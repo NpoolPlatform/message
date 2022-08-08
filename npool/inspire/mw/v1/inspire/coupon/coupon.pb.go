@@ -106,8 +106,8 @@ type Coupon struct {
 	CreatedAt uint32 `protobuf:"varint,120,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"create_at"`
 	// @inject_tag: sql:"app_id"
 	AppID string `protobuf:"bytes,130,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
-	// @inject_tag: sql:"iser_id"
-	UserID string `protobuf:"bytes,140,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"iser_id"`
+	// @inject_tag: sql:"user_id"
+	UserID string `protobuf:"bytes,140,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
 }
 
 func (x *Coupon) Reset() {
