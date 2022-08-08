@@ -437,7 +437,7 @@
         "LoginClientUserAgent": {
           "type": "string"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }

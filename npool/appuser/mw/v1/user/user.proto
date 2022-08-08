@@ -105,7 +105,7 @@ message User {
     string LoginClientIP                     = 310;
     string LoginClientUserAgent              = 320;
 
-    uint32 CreateAt                          = 330;
+    uint32 CreatedAt                         = 330;
 }
 
 message CreateUserRequest {
