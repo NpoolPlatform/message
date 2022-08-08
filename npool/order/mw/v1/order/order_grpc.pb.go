@@ -26,7 +26,6 @@ type MiddlewareClient interface {
 	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
-	GetCouponOrder(ctx context.Context, in *GetCouponOrderRequest, opts ...grpc.CallOption) (*GetCouponOrderResponse, error)
 	// Admin apis
 	GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error)
 }
@@ -75,15 +74,6 @@ func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetCouponOrder(ctx context.Context, in *GetCouponOrderRequest, opts ...grpc.CallOption) (*GetCouponOrderResponse, error) {
-	out := new(GetCouponOrderResponse)
-	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/GetCouponOrder", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error) {
 	out := new(GetAppOrdersResponse)
 	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/GetAppOrders", in, out, opts...)
@@ -101,7 +91,6 @@ type MiddlewareServer interface {
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
-	GetCouponOrder(context.Context, *GetCouponOrderRequest) (*GetCouponOrderResponse, error)
 	// Admin apis
 	GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -122,9 +111,6 @@ func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest)
 }
 func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCouponOrder(context.Context, *GetCouponOrderRequest) (*GetCouponOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCouponOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppOrders not implemented")
@@ -214,24 +200,6 @@ func _Middleware_GetOrders_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCouponOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCouponOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCouponOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/order.middleware.order1.v1.Middleware/GetCouponOrder",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCouponOrder(ctx, req.(*GetCouponOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetAppOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppOrdersRequest)
 	if err := dec(in); err != nil {
@@ -272,10 +240,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrders",
 			Handler:    _Middleware_GetOrders_Handler,
-		},
-		{
-			MethodName: "GetCouponOrder",
-			Handler:    _Middleware_GetCouponOrder_Handler,
 		},
 		{
 			MethodName: "GetAppOrders",
