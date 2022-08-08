@@ -78,6 +78,7 @@ message Order {
     string ParentOrderGoodID      = 30;
     string ParentOrderGoodName    = 40;
 
+    string AppID                  = 49;
     string UserID                 = 50;
     string EmailAddress           = 60;
     string PhoneNO                = 70;
