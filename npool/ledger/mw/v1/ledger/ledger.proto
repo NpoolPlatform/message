@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v1/ledger"
 
 import "npool/ledger/mgr/v1/ledger/general/general.proto";
 import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
+import "npool/ledger/mgr/v1/ledger/withdraw/withdraw.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -19,6 +20,10 @@ service Middleware {
     rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
     rpc LockBalance               (LockBalanceRequest)               returns (LockBalanceResponse)          {}
     rpc UnlockBalance             (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
+
+    rpc FinalPayment              (FinalPaymentRequest)              returns (FinalPaymentResponse)         {}
+    rpc CreateWithdraw            (CreateWithdrawRequest)            returns (CreateWithdrawResponse)       {}
+    rpc FinalWithdraw             (FinalWithdrawRequest)             returns (FinalWithdrawResponse)        {}
 }
 
 message GetIntervalGeneralsRequest {
@@ -93,3 +98,27 @@ message UnlockBalanceRequest {
 
 message UnlockBalanceResponse {
 }
+
+message FinalPaymentRequest {
+    repeated ledger.manager.ledger.detail.v1.DetailReq Infos = 10;
+}
+
+message FinalPaymentResponse {
+}
+
+message CreateWithdrawRequest {
+    ledger.manager.ledger.withdraw.v1.WithdrawReq Info = 10;
+}
+
+message CreateWithdrawResponse {
+    ledger.manager.ledger.withdraw.v1.Withdraw Info = 10;
+}
+
+message FinalWithdrawRequest {
+    ledger.manager.ledger.withdraw.v1.WithdrawReq Info = 10;
+}
+
+message FinalWithdrawResponse {
+    ledger.manager.ledger.withdraw.v1.Withdraw Info = 10;
+}
+
