@@ -157,6 +157,9 @@
         },
         "CurGoodName": {
           "type": "string"
+        },
+        "CurGoodUnit": {
+          "type": "string"
         }
       }
     },

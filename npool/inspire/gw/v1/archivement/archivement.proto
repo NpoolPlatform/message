@@ -34,6 +34,7 @@ message CoinArchivement {
     uint32 CurPercent      = 110;
     string CurGoodID       = 120;
     string CurGoodName     = 130;
+    string CurGoodUnit     = 140;
 }
 
 message GetCoinArchivementsRequest {
