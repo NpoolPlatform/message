@@ -4,7 +4,6 @@ package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
-import "npool/inspire/mw/v1/inspire/coupon/coupon.proto";
 import "npool/order/mgr/v1/order/state/state.proto";
 import "npool/order/mgr/v1/order/order/order.proto";
 import "google/api/annotations.proto";
