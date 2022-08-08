@@ -70,9 +70,6 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "FromOldID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -223,9 +220,6 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
-        },
-        "FromOldID": {
-          "type": "string"
         }
       }
     },
@@ -258,9 +252,6 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
-        },
-        "FromOldID": {
-          "type": "string"
         }
       }
     },

@@ -273,9 +273,6 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
-        },
-        "FromOldID": {
-          "type": "string"
         }
       }
     },
@@ -308,9 +305,6 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
-        },
-        "FromOldID": {
-          "type": "string"
         }
       }
     },
