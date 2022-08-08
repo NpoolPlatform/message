@@ -144,6 +144,38 @@
         ]
       }
     },
+    "/v1/get/order": {
+      "post": {
+        "operationId": "Gateway_GetOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayorder1v1GetOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayorder1v1GetOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/orders": {
       "post": {
         "operationId": "Gateway_GetOrders",
@@ -282,6 +314,28 @@
       }
     },
     "gatewayorder1v1CreateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
+        }
+      }
+    },
+    "gatewayorder1v1GetOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewayorder1v1GetOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {

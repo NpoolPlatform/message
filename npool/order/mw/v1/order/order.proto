@@ -4,6 +4,7 @@ package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
+import "npool/inspire/mw/v1/inspire/coupon/coupon.proto";
 import "npool/order/mgr/v1/order/state/state.proto";
 import "npool/order/mgr/v1/order/order/order.proto";
 import "google/api/annotations.proto";
@@ -16,6 +17,7 @@ service Middleware {
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
+    rpc GetCouponOrder  (GetCouponOrderRequest) returns (GetCouponOrderResponse) {}
 
     // Admin apis
     rpc GetAppOrders    (GetAppOrdersRequest)   returns (GetAppOrdersResponse)   {}
@@ -179,4 +181,13 @@ message GetAppOrdersRequest {
 message GetAppOrdersResponse {
     repeated Order Infos = 10;
     uint32         Total = 20;
+}
+
+message GetCouponOrderRequest {
+    string CouponID                                            = 10;
+    inspire.middleware.inspire.coupon.v1.CouponType CouponType = 20;
+}
+
+message GetCouponOrderResponse {
+    Order Info = 10;
 }

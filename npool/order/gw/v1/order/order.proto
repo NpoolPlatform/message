@@ -26,6 +26,13 @@ service Gateway {
         };
     }
 
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/order"
+            body: "*"
+        };
+    }
+
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders"
@@ -146,6 +153,16 @@ message UpdateOrderRequest {
 }
 
 message UpdateOrderResponse {
+    Order Info = 10;
+}
+
+message GetOrderRequest {
+    string AppID     = 10;
+    string UserID    = 20;
+    string ID        = 30;
+}
+
+message GetOrderResponse {
     Order Info = 10;
 }
 
