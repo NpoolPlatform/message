@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareledger1v1CreateWithdrawResponse": {
+    "middlewareledger1v1UpdateWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -136,14 +136,6 @@
     },
     "v1FinalPaymentResponse": {
       "type": "object"
-    },
-    "v1FinalWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
     },
     "v1General": {
       "type": "object",

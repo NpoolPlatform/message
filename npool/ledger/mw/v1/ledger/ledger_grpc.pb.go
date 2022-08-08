@@ -29,8 +29,7 @@ type MiddlewareClient interface {
 	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
 	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
 	FinalPayment(ctx context.Context, in *FinalPaymentRequest, opts ...grpc.CallOption) (*FinalPaymentResponse, error)
-	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error)
-	FinalWithdraw(ctx context.Context, in *FinalWithdrawRequest, opts ...grpc.CallOption) (*FinalWithdrawResponse, error)
+	UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error)
 }
 
 type middlewareClient struct {
@@ -104,18 +103,9 @@ func (c *middlewareClient) FinalPayment(ctx context.Context, in *FinalPaymentReq
 	return out, nil
 }
 
-func (c *middlewareClient) CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error) {
-	out := new(CreateWithdrawResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/CreateWithdraw", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) FinalWithdraw(ctx context.Context, in *FinalWithdrawRequest, opts ...grpc.CallOption) (*FinalWithdrawResponse, error) {
-	out := new(FinalWithdrawResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/FinalWithdraw", in, out, opts...)
+func (c *middlewareClient) UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error) {
+	out := new(UpdateWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,8 +123,7 @@ type MiddlewareServer interface {
 	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
 	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
 	FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error)
-	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error)
-	FinalWithdraw(context.Context, *FinalWithdrawRequest) (*FinalWithdrawResponse, error)
+	UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -163,11 +152,8 @@ func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalan
 func (UnimplementedMiddlewareServer) FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FinalPayment not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraw not implemented")
-}
-func (UnimplementedMiddlewareServer) FinalWithdraw(context.Context, *FinalWithdrawRequest) (*FinalWithdrawResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FinalWithdraw not implemented")
+func (UnimplementedMiddlewareServer) UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdraw not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -308,38 +294,20 @@ func _Middleware_FinalPayment_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateWithdrawRequest)
+func _Middleware_UpdateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateWithdrawRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateWithdraw(ctx, in)
+		return srv.(MiddlewareServer).UpdateWithdraw(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/CreateWithdraw",
+		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateWithdraw(ctx, req.(*CreateWithdrawRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_FinalWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FinalWithdrawRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).FinalWithdraw(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/FinalWithdraw",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).FinalWithdraw(ctx, req.(*FinalWithdrawRequest))
+		return srv.(MiddlewareServer).UpdateWithdraw(ctx, req.(*UpdateWithdrawRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -380,12 +348,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_FinalPayment_Handler,
 		},
 		{
-			MethodName: "CreateWithdraw",
-			Handler:    _Middleware_CreateWithdraw_Handler,
-		},
-		{
-			MethodName: "FinalWithdraw",
-			Handler:    _Middleware_FinalWithdraw_Handler,
+			MethodName: "UpdateWithdraw",
+			Handler:    _Middleware_UpdateWithdraw_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -22,8 +22,7 @@ service Middleware {
     rpc UnlockBalance             (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
 
     rpc FinalPayment              (FinalPaymentRequest)              returns (FinalPaymentResponse)         {}
-    rpc CreateWithdraw            (CreateWithdrawRequest)            returns (CreateWithdrawResponse)       {}
-    rpc FinalWithdraw             (FinalWithdrawRequest)             returns (FinalWithdrawResponse)        {}
+    rpc UpdateWithdraw            (UpdateWithdrawRequest)            returns (UpdateWithdrawResponse)       {}
 }
 
 message GetIntervalGeneralsRequest {
@@ -106,19 +105,12 @@ message FinalPaymentRequest {
 message FinalPaymentResponse {
 }
 
-message CreateWithdrawRequest {
+message UpdateWithdrawRequest {
     ledger.manager.ledger.withdraw.v1.WithdrawReq Info = 10;
 }
 
-message CreateWithdrawResponse {
+message UpdateWithdrawResponse {
     ledger.manager.ledger.withdraw.v1.Withdraw Info = 10;
 }
 
-message FinalWithdrawRequest {
-    ledger.manager.ledger.withdraw.v1.WithdrawReq Info = 10;
-}
-
-message FinalWithdrawResponse {
-    ledger.manager.ledger.withdraw.v1.Withdraw Info = 10;
-}
 
