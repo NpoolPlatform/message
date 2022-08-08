@@ -54,8 +54,9 @@ message GetCoinArchivementsResponse {
         string LastName        = 60;
         bool   Kol             = 70;
         uint32 TotalInvitees   = 80;
-
         repeated CoinArchivement Archivements = 90;
+        uint32 CreatedAt       = 100;
+        uint32 InvitedAt       = 110;
     }
 
     repeated Archivement Archivements  = 10; // Coin
