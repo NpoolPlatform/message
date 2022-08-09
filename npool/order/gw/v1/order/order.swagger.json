@@ -416,6 +416,9 @@
         "CoinUnit": {
           "type": "string"
         },
+        "CoinPresale": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -424,6 +427,10 @@
         },
         "GoodUnit": {
           "type": "string"
+        },
+        "GoodServicePeriod": {
+          "type": "integer",
+          "format": "int64"
         },
         "Units": {
           "type": "integer",
