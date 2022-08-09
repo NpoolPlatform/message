@@ -779,6 +779,9 @@
         "GoodUnit": {
           "type": "string"
         },
+        "GoodServicePeriodDays": {
+          "type": "string"
+        },
         "Units": {
           "type": "integer",
           "format": "int64"
