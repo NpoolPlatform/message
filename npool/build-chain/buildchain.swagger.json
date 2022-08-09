@@ -147,10 +147,7 @@
         "ID": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
-        },
-        "Type": {
+        "CoinID": {
           "type": "string"
         },
         "Contract": {

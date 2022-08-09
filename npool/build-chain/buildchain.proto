@@ -32,9 +32,19 @@ message VersionResponse { string Info = 100; }
 
 message DeployedCoin {
   string ID = 10;
+  string CoinID = 20;
+  string Contract = 30;
+}
+
+message CoinsInfo {
+  string ID = 10;
   string Name = 20;
-  string Type = 30;
-  string Contract = 40;
+  string ChainType = 30;
+  string TokenType = 40;
+  string MainnetAddress = 50;
+  string Similarity = 60;
+  string Remark = 70;
+  bytes Data = 80;
 }
 
 message GetDeployedCoinsRequest {
