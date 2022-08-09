@@ -60,7 +60,7 @@ message UserReq {
     optional string BanMessage                 = 260;
 
     // RoleUser
-    optional string RoleID                     = 270;
+    repeated string RoleIDs                    = 270;
 }
 
 message User {

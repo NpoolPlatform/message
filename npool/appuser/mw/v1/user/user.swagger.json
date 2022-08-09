@@ -340,8 +340,11 @@
         "BanMessage": {
           "type": "string"
         },
-        "RoleID": {
-          "type": "string",
+        "RoleIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "title": "RoleUser"
         }
       }
