@@ -12,10 +12,13 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
-    rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {}
-    rpc GetOrder    (GetOrderRequest)    returns (GetOrderResponse)    {}
-    rpc GetOrders   (GetOrdersRequest)   returns (GetOrdersResponse)   {}
+    rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
+    rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
+    rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
+    rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
+
+    // Admin apis
+    rpc GetAppOrders    (GetAppOrdersRequest)   returns (GetAppOrdersResponse)   {}
 }
 
 message OrderReq {
@@ -64,7 +67,8 @@ message Order {
     // @inject_tag: sql:"units"
     uint32 Units                  = 50;
     // @inject_tag: sql:"order_type"
-    string OrderType              = 60;
+    string OrderTypeStr           = 60;
+    order.manager.order.order.v1.OrderType OrderType = 61;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
@@ -77,25 +81,29 @@ message Order {
     int32  PayWithParentInt       = 110;
 
     // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID           = 120;
+    string PaymentCoinTypeID       = 120;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    uint64 PaymentCoinUSDCurrencyUint  = 130;
+    string PaymentCoinUSDCurrency  = 130;
     // @inject_tag: sql:"payment_local_coin_usd_currency"
-    uint64 PaymentLocalUSDCurrencyUint = 140;
+    string PaymentLocalUSDCurrency = 140;
     // @inject_tag: sql:"payment_live_coin_usd_currency"
-    uint64 PaymentLiveUSDCurrencyUint  = 150;
+    string PaymentLiveUSDCurrency  = 150;
     // @inject_tag: sql:"payment_id"
     string PaymentID              = 160;
     // @inject_tag: sql:"payment_account_id"
     string PaymentAccountID       = 170;
     // @inject_tag: sql:"payment_amount"
-    uint64 PaymentAmountUint      = 180;
+    string PaymentAmount          = 180;
     // @inject_tag: sql:"payment_state"
     string PaymentState           = 190;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 200;
     // @inject_tag: sql:"paid_at"
     uint32 PaidAt                 = 210;
+    // @inject_tag: sql:"payment_start_amount"
+    string PaymentStartAmount     = 211;
+    // @inject_tag: sql:"payment_finish_amount"
+    string PaymentFinishAmount    = 212;
 
     // @inject_tag: sql:"coupon_id"
     string FixAmountID            = 220;
@@ -106,14 +114,11 @@ message Order {
 
     // @inject_tag: sql:"create_at"
     uint32 CreatedAt              = 250;
+    // @inject_tag: sql:"user_canceled"
+    uint32 UserCanceled           = 251;
 
     order.manager.order.state.v1.EState    State                        = 260;
-    order.manager.order.order.v1.OrderType Type                         = 270;
     bool                                   PayWithParent                = 280;
-    string                                 PaymentAmount                = 290;
-    string                                 PaymentCoinUSDCurrency       = 300;
-    string                                 PaymentLiveCoinUSDCurrency   = 310;
-    string                                 PaymentLocalCoinUSDCurrency  = 320;
 }
 
 message Conds {
@@ -164,3 +169,15 @@ message GetOrdersResponse {
     repeated Order Infos = 10;
     uint32         Total = 20;
 }
+
+message GetAppOrdersRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetAppOrdersResponse {
+    repeated Order Infos = 10;
+    uint32         Total = 20;
+}
+

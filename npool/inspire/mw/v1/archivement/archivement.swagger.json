@@ -18,7 +18,6 @@
   "paths": {
     "/v1/version": {
       "post": {
-        "summary": "Method Version",
         "operationId": "Middleware_Version",
         "responses": {
           "200": {
@@ -75,6 +74,61 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BookKeepingResponse": {
+      "type": "object"
+    },
+    "v1DetailReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "SelfOrder": {
+          "type": "boolean"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "USDAmount": {
+          "type": "string"
+        },
+        "Commission": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

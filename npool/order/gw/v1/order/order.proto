@@ -26,6 +26,13 @@ service Gateway {
         };
     }
 
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/order"
+            body: "*"
+        };
+    }
+
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders"
@@ -71,6 +78,7 @@ message Order {
     string ParentOrderGoodID      = 30;
     string ParentOrderGoodName    = 40;
 
+    string AppID                  = 49;
     string UserID                 = 50;
     string EmailAddress           = 60;
     string PhoneNO                = 70;
@@ -79,10 +87,12 @@ message Order {
     string CoinName               = 90;
     string CoinLogo               = 100;
     string CoinUnit               = 110;
+    bool   CoinPresale            = 111;
 
     string GoodID                 = 120;
     string GoodName               = 130;
     string GoodUnit               = 131;
+    uint32 GoodServicePeriodDays  = 132;
     uint32 Units                  = 140;
 
     string PaymentID              = 150;
@@ -146,6 +156,16 @@ message UpdateOrderRequest {
 }
 
 message UpdateOrderResponse {
+    Order Info = 10;
+}
+
+message GetOrderRequest {
+    string AppID     = 10;
+    string UserID    = 20;
+    string ID        = 30;
+}
+
+message GetOrderResponse {
     Order Info = 10;
 }
 

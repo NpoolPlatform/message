@@ -144,6 +144,38 @@
         ]
       }
     },
+    "/v1/get/order": {
+      "post": {
+        "operationId": "Gateway_GetOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayorder1v1GetOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayorder1v1GetOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/orders": {
       "post": {
         "operationId": "Gateway_GetOrders",
@@ -289,6 +321,28 @@
         }
       }
     },
+    "gatewayorder1v1GetOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewayorder1v1GetOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
+        }
+      }
+    },
     "gatewayorder1v1GetOrdersRequest": {
       "type": "object",
       "properties": {
@@ -338,6 +392,9 @@
         "ParentOrderGoodName": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
@@ -359,6 +416,9 @@
         "CoinUnit": {
           "type": "string"
         },
+        "CoinPresale": {
+          "type": "boolean"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -367,6 +427,10 @@
         },
         "GoodUnit": {
           "type": "string"
+        },
+        "GoodServicePeriodDays": {
+          "type": "integer",
+          "format": "int64"
         },
         "Units": {
           "type": "integer",
@@ -585,12 +649,13 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
+        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1GetAppUserOrdersRequest": {
       "type": "object",

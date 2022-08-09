@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareledger1v1UpdateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Withdraw"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -126,6 +134,9 @@
         }
       }
     },
+    "v1FinalPaymentResponse": {
+      "type": "object"
+    },
     "v1General": {
       "type": "object",
       "properties": {
@@ -228,6 +239,86 @@
     },
     "v1UnlockBalanceResponse": {
       "type": "object"
+    },
+    "v1Withdraw": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        }
+      }
+    },
+    "v1WithdrawReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        }
+      }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }

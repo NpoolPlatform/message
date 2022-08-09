@@ -140,6 +140,7 @@ message User {
 
     // @inject_tag: sql:"created_at"
     uint32          CreateAt                             = 370;
+
 }
 
 message CreateUserRequest {

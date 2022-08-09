@@ -72,9 +72,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"units\""
         },
-        "OrderType": {
+        "OrderTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_type\""
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         },
         "ParentOrderID": {
           "type": "string",
@@ -103,19 +106,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
-        "PaymentCoinUSDCurrencyUint": {
+        "PaymentCoinUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
         },
-        "PaymentLocalUSDCurrencyUint": {
+        "PaymentLocalUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
         },
-        "PaymentLiveUSDCurrencyUint": {
+        "PaymentLiveUSDCurrency": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
         },
         "PaymentID": {
@@ -126,9 +126,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_account_id\""
         },
-        "PaymentAmountUint": {
+        "PaymentAmount": {
           "type": "string",
-          "format": "uint64",
           "title": "@inject_tag: sql:\"payment_amount\""
         },
         "PaymentState": {
@@ -143,6 +142,14 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"paid_at\""
+        },
+        "PaymentStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_start_amount\""
+        },
+        "PaymentFinishAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_finish_amount\""
         },
         "FixAmountID": {
           "type": "string",
@@ -161,26 +168,16 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"create_at\""
         },
+        "UserCanceled": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"user_canceled\""
+        },
         "State": {
           "$ref": "#/definitions/v1EState"
         },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
-        },
         "PayWithParent": {
           "type": "boolean"
-        },
-        "PaymentAmount": {
-          "type": "string"
-        },
-        "PaymentCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLiveCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLocalCoinUSDCurrency": {
-          "type": "string"
         }
       }
     },
@@ -299,12 +296,28 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
+        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+    },
+    "v1GetAppOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1OrderType": {
       "type": "string",

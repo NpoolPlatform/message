@@ -28,6 +28,8 @@ type MiddlewareClient interface {
 	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
 	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
 	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
+	FinalPayment(ctx context.Context, in *FinalPaymentRequest, opts ...grpc.CallOption) (*FinalPaymentResponse, error)
+	UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error)
 }
 
 type middlewareClient struct {
@@ -92,6 +94,24 @@ func (c *middlewareClient) UnlockBalance(ctx context.Context, in *UnlockBalanceR
 	return out, nil
 }
 
+func (c *middlewareClient) FinalPayment(ctx context.Context, in *FinalPaymentRequest, opts ...grpc.CallOption) (*FinalPaymentResponse, error) {
+	out := new(FinalPaymentResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/FinalPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error) {
+	out := new(UpdateWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -102,6 +122,8 @@ type MiddlewareServer interface {
 	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
 	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
 	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
+	FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error)
+	UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -126,6 +148,12 @@ func (UnimplementedMiddlewareServer) LockBalance(context.Context, *LockBalanceRe
 }
 func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnlockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FinalPayment not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdraw not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -248,6 +276,42 @@ func _Middleware_UnlockBalance_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_FinalPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FinalPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).FinalPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/FinalPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).FinalPayment(ctx, req.(*FinalPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateWithdraw(ctx, req.(*UpdateWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +342,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnlockBalance",
 			Handler:    _Middleware_UnlockBalance_Handler,
+		},
+		{
+			MethodName: "FinalPayment",
+			Handler:    _Middleware_FinalPayment_Handler,
+		},
+		{
+			MethodName: "UpdateWithdraw",
+			Handler:    _Middleware_UpdateWithdraw_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

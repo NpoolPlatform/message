@@ -83,6 +83,14 @@
           "items": {
             "$ref": "#/definitions/v1CoinArchivement"
           }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InvitedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -156,6 +164,9 @@
           "type": "string"
         },
         "CurGoodName": {
+          "type": "string"
+        },
+        "CurGoodUnit": {
           "type": "string"
         }
       }
