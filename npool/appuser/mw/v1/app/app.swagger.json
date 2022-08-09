@@ -22,33 +22,48 @@
       "properties": {
         "ID": {
           "type": "string",
-          "title": "Base info"
+          "title": "Base info\n@inject_tag: sql:\"id\""
         },
         "CreatedBy": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
         "Logo": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
         },
         "Description": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "BanAppID": {
+          "type": "string",
+          "title": "Banned\n@inject_tag: sql:\"ban_app_id\""
         },
         "Banned": {
-          "type": "boolean",
-          "title": "Banned"
+          "type": "boolean"
         },
         "BanMessage": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "SignupMethodsString": {
+          "type": "string",
+          "title": "Sign methods\n@inject_tag: sql:\"signup_methods\""
         },
         "SignupMethods": {
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "title": "Sign methods"
+          }
+        },
+        "ExtSigninMethodsString": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"extern_signin_methods\""
         },
         "ExtSigninMethods": {
           "type": "array",
@@ -58,20 +73,36 @@
         },
         "RecaptchaMethod": {
           "type": "string",
-          "title": "Control flag"
+          "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
         },
         "KycEnable": {
           "type": "boolean"
         },
+        "SigninVerifyEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
+        },
         "SigninVerifyEnable": {
           "type": "boolean"
+        },
+        "InvitationCodeMustInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
         },
         "InvitationCodeMust": {
           "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         }
       }
     },

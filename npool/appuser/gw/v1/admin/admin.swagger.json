@@ -441,33 +441,43 @@
       "properties": {
         "ID": {
           "type": "string",
-          "title": "Base"
+          "title": "Base\n@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "EmailAddress": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"email_address\""
         },
         "PhoneNO": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"phone_no\""
         },
         "ImportedFromAppID": {
           "type": "string",
-          "title": "Imported"
+          "title": "Imported\n@inject_tag: sql:\"import_from_app\""
         },
         "ImportedFromAppName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_name\""
         },
         "ImportedFromAppLogo": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_logo\""
         },
         "ImportedFromAppHome": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_home\""
         },
         "Username": {
           "type": "string",
-          "title": "Extra"
+          "title": "Extra\n@inject_tag: sql:\"username\""
+        },
+        "AddressFieldsString": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address_fields\""
         },
         "AddressFields": {
           "type": "array",
@@ -476,50 +486,76 @@
           }
         },
         "Gender": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"gender\""
         },
         "PostalCode": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"postal_code\""
         },
         "Age": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"age\""
         },
         "Birthday": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"birthday\""
         },
         "Avatar": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"avatar\""
         },
         "Organization": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"organization\""
         },
         "FirstName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"first_name\""
         },
         "LastName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_name\""
         },
         "IDNumber": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id_number\""
+        },
+        "SigninVerifyByGoogleAuthenticationInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Control flat\n@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
         "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean",
-          "title": "Control flat"
+          "type": "boolean"
+        },
+        "GoogleAuthenticationVerifiedInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
         "GoogleAuthenticationVerified": {
           "type": "boolean"
+        },
+        "BanAppUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_app_user_id\""
         },
         "Banned": {
           "type": "boolean"
         },
         "BanMessage": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "GoogleSecret": {
+          "type": "string",
+          "title": "Secret map\n@inject_tag: sql:\"google_secret\""
         },
         "HasGoogleSecret": {
-          "type": "boolean",
-          "title": "Secret map"
+          "type": "boolean"
         },
         "Roles": {
           "type": "array",
@@ -549,7 +585,8 @@
         },
         "CreateAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         }
       }
     },
