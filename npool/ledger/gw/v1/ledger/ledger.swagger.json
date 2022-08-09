@@ -780,7 +780,8 @@
           "type": "string"
         },
         "GoodServicePeriodDays": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Units": {
           "type": "integer",
