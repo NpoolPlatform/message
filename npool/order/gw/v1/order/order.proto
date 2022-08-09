@@ -92,7 +92,7 @@ message Order {
     string GoodID                 = 120;
     string GoodName               = 130;
     string GoodUnit               = 131;
-    uint32 GoodServicePeriod      = 132;
+    uint32 GoodServicePeriodDays  = 132;
     uint32 Units                  = 140;
 
     string PaymentID              = 150;
