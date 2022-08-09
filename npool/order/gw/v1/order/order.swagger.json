@@ -417,7 +417,7 @@
           "type": "string"
         },
         "CoinPresale": {
-          "type": "string"
+          "type": "boolean"
         },
         "GoodID": {
           "type": "string"

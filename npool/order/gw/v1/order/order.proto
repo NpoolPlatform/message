@@ -87,7 +87,7 @@ message Order {
     string CoinName               = 90;
     string CoinLogo               = 100;
     string CoinUnit               = 110;
-    string CoinPresale            = 111;
+    bool   CoinPresale            = 111;
 
     string GoodID                 = 120;
     string GoodName               = 130;
