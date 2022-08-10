@@ -122,6 +122,7 @@ message Detail {
     string IOSubType  = 60;
     string Amount     = 70;
     string IOExtra    = 80;
+    uint32 CreateAt   = 90;
 }
 
 message GetDetailsRequest {
