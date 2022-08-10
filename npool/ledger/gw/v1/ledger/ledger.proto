@@ -4,6 +4,7 @@ package ledger.gateway.ledger1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger";
 
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/ledger/mgr/v1/ledger/withdraw/withdraw.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -214,11 +215,14 @@ message Withdraw {
 }
 
 message CreateWithdrawRequest {
-    string AppID       = 10;
-    string UserID      = 20;
-    string CoinTypeID  = 30;
-    string AccountID   = 40;
-    string Amount      = 50;
+    string AppID             = 10;
+    string UserID            = 20;
+    string CoinTypeID        = 30;
+    string AccountID         = 40;
+    string Amount            = 50;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 60;
+    string Account           = 70;
+    string VerificationCode  = 80;
 }
 
 message CreateWithdrawResponse {
