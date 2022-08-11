@@ -5428,6 +5428,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "DeleteAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

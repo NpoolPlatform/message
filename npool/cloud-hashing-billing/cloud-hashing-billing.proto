@@ -1202,6 +1202,7 @@ message UserWithdraw {
     string Message = 70;
     uint32 CreateAt = 80;
     repeated string Labels = 90;
+    uint32 DeleteAt = 100;
 }
 
 message CreateUserWithdrawRequest {
