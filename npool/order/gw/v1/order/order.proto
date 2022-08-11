@@ -87,10 +87,12 @@ message Order {
     string CoinName               = 90;
     string CoinLogo               = 100;
     string CoinUnit               = 110;
+    bool   CoinPresale            = 111;
 
     string GoodID                 = 120;
     string GoodName               = 130;
     string GoodUnit               = 131;
+    uint32 GoodServicePeriodDays  = 132;
     uint32 Units                  = 140;
 
     string PaymentID              = 150;
