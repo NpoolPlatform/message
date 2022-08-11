@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/authorize/genesis": {
+      "post": {
+        "operationId": "AdminGw_AuthorizeGenesis",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeGenesisResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AuthorizeGenesisRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminGw"
+        ]
+      }
+    },
     "/v1/create/admin/apps": {
       "post": {
         "summary": "VPN only apis\nCreate genesis / admin apps",
@@ -139,38 +171,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAdminAppsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminGw"
-        ]
-      }
-    },
-    "/v1/get/authorize/genesis": {
-      "post": {
-        "operationId": "AdminGw_AuthorizeGenesis",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AuthorizeGenesisResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AuthorizeGenesisRequest"
             }
           }
         ],
@@ -328,11 +328,42 @@
         }
       }
     },
+    "v1Auth": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        }
+      }
+    },
     "v1AuthorizeGenesisRequest": {
       "type": "object"
     },
     "v1AuthorizeGenesisResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Auth"
+          }
+        }
+      }
     },
     "v1CreateAdminAppsRequest": {
       "type": "object"
@@ -399,10 +430,23 @@
       }
     },
     "v1GetGenesisAuthsRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        }
+      }
     },
     "v1GetGenesisAuthsResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Auth"
+          }
+        }
+      }
     },
     "v1GetGenesisRoleUsersRequest": {
       "type": "object"

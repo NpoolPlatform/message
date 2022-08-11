@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v2/create/app/ban/user": {
+    "/v1/create/app/ban/user": {
       "post": {
         "operationId": "BanAppUserGw_CreateAppBanUser",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v2/create/ban/user": {
+    "/v1/create/ban/user": {
       "post": {
         "operationId": "BanAppUserGw_CreateBanUser",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v2/delete/ban/user": {
+    "/v1/delete/ban/user": {
       "post": {
         "operationId": "BanAppUserGw_DeleteBanUser",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v2/update/ban/user": {
+    "/v1/update/ban/user": {
       "post": {
         "operationId": "BanAppUserGw_UpdateBanUser",
         "responses": {

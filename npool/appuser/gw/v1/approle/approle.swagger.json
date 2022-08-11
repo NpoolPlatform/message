@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v2/create/app/role": {
+    "/v1/create/app/role": {
       "post": {
         "summary": "Admin apis",
         "operationId": "AppRoleGw_CreateAppRole",
@@ -49,7 +49,7 @@
         ]
       }
     },
-    "/v2/create/role": {
+    "/v1/create/role": {
       "post": {
         "summary": "Create role should ignore genesis roles",
         "operationId": "AppRoleGw_CreateRole",
@@ -82,7 +82,7 @@
         ]
       }
     },
-    "/v2/get/app/roles": {
+    "/v1/get/app/roles": {
       "post": {
         "operationId": "AppRoleGw_GetAppRoles",
         "responses": {
@@ -114,7 +114,7 @@
         ]
       }
     },
-    "/v2/get/roles": {
+    "/v1/get/roles": {
       "post": {
         "operationId": "AppRoleGw_GetRoles",
         "responses": {
@@ -146,7 +146,7 @@
         ]
       }
     },
-    "/v2/update/app/role": {
+    "/v1/update/app/role": {
       "post": {
         "summary": "Update role should ignore genesis roles",
         "operationId": "AppRoleGw_UpdateRole",

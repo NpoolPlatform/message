@@ -12,6 +12,7 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/user/user.proto";
+import "npool/authinggateway/authinggateway.proto";
 
 service AdminGw {
     // VPN only apis
@@ -69,7 +70,7 @@ service AdminGw {
 
     rpc AuthorizeGenesis (AuthorizeGenesisRequest) returns (AuthorizeGenesisResponse) {
         option (google.api.http) = {
-            post: "/v1/get/authorize/genesis"
+            post: "/v1/authorize/genesis"
             body: "*"
         };
     }
@@ -112,6 +113,7 @@ message AuthorizeGenesisRequest {
 }
 
 message AuthorizeGenesisResponse {
+    repeated authing.gateway.v1.Auth Infos = 10;
 }
 
 message GetGenesisRolesRequest {
@@ -130,7 +132,9 @@ message GetGenesisRoleUsersResponse {
 }
 
 message GetGenesisAuthsRequest {
+    string AppID  = 10;
 }
 
 message GetGenesisAuthsResponse {
+    repeated authing.gateway.v1.Auth Infos = 10;
 }

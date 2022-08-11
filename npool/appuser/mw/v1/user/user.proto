@@ -141,6 +141,7 @@ message User {
     // @inject_tag: sql:"created_at"
     uint32          CreateAt                             = 370;
 
+
 }
 
 message CreateUserRequest {
@@ -167,6 +168,7 @@ message GetUsersRequest {
 
 message GetUsersResponse {
     repeated User Infos = 10;
+    uint32 Total  = 40;
 }
 
 message GetUserRequest {
@@ -184,6 +186,7 @@ message GetManyUsersRequest {
 
 message GetManyUsersResponse {
     repeated User Infos = 10;
+    uint32 Total  = 40;
 }
 
 message DeleteUserRequest {

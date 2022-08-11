@@ -10,21 +10,21 @@ import "npool/appuser/mw/v1/user/user.proto";
 service LoginGw {
     rpc Login (LoginRequest) returns (LoginResponse) {
         option (google.api.http) = {
-            post: "/v2/login"
+            post: "/v1/login"
             body: "*"
         };
     }
 
     rpc Logined (LoginedRequest) returns (LoginedResponse) {
         option (google.api.http) = {
-            post: "/v2/logined"
+            post: "/v1/logined"
             body: "*"
         };
     }
 
     rpc Logout (LogoutRequest) returns (LogoutResponse) {
         option (google.api.http) = {
-            post: "/v2/logout"
+            post: "/v1/logout"
             body: "*"
         };
     }

@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v2/login": {
+    "/v1/login": {
       "post": {
         "operationId": "LoginGw_Login",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v2/logined": {
+    "/v1/logined": {
       "post": {
         "operationId": "LoginGw_Logined",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v2/logout": {
+    "/v1/logout": {
       "post": {
         "operationId": "LoginGw_Logout",
         "responses": {

@@ -10,28 +10,28 @@ import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
 service BanAppUserGw {
     rpc CreateBanUser (CreateBanUserRequest) returns (CreateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/create/ban/user"
+            post: "/v1/create/ban/user"
             body: "*"
         };
     }
 
     rpc CreateAppBanUser (CreateAppBanUserRequest) returns (CreateAppBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/create/app/ban/user"
+            post: "/v1/create/app/ban/user"
             body: "*"
         };
     }
 
     rpc UpdateBanUser (UpdateBanUserRequest) returns (UpdateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/update/ban/user"
+            post: "/v1/update/ban/user"
             body: "*"
         };
     }
 
     rpc DeleteBanUser (DeleteBanUserRequest) returns (DeleteBanUserResponse) {
         option (google.api.http) = {
-            post: "/v2/delete/ban/user"
+            post: "/v1/delete/ban/user"
             body: "*"
         };
     }

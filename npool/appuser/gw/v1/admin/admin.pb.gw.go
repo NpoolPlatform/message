@@ -476,7 +476,7 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/get/authorize/genesis"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -678,7 +678,7 @@ func RegisterAdminGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/get/authorize/genesis"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -712,7 +712,7 @@ var (
 
 	pattern_AdminGw_GetGenesisAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "genesis", "auths"}, ""))
 
-	pattern_AdminGw_AuthorizeGenesis_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "authorize", "genesis"}, ""))
+	pattern_AdminGw_AuthorizeGenesis_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "authorize", "genesis"}, ""))
 )
 
 var (

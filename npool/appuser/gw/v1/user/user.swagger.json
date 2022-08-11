@@ -16,6 +16,102 @@
     "application/json"
   ],
   "paths": {
+    "/1/create/user": {
+      "post": {
+        "operationId": "UserGw_CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1CreateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1CreateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/1/signup": {
+      "post": {
+        "operationId": "UserGw_Signup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SignupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SignupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
+    "/1/update/user": {
+      "post": {
+        "operationId": "UserGw_UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1UpdateUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayuserv1UpdateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserGw"
+        ]
+      }
+    },
     "/v1/get/app/users": {
       "post": {
         "operationId": "UserGw_GetAppUsers",
@@ -79,102 +175,6 @@
           "UserGw"
         ]
       }
-    },
-    "/v2/create/user": {
-      "post": {
-        "operationId": "UserGw_CreateUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1CreateUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1CreateUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserGw"
-        ]
-      }
-    },
-    "/v2/signup": {
-      "post": {
-        "operationId": "UserGw_Signup",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SignupResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SignupRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserGw"
-        ]
-      }
-    },
-    "/v2/update/user": {
-      "post": {
-        "operationId": "UserGw_UpdateUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1UpdateUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appusergatewayuserv1UpdateUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserGw"
-        ]
-      }
     }
   },
   "definitions": {
@@ -218,6 +218,10 @@
           "items": {
             "$ref": "#/definitions/v1User"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -288,6 +292,10 @@
           "items": {
             "$ref": "#/definitions/v1User"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
