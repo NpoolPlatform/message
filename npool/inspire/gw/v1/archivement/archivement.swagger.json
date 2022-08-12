@@ -156,17 +156,17 @@
         "SelfCommission": {
           "type": "string"
         },
-        "CurPercent": {
+        "CommissionPercent": {
           "type": "integer",
           "format": "int64"
         },
-        "CurGoodID": {
+        "GoodID": {
           "type": "string"
         },
-        "CurGoodName": {
+        "GoodName": {
           "type": "string"
         },
-        "CurGoodUnit": {
+        "GoodUnit": {
           "type": "string"
         }
       }
