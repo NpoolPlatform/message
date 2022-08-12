@@ -21,50 +21,52 @@ service GeneralMgr {
 }
 
 message GeneralReq {
-    optional string ID              = 10;
-    optional string AppID           = 20;
-    optional string UserID          = 30;
-    optional string GoodID          = 40;
-    optional string CoinTypeID      = 50;
-    optional string TotalAmount     = 60;
-    optional string SelfAmount      = 70;
-    optional uint32 TotalUnits      = 80;
-    optional uint32 SelfUnits       = 90;
-    optional string TotalCommission = 100;
-    optional string SelfCommission  = 110;
+    optional string ID                 = 10;
+    optional string AppID              = 20;
+    optional string UserID             = 30;
+    optional string GoodID             = 40;
+    optional string CoinTypeID         = 50;
+    optional string TotalAmount        = 60;
+    optional string SelfAmount         = 70;
+    optional uint32 TotalUnits         = 80;
+    optional uint32 SelfUnits          = 90;
+    optional string TotalCommission    = 100;
+    optional string SelfCommission     = 110;
+    optional string SuperiorCommission = 120;
 }
 
 message General {
-    string ID              = 10;
-    string AppID           = 20;
-    string UserID          = 30;
-    string GoodID          = 40;
+    string ID                 = 10;
+    string AppID              = 20;
+    string UserID             = 30;
+    string GoodID             = 40;
     // CoinTypeID of the good
-    string CoinTypeID      = 50;
+    string CoinTypeID         = 50;
     // Payment amount in USD
-    string TotalAmount     = 60;
-    string SelfAmount      = 70;
-    uint32 TotalUnits      = 80;
-    uint32 SelfUnits       = 90;
+    string TotalAmount        = 60;
+    string SelfAmount         = 70;
+    uint32 TotalUnits         = 80;
+    uint32 SelfUnits          = 90;
     // Commission amount in USD
-    string TotalCommission = 100;
-    string SelfCommission  = 110;
+    string TotalCommission    = 100;
+    string SelfCommission     = 110;
+    string SuperiorCommission = 120;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID              = 10;
-    optional npool.v1.StringVal AppID           = 20;
-    optional npool.v1.StringVal UserID          = 30;
-    optional npool.v1.StringVal GoodID          = 40;
-    optional npool.v1.StringVal CoinTypeID      = 50;
-    optional npool.v1.StringVal TotalAmount     = 60;
-    optional npool.v1.StringVal SelfAmount      = 70;
-    optional npool.v1.Uint32Val TotalUnits      = 80;
-    optional npool.v1.Uint32Val SelfUnits       = 90;
-    optional npool.v1.StringVal TotalCommission = 100;
-    optional npool.v1.StringVal SelfCommission  = 110;
-
-    optional npool.v1.StringSliceVal UserIDs    = 120;
+    optional npool.v1.StringVal ID                 = 10;
+    optional npool.v1.StringVal AppID              = 20;
+    optional npool.v1.StringVal UserID             = 30;
+    optional npool.v1.StringVal GoodID             = 40;
+    optional npool.v1.StringVal CoinTypeID         = 50;
+    optional npool.v1.StringVal TotalAmount        = 60;
+    optional npool.v1.StringVal SelfAmount         = 70;
+    optional npool.v1.Uint32Val TotalUnits         = 80;
+    optional npool.v1.Uint32Val SelfUnits          = 90;
+    optional npool.v1.StringVal TotalCommission    = 100;
+    optional npool.v1.StringVal SelfCommission     = 110;
+    optional npool.v1.StringVal SuperiorCommission = 111;
+    optional npool.v1.StringSliceVal UserIDs       = 120;
 }
 
 

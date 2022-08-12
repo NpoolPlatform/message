@@ -67,6 +67,9 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "DirectContributorID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -145,6 +148,9 @@
         "UserID": {
           "type": "string"
         },
+        "DirectContributorID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -195,6 +201,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "DirectContributorID": {
           "type": "string"
         },
         "GoodID": {

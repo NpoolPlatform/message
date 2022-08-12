@@ -20,45 +20,48 @@ service DetailMgr {
 }
 
 message DetailReq {
-    optional string     ID                      = 10;
-    optional string     AppID                   = 20;
-    optional string     UserID                  = 30;
-    optional string     GoodID                  = 40;
-    optional string     OrderID                 = 50;
-    optional bool       SelfOrder               = 60;
-    optional string     PaymentID               = 70;
-    optional string     CoinTypeID              = 80;
-    optional string     PaymentCoinTypeID       = 90;
-    optional string     PaymentCoinUSDCurrency  = 100;
-    optional uint32     Units                   = 110;
-    optional string     Amount                  = 120;
-    optional string     USDAmount               = 130;
-    optional string     Commission              = 140;
-    optional uint32     CreatedAt               = 150;
+    optional string ID                      = 10;
+    optional string AppID                   = 20;
+    optional string UserID                  = 30;
+    optional string DirectContributorID     = 31;
+    optional string GoodID                  = 40;
+    optional string OrderID                 = 50;
+    optional bool   SelfOrder               = 60;
+    optional string PaymentID               = 70;
+    optional string CoinTypeID              = 80;
+    optional string PaymentCoinTypeID       = 90;
+    optional string PaymentCoinUSDCurrency  = 100;
+    optional uint32 Units                   = 110;
+    optional string Amount                  = 120;
+    optional string USDAmount               = 130;
+    optional string Commission              = 140;
+    optional uint32 CreatedAt               = 150;
 }
 
 message Detail {
-    string      ID                       = 10;
-    string      AppID                    = 20;
-    string      UserID                   = 30;
-    string      GoodID                   = 40;
-    string      OrderID                  = 50;
-    bool        SelfOrder                = 60;
-    string      PaymentID                = 70;
-    string      CoinTypeID               = 80;
-    string      PaymentCoinTypeID        = 90;
-    string      PaymentCoinUSDCurrency   = 100;
-    uint32      Units                    = 110;
-    string      Amount                   = 120;
-    string      USDAmount                = 130;
-    string      Commission               = 140;
-    uint32      CreatedAt                = 150;
+    string ID                       = 10;
+    string AppID                    = 20;
+    string UserID                   = 30;
+    string DirectContributorID      = 31;
+    string GoodID                   = 40;
+    string OrderID                  = 50;
+    bool   SelfOrder                = 60;
+    string PaymentID                = 70;
+    string CoinTypeID               = 80;
+    string PaymentCoinTypeID        = 90;
+    string PaymentCoinUSDCurrency   = 100;
+    uint32 Units                    = 110;
+    string Amount                   = 120;
+    string USDAmount                = 130;
+    string Commission               = 140;
+    uint32 CreatedAt                = 150;
 }
 
 message Conds {
     optional npool.v1.StringVal ID                      = 10;
     optional npool.v1.StringVal AppID                   = 20;
     optional npool.v1.StringVal UserID                  = 30;
+    optional npool.v1.StringVal DirectContributorID     = 31;
     optional npool.v1.StringVal GoodID                  = 40;
     optional npool.v1.StringVal OrderID                 = 50;
     optional npool.v1.BoolVal   SelfOrder               = 60;

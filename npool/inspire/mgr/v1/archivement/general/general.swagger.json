@@ -88,6 +88,9 @@
         "SelfCommission": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "SuperiorCommission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -185,6 +188,9 @@
         },
         "SelfCommission": {
           "type": "string"
+        },
+        "SuperiorCommission": {
+          "type": "string"
         }
       }
     },
@@ -224,6 +230,9 @@
           "type": "string"
         },
         "SelfCommission": {
+          "type": "string"
+        },
+        "SuperiorCommission": {
           "type": "string"
         }
       }
