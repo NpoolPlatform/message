@@ -124,16 +124,41 @@
     "v1CoinArchivement": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "GoodID": {
           "type": "string"
         },
-        "CoinName": {
+        "GoodName": {
           "type": "string"
         },
-        "CoinLogo": {
+        "GoodUnit": {
           "type": "string"
         },
-        "CoinUnit": {
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodCoinTypeID": {
+          "type": "string"
+        },
+        "GoodCoinName": {
+          "type": "string"
+        },
+        "GoodCoinLogo": {
+          "type": "string"
+        },
+        "GoodCoinUnit": {
+          "type": "string"
+        },
+        "CommissionCoinTypeID": {
+          "type": "string"
+        },
+        "CommissionCoinName": {
+          "type": "string"
+        },
+        "CommissionCoinLogo": {
+          "type": "string"
+        },
+        "CommissionCoinUnit": {
           "type": "string"
         },
         "TotalUnits": {
@@ -154,19 +179,6 @@
           "type": "string"
         },
         "SelfCommission": {
-          "type": "string"
-        },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "GoodUnit": {
           "type": "string"
         }
       }

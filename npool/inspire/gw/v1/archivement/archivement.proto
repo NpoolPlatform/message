@@ -19,22 +19,27 @@ service Gateway {
 }
 
 message CoinArchivement {
-    string CoinTypeID        = 10;
-    string CoinName          = 20;
-    string CoinLogo          = 30;
-    string CoinUnit          = 40;
+    string GoodID                = 10;
+    string GoodName              = 20;
+    string GoodUnit              = 30;
+    uint32 CommissionPercent     = 40;
 
-    uint32 TotalUnits        = 50;
-    uint32 SelfUnits         = 60;
-    string TotalAmount       = 70;
-    string SelfAmount        = 80;
-    string TotalCommission   = 90;
-    string SelfCommission    = 100;
+    string GoodCoinTypeID        = 50;
+    string GoodCoinName          = 60;
+    string GoodCoinLogo          = 70;
+    string GoodCoinUnit          = 80;
 
-    uint32 CommissionPercent = 110;
-    string GoodID            = 120;
-    string GoodName          = 130;
-    string GoodUnit          = 140;
+    string CommissionCoinTypeID  = 90;
+    string CommissionCoinName    = 100;
+    string CommissionCoinLogo    = 110;
+    string CommissionCoinUnit    = 120;
+
+    uint32 TotalUnits            = 130;
+    uint32 SelfUnits             = 140;
+    string TotalAmount           = 150;
+    string SelfAmount            = 160;
+    string TotalCommission       = 170;
+    string SelfCommission        = 180;
 }
 
 message GetCoinArchivementsRequest {
