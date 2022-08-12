@@ -68,7 +68,7 @@ message GetDeployedCoinsResponse {
 
 message FaucetRequst {
   string ID = 10;
-  double Amount = 20;
+  string Amount = 20;
   string Contract = 30;
   string To = 40;
 }

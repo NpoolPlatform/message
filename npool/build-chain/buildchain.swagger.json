@@ -180,8 +180,7 @@
           "type": "string"
         },
         "Amount": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Contract": {
           "type": "string"
