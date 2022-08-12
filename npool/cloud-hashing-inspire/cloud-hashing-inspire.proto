@@ -667,6 +667,15 @@ service CloudHashingInspire {
     }
 }
 
+message Conds {
+    npool.v1.StringVal ID             = 10;
+    npool.v1.StringVal UserID         = 20;
+    npool.v1.StringVal AppID          = 30;
+    npool.v1.StringVal InvitationCode = 40;
+    npool.v1.Uint32Val CreateAt       = 50;
+    npool.v1.BoolVal   Confirmed      = 60;
+}
+
 // request body and response
 message CommissionCoinSetting {
     string ID = 10;

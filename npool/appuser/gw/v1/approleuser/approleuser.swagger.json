@@ -16,6 +16,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/role/user": {
+      "post": {
+        "operationId": "AppRoleUserGw_CreateAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/approleuserv1CreateAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/approleuserv1CreateAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
+    "/v1/create/role/user": {
+      "post": {
+        "operationId": "AppRoleUserGw_CreateRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppRoleUserGw"
+        ]
+      }
+    },
     "/v1/delete/role/user": {
       "post": {
         "operationId": "AppRoleUserGw_DeleteRoleUser",
@@ -48,71 +112,7 @@
         ]
       }
     },
-    "/v2/create/app/role/user": {
-      "post": {
-        "operationId": "AppRoleUserGw_CreateAppRoleUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/approleuserv1CreateAppRoleUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/approleuserv1CreateAppRoleUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppRoleUserGw"
-        ]
-      }
-    },
-    "/v2/create/role/user": {
-      "post": {
-        "operationId": "AppRoleUserGw_CreateRoleUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateRoleUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateRoleUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AppRoleUserGw"
-        ]
-      }
-    },
-    "/v2/get/app/role/users": {
+    "/v1/get/app/role/users": {
       "post": {
         "operationId": "AppRoleUserGw_GetAppRoleUsers",
         "responses": {
@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v2/get/role/users": {
+    "/v1/get/role/users": {
       "post": {
         "operationId": "AppRoleUserGw_GetRoleUsers",
         "responses": {

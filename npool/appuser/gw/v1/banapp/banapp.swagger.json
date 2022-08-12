@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v2/create/ban/app": {
+    "/v1/create/ban/app": {
       "post": {
         "summary": "Admin apis",
         "operationId": "BanAppGw_CreateBanApp",
@@ -49,7 +49,7 @@
         ]
       }
     },
-    "/v2/delete/ban/app": {
+    "/v1/delete/ban/app": {
       "post": {
         "operationId": "BanAppGw_DeleteBanApp",
         "responses": {
@@ -81,7 +81,7 @@
         ]
       }
     },
-    "/v2/update/ban/app": {
+    "/v1/update/ban/app": {
       "post": {
         "operationId": "BanAppGw_UpdateBanApp",
         "responses": {

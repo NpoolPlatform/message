@@ -11,14 +11,14 @@ service AppRoleGw {
     // Create role should ignore genesis roles
     rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
         option (google.api.http) = {
-            post: "/v2/create/role"
+            post: "/v1/create/role"
             body: "*"
         };
     }
 
     rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
         option (google.api.http) = {
-            post: "/v2/get/roles"
+            post: "/v1/get/roles"
             body: "*"
         };
     }
@@ -26,7 +26,7 @@ service AppRoleGw {
     // Update role should ignore genesis roles
     rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse) {
         option (google.api.http) = {
-            post: "/v2/update/app/role"
+            post: "/v1/update/app/role"
             body: "*"
         };
     }
@@ -34,14 +34,14 @@ service AppRoleGw {
     // Admin apis
     rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
         option (google.api.http) = {
-            post: "/v2/create/app/role"
+            post: "/v1/create/app/role"
             body: "*"
         };
     }
 
     rpc GetAppRoles (GetAppRolesRequest) returns (GetAppRolesResponse) {
         option (google.api.http) = {
-            post: "/v2/get/app/roles"
+            post: "/v1/get/app/roles"
             body: "*"
         };
     }

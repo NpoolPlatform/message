@@ -11,21 +11,21 @@ service BanAppGw {
     // Admin apis
     rpc CreateBanApp (CreateBanAppRequest) returns (CreateBanAppResponse) {
         option (google.api.http) = {
-            post: "/v2/create/ban/app"
+            post: "/v1/create/ban/app"
             body: "*"
         };
     }
 
     rpc UpdateBanApp (UpdateBanAppRequest) returns (UpdateBanAppResponse) {
         option (google.api.http) = {
-            post: "/v2/update/ban/app"
+            post: "/v1/update/ban/app"
             body: "*"
         };
     }
 
     rpc DeleteBanApp (DeleteBanAppRequest) returns (DeleteBanAppResponse) {
         option (google.api.http) = {
-            post: "/v2/delete/ban/app"
+            post: "/v1/delete/ban/app"
             body: "*"
         };
     }
