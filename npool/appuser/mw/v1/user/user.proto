@@ -8,6 +8,7 @@ import "npool/npool.proto";
 
 service UserMw {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
+    rpc CreateUserRevert  (CreateUserRequest)       returns (CreateUserResponse)       {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
