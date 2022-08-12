@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetCoinArchivements(ctx context.Context, in *GetCoinArchivementsRequest, opts ...grpc.CallOption) (*GetCoinArchivementsResponse, error)
+	GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +33,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetCoinArchivements(ctx context.Context, in *GetCoinArchivementsRequest, opts ...grpc.CallOption) (*GetCoinArchivementsResponse, error) {
-	out := new(GetCoinArchivementsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.archivement.v1.Gateway/GetCoinArchivements", in, out, opts...)
+func (c *gatewayClient) GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error) {
+	out := new(GetArchivementsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.archivement.v1.Gateway/GetArchivements", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) GetCoinArchivements(ctx context.Context, in *GetCoinArch
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetCoinArchivements(context.Context, *GetCoinArchivementsRequest) (*GetCoinArchivementsResponse, error)
+	GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetCoinArchivements(context.Context, *GetCoinArchivementsRequest) (*GetCoinArchivementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinArchivements not implemented")
+func (UnimplementedGatewayServer) GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetArchivements not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetCoinArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinArchivementsRequest)
+func _Gateway_GetArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetArchivementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetCoinArchivements(ctx, in)
+		return srv.(GatewayServer).GetArchivements(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.archivement.v1.Gateway/GetCoinArchivements",
+		FullMethod: "/inspire.gateway.archivement.v1.Gateway/GetArchivements",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCoinArchivements(ctx, req.(*GetCoinArchivementsRequest))
+		return srv.(GatewayServer).GetArchivements(ctx, req.(*GetArchivementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +96,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetCoinArchivements",
-			Handler:    _Gateway_GetCoinArchivements_Handler,
+			MethodName: "GetArchivements",
+			Handler:    _Gateway_GetArchivements_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

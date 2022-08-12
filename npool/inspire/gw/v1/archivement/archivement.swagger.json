@@ -18,12 +18,12 @@
   "paths": {
     "/v1/get/coinarchivements": {
       "post": {
-        "operationId": "Gateway_GetCoinArchivements",
+        "operationId": "Gateway_GetArchivements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinArchivementsResponse"
+              "$ref": "#/definitions/v1GetArchivementsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinArchivementsRequest"
+              "$ref": "#/definitions/v1GetArchivementsRequest"
             }
           }
         ],
@@ -50,7 +50,7 @@
     }
   },
   "definitions": {
-    "GetCoinArchivementsResponseArchivement": {
+    "GetArchivementsResponseUserArchivement": {
       "type": "object",
       "properties": {
         "UserID": {
@@ -81,7 +81,7 @@
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinArchivement"
+            "$ref": "#/definitions/v1Archivement"
           }
         },
         "CreatedAt": {
@@ -121,7 +121,7 @@
         }
       }
     },
-    "v1CoinArchivement": {
+    "v1Archivement": {
       "type": "object",
       "properties": {
         "GoodID": {
@@ -172,7 +172,7 @@
         }
       }
     },
-    "v1GetCoinArchivementsRequest": {
+    "v1GetArchivementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -191,13 +191,13 @@
         }
       }
     },
-    "v1GetCoinArchivementsResponse": {
+    "v1GetArchivementsResponse": {
       "type": "object",
       "properties": {
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GetCoinArchivementsResponseArchivement"
+            "$ref": "#/definitions/GetArchivementsResponseUserArchivement"
           }
         },
         "Total": {
