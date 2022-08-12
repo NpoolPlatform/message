@@ -432,6 +432,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "GoodUnitPrice": {
+          "type": "string"
+        },
+        "GoodValue": {
+          "type": "string"
+        },
         "Units": {
           "type": "integer",
           "format": "int64"
