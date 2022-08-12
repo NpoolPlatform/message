@@ -137,28 +137,16 @@
           "type": "integer",
           "format": "int64"
         },
-        "GoodCoinTypeID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "GoodCoinName": {
+        "CoinName": {
           "type": "string"
         },
-        "GoodCoinLogo": {
+        "CoinLogo": {
           "type": "string"
         },
-        "GoodCoinUnit": {
-          "type": "string"
-        },
-        "CommissionCoinTypeID": {
-          "type": "string"
-        },
-        "CommissionCoinName": {
-          "type": "string"
-        },
-        "CommissionCoinLogo": {
-          "type": "string"
-        },
-        "CommissionCoinUnit": {
+        "CoinUnit": {
           "type": "string"
         },
         "TotalUnits": {
@@ -170,7 +158,8 @@
           "format": "int64"
         },
         "TotalAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "In USD"
         },
         "SelfAmount": {
           "type": "string"
