@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/coinarchivements": {
+    "/v1/get/goodarchivements": {
       "post": {
-        "operationId": "Gateway_GetArchivements",
+        "operationId": "Gateway_GetGoodArchivements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetArchivementsResponse"
+              "$ref": "#/definitions/v1GetGoodArchivementsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetArchivementsRequest"
+              "$ref": "#/definitions/v1GetGoodArchivementsRequest"
             }
           }
         ],
@@ -50,7 +50,7 @@
     }
   },
   "definitions": {
-    "GetArchivementsResponseUserArchivement": {
+    "GetGoodArchivementsResponseUserArchivement": {
       "type": "object",
       "properties": {
         "UserID": {
@@ -81,7 +81,7 @@
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Archivement"
+            "$ref": "#/definitions/v1GoodArchivement"
           }
         },
         "CreatedAt": {
@@ -121,7 +121,41 @@
         }
       }
     },
-    "v1Archivement": {
+    "v1GetGoodArchivementsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGoodArchivementsResponse": {
+      "type": "object",
+      "properties": {
+        "Archivements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetGoodArchivementsResponseUserArchivement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodArchivement": {
       "type": "object",
       "properties": {
         "GoodID": {
@@ -169,40 +203,6 @@
         },
         "SelfCommission": {
           "type": "string"
-        }
-      }
-    },
-    "v1GetArchivementsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetArchivementsResponse": {
-      "type": "object",
-      "properties": {
-        "Archivements": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/GetArchivementsResponseUserArchivement"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

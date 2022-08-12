@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error)
+	GetGoodArchivements(ctx context.Context, in *GetGoodArchivementsRequest, opts ...grpc.CallOption) (*GetGoodArchivementsResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +33,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error) {
-	out := new(GetArchivementsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.archivement.v1.Gateway/GetArchivements", in, out, opts...)
+func (c *gatewayClient) GetGoodArchivements(ctx context.Context, in *GetGoodArchivementsRequest, opts ...grpc.CallOption) (*GetGoodArchivementsResponse, error) {
+	out := new(GetGoodArchivementsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.archivement.v1.Gateway/GetGoodArchivements", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) GetArchivements(ctx context.Context, in *GetArchivements
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error)
+	GetGoodArchivements(context.Context, *GetGoodArchivementsRequest) (*GetGoodArchivementsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetArchivements not implemented")
+func (UnimplementedGatewayServer) GetGoodArchivements(context.Context, *GetGoodArchivementsRequest) (*GetGoodArchivementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodArchivements not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetArchivementsRequest)
+func _Gateway_GetGoodArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodArchivementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetArchivements(ctx, in)
+		return srv.(GatewayServer).GetGoodArchivements(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.archivement.v1.Gateway/GetArchivements",
+		FullMethod: "/inspire.gateway.archivement.v1.Gateway/GetGoodArchivements",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetArchivements(ctx, req.(*GetArchivementsRequest))
+		return srv.(GatewayServer).GetGoodArchivements(ctx, req.(*GetGoodArchivementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +96,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetArchivements",
-			Handler:    _Gateway_GetArchivements_Handler,
+			MethodName: "GetGoodArchivements",
+			Handler:    _Gateway_GetGoodArchivements_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

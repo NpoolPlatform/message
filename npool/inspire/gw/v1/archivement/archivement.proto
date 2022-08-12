@@ -10,15 +10,15 @@ import "npool/npool.proto";
 
 // Service Name
 service Gateway {
-    rpc GetArchivements (GetArchivementsRequest) returns (GetArchivementsResponse) {
+    rpc GetGoodArchivements (GetGoodArchivementsRequest) returns (GetGoodArchivementsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/coinarchivements"
+            post: "/v1/get/goodarchivements"
             body: "*"
         };
     }
 }
 
-message Archivement {
+message GoodArchivement {
     string GoodID            = 10;
     string GoodName          = 20;
     string GoodUnit          = 30;
@@ -38,14 +38,14 @@ message Archivement {
     string SelfCommission    = 140;
 }
 
-message GetArchivementsRequest {
+message GetGoodArchivementsRequest {
     string AppID    = 10;
     string UserID   = 20;
     int32  Offset   = 30;
     int32  Limit    = 40;
 }
 
-message GetArchivementsResponse {
+message GetGoodArchivementsResponse {
     message UserArchivement {
         string UserID          = 10;
         string Username        = 20;
@@ -55,7 +55,7 @@ message GetArchivementsResponse {
         string LastName        = 60;
         bool   Kol             = 70;
         uint32 TotalInvitees   = 80;
-        repeated Archivement Archivements = 90;
+        repeated GoodArchivement Archivements = 90;
         uint32 CreatedAt       = 100;
         uint32 InvitedAt       = 110;
     }
