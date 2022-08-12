@@ -145,7 +145,7 @@ func RegisterBanAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -168,7 +168,7 @@ func RegisterBanAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -191,7 +191,7 @@ func RegisterBanAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -253,7 +253,7 @@ func RegisterBanAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v2/create/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/CreateBanApp", runtime.WithHTTPPathPattern("/v1/create/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -273,7 +273,7 @@ func RegisterBanAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v2/update/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/UpdateBanApp", runtime.WithHTTPPathPattern("/v1/update/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterBanAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v2/delete/ban/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banapp.v1.BanAppGw/DeleteBanApp", runtime.WithHTTPPathPattern("/v1/delete/ban/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -313,11 +313,11 @@ func RegisterBanAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 }
 
 var (
-	pattern_BanAppGw_CreateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "ban", "app"}, ""))
+	pattern_BanAppGw_CreateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "ban", "app"}, ""))
 
-	pattern_BanAppGw_UpdateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "update", "ban", "app"}, ""))
+	pattern_BanAppGw_UpdateBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "ban", "app"}, ""))
 
-	pattern_BanAppGw_DeleteBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "delete", "ban", "app"}, ""))
+	pattern_BanAppGw_DeleteBanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "ban", "app"}, ""))
 )
 
 var (

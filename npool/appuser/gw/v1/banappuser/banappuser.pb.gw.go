@@ -179,7 +179,7 @@ func RegisterBanAppUserGwHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanUser", runtime.WithHTTPPathPattern("/v2/create/ban/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanUser", runtime.WithHTTPPathPattern("/v1/create/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterBanAppUserGwHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateAppBanUser", runtime.WithHTTPPathPattern("/v2/create/app/ban/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateAppBanUser", runtime.WithHTTPPathPattern("/v1/create/app/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterBanAppUserGwHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanUser", runtime.WithHTTPPathPattern("/v2/update/ban/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanUser", runtime.WithHTTPPathPattern("/v1/update/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterBanAppUserGwHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanUser", runtime.WithHTTPPathPattern("/v2/delete/ban/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanUser", runtime.WithHTTPPathPattern("/v1/delete/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterBanAppUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanUser", runtime.WithHTTPPathPattern("/v2/create/ban/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateBanUser", runtime.WithHTTPPathPattern("/v1/create/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterBanAppUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateAppBanUser", runtime.WithHTTPPathPattern("/v2/create/app/ban/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/CreateAppBanUser", runtime.WithHTTPPathPattern("/v1/create/app/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterBanAppUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanUser", runtime.WithHTTPPathPattern("/v2/update/ban/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/UpdateBanUser", runtime.WithHTTPPathPattern("/v1/update/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterBanAppUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanUser", runtime.WithHTTPPathPattern("/v2/delete/ban/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.banappuser.v1.BanAppUserGw/DeleteBanUser", runtime.WithHTTPPathPattern("/v1/delete/ban/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,13 +390,13 @@ func RegisterBanAppUserGwHandlerClient(ctx context.Context, mux *runtime.ServeMu
 }
 
 var (
-	pattern_BanAppUserGw_CreateBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "ban", "user"}, ""))
+	pattern_BanAppUserGw_CreateBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "ban", "user"}, ""))
 
-	pattern_BanAppUserGw_CreateAppBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "create", "app", "ban", "user"}, ""))
+	pattern_BanAppUserGw_CreateAppBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "ban", "user"}, ""))
 
-	pattern_BanAppUserGw_UpdateBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "update", "ban", "user"}, ""))
+	pattern_BanAppUserGw_UpdateBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "update", "ban", "user"}, ""))
 
-	pattern_BanAppUserGw_DeleteBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "delete", "ban", "user"}, ""))
+	pattern_BanAppUserGw_DeleteBanUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "ban", "user"}, ""))
 )
 
 var (

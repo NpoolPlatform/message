@@ -27,6 +27,7 @@ type UserMwClient interface {
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	GetManyUsers(ctx context.Context, in *GetManyUsersRequest, opts ...grpc.CallOption) (*GetManyUsersResponse, error)
+	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
 type userMwClient struct {
@@ -82,6 +83,15 @@ func (c *userMwClient) GetManyUsers(ctx context.Context, in *GetManyUsersRequest
 	return out, nil
 }
 
+func (c *userMwClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
+	out := new(DeleteUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.UserMw/DeleteUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserMwServer is the server API for UserMw service.
 // All implementations must embed UnimplementedUserMwServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type UserMwServer interface {
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	GetManyUsers(context.Context, *GetManyUsersRequest) (*GetManyUsersResponse, error)
+	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	mustEmbedUnimplementedUserMwServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedUserMwServer) GetUser(context.Context, *GetUserRequest) (*Get
 }
 func (UnimplementedUserMwServer) GetManyUsers(context.Context, *GetManyUsersRequest) (*GetManyUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManyUsers not implemented")
+}
+func (UnimplementedUserMwServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
 func (UnimplementedUserMwServer) mustEmbedUnimplementedUserMwServer() {}
 
@@ -216,6 +230,24 @@ func _UserMw_GetManyUsers_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserMw_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserMwServer).DeleteUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.user.v1.UserMw/DeleteUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserMwServer).DeleteUser(ctx, req.(*DeleteUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserMw_ServiceDesc is the grpc.ServiceDesc for UserMw service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var UserMw_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetManyUsers",
 			Handler:    _UserMw_GetManyUsers_Handler,
+		},
+		{
+			MethodName: "DeleteUser",
+			Handler:    _UserMw_DeleteUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

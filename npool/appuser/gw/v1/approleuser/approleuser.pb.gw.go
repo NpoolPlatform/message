@@ -213,7 +213,7 @@ func RegisterAppRoleUserGwHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v1/create/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,7 +236,7 @@ func RegisterAppRoleUserGwHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v1/get/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -282,7 +282,7 @@ func RegisterAppRoleUserGwHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterAppRoleUserGwHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v1/get/app/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -367,7 +367,7 @@ func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v2/create/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", runtime.WithHTTPPathPattern("/v1/create/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -387,7 +387,7 @@ func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v2/get/role/users"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", runtime.WithHTTPPathPattern("/v1/get/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -427,7 +427,7 @@ func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v2/create/app/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser", runtime.WithHTTPPathPattern("/v1/create/app/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -447,7 +447,7 @@ func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v2/get/app/role/users"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", runtime.WithHTTPPathPattern("/v1/get/app/role/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,15 +467,15 @@ func RegisterAppRoleUserGwHandlerClient(ctx context.Context, mux *runtime.ServeM
 }
 
 var (
-	pattern_AppRoleUserGw_CreateRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "create", "role", "user"}, ""))
+	pattern_AppRoleUserGw_CreateRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "role", "user"}, ""))
 
-	pattern_AppRoleUserGw_GetRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v2", "get", "role", "users"}, ""))
+	pattern_AppRoleUserGw_GetRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "role", "users"}, ""))
 
 	pattern_AppRoleUserGw_DeleteRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "delete", "role", "user"}, ""))
 
-	pattern_AppRoleUserGw_CreateAppRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "create", "app", "role", "user"}, ""))
+	pattern_AppRoleUserGw_CreateAppRoleUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "role", "user"}, ""))
 
-	pattern_AppRoleUserGw_GetAppRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v2", "get", "app", "role", "users"}, ""))
+	pattern_AppRoleUserGw_GetAppRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "role", "users"}, ""))
 )
 
 var (

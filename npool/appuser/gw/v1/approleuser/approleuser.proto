@@ -10,14 +10,14 @@ import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 service AppRoleUserGw {
     rpc CreateRoleUser (CreateRoleUserRequest) returns (CreateRoleUserResponse) {
         option (google.api.http) = {
-            post: "/v2/create/role/user"
+            post: "/v1/create/role/user"
             body: "*"
         };
     }
 
     rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
         option (google.api.http) = {
-            post: "/v2/get/role/users"
+            post: "/v1/get/role/users"
             body: "*"
         };
     }
@@ -31,14 +31,14 @@ service AppRoleUserGw {
 
     rpc CreateAppRoleUser(CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
         option (google.api.http) = {
-            post: "/v2/create/app/role/user"
+            post: "/v1/create/app/role/user"
             body: "*"
         };
     }
 
     rpc GetAppRoleUsers (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {
         option (google.api.http) = {
-            post: "/v2/get/app/role/users"
+            post: "/v1/get/app/role/users"
             body: "*"
         };
     }
