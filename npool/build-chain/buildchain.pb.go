@@ -277,12 +277,18 @@ type DeployedCoinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	CoinID    string `protobuf:"bytes,20,opt,name=CoinID,proto3" json:"CoinID,omitempty"`
-	Contract  string `protobuf:"bytes,30,opt,name=Contract,proto3" json:"Contract,omitempty"`
-	Name      string `protobuf:"bytes,40,opt,name=Name,proto3" json:"Name,omitempty"`
-	ChainType string `protobuf:"bytes,50,opt,name=ChainType,proto3" json:"ChainType,omitempty"`
-	TokenType string `protobuf:"bytes,60,opt,name=TokenType,proto3" json:"TokenType,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"coin_id"
+	CoinID string `protobuf:"bytes,20,opt,name=CoinID,proto3" json:"CoinID,omitempty" sql:"coin_id"`
+	// @inject_tag: sql:"contract"
+	Contract string `protobuf:"bytes,30,opt,name=Contract,proto3" json:"Contract,omitempty" sql:"contract"`
+	// @inject_tag: sql:"name"
+	Name string `protobuf:"bytes,40,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`
+	// @inject_tag: sql:"chain_type"
+	ChainType string `protobuf:"bytes,50,opt,name=ChainType,proto3" json:"ChainType,omitempty" sql:"chain_type"`
+	// @inject_tag: sql:"token_type"
+	TokenType string `protobuf:"bytes,60,opt,name=TokenType,proto3" json:"TokenType,omitempty" sql:"token_type"`
 }
 
 func (x *DeployedCoinInfo) Reset() {

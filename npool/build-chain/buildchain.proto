@@ -47,11 +47,17 @@ message CoinsInfo {
 }
 
 message DeployedCoinInfo {
+  // @inject_tag: sql:"id"
   string ID = 10;
+  // @inject_tag: sql:"coin_id"
   string CoinID = 20;
+  // @inject_tag: sql:"contract"
   string Contract = 30;
+  // @inject_tag: sql:"name"
   string Name = 40;
+  // @inject_tag: sql:"chain_type"
   string ChainType = 50;
+  // @inject_tag: sql:"token_type"
   string TokenType = 60;
 }
 

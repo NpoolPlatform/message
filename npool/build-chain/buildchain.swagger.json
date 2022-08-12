@@ -145,22 +145,28 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "CoinID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_id\""
         },
         "Contract": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"contract\""
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
         "ChainType": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_type\""
         },
         "TokenType": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"token_type\""
         }
       }
     },
