@@ -203,6 +203,9 @@
         },
         "SelfCommission": {
           "type": "string"
+        },
+        "SuperiorCommission": {
+          "type": "string"
         }
       }
     }
