@@ -185,6 +185,9 @@
         },
         "Contract": {
           "type": "string"
+        },
+        "To": {
+          "type": "string"
         }
       }
     },
