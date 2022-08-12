@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetDeployedCoinsRequest"
+              "$ref": "#/definitions/v1Empty"
             }
           }
         ],
@@ -141,7 +141,7 @@
         }
       }
     },
-    "v1DeployedCoin": {
+    "v1DeployedCoinInfo": {
       "type": "object",
       "properties": {
         "ID": {
@@ -151,6 +151,15 @@
           "type": "string"
         },
         "Contract": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "TokenType": {
           "type": "string"
         }
       }
@@ -167,6 +176,9 @@
         "Amount": {
           "type": "number",
           "format": "double"
+        },
+        "Contract": {
+          "type": "string"
         }
       }
     },
@@ -181,26 +193,13 @@
         }
       }
     },
-    "v1GetDeployedCoinsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1GetDeployedCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1DeployedCoin"
+            "$ref": "#/definitions/v1DeployedCoinInfo"
           }
         },
         "Total": {

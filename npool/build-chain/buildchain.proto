@@ -13,8 +13,7 @@ service BuildChain {
       body : "*"
     };
   }
-  rpc GetDeployedCoins(GetDeployedCoinsRequest)
-      returns (GetDeployedCoinsResponse) {
+  rpc GetDeployedCoins(Empty) returns (GetDeployedCoinsResponse) {
     option (google.api.http) = {
       post : "/v1/get/deployed/coins"
       body : "*"
@@ -47,19 +46,24 @@ message CoinsInfo {
   bytes Data = 80;
 }
 
-message GetDeployedCoinsRequest {
-  int32 Offset = 10;
-  int32 Limit = 20;
+message DeployedCoinInfo {
+  string ID = 10;
+  string CoinID = 20;
+  string Contract = 30;
+  string Name = 40;
+  string ChainType = 50;
+  string TokenType = 60;
 }
 
 message GetDeployedCoinsResponse {
-  repeated DeployedCoin Infos = 10;
+  repeated DeployedCoinInfo Infos = 10;
   uint32 Total = 20;
 }
 
 message FaucetRequst {
   string ID = 10;
   double Amount = 20;
+  string Contract = 30;
 }
 
 message FaucetResponse {

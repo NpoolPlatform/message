@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BuildChainClient interface {
 	Version(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*VersionResponse, error)
-	GetDeployedCoins(ctx context.Context, in *GetDeployedCoinsRequest, opts ...grpc.CallOption) (*GetDeployedCoinsResponse, error)
+	GetDeployedCoins(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetDeployedCoinsResponse, error)
 	Faucet(ctx context.Context, in *FaucetRequst, opts ...grpc.CallOption) (*FaucetResponse, error)
 }
 
@@ -44,7 +44,7 @@ func (c *buildChainClient) Version(ctx context.Context, in *Empty, opts ...grpc.
 	return out, nil
 }
 
-func (c *buildChainClient) GetDeployedCoins(ctx context.Context, in *GetDeployedCoinsRequest, opts ...grpc.CallOption) (*GetDeployedCoinsResponse, error) {
+func (c *buildChainClient) GetDeployedCoins(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetDeployedCoinsResponse, error) {
 	out := new(GetDeployedCoinsResponse)
 	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/GetDeployedCoins", in, out, opts...)
 	if err != nil {
@@ -67,7 +67,7 @@ func (c *buildChainClient) Faucet(ctx context.Context, in *FaucetRequst, opts ..
 // for forward compatibility
 type BuildChainServer interface {
 	Version(context.Context, *Empty) (*VersionResponse, error)
-	GetDeployedCoins(context.Context, *GetDeployedCoinsRequest) (*GetDeployedCoinsResponse, error)
+	GetDeployedCoins(context.Context, *Empty) (*GetDeployedCoinsResponse, error)
 	Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error)
 	mustEmbedUnimplementedBuildChainServer()
 }
@@ -79,7 +79,7 @@ type UnimplementedBuildChainServer struct {
 func (UnimplementedBuildChainServer) Version(context.Context, *Empty) (*VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedBuildChainServer) GetDeployedCoins(context.Context, *GetDeployedCoinsRequest) (*GetDeployedCoinsResponse, error) {
+func (UnimplementedBuildChainServer) GetDeployedCoins(context.Context, *Empty) (*GetDeployedCoinsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeployedCoins not implemented")
 }
 func (UnimplementedBuildChainServer) Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error) {
@@ -117,7 +117,7 @@ func _BuildChain_Version_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _BuildChain_GetDeployedCoins_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDeployedCoinsRequest)
+	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -129,7 +129,7 @@ func _BuildChain_GetDeployedCoins_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/build.chain.v1.BuildChain/GetDeployedCoins",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BuildChainServer).GetDeployedCoins(ctx, req.(*GetDeployedCoinsRequest))
+		return srv.(BuildChainServer).GetDeployedCoins(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
