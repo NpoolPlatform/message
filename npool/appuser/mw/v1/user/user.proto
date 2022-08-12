@@ -139,7 +139,7 @@ message User {
     string          LoginClientUserAgent                 = 360;
 
     // @inject_tag: sql:"created_at"
-    uint32          CreateAt                             = 370;
+    uint32          CreatedAt                            = 370;
 
     // @inject_tag: sql:"invitation_code"
     string          InvitationCode                       = 380;
