@@ -47,6 +47,20 @@ message GoodArchivement {
     string SuperiorCommission = 150;
 }
 
+message UserArchivement {
+    string UserID          = 10;
+    string Username        = 20;
+    string EmailAddress    = 30;
+    string PhoneNO         = 40;
+    string FirstName       = 50;
+    string LastName        = 60;
+    bool   Kol             = 70;
+    uint32 TotalInvitees   = 80;
+    repeated GoodArchivement Archivements = 90;
+    uint32 CreatedAt       = 100;
+    uint32 InvitedAt       = 110;
+}
+
 message GetGoodArchivementsRequest {
     string AppID    = 10;
     string UserID   = 20;
@@ -55,20 +69,6 @@ message GetGoodArchivementsRequest {
 }
 
 message GetGoodArchivementsResponse {
-    message UserArchivement {
-        string UserID          = 10;
-        string Username        = 20;
-        string EmailAddress    = 30;
-        string PhoneNO         = 40;
-        string FirstName       = 50;
-        string LastName        = 60;
-        bool   Kol             = 70;
-        uint32 TotalInvitees   = 80;
-        repeated GoodArchivement Archivements = 90;
-        uint32 CreatedAt       = 100;
-        uint32 InvitedAt       = 110;
-    }
-
     repeated UserArchivement Archivements  = 10; // Each user
     uint32                   Total         = 20;
 }
@@ -82,38 +82,6 @@ message GetUserGoodArchivementsRequest {
 }
 
 message GetUserGoodArchivementsResponse {
-    message UserArchivement {
-        string UserID             = 10;
-        string Username           = 20;
-        string EmailAddress       = 30;
-        string PhoneNO            = 40;
-        string FirstName          = 50;
-        string LastName           = 60;
-        bool   Kol                = 70;
-        uint32 TotalInvitees      = 80;
-        uint32 CreatedAt          = 90;
-        uint32 InvitedAt          = 100;
-
-        string GoodID             = 110;
-        string GoodName           = 120;
-        string GoodUnit           = 130;
-        uint32 CommissionPercent  = 140;
-
-        string CoinTypeID         = 150;
-        string CoinName           = 160;
-        string CoinLogo           = 170;
-        string CoinUnit           = 180;
-
-        uint32 TotalUnits         = 190;
-        uint32 SelfUnits          = 200;
-        // In USD
-        string TotalAmount        = 210;
-        string SelfAmount         = 220;
-        string TotalCommission    = 230;
-        string SelfCommission     = 240;
-
-        string SuperiorCommission = 250;
-    }
     repeated UserArchivement Archivements = 10;
     uint32                   Total        = 20;
 }

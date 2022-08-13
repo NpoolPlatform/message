@@ -134,54 +134,10 @@
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GetGoodArchivementsResponseUserArchivement"
+            "$ref": "#/definitions/v1UserArchivement"
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetGoodArchivementsResponseUserArchivement": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Archivements": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodArchivement"
-          }
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InvitedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -215,99 +171,12 @@
         "Archivements": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GetUserGoodArchivementsResponseUserArchivement"
+            "$ref": "#/definitions/v1UserArchivement"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1GetUserGoodArchivementsResponseUserArchivement": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InvitedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "GoodUnit": {
-          "type": "string"
-        },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TotalAmount": {
-          "type": "string",
-          "title": "In USD"
-        },
-        "SelfAmount": {
-          "type": "string"
-        },
-        "TotalCommission": {
-          "type": "string"
-        },
-        "SelfCommission": {
-          "type": "string"
-        },
-        "SuperiorCommission": {
-          "type": "string"
         }
       }
     },
@@ -362,6 +231,50 @@
         },
         "SuperiorCommission": {
           "type": "string"
+        }
+      }
+    },
+    "v1UserArchivement": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "TotalInvitees": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Archivements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodArchivement"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InvitedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
