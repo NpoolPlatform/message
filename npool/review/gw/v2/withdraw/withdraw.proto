@@ -41,14 +41,14 @@ service Gateway {
 }
 
 message WithdrawReview {
-    string ReviewID                             = 10;
-    string UserID                               = 20;
-    review.manager.v2.ReviewState KycState      = 30;
-    string EmailAddress                         = 40;
-    string PhoneNO                              = 50;
-    string Reviewer                             = 60;
-    string ObjectType                           = 70;
-    string ObjectID                             = 80;
+    string WithdrawID                           = 10;
+    string ReviewID                             = 20;
+    string UserID                               = 30;
+    review.manager.v2.ReviewState KycState      = 40;
+    string EmailAddress                         = 50;
+    string PhoneNO                              = 60;
+    string Reviewer                             = 70;
+    string ObjectType                           = 80;
     string Domain                               = 90;
     uint32 CreatedAt                            = 100;
     uint32 UpdatedAt                            = 110;
@@ -56,10 +56,11 @@ message WithdrawReview {
     review.manager.v2.ReviewState State         = 130;
     review.manager.v2.ReviewTriggerType Trigger = 140;
     string Amount                               = 150;
-    string CoinTypeID                           = 160;
-    string CoinName                             = 170;
-    string CoinUnit                             = 180;
-    string Address                              = 190;
+    string FeeAmount                            = 160;
+    string CoinTypeID                           = 170;
+    string CoinName                             = 180;
+    string CoinUnit                             = 190;
+    string Address                              = 200;
 }
 
 message GetWithdrawReviewsRequest {
@@ -69,7 +70,8 @@ message GetWithdrawReviewsRequest {
 }
 
 message GetWithdrawReviewsResponse {
-    repeated WithdrawReview Info = 10;
+    repeated WithdrawReview Infos = 10;
+    uint32                  Total = 20;
 }
 
 message GetAppWithdrawReviewsRequest {
@@ -79,7 +81,8 @@ message GetAppWithdrawReviewsRequest {
 }
 
 message GetAppWithdrawReviewsResponse {
-    repeated WithdrawReview Info = 10;
+    repeated WithdrawReview Infos = 10;
+    uint32                  Total = 20;
 }
 
 message UpdateWithdrawReviewRequest {
