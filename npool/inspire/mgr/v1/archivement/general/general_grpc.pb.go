@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// GeneralMgrClient is the client API for GeneralMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type GeneralMgrClient interface {
+type ManagerClient interface {
 	CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error)
 	CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error)
 	AddGeneral(ctx context.Context, in *AddGeneralRequest, opts ...grpc.CallOption) (*AddGeneralResponse, error)
@@ -34,108 +34,108 @@ type GeneralMgrClient interface {
 	DeleteGeneral(ctx context.Context, in *DeleteGeneralRequest, opts ...grpc.CallOption) (*DeleteGeneralResponse, error)
 }
 
-type generalMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewGeneralMgrClient(cc grpc.ClientConnInterface) GeneralMgrClient {
-	return &generalMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *generalMgrClient) CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error) {
+func (c *managerClient) CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error) {
 	out := new(CreateGeneralResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/CreateGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/CreateGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error) {
+func (c *managerClient) CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error) {
 	out := new(CreateGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/CreateGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/CreateGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) AddGeneral(ctx context.Context, in *AddGeneralRequest, opts ...grpc.CallOption) (*AddGeneralResponse, error) {
+func (c *managerClient) AddGeneral(ctx context.Context, in *AddGeneralRequest, opts ...grpc.CallOption) (*AddGeneralResponse, error) {
 	out := new(AddGeneralResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/AddGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/AddGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) GetGeneral(ctx context.Context, in *GetGeneralRequest, opts ...grpc.CallOption) (*GetGeneralResponse, error) {
+func (c *managerClient) GetGeneral(ctx context.Context, in *GetGeneralRequest, opts ...grpc.CallOption) (*GetGeneralResponse, error) {
 	out := new(GetGeneralResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/GetGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/GetGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error) {
+func (c *managerClient) GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error) {
 	out := new(GetGeneralOnlyResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/GetGeneralOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/GetGeneralOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error) {
+func (c *managerClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error) {
 	out := new(GetGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/GetGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/GetGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) ExistGeneral(ctx context.Context, in *ExistGeneralRequest, opts ...grpc.CallOption) (*ExistGeneralResponse, error) {
+func (c *managerClient) ExistGeneral(ctx context.Context, in *ExistGeneralRequest, opts ...grpc.CallOption) (*ExistGeneralResponse, error) {
 	out := new(ExistGeneralResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/ExistGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/ExistGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) ExistGeneralConds(ctx context.Context, in *ExistGeneralCondsRequest, opts ...grpc.CallOption) (*ExistGeneralCondsResponse, error) {
+func (c *managerClient) ExistGeneralConds(ctx context.Context, in *ExistGeneralCondsRequest, opts ...grpc.CallOption) (*ExistGeneralCondsResponse, error) {
 	out := new(ExistGeneralCondsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/ExistGeneralConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/ExistGeneralConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) CountGenerals(ctx context.Context, in *CountGeneralsRequest, opts ...grpc.CallOption) (*CountGeneralsResponse, error) {
+func (c *managerClient) CountGenerals(ctx context.Context, in *CountGeneralsRequest, opts ...grpc.CallOption) (*CountGeneralsResponse, error) {
 	out := new(CountGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/CountGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/CountGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *generalMgrClient) DeleteGeneral(ctx context.Context, in *DeleteGeneralRequest, opts ...grpc.CallOption) (*DeleteGeneralResponse, error) {
+func (c *managerClient) DeleteGeneral(ctx context.Context, in *DeleteGeneralRequest, opts ...grpc.CallOption) (*DeleteGeneralResponse, error) {
 	out := new(DeleteGeneralResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.GeneralMgr/DeleteGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.general.v1.Manager/DeleteGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// GeneralMgrServer is the server API for GeneralMgr service.
-// All implementations must embed UnimplementedGeneralMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type GeneralMgrServer interface {
+type ManagerServer interface {
 	CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error)
 	CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error)
 	AddGeneral(context.Context, *AddGeneralRequest) (*AddGeneralResponse, error)
@@ -146,282 +146,282 @@ type GeneralMgrServer interface {
 	ExistGeneralConds(context.Context, *ExistGeneralCondsRequest) (*ExistGeneralCondsResponse, error)
 	CountGenerals(context.Context, *CountGeneralsRequest) (*CountGeneralsResponse, error)
 	DeleteGeneral(context.Context, *DeleteGeneralRequest) (*DeleteGeneralResponse, error)
-	mustEmbedUnimplementedGeneralMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedGeneralMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedGeneralMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedGeneralMgrServer) CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error) {
+func (UnimplementedManagerServer) CreateGeneral(context.Context, *CreateGeneralRequest) (*CreateGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGeneral not implemented")
 }
-func (UnimplementedGeneralMgrServer) CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error) {
+func (UnimplementedManagerServer) CreateGenerals(context.Context, *CreateGeneralsRequest) (*CreateGeneralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGenerals not implemented")
 }
-func (UnimplementedGeneralMgrServer) AddGeneral(context.Context, *AddGeneralRequest) (*AddGeneralResponse, error) {
+func (UnimplementedManagerServer) AddGeneral(context.Context, *AddGeneralRequest) (*AddGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddGeneral not implemented")
 }
-func (UnimplementedGeneralMgrServer) GetGeneral(context.Context, *GetGeneralRequest) (*GetGeneralResponse, error) {
+func (UnimplementedManagerServer) GetGeneral(context.Context, *GetGeneralRequest) (*GetGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGeneral not implemented")
 }
-func (UnimplementedGeneralMgrServer) GetGeneralOnly(context.Context, *GetGeneralOnlyRequest) (*GetGeneralOnlyResponse, error) {
+func (UnimplementedManagerServer) GetGeneralOnly(context.Context, *GetGeneralOnlyRequest) (*GetGeneralOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGeneralOnly not implemented")
 }
-func (UnimplementedGeneralMgrServer) GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error) {
+func (UnimplementedManagerServer) GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGenerals not implemented")
 }
-func (UnimplementedGeneralMgrServer) ExistGeneral(context.Context, *ExistGeneralRequest) (*ExistGeneralResponse, error) {
+func (UnimplementedManagerServer) ExistGeneral(context.Context, *ExistGeneralRequest) (*ExistGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistGeneral not implemented")
 }
-func (UnimplementedGeneralMgrServer) ExistGeneralConds(context.Context, *ExistGeneralCondsRequest) (*ExistGeneralCondsResponse, error) {
+func (UnimplementedManagerServer) ExistGeneralConds(context.Context, *ExistGeneralCondsRequest) (*ExistGeneralCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistGeneralConds not implemented")
 }
-func (UnimplementedGeneralMgrServer) CountGenerals(context.Context, *CountGeneralsRequest) (*CountGeneralsResponse, error) {
+func (UnimplementedManagerServer) CountGenerals(context.Context, *CountGeneralsRequest) (*CountGeneralsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountGenerals not implemented")
 }
-func (UnimplementedGeneralMgrServer) DeleteGeneral(context.Context, *DeleteGeneralRequest) (*DeleteGeneralResponse, error) {
+func (UnimplementedManagerServer) DeleteGeneral(context.Context, *DeleteGeneralRequest) (*DeleteGeneralResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteGeneral not implemented")
 }
-func (UnimplementedGeneralMgrServer) mustEmbedUnimplementedGeneralMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeGeneralMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to GeneralMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeGeneralMgrServer interface {
-	mustEmbedUnimplementedGeneralMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterGeneralMgrServer(s grpc.ServiceRegistrar, srv GeneralMgrServer) {
-	s.RegisterService(&GeneralMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _GeneralMgr_CreateGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGeneralRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).CreateGeneral(ctx, in)
+		return srv.(ManagerServer).CreateGeneral(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/CreateGeneral",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/CreateGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).CreateGeneral(ctx, req.(*CreateGeneralRequest))
+		return srv.(ManagerServer).CreateGeneral(ctx, req.(*CreateGeneralRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_CreateGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGeneralsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).CreateGenerals(ctx, in)
+		return srv.(ManagerServer).CreateGenerals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/CreateGenerals",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/CreateGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).CreateGenerals(ctx, req.(*CreateGeneralsRequest))
+		return srv.(ManagerServer).CreateGenerals(ctx, req.(*CreateGeneralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_AddGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_AddGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddGeneralRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).AddGeneral(ctx, in)
+		return srv.(ManagerServer).AddGeneral(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/AddGeneral",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/AddGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).AddGeneral(ctx, req.(*AddGeneralRequest))
+		return srv.(ManagerServer).AddGeneral(ctx, req.(*AddGeneralRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_GetGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGeneralRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).GetGeneral(ctx, in)
+		return srv.(ManagerServer).GetGeneral(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/GetGeneral",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/GetGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).GetGeneral(ctx, req.(*GetGeneralRequest))
+		return srv.(ManagerServer).GetGeneral(ctx, req.(*GetGeneralRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_GetGeneralOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetGeneralOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGeneralOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).GetGeneralOnly(ctx, in)
+		return srv.(ManagerServer).GetGeneralOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/GetGeneralOnly",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/GetGeneralOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).GetGeneralOnly(ctx, req.(*GetGeneralOnlyRequest))
+		return srv.(ManagerServer).GetGeneralOnly(ctx, req.(*GetGeneralOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGeneralsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).GetGenerals(ctx, in)
+		return srv.(ManagerServer).GetGenerals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/GetGenerals",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/GetGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).GetGenerals(ctx, req.(*GetGeneralsRequest))
+		return srv.(ManagerServer).GetGenerals(ctx, req.(*GetGeneralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_ExistGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistGeneralRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).ExistGeneral(ctx, in)
+		return srv.(ManagerServer).ExistGeneral(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/ExistGeneral",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/ExistGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).ExistGeneral(ctx, req.(*ExistGeneralRequest))
+		return srv.(ManagerServer).ExistGeneral(ctx, req.(*ExistGeneralRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_ExistGeneralConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistGeneralConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistGeneralCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).ExistGeneralConds(ctx, in)
+		return srv.(ManagerServer).ExistGeneralConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/ExistGeneralConds",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/ExistGeneralConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).ExistGeneralConds(ctx, req.(*ExistGeneralCondsRequest))
+		return srv.(ManagerServer).ExistGeneralConds(ctx, req.(*ExistGeneralCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_CountGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountGeneralsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).CountGenerals(ctx, in)
+		return srv.(ManagerServer).CountGenerals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/CountGenerals",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/CountGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).CountGenerals(ctx, req.(*CountGeneralsRequest))
+		return srv.(ManagerServer).CountGenerals(ctx, req.(*CountGeneralsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GeneralMgr_DeleteGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteGeneral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteGeneralRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GeneralMgrServer).DeleteGeneral(ctx, in)
+		return srv.(ManagerServer).DeleteGeneral(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.general.v1.GeneralMgr/DeleteGeneral",
+		FullMethod: "/inspire.manager.archivement.general.v1.Manager/DeleteGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeneralMgrServer).DeleteGeneral(ctx, req.(*DeleteGeneralRequest))
+		return srv.(ManagerServer).DeleteGeneral(ctx, req.(*DeleteGeneralRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// GeneralMgr_ServiceDesc is the grpc.ServiceDesc for GeneralMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var GeneralMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.manager.archivement.general.v1.GeneralMgr",
-	HandlerType: (*GeneralMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "inspire.manager.archivement.general.v1.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateGeneral",
-			Handler:    _GeneralMgr_CreateGeneral_Handler,
+			Handler:    _Manager_CreateGeneral_Handler,
 		},
 		{
 			MethodName: "CreateGenerals",
-			Handler:    _GeneralMgr_CreateGenerals_Handler,
+			Handler:    _Manager_CreateGenerals_Handler,
 		},
 		{
 			MethodName: "AddGeneral",
-			Handler:    _GeneralMgr_AddGeneral_Handler,
+			Handler:    _Manager_AddGeneral_Handler,
 		},
 		{
 			MethodName: "GetGeneral",
-			Handler:    _GeneralMgr_GetGeneral_Handler,
+			Handler:    _Manager_GetGeneral_Handler,
 		},
 		{
 			MethodName: "GetGeneralOnly",
-			Handler:    _GeneralMgr_GetGeneralOnly_Handler,
+			Handler:    _Manager_GetGeneralOnly_Handler,
 		},
 		{
 			MethodName: "GetGenerals",
-			Handler:    _GeneralMgr_GetGenerals_Handler,
+			Handler:    _Manager_GetGenerals_Handler,
 		},
 		{
 			MethodName: "ExistGeneral",
-			Handler:    _GeneralMgr_ExistGeneral_Handler,
+			Handler:    _Manager_ExistGeneral_Handler,
 		},
 		{
 			MethodName: "ExistGeneralConds",
-			Handler:    _GeneralMgr_ExistGeneralConds_Handler,
+			Handler:    _Manager_ExistGeneralConds_Handler,
 		},
 		{
 			MethodName: "CountGenerals",
-			Handler:    _GeneralMgr_CountGenerals_Handler,
+			Handler:    _Manager_CountGenerals_Handler,
 		},
 		{
 			MethodName: "DeleteGeneral",
-			Handler:    _GeneralMgr_DeleteGeneral_Handler,
+			Handler:    _Manager_DeleteGeneral_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

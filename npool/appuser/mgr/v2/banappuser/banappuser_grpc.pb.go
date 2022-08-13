@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// BanAppUserMgrClient is the client API for BanAppUserMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type BanAppUserMgrClient interface {
+type ManagerClient interface {
 	CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error)
 	CreateBanAppUsers(ctx context.Context, in *CreateBanAppUsersRequest, opts ...grpc.CallOption) (*CreateBanAppUsersResponse, error)
 	UpdateBanAppUser(ctx context.Context, in *UpdateBanAppUserRequest, opts ...grpc.CallOption) (*UpdateBanAppUserResponse, error)
@@ -34,108 +34,108 @@ type BanAppUserMgrClient interface {
 	DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error)
 }
 
-type banAppUserMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewBanAppUserMgrClient(cc grpc.ClientConnInterface) BanAppUserMgrClient {
-	return &banAppUserMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *banAppUserMgrClient) CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error) {
+func (c *managerClient) CreateBanAppUser(ctx context.Context, in *CreateBanAppUserRequest, opts ...grpc.CallOption) (*CreateBanAppUserResponse, error) {
 	out := new(CreateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/CreateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/CreateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) CreateBanAppUsers(ctx context.Context, in *CreateBanAppUsersRequest, opts ...grpc.CallOption) (*CreateBanAppUsersResponse, error) {
+func (c *managerClient) CreateBanAppUsers(ctx context.Context, in *CreateBanAppUsersRequest, opts ...grpc.CallOption) (*CreateBanAppUsersResponse, error) {
 	out := new(CreateBanAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/CreateBanAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/CreateBanAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) UpdateBanAppUser(ctx context.Context, in *UpdateBanAppUserRequest, opts ...grpc.CallOption) (*UpdateBanAppUserResponse, error) {
+func (c *managerClient) UpdateBanAppUser(ctx context.Context, in *UpdateBanAppUserRequest, opts ...grpc.CallOption) (*UpdateBanAppUserResponse, error) {
 	out := new(UpdateBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/UpdateBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/UpdateBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error) {
+func (c *managerClient) GetBanAppUser(ctx context.Context, in *GetBanAppUserRequest, opts ...grpc.CallOption) (*GetBanAppUserResponse, error) {
 	out := new(GetBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/GetBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) GetBanAppUserOnly(ctx context.Context, in *GetBanAppUserOnlyRequest, opts ...grpc.CallOption) (*GetBanAppUserOnlyResponse, error) {
+func (c *managerClient) GetBanAppUserOnly(ctx context.Context, in *GetBanAppUserOnlyRequest, opts ...grpc.CallOption) (*GetBanAppUserOnlyResponse, error) {
 	out := new(GetBanAppUserOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUserOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/GetBanAppUserOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) GetBanAppUsers(ctx context.Context, in *GetBanAppUsersRequest, opts ...grpc.CallOption) (*GetBanAppUsersResponse, error) {
+func (c *managerClient) GetBanAppUsers(ctx context.Context, in *GetBanAppUsersRequest, opts ...grpc.CallOption) (*GetBanAppUsersResponse, error) {
 	out := new(GetBanAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/GetBanAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) ExistBanAppUser(ctx context.Context, in *ExistBanAppUserRequest, opts ...grpc.CallOption) (*ExistBanAppUserResponse, error) {
+func (c *managerClient) ExistBanAppUser(ctx context.Context, in *ExistBanAppUserRequest, opts ...grpc.CallOption) (*ExistBanAppUserResponse, error) {
 	out := new(ExistBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/ExistBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/ExistBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) ExistBanAppUserConds(ctx context.Context, in *ExistBanAppUserCondsRequest, opts ...grpc.CallOption) (*ExistBanAppUserCondsResponse, error) {
+func (c *managerClient) ExistBanAppUserConds(ctx context.Context, in *ExistBanAppUserCondsRequest, opts ...grpc.CallOption) (*ExistBanAppUserCondsResponse, error) {
 	out := new(ExistBanAppUserCondsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/ExistBanAppUserConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/ExistBanAppUserConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) CountBanAppUsers(ctx context.Context, in *CountBanAppUsersRequest, opts ...grpc.CallOption) (*CountBanAppUsersResponse, error) {
+func (c *managerClient) CountBanAppUsers(ctx context.Context, in *CountBanAppUsersRequest, opts ...grpc.CallOption) (*CountBanAppUsersResponse, error) {
 	out := new(CountBanAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/CountBanAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/CountBanAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *banAppUserMgrClient) DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error) {
+func (c *managerClient) DeleteBanAppUser(ctx context.Context, in *DeleteBanAppUserRequest, opts ...grpc.CallOption) (*DeleteBanAppUserResponse, error) {
 	out := new(DeleteBanAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.BanAppUserMgr/DeleteBanAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.banappuser.v2.Manager/DeleteBanAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// BanAppUserMgrServer is the server API for BanAppUserMgr service.
-// All implementations must embed UnimplementedBanAppUserMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type BanAppUserMgrServer interface {
+type ManagerServer interface {
 	CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error)
 	CreateBanAppUsers(context.Context, *CreateBanAppUsersRequest) (*CreateBanAppUsersResponse, error)
 	UpdateBanAppUser(context.Context, *UpdateBanAppUserRequest) (*UpdateBanAppUserResponse, error)
@@ -146,282 +146,282 @@ type BanAppUserMgrServer interface {
 	ExistBanAppUserConds(context.Context, *ExistBanAppUserCondsRequest) (*ExistBanAppUserCondsResponse, error)
 	CountBanAppUsers(context.Context, *CountBanAppUsersRequest) (*CountBanAppUsersResponse, error)
 	DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error)
-	mustEmbedUnimplementedBanAppUserMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedBanAppUserMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedBanAppUserMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedBanAppUserMgrServer) CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error) {
+func (UnimplementedManagerServer) CreateBanAppUser(context.Context, *CreateBanAppUserRequest) (*CreateBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBanAppUser not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) CreateBanAppUsers(context.Context, *CreateBanAppUsersRequest) (*CreateBanAppUsersResponse, error) {
+func (UnimplementedManagerServer) CreateBanAppUsers(context.Context, *CreateBanAppUsersRequest) (*CreateBanAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBanAppUsers not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) UpdateBanAppUser(context.Context, *UpdateBanAppUserRequest) (*UpdateBanAppUserResponse, error) {
+func (UnimplementedManagerServer) UpdateBanAppUser(context.Context, *UpdateBanAppUserRequest) (*UpdateBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBanAppUser not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) GetBanAppUser(context.Context, *GetBanAppUserRequest) (*GetBanAppUserResponse, error) {
+func (UnimplementedManagerServer) GetBanAppUser(context.Context, *GetBanAppUserRequest) (*GetBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppUser not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) GetBanAppUserOnly(context.Context, *GetBanAppUserOnlyRequest) (*GetBanAppUserOnlyResponse, error) {
+func (UnimplementedManagerServer) GetBanAppUserOnly(context.Context, *GetBanAppUserOnlyRequest) (*GetBanAppUserOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppUserOnly not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) GetBanAppUsers(context.Context, *GetBanAppUsersRequest) (*GetBanAppUsersResponse, error) {
+func (UnimplementedManagerServer) GetBanAppUsers(context.Context, *GetBanAppUsersRequest) (*GetBanAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanAppUsers not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) ExistBanAppUser(context.Context, *ExistBanAppUserRequest) (*ExistBanAppUserResponse, error) {
+func (UnimplementedManagerServer) ExistBanAppUser(context.Context, *ExistBanAppUserRequest) (*ExistBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistBanAppUser not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) ExistBanAppUserConds(context.Context, *ExistBanAppUserCondsRequest) (*ExistBanAppUserCondsResponse, error) {
+func (UnimplementedManagerServer) ExistBanAppUserConds(context.Context, *ExistBanAppUserCondsRequest) (*ExistBanAppUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistBanAppUserConds not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) CountBanAppUsers(context.Context, *CountBanAppUsersRequest) (*CountBanAppUsersResponse, error) {
+func (UnimplementedManagerServer) CountBanAppUsers(context.Context, *CountBanAppUsersRequest) (*CountBanAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountBanAppUsers not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error) {
+func (UnimplementedManagerServer) DeleteBanAppUser(context.Context, *DeleteBanAppUserRequest) (*DeleteBanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanAppUser not implemented")
 }
-func (UnimplementedBanAppUserMgrServer) mustEmbedUnimplementedBanAppUserMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeBanAppUserMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to BanAppUserMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeBanAppUserMgrServer interface {
-	mustEmbedUnimplementedBanAppUserMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterBanAppUserMgrServer(s grpc.ServiceRegistrar, srv BanAppUserMgrServer) {
-	s.RegisterService(&BanAppUserMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _BanAppUserMgr_CreateBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateBanAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).CreateBanAppUser(ctx, in)
+		return srv.(ManagerServer).CreateBanAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/CreateBanAppUser",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/CreateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).CreateBanAppUser(ctx, req.(*CreateBanAppUserRequest))
+		return srv.(ManagerServer).CreateBanAppUser(ctx, req.(*CreateBanAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_CreateBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateBanAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).CreateBanAppUsers(ctx, in)
+		return srv.(ManagerServer).CreateBanAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/CreateBanAppUsers",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/CreateBanAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).CreateBanAppUsers(ctx, req.(*CreateBanAppUsersRequest))
+		return srv.(ManagerServer).CreateBanAppUsers(ctx, req.(*CreateBanAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_UpdateBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateBanAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).UpdateBanAppUser(ctx, in)
+		return srv.(ManagerServer).UpdateBanAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/UpdateBanAppUser",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/UpdateBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).UpdateBanAppUser(ctx, req.(*UpdateBanAppUserRequest))
+		return srv.(ManagerServer).UpdateBanAppUser(ctx, req.(*UpdateBanAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_GetBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBanAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).GetBanAppUser(ctx, in)
+		return srv.(ManagerServer).GetBanAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUser",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/GetBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).GetBanAppUser(ctx, req.(*GetBanAppUserRequest))
+		return srv.(ManagerServer).GetBanAppUser(ctx, req.(*GetBanAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_GetBanAppUserOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetBanAppUserOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBanAppUserOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).GetBanAppUserOnly(ctx, in)
+		return srv.(ManagerServer).GetBanAppUserOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUserOnly",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/GetBanAppUserOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).GetBanAppUserOnly(ctx, req.(*GetBanAppUserOnlyRequest))
+		return srv.(ManagerServer).GetBanAppUserOnly(ctx, req.(*GetBanAppUserOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_GetBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBanAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).GetBanAppUsers(ctx, in)
+		return srv.(ManagerServer).GetBanAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/GetBanAppUsers",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/GetBanAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).GetBanAppUsers(ctx, req.(*GetBanAppUsersRequest))
+		return srv.(ManagerServer).GetBanAppUsers(ctx, req.(*GetBanAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_ExistBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistBanAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).ExistBanAppUser(ctx, in)
+		return srv.(ManagerServer).ExistBanAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/ExistBanAppUser",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/ExistBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).ExistBanAppUser(ctx, req.(*ExistBanAppUserRequest))
+		return srv.(ManagerServer).ExistBanAppUser(ctx, req.(*ExistBanAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_ExistBanAppUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistBanAppUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistBanAppUserCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).ExistBanAppUserConds(ctx, in)
+		return srv.(ManagerServer).ExistBanAppUserConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/ExistBanAppUserConds",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/ExistBanAppUserConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).ExistBanAppUserConds(ctx, req.(*ExistBanAppUserCondsRequest))
+		return srv.(ManagerServer).ExistBanAppUserConds(ctx, req.(*ExistBanAppUserCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_CountBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountBanAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountBanAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).CountBanAppUsers(ctx, in)
+		return srv.(ManagerServer).CountBanAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/CountBanAppUsers",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/CountBanAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).CountBanAppUsers(ctx, req.(*CountBanAppUsersRequest))
+		return srv.(ManagerServer).CountBanAppUsers(ctx, req.(*CountBanAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BanAppUserMgr_DeleteBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteBanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteBanAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BanAppUserMgrServer).DeleteBanAppUser(ctx, in)
+		return srv.(ManagerServer).DeleteBanAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.banappuser.v2.BanAppUserMgr/DeleteBanAppUser",
+		FullMethod: "/appuser.manager.banappuser.v2.Manager/DeleteBanAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BanAppUserMgrServer).DeleteBanAppUser(ctx, req.(*DeleteBanAppUserRequest))
+		return srv.(ManagerServer).DeleteBanAppUser(ctx, req.(*DeleteBanAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// BanAppUserMgr_ServiceDesc is the grpc.ServiceDesc for BanAppUserMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var BanAppUserMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.manager.banappuser.v2.BanAppUserMgr",
-	HandlerType: (*BanAppUserMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.manager.banappuser.v2.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateBanAppUser",
-			Handler:    _BanAppUserMgr_CreateBanAppUser_Handler,
+			Handler:    _Manager_CreateBanAppUser_Handler,
 		},
 		{
 			MethodName: "CreateBanAppUsers",
-			Handler:    _BanAppUserMgr_CreateBanAppUsers_Handler,
+			Handler:    _Manager_CreateBanAppUsers_Handler,
 		},
 		{
 			MethodName: "UpdateBanAppUser",
-			Handler:    _BanAppUserMgr_UpdateBanAppUser_Handler,
+			Handler:    _Manager_UpdateBanAppUser_Handler,
 		},
 		{
 			MethodName: "GetBanAppUser",
-			Handler:    _BanAppUserMgr_GetBanAppUser_Handler,
+			Handler:    _Manager_GetBanAppUser_Handler,
 		},
 		{
 			MethodName: "GetBanAppUserOnly",
-			Handler:    _BanAppUserMgr_GetBanAppUserOnly_Handler,
+			Handler:    _Manager_GetBanAppUserOnly_Handler,
 		},
 		{
 			MethodName: "GetBanAppUsers",
-			Handler:    _BanAppUserMgr_GetBanAppUsers_Handler,
+			Handler:    _Manager_GetBanAppUsers_Handler,
 		},
 		{
 			MethodName: "ExistBanAppUser",
-			Handler:    _BanAppUserMgr_ExistBanAppUser_Handler,
+			Handler:    _Manager_ExistBanAppUser_Handler,
 		},
 		{
 			MethodName: "ExistBanAppUserConds",
-			Handler:    _BanAppUserMgr_ExistBanAppUserConds_Handler,
+			Handler:    _Manager_ExistBanAppUserConds_Handler,
 		},
 		{
 			MethodName: "CountBanAppUsers",
-			Handler:    _BanAppUserMgr_CountBanAppUsers_Handler,
+			Handler:    _Manager_CountBanAppUsers_Handler,
 		},
 		{
 			MethodName: "DeleteBanAppUser",
-			Handler:    _BanAppUserMgr_DeleteBanAppUser_Handler,
+			Handler:    _Manager_DeleteBanAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

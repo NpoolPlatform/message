@@ -7,7 +7,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service GeneralMgr {
+service Manager {
     rpc CreateGeneral     (CreateGeneralRequest)     returns (CreateGeneralResponse)     {}
     rpc CreateGenerals    (CreateGeneralsRequest)    returns (CreateGeneralsResponse)    {}
     rpc AddGeneral        (AddGeneralRequest)        returns (AddGeneralResponse)        {}

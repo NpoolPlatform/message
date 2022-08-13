@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UserGwClient is the client API for UserGw service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserGwClient interface {
+type GatewayClient interface {
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
@@ -29,219 +29,219 @@ type UserGwClient interface {
 	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
 }
 
-type userGwClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserGwClient(cc grpc.ClientConnInterface) UserGwClient {
-	return &userGwClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *userGwClient) Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error) {
+func (c *gatewayClient) Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error) {
 	out := new(SignupResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.UserGw/Signup", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/Signup", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
+func (c *gatewayClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
 	out := new(CreateUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.UserGw/CreateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
+func (c *gatewayClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
 	out := new(UpdateUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.UserGw/UpdateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/UpdateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
+func (c *gatewayClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
 	out := new(GetUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.UserGw/GetUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userGwClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
+func (c *gatewayClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
 	out := new(GetAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.UserGw/GetAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/GetAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserGwServer is the server API for UserGw service.
-// All implementations must embed UnimplementedUserGwServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type UserGwServer interface {
+type GatewayServer interface {
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
-	mustEmbedUnimplementedUserGwServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedUserGwServer must be embedded to have forward compatible implementations.
-type UnimplementedUserGwServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedUserGwServer) Signup(context.Context, *SignupRequest) (*SignupResponse, error) {
+func (UnimplementedGatewayServer) Signup(context.Context, *SignupRequest) (*SignupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Signup not implemented")
 }
-func (UnimplementedUserGwServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
+func (UnimplementedGatewayServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedUserGwServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
+func (UnimplementedGatewayServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
-func (UnimplementedUserGwServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
+func (UnimplementedGatewayServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
-func (UnimplementedUserGwServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
+func (UnimplementedGatewayServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUsers not implemented")
 }
-func (UnimplementedUserGwServer) mustEmbedUnimplementedUserGwServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeUserGwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserGwServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeUserGwServer interface {
-	mustEmbedUnimplementedUserGwServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterUserGwServer(s grpc.ServiceRegistrar, srv UserGwServer) {
-	s.RegisterService(&UserGw_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _UserGw_Signup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_Signup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SignupRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).Signup(ctx, in)
+		return srv.(GatewayServer).Signup(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.user.v1.UserGw/Signup",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/Signup",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).Signup(ctx, req.(*SignupRequest))
+		return srv.(GatewayServer).Signup(ctx, req.(*SignupRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).CreateUser(ctx, in)
+		return srv.(GatewayServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.user.v1.UserGw/CreateUser",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).CreateUser(ctx, req.(*CreateUserRequest))
+		return srv.(GatewayServer).CreateUser(ctx, req.(*CreateUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).UpdateUser(ctx, in)
+		return srv.(GatewayServer).UpdateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.user.v1.UserGw/UpdateUser",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/UpdateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).UpdateUser(ctx, req.(*UpdateUserRequest))
+		return srv.(GatewayServer).UpdateUser(ctx, req.(*UpdateUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).GetUsers(ctx, in)
+		return srv.(GatewayServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.user.v1.UserGw/GetUsers",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).GetUsers(ctx, req.(*GetUsersRequest))
+		return srv.(GatewayServer).GetUsers(ctx, req.(*GetUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserGw_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserGwServer).GetAppUsers(ctx, in)
+		return srv.(GatewayServer).GetAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.user.v1.UserGw/GetAppUsers",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/GetAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserGwServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
+		return srv.(GatewayServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserGw_ServiceDesc is the grpc.ServiceDesc for UserGw service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.user.v1.UserGw",
-	HandlerType: (*UserGwServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.gateway.user.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Signup",
-			Handler:    _UserGw_Signup_Handler,
+			Handler:    _Gateway_Signup_Handler,
 		},
 		{
 			MethodName: "CreateUser",
-			Handler:    _UserGw_CreateUser_Handler,
+			Handler:    _Gateway_CreateUser_Handler,
 		},
 		{
 			MethodName: "UpdateUser",
-			Handler:    _UserGw_UpdateUser_Handler,
+			Handler:    _Gateway_UpdateUser_Handler,
 		},
 		{
 			MethodName: "GetUsers",
-			Handler:    _UserGw_GetUsers_Handler,
+			Handler:    _Gateway_GetUsers_Handler,
 		},
 		{
 			MethodName: "GetAppUsers",
-			Handler:    _UserGw_GetAppUsers_Handler,
+			Handler:    _Gateway_GetAppUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

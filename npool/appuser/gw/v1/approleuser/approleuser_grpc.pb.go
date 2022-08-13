@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppRoleUserGwClient is the client API for AppRoleUserGw service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppRoleUserGwClient interface {
+type GatewayClient interface {
 	CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error)
 	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
 	DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error)
@@ -29,219 +29,219 @@ type AppRoleUserGwClient interface {
 	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
 }
 
-type appRoleUserGwClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppRoleUserGwClient(cc grpc.ClientConnInterface) AppRoleUserGwClient {
-	return &appRoleUserGwClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *appRoleUserGwClient) CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error) {
+func (c *gatewayClient) CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error) {
 	out := new(CreateRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.Gateway/CreateRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appRoleUserGwClient) GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error) {
+func (c *gatewayClient) GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error) {
 	out := new(GetRoleUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.Gateway/GetRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appRoleUserGwClient) DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error) {
+func (c *gatewayClient) DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error) {
 	out := new(DeleteRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.AppRoleUserGw/DeleteRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.Gateway/DeleteRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appRoleUserGwClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
+func (c *gatewayClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
 	out := new(CreateAppRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.Gateway/CreateAppRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appRoleUserGwClient) GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error) {
+func (c *gatewayClient) GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error) {
 	out := new(GetAppRoleUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.approleuser.v1.Gateway/GetAppRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppRoleUserGwServer is the server API for AppRoleUserGw service.
-// All implementations must embed UnimplementedAppRoleUserGwServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type AppRoleUserGwServer interface {
+type GatewayServer interface {
 	CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error)
 	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
 	DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error)
 	CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error)
 	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
-	mustEmbedUnimplementedAppRoleUserGwServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedAppRoleUserGwServer must be embedded to have forward compatible implementations.
-type UnimplementedAppRoleUserGwServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedAppRoleUserGwServer) CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error) {
+func (UnimplementedGatewayServer) CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRoleUser not implemented")
 }
-func (UnimplementedAppRoleUserGwServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
+func (UnimplementedGatewayServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUsers not implemented")
 }
-func (UnimplementedAppRoleUserGwServer) DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error) {
+func (UnimplementedGatewayServer) DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRoleUser not implemented")
 }
-func (UnimplementedAppRoleUserGwServer) CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error) {
+func (UnimplementedGatewayServer) CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleUser not implemented")
 }
-func (UnimplementedAppRoleUserGwServer) GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error) {
+func (UnimplementedGatewayServer) GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsers not implemented")
 }
-func (UnimplementedAppRoleUserGwServer) mustEmbedUnimplementedAppRoleUserGwServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeAppRoleUserGwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppRoleUserGwServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeAppRoleUserGwServer interface {
-	mustEmbedUnimplementedAppRoleUserGwServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterAppRoleUserGwServer(s grpc.ServiceRegistrar, srv AppRoleUserGwServer) {
-	s.RegisterService(&AppRoleUserGw_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _AppRoleUserGw_CreateRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateRoleUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppRoleUserGwServer).CreateRoleUser(ctx, in)
+		return srv.(GatewayServer).CreateRoleUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateRoleUser",
+		FullMethod: "/appuser.gateway.approleuser.v1.Gateway/CreateRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleUserGwServer).CreateRoleUser(ctx, req.(*CreateRoleUserRequest))
+		return srv.(GatewayServer).CreateRoleUser(ctx, req.(*CreateRoleUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppRoleUserGw_GetRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRoleUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppRoleUserGwServer).GetRoleUsers(ctx, in)
+		return srv.(GatewayServer).GetRoleUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetRoleUsers",
+		FullMethod: "/appuser.gateway.approleuser.v1.Gateway/GetRoleUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleUserGwServer).GetRoleUsers(ctx, req.(*GetRoleUsersRequest))
+		return srv.(GatewayServer).GetRoleUsers(ctx, req.(*GetRoleUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppRoleUserGw_DeleteRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_DeleteRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteRoleUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppRoleUserGwServer).DeleteRoleUser(ctx, in)
+		return srv.(GatewayServer).DeleteRoleUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approleuser.v1.AppRoleUserGw/DeleteRoleUser",
+		FullMethod: "/appuser.gateway.approleuser.v1.Gateway/DeleteRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleUserGwServer).DeleteRoleUser(ctx, req.(*DeleteRoleUserRequest))
+		return srv.(GatewayServer).DeleteRoleUser(ctx, req.(*DeleteRoleUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppRoleUserGw_CreateAppRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAppRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRoleUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppRoleUserGwServer).CreateAppRoleUser(ctx, in)
+		return srv.(GatewayServer).CreateAppRoleUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approleuser.v1.AppRoleUserGw/CreateAppRoleUser",
+		FullMethod: "/appuser.gateway.approleuser.v1.Gateway/CreateAppRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleUserGwServer).CreateAppRoleUser(ctx, req.(*CreateAppRoleUserRequest))
+		return srv.(GatewayServer).CreateAppRoleUser(ctx, req.(*CreateAppRoleUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppRoleUserGw_GetAppRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppRoleUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppRoleUserGwServer).GetAppRoleUsers(ctx, in)
+		return srv.(GatewayServer).GetAppRoleUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approleuser.v1.AppRoleUserGw/GetAppRoleUsers",
+		FullMethod: "/appuser.gateway.approleuser.v1.Gateway/GetAppRoleUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppRoleUserGwServer).GetAppRoleUsers(ctx, req.(*GetAppRoleUsersRequest))
+		return srv.(GatewayServer).GetAppRoleUsers(ctx, req.(*GetAppRoleUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppRoleUserGw_ServiceDesc is the grpc.ServiceDesc for AppRoleUserGw service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppRoleUserGw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.approleuser.v1.AppRoleUserGw",
-	HandlerType: (*AppRoleUserGwServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.gateway.approleuser.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateRoleUser",
-			Handler:    _AppRoleUserGw_CreateRoleUser_Handler,
+			Handler:    _Gateway_CreateRoleUser_Handler,
 		},
 		{
 			MethodName: "GetRoleUsers",
-			Handler:    _AppRoleUserGw_GetRoleUsers_Handler,
+			Handler:    _Gateway_GetRoleUsers_Handler,
 		},
 		{
 			MethodName: "DeleteRoleUser",
-			Handler:    _AppRoleUserGw_DeleteRoleUser_Handler,
+			Handler:    _Gateway_DeleteRoleUser_Handler,
 		},
 		{
 			MethodName: "CreateAppRoleUser",
-			Handler:    _AppRoleUserGw_CreateAppRoleUser_Handler,
+			Handler:    _Gateway_CreateAppRoleUser_Handler,
 		},
 		{
 			MethodName: "GetAppRoleUsers",
-			Handler:    _AppRoleUserGw_GetAppRoleUsers_Handler,
+			Handler:    _Gateway_GetAppRoleUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

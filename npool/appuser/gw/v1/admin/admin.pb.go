@@ -842,8 +842,8 @@ var file_npool_appuser_gw_v1_admin_admin_proto_rawDesc = []byte{
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2e, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f,
 	0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e,
 	0x67, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x75, 0x74,
-	0x68, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32, 0xfc, 0x09, 0x0a, 0x07, 0x41, 0x64, 0x6d,
-	0x69, 0x6e, 0x47, 0x77, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x68, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32, 0xfc, 0x09, 0x0a, 0x07, 0x47, 0x61, 0x74,
+	0x65, 0x77, 0x61, 0x79, 0x12, 0x98, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
 	0x64, 0x6d, 0x69, 0x6e, 0x41, 0x70, 0x70, 0x73, 0x12, 0x30, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x64, 0x6d, 0x69, 0x6e,
 	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
@@ -974,22 +974,22 @@ var file_npool_appuser_gw_v1_admin_admin_proto_depIdxs = []int32{
 	17, // 5: appuser.gateway.admin.v1.GetGenesisRolesResponse.Infos:type_name -> appuser.manager.approle.v2.AppRole
 	20, // 6: appuser.gateway.admin.v1.GetGenesisRoleUsersResponse.Infos:type_name -> appuser.manager.approleuser.v2.AppRoleUser
 	19, // 7: appuser.gateway.admin.v1.GetGenesisAuthsResponse.Infos:type_name -> authing.gateway.v1.Auth
-	0,  // 8: appuser.gateway.admin.v1.AdminGw.CreateAdminApps:input_type -> appuser.gateway.admin.v1.CreateAdminAppsRequest
-	2,  // 9: appuser.gateway.admin.v1.AdminGw.CreateGenesisRoles:input_type -> appuser.gateway.admin.v1.CreateGenesisRolesRequest
-	4,  // 10: appuser.gateway.admin.v1.AdminGw.CreateGenesisUser:input_type -> appuser.gateway.admin.v1.CreateGenesisUserRequest
-	6,  // 11: appuser.gateway.admin.v1.AdminGw.GetAdminApps:input_type -> appuser.gateway.admin.v1.GetAdminAppsRequest
-	10, // 12: appuser.gateway.admin.v1.AdminGw.GetGenesisRoles:input_type -> appuser.gateway.admin.v1.GetGenesisRolesRequest
-	12, // 13: appuser.gateway.admin.v1.AdminGw.GetGenesisRoleUsers:input_type -> appuser.gateway.admin.v1.GetGenesisRoleUsersRequest
-	14, // 14: appuser.gateway.admin.v1.AdminGw.GetGenesisAuths:input_type -> appuser.gateway.admin.v1.GetGenesisAuthsRequest
-	8,  // 15: appuser.gateway.admin.v1.AdminGw.AuthorizeGenesis:input_type -> appuser.gateway.admin.v1.AuthorizeGenesisRequest
-	1,  // 16: appuser.gateway.admin.v1.AdminGw.CreateAdminApps:output_type -> appuser.gateway.admin.v1.CreateAdminAppsResponse
-	3,  // 17: appuser.gateway.admin.v1.AdminGw.CreateGenesisRoles:output_type -> appuser.gateway.admin.v1.CreateGenesisRolesResponse
-	5,  // 18: appuser.gateway.admin.v1.AdminGw.CreateGenesisUser:output_type -> appuser.gateway.admin.v1.CreateGenesisUserResponse
-	7,  // 19: appuser.gateway.admin.v1.AdminGw.GetAdminApps:output_type -> appuser.gateway.admin.v1.GetAdminAppsResponse
-	11, // 20: appuser.gateway.admin.v1.AdminGw.GetGenesisRoles:output_type -> appuser.gateway.admin.v1.GetGenesisRolesResponse
-	13, // 21: appuser.gateway.admin.v1.AdminGw.GetGenesisRoleUsers:output_type -> appuser.gateway.admin.v1.GetGenesisRoleUsersResponse
-	15, // 22: appuser.gateway.admin.v1.AdminGw.GetGenesisAuths:output_type -> appuser.gateway.admin.v1.GetGenesisAuthsResponse
-	9,  // 23: appuser.gateway.admin.v1.AdminGw.AuthorizeGenesis:output_type -> appuser.gateway.admin.v1.AuthorizeGenesisResponse
+	0,  // 8: appuser.gateway.admin.v1.Gateway.CreateAdminApps:input_type -> appuser.gateway.admin.v1.CreateAdminAppsRequest
+	2,  // 9: appuser.gateway.admin.v1.Gateway.CreateGenesisRoles:input_type -> appuser.gateway.admin.v1.CreateGenesisRolesRequest
+	4,  // 10: appuser.gateway.admin.v1.Gateway.CreateGenesisUser:input_type -> appuser.gateway.admin.v1.CreateGenesisUserRequest
+	6,  // 11: appuser.gateway.admin.v1.Gateway.GetAdminApps:input_type -> appuser.gateway.admin.v1.GetAdminAppsRequest
+	10, // 12: appuser.gateway.admin.v1.Gateway.GetGenesisRoles:input_type -> appuser.gateway.admin.v1.GetGenesisRolesRequest
+	12, // 13: appuser.gateway.admin.v1.Gateway.GetGenesisRoleUsers:input_type -> appuser.gateway.admin.v1.GetGenesisRoleUsersRequest
+	14, // 14: appuser.gateway.admin.v1.Gateway.GetGenesisAuths:input_type -> appuser.gateway.admin.v1.GetGenesisAuthsRequest
+	8,  // 15: appuser.gateway.admin.v1.Gateway.AuthorizeGenesis:input_type -> appuser.gateway.admin.v1.AuthorizeGenesisRequest
+	1,  // 16: appuser.gateway.admin.v1.Gateway.CreateAdminApps:output_type -> appuser.gateway.admin.v1.CreateAdminAppsResponse
+	3,  // 17: appuser.gateway.admin.v1.Gateway.CreateGenesisRoles:output_type -> appuser.gateway.admin.v1.CreateGenesisRolesResponse
+	5,  // 18: appuser.gateway.admin.v1.Gateway.CreateGenesisUser:output_type -> appuser.gateway.admin.v1.CreateGenesisUserResponse
+	7,  // 19: appuser.gateway.admin.v1.Gateway.GetAdminApps:output_type -> appuser.gateway.admin.v1.GetAdminAppsResponse
+	11, // 20: appuser.gateway.admin.v1.Gateway.GetGenesisRoles:output_type -> appuser.gateway.admin.v1.GetGenesisRolesResponse
+	13, // 21: appuser.gateway.admin.v1.Gateway.GetGenesisRoleUsers:output_type -> appuser.gateway.admin.v1.GetGenesisRoleUsersResponse
+	15, // 22: appuser.gateway.admin.v1.Gateway.GetGenesisAuths:output_type -> appuser.gateway.admin.v1.GetGenesisAuthsResponse
+	9,  // 23: appuser.gateway.admin.v1.Gateway.AuthorizeGenesis:output_type -> appuser.gateway.admin.v1.AuthorizeGenesisResponse
 	16, // [16:24] is the sub-list for method output_type
 	8,  // [8:16] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name

@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "BanAppUserGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app/ban/user": {
       "post": {
-        "operationId": "BanAppUserGw_CreateAppBanUser",
+        "operationId": "Gateway_CreateAppBanUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "BanAppUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/ban/user": {
       "post": {
-        "operationId": "BanAppUserGw_CreateBanUser",
+        "operationId": "Gateway_CreateBanUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "BanAppUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/ban/user": {
       "post": {
-        "operationId": "BanAppUserGw_DeleteBanUser",
+        "operationId": "Gateway_DeleteBanUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "BanAppUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/update/ban/user": {
       "post": {
-        "operationId": "BanAppUserGw_UpdateBanUser",
+        "operationId": "Gateway_UpdateBanUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,7 +140,7 @@
           }
         ],
         "tags": [
-          "BanAppUserGw"
+          "Gateway"
         ]
       }
     }

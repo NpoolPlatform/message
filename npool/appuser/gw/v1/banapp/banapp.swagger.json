@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "BanAppGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/create/ban/app": {
       "post": {
         "summary": "Admin apis",
-        "operationId": "BanAppGw_CreateBanApp",
+        "operationId": "Gateway_CreateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,13 +45,13 @@
           }
         ],
         "tags": [
-          "BanAppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/ban/app": {
       "post": {
-        "operationId": "BanAppGw_DeleteBanApp",
+        "operationId": "Gateway_DeleteBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -77,13 +77,13 @@
           }
         ],
         "tags": [
-          "BanAppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/update/ban/app": {
       "post": {
-        "operationId": "BanAppGw_UpdateBanApp",
+        "operationId": "Gateway_UpdateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -109,7 +109,7 @@
           }
         ],
         "tags": [
-          "BanAppGw"
+          "Gateway"
         ]
       }
     }

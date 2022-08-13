@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_LoginGw_Login_0(ctx context.Context, marshaler runtime.Marshaler, client LoginGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_Login_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_LoginGw_Login_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_LoginGw_Login_0(ctx context.Context, marshaler runtime.Marshaler, server LoginGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_Login_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_LoginGw_Login_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_LoginGw_Logined_0(ctx context.Context, marshaler runtime.Marshaler, client LoginGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_Logined_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginedRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_LoginGw_Logined_0(ctx context.Context, marshaler runtime.Marshaler,
 
 }
 
-func local_request_LoginGw_Logined_0(ctx context.Context, marshaler runtime.Marshaler, server LoginGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_Logined_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginedRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_LoginGw_Logined_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func request_LoginGw_Logout_0(ctx context.Context, marshaler runtime.Marshaler, client LoginGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_Logout_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LogoutRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_LoginGw_Logout_0(ctx context.Context, marshaler runtime.Marshaler, 
 
 }
 
-func local_request_LoginGw_Logout_0(ctx context.Context, marshaler runtime.Marshaler, server LoginGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_Logout_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LogoutRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,24 +133,24 @@ func local_request_LoginGw_Logout_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-// RegisterLoginGwHandlerServer registers the http handlers for service LoginGw to "mux".
-// UnaryRPC     :call LoginGwServer directly.
+// RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
+// UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterLoginGwHandlerFromEndpoint instead.
-func RegisterLoginGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server LoginGwServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
+func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
-	mux.Handle("POST", pattern_LoginGw_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Login", runtime.WithHTTPPathPattern("/v1/login"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Login", runtime.WithHTTPPathPattern("/v1/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_LoginGw_Login_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_Login_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -158,22 +158,22 @@ func RegisterLoginGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_LoginGw_Login_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Login_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_LoginGw_Logined_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Logined_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Logined", runtime.WithHTTPPathPattern("/v1/logined"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Logined", runtime.WithHTTPPathPattern("/v1/logined"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_LoginGw_Logined_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_Logined_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -181,22 +181,22 @@ func RegisterLoginGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_LoginGw_Logined_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Logined_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_LoginGw_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Logout", runtime.WithHTTPPathPattern("/v1/logout"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Logout", runtime.WithHTTPPathPattern("/v1/logout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_LoginGw_Logout_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_Logout_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -204,16 +204,16 @@ func RegisterLoginGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_LoginGw_Logout_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Logout_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterLoginGwHandlerFromEndpoint is same as RegisterLoginGwHandler but
+// RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterLoginGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -233,79 +233,79 @@ func RegisterLoginGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterLoginGwHandler(ctx, mux, conn)
+	return RegisterGatewayHandler(ctx, mux, conn)
 }
 
-// RegisterLoginGwHandler registers the http handlers for service LoginGw to "mux".
+// RegisterGatewayHandler registers the http handlers for service Gateway to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterLoginGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterLoginGwHandlerClient(ctx, mux, NewLoginGwClient(conn))
+func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGatewayHandlerClient(ctx, mux, NewGatewayClient(conn))
 }
 
-// RegisterLoginGwHandlerClient registers the http handlers for service LoginGw
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "LoginGwClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "LoginGwClient"
+// RegisterGatewayHandlerClient registers the http handlers for service Gateway
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GatewayClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GatewayClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "LoginGwClient" to call the correct interceptors.
-func RegisterLoginGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client LoginGwClient) error {
+// "GatewayClient" to call the correct interceptors.
+func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
 
-	mux.Handle("POST", pattern_LoginGw_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Login", runtime.WithHTTPPathPattern("/v1/login"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Login", runtime.WithHTTPPathPattern("/v1/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_LoginGw_Login_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_Login_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_LoginGw_Login_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Login_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_LoginGw_Logined_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Logined_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Logined", runtime.WithHTTPPathPattern("/v1/logined"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Logined", runtime.WithHTTPPathPattern("/v1/logined"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_LoginGw_Logined_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_Logined_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_LoginGw_Logined_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Logined_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_LoginGw_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.LoginGw/Logout", runtime.WithHTTPPathPattern("/v1/logout"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.login.v1.Gateway/Logout", runtime.WithHTTPPathPattern("/v1/logout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_LoginGw_Logout_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_Logout_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_LoginGw_Logout_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_Logout_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -313,17 +313,17 @@ func RegisterLoginGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_LoginGw_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "login"}, ""))
+	pattern_Gateway_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "login"}, ""))
 
-	pattern_LoginGw_Logined_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "logined"}, ""))
+	pattern_Gateway_Logined_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "logined"}, ""))
 
-	pattern_LoginGw_Logout_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "logout"}, ""))
+	pattern_Gateway_Logout_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "logout"}, ""))
 )
 
 var (
-	forward_LoginGw_Login_0 = runtime.ForwardResponseMessage
+	forward_Gateway_Login_0 = runtime.ForwardResponseMessage
 
-	forward_LoginGw_Logined_0 = runtime.ForwardResponseMessage
+	forward_Gateway_Logined_0 = runtime.ForwardResponseMessage
 
-	forward_LoginGw_Logout_0 = runtime.ForwardResponseMessage
+	forward_Gateway_Logout_0 = runtime.ForwardResponseMessage
 )

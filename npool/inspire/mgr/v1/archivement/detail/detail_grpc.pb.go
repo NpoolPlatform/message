@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// DetailMgrClient is the client API for DetailMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type DetailMgrClient interface {
+type ManagerClient interface {
 	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
 	CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error)
 	GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error)
@@ -32,90 +32,90 @@ type DetailMgrClient interface {
 	CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error)
 }
 
-type detailMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDetailMgrClient(cc grpc.ClientConnInterface) DetailMgrClient {
-	return &detailMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *detailMgrClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
+func (c *managerClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
 	out := new(CreateDetailResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/CreateDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/CreateDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error) {
+func (c *managerClient) CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error) {
 	out := new(CreateDetailsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/CreateDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/CreateDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error) {
+func (c *managerClient) GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error) {
 	out := new(GetDetailResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/GetDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
+func (c *managerClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
 	out := new(GetDetailOnlyResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetailOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/GetDetailOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
+func (c *managerClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
 	out := new(GetDetailsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/GetDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error) {
+func (c *managerClient) ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error) {
 	out := new(ExistDetailResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/ExistDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/ExistDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error) {
+func (c *managerClient) ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error) {
 	out := new(ExistDetailCondsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/ExistDetailConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/ExistDetailConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *detailMgrClient) CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error) {
+func (c *managerClient) CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error) {
 	out := new(CountDetailsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.DetailMgr/CountDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.archivement.detail.v1.Manager/CountDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DetailMgrServer is the server API for DetailMgr service.
-// All implementations must embed UnimplementedDetailMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type DetailMgrServer interface {
+type ManagerServer interface {
 	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
 	CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error)
 	GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error)
@@ -124,232 +124,232 @@ type DetailMgrServer interface {
 	ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error)
 	ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error)
 	CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error)
-	mustEmbedUnimplementedDetailMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedDetailMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedDetailMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedDetailMgrServer) CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error) {
+func (UnimplementedManagerServer) CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDetail not implemented")
 }
-func (UnimplementedDetailMgrServer) CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error) {
+func (UnimplementedManagerServer) CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDetails not implemented")
 }
-func (UnimplementedDetailMgrServer) GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error) {
+func (UnimplementedManagerServer) GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetail not implemented")
 }
-func (UnimplementedDetailMgrServer) GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error) {
+func (UnimplementedManagerServer) GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetailOnly not implemented")
 }
-func (UnimplementedDetailMgrServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
+func (UnimplementedManagerServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetails not implemented")
 }
-func (UnimplementedDetailMgrServer) ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error) {
+func (UnimplementedManagerServer) ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistDetail not implemented")
 }
-func (UnimplementedDetailMgrServer) ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error) {
+func (UnimplementedManagerServer) ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistDetailConds not implemented")
 }
-func (UnimplementedDetailMgrServer) CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error) {
+func (UnimplementedManagerServer) CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountDetails not implemented")
 }
-func (UnimplementedDetailMgrServer) mustEmbedUnimplementedDetailMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeDetailMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DetailMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeDetailMgrServer interface {
-	mustEmbedUnimplementedDetailMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterDetailMgrServer(s grpc.ServiceRegistrar, srv DetailMgrServer) {
-	s.RegisterService(&DetailMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _DetailMgr_CreateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDetailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).CreateDetail(ctx, in)
+		return srv.(ManagerServer).CreateDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/CreateDetail",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/CreateDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).CreateDetail(ctx, req.(*CreateDetailRequest))
+		return srv.(ManagerServer).CreateDetail(ctx, req.(*CreateDetailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_CreateDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDetailsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).CreateDetails(ctx, in)
+		return srv.(ManagerServer).CreateDetails(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/CreateDetails",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/CreateDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).CreateDetails(ctx, req.(*CreateDetailsRequest))
+		return srv.(ManagerServer).CreateDetails(ctx, req.(*CreateDetailsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_GetDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDetailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).GetDetail(ctx, in)
+		return srv.(ManagerServer).GetDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetail",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/GetDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).GetDetail(ctx, req.(*GetDetailRequest))
+		return srv.(ManagerServer).GetDetail(ctx, req.(*GetDetailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDetailOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).GetDetailOnly(ctx, in)
+		return srv.(ManagerServer).GetDetailOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetailOnly",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/GetDetailOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
+		return srv.(ManagerServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDetailsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).GetDetails(ctx, in)
+		return srv.(ManagerServer).GetDetails(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/GetDetails",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/GetDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).GetDetails(ctx, req.(*GetDetailsRequest))
+		return srv.(ManagerServer).GetDetails(ctx, req.(*GetDetailsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_ExistDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistDetailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).ExistDetail(ctx, in)
+		return srv.(ManagerServer).ExistDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/ExistDetail",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/ExistDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).ExistDetail(ctx, req.(*ExistDetailRequest))
+		return srv.(ManagerServer).ExistDetail(ctx, req.(*ExistDetailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_ExistDetailConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistDetailConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistDetailCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).ExistDetailConds(ctx, in)
+		return srv.(ManagerServer).ExistDetailConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/ExistDetailConds",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/ExistDetailConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).ExistDetailConds(ctx, req.(*ExistDetailCondsRequest))
+		return srv.(ManagerServer).ExistDetailConds(ctx, req.(*ExistDetailCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DetailMgr_CountDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountDetailsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DetailMgrServer).CountDetails(ctx, in)
+		return srv.(ManagerServer).CountDetails(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.archivement.detail.v1.DetailMgr/CountDetails",
+		FullMethod: "/inspire.manager.archivement.detail.v1.Manager/CountDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DetailMgrServer).CountDetails(ctx, req.(*CountDetailsRequest))
+		return srv.(ManagerServer).CountDetails(ctx, req.(*CountDetailsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DetailMgr_ServiceDesc is the grpc.ServiceDesc for DetailMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DetailMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.manager.archivement.detail.v1.DetailMgr",
-	HandlerType: (*DetailMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "inspire.manager.archivement.detail.v1.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateDetail",
-			Handler:    _DetailMgr_CreateDetail_Handler,
+			Handler:    _Manager_CreateDetail_Handler,
 		},
 		{
 			MethodName: "CreateDetails",
-			Handler:    _DetailMgr_CreateDetails_Handler,
+			Handler:    _Manager_CreateDetails_Handler,
 		},
 		{
 			MethodName: "GetDetail",
-			Handler:    _DetailMgr_GetDetail_Handler,
+			Handler:    _Manager_GetDetail_Handler,
 		},
 		{
 			MethodName: "GetDetailOnly",
-			Handler:    _DetailMgr_GetDetailOnly_Handler,
+			Handler:    _Manager_GetDetailOnly_Handler,
 		},
 		{
 			MethodName: "GetDetails",
-			Handler:    _DetailMgr_GetDetails_Handler,
+			Handler:    _Manager_GetDetails_Handler,
 		},
 		{
 			MethodName: "ExistDetail",
-			Handler:    _DetailMgr_ExistDetail_Handler,
+			Handler:    _Manager_ExistDetail_Handler,
 		},
 		{
 			MethodName: "ExistDetailConds",
-			Handler:    _DetailMgr_ExistDetailConds_Handler,
+			Handler:    _Manager_ExistDetailConds_Handler,
 		},
 		{
 			MethodName: "CountDetails",
-			Handler:    _DetailMgr_CountDetails_Handler,
+			Handler:    _Manager_CountDetails_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

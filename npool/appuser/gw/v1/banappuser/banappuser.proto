@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/banapp
 import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
 
-service BanAppUserGw {
+service Gateway {
     rpc CreateBanUser (CreateBanUserRequest) returns (CreateBanUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/ban/user"

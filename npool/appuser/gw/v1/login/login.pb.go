@@ -425,7 +425,7 @@ var file_npool_appuser_gw_v1_login_login_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x32, 0xe5, 0x02, 0x0a, 0x07, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x47, 0x77, 0x12, 0x6e, 0x0a, 0x05,
+	0x32, 0xe5, 0x02, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x6e, 0x0a, 0x05,
 	0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x26, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x2e, 0x76, 0x31,
 	0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e,
@@ -480,12 +480,12 @@ var file_npool_appuser_gw_v1_login_login_proto_depIdxs = []int32{
 	6, // 0: appuser.gateway.login.v1.LoginResponse.Info:type_name -> appuser.middleware.user.v1.User
 	6, // 1: appuser.gateway.login.v1.LoginedResponse.Info:type_name -> appuser.middleware.user.v1.User
 	6, // 2: appuser.gateway.login.v1.LogoutResponse.Info:type_name -> appuser.middleware.user.v1.User
-	0, // 3: appuser.gateway.login.v1.LoginGw.Login:input_type -> appuser.gateway.login.v1.LoginRequest
-	2, // 4: appuser.gateway.login.v1.LoginGw.Logined:input_type -> appuser.gateway.login.v1.LoginedRequest
-	4, // 5: appuser.gateway.login.v1.LoginGw.Logout:input_type -> appuser.gateway.login.v1.LogoutRequest
-	1, // 6: appuser.gateway.login.v1.LoginGw.Login:output_type -> appuser.gateway.login.v1.LoginResponse
-	3, // 7: appuser.gateway.login.v1.LoginGw.Logined:output_type -> appuser.gateway.login.v1.LoginedResponse
-	5, // 8: appuser.gateway.login.v1.LoginGw.Logout:output_type -> appuser.gateway.login.v1.LogoutResponse
+	0, // 3: appuser.gateway.login.v1.Gateway.Login:input_type -> appuser.gateway.login.v1.LoginRequest
+	2, // 4: appuser.gateway.login.v1.Gateway.Logined:input_type -> appuser.gateway.login.v1.LoginedRequest
+	4, // 5: appuser.gateway.login.v1.Gateway.Logout:input_type -> appuser.gateway.login.v1.LogoutRequest
+	1, // 6: appuser.gateway.login.v1.Gateway.Login:output_type -> appuser.gateway.login.v1.LoginResponse
+	3, // 7: appuser.gateway.login.v1.Gateway.Logined:output_type -> appuser.gateway.login.v1.LoginedResponse
+	5, // 8: appuser.gateway.login.v1.Gateway.Logout:output_type -> appuser.gateway.login.v1.LogoutResponse
 	6, // [6:9] is the sub-list for method output_type
 	3, // [3:6] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

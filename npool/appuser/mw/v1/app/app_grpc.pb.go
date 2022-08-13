@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppMwClient is the client API for AppMw service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppMwClient interface {
+type MiddlewareClient interface {
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
@@ -29,219 +29,219 @@ type AppMwClient interface {
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
 }
 
-type appMwClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppMwClient(cc grpc.ClientConnInterface) AppMwClient {
-	return &appMwClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *appMwClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
+func (c *middlewareClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/CreateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/CreateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMwClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
+func (c *middlewareClient) UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error) {
 	out := new(UpdateAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/UpdateApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/UpdateApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMwClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
+func (c *middlewareClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
 	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMwClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
+func (c *middlewareClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error) {
 	out := new(GetAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appMwClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
+func (c *middlewareClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
 	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.AppMw/GetUserApps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetUserApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppMwServer is the server API for AppMw service.
-// All implementations must embed UnimplementedAppMwServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type AppMwServer interface {
+type MiddlewareServer interface {
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	mustEmbedUnimplementedAppMwServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedAppMwServer must be embedded to have forward compatible implementations.
-type UnimplementedAppMwServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedAppMwServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
+func (UnimplementedMiddlewareServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
-func (UnimplementedAppMwServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
 }
-func (UnimplementedAppMwServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
+func (UnimplementedMiddlewareServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
 }
-func (UnimplementedAppMwServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
+func (UnimplementedMiddlewareServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-func (UnimplementedAppMwServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
+func (UnimplementedMiddlewareServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
 }
-func (UnimplementedAppMwServer) mustEmbedUnimplementedAppMwServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeAppMwServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppMwServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeAppMwServer interface {
-	mustEmbedUnimplementedAppMwServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterAppMwServer(s grpc.ServiceRegistrar, srv AppMwServer) {
-	s.RegisterService(&AppMw_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _AppMw_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMwServer).CreateApp(ctx, in)
+		return srv.(MiddlewareServer).CreateApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/CreateApp",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/CreateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).CreateApp(ctx, req.(*CreateAppRequest))
+		return srv.(MiddlewareServer).CreateApp(ctx, req.(*CreateAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_UpdateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMwServer).UpdateApp(ctx, in)
+		return srv.(MiddlewareServer).UpdateApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/UpdateApp",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/UpdateApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).UpdateApp(ctx, req.(*UpdateAppRequest))
+		return srv.(MiddlewareServer).UpdateApp(ctx, req.(*UpdateAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMwServer).GetApp(ctx, in)
+		return srv.(MiddlewareServer).GetApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/GetApp",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/GetApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).GetApp(ctx, req.(*GetAppRequest))
+		return srv.(MiddlewareServer).GetApp(ctx, req.(*GetAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMwServer).GetApps(ctx, in)
+		return srv.(MiddlewareServer).GetApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/GetApps",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/GetApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).GetApps(ctx, req.(*GetAppsRequest))
+		return srv.(MiddlewareServer).GetApps(ctx, req.(*GetAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppMw_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppMwServer).GetUserApps(ctx, in)
+		return srv.(MiddlewareServer).GetUserApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.AppMw/GetUserApps",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/GetUserApps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppMwServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
+		return srv.(MiddlewareServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppMw_ServiceDesc is the grpc.ServiceDesc for AppMw service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppMw_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.middleware.app.v1.AppMw",
-	HandlerType: (*AppMwServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.middleware.app.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateApp",
-			Handler:    _AppMw_CreateApp_Handler,
+			Handler:    _Middleware_CreateApp_Handler,
 		},
 		{
 			MethodName: "UpdateApp",
-			Handler:    _AppMw_UpdateApp_Handler,
+			Handler:    _Middleware_UpdateApp_Handler,
 		},
 		{
 			MethodName: "GetApp",
-			Handler:    _AppMw_GetApp_Handler,
+			Handler:    _Middleware_GetApp_Handler,
 		},
 		{
 			MethodName: "GetApps",
-			Handler:    _AppMw_GetApps_Handler,
+			Handler:    _Middleware_GetApps_Handler,
 		},
 		{
 			MethodName: "GetUserApps",
-			Handler:    _AppMw_GetUserApps_Handler,
+			Handler:    _Middleware_GetUserApps_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

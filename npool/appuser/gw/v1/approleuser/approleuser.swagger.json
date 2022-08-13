@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppRoleUserGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app/role/user": {
       "post": {
-        "operationId": "AppRoleUserGw_CreateAppRoleUser",
+        "operationId": "Gateway_CreateAppRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppRoleUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/role/user": {
       "post": {
-        "operationId": "AppRoleUserGw_CreateRoleUser",
+        "operationId": "Gateway_CreateRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "AppRoleUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/role/user": {
       "post": {
-        "operationId": "AppRoleUserGw_DeleteRoleUser",
+        "operationId": "Gateway_DeleteRoleUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "AppRoleUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/role/users": {
       "post": {
-        "operationId": "AppRoleUserGw_GetAppRoleUsers",
+        "operationId": "Gateway_GetAppRoleUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "AppRoleUserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/role/users": {
       "post": {
-        "operationId": "AppRoleUserGw_GetRoleUsers",
+        "operationId": "Gateway_GetRoleUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "AppRoleUserGw"
+          "Gateway"
         ]
       }
     }

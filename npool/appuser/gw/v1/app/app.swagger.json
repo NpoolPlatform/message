@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app": {
       "post": {
-        "operationId": "AppGw_CreateApp",
+        "operationId": "Gateway_CreateApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app": {
       "post": {
-        "operationId": "AppGw_GetApp",
+        "operationId": "Gateway_GetApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,14 +76,14 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/apps": {
       "post": {
         "summary": "Super admin api",
-        "operationId": "AppGw_GetApps",
+        "operationId": "Gateway_GetApps",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -109,13 +109,13 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/recaptchas": {
       "post": {
-        "operationId": "AppGw_GetRecaptchas",
+        "operationId": "Gateway_GetRecaptchas",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -141,13 +141,13 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/signmethods": {
       "post": {
-        "operationId": "AppGw_GetSignMethods",
+        "operationId": "Gateway_GetSignMethods",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -173,13 +173,13 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/user/apps": {
       "post": {
-        "operationId": "AppGw_GetUserApps",
+        "operationId": "Gateway_GetUserApps",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -205,13 +205,13 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     },
     "/v1/update/app": {
       "post": {
-        "operationId": "AppGw_UpdateApp",
+        "operationId": "Gateway_UpdateApp",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -237,7 +237,7 @@
           }
         ],
         "tags": [
-          "AppGw"
+          "Gateway"
         ]
       }
     }

@@ -8,7 +8,7 @@ import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
-service AppMw {
+service Middleware {
     rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
     rpc UpdateApp              (UpdateAppRequest)             returns (UpdateAppResponse)             {}
     rpc GetApp                 (GetAppRequest)                returns (GetAppResponse)                {}

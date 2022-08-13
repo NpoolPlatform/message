@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appus
 
 import "npool/npool.proto";
 
-service AppUserThirdPartyMgr {
+service Manager {
     rpc CreateAppUserThirdParty     (CreateAppUserThirdPartyRequest)     returns (CreateAppUserThirdPartyResponse)     {}
     rpc CreateAppUserThirdParties   (CreateAppUserThirdPartiesRequest)   returns (CreateAppUserThirdPartiesResponse)   {}
     rpc UpdateAppUserThirdParty     (UpdateAppUserThirdPartyRequest)     returns (UpdateAppUserThirdPartyResponse)     {}

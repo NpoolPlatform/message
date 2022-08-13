@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler,
 
 }
 
-func local_request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_CreateApp_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AppGw_CreateApp_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler,
 
 }
 
-func local_request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_UpdateApp_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AppGw_UpdateApp_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, cl
 
 }
 
-func local_request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetApp_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AppGw_GetApp_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetApps_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_AppGw_GetApps_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetUserAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Marshale
 
 }
 
-func local_request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetUserApps_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetUserAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,7 +201,7 @@ func local_request_AppGw_GetUserApps_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_AppGw_GetSignMethods_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetSignMethods_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetSignMethodsRequest
 	var metadata runtime.ServerMetadata
 
@@ -218,7 +218,7 @@ func request_AppGw_GetSignMethods_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_AppGw_GetSignMethods_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetSignMethods_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetSignMethodsRequest
 	var metadata runtime.ServerMetadata
 
@@ -235,7 +235,7 @@ func local_request_AppGw_GetSignMethods_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_AppGw_GetRecaptchas_0(ctx context.Context, marshaler runtime.Marshaler, client AppGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetRecaptchas_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRecaptchasRequest
 	var metadata runtime.ServerMetadata
 
@@ -252,7 +252,7 @@ func request_AppGw_GetRecaptchas_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func local_request_AppGw_GetRecaptchas_0(ctx context.Context, marshaler runtime.Marshaler, server AppGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetRecaptchas_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRecaptchasRequest
 	var metadata runtime.ServerMetadata
 
@@ -269,24 +269,24 @@ func local_request_AppGw_GetRecaptchas_0(ctx context.Context, marshaler runtime.
 
 }
 
-// RegisterAppGwHandlerServer registers the http handlers for service AppGw to "mux".
-// UnaryRPC     :call AppGwServer directly.
+// RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
+// UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAppGwHandlerFromEndpoint instead.
-func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AppGwServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
+func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
-	mux.Handle("POST", pattern_AppGw_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_CreateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -294,22 +294,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_UpdateApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_UpdateApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -317,22 +317,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_GetApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetApp_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -340,22 +340,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_GetApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -363,22 +363,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_GetUserApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetUserApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -386,22 +386,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetSignMethods_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetSignMethods_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetSignMethods", runtime.WithHTTPPathPattern("/v1/get/signmethods"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetSignMethods", runtime.WithHTTPPathPattern("/v1/get/signmethods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_GetSignMethods_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetSignMethods_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -409,22 +409,22 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_GetSignMethods_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetSignMethods_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetRecaptchas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetRecaptchas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetRecaptchas", runtime.WithHTTPPathPattern("/v1/get/recaptchas"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetRecaptchas", runtime.WithHTTPPathPattern("/v1/get/recaptchas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AppGw_GetRecaptchas_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetRecaptchas_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -432,16 +432,16 @@ func RegisterAppGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_AppGw_GetRecaptchas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetRecaptchas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAppGwHandlerFromEndpoint is same as RegisterAppGwHandler but
+// RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAppGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -461,159 +461,159 @@ func RegisterAppGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux
 		}()
 	}()
 
-	return RegisterAppGwHandler(ctx, mux, conn)
+	return RegisterGatewayHandler(ctx, mux, conn)
 }
 
-// RegisterAppGwHandler registers the http handlers for service AppGw to "mux".
+// RegisterGatewayHandler registers the http handlers for service Gateway to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAppGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAppGwHandlerClient(ctx, mux, NewAppGwClient(conn))
+func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGatewayHandlerClient(ctx, mux, NewGatewayClient(conn))
 }
 
-// RegisterAppGwHandlerClient registers the http handlers for service AppGw
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AppGwClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AppGwClient"
+// RegisterGatewayHandlerClient registers the http handlers for service Gateway
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GatewayClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GatewayClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AppGwClient" to call the correct interceptors.
-func RegisterAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AppGwClient) error {
+// "GatewayClient" to call the correct interceptors.
+func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
 
-	mux.Handle("POST", pattern_AppGw_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/CreateApp", runtime.WithHTTPPathPattern("/v1/create/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_CreateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CreateApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_UpdateApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/UpdateApp", runtime.WithHTTPPathPattern("/v1/update/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_UpdateApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_UpdateApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetApp", runtime.WithHTTPPathPattern("/v1/get/app"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_GetApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetApp_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetApp_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetApps", runtime.WithHTTPPathPattern("/v1/get/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_GetApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetUserApps", runtime.WithHTTPPathPattern("/v1/get/user/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_GetUserApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetUserApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetUserApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetSignMethods_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetSignMethods_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetSignMethods", runtime.WithHTTPPathPattern("/v1/get/signmethods"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetSignMethods", runtime.WithHTTPPathPattern("/v1/get/signmethods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_GetSignMethods_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetSignMethods_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_GetSignMethods_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetSignMethods_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AppGw_GetRecaptchas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetRecaptchas_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.AppGw/GetRecaptchas", runtime.WithHTTPPathPattern("/v1/get/recaptchas"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.app.v1.Gateway/GetRecaptchas", runtime.WithHTTPPathPattern("/v1/get/recaptchas"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AppGw_GetRecaptchas_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetRecaptchas_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AppGw_GetRecaptchas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetRecaptchas_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -621,33 +621,33 @@ func RegisterAppGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_AppGw_CreateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "app"}, ""))
+	pattern_Gateway_CreateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "app"}, ""))
 
-	pattern_AppGw_UpdateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "app"}, ""))
+	pattern_Gateway_UpdateApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "app"}, ""))
 
-	pattern_AppGw_GetApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "app"}, ""))
+	pattern_Gateway_GetApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "app"}, ""))
 
-	pattern_AppGw_GetApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apps"}, ""))
+	pattern_Gateway_GetApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apps"}, ""))
 
-	pattern_AppGw_GetUserApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "apps"}, ""))
+	pattern_Gateway_GetUserApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "apps"}, ""))
 
-	pattern_AppGw_GetSignMethods_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "signmethods"}, ""))
+	pattern_Gateway_GetSignMethods_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "signmethods"}, ""))
 
-	pattern_AppGw_GetRecaptchas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "recaptchas"}, ""))
+	pattern_Gateway_GetRecaptchas_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "recaptchas"}, ""))
 )
 
 var (
-	forward_AppGw_CreateApp_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CreateApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_UpdateApp_0 = runtime.ForwardResponseMessage
+	forward_Gateway_UpdateApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_GetApp_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetApp_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_GetApps_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetApps_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_GetUserApps_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetUserApps_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_GetSignMethods_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetSignMethods_0 = runtime.ForwardResponseMessage
 
-	forward_AppGw_GetRecaptchas_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetRecaptchas_0 = runtime.ForwardResponseMessage
 )

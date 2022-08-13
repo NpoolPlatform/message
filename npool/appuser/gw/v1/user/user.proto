@@ -8,7 +8,7 @@ import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/appuser/appuser.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 
-service UserGw {
+service Gateway {
     rpc Signup (SignupRequest) returns (SignupResponse) {
         option (google.api.http) = {
             post: "/1/signup"

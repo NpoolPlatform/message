@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "npool/npool.proto";
 
-service UserMw {
+service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 

@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontro
 
 import "npool/npool.proto";
 
-service AppControlMgr {
+service Manager {
     rpc CreateAppControl     (CreateAppControlRequest)     returns (CreateAppControlResponse)     {}
     rpc CreateAppControls    (CreateAppControlsRequest)    returns (CreateAppControlsResponse)    {}
     rpc UpdateAppControl     (UpdateAppControlRequest)     returns (UpdateAppControlResponse)     {}

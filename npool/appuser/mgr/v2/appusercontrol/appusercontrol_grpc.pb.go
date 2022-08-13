@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserControlMgrClient is the client API for AppUserControlMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserControlMgrClient interface {
+type ManagerClient interface {
 	CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error)
 	CreateAppUserControls(ctx context.Context, in *CreateAppUserControlsRequest, opts ...grpc.CallOption) (*CreateAppUserControlsResponse, error)
 	UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error)
@@ -34,108 +34,108 @@ type AppUserControlMgrClient interface {
 	DeleteAppUserControl(ctx context.Context, in *DeleteAppUserControlRequest, opts ...grpc.CallOption) (*DeleteAppUserControlResponse, error)
 }
 
-type appUserControlMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserControlMgrClient(cc grpc.ClientConnInterface) AppUserControlMgrClient {
-	return &appUserControlMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *appUserControlMgrClient) CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error) {
+func (c *managerClient) CreateAppUserControl(ctx context.Context, in *CreateAppUserControlRequest, opts ...grpc.CallOption) (*CreateAppUserControlResponse, error) {
 	out := new(CreateAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CreateAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/CreateAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) CreateAppUserControls(ctx context.Context, in *CreateAppUserControlsRequest, opts ...grpc.CallOption) (*CreateAppUserControlsResponse, error) {
+func (c *managerClient) CreateAppUserControls(ctx context.Context, in *CreateAppUserControlsRequest, opts ...grpc.CallOption) (*CreateAppUserControlsResponse, error) {
 	out := new(CreateAppUserControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CreateAppUserControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/CreateAppUserControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error) {
+func (c *managerClient) UpdateAppUserControl(ctx context.Context, in *UpdateAppUserControlRequest, opts ...grpc.CallOption) (*UpdateAppUserControlResponse, error) {
 	out := new(UpdateAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/UpdateAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/UpdateAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) GetAppUserControl(ctx context.Context, in *GetAppUserControlRequest, opts ...grpc.CallOption) (*GetAppUserControlResponse, error) {
+func (c *managerClient) GetAppUserControl(ctx context.Context, in *GetAppUserControlRequest, opts ...grpc.CallOption) (*GetAppUserControlResponse, error) {
 	out := new(GetAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) GetAppUserControlOnly(ctx context.Context, in *GetAppUserControlOnlyRequest, opts ...grpc.CallOption) (*GetAppUserControlOnlyResponse, error) {
+func (c *managerClient) GetAppUserControlOnly(ctx context.Context, in *GetAppUserControlOnlyRequest, opts ...grpc.CallOption) (*GetAppUserControlOnlyResponse, error) {
 	out := new(GetAppUserControlOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControlOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControlOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) GetAppUserControls(ctx context.Context, in *GetAppUserControlsRequest, opts ...grpc.CallOption) (*GetAppUserControlsResponse, error) {
+func (c *managerClient) GetAppUserControls(ctx context.Context, in *GetAppUserControlsRequest, opts ...grpc.CallOption) (*GetAppUserControlsResponse, error) {
 	out := new(GetAppUserControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) ExistAppUserControl(ctx context.Context, in *ExistAppUserControlRequest, opts ...grpc.CallOption) (*ExistAppUserControlResponse, error) {
+func (c *managerClient) ExistAppUserControl(ctx context.Context, in *ExistAppUserControlRequest, opts ...grpc.CallOption) (*ExistAppUserControlResponse, error) {
 	out := new(ExistAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/ExistAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/ExistAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) ExistAppUserControlConds(ctx context.Context, in *ExistAppUserControlCondsRequest, opts ...grpc.CallOption) (*ExistAppUserControlCondsResponse, error) {
+func (c *managerClient) ExistAppUserControlConds(ctx context.Context, in *ExistAppUserControlCondsRequest, opts ...grpc.CallOption) (*ExistAppUserControlCondsResponse, error) {
 	out := new(ExistAppUserControlCondsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/ExistAppUserControlConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/ExistAppUserControlConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) CountAppUserControls(ctx context.Context, in *CountAppUserControlsRequest, opts ...grpc.CallOption) (*CountAppUserControlsResponse, error) {
+func (c *managerClient) CountAppUserControls(ctx context.Context, in *CountAppUserControlsRequest, opts ...grpc.CallOption) (*CountAppUserControlsResponse, error) {
 	out := new(CountAppUserControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CountAppUserControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/CountAppUserControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserControlMgrClient) DeleteAppUserControl(ctx context.Context, in *DeleteAppUserControlRequest, opts ...grpc.CallOption) (*DeleteAppUserControlResponse, error) {
+func (c *managerClient) DeleteAppUserControl(ctx context.Context, in *DeleteAppUserControlRequest, opts ...grpc.CallOption) (*DeleteAppUserControlResponse, error) {
 	out := new(DeleteAppUserControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.AppUserControlMgr/DeleteAppUserControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appusercontrol.v2.Manager/DeleteAppUserControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserControlMgrServer is the server API for AppUserControlMgr service.
-// All implementations must embed UnimplementedAppUserControlMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type AppUserControlMgrServer interface {
+type ManagerServer interface {
 	CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error)
 	CreateAppUserControls(context.Context, *CreateAppUserControlsRequest) (*CreateAppUserControlsResponse, error)
 	UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error)
@@ -146,282 +146,282 @@ type AppUserControlMgrServer interface {
 	ExistAppUserControlConds(context.Context, *ExistAppUserControlCondsRequest) (*ExistAppUserControlCondsResponse, error)
 	CountAppUserControls(context.Context, *CountAppUserControlsRequest) (*CountAppUserControlsResponse, error)
 	DeleteAppUserControl(context.Context, *DeleteAppUserControlRequest) (*DeleteAppUserControlResponse, error)
-	mustEmbedUnimplementedAppUserControlMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedAppUserControlMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserControlMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedAppUserControlMgrServer) CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error) {
+func (UnimplementedManagerServer) CreateAppUserControl(context.Context, *CreateAppUserControlRequest) (*CreateAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserControl not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) CreateAppUserControls(context.Context, *CreateAppUserControlsRequest) (*CreateAppUserControlsResponse, error) {
+func (UnimplementedManagerServer) CreateAppUserControls(context.Context, *CreateAppUserControlsRequest) (*CreateAppUserControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserControls not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error) {
+func (UnimplementedManagerServer) UpdateAppUserControl(context.Context, *UpdateAppUserControlRequest) (*UpdateAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserControl not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) GetAppUserControl(context.Context, *GetAppUserControlRequest) (*GetAppUserControlResponse, error) {
+func (UnimplementedManagerServer) GetAppUserControl(context.Context, *GetAppUserControlRequest) (*GetAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserControl not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) GetAppUserControlOnly(context.Context, *GetAppUserControlOnlyRequest) (*GetAppUserControlOnlyResponse, error) {
+func (UnimplementedManagerServer) GetAppUserControlOnly(context.Context, *GetAppUserControlOnlyRequest) (*GetAppUserControlOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserControlOnly not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) GetAppUserControls(context.Context, *GetAppUserControlsRequest) (*GetAppUserControlsResponse, error) {
+func (UnimplementedManagerServer) GetAppUserControls(context.Context, *GetAppUserControlsRequest) (*GetAppUserControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserControls not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) ExistAppUserControl(context.Context, *ExistAppUserControlRequest) (*ExistAppUserControlResponse, error) {
+func (UnimplementedManagerServer) ExistAppUserControl(context.Context, *ExistAppUserControlRequest) (*ExistAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserControl not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) ExistAppUserControlConds(context.Context, *ExistAppUserControlCondsRequest) (*ExistAppUserControlCondsResponse, error) {
+func (UnimplementedManagerServer) ExistAppUserControlConds(context.Context, *ExistAppUserControlCondsRequest) (*ExistAppUserControlCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserControlConds not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) CountAppUserControls(context.Context, *CountAppUserControlsRequest) (*CountAppUserControlsResponse, error) {
+func (UnimplementedManagerServer) CountAppUserControls(context.Context, *CountAppUserControlsRequest) (*CountAppUserControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppUserControls not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) DeleteAppUserControl(context.Context, *DeleteAppUserControlRequest) (*DeleteAppUserControlResponse, error) {
+func (UnimplementedManagerServer) DeleteAppUserControl(context.Context, *DeleteAppUserControlRequest) (*DeleteAppUserControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUserControl not implemented")
 }
-func (UnimplementedAppUserControlMgrServer) mustEmbedUnimplementedAppUserControlMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeAppUserControlMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserControlMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeAppUserControlMgrServer interface {
-	mustEmbedUnimplementedAppUserControlMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterAppUserControlMgrServer(s grpc.ServiceRegistrar, srv AppUserControlMgrServer) {
-	s.RegisterService(&AppUserControlMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _AppUserControlMgr_CreateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).CreateAppUserControl(ctx, in)
+		return srv.(ManagerServer).CreateAppUserControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CreateAppUserControl",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/CreateAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).CreateAppUserControl(ctx, req.(*CreateAppUserControlRequest))
+		return srv.(ManagerServer).CreateAppUserControl(ctx, req.(*CreateAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_CreateAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).CreateAppUserControls(ctx, in)
+		return srv.(ManagerServer).CreateAppUserControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CreateAppUserControls",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/CreateAppUserControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).CreateAppUserControls(ctx, req.(*CreateAppUserControlsRequest))
+		return srv.(ManagerServer).CreateAppUserControls(ctx, req.(*CreateAppUserControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_UpdateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).UpdateAppUserControl(ctx, in)
+		return srv.(ManagerServer).UpdateAppUserControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/UpdateAppUserControl",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/UpdateAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).UpdateAppUserControl(ctx, req.(*UpdateAppUserControlRequest))
+		return srv.(ManagerServer).UpdateAppUserControl(ctx, req.(*UpdateAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_GetAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).GetAppUserControl(ctx, in)
+		return srv.(ManagerServer).GetAppUserControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControl",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).GetAppUserControl(ctx, req.(*GetAppUserControlRequest))
+		return srv.(ManagerServer).GetAppUserControl(ctx, req.(*GetAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_GetAppUserControlOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserControlOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserControlOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).GetAppUserControlOnly(ctx, in)
+		return srv.(ManagerServer).GetAppUserControlOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControlOnly",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControlOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).GetAppUserControlOnly(ctx, req.(*GetAppUserControlOnlyRequest))
+		return srv.(ManagerServer).GetAppUserControlOnly(ctx, req.(*GetAppUserControlOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_GetAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).GetAppUserControls(ctx, in)
+		return srv.(ManagerServer).GetAppUserControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/GetAppUserControls",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/GetAppUserControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).GetAppUserControls(ctx, req.(*GetAppUserControlsRequest))
+		return srv.(ManagerServer).GetAppUserControls(ctx, req.(*GetAppUserControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_ExistAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).ExistAppUserControl(ctx, in)
+		return srv.(ManagerServer).ExistAppUserControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/ExistAppUserControl",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/ExistAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).ExistAppUserControl(ctx, req.(*ExistAppUserControlRequest))
+		return srv.(ManagerServer).ExistAppUserControl(ctx, req.(*ExistAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_ExistAppUserControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUserControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserControlCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).ExistAppUserControlConds(ctx, in)
+		return srv.(ManagerServer).ExistAppUserControlConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/ExistAppUserControlConds",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/ExistAppUserControlConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).ExistAppUserControlConds(ctx, req.(*ExistAppUserControlCondsRequest))
+		return srv.(ManagerServer).ExistAppUserControlConds(ctx, req.(*ExistAppUserControlCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_CountAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountAppUserControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountAppUserControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).CountAppUserControls(ctx, in)
+		return srv.(ManagerServer).CountAppUserControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/CountAppUserControls",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/CountAppUserControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).CountAppUserControls(ctx, req.(*CountAppUserControlsRequest))
+		return srv.(ManagerServer).CountAppUserControls(ctx, req.(*CountAppUserControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserControlMgr_DeleteAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteAppUserControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppUserControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserControlMgrServer).DeleteAppUserControl(ctx, in)
+		return srv.(ManagerServer).DeleteAppUserControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appusercontrol.v2.AppUserControlMgr/DeleteAppUserControl",
+		FullMethod: "/appuser.manager.appusercontrol.v2.Manager/DeleteAppUserControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserControlMgrServer).DeleteAppUserControl(ctx, req.(*DeleteAppUserControlRequest))
+		return srv.(ManagerServer).DeleteAppUserControl(ctx, req.(*DeleteAppUserControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserControlMgr_ServiceDesc is the grpc.ServiceDesc for AppUserControlMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserControlMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.manager.appusercontrol.v2.AppUserControlMgr",
-	HandlerType: (*AppUserControlMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.manager.appusercontrol.v2.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAppUserControl",
-			Handler:    _AppUserControlMgr_CreateAppUserControl_Handler,
+			Handler:    _Manager_CreateAppUserControl_Handler,
 		},
 		{
 			MethodName: "CreateAppUserControls",
-			Handler:    _AppUserControlMgr_CreateAppUserControls_Handler,
+			Handler:    _Manager_CreateAppUserControls_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserControl",
-			Handler:    _AppUserControlMgr_UpdateAppUserControl_Handler,
+			Handler:    _Manager_UpdateAppUserControl_Handler,
 		},
 		{
 			MethodName: "GetAppUserControl",
-			Handler:    _AppUserControlMgr_GetAppUserControl_Handler,
+			Handler:    _Manager_GetAppUserControl_Handler,
 		},
 		{
 			MethodName: "GetAppUserControlOnly",
-			Handler:    _AppUserControlMgr_GetAppUserControlOnly_Handler,
+			Handler:    _Manager_GetAppUserControlOnly_Handler,
 		},
 		{
 			MethodName: "GetAppUserControls",
-			Handler:    _AppUserControlMgr_GetAppUserControls_Handler,
+			Handler:    _Manager_GetAppUserControls_Handler,
 		},
 		{
 			MethodName: "ExistAppUserControl",
-			Handler:    _AppUserControlMgr_ExistAppUserControl_Handler,
+			Handler:    _Manager_ExistAppUserControl_Handler,
 		},
 		{
 			MethodName: "ExistAppUserControlConds",
-			Handler:    _AppUserControlMgr_ExistAppUserControlConds_Handler,
+			Handler:    _Manager_ExistAppUserControlConds_Handler,
 		},
 		{
 			MethodName: "CountAppUserControls",
-			Handler:    _AppUserControlMgr_CountAppUserControls_Handler,
+			Handler:    _Manager_CountAppUserControls_Handler,
 		},
 		{
 			MethodName: "DeleteAppUserControl",
-			Handler:    _AppUserControlMgr_DeleteAppUserControl_Handler,
+			Handler:    _Manager_DeleteAppUserControl_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

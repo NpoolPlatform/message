@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AppRoleGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/create/app/role": {
       "post": {
         "summary": "Admin apis",
-        "operationId": "AppRoleGw_CreateAppRole",
+        "operationId": "Gateway_CreateAppRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,14 +45,14 @@
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/role": {
       "post": {
         "summary": "Create role should ignore genesis roles",
-        "operationId": "AppRoleGw_CreateRole",
+        "operationId": "Gateway_CreateRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -78,13 +78,13 @@
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/roles": {
       "post": {
-        "operationId": "AppRoleGw_GetAppRoles",
+        "operationId": "Gateway_GetAppRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -110,13 +110,13 @@
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/roles": {
       "post": {
-        "operationId": "AppRoleGw_GetRoles",
+        "operationId": "Gateway_GetRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -142,14 +142,14 @@
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "Gateway"
         ]
       }
     },
     "/v1/update/app/role": {
       "post": {
         "summary": "Update role should ignore genesis roles",
-        "operationId": "AppRoleGw_UpdateRole",
+        "operationId": "Gateway_UpdateRole",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -175,7 +175,7 @@
           }
         ],
         "tags": [
-          "AppRoleGw"
+          "Gateway"
         ]
       }
     }

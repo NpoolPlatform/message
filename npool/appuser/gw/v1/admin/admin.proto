@@ -14,7 +14,7 @@ import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 import "npool/authinggateway/authinggateway.proto";
 
-service AdminGw {
+service Gateway {
     // VPN only apis
     // Create genesis / admin apps
     rpc CreateAdminApps (CreateAdminAppsRequest) returns (CreateAdminAppsResponse) {

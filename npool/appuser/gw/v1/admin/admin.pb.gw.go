@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_AdminGw_CreateAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_CreateAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAdminAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_AdminGw_CreateAdminApps_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_AdminGw_CreateAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_CreateAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAdminAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_AdminGw_CreateAdminApps_0(ctx context.Context, marshaler runt
 
 }
 
-func request_AdminGw_CreateGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_CreateGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateGenesisRolesRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_AdminGw_CreateGenesisRoles_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_AdminGw_CreateGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_CreateGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateGenesisRolesRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_AdminGw_CreateGenesisRoles_0(ctx context.Context, marshaler r
 
 }
 
-func request_AdminGw_CreateGenesisUser_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_CreateGenesisUser_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateGenesisUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_AdminGw_CreateGenesisUser_0(ctx context.Context, marshaler runtime.
 
 }
 
-func local_request_AdminGw_CreateGenesisUser_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_CreateGenesisUser_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateGenesisUserRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_AdminGw_CreateGenesisUser_0(ctx context.Context, marshaler ru
 
 }
 
-func request_AdminGw_GetAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAdminAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_AdminGw_GetAdminApps_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_AdminGw_GetAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetAdminApps_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAdminAppsRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_AdminGw_GetAdminApps_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_AdminGw_GetGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisRolesRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_AdminGw_GetGenesisRoles_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_AdminGw_GetGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetGenesisRoles_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisRolesRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,7 +201,7 @@ func local_request_AdminGw_GetGenesisRoles_0(ctx context.Context, marshaler runt
 
 }
 
-func request_AdminGw_GetGenesisRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetGenesisRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -218,7 +218,7 @@ func request_AdminGw_GetGenesisRoleUsers_0(ctx context.Context, marshaler runtim
 
 }
 
-func local_request_AdminGw_GetGenesisRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetGenesisRoleUsers_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisRoleUsersRequest
 	var metadata runtime.ServerMetadata
 
@@ -235,7 +235,7 @@ func local_request_AdminGw_GetGenesisRoleUsers_0(ctx context.Context, marshaler 
 
 }
 
-func request_AdminGw_GetGenesisAuths_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetGenesisAuths_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisAuthsRequest
 	var metadata runtime.ServerMetadata
 
@@ -252,7 +252,7 @@ func request_AdminGw_GetGenesisAuths_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_AdminGw_GetGenesisAuths_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetGenesisAuths_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetGenesisAuthsRequest
 	var metadata runtime.ServerMetadata
 
@@ -269,7 +269,7 @@ func local_request_AdminGw_GetGenesisAuths_0(ctx context.Context, marshaler runt
 
 }
 
-func request_AdminGw_AuthorizeGenesis_0(ctx context.Context, marshaler runtime.Marshaler, client AdminGwClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_AuthorizeGenesis_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AuthorizeGenesisRequest
 	var metadata runtime.ServerMetadata
 
@@ -286,7 +286,7 @@ func request_AdminGw_AuthorizeGenesis_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_AdminGw_AuthorizeGenesis_0(ctx context.Context, marshaler runtime.Marshaler, server AdminGwServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_AuthorizeGenesis_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AuthorizeGenesisRequest
 	var metadata runtime.ServerMetadata
 
@@ -303,24 +303,24 @@ func local_request_AdminGw_AuthorizeGenesis_0(ctx context.Context, marshaler run
 
 }
 
-// RegisterAdminGwHandlerServer registers the http handlers for service AdminGw to "mux".
-// UnaryRPC     :call AdminGwServer directly.
+// RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
+// UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAdminGwHandlerFromEndpoint instead.
-func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AdminGwServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
+func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
-	mux.Handle("POST", pattern_AdminGw_CreateAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_CreateAdminApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateAdminApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -328,22 +328,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_CreateAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_CreateGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateGenesisRoles", runtime.WithHTTPPathPattern("/v1/create/genesis/roles"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateGenesisRoles", runtime.WithHTTPPathPattern("/v1/create/genesis/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_CreateGenesisRoles_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateGenesisRoles_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -351,22 +351,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_CreateGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_CreateGenesisUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateGenesisUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateGenesisUser", runtime.WithHTTPPathPattern("/v1/create/genesis/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateGenesisUser", runtime.WithHTTPPathPattern("/v1/create/genesis/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_CreateGenesisUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateGenesisUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -374,22 +374,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_CreateGenesisUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateGenesisUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_GetAdminApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetAdminApps_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -397,22 +397,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_GetAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoles", runtime.WithHTTPPathPattern("/v1/get/genesis/roles"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisRoles", runtime.WithHTTPPathPattern("/v1/get/genesis/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_GetGenesisRoles_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetGenesisRoles_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -420,22 +420,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_GetGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoleUsers", runtime.WithHTTPPathPattern("/v1/get/genesis/role/user"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisRoleUsers", runtime.WithHTTPPathPattern("/v1/get/genesis/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_GetGenesisRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetGenesisRoleUsers_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -443,22 +443,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_GetGenesisRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisAuths", runtime.WithHTTPPathPattern("/v1/get/genesis/auths"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisAuths", runtime.WithHTTPPathPattern("/v1/get/genesis/auths"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_GetGenesisAuths_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetGenesisAuths_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -466,22 +466,22 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_GetGenesisAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_AuthorizeGenesis_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AuthorizeGenesis_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AdminGw_AuthorizeGenesis_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AuthorizeGenesis_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -489,16 +489,16 @@ func RegisterAdminGwHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_AdminGw_AuthorizeGenesis_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AuthorizeGenesis_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterAdminGwHandlerFromEndpoint is same as RegisterAdminGwHandler but
+// RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterAdminGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -518,179 +518,179 @@ func RegisterAdminGwHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterAdminGwHandler(ctx, mux, conn)
+	return RegisterGatewayHandler(ctx, mux, conn)
 }
 
-// RegisterAdminGwHandler registers the http handlers for service AdminGw to "mux".
+// RegisterGatewayHandler registers the http handlers for service Gateway to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterAdminGwHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterAdminGwHandlerClient(ctx, mux, NewAdminGwClient(conn))
+func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGatewayHandlerClient(ctx, mux, NewGatewayClient(conn))
 }
 
-// RegisterAdminGwHandlerClient registers the http handlers for service AdminGw
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AdminGwClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AdminGwClient"
+// RegisterGatewayHandlerClient registers the http handlers for service Gateway
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GatewayClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GatewayClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "AdminGwClient" to call the correct interceptors.
-func RegisterAdminGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AdminGwClient) error {
+// "GatewayClient" to call the correct interceptors.
+func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
 
-	mux.Handle("POST", pattern_AdminGw_CreateAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateAdminApps", runtime.WithHTTPPathPattern("/v1/create/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_CreateAdminApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CreateAdminApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_CreateAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_CreateGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateGenesisRoles", runtime.WithHTTPPathPattern("/v1/create/genesis/roles"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateGenesisRoles", runtime.WithHTTPPathPattern("/v1/create/genesis/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_CreateGenesisRoles_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CreateGenesisRoles_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_CreateGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_CreateGenesisUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateGenesisUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/CreateGenesisUser", runtime.WithHTTPPathPattern("/v1/create/genesis/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/CreateGenesisUser", runtime.WithHTTPPathPattern("/v1/create/genesis/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_CreateGenesisUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CreateGenesisUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_CreateGenesisUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateGenesisUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetAdminApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetAdminApps", runtime.WithHTTPPathPattern("/v1/get/admin/apps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_GetAdminApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetAdminApps_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_GetAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetAdminApps_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoles", runtime.WithHTTPPathPattern("/v1/get/genesis/roles"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisRoles", runtime.WithHTTPPathPattern("/v1/get/genesis/roles"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_GetGenesisRoles_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetGenesisRoles_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_GetGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisRoleUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisRoleUsers", runtime.WithHTTPPathPattern("/v1/get/genesis/role/user"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisRoleUsers", runtime.WithHTTPPathPattern("/v1/get/genesis/role/user"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_GetGenesisRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetGenesisRoleUsers_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_GetGenesisRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisRoleUsers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_GetGenesisAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetGenesisAuths_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/GetGenesisAuths", runtime.WithHTTPPathPattern("/v1/get/genesis/auths"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/GetGenesisAuths", runtime.WithHTTPPathPattern("/v1/get/genesis/auths"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_GetGenesisAuths_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetGenesisAuths_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_GetGenesisAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetGenesisAuths_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_AdminGw_AuthorizeGenesis_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AuthorizeGenesis_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.AdminGw/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.admin.v1.Gateway/AuthorizeGenesis", runtime.WithHTTPPathPattern("/v1/authorize/genesis"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AdminGw_AuthorizeGenesis_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AuthorizeGenesis_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_AdminGw_AuthorizeGenesis_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AuthorizeGenesis_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -698,37 +698,37 @@ func RegisterAdminGwHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_AdminGw_CreateAdminApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "admin", "apps"}, ""))
+	pattern_Gateway_CreateAdminApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "admin", "apps"}, ""))
 
-	pattern_AdminGw_CreateGenesisRoles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "genesis", "roles"}, ""))
+	pattern_Gateway_CreateGenesisRoles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "genesis", "roles"}, ""))
 
-	pattern_AdminGw_CreateGenesisUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "genesis", "user"}, ""))
+	pattern_Gateway_CreateGenesisUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "genesis", "user"}, ""))
 
-	pattern_AdminGw_GetAdminApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "admin", "apps"}, ""))
+	pattern_Gateway_GetAdminApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "admin", "apps"}, ""))
 
-	pattern_AdminGw_GetGenesisRoles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "genesis", "roles"}, ""))
+	pattern_Gateway_GetGenesisRoles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "genesis", "roles"}, ""))
 
-	pattern_AdminGw_GetGenesisRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "genesis", "role", "user"}, ""))
+	pattern_Gateway_GetGenesisRoleUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "genesis", "role", "user"}, ""))
 
-	pattern_AdminGw_GetGenesisAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "genesis", "auths"}, ""))
+	pattern_Gateway_GetGenesisAuths_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "genesis", "auths"}, ""))
 
-	pattern_AdminGw_AuthorizeGenesis_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "authorize", "genesis"}, ""))
+	pattern_Gateway_AuthorizeGenesis_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "authorize", "genesis"}, ""))
 )
 
 var (
-	forward_AdminGw_CreateAdminApps_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CreateAdminApps_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_CreateGenesisRoles_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CreateGenesisRoles_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_CreateGenesisUser_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CreateGenesisUser_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_GetAdminApps_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetAdminApps_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_GetGenesisRoles_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetGenesisRoles_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_GetGenesisRoleUsers_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetGenesisRoleUsers_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_GetGenesisAuths_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetGenesisAuths_0 = runtime.ForwardResponseMessage
 
-	forward_AdminGw_AuthorizeGenesis_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AuthorizeGenesis_0 = runtime.ForwardResponseMessage
 )

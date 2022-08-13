@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserThirdPartyMgrClient is the client API for AppUserThirdPartyMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserThirdPartyMgrClient interface {
+type ManagerClient interface {
 	CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error)
 	CreateAppUserThirdParties(ctx context.Context, in *CreateAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartiesResponse, error)
 	UpdateAppUserThirdParty(ctx context.Context, in *UpdateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*UpdateAppUserThirdPartyResponse, error)
@@ -34,108 +34,108 @@ type AppUserThirdPartyMgrClient interface {
 	DeleteAppUserThirdParty(ctx context.Context, in *DeleteAppUserThirdPartyRequest, opts ...grpc.CallOption) (*DeleteAppUserThirdPartyResponse, error)
 }
 
-type appUserThirdPartyMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserThirdPartyMgrClient(cc grpc.ClientConnInterface) AppUserThirdPartyMgrClient {
-	return &appUserThirdPartyMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error) {
+func (c *managerClient) CreateAppUserThirdParty(ctx context.Context, in *CreateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartyResponse, error) {
 	out := new(CreateAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/CreateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) CreateAppUserThirdParties(ctx context.Context, in *CreateAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartiesResponse, error) {
+func (c *managerClient) CreateAppUserThirdParties(ctx context.Context, in *CreateAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CreateAppUserThirdPartiesResponse, error) {
 	out := new(CreateAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/CreateAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) UpdateAppUserThirdParty(ctx context.Context, in *UpdateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*UpdateAppUserThirdPartyResponse, error) {
+func (c *managerClient) UpdateAppUserThirdParty(ctx context.Context, in *UpdateAppUserThirdPartyRequest, opts ...grpc.CallOption) (*UpdateAppUserThirdPartyResponse, error) {
 	out := new(UpdateAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/UpdateAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) GetAppUserThirdParty(ctx context.Context, in *GetAppUserThirdPartyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyResponse, error) {
+func (c *managerClient) GetAppUserThirdParty(ctx context.Context, in *GetAppUserThirdPartyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyResponse, error) {
 	out := new(GetAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) GetAppUserThirdPartyOnly(ctx context.Context, in *GetAppUserThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyOnlyResponse, error) {
+func (c *managerClient) GetAppUserThirdPartyOnly(ctx context.Context, in *GetAppUserThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartyOnlyResponse, error) {
 	out := new(GetAppUserThirdPartyOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdPartyOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) GetAppUserThirdParties(ctx context.Context, in *GetAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartiesResponse, error) {
+func (c *managerClient) GetAppUserThirdParties(ctx context.Context, in *GetAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*GetAppUserThirdPartiesResponse, error) {
 	out := new(GetAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) ExistAppUserThirdParty(ctx context.Context, in *ExistAppUserThirdPartyRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyResponse, error) {
+func (c *managerClient) ExistAppUserThirdParty(ctx context.Context, in *ExistAppUserThirdPartyRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyResponse, error) {
 	out := new(ExistAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/ExistAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) ExistAppUserThirdPartyConds(ctx context.Context, in *ExistAppUserThirdPartyCondsRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyCondsResponse, error) {
+func (c *managerClient) ExistAppUserThirdPartyConds(ctx context.Context, in *ExistAppUserThirdPartyCondsRequest, opts ...grpc.CallOption) (*ExistAppUserThirdPartyCondsResponse, error) {
 	out := new(ExistAppUserThirdPartyCondsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/ExistAppUserThirdPartyConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) CountAppUserThirdParties(ctx context.Context, in *CountAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CountAppUserThirdPartiesResponse, error) {
+func (c *managerClient) CountAppUserThirdParties(ctx context.Context, in *CountAppUserThirdPartiesRequest, opts ...grpc.CallOption) (*CountAppUserThirdPartiesResponse, error) {
 	out := new(CountAppUserThirdPartiesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/CountAppUserThirdParties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserThirdPartyMgrClient) DeleteAppUserThirdParty(ctx context.Context, in *DeleteAppUserThirdPartyRequest, opts ...grpc.CallOption) (*DeleteAppUserThirdPartyResponse, error) {
+func (c *managerClient) DeleteAppUserThirdParty(ctx context.Context, in *DeleteAppUserThirdPartyRequest, opts ...grpc.CallOption) (*DeleteAppUserThirdPartyResponse, error) {
 	out := new(DeleteAppUserThirdPartyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuserthirdparty.v2.Manager/DeleteAppUserThirdParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserThirdPartyMgrServer is the server API for AppUserThirdPartyMgr service.
-// All implementations must embed UnimplementedAppUserThirdPartyMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type AppUserThirdPartyMgrServer interface {
+type ManagerServer interface {
 	CreateAppUserThirdParty(context.Context, *CreateAppUserThirdPartyRequest) (*CreateAppUserThirdPartyResponse, error)
 	CreateAppUserThirdParties(context.Context, *CreateAppUserThirdPartiesRequest) (*CreateAppUserThirdPartiesResponse, error)
 	UpdateAppUserThirdParty(context.Context, *UpdateAppUserThirdPartyRequest) (*UpdateAppUserThirdPartyResponse, error)
@@ -146,282 +146,282 @@ type AppUserThirdPartyMgrServer interface {
 	ExistAppUserThirdPartyConds(context.Context, *ExistAppUserThirdPartyCondsRequest) (*ExistAppUserThirdPartyCondsResponse, error)
 	CountAppUserThirdParties(context.Context, *CountAppUserThirdPartiesRequest) (*CountAppUserThirdPartiesResponse, error)
 	DeleteAppUserThirdParty(context.Context, *DeleteAppUserThirdPartyRequest) (*DeleteAppUserThirdPartyResponse, error)
-	mustEmbedUnimplementedAppUserThirdPartyMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedAppUserThirdPartyMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserThirdPartyMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedAppUserThirdPartyMgrServer) CreateAppUserThirdParty(context.Context, *CreateAppUserThirdPartyRequest) (*CreateAppUserThirdPartyResponse, error) {
+func (UnimplementedManagerServer) CreateAppUserThirdParty(context.Context, *CreateAppUserThirdPartyRequest) (*CreateAppUserThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) CreateAppUserThirdParties(context.Context, *CreateAppUserThirdPartiesRequest) (*CreateAppUserThirdPartiesResponse, error) {
+func (UnimplementedManagerServer) CreateAppUserThirdParties(context.Context, *CreateAppUserThirdPartiesRequest) (*CreateAppUserThirdPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserThirdParties not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) UpdateAppUserThirdParty(context.Context, *UpdateAppUserThirdPartyRequest) (*UpdateAppUserThirdPartyResponse, error) {
+func (UnimplementedManagerServer) UpdateAppUserThirdParty(context.Context, *UpdateAppUserThirdPartyRequest) (*UpdateAppUserThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) GetAppUserThirdParty(context.Context, *GetAppUserThirdPartyRequest) (*GetAppUserThirdPartyResponse, error) {
+func (UnimplementedManagerServer) GetAppUserThirdParty(context.Context, *GetAppUserThirdPartyRequest) (*GetAppUserThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) GetAppUserThirdPartyOnly(context.Context, *GetAppUserThirdPartyOnlyRequest) (*GetAppUserThirdPartyOnlyResponse, error) {
+func (UnimplementedManagerServer) GetAppUserThirdPartyOnly(context.Context, *GetAppUserThirdPartyOnlyRequest) (*GetAppUserThirdPartyOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserThirdPartyOnly not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) GetAppUserThirdParties(context.Context, *GetAppUserThirdPartiesRequest) (*GetAppUserThirdPartiesResponse, error) {
+func (UnimplementedManagerServer) GetAppUserThirdParties(context.Context, *GetAppUserThirdPartiesRequest) (*GetAppUserThirdPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserThirdParties not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) ExistAppUserThirdParty(context.Context, *ExistAppUserThirdPartyRequest) (*ExistAppUserThirdPartyResponse, error) {
+func (UnimplementedManagerServer) ExistAppUserThirdParty(context.Context, *ExistAppUserThirdPartyRequest) (*ExistAppUserThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) ExistAppUserThirdPartyConds(context.Context, *ExistAppUserThirdPartyCondsRequest) (*ExistAppUserThirdPartyCondsResponse, error) {
+func (UnimplementedManagerServer) ExistAppUserThirdPartyConds(context.Context, *ExistAppUserThirdPartyCondsRequest) (*ExistAppUserThirdPartyCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserThirdPartyConds not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) CountAppUserThirdParties(context.Context, *CountAppUserThirdPartiesRequest) (*CountAppUserThirdPartiesResponse, error) {
+func (UnimplementedManagerServer) CountAppUserThirdParties(context.Context, *CountAppUserThirdPartiesRequest) (*CountAppUserThirdPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppUserThirdParties not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) DeleteAppUserThirdParty(context.Context, *DeleteAppUserThirdPartyRequest) (*DeleteAppUserThirdPartyResponse, error) {
+func (UnimplementedManagerServer) DeleteAppUserThirdParty(context.Context, *DeleteAppUserThirdPartyRequest) (*DeleteAppUserThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUserThirdParty not implemented")
 }
-func (UnimplementedAppUserThirdPartyMgrServer) mustEmbedUnimplementedAppUserThirdPartyMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeAppUserThirdPartyMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserThirdPartyMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeAppUserThirdPartyMgrServer interface {
-	mustEmbedUnimplementedAppUserThirdPartyMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterAppUserThirdPartyMgrServer(s grpc.ServiceRegistrar, srv AppUserThirdPartyMgrServer) {
-	s.RegisterService(&AppUserThirdPartyMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _AppUserThirdPartyMgr_CreateAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParty(ctx, in)
+		return srv.(ManagerServer).CreateAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/CreateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParty(ctx, req.(*CreateAppUserThirdPartyRequest))
+		return srv.(ManagerServer).CreateAppUserThirdParty(ctx, req.(*CreateAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_CreateAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserThirdPartiesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParties(ctx, in)
+		return srv.(ManagerServer).CreateAppUserThirdParties(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CreateAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/CreateAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).CreateAppUserThirdParties(ctx, req.(*CreateAppUserThirdPartiesRequest))
+		return srv.(ManagerServer).CreateAppUserThirdParties(ctx, req.(*CreateAppUserThirdPartiesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_UpdateAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).UpdateAppUserThirdParty(ctx, in)
+		return srv.(ManagerServer).UpdateAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/UpdateAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/UpdateAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).UpdateAppUserThirdParty(ctx, req.(*UpdateAppUserThirdPartyRequest))
+		return srv.(ManagerServer).UpdateAppUserThirdParty(ctx, req.(*UpdateAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_GetAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParty(ctx, in)
+		return srv.(ManagerServer).GetAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParty(ctx, req.(*GetAppUserThirdPartyRequest))
+		return srv.(ManagerServer).GetAppUserThirdParty(ctx, req.(*GetAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_GetAppUserThirdPartyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserThirdPartyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserThirdPartyOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdPartyOnly(ctx, in)
+		return srv.(ManagerServer).GetAppUserThirdPartyOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdPartyOnly",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdPartyOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdPartyOnly(ctx, req.(*GetAppUserThirdPartyOnlyRequest))
+		return srv.(ManagerServer).GetAppUserThirdPartyOnly(ctx, req.(*GetAppUserThirdPartyOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_GetAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserThirdPartiesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParties(ctx, in)
+		return srv.(ManagerServer).GetAppUserThirdParties(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/GetAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/GetAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).GetAppUserThirdParties(ctx, req.(*GetAppUserThirdPartiesRequest))
+		return srv.(ManagerServer).GetAppUserThirdParties(ctx, req.(*GetAppUserThirdPartiesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_ExistAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdParty(ctx, in)
+		return srv.(ManagerServer).ExistAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/ExistAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdParty(ctx, req.(*ExistAppUserThirdPartyRequest))
+		return srv.(ManagerServer).ExistAppUserThirdParty(ctx, req.(*ExistAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_ExistAppUserThirdPartyConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUserThirdPartyConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserThirdPartyCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdPartyConds(ctx, in)
+		return srv.(ManagerServer).ExistAppUserThirdPartyConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/ExistAppUserThirdPartyConds",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/ExistAppUserThirdPartyConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).ExistAppUserThirdPartyConds(ctx, req.(*ExistAppUserThirdPartyCondsRequest))
+		return srv.(ManagerServer).ExistAppUserThirdPartyConds(ctx, req.(*ExistAppUserThirdPartyCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_CountAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountAppUserThirdParties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountAppUserThirdPartiesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).CountAppUserThirdParties(ctx, in)
+		return srv.(ManagerServer).CountAppUserThirdParties(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/CountAppUserThirdParties",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/CountAppUserThirdParties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).CountAppUserThirdParties(ctx, req.(*CountAppUserThirdPartiesRequest))
+		return srv.(ManagerServer).CountAppUserThirdParties(ctx, req.(*CountAppUserThirdPartiesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserThirdPartyMgr_DeleteAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteAppUserThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppUserThirdPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserThirdPartyMgrServer).DeleteAppUserThirdParty(ctx, in)
+		return srv.(ManagerServer).DeleteAppUserThirdParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr/DeleteAppUserThirdParty",
+		FullMethod: "/appuser.manager.appuserthirdparty.v2.Manager/DeleteAppUserThirdParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserThirdPartyMgrServer).DeleteAppUserThirdParty(ctx, req.(*DeleteAppUserThirdPartyRequest))
+		return srv.(ManagerServer).DeleteAppUserThirdParty(ctx, req.(*DeleteAppUserThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserThirdPartyMgr_ServiceDesc is the grpc.ServiceDesc for AppUserThirdPartyMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserThirdPartyMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.manager.appuserthirdparty.v2.AppUserThirdPartyMgr",
-	HandlerType: (*AppUserThirdPartyMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.manager.appuserthirdparty.v2.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAppUserThirdParty",
-			Handler:    _AppUserThirdPartyMgr_CreateAppUserThirdParty_Handler,
+			Handler:    _Manager_CreateAppUserThirdParty_Handler,
 		},
 		{
 			MethodName: "CreateAppUserThirdParties",
-			Handler:    _AppUserThirdPartyMgr_CreateAppUserThirdParties_Handler,
+			Handler:    _Manager_CreateAppUserThirdParties_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserThirdParty",
-			Handler:    _AppUserThirdPartyMgr_UpdateAppUserThirdParty_Handler,
+			Handler:    _Manager_UpdateAppUserThirdParty_Handler,
 		},
 		{
 			MethodName: "GetAppUserThirdParty",
-			Handler:    _AppUserThirdPartyMgr_GetAppUserThirdParty_Handler,
+			Handler:    _Manager_GetAppUserThirdParty_Handler,
 		},
 		{
 			MethodName: "GetAppUserThirdPartyOnly",
-			Handler:    _AppUserThirdPartyMgr_GetAppUserThirdPartyOnly_Handler,
+			Handler:    _Manager_GetAppUserThirdPartyOnly_Handler,
 		},
 		{
 			MethodName: "GetAppUserThirdParties",
-			Handler:    _AppUserThirdPartyMgr_GetAppUserThirdParties_Handler,
+			Handler:    _Manager_GetAppUserThirdParties_Handler,
 		},
 		{
 			MethodName: "ExistAppUserThirdParty",
-			Handler:    _AppUserThirdPartyMgr_ExistAppUserThirdParty_Handler,
+			Handler:    _Manager_ExistAppUserThirdParty_Handler,
 		},
 		{
 			MethodName: "ExistAppUserThirdPartyConds",
-			Handler:    _AppUserThirdPartyMgr_ExistAppUserThirdPartyConds_Handler,
+			Handler:    _Manager_ExistAppUserThirdPartyConds_Handler,
 		},
 		{
 			MethodName: "CountAppUserThirdParties",
-			Handler:    _AppUserThirdPartyMgr_CountAppUserThirdParties_Handler,
+			Handler:    _Manager_CountAppUserThirdParties_Handler,
 		},
 		{
 			MethodName: "DeleteAppUserThirdParty",
-			Handler:    _AppUserThirdPartyMgr_DeleteAppUserThirdParty_Handler,
+			Handler:    _Manager_DeleteAppUserThirdParty_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

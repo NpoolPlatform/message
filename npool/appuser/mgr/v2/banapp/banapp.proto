@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/banap
 
 import "npool/npool.proto";
 
-service BanAppMgr {
+service Manager {
     rpc CreateBanApp     (CreateBanAppRequest)     returns (CreateBanAppResponse)     {}
     rpc CreateBanApps    (CreateBanAppsRequest)    returns (CreateBanAppsResponse)    {}
     rpc UpdateBanApp     (UpdateBanAppRequest)     returns (UpdateBanAppResponse)     {}

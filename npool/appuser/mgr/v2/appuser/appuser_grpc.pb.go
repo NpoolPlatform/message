@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppUserMgrClient is the client API for AppUserMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppUserMgrClient interface {
+type ManagerClient interface {
 	CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error)
 	CreateAppUsers(ctx context.Context, in *CreateAppUsersRequest, opts ...grpc.CallOption) (*CreateAppUsersResponse, error)
 	UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error)
@@ -34,108 +34,108 @@ type AppUserMgrClient interface {
 	DeleteAppUser(ctx context.Context, in *DeleteAppUserRequest, opts ...grpc.CallOption) (*DeleteAppUserResponse, error)
 }
 
-type appUserMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppUserMgrClient(cc grpc.ClientConnInterface) AppUserMgrClient {
-	return &appUserMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *appUserMgrClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
+func (c *managerClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
 	out := new(CreateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/CreateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) CreateAppUsers(ctx context.Context, in *CreateAppUsersRequest, opts ...grpc.CallOption) (*CreateAppUsersResponse, error) {
+func (c *managerClient) CreateAppUsers(ctx context.Context, in *CreateAppUsersRequest, opts ...grpc.CallOption) (*CreateAppUsersResponse, error) {
 	out := new(CreateAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/CreateAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
+func (c *managerClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
 	out := new(UpdateAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/UpdateAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/UpdateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
+func (c *managerClient) GetAppUser(ctx context.Context, in *GetAppUserRequest, opts ...grpc.CallOption) (*GetAppUserResponse, error) {
 	out := new(GetAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/GetAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) GetAppUserOnly(ctx context.Context, in *GetAppUserOnlyRequest, opts ...grpc.CallOption) (*GetAppUserOnlyResponse, error) {
+func (c *managerClient) GetAppUserOnly(ctx context.Context, in *GetAppUserOnlyRequest, opts ...grpc.CallOption) (*GetAppUserOnlyResponse, error) {
 	out := new(GetAppUserOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUserOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/GetAppUserOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
+func (c *managerClient) GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error) {
 	out := new(GetAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/GetAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/GetAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) ExistAppUser(ctx context.Context, in *ExistAppUserRequest, opts ...grpc.CallOption) (*ExistAppUserResponse, error) {
+func (c *managerClient) ExistAppUser(ctx context.Context, in *ExistAppUserRequest, opts ...grpc.CallOption) (*ExistAppUserResponse, error) {
 	out := new(ExistAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/ExistAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) ExistAppUserConds(ctx context.Context, in *ExistAppUserCondsRequest, opts ...grpc.CallOption) (*ExistAppUserCondsResponse, error) {
+func (c *managerClient) ExistAppUserConds(ctx context.Context, in *ExistAppUserCondsRequest, opts ...grpc.CallOption) (*ExistAppUserCondsResponse, error) {
 	out := new(ExistAppUserCondsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUserConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/ExistAppUserConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) CountAppUsers(ctx context.Context, in *CountAppUsersRequest, opts ...grpc.CallOption) (*CountAppUsersResponse, error) {
+func (c *managerClient) CountAppUsers(ctx context.Context, in *CountAppUsersRequest, opts ...grpc.CallOption) (*CountAppUsersResponse, error) {
 	out := new(CountAppUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/CountAppUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/CountAppUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appUserMgrClient) DeleteAppUser(ctx context.Context, in *DeleteAppUserRequest, opts ...grpc.CallOption) (*DeleteAppUserResponse, error) {
+func (c *managerClient) DeleteAppUser(ctx context.Context, in *DeleteAppUserRequest, opts ...grpc.CallOption) (*DeleteAppUserResponse, error) {
 	out := new(DeleteAppUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.AppUserMgr/DeleteAppUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appuser.v2.Manager/DeleteAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppUserMgrServer is the server API for AppUserMgr service.
-// All implementations must embed UnimplementedAppUserMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type AppUserMgrServer interface {
+type ManagerServer interface {
 	CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error)
 	CreateAppUsers(context.Context, *CreateAppUsersRequest) (*CreateAppUsersResponse, error)
 	UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error)
@@ -146,282 +146,282 @@ type AppUserMgrServer interface {
 	ExistAppUserConds(context.Context, *ExistAppUserCondsRequest) (*ExistAppUserCondsResponse, error)
 	CountAppUsers(context.Context, *CountAppUsersRequest) (*CountAppUsersResponse, error)
 	DeleteAppUser(context.Context, *DeleteAppUserRequest) (*DeleteAppUserResponse, error)
-	mustEmbedUnimplementedAppUserMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedAppUserMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedAppUserMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedAppUserMgrServer) CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error) {
+func (UnimplementedManagerServer) CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUser not implemented")
 }
-func (UnimplementedAppUserMgrServer) CreateAppUsers(context.Context, *CreateAppUsersRequest) (*CreateAppUsersResponse, error) {
+func (UnimplementedManagerServer) CreateAppUsers(context.Context, *CreateAppUsersRequest) (*CreateAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUsers not implemented")
 }
-func (UnimplementedAppUserMgrServer) UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error) {
+func (UnimplementedManagerServer) UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUser not implemented")
 }
-func (UnimplementedAppUserMgrServer) GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error) {
+func (UnimplementedManagerServer) GetAppUser(context.Context, *GetAppUserRequest) (*GetAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUser not implemented")
 }
-func (UnimplementedAppUserMgrServer) GetAppUserOnly(context.Context, *GetAppUserOnlyRequest) (*GetAppUserOnlyResponse, error) {
+func (UnimplementedManagerServer) GetAppUserOnly(context.Context, *GetAppUserOnlyRequest) (*GetAppUserOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserOnly not implemented")
 }
-func (UnimplementedAppUserMgrServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
+func (UnimplementedManagerServer) GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUsers not implemented")
 }
-func (UnimplementedAppUserMgrServer) ExistAppUser(context.Context, *ExistAppUserRequest) (*ExistAppUserResponse, error) {
+func (UnimplementedManagerServer) ExistAppUser(context.Context, *ExistAppUserRequest) (*ExistAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUser not implemented")
 }
-func (UnimplementedAppUserMgrServer) ExistAppUserConds(context.Context, *ExistAppUserCondsRequest) (*ExistAppUserCondsResponse, error) {
+func (UnimplementedManagerServer) ExistAppUserConds(context.Context, *ExistAppUserCondsRequest) (*ExistAppUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppUserConds not implemented")
 }
-func (UnimplementedAppUserMgrServer) CountAppUsers(context.Context, *CountAppUsersRequest) (*CountAppUsersResponse, error) {
+func (UnimplementedManagerServer) CountAppUsers(context.Context, *CountAppUsersRequest) (*CountAppUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppUsers not implemented")
 }
-func (UnimplementedAppUserMgrServer) DeleteAppUser(context.Context, *DeleteAppUserRequest) (*DeleteAppUserResponse, error) {
+func (UnimplementedManagerServer) DeleteAppUser(context.Context, *DeleteAppUserRequest) (*DeleteAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppUser not implemented")
 }
-func (UnimplementedAppUserMgrServer) mustEmbedUnimplementedAppUserMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeAppUserMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppUserMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeAppUserMgrServer interface {
-	mustEmbedUnimplementedAppUserMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterAppUserMgrServer(s grpc.ServiceRegistrar, srv AppUserMgrServer) {
-	s.RegisterService(&AppUserMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _AppUserMgr_CreateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).CreateAppUser(ctx, in)
+		return srv.(ManagerServer).CreateAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/CreateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
+		return srv.(ManagerServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_CreateAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).CreateAppUsers(ctx, in)
+		return srv.(ManagerServer).CreateAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CreateAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/CreateAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).CreateAppUsers(ctx, req.(*CreateAppUsersRequest))
+		return srv.(ManagerServer).CreateAppUsers(ctx, req.(*CreateAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).UpdateAppUser(ctx, in)
+		return srv.(ManagerServer).UpdateAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/UpdateAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/UpdateAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
+		return srv.(ManagerServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_GetAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).GetAppUser(ctx, in)
+		return srv.(ManagerServer).GetAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/GetAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).GetAppUser(ctx, req.(*GetAppUserRequest))
+		return srv.(ManagerServer).GetAppUser(ctx, req.(*GetAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_GetAppUserOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUserOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUserOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).GetAppUserOnly(ctx, in)
+		return srv.(ManagerServer).GetAppUserOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUserOnly",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/GetAppUserOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).GetAppUserOnly(ctx, req.(*GetAppUserOnlyRequest))
+		return srv.(ManagerServer).GetAppUserOnly(ctx, req.(*GetAppUserOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).GetAppUsers(ctx, in)
+		return srv.(ManagerServer).GetAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/GetAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/GetAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
+		return srv.(ManagerServer).GetAppUsers(ctx, req.(*GetAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_ExistAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).ExistAppUser(ctx, in)
+		return srv.(ManagerServer).ExistAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/ExistAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).ExistAppUser(ctx, req.(*ExistAppUserRequest))
+		return srv.(ManagerServer).ExistAppUser(ctx, req.(*ExistAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_ExistAppUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppUserCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).ExistAppUserConds(ctx, in)
+		return srv.(ManagerServer).ExistAppUserConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/ExistAppUserConds",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/ExistAppUserConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).ExistAppUserConds(ctx, req.(*ExistAppUserCondsRequest))
+		return srv.(ManagerServer).ExistAppUserConds(ctx, req.(*ExistAppUserCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_CountAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountAppUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountAppUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).CountAppUsers(ctx, in)
+		return srv.(ManagerServer).CountAppUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/CountAppUsers",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/CountAppUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).CountAppUsers(ctx, req.(*CountAppUsersRequest))
+		return srv.(ManagerServer).CountAppUsers(ctx, req.(*CountAppUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppUserMgr_DeleteAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppUserMgrServer).DeleteAppUser(ctx, in)
+		return srv.(ManagerServer).DeleteAppUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appuser.v2.AppUserMgr/DeleteAppUser",
+		FullMethod: "/appuser.manager.appuser.v2.Manager/DeleteAppUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppUserMgrServer).DeleteAppUser(ctx, req.(*DeleteAppUserRequest))
+		return srv.(ManagerServer).DeleteAppUser(ctx, req.(*DeleteAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppUserMgr_ServiceDesc is the grpc.ServiceDesc for AppUserMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppUserMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.manager.appuser.v2.AppUserMgr",
-	HandlerType: (*AppUserMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.manager.appuser.v2.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAppUser",
-			Handler:    _AppUserMgr_CreateAppUser_Handler,
+			Handler:    _Manager_CreateAppUser_Handler,
 		},
 		{
 			MethodName: "CreateAppUsers",
-			Handler:    _AppUserMgr_CreateAppUsers_Handler,
+			Handler:    _Manager_CreateAppUsers_Handler,
 		},
 		{
 			MethodName: "UpdateAppUser",
-			Handler:    _AppUserMgr_UpdateAppUser_Handler,
+			Handler:    _Manager_UpdateAppUser_Handler,
 		},
 		{
 			MethodName: "GetAppUser",
-			Handler:    _AppUserMgr_GetAppUser_Handler,
+			Handler:    _Manager_GetAppUser_Handler,
 		},
 		{
 			MethodName: "GetAppUserOnly",
-			Handler:    _AppUserMgr_GetAppUserOnly_Handler,
+			Handler:    _Manager_GetAppUserOnly_Handler,
 		},
 		{
 			MethodName: "GetAppUsers",
-			Handler:    _AppUserMgr_GetAppUsers_Handler,
+			Handler:    _Manager_GetAppUsers_Handler,
 		},
 		{
 			MethodName: "ExistAppUser",
-			Handler:    _AppUserMgr_ExistAppUser_Handler,
+			Handler:    _Manager_ExistAppUser_Handler,
 		},
 		{
 			MethodName: "ExistAppUserConds",
-			Handler:    _AppUserMgr_ExistAppUserConds_Handler,
+			Handler:    _Manager_ExistAppUserConds_Handler,
 		},
 		{
 			MethodName: "CountAppUsers",
-			Handler:    _AppUserMgr_CountAppUsers_Handler,
+			Handler:    _Manager_CountAppUsers_Handler,
 		},
 		{
 			MethodName: "DeleteAppUser",
-			Handler:    _AppUserMgr_DeleteAppUser_Handler,
+			Handler:    _Manager_DeleteAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

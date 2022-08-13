@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "AdminGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/authorize/genesis": {
       "post": {
-        "operationId": "AdminGw_AuthorizeGenesis",
+        "operationId": "Gateway_AuthorizeGenesis",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,14 +44,14 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/admin/apps": {
       "post": {
         "summary": "VPN only apis\nCreate genesis / admin apps",
-        "operationId": "AdminGw_CreateAdminApps",
+        "operationId": "Gateway_CreateAdminApps",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -77,14 +77,14 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/genesis/roles": {
       "post": {
         "summary": "Create genesis / admin role",
-        "operationId": "AdminGw_CreateGenesisRoles",
+        "operationId": "Gateway_CreateGenesisRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -110,14 +110,14 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/create/genesis/user": {
       "post": {
         "summary": "Create genesis / admin user",
-        "operationId": "AdminGw_CreateGenesisUser",
+        "operationId": "Gateway_CreateGenesisUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -143,13 +143,13 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/admin/apps": {
       "post": {
-        "operationId": "AdminGw_GetAdminApps",
+        "operationId": "Gateway_GetAdminApps",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -175,13 +175,13 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/genesis/auths": {
       "post": {
-        "operationId": "AdminGw_GetGenesisAuths",
+        "operationId": "Gateway_GetGenesisAuths",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -207,13 +207,13 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/genesis/role/user": {
       "post": {
-        "operationId": "AdminGw_GetGenesisRoleUsers",
+        "operationId": "Gateway_GetGenesisRoleUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -239,13 +239,13 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/genesis/roles": {
       "post": {
-        "operationId": "AdminGw_GetGenesisRoles",
+        "operationId": "Gateway_GetGenesisRoles",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -271,7 +271,7 @@
           }
         ],
         "tags": [
-          "AdminGw"
+          "Gateway"
         ]
       }
     }

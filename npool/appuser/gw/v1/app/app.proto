@@ -12,7 +12,7 @@ import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
-service AppGw {
+service Gateway {
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
         option (google.api.http) = {
             post: "/v1/create/app"

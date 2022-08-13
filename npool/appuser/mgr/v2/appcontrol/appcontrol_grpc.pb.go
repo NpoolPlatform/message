@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AppControlMgrClient is the client API for AppControlMgr service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AppControlMgrClient interface {
+type ManagerClient interface {
 	CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error)
 	CreateAppControls(ctx context.Context, in *CreateAppControlsRequest, opts ...grpc.CallOption) (*CreateAppControlsResponse, error)
 	UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error)
@@ -34,108 +34,108 @@ type AppControlMgrClient interface {
 	DeleteAppControl(ctx context.Context, in *DeleteAppControlRequest, opts ...grpc.CallOption) (*DeleteAppControlResponse, error)
 }
 
-type appControlMgrClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAppControlMgrClient(cc grpc.ClientConnInterface) AppControlMgrClient {
-	return &appControlMgrClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *appControlMgrClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
+func (c *managerClient) CreateAppControl(ctx context.Context, in *CreateAppControlRequest, opts ...grpc.CallOption) (*CreateAppControlResponse, error) {
 	out := new(CreateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/CreateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) CreateAppControls(ctx context.Context, in *CreateAppControlsRequest, opts ...grpc.CallOption) (*CreateAppControlsResponse, error) {
+func (c *managerClient) CreateAppControls(ctx context.Context, in *CreateAppControlsRequest, opts ...grpc.CallOption) (*CreateAppControlsResponse, error) {
 	out := new(CreateAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/CreateAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error) {
+func (c *managerClient) UpdateAppControl(ctx context.Context, in *UpdateAppControlRequest, opts ...grpc.CallOption) (*UpdateAppControlResponse, error) {
 	out := new(UpdateAppControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/UpdateAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/UpdateAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error) {
+func (c *managerClient) GetAppControl(ctx context.Context, in *GetAppControlRequest, opts ...grpc.CallOption) (*GetAppControlResponse, error) {
 	out := new(GetAppControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/GetAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) GetAppControlOnly(ctx context.Context, in *GetAppControlOnlyRequest, opts ...grpc.CallOption) (*GetAppControlOnlyResponse, error) {
+func (c *managerClient) GetAppControlOnly(ctx context.Context, in *GetAppControlOnlyRequest, opts ...grpc.CallOption) (*GetAppControlOnlyResponse, error) {
 	out := new(GetAppControlOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/GetAppControlOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) GetAppControls(ctx context.Context, in *GetAppControlsRequest, opts ...grpc.CallOption) (*GetAppControlsResponse, error) {
+func (c *managerClient) GetAppControls(ctx context.Context, in *GetAppControlsRequest, opts ...grpc.CallOption) (*GetAppControlsResponse, error) {
 	out := new(GetAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/GetAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) ExistAppControl(ctx context.Context, in *ExistAppControlRequest, opts ...grpc.CallOption) (*ExistAppControlResponse, error) {
+func (c *managerClient) ExistAppControl(ctx context.Context, in *ExistAppControlRequest, opts ...grpc.CallOption) (*ExistAppControlResponse, error) {
 	out := new(ExistAppControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/ExistAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) ExistAppControlConds(ctx context.Context, in *ExistAppControlCondsRequest, opts ...grpc.CallOption) (*ExistAppControlCondsResponse, error) {
+func (c *managerClient) ExistAppControlConds(ctx context.Context, in *ExistAppControlCondsRequest, opts ...grpc.CallOption) (*ExistAppControlCondsResponse, error) {
 	out := new(ExistAppControlCondsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/ExistAppControlConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) CountAppControls(ctx context.Context, in *CountAppControlsRequest, opts ...grpc.CallOption) (*CountAppControlsResponse, error) {
+func (c *managerClient) CountAppControls(ctx context.Context, in *CountAppControlsRequest, opts ...grpc.CallOption) (*CountAppControlsResponse, error) {
 	out := new(CountAppControlsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/CountAppControls", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/CountAppControls", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *appControlMgrClient) DeleteAppControl(ctx context.Context, in *DeleteAppControlRequest, opts ...grpc.CallOption) (*DeleteAppControlResponse, error) {
+func (c *managerClient) DeleteAppControl(ctx context.Context, in *DeleteAppControlRequest, opts ...grpc.CallOption) (*DeleteAppControlResponse, error) {
 	out := new(DeleteAppControlResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.AppControlMgr/DeleteAppControl", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.manager.appcontrol.v2.Manager/DeleteAppControl", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AppControlMgrServer is the server API for AppControlMgr service.
-// All implementations must embed UnimplementedAppControlMgrServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type AppControlMgrServer interface {
+type ManagerServer interface {
 	CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error)
 	CreateAppControls(context.Context, *CreateAppControlsRequest) (*CreateAppControlsResponse, error)
 	UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error)
@@ -146,282 +146,282 @@ type AppControlMgrServer interface {
 	ExistAppControlConds(context.Context, *ExistAppControlCondsRequest) (*ExistAppControlCondsResponse, error)
 	CountAppControls(context.Context, *CountAppControlsRequest) (*CountAppControlsResponse, error)
 	DeleteAppControl(context.Context, *DeleteAppControlRequest) (*DeleteAppControlResponse, error)
-	mustEmbedUnimplementedAppControlMgrServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedAppControlMgrServer must be embedded to have forward compatible implementations.
-type UnimplementedAppControlMgrServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedAppControlMgrServer) CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error) {
+func (UnimplementedManagerServer) CreateAppControl(context.Context, *CreateAppControlRequest) (*CreateAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppControl not implemented")
 }
-func (UnimplementedAppControlMgrServer) CreateAppControls(context.Context, *CreateAppControlsRequest) (*CreateAppControlsResponse, error) {
+func (UnimplementedManagerServer) CreateAppControls(context.Context, *CreateAppControlsRequest) (*CreateAppControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppControls not implemented")
 }
-func (UnimplementedAppControlMgrServer) UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error) {
+func (UnimplementedManagerServer) UpdateAppControl(context.Context, *UpdateAppControlRequest) (*UpdateAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppControl not implemented")
 }
-func (UnimplementedAppControlMgrServer) GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error) {
+func (UnimplementedManagerServer) GetAppControl(context.Context, *GetAppControlRequest) (*GetAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppControl not implemented")
 }
-func (UnimplementedAppControlMgrServer) GetAppControlOnly(context.Context, *GetAppControlOnlyRequest) (*GetAppControlOnlyResponse, error) {
+func (UnimplementedManagerServer) GetAppControlOnly(context.Context, *GetAppControlOnlyRequest) (*GetAppControlOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppControlOnly not implemented")
 }
-func (UnimplementedAppControlMgrServer) GetAppControls(context.Context, *GetAppControlsRequest) (*GetAppControlsResponse, error) {
+func (UnimplementedManagerServer) GetAppControls(context.Context, *GetAppControlsRequest) (*GetAppControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppControls not implemented")
 }
-func (UnimplementedAppControlMgrServer) ExistAppControl(context.Context, *ExistAppControlRequest) (*ExistAppControlResponse, error) {
+func (UnimplementedManagerServer) ExistAppControl(context.Context, *ExistAppControlRequest) (*ExistAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppControl not implemented")
 }
-func (UnimplementedAppControlMgrServer) ExistAppControlConds(context.Context, *ExistAppControlCondsRequest) (*ExistAppControlCondsResponse, error) {
+func (UnimplementedManagerServer) ExistAppControlConds(context.Context, *ExistAppControlCondsRequest) (*ExistAppControlCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppControlConds not implemented")
 }
-func (UnimplementedAppControlMgrServer) CountAppControls(context.Context, *CountAppControlsRequest) (*CountAppControlsResponse, error) {
+func (UnimplementedManagerServer) CountAppControls(context.Context, *CountAppControlsRequest) (*CountAppControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppControls not implemented")
 }
-func (UnimplementedAppControlMgrServer) DeleteAppControl(context.Context, *DeleteAppControlRequest) (*DeleteAppControlResponse, error) {
+func (UnimplementedManagerServer) DeleteAppControl(context.Context, *DeleteAppControlRequest) (*DeleteAppControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppControl not implemented")
 }
-func (UnimplementedAppControlMgrServer) mustEmbedUnimplementedAppControlMgrServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeAppControlMgrServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AppControlMgrServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeAppControlMgrServer interface {
-	mustEmbedUnimplementedAppControlMgrServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterAppControlMgrServer(s grpc.ServiceRegistrar, srv AppControlMgrServer) {
-	s.RegisterService(&AppControlMgr_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _AppControlMgr_CreateAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).CreateAppControl(ctx, in)
+		return srv.(ManagerServer).CreateAppControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/CreateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
+		return srv.(ManagerServer).CreateAppControl(ctx, req.(*CreateAppControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_CreateAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).CreateAppControls(ctx, in)
+		return srv.(ManagerServer).CreateAppControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CreateAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/CreateAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).CreateAppControls(ctx, req.(*CreateAppControlsRequest))
+		return srv.(ManagerServer).CreateAppControls(ctx, req.(*CreateAppControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_UpdateAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).UpdateAppControl(ctx, in)
+		return srv.(ManagerServer).UpdateAppControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/UpdateAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/UpdateAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).UpdateAppControl(ctx, req.(*UpdateAppControlRequest))
+		return srv.(ManagerServer).UpdateAppControl(ctx, req.(*UpdateAppControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_GetAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).GetAppControl(ctx, in)
+		return srv.(ManagerServer).GetAppControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/GetAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).GetAppControl(ctx, req.(*GetAppControlRequest))
+		return srv.(ManagerServer).GetAppControl(ctx, req.(*GetAppControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_GetAppControlOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppControlOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppControlOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).GetAppControlOnly(ctx, in)
+		return srv.(ManagerServer).GetAppControlOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControlOnly",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/GetAppControlOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).GetAppControlOnly(ctx, req.(*GetAppControlOnlyRequest))
+		return srv.(ManagerServer).GetAppControlOnly(ctx, req.(*GetAppControlOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_GetAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_GetAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).GetAppControls(ctx, in)
+		return srv.(ManagerServer).GetAppControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/GetAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/GetAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).GetAppControls(ctx, req.(*GetAppControlsRequest))
+		return srv.(ManagerServer).GetAppControls(ctx, req.(*GetAppControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_ExistAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).ExistAppControl(ctx, in)
+		return srv.(ManagerServer).ExistAppControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/ExistAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).ExistAppControl(ctx, req.(*ExistAppControlRequest))
+		return srv.(ManagerServer).ExistAppControl(ctx, req.(*ExistAppControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_ExistAppControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_ExistAppControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppControlCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).ExistAppControlConds(ctx, in)
+		return srv.(ManagerServer).ExistAppControlConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/ExistAppControlConds",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/ExistAppControlConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).ExistAppControlConds(ctx, req.(*ExistAppControlCondsRequest))
+		return srv.(ManagerServer).ExistAppControlConds(ctx, req.(*ExistAppControlCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_CountAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CountAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountAppControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).CountAppControls(ctx, in)
+		return srv.(ManagerServer).CountAppControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/CountAppControls",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/CountAppControls",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).CountAppControls(ctx, req.(*CountAppControlsRequest))
+		return srv.(ManagerServer).CountAppControls(ctx, req.(*CountAppControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AppControlMgr_DeleteAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteAppControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AppControlMgrServer).DeleteAppControl(ctx, in)
+		return srv.(ManagerServer).DeleteAppControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.appcontrol.v2.AppControlMgr/DeleteAppControl",
+		FullMethod: "/appuser.manager.appcontrol.v2.Manager/DeleteAppControl",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppControlMgrServer).DeleteAppControl(ctx, req.(*DeleteAppControlRequest))
+		return srv.(ManagerServer).DeleteAppControl(ctx, req.(*DeleteAppControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// AppControlMgr_ServiceDesc is the grpc.ServiceDesc for AppControlMgr service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var AppControlMgr_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.manager.appcontrol.v2.AppControlMgr",
-	HandlerType: (*AppControlMgrServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.manager.appcontrol.v2.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAppControl",
-			Handler:    _AppControlMgr_CreateAppControl_Handler,
+			Handler:    _Manager_CreateAppControl_Handler,
 		},
 		{
 			MethodName: "CreateAppControls",
-			Handler:    _AppControlMgr_CreateAppControls_Handler,
+			Handler:    _Manager_CreateAppControls_Handler,
 		},
 		{
 			MethodName: "UpdateAppControl",
-			Handler:    _AppControlMgr_UpdateAppControl_Handler,
+			Handler:    _Manager_UpdateAppControl_Handler,
 		},
 		{
 			MethodName: "GetAppControl",
-			Handler:    _AppControlMgr_GetAppControl_Handler,
+			Handler:    _Manager_GetAppControl_Handler,
 		},
 		{
 			MethodName: "GetAppControlOnly",
-			Handler:    _AppControlMgr_GetAppControlOnly_Handler,
+			Handler:    _Manager_GetAppControlOnly_Handler,
 		},
 		{
 			MethodName: "GetAppControls",
-			Handler:    _AppControlMgr_GetAppControls_Handler,
+			Handler:    _Manager_GetAppControls_Handler,
 		},
 		{
 			MethodName: "ExistAppControl",
-			Handler:    _AppControlMgr_ExistAppControl_Handler,
+			Handler:    _Manager_ExistAppControl_Handler,
 		},
 		{
 			MethodName: "ExistAppControlConds",
-			Handler:    _AppControlMgr_ExistAppControlConds_Handler,
+			Handler:    _Manager_ExistAppControlConds_Handler,
 		},
 		{
 			MethodName: "CountAppControls",
-			Handler:    _AppControlMgr_CountAppControls_Handler,
+			Handler:    _Manager_CountAppControls_Handler,
 		},
 		{
 			MethodName: "DeleteAppControl",
-			Handler:    _AppControlMgr_DeleteAppControl_Handler,
+			Handler:    _Manager_DeleteAppControl_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

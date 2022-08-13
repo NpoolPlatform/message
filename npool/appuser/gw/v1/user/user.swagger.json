@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "UserGw"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/1/create/user": {
       "post": {
-        "operationId": "UserGw_CreateUser",
+        "operationId": "Gateway_CreateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "Gateway"
         ]
       }
     },
     "/1/signup": {
       "post": {
-        "operationId": "UserGw_Signup",
+        "operationId": "Gateway_Signup",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "Gateway"
         ]
       }
     },
     "/1/update/user": {
       "post": {
-        "operationId": "UserGw_UpdateUser",
+        "operationId": "Gateway_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/users": {
       "post": {
-        "operationId": "UserGw_GetAppUsers",
+        "operationId": "Gateway_GetAppUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "Gateway"
         ]
       }
     },
     "/v1/get/users": {
       "post": {
-        "operationId": "UserGw_GetUsers",
+        "operationId": "Gateway_GetUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "UserGw"
+          "Gateway"
         ]
       }
     }

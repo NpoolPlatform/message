@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appus
 
 import "npool/npool.proto";
 
-service AppUserControlMgr {
+service Manager {
     rpc CreateAppUserControl     (CreateAppUserControlRequest)     returns (CreateAppUserControlResponse)     {}
     rpc CreateAppUserControls    (CreateAppUserControlsRequest)    returns (CreateAppUserControlsResponse)    {}
     rpc UpdateAppUserControl     (UpdateAppUserControlRequest)     returns (UpdateAppUserControlResponse)     {}
