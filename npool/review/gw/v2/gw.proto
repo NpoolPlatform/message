@@ -27,7 +27,7 @@ service Gateway {
 
     rpc UpdateAppReview (UpdateAppReviewRequest) returns (UpdateAppReviewResponse) {
         option (google.api.http) = {
-            post: "/v2/update/appreview"
+            post: "/v2/update/app/review"
             body: "*"
         };
     }

@@ -38,7 +38,7 @@
         ]
       }
     },
-    "/v2/update/appreview": {
+    "/v2/update/app/review": {
       "post": {
         "operationId": "Gateway_UpdateAppReview",
         "responses": {
