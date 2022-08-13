@@ -25,8 +25,6 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
-	UpdateAppReview(ctx context.Context, in *UpdateAppReviewRequest, opts ...grpc.CallOption) (*UpdateAppReviewResponse, error)
 	GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error)
 }
 
@@ -47,24 +45,6 @@ func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error) {
-	out := new(UpdateReviewResponse)
-	err := c.cc.Invoke(ctx, "/review.gateway.v2.Gateway/UpdateReview", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateAppReview(ctx context.Context, in *UpdateAppReviewRequest, opts ...grpc.CallOption) (*UpdateAppReviewResponse, error) {
-	out := new(UpdateAppReviewResponse)
-	err := c.cc.Invoke(ctx, "/review.gateway.v2.Gateway/UpdateAppReview", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error) {
 	out := new(GetObjectTypesResponse)
 	err := c.cc.Invoke(ctx, "/review.gateway.v2.Gateway/GetObjectTypes", in, out, opts...)
@@ -79,8 +59,6 @@ func (c *gatewayClient) GetObjectTypes(ctx context.Context, in *GetObjectTypesRe
 // for forward compatibility
 type GatewayServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
-	UpdateAppReview(context.Context, *UpdateAppReviewRequest) (*UpdateAppReviewResponse, error)
 	GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -91,12 +69,6 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
-func (UnimplementedGatewayServer) UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateReview not implemented")
-}
-func (UnimplementedGatewayServer) UpdateAppReview(context.Context, *UpdateAppReviewRequest) (*UpdateAppReviewResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppReview not implemented")
 }
 func (UnimplementedGatewayServer) GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetObjectTypes not implemented")
@@ -132,42 +104,6 @@ func _Gateway_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateReviewRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateReview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/review.gateway.v2.Gateway/UpdateReview",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateReview(ctx, req.(*UpdateReviewRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateAppReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppReviewRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateAppReview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/review.gateway.v2.Gateway/UpdateAppReview",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateAppReview(ctx, req.(*UpdateAppReviewRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetObjectTypes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetObjectTypesRequest)
 	if err := dec(in); err != nil {
@@ -196,14 +132,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _Gateway_Version_Handler,
-		},
-		{
-			MethodName: "UpdateReview",
-			Handler:    _Gateway_UpdateReview_Handler,
-		},
-		{
-			MethodName: "UpdateAppReview",
-			Handler:    _Gateway_UpdateAppReview_Handler,
 		},
 		{
 			MethodName: "GetObjectTypes",

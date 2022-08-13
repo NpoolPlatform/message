@@ -38,70 +38,6 @@
         ]
       }
     },
-    "/v2/update/app/review": {
-      "post": {
-        "operationId": "Gateway_UpdateAppReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v2UpdateAppReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v2UpdateAppReviewRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v2/update/review": {
-      "post": {
-        "operationId": "Gateway_UpdateReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v2UpdateReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v2UpdateReviewRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v2/version": {
       "post": {
         "operationId": "Gateway_Version",
@@ -182,49 +118,6 @@
         }
       }
     },
-    "v2Review": {
-      "type": "object",
-      "properties": {
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "Reviewer": {
-          "type": "string"
-        },
-        "ObjectType": {
-          "type": "string"
-        },
-        "ObjectID": {
-          "type": "string"
-        },
-        "Domain": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v2ReviewState"
-        },
-        "Trigger": {
-          "$ref": "#/definitions/v2ReviewTriggerType"
-        },
-        "ObjectInfo": {
-          "type": "string"
-        }
-      }
-    },
     "v2ReviewObjectType": {
       "type": "string",
       "enum": [
@@ -233,87 +126,6 @@
         "ObjectWithdrawal"
       ],
       "default": "DefaultObjectType"
-    },
-    "v2ReviewState": {
-      "type": "string",
-      "enum": [
-        "DefaultReviewState",
-        "Approved",
-        "Wait",
-        "Rejected"
-      ],
-      "default": "DefaultReviewState"
-    },
-    "v2ReviewTriggerType": {
-      "type": "string",
-      "enum": [
-        "DefaultTriggerType",
-        "AutoReviewed",
-        "LargeAmount",
-        "InsufficientFunds",
-        "InsufficientGas"
-      ],
-      "default": "DefaultTriggerType",
-      "title": "- AutoReviewed: Withdrawal triggers"
-    },
-    "v2UpdateAppReviewRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v2ReviewState"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v2UpdateAppReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
-    },
-    "v2UpdateReviewRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v2ReviewState"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v2UpdateReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
     }
   }
 }

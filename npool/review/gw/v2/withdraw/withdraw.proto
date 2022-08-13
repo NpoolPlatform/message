@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package review.gateway.withdraw.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/withdraw";
+
+import "npool/review/mgr/v2/mgr.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetWithdrawReviews (GetWithdrawReviewsRequest) returns (GetWithdrawReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/withdrawreviews"
+            body: "*"
+        };
+    }
+
+    rpc GetAppWithdrawReviews (GetAppWithdrawReviewsRequest) returns (GetAppWithdrawReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/app/withdrawreviews"
+            body: "*"
+        };
+    }
+
+    rpc UpdateWithdrawReview (UpdateWithdrawReviewRequest) returns (UpdateWithdrawReviewResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/withdrawreview"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppWithdrawReview (UpdateAppWithdrawReviewRequest) returns (UpdateAppWithdrawReviewResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/app/withdrawreview"
+            body: "*"
+        };
+    }
+}
+
+message WithdrawReview {
+    string ReviewID                             = 10;
+    string UserID                               = 20;
+    review.manager.v2.ReviewState KycState      = 30;
+    string EmailAddress                         = 40;
+    string PhoneNO                              = 50;
+    string Reviewer                             = 60;
+    string ObjectType                           = 70;
+    string ObjectID                             = 80;
+    string Domain                               = 90;
+    uint32 CreatedAt                            = 100;
+    uint32 UpdatedAt                            = 110;
+    string Message                              = 120;
+    review.manager.v2.ReviewState State         = 130;
+    review.manager.v2.ReviewTriggerType Trigger = 140;
+    string Amount                               = 150;
+    string CoinTypeID                           = 160;
+    string CoinName                             = 170;
+    string CoinUnit                             = 180;
+    string Address                              = 190;
+}
+
+message GetWithdrawReviewsRequest {
+    string AppID       = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetWithdrawReviewsResponse {
+    repeated WithdrawReview Info = 10;
+}
+
+message GetAppWithdrawReviewsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppWithdrawReviewsResponse {
+    repeated WithdrawReview Info = 10;
+}
+
+message UpdateWithdrawReviewRequest {
+    string ID          = 10;
+    string AppID       = 20;
+    string UserID      = 30; // Reviewer
+    review.manager.v2.ReviewState State = 40;
+    optional string Message   = 50;
+}
+
+message UpdateWithdrawReviewResponse {
+    WithdrawReview Info = 10;
+}
+
+message UpdateAppWithdrawReviewRequest {
+    string ID          = 10;
+    string AppID       = 20;
+    string TargetAppID = 30;
+    string UserID      = 40; // Reviewer
+    review.manager.v2.ReviewState State = 50;
+    optional string Message   = 60;
+}
+
+message UpdateAppWithdrawReviewResponse {
+    WithdrawReview Info = 10;
+}
+
