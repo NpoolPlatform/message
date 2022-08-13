@@ -30,6 +30,8 @@ type GatewayClient interface {
 	CreateAppUserOrder(ctx context.Context, in *CreateAppUserOrderRequest, opts ...grpc.CallOption) (*CreateAppUserOrderResponse, error)
 	GetUserOrders(ctx context.Context, in *GetUserOrdersRequest, opts ...grpc.CallOption) (*GetUserOrdersResponse, error)
 	GetAppUserOrders(ctx context.Context, in *GetAppUserOrdersRequest, opts ...grpc.CallOption) (*GetAppUserOrdersResponse, error)
+	GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error)
+	GetNAppOrders(ctx context.Context, in *GetNAppOrdersRequest, opts ...grpc.CallOption) (*GetNAppOrdersResponse, error)
 }
 
 type gatewayClient struct {
@@ -112,6 +114,24 @@ func (c *gatewayClient) GetAppUserOrders(ctx context.Context, in *GetAppUserOrde
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error) {
+	out := new(GetAppOrdersResponse)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/GetAppOrders", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetNAppOrders(ctx context.Context, in *GetNAppOrdersRequest, opts ...grpc.CallOption) (*GetNAppOrdersResponse, error) {
+	out := new(GetNAppOrdersResponse)
+	err := c.cc.Invoke(ctx, "/order.gateway.order1.v1.Gateway/GetNAppOrders", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -124,6 +144,8 @@ type GatewayServer interface {
 	CreateAppUserOrder(context.Context, *CreateAppUserOrderRequest) (*CreateAppUserOrderResponse, error)
 	GetUserOrders(context.Context, *GetUserOrdersRequest) (*GetUserOrdersResponse, error)
 	GetAppUserOrders(context.Context, *GetAppUserOrdersRequest) (*GetAppUserOrdersResponse, error)
+	GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error)
+	GetNAppOrders(context.Context, *GetNAppOrdersRequest) (*GetNAppOrdersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -154,6 +176,12 @@ func (UnimplementedGatewayServer) GetUserOrders(context.Context, *GetUserOrdersR
 }
 func (UnimplementedGatewayServer) GetAppUserOrders(context.Context, *GetAppUserOrdersRequest) (*GetAppUserOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppUserOrders not implemented")
+}
+func (UnimplementedGatewayServer) GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppOrders not implemented")
+}
+func (UnimplementedGatewayServer) GetNAppOrders(context.Context, *GetNAppOrdersRequest) (*GetNAppOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppOrders not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -312,6 +340,42 @@ func _Gateway_GetAppUserOrders_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.gateway.order1.v1.Gateway/GetAppOrders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppOrders(ctx, req.(*GetAppOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetNAppOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNAppOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNAppOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.gateway.order1.v1.Gateway/GetNAppOrders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNAppOrders(ctx, req.(*GetNAppOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -350,6 +414,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppUserOrders",
 			Handler:    _Gateway_GetAppUserOrders_Handler,
+		},
+		{
+			MethodName: "GetAppOrders",
+			Handler:    _Gateway_GetAppOrders_Handler,
+		},
+		{
+			MethodName: "GetNAppOrders",
+			Handler:    _Gateway_GetNAppOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
