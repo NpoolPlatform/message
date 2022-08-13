@@ -59,8 +59,11 @@ message WithdrawReview {
     string FeeAmount                            = 160;
     string CoinTypeID                           = 170;
     string CoinName                             = 180;
-    string CoinUnit                             = 190;
-    string Address                              = 200;
+    string CoinLogo                             = 190;
+    string CoinUnit                             = 200;
+    string Address                              = 210;
+    string PlatformTransactionID                = 220;
+    string ChainTransactionID                   = 230;
 }
 
 message GetWithdrawReviewsRequest {

@@ -381,10 +381,19 @@
         "CoinName": {
           "type": "string"
         },
+        "CoinLogo": {
+          "type": "string"
+        },
         "CoinUnit": {
           "type": "string"
         },
         "Address": {
+          "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
           "type": "string"
         }
       }
