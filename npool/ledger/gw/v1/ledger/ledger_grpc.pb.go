@@ -31,6 +31,8 @@ type GatewayClient interface {
 	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error)
 	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
 	GetIntervalWithdraws(ctx context.Context, in *GetIntervalWithdrawsRequest, opts ...grpc.CallOption) (*GetIntervalWithdrawsResponse, error)
+	GetAppWithdraws(ctx context.Context, in *GetAppWithdrawsRequest, opts ...grpc.CallOption) (*GetAppWithdrawsResponse, error)
+	GetNAppWithdraws(ctx context.Context, in *GetNAppWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppWithdrawsResponse, error)
 }
 
 type gatewayClient struct {
@@ -122,6 +124,24 @@ func (c *gatewayClient) GetIntervalWithdraws(ctx context.Context, in *GetInterva
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppWithdraws(ctx context.Context, in *GetAppWithdrawsRequest, opts ...grpc.CallOption) (*GetAppWithdrawsResponse, error) {
+	out := new(GetAppWithdrawsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetAppWithdraws", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetNAppWithdraws(ctx context.Context, in *GetNAppWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppWithdrawsResponse, error) {
+	out := new(GetNAppWithdrawsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetNAppWithdraws", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -135,6 +155,8 @@ type GatewayServer interface {
 	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error)
 	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
 	GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error)
+	GetAppWithdraws(context.Context, *GetAppWithdrawsRequest) (*GetAppWithdrawsResponse, error)
+	GetNAppWithdraws(context.Context, *GetNAppWithdrawsRequest) (*GetNAppWithdrawsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -168,6 +190,12 @@ func (UnimplementedGatewayServer) GetWithdraws(context.Context, *GetWithdrawsReq
 }
 func (UnimplementedGatewayServer) GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalWithdraws not implemented")
+}
+func (UnimplementedGatewayServer) GetAppWithdraws(context.Context, *GetAppWithdrawsRequest) (*GetAppWithdrawsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppWithdraws not implemented")
+}
+func (UnimplementedGatewayServer) GetNAppWithdraws(context.Context, *GetNAppWithdrawsRequest) (*GetNAppWithdrawsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppWithdraws not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -344,6 +372,42 @@ func _Gateway_GetIntervalWithdraws_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppWithdrawsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppWithdraws(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetAppWithdraws",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppWithdraws(ctx, req.(*GetAppWithdrawsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetNAppWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNAppWithdrawsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNAppWithdraws(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetNAppWithdraws",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNAppWithdraws(ctx, req.(*GetNAppWithdrawsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -386,6 +450,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetIntervalWithdraws",
 			Handler:    _Gateway_GetIntervalWithdraws_Handler,
+		},
+		{
+			MethodName: "GetAppWithdraws",
+			Handler:    _Gateway_GetAppWithdraws_Handler,
+		},
+		{
+			MethodName: "GetNAppWithdraws",
+			Handler:    _Gateway_GetNAppWithdraws_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

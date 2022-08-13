@@ -75,6 +75,20 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetAppWithdraws (GetAppWithdrawsRequest) returns (GetAppWithdrawsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/withdraws"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppWithdraws (GetNAppWithdrawsRequest) returns (GetNAppWithdrawsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/withdraws"
+            body: "*"
+        };
+    }
 }
 
 message General {
@@ -253,6 +267,28 @@ message GetIntervalWithdrawsRequest {
 }
 
 message GetIntervalWithdrawsResponse {
+    repeated Withdraw Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetAppWithdrawsRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetAppWithdrawsResponse {
+    repeated Withdraw Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetNAppWithdrawsRequest {
+    string TargetAppID   = 10;
+    int32  Offset        = 20;
+    int32  Limit         = 30;
+}
+
+message GetNAppWithdrawsResponse {
     repeated Withdraw Infos = 10;
     uint32            Total = 20;
 }
