@@ -252,7 +252,7 @@
     "v2UpdateAppWithdrawReviewRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "ReviewID": {
           "type": "string"
         },
         "AppID": {
@@ -262,6 +262,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "State": {
@@ -283,13 +286,16 @@
     "v2UpdateWithdrawReviewRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "ReviewID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "State": {
