@@ -4,6 +4,7 @@ package review.gateway.withdraw.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/withdraw";
 
+import "npool/ledger/mgr/v1/ledger/withdraw/withdraw.proto";
 import "npool/review/mgr/v2/mgr.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -42,28 +43,29 @@ service Gateway {
 
 message WithdrawReview {
     string WithdrawID                           = 10;
-    string ReviewID                             = 20;
-    string UserID                               = 30;
-    review.manager.v2.ReviewState KycState      = 40;
-    string EmailAddress                         = 50;
-    string PhoneNO                              = 60;
-    string Reviewer                             = 70;
-    string ObjectType                           = 80;
-    string Domain                               = 90;
-    uint32 CreatedAt                            = 100;
-    uint32 UpdatedAt                            = 110;
-    string Message                              = 120;
-    review.manager.v2.ReviewState State         = 130;
-    review.manager.v2.ReviewTriggerType Trigger = 140;
-    string Amount                               = 150;
-    string FeeAmount                            = 160;
-    string CoinTypeID                           = 170;
-    string CoinName                             = 180;
-    string CoinLogo                             = 190;
-    string CoinUnit                             = 200;
-    string Address                              = 210;
-    string PlatformTransactionID                = 220;
-    string ChainTransactionID                   = 230;
+    ledger.manager.ledger.withdraw.v1.WithdrawState WithdrawState = 20;
+    string ReviewID                             = 30;
+    string UserID                               = 40;
+    review.manager.v2.ReviewState KycState      = 50;
+    string EmailAddress                         = 60;
+    string PhoneNO                              = 70;
+    string Reviewer                             = 80;
+    string ObjectType                           = 90;
+    string Domain                               = 100;
+    uint32 CreatedAt                            = 110;
+    uint32 UpdatedAt                            = 120;
+    string Message                              = 130;
+    review.manager.v2.ReviewState State         = 140;
+    review.manager.v2.ReviewTriggerType Trigger = 150;
+    string Amount                               = 160;
+    string FeeAmount                            = 170;
+    string CoinTypeID                           = 180;
+    string CoinName                             = 190;
+    string CoinLogo                             = 200;
+    string CoinUnit                             = 210;
+    string Address                              = 220;
+    string PlatformTransactionID                = 230;
+    string ChainTransactionID                   = 240;
 }
 
 message GetWithdrawReviewsRequest {

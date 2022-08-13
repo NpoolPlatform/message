@@ -173,6 +173,18 @@
         }
       }
     },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
+    },
     "v2GetAppWithdrawReviewsRequest": {
       "type": "object",
       "properties": {
@@ -327,6 +339,9 @@
       "properties": {
         "WithdrawID": {
           "type": "string"
+        },
+        "WithdrawState": {
+          "$ref": "#/definitions/v1WithdrawState"
         },
         "ReviewID": {
           "type": "string"
