@@ -25,7 +25,7 @@ type MiddlewareClient interface {
 	// Method Version
 	GetInvitees(ctx context.Context, in *GetInviteesRequest, opts ...grpc.CallOption) (*GetInviteesResponse, error)
 	GetInviters(ctx context.Context, in *GetInvitersRequest, opts ...grpc.CallOption) (*GetInvitersResponse, error)
-	GetActivePercents(ctx context.Context, in *GetActivePercentsRequest, opts ...grpc.CallOption) (*GetActivePercentsResponse, error)
+	GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error)
 }
 
 type middlewareClient struct {
@@ -54,9 +54,9 @@ func (c *middlewareClient) GetInviters(ctx context.Context, in *GetInvitersReque
 	return out, nil
 }
 
-func (c *middlewareClient) GetActivePercents(ctx context.Context, in *GetActivePercentsRequest, opts ...grpc.CallOption) (*GetActivePercentsResponse, error) {
-	out := new(GetActivePercentsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire.invitation.v1.Middleware/GetActivePercents", in, out, opts...)
+func (c *middlewareClient) GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error) {
+	out := new(GetPercentsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire.invitation.v1.Middleware/GetPercents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +70,7 @@ type MiddlewareServer interface {
 	// Method Version
 	GetInvitees(context.Context, *GetInviteesRequest) (*GetInviteesResponse, error)
 	GetInviters(context.Context, *GetInvitersRequest) (*GetInvitersResponse, error)
-	GetActivePercents(context.Context, *GetActivePercentsRequest) (*GetActivePercentsResponse, error)
+	GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -84,8 +84,8 @@ func (UnimplementedMiddlewareServer) GetInvitees(context.Context, *GetInviteesRe
 func (UnimplementedMiddlewareServer) GetInviters(context.Context, *GetInvitersRequest) (*GetInvitersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInviters not implemented")
 }
-func (UnimplementedMiddlewareServer) GetActivePercents(context.Context, *GetActivePercentsRequest) (*GetActivePercentsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetActivePercents not implemented")
+func (UnimplementedMiddlewareServer) GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPercents not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -136,20 +136,20 @@ func _Middleware_GetInviters_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetActivePercents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetActivePercentsRequest)
+func _Middleware_GetPercents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPercentsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetActivePercents(ctx, in)
+		return srv.(MiddlewareServer).GetPercents(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.inspire.invitation.v1.Middleware/GetActivePercents",
+		FullMethod: "/inspire.middleware.inspire.invitation.v1.Middleware/GetPercents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetActivePercents(ctx, req.(*GetActivePercentsRequest))
+		return srv.(MiddlewareServer).GetPercents(ctx, req.(*GetPercentsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -170,8 +170,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetInviters_Handler,
 		},
 		{
-			MethodName: "GetActivePercents",
-			Handler:    _Middleware_GetActivePercents_Handler,
+			MethodName: "GetPercents",
+			Handler:    _Middleware_GetPercents_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

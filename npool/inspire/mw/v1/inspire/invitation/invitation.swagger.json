@@ -44,21 +44,6 @@
         }
       }
     },
-    "v1GetActivePercentsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Percent"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetInviteesResponse": {
       "type": "object",
       "properties": {
@@ -81,6 +66,21 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Invitation"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetPercentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Percent"
           }
         },
         "Total": {
