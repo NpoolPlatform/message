@@ -7,13 +7,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/admin"
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-// import "npool/appuser/mgr/v2/app/app.proto";
-// import "npool/appuser/mgr/v2/approle/approle.proto";
-// import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/role/role.proto";
 import "npool/appuser/mw/v1/user/user.proto";
-// import "npool/authinggateway/authinggateway.proto";
+import "npool/authinggateway/authinggateway.proto";
 
 service Gateway {
     // VPN only apis
