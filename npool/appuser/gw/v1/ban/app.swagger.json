@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/gw/v1/banappuser/banappuser.proto",
+    "title": "npool/appuser/gw/v1/ban/app.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/ban/user": {
+    "/v1/create/banapp": {
       "post": {
-        "operationId": "Gateway_CreateAppBanUser",
+        "summary": "Admin apis",
+        "operationId": "Gateway_CreateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppBanUserResponse"
+              "$ref": "#/definitions/banv1CreateBanAppResponse"
             }
           },
           "default": {
@@ -39,7 +40,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppBanUserRequest"
+              "$ref": "#/definitions/banv1CreateBanAppRequest"
             }
           }
         ],
@@ -48,14 +49,14 @@
         ]
       }
     },
-    "/v1/create/ban/user": {
+    "/v1/delete/banapp": {
       "post": {
-        "operationId": "Gateway_CreateBanUser",
+        "operationId": "Gateway_DeleteBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateBanUserResponse"
+              "$ref": "#/definitions/banv1DeleteBanAppResponse"
             }
           },
           "default": {
@@ -71,7 +72,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateBanUserRequest"
+              "$ref": "#/definitions/banv1DeleteBanAppRequest"
             }
           }
         ],
@@ -80,14 +81,14 @@
         ]
       }
     },
-    "/v1/delete/ban/user": {
+    "/v1/update/banapp": {
       "post": {
-        "operationId": "Gateway_DeleteBanUser",
+        "operationId": "Gateway_UpdateBanApp",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteBanUserResponse"
+              "$ref": "#/definitions/banv1UpdateBanAppResponse"
             }
           },
           "default": {
@@ -103,39 +104,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteBanUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/ban/user": {
-      "post": {
-        "operationId": "Gateway_UpdateBanUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateBanUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateBanUserRequest"
+              "$ref": "#/definitions/banv1UpdateBanAppRequest"
             }
           }
         ],
@@ -146,6 +115,57 @@
     }
   },
   "definitions": {
+    "banv1CreateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "banv1CreateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanApp"
+        }
+      }
+    },
+    "banv1DeleteBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "banv1DeleteBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanApp"
+        }
+      }
+    },
+    "banv1UpdateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "banv1UpdateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanApp"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -173,93 +193,13 @@
         }
       }
     },
-    "v1CreateAppBanUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUserReq"
-        }
-      }
-    },
-    "v1CreateAppBanUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUser"
-        }
-      }
-    },
-    "v1CreateBanUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUserReq"
-        }
-      }
-    },
-    "v1CreateBanUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUser"
-        }
-      }
-    },
-    "v1DeleteBanUserRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "v1DeleteBanUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUser"
-        }
-      }
-    },
-    "v1UpdateBanUserRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUserReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "v1UpdateBanUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUser"
-        }
-      }
-    },
-    "v2BanAppUser": {
+    "v2BanApp": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "UserID": {
           "type": "string"
         },
         "Message": {
@@ -267,16 +207,13 @@
         }
       }
     },
-    "v2BanAppUserReq": {
+    "v2BanAppReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "UserID": {
           "type": "string"
         },
         "Message": {

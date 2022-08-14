@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/create/admin/apps": {
+    "/v1/create/adminapps": {
       "post": {
         "summary": "VPN only apis\nCreate genesis / admin apps",
         "operationId": "Gateway_CreateAdminApps",
@@ -81,7 +81,7 @@
         ]
       }
     },
-    "/v1/create/genesis/roles": {
+    "/v1/create/genesisroles": {
       "post": {
         "summary": "Create genesis / admin role",
         "operationId": "Gateway_CreateGenesisRoles",
@@ -114,7 +114,7 @@
         ]
       }
     },
-    "/v1/create/genesis/user": {
+    "/v1/create/genesisuser": {
       "post": {
         "summary": "Create genesis / admin user",
         "operationId": "Gateway_CreateGenesisUser",
@@ -147,7 +147,7 @@
         ]
       }
     },
-    "/v1/get/admin/apps": {
+    "/v1/get/adminapps": {
       "post": {
         "operationId": "Gateway_GetAdminApps",
         "responses": {
@@ -277,6 +277,95 @@
     }
   },
   "definitions": {
+    "appv1App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base info\n@inject_tag: sql:\"id\""
+        },
+        "CreatedBy": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "BanAppID": {
+          "type": "string",
+          "title": "Banned\n@inject_tag: sql:\"ban_app_id\""
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "SignupMethodsString": {
+          "type": "string",
+          "title": "Sign methods\n@inject_tag: sql:\"signup_methods\""
+        },
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ExtSigninMethodsString": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"extern_signin_methods\""
+        },
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RecaptchaMethod": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMustInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
     "appv2App": {
       "type": "object",
       "properties": {
@@ -374,7 +463,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv2App"
+            "$ref": "#/definitions/appv1App"
           }
         }
       }

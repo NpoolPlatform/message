@@ -120,7 +120,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRecaptchasResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
             }
           },
           "default": {
@@ -136,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRecaptchasRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
             }
           }
         ],
@@ -152,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetSignMethodsResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsResponse"
             }
           },
           "default": {
@@ -168,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetSignMethodsRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsRequest"
             }
           }
         ],
@@ -303,6 +303,36 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "appusergatewayappv1GetRecaptchasRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "appusergatewayappv1GetSignMethodsRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -522,36 +552,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "v1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "v1GetSignMethodsRequest": {
-      "type": "object"
-    },
-    "v1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
         }
       }
     },

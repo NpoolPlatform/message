@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appuser.gateway.login.v1;
+package appuser.gateway.user.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/login";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/user";
 
 import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/user/user.proto";

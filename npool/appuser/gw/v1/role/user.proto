@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appuser.gateway.approleuser.v1;
+package appuser.gateway.role.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/approleuser";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/role";
 
 import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
@@ -10,35 +10,35 @@ import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 service Gateway {
     rpc CreateRoleUser (CreateRoleUserRequest) returns (CreateRoleUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/role/user"
+            post: "/v1/create/roleuser"
             body: "*"
         };
     }
 
     rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/role/users"
+            post: "/v1/get/roleusers"
             body: "*"
         };
     }
 
     rpc DeleteRoleUser (DeleteRoleUserRequest) returns (DeleteRoleUserResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/role/user"
+            post: "/v1/delete/roleuser"
             body: "*"
         };
     }
 
     rpc CreateAppRoleUser(CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/app/role/user"
+            post: "/v1/create/app/roleuser"
             body: "*"
         };
     }
 
     rpc GetAppRoleUsers (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/role/users"
+            post: "/v1/get/app/roleusers"
             body: "*"
         };
     }

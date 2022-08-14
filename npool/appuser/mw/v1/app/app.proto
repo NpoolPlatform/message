@@ -133,3 +133,21 @@ message GetUserAppsResponse {
     repeated App Infos = 10;
     uint32       Total = 20;
 }
+
+message GetSignMethodsRequest {
+    // Permissioned by path
+}
+
+message GetSignMethodsResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
+}
+
+message GetRecaptchasRequest {
+    // Permissioned by path
+}
+
+message GetRecaptchasResponse {
+    // In future this may be put to database then admin can change it
+    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
+}

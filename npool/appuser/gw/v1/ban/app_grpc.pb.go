@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/banapp/banapp.proto
+// source: npool/appuser/gw/v1/ban/app.proto
 
-package banapp
+package ban
 
 import (
 	context "context"
@@ -38,7 +38,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateBanApp(ctx context.Context, in *CreateBanAppRequest, opts ...grpc.CallOption) (*CreateBanAppResponse, error) {
 	out := new(CreateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.banapp.v1.Gateway/CreateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.ban.v1.Gateway/CreateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *gatewayClient) CreateBanApp(ctx context.Context, in *CreateBanAppReques
 
 func (c *gatewayClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppRequest, opts ...grpc.CallOption) (*UpdateBanAppResponse, error) {
 	out := new(UpdateBanAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.banapp.v1.Gateway/UpdateBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.ban.v1.Gateway/UpdateBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *gatewayClient) UpdateBanApp(ctx context.Context, in *UpdateBanAppReques
 
 func (c *gatewayClient) DeleteBanApp(ctx context.Context, in *DeleteBanAppRequest, opts ...grpc.CallOption) (*DeleteBanAppResponse, error) {
 	out := new(DeleteBanAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.banapp.v1.Gateway/DeleteBanApp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.ban.v1.Gateway/DeleteBanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,7 +110,7 @@ func _Gateway_CreateBanApp_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.banapp.v1.Gateway/CreateBanApp",
+		FullMethod: "/appuser.gateway.ban.v1.Gateway/CreateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateBanApp(ctx, req.(*CreateBanAppRequest))
@@ -128,7 +128,7 @@ func _Gateway_UpdateBanApp_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.banapp.v1.Gateway/UpdateBanApp",
+		FullMethod: "/appuser.gateway.ban.v1.Gateway/UpdateBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateBanApp(ctx, req.(*UpdateBanAppRequest))
@@ -146,7 +146,7 @@ func _Gateway_DeleteBanApp_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.banapp.v1.Gateway/DeleteBanApp",
+		FullMethod: "/appuser.gateway.ban.v1.Gateway/DeleteBanApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteBanApp(ctx, req.(*DeleteBanAppRequest))
@@ -158,7 +158,7 @@ func _Gateway_DeleteBanApp_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.banapp.v1.Gateway",
+	ServiceName: "appuser.gateway.ban.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -175,5 +175,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/banapp/banapp.proto",
+	Metadata: "npool/appuser/gw/v1/ban/app.proto",
 }
