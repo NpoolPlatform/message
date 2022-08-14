@@ -51,7 +51,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ban_message\""
         },
-        "SignupMethodsString": {
+        "SignupMethodsStr": {
           "type": "string",
           "title": "Sign methods\n@inject_tag: sql:\"signup_methods\""
         },
@@ -61,7 +61,7 @@
             "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExtSigninMethodsString": {
+        "ExtSigninMethodsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"extern_signin_methods\""
         },
@@ -71,9 +71,12 @@
             "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "RecaptchaMethod": {
+        "RecaptchaMethodStr": {
           "type": "string",
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnableInt": {
           "type": "integer",
@@ -146,7 +149,7 @@
           }
         },
         "RecaptchaMethod": {
-          "type": "string",
+          "$ref": "#/definitions/v2RecaptchaType",
           "title": "Control flag"
         },
         "KycEnable": {
@@ -240,6 +243,14 @@
           "format": "int64"
         }
       }
+    },
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
     },
     "v2SignMethodType": {
       "type": "string",

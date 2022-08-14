@@ -33,7 +33,7 @@ message AppReq {
     repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 90;
 
     // Control flag
-    optional string          RecaptchaMethod    = 100;
+    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 100;
     optional bool            KycEnable          = 110;
     optional bool            SigninVerifyEnable = 120;
     optional bool            InvitationCodeMust = 130;
@@ -61,15 +61,16 @@ message App {
 
     // Sign methods
     // @inject_tag: sql:"signup_methods"
-    string SignupMethodsString             = 90;
+    string SignupMethodsStr                = 90;
     repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 100;
     // @inject_tag: sql:"extern_signin_methods"
-    string ExtSigninMethodsString          = 110;
+    string ExtSigninMethodsStr             = 110;
     repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 120;
 
     // Control flag
     // @inject_tag: sql:"recaptcha_method"
-    string          RecaptchaMethod        = 130;
+    string          RecaptchaMethodStr     = 130;
+    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 131;
     // @inject_tag: sql:"kyc_enable"
     int32           KycEnableInt           = 140;
     bool            KycEnable              = 150;
