@@ -746,10 +746,18 @@
         },
         "SigninVerifyTypeStr": {
           "type": "string",
-          "title": "Control flat\n@inject_tag: sql:\"signin_verify_type\""
+          "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
         },
         "SigninVerifyType": {
           "$ref": "#/definitions/v2SignMethodType"
+        },
+        "SigninVerifyByGoogleAuthInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
+        },
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean"
         },
         "GoogleAuthVerifiedInt": {
           "type": "integer",
