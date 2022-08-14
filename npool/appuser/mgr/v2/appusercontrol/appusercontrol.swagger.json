@@ -83,6 +83,9 @@
         },
         "GoogleAuthenticationVerified": {
           "type": "boolean"
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
         }
       }
     },
@@ -103,6 +106,9 @@
         },
         "GoogleAuthenticationVerified": {
           "type": "boolean"
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
         }
       }
     },
@@ -208,6 +214,22 @@
           "format": "int64"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     },
     "v2UpdateAppUserControlResponse": {
       "type": "object",

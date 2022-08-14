@@ -78,17 +78,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExternSigninMethods": {
+        "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
-          "type": "string"
+          "$ref": "#/definitions/v2Recaptcha"
         },
         "KycEnable": {
           "type": "boolean"
@@ -113,17 +113,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExternSigninMethods": {
+        "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
-          "type": "string"
+          "$ref": "#/definitions/v2Recaptcha"
         },
         "KycEnable": {
           "type": "boolean"
@@ -143,9 +143,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RecaptchaMethod": {
           "$ref": "#/definitions/v1StringVal"
         },
         "KycEnable": {
@@ -241,6 +238,36 @@
           "format": "int64"
         }
       }
+    },
+    "v2Recaptcha": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Recaptcha": {
+          "type": "string"
+        },
+        "Dashboard": {
+          "type": "string"
+        }
+      }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     },
     "v2UpdateAppControlResponse": {
       "type": "object",
