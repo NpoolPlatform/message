@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package appuser.middleware.role.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/role";
+
+import "npool/appuser/mgr/v2/approle/approle.proto";
+
+service Middleware {
+    rpc CreateRole    (CreateRoleRequest)  returns (CreateRoleResponse)  {}
+    rpc UpdateRole    (UpdateRoleRequest)  returns (UpdateRoleResponse)  {}
+    rpc GetRoles      (GetRolesRequest)    returns (GetRolesResponse)    {}
+    rpc GetAppRoles   (GetAppRolesRequest) returns (GetAppRolesResponse) {}
+}
+
+message Role {
+    // Base info
+    // @inject_tag: sql:"id"
+    string  ID           = 10;
+    // @inject_tag: sql:"created_by"
+    string  CreatedBy    = 20;
+    // @inject_tag: sql:"role"
+    string  Role         = 30;
+    // @inject_tag: sql:"description"
+    string  Description  = 40;
+    // @inject_tag: sql:"default"
+    int32   DefaultInt   = 50;
+    bool    Default      = 60;
+    // @inject_tag: sql:"app_id"
+    string  AppID        = 70;
+    // @inject_tag: sql:"app_name"
+    string  AppName      = 80;
+    // @inject_tag: sql:"app_logo"
+    string  AppLogo      = 90;
+    // @inject_tag: sql:"created_at"
+    uint32  CreatedAt    = 100;
+}
+
+message CreateRoleRequest {
+    // Permissioned by path
+    appuser.manager.approle.v2.AppRoleReq Info = 10;
+}
+
+message CreateRoleResponse {
+    Role Info = 10;
+}
+
+message UpdateRoleRequest {
+    // Permissioned by path
+    appuser.manager.approle.v2.AppRoleReq Info = 10;
+}
+
+message UpdateRoleResponse {
+    Role Info = 10;
+}
+
+message GetRolesRequest {
+    // Permissioned by path
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetRolesResponse {
+    repeated Role Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetAppRolesRequest {
+    // Permissioned by path
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppRolesResponse {
+    repeated Role Infos = 10;
+    uint32        Total = 20;
+}
+
