@@ -76,7 +76,7 @@
         "ThirdPartyUsername": {
           "type": "string"
         },
-        "ThirdPartyUserAvatar": {
+        "ThirdPartyAvatar": {
           "type": "string"
         }
       }
@@ -102,7 +102,7 @@
         "ThirdPartyUsername": {
           "type": "string"
         },
-        "ThirdPartyUserAvatar": {
+        "ThirdPartyAvatar": {
           "type": "string"
         }
       }
@@ -128,7 +128,7 @@
         "ThirdPartyUsername": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ThirdPartyUserAvatar": {
+        "ThirdPartyAvatar": {
           "$ref": "#/definitions/v1StringVal"
         }
       }

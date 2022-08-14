@@ -34,10 +34,10 @@ message AppRoleUser {
 }
 
 message Conds {
-    npool.v1.StringVal ID           = 10;
-    npool.v1.StringVal AppID        = 20;
-    npool.v1.StringVal RoleID       = 30;
-    npool.v1.StringVal UserID       = 40;
+    npool.v1.StringVal      ID      = 10;
+    npool.v1.StringVal      AppID   = 20;
+    npool.v1.StringVal      RoleID  = 30;
+    npool.v1.StringVal      UserID  = 40;
     npool.v1.StringSliceVal AppIDs  = 50;
     npool.v1.StringSliceVal RoleIDs = 60;
 }

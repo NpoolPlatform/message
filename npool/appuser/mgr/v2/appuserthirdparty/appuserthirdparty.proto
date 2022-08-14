@@ -26,7 +26,7 @@ message AppUserThirdPartyReq {
     optional string ThirdPartyID         = 40;
     optional string ThirdPartyUserID     = 50;
     optional string ThirdPartyUsername   = 60;
-    optional string ThirdPartyUserAvatar = 70;
+    optional string ThirdPartyAvatar     = 70;
 }
 
 message AppUserThirdParty {
@@ -36,17 +36,17 @@ message AppUserThirdParty {
     string ThirdPartyID         = 40;
     string ThirdPartyUserID     = 50;
     string ThirdPartyUsername   = 60;
-    string ThirdPartyUserAvatar = 70;
+    string ThirdPartyAvatar     = 70;
 }
 
 message Conds {
-    npool.v1.StringVal ID                   = 60;
-    npool.v1.StringVal AppID                = 70;
-    npool.v1.StringVal UserID               = 10;
-    npool.v1.StringVal ThirdPartyID         = 30;
-    npool.v1.StringVal ThirdPartyUserID     = 20;
-    npool.v1.StringVal ThirdPartyUsername   = 40;
-    npool.v1.StringVal ThirdPartyUserAvatar = 50;
+    npool.v1.StringVal ID                   = 10;
+    npool.v1.StringVal AppID                = 20;
+    npool.v1.StringVal UserID               = 30;
+    npool.v1.StringVal ThirdPartyID         = 40;
+    npool.v1.StringVal ThirdPartyUserID     = 50;
+    npool.v1.StringVal ThirdPartyUsername   = 60;
+    npool.v1.StringVal ThirdPartyAvatar     = 70;
 }
 
 message CreateAppUserThirdPartyRequest {
