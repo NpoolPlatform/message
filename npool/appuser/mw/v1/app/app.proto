@@ -29,8 +29,8 @@ message AppReq {
     optional string          BanMessage         = 70;
 
     // Sign methods
-    repeated string SignupMethods               = 80;
-    repeated string ExtSigninMethods            = 90;
+    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 80;
+    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 90;
 
     // Control flag
     optional string          RecaptchaMethod    = 100;
@@ -62,22 +62,22 @@ message App {
     // Sign methods
     // @inject_tag: sql:"signup_methods"
     string SignupMethodsString             = 90;
-    repeated string SignupMethods          = 100;
+    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 100;
     // @inject_tag: sql:"extern_signin_methods"
     string ExtSigninMethodsString          = 110;
-    repeated string ExtSigninMethods       = 120;
+    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 120;
 
     // Control flag
     // @inject_tag: sql:"recaptcha_method"
     string          RecaptchaMethod        = 130;
     // @inject_tag: sql:"kyc_enable"
-    int32            KycEnableInt          = 140;
+    int32           KycEnableInt           = 140;
     bool            KycEnable              = 150;
     // @inject_tag: sql:"signin_verify_enable"
-    int32            SigninVerifyEnableInt = 160;
+    int32           SigninVerifyEnableInt  = 160;
     bool            SigninVerifyEnable     = 170;
     // @inject_tag: sql:"invitation_code_must"
-    int32            InvitationCodeMustInt = 180;
+    int32           InvitationCodeMustInt  = 180;
     bool            InvitationCodeMust     = 190;
 
     // @inject_tag: sql:"created_at"
