@@ -318,7 +318,7 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "ExtSigninMethodsString": {
@@ -328,7 +328,7 @@
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
@@ -814,6 +814,22 @@
           "title": "@inject_tag: sql:\"invitation_code\""
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

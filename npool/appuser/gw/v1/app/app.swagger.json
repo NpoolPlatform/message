@@ -426,7 +426,7 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "ExtSigninMethodsString": {
@@ -436,7 +436,7 @@
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
@@ -503,14 +503,14 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           },
           "title": "Sign methods"
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
@@ -585,6 +585,22 @@
           "type": "boolean"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }
