@@ -88,7 +88,7 @@
           }
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2Recaptcha"
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnable": {
           "type": "boolean"
@@ -123,7 +123,7 @@
           }
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2Recaptcha"
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnable": {
           "type": "boolean"
@@ -239,19 +239,13 @@
         }
       }
     },
-    "v2Recaptcha": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Recaptcha": {
-          "type": "string"
-        },
-        "Dashboard": {
-          "type": "string"
-        }
-      }
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
     },
     "v2SignMethodType": {
       "type": "string",

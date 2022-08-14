@@ -26,7 +26,7 @@ message AppControlReq {
     optional string AppID               = 20;
     repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 30;
     repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 40;
-    optional appuser.manager.recaptcha.v2.Recaptcha       RecaptchaMethod  = 50;
+    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 50;
     optional bool KycEnable             = 60;
     optional bool SigninVerifyEnable    = 70;
     optional bool InvitationCodeMust    = 80;
@@ -37,7 +37,7 @@ message AppControl {
     string AppID                        = 20;
     repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 30;
     repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 40;
-    appuser.manager.recaptcha.v2.Recaptcha                RecaptchaMethod  = 50;
+    appuser.manager.recaptcha.v2.RecaptchaType            RecaptchaMethod  = 50;
     bool KycEnable                      = 60;
     bool SigninVerifyEnable             = 70;
     bool InvitationCodeMust             = 80;
