@@ -93,8 +93,8 @@ message GetAppResponse {
 
 message GetAppsRequest {
     // Permissioned by path
-    int32  Offset = 30;
-    int32  Limit  = 40;
+    int32  Offset = 10;
+    int32  Limit  = 20;
 }
 
 message GetAppsResponse {
@@ -114,16 +114,6 @@ message GetUserAppsResponse {
     uint32                                 Total = 20;
 }
 
-
-message BanAppRequest {
-    string AppID      = 10;
-    string BanMessage = 20;
-}
-
-message BanAppResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}
-
 message GetSignMethodsRequest {
 }
 
@@ -132,55 +122,10 @@ message GetSignMethodsResponse {
     repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
 }
 
-message SetSignMethodsRequest {
-    string          AppID         = 10;
-    repeated string SignMethodIDs = 20;
-}
-
-message SetSignMethodsResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}
-
 message GetRecaptchasRequest {
 }
 
 message GetRecaptchasResponse {
     // In future this may be put to database then admin can change it
     repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
-}
-
-message SetRecaptchaRequest {
-    string AppID       = 10;
-    string RecaptchaID = 20;
-}
-
-message SetRecaptchaResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}
-
-message SetKycRequest {
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetKycResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}
-
-message SetSigninVerifyRequest {
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetSigninVerifyResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}
-
-message SetInvitationCodeMustRequest {
-    string AppID  = 10;
-    bool   Enable = 20;
-}
-
-message SetInvitationCodeMustResponse {
-    appuser.middleware.app.v1.App Info = 10;
 }
