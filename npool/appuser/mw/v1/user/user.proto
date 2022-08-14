@@ -110,10 +110,13 @@ message User {
     // @inject_tag: sql:"id_number"
     string          IDNumber                    = 200;
 
-    // Control flat
+    // Control flag
     // @inject_tag: sql:"signin_verify_type"
     string          SigninVerifyTypeStr         = 210;
     appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 220;
+    // @inject_tag: sql:"signin_verify_by_google_authentication"
+    int32           SigninVerifyByGoogleAuthInt = 221;
+    bool            SigninVerifyByGoogleAuth    = 222;
     // @inject_tag: sql:"google_authentication_verified"
     int32           GoogleAuthVerifiedInt       = 230;
     bool            GoogleAuthVerified          = 240;
