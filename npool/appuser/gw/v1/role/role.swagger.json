@@ -57,7 +57,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleResponse"
+              "$ref": "#/definitions/appusergatewayrolev1CreateRoleResponse"
             }
           },
           "default": {
@@ -73,7 +73,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleRequest"
+              "$ref": "#/definitions/appusergatewayrolev1CreateRoleRequest"
             }
           }
         ],
@@ -89,7 +89,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRolesResponse"
+              "$ref": "#/definitions/appusergatewayrolev1GetAppRolesResponse"
             }
           },
           "default": {
@@ -105,7 +105,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRolesRequest"
+              "$ref": "#/definitions/appusergatewayrolev1GetAppRolesRequest"
             }
           }
         ],
@@ -121,7 +121,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRolesResponse"
+              "$ref": "#/definitions/appusergatewayrolev1GetRolesResponse"
             }
           },
           "default": {
@@ -137,7 +137,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRolesRequest"
+              "$ref": "#/definitions/appusergatewayrolev1GetRolesRequest"
             }
           }
         ],
@@ -154,7 +154,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleResponse"
+              "$ref": "#/definitions/appusergatewayrolev1UpdateRoleResponse"
             }
           },
           "default": {
@@ -170,7 +170,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleRequest"
+              "$ref": "#/definitions/appusergatewayrolev1UpdateRoleRequest"
             }
           }
         ],
@@ -181,6 +181,113 @@
     }
   },
   "definitions": {
+    "appusergatewayrolev1CreateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path (UserID is for CreatedBy)"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayrolev1CreateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "appusergatewayrolev1GetAppRolesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayrolev1GetAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayrolev1GetRolesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayrolev1GetRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayrolev1UpdateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "appusergatewayrolev1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -200,8 +307,11 @@
         "UserID": {
           "type": "string"
         },
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq"
+        "RoleName": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "string"
         }
       }
     },
@@ -209,39 +319,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
-    "rolev1GetAppRolesRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "rolev1GetAppRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2AppRole"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1Role"
         }
       }
     },
@@ -263,124 +341,49 @@
         }
       }
     },
-    "v1CreateRoleRequest": {
-      "type": "object",
-      "properties": {
-        "UserID": {
-          "type": "string",
-          "title": "Permissioned by path (UserID is for CreatedBy)"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "v1GetRolesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Role"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1Role": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateRoleRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "v1UpdateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRole"
-        }
-      }
-    },
-    "v2AppRole": {
-      "type": "object",
-      "properties": {
         "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Base info\n@inject_tag: sql:\"id\""
         },
         "CreatedBy": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
         },
         "Role": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"role\""
         },
         "Description": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "DefaultInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"default\""
         },
         "Default": {
           "type": "boolean"
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "AppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_name\""
+        },
+        "AppLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_logo\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         }
       }
     },
