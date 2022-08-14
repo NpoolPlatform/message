@@ -78,10 +78,7 @@
         "UserID": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean"
-        },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "SigninVerifyType": {
@@ -101,10 +98,7 @@
         "UserID": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean"
-        },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "SigninVerifyType": {
@@ -124,10 +118,7 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "SigninVerifyByGoogleAuthentication": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
