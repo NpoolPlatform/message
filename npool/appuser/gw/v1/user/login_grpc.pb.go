@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/login/login.proto
+// source: npool/appuser/gw/v1/user/login.proto
 
-package login
+package user
 
 import (
 	context "context"
@@ -37,7 +37,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	out := new(LoginResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.Gateway/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) Login(ctx context.Context, in *LoginRequest, opts ...grp
 
 func (c *gatewayClient) Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error) {
 	out := new(LoginedResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.Gateway/Logined", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/Logined", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *gatewayClient) Logined(ctx context.Context, in *LoginedRequest, opts ..
 
 func (c *gatewayClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
 	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.login.v1.Gateway/Logout", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/Logout", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _Gateway_Login_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.Gateway/Login",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).Login(ctx, req.(*LoginRequest))
@@ -126,7 +126,7 @@ func _Gateway_Logined_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.Gateway/Logined",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/Logined",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).Logined(ctx, req.(*LoginedRequest))
@@ -144,7 +144,7 @@ func _Gateway_Logout_Handler(srv interface{}, ctx context.Context, dec func(inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.login.v1.Gateway/Logout",
+		FullMethod: "/appuser.gateway.user.v1.Gateway/Logout",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).Logout(ctx, req.(*LogoutRequest))
@@ -156,7 +156,7 @@ func _Gateway_Logout_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.login.v1.Gateway",
+	ServiceName: "appuser.gateway.user.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -173,5 +173,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/login/login.proto",
+	Metadata: "npool/appuser/gw/v1/user/login.proto",
 }

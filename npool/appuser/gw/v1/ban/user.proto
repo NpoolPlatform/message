@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appuser.gateway.banappuser.v1;
+package appuser.gateway.ban.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/banappuser";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/ban";
 
 import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
@@ -10,28 +10,28 @@ import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
 service Gateway {
     rpc CreateBanUser (CreateBanUserRequest) returns (CreateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/ban/user"
+            post: "/v1/create/banuser"
             body: "*"
         };
     }
 
     rpc CreateAppBanUser (CreateAppBanUserRequest) returns (CreateAppBanUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/app/ban/user"
+            post: "/v1/create/app/banuser"
             body: "*"
         };
     }
 
     rpc UpdateBanUser (UpdateBanUserRequest) returns (UpdateBanUserResponse) {
         option (google.api.http) = {
-            post: "/v1/update/ban/user"
+            post: "/v1/update/banuser"
             body: "*"
         };
     }
 
     rpc DeleteBanUser (DeleteBanUserRequest) returns (DeleteBanUserResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/ban/user"
+            post: "/v1/delete/banuser"
             body: "*"
         };
     }

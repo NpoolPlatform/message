@@ -19,7 +19,7 @@ service Gateway {
     // Create genesis / admin apps
     rpc CreateAdminApps (CreateAdminAppsRequest) returns (CreateAdminAppsResponse) {
         option (google.api.http) = {
-            post: "/v1/create/admin/apps"
+            post: "/v1/create/adminapps"
             body: "*"
         };
     }
@@ -27,7 +27,7 @@ service Gateway {
     // Create genesis / admin role
     rpc CreateGenesisRoles (CreateGenesisRolesRequest) returns (CreateGenesisRolesResponse) {
         option (google.api.http) = {
-            post: "/v1/create/genesis/roles"
+            post: "/v1/create/genesisroles"
             body: "*"
         };
     }
@@ -35,14 +35,14 @@ service Gateway {
     // Create genesis / admin user
     rpc CreateGenesisUser (CreateGenesisUserRequest) returns (CreateGenesisUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/genesis/user"
+            post: "/v1/create/genesisuser"
             body: "*"
         };
     }
 
     rpc GetAdminApps (GetAdminAppsRequest) returns (GetAdminAppsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/admin/apps"
+            post: "/v1/get/adminapps"
             body: "*"
         };
     }
@@ -81,7 +81,7 @@ message CreateAdminAppsRequest {
 }
 
 message CreateAdminAppsResponse {
-    repeated appuser.manager.app.v2.App Infos = 10;
+    repeated appuser.middleware.app.v1.App Infos = 10;
 }
 
 message CreateGenesisRolesRequest {
