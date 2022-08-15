@@ -129,8 +129,7 @@ message GetAppRoleUsersResponse {
 }
 
 message GetManyRoleUsersRequest {
-    string          AppID   = 10;
-    repeated string RoleIDs = 20;
+    repeated string IDs = 10;
 }
 
 message GetManyRoleUsersResponse {
