@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package account.manager.account1.v1;
+package account.manager.deposit.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/account";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/deposit";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -21,43 +21,25 @@ service Manager {
     rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
 }
 
-enum AccountUsedFor {
-    DefaultAccountUsedFor = 0;
-    GoodBenefit           = 10;  // Daily good benefit receiver              - Platform Hot
-    UserBenefitHot        = 20;  // Limited amount money for withdrawal      - Platform Hot
-    UserBenefitCold       = 30;  // Money of user benefit over limitation    - Platform Cold
-    PlatformBenefitCold   = 40;  // Money over limitation                    - Platform Cold
-    GasProvider           = 50;  // Deposit money for transaction gas        - Platform Hot
-    UserWithdraw          = 60;  // User set withdraw address                - User Set
-    UserDeposit           = 70;  // Platform created user deposit address    - Platform Create
-    GoodPayment           = 80;  // Platform created for good payment        - Platform Created
-    PaymentCollector      = 90;  // Money for payment over limitation        - Platform Cold
-}
-
 message AccountReq {
-    optional string         ID         = 10;
-    optional string         CoinTypeID = 20;
-    optional string         Address    = 30;
-    optional AccountUsedFor UsedFor    = 40;
-    optional bool           PlatformHoldPrivateKey = 50;
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string AccountID  = 40;
 }
 
 message Account {
-    string         ID         = 10;
-    string         CoinTypeID = 20;
-    string         Address    = 30;
-    AccountUsedFor UsedFor    = 40;
-    bool           PlatformHoldPrivateKey = 50;
-    uint32         CreatedAt  = 60;
+    string ID        = 10;
+    string AppID     = 20;
+    string GoodID    = 30;
+    string AccountID = 40;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal CoinTypeID = 20;
-    optional npool.v1.StringVal Address    = 30;
-    optional npool.v1.Int32Val  UsedFor    = 40;
-    optional npool.v1.BoolVal   PlatformHoldPrivateKey = 50;
-    optional npool.v1.Uint32Val CreatedAt  = 60;
+    optional npool.v1.StringVal ID        = 10;
+    optional npool.v1.StringVal AppID     = 20;
+    optional npool.v1.StringVal GoodID    = 30;
+    optional npool.v1.StringVal AccountID = 40;
 }
 
 

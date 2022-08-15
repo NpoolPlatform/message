@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/goodbenefit/goodbenefit.proto",
+    "title": "npool/account/mgr/v1/deposit/deposit.proto",
     "version": "version not set"
   },
   "tags": [
@@ -50,6 +50,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -64,7 +67,10 @@
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "AccountID": {
@@ -84,6 +90,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "GoodID": {
