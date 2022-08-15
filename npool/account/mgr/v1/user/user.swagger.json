@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/platform/platform.proto",
+    "title": "npool/account/mgr/v1/user/user.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,80 +17,92 @@
   ],
   "paths": {},
   "definitions": {
-    "managerplatformv1Account": {
+    "manageruserv1Account": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "AppID": {
           "type": "string"
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+        "GoodID": {
+          "type": "string"
         },
         "AccountID": {
           "type": "string"
-        },
-        "Backup": {
-          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
-    "managerplatformv1AccountReq": {
+    "manageruserv1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AccountID": {
           "type": "string"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]"
+          "title": "Only [UserWithdraw, UserDeposit, UserDirectBenefit]"
         },
-        "AccountID": {
-          "type": "string"
-        },
-        "Backup": {
-          "type": "boolean"
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
-    "managerplatformv1AddAccountResponse": {
+    "manageruserv1AddAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
+          "$ref": "#/definitions/manageruserv1Account"
         }
       }
     },
-    "managerplatformv1Conds": {
+    "manageruserv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinTypeID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Backup": {
-          "$ref": "#/definitions/v1BoolVal"
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         }
       }
     },
-    "managerplatformv1CountAccountsResponse": {
+    "manageruserv1CountAccountsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -99,42 +111,34 @@
         }
       }
     },
-    "managerplatformv1CreateAccountResponse": {
+    "manageruserv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
+          "$ref": "#/definitions/manageruserv1Account"
         }
       }
     },
-    "managerplatformv1CreateAccountsResponse": {
+    "manageruserv1CreateAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/managerplatformv1Account"
+            "$ref": "#/definitions/manageruserv1Account"
           }
         }
       }
     },
-    "managerplatformv1DeleteAccountResponse": {
+    "manageruserv1DeleteAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
+          "$ref": "#/definitions/manageruserv1Account"
         }
       }
     },
-    "managerplatformv1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "managerplatformv1ExistAccountResponse": {
+    "manageruserv1ExistAccountCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -142,29 +146,37 @@
         }
       }
     },
-    "managerplatformv1GetAccountOnlyResponse": {
+    "manageruserv1ExistAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
+          "type": "boolean"
         }
       }
     },
-    "managerplatformv1GetAccountResponse": {
+    "manageruserv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
+          "$ref": "#/definitions/manageruserv1Account"
         }
       }
     },
-    "managerplatformv1GetAccountsResponse": {
+    "manageruserv1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/manageruserv1Account"
+        }
+      }
+    },
+    "manageruserv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/managerplatformv1Account"
+            "$ref": "#/definitions/manageruserv1Account"
           }
         },
         "Total": {
@@ -216,29 +228,6 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
     },
     "v1StringVal": {
       "type": "object",

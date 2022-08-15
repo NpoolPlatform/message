@@ -100,7 +100,8 @@
         "UserWithdraw",
         "UserDeposit",
         "GoodPayment",
-        "PaymentCollector"
+        "PaymentCollector",
+        "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
     },

@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/account/mgr/v1/deposit/deposit.proto
+// source: npool/account/mgr/v1/limitation/limitation.proto
 
-package deposit
+package withdraw
 
 import (
 	context "context"
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/CreateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateAccount(ctx context.Context, in *CreateAccountRequ
 
 func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error) {
 	out := new(CreateAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/CreateAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CreateAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRe
 
 func (c *managerClient) AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error) {
 	out := new(AddAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/AddAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/AddAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) AddAccount(ctx context.Context, in *AddAccountRequest, o
 
 func (c *managerClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
 	out := new(GetAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/GetAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetAccount(ctx context.Context, in *GetAccountRequest, o
 
 func (c *managerClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error) {
 	out := new(GetAccountOnlyResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/GetAccountOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccountOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRe
 
 func (c *managerClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/GetAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetAccounts(ctx context.Context, in *GetAccountsRequest,
 
 func (c *managerClient) ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error) {
 	out := new(ExistAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/ExistAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/ExistAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistAccount(ctx context.Context, in *ExistAccountReques
 
 func (c *managerClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
 	out := new(ExistAccountCondsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/ExistAccountConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/ExistAccountConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistAccountConds(ctx context.Context, in *ExistAccountC
 
 func (c *managerClient) CountAccounts(ctx context.Context, in *CountAccountsRequest, opts ...grpc.CallOption) (*CountAccountsResponse, error) {
 	out := new(CountAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/CountAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CountAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountAccounts(ctx context.Context, in *CountAccountsRequ
 
 func (c *managerClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
 	out := new(DeleteAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.deposit.v1.Manager/DeleteAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/DeleteAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/CreateAccount",
+		FullMethod: "/account.manager.withdraw.v1.Manager/CreateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateAccount(ctx, req.(*CreateAccountRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/CreateAccounts",
+		FullMethod: "/account.manager.withdraw.v1.Manager/CreateAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateAccounts(ctx, req.(*CreateAccountsRequest))
@@ -242,7 +242,7 @@ func _Manager_AddAccount_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/AddAccount",
+		FullMethod: "/account.manager.withdraw.v1.Manager/AddAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).AddAccount(ctx, req.(*AddAccountRequest))
@@ -260,7 +260,7 @@ func _Manager_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/GetAccount",
+		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAccount(ctx, req.(*GetAccountRequest))
@@ -278,7 +278,7 @@ func _Manager_GetAccountOnly_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/GetAccountOnly",
+		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccountOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAccountOnly(ctx, req.(*GetAccountOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/GetAccounts",
+		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAccounts(ctx, req.(*GetAccountsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistAccount_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/ExistAccount",
+		FullMethod: "/account.manager.withdraw.v1.Manager/ExistAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistAccount(ctx, req.(*ExistAccountRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistAccountConds_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/ExistAccountConds",
+		FullMethod: "/account.manager.withdraw.v1.Manager/ExistAccountConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistAccountConds(ctx, req.(*ExistAccountCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountAccounts_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/CountAccounts",
+		FullMethod: "/account.manager.withdraw.v1.Manager/CountAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountAccounts(ctx, req.(*CountAccountsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.deposit.v1.Manager/DeleteAccount",
+		FullMethod: "/account.manager.withdraw.v1.Manager/DeleteAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.manager.deposit.v1.Manager",
+	ServiceName: "account.manager.withdraw.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/account/mgr/v1/deposit/deposit.proto",
+	Metadata: "npool/account/mgr/v1/limitation/limitation.proto",
 }

@@ -37,6 +37,7 @@ message Account {
     account.manager.account1.v1.AccountUsedFor UsedFor = 30;
     string         AccountID   = 40;
     bool           Backup      = 50;
+    uint32         CreatedAt   = 60;
 }
 
 message Conds {

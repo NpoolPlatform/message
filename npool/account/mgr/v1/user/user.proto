@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package account.manager.deposit.v1;
+package account.manager.user.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/deposit";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/user";
 
+import "npool/account/mgr/v1/account/account.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
@@ -26,6 +27,9 @@ message AccountReq {
     optional string AppID      = 20;
     optional string UserID     = 30;
     optional string AccountID  = 40;
+    // Only [UserWithdraw, UserDeposit, UserDirectBenefit]
+    optional account.manager.account1.v1.AccountUsedFor UsedFor = 50;
+    repeated string Labels     = 60;   // For withdraw and benefit address
 }
 
 message Account {
@@ -33,6 +37,9 @@ message Account {
     string AppID     = 20;
     string GoodID    = 30;
     string AccountID = 40;
+    uint32 CreatedAt = 50;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 60;
+    repeated string Labels = 70;
 }
 
 message Conds {
@@ -40,6 +47,7 @@ message Conds {
     optional npool.v1.StringVal AppID     = 20;
     optional npool.v1.StringVal GoodID    = 30;
     optional npool.v1.StringVal AccountID = 40;
+    optional account.manager.account1.v1.AccountUsedFor UsedFor = 50;
 }
 
 

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package account.manager.goodbenefit.v1;
+package account.manager.withdraw.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/goodbenefit";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/withdraw";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -23,21 +23,26 @@ service Manager {
 
 message AccountReq {
     optional string ID         = 10;
-    optional string GoodID     = 20;
-    optional string AccountID  = 30;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string AccountID  = 40;
+    repeated string Labels     = 50;
 }
 
 message Account {
     string ID        = 10;
-    string GoodID    = 20;
-    string AccountID = 30;
-    uint32 CreatedAt = 40;
+    string AppID     = 20;
+    string GoodID    = 30;
+    string AccountID = 40;
+    repeated string Labels = 50;
+    uint32 CreatedAt = 60;
 }
 
 message Conds {
     optional npool.v1.StringVal ID        = 10;
-    optional npool.v1.StringVal GoodID    = 20;
-    optional npool.v1.StringVal AccountID = 30;
+    optional npool.v1.StringVal AppID     = 20;
+    optional npool.v1.StringVal GoodID    = 30;
+    optional npool.v1.StringVal AccountID = 40;
 }
 
 

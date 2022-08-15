@@ -32,6 +32,7 @@ enum AccountUsedFor {
     UserDeposit           = 70;  // Platform created user deposit address    - Platform Create
     GoodPayment           = 80;  // Platform created for good payment        - Platform Created
     PaymentCollector      = 90;  // Money for payment over limitation        - Platform Cold
+    UserDirectBenefit     = 100; // Benefit address for user set to product  - User set
 }
 
 message AccountReq {
