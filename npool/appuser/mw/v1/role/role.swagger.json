@@ -89,6 +89,21 @@
         }
       }
     },
+    "v1GetManyRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetRoleUsersResponse": {
       "type": "object",
       "properties": {

@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
-	GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
+	GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetManyRolesResponse, error)
 	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
 	GetManyRoleUsers(ctx context.Context, in *GetManyRoleUsersRequest, opts ...grpc.CallOption) (*GetManyRoleUsersResponse, error)
@@ -56,8 +56,8 @@ func (c *middlewareClient) GetAppRoles(ctx context.Context, in *GetAppRolesReque
 	return out, nil
 }
 
-func (c *middlewareClient) GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error) {
-	out := new(GetAppRolesResponse)
+func (c *middlewareClient) GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetManyRolesResponse, error) {
+	out := new(GetManyRolesResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetManyRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -98,7 +98,7 @@ func (c *middlewareClient) GetManyRoleUsers(ctx context.Context, in *GetManyRole
 type MiddlewareServer interface {
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
-	GetManyRoles(context.Context, *GetManyRolesRequest) (*GetAppRolesResponse, error)
+	GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error)
 	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
 	GetManyRoleUsers(context.Context, *GetManyRoleUsersRequest) (*GetManyRoleUsersResponse, error)
@@ -115,7 +115,7 @@ func (UnimplementedMiddlewareServer) GetRoles(context.Context, *GetRolesRequest)
 func (UnimplementedMiddlewareServer) GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoles not implemented")
 }
-func (UnimplementedMiddlewareServer) GetManyRoles(context.Context, *GetManyRolesRequest) (*GetAppRolesResponse, error) {
+func (UnimplementedMiddlewareServer) GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManyRoles not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
