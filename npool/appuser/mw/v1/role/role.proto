@@ -8,13 +8,10 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 
 service Middleware {
-    rpc CreateRole    (CreateRoleRequest)  returns (CreateRoleResponse)  {}
-    rpc UpdateRole    (UpdateRoleRequest)  returns (UpdateRoleResponse)  {}
-    rpc GetRoles      (GetRolesRequest)    returns (GetRolesResponse)    {}
-    rpc GetAppRoles   (GetAppRolesRequest) returns (GetAppRolesResponse) {}
+    rpc GetRoles      (GetRolesRequest)    returns (GetRolesResponse)     {}
+    rpc GetAppRoles   (GetAppRolesRequest) returns (GetAppRolesResponse)  {}
+    rpc GetManyRoles  (GetManyRolesRequest) returns (GetAppRolesResponse) {}
 
-    rpc CreateRoleUser    (CreateRoleUserRequest)  returns (CreateRoleUserResponse)  {}
-    rpc DeleteRoleUser    (DeleteRoleUserRequest)  returns (DeleteRoleUserResponse)  {}
     rpc GetRoleUsers      (GetRoleUsersRequest)    returns (GetRoleUsersResponse)    {}
     rpc GetAppRoleUsers   (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {}
 }
@@ -42,24 +39,6 @@ message Role {
     uint32  CreatedAt    = 100;
 }
 
-message CreateRoleRequest {
-    // Permissioned by path
-    appuser.manager.approle.v2.AppRoleReq Info = 10;
-}
-
-message CreateRoleResponse {
-    Role Info = 10;
-}
-
-message UpdateRoleRequest {
-    // Permissioned by path
-    appuser.manager.approle.v2.AppRoleReq Info = 10;
-}
-
-message UpdateRoleResponse {
-    Role Info = 10;
-}
-
 message GetRolesRequest {
     // Permissioned by path
     string AppID  = 10;
@@ -80,6 +59,16 @@ message GetAppRolesRequest {
 }
 
 message GetAppRolesResponse {
+    repeated Role Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetManyRolesRequest {
+    // Permissioned by path
+    string IDs = 10;
+}
+
+message GetManyRolesResponse {
     repeated Role Infos = 10;
     uint32        Total = 20;
 }
@@ -111,23 +100,6 @@ message RoleUser {
     string  EmailAddress = 120;
     // @inject_tag: sql:"phone_no"
     string  PhoneNO      = 130;
-}
-
-message CreateRoleUserRequest {
-    // Permissioned by path
-    appuser.manager.approleuser.v2.AppRoleUserReq Info = 10;
-}
-
-message CreateRoleUserResponse {
-    RoleUser Info = 10;
-}
-
-message DeleteRoleUserRequest {
-    string ID  = 10;
-}
-
-message DeleteRoleUserResponse {
-    RoleUser Info = 10;
 }
 
 message GetRoleUsersRequest {

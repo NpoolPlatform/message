@@ -74,30 +74,6 @@
         }
       }
     },
-    "v1CreateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "v1CreateRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RoleUser"
-        }
-      }
-    },
-    "v1DeleteRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RoleUser"
-        }
-      }
-    },
     "v1GetRoleUsersResponse": {
       "type": "object",
       "properties": {
@@ -229,54 +205,6 @@
         "PhoneNO": {
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
-        }
-      }
-    },
-    "v1UpdateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "v2AppRoleReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2AppRoleUserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
         }
       }
     }
