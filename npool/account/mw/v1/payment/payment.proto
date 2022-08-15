@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package account.middleware.goodbenefit.v1;
+package account.middleware.payment.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/goodbenefit";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/payment";
 
-import "npool/account/mgr/v1/goodbenefit/goodbenefit.proto";
+import "npool/account/mgr/v1/payment/payment.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
@@ -20,29 +20,35 @@ service Middleware {
 }
 
 message AccountReq {
-    optional string ID         = 10;
-    optional string GoodID     = 20;
-    optional string CoinTypeID = 30; // CoinTypeID of the good
-    optional string AccountID  = 40;
-    optional string Address    = 50;
+    optional string     ID             = 10;
+    optional string     CoinTypeID     = 20;
+    optional string     AccountID      = 30;
+    optional string     Address        = 40;
+    optional bool       Idle           = 50;
+    optional account.manager.payment.v1.OccupiedBy OccupiedBy = 60;
+    optional string     CollectingTID  = 70;  // Used to free the address when transaction done
 }
 
 message Account {
-    string ID         = 10;
-    string GoodID     = 20;
-    string CoinTypeID = 30;
-    string AccountID  = 40;
-    string Address    = 50;
-    uint32 CreatedAt  = 60;
-    uint32 UpdatedAt  = 70;
+    string     ID            = 10;
+    string     CoinTypeID    = 20;
+    string     AccountID     = 30;
+    string     Address       = 40;
+    bool       Idle          = 50;
+    account.manager.payment.v1.OccupiedBy OccupiedBy = 60;
+    string     CollectingTID = 70;
+    uint32     CreatedAt     = 80;
+    uint32     AvailableAt   = 90;
+    uint32     UpdatedAt     = 100;
 }
 
 message Conds {
     optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal GoodID      = 20;
-    optional npool.v1.StringVal CoinTypeID  = 30;
-    optional npool.v1.StringVal AccountID   = 40;
-    optional npool.v1.StringVal Address     = 50;
+    optional npool.v1.StringVal CoinTypeID  = 20;
+    optional npool.v1.StringVal AccountID   = 30;
+    optional npool.v1.BoolVal   Idle        = 40;
+    optional npool.v1.Int32Val  OccupiedBy  = 50;
+    optional npool.v1.StringVal Address     = 60;
 }
 
 message CreateAccountRequest {
