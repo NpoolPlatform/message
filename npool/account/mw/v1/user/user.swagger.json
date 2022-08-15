@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/user/user.proto",
+    "title": "npool/account/mw/v1/user/user.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "manageruserv1Account": {
+    "middlewareuserv1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -33,6 +33,9 @@
           "type": "string"
         },
         "AccountID": {
+          "type": "string"
+        },
+        "Address": {
           "type": "string"
         },
         "UsedFor": {
@@ -50,7 +53,7 @@
         }
       }
     },
-    "manageruserv1AccountReq": {
+    "middlewareuserv1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -66,6 +69,9 @@
           "type": "string"
         },
         "AccountID": {
+          "type": "string"
+        },
+        "Address": {
           "type": "string"
         },
         "UsedFor": {
@@ -80,15 +86,7 @@
         }
       }
     },
-    "manageruserv1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1Conds": {
+    "middlewareuserv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -106,86 +104,56 @@
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         }
       }
     },
-    "manageruserv1CountAccountsResponse": {
+    "middlewareuserv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/middlewareuserv1Account"
         }
       }
     },
-    "manageruserv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1CreateAccountsResponse": {
+    "middlewareuserv1CreateAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manageruserv1Account"
+            "$ref": "#/definitions/middlewareuserv1Account"
           }
         }
       }
     },
-    "manageruserv1DeleteAccountResponse": {
+    "middlewareuserv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
+          "$ref": "#/definitions/middlewareuserv1Account"
         }
       }
     },
-    "manageruserv1ExistAccountCondsResponse": {
+    "middlewareuserv1GetAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "boolean"
+          "$ref": "#/definitions/middlewareuserv1Account"
         }
       }
     },
-    "manageruserv1ExistAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "manageruserv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1GetAccountsResponse": {
+    "middlewareuserv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manageruserv1Account"
+            "$ref": "#/definitions/middlewareuserv1Account"
           }
         },
         "Total": {
@@ -246,6 +214,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareuserv1Account"
         }
       }
     }

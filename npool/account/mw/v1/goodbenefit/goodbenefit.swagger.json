@@ -32,6 +32,9 @@
         "AccountID": {
           "type": "string"
         },
+        "Backup": {
+          "type": "boolean"
+        },
         "Address": {
           "type": "string"
         },
@@ -62,6 +65,9 @@
         },
         "Address": {
           "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
         }
       }
     },

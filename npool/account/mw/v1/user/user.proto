@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package account.middleware.goodbenefit.v1;
+package account.middleware.user.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/goodbenefit";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/user";
 
-import "npool/account/mgr/v1/goodbenefit/goodbenefit.proto";
+import "npool/account/mgr/v1/account/account.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Middleware {
+service Manager {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
@@ -21,31 +21,38 @@ service Middleware {
 
 message AccountReq {
     optional string ID         = 10;
-    optional string GoodID     = 20;
-    optional string CoinTypeID = 30; // CoinTypeID of the good
-    optional string AccountID  = 40;
-    optional string Address    = 50;
-    optional bool   Backup     = 60;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string CoinTypeID = 40;
+    optional string AccountID  = 50;
+    optional string Address    = 60;
+    // Only [UserWithdraw, UserDeposit, UserDirectBenefit]
+    optional account.manager.account1.v1.AccountUsedFor UsedFor = 70;
+    repeated string Labels     = 80;   // For withdraw and benefit address
 }
 
 message Account {
     string ID         = 10;
-    string GoodID     = 20;
-    string CoinTypeID = 30;
-    string AccountID  = 40;
-    bool   Backup     = 50;
+    string AppID      = 20;
+    string UserID     = 30;
+    string CoinTypeID = 40;
+    string AccountID  = 50;
     string Address    = 60;
-    uint32 CreatedAt  = 70;
-    uint32 UpdatedAt  = 80;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 70;
+    repeated string Labels = 80;
+    uint32 CreatedAt  = 90;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal GoodID      = 20;
-    optional npool.v1.StringVal CoinTypeID  = 30;
-    optional npool.v1.StringVal AccountID   = 40;
-    optional npool.v1.StringVal Address     = 50;
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.StringVal CoinTypeID = 40;
+    optional npool.v1.StringVal AccountID  = 50;
+    optional npool.v1.StringVal Address    = 60;
+    optional account.manager.account1.v1.AccountUsedFor UsedFor = 70;
 }
+
 
 message CreateAccountRequest {
     AccountReq Info = 10;

@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/user/user.proto",
+    "title": "npool/account/mw/v1/platform/platform.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -17,32 +17,26 @@
   ],
   "paths": {},
   "definitions": {
-    "manageruserv1Account": {
+    "middlewareplatformv1Account": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
           "type": "string"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "AccountID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
@@ -50,142 +44,89 @@
         }
       }
     },
-    "manageruserv1AccountReq": {
+    "middlewareplatformv1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
           "type": "string"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [UserWithdraw, UserDeposit, UserDirectBenefit]"
+          "title": "Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]"
         },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "AccountID": {
+          "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
         }
       }
     },
-    "manageruserv1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1Conds": {
+    "middlewareplatformv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Int32Val"
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+        "Backup": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "manageruserv1CountAccountsResponse": {
+    "middlewareplatformv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/middlewareplatformv1Account"
         }
       }
     },
-    "manageruserv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1CreateAccountsResponse": {
+    "middlewareplatformv1CreateAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manageruserv1Account"
+            "$ref": "#/definitions/middlewareplatformv1Account"
           }
         }
       }
     },
-    "manageruserv1DeleteAccountResponse": {
+    "middlewareplatformv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
+          "$ref": "#/definitions/middlewareplatformv1Account"
         }
       }
     },
-    "manageruserv1ExistAccountCondsResponse": {
+    "middlewareplatformv1GetAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "boolean"
+          "$ref": "#/definitions/middlewareplatformv1Account"
         }
       }
     },
-    "manageruserv1ExistAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "manageruserv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
-    "manageruserv1GetAccountsResponse": {
+    "middlewareplatformv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manageruserv1Account"
+            "$ref": "#/definitions/middlewareplatformv1Account"
           }
         },
         "Total": {
@@ -238,6 +179,29 @@
       ],
       "default": "DefaultAccountUsedFor"
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -246,6 +210,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareplatformv1Account"
         }
       }
     }
