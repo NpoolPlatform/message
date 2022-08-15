@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package chain.manager.coin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateCoin     (CreateCoinRequest)     returns (CreateCoinResponse)     {}
+    rpc CreateCoins    (CreateCoinsRequest)    returns (CreateCoinsResponse)    {}
+    rpc AddCoin        (AddCoinRequest)        returns (AddCoinResponse)        {}
+    rpc GetCoin        (GetCoinRequest)        returns (GetCoinResponse)        {}
+    rpc GetCoinOnly    (GetCoinOnlyRequest)    returns (GetCoinOnlyResponse)    {}
+    rpc GetCoins       (GetCoinsRequest)       returns (GetCoinsResponse)       {}
+    rpc ExistCoin      (ExistCoinRequest)      returns (ExistCoinResponse)      {}
+    rpc ExistCoinConds (ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
+    rpc CountCoins     (CountCoinsRequest)     returns (CountCoinsResponse)     {}
+    rpc DeleteCoin     (DeleteCoinRequest)     returns (DeleteCoinResponse)     {}
+}
+
+message CoinReq {
+    optional string    ID      = 10;
+    optional string    Name    = 20;
+    optional string    Logo    = 30;
+    optional bool      Presale = 40;
+    optional bool      ForPay  = 50;
+    optional string    Unit    = 60;
+    optional string    ENV     = 70;
+}
+
+message Coin {
+    string ID        = 10;
+    string Name      = 20;
+    string Logo      = 30;
+    bool   Presale   = 40;
+    bool   ForPay    = 50;
+    string Unit      = 60;
+    string ENV       = 70;
+    uint32 CreatedAt = 80;
+    uint32 UpdatedAt = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID       = 10;
+    optional npool.v1.StringVal Name     = 20;
+    optional npool.v1.StringVal ENV      = 30;
+    optional npool.v1.BoolVal   Presale  = 40;
+    optional npool.v1.BoolVal   ForPay   = 50;
+}
+
+
+message CreateCoinRequest {
+    CoinReq Info = 10;
+}
+
+message CreateCoinResponse {
+    Coin Info = 10;
+}
+
+message CreateCoinsRequest {
+    repeated CoinReq Infos = 10;
+}
+
+message CreateCoinsResponse {
+    repeated Coin Infos = 10;
+}
+
+message AddCoinRequest {
+    CoinReq Info = 10;
+}
+
+message AddCoinResponse {
+    Coin Info = 10;
+}
+
+message GetCoinRequest {
+    string ID = 10;
+}
+
+message GetCoinResponse {
+    Coin Info = 10;
+}
+
+message GetCoinsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetCoinsResponse {
+    repeated Coin Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetCoinOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCoinOnlyResponse {
+    Coin Info = 10;
+}
+
+message ExistCoinRequest {
+    string ID = 10;
+}
+
+message ExistCoinResponse {
+    bool Info = 10;
+}
+
+message ExistCoinCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCoinCondsResponse {
+    bool Info = 10;
+}
+
+message CountCoinsRequest {
+    Conds Conds = 10;
+}
+
+message CountCoinsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteCoinRequest {
+    string ID = 10;
+}
+
+message DeleteCoinResponse {
+    Coin Info = 10;
+}
+
