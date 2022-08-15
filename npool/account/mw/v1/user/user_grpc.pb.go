@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ManagerClient is the client API for Manager service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type MiddlewareClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
@@ -30,254 +30,254 @@ type ManagerClient interface {
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 }
 
-type managerClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *managerClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
+func (c *middlewareClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/CreateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error) {
+func (c *middlewareClient) CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error) {
 	out := new(CreateAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/CreateAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/CreateAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
+func (c *middlewareClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/UpdateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/UpdateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
+func (c *middlewareClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
 	out := new(GetAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/GetAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/GetAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error) {
+func (c *middlewareClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error) {
 	out := new(GetAccountOnlyResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/GetAccountOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/GetAccountOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
+func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Manager/GetAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.middleware.user.v1.Middleware/GetAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ManagerServer interface {
+type MiddlewareServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedManagerServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
+func (UnimplementedMiddlewareServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
 }
-func (UnimplementedManagerServer) CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error) {
+func (UnimplementedMiddlewareServer) CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccounts not implemented")
 }
-func (UnimplementedManagerServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
 }
-func (UnimplementedManagerServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
+func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
 }
-func (UnimplementedManagerServer) GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error) {
+func (UnimplementedMiddlewareServer) GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccountOnly not implemented")
 }
-func (UnimplementedManagerServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
+func (UnimplementedMiddlewareServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Manager_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAccount(ctx, in)
+		return srv.(MiddlewareServer).CreateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/CreateAccount",
+		FullMethod: "/account.middleware.user.v1.Middleware/CreateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAccount(ctx, req.(*CreateAccountRequest))
+		return srv.(MiddlewareServer).CreateAccount(ctx, req.(*CreateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAccounts(ctx, in)
+		return srv.(MiddlewareServer).CreateAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/CreateAccounts",
+		FullMethod: "/account.middleware.user.v1.Middleware/CreateAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAccounts(ctx, req.(*CreateAccountsRequest))
+		return srv.(MiddlewareServer).CreateAccounts(ctx, req.(*CreateAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateAccount(ctx, in)
+		return srv.(MiddlewareServer).UpdateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/UpdateAccount",
+		FullMethod: "/account.middleware.user.v1.Middleware/UpdateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
+		return srv.(MiddlewareServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccount(ctx, in)
+		return srv.(MiddlewareServer).GetAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/GetAccount",
+		FullMethod: "/account.middleware.user.v1.Middleware/GetAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccount(ctx, req.(*GetAccountRequest))
+		return srv.(MiddlewareServer).GetAccount(ctx, req.(*GetAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccountOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetAccountOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccountOnly(ctx, in)
+		return srv.(MiddlewareServer).GetAccountOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/GetAccountOnly",
+		FullMethod: "/account.middleware.user.v1.Middleware/GetAccountOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccountOnly(ctx, req.(*GetAccountOnlyRequest))
+		return srv.(MiddlewareServer).GetAccountOnly(ctx, req.(*GetAccountOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccounts(ctx, in)
+		return srv.(MiddlewareServer).GetAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.user.v1.Manager/GetAccounts",
+		FullMethod: "/account.middleware.user.v1.Middleware/GetAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccounts(ctx, req.(*GetAccountsRequest))
+		return srv.(MiddlewareServer).GetAccounts(ctx, req.(*GetAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.middleware.user.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "account.middleware.user.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAccount",
-			Handler:    _Manager_CreateAccount_Handler,
+			Handler:    _Middleware_CreateAccount_Handler,
 		},
 		{
 			MethodName: "CreateAccounts",
-			Handler:    _Manager_CreateAccounts_Handler,
+			Handler:    _Middleware_CreateAccounts_Handler,
 		},
 		{
 			MethodName: "UpdateAccount",
-			Handler:    _Manager_UpdateAccount_Handler,
+			Handler:    _Middleware_UpdateAccount_Handler,
 		},
 		{
 			MethodName: "GetAccount",
-			Handler:    _Manager_GetAccount_Handler,
+			Handler:    _Middleware_GetAccount_Handler,
 		},
 		{
 			MethodName: "GetAccountOnly",
-			Handler:    _Manager_GetAccountOnly_Handler,
+			Handler:    _Middleware_GetAccountOnly_Handler,
 		},
 		{
 			MethodName: "GetAccounts",
-			Handler:    _Manager_GetAccounts_Handler,
+			Handler:    _Middleware_GetAccounts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

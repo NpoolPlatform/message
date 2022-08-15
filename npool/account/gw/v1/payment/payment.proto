@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package account.gateway.payment.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/payment";
+
+import "npool/account/mgr/v1/payment/payment.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/paymentaccounts"
+            body: "*"
+        };
+    }
+}
+
+message Account {
+    string     ID            = 10;
+    string     CoinTypeID    = 20;
+    string     CoinName      = 30;
+    string     CoinUnit      = 40;
+    string     CoinEnv       = 50;
+    string     CoinLogo      = 60;
+    string     AccountID     = 70;
+    string     Address       = 80;
+    bool       Idle          = 90;
+    account.manager.payment.v1.OccupiedBy OccupiedBy = 100;
+    string     CollectingTID = 110;
+    uint32     CreatedAt     = 120;
+    uint32     AvailableAt   = 130;
+    uint32     UpdatedAt     = 140;
+}
+
+message GetAccountsRequest {
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAccountsResponse {
+    repeated Account Infos = 10;
+    uint32           Total = 20;
+}
+

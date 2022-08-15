@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}

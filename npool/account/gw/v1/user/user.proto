@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package account.gateway.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/user";
+
+import "npool/account/mgr/v1/account/account.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateWithdrawAccount (CreateWithdrawAccountRequest) returns (CreateWithdrawAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/withdrawaccount"
+            body: "*"
+        };
+    }
+
+    rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/useraccounts"
+            body: "*"
+        };
+    }
+
+    rpc GetAppAccounts (GetAppAccountsRequest) returns (GetAppAccountsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/useraccounts"
+            body: "*"
+        };
+    }
+}
+
+message Account {
+    string ID         = 10;
+    string AppID      = 20;
+    string UserID     = 30;
+    string CoinTypeID = 40;
+    string CoinName   = 50;
+    string CoinUnit   = 60;
+    string CoinEnv    = 70;
+    string CoinLogo   = 80;
+    string AccountID  = 90;
+    string Address    = 100;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 110;
+    repeated string Labels = 120;
+    uint32 CreatedAt  = 130;
+}
+
+message CreateWithdrawAccountRequest {
+    // Only could be withdraw address
+    // Deposit address will be created by platform
+    // Direct benefit address will be set with order
+    string          AppID       = 10;
+    string          UserID      = 20;
+    string          CoinTypeID  = 30;
+    string          Address     = 40;
+    repeated string Labels      = 50;
+}
+
+message CreateWithdrawAccountResponse {
+    Account Info = 10;
+}
+
+message GetAccountsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 30;
+    int32 Offset   = 40;
+    int32 Limit    = 50;
+}
+
+message GetAccountsResponse {
+    repeated Account Infos = 10;
+    uint32           Total = 20;
+}
+
+
+message GetAppAccountsRequest {
+    string AppID   = 10;
+    int32 Offset   = 20;
+    int32 Limit    = 30;
+}
+
+message GetAppAccountsResponse {
+    repeated Account Infos = 10;
+    uint32           Total = 20;
+}
