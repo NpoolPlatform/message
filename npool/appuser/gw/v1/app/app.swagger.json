@@ -120,7 +120,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRecaptchasResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
             }
           },
           "default": {
@@ -136,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRecaptchasRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
             }
           }
         ],
@@ -152,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetSignMethodsResponse"
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsResponse"
             }
           },
           "default": {
@@ -168,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetSignMethodsRequest"
+              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsRequest"
             }
           }
         ],
@@ -306,6 +306,36 @@
         }
       }
     },
+    "appusergatewayappv1GetRecaptchasRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "appusergatewayappv1GetSignMethodsRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
     "appusergatewayappv1GetUserAppsRequest": {
       "type": "object",
       "properties": {
@@ -389,29 +419,32 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ban_message\""
         },
-        "SignupMethodsString": {
+        "SignupMethodsStr": {
           "type": "string",
           "title": "Sign methods\n@inject_tag: sql:\"signup_methods\""
         },
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExtSigninMethodsString": {
+        "ExtSigninMethodsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"extern_signin_methods\""
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "RecaptchaMethod": {
+        "RecaptchaMethodStr": {
           "type": "string",
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnableInt": {
           "type": "integer",
@@ -473,18 +506,18 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           },
           "title": "Sign methods"
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
-          "type": "string",
+          "$ref": "#/definitions/v2RecaptchaType",
           "title": "Control flag"
         },
         "KycEnable": {
@@ -525,36 +558,6 @@
         }
       }
     },
-    "v1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "v1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "v1GetSignMethodsRequest": {
-      "type": "object"
-    },
-    "v1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
     "v2Recaptcha": {
       "type": "object",
       "properties": {
@@ -568,6 +571,14 @@
           "type": "string"
         }
       }
+    },
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
     },
     "v2SignMethod": {
       "type": "object",
@@ -585,6 +596,22 @@
           "type": "boolean"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

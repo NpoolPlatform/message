@@ -78,11 +78,11 @@
         "UserID": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuthentication": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
-        "GoogleAuthenticationVerified": {
-          "type": "boolean"
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
         }
       }
     },
@@ -98,11 +98,11 @@
         "UserID": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuthentication": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
-        "GoogleAuthenticationVerified": {
-          "type": "boolean"
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
         }
       }
     },
@@ -118,10 +118,7 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "SigninVerifyByGoogleAuthentication": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -208,6 +205,22 @@
           "format": "int64"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     },
     "v2UpdateAppUserControlResponse": {
       "type": "object",

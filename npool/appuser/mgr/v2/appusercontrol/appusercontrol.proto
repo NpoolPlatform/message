@@ -5,6 +5,7 @@ package appuser.manager.appusercontrol.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appusercontrol";
 
 import "npool/npool.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 
 service Manager {
     rpc CreateAppUserControl     (CreateAppUserControlRequest)     returns (CreateAppUserControlResponse)     {}
@@ -20,27 +21,26 @@ service Manager {
 }
 
 message AppUserControlReq {
-    optional string ID                                = 10;
-    optional string AppID                             = 20;
-    optional string UserID                            = 30;
-    optional bool SigninVerifyByGoogleAuthentication  = 40;
-    optional bool GoogleAuthenticationVerified        = 50;
+    optional string ID                 = 10;
+    optional string AppID              = 20;
+    optional string UserID             = 30;
+    optional bool   GoogleAuthVerified = 40;
+    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
 }
 
 message AppUserControl {
-    string ID                               = 10;
-    string AppID                            = 20;
-    string UserID                           = 30;
-    bool SigninVerifyByGoogleAuthentication = 40;
-    bool GoogleAuthenticationVerified       = 50;
+    string ID                 = 10;
+    string AppID              = 20;
+    string UserID             = 30;
+    bool   GoogleAuthVerified = 40;
+    appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
 }
 
 message Conds {
-    npool.v1.StringVal ID                               = 10;
-    npool.v1.StringVal AppID                            = 20;
-    npool.v1.StringVal UserID                           = 30;
-    npool.v1.BoolVal SigninVerifyByGoogleAuthentication = 40;
-    npool.v1.BoolVal GoogleAuthenticationVerified       = 50;
+    npool.v1.StringVal ID               = 10;
+    npool.v1.StringVal AppID            = 20;
+    npool.v1.StringVal UserID           = 30;
+    npool.v1.BoolVal GoogleAuthVerified = 40;
 }
 
 message CreateAppUserControlRequest {

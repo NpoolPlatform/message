@@ -6,14 +6,15 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/signm
 
 enum SignMethodType {
     DefaultSignMethodType = 0;
-    Mobile                = 10;
-    Email                 = 20;
-    Twitter               = 30;
-    Github                = 40;
-    Facebook              = 50;
-    Linkedin              = 60;
-    Wechat                = 70;
-    Google                = 80;
+    Mobile                = 10; // For signup, signin, verify
+    Email                 = 20; // For signup, signin, verify
+    Twitter               = 30; // For signin
+    Github                = 40; // For signin
+    Facebook              = 50; // For signin
+    Linkedin              = 60; // For signin
+    Wechat                = 70; // For signin
+    Google                = 80; // For signin, verify
+    Username              = 90; // For signup, signin
 }
 
 message SignMethod {

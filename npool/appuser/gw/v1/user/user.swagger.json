@@ -175,6 +175,102 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/login": {
+      "post": {
+        "operationId": "Gateway_Login",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/logined": {
+      "post": {
+        "operationId": "Gateway_Logined",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LoginedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LoginedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/logout": {
+      "post": {
+        "operationId": "Gateway_Logout",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LogoutResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LogoutRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -299,6 +395,81 @@
         }
       }
     },
+    "v1LoginRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "ManMachineSpec": {
+          "type": "string"
+        },
+        "EnvironmentSpec": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1LoginedRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LoginedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1LogoutRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LogoutResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1SignupRequest": {
       "type": "object",
       "properties": {
@@ -306,17 +477,14 @@
           "type": "string",
           "title": "Permissioned by path"
         },
-        "Username": {
+        "Account": {
           "type": "string"
         },
         "PasswordHash": {
           "type": "string"
         },
-        "Account": {
-          "type": "string"
-        },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "VerificationCode": {
           "type": "string"
@@ -421,20 +589,27 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id_number\""
         },
-        "SigninVerifyByGoogleAuthenticationInt": {
+        "SigninVerifyTypeStr": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "SigninVerifyByGoogleAuthInt": {
           "type": "integer",
           "format": "int32",
-          "title": "Control flat\n@inject_tag: sql:\"signin_verify_by_google_authentication\""
+          "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuthentication": {
+        "SigninVerifyByGoogleAuth": {
           "type": "boolean"
         },
-        "GoogleAuthenticationVerifiedInt": {
+        "GoogleAuthVerifiedInt": {
           "type": "integer",
           "format": "int32",
           "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "BanAppUserID": {
@@ -470,7 +645,7 @@
           "type": "string"
         },
         "LoginAccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "LoginToken": {
           "type": "string"
@@ -551,11 +726,11 @@
         "IDNumber": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean",
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType",
           "title": "Control"
         },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "PasswordHash": {
@@ -575,7 +750,7 @@
         "ThirdPartyUsername": {
           "type": "string"
         },
-        "ThirdPartyUserAvatar": {
+        "ThirdPartyAvatar": {
           "type": "string"
         },
         "Banned": {
@@ -593,6 +768,22 @@
           "title": "RoleUser"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

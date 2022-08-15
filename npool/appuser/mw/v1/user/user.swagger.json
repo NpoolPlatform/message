@@ -188,20 +188,27 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id_number\""
         },
-        "SigninVerifyByGoogleAuthenticationInt": {
+        "SigninVerifyTypeStr": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "SigninVerifyByGoogleAuthInt": {
           "type": "integer",
           "format": "int32",
-          "title": "Control flat\n@inject_tag: sql:\"signin_verify_by_google_authentication\""
+          "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuthentication": {
+        "SigninVerifyByGoogleAuth": {
           "type": "boolean"
         },
-        "GoogleAuthenticationVerifiedInt": {
+        "GoogleAuthVerifiedInt": {
           "type": "integer",
           "format": "int32",
           "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "BanAppUserID": {
@@ -237,7 +244,7 @@
           "type": "string"
         },
         "LoginAccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "LoginToken": {
           "type": "string"
@@ -318,11 +325,11 @@
         "IDNumber": {
           "type": "string"
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean",
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType",
           "title": "Control"
         },
-        "GoogleAuthenticationVerified": {
+        "GoogleAuthVerified": {
           "type": "boolean"
         },
         "PasswordHash": {
@@ -342,7 +349,7 @@
         "ThirdPartyUsername": {
           "type": "string"
         },
-        "ThirdPartyUserAvatar": {
+        "ThirdPartyAvatar": {
           "type": "string"
         },
         "Banned": {
@@ -360,6 +367,22 @@
           "title": "RoleUser"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

@@ -1,0 +1,198 @@
+syntax = "proto3";
+
+package appuser.gateway.role.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/role";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/approle/approle.proto";
+import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
+import "npool/appuser/mw/v1/role/role.proto";
+
+service Gateway {
+    // Create role should ignore genesis roles
+    rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/role"
+            body: "*"
+        };
+    }
+
+    rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/roles"
+            body: "*"
+        };
+    }
+
+    // Update role should ignore genesis roles
+    rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/role"
+            body: "*"
+        };
+    }
+
+    // Admin apis
+    rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/role"
+            body: "*"
+        };
+    }
+
+    rpc GetAppRoles (GetAppRolesRequest) returns (GetAppRolesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/roles"
+            body: "*"
+        };
+    }
+
+    rpc CreateRoleUser (CreateRoleUserRequest) returns (CreateRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/roleuser"
+            body: "*"
+        };
+    }
+
+    rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/roleusers"
+            body: "*"
+        };
+    }
+
+    rpc DeleteRoleUser (DeleteRoleUserRequest) returns (DeleteRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/roleuser"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppRoleUser(CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/roleuser"
+            body: "*"
+        };
+    }
+
+    rpc GetAppRoleUsers (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/roleusers"
+            body: "*"
+        };
+    }
+}
+
+message CreateRoleRequest {
+    // Permissioned by path (UserID is for CreatedBy)
+    string AppID    = 10;
+    string UserID   = 20;
+    string RoleName = 30;
+    string Default  = 40;
+}
+
+message CreateRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
+}
+
+message GetRolesRequest {
+    // Permissioned by path
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetRolesResponse {
+    repeated appuser.middleware.role.v1.Role Infos = 10;
+    uint32                                   Total = 20;
+}
+
+message UpdateRoleRequest {
+    // Permissioned by path
+    appuser.manager.approle.v2.AppRoleReq Info = 10;
+}
+
+message UpdateRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
+}
+
+message CreateAppRoleRequest {
+    // Permissioned by path
+    string TargetAppID = 10;
+    string UserID      = 20;
+    string RoleName    = 30;
+    string Default     = 40;
+}
+
+message CreateAppRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
+}
+
+message GetAppRolesRequest {
+    // Permissioned by path
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppRolesResponse {
+    repeated appuser.middleware.role.v1.Role Infos = 10;
+    uint32                                   Total = 20;
+}
+
+message CreateRoleUserRequest {
+    // Permissioned by path
+    string                                        TargetUserID = 10;
+    appuser.manager.approleuser.v2.AppRoleUserReq Info         = 20;
+}
+
+message CreateRoleUserResponse {
+    appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message GetRoleUsersRequest {
+    // Permissioned by path
+    string AppID  = 10;
+    string RoleID = 20;
+    int32  Limit  = 30;
+    int32  Offset = 40;
+}
+
+message GetRoleUsersResponse {
+    repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+    uint32                                              Total = 20;
+}
+
+message DeleteRoleUserRequest {
+    // Permissioned by path
+    string ID = 10;
+}
+
+message DeleteRoleUserResponse {
+    appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message CreateAppRoleUserRequest {
+    // Permissioned by path
+    string                                        TargetAppID  = 10;
+    string                                        TargetUserID = 20;
+    appuser.manager.approleuser.v2.AppRoleUserReq Info         = 30;
+}
+
+message CreateAppRoleUserResponse {
+    appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message GetAppRoleUsersRequest {
+    // Permissioned by path
+    string TargetAppID = 10;
+    string RoleID      = 20;
+    int32  Limit       = 30;
+    int32  Offset      = 40;
+}
+
+message GetAppRoleUsersResponse {
+    repeated appuser.manager.approleuser.v2.AppRoleUser Infos = 10;
+    uint32                                              Total = 20;
+}

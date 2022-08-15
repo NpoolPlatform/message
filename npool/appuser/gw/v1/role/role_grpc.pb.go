@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/approle/approle.proto
+// source: npool/appuser/gw/v1/role/role.proto
 
-package approle
+package role
 
 import (
 	context "context"
@@ -30,6 +30,11 @@ type GatewayClient interface {
 	// Admin apis
 	CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error)
 	GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
+	CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error)
+	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
+	DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error)
+	CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error)
+	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
 }
 
 type gatewayClient struct {
@@ -42,7 +47,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error) {
 	out := new(CreateRoleResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.Gateway/CreateRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/CreateRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +56,7 @@ func (c *gatewayClient) CreateRole(ctx context.Context, in *CreateRoleRequest, o
 
 func (c *gatewayClient) GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error) {
 	out := new(GetRolesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.Gateway/GetRoles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/GetRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +65,7 @@ func (c *gatewayClient) GetRoles(ctx context.Context, in *GetRolesRequest, opts 
 
 func (c *gatewayClient) UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error) {
 	out := new(UpdateRoleResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.Gateway/UpdateRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/UpdateRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +74,7 @@ func (c *gatewayClient) UpdateRole(ctx context.Context, in *UpdateRoleRequest, o
 
 func (c *gatewayClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRequest, opts ...grpc.CallOption) (*CreateAppRoleResponse, error) {
 	out := new(CreateAppRoleResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.Gateway/CreateAppRole", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/CreateAppRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +83,52 @@ func (c *gatewayClient) CreateAppRole(ctx context.Context, in *CreateAppRoleRequ
 
 func (c *gatewayClient) GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error) {
 	out := new(GetAppRolesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.approle.v1.Gateway/GetAppRoles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/GetAppRoles", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error) {
+	out := new(CreateRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/CreateRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error) {
+	out := new(GetRoleUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/GetRoleUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error) {
+	out := new(DeleteRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/DeleteRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
+	out := new(CreateAppRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/CreateAppRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error) {
+	out := new(GetAppRoleUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/GetAppRoleUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,6 +147,11 @@ type GatewayServer interface {
 	// Admin apis
 	CreateAppRole(context.Context, *CreateAppRoleRequest) (*CreateAppRoleResponse, error)
 	GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
+	CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error)
+	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
+	DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error)
+	CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error)
+	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -118,6 +173,21 @@ func (UnimplementedGatewayServer) CreateAppRole(context.Context, *CreateAppRoleR
 }
 func (UnimplementedGatewayServer) GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoles not implemented")
+}
+func (UnimplementedGatewayServer) CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRoleUser not implemented")
+}
+func (UnimplementedGatewayServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUsers not implemented")
+}
+func (UnimplementedGatewayServer) DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRoleUser not implemented")
+}
+func (UnimplementedGatewayServer) CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleUser not implemented")
+}
+func (UnimplementedGatewayServer) GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsers not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -142,7 +212,7 @@ func _Gateway_CreateRole_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approle.v1.Gateway/CreateRole",
+		FullMethod: "/appuser.gateway.role.v1.Gateway/CreateRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateRole(ctx, req.(*CreateRoleRequest))
@@ -160,7 +230,7 @@ func _Gateway_GetRoles_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approle.v1.Gateway/GetRoles",
+		FullMethod: "/appuser.gateway.role.v1.Gateway/GetRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetRoles(ctx, req.(*GetRolesRequest))
@@ -178,7 +248,7 @@ func _Gateway_UpdateRole_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approle.v1.Gateway/UpdateRole",
+		FullMethod: "/appuser.gateway.role.v1.Gateway/UpdateRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateRole(ctx, req.(*UpdateRoleRequest))
@@ -196,7 +266,7 @@ func _Gateway_CreateAppRole_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approle.v1.Gateway/CreateAppRole",
+		FullMethod: "/appuser.gateway.role.v1.Gateway/CreateAppRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateAppRole(ctx, req.(*CreateAppRoleRequest))
@@ -214,10 +284,100 @@ func _Gateway_GetAppRoles_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.approle.v1.Gateway/GetAppRoles",
+		FullMethod: "/appuser.gateway.role.v1.Gateway/GetAppRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppRoles(ctx, req.(*GetAppRolesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/CreateRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateRoleUser(ctx, req.(*CreateRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRoleUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetRoleUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/GetRoleUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetRoleUsers(ctx, req.(*GetRoleUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_DeleteRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/DeleteRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteRoleUser(ctx, req.(*DeleteRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateAppRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateAppRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/CreateAppRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateAppRoleUser(ctx, req.(*CreateAppRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRoleUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppRoleUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/GetAppRoleUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppRoleUsers(ctx, req.(*GetAppRoleUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,7 +386,7 @@ func _Gateway_GetAppRoles_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.approle.v1.Gateway",
+	ServiceName: "appuser.gateway.role.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -249,7 +409,27 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetAppRoles",
 			Handler:    _Gateway_GetAppRoles_Handler,
 		},
+		{
+			MethodName: "CreateRoleUser",
+			Handler:    _Gateway_CreateRoleUser_Handler,
+		},
+		{
+			MethodName: "GetRoleUsers",
+			Handler:    _Gateway_GetRoleUsers_Handler,
+		},
+		{
+			MethodName: "DeleteRoleUser",
+			Handler:    _Gateway_DeleteRoleUser_Handler,
+		},
+		{
+			MethodName: "CreateAppRoleUser",
+			Handler:    _Gateway_CreateAppRoleUser_Handler,
+		},
+		{
+			MethodName: "GetAppRoleUsers",
+			Handler:    _Gateway_GetAppRoleUsers_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/approle/approle.proto",
+	Metadata: "npool/appuser/gw/v1/role/role.proto",
 }

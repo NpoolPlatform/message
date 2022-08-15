@@ -5,6 +5,7 @@ package appuser.middleware.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "npool/npool.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -20,130 +21,132 @@ service Middleware {
 
 message UserReq {
     // Base
-    optional string ID                         = 10;
-    optional string AppID                      = 20;
-    optional string EmailAddress               = 30;
-    optional string PhoneNO                    = 40;
+    optional string ID                 = 10;
+    optional string AppID              = 20;
+    optional string EmailAddress       = 30;
+    optional string PhoneNO            = 40;
 
     // Imported
-    optional string ImportedFromAppID          = 50;
+    optional string ImportedFromAppID  = 50;
 
     // Extra
-    optional string Username                   = 60;
-    repeated string AddressFields              = 70;
-    optional string Gender                     = 80;
-    optional string PostalCode                 = 90;
-    optional uint32 Age                        = 100;
-    optional uint32 Birthday                   = 110;
-    optional string Avatar                     = 120;
-    optional string Organization               = 130;
-    optional string FirstName                  = 140;
-    optional string LastName                   = 150;
-    optional string IDNumber                   = 160;
+    optional string Username           = 60;
+    repeated string AddressFields      = 70;
+    optional string Gender             = 80;
+    optional string PostalCode         = 90;
+    optional uint32 Age                = 100;
+    optional uint32 Birthday           = 110;
+    optional string Avatar             = 120;
+    optional string Organization       = 130;
+    optional string FirstName          = 140;
+    optional string LastName           = 150;
+    optional string IDNumber           = 160;
 
     // Control
-    optional bool SigninVerifyByGoogleAuth     = 170;
-    optional bool GoogleAuthenticationVerified = 180;
+    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 170;
+    optional bool GoogleAuthVerified   = 180;
 
     // Secret
-    optional string PasswordHash               = 190;
-    optional string GoogleSecret               = 200;
+    optional string PasswordHash       = 190;
+    optional string GoogleSecret       = 200;
 
     // ThirdParty
-    optional string ThirdPartyID               = 210;
-    optional string ThirdPartyUserID           = 220;
-    optional string ThirdPartyUsername         = 230;
-    optional string ThirdPartyUserAvatar       = 240;
+    optional string ThirdPartyID       = 210;
+    optional string ThirdPartyUserID   = 220;
+    optional string ThirdPartyUsername = 230;
+    optional string ThirdPartyAvatar   = 240;
 
     // Banned
-    optional bool   Banned                     = 250;
-    optional string BanMessage                 = 260;
+    optional bool   Banned             = 250;
+    optional string BanMessage         = 260;
 
     // RoleUser
-    repeated string RoleIDs                    = 270;
+    repeated string RoleIDs            = 270;
 }
 
 message User {
     // Base
     // @inject_tag: sql:"id"
-    string          ID                                    = 10;
+    string          ID                          = 10;
     // @inject_tag: sql:"app_id"
-    string          AppID                                 = 20;
+    string          AppID                       = 20;
     // @inject_tag: sql:"email_address"
-    string          EmailAddress                          = 30;
+    string          EmailAddress                = 30;
     // @inject_tag: sql:"phone_no"
-    string          PhoneNO                               = 40;
+    string          PhoneNO                     = 40;
 
     // Imported
     // @inject_tag: sql:"import_from_app"
-    string          ImportedFromAppID                     = 50;
+    string          ImportedFromAppID           = 50;
     // @inject_tag: sql:"imported_from_app_name"
-    string          ImportedFromAppName                   = 60;
+    string          ImportedFromAppName         = 60;
     // @inject_tag: sql:"imported_from_app_logo"
-    string          ImportedFromAppLogo                   = 70;
+    string          ImportedFromAppLogo         = 70;
     // @inject_tag: sql:"imported_from_app_home"
-    string          ImportedFromAppHome                   = 80;
+    string          ImportedFromAppHome         = 80;
 
     // Extra
     // @inject_tag: sql:"username"
-    string          Username                              = 90;
+    string          Username                    = 90;
     // @inject_tag: sql:"address_fields"
-    string          AddressFieldsString                   = 100;
-    repeated string AddressFields                         = 110;
+    string          AddressFieldsString         = 100;
+    repeated string AddressFields               = 110;
     // @inject_tag: sql:"gender"
-    string          Gender                                = 120;
+    string          Gender                      = 120;
     // @inject_tag: sql:"postal_code"
-    string          PostalCode                            = 130;
+    string          PostalCode                  = 130;
     // @inject_tag: sql:"age"
-    uint32          Age                                   = 140;
+    uint32          Age                         = 140;
     // @inject_tag: sql:"birthday"
-    uint32          Birthday                              = 150;
+    uint32          Birthday                    = 150;
     // @inject_tag: sql:"avatar"
-    string          Avatar                                = 160;
+    string          Avatar                      = 160;
     // @inject_tag: sql:"organization"
-    string          Organization                          = 170;
+    string          Organization                = 170;
     // @inject_tag: sql:"first_name"
-    string          FirstName                             = 180;
+    string          FirstName                   = 180;
     // @inject_tag: sql:"last_name"
-    string          LastName                              = 190;
+    string          LastName                    = 190;
     // @inject_tag: sql:"id_number"
-    string          IDNumber                              = 200;
+    string          IDNumber                    = 200;
 
-    // Control flat
+    // Control flag
+    // @inject_tag: sql:"signin_verify_type"
+    string          SigninVerifyTypeStr         = 210;
+    appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 220;
     // @inject_tag: sql:"signin_verify_by_google_authentication"
-    int32           SigninVerifyByGoogleAuthenticationInt = 210;
-    bool            SigninVerifyByGoogleAuthentication    = 220;
+    int32           SigninVerifyByGoogleAuthInt = 221;
+    bool            SigninVerifyByGoogleAuth    = 222;
     // @inject_tag: sql:"google_authentication_verified"
-    int32           GoogleAuthenticationVerifiedInt       = 230;
-    bool            GoogleAuthenticationVerified          = 240;
+    int32           GoogleAuthVerifiedInt       = 230;
+    bool            GoogleAuthVerified          = 240;
     // @inject_tag: sql:"ban_app_user_id"
-    string          BanAppUserID                          = 250;
-    bool            Banned                                = 260;
+    string          BanAppUserID                = 250;
+    bool            Banned                      = 260;
     // @inject_tag: sql:"ban_message"
-    string          BanMessage                            = 270;
+    string          BanMessage                  = 270;
 
     // Secret map
     // @inject_tag: sql:"google_secret"
-    string          GoogleSecret                          = 280;
-    bool            HasGoogleSecret                       = 290;
+    string          GoogleSecret                = 280;
+    bool            HasGoogleSecret             = 290;
 
     // Role
-    repeated string Roles                                 = 300;
+    repeated string Roles                       = 300;
 
     // Login info
-    bool            Logined                              = 310;
-    string          LoginAccount                         = 320;
-    string          LoginAccountType                     = 330;
-    string          LoginToken                           = 340;
-    string          LoginClientIP                        = 350;
-    string          LoginClientUserAgent                 = 360;
+    bool            Logined                     = 310;
+    string          LoginAccount                = 320;
+    appuser.manager.signmethod.v2.SignMethodType LoginAccountType = 330;
+    string          LoginToken                  = 340;
+    string          LoginClientIP               = 350;
+    string          LoginClientUserAgent        = 360;
 
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                            = 370;
+    uint32          CreatedAt                   = 370;
 
     // @inject_tag: sql:"invitation_code"
-    string          InvitationCode                       = 380;
-
+    string          InvitationCode              = 380;
 }
 
 message CreateUserRequest {

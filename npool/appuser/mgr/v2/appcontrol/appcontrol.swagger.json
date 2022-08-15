@@ -78,17 +78,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExternSigninMethods": {
+        "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
-          "type": "string"
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnable": {
           "type": "boolean"
@@ -113,17 +113,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
-        "ExternSigninMethods": {
+        "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v2SignMethodType"
           }
         },
         "RecaptchaMethod": {
-          "type": "string"
+          "$ref": "#/definitions/v2RecaptchaType"
         },
         "KycEnable": {
           "type": "boolean"
@@ -143,9 +143,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RecaptchaMethod": {
           "$ref": "#/definitions/v1StringVal"
         },
         "KycEnable": {
@@ -241,6 +238,30 @@
           "format": "int64"
         }
       }
+    },
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     },
     "v2UpdateAppControlResponse": {
       "type": "object",
