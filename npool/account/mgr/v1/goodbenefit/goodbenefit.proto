@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+package account.manager.goodbenefit.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/goodbenefit";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateGoodBenefit     (CreateGoodBenefitRequest)     returns (CreateGoodBenefitResponse)     {}
+    rpc CreateGoodBenefits    (CreateGoodBenefitsRequest)    returns (CreateGoodBenefitsResponse)    {}
+    rpc AddGoodBenefit        (AddGoodBenefitRequest)        returns (AddGoodBenefitResponse)        {}
+    rpc GetGoodBenefit        (GetGoodBenefitRequest)        returns (GetGoodBenefitResponse)        {}
+    rpc GetGoodBenefitOnly    (GetGoodBenefitOnlyRequest)    returns (GetGoodBenefitOnlyResponse)    {}
+    rpc GetGoodBenefits       (GetGoodBenefitsRequest)       returns (GetGoodBenefitsResponse)       {}
+    rpc ExistGoodBenefit      (ExistGoodBenefitRequest)      returns (ExistGoodBenefitResponse)      {}
+    rpc ExistGoodBenefitConds (ExistGoodBenefitCondsRequest) returns (ExistGoodBenefitCondsResponse) {}
+    rpc CountGoodBenefits     (CountGoodBenefitsRequest)     returns (CountGoodBenefitsResponse)     {}
+    rpc DeleteGoodBenefit     (DeleteGoodBenefitRequest)     returns (DeleteGoodBenefitResponse)     {}
+}
+
+message GoodBenefitReq {
+    optional string ID         = 10;
+    optional string GoodID     = 20;
+    optional string AccountID  = 30;
+}
+
+message GoodBenefit {
+    string ID        = 10;
+    string GoodID    = 20;
+    string AccountID = 30;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID        = 10;
+    optional npool.v1.StringVal GoodID    = 20;
+    optional npool.v1.StringVal AccountID = 30;
+}
+
+
+message CreateGoodBenefitRequest {
+    GoodBenefitReq Info = 10;
+}
+
+message CreateGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message CreateGoodBenefitsRequest {
+    repeated GoodBenefitReq Infos = 10;
+}
+
+message CreateGoodBenefitsResponse {
+    repeated GoodBenefit Infos = 10;
+}
+
+message AddGoodBenefitRequest {
+    GoodBenefitReq Info = 10;
+}
+
+message AddGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message GetGoodBenefitRequest {
+    string ID = 10;
+}
+
+message GetGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
+message GetGoodBenefitsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetGoodBenefitsResponse {
+    repeated GoodBenefit Infos = 10;
+    uint32               Total = 20;
+}
+
+message GetGoodBenefitOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetGoodBenefitOnlyResponse {
+    GoodBenefit Info = 10;
+}
+
+message ExistGoodBenefitRequest {
+    string ID = 10;
+}
+
+message ExistGoodBenefitResponse {
+    bool Info = 10;
+}
+
+message ExistGoodBenefitCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistGoodBenefitCondsResponse {
+    bool Info = 10;
+}
+
+message CountGoodBenefitsRequest {
+    Conds Conds = 10;
+}
+
+message CountGoodBenefitsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteGoodBenefitRequest {
+    string ID = 10;
+}
+
+message DeleteGoodBenefitResponse {
+    GoodBenefit Info = 10;
+}
+
