@@ -64,8 +64,7 @@ message GetAppRolesResponse {
 }
 
 message GetManyRolesRequest {
-    // Permissioned by path
-    string IDs = 10;
+    repeated string IDs = 10;
 }
 
 message GetManyRolesResponse {
