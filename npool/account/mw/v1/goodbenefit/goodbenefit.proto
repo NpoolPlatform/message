@@ -1,46 +1,48 @@
 syntax = "proto3";
 
-package account.manager.goodbenefit.v1;
+package account.middleware.goodbenefit.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/account/mgr/v1/goodbenefit";
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/goodbenefit";
 
+import "npool/account/mgr/v1/goodbenefit/goodbenefit.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
-    rpc AddAccount        (AddAccountRequest)        returns (AddAccountResponse)        {}
+    rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
+
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
-    rpc ExistAccount      (ExistAccountRequest)      returns (ExistAccountResponse)      {}
-    rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
-    rpc CountAccounts     (CountAccountsRequest)     returns (CountAccountsResponse)     {}
-    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
 }
 
 message AccountReq {
     optional string ID         = 10;
     optional string GoodID     = 20;
-    optional bool   Backup     = 30;
+    optional string CoinTypeID = 30; // CoinTypeID of the good
     optional string AccountID  = 40;
+    optional string Address    = 50;
 }
 
 message Account {
-    string ID        = 10;
-    string GoodID    = 20;
-    string AccountID = 30;
-    bool   Backup    = 40;
-    uint32 CreatedAt = 50;
-    uint32 UpdatedAt = 60;
+    string ID         = 10;
+    string GoodID     = 20;
+    string CoinTypeID = 30;
+    string AccountID  = 40;
+    string Address    = 50;
+    uint32 CreatedAt  = 60;
+    uint32 UpdatedAt  = 70;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID        = 10;
-    optional npool.v1.StringVal GoodID    = 20;
-    optional npool.v1.StringVal AccountID = 30;
+    optional npool.v1.StringVal ID          = 10;
+    optional npool.v1.StringVal GoodID      = 20;
+    optional npool.v1.StringVal CoinTypeID  = 30;
+    optional npool.v1.StringVal AccountID   = 40;
+    optional npool.v1.StringVal Address     = 50;
 }
 
 
@@ -60,11 +62,11 @@ message CreateAccountsResponse {
     repeated Account Infos = 10;
 }
 
-message AddAccountRequest {
+message UpdateAccountRequest {
     AccountReq Info = 10;
 }
 
-message AddAccountResponse {
+message UpdateAccountResponse {
     Account Info = 10;
 }
 
@@ -92,38 +94,6 @@ message GetAccountOnlyRequest {
 }
 
 message GetAccountOnlyResponse {
-    Account Info = 10;
-}
-
-message ExistAccountRequest {
-    string ID = 10;
-}
-
-message ExistAccountResponse {
-    bool Info = 10;
-}
-
-message ExistAccountCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistAccountCondsResponse {
-    bool Info = 10;
-}
-
-message CountAccountsRequest {
-    Conds Conds = 10;
-}
-
-message CountAccountsResponse {
-    uint32 Info = 10;
-}
-
-message DeleteAccountRequest {
-    string ID = 10;
-}
-
-message DeleteAccountResponse {
     Account Info = 10;
 }
 
