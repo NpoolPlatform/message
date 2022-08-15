@@ -229,6 +229,21 @@
         }
       }
     },
+    "v1GetManyAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetUserAppsResponse": {
       "type": "object",
       "properties": {
