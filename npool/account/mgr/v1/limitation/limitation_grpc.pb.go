@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/account/mgr/v1/limitation/limitation.proto
 
-package withdraw
+package limitation
 
 import (
 	context "context"
@@ -22,16 +22,16 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
-	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
-	CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error)
-	AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error)
-	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
-	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
-	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
-	ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error)
-	ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error)
-	CountAccounts(ctx context.Context, in *CountAccountsRequest, opts ...grpc.CallOption) (*CountAccountsResponse, error)
-	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
+	CreateLimitation(ctx context.Context, in *CreateLimitationRequest, opts ...grpc.CallOption) (*CreateLimitationResponse, error)
+	CreateLimitations(ctx context.Context, in *CreateLimitationsRequest, opts ...grpc.CallOption) (*CreateLimitationsResponse, error)
+	AddLimitation(ctx context.Context, in *AddLimitationRequest, opts ...grpc.CallOption) (*AddLimitationResponse, error)
+	GetLimitation(ctx context.Context, in *GetLimitationRequest, opts ...grpc.CallOption) (*GetLimitationResponse, error)
+	GetLimitationOnly(ctx context.Context, in *GetLimitationOnlyRequest, opts ...grpc.CallOption) (*GetLimitationOnlyResponse, error)
+	GetLimitations(ctx context.Context, in *GetLimitationsRequest, opts ...grpc.CallOption) (*GetLimitationsResponse, error)
+	ExistLimitation(ctx context.Context, in *ExistLimitationRequest, opts ...grpc.CallOption) (*ExistLimitationResponse, error)
+	ExistLimitationConds(ctx context.Context, in *ExistLimitationCondsRequest, opts ...grpc.CallOption) (*ExistLimitationCondsResponse, error)
+	CountLimitations(ctx context.Context, in *CountLimitationsRequest, opts ...grpc.CallOption) (*CountLimitationsResponse, error)
+	DeleteLimitation(ctx context.Context, in *DeleteLimitationRequest, opts ...grpc.CallOption) (*DeleteLimitationResponse, error)
 }
 
 type managerClient struct {
@@ -42,90 +42,90 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
-func (c *managerClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
-	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CreateAccount", in, out, opts...)
+func (c *managerClient) CreateLimitation(ctx context.Context, in *CreateLimitationRequest, opts ...grpc.CallOption) (*CreateLimitationResponse, error) {
+	out := new(CreateLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/CreateLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error) {
-	out := new(CreateAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CreateAccounts", in, out, opts...)
+func (c *managerClient) CreateLimitations(ctx context.Context, in *CreateLimitationsRequest, opts ...grpc.CallOption) (*CreateLimitationsResponse, error) {
+	out := new(CreateLimitationsResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/CreateLimitations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error) {
-	out := new(AddAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/AddAccount", in, out, opts...)
+func (c *managerClient) AddLimitation(ctx context.Context, in *AddLimitationRequest, opts ...grpc.CallOption) (*AddLimitationResponse, error) {
+	out := new(AddLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/AddLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
-	out := new(GetAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccount", in, out, opts...)
+func (c *managerClient) GetLimitation(ctx context.Context, in *GetLimitationRequest, opts ...grpc.CallOption) (*GetLimitationResponse, error) {
+	out := new(GetLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/GetLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error) {
-	out := new(GetAccountOnlyResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccountOnly", in, out, opts...)
+func (c *managerClient) GetLimitationOnly(ctx context.Context, in *GetLimitationOnlyRequest, opts ...grpc.CallOption) (*GetLimitationOnlyResponse, error) {
+	out := new(GetLimitationOnlyResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/GetLimitationOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
-	out := new(GetAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/GetAccounts", in, out, opts...)
+func (c *managerClient) GetLimitations(ctx context.Context, in *GetLimitationsRequest, opts ...grpc.CallOption) (*GetLimitationsResponse, error) {
+	out := new(GetLimitationsResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/GetLimitations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error) {
-	out := new(ExistAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/ExistAccount", in, out, opts...)
+func (c *managerClient) ExistLimitation(ctx context.Context, in *ExistLimitationRequest, opts ...grpc.CallOption) (*ExistLimitationResponse, error) {
+	out := new(ExistLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/ExistLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
-	out := new(ExistAccountCondsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/ExistAccountConds", in, out, opts...)
+func (c *managerClient) ExistLimitationConds(ctx context.Context, in *ExistLimitationCondsRequest, opts ...grpc.CallOption) (*ExistLimitationCondsResponse, error) {
+	out := new(ExistLimitationCondsResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/ExistLimitationConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CountAccounts(ctx context.Context, in *CountAccountsRequest, opts ...grpc.CallOption) (*CountAccountsResponse, error) {
-	out := new(CountAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/CountAccounts", in, out, opts...)
+func (c *managerClient) CountLimitations(ctx context.Context, in *CountLimitationsRequest, opts ...grpc.CallOption) (*CountLimitationsResponse, error) {
+	out := new(CountLimitationsResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/CountLimitations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
-	out := new(DeleteAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.withdraw.v1.Manager/DeleteAccount", in, out, opts...)
+func (c *managerClient) DeleteLimitation(ctx context.Context, in *DeleteLimitationRequest, opts ...grpc.CallOption) (*DeleteLimitationResponse, error) {
+	out := new(DeleteLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/DeleteLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,16 +136,16 @@ func (c *managerClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequ
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
-	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
-	CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error)
-	AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error)
-	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
-	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
-	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
-	ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error)
-	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
-	CountAccounts(context.Context, *CountAccountsRequest) (*CountAccountsResponse, error)
-	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
+	CreateLimitation(context.Context, *CreateLimitationRequest) (*CreateLimitationResponse, error)
+	CreateLimitations(context.Context, *CreateLimitationsRequest) (*CreateLimitationsResponse, error)
+	AddLimitation(context.Context, *AddLimitationRequest) (*AddLimitationResponse, error)
+	GetLimitation(context.Context, *GetLimitationRequest) (*GetLimitationResponse, error)
+	GetLimitationOnly(context.Context, *GetLimitationOnlyRequest) (*GetLimitationOnlyResponse, error)
+	GetLimitations(context.Context, *GetLimitationsRequest) (*GetLimitationsResponse, error)
+	ExistLimitation(context.Context, *ExistLimitationRequest) (*ExistLimitationResponse, error)
+	ExistLimitationConds(context.Context, *ExistLimitationCondsRequest) (*ExistLimitationCondsResponse, error)
+	CountLimitations(context.Context, *CountLimitationsRequest) (*CountLimitationsResponse, error)
+	DeleteLimitation(context.Context, *DeleteLimitationRequest) (*DeleteLimitationResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -153,35 +153,35 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedManagerServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
+func (UnimplementedManagerServer) CreateLimitation(context.Context, *CreateLimitationRequest) (*CreateLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateLimitation not implemented")
 }
-func (UnimplementedManagerServer) CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAccounts not implemented")
+func (UnimplementedManagerServer) CreateLimitations(context.Context, *CreateLimitationsRequest) (*CreateLimitationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateLimitations not implemented")
 }
-func (UnimplementedManagerServer) AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddAccount not implemented")
+func (UnimplementedManagerServer) AddLimitation(context.Context, *AddLimitationRequest) (*AddLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddLimitation not implemented")
 }
-func (UnimplementedManagerServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
+func (UnimplementedManagerServer) GetLimitation(context.Context, *GetLimitationRequest) (*GetLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLimitation not implemented")
 }
-func (UnimplementedManagerServer) GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccountOnly not implemented")
+func (UnimplementedManagerServer) GetLimitationOnly(context.Context, *GetLimitationOnlyRequest) (*GetLimitationOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLimitationOnly not implemented")
 }
-func (UnimplementedManagerServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
+func (UnimplementedManagerServer) GetLimitations(context.Context, *GetLimitationsRequest) (*GetLimitationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLimitations not implemented")
 }
-func (UnimplementedManagerServer) ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistAccount not implemented")
+func (UnimplementedManagerServer) ExistLimitation(context.Context, *ExistLimitationRequest) (*ExistLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistLimitation not implemented")
 }
-func (UnimplementedManagerServer) ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistAccountConds not implemented")
+func (UnimplementedManagerServer) ExistLimitationConds(context.Context, *ExistLimitationCondsRequest) (*ExistLimitationCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistLimitationConds not implemented")
 }
-func (UnimplementedManagerServer) CountAccounts(context.Context, *CountAccountsRequest) (*CountAccountsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountAccounts not implemented")
+func (UnimplementedManagerServer) CountLimitations(context.Context, *CountLimitationsRequest) (*CountLimitationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountLimitations not implemented")
 }
-func (UnimplementedManagerServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
+func (UnimplementedManagerServer) DeleteLimitation(context.Context, *DeleteLimitationRequest) (*DeleteLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteLimitation not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -196,182 +196,182 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Manager_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAccountRequest)
+func _Manager_CreateLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAccount(ctx, in)
+		return srv.(ManagerServer).CreateLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/CreateAccount",
+		FullMethod: "/account.manager.limitation.v1.Manager/CreateLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAccount(ctx, req.(*CreateAccountRequest))
+		return srv.(ManagerServer).CreateLimitation(ctx, req.(*CreateLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAccountsRequest)
+func _Manager_CreateLimitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLimitationsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAccounts(ctx, in)
+		return srv.(ManagerServer).CreateLimitations(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/CreateAccounts",
+		FullMethod: "/account.manager.limitation.v1.Manager/CreateLimitations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAccounts(ctx, req.(*CreateAccountsRequest))
+		return srv.(ManagerServer).CreateLimitations(ctx, req.(*CreateLimitationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddAccountRequest)
+func _Manager_AddLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddAccount(ctx, in)
+		return srv.(ManagerServer).AddLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/AddAccount",
+		FullMethod: "/account.manager.limitation.v1.Manager/AddLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddAccount(ctx, req.(*AddAccountRequest))
+		return srv.(ManagerServer).AddLimitation(ctx, req.(*AddLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountRequest)
+func _Manager_GetLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccount(ctx, in)
+		return srv.(ManagerServer).GetLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccount",
+		FullMethod: "/account.manager.limitation.v1.Manager/GetLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccount(ctx, req.(*GetAccountRequest))
+		return srv.(ManagerServer).GetLimitation(ctx, req.(*GetLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccountOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountOnlyRequest)
+func _Manager_GetLimitationOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLimitationOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccountOnly(ctx, in)
+		return srv.(ManagerServer).GetLimitationOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccountOnly",
+		FullMethod: "/account.manager.limitation.v1.Manager/GetLimitationOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccountOnly(ctx, req.(*GetAccountOnlyRequest))
+		return srv.(ManagerServer).GetLimitationOnly(ctx, req.(*GetLimitationOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountsRequest)
+func _Manager_GetLimitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLimitationsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAccounts(ctx, in)
+		return srv.(ManagerServer).GetLimitations(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/GetAccounts",
+		FullMethod: "/account.manager.limitation.v1.Manager/GetLimitations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAccounts(ctx, req.(*GetAccountsRequest))
+		return srv.(ManagerServer).GetLimitations(ctx, req.(*GetLimitationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistAccountRequest)
+func _Manager_ExistLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistAccount(ctx, in)
+		return srv.(ManagerServer).ExistLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/ExistAccount",
+		FullMethod: "/account.manager.limitation.v1.Manager/ExistLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistAccount(ctx, req.(*ExistAccountRequest))
+		return srv.(ManagerServer).ExistLimitation(ctx, req.(*ExistLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistAccountCondsRequest)
+func _Manager_ExistLimitationConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistLimitationCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistAccountConds(ctx, in)
+		return srv.(ManagerServer).ExistLimitationConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/ExistAccountConds",
+		FullMethod: "/account.manager.limitation.v1.Manager/ExistLimitationConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistAccountConds(ctx, req.(*ExistAccountCondsRequest))
+		return srv.(ManagerServer).ExistLimitationConds(ctx, req.(*ExistLimitationCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountAccountsRequest)
+func _Manager_CountLimitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountLimitationsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountAccounts(ctx, in)
+		return srv.(ManagerServer).CountLimitations(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/CountAccounts",
+		FullMethod: "/account.manager.limitation.v1.Manager/CountLimitations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountAccounts(ctx, req.(*CountAccountsRequest))
+		return srv.(ManagerServer).CountLimitations(ctx, req.(*CountLimitationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAccountRequest)
+func _Manager_DeleteLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteAccount(ctx, in)
+		return srv.(ManagerServer).DeleteLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.withdraw.v1.Manager/DeleteAccount",
+		FullMethod: "/account.manager.limitation.v1.Manager/DeleteLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
+		return srv.(ManagerServer).DeleteLimitation(ctx, req.(*DeleteLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -380,48 +380,48 @@ func _Manager_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.manager.withdraw.v1.Manager",
+	ServiceName: "account.manager.limitation.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAccount",
-			Handler:    _Manager_CreateAccount_Handler,
+			MethodName: "CreateLimitation",
+			Handler:    _Manager_CreateLimitation_Handler,
 		},
 		{
-			MethodName: "CreateAccounts",
-			Handler:    _Manager_CreateAccounts_Handler,
+			MethodName: "CreateLimitations",
+			Handler:    _Manager_CreateLimitations_Handler,
 		},
 		{
-			MethodName: "AddAccount",
-			Handler:    _Manager_AddAccount_Handler,
+			MethodName: "AddLimitation",
+			Handler:    _Manager_AddLimitation_Handler,
 		},
 		{
-			MethodName: "GetAccount",
-			Handler:    _Manager_GetAccount_Handler,
+			MethodName: "GetLimitation",
+			Handler:    _Manager_GetLimitation_Handler,
 		},
 		{
-			MethodName: "GetAccountOnly",
-			Handler:    _Manager_GetAccountOnly_Handler,
+			MethodName: "GetLimitationOnly",
+			Handler:    _Manager_GetLimitationOnly_Handler,
 		},
 		{
-			MethodName: "GetAccounts",
-			Handler:    _Manager_GetAccounts_Handler,
+			MethodName: "GetLimitations",
+			Handler:    _Manager_GetLimitations_Handler,
 		},
 		{
-			MethodName: "ExistAccount",
-			Handler:    _Manager_ExistAccount_Handler,
+			MethodName: "ExistLimitation",
+			Handler:    _Manager_ExistLimitation_Handler,
 		},
 		{
-			MethodName: "ExistAccountConds",
-			Handler:    _Manager_ExistAccountConds_Handler,
+			MethodName: "ExistLimitationConds",
+			Handler:    _Manager_ExistLimitationConds_Handler,
 		},
 		{
-			MethodName: "CountAccounts",
-			Handler:    _Manager_CountAccounts_Handler,
+			MethodName: "CountLimitations",
+			Handler:    _Manager_CountLimitations_Handler,
 		},
 		{
-			MethodName: "DeleteAccount",
-			Handler:    _Manager_DeleteAccount_Handler,
+			MethodName: "DeleteLimitation",
+			Handler:    _Manager_DeleteLimitation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -44,61 +44,11 @@
         }
       }
     },
-    "v1Account": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1AccountReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1AddAccountResponse": {
+    "v1AddLimitationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1Limitation"
         }
       }
     },
@@ -108,18 +58,15 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
+        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Limitation": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
-    "v1CountAccountsResponse": {
+    "v1CountLimitationsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -128,42 +75,34 @@
         }
       }
     },
-    "v1CreateAccountResponse": {
+    "v1CreateLimitationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1Limitation"
         }
       }
     },
-    "v1CreateAccountsResponse": {
+    "v1CreateLimitationsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1Limitation"
           }
         }
       }
     },
-    "v1DeleteAccountResponse": {
+    "v1DeleteLimitationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1Limitation"
         }
       }
     },
-    "v1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAccountResponse": {
+    "v1ExistLimitationCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -171,29 +110,37 @@
         }
       }
     },
-    "v1GetAccountOnlyResponse": {
+    "v1ExistLimitationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "type": "boolean"
         }
       }
     },
-    "v1GetAccountResponse": {
+    "v1GetLimitationOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1Limitation"
         }
       }
     },
-    "v1GetAccountsResponse": {
+    "v1GetLimitationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Limitation"
+        }
+      }
+    },
+    "v1GetLimitationsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1Limitation"
           }
         },
         "Total": {
@@ -201,6 +148,66 @@
           "format": "int64"
         }
       }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Limitation": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Limitation": {
+          "$ref": "#/definitions/v1LimitationType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1LimitationReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Limitation": {
+          "$ref": "#/definitions/v1LimitationType"
+        }
+      }
+    },
+    "v1LimitationType": {
+      "type": "string",
+      "enum": [
+        "DefaultLimitationType",
+        "WithdrawAutoReview",
+        "UserBenefitHotAmount",
+        "PaymentCollectorAmount",
+        "CoinAddressReservedAmount",
+        "GasFeederTriggerAmount",
+        "GasFeeeingAmount"
+      ],
+      "default": "DefaultLimitationType"
     },
     "v1StringVal": {
       "type": "object",
