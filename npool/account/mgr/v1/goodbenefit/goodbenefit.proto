@@ -24,8 +24,8 @@ service Manager {
 message AccountReq {
     optional string ID         = 10;
     optional string GoodID     = 20;
-    optional bool   Backup     = 30;
-    optional string AccountID  = 40;
+    optional string AccountID  = 30;
+    optional bool   Backup     = 40;
 }
 
 message Account {
@@ -41,6 +41,7 @@ message Conds {
     optional npool.v1.StringVal ID        = 10;
     optional npool.v1.StringVal GoodID    = 20;
     optional npool.v1.StringVal AccountID = 30;
+    optional npool.v1.BoolVal   Backup    = 40;
 }
 
 

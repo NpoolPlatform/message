@@ -78,11 +78,11 @@
         "GoodID": {
           "type": "string"
         },
-        "Backup": {
-          "type": "boolean"
-        },
         "AccountID": {
           "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
         }
       }
     },
@@ -91,6 +91,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
@@ -105,6 +116,9 @@
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Backup": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
