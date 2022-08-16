@@ -367,7 +367,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRoleUser"
+            "$ref": "#/definitions/v1RoleUser"
           }
         },
         "Total": {
@@ -434,7 +434,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2AppRoleUser"
+            "$ref": "#/definitions/v1RoleUser"
           }
         },
         "Total": {
@@ -532,7 +532,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleUser"
+          "$ref": "#/definitions/v1RoleUser"
         }
       }
     },
