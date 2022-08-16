@@ -37,9 +37,12 @@ message Account {
     bool       Idle          = 50;
     account.manager.payment.v1.OccupiedBy OccupiedBy = 60;
     string     CollectingTID = 70;
-    uint32     CreatedAt     = 80;
-    uint32     AvailableAt   = 90;
-    uint32     UpdatedAt     = 100;
+    bool       Active        = 80;
+    bool       Locked        = 90;
+    bool       Blocked       = 100;
+    uint32     CreatedAt     = 110;
+    uint32     AvailableAt   = 120;
+    uint32     UpdatedAt     = 130;
 }
 
 message Conds {

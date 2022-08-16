@@ -49,7 +49,10 @@ message Account {
     string         Address    = 30;
     AccountUsedFor UsedFor    = 40;
     bool           PlatformHoldPrivateKey = 50;
-    uint32         CreatedAt  = 60;
+    bool           Active     = 60;
+    bool           Locked     = 70;
+    bool           Blocked    = 80;
+    uint32         CreatedAt  = 90;
 }
 
 message Conds {

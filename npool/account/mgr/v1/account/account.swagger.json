@@ -62,6 +62,15 @@
         "PlatformHoldPrivateKey": {
           "type": "boolean"
         },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

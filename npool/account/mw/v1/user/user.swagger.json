@@ -38,6 +38,15 @@
         "Address": {
           "type": "string"
         },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },

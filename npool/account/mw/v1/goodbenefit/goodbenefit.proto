@@ -35,8 +35,11 @@ message Account {
     string AccountID  = 40;
     bool   Backup     = 50;
     string Address    = 60;
-    uint32 CreatedAt  = 70;
-    uint32 UpdatedAt  = 80;
+    bool   Active     = 70;
+    bool   Locked     = 80;
+    bool   Blocked    = 90;
+    uint32 CreatedAt  = 100;
+    uint32 UpdatedAt  = 110;
 }
 
 message Conds {

@@ -38,9 +38,12 @@ message Account {
     string CoinTypeID = 40;
     string AccountID  = 50;
     string Address    = 60;
-    account.manager.account1.v1.AccountUsedFor UsedFor = 70;
-    repeated string Labels = 80;
-    uint32 CreatedAt  = 90;
+    bool   Active     = 70;
+    bool   Locked     = 80;
+    bool   Blocked    = 90;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 100;
+    repeated string Labels = 110;
+    uint32 CreatedAt  = 120;
 }
 
 message Conds {
