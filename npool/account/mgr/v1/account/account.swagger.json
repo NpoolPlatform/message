@@ -94,6 +94,15 @@
         },
         "PlatformHoldPrivateKey": {
           "type": "boolean"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
         }
       }
     },
@@ -149,6 +158,15 @@
           "$ref": "#/definitions/v1Int32Val"
         },
         "PlatformHoldPrivateKey": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "CreatedAt": {

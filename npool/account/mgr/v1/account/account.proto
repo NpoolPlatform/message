@@ -41,6 +41,9 @@ message AccountReq {
     optional string         Address    = 30;
     optional AccountUsedFor UsedFor    = 40;
     optional bool           PlatformHoldPrivateKey = 50;
+    optional bool           Active     = 60;
+    optional bool           Locked     = 70;
+    optional bool           Blocked    = 80;
 }
 
 message Account {
@@ -61,7 +64,10 @@ message Conds {
     optional npool.v1.StringVal Address    = 30;
     optional npool.v1.Int32Val  UsedFor    = 40;
     optional npool.v1.BoolVal   PlatformHoldPrivateKey = 50;
-    optional npool.v1.Uint32Val CreatedAt  = 60;
+    optional npool.v1.BoolVal   Active     = 60;
+    optional npool.v1.BoolVal   Locked     = 70;
+    optional npool.v1.BoolVal   Blocked    = 80;
+    optional npool.v1.Uint32Val CreatedAt  = 90;
 }
 
 
