@@ -47,6 +47,9 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Balance": {
+          "type": "string"
         }
       }
     },
@@ -77,6 +80,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "Balance": {
+          "type": "string"
         }
       }
     },

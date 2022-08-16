@@ -31,6 +31,7 @@ message AccountReq {
     // Only [UserWithdraw, UserDeposit, UserDirectBenefit]
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 60;
     repeated string Labels     = 70;   // For withdraw and benefit address
+    optional string Balance    = 80;   // For deposit address
 }
 
 message Account {
@@ -42,6 +43,7 @@ message Account {
     account.manager.account1.v1.AccountUsedFor UsedFor = 60;
     repeated string Labels = 70;
     uint32 CreatedAt  = 80;
+    string Balance    = 90;
 }
 
 message Conds {
