@@ -92,8 +92,8 @@ message DeleteBanAppResponse {
 
 message CreateBanUserRequest {
     // Permissioned by path
-    string TargetUserID = 10;
-    string AppID        = 20;
+    string AppID        = 10;
+    string TargetUserID = 20;
     string Message      = 30;
 }
 
