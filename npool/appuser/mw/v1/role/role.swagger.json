@@ -112,6 +112,14 @@
         }
       }
     },
+    "v1GetRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleUser"
+        }
+      }
+    },
     "v1GetRoleUsersResponse": {
       "type": "object",
       "properties": {

@@ -26,6 +26,7 @@ type MiddlewareClient interface {
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
 	GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetManyRolesResponse, error)
+	GetRoleUser(ctx context.Context, in *GetRoleUserRequest, opts ...grpc.CallOption) (*GetRoleUserResponse, error)
 	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
 	GetManyRoleUsers(ctx context.Context, in *GetManyRoleUsersRequest, opts ...grpc.CallOption) (*GetManyRoleUsersResponse, error)
@@ -75,6 +76,15 @@ func (c *middlewareClient) GetManyRoles(ctx context.Context, in *GetManyRolesReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetRoleUser(ctx context.Context, in *GetRoleUserRequest, opts ...grpc.CallOption) (*GetRoleUserResponse, error) {
+	out := new(GetRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error) {
 	out := new(GetRoleUsersResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetRoleUsers", in, out, opts...)
@@ -110,6 +120,7 @@ type MiddlewareServer interface {
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
 	GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error)
+	GetRoleUser(context.Context, *GetRoleUserRequest) (*GetRoleUserResponse, error)
 	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
 	GetManyRoleUsers(context.Context, *GetManyRoleUsersRequest) (*GetManyRoleUsersResponse, error)
@@ -131,6 +142,9 @@ func (UnimplementedMiddlewareServer) GetAppRoles(context.Context, *GetAppRolesRe
 }
 func (UnimplementedMiddlewareServer) GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManyRoles not implemented")
+}
+func (UnimplementedMiddlewareServer) GetRoleUser(context.Context, *GetRoleUserRequest) (*GetRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUser not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUsers not implemented")
@@ -226,6 +240,24 @@ func _Middleware_GetManyRoles_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.role.v1.Middleware/GetRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetRoleUser(ctx, req.(*GetRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRoleUsersRequest)
 	if err := dec(in); err != nil {
@@ -302,6 +334,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetManyRoles",
 			Handler:    _Middleware_GetManyRoles_Handler,
+		},
+		{
+			MethodName: "GetRoleUser",
+			Handler:    _Middleware_GetRoleUser_Handler,
 		},
 		{
 			MethodName: "GetRoleUsers",

@@ -13,6 +13,7 @@ service Middleware {
     rpc GetAppRoles   (GetAppRolesRequest)  returns (GetAppRolesResponse)  {}
     rpc GetManyRoles  (GetManyRolesRequest) returns (GetManyRolesResponse) {}
 
+    rpc GetRoleUser       (GetRoleUserRequest)     returns (GetRoleUserResponse)     {}
     rpc GetRoleUsers      (GetRoleUsersRequest)     returns (GetRoleUsersResponse)     {}
     rpc GetAppRoleUsers   (GetAppRoleUsersRequest)  returns (GetAppRoleUsersResponse)  {}
     rpc GetManyRoleUsers  (GetManyRoleUsersRequest) returns (GetManyRoleUsersResponse) {}
@@ -109,6 +110,14 @@ message RoleUser {
     string  EmailAddress = 120;
     // @inject_tag: sql:"phone_no"
     string  PhoneNO      = 130;
+}
+
+message GetRoleUserRequest {
+    string ID  = 10;
+}
+
+message GetRoleUserResponse {
+    RoleUser Info = 10;
 }
 
 message GetRoleUsersRequest {
