@@ -8,15 +8,15 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 
 service Middleware {
-    rpc CreateRole    (CreateRoleRequest)  returns (CreateRoleResponse)  {}
-    rpc UpdateRole    (UpdateRoleRequest)  returns (UpdateRoleResponse)  {}
-    rpc GetRoles      (GetRolesRequest)    returns (GetRolesResponse)    {}
-    rpc GetAppRoles   (GetAppRolesRequest) returns (GetAppRolesResponse) {}
+    rpc GetRole       (GetRoleRequest)      returns (GetRoleResponse)      {}
+    rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
+    rpc GetAppRoles   (GetAppRolesRequest)  returns (GetAppRolesResponse)  {}
+    rpc GetManyRoles  (GetManyRolesRequest) returns (GetManyRolesResponse) {}
 
-    rpc CreateRoleUser    (CreateRoleUserRequest)  returns (CreateRoleUserResponse)  {}
-    rpc DeleteRoleUser    (DeleteRoleUserRequest)  returns (DeleteRoleUserResponse)  {}
-    rpc GetRoleUsers      (GetRoleUsersRequest)    returns (GetRoleUsersResponse)    {}
-    rpc GetAppRoleUsers   (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {}
+    rpc GetRoleUser       (GetRoleUserRequest)     returns (GetRoleUserResponse)     {}
+    rpc GetRoleUsers      (GetRoleUsersRequest)     returns (GetRoleUsersResponse)     {}
+    rpc GetAppRoleUsers   (GetAppRoleUsersRequest)  returns (GetAppRoleUsersResponse)  {}
+    rpc GetManyRoleUsers  (GetManyRoleUsersRequest) returns (GetManyRoleUsersResponse) {}
 }
 
 message Role {
@@ -42,21 +42,11 @@ message Role {
     uint32  CreatedAt    = 100;
 }
 
-message CreateRoleRequest {
-    // Permissioned by path
-    appuser.manager.approle.v2.AppRoleReq Info = 10;
+message GetRoleRequest {
+    string ID  = 10;
 }
 
-message CreateRoleResponse {
-    Role Info = 10;
-}
-
-message UpdateRoleRequest {
-    // Permissioned by path
-    appuser.manager.approle.v2.AppRoleReq Info = 10;
-}
-
-message UpdateRoleResponse {
+message GetRoleResponse {
     Role Info = 10;
 }
 
@@ -80,6 +70,15 @@ message GetAppRolesRequest {
 }
 
 message GetAppRolesResponse {
+    repeated Role Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetManyRolesRequest {
+    repeated string IDs = 10;
+}
+
+message GetManyRolesResponse {
     repeated Role Infos = 10;
     uint32        Total = 20;
 }
@@ -113,28 +112,20 @@ message RoleUser {
     string  PhoneNO      = 130;
 }
 
-message CreateRoleUserRequest {
-    // Permissioned by path
-    appuser.manager.approleuser.v2.AppRoleUserReq Info = 10;
-}
-
-message CreateRoleUserResponse {
-    RoleUser Info = 10;
-}
-
-message DeleteRoleUserRequest {
+message GetRoleUserRequest {
     string ID  = 10;
 }
 
-message DeleteRoleUserResponse {
+message GetRoleUserResponse {
     RoleUser Info = 10;
 }
 
 message GetRoleUsersRequest {
     // Permissioned by path
     string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    string RoleID = 20;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetRoleUsersResponse {
@@ -145,11 +136,21 @@ message GetRoleUsersResponse {
 message GetAppRoleUsersRequest {
     // Permissioned by path
     string TargetAppID  = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
+    string RoleID       = 20;
+    int32  Offset       = 30;
+    int32  Limit        = 40;
 }
 
 message GetAppRoleUsersResponse {
+    repeated RoleUser Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetManyRoleUsersRequest {
+    repeated string IDs = 10;
+}
+
+message GetManyRoleUsersResponse {
     repeated RoleUser Infos = 10;
     uint32            Total = 20;
 }
