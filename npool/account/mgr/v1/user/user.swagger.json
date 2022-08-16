@@ -99,7 +99,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -237,6 +237,18 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

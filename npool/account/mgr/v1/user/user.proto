@@ -50,7 +50,7 @@ message Conds {
     optional npool.v1.StringVal UserID     = 30;
     optional npool.v1.StringVal CoinTypeID = 40;
     optional npool.v1.StringVal AccountID  = 50;
-    optional account.manager.account1.v1.AccountUsedFor UsedFor = 60;
+    optional npool.v1.Int32Val  UsedFor    = 60;
 }
 
 
