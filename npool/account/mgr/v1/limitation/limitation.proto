@@ -28,7 +28,7 @@ enum LimitationType {
     PaymentCollectorAmount      = 30;
     CoinAddressReservedAmount   = 40;
     GasFeederTriggerAmount      = 50;
-    GasFeeeingAmount            = 60;
+    GasFeedingAmount            = 60;
 }
 
 message LimitationReq {
