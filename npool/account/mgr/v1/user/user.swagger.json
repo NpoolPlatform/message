@@ -238,14 +238,6 @@
       ],
       "default": "DefaultAccountUsedFor"
     },
-    "v1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
     "v1Int32Val": {
       "type": "object",
       "properties": {
