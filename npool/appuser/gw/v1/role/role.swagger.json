@@ -565,6 +565,9 @@
           "type": "string"
         },
         "Default": {
+          "type": "boolean"
+        },
+        "Description": {
           "type": "string"
         }
       }

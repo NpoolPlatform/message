@@ -89,7 +89,7 @@ message CreateRoleRequest {
     string AppID        = 10;
     string UserID       = 20;
     string RoleName     = 30;
-    string Default      = 40;
+    bool   Default      = 40;
     string Description  = 50;
 }
 
