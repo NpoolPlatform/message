@@ -80,14 +80,6 @@
         }
       }
     },
-    "manageruserv1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/manageruserv1Account"
-        }
-      }
-    },
     "manageruserv1Conds": {
       "type": "object",
       "properties": {
@@ -191,6 +183,14 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "manageruserv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/manageruserv1Account"
         }
       }
     },

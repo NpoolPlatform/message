@@ -102,14 +102,6 @@
         }
       }
     },
-    "v1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -238,6 +230,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     }

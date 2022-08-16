@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateLimitation     (CreateLimitationRequest)     returns (CreateLimitationResponse)     {}
     rpc CreateLimitations    (CreateLimitationsRequest)    returns (CreateLimitationsResponse)    {}
-    rpc AddLimitation        (AddLimitationRequest)        returns (AddLimitationResponse)        {}
+    rpc UpdateLimitation     (UpdateLimitationRequest)     returns (UpdateLimitationResponse)     {}
     rpc GetLimitation        (GetLimitationRequest)        returns (GetLimitationResponse)        {}
     rpc GetLimitationOnly    (GetLimitationOnlyRequest)    returns (GetLimitationOnlyResponse)    {}
     rpc GetLimitations       (GetLimitationsRequest)       returns (GetLimitationsResponse)       {}
@@ -68,11 +68,11 @@ message CreateLimitationsResponse {
     repeated Limitation Infos = 10;
 }
 
-message AddLimitationRequest {
+message UpdateLimitationRequest {
     LimitationReq Info = 10;
 }
 
-message AddLimitationResponse {
+message UpdateLimitationResponse {
     Limitation Info = 10;
 }
 

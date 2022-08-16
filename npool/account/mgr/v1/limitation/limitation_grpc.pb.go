@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateLimitation(ctx context.Context, in *CreateLimitationRequest, opts ...grpc.CallOption) (*CreateLimitationResponse, error)
 	CreateLimitations(ctx context.Context, in *CreateLimitationsRequest, opts ...grpc.CallOption) (*CreateLimitationsResponse, error)
-	AddLimitation(ctx context.Context, in *AddLimitationRequest, opts ...grpc.CallOption) (*AddLimitationResponse, error)
+	UpdateLimitation(ctx context.Context, in *UpdateLimitationRequest, opts ...grpc.CallOption) (*UpdateLimitationResponse, error)
 	GetLimitation(ctx context.Context, in *GetLimitationRequest, opts ...grpc.CallOption) (*GetLimitationResponse, error)
 	GetLimitationOnly(ctx context.Context, in *GetLimitationOnlyRequest, opts ...grpc.CallOption) (*GetLimitationOnlyResponse, error)
 	GetLimitations(ctx context.Context, in *GetLimitationsRequest, opts ...grpc.CallOption) (*GetLimitationsResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateLimitations(ctx context.Context, in *CreateLimitat
 	return out, nil
 }
 
-func (c *managerClient) AddLimitation(ctx context.Context, in *AddLimitationRequest, opts ...grpc.CallOption) (*AddLimitationResponse, error) {
-	out := new(AddLimitationResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/AddLimitation", in, out, opts...)
+func (c *managerClient) UpdateLimitation(ctx context.Context, in *UpdateLimitationRequest, opts ...grpc.CallOption) (*UpdateLimitationResponse, error) {
+	out := new(UpdateLimitationResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.limitation.v1.Manager/UpdateLimitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteLimitation(ctx context.Context, in *DeleteLimitati
 type ManagerServer interface {
 	CreateLimitation(context.Context, *CreateLimitationRequest) (*CreateLimitationResponse, error)
 	CreateLimitations(context.Context, *CreateLimitationsRequest) (*CreateLimitationsResponse, error)
-	AddLimitation(context.Context, *AddLimitationRequest) (*AddLimitationResponse, error)
+	UpdateLimitation(context.Context, *UpdateLimitationRequest) (*UpdateLimitationResponse, error)
 	GetLimitation(context.Context, *GetLimitationRequest) (*GetLimitationResponse, error)
 	GetLimitationOnly(context.Context, *GetLimitationOnlyRequest) (*GetLimitationOnlyResponse, error)
 	GetLimitations(context.Context, *GetLimitationsRequest) (*GetLimitationsResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateLimitation(context.Context, *CreateLimit
 func (UnimplementedManagerServer) CreateLimitations(context.Context, *CreateLimitationsRequest) (*CreateLimitationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLimitations not implemented")
 }
-func (UnimplementedManagerServer) AddLimitation(context.Context, *AddLimitationRequest) (*AddLimitationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddLimitation not implemented")
+func (UnimplementedManagerServer) UpdateLimitation(context.Context, *UpdateLimitationRequest) (*UpdateLimitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateLimitation not implemented")
 }
 func (UnimplementedManagerServer) GetLimitation(context.Context, *GetLimitationRequest) (*GetLimitationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLimitation not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateLimitations_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddLimitationRequest)
+func _Manager_UpdateLimitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateLimitationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddLimitation(ctx, in)
+		return srv.(ManagerServer).UpdateLimitation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.limitation.v1.Manager/AddLimitation",
+		FullMethod: "/account.manager.limitation.v1.Manager/UpdateLimitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddLimitation(ctx, req.(*AddLimitationRequest))
+		return srv.(ManagerServer).UpdateLimitation(ctx, req.(*UpdateLimitationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateLimitations_Handler,
 		},
 		{
-			MethodName: "AddLimitation",
-			Handler:    _Manager_AddLimitation_Handler,
+			MethodName: "UpdateLimitation",
+			Handler:    _Manager_UpdateLimitation_Handler,
 		},
 		{
 			MethodName: "GetLimitation",

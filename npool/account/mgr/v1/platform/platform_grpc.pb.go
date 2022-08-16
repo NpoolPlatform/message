@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error)
-	AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error)
+	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRe
 	return out, nil
 }
 
-func (c *managerClient) AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error) {
-	out := new(AddAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.manager.platform.v1.Manager/AddAccount", in, out, opts...)
+func (c *managerClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
+	out := new(UpdateAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.platform.v1.Manager/UpdateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequ
 type ManagerServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error)
-	AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error)
+	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateAccount(context.Context, *CreateAccountR
 func (UnimplementedManagerServer) CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccounts not implemented")
 }
-func (UnimplementedManagerServer) AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddAccount not implemented")
+func (UnimplementedManagerServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
 }
 func (UnimplementedManagerServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddAccountRequest)
+func _Manager_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddAccount(ctx, in)
+		return srv.(ManagerServer).UpdateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.manager.platform.v1.Manager/AddAccount",
+		FullMethod: "/account.manager.platform.v1.Manager/UpdateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddAccount(ctx, req.(*AddAccountRequest))
+		return srv.(ManagerServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateAccounts_Handler,
 		},
 		{
-			MethodName: "AddAccount",
-			Handler:    _Manager_AddAccount_Handler,
+			MethodName: "UpdateAccount",
+			Handler:    _Manager_UpdateAccount_Handler,
 		},
 		{
 			MethodName: "GetAccount",

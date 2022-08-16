@@ -150,6 +150,14 @@
         }
       }
     },
+    "accountmiddlewaregoodbenefitv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/accountmiddlewaregoodbenefitv1Account"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -185,14 +193,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/accountmiddlewaregoodbenefitv1Account"
         }
       }
     }

@@ -12,7 +12,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
-    rpc AddAccount        (AddAccountRequest)        returns (AddAccountResponse)        {}
+    rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
@@ -70,11 +70,11 @@ message CreateAccountsResponse {
     repeated Account Infos = 10;
 }
 
-message AddAccountRequest {
+message UpdateAccountRequest {
     AccountReq Info = 10;
 }
 
-message AddAccountResponse {
+message UpdateAccountResponse {
     Account Info = 10;
 }
 

@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddLimitationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Limitation"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -217,6 +209,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateLimitationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Limitation"
         }
       }
     }

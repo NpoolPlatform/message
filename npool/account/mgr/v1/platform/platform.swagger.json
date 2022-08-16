@@ -62,14 +62,6 @@
         }
       }
     },
-    "managerplatformv1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/managerplatformv1Account"
-        }
-      }
-    },
     "managerplatformv1Conds": {
       "type": "object",
       "properties": {
@@ -170,6 +162,14 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "managerplatformv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/managerplatformv1Account"
         }
       }
     },
