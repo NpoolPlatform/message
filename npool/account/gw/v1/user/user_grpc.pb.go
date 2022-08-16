@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateWithdrawAccount(ctx context.Context, in *CreateWithdrawAccountRequest, opts ...grpc.CallOption) (*CreateWithdrawAccountResponse, error)
+	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	GetAppAccounts(ctx context.Context, in *GetAppAccountsRequest, opts ...grpc.CallOption) (*GetAppAccountsResponse, error)
 }
@@ -35,9 +35,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateWithdrawAccount(ctx context.Context, in *CreateWithdrawAccountRequest, opts ...grpc.CallOption) (*CreateWithdrawAccountResponse, error) {
-	out := new(CreateWithdrawAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/CreateWithdrawAccount", in, out, opts...)
+func (c *gatewayClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
+	out := new(CreateAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *gatewayClient) GetAppAccounts(ctx context.Context, in *GetAppAccountsRe
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateWithdrawAccount(context.Context, *CreateWithdrawAccountRequest) (*CreateWithdrawAccountResponse, error)
+	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	GetAppAccounts(context.Context, *GetAppAccountsRequest) (*GetAppAccountsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -76,8 +76,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateWithdrawAccount(context.Context, *CreateWithdrawAccountRequest) (*CreateWithdrawAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdrawAccount not implemented")
+func (UnimplementedGatewayServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
 }
 func (UnimplementedGatewayServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
@@ -98,20 +98,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateWithdrawAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateWithdrawAccountRequest)
+func _Gateway_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateWithdrawAccount(ctx, in)
+		return srv.(GatewayServer).CreateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.gateway.user.v1.Gateway/CreateWithdrawAccount",
+		FullMethod: "/account.gateway.user.v1.Gateway/CreateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateWithdrawAccount(ctx, req.(*CreateWithdrawAccountRequest))
+		return srv.(GatewayServer).CreateAccount(ctx, req.(*CreateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -160,8 +160,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateWithdrawAccount",
-			Handler:    _Gateway_CreateWithdrawAccount_Handler,
+			MethodName: "CreateAccount",
+			Handler:    _Gateway_CreateAccount_Handler,
 		},
 		{
 			MethodName: "GetAccounts",

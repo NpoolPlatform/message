@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/withdrawaccount": {
+    "/v1/create/account": {
       "post": {
-        "operationId": "Gateway_CreateWithdrawAccount",
+        "operationId": "Gateway_CreateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateWithdrawAccountResponse"
+              "$ref": "#/definitions/gatewayuserv1CreateAccountResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateWithdrawAccountRequest"
+              "$ref": "#/definitions/gatewayuserv1CreateAccountRequest"
             }
           }
         ],
@@ -148,7 +148,8 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+          "$ref": "#/definitions/v1AccountUsedFor",
+          "title": "Only [UserWithdraw, UserDeposit, UserDirectBenefit]"
         },
         "Labels": {
           "type": "array",
@@ -159,6 +160,42 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewayuserv1CreateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Only could be withdraw address\nDeposit address will be created by platform\nDirect benefit address will be set with order"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor",
+          "title": "Only [UserWithdraw, UserDeposit]"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gatewayuserv1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
         }
       }
     },
@@ -242,38 +279,6 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
-    },
-    "v1CreateWithdrawAccountRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Only could be withdraw address\nDeposit address will be created by platform\nDirect benefit address will be set with order"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1CreateWithdrawAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
-        }
-      }
     },
     "v1GetAppAccountsRequest": {
       "type": "object",
