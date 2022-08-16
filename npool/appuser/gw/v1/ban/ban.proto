@@ -5,8 +5,8 @@ package appuser.gateway.ban.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/ban";
 
 import "google/api/annotations.proto";
-import "npool/appuser/mgr/v2/banapp/banapp.proto";
-import "npool/appuser/mgr/v2/banappuser/banappuser.proto";
+import "npool/appuser/mw/v1/app/app.proto";
+import "npool/useruser/mw/v1/user/user.proto";
 
 service Gateway {
     // Admin apis
@@ -62,11 +62,12 @@ service Gateway {
 
 message CreateBanAppRequest {
     // Permissioned by path
-    appuser.manager.banapp.v2.BanAppReq Info = 10;
+    string TargetAppID   = 10;
+    string Message       = 20;
 }
 
 message CreateBanAppResponse {
-    appuser.manager.banapp.v2.BanApp Info = 10;
+    appuser.middleware.app.v1.App Info = 10;
 }
 
 message UpdateBanAppRequest {
@@ -75,7 +76,7 @@ message UpdateBanAppRequest {
 }
 
 message UpdateBanAppResponse {
-    appuser.manager.banapp.v2.BanApp Info = 10;
+    appuser.middleware.app.v1.App Info = 10;
 }
 
 message DeleteBanAppRequest {
