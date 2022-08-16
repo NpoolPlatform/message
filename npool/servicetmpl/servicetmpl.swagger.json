@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "ServiceTemplate"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "ServiceTemplate_Version",
+        "operationId": "Manager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "ServiceTemplate"
+          "Manager"
         ]
       }
     }

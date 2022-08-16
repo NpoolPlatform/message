@@ -20,88 +20,88 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ServiceTemplateClient is the client API for ServiceTemplate service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ServiceTemplateClient interface {
+type ManagerClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
-type serviceTemplateClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewServiceTemplateClient(cc grpc.ClientConnInterface) ServiceTemplateClient {
-	return &serviceTemplateClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *serviceTemplateClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/service.template.v1.ServiceTemplate/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/service.template.v1.Manager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ServiceTemplateServer is the server API for ServiceTemplate service.
-// All implementations must embed UnimplementedServiceTemplateServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type ServiceTemplateServer interface {
+type ManagerServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	mustEmbedUnimplementedServiceTemplateServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedServiceTemplateServer must be embedded to have forward compatible implementations.
-type UnimplementedServiceTemplateServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedServiceTemplateServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedServiceTemplateServer) mustEmbedUnimplementedServiceTemplateServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeServiceTemplateServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ServiceTemplateServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeServiceTemplateServer interface {
-	mustEmbedUnimplementedServiceTemplateServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterServiceTemplateServer(s grpc.ServiceRegistrar, srv ServiceTemplateServer) {
-	s.RegisterService(&ServiceTemplate_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _ServiceTemplate_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceTemplateServer).Version(ctx, in)
+		return srv.(ManagerServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.template.v1.ServiceTemplate/Version",
+		FullMethod: "/service.template.v1.Manager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceTemplateServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ServiceTemplate_ServiceDesc is the grpc.ServiceDesc for ServiceTemplate service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ServiceTemplate_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "service.template.v1.ServiceTemplate",
-	HandlerType: (*ServiceTemplateServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "service.template.v1.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _ServiceTemplate_Version_Handler,
+			Handler:    _Manager_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

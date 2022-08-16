@@ -8,24 +8,15 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service TemplateDetail {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
-
-    rpc CreateDetail (CreateDetailRequest) returns (CreateDetailResponse) {}
-
-    rpc CreateDetails (CreateDetailsRequest) returns (CreateDetailsResponse) {}
-
-    rpc GetDetail (GetDetailRequest) returns (GetDetailResponse) {}
-
-    rpc GetDetailOnly (GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
-
-    rpc GetDetails (GetDetailsRequest) returns (GetDetailsResponse) {}
-
-    rpc ExistDetail (ExistDetailRequest) returns (ExistDetailResponse) {}
-
+service Manager {
+    rpc CreateDetail     (CreateDetailRequest)     returns (CreateDetailResponse)     {}
+    rpc CreateDetails    (CreateDetailsRequest)    returns (CreateDetailsResponse)    {}
+    rpc GetDetail        (GetDetailRequest)        returns (GetDetailResponse)        {}
+    rpc GetDetailOnly    (GetDetailOnlyRequest)    returns (GetDetailOnlyResponse)    {}
+    rpc GetDetails       (GetDetailsRequest)       returns (GetDetailsResponse)       {}
+    rpc ExistDetail      (ExistDetailRequest)      returns (ExistDetailResponse)      {}
     rpc ExistDetailConds (ExistDetailCondsRequest) returns (ExistDetailCondsResponse) {}
-
-    rpc CountDetails (CountDetailsRequest) returns (CountDetailsResponse) {}
+    rpc CountDetails     (CountDetailsRequest)     returns (CountDetailsResponse)     {}
 }
 
 enum IOType {

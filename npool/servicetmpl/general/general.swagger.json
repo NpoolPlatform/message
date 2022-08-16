@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "TemplateGeneral"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -229,14 +229,6 @@
           "type": "string"
         },
         "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
           "type": "string"
         }
       }
