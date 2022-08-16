@@ -426,8 +426,8 @@
         "TargetUserID": {
           "type": "string"
         },
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUserReq"
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -446,8 +446,11 @@
           "type": "string",
           "title": "Permissioned by path"
         },
-        "Info": {
-          "$ref": "#/definitions/v2BanAppUserReq"
+        "AppID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
