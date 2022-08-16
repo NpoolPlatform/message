@@ -8,6 +8,7 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 
 service Middleware {
+    rpc GetRole       (GetRoleRequest)      returns (GetRolesResponse)     {}
     rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
     rpc GetAppRoles   (GetAppRolesRequest)  returns (GetAppRolesResponse)  {}
     rpc GetManyRoles  (GetManyRolesRequest) returns (GetManyRolesResponse) {}
@@ -38,6 +39,14 @@ message Role {
     string  AppLogo      = 90;
     // @inject_tag: sql:"created_at"
     uint32  CreatedAt    = 100;
+}
+
+message GetRoleRequest {
+    string ID  = 10;
+}
+
+message GetRoleResponse {
+    Role Info = 10;
 }
 
 message GetRolesRequest {
