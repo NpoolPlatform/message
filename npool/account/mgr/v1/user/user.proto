@@ -13,6 +13,7 @@ service Manager {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
+    rpc AddAccount        (AddAccountRequest)        returns (AddAccountResponse)        {}
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
@@ -77,6 +78,14 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message AddAccountRequest {
+    AccountReq Info = 10;
+}
+
+message AddAccountResponse {
     Account Info = 10;
 }
 

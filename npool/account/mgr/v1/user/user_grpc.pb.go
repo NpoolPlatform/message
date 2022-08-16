@@ -25,6 +25,7 @@ type ManagerClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
+	AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -63,6 +64,15 @@ func (c *managerClient) CreateAccounts(ctx context.Context, in *CreateAccountsRe
 func (c *managerClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
 	err := c.cc.Invoke(ctx, "/account.manager.user.v1.Manager/UpdateAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) AddAccount(ctx context.Context, in *AddAccountRequest, opts ...grpc.CallOption) (*AddAccountResponse, error) {
+	out := new(AddAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.manager.user.v1.Manager/AddAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -139,6 +149,7 @@ type ManagerServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
+	AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
@@ -161,6 +172,9 @@ func (UnimplementedManagerServer) CreateAccounts(context.Context, *CreateAccount
 }
 func (UnimplementedManagerServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
+}
+func (UnimplementedManagerServer) AddAccount(context.Context, *AddAccountRequest) (*AddAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddAccount not implemented")
 }
 func (UnimplementedManagerServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -246,6 +260,24 @@ func _Manager_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_AddAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).AddAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.manager.user.v1.Manager/AddAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).AddAccount(ctx, req.(*AddAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +426,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAccount",
 			Handler:    _Manager_UpdateAccount_Handler,
+		},
+		{
+			MethodName: "AddAccount",
+			Handler:    _Manager_AddAccount_Handler,
 		},
 		{
 			MethodName: "GetAccount",
