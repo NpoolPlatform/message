@@ -104,6 +104,14 @@
         }
       }
     },
+    "v1GetRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
     "v1GetRoleUsersResponse": {
       "type": "object",
       "properties": {

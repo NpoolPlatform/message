@@ -8,7 +8,7 @@ import "npool/appuser/mgr/v2/approle/approle.proto";
 import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 
 service Middleware {
-    rpc GetRole       (GetRoleRequest)      returns (GetRolesResponse)     {}
+    rpc GetRole       (GetRoleRequest)      returns (GetRoleResponse)      {}
     rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
     rpc GetAppRoles   (GetAppRolesRequest)  returns (GetAppRolesResponse)  {}
     rpc GetManyRoles  (GetManyRolesRequest) returns (GetManyRolesResponse) {}
