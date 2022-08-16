@@ -487,7 +487,7 @@
     "rolev1CreateAppRoleRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string",
           "title": "Permissioned by path"
         },
