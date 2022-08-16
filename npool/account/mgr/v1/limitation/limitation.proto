@@ -35,6 +35,7 @@ message LimitationReq {
     optional string         ID         = 10;
     optional string         CoinTypeID = 20;
     optional LimitationType Limitation = 30;
+    optional string         Amount     = 40;
 }
 
 message Limitation {

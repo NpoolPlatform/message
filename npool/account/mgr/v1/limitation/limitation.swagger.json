@@ -185,6 +185,9 @@
         },
         "Limitation": {
           "$ref": "#/definitions/v1LimitationType"
+        },
+        "Amount": {
+          "type": "string"
         }
       }
     },
