@@ -243,12 +243,107 @@
     }
   },
   "definitions": {
+    "appv1App": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Base info\n@inject_tag: sql:\"id\""
+        },
+        "CreatedBy": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "BanAppID": {
+          "type": "string",
+          "title": "Banned\n@inject_tag: sql:\"ban_app_id\""
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "SignupMethodsStr": {
+          "type": "string",
+          "title": "Sign methods\n@inject_tag: sql:\"signup_methods\""
+        },
+        "SignupMethods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
+        },
+        "ExtSigninMethodsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"extern_signin_methods\""
+        },
+        "ExtSigninMethods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
+        },
+        "RecaptchaMethodStr": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v2RecaptchaType"
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMustInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
     "banv1CreateBanAppRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppReq",
+        "TargetAppID": {
+          "type": "string",
           "title": "Permissioned by path"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -256,7 +351,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2BanApp"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -290,7 +385,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2BanApp"
+          "$ref": "#/definitions/appv1App"
         }
       }
     },
@@ -459,6 +554,30 @@
           "type": "string"
         }
       }
+    },
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }
