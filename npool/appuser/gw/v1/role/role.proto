@@ -86,10 +86,11 @@ service Gateway {
 
 message CreateRoleRequest {
     // Permissioned by path (UserID is for CreatedBy)
-    string AppID    = 10;
-    string UserID   = 20;
-    string RoleName = 30;
-    string Default  = 40;
+    string AppID        = 10;
+    string UserID       = 20;
+    string RoleName     = 30;
+    string Default      = 40;
+    string Description  = 50;
 }
 
 message CreateRoleResponse {
