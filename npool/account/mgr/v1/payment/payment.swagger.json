@@ -99,6 +99,10 @@
         },
         "CollectingTID": {
           "type": "string"
+        },
+        "AvailableAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -34,6 +34,7 @@ message AccountReq {
     optional bool       Idle           = 40;
     optional OccupiedBy OccupiedBy     = 50;
     optional string     CollectingTID  = 60;  // Used to free the address when transaction done
+    optional uint32     AvailableAt    = 70;
 }
 
 message Account {
