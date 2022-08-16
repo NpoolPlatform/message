@@ -120,10 +120,11 @@ message UpdateRoleResponse {
 
 message CreateAppRoleRequest {
     // Permissioned by path
-    string TargetAppID = 10;
-    string UserID      = 20;
-    string RoleName    = 30;
-    string Default     = 40;
+    string AppID        = 10;
+    string UserID       = 20;
+    string RoleName     = 30;
+    bool   Default      = 40;
+    string Description  = 50;
 }
 
 message CreateAppRoleResponse {
