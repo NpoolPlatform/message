@@ -47,9 +47,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Balance": {
-          "type": "string"
         }
       }
     },
@@ -73,16 +70,13 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [UserWithdraw, UserDeposit, UserDirectBenefit]"
+          "title": "Only [UserWithdraw, UserDirectBenefit]"
         },
         "Labels": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "Balance": {
-          "type": "string"
         }
       }
     },

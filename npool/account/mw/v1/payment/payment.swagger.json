@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "accountmiddlewarepaymentv1Account": {
+    "middlewarepaymentv1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -32,12 +32,6 @@
         "Address": {
           "type": "string"
         },
-        "Idle": {
-          "type": "boolean"
-        },
-        "OccupiedBy": {
-          "$ref": "#/definitions/v1OccupiedBy"
-        },
         "CollectingTID": {
           "type": "string"
         },
@@ -46,6 +40,9 @@
         },
         "Locked": {
           "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
         },
         "Blocked": {
           "type": "boolean"
@@ -64,7 +61,7 @@
         }
       }
     },
-    "accountmiddlewarepaymentv1AccountReq": {
+    "middlewarepaymentv1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -79,18 +76,18 @@
         "Address": {
           "type": "string"
         },
-        "Idle": {
+        "Locked": {
           "type": "boolean"
         },
-        "OccupiedBy": {
-          "$ref": "#/definitions/v1OccupiedBy"
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
         },
         "CollectingTID": {
           "type": "string"
         }
       }
     },
-    "accountmiddlewarepaymentv1Conds": {
+    "middlewarepaymentv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -102,10 +99,7 @@
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Idle": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "OccupiedBy": {
+        "LockedBy": {
           "$ref": "#/definitions/v1Int32Val"
         },
         "Address": {
@@ -113,48 +107,48 @@
         }
       }
     },
-    "accountmiddlewarepaymentv1CreateAccountResponse": {
+    "middlewarepaymentv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+          "$ref": "#/definitions/middlewarepaymentv1Account"
         }
       }
     },
-    "accountmiddlewarepaymentv1CreateAccountsResponse": {
+    "middlewarepaymentv1CreateAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+            "$ref": "#/definitions/middlewarepaymentv1Account"
           }
         }
       }
     },
-    "accountmiddlewarepaymentv1GetAccountOnlyResponse": {
+    "middlewarepaymentv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+          "$ref": "#/definitions/middlewarepaymentv1Account"
         }
       }
     },
-    "accountmiddlewarepaymentv1GetAccountResponse": {
+    "middlewarepaymentv1GetAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+          "$ref": "#/definitions/middlewarepaymentv1Account"
         }
       }
     },
-    "accountmiddlewarepaymentv1GetAccountsResponse": {
+    "middlewarepaymentv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+            "$ref": "#/definitions/middlewarepaymentv1Account"
           }
         },
         "Total": {
@@ -163,11 +157,11 @@
         }
       }
     },
-    "accountmiddlewarepaymentv1UpdateAccountResponse": {
+    "middlewarepaymentv1UpdateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/accountmiddlewarepaymentv1Account"
+          "$ref": "#/definitions/middlewarepaymentv1Account"
         }
       }
     },
@@ -198,17 +192,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Int32Val": {
       "type": "object",
       "properties": {
@@ -221,14 +204,14 @@
         }
       }
     },
-    "v1OccupiedBy": {
+    "v1LockedBy": {
       "type": "string",
       "enum": [
-        "DefaultOccupiedBy",
+        "DefaultLockedBy",
         "Payment",
         "Collecting"
       ],
-      "default": "DefaultOccupiedBy"
+      "default": "DefaultLockedBy"
     },
     "v1StringVal": {
       "type": "object",

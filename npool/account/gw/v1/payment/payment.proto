@@ -4,7 +4,7 @@ package account.gateway.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/payment";
 
-import "npool/account/mgr/v1/payment/payment.proto";
+import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -29,7 +29,7 @@ message Account {
     string     AccountID     = 70;
     string     Address       = 80;
     bool       Idle          = 90;
-    account.manager.payment.v1.OccupiedBy OccupiedBy = 100;
+    account.manager.account1.v1.LockedBy LockedBy = 100;
     string     CollectingTID = 110;
     uint32     CreatedAt     = 120;
     uint32     AvailableAt   = 130;

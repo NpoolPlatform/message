@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/accountgatewaypaymentv1GetAccountsResponse"
+              "$ref": "#/definitions/gatewaypaymentv1GetAccountsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/accountgatewaypaymentv1GetAccountsRequest"
+              "$ref": "#/definitions/gatewaypaymentv1GetAccountsRequest"
             }
           }
         ],
@@ -50,7 +50,7 @@
     }
   },
   "definitions": {
-    "accountgatewaypaymentv1Account": {
+    "gatewaypaymentv1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -80,8 +80,8 @@
         "Idle": {
           "type": "boolean"
         },
-        "OccupiedBy": {
-          "$ref": "#/definitions/v1OccupiedBy"
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
         },
         "CollectingTID": {
           "type": "string"
@@ -100,7 +100,7 @@
         }
       }
     },
-    "accountgatewaypaymentv1GetAccountsRequest": {
+    "gatewaypaymentv1GetAccountsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -113,13 +113,13 @@
         }
       }
     },
-    "accountgatewaypaymentv1GetAccountsResponse": {
+    "gatewaypaymentv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/accountgatewaypaymentv1Account"
+            "$ref": "#/definitions/gatewaypaymentv1Account"
           }
         },
         "Total": {
@@ -155,14 +155,14 @@
         }
       }
     },
-    "v1OccupiedBy": {
+    "v1LockedBy": {
       "type": "string",
       "enum": [
-        "DefaultOccupiedBy",
+        "DefaultLockedBy",
         "Payment",
         "Collecting"
       ],
-      "default": "DefaultOccupiedBy"
+      "default": "DefaultLockedBy"
     }
   }
 }
