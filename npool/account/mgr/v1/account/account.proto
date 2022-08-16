@@ -74,7 +74,7 @@ message Conds {
     optional npool.v1.BoolVal   PlatformHoldPrivateKey = 50;
     optional npool.v1.BoolVal   Active     = 60;
     optional npool.v1.BoolVal   Locked     = 70;
-    optional npool.v1.StringVal LockedBy   = 80;
+    optional npool.v1.Int32Val  LockedBy   = 80;
     optional npool.v1.BoolVal   Blocked    = 90;
     optional npool.v1.Uint32Val CreatedAt  = 100;
 }

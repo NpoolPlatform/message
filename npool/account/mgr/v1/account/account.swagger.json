@@ -165,7 +165,7 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Int32Val"
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
