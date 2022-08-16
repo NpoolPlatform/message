@@ -22,14 +22,14 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error)
-	UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error)
+	GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error)
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	GetAppRoles(ctx context.Context, in *GetAppRolesRequest, opts ...grpc.CallOption) (*GetAppRolesResponse, error)
-	CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error)
-	DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error)
+	GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetManyRolesResponse, error)
+	GetRoleUser(ctx context.Context, in *GetRoleUserRequest, opts ...grpc.CallOption) (*GetRoleUserResponse, error)
 	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
+	GetManyRoleUsers(ctx context.Context, in *GetManyRoleUsersRequest, opts ...grpc.CallOption) (*GetManyRoleUsersResponse, error)
 }
 
 type middlewareClient struct {
@@ -40,18 +40,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error) {
-	out := new(CreateRoleResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/CreateRole", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error) {
-	out := new(UpdateRoleResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/UpdateRole", in, out, opts...)
+func (c *middlewareClient) GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error) {
+	out := new(GetRoleResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,18 +67,18 @@ func (c *middlewareClient) GetAppRoles(ctx context.Context, in *GetAppRolesReque
 	return out, nil
 }
 
-func (c *middlewareClient) CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error) {
-	out := new(CreateRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/CreateRoleUser", in, out, opts...)
+func (c *middlewareClient) GetManyRoles(ctx context.Context, in *GetManyRolesRequest, opts ...grpc.CallOption) (*GetManyRolesResponse, error) {
+	out := new(GetManyRolesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetManyRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error) {
-	out := new(DeleteRoleUserResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/DeleteRoleUser", in, out, opts...)
+func (c *middlewareClient) GetRoleUser(ctx context.Context, in *GetRoleUserRequest, opts ...grpc.CallOption) (*GetRoleUserResponse, error) {
+	out := new(GetRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetRoleUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +103,27 @@ func (c *middlewareClient) GetAppRoleUsers(ctx context.Context, in *GetAppRoleUs
 	return out, nil
 }
 
+func (c *middlewareClient) GetManyRoleUsers(ctx context.Context, in *GetManyRoleUsersRequest, opts ...grpc.CallOption) (*GetManyRoleUsersResponse, error) {
+	out := new(GetManyRoleUsersResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/GetManyRoleUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateRole(context.Context, *CreateRoleRequest) (*CreateRoleResponse, error)
-	UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error)
+	GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error)
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error)
-	CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error)
-	DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error)
+	GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error)
+	GetRoleUser(context.Context, *GetRoleUserRequest) (*GetRoleUserResponse, error)
 	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
 	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
+	GetManyRoleUsers(context.Context, *GetManyRoleUsersRequest) (*GetManyRoleUsersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -131,11 +131,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateRole(context.Context, *CreateRoleRequest) (*CreateRoleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateRole not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateRole not implemented")
+func (UnimplementedMiddlewareServer) GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRole not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoles not implemented")
@@ -143,17 +140,20 @@ func (UnimplementedMiddlewareServer) GetRoles(context.Context, *GetRolesRequest)
 func (UnimplementedMiddlewareServer) GetAppRoles(context.Context, *GetAppRolesRequest) (*GetAppRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoles not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateRoleUser not implemented")
+func (UnimplementedMiddlewareServer) GetManyRoles(context.Context, *GetManyRolesRequest) (*GetManyRolesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetManyRoles not implemented")
 }
-func (UnimplementedMiddlewareServer) DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteRoleUser not implemented")
+func (UnimplementedMiddlewareServer) GetRoleUser(context.Context, *GetRoleUserRequest) (*GetRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUser not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoleUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRoleUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) GetManyRoleUsers(context.Context, *GetManyRoleUsersRequest) (*GetManyRoleUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetManyRoleUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -168,38 +168,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_CreateRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRoleRequest)
+func _Middleware_GetRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRoleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateRole(ctx, in)
+		return srv.(MiddlewareServer).GetRole(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.role.v1.Middleware/CreateRole",
+		FullMethod: "/appuser.middleware.role.v1.Middleware/GetRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateRole(ctx, req.(*CreateRoleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateRoleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateRole(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.role.v1.Middleware/UpdateRole",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateRole(ctx, req.(*UpdateRoleRequest))
+		return srv.(MiddlewareServer).GetRole(ctx, req.(*GetRoleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -240,38 +222,38 @@ func _Middleware_GetAppRoles_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRoleUserRequest)
+func _Middleware_GetManyRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetManyRolesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateRoleUser(ctx, in)
+		return srv.(MiddlewareServer).GetManyRoles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.role.v1.Middleware/CreateRoleUser",
+		FullMethod: "/appuser.middleware.role.v1.Middleware/GetManyRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateRoleUser(ctx, req.(*CreateRoleUserRequest))
+		return srv.(MiddlewareServer).GetManyRoles(ctx, req.(*GetManyRolesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteRoleUserRequest)
+func _Middleware_GetRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRoleUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteRoleUser(ctx, in)
+		return srv.(MiddlewareServer).GetRoleUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.role.v1.Middleware/DeleteRoleUser",
+		FullMethod: "/appuser.middleware.role.v1.Middleware/GetRoleUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteRoleUser(ctx, req.(*DeleteRoleUserRequest))
+		return srv.(MiddlewareServer).GetRoleUser(ctx, req.(*GetRoleUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +294,24 @@ func _Middleware_GetAppRoleUsers_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetManyRoleUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetManyRoleUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetManyRoleUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.role.v1.Middleware/GetManyRoleUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetManyRoleUsers(ctx, req.(*GetManyRoleUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -320,12 +320,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateRole",
-			Handler:    _Middleware_CreateRole_Handler,
-		},
-		{
-			MethodName: "UpdateRole",
-			Handler:    _Middleware_UpdateRole_Handler,
+			MethodName: "GetRole",
+			Handler:    _Middleware_GetRole_Handler,
 		},
 		{
 			MethodName: "GetRoles",
@@ -336,12 +332,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetAppRoles_Handler,
 		},
 		{
-			MethodName: "CreateRoleUser",
-			Handler:    _Middleware_CreateRoleUser_Handler,
+			MethodName: "GetManyRoles",
+			Handler:    _Middleware_GetManyRoles_Handler,
 		},
 		{
-			MethodName: "DeleteRoleUser",
-			Handler:    _Middleware_DeleteRoleUser_Handler,
+			MethodName: "GetRoleUser",
+			Handler:    _Middleware_GetRoleUser_Handler,
 		},
 		{
 			MethodName: "GetRoleUsers",
@@ -350,6 +346,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppRoleUsers",
 			Handler:    _Middleware_GetAppRoleUsers_Handler,
+		},
+		{
+			MethodName: "GetManyRoleUsers",
+			Handler:    _Middleware_GetManyRoleUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
