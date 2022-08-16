@@ -127,6 +127,9 @@
         },
         "Idle": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "OccupiedBy": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -210,6 +213,18 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

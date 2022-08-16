@@ -53,6 +53,7 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID  = 20;
     optional npool.v1.StringVal AccountID   = 30;
     optional npool.v1.BoolVal   Idle        = 40;
+    optional npool.v1.Int32Val  OccupiedBy  = 50;
 }
 
 
