@@ -146,14 +146,6 @@
         }
       }
     },
-    "middlewaredepositv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaredepositv1Account"
-        }
-      }
-    },
     "middlewaredepositv1GetAccountResponse": {
       "type": "object",
       "properties": {

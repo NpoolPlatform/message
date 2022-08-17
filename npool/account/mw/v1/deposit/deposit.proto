@@ -15,7 +15,6 @@ service Middleware {
     rpc AddAccount        (AddAccountRequest)        returns (AddAccountResponse)        {}
 
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
-    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
 }
 
@@ -107,11 +106,4 @@ message GetAccountsResponse {
     uint32           Total = 20;
 }
 
-message GetAccountOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAccountOnlyResponse {
-    Account Info = 10;
-}
 
