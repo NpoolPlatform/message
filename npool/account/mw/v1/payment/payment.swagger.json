@@ -32,9 +32,6 @@
         "Address": {
           "type": "string"
         },
-        "CollectingTID": {
-          "type": "string"
-        },
         "Active": {
           "type": "boolean"
         },
@@ -46,6 +43,9 @@
         },
         "Blocked": {
           "type": "boolean"
+        },
+        "CollectingTID": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -76,11 +76,17 @@
         "Address": {
           "type": "string"
         },
+        "Active": {
+          "type": "boolean"
+        },
         "Locked": {
           "type": "boolean"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1LockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
         },
         "CollectingTID": {
           "type": "string"
@@ -99,11 +105,20 @@
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "LockedBy": {
           "$ref": "#/definitions/v1Int32Val"
         },
-        "Address": {
-          "$ref": "#/definitions/v1StringVal"
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -189,6 +204,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },

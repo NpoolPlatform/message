@@ -41,9 +41,6 @@
         "Active": {
           "type": "boolean"
         },
-        "Locked": {
-          "type": "boolean"
-        },
         "Blocked": {
           "type": "boolean"
         },
@@ -92,6 +89,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
         }
       }
     },
@@ -116,8 +119,14 @@
         "Address": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -222,6 +231,29 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

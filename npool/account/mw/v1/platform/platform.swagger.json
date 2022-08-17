@@ -44,6 +44,9 @@
         "Locked": {
           "type": "boolean"
         },
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
+        },
         "Blocked": {
           "type": "boolean"
         },
@@ -71,6 +74,18 @@
         },
         "Backup": {
           "type": "boolean"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
         }
       }
     },
@@ -90,6 +105,18 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Backup": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -218,6 +245,15 @@
           "format": "int32"
         }
       }
+    },
+    "v1LockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
     },
     "v1StringVal": {
       "type": "object",

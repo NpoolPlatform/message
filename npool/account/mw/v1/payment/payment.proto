@@ -24,9 +24,11 @@ message AccountReq {
     optional string     CoinTypeID     = 20;
     optional string     AccountID      = 30;
     optional string     Address        = 40;
-    optional bool       Locked         = 50;
-    optional account.manager.account1.v1.LockedBy LockedBy = 60;
-    optional string     CollectingTID  = 70;  // Used to free the address when transaction done
+    optional bool       Active         = 50;
+    optional bool       Locked         = 60;
+    optional account.manager.account1.v1.LockedBy LockedBy = 70;
+    optional bool       Blocked        = 80;
+    optional string     CollectingTID  = 90;  // Used to free the address when transaction done
 }
 
 message Account {
@@ -34,11 +36,11 @@ message Account {
     string     CoinTypeID    = 20;
     string     AccountID     = 30;
     string     Address       = 40;
-    string     CollectingTID = 50;
-    bool       Active        = 60;
-    bool       Locked        = 70;
-    account.manager.account1.v1.LockedBy LockedBy = 80;
-    bool       Blocked       = 90;
+    bool       Active        = 50;
+    bool       Locked        = 60;
+    account.manager.account1.v1.LockedBy LockedBy = 70;
+    bool       Blocked       = 80;
+    string     CollectingTID = 90;
     uint32     CreatedAt     = 100;
     uint32     AvailableAt   = 110;
     uint32     UpdatedAt     = 120;
@@ -48,8 +50,11 @@ message Conds {
     optional npool.v1.StringVal ID          = 10;
     optional npool.v1.StringVal CoinTypeID  = 20;
     optional npool.v1.StringVal AccountID   = 30;
-    optional npool.v1.Int32Val  LockedBy    = 40;
-    optional npool.v1.StringVal Address     = 50;
+    optional npool.v1.StringVal Address     = 40;
+    optional npool.v1.BoolVal   Active      = 50;
+    optional npool.v1.BoolVal   Locked      = 60;
+    optional npool.v1.Int32Val  LockedBy    = 70;
+    optional npool.v1.BoolVal   Blocked     = 80;
 }
 
 message CreateAccountRequest {

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mw/v1/goodbenefit/goodbenefit.proto",
+    "title": "npool/account/mw/v1/deposit/deposit.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,13 +17,16 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewaregoodbenefitv1Account": {
+    "middlewaredepositv1Account": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -31,9 +34,6 @@
         },
         "AccountID": {
           "type": "string"
-        },
-        "Backup": {
-          "type": "boolean"
         },
         "Address": {
           "type": "string"
@@ -53,26 +53,28 @@
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
-        "TransactionID": {
+        "CollectingTID": {
+          "type": "string"
+        },
+        "Balance": {
           "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "middlewaregoodbenefitv1AccountReq": {
+    "middlewaredepositv1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -83,9 +85,6 @@
         },
         "Address": {
           "type": "string"
-        },
-        "Backup": {
-          "type": "boolean"
         },
         "Active": {
           "type": "boolean"
@@ -99,18 +98,21 @@
         "Blocked": {
           "type": "boolean"
         },
-        "TransactionID": {
+        "CollectingTID": {
           "type": "string"
         }
       }
     },
-    "middlewaregoodbenefitv1Conds": {
+    "middlewaredepositv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
@@ -118,9 +120,6 @@
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Backup": {
-          "$ref": "#/definitions/v1BoolVal"
         },
         "Address": {
           "$ref": "#/definitions/v1StringVal"
@@ -139,48 +138,48 @@
         }
       }
     },
-    "middlewaregoodbenefitv1CreateAccountResponse": {
+    "middlewaredepositv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },
-    "middlewaregoodbenefitv1CreateAccountsResponse": {
+    "middlewaredepositv1CreateAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+            "$ref": "#/definitions/middlewaredepositv1Account"
           }
         }
       }
     },
-    "middlewaregoodbenefitv1GetAccountOnlyResponse": {
+    "middlewaredepositv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },
-    "middlewaregoodbenefitv1GetAccountResponse": {
+    "middlewaredepositv1GetAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },
-    "middlewaregoodbenefitv1GetAccountsResponse": {
+    "middlewaredepositv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+            "$ref": "#/definitions/middlewaredepositv1Account"
           }
         },
         "Total": {
@@ -189,11 +188,11 @@
         }
       }
     },
-    "middlewaregoodbenefitv1UpdateAccountResponse": {
+    "middlewaredepositv1UpdateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },
@@ -240,6 +239,14 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
+    },
+    "v1AddAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewaredepositv1Account"
+        }
+      }
     },
     "v1BoolVal": {
       "type": "object",

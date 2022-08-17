@@ -26,19 +26,24 @@ message AccountReq {
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 30;
     optional string         AccountID   = 40;
     optional bool           Backup      = 50;
+    optional bool           Active      = 60;
+    optional bool           Locked      = 70;   // Locked when collecting
+    optional account.manager.account1.v1.LockedBy LockedBy = 80;
+    optional bool           Blocked     = 90;
 }
 
 message Account {
     string         ID          = 10;
     string         CoinTypeID  = 20;
-    account.manager.account1.v1.AccountUsedFor UsedFor = 30;
+    account.manager.account1.v1.AccountUsedFor UsedFor  = 30;
     string         AccountID   = 40;
     string         Address     = 50;
     bool           Backup      = 60;
     bool           Active      = 70;
     bool           Locked      = 80;
-    bool           Blocked     = 90;
-    uint32         CreatedAt   = 100;
+    account.manager.account1.v1.LockedBy       LockedBy = 90;
+    bool           Blocked     = 100;
+    uint32         CreatedAt   = 110;
 }
 
 message Conds {
@@ -47,6 +52,10 @@ message Conds {
     optional npool.v1.Int32Val  UsedFor     = 30;
     optional npool.v1.StringVal AccountID   = 40;
     optional npool.v1.BoolVal   Backup      = 50;
+    optional npool.v1.BoolVal   Active      = 60;
+    optional npool.v1.BoolVal   Locked      = 70;
+    optional npool.v1.Int32Val  LockedBy    = 80;
+    optional npool.v1.BoolVal   Blocked     = 90;
 }
 
 
