@@ -33,20 +33,39 @@ message AccountReq {
 }
 
 message Account {
+    // @inject_tag: sql:"id"
     string ID            = 10;
+    // @inject_tag: sql:"app_id"
     string AppID         = 20;
+    // @inject_tag: sql:"user_id"
     string UserID        = 30;
+    // @inject_tag: sql:"coin_type_id"
     string CoinTypeID    = 40;
+    // @inject_tag: sql:"account_id"
     string AccountID     = 50;
+    // @inject_tag: sql:"address"
     string Address       = 60;
-    bool   Active        = 70;
-    bool   Locked        = 80;
-    account.manager.account1.v1.LockedBy       LockedBy = 90;
-    bool   Blocked       = 100;
-    account.manager.account1.v1.AccountUsedFor UsedFor  = 110;
-    string CollectingTID = 120;
-    string Balance       = 130;
-    uint32 CreatedAt     = 140;
+    // @inject_tag: sql:"active"
+    int32  ActiveInt     = 70;
+    bool   Active        = 80;
+    // @inject_tag: sql:"locked"
+    int32  LockedInt     = 90;
+    bool   Locked        = 100;
+    // @inject_tag: sql:"locked_by"
+    string LockedByStr   = 110;
+    account.manager.account1.v1.LockedBy       LockedBy = 120;
+    // @inject_tag: sql:"blocked"
+    string BlockedInt    = 130;
+    bool   Blocked       = 140;
+    // @inject_tag: sql:"used_for"
+    string UsedForStr    = 150;
+    account.manager.account1.v1.AccountUsedFor UsedFor  = 160;
+    // @inject_tag: sql:"collecting_tid"
+    string CollectingTID = 170;
+    // @inject_tag: sql:"balance"
+    string Balance       = 180;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt     = 190;
 }
 
 message Conds {
