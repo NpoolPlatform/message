@@ -177,14 +177,6 @@
         }
       }
     },
-    "middlewaredepositv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaredepositv1Account"
-        }
-      }
-    },
     "middlewaredepositv1GetAccountsResponse": {
       "type": "object",
       "properties": {
@@ -197,14 +189,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "middlewaredepositv1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },
@@ -251,14 +235,6 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
-    },
-    "v1AddAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaredepositv1Account"
-        }
-      }
     },
     "v1BoolVal": {
       "type": "object",
