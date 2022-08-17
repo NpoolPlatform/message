@@ -11,9 +11,16 @@ import "npool/npool.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
+    rpc CreateWithdrawAccount (CreateWithdrawAccountRequest) returns (CreateWithdrawAccountResponse) {
         option (google.api.http) = {
-            post: "/v1/create/account"
+            post: "/v1/create/withdrawaccount"
+            body: "*"
+        };
+    }
+
+    rpc GetDepositAccount (GetDepositAccountRequest) returns (GetDepositAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/depositaccount"
             body: "*"
         };
     }
@@ -44,26 +51,34 @@ message Account {
     string CoinLogo   = 80;
     string AccountID  = 90;
     string Address    = 100;
-    // Only [UserWithdraw, UserDeposit, UserDirectBenefit]
+    // Only [UserWithdraw, UserDirectBenefit]
     account.manager.account1.v1.AccountUsedFor UsedFor = 110;
     repeated string Labels = 120;
     uint32 CreatedAt  = 130;
 }
 
-message CreateAccountRequest {
+message CreateWithdrawAccountRequest {
     // Only could be withdraw address
     // Deposit address will be created by platform
     // Direct benefit address will be set with order
     string          AppID       = 10;
     string          UserID      = 20;
     string          CoinTypeID  = 30;
-    // Only [UserWithdraw, UserDeposit]
-    account.manager.account1.v1.AccountUsedFor UsedFor = 40;
-    string          Address     = 50;
-    repeated string Labels      = 60;
+    string          Address     = 40;
+    repeated string Labels      = 50;
 }
 
-message CreateAccountResponse {
+message CreateWithdrawAccountResponse {
+    Account Info = 10;
+}
+
+message GetDepositAccountRequest {
+    string AppID       = 10;
+    string UserID      = 20;
+    string CoinTypeID  = 30;
+}
+
+message GetDepositAccountResponse {
     Account Info = 10;
 }
 

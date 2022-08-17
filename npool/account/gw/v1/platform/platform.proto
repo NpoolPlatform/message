@@ -27,17 +27,22 @@ service Gateway {
 }
 
 message Account {
-    string         ID          = 10;
-    string         CoinTypeID  = 20;
-    string         CoinName    = 30;
-    string         CoinUnit    = 40;
-    string         CoinEnv     = 50;
-    string         CoinLogo    = 60;
-    account.manager.account1.v1.AccountUsedFor UsedFor = 70;
-    string         AccountID   = 80;
-    string         Address     = 90;
-    bool           Backup      = 100;
-    uint32         CreatedAt   = 110;
+    string         ID            = 10;
+    string         CoinTypeID    = 20;
+    string         CoinName      = 30;
+    string         CoinUnit      = 40;
+    string         CoinEnv       = 50;
+    string         CoinLogo      = 60;
+    account.manager.account1.v1.AccountUsedFor UsedFor  = 70;
+    string         AccountID     = 80;
+    string         Address       = 90;
+    bool           Backup        = 100;
+    string         CollectingTID = 110;
+    bool           Active        = 120;
+    bool           Locked        = 130;
+    account.manager.account1.v1.LockedBy       LockedBy = 140;
+    bool           Blocked       = 150;
+    uint32         CreatedAt     = 160;
 }
 
 message CreateAccountRequest {

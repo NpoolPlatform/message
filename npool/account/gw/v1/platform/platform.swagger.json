@@ -115,6 +115,21 @@
         "Backup": {
           "type": "boolean"
         },
+        "CollectingTID": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -214,6 +229,15 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
+    },
+    "v1LockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
     }
   }
 }

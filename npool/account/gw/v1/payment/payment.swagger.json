@@ -77,14 +77,20 @@
         "Address": {
           "type": "string"
         },
-        "Idle": {
+        "CollectingTID": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
           "type": "boolean"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1LockedBy"
         },
-        "CollectingTID": {
-          "type": "string"
+        "Blocked": {
+          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",

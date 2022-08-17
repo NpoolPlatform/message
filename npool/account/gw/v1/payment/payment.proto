@@ -28,12 +28,14 @@ message Account {
     string     CoinLogo      = 60;
     string     AccountID     = 70;
     string     Address       = 80;
-    bool       Idle          = 90;
-    account.manager.account1.v1.LockedBy LockedBy = 100;
     string     CollectingTID = 110;
-    uint32     CreatedAt     = 120;
-    uint32     AvailableAt   = 130;
-    uint32     UpdatedAt     = 140;
+    bool       Active        = 120;
+    bool       Locked        = 130;
+    account.manager.account1.v1.LockedBy LockedBy = 140;
+    bool       Blocked       = 150;
+    uint32     CreatedAt     = 160;
+    uint32     AvailableAt   = 170;
+    uint32     UpdatedAt     = 180;
 }
 
 message GetAccountsRequest {

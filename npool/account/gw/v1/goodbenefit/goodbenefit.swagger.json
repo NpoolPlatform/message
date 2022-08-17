@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/accountgatewaygoodbenefitv1CreateAccountResponse"
+              "$ref": "#/definitions/gatewaygoodbenefitv1CreateAccountResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/accountgatewaygoodbenefitv1CreateAccountRequest"
+              "$ref": "#/definitions/gatewaygoodbenefitv1CreateAccountRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/accountgatewaygoodbenefitv1GetAccountsResponse"
+              "$ref": "#/definitions/gatewaygoodbenefitv1GetAccountsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/accountgatewaygoodbenefitv1GetAccountsRequest"
+              "$ref": "#/definitions/gatewaygoodbenefitv1GetAccountsRequest"
             }
           }
         ],
@@ -82,7 +82,7 @@
     }
   },
   "definitions": {
-    "accountgatewaygoodbenefitv1Account": {
+    "gatewaygoodbenefitv1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -121,6 +121,18 @@
         "Address": {
           "type": "string"
         },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1LockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -131,7 +143,7 @@
         }
       }
     },
-    "accountgatewaygoodbenefitv1CreateAccountRequest": {
+    "gatewaygoodbenefitv1CreateAccountRequest": {
       "type": "object",
       "properties": {
         "GoodID": {
@@ -139,15 +151,15 @@
         }
       }
     },
-    "accountgatewaygoodbenefitv1CreateAccountResponse": {
+    "gatewaygoodbenefitv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/accountgatewaygoodbenefitv1Account"
+          "$ref": "#/definitions/gatewaygoodbenefitv1Account"
         }
       }
     },
-    "accountgatewaygoodbenefitv1GetAccountsRequest": {
+    "gatewaygoodbenefitv1GetAccountsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -160,13 +172,13 @@
         }
       }
     },
-    "accountgatewaygoodbenefitv1GetAccountsResponse": {
+    "gatewaygoodbenefitv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/accountgatewaygoodbenefitv1Account"
+            "$ref": "#/definitions/gatewaygoodbenefitv1Account"
           }
         },
         "Total": {
@@ -201,6 +213,15 @@
           }
         }
       }
+    },
+    "v1LockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
     }
   }
 }
