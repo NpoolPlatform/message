@@ -523,8 +523,8 @@
         "TargetUserID": {
           "type": "string"
         },
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleUserReq"
+        "RoleID": {
+          "type": "string"
         }
       }
     },
@@ -590,8 +590,11 @@
           "type": "string",
           "title": "Permissioned by path"
         },
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleUserReq"
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
         }
       }
     },
@@ -765,23 +768,6 @@
       }
     },
     "v2AppRoleUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v2AppRoleUserReq": {
       "type": "object",
       "properties": {
         "ID": {
