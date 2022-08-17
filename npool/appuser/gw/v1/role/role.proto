@@ -145,8 +145,8 @@ message GetAppRolesResponse {
 
 message CreateRoleUserRequest {
     // Permissioned by path
-    string TargetUserID = 10;
-    string AppID        = 20;
+    string AppID        = 10;
+    string TargetUserID = 20;
     string RoleID       = 30;
 }
 
