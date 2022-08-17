@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/coin/info": {
+      "post": {
+        "operationId": "BuildChain_CreateCoinInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCoinInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BuildChain"
+        ]
+      }
+    },
     "/v1/faucet": {
       "post": {
         "operationId": "BuildChain_Faucet",
@@ -141,6 +173,56 @@
         }
       }
     },
+    "v1CoinInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "TokenType": {
+          "type": "string"
+        },
+        "Contract": {
+          "type": "string"
+        },
+        "Similarity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Remark": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1CreateCoinInfoRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1CreateCoinInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Success": {
+          "type": "boolean"
+        },
+        "Msg": {
+          "type": "string"
+        }
+      }
+    },
     "v1DeployedCoinInfo": {
       "type": "object",
       "properties": {
@@ -176,16 +258,13 @@
     "v1FaucetRequst": {
       "type": "object",
       "properties": {
-        "ID": {
+        "To": {
           "type": "string"
         },
         "Amount": {
           "type": "string"
         },
         "Contract": {
-          "type": "string"
-        },
-        "To": {
           "type": "string"
         }
       }

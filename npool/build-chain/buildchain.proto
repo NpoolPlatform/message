@@ -19,6 +19,12 @@ service BuildChain {
       body : "*"
     };
   }
+  rpc CreateCoinInfo(CreateCoinInfoRequest) returns (CreateCoinInfoResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/coin/info"
+      body : "*"
+    };
+  }
   rpc Faucet(FaucetRequst) returns (FaucetResponse) {
     option (google.api.http) = {
       post : "/v1/faucet"
@@ -26,6 +32,7 @@ service BuildChain {
     };
   }
 }
+
 message Empty {}
 message VersionResponse { string Info = 100; }
 
@@ -35,7 +42,7 @@ message DeployedCoin {
   string Contract = 30;
 }
 
-message CoinsInfo {
+message CoinInfo {
   string ID = 10;
   string Name = 20;
   string ChainType = 30;
@@ -66,11 +73,17 @@ message GetDeployedCoinsResponse {
   uint32 Total = 20;
 }
 
+message CreateCoinInfoRequest { CoinInfo Info = 10; }
+
+message CreateCoinInfoResponse {
+  bool Success = 10;
+  string Msg = 20;
+}
+
 message FaucetRequst {
-  string ID = 10;
+  string To = 10;
   string Amount = 20;
   string Contract = 30;
-  string To = 40;
 }
 
 message FaucetResponse {
