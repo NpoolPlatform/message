@@ -209,6 +209,9 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1CoinInfo"
+        },
+        "Force": {
+          "type": "boolean"
         }
       }
     },

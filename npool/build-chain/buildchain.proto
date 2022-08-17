@@ -73,7 +73,10 @@ message GetDeployedCoinsResponse {
   uint32 Total = 20;
 }
 
-message CreateCoinInfoRequest { CoinInfo Info = 10; }
+message CreateCoinInfoRequest {
+  CoinInfo Info = 10;
+  bool Force = 20;
+}
 
 message CreateCoinInfoResponse {
   bool Success = 10;
