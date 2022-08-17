@@ -13,9 +13,9 @@ service BuildChain {
       body : "*"
     };
   }
-  rpc GetDeployedCoins(Empty) returns (GetDeployedCoinsResponse) {
+  rpc GetCoinInfos(Empty) returns (GetCoinInfosResponse) {
     option (google.api.http) = {
-      post : "/v1/get/deployed/coins"
+      post : "/v1/get/coin/infos"
       body : "*"
     };
   }
@@ -36,41 +36,15 @@ service BuildChain {
 message Empty {}
 message VersionResponse { string Info = 100; }
 
-message DeployedCoin {
-  string ID = 10;
-  string CoinID = 20;
-  string Contract = 30;
-}
-
 message CoinInfo {
   string ID = 10;
   string Name = 20;
   string ChainType = 30;
   string TokenType = 40;
-  string Contract = 50;
-  int32 Similarity = 60;
-  string Remark = 70;
-  bytes Data = 80;
-}
-
-message DeployedCoinInfo {
-  // @inject_tag: sql:"id"
-  string ID = 10;
-  // @inject_tag: sql:"coin_id"
-  string CoinID = 20;
-  // @inject_tag: sql:"contract"
-  string Contract = 30;
-  // @inject_tag: sql:"name"
-  string Name = 40;
-  // @inject_tag: sql:"chain_type"
-  string ChainType = 50;
-  // @inject_tag: sql:"token_type"
-  string TokenType = 60;
-}
-
-message GetDeployedCoinsResponse {
-  repeated DeployedCoinInfo Infos = 10;
-  uint32 Total = 20;
+  string OfficialContract = 50;
+  string PrivateContract = 60;
+  string Remark = 80;
+  bytes Data = 90;
 }
 
 message CreateCoinInfoRequest {
@@ -81,6 +55,20 @@ message CreateCoinInfoRequest {
 message CreateCoinInfoResponse {
   bool Success = 10;
   string Msg = 20;
+}
+
+message CoinInfoReq {
+  string ID = 10;
+  string Name = 20;
+  string ChainType = 30;
+  string TokenType = 40;
+  string PrivateContract = 50;
+  string Remark = 60;
+}
+
+message GetCoinInfosResponse {
+  repeated CoinInfoReq Infos = 10;
+  uint32 Total = 20;
 }
 
 message FaucetRequst {
