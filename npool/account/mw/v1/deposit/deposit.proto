@@ -11,7 +11,6 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
-    rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
     rpc AddAccount        (AddAccountRequest)        returns (AddAccountResponse)        {}
 
@@ -71,14 +70,6 @@ message CreateAccountRequest {
 
 message CreateAccountResponse {
     Account Info = 10;
-}
-
-message CreateAccountsRequest {
-    repeated AccountReq Infos = 10;
-}
-
-message CreateAccountsResponse {
-    repeated Account Infos = 10;
 }
 
 message UpdateAccountRequest {
