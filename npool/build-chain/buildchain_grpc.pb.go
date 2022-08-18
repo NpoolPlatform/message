@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BuildChainClient interface {
 	Version(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*VersionResponse, error)
-	GetCoinInfos(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
+	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
 	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
 	Faucet(ctx context.Context, in *FaucetRequst, opts ...grpc.CallOption) (*FaucetResponse, error)
 }
@@ -45,7 +45,7 @@ func (c *buildChainClient) Version(ctx context.Context, in *Empty, opts ...grpc.
 	return out, nil
 }
 
-func (c *buildChainClient) GetCoinInfos(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
+func (c *buildChainClient) GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
 	out := new(GetCoinInfosResponse)
 	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/GetCoinInfos", in, out, opts...)
 	if err != nil {
@@ -77,7 +77,7 @@ func (c *buildChainClient) Faucet(ctx context.Context, in *FaucetRequst, opts ..
 // for forward compatibility
 type BuildChainServer interface {
 	Version(context.Context, *Empty) (*VersionResponse, error)
-	GetCoinInfos(context.Context, *Empty) (*GetCoinInfosResponse, error)
+	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
 	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
 	Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error)
 	mustEmbedUnimplementedBuildChainServer()
@@ -90,7 +90,7 @@ type UnimplementedBuildChainServer struct {
 func (UnimplementedBuildChainServer) Version(context.Context, *Empty) (*VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedBuildChainServer) GetCoinInfos(context.Context, *Empty) (*GetCoinInfosResponse, error) {
+func (UnimplementedBuildChainServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfos not implemented")
 }
 func (UnimplementedBuildChainServer) CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error) {
@@ -131,7 +131,7 @@ func _BuildChain_Version_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _BuildChain_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(GetCoinInfosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -143,7 +143,7 @@ func _BuildChain_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/build.chain.v1.BuildChain/GetCoinInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BuildChainServer).GetCoinInfos(ctx, req.(*Empty))
+		return srv.(BuildChainServer).GetCoinInfos(ctx, req.(*GetCoinInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

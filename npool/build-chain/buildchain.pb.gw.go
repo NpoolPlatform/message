@@ -66,7 +66,7 @@ func local_request_BuildChain_Version_0(ctx context.Context, marshaler runtime.M
 }
 
 func request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, client BuildChainClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Empty
+	var protoReq GetCoinInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -83,7 +83,7 @@ func request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Ma
 }
 
 func local_request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, server BuildChainServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Empty
+	var protoReq GetCoinInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

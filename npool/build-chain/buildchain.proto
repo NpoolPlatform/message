@@ -3,7 +3,7 @@ syntax = "proto3";
 package build.chain.v1;
 
 option go_package = "github.com/NpoolPlatform/pkg/proto";
-
+import "npool/npool.proto";
 import "google/api/annotations.proto";
 
 service BuildChain {
@@ -13,7 +13,7 @@ service BuildChain {
       body : "*"
     };
   }
-  rpc GetCoinInfos(Empty) returns (GetCoinInfosResponse) {
+  rpc GetCoinInfos(GetCoinInfosRequest) returns (GetCoinInfosResponse) {
     option (google.api.http) = {
       post : "/v1/get/coin/infos"
       body : "*"
@@ -65,6 +65,8 @@ message CoinInfoReq {
   string PrivateContract = 50;
   string Remark = 60;
 }
+
+message GetCoinInfosRequest { map<string, npool.v1.FilterCond> Conds = 20; }
 
 message GetCoinInfosResponse {
   repeated CoinInfoReq Infos = 10;
