@@ -35,7 +35,10 @@
         "AccountID": {
           "type": "string"
         },
-        "Balance": {
+        "Incoming": {
+          "type": "string"
+        },
+        "Outcoming": {
           "type": "string"
         },
         "CollectingTID": {
@@ -65,7 +68,10 @@
         "AccountID": {
           "type": "string"
         },
-        "Balance": {
+        "Incoming": {
+          "type": "string"
+        },
+        "Outcoming": {
           "type": "string"
         },
         "CollectingTID": {

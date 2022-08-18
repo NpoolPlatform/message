@@ -586,11 +586,11 @@
     "v1CreateRoleUserRequest": {
       "type": "object",
       "properties": {
-        "TargetUserID": {
+        "AppID": {
           "type": "string",
           "title": "Permissioned by path"
         },
-        "AppID": {
+        "TargetUserID": {
           "type": "string"
         },
         "RoleID": {
