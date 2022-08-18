@@ -26,6 +26,7 @@ message AccountReq {
     optional account.manager.account1.v1.LockedBy LockedBy = 90;
     optional bool   Blocked        = 100;
     optional string CollectingTID  = 110;  // Used to free the address when transaction done
+    optional uint32 ScannableAt    = 120;
 }
 
 message Account {
@@ -58,23 +59,28 @@ message Account {
     account.manager.account1.v1.AccountUsedFor UsedFor  = 160;
     // @inject_tag: sql:"collecting_tid"
     string CollectingTID = 170;
-    // @inject_tag: sql:"balance"
-    string Balance       = 180;
+    // @inject_tag: sql:"incoming"
+    string Incoming      = 180;
+    // @inject_tag: sql:"outcoming"
+    string Outcoming     = 190;
+    // @inject_tag: sql:"scannable_at"
+    string ScannableAt   = 200;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt     = 190;
+    uint32 CreatedAt     = 210;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
-    optional npool.v1.StringVal CoinTypeID = 40;
-    optional npool.v1.StringVal AccountID  = 50;
-    optional npool.v1.StringVal Address    = 60;
-    optional npool.v1.BoolVal   Active     = 70;
-    optional npool.v1.BoolVal   Locked     = 80;
-    optional npool.v1.Int32Val  LockedBy   = 90;
-    optional npool.v1.BoolVal   Blocked    = 100;
+    optional npool.v1.StringVal ID          = 10;
+    optional npool.v1.StringVal AppID       = 20;
+    optional npool.v1.StringVal UserID      = 30;
+    optional npool.v1.StringVal CoinTypeID  = 40;
+    optional npool.v1.StringVal AccountID   = 50;
+    optional npool.v1.StringVal Address     = 60;
+    optional npool.v1.BoolVal   Active      = 70;
+    optional npool.v1.BoolVal   Locked      = 80;
+    optional npool.v1.Int32Val  LockedBy    = 90;
+    optional npool.v1.BoolVal   Blocked     = 100;
+    optional npool.v1.Uint32Val ScannableAt = 110;
 }
 
 

@@ -85,9 +85,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"collecting_tid\""
         },
-        "Balance": {
+        "Incoming": {
           "type": "string",
-          "title": "@inject_tag: sql:\"balance\""
+          "title": "@inject_tag: sql:\"incoming\""
+        },
+        "Outcoming": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"outcoming\""
+        },
+        "ScannableAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"scannable_at\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -131,6 +139,10 @@
         },
         "CollectingTID": {
           "type": "string"
+        },
+        "ScannableAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -166,6 +178,9 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "ScannableAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -276,6 +291,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

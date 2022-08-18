@@ -31,7 +31,8 @@ message AccountReq {
     optional string AccountID      = 50;
     optional string Incoming       = 60;
     optional string Outcoming      = 70;
-    optional string CollectingTID  = 80;
+    optional uint32 ScannableAt    = 80;
+    optional string CollectingTID  = 90;
 }
 
 message Account {
@@ -43,15 +44,17 @@ message Account {
     string Incoming      = 60;
     string Outcoming     = 70;
     string CollectingTID = 80;
-    uint32 CreatedAt     = 90;
+    uint32 ScannableAt   = 90;
+    uint32 CreatedAt     = 100;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
-    optional npool.v1.StringVal CoinTypeID = 40;
-    optional npool.v1.StringVal AccountID  = 50;
+    optional npool.v1.StringVal ID          = 10;
+    optional npool.v1.StringVal AppID       = 20;
+    optional npool.v1.StringVal UserID      = 30;
+    optional npool.v1.StringVal CoinTypeID  = 40;
+    optional npool.v1.StringVal AccountID   = 50;
+    optional npool.v1.Uint32Val ScannableAt = 60;
 }
 
 

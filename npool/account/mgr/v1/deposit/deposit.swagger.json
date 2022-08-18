@@ -44,6 +44,10 @@
         "CollectingTID": {
           "type": "string"
         },
+        "ScannableAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -74,6 +78,10 @@
         "Outcoming": {
           "type": "string"
         },
+        "ScannableAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CollectingTID": {
           "type": "string"
         }
@@ -96,6 +104,9 @@
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "ScannableAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -233,6 +244,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
