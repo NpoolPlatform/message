@@ -51,7 +51,7 @@ message Account {
     string CoinLogo   = 80;
     string AccountID  = 90;
     string Address    = 100;
-    // Only [UserWithdraw, UserDirectBenefit]
+    // Only [UserWithdraw, UserDirectBenefit, UserDeposit]
     account.manager.account1.v1.AccountUsedFor UsedFor = 110;
     repeated string Labels = 120;
     uint32 CreatedAt  = 130;

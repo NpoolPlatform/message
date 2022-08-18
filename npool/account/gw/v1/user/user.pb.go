@@ -39,7 +39,7 @@ type Account struct {
 	CoinLogo   string `protobuf:"bytes,80,opt,name=CoinLogo,proto3" json:"CoinLogo,omitempty"`
 	AccountID  string `protobuf:"bytes,90,opt,name=AccountID,proto3" json:"AccountID,omitempty"`
 	Address    string `protobuf:"bytes,100,opt,name=Address,proto3" json:"Address,omitempty"`
-	// Only [UserWithdraw, UserDirectBenefit]
+	// Only [UserWithdraw, UserDirectBenefit, UserDeposit]
 	UsedFor   account.AccountUsedFor `protobuf:"varint,110,opt,name=UsedFor,proto3,enum=account.manager.account1.v1.AccountUsedFor" json:"UsedFor,omitempty"`
 	Labels    []string               `protobuf:"bytes,120,rep,name=Labels,proto3" json:"Labels,omitempty"`
 	CreatedAt uint32                 `protobuf:"varint,130,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`

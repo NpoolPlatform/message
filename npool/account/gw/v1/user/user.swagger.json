@@ -181,7 +181,7 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [UserWithdraw, UserDirectBenefit]"
+          "title": "Only [UserWithdraw, UserDirectBenefit, UserDeposit]"
         },
         "Labels": {
           "type": "array",
