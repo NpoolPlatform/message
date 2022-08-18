@@ -140,6 +140,12 @@
         "CollectingTID": {
           "type": "string"
         },
+        "Incoming": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
         "ScannableAt": {
           "type": "integer",
           "format": "int64"
@@ -192,6 +198,14 @@
         }
       }
     },
+    "middlewaredepositv1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewaredepositv1Account"
+        }
+      }
+    },
     "middlewaredepositv1GetAccountsResponse": {
       "type": "object",
       "properties": {
@@ -204,6 +218,14 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "middlewaredepositv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewaredepositv1Account"
         }
       }
     },

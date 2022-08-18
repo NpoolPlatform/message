@@ -12,21 +12,21 @@ import "npool/appuser/mw/v1/user/user.proto";
 service Gateway {
     rpc Signup (SignupRequest) returns (SignupResponse) {
         option (google.api.http) = {
-            post: "/1/signup"
+            post: "/v1/signup"
             body: "*"
         };
     }
 
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
         option (google.api.http) = {
-            post: "/1/create/user"
+            post: "/v1/create/user"
             body: "*"
         };
     }
 
     rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse) {
         option (google.api.http) = {
-            post: "/1/update/user"
+            post: "/v1/update/user"
             body: "*"
         };
     }

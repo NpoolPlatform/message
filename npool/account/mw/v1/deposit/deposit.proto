@@ -11,7 +11,10 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {}
-    rpc GetAccounts   (GetAccountsRequest)   returns (GetAccountsResponse)   {}
+    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {}
+
+    rpc GetAccount  (GetAccountRequest)  returns (GetAccountResponse)  {}
+    rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {}
 }
 
 message AccountReq {
@@ -26,7 +29,9 @@ message AccountReq {
     optional account.manager.account1.v1.LockedBy LockedBy = 90;
     optional bool   Blocked        = 100;
     optional string CollectingTID  = 110;  // Used to free the address when transaction done
-    optional uint32 ScannableAt    = 120;
+    optional string Incoming       = 120;
+    optional string Outcoming      = 130;
+    optional uint32 ScannableAt    = 140;
 }
 
 message Account {
@@ -83,12 +88,27 @@ message Conds {
     optional npool.v1.Uint32Val ScannableAt = 110;
 }
 
-
 message CreateAccountRequest {
     AccountReq Info = 10;
 }
 
 message CreateAccountResponse {
+    Account Info = 10;
+}
+
+message UpdateAccountRequest {
+    AccountReq Info = 10;
+}
+
+message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message GetAccountRequest {
+    string ID = 10;
+}
+
+message GetAccountResponse {
     Account Info = 10;
 }
 
