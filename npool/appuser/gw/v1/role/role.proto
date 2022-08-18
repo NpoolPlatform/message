@@ -145,8 +145,9 @@ message GetAppRolesResponse {
 
 message CreateRoleUserRequest {
     // Permissioned by path
-    string                                        TargetUserID = 10;
-    appuser.manager.approleuser.v2.AppRoleUserReq Info         = 20;
+    string AppID        = 10;
+    string TargetUserID = 20;
+    string RoleID       = 30;
 }
 
 message CreateRoleUserResponse {
@@ -177,9 +178,9 @@ message DeleteRoleUserResponse {
 
 message CreateAppRoleUserRequest {
     // Permissioned by path
-    string                                        TargetAppID  = 10;
-    string                                        TargetUserID = 20;
-    appuser.manager.approleuser.v2.AppRoleUserReq Info         = 30;
+    string TargetAppID  = 10;
+    string TargetUserID = 20;
+    string RoleID       = 30;
 }
 
 message CreateAppRoleUserResponse {
