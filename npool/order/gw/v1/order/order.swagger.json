@@ -536,6 +536,12 @@
         "PaymentAmount": {
           "type": "string"
         },
+        "PaymentStartAmount": {
+          "type": "string"
+        },
+        "PaymentFinishAmount": {
+          "type": "string"
+        },
         "PayWithBalanceAmount": {
           "type": "string"
         },

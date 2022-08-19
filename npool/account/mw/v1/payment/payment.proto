@@ -29,6 +29,7 @@ message AccountReq {
     optional account.manager.account1.v1.LockedBy LockedBy = 70;
     optional bool       Blocked        = 80;
     optional string     CollectingTID  = 90;  // Used to free the address when transaction done
+    optional uint32     AvailableAt    = 100;
 }
 
 message Account {
