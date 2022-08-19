@@ -11,11 +11,9 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
-    rpc CreateAccounts    (CreateAccountsRequest)    returns (CreateAccountsResponse)    {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
 
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
-    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
 }
 
@@ -25,11 +23,12 @@ message AccountReq {
     // Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 30;
     optional string         AccountID   = 40;
-    optional bool           Backup      = 50;
-    optional bool           Active      = 60;
-    optional bool           Locked      = 70;   // Locked when collecting
-    optional account.manager.account1.v1.LockedBy LockedBy = 80;
-    optional bool           Blocked     = 90;
+    optional string         Address     = 50;
+    optional bool           Backup      = 60;
+    optional bool           Active      = 70;
+    optional bool           Locked      = 80;   // Locked when collecting
+    optional account.manager.account1.v1.LockedBy LockedBy = 90;
+    optional bool           Blocked     = 100;
 }
 
 message Account {
@@ -67,14 +66,6 @@ message CreateAccountResponse {
     Account Info = 10;
 }
 
-message CreateAccountsRequest {
-    repeated AccountReq Infos = 10;
-}
-
-message CreateAccountsResponse {
-    repeated Account Infos = 10;
-}
-
 message UpdateAccountRequest {
     AccountReq Info = 10;
 }
@@ -102,12 +93,5 @@ message GetAccountsResponse {
     uint32           Total = 20;
 }
 
-message GetAccountOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAccountOnlyResponse {
-    Account Info = 10;
-}
 
 
