@@ -95,6 +95,9 @@
         },
         "Blocked": {
           "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
         }
       }
     },
@@ -131,25 +134,6 @@
       }
     },
     "middlewareuserv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1CreateAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/middlewareuserv1Account"
-          }
-        }
-      }
-    },
-    "middlewareuserv1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
