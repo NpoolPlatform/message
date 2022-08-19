@@ -620,6 +620,9 @@
         "OnlineScale": {
           "type": "integer",
           "format": "int32"
+        },
+        "FeedingTID": {
+          "type": "string"
         }
       }
     },

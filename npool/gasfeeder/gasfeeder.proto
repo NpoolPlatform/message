@@ -136,6 +136,7 @@ message CoinGas {
     double DepositThresholdLow = 40;
     double DepositAmount = 50;
     int32 OnlineScale = 60;
+    string FeedingTID = 70;
 }
 
 message CreateCoinGasRequest {
