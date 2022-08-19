@@ -174,12 +174,7 @@
       }
     },
     "v1GetApisRequest": {
-      "type": "object",
-      "properties": {
-        "ServiceName": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     },
     "v1GetApisResponse": {
       "type": "object",
@@ -233,9 +228,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1ServiceApis"
-        },
-        "ServiceName": {
-          "type": "string"
         }
       }
     },
@@ -264,6 +256,17 @@
           "items": {
             "$ref": "#/definitions/v1Path"
           }
+        },
+        "Exported": {
+          "type": "boolean",
+          "title": "http: true grpc: false"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "use gateway access"
         }
       }
     },

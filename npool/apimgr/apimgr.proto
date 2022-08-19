@@ -50,11 +50,14 @@ message ServiceApis {
     string ServiceName = 20;
     string PathPrefix = 30;
     repeated Path Paths = 40;
+    // http: true grpc: false
+    bool Exported = 50;
+    // use gateway access
+    repeated string Domains = 60;
 }
 
 message RegisterRequest {
     ServiceApis Info = 10;
-    string ServiceName = 20;
 }
 
 message RegisterResponse {
@@ -76,7 +79,6 @@ message ServicePath {
 }
 
 message GetApisRequest {
-  string ServiceName = 100;
 }
 
 message GetApisResponse {
