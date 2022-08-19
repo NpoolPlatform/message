@@ -121,6 +121,8 @@ message Order {
     string PaymentLocalUSDCurrency = 220;
     string PaymentAddress         = 230;
     string PaymentAmount          = 240;
+    string PaymentStartAmount     = 241;
+    string PaymentFinishAmount    = 242;
     string PayWithBalanceAmount   = 250;
     bool   PayWithParent          = 260;
 
