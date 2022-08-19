@@ -147,25 +147,6 @@
         }
       }
     },
-    "middlewaregoodbenefitv1CreateAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/middlewaregoodbenefitv1Account"
-          }
-        }
-      }
-    },
-    "middlewaregoodbenefitv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
-        }
-      }
-    },
     "middlewaregoodbenefitv1GetAccountResponse": {
       "type": "object",
       "properties": {
