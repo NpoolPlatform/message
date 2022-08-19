@@ -54,6 +54,7 @@ message ServiceApis {
 
 message RegisterRequest {
     ServiceApis Info = 10;
+    string ServiceName = 20;
 }
 
 message RegisterResponse {
