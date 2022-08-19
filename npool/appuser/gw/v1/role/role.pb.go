@@ -668,13 +668,6 @@ func (x *CreateRoleUserRequest) GetTargetUserID() string {
 	return ""
 }
 
-func (x *CreateRoleUserRequest) GetTargetUserID() string {
-	if x != nil {
-		return x.TargetUserID
-	}
-	return ""
-}
-
 func (x *CreateRoleUserRequest) GetRoleID() string {
 	if x != nil {
 		return x.RoleID

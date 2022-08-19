@@ -174,7 +174,12 @@
       }
     },
     "v1GetApisRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "ServiceName": {
+          "type": "string"
+        }
+      }
     },
     "v1GetApisResponse": {
       "type": "object",

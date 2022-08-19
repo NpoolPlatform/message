@@ -75,6 +75,7 @@ message ServicePath {
 }
 
 message GetApisRequest {
+  string ServiceName = 100;
 }
 
 message GetApisResponse {
