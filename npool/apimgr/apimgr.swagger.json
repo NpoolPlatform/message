@@ -256,6 +256,17 @@
           "items": {
             "$ref": "#/definitions/v1Path"
           }
+        },
+        "Exported": {
+          "type": "boolean",
+          "title": "http: true grpc: false"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "use gateway access"
         }
       }
     },
