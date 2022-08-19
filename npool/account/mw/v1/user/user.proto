@@ -31,6 +31,7 @@ message AccountReq {
     repeated string Labels     = 80;   // For withdraw and benefit address
     optional bool   Active     = 90;
     optional bool   Blocked    = 100;
+    optional bool   Locked     = 110;
 }
 
 message Account {
