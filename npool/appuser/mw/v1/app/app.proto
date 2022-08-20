@@ -106,7 +106,7 @@ message UpdateAppResponse {
 
 message GetAppRequest {
     // Permissioned by path
-    string AppID = 10;
+    string ID = 10;
 }
 
 message GetAppResponse {
