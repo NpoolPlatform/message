@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package appuser.manager.authing.history.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/authing/history";
+
+import "npool/npool.proto";
+
+service Manager {
+    rpc CreateHistory     (CreateHistoryRequest)     returns (CreateHistoryResponse)     {}
+    rpc CreateHistorys    (CreateHistorysRequest)    returns (CreateHistorysResponse)    {}
+    rpc UpdateHistory     (UpdateHistoryRequest)     returns (UpdateHistoryResponse)     {}
+    rpc GetHistory        (GetHistoryRequest)        returns (GetHistoryResponse)        {}
+    rpc GetHistoryOnly    (GetHistoryOnlyRequest)    returns (GetHistoryOnlyResponse)    {}
+    rpc GetHistorys       (GetHistorysRequest)       returns (GetHistorysResponse)       {}
+    rpc ExistHistory      (ExistHistoryRequest)      returns (ExistHistoryResponse)      {}
+    rpc ExistHistoryConds (ExistHistoryCondsRequest) returns (ExistHistoryCondsResponse) {}
+    rpc CountHistorys     (CountHistorysRequest)     returns (CountHistorysResponse)     {}
+    rpc DeleteHistory     (DeleteHistoryRequest)     returns (DeleteHistoryResponse)     {}
+}
+
+message HistoryReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string UserID      = 30;
+    optional string Resource    = 40;
+    optional string Method      = 50;
+    optional bool   Allowed     = 60;
+}
+
+message History {
+    string ID          = 10;
+    string AppID       = 20;
+    string UserID      = 30;
+    string Resource    = 40;
+    string Method      = 50;
+    bool   Allowed     = 60;
+    uint32 CreatedAt   = 70;
+}
+
+message Conds {
+    npool.v1.StringVal ID        = 10;
+    npool.v1.StringVal AppID     = 20;
+    npool.v1.StringVal UserID    = 30;
+    npool.v1.StringVal Resource  = 40;
+    npool.v1.StringVal Method    = 50;
+    npool.v1.BoolVal   Allowed   = 60;
+}
+
+
+message CreateHistoryRequest {
+    HistoryReq Info = 10;
+}
+
+message CreateHistoryResponse {
+    History Info = 10;
+}
+
+message CreateHistorysRequest {
+    repeated HistoryReq Infos = 10;
+}
+
+message CreateHistorysResponse {
+    repeated History Infos = 10;
+}
+
+message GetHistoryRequest {
+    string ID = 10;
+}
+
+message GetHistoryResponse {
+    History Info = 10;
+}
+
+message GetHistorysRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetHistorysResponse {
+    repeated History Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetHistoryOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetHistoryOnlyResponse {
+    History Info = 10;
+}
+
+message UpdateHistoryRequest {
+    HistoryReq Info = 10;
+}
+
+message UpdateHistoryResponse {
+    History Info = 10;
+}
+
+message ExistHistoryRequest {
+    string ID = 10;
+}
+
+message ExistHistoryResponse {
+    bool Info = 10;
+}
+
+message ExistHistoryCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistHistoryCondsResponse {
+    bool Info = 10;
+}
+
+message CountHistorysRequest {
+    Conds Conds = 10;
+}
+
+message CountHistorysResponse {
+    uint32 Info = 10;
+}
+
+message DeleteHistoryRequest {
+    string ID = 10;
+}
+
+message DeleteHistoryResponse {
+    History Info = 10;
+}

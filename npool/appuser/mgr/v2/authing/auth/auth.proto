@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package appuser.manager.authing.auth.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/authing/auth";
+
+import "npool/npool.proto";
+
+service Manager {
+    rpc CreateAuth     (CreateAuthRequest)     returns (CreateAuthResponse)     {}
+    rpc CreateAuths    (CreateAuthsRequest)    returns (CreateAuthsResponse)    {}
+    rpc UpdateAuth     (UpdateAuthRequest)     returns (UpdateAuthResponse)     {}
+    rpc GetAuth        (GetAuthRequest)        returns (GetAuthResponse)        {}
+    rpc GetAuthOnly    (GetAuthOnlyRequest)    returns (GetAuthOnlyResponse)    {}
+    rpc GetAuths       (GetAuthsRequest)       returns (GetAuthsResponse)       {}
+    rpc ExistAuth      (ExistAuthRequest)      returns (ExistAuthResponse)      {}
+    rpc ExistAuthConds (ExistAuthCondsRequest) returns (ExistAuthCondsResponse) {}
+    rpc CountAuths     (CountAuthsRequest)     returns (CountAuthsResponse)     {}
+    rpc DeleteAuth     (DeleteAuthRequest)     returns (DeleteAuthResponse)     {}
+}
+
+message AuthReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string RoleID      = 30;
+    optional string UserID      = 40;
+    optional string Resource    = 50;
+    optional string Method      = 60;
+}
+
+message Auth {
+    string ID          = 10;
+    string AppID       = 20;
+    string RoleID      = 30;
+    string UserID      = 40;
+    string Resource    = 50;
+    string Method      = 60;
+    uint32 CreatedAt   = 70;
+}
+
+message Conds {
+    npool.v1.StringVal ID        = 10;
+    npool.v1.StringVal AppID     = 20;
+    npool.v1.StringVal RoleID    = 30;
+    npool.v1.StringVal UserID    = 40;
+    npool.v1.StringVal Resource  = 50;
+    npool.v1.StringVal Method    = 60;
+}
+
+
+message CreateAuthRequest {
+    AuthReq Info = 10;
+}
+
+message CreateAuthResponse {
+    Auth Info = 10;
+}
+
+message CreateAuthsRequest {
+    repeated AuthReq Infos = 10;
+}
+
+message CreateAuthsResponse {
+    repeated Auth Infos = 10;
+}
+
+message GetAuthRequest {
+    string ID = 10;
+}
+
+message GetAuthResponse {
+    Auth Info = 10;
+}
+
+message GetAuthsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAuthsResponse {
+    repeated Auth Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetAuthOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAuthOnlyResponse {
+    Auth Info = 10;
+}
+
+message UpdateAuthRequest {
+    AuthReq Info = 10;
+}
+
+message UpdateAuthResponse {
+    Auth Info = 10;
+}
+
+message ExistAuthRequest {
+    string ID = 10;
+}
+
+message ExistAuthResponse {
+    bool Info = 10;
+}
+
+message ExistAuthCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAuthCondsResponse {
+    bool Info = 10;
+}
+
+message CountAuthsRequest {
+    Conds Conds = 10;
+}
+
+message CountAuthsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAuthRequest {
+    string ID = 10;
+}
+
+message DeleteAuthResponse {
+    Auth Info = 10;
+}
