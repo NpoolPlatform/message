@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetAuthOnly(ctx context.Context, in *GetAuthOnlyRequest, opts ...grpc.CallOption) (*GetAuthOnlyResponse, error)
+	ExistConds(ctx context.Context, in *ExistCondsRequest, opts ...grpc.CallOption) (*ExistCondsResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 }
@@ -35,9 +35,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GetAuthOnly(ctx context.Context, in *GetAuthOnlyRequest, opts ...grpc.CallOption) (*GetAuthOnlyResponse, error) {
-	out := new(GetAuthOnlyResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.v1.Middleware/GetAuthOnly", in, out, opts...)
+func (c *middlewareClient) ExistConds(ctx context.Context, in *ExistCondsRequest, opts ...grpc.CallOption) (*ExistCondsResponse, error) {
+	out := new(ExistCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.v1.Middleware/ExistConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetAuthOnly(context.Context, *GetAuthOnlyRequest) (*GetAuthOnlyResponse, error)
+	ExistConds(context.Context, *ExistCondsRequest) (*ExistCondsResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -76,8 +76,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetAuthOnly(context.Context, *GetAuthOnlyRequest) (*GetAuthOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAuthOnly not implemented")
+func (UnimplementedMiddlewareServer) ExistConds(context.Context, *ExistCondsRequest) (*ExistCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistConds not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuths not implemented")
@@ -98,20 +98,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_GetAuthOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAuthOnlyRequest)
+func _Middleware_ExistConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAuthOnly(ctx, in)
+		return srv.(MiddlewareServer).ExistConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.authing.v1.Middleware/GetAuthOnly",
+		FullMethod: "/appuser.middleware.authing.v1.Middleware/ExistConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAuthOnly(ctx, req.(*GetAuthOnlyRequest))
+		return srv.(MiddlewareServer).ExistConds(ctx, req.(*ExistCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -160,8 +160,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetAuthOnly",
-			Handler:    _Middleware_GetAuthOnly_Handler,
+			MethodName: "ExistConds",
+			Handler:    _Middleware_ExistConds_Handler,
 		},
 		{
 			MethodName: "GetAuths",

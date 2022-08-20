@@ -56,14 +56,6 @@
         }
       }
     },
-    "authingv1GetAuthOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/authingv1Auth"
-        }
-      }
-    },
     "authingv1GetAuthsResponse": {
       "type": "object",
       "properties": {
@@ -103,6 +95,14 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1ExistCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },
@@ -157,26 +157,37 @@
         }
       }
     },
-    "v2AuthReq": {
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v2Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
         "RoleID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Resource": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Method": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     }

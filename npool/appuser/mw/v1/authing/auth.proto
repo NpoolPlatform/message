@@ -10,9 +10,9 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 service Middleware {
-    rpc GetAuthOnly  (GetAuthOnlyRequest)  returns (GetAuthOnlyResponse)  {}
-    rpc GetAuths     (GetAuthsRequest)     returns (GetAuthsResponse)     {}
-    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {}
+    rpc ExistConds    (ExistCondsRequest)   returns (ExistCondsResponse)   {}
+    rpc GetAuths      (GetAuthsRequest)     returns (GetAuthsResponse)     {}
+    rpc GetHistories  (GetHistoriesRequest) returns (GetHistoriesResponse) {}
 }
 
 message Auth {
@@ -29,13 +29,12 @@ message Auth {
     uint32 CreatedAt    = 110;
 }
 
-message GetAuthOnlyRequest {
-    // Permissioned by path
-    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+message ExistCondsRequest {
+    appuser.manager.authing.auth.v2.Conds Info = 10;
 }
 
-message GetAuthOnlyResponse {
-    Auth Info = 10;
+message ExistCondsResponse {
+    bool Info = 10;
 }
 
 
