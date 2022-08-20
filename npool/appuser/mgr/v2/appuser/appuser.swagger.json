@@ -78,7 +78,7 @@
         "AppID": {
           "type": "string"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
@@ -98,7 +98,7 @@
         "AppID": {
           "type": "string"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
@@ -118,7 +118,7 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "$ref": "#/definitions/v1StringVal"
         },
         "EmailAddress": {

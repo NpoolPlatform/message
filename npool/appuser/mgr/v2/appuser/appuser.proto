@@ -22,7 +22,7 @@ service Manager {
 message AppUserReq {
     optional string ID            = 10;
     optional string AppID         = 20;
-    optional string PhoneNo       = 30;
+    optional string PhoneNO       = 30;
     optional string EmailAddress  = 40;
     optional string ImportFromApp = 50;
 }
@@ -30,7 +30,7 @@ message AppUserReq {
 message AppUser {
     string ID            = 10;
     string AppID         = 20;
-    string PhoneNo       = 30;
+    string PhoneNO       = 30;
     string EmailAddress  = 40;
     string ImportFromApp = 50;
 }
@@ -38,7 +38,7 @@ message AppUser {
 message Conds {
     npool.v1.StringVal ID            = 10;
     npool.v1.StringVal AppID         = 20;
-    npool.v1.StringVal PhoneNo       = 30;
+    npool.v1.StringVal PhoneNO       = 30;
     npool.v1.StringVal EmailAddress  = 40;
     npool.v1.StringVal ImportFromApp = 50;
     npool.v1.StringSliceVal IDs      = 60;
