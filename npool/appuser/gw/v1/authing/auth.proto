@@ -5,7 +5,6 @@ package appuser.gateway.authing.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/authing";
 
 import "npool/appuser/mw/v1/authing/auth.proto";
-import "npool/appuser/mgr/v2/authing/auth/auth.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -16,6 +15,13 @@ service Gateway {
     rpc CreateAppAuth (CreateAppAuthRequest) returns (CreateAppAuthResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/auth"
+            body: "*"
+        };
+    }
+
+    rpc DeleteAppAuth (DeleteAppAuthRequest) returns (DeleteAppAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/auth"
             body: "*"
         };
     }
@@ -36,18 +42,35 @@ service Gateway {
 }
 
 message AuthenticateRequest {
-    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+    string          AppID    = 10;
+    optional string UserID   = 20;
+    optional string Token    = 30;
+    string          Resource = 40;
+    string          Method   = 50;
 }
 
 message AuthenticateResponse {
-   appuser.middleware.authing.v1.Auth Info = 10;
+   bool Info = 10;
 }
 
 message CreateAppAuthRequest {
-    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+    string          TargetAppID    = 10;
+    optional string TargetUserID   = 20;
+    optional string RoleID         = 30;
+    string          Resource       = 40;
+    string          Method         = 50;
 }
 
 message CreateAppAuthResponse {
+   appuser.middleware.authing.v1.Auth Info = 10;
+}
+
+message DeleteAppAuthRequest {
+    string TargetAppID = 10;
+    string ID          = 20;
+}
+
+message DeleteAppAuthResponse {
    appuser.middleware.authing.v1.Auth Info = 10;
 }
 

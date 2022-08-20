@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error)
 	CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error)
+	DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error)
 	GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error)
 	GetAppHistories(ctx context.Context, in *GetAppHistoriesRequest, opts ...grpc.CallOption) (*GetAppHistoriesResponse, error)
 }
@@ -54,6 +55,15 @@ func (c *gatewayClient) CreateAppAuth(ctx context.Context, in *CreateAppAuthRequ
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error) {
+	out := new(DeleteAppAuthResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/DeleteAppAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error) {
 	out := new(GetAppAuthsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/GetAppAuths", in, out, opts...)
@@ -78,6 +88,7 @@ func (c *gatewayClient) GetAppHistories(ctx context.Context, in *GetAppHistories
 type GatewayServer interface {
 	Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error)
 	CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error)
+	DeleteAppAuth(context.Context, *DeleteAppAuthRequest) (*DeleteAppAuthResponse, error)
 	GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error)
 	GetAppHistories(context.Context, *GetAppHistoriesRequest) (*GetAppHistoriesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -92,6 +103,9 @@ func (UnimplementedGatewayServer) Authenticate(context.Context, *AuthenticateReq
 }
 func (UnimplementedGatewayServer) CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAuth not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAppAuth(context.Context, *DeleteAppAuthRequest) (*DeleteAppAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppAuth not implemented")
 }
 func (UnimplementedGatewayServer) GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuths not implemented")
@@ -148,6 +162,24 @@ func _Gateway_CreateAppAuth_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteAppAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAppAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.authing.v1.Gateway/DeleteAppAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAppAuth(ctx, req.(*DeleteAppAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetAppAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppAuthsRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +230,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppAuth",
 			Handler:    _Gateway_CreateAppAuth_Handler,
+		},
+		{
+			MethodName: "DeleteAppAuth",
+			Handler:    _Gateway_DeleteAppAuth_Handler,
 		},
 		{
 			MethodName: "GetAppAuths",

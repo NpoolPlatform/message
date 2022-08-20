@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/app/auth": {
+      "post": {
+        "operationId": "Gateway_DeleteAppAuth",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppAuthResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppAuthRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/authhistories": {
       "post": {
         "operationId": "Gateway_GetAppHistories",
@@ -184,19 +216,50 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/authingv1Auth"
+          "type": "boolean"
         }
       }
     },
     "v1CreateAppAuthRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AuthReq"
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
         }
       }
     },
     "v1CreateAppAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/authingv1Auth"
+        }
+      }
+    },
+    "v1DeleteAppAuthRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppAuthResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -255,29 +318,6 @@
           "items": {
             "$ref": "#/definitions/authingv1Auth"
           }
-        }
-      }
-    },
-    "v2AuthReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
         }
       }
     }
