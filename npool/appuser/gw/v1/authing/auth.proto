@@ -11,12 +11,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 service Gateway {
-    rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {
-        option (google.api.http) = {
-            post: "/v1/authenticate"
-            body: "*"
-        };
-    }
+    rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {}
 
     rpc GetAppAuths (GetAppAuthsRequest) returns (GetAppAuthsResponse) {
         option (google.api.http) = {
