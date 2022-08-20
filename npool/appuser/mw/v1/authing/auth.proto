@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package appuser.middleware.authing.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing";
+
+import "npool/appuser/mgr/v2/authing/auth/auth.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service Middleware {
+    rpc GetAuthOnly  (GetAuthOnlyRequest)  returns (GetAuthOnlyResponse)  {}
+    rpc GetAuths     (GetAuthsRequest)     returns (GetAuthsResponse)     {}
+    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {}
+}
+
+message Auth {
+    string AppID        = 10;
+    string AppName      = 20;
+    string AppLogo      = 30;
+    string RoleID       = 40;
+    string RoleName     = 50;
+    string UserID       = 60;
+    string EmailAddress = 70;
+    string PhoneNO      = 80;
+    string Resource     = 90;
+    string Method       = 100;
+    uint32 CreatedAt    = 110;
+}
+
+message GetAuthOnlyRequest {
+    // Permissioned by path
+    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+}
+
+message GetAuthOnlyResponse {
+    Auth Info = 10;
+}
+
+
+message GetAuthsRequest {
+    string AppID    = 10;
+    int32  Offset   = 20;
+    int32  Limit    = 30;
+}
+
+message GetAuthsResponse {
+    repeated Auth Infos = 10;
+    uint32        Total = 20;
+}
+
+message History {
+    string AppID        = 10;
+    string AppName      = 20;
+    string AppLogo      = 30;
+    string UserID       = 40;
+    string EmailAddress = 50;
+    string PhoneNO      = 60;
+    string Resource     = 70;
+    string Method       = 80;
+    bool   Allowed      = 90;
+    uint32 CreatedAt    = 100;
+}
+
+message GetHistoriesRequest {
+    string AppID    = 10;
+    int32  Offset   = 20;
+    int32  Limit    = 30;
+}
+
+message GetHistoriesResponse {
+    repeated History Infos = 10;
+    uint32           Total = 20;
+}
+

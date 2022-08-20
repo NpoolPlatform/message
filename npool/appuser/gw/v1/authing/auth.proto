@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package appuser.gateway.authing.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/authing";
+
+import "npool/appuser/mw/v1/authing/auth.proto";
+import "npool/appuser/mgr/v2/authing/auth/auth.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+service Gateway {
+    rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {
+        option (google.api.http) = {
+            post: "/v1/authenticate"
+            body: "*"
+        };
+    }
+
+    rpc GetAppAuths (GetAppAuthsRequest) returns (GetAppAuthsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/auths"
+            body: "*"
+        };
+    }
+
+    rpc GetAppHistories (GetAppHistoriesRequest) returns (GetAppHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/authhistories"
+            body: "*"
+        };
+    }
+}
+
+message AuthenticateRequest {
+    // Permissioned by path
+    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+}
+
+message AuthenticateResponse {
+   appuser.middleware.authing.v1.Auth Info = 10;
+}
+
+message GetAppAuthsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppAuthsResponse {
+   repeated appuser.middleware.authing.v1.Auth Infos = 10;
+}
+
+message GetAppHistoriesRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppHistoriesResponse {
+   repeated appuser.middleware.authing.v1.Auth Infos = 10;
+}

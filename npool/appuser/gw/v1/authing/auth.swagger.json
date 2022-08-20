@@ -1,0 +1,278 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/authing/auth.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/authenticate": {
+      "post": {
+        "operationId": "Gateway_Authenticate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AuthenticateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AuthenticateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/authhistories": {
+      "post": {
+        "operationId": "Gateway_GetAppHistories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppHistoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/auths": {
+      "post": {
+        "operationId": "Gateway_GetAppAuths",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAuthsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAuthsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "authingv1Auth": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "AppLogo": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AuthenticateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AuthReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "v1AuthenticateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/authingv1Auth"
+        }
+      }
+    },
+    "v1GetAppAuthsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppAuthsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/authingv1Auth"
+          }
+        }
+      }
+    },
+    "v1GetAppHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/authingv1Auth"
+          }
+        }
+      }
+    },
+    "v2AuthReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
