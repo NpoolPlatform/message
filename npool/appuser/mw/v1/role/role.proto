@@ -10,12 +10,10 @@ import "npool/appuser/mgr/v2/approleuser/approleuser.proto";
 service Middleware {
     rpc GetRole       (GetRoleRequest)      returns (GetRoleResponse)      {}
     rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
-    rpc GetAppRoles   (GetAppRolesRequest)  returns (GetAppRolesResponse)  {}
     rpc GetManyRoles  (GetManyRolesRequest) returns (GetManyRolesResponse) {}
 
     rpc GetRoleUser       (GetRoleUserRequest)     returns (GetRoleUserResponse)     {}
     rpc GetRoleUsers      (GetRoleUsersRequest)     returns (GetRoleUsersResponse)     {}
-    rpc GetAppRoleUsers   (GetAppRoleUsersRequest)  returns (GetAppRoleUsersResponse)  {}
     rpc GetManyRoleUsers  (GetManyRoleUsersRequest) returns (GetManyRoleUsersResponse) {}
 }
 
@@ -58,18 +56,6 @@ message GetRolesRequest {
 }
 
 message GetRolesResponse {
-    repeated Role Infos = 10;
-    uint32        Total = 20;
-}
-
-message GetAppRolesRequest {
-    // Permissioned by path
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
-}
-
-message GetAppRolesResponse {
     repeated Role Infos = 10;
     uint32        Total = 20;
 }
@@ -129,19 +115,6 @@ message GetRoleUsersRequest {
 }
 
 message GetRoleUsersResponse {
-    repeated RoleUser Infos = 10;
-    uint32            Total = 20;
-}
-
-message GetAppRoleUsersRequest {
-    // Permissioned by path
-    string TargetAppID  = 10;
-    string RoleID       = 20;
-    int32  Offset       = 30;
-    int32  Limit        = 40;
-}
-
-message GetAppRoleUsersResponse {
     repeated RoleUser Infos = 10;
     uint32            Total = 20;
 }
