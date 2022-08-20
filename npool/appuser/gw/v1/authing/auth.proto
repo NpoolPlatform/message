@@ -13,6 +13,13 @@ import "npool/npool.proto";
 service Gateway {
     rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {}
 
+    rpc CreateAppAuth (CreateAppAuthRequest) returns (CreateAppAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/auth"
+            body: "*"
+        };
+    }
+
     rpc GetAppAuths (GetAppAuthsRequest) returns (GetAppAuthsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/auths"
@@ -29,11 +36,18 @@ service Gateway {
 }
 
 message AuthenticateRequest {
-    // Permissioned by path
     appuser.manager.authing.auth.v2.AuthReq Info = 10;
 }
 
 message AuthenticateResponse {
+   appuser.middleware.authing.v1.Auth Info = 10;
+}
+
+message CreateAppAuthRequest {
+    appuser.manager.authing.auth.v2.AuthReq Info = 10;
+}
+
+message CreateAppAuthResponse {
    appuser.middleware.authing.v1.Auth Info = 10;
 }
 

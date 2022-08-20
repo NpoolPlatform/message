@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error)
+	CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error)
 	GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error)
 	GetAppHistories(ctx context.Context, in *GetAppHistoriesRequest, opts ...grpc.CallOption) (*GetAppHistoriesResponse, error)
 }
@@ -38,6 +39,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error) {
 	out := new(AuthenticateResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/Authenticate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error) {
+	out := new(CreateAppAuthResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/CreateAppAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *gatewayClient) GetAppHistories(ctx context.Context, in *GetAppHistories
 // for forward compatibility
 type GatewayServer interface {
 	Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error)
+	CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error)
 	GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error)
 	GetAppHistories(context.Context, *GetAppHistoriesRequest) (*GetAppHistoriesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -78,6 +89,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Authenticate not implemented")
+}
+func (UnimplementedGatewayServer) CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAuth not implemented")
 }
 func (UnimplementedGatewayServer) GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuths not implemented")
@@ -112,6 +126,24 @@ func _Gateway_Authenticate_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).Authenticate(ctx, req.(*AuthenticateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateAppAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateAppAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.authing.v1.Gateway/CreateAppAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateAppAuth(ctx, req.(*CreateAppAuthRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -162,6 +194,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Authenticate",
 			Handler:    _Gateway_Authenticate_Handler,
+		},
+		{
+			MethodName: "CreateAppAuth",
+			Handler:    _Gateway_CreateAppAuth_Handler,
 		},
 		{
 			MethodName: "GetAppAuths",

@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/app/auth": {
+      "post": {
+        "operationId": "Gateway_CreateAppAuth",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppAuthResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppAuthRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/authhistories": {
       "post": {
         "operationId": "Gateway_GetAppHistories",
@@ -149,6 +181,22 @@
       }
     },
     "v1AuthenticateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/authingv1Auth"
+        }
+      }
+    },
+    "v1CreateAppAuthRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AuthReq"
+        }
+      }
+    },
+    "v1CreateAppAuthResponse": {
       "type": "object",
       "properties": {
         "Info": {
