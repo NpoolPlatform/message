@@ -111,9 +111,6 @@ message CreateUserRequest {
 
     // Secret
     optional string PasswordHash       = 160;
-
-    // RoleUser
-    repeated string RoleIDs            = 170;
 }
 
 message CreateUserResponse {
@@ -123,34 +120,35 @@ message CreateUserResponse {
 message UpdateUserRequest {
     string          AppID              = 10;
     string          UserID             = 20;
-    optional string EmailAddress       = 30;
-    optional string PhoneNO            = 40;
+
+    optional string Account            = 30;
+    optional string AccountType        = 40;
+    optional string VerificationCode   = 50;
+
+    // Need verification code
+    optional string EmailAddress       = 60;
+    // Need verification code
+    optional string PhoneNO            = 70;
 
     // Extra
-    optional string Username           = 50;
-    repeated string AddressFields      = 60;
-    optional string Gender             = 70;
-    optional string PostalCode         = 80;
-    optional uint32 Age                = 90;
-    optional uint32 Birthday           = 100;
-    optional string Avatar             = 110;
-    optional string Organization       = 120;
-    optional string FirstName          = 130;
-    optional string LastName           = 140;
-    optional string IDNumber           = 150;
+    optional string Username           = 80;
+    repeated string AddressFields      = 90;
+    optional string Gender             = 100;
+    optional string PostalCode         = 110;
+    optional uint32 Age                = 120;
+    optional uint32 Birthday           = 130;
+    optional string Avatar             = 140;
+    optional string Organization       = 150;
+    optional string FirstName          = 160;
+    optional string LastName           = 170;
+    optional string IDNumber           = 180;
 
     // Control
-    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 160;
+    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 190;
 
     // Secret
-    optional string PasswordHash       = 170;
-
-    // Banned
-    optional bool   Banned             = 180;
-    optional string BanMessage         = 190;
-
-    // RoleUser
-    repeated string RoleIDs            = 200;
+    // Need verification code
+    optional string PasswordHash       = 200;
 }
 
 message UpdateUserResponse {

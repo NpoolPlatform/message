@@ -364,13 +364,6 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret"
-        },
-        "RoleIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "RoleUser"
         }
       }
     },
@@ -422,11 +415,22 @@
         "UserID": {
           "type": "string"
         },
-        "EmailAddress": {
+        "Account": {
           "type": "string"
         },
-        "PhoneNO": {
+        "AccountType": {
           "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "Need verification code"
+        },
+        "PhoneNO": {
+          "type": "string",
+          "title": "Need verification code"
         },
         "Username": {
           "type": "string",
@@ -473,21 +477,7 @@
         },
         "PasswordHash": {
           "type": "string",
-          "title": "Secret"
-        },
-        "Banned": {
-          "type": "boolean",
-          "title": "Banned"
-        },
-        "BanMessage": {
-          "type": "string"
-        },
-        "RoleIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "RoleUser"
+          "title": "Secret\nNeed verification code"
         }
       }
     },
