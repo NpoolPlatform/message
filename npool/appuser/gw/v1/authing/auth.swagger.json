@@ -146,7 +146,34 @@
     }
   },
   "definitions": {
-    "authingv1Auth": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Auth": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -185,33 +212,6 @@
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
     "v1AuthenticateResponse": {
       "type": "object",
       "properties": {
@@ -244,7 +244,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/authingv1Auth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -263,7 +263,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/authingv1Auth"
+          "$ref": "#/definitions/v1Auth"
         }
       }
     },
@@ -289,7 +289,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/authingv1Auth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }
@@ -316,7 +316,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/authingv1Auth"
+            "$ref": "#/definitions/v1Auth"
           }
         }
       }

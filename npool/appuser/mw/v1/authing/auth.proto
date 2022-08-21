@@ -4,13 +4,12 @@ package appuser.middleware.authing.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing";
 
-import "npool/appuser/mgr/v2/authing/auth/auth.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 service Middleware {
-    rpc ExistConds    (ExistCondsRequest)   returns (ExistCondsResponse)   {}
+    rpc ExistAuth     (ExistAuthRequest)    returns (ExistAuthResponse)    {}
     rpc GetAuths      (GetAuthsRequest)     returns (GetAuthsResponse)     {}
     rpc GetHistories  (GetHistoriesRequest) returns (GetHistoriesResponse) {}
 }
@@ -29,11 +28,14 @@ message Auth {
     uint32 CreatedAt    = 110;
 }
 
-message ExistCondsRequest {
-    appuser.manager.authing.auth.v2.Conds Info = 10;
+message ExistAuthRequest {
+    string          AppID    = 10;
+    optional string UserID   = 20;
+    string          Resource = 30;
+    string          Method   = 40;
 }
 
-message ExistCondsResponse {
+message ExistAuthResponse {
     bool Info = 10;
 }
 

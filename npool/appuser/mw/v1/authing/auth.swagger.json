@@ -17,7 +17,34 @@
   ],
   "paths": {},
   "definitions": {
-    "authingv1Auth": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Auth": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -56,53 +83,26 @@
         }
       }
     },
-    "authingv1GetAuthsResponse": {
+    "v1ExistAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAuthsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/authingv1Auth"
+            "$ref": "#/definitions/v1Auth"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1ExistCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
         }
       }
     },
@@ -154,40 +154,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RoleID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Resource": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Method": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     }
