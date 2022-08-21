@@ -89,7 +89,7 @@
         }
       }
     },
-    "v2CountHistorysResponse": {
+    "v2CountHistoriesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -98,15 +98,7 @@
         }
       }
     },
-    "v2CreateHistoryResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2History"
-        }
-      }
-    },
-    "v2CreateHistorysResponse": {
+    "v2CreateHistoriesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -114,6 +106,14 @@
           "items": {
             "$ref": "#/definitions/v2History"
           }
+        }
+      }
+    },
+    "v2CreateHistoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2History"
         }
       }
     },
@@ -141,6 +141,21 @@
         }
       }
     },
+    "v2GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2History"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v2GetHistoryOnlyResponse": {
       "type": "object",
       "properties": {
@@ -154,21 +169,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2History"
-        }
-      }
-    },
-    "v2GetHistorysResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2History"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

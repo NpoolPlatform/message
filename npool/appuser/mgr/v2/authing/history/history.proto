@@ -8,14 +8,14 @@ import "npool/npool.proto";
 
 service Manager {
     rpc CreateHistory     (CreateHistoryRequest)     returns (CreateHistoryResponse)     {}
-    rpc CreateHistorys    (CreateHistorysRequest)    returns (CreateHistorysResponse)    {}
+    rpc CreateHistories   (CreateHistoriesRequest)   returns (CreateHistoriesResponse)   {}
     rpc UpdateHistory     (UpdateHistoryRequest)     returns (UpdateHistoryResponse)     {}
     rpc GetHistory        (GetHistoryRequest)        returns (GetHistoryResponse)        {}
     rpc GetHistoryOnly    (GetHistoryOnlyRequest)    returns (GetHistoryOnlyResponse)    {}
-    rpc GetHistorys       (GetHistorysRequest)       returns (GetHistorysResponse)       {}
+    rpc GetHistories      (GetHistoriesRequest)      returns (GetHistoriesResponse)      {}
     rpc ExistHistory      (ExistHistoryRequest)      returns (ExistHistoryResponse)      {}
     rpc ExistHistoryConds (ExistHistoryCondsRequest) returns (ExistHistoryCondsResponse) {}
-    rpc CountHistorys     (CountHistorysRequest)     returns (CountHistorysResponse)     {}
+    rpc CountHistories    (CountHistoriesRequest)    returns (CountHistoriesResponse)    {}
     rpc DeleteHistory     (DeleteHistoryRequest)     returns (DeleteHistoryResponse)     {}
 }
 
@@ -56,11 +56,11 @@ message CreateHistoryResponse {
     History Info = 10;
 }
 
-message CreateHistorysRequest {
+message CreateHistoriesRequest {
     repeated HistoryReq Infos = 10;
 }
 
-message CreateHistorysResponse {
+message CreateHistoriesResponse {
     repeated History Infos = 10;
 }
 
@@ -72,13 +72,13 @@ message GetHistoryResponse {
     History Info = 10;
 }
 
-message GetHistorysRequest {
+message GetHistoriesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetHistorysResponse {
+message GetHistoriesResponse {
     repeated History Infos = 10;
     uint32           Total = 20;
 }
@@ -115,11 +115,11 @@ message ExistHistoryCondsResponse {
     bool Info = 10;
 }
 
-message CountHistorysRequest {
+message CountHistoriesRequest {
     Conds Conds = 10;
 }
 
-message CountHistorysResponse {
+message CountHistoriesResponse {
     uint32 Info = 10;
 }
 

@@ -23,14 +23,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
 	CreateHistory(ctx context.Context, in *CreateHistoryRequest, opts ...grpc.CallOption) (*CreateHistoryResponse, error)
-	CreateHistorys(ctx context.Context, in *CreateHistorysRequest, opts ...grpc.CallOption) (*CreateHistorysResponse, error)
+	CreateHistories(ctx context.Context, in *CreateHistoriesRequest, opts ...grpc.CallOption) (*CreateHistoriesResponse, error)
 	UpdateHistory(ctx context.Context, in *UpdateHistoryRequest, opts ...grpc.CallOption) (*UpdateHistoryResponse, error)
 	GetHistory(ctx context.Context, in *GetHistoryRequest, opts ...grpc.CallOption) (*GetHistoryResponse, error)
 	GetHistoryOnly(ctx context.Context, in *GetHistoryOnlyRequest, opts ...grpc.CallOption) (*GetHistoryOnlyResponse, error)
-	GetHistorys(ctx context.Context, in *GetHistorysRequest, opts ...grpc.CallOption) (*GetHistorysResponse, error)
+	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 	ExistHistory(ctx context.Context, in *ExistHistoryRequest, opts ...grpc.CallOption) (*ExistHistoryResponse, error)
 	ExistHistoryConds(ctx context.Context, in *ExistHistoryCondsRequest, opts ...grpc.CallOption) (*ExistHistoryCondsResponse, error)
-	CountHistorys(ctx context.Context, in *CountHistorysRequest, opts ...grpc.CallOption) (*CountHistorysResponse, error)
+	CountHistories(ctx context.Context, in *CountHistoriesRequest, opts ...grpc.CallOption) (*CountHistoriesResponse, error)
 	DeleteHistory(ctx context.Context, in *DeleteHistoryRequest, opts ...grpc.CallOption) (*DeleteHistoryResponse, error)
 }
 
@@ -51,9 +51,9 @@ func (c *managerClient) CreateHistory(ctx context.Context, in *CreateHistoryRequ
 	return out, nil
 }
 
-func (c *managerClient) CreateHistorys(ctx context.Context, in *CreateHistorysRequest, opts ...grpc.CallOption) (*CreateHistorysResponse, error) {
-	out := new(CreateHistorysResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/CreateHistorys", in, out, opts...)
+func (c *managerClient) CreateHistories(ctx context.Context, in *CreateHistoriesRequest, opts ...grpc.CallOption) (*CreateHistoriesResponse, error) {
+	out := new(CreateHistoriesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/CreateHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,9 +87,9 @@ func (c *managerClient) GetHistoryOnly(ctx context.Context, in *GetHistoryOnlyRe
 	return out, nil
 }
 
-func (c *managerClient) GetHistorys(ctx context.Context, in *GetHistorysRequest, opts ...grpc.CallOption) (*GetHistorysResponse, error) {
-	out := new(GetHistorysResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/GetHistorys", in, out, opts...)
+func (c *managerClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
+	out := new(GetHistoriesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -114,9 +114,9 @@ func (c *managerClient) ExistHistoryConds(ctx context.Context, in *ExistHistoryC
 	return out, nil
 }
 
-func (c *managerClient) CountHistorys(ctx context.Context, in *CountHistorysRequest, opts ...grpc.CallOption) (*CountHistorysResponse, error) {
-	out := new(CountHistorysResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/CountHistorys", in, out, opts...)
+func (c *managerClient) CountHistories(ctx context.Context, in *CountHistoriesRequest, opts ...grpc.CallOption) (*CountHistoriesResponse, error) {
+	out := new(CountHistoriesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.authing.history.v2.Manager/CountHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,14 +137,14 @@ func (c *managerClient) DeleteHistory(ctx context.Context, in *DeleteHistoryRequ
 // for forward compatibility
 type ManagerServer interface {
 	CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error)
-	CreateHistorys(context.Context, *CreateHistorysRequest) (*CreateHistorysResponse, error)
+	CreateHistories(context.Context, *CreateHistoriesRequest) (*CreateHistoriesResponse, error)
 	UpdateHistory(context.Context, *UpdateHistoryRequest) (*UpdateHistoryResponse, error)
 	GetHistory(context.Context, *GetHistoryRequest) (*GetHistoryResponse, error)
 	GetHistoryOnly(context.Context, *GetHistoryOnlyRequest) (*GetHistoryOnlyResponse, error)
-	GetHistorys(context.Context, *GetHistorysRequest) (*GetHistorysResponse, error)
+	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	ExistHistory(context.Context, *ExistHistoryRequest) (*ExistHistoryResponse, error)
 	ExistHistoryConds(context.Context, *ExistHistoryCondsRequest) (*ExistHistoryCondsResponse, error)
-	CountHistorys(context.Context, *CountHistorysRequest) (*CountHistorysResponse, error)
+	CountHistories(context.Context, *CountHistoriesRequest) (*CountHistoriesResponse, error)
 	DeleteHistory(context.Context, *DeleteHistoryRequest) (*DeleteHistoryResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
@@ -156,8 +156,8 @@ type UnimplementedManagerServer struct {
 func (UnimplementedManagerServer) CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateHistory not implemented")
 }
-func (UnimplementedManagerServer) CreateHistorys(context.Context, *CreateHistorysRequest) (*CreateHistorysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateHistorys not implemented")
+func (UnimplementedManagerServer) CreateHistories(context.Context, *CreateHistoriesRequest) (*CreateHistoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateHistories not implemented")
 }
 func (UnimplementedManagerServer) UpdateHistory(context.Context, *UpdateHistoryRequest) (*UpdateHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateHistory not implemented")
@@ -168,8 +168,8 @@ func (UnimplementedManagerServer) GetHistory(context.Context, *GetHistoryRequest
 func (UnimplementedManagerServer) GetHistoryOnly(context.Context, *GetHistoryOnlyRequest) (*GetHistoryOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistoryOnly not implemented")
 }
-func (UnimplementedManagerServer) GetHistorys(context.Context, *GetHistorysRequest) (*GetHistorysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetHistorys not implemented")
+func (UnimplementedManagerServer) GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetHistories not implemented")
 }
 func (UnimplementedManagerServer) ExistHistory(context.Context, *ExistHistoryRequest) (*ExistHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistHistory not implemented")
@@ -177,8 +177,8 @@ func (UnimplementedManagerServer) ExistHistory(context.Context, *ExistHistoryReq
 func (UnimplementedManagerServer) ExistHistoryConds(context.Context, *ExistHistoryCondsRequest) (*ExistHistoryCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistHistoryConds not implemented")
 }
-func (UnimplementedManagerServer) CountHistorys(context.Context, *CountHistorysRequest) (*CountHistorysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountHistorys not implemented")
+func (UnimplementedManagerServer) CountHistories(context.Context, *CountHistoriesRequest) (*CountHistoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountHistories not implemented")
 }
 func (UnimplementedManagerServer) DeleteHistory(context.Context, *DeleteHistoryRequest) (*DeleteHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteHistory not implemented")
@@ -214,20 +214,20 @@ func _Manager_CreateHistory_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateHistorys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateHistorysRequest)
+func _Manager_CreateHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateHistoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateHistorys(ctx, in)
+		return srv.(ManagerServer).CreateHistories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.authing.history.v2.Manager/CreateHistorys",
+		FullMethod: "/appuser.manager.authing.history.v2.Manager/CreateHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateHistorys(ctx, req.(*CreateHistorysRequest))
+		return srv.(ManagerServer).CreateHistories(ctx, req.(*CreateHistoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -286,20 +286,20 @@ func _Manager_GetHistoryOnly_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetHistorys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetHistorysRequest)
+func _Manager_GetHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHistoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetHistorys(ctx, in)
+		return srv.(ManagerServer).GetHistories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.authing.history.v2.Manager/GetHistorys",
+		FullMethod: "/appuser.manager.authing.history.v2.Manager/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetHistorys(ctx, req.(*GetHistorysRequest))
+		return srv.(ManagerServer).GetHistories(ctx, req.(*GetHistoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -340,20 +340,20 @@ func _Manager_ExistHistoryConds_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountHistorys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountHistorysRequest)
+func _Manager_CountHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountHistoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountHistorys(ctx, in)
+		return srv.(ManagerServer).CountHistories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.authing.history.v2.Manager/CountHistorys",
+		FullMethod: "/appuser.manager.authing.history.v2.Manager/CountHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountHistorys(ctx, req.(*CountHistorysRequest))
+		return srv.(ManagerServer).CountHistories(ctx, req.(*CountHistoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -388,8 +388,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateHistory_Handler,
 		},
 		{
-			MethodName: "CreateHistorys",
-			Handler:    _Manager_CreateHistorys_Handler,
+			MethodName: "CreateHistories",
+			Handler:    _Manager_CreateHistories_Handler,
 		},
 		{
 			MethodName: "UpdateHistory",
@@ -404,8 +404,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_GetHistoryOnly_Handler,
 		},
 		{
-			MethodName: "GetHistorys",
-			Handler:    _Manager_GetHistorys_Handler,
+			MethodName: "GetHistories",
+			Handler:    _Manager_GetHistories_Handler,
 		},
 		{
 			MethodName: "ExistHistory",
@@ -416,8 +416,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_ExistHistoryConds_Handler,
 		},
 		{
-			MethodName: "CountHistorys",
-			Handler:    _Manager_CountHistorys_Handler,
+			MethodName: "CountHistories",
+			Handler:    _Manager_CountHistories_Handler,
 		},
 		{
 			MethodName: "DeleteHistory",
