@@ -368,6 +368,14 @@
         }
       }
     },
+    "v1VerifyUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v2SignMethodType": {
       "type": "string",
       "enum": [
