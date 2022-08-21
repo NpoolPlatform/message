@@ -69,12 +69,12 @@ service Gateway {
 
 message SignupRequest {
     // Permissioned by path
-    string AppID            = 10;
-    string Account          = 20;
-    string PasswordHash     = 30;
+    string          AppID            = 10;
+    string          Account          = 20;
+    string          PasswordHash     = 30;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
-    string VerificationCode = 50;
-    string InvitationCode   = 60;
+    string          VerificationCode = 50;
+    optional string InvitationCode   = 60;
 }
 
 message SignupResponse {
