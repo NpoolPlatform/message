@@ -89,30 +89,31 @@ message SignupResponse {
 }
 
 message CreateUserRequest {
-    optional string EmailAddress       = 10;
-    optional string PhoneNO            = 20;
+    string          AppID              = 10;
+    optional string EmailAddress       = 20;
+    optional string PhoneNO            = 30;
 
     // Imported
-    optional string ImportedFromAppID  = 30;
+    optional string ImportedFromAppID  = 40;
 
     // Extra
-    optional string Username           = 40;
-    repeated string AddressFields      = 50;
-    optional string Gender             = 60;
-    optional string PostalCode         = 70;
-    optional uint32 Age                = 80;
-    optional uint32 Birthday           = 90;
-    optional string Avatar             = 100;
-    optional string Organization       = 110;
-    optional string FirstName          = 120;
-    optional string LastName           = 130;
-    optional string IDNumber           = 140;
+    optional string Username           = 50;
+    repeated string AddressFields      = 60;
+    optional string Gender             = 70;
+    optional string PostalCode         = 80;
+    optional uint32 Age                = 90;
+    optional uint32 Birthday           = 100;
+    optional string Avatar             = 110;
+    optional string Organization       = 120;
+    optional string FirstName          = 130;
+    optional string LastName           = 140;
+    optional string IDNumber           = 150;
 
     // Secret
-    optional string PasswordHash       = 150;
+    optional string PasswordHash       = 160;
 
     // RoleUser
-    repeated string RoleIDs            = 160;
+    repeated string RoleIDs            = 170;
 }
 
 message CreateUserResponse {
@@ -120,34 +121,36 @@ message CreateUserResponse {
 }
 
 message UpdateUserRequest {
-    optional string EmailAddress       = 10;
-    optional string PhoneNO            = 20;
+    string          AppID              = 10;
+    string          UserID             = 20;
+    optional string EmailAddress       = 30;
+    optional string PhoneNO            = 40;
 
     // Extra
-    optional string Username           = 30;
-    repeated string AddressFields      = 40;
-    optional string Gender             = 50;
-    optional string PostalCode         = 60;
-    optional uint32 Age                = 70;
-    optional uint32 Birthday           = 80;
-    optional string Avatar             = 90;
-    optional string Organization       = 100;
-    optional string FirstName          = 110;
-    optional string LastName           = 120;
-    optional string IDNumber           = 130;
+    optional string Username           = 50;
+    repeated string AddressFields      = 60;
+    optional string Gender             = 70;
+    optional string PostalCode         = 80;
+    optional uint32 Age                = 90;
+    optional uint32 Birthday           = 100;
+    optional string Avatar             = 110;
+    optional string Organization       = 120;
+    optional string FirstName          = 130;
+    optional string LastName           = 140;
+    optional string IDNumber           = 150;
 
     // Control
-    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 140;
+    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 160;
 
     // Secret
-    optional string PasswordHash       = 150;
+    optional string PasswordHash       = 170;
 
     // Banned
-    optional bool   Banned             = 160;
-    optional string BanMessage         = 170;
+    optional bool   Banned             = 180;
+    optional string BanMessage         = 190;
 
     // RoleUser
-    repeated string RoleIDs            = 180;
+    repeated string RoleIDs            = 200;
 }
 
 message UpdateUserResponse {

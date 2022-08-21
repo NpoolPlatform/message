@@ -309,6 +309,9 @@
     "appusergatewayuserv1CreateUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "EmailAddress": {
           "type": "string"
         },
@@ -413,6 +416,12 @@
     "appusergatewayuserv1UpdateUserRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "EmailAddress": {
           "type": "string"
         },
