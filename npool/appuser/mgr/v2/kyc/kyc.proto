@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package appuser.manager.kyc.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/kyc";
+
+import "npool/npool.proto";
+
+service Manager {
+    rpc CreateKyc     (CreateKycRequest)     returns (CreateKycResponse)     {}
+    rpc CreateKycs    (CreateKycsRequest)    returns (CreateKycsResponse)    {}
+    rpc UpdateKyc     (UpdateKycRequest)     returns (UpdateKycResponse)     {}
+    rpc GetKyc        (GetKycRequest)        returns (GetKycResponse)        {}
+    rpc GetKycOnly    (GetKycOnlyRequest)    returns (GetKycOnlyResponse)    {}
+    rpc GetKycs       (GetKycsRequest)       returns (GetKycsResponse)       {}
+    rpc ExistKyc      (ExistKycRequest)      returns (ExistKycResponse)      {}
+    rpc ExistKycConds (ExistKycCondsRequest) returns (ExistKycCondsResponse) {}
+    rpc CountKycs     (CountKycsRequest)     returns (CountKycsResponse)     {}
+    rpc DeleteKyc     (DeleteKycRequest)     returns (DeleteKycResponse)     {}
+}
+
+enum KycDocumentType {
+    DefaultKycDocumentType = 0;
+    IDCard                 = 10;
+    DriverLicense          = 20;
+    Passport               = 30;
+}
+
+message KycReq {
+    optional string          ID           = 10;
+    optional string          AppID        = 20;
+    optional string          UserID       = 30;
+    optional KycDocumentType DocumentType = 40;
+    optional string          IDNumber     = 50;
+    optional string          FrontImg     = 60;
+    optional string          BackImg      = 70;
+    optional string          SelfieImg    = 80;
+}
+
+message Kyc {
+    string          ID           = 10;
+    string          AppID        = 20;
+    string          UserID       = 30;
+    KycDocumentType DocumentType = 40;
+    string          IDNumber     = 50;
+    string          FrontImg     = 60;
+    string          BackImg      = 70;
+    string          SelfieImg    = 80;
+    uint32          CreatedAt    = 90;
+    uint32          UpdatedAt    = 100;
+}
+
+message Conds {
+    npool.v1.StringVal ID        = 10;
+    npool.v1.StringVal AppID     = 20;
+    npool.v1.StringVal UserID    = 30;
+}
+
+
+message CreateKycRequest {
+    KycReq Info = 10;
+}
+
+message CreateKycResponse {
+    Kyc Info = 10;
+}
+
+message CreateKycsRequest {
+    repeated KycReq Infos = 10;
+}
+
+message CreateKycsResponse {
+    repeated Kyc Infos = 10;
+}
+
+message GetKycRequest {
+    string ID = 10;
+}
+
+message GetKycResponse {
+    Kyc Info = 10;
+}
+
+message GetKycsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetKycsResponse {
+    repeated Kyc Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetKycOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetKycOnlyResponse {
+    Kyc Info = 10;
+}
+
+message UpdateKycRequest {
+    KycReq Info = 10;
+}
+
+message UpdateKycResponse {
+    Kyc Info = 10;
+}
+
+message ExistKycRequest {
+    string ID = 10;
+}
+
+message ExistKycResponse {
+    bool Info = 10;
+}
+
+message ExistKycCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistKycCondsResponse {
+    bool Info = 10;
+}
+
+message CountKycsRequest {
+    Conds Conds = 10;
+}
+
+message CountKycsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteKycRequest {
+    string ID = 10;
+}
+
+message DeleteKycResponse {
+    Kyc Info = 10;
+}
