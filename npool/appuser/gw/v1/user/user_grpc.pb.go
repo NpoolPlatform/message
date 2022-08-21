@@ -28,6 +28,7 @@ type GatewayClient interface {
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	LoginVerify(ctx context.Context, in *LoginVerifyRequest, opts ...grpc.CallOption) (*LoginVerifyResponse, error)
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 }
@@ -94,6 +95,15 @@ func (c *gatewayClient) Login(ctx context.Context, in *LoginRequest, opts ...grp
 	return out, nil
 }
 
+func (c *gatewayClient) LoginVerify(ctx context.Context, in *LoginVerifyRequest, opts ...grpc.CallOption) (*LoginVerifyResponse, error) {
+	out := new(LoginVerifyResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/LoginVerify", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error) {
 	out := new(LoginedResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/Logined", in, out, opts...)
@@ -122,6 +132,7 @@ type GatewayServer interface {
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	LoginVerify(context.Context, *LoginVerifyRequest) (*LoginVerifyResponse, error)
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -148,6 +159,9 @@ func (UnimplementedGatewayServer) GetAppUsers(context.Context, *GetAppUsersReque
 }
 func (UnimplementedGatewayServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedGatewayServer) LoginVerify(context.Context, *LoginVerifyRequest) (*LoginVerifyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LoginVerify not implemented")
 }
 func (UnimplementedGatewayServer) Logined(context.Context, *LoginedRequest) (*LoginedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logined not implemented")
@@ -276,6 +290,24 @@ func _Gateway_Login_Handler(srv interface{}, ctx context.Context, dec func(inter
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_LoginVerify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginVerifyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).LoginVerify(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/LoginVerify",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).LoginVerify(ctx, req.(*LoginVerifyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_Logined_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginedRequest)
 	if err := dec(in); err != nil {
@@ -342,6 +374,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _Gateway_Login_Handler,
+		},
+		{
+			MethodName: "LoginVerify",
+			Handler:    _Gateway_LoginVerify_Handler,
 		},
 		{
 			MethodName: "Logined",

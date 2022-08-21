@@ -52,6 +52,13 @@ service Gateway {
         };
     }
 
+    rpc LoginVerify (LoginVerifyRequest) returns (LoginVerifyResponse) {
+        option (google.api.http) = {
+            post: "/v1/loginverify"
+            body: "*"
+        };
+    }
+
     rpc Logined (LoginedRequest) returns (LoginedResponse) {
         option (google.api.http) = {
             post: "/v1/logined"
@@ -129,6 +136,17 @@ message LoginRequest {
 }
 
 message LoginResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message LoginVerifyRequest {
+    string AppID            = 10;
+    string UserID           = 20;
+    string Token            = 30;
+    string VerificationCode = 40;
+}
+
+message LoginVerifyResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 

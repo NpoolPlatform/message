@@ -176,6 +176,38 @@
         ]
       }
     },
+    "/v1/loginverify": {
+      "post": {
+        "operationId": "Gateway_LoginVerify",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LoginVerifyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LoginVerifyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/logout": {
       "post": {
         "operationId": "Gateway_Logout",
@@ -419,6 +451,31 @@
       }
     },
     "v1LoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1LoginVerifyRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LoginVerifyResponse": {
       "type": "object",
       "properties": {
         "Info": {
