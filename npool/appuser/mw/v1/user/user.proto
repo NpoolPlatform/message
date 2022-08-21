@@ -146,8 +146,8 @@ message User {
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt                   = 370;
 
-    // @inject_tag: sql:"invitation_code"
     string          InvitationCode              = 380;
+    bool            LoginVerified               = 390;
 }
 
 message CreateUserRequest {
