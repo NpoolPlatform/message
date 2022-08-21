@@ -309,8 +309,65 @@
     "appusergatewayuserv1CreateUserRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserReq"
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string",
+          "title": "Secret"
+        },
+        "RoleIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "RoleUser"
         }
       }
     },
@@ -356,8 +413,72 @@
     "appusergatewayuserv1UpdateUserRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserReq"
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra"
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Avatar": {
+          "type": "string"
+        },
+        "Organization": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType",
+          "title": "Control"
+        },
+        "PasswordHash": {
+          "type": "string",
+          "title": "Secret"
+        },
+        "Banned": {
+          "type": "boolean",
+          "title": "Banned"
+        },
+        "BanMessage": {
+          "type": "string"
+        },
+        "RoleIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "RoleUser"
         }
       }
     },
@@ -723,108 +844,6 @@
         },
         "LoginVerified": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1UserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Base"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "ImportedFromAppID": {
-          "type": "string",
-          "title": "Imported"
-        },
-        "Username": {
-          "type": "string",
-          "title": "Extra"
-        },
-        "AddressFields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Gender": {
-          "type": "string"
-        },
-        "PostalCode": {
-          "type": "string"
-        },
-        "Age": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Birthday": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Avatar": {
-          "type": "string"
-        },
-        "Organization": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "IDNumber": {
-          "type": "string"
-        },
-        "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType",
-          "title": "Control"
-        },
-        "GoogleAuthVerified": {
-          "type": "boolean"
-        },
-        "PasswordHash": {
-          "type": "string",
-          "title": "Secret"
-        },
-        "GoogleSecret": {
-          "type": "string"
-        },
-        "ThirdPartyID": {
-          "type": "string",
-          "title": "ThirdParty"
-        },
-        "ThirdPartyUserID": {
-          "type": "string"
-        },
-        "ThirdPartyUsername": {
-          "type": "string"
-        },
-        "ThirdPartyAvatar": {
-          "type": "string"
-        },
-        "Banned": {
-          "type": "boolean",
-          "title": "Banned"
-        },
-        "BanMessage": {
-          "type": "string"
-        },
-        "RoleIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "RoleUser"
         }
       }
     },

@@ -89,7 +89,30 @@ message SignupResponse {
 }
 
 message CreateUserRequest {
-    appuser.middleware.user.v1.UserReq Info = 10;
+    optional string EmailAddress       = 10;
+    optional string PhoneNO            = 20;
+
+    // Imported
+    optional string ImportedFromAppID  = 30;
+
+    // Extra
+    optional string Username           = 40;
+    repeated string AddressFields      = 50;
+    optional string Gender             = 60;
+    optional string PostalCode         = 70;
+    optional uint32 Age                = 80;
+    optional uint32 Birthday           = 90;
+    optional string Avatar             = 100;
+    optional string Organization       = 110;
+    optional string FirstName          = 120;
+    optional string LastName           = 130;
+    optional string IDNumber           = 140;
+
+    // Secret
+    optional string PasswordHash       = 150;
+
+    // RoleUser
+    repeated string RoleIDs            = 160;
 }
 
 message CreateUserResponse {
@@ -97,7 +120,34 @@ message CreateUserResponse {
 }
 
 message UpdateUserRequest {
-    appuser.middleware.user.v1.UserReq Info = 10;
+    optional string EmailAddress       = 10;
+    optional string PhoneNO            = 20;
+
+    // Extra
+    optional string Username           = 30;
+    repeated string AddressFields      = 40;
+    optional string Gender             = 50;
+    optional string PostalCode         = 60;
+    optional uint32 Age                = 70;
+    optional uint32 Birthday           = 80;
+    optional string Avatar             = 90;
+    optional string Organization       = 100;
+    optional string FirstName          = 110;
+    optional string LastName           = 120;
+    optional string IDNumber           = 130;
+
+    // Control
+    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 140;
+
+    // Secret
+    optional string PasswordHash       = 150;
+
+    // Banned
+    optional bool   Banned             = 160;
+    optional string BanMessage         = 170;
+
+    // RoleUser
+    repeated string RoleIDs            = 180;
 }
 
 message UpdateUserResponse {
