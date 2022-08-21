@@ -419,7 +419,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "VerificationCode": {
           "type": "string"

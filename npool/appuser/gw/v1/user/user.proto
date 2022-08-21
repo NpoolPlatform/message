@@ -122,7 +122,7 @@ message UpdateUserRequest {
     string          UserID             = 20;
 
     optional string Account            = 30;
-    optional string AccountType        = 40;
+    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     optional string VerificationCode   = 50;
 
     // Need verification code
