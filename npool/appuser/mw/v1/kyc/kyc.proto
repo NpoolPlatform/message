@@ -11,9 +11,9 @@ import "npool/appuser/mgr/v2/kyc/kyc.proto";
 import "npool/review/mgr/v2/mgr.proto";
 
 service Middleware {
-    rpc GetKyc      (GetKycRequest)    returns (GetKycResponse)     {}
-    rpc GetKycOnly  (GetKycOnlyRequest)    returns (GetKycResponse)     {}
-    rpc GetKycs     (GetKycsRequest)   returns (GetKycsResponse)     {}
+    rpc GetKyc      (GetKycRequest)     returns (GetKycResponse)     {}
+    rpc GetKycOnly  (GetKycOnlyRequest) returns (GetKycResponse)     {}
+    rpc GetKycs     (GetKycsRequest)    returns (GetKycsResponse)    {}
 }
 
 message Kyc {
