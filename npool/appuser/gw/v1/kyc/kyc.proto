@@ -44,6 +44,21 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc UploadKycImage (UploadKycImageRequest) returns (UploadKycImageResponse) {
+        option (google.api.http) = {
+            post: "/v1/upload/kycimage"
+            body: "*"
+        };
+    }
+
+    rpc GetKycImage (GetKycImageRequest) returns (GetKycImageResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/kycimage"
+            body: "*"
+        };
+    }
+
 }
 
 message Kyc {
@@ -123,5 +138,25 @@ message UpdateKycRequest {
 
 message UpdateKycResponse {
     Kyc Info = 10;
+}
+
+message UploadKycImageRequest {
+    string AppID       = 10;
+    string UserID      = 20;
+    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+    string ImageBase64 = 40;
+}
+
+message UploadKycImageResponse {
+}
+
+message GetKycImageRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+}
+
+message GetKycImageResponse {
+    string Info = 10;
 }
 

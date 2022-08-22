@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/get/kycimage": {
+      "post": {
+        "operationId": "Gateway_GetKycImage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetKycImageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetKycImageRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/kycs": {
       "post": {
         "operationId": "Gateway_GetKycs",
@@ -168,6 +200,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/appusergatewaykycv2UpdateKycRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/upload/kycimage": {
+      "post": {
+        "operationId": "Gateway_UploadKycImage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UploadKycImageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UploadKycImageRequest"
             }
           }
         ],
@@ -412,6 +476,28 @@
         }
       }
     },
+    "v2GetKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v2KycImageType"
+        }
+      }
+    },
+    "v2GetKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
     "v2KycDocumentType": {
       "type": "string",
       "enum": [
@@ -431,6 +517,16 @@
       ],
       "default": "DefaultKycEntityType"
     },
+    "v2KycImageType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycImageType",
+        "FrontImg",
+        "BackImg",
+        "SelfieImg"
+      ],
+      "default": "DefaultKycImageType"
+    },
     "v2ReviewState": {
       "type": "string",
       "enum": [
@@ -440,6 +536,26 @@
         "Rejected"
       ],
       "default": "DefaultReviewState"
+    },
+    "v2UploadKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v2KycImageType"
+        },
+        "ImageBase64": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UploadKycImageResponse": {
+      "type": "object"
     }
   }
 }

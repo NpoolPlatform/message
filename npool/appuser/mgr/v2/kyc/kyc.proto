@@ -32,6 +32,13 @@ enum KycEntityType {
     Organization           = 20;
 }
 
+enum KycImageType {
+    DefaultKycImageType    = 0;
+    FrontImg               = 10;
+    BackImg                = 20;
+    SelfieImg              = 30;
+}
+
 message KycReq {
     optional string          ID           = 10;
     optional string          AppID        = 20;

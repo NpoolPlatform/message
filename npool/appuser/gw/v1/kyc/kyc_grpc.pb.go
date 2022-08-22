@@ -27,6 +27,8 @@ type GatewayClient interface {
 	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
 	GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error)
 	GetAppKycs(ctx context.Context, in *GetAppKycsRequest, opts ...grpc.CallOption) (*GetAppKycsResponse, error)
+	UploadKycImage(ctx context.Context, in *UploadKycImageRequest, opts ...grpc.CallOption) (*UploadKycImageResponse, error)
+	GetKycImage(ctx context.Context, in *GetKycImageRequest, opts ...grpc.CallOption) (*GetKycImageResponse, error)
 }
 
 type gatewayClient struct {
@@ -82,6 +84,24 @@ func (c *gatewayClient) GetAppKycs(ctx context.Context, in *GetAppKycsRequest, o
 	return out, nil
 }
 
+func (c *gatewayClient) UploadKycImage(ctx context.Context, in *UploadKycImageRequest, opts ...grpc.CallOption) (*UploadKycImageResponse, error) {
+	out := new(UploadKycImageResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/UploadKycImage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetKycImage(ctx context.Context, in *GetKycImageRequest, opts ...grpc.CallOption) (*GetKycImageResponse, error) {
+	out := new(GetKycImageResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKycImage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -91,6 +111,8 @@ type GatewayServer interface {
 	GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error)
 	GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error)
 	GetAppKycs(context.Context, *GetAppKycsRequest) (*GetAppKycsResponse, error)
+	UploadKycImage(context.Context, *UploadKycImageRequest) (*UploadKycImageResponse, error)
+	GetKycImage(context.Context, *GetKycImageRequest) (*GetKycImageResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -112,6 +134,12 @@ func (UnimplementedGatewayServer) GetKycs(context.Context, *GetKycsRequest) (*Ge
 }
 func (UnimplementedGatewayServer) GetAppKycs(context.Context, *GetAppKycsRequest) (*GetAppKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppKycs not implemented")
+}
+func (UnimplementedGatewayServer) UploadKycImage(context.Context, *UploadKycImageRequest) (*UploadKycImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadKycImage not implemented")
+}
+func (UnimplementedGatewayServer) GetKycImage(context.Context, *GetKycImageRequest) (*GetKycImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetKycImage not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -216,6 +244,42 @@ func _Gateway_GetAppKycs_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UploadKycImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadKycImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UploadKycImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/UploadKycImage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UploadKycImage(ctx, req.(*UploadKycImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetKycImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetKycImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetKycImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKycImage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetKycImage(ctx, req.(*GetKycImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +306,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppKycs",
 			Handler:    _Gateway_GetAppKycs_Handler,
+		},
+		{
+			MethodName: "UploadKycImage",
+			Handler:    _Gateway_UploadKycImage_Handler,
+		},
+		{
+			MethodName: "GetKycImage",
+			Handler:    _Gateway_GetKycImage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
