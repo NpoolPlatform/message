@@ -20,17 +20,8 @@
     "kycv1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ReviewID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Conds": {
+          "$ref": "#/definitions/kycv2Conds"
         }
       }
     },
@@ -139,6 +130,23 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "kycv2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
