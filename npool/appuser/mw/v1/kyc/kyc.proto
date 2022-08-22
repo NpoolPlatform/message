@@ -12,7 +12,7 @@ import "npool/review/mgr/v2/mgr.proto";
 
 service Middleware {
     rpc GetKyc      (GetKycRequest)    returns (GetKycResponse)     {}
-    rpc GetAuths    (GetKycsRequest)   returns (GetKycsResponse)     {}
+    rpc GetKycs     (GetKycsRequest)   returns (GetKycsResponse)     {}
 }
 
 message Kyc {
