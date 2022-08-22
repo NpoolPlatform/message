@@ -26,6 +26,12 @@ enum KycDocumentType {
     Passport               = 30;
 }
 
+enum KycEntityType {
+    DefaultKycEntityType   = 0;
+    Individual             = 10;
+    Organization           = 20;
+}
+
 message KycReq {
     optional string          ID           = 10;
     optional string          AppID        = 20;
@@ -35,6 +41,7 @@ message KycReq {
     optional string          FrontImg     = 60;
     optional string          BackImg      = 70;
     optional string          SelfieImg    = 80;
+    optional KycEntityType   EntityType   = 90;
 }
 
 message Kyc {
@@ -46,8 +53,9 @@ message Kyc {
     string          FrontImg     = 60;
     string          BackImg      = 70;
     string          SelfieImg    = 80;
-    uint32          CreatedAt    = 90;
-    uint32          UpdatedAt    = 100;
+    KycEntityType   EntityType   = 90;
+    uint32          CreatedAt    = 100;
+    uint32          UpdatedAt    = 110;
 }
 
 message Conds {
