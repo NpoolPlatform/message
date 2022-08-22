@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
+	GetKycOnly(ctx context.Context, in *GetKycOnlyRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
 	GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error)
 }
 
@@ -43,6 +44,15 @@ func (c *middlewareClient) GetKyc(ctx context.Context, in *GetKycRequest, opts .
 	return out, nil
 }
 
+func (c *middlewareClient) GetKycOnly(ctx context.Context, in *GetKycOnlyRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
+	out := new(GetKycResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/GetKycOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error) {
 	out := new(GetKycsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/GetKycs", in, out, opts...)
@@ -57,6 +67,7 @@ func (c *middlewareClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts
 // for forward compatibility
 type MiddlewareServer interface {
 	GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error)
+	GetKycOnly(context.Context, *GetKycOnlyRequest) (*GetKycResponse, error)
 	GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -67,6 +78,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKyc not implemented")
+}
+func (UnimplementedMiddlewareServer) GetKycOnly(context.Context, *GetKycOnlyRequest) (*GetKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetKycOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycs not implemented")
@@ -102,6 +116,24 @@ func _Middleware_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetKycOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetKycOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetKycOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.kyc.v1.Middleware/GetKycOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetKycOnly(ctx, req.(*GetKycOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetKycs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetKycsRequest)
 	if err := dec(in); err != nil {
@@ -130,6 +162,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetKyc",
 			Handler:    _Middleware_GetKyc_Handler,
+		},
+		{
+			MethodName: "GetKycOnly",
+			Handler:    _Middleware_GetKycOnly_Handler,
 		},
 		{
 			MethodName: "GetKycs",

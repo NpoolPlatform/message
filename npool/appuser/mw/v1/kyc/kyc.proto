@@ -11,8 +11,8 @@ import "npool/appuser/mgr/v2/kyc/kyc.proto";
 import "npool/review/mgr/v2/mgr.proto";
 
 service Middleware {
-    rpc GetKyc      (GetKycRequest)    returns (GetKycResponse)     {}
-    rpc GetKycs     (GetKycsRequest)   returns (GetKycsResponse)     {}
+    rpc GetKyc      (GetKycRequest)     returns (GetKycResponse)     {}
+    rpc GetKycs     (GetKycsRequest)    returns (GetKycsResponse)    {}
 }
 
 message Kyc {
@@ -56,6 +56,10 @@ message Kyc {
     uint32          UpdatedAt       = 200;
 }
 
+message Conds {
+    appuser.manager.kyc.v2.Conds Conds = 10;
+}
+
 message GetKycRequest {
     string ID    = 10;
 }
@@ -65,7 +69,7 @@ message GetKycResponse {
 }
 
 message GetKycsRequest {
-    string AppID    = 10;
+    Conds  Conds    = 10;
     int32  Offset   = 20;
     int32  Limit    = 30;
 }

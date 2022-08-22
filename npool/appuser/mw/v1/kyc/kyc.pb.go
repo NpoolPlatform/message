@@ -242,6 +242,53 @@ func (x *Kyc) GetUpdatedAt() uint32 {
 	return 0
 }
 
+type Conds struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *kyc.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *Conds) Reset() {
+	*x = Conds{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Conds) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Conds) ProtoMessage() {}
+
+func (x *Conds) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Conds.ProtoReflect.Descriptor instead.
+func (*Conds) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Conds) GetConds() *kyc.Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
 type GetKycRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -253,7 +300,7 @@ type GetKycRequest struct {
 func (x *GetKycRequest) Reset() {
 	*x = GetKycRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[1]
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -266,7 +313,7 @@ func (x *GetKycRequest) String() string {
 func (*GetKycRequest) ProtoMessage() {}
 
 func (x *GetKycRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[1]
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -279,7 +326,7 @@ func (x *GetKycRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetKycRequest.ProtoReflect.Descriptor instead.
 func (*GetKycRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{1}
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetKycRequest) GetID() string {
@@ -300,7 +347,7 @@ type GetKycResponse struct {
 func (x *GetKycResponse) Reset() {
 	*x = GetKycResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[2]
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -313,7 +360,7 @@ func (x *GetKycResponse) String() string {
 func (*GetKycResponse) ProtoMessage() {}
 
 func (x *GetKycResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[2]
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,10 +373,104 @@ func (x *GetKycResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetKycResponse.ProtoReflect.Descriptor instead.
 func (*GetKycResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{2}
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetKycResponse) GetInfo() *Kyc {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type GetKycOnlyRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *GetKycOnlyRequest) Reset() {
+	*x = GetKycOnlyRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetKycOnlyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetKycOnlyRequest) ProtoMessage() {}
+
+func (x *GetKycOnlyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetKycOnlyRequest.ProtoReflect.Descriptor instead.
+func (*GetKycOnlyRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetKycOnlyRequest) GetConds() *Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
+type GetKycOnlyResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Kyc `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *GetKycOnlyResponse) Reset() {
+	*x = GetKycOnlyResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetKycOnlyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetKycOnlyResponse) ProtoMessage() {}
+
+func (x *GetKycOnlyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetKycOnlyResponse.ProtoReflect.Descriptor instead.
+func (*GetKycOnlyResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetKycOnlyResponse) GetInfo() *Kyc {
 	if x != nil {
 		return x.Info
 	}
@@ -341,7 +482,7 @@ type GetKycsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	Conds  *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 	Offset int32  `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
@@ -349,7 +490,7 @@ type GetKycsRequest struct {
 func (x *GetKycsRequest) Reset() {
 	*x = GetKycsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[3]
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -362,7 +503,7 @@ func (x *GetKycsRequest) String() string {
 func (*GetKycsRequest) ProtoMessage() {}
 
 func (x *GetKycsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[3]
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,14 +516,14 @@ func (x *GetKycsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetKycsRequest.ProtoReflect.Descriptor instead.
 func (*GetKycsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{3}
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetKycsRequest) GetAppID() string {
+func (x *GetKycsRequest) GetConds() *Conds {
 	if x != nil {
-		return x.AppID
+		return x.Conds
 	}
-	return ""
+	return nil
 }
 
 func (x *GetKycsRequest) GetOffset() int32 {
@@ -411,7 +552,7 @@ type GetKycsResponse struct {
 func (x *GetKycsResponse) Reset() {
 	*x = GetKycsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[4]
+		mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -424,7 +565,7 @@ func (x *GetKycsResponse) String() string {
 func (*GetKycsResponse) ProtoMessage() {}
 
 func (x *GetKycsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[4]
+	mi := &file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -437,7 +578,7 @@ func (x *GetKycsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetKycsResponse.ProtoReflect.Descriptor instead.
 func (*GetKycsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{4}
+	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetKycsResponse) GetInfos() []*Kyc {
@@ -515,28 +656,50 @@ var file_npool_appuser_mw_v1_kyc_kyc_proto_rawDesc = []byte{
 	0x41, 0x74, 0x18, 0xbe, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41,
 	0x74, 0x18, 0xc8, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x64, 0x41, 0x74, 0x22, 0x1f, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x02, 0x49, 0x44, 0x22, 0x44, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31,
-	0x2e, 0x4b, 0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x0e, 0x47, 0x65,
-	0x74, 0x4b, 0x79, 0x63, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05,
-	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70,
-	0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69,
-	0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74,
-	0x22, 0x5d, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
+	0x64, 0x41, 0x74, 0x22, 0x3c, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x33, 0x0a, 0x05,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x61, 0x70,
+	0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6b, 0x79,
+	0x63, 0x2e, 0x76, 0x32, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64,
+	0x73, 0x22, 0x1f, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
+	0x49, 0x44, 0x22, 0x44, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x4b,
-	0x79, 0x63, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74,
-	0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32,
-	0xd1, 0x01, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x5f,
-	0x0a, 0x06, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x12, 0x28, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
-	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79,
-	0x63, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4b, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4b,
+	0x79, 0x63, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a,
+	0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61,
+	0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x48, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x4f,
+	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x61, 0x70, 0x70, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b,
+	0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x76, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x36, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e,
+	0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65,
+	0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x5d, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4b, 0x79,
+	0x63, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x05, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x61, 0x70, 0x70, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b,
+	0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52,
+	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xba, 0x02, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x5f, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x12,
+	0x28, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4b,
+	0x79, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x61, 0x70, 0x70, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b,
+	0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63,
+	0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2c, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x4b, 0x79, 0x63, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x29, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x65, 0x74, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
@@ -565,32 +728,42 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescGZIP() []byte {
 	return file_npool_appuser_mw_v1_kyc_kyc_proto_rawDescData
 }
 
-var file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_npool_appuser_mw_v1_kyc_kyc_proto_goTypes = []interface{}{
-	(*Kyc)(nil),              // 0: appuser.middleware.kyc.v1.Kyc
-	(*GetKycRequest)(nil),    // 1: appuser.middleware.kyc.v1.GetKycRequest
-	(*GetKycResponse)(nil),   // 2: appuser.middleware.kyc.v1.GetKycResponse
-	(*GetKycsRequest)(nil),   // 3: appuser.middleware.kyc.v1.GetKycsRequest
-	(*GetKycsResponse)(nil),  // 4: appuser.middleware.kyc.v1.GetKycsResponse
-	(kyc.KycDocumentType)(0), // 5: appuser.manager.kyc.v2.KycDocumentType
-	(kyc.KycEntityType)(0),   // 6: appuser.manager.kyc.v2.KycEntityType
-	(v2.ReviewState)(0),      // 7: review.manager.v2.ReviewState
+	(*Kyc)(nil),                // 0: appuser.middleware.kyc.v1.Kyc
+	(*Conds)(nil),              // 1: appuser.middleware.kyc.v1.Conds
+	(*GetKycRequest)(nil),      // 2: appuser.middleware.kyc.v1.GetKycRequest
+	(*GetKycResponse)(nil),     // 3: appuser.middleware.kyc.v1.GetKycResponse
+	(*GetKycOnlyRequest)(nil),  // 4: appuser.middleware.kyc.v1.GetKycOnlyRequest
+	(*GetKycOnlyResponse)(nil), // 5: appuser.middleware.kyc.v1.GetKycOnlyResponse
+	(*GetKycsRequest)(nil),     // 6: appuser.middleware.kyc.v1.GetKycsRequest
+	(*GetKycsResponse)(nil),    // 7: appuser.middleware.kyc.v1.GetKycsResponse
+	(kyc.KycDocumentType)(0),   // 8: appuser.manager.kyc.v2.KycDocumentType
+	(kyc.KycEntityType)(0),     // 9: appuser.manager.kyc.v2.KycEntityType
+	(v2.ReviewState)(0),        // 10: review.manager.v2.ReviewState
+	(*kyc.Conds)(nil),          // 11: appuser.manager.kyc.v2.Conds
 }
 var file_npool_appuser_mw_v1_kyc_kyc_proto_depIdxs = []int32{
-	5, // 0: appuser.middleware.kyc.v1.Kyc.DocumentType:type_name -> appuser.manager.kyc.v2.KycDocumentType
-	6, // 1: appuser.middleware.kyc.v1.Kyc.EntityType:type_name -> appuser.manager.kyc.v2.KycEntityType
-	7, // 2: appuser.middleware.kyc.v1.Kyc.ReviewState:type_name -> review.manager.v2.ReviewState
-	0, // 3: appuser.middleware.kyc.v1.GetKycResponse.Info:type_name -> appuser.middleware.kyc.v1.Kyc
-	0, // 4: appuser.middleware.kyc.v1.GetKycsResponse.Infos:type_name -> appuser.middleware.kyc.v1.Kyc
-	1, // 5: appuser.middleware.kyc.v1.Middleware.GetKyc:input_type -> appuser.middleware.kyc.v1.GetKycRequest
-	3, // 6: appuser.middleware.kyc.v1.Middleware.GetKycs:input_type -> appuser.middleware.kyc.v1.GetKycsRequest
-	2, // 7: appuser.middleware.kyc.v1.Middleware.GetKyc:output_type -> appuser.middleware.kyc.v1.GetKycResponse
-	4, // 8: appuser.middleware.kyc.v1.Middleware.GetKycs:output_type -> appuser.middleware.kyc.v1.GetKycsResponse
-	7, // [7:9] is the sub-list for method output_type
-	5, // [5:7] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	8,  // 0: appuser.middleware.kyc.v1.Kyc.DocumentType:type_name -> appuser.manager.kyc.v2.KycDocumentType
+	9,  // 1: appuser.middleware.kyc.v1.Kyc.EntityType:type_name -> appuser.manager.kyc.v2.KycEntityType
+	10, // 2: appuser.middleware.kyc.v1.Kyc.ReviewState:type_name -> review.manager.v2.ReviewState
+	11, // 3: appuser.middleware.kyc.v1.Conds.Conds:type_name -> appuser.manager.kyc.v2.Conds
+	0,  // 4: appuser.middleware.kyc.v1.GetKycResponse.Info:type_name -> appuser.middleware.kyc.v1.Kyc
+	1,  // 5: appuser.middleware.kyc.v1.GetKycOnlyRequest.Conds:type_name -> appuser.middleware.kyc.v1.Conds
+	0,  // 6: appuser.middleware.kyc.v1.GetKycOnlyResponse.Info:type_name -> appuser.middleware.kyc.v1.Kyc
+	1,  // 7: appuser.middleware.kyc.v1.GetKycsRequest.Conds:type_name -> appuser.middleware.kyc.v1.Conds
+	0,  // 8: appuser.middleware.kyc.v1.GetKycsResponse.Infos:type_name -> appuser.middleware.kyc.v1.Kyc
+	2,  // 9: appuser.middleware.kyc.v1.Middleware.GetKyc:input_type -> appuser.middleware.kyc.v1.GetKycRequest
+	4,  // 10: appuser.middleware.kyc.v1.Middleware.GetKycOnly:input_type -> appuser.middleware.kyc.v1.GetKycOnlyRequest
+	6,  // 11: appuser.middleware.kyc.v1.Middleware.GetKycs:input_type -> appuser.middleware.kyc.v1.GetKycsRequest
+	3,  // 12: appuser.middleware.kyc.v1.Middleware.GetKyc:output_type -> appuser.middleware.kyc.v1.GetKycResponse
+	3,  // 13: appuser.middleware.kyc.v1.Middleware.GetKycOnly:output_type -> appuser.middleware.kyc.v1.GetKycResponse
+	7,  // 14: appuser.middleware.kyc.v1.Middleware.GetKycs:output_type -> appuser.middleware.kyc.v1.GetKycsResponse
+	12, // [12:15] is the sub-list for method output_type
+	9,  // [9:12] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_npool_appuser_mw_v1_kyc_kyc_proto_init() }
@@ -612,7 +785,7 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetKycRequest); i {
+			switch v := v.(*Conds); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -624,7 +797,7 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetKycResponse); i {
+			switch v := v.(*GetKycRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -636,7 +809,7 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetKycsRequest); i {
+			switch v := v.(*GetKycResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -648,6 +821,42 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycOnlyRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycOnlyResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetKycsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_kyc_kyc_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetKycsResponse); i {
 			case 0:
 				return &v.state
@@ -666,7 +875,7 @@ func file_npool_appuser_mw_v1_kyc_kyc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_appuser_mw_v1_kyc_kyc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

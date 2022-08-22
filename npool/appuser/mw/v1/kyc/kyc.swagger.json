@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "kycv1Conds": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/kycv2Conds"
+        }
+      }
+    },
     "kycv1GetKycResponse": {
       "type": "object",
       "properties": {
@@ -125,6 +133,23 @@
         }
       }
     },
+    "kycv2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -149,6 +174,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
