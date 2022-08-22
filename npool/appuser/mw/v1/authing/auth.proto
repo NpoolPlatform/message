@@ -15,16 +15,27 @@ service Middleware {
 }
 
 message Auth {
+    // @inject_tag: sql:"app_id"
     string AppID        = 10;
+    // @inject_tag: sql:"app_name"
     string AppName      = 20;
+    // @inject_tag: sql:"app_logo"
     string AppLogo      = 30;
+    // @inject_tag: sql:"role_id"
     string RoleID       = 40;
+    // @inject_tag: sql:"role_name"
     string RoleName     = 50;
+    // @inject_tag: sql:"user_id"
     string UserID       = 60;
+    // @inject_tag: sql:"email_address"
     string EmailAddress = 70;
+    // @inject_tag: sql:"phone_no"
     string PhoneNO      = 80;
+    // @inject_tag: sql:"resource"
     string Resource     = 90;
+    // @inject_tag: sql:"method"
     string Method       = 100;
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 110;
 }
 
@@ -52,15 +63,25 @@ message GetAuthsResponse {
 }
 
 message History {
+    // @inject_tag: sql:"app_id"
     string AppID        = 10;
+    // @inject_tag: sql:"app_name"
     string AppName      = 20;
+    // @inject_tag: sql:"app_logo"
     string AppLogo      = 30;
+    // @inject_tag: sql:"user_id"
     string UserID       = 40;
+    // @inject_tag: sql:"email_address"
     string EmailAddress = 50;
+    // @inject_tag: sql:"phone_no"
     string PhoneNO      = 60;
+    // @inject_tag: sql:"resource"
     string Resource     = 70;
+    // @inject_tag: sql:"method"
     string Method       = 80;
+    // @inject_tag: sql:"allowed"
     bool   Allowed      = 90;
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 100;
 }
 

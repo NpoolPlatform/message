@@ -28,17 +28,28 @@ type Auth struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AppID        string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	AppName      string `protobuf:"bytes,20,opt,name=AppName,proto3" json:"AppName,omitempty"`
-	AppLogo      string `protobuf:"bytes,30,opt,name=AppLogo,proto3" json:"AppLogo,omitempty"`
-	RoleID       string `protobuf:"bytes,40,opt,name=RoleID,proto3" json:"RoleID,omitempty"`
-	RoleName     string `protobuf:"bytes,50,opt,name=RoleName,proto3" json:"RoleName,omitempty"`
-	UserID       string `protobuf:"bytes,60,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	EmailAddress string `protobuf:"bytes,70,opt,name=EmailAddress,proto3" json:"EmailAddress,omitempty"`
-	PhoneNO      string `protobuf:"bytes,80,opt,name=PhoneNO,proto3" json:"PhoneNO,omitempty"`
-	Resource     string `protobuf:"bytes,90,opt,name=Resource,proto3" json:"Resource,omitempty"`
-	Method       string `protobuf:"bytes,100,opt,name=Method,proto3" json:"Method,omitempty"`
-	CreatedAt    uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"app_name"
+	AppName string `protobuf:"bytes,20,opt,name=AppName,proto3" json:"AppName,omitempty" sql:"app_name"`
+	// @inject_tag: sql:"app_logo"
+	AppLogo string `protobuf:"bytes,30,opt,name=AppLogo,proto3" json:"AppLogo,omitempty" sql:"app_logo"`
+	// @inject_tag: sql:"role_id"
+	RoleID string `protobuf:"bytes,40,opt,name=RoleID,proto3" json:"RoleID,omitempty" sql:"role_id"`
+	// @inject_tag: sql:"role_name"
+	RoleName string `protobuf:"bytes,50,opt,name=RoleName,proto3" json:"RoleName,omitempty" sql:"role_name"`
+	// @inject_tag: sql:"user_id"
+	UserID string `protobuf:"bytes,60,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
+	// @inject_tag: sql:"email_address"
+	EmailAddress string `protobuf:"bytes,70,opt,name=EmailAddress,proto3" json:"EmailAddress,omitempty" sql:"email_address"`
+	// @inject_tag: sql:"phone_no"
+	PhoneNO string `protobuf:"bytes,80,opt,name=PhoneNO,proto3" json:"PhoneNO,omitempty" sql:"phone_no"`
+	// @inject_tag: sql:"resource"
+	Resource string `protobuf:"bytes,90,opt,name=Resource,proto3" json:"Resource,omitempty" sql:"resource"`
+	// @inject_tag: sql:"method"
+	Method string `protobuf:"bytes,100,opt,name=Method,proto3" json:"Method,omitempty" sql:"method"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 }
 
 func (x *Auth) Reset() {
@@ -391,16 +402,26 @@ type History struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AppID        string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	AppName      string `protobuf:"bytes,20,opt,name=AppName,proto3" json:"AppName,omitempty"`
-	AppLogo      string `protobuf:"bytes,30,opt,name=AppLogo,proto3" json:"AppLogo,omitempty"`
-	UserID       string `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	EmailAddress string `protobuf:"bytes,50,opt,name=EmailAddress,proto3" json:"EmailAddress,omitempty"`
-	PhoneNO      string `protobuf:"bytes,60,opt,name=PhoneNO,proto3" json:"PhoneNO,omitempty"`
-	Resource     string `protobuf:"bytes,70,opt,name=Resource,proto3" json:"Resource,omitempty"`
-	Method       string `protobuf:"bytes,80,opt,name=Method,proto3" json:"Method,omitempty"`
-	Allowed      bool   `protobuf:"varint,90,opt,name=Allowed,proto3" json:"Allowed,omitempty"`
-	CreatedAt    uint32 `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"app_name"
+	AppName string `protobuf:"bytes,20,opt,name=AppName,proto3" json:"AppName,omitempty" sql:"app_name"`
+	// @inject_tag: sql:"app_logo"
+	AppLogo string `protobuf:"bytes,30,opt,name=AppLogo,proto3" json:"AppLogo,omitempty" sql:"app_logo"`
+	// @inject_tag: sql:"user_id"
+	UserID string `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
+	// @inject_tag: sql:"email_address"
+	EmailAddress string `protobuf:"bytes,50,opt,name=EmailAddress,proto3" json:"EmailAddress,omitempty" sql:"email_address"`
+	// @inject_tag: sql:"phone_no"
+	PhoneNO string `protobuf:"bytes,60,opt,name=PhoneNO,proto3" json:"PhoneNO,omitempty" sql:"phone_no"`
+	// @inject_tag: sql:"resource"
+	Resource string `protobuf:"bytes,70,opt,name=Resource,proto3" json:"Resource,omitempty" sql:"resource"`
+	// @inject_tag: sql:"method"
+	Method string `protobuf:"bytes,80,opt,name=Method,proto3" json:"Method,omitempty" sql:"method"`
+	// @inject_tag: sql:"allowed"
+	Allowed bool `protobuf:"varint,90,opt,name=Allowed,proto3" json:"Allowed,omitempty" sql:"allowed"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 }
 
 func (x *History) Reset() {
