@@ -58,10 +58,7 @@ message Kyc {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
-    optional npool.v1.StringVal ReviewID   = 40;
+    appuser.manager.kyc.v2.Conds Conds = 10;
 }
 
 message GetKycRequest {
