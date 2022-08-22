@@ -22,8 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
-	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
+	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
+	GetAuths(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error)
 }
 
 type middlewareClient struct {
@@ -34,8 +34,8 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error) {
-	out := new(GetAuthsResponse)
+func (c *middlewareClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
+	out := new(GetKycResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/GetKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,8 +43,8 @@ func (c *middlewareClient) GetKyc(ctx context.Context, in *GetKycRequest, opts .
 	return out, nil
 }
 
-func (c *middlewareClient) GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error) {
-	out := new(GetAuthsResponse)
+func (c *middlewareClient) GetAuths(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error) {
+	out := new(GetKycsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/GetAuths", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -56,8 +56,8 @@ func (c *middlewareClient) GetAuths(ctx context.Context, in *GetAuthsRequest, op
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetKyc(context.Context, *GetKycRequest) (*GetAuthsResponse, error)
-	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
+	GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error)
+	GetAuths(context.Context, *GetKycsRequest) (*GetKycsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -65,10 +65,10 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetKyc(context.Context, *GetKycRequest) (*GetAuthsResponse, error) {
+func (UnimplementedMiddlewareServer) GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKyc not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error) {
+func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetKycsRequest) (*GetKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuths not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
@@ -103,7 +103,7 @@ func _Middleware_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(i
 }
 
 func _Middleware_GetAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAuthsRequest)
+	in := new(GetKycsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func _Middleware_GetAuths_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/appuser.middleware.kyc.v1.Middleware/GetAuths",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAuths(ctx, req.(*GetAuthsRequest))
+		return srv.(MiddlewareServer).GetAuths(ctx, req.(*GetKycsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
