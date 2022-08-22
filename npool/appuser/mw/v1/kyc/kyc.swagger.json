@@ -71,9 +71,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
         },
-        "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType",
+        "DocumentTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"document_type\""
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v2KycDocumentType"
         },
         "IDNumber": {
           "type": "string",
@@ -91,9 +94,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"selfie_img\""
         },
-        "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType",
+        "EntityTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"entity_type\""
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
         },
         "ReviewID": {
           "type": "string",

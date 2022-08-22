@@ -31,7 +31,7 @@ message Kyc {
     // @inject_tag: sql:"phone_no"
     string          PhoneNO         = 70;
     // @inject_tag: sql:"document_type"
-    int32           DocumentTypeInt = 80;
+    string          DocumentTypeStr = 80;
     appuser.manager.kyc.v2.KycDocumentType DocumentType = 90;
     // @inject_tag: sql:"id_number"
     string          IDNumber        = 100;
@@ -42,7 +42,7 @@ message Kyc {
     // @inject_tag: sql:"selfie_img"
     string          SelfieImg       = 130;
     // @inject_tag: sql:"entity_type"
-    int32           EntityTypeInt   = 140;
+    string          EntityTypeStr   = 140;
     appuser.manager.kyc.v2.KycEntityType   EntityType    = 150;
     // @inject_tag: sql:"review_id"
     string          ReviewID        = 160;
