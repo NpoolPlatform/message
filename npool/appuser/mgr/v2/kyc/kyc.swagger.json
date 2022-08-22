@@ -66,6 +66,9 @@
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -189,6 +192,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "ReviewID": {
+          "type": "string"
         }
       }
     },
@@ -240,6 +246,9 @@
         },
         "EntityType": {
           "$ref": "#/definitions/v2KycEntityType"
+        },
+        "ReviewID": {
+          "type": "string"
         }
       }
     },
