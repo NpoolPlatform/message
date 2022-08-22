@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/kyc": {
       "post": {
-        "operationId": "Manager_CreateKyc",
+        "operationId": "Gateway_CreateKyc",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/kycs": {
       "post": {
-        "operationId": "Manager_GetAppKycs",
+        "operationId": "Gateway_GetAppKycs",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/get/kyc": {
       "post": {
-        "operationId": "Manager_GetKyc",
+        "operationId": "Gateway_GetKyc",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/get/kycs": {
       "post": {
-        "operationId": "Manager_GetKycs",
+        "operationId": "Gateway_GetKycs",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/update/kyc": {
       "post": {
-        "operationId": "Manager_UpdateKyc",
+        "operationId": "Gateway_UpdateKyc",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     }

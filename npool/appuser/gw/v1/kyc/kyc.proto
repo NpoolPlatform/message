@@ -9,7 +9,7 @@ import "npool/review/mgr/v2/mgr.proto";
 import "google/api/annotations.proto";
 import "npool/npool.proto";
 
-service Manager {
+service Gateway {
     rpc CreateKyc (CreateKycRequest) returns (CreateKycResponse) {
         option (google.api.http) = {
             post: "/v1/create/kyc"

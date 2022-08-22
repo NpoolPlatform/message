@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ManagerClient is the client API for Manager service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type GatewayClient interface {
 	CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error)
 	UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error)
 	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
@@ -29,219 +29,219 @@ type ManagerClient interface {
 	GetAppKycs(ctx context.Context, in *GetAppKycsRequest, opts ...grpc.CallOption) (*GetAppKycsResponse, error)
 }
 
-type managerClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *managerClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
+func (c *gatewayClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
 	out := new(CreateKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Manager/CreateKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/CreateKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error) {
+func (c *gatewayClient) UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error) {
 	out := new(UpdateKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Manager/UpdateKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/UpdateKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
+func (c *gatewayClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
 	out := new(GetKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Manager/GetKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error) {
+func (c *gatewayClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error) {
 	out := new(GetKycsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Manager/GetKycs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKycs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAppKycs(ctx context.Context, in *GetAppKycsRequest, opts ...grpc.CallOption) (*GetAppKycsResponse, error) {
+func (c *gatewayClient) GetAppKycs(ctx context.Context, in *GetAppKycsRequest, opts ...grpc.CallOption) (*GetAppKycsResponse, error) {
 	out := new(GetAppKycsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Manager/GetAppKycs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetAppKycs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type ManagerServer interface {
+type GatewayServer interface {
 	CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error)
 	UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error)
 	GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error)
 	GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error)
 	GetAppKycs(context.Context, *GetAppKycsRequest) (*GetAppKycsResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedManagerServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {
+func (UnimplementedGatewayServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateKyc not implemented")
 }
-func (UnimplementedManagerServer) UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error) {
+func (UnimplementedGatewayServer) UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateKyc not implemented")
 }
-func (UnimplementedManagerServer) GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error) {
+func (UnimplementedGatewayServer) GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKyc not implemented")
 }
-func (UnimplementedManagerServer) GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error) {
+func (UnimplementedGatewayServer) GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycs not implemented")
 }
-func (UnimplementedManagerServer) GetAppKycs(context.Context, *GetAppKycsRequest) (*GetAppKycsResponse, error) {
+func (UnimplementedGatewayServer) GetAppKycs(context.Context, *GetAppKycsRequest) (*GetAppKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppKycs not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Manager_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateKycRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateKyc(ctx, in)
+		return srv.(GatewayServer).CreateKyc(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Manager/CreateKyc",
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/CreateKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateKyc(ctx, req.(*CreateKycRequest))
+		return srv.(GatewayServer).CreateKyc(ctx, req.(*CreateKycRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateKycRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateKyc(ctx, in)
+		return srv.(GatewayServer).UpdateKyc(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Manager/UpdateKyc",
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/UpdateKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateKyc(ctx, req.(*UpdateKycRequest))
+		return srv.(GatewayServer).UpdateKyc(ctx, req.(*UpdateKycRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetKycRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetKyc(ctx, in)
+		return srv.(GatewayServer).GetKyc(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Manager/GetKyc",
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetKyc(ctx, req.(*GetKycRequest))
+		return srv.(GatewayServer).GetKyc(ctx, req.(*GetKycRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetKycs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetKycs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetKycsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetKycs(ctx, in)
+		return srv.(GatewayServer).GetKycs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Manager/GetKycs",
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKycs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetKycs(ctx, req.(*GetKycsRequest))
+		return srv.(GatewayServer).GetKycs(ctx, req.(*GetKycsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAppKycs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppKycs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppKycsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAppKycs(ctx, in)
+		return srv.(GatewayServer).GetAppKycs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Manager/GetAppKycs",
+		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetAppKycs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAppKycs(ctx, req.(*GetAppKycsRequest))
+		return srv.(GatewayServer).GetAppKycs(ctx, req.(*GetAppKycsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.kyc.v2.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "appuser.gateway.kyc.v2.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateKyc",
-			Handler:    _Manager_CreateKyc_Handler,
+			Handler:    _Gateway_CreateKyc_Handler,
 		},
 		{
 			MethodName: "UpdateKyc",
-			Handler:    _Manager_UpdateKyc_Handler,
+			Handler:    _Gateway_UpdateKyc_Handler,
 		},
 		{
 			MethodName: "GetKyc",
-			Handler:    _Manager_GetKyc_Handler,
+			Handler:    _Gateway_GetKyc_Handler,
 		},
 		{
 			MethodName: "GetKycs",
-			Handler:    _Manager_GetKycs_Handler,
+			Handler:    _Gateway_GetKycs_Handler,
 		},
 		{
 			MethodName: "GetAppKycs",
-			Handler:    _Manager_GetAppKycs_Handler,
+			Handler:    _Gateway_GetAppKycs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

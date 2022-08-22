@@ -951,7 +951,7 @@ var file_npool_appuser_gw_v1_kyc_kyc_proto_rawDesc = []byte{
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x61, 0x70, 0x70, 0x75,
 	0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6b, 0x79, 0x63, 0x2e,
 	0x76, 0x32, 0x2e, 0x4b, 0x79, 0x63, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xec, 0x04, 0x0a,
-	0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x7b, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61,
+	0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x7b, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x4b, 0x79, 0x63, 0x12, 0x28, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6b, 0x79, 0x63, 0x2e, 0x76, 0x32, 0x2e, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x4b, 0x79, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
@@ -1036,16 +1036,16 @@ var file_npool_appuser_gw_v1_kyc_kyc_proto_depIdxs = []int32{
 	0,  // 7: appuser.gateway.kyc.v2.GetKycsResponse.Infos:type_name -> appuser.gateway.kyc.v2.Kyc
 	0,  // 8: appuser.gateway.kyc.v2.GetAppKycsResponse.Infos:type_name -> appuser.gateway.kyc.v2.Kyc
 	0,  // 9: appuser.gateway.kyc.v2.UpdateKycResponse.Info:type_name -> appuser.gateway.kyc.v2.Kyc
-	1,  // 10: appuser.gateway.kyc.v2.Manager.CreateKyc:input_type -> appuser.gateway.kyc.v2.CreateKycRequest
-	9,  // 11: appuser.gateway.kyc.v2.Manager.UpdateKyc:input_type -> appuser.gateway.kyc.v2.UpdateKycRequest
-	3,  // 12: appuser.gateway.kyc.v2.Manager.GetKyc:input_type -> appuser.gateway.kyc.v2.GetKycRequest
-	5,  // 13: appuser.gateway.kyc.v2.Manager.GetKycs:input_type -> appuser.gateway.kyc.v2.GetKycsRequest
-	7,  // 14: appuser.gateway.kyc.v2.Manager.GetAppKycs:input_type -> appuser.gateway.kyc.v2.GetAppKycsRequest
-	2,  // 15: appuser.gateway.kyc.v2.Manager.CreateKyc:output_type -> appuser.gateway.kyc.v2.CreateKycResponse
-	10, // 16: appuser.gateway.kyc.v2.Manager.UpdateKyc:output_type -> appuser.gateway.kyc.v2.UpdateKycResponse
-	4,  // 17: appuser.gateway.kyc.v2.Manager.GetKyc:output_type -> appuser.gateway.kyc.v2.GetKycResponse
-	6,  // 18: appuser.gateway.kyc.v2.Manager.GetKycs:output_type -> appuser.gateway.kyc.v2.GetKycsResponse
-	8,  // 19: appuser.gateway.kyc.v2.Manager.GetAppKycs:output_type -> appuser.gateway.kyc.v2.GetAppKycsResponse
+	1,  // 10: appuser.gateway.kyc.v2.Gateway.CreateKyc:input_type -> appuser.gateway.kyc.v2.CreateKycRequest
+	9,  // 11: appuser.gateway.kyc.v2.Gateway.UpdateKyc:input_type -> appuser.gateway.kyc.v2.UpdateKycRequest
+	3,  // 12: appuser.gateway.kyc.v2.Gateway.GetKyc:input_type -> appuser.gateway.kyc.v2.GetKycRequest
+	5,  // 13: appuser.gateway.kyc.v2.Gateway.GetKycs:input_type -> appuser.gateway.kyc.v2.GetKycsRequest
+	7,  // 14: appuser.gateway.kyc.v2.Gateway.GetAppKycs:input_type -> appuser.gateway.kyc.v2.GetAppKycsRequest
+	2,  // 15: appuser.gateway.kyc.v2.Gateway.CreateKyc:output_type -> appuser.gateway.kyc.v2.CreateKycResponse
+	10, // 16: appuser.gateway.kyc.v2.Gateway.UpdateKyc:output_type -> appuser.gateway.kyc.v2.UpdateKycResponse
+	4,  // 17: appuser.gateway.kyc.v2.Gateway.GetKyc:output_type -> appuser.gateway.kyc.v2.GetKycResponse
+	6,  // 18: appuser.gateway.kyc.v2.Gateway.GetKycs:output_type -> appuser.gateway.kyc.v2.GetKycsResponse
+	8,  // 19: appuser.gateway.kyc.v2.Gateway.GetAppKycs:output_type -> appuser.gateway.kyc.v2.GetAppKycsResponse
 	15, // [15:20] is the sub-list for method output_type
 	10, // [10:15] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
