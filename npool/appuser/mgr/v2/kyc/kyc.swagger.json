@@ -179,6 +179,9 @@
         "SelfieImg": {
           "type": "string"
         },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -198,6 +201,15 @@
         "Passport"
       ],
       "default": "DefaultKycDocumentType"
+    },
+    "v2KycEntityType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycEntityType",
+        "Individual",
+        "Organization"
+      ],
+      "default": "DefaultKycEntityType"
     },
     "v2KycReq": {
       "type": "object",
@@ -225,6 +237,9 @@
         },
         "SelfieImg": {
           "type": "string"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
         }
       }
     },
