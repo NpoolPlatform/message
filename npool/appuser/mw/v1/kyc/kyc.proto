@@ -12,6 +12,7 @@ import "npool/review/mgr/v2/mgr.proto";
 
 service Middleware {
     rpc GetKyc      (GetKycRequest)    returns (GetKycResponse)     {}
+    rpc GetKycOnly  (GetKycOnlyRequest)    returns (GetKycResponse)     {}
     rpc GetKycs     (GetKycsRequest)   returns (GetKycsResponse)     {}
 }
 
@@ -56,6 +57,13 @@ message Kyc {
     uint32          UpdatedAt       = 200;
 }
 
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.StringVal ReviewID   = 40;
+}
+
 message GetKycRequest {
     string ID    = 10;
 }
@@ -64,8 +72,16 @@ message GetKycResponse {
     Kyc Info = 10;
 }
 
+message GetKycOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetKycOnlyResponse {
+    Kyc Info = 10;
+}
+
 message GetKycsRequest {
-    string AppID    = 10;
+    Conds  Conds    = 10;
     int32  Offset   = 20;
     int32  Limit    = 30;
 }

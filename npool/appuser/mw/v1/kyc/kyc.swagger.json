@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "kycv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "kycv1GetKycResponse": {
       "type": "object",
       "properties": {
@@ -149,6 +166,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
