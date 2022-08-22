@@ -49,6 +49,7 @@ message KycReq {
     optional string          BackImg      = 70;
     optional string          SelfieImg    = 80;
     optional KycEntityType   EntityType   = 90;
+    optional string          ReviewID     = 100;
 }
 
 message Kyc {
@@ -63,12 +64,14 @@ message Kyc {
     KycEntityType   EntityType   = 90;
     uint32          CreatedAt    = 100;
     uint32          UpdatedAt    = 110;
+    string          ReviewID     = 120;
 }
 
 message Conds {
     npool.v1.StringVal ID        = 10;
     npool.v1.StringVal AppID     = 20;
     npool.v1.StringVal UserID    = 30;
+    npool.v1.StringVal ReviewID  = 40;
 }
 
 
