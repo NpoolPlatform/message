@@ -69,6 +69,15 @@
         },
         "ReviewID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "IDNumber": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
