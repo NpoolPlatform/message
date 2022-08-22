@@ -80,7 +80,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1StringSliceVal"
+          }
         }
       }
     },
@@ -222,6 +225,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

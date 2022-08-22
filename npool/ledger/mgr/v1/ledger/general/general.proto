@@ -52,7 +52,7 @@ message Conds {
     optional npool.v1.StringVal Locked      = 60;
     optional npool.v1.StringVal Outcoming   = 70;
     optional npool.v1.StringVal Spendable   = 80;
-    optional npool.v1.StringVal CoinTypeIDs = 90;
+    repeated npool.v1.StringSliceVal CoinTypeIDs = 90;
 }
 
 
