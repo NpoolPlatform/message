@@ -78,6 +78,9 @@
         },
         "Spendable": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
