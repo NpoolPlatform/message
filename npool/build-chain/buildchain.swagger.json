@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/version": {
+    "/v1/version": {
       "post": {
         "operationId": "BuildChain_Version",
         "responses": {
