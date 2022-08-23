@@ -54,7 +54,7 @@ service Gateway {
 
     rpc GetGenesisUsers (GetGenesisUsersRequest) returns (GetGenesisUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesisuser"
+            post: "/v1/get/genesisusers"
             body: "*"
         };
     }
