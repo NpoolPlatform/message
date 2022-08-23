@@ -47,21 +47,21 @@ service Gateway {
 
     rpc GetGenesisRoles (GetGenesisRolesRequest) returns (GetGenesisRolesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesis/roles"
+            post: "/v1/get/genesisroles"
             body: "*"
         };
     }
 
-    rpc GetGenesisRoleUsers (GetGenesisRoleUsersRequest) returns (GetGenesisRoleUsersResponse) {
+    rpc GetGenesisUsers (GetGenesisUsersRequest) returns (GetGenesisUsersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesis/role/user"
+            post: "/v1/get/genesisuser"
             body: "*"
         };
     }
 
     rpc GetGenesisAuths (GetGenesisAuthsRequest) returns (GetGenesisAuthsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/genesis/auths"
+            post: "/v1/get/genesisauths"
             body: "*"
         };
     }
@@ -123,12 +123,12 @@ message GetGenesisRolesResponse {
     uint32                                   Total = 20;
 }
 
-message GetGenesisRoleUsersRequest {
+message GetGenesisUsersRequest {
 }
 
-message GetGenesisRoleUsersResponse {
-    repeated appuser.middleware.role.v1.RoleUser Infos = 10;
-    uint32                                       Total = 20;
+message GetGenesisUsersResponse {
+    repeated appuser.middleware.user.v1.User Infos = 10;
+    uint32                                   Total = 20;
 }
 
 message GetGenesisAuthsRequest {
