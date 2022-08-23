@@ -354,6 +354,10 @@
           "items": {
             "$ref": "#/definitions/v1Auth"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
