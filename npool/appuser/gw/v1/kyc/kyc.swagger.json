@@ -275,7 +275,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appusergatewaykycv2Kyc"
+          "$ref": "#/definitions/kycv1Kyc"
         }
       }
     },
@@ -294,7 +294,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appusergatewaykycv2Kyc"
+          "$ref": "#/definitions/kycv1Kyc"
         }
       }
     },
@@ -320,65 +320,10 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appusergatewaykycv2Kyc"
+            "$ref": "#/definitions/kycv1Kyc"
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appusergatewaykycv2Kyc": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "AppLogo": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
-        },
-        "IDNumber": {
-          "type": "string"
-        },
-        "FrontImg": {
-          "type": "string"
-        },
-        "BackImg": {
-          "type": "string"
-        },
-        "SelfieImg": {
-          "type": "string"
-        },
-        "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
-        },
-        "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -414,7 +359,92 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appusergatewaykycv2Kyc"
+          "$ref": "#/definitions/kycv1Kyc"
+        }
+      }
+    },
+    "kycv1Kyc": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "AppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_name\""
+        },
+        "AppLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_logo\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"email_address\""
+        },
+        "PhoneNO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"phone_no\""
+        },
+        "DocumentTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"document_type\""
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v2KycDocumentType"
+        },
+        "IDNumber": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id_number\""
+        },
+        "FrontImg": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"front_img\""
+        },
+        "BackImg": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"back_img\""
+        },
+        "SelfieImg": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"selfie_img\""
+        },
+        "EntityTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"entity_type\""
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
+        },
+        "ReviewID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"review_id\""
+        },
+        "ReviewState": {
+          "$ref": "#/definitions/v2ReviewState",
+          "title": "@inject_tag: sql:\"review_state\""
+        },
+        "ReviewMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"review_message\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -467,7 +497,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appusergatewaykycv2Kyc"
+            "$ref": "#/definitions/kycv1Kyc"
           }
         },
         "Total": {

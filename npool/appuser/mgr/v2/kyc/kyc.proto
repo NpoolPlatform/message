@@ -68,10 +68,13 @@ message Kyc {
 }
 
 message Conds {
-    npool.v1.StringVal ID        = 10;
-    npool.v1.StringVal AppID     = 20;
-    npool.v1.StringVal UserID    = 30;
-    npool.v1.StringVal ReviewID  = 40;
+    npool.v1.StringVal ID           = 10;
+    npool.v1.StringVal AppID        = 20;
+    npool.v1.StringVal UserID       = 30;
+    npool.v1.StringVal ReviewID     = 40;
+    npool.v1.StringVal IDNumber     = 50;
+    npool.v1.StringVal DocumentType = 60;
+    npool.v1.StringVal EntityType   = 70;
 }
 
 
