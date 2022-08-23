@@ -97,5 +97,6 @@ message GetAppHistoriesRequest {
 }
 
 message GetAppHistoriesResponse {
-   repeated appuser.middleware.authing.v1.Auth Infos = 10;
+   repeated appuser.middleware.authing.v1.History Infos = 10;
+   uint32   Total                                       = 20;
 }
