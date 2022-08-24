@@ -113,7 +113,6 @@ message AuthorizeGenesisRequest {
 
 message AuthorizeGenesisResponse {
     repeated appuser.middleware.authing.v1.Auth Infos = 10;
-    uint32   Total                                    = 20;
 }
 
 message GetGenesisRolesRequest {
@@ -137,5 +136,5 @@ message GetGenesisAuthsRequest {
 }
 
 message GetGenesisAuthsResponse {
-    repeated authing.gateway.v1.Auth Infos = 10;
+    repeated appuser.middleware.authing.v1.Auth Infos = 10;
 }

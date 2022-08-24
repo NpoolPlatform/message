@@ -369,29 +369,6 @@
         }
       }
     },
-    "authinggatewayv1Auth": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        }
-      }
-    },
     "middlewareauthingv1Auth": {
       "type": "object",
       "properties": {
@@ -480,10 +457,6 @@
           "items": {
             "$ref": "#/definitions/middlewareauthingv1Auth"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -565,7 +538,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/authinggatewayv1Auth"
+            "$ref": "#/definitions/middlewareauthingv1Auth"
           }
         }
       }
