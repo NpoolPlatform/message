@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package review.gateway.kyc.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/kyc";
+
+import "npool/review/mgr/v2/mgr.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/kycreviews"
+            body: "*"
+        };
+    }
+
+    rpc GetAppKycReviews (GetAppKycReviewsRequest) returns (GetAppKycReviewsResponse) {
+        option (google.api.http) = {
+            post: "/v2/get/app/kycreviews"
+            body: "*"
+        };
+    }
+
+    rpc UpdateKycReview (UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/kycreview"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppKycReview (UpdateAppKycReviewRequest) returns (UpdateAppKycReviewResponse) {
+        option (google.api.http) = {
+            post: "/v2/update/app/kycreview"
+            body: "*"
+        };
+    }
+}
+
+message KycReview {
+    string KycID                                = 10;
+    string ReviewID                             = 30;
+    string UserID                               = 40;
+    review.manager.v2.ReviewState KycState      = 50;
+    string EmailAddress                         = 60;
+    string PhoneNO                              = 70;
+    string Reviewer                             = 80;
+    string ObjectType                           = 90;
+    string Domain                               = 100;
+    uint32 CreatedAt                            = 110;
+    uint32 UpdatedAt                            = 120;
+    string Message                              = 130;
+
+}
+
+message GetKycReviewsRequest {
+    string AppID       = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetKycReviewsResponse {
+    repeated KycReview Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetAppKycReviewsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppKycReviewsResponse {
+    repeated KycReview Infos = 10;
+    uint32             Total = 20;
+}
+
+message UpdateKycReviewRequest {
+    string ReviewID    = 10;
+    string AppID       = 20;
+    string UserID      = 30; // Reviewer
+    string LangID      = 40;
+    review.manager.v2.ReviewState State = 50;
+    optional string Message   = 60;
+}
+
+message UpdateKycReviewResponse {
+    KycReview Info = 10;
+}
+
+message UpdateAppKycReviewRequest {
+    string ReviewID    = 10;
+    string AppID       = 20;
+    string TargetAppID = 30;
+    string UserID      = 40; // Reviewer
+    string LangID      = 50;
+    review.manager.v2.ReviewState State = 60;
+    optional string Message   = 70;
+}
+
+message UpdateAppKycReviewResponse {
+    KycReview Info = 10;
+}
+
