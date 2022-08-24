@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error)
+	GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 }
@@ -38,6 +39,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error) {
 	out := new(ExistAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.v1.Middleware/ExistAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error) {
+	out := new(GetAuthResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.v1.Middleware/GetAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 // for forward compatibility
 type MiddlewareServer interface {
 	ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error)
+	GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -78,6 +89,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAuth not implemented")
+}
+func (UnimplementedMiddlewareServer) GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuth not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuths not implemented")
@@ -112,6 +126,24 @@ func _Middleware_ExistAuth_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).ExistAuth(ctx, req.(*ExistAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.authing.v1.Middleware/GetAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetAuth(ctx, req.(*GetAuthRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -162,6 +194,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAuth",
 			Handler:    _Middleware_ExistAuth_Handler,
+		},
+		{
+			MethodName: "GetAuth",
+			Handler:    _Middleware_GetAuth_Handler,
 		},
 		{
 			MethodName: "GetAuths",
