@@ -502,7 +502,12 @@
       }
     },
     "v1GetGenesisAuthsRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
     },
     "v1GetGenesisAuthsResponse": {
       "type": "object",
