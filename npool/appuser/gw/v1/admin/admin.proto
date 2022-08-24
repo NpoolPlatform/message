@@ -132,7 +132,6 @@ message GetGenesisUsersResponse {
 }
 
 message GetGenesisAuthsRequest {
-    string AppID  = 10;
 }
 
 message GetGenesisAuthsResponse {
