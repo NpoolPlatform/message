@@ -666,6 +666,14 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "GenesisInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"genesis\""
+        },
+        "Genesis": {
+          "type": "boolean"
         }
       }
     },
@@ -763,6 +771,9 @@
           "type": "string"
         },
         "Default": {
+          "type": "boolean"
+        },
+        "Genesis": {
           "type": "boolean"
         }
       }

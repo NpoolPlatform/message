@@ -369,7 +369,34 @@
         }
       }
     },
-    "middlewareauthingv1Auth": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Auth": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -419,33 +446,6 @@
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
     "v1AuthorizeGenesisRequest": {
       "type": "object"
     },
@@ -455,8 +455,12 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewareauthingv1Auth"
+            "$ref": "#/definitions/v1Auth"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -529,6 +533,14 @@
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -538,8 +550,12 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewareauthingv1Auth"
+            "$ref": "#/definitions/v1Auth"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -622,6 +638,14 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "GenesisInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"genesis\""
+        },
+        "Genesis": {
+          "type": "boolean"
         }
       }
     },

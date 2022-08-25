@@ -10,7 +10,6 @@ import "npool/npool.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mw/v1/role/role.proto";
 import "npool/appuser/mw/v1/user/user.proto";
-import "npool/authinggateway/authinggateway.proto";
 import "npool/appuser/mw/v1/authing/auth.proto";
 
 service Gateway {
@@ -113,6 +112,7 @@ message AuthorizeGenesisRequest {
 
 message AuthorizeGenesisResponse {
     repeated appuser.middleware.authing.v1.Auth Infos = 10;
+    uint32                                      Total = 20;
 }
 
 message GetGenesisRolesRequest {
@@ -133,8 +133,11 @@ message GetGenesisUsersResponse {
 
 message GetGenesisAuthsRequest {
     string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
 message GetGenesisAuthsResponse {
     repeated appuser.middleware.authing.v1.Auth Infos = 10;
+    uint32                                      Total = 20;
 }
