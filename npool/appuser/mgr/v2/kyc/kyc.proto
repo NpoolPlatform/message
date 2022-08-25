@@ -5,6 +5,7 @@ package appuser.manager.kyc.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/kyc";
 
 import "npool/npool.proto";
+import "npool/review/mgr/v2/mgr.proto";
 
 service Manager {
     rpc CreateKyc     (CreateKycRequest)     returns (CreateKycResponse)     {}
@@ -39,32 +40,42 @@ enum KycImageType {
     SelfieImg              = 30;
 }
 
+enum KycReviewState {
+    DefaultReviewState    = 0;
+
+    Approved              = 10;
+    Wait                  = 20;
+    Rejected              = 30;
+}
+
 message KycReq {
-    optional string          ID           = 10;
-    optional string          AppID        = 20;
-    optional string          UserID       = 30;
-    optional KycDocumentType DocumentType = 40;
-    optional string          IDNumber     = 50;
-    optional string          FrontImg     = 60;
-    optional string          BackImg      = 70;
-    optional string          SelfieImg    = 80;
-    optional KycEntityType   EntityType   = 90;
-    optional string          ReviewID     = 100;
+    optional string          ID            = 10;
+    optional string          AppID         = 20;
+    optional string          UserID        = 30;
+    optional KycDocumentType DocumentType  = 40;
+    optional string          IDNumber      = 50;
+    optional string          FrontImg      = 60;
+    optional string          BackImg       = 70;
+    optional string          SelfieImg     = 80;
+    optional KycEntityType   EntityType    = 90;
+    optional string          ReviewID      = 100;
+    optional KycReviewState  ReviewState   = 110;
 }
 
 message Kyc {
-    string          ID           = 10;
-    string          AppID        = 20;
-    string          UserID       = 30;
-    KycDocumentType DocumentType = 40;
-    string          IDNumber     = 50;
-    string          FrontImg     = 60;
-    string          BackImg      = 70;
-    string          SelfieImg    = 80;
-    KycEntityType   EntityType   = 90;
-    uint32          CreatedAt    = 100;
-    uint32          UpdatedAt    = 110;
-    string          ReviewID     = 120;
+    string          ID            = 10;
+    string          AppID         = 20;
+    string          UserID        = 30;
+    KycDocumentType DocumentType  = 40;
+    string          IDNumber      = 50;
+    string          FrontImg      = 60;
+    string          BackImg       = 70;
+    string          SelfieImg     = 80;
+    KycEntityType   EntityType    = 90;
+    uint32          CreatedAt     = 100;
+    uint32          UpdatedAt     = 110;
+    string          ReviewID      = 120;
+    KycReviewState  ReviewState   = 130;
 }
 
 message Conds {

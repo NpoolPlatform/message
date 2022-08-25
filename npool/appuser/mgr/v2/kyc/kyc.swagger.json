@@ -204,6 +204,9 @@
         },
         "ReviewID": {
           "type": "string"
+        },
+        "ReviewState": {
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
@@ -258,8 +261,21 @@
         },
         "ReviewID": {
           "type": "string"
+        },
+        "ReviewState": {
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
+    },
+    "v2KycReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
     },
     "v2UpdateKycResponse": {
       "type": "object",

@@ -1,0 +1,412 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/review/gw/v2/kyc/kyc.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/get/app/kycreviews": {
+      "post": {
+        "operationId": "Gateway_GetAppKycReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetAppKycReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetAppKycReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/get/kycreviews": {
+      "post": {
+        "operationId": "Gateway_GetKycReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetKycReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetKycReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/update/app/kycreview": {
+      "post": {
+        "operationId": "Gateway_UpdateAppKycReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateAppKycReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateAppKycReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/update/kycreview": {
+      "post": {
+        "operationId": "Gateway_UpdateKycReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateKycReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateKycReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v2GetAppKycReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v2GetAppKycReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2KycReview"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2GetKycReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v2GetKycReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2KycReview"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2KycDocumentType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycDocumentType",
+        "IDCard",
+        "DriverLicense",
+        "Passport"
+      ],
+      "default": "DefaultKycDocumentType"
+    },
+    "v2KycEntityType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycEntityType",
+        "Individual",
+        "Organization"
+      ],
+      "default": "DefaultKycEntityType"
+    },
+    "v2KycReview": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string",
+          "title": "user"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "KycID": {
+          "type": "string",
+          "title": "kyc"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v2KycDocumentType"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "FrontImg": {
+          "type": "string"
+        },
+        "BackImg": {
+          "type": "string"
+        },
+        "SelfieImg": {
+          "type": "string"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
+        },
+        "ReviewID": {
+          "type": "string",
+          "title": "review"
+        },
+        "ObjectType": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "Reviewer": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v2ReviewTriggerType"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
+    },
+    "v2ReviewTriggerType": {
+      "type": "string",
+      "enum": [
+        "DefaultTriggerType",
+        "AutoReviewed",
+        "LargeAmount",
+        "InsufficientFunds",
+        "InsufficientGas"
+      ],
+      "default": "DefaultTriggerType",
+      "title": "- AutoReviewed: Withdrawal triggers"
+    },
+    "v2UpdateAppKycReviewRequest": {
+      "type": "object",
+      "properties": {
+        "ReviewID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateAppKycReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2KycReview"
+        }
+      }
+    },
+    "v2UpdateKycReviewRequest": {
+      "type": "object",
+      "properties": {
+        "ReviewID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateKycReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2KycReview"
+        }
+      }
+    }
+  }
+}

@@ -660,6 +660,13 @@
         },
         "LoginVerified": {
           "type": "boolean"
+        },
+        "KycReviewStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"kyc_review_state\""
+        },
+        "KycReviewState": {
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
@@ -724,6 +731,16 @@
           "type": "string"
         }
       }
+    },
+    "v2KycReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
     },
     "v2RecaptchaType": {
       "type": "string",

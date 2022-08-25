@@ -428,13 +428,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"review_id\""
         },
-        "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState",
+        "ReviewStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"review_state\""
         },
-        "ReviewMessage": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"review_message\""
+        "ReviewState": {
+          "$ref": "#/definitions/v2KycReviewState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -557,7 +556,7 @@
       ],
       "default": "DefaultKycImageType"
     },
-    "v2ReviewState": {
+    "v2KycReviewState": {
       "type": "string",
       "enum": [
         "DefaultReviewState",
