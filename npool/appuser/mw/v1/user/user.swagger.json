@@ -265,6 +265,9 @@
         },
         "LoginVerified": {
           "type": "boolean"
+        },
+        "KycReviewState": {
+          "$ref": "#/definitions/v2ReviewState"
         }
       }
     },
@@ -377,6 +380,16 @@
           "$ref": "#/definitions/v1User"
         }
       }
+    },
+    "v2ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
     },
     "v2SignMethodType": {
       "type": "string",
