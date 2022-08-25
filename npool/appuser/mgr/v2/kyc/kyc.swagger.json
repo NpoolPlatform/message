@@ -265,8 +265,8 @@
         "ReviewID": {
           "type": "string"
         },
-        "ReviewState": {
-          "type": "string"
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
         },
         "ReviewMessage": {
           "type": "string"

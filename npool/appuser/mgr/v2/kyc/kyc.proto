@@ -51,7 +51,7 @@ message KycReq {
     optional string          SelfieImg     = 80;
     optional KycEntityType   EntityType    = 90;
     optional string          ReviewID      = 100;
-    optional string          ReviewState   = 110;
+    optional review.manager.v2.ReviewState State  = 110;
     optional string          ReviewMessage = 120;
 }
 
