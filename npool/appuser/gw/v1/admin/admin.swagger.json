@@ -813,6 +813,9 @@
         },
         "LoginVerified": {
           "type": "boolean"
+        },
+        "KycReviewState": {
+          "$ref": "#/definitions/v2ReviewState"
         }
       }
     },
@@ -823,6 +826,16 @@
         "GoogleRecaptchaV3"
       ],
       "default": "DefaultRecaptchaType"
+    },
+    "v2ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
     },
     "v2SignMethodType": {
       "type": "string",
