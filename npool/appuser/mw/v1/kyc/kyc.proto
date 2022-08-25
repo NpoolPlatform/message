@@ -46,8 +46,8 @@ message Kyc {
     appuser.manager.kyc.v2.KycEntityType   EntityType    = 150;
     // @inject_tag: sql:"review_id"
     string          ReviewID        = 160;
-    // @inject_tag: sql:"review_state"
-    string          ReviewStateStr  = 170;
+    // @inject_tag: sql:"state"
+    string          StateStr  = 170;
     appuser.manager.kyc.v2.KycState  State   = 180;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 190;

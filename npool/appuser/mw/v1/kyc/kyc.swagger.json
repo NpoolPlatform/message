@@ -113,9 +113,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"review_id\""
         },
-        "ReviewStateStr": {
+        "StateStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"review_state\""
+          "title": "@inject_tag: sql:\"state\""
         },
         "State": {
           "$ref": "#/definitions/v2KycState"
