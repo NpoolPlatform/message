@@ -814,9 +814,8 @@
         "LoginVerified": {
           "type": "boolean"
         },
-        "KycReviewStateInt": {
-          "type": "integer",
-          "format": "int32",
+        "KycReviewStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"kyc_review_state\""
         },
         "KycReviewState": {
