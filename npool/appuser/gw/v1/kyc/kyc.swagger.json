@@ -428,9 +428,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"review_id\""
         },
-        "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState",
+        "ReviewStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"review_state\""
+        },
+        "ReviewState": {
+          "$ref": "#/definitions/v2ReviewState"
         },
         "CreatedAt": {
           "type": "integer",
