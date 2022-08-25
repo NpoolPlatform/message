@@ -143,7 +143,9 @@ message ProxyPluginResponse {
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
   string Unit = 112;
+  string Name = 113;
   string TransactionID = 120;
+
   string CID = 140;
   double Balance = 150;
   string BalanceStr = 160;
