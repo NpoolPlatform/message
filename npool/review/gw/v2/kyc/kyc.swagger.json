@@ -257,16 +257,6 @@
     "v2KycReview": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "app"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "AppLogo": {
-          "type": "string"
-        },
         "UserID": {
           "type": "string",
           "title": "user"
