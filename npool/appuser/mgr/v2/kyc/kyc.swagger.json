@@ -204,6 +204,12 @@
         },
         "ReviewID": {
           "type": "string"
+        },
+        "ReviewState": {
+          "type": "string"
+        },
+        "ReviewMessage": {
+          "type": "string"
         }
       }
     },
@@ -257,6 +263,12 @@
           "$ref": "#/definitions/v2KycEntityType"
         },
         "ReviewID": {
+          "type": "string"
+        },
+        "ReviewState": {
+          "type": "string"
+        },
+        "ReviewMessage": {
           "type": "string"
         }
       }

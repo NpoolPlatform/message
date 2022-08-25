@@ -271,9 +271,6 @@
           "type": "string",
           "title": "kyc"
         },
-        "DocumentTypeStr": {
-          "type": "string"
-        },
         "DocumentType": {
           "$ref": "#/definitions/v2KycDocumentType"
         },
@@ -291,12 +288,6 @@
         },
         "EntityType": {
           "$ref": "#/definitions/v2KycEntityType"
-        },
-        "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
-        },
-        "ReviewMessage": {
-          "type": "string"
         },
         "ReviewID": {
           "type": "string",

@@ -49,15 +49,12 @@ message KycReview {
 
     // kyc
     string KycID                                         = 40;
-    string DocumentTypeStr                               = 50;
     appuser.manager.kyc.v2.KycDocumentType DocumentType  = 60;
     string                                 IDNumber      = 70;
     string                                 FrontImg      = 80;
     string                                 BackImg       = 90;
     string                                 SelfieImg     = 100;
     appuser.manager.kyc.v2.KycEntityType   EntityType    = 110;
-    review.manager.v2.ReviewState          ReviewState   = 120;
-    string                                 ReviewMessage = 130;
 
     // review
     string ReviewID                             = 140;
