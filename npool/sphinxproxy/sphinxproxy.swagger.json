@@ -479,6 +479,9 @@
           "type": "string",
           "title": "query wallet account"
         },
+        "Name": {
+          "type": "string"
+        },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
         },
