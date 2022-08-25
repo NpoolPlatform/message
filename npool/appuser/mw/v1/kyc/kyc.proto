@@ -48,8 +48,6 @@ message Kyc {
     string          ReviewID        = 160;
     // @inject_tag: sql:"review_state"
     review.manager.v2.ReviewState          ReviewState   = 170;
-    // @inject_tag: sql:"review_message"
-    string        ReviewMessage     = 180;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 190;
     // @inject_tag: sql:"updated_at"
