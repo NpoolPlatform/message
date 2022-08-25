@@ -814,24 +814,24 @@
         "LoginVerified": {
           "type": "boolean"
         },
-        "KycReviewStateStr": {
+        "KycStateStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"kyc_review_state\""
+          "title": "@inject_tag: sql:\"kyc_state\""
         },
-        "KycReviewState": {
-          "$ref": "#/definitions/v2KycReviewState"
+        "State": {
+          "$ref": "#/definitions/v2KycState"
         }
       }
     },
-    "v2KycReviewState": {
+    "v2KycState": {
       "type": "string",
       "enum": [
-        "DefaultReviewState",
+        "DefaultState",
         "Approved",
         "Wait",
         "Rejected"
       ],
-      "default": "DefaultReviewState"
+      "default": "DefaultState"
     },
     "v2RecaptchaType": {
       "type": "string",
