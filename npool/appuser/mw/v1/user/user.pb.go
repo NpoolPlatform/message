@@ -362,10 +362,11 @@ type User struct {
 	LoginClientIP        string                    `protobuf:"bytes,350,opt,name=LoginClientIP,proto3" json:"LoginClientIP,omitempty"`
 	LoginClientUserAgent string                    `protobuf:"bytes,360,opt,name=LoginClientUserAgent,proto3" json:"LoginClientUserAgent,omitempty"`
 	// @inject_tag: sql:"created_at"
-	CreatedAt      uint32         `protobuf:"varint,370,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
-	InvitationCode *string        `protobuf:"bytes,380,opt,name=InvitationCode,proto3,oneof" json:"InvitationCode,omitempty"`
-	LoginVerified  bool           `protobuf:"varint,390,opt,name=LoginVerified,proto3" json:"LoginVerified,omitempty"`
-	KycReviewState v2.ReviewState `protobuf:"varint,400,opt,name=KycReviewState,proto3,enum=review.manager.v2.ReviewState" json:"KycReviewState,omitempty"`
+	CreatedAt      uint32  `protobuf:"varint,370,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	InvitationCode *string `protobuf:"bytes,380,opt,name=InvitationCode,proto3,oneof" json:"InvitationCode,omitempty"`
+	LoginVerified  bool    `protobuf:"varint,390,opt,name=LoginVerified,proto3" json:"LoginVerified,omitempty"`
+	// @inject_tag: sql:"kyc_review_state"
+	KycReviewState v2.ReviewState `protobuf:"varint,400,opt,name=KycReviewState,proto3,enum=review.manager.v2.ReviewState" json:"KycReviewState,omitempty" sql:"kyc_review_state"`
 }
 
 func (x *User) Reset() {
