@@ -151,7 +151,8 @@ message User {
     bool            LoginVerified               = 390;
 
     // @inject_tag: sql:"kyc_review_state"
-    review.manager.v2.ReviewState KycReviewState = 400;
+    int32 KycReviewStateInt = 400;
+    review.manager.v2.ReviewState KycReviewState = 410;
 }
 
 message CreateUserRequest {

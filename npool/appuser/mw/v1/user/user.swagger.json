@@ -266,6 +266,11 @@
         "LoginVerified": {
           "type": "boolean"
         },
+        "KycReviewStateInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_review_state\""
+        },
         "KycReviewState": {
           "$ref": "#/definitions/v2ReviewState"
         }
