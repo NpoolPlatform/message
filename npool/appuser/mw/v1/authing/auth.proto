@@ -16,6 +16,8 @@ service Middleware {
 }
 
 message Auth {
+    // @inject_tag: sql:"id"
+    string ID           = 5;
     // @inject_tag: sql:"app_id"
     string AppID        = 10;
     // @inject_tag: sql:"app_name"
