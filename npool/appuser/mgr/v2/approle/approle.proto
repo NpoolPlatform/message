@@ -26,6 +26,7 @@ message AppRoleReq {
     optional string Role        = 40;
     optional string Description = 50;
     optional bool   Default     = 60;
+    optional bool   Genesis     = 70;
 }
 
 message AppRole {
@@ -35,6 +36,7 @@ message AppRole {
     string Role        = 40;
     string Description = 50;
     bool   Default     = 60;
+    bool   Genesis     = 70;
 }
 
 message Conds {
