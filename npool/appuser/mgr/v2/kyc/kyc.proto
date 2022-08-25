@@ -52,7 +52,6 @@ message KycReq {
     optional KycEntityType   EntityType    = 90;
     optional string          ReviewID      = 100;
     optional review.manager.v2.ReviewState ReviewState  = 110;
-    optional string          ReviewMessage = 120;
 }
 
 message Kyc {
@@ -69,7 +68,6 @@ message Kyc {
     uint32          UpdatedAt     = 110;
     string          ReviewID      = 120;
     review.manager.v2.ReviewState ReviewState   = 130;
-    string          ReviewMessage = 140;
 }
 
 message Conds {
