@@ -206,7 +206,7 @@
           "type": "string"
         },
         "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
@@ -263,11 +263,11 @@
           "type": "string"
         },
         "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
-    "v2ReviewState": {
+    "v2KycReviewState": {
       "type": "string",
       "enum": [
         "DefaultReviewState",

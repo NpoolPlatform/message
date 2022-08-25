@@ -849,11 +849,11 @@
           "title": "@inject_tag: sql:\"kyc_review_state\""
         },
         "KycReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
-    "v2ReviewState": {
+    "v2KycReviewState": {
       "type": "string",
       "enum": [
         "DefaultReviewState",

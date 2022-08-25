@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/review/mgr/v2/mgr.proto";
+import "npool/appuser/mgr/v2/kyc/kyc.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -152,7 +153,7 @@ message User {
 
     // @inject_tag: sql:"kyc_review_state"
     string          KycReviewStateStr            = 400;
-    review.manager.v2.ReviewState KycReviewState = 410;
+    appuser.manager.kyc.v2.KycReviewState KycReviewState = 410;
 }
 
 message CreateUserRequest {

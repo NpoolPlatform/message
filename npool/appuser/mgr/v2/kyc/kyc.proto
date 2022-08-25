@@ -40,6 +40,14 @@ enum KycImageType {
     SelfieImg              = 30;
 }
 
+enum KycReviewState {
+    DefaultReviewState    = 0;
+
+    Approved              = 10;
+    Wait                  = 20;
+    Rejected              = 30;
+}
+
 message KycReq {
     optional string          ID            = 10;
     optional string          AppID         = 20;
@@ -51,7 +59,7 @@ message KycReq {
     optional string          SelfieImg     = 80;
     optional KycEntityType   EntityType    = 90;
     optional string          ReviewID      = 100;
-    optional review.manager.v2.ReviewState ReviewState  = 110;
+    optional KycReviewState  ReviewState   = 110;
 }
 
 message Kyc {
@@ -67,7 +75,7 @@ message Kyc {
     uint32          CreatedAt     = 100;
     uint32          UpdatedAt     = 110;
     string          ReviewID      = 120;
-    review.manager.v2.ReviewState ReviewState   = 130;
+    KycReviewState  ReviewState   = 130;
 }
 
 message Conds {

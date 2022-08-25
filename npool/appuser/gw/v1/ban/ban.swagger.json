@@ -666,7 +666,7 @@
           "title": "@inject_tag: sql:\"kyc_review_state\""
         },
         "KycReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v2KycReviewState"
         }
       }
     },
@@ -732,15 +732,7 @@
         }
       }
     },
-    "v2RecaptchaType": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaType",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaType"
-    },
-    "v2ReviewState": {
+    "v2KycReviewState": {
       "type": "string",
       "enum": [
         "DefaultReviewState",
@@ -749,6 +741,14 @@
         "Rejected"
       ],
       "default": "DefaultReviewState"
+    },
+    "v2RecaptchaType": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaType",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaType"
     },
     "v2SignMethodType": {
       "type": "string",

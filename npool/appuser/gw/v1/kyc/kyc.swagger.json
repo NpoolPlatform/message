@@ -433,7 +433,7 @@
           "title": "@inject_tag: sql:\"review_state\""
         },
         "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v2KycReviewState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -556,7 +556,7 @@
       ],
       "default": "DefaultKycImageType"
     },
-    "v2ReviewState": {
+    "v2KycReviewState": {
       "type": "string",
       "enum": [
         "DefaultReviewState",
