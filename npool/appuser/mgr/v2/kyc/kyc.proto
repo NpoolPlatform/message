@@ -68,7 +68,7 @@ message Kyc {
     uint32          CreatedAt     = 100;
     uint32          UpdatedAt     = 110;
     string          ReviewID      = 120;
-    review.manager.v2.ReviewState State   = 130;
+    review.manager.v2.ReviewState ReviewState   = 130;
     string          ReviewMessage = 140;
 }
 
