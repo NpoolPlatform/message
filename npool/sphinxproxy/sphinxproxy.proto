@@ -165,6 +165,7 @@ message ProxyPluginRequest {
   string TransactionID = 120;
   // query wallet account
   string Address = 130;
+  string Name = 131;
   sphinx.plugin.v1.UnsignedMessage Message = 140;
   // fil
   sphinx.plugin.v1.Signature Signature = 150;
@@ -184,7 +185,6 @@ message ProxySignRequest {
   TransactionType TransactionType = 110;
   string TransactionID = 120;
   sphinx.plugin.v1.UnsignedMessage Message = 130;
-
   bytes Payload = 140;
 }
 
