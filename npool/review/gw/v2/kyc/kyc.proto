@@ -8,6 +8,7 @@ import "npool/review/mgr/v2/mgr.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
+import "npool/appuser/mgr/v2/kyc/kyc.proto";
 
 // Service Name
 service Gateway {
@@ -41,19 +42,38 @@ service Gateway {
 }
 
 message KycReview {
-    string KycID                                = 10;
-    string ReviewID                             = 30;
-    string UserID                               = 40;
-    review.manager.v2.ReviewState KycState      = 50;
-    string EmailAddress                         = 60;
-    string PhoneNO                              = 70;
-    string Reviewer                             = 80;
-    string ObjectType                           = 90;
-    string Domain                               = 100;
-    uint32 CreatedAt                            = 110;
-    uint32 UpdatedAt                            = 120;
-    string Message                              = 130;
+    // app
+    string AppID   = 10;
+    string AppName = 20;
+    string AppLogo = 30;
 
+    // user
+    string UserID       = 40;
+    string EmailAddress = 50;
+    string PhoneNO      = 60;
+
+    // kyc
+    string KycID                                         = 70;
+    string DocumentTypeStr                               = 80;
+    appuser.manager.kyc.v2.KycDocumentType DocumentType  = 90;
+    string                                 IDNumber      = 100;
+    string                                 FrontImg      = 110;
+    string                                 BackImg       = 120;
+    string                                 SelfieImg     = 130;
+    appuser.manager.kyc.v2.KycEntityType   EntityType    = 140;
+    review.manager.v2.ReviewState          ReviewState   = 175;
+    string                                 ReviewMessage = 160;
+
+    // review
+    string ReviewID                             = 170;
+    string ObjectType                           = 180;
+    string Domain                               = 190;
+    string Reviewer                             = 200;
+    review.manager.v2.ReviewState State         = 210;
+    review.manager.v2.ReviewTriggerType Trigger = 220;
+    string Message                              = 230;
+    uint32          CreatedAt                   = 240;
+    uint32          UpdatedAt                   = 250;
 }
 
 message GetKycReviewsRequest {

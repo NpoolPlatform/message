@@ -235,20 +235,41 @@
         }
       }
     },
+    "v2KycDocumentType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycDocumentType",
+        "IDCard",
+        "DriverLicense",
+        "Passport"
+      ],
+      "default": "DefaultKycDocumentType"
+    },
+    "v2KycEntityType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycEntityType",
+        "Individual",
+        "Organization"
+      ],
+      "default": "DefaultKycEntityType"
+    },
     "v2KycReview": {
       "type": "object",
       "properties": {
-        "KycID": {
+        "AppID": {
+          "type": "string",
+          "title": "app"
+        },
+        "AppName": {
           "type": "string"
         },
-        "ReviewID": {
+        "AppLogo": {
           "type": "string"
         },
         "UserID": {
-          "type": "string"
-        },
-        "KycState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "type": "string",
+          "title": "user"
         },
         "EmailAddress": {
           "type": "string"
@@ -256,13 +277,57 @@
         "PhoneNO": {
           "type": "string"
         },
-        "Reviewer": {
+        "KycID": {
+          "type": "string",
+          "title": "kyc"
+        },
+        "DocumentTypeStr": {
           "type": "string"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v2KycDocumentType"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "FrontImg": {
+          "type": "string"
+        },
+        "BackImg": {
+          "type": "string"
+        },
+        "SelfieImg": {
+          "type": "string"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
+        },
+        "ReviewState": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "ReviewMessage": {
+          "type": "string"
+        },
+        "ReviewID": {
+          "type": "string",
+          "title": "review"
         },
         "ObjectType": {
           "type": "string"
         },
         "Domain": {
+          "type": "string"
+        },
+        "Reviewer": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v2ReviewTriggerType"
+        },
+        "Message": {
           "type": "string"
         },
         "CreatedAt": {
@@ -272,9 +337,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Message": {
-          "type": "string"
         }
       }
     },
@@ -287,6 +349,18 @@
         "Rejected"
       ],
       "default": "DefaultReviewState"
+    },
+    "v2ReviewTriggerType": {
+      "type": "string",
+      "enum": [
+        "DefaultTriggerType",
+        "AutoReviewed",
+        "LargeAmount",
+        "InsufficientFunds",
+        "InsufficientGas"
+      ],
+      "default": "DefaultTriggerType",
+      "title": "- AutoReviewed: Withdrawal triggers"
     },
     "v2UpdateAppKycReviewRequest": {
       "type": "object",
