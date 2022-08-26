@@ -44,7 +44,7 @@ enum KycState {
     DefaultState    = 0;
 
     Approved              = 10;
-    Wait                  = 20;
+    Reviewing             = 20;
     Rejected              = 30;
 }
 
