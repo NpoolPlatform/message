@@ -65,6 +65,9 @@ message UserReq {
 
     // RoleUser
     repeated string RoleIDs            = 270;
+
+    optional bool   InvitationCodeConfirmed     = 381;
+    optional string InvitationCodeID            = 382;
 }
 
 message User {
@@ -150,6 +153,7 @@ message User {
 
     optional string InvitationCode              = 380;
     bool            InvitationCodeConfirmed     = 381;
+    optional string InvitationCodeID            = 382;
     bool            LoginVerified               = 390;
 
     // @inject_tag: sql:"kyc_state"

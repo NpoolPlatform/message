@@ -266,6 +266,9 @@
         "InvitationCodeConfirmed": {
           "type": "boolean"
         },
+        "InvitationCodeID": {
+          "type": "string"
+        },
         "LoginVerified": {
           "type": "boolean"
         },
@@ -377,6 +380,12 @@
             "type": "string"
           },
           "title": "RoleUser"
+        },
+        "InvitationCodeConfirmed": {
+          "type": "boolean"
+        },
+        "InvitationCodeID": {
+          "type": "string"
         }
       }
     },
