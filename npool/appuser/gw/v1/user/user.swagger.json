@@ -424,6 +424,9 @@
         "VerificationCode": {
           "type": "string"
         },
+        "NewVerificationCode": {
+          "type": "string"
+        },
         "EmailAddress": {
           "type": "string",
           "title": "Need verification code"

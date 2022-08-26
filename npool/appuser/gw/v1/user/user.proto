@@ -124,6 +124,7 @@ message UpdateUserRequest {
     optional string Account            = 30;
     optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     optional string VerificationCode   = 50;
+    optional string NewVerificationCode = 51;
 
     // Need verification code
     optional string EmailAddress       = 60;
