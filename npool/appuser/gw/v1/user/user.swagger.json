@@ -430,11 +430,7 @@
         "NewAccountType": {
           "$ref": "#/definitions/v2SignMethodType"
         },
-        "EmailAddress": {
-          "type": "string",
-          "title": "Need verification code"
-        },
-        "PhoneNO": {
+        "NewAccount": {
           "type": "string",
           "title": "Need verification code"
         },
