@@ -40,8 +40,8 @@ enum KycImageType {
     SelfieImg              = 30;
 }
 
-enum KycReviewState {
-    DefaultReviewState    = 0;
+enum KycState {
+    DefaultState    = 0;
 
     Approved              = 10;
     Wait                  = 20;
@@ -59,7 +59,7 @@ message KycReq {
     optional string          SelfieImg     = 80;
     optional KycEntityType   EntityType    = 90;
     optional string          ReviewID      = 100;
-    optional KycReviewState  ReviewState   = 110;
+    optional KycState        State         = 110;
 }
 
 message Kyc {
@@ -75,7 +75,7 @@ message Kyc {
     uint32          CreatedAt     = 100;
     uint32          UpdatedAt     = 110;
     string          ReviewID      = 120;
-    KycReviewState  ReviewState   = 130;
+    KycState        State         = 130;
 }
 
 message Conds {

@@ -151,9 +151,9 @@ message User {
     optional string InvitationCode              = 380;
     bool            LoginVerified               = 390;
 
-    // @inject_tag: sql:"kyc_review_state"
-    string          KycReviewStateStr            = 400;
-    appuser.manager.kyc.v2.KycReviewState KycReviewState = 410;
+    // @inject_tag: sql:"kyc_state"
+    string          KycStateStr            = 400;
+    appuser.manager.kyc.v2.KycState   State = 410;
 }
 
 message CreateUserRequest {
