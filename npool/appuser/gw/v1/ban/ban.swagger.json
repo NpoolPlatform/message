@@ -737,7 +737,7 @@
       "enum": [
         "DefaultState",
         "Approved",
-        "Wait",
+        "Reviewing",
         "Rejected"
       ],
       "default": "DefaultState"
