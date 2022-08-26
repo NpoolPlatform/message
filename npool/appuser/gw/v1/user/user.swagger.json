@@ -427,6 +427,9 @@
         "NewVerificationCode": {
           "type": "string"
         },
+        "NewAccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
         "EmailAddress": {
           "type": "string",
           "title": "Need verification code"
