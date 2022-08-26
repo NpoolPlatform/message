@@ -50,6 +50,7 @@ message Kyc {
     string          StateStr  = 170;
     appuser.manager.kyc.v2.KycState  State   = 180;
     // @inject_tag: sql:"created_at"
+    string          ReviewMessage   = 181;
     uint32          CreatedAt       = 190;
     // @inject_tag: sql:"updated_at"
     uint32          UpdatedAt       = 200;
