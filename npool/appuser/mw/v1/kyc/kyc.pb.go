@@ -61,11 +61,11 @@ type Kyc struct {
 	// @inject_tag: sql:"review_id"
 	ReviewID string `protobuf:"bytes,160,opt,name=ReviewID,proto3" json:"ReviewID,omitempty" sql:"review_id"`
 	// @inject_tag: sql:"state"
-	StateStr string       `protobuf:"bytes,170,opt,name=StateStr,proto3" json:"StateStr,omitempty" sql:"state"`
-	State    kyc.KycState `protobuf:"varint,180,opt,name=State,proto3,enum=appuser.manager.kyc.v2.KycState" json:"State,omitempty"`
+	StateStr      string       `protobuf:"bytes,170,opt,name=StateStr,proto3" json:"StateStr,omitempty" sql:"state"`
+	State         kyc.KycState `protobuf:"varint,180,opt,name=State,proto3,enum=appuser.manager.kyc.v2.KycState" json:"State,omitempty"`
+	ReviewMessage string       `protobuf:"bytes,181,opt,name=ReviewMessage,proto3" json:"ReviewMessage,omitempty"`
 	// @inject_tag: sql:"created_at"
-	ReviewMessage string `protobuf:"bytes,181,opt,name=ReviewMessage,proto3" json:"ReviewMessage,omitempty" sql:"created_at"`
-	CreatedAt     uint32 `protobuf:"varint,190,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	CreatedAt uint32 `protobuf:"varint,190,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
 	UpdatedAt uint32 `protobuf:"varint,200,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
