@@ -481,6 +481,12 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret\nNeed verification code"
+        },
+        "InvitationCodeConfirmed": {
+          "type": "boolean"
+        },
+        "InvitationCodeID": {
+          "type": "string"
         }
       }
     },

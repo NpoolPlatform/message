@@ -380,12 +380,6 @@
             "type": "string"
           },
           "title": "RoleUser"
-        },
-        "InvitationCodeConfirmed": {
-          "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
         }
       }
     },
