@@ -845,7 +845,7 @@
           "type": "string"
         },
         "InvitationCodeConfirmed": {
-          "type": "string"
+          "type": "boolean"
         },
         "LoginVerified": {
           "type": "boolean"
