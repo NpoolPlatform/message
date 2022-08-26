@@ -150,6 +150,10 @@ message UpdateUserRequest {
     // Secret
     // Need verification code
     optional string PasswordHash       = 200;
+
+
+    optional bool   InvitationCodeConfirmed     = 381;
+    optional string InvitationCodeID            = 382;
 }
 
 message UpdateUserResponse {
