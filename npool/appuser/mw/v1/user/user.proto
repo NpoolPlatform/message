@@ -15,6 +15,7 @@ service Middleware {
 
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
+    rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
     rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
 
@@ -194,11 +195,21 @@ message GetUserResponse {
     User Info = 10;
 }
 
-message VerifyUserRequest {
+message VerifyAccountRequest {
     string AppID        = 10;
     string Account      = 20;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
     string PasswordHash = 40;
+}
+
+message VerifyAccountResponse {
+    User Info = 10;
+}
+
+message VerifyUserRequest {
+    string AppID        = 10;
+    string UserID       = 20;
+    string PasswordHash = 30;
 }
 
 message VerifyUserResponse {
