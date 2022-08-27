@@ -720,38 +720,6 @@
         ]
       }
     },
-    "/v1/setup/google/authentication": {
-      "post": {
-        "operationId": "ThirdGateway_SetupGoogleAuthentication",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetupGoogleAuthenticationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetupGoogleAuthenticationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ThirdGateway"
-        ]
-      }
-    },
     "/v1/update/app/contact": {
       "post": {
         "operationId": "ThirdGateway_UpdateAppContact",
@@ -872,38 +840,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1VerifyEmailCodeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ThirdGateway"
-        ]
-      }
-    },
-    "/v1/verify/google/authentication": {
-      "post": {
-        "operationId": "ThirdGateway_VerifyGoogleAuthentication",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VerifyGoogleAuthenticationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1VerifyGoogleAuthenticationRequest"
             }
           }
         ],
@@ -1613,28 +1549,6 @@
         }
       }
     },
-    "v1SetupGoogleAuthenticationRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SetupGoogleAuthenticationResponse": {
-      "type": "object",
-      "properties": {
-        "OTPAuth": {
-          "type": "string"
-        },
-        "Secret": {
-          "type": "string"
-        }
-      }
-    },
     "v1UpdateAppContactRequest": {
       "type": "object",
       "properties": {
@@ -1704,32 +1618,6 @@
       }
     },
     "v1VerifyEmailCodeResponse": {
-      "type": "object",
-      "properties": {
-        "Code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VerifyGoogleAuthenticationRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Code": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VerifyGoogleAuthenticationResponse": {
       "type": "object",
       "properties": {
         "Code": {
