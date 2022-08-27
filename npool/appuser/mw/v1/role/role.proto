@@ -99,6 +99,9 @@ message RoleUser {
     string  EmailAddress = 120;
     // @inject_tag: sql:"phone_no"
     string  PhoneNO      = 130;
+    // @inject_tag: sql:"genesis"
+    int32   GenesisInt   = 140;
+    bool    Genesis      = 150;
 }
 
 message GetRoleUserRequest {
