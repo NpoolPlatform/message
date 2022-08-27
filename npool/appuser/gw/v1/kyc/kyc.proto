@@ -130,6 +130,7 @@ message UploadKycImageRequest {
 }
 
 message UploadKycImageResponse {
+    string Info = 10;
 }
 
 message GetKycImageRequest {

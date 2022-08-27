@@ -459,11 +459,10 @@
         "NewVerificationCode": {
           "type": "string"
         },
-        "EmailAddress": {
-          "type": "string",
-          "title": "Need verification code"
+        "NewAccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
         },
-        "PhoneNO": {
+        "NewAccount": {
           "type": "string",
           "title": "Need verification code"
         },

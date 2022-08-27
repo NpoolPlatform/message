@@ -130,14 +130,14 @@ message UpdateUserRequest {
     string          UserID             = 20;
 
     optional string Account            = 30;
-    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    optional appuser.manager.signmethod.v2.SignMethodType AccountType    = 40;
     optional string VerificationCode   = 50;
+
     optional string NewVerificationCode = 51;
+    optional appuser.manager.signmethod.v2.SignMethodType NewAccountType = 52;
 
     // Need verification code
-    optional string EmailAddress       = 60;
-    // Need verification code
-    optional string PhoneNO            = 70;
+    optional string NewAccount          = 60;
 
     // Extra
     optional string Username           = 80;
