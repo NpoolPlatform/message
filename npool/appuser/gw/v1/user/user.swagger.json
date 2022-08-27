@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/login/histories": {
+    "/v1/get/loginhistories": {
       "post": {
         "operationId": "Gateway_GetLoginHistories",
         "responses": {

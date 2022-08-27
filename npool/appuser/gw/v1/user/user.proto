@@ -76,7 +76,7 @@ service Gateway {
 
     rpc GetLoginHistories (GetLoginHistoriesRequest) returns (GetLoginHistoriesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/login/histories"
+            post: "/v1/get/loginhistories"
             body: "*"
         };
     }
