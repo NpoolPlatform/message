@@ -229,6 +229,9 @@
         "HasGoogleSecret": {
           "type": "boolean"
         },
+        "GoogleOTPAuth": {
+          "type": "string"
+        },
         "Roles": {
           "type": "array",
           "items": {

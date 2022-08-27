@@ -134,6 +134,7 @@ message User {
     // @inject_tag: sql:"google_secret"
     string          GoogleSecret                = 280;
     bool            HasGoogleSecret             = 290;
+    string          GoogleOTPAuth               = 291;
 
     // Role
     repeated string Roles                       = 300;
