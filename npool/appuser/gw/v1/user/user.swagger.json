@@ -601,6 +601,12 @@
         "Token": {
           "type": "string"
         },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
         "VerificationCode": {
           "type": "string"
         }
