@@ -272,6 +272,38 @@
         ]
       }
     },
+    "/v1/reset/user": {
+      "post": {
+        "operationId": "Gateway_ResetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ResetUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ResetUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/signup": {
       "post": {
         "operationId": "Gateway_Signup",
@@ -729,6 +761,35 @@
           "$ref": "#/definitions/v1User"
         }
       }
+    },
+    "v1ResetUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "PasswordHash": {
+          "type": "string"
+        },
+        "RecoveryCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ResetUserResponse": {
+      "type": "object"
     },
     "v1SignupRequest": {
       "type": "object",

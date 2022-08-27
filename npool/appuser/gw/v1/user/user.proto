@@ -32,6 +32,13 @@ service Gateway {
         };
     }
 
+    rpc ResetUser (ResetUserRequest) returns (ResetUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/reset/user"
+            body: "*"
+        };
+    }
+
     rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
         option (google.api.http) = {
             post: "/v1/get/users"
@@ -167,6 +174,21 @@ message UpdateUserRequest {
 
 message UpdateUserResponse {
     appuser.middleware.user.v1.User Info = 10;
+}
+
+message ResetUserRequest {
+    string          AppID              = 10;
+    string          UserID             = 20;
+
+    string          Account            = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType    = 40;
+    string          VerificationCode   = 50;
+
+    optional string PasswordHash       = 60;
+    optional string RecoveryCode       = 70;
+}
+
+message ResetUserResponse {
 }
 
 message GetUsersRequest {
