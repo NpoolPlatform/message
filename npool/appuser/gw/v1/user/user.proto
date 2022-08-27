@@ -178,7 +178,7 @@ message UpdateUserResponse {
 
 message ResetUserRequest {
     string          AppID              = 10;
-    string          UserID             = 20;
+    optional string UserID             = 20;
 
     string          Account            = 30;
     appuser.manager.signmethod.v2.SignMethodType AccountType    = 40;
