@@ -31,6 +31,7 @@ type GatewayClient interface {
 	LoginVerify(ctx context.Context, in *LoginVerifyRequest, opts ...grpc.CallOption) (*LoginVerifyResponse, error)
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
+	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
 }
 
 type gatewayClient struct {
@@ -122,6 +123,15 @@ func (c *gatewayClient) Logout(ctx context.Context, in *LogoutRequest, opts ...g
 	return out, nil
 }
 
+func (c *gatewayClient) GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error) {
+	out := new(GetLoginHistoriesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/GetLoginHistories", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -135,6 +145,7 @@ type GatewayServer interface {
 	LoginVerify(context.Context, *LoginVerifyRequest) (*LoginVerifyResponse, error)
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
+	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -168,6 +179,9 @@ func (UnimplementedGatewayServer) Logined(context.Context, *LoginedRequest) (*Lo
 }
 func (UnimplementedGatewayServer) Logout(context.Context, *LogoutRequest) (*LogoutResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
+}
+func (UnimplementedGatewayServer) GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLoginHistories not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -344,6 +358,24 @@ func _Gateway_Logout_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetLoginHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLoginHistoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetLoginHistories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/GetLoginHistories",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetLoginHistories(ctx, req.(*GetLoginHistoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -386,6 +418,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Logout",
 			Handler:    _Gateway_Logout_Handler,
+		},
+		{
+			MethodName: "GetLoginHistories",
+			Handler:    _Gateway_GetLoginHistories_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

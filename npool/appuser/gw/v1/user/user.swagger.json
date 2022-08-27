@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/get/login/histories": {
+      "post": {
+        "operationId": "Gateway_GetLoginHistories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetLoginHistoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetLoginHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/users": {
       "post": {
         "operationId": "Gateway_GetUsers",
@@ -556,6 +588,36 @@
         }
       }
     },
+    "v1GetLoginHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetLoginHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2History"
+          }
+        }
+      }
+    },
     "v1LoginRequest": {
       "type": "object",
       "properties": {
@@ -865,6 +927,33 @@
         },
         "State": {
           "$ref": "#/definitions/v2KycState"
+        }
+      }
+    },
+    "v2History": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ClientIP": {
+          "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
