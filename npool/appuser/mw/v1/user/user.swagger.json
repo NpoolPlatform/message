@@ -383,6 +383,14 @@
         }
       }
     },
+    "v1VerifyAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1VerifyUserResponse": {
       "type": "object",
       "properties": {

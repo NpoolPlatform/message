@@ -513,6 +513,9 @@
           "type": "string",
           "title": "Secret\nNeed verification code"
         },
+        "OldPasswordHash": {
+          "type": "string"
+        },
         "InvitationCodeConfirmed": {
           "type": "boolean"
         },
