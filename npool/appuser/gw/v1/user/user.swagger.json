@@ -615,6 +615,10 @@
           "items": {
             "$ref": "#/definitions/v2History"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

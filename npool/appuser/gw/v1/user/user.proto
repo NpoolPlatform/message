@@ -243,4 +243,5 @@ message GetLoginHistoriesRequest {
 
 message GetLoginHistoriesResponse {
     repeated appuser.manager.login.history.v2.History Infos = 10;
+    uint32 Total  = 20;
 }
