@@ -229,6 +229,14 @@
         "PhoneNO": {
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
+        },
+        "GenesisInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"genesis\""
+        },
+        "Genesis": {
+          "type": "boolean"
         }
       }
     }
