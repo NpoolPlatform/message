@@ -364,6 +364,9 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret"
+        },
+        "OldPasswordHash": {
+          "type": "string"
         }
       }
     },

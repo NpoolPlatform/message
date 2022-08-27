@@ -111,6 +111,7 @@ message CreateUserRequest {
 
     // Secret
     optional string PasswordHash       = 160;
+    optional string OldPasswordHash    = 170;
 }
 
 message CreateUserResponse {
