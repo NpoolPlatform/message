@@ -111,7 +111,6 @@ message CreateUserRequest {
 
     // Secret
     optional string PasswordHash       = 160;
-    optional string OldPasswordHash    = 170;
 }
 
 message CreateUserResponse {
@@ -151,6 +150,7 @@ message UpdateUserRequest {
     // Secret
     // Need verification code
     optional string PasswordHash       = 200;
+    optional string OldPasswordHash    = 201;
 
 
     optional bool   InvitationCodeConfirmed     = 381;

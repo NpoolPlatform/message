@@ -364,9 +364,6 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret"
-        },
-        "OldPasswordHash": {
-          "type": "string"
         }
       }
     },
@@ -483,6 +480,9 @@
         "PasswordHash": {
           "type": "string",
           "title": "Secret\nNeed verification code"
+        },
+        "OldPasswordHash": {
+          "type": "string"
         },
         "InvitationCodeConfirmed": {
           "type": "boolean"
