@@ -609,9 +609,12 @@
     "v1DeleteRoleUserRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "TargetAppID": {
           "type": "string",
           "title": "Permissioned by path"
+        },
+        "RoleUserID": {
+          "type": "string"
         }
       }
     },

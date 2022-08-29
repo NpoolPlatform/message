@@ -169,7 +169,8 @@ message GetRoleUsersResponse {
 
 message DeleteRoleUserRequest {
     // Permissioned by path
-    string ID = 10;
+    string TargetAppID = 10;
+    string RoleUserID  = 20;
 }
 
 message DeleteRoleUserResponse {
