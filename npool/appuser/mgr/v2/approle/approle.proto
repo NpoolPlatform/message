@@ -46,6 +46,7 @@ message Conds {
     npool.v1.StringVal       Role      = 40;
     npool.v1.BoolVal         Default   = 50;
     npool.v1.StringSliceVal  Roles     = 60;
+    npool.v1.BoolVal         Genesis   = 70;
 }
 
 message CreateAppRoleRequest {

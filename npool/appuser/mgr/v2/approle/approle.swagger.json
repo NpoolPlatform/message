@@ -152,6 +152,9 @@
         },
         "Roles": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Genesis": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
