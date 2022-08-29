@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/get/app/user/kycimage": {
+      "post": {
+        "operationId": "Gateway_GetAppUserKycImage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetAppUserKycImageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetAppUserKycImageRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/kyc": {
       "post": {
         "operationId": "Gateway_GetKyc",
@@ -168,6 +200,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/appusergatewaykycv2GetKycsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/user/kycimage": {
+      "post": {
+        "operationId": "Gateway_GetUserKycImage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetUserKycImageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetUserKycImageRequest"
             }
           }
         ],
@@ -508,6 +572,28 @@
         }
       }
     },
+    "v2GetAppUserKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v2KycImageType"
+        }
+      }
+    },
+    "v2GetAppUserKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
     "v2GetKycImageRequest": {
       "type": "object",
       "properties": {
@@ -523,6 +609,28 @@
       }
     },
     "v2GetKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v2GetUserKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v2KycImageType"
+        }
+      }
+    },
+    "v2GetUserKycImageResponse": {
       "type": "object",
       "properties": {
         "Info": {

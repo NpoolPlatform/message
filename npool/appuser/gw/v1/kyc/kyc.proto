@@ -60,6 +60,19 @@ service Gateway {
         };
     }
 
+    rpc GetUserKycImage (GetUserKycImageRequest) returns (GetUserKycImageResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/kycimage"
+            body: "*"
+        };
+    }
+
+    rpc GetAppUserKycImage (GetAppUserKycImageRequest) returns (GetAppUserKycImageResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/user/kycimage"
+            body: "*"
+        };
+    }
 }
 
 message CreateKycRequest {
@@ -140,6 +153,26 @@ message GetKycImageRequest {
 }
 
 message GetKycImageResponse {
+    string Info = 10;
+}
+
+message GetUserKycImageRequest {
+    string AppID        = 10;
+    string TargetUserID = 20;
+    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+}
+
+message GetUserKycImageResponse {
+    string Info = 10;
+}
+
+message GetAppUserKycImageRequest {
+    string TargetAppID  = 10;
+    string TargetUserID = 20;
+    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+}
+
+message GetAppUserKycImageResponse {
     string Info = 10;
 }
 
