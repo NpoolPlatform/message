@@ -64,8 +64,8 @@ message KycReview {
     review.manager.v2.ReviewState State         = 180;
     review.manager.v2.ReviewTriggerType Trigger = 190;
     string Message                              = 200;
-    uint32          CreatedAt                   = 210;
-    uint32          UpdatedAt                   = 220;
+    uint32 CreatedAt                            = 210;
+    uint32 UpdatedAt                            = 220;
 }
 
 message GetKycReviewsRequest {
