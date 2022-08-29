@@ -5,104 +5,104 @@ package sphinx.plugin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/sphinxplugin";
 
 enum CoinType {
-  CoinTypeUnKnow      = 0;
+  CoinTypeUnKnow = 0;
   // mainnet
-  CoinTypefilecoin    = 1;
-  CoinTypebitcoin     = 2;
-  CoinTypeethereum    = 3;
-  CoinTypeusdterc20   = 4;
-  CoinTypespacemesh   = 5;
-  CoinTypesolana      = 6;
-  CoinTypeusdttrc20   = 7;
+  CoinTypefilecoin = 1;
+  CoinTypebitcoin = 2;
+  CoinTypeethereum = 3;
+  CoinTypeusdterc20 = 4;
+  CoinTypespacemesh = 5;
+  CoinTypesolana = 6;
+  CoinTypeusdttrc20 = 7;
   CoinTypebinancecoin = 8;
-  CoinTypetron        = 9;
-  CoinTypebinanceusd  = 10;
-  CoinTypeusdcerc20   = 11;
+  CoinTypetron = 9;
+  CoinTypebinanceusd = 10;
+  CoinTypeusdcerc20 = 11;
 
   // testnet
-  CoinTypetfilecoin    = 100;
-  CoinTypetbitcoin     = 101;
-  CoinTypetethereum    = 102;
-  CoinTypetusdterc20   = 103;
-  CoinTypetspacemesh   = 104;
-  CoinTypetsolana      = 105;
-  CoinTypetusdttrc20   = 106;
+  CoinTypetfilecoin = 100;
+  CoinTypetbitcoin = 101;
+  CoinTypetethereum = 102;
+  CoinTypetusdterc20 = 103;
+  CoinTypetspacemesh = 104;
+  CoinTypetsolana = 105;
+  CoinTypetusdttrc20 = 106;
   CoinTypetbinancecoin = 107;
-  CoinTypettron        = 108;
-  CoinTypetbinanceusd  = 109;
-  CoinTypetusdcerc20   = 110;
+  CoinTypettron = 108;
+  CoinTypetbinanceusd = 109;
+  CoinTypetusdcerc20 = 110;
 }
 
 // fil
 message UnsignedMessage {
-  uint64 Version          = 100;
-  string To               = 110;
-  string From             = 120;
-  double Value            = 130;
+  uint64 Version = 100;
+  string To = 110;
+  string From = 120;
+  double Value = 130;
 
   // fil/eth/erc20/bsc
-  uint64 Nonce            = 140;
-  int64 GasLimit          = 150;
+  uint64 Nonce = 140;
+  int64 GasLimit = 150;
 
   // eth/erc20/bsc
-  int64 GasPrice          = 151;
-  int64 ChainID           = 152;
-  string ContractID       = 153;
+  int64 GasPrice = 151;
+  int64 ChainID = 152;
+  string ContractID = 153;
 
   // fil
-  uint64 GasFeeCap        = 160;
-  uint64 GasPremium       = 170;
-  uint64 Method           = 180;
-  bytes Params            = 190;
+  uint64 GasFeeCap = 160;
+  uint64 GasPremium = 170;
+  uint64 Method = 180;
+  bytes Params = 190;
 
   // btc
   repeated Unspent Unspent = 200;
 
   // sol
-  string RecentBhash        = 210;
+  string RecentBhash = 210;
   // trc20
-  bytes TxData            =220;
+  bytes TxData = 220;
 }
 
 message Signature {
   string SignType = 100; // secp256k1
-  bytes Data      = 110;
+  bytes Data = 110;
 }
 
 // ============================= btc
 message Unspent {
-  string  TxID          = 100;
-	uint32  Vout          = 110;
-	string  Address       = 120;
-	string  Account       = 130;
-	string  ScriptPubKey  = 140;
-	string  RedeemScript  = 150;
-	double  Amount        = 160;
-	int64   Confirmations = 170;
-	bool    Spendable     = 180;
+  string TxID = 100;
+  uint32 Vout = 110;
+  string Address = 120;
+  string Account = 130;
+  string ScriptPubKey = 140;
+  string RedeemScript = 150;
+  double Amount = 160;
+  int64 Confirmations = 170;
+  bool Spendable = 180;
 }
 
 message MsgTx {
-  int32           Version   = 100;
-  repeated TxIn   TxIn      = 110;
-  repeated TxOut  TxOut     = 120;
-  uint32          LockTime  = 130;
+  int32 Version = 100;
+  repeated TxIn TxIn = 110;
+  repeated TxOut TxOut = 120;
+  uint32 LockTime = 130;
 }
 
 message TxIn {
-  OutPoint        PreviousOutPoint  = 100;
-  bytes           SignatureScript   = 110;
-  repeated bytes  Witness           = 120;
-  uint32          Sequence          = 130;
+  OutPoint PreviousOutPoint = 100;
+  bytes SignatureScript = 110;
+  repeated bytes Witness = 120;
+  uint32 Sequence = 130;
 }
 
 message OutPoint {
   // byte len 32
-  bytes   Hash  = 100;
-  uint32  Index = 110;
+  bytes Hash = 100;
+  uint32 Index = 110;
 }
 
 message TxOut {
-  int64 Value     = 100;
-  bytes PkScript  = 110;
+  int64 Value = 100;
+  bytes PkScript = 110;
 }

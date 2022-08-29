@@ -521,6 +521,9 @@
         "TransactionType": {
           "$ref": "#/definitions/v1TransactionType"
         },
+        "Name": {
+          "type": "string"
+        },
         "TransactionID": {
           "type": "string"
         },
