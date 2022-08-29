@@ -855,8 +855,8 @@ type DeleteRoleUserRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Permissioned by path
-	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
-	RoleUserID  string `protobuf:"bytes,20,opt,name=RoleUserID,proto3" json:"RoleUserID,omitempty"`
+	AppID      string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	RoleUserID string `protobuf:"bytes,20,opt,name=RoleUserID,proto3" json:"RoleUserID,omitempty"`
 }
 
 func (x *DeleteRoleUserRequest) Reset() {
@@ -891,9 +891,9 @@ func (*DeleteRoleUserRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *DeleteRoleUserRequest) GetTargetAppID() string {
+func (x *DeleteRoleUserRequest) GetAppID() string {
 	if x != nil {
-		return x.TargetAppID
+		return x.AppID
 	}
 	return ""
 }
@@ -952,6 +952,109 @@ func (x *DeleteRoleUserResponse) GetInfo() *approleuser.AppRoleUser {
 	return nil
 }
 
+type DeleteAppRoleUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Permissioned by path
+	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	RoleUserID  string `protobuf:"bytes,20,opt,name=RoleUserID,proto3" json:"RoleUserID,omitempty"`
+}
+
+func (x *DeleteAppRoleUserRequest) Reset() {
+	*x = DeleteAppRoleUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAppRoleUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAppRoleUserRequest) ProtoMessage() {}
+
+func (x *DeleteAppRoleUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAppRoleUserRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAppRoleUserRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *DeleteAppRoleUserRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *DeleteAppRoleUserRequest) GetRoleUserID() string {
+	if x != nil {
+		return x.RoleUserID
+	}
+	return ""
+}
+
+type DeleteAppRoleUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *approleuser.AppRoleUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteAppRoleUserResponse) Reset() {
+	*x = DeleteAppRoleUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAppRoleUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAppRoleUserResponse) ProtoMessage() {}
+
+func (x *DeleteAppRoleUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAppRoleUserResponse.ProtoReflect.Descriptor instead.
+func (*DeleteAppRoleUserResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *DeleteAppRoleUserResponse) GetInfo() *approleuser.AppRoleUser {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type CreateAppRoleUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -966,7 +1069,7 @@ type CreateAppRoleUserRequest struct {
 func (x *CreateAppRoleUserRequest) Reset() {
 	*x = CreateAppRoleUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[16]
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -979,7 +1082,7 @@ func (x *CreateAppRoleUserRequest) String() string {
 func (*CreateAppRoleUserRequest) ProtoMessage() {}
 
 func (x *CreateAppRoleUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[16]
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -992,7 +1095,7 @@ func (x *CreateAppRoleUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleUserRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{16}
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *CreateAppRoleUserRequest) GetTargetAppID() string {
@@ -1027,7 +1130,7 @@ type CreateAppRoleUserResponse struct {
 func (x *CreateAppRoleUserResponse) Reset() {
 	*x = CreateAppRoleUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[17]
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1040,7 +1143,7 @@ func (x *CreateAppRoleUserResponse) String() string {
 func (*CreateAppRoleUserResponse) ProtoMessage() {}
 
 func (x *CreateAppRoleUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[17]
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1053,7 +1156,7 @@ func (x *CreateAppRoleUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppRoleUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppRoleUserResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{17}
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CreateAppRoleUserResponse) GetInfo() *role.RoleUser {
@@ -1078,7 +1181,7 @@ type GetAppRoleUsersRequest struct {
 func (x *GetAppRoleUsersRequest) Reset() {
 	*x = GetAppRoleUsersRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[18]
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1091,7 +1194,7 @@ func (x *GetAppRoleUsersRequest) String() string {
 func (*GetAppRoleUsersRequest) ProtoMessage() {}
 
 func (x *GetAppRoleUsersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[18]
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1104,7 +1207,7 @@ func (x *GetAppRoleUsersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppRoleUsersRequest.ProtoReflect.Descriptor instead.
 func (*GetAppRoleUsersRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{18}
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetAppRoleUsersRequest) GetTargetAppID() string {
@@ -1147,7 +1250,7 @@ type GetAppRoleUsersResponse struct {
 func (x *GetAppRoleUsersResponse) Reset() {
 	*x = GetAppRoleUsersResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[19]
+		mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1160,7 +1263,7 @@ func (x *GetAppRoleUsersResponse) String() string {
 func (*GetAppRoleUsersResponse) ProtoMessage() {}
 
 func (x *GetAppRoleUsersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[19]
+	mi := &file_npool_appuser_gw_v1_role_role_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1173,7 +1276,7 @@ func (x *GetAppRoleUsersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppRoleUsersResponse.ProtoReflect.Descriptor instead.
 func (*GetAppRoleUsersResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{19}
+	return file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetAppRoleUsersResponse) GetInfos() []*role.RoleUser {
@@ -1297,13 +1400,24 @@ var file_npool_appuser_gw_v1_role_role_proto_rawDesc = []byte{
 	0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x55,
 	0x73, 0x65, 0x72, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f,
 	0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c,
-	0x22, 0x59, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73,
-	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72,
-	0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
-	0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x52,
-	0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0a, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x59, 0x0a, 0x16, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x22, 0x4d, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70,
+	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12,
+	0x1e, 0x0a, 0x0a, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0a, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22,
+	0x59, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x72, 0x6f, 0x6c,
+	0x65, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5c, 0x0a, 0x18, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72,
+	0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x52, 0x6f, 0x6c, 0x65,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x52, 0x6f,
+	0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x5c, 0x0a, 0x19, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x61,
 	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73, 0x65,
@@ -1336,7 +1450,7 @@ var file_npool_appuser_gw_v1_role_role_proto_rawDesc = []byte{
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76,
 	0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f,
 	0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0x94, 0x0b, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65,
+	0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xb5, 0x0c, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x12, 0x81, 0x01, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f,
 	0x6c, 0x65, 0x12, 0x2a, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74,
 	0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
@@ -1406,31 +1520,41 @@ var file_npool_appuser_gw_v1_role_role_proto_rawDesc = []byte{
 	0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76,
 	0x31, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73, 0x65,
-	0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9e, 0x01, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9e, 0x01, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41,
 	0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x31, 0x2e, 0x61, 0x70, 0x70,
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f, 0x6c,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52, 0x6f,
 	0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e,
 	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e,
-	0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70,
 	0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x63,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73,
-	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x96, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
-	0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x2f, 0x2e, 0x61, 0x70, 0x70, 0x75,
-	0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f, 0x6c, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73,
-	0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x61, 0x70, 0x70,
+	0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x64,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73,
+	0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x9e, 0x01, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x31, 0x2e, 0x61, 0x70,
+	0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f,
+	0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x52,
+	0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32,
+	0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
+	0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f,
+	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75,
+	0x73, 0x65, 0x72, 0x3a, 0x01, 0x2a, 0x12, 0x96, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x2f, 0x2e, 0x61, 0x70, 0x70,
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f, 0x6c,
 	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65, 0x55,
-	0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70,
-	0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73, 0x65, 0x72, 0x73, 0x3a, 0x01, 0x2a, 0x42, 0x3b,
-	0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72,
-	0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x61, 0x70,
+	0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x72, 0x6f,
+	0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x6f, 0x6c, 0x65,
+	0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61,
+	0x70, 0x70, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x75, 0x73, 0x65, 0x72, 0x73, 0x3a, 0x01, 0x2a, 0x42,
+	0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70,
+	0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65,
+	0x72, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1445,7 +1569,7 @@ func file_npool_appuser_gw_v1_role_role_proto_rawDescGZIP() []byte {
 	return file_npool_appuser_gw_v1_role_role_proto_rawDescData
 }
 
-var file_npool_appuser_gw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_npool_appuser_gw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_npool_appuser_gw_v1_role_role_proto_goTypes = []interface{}{
 	(*CreateRoleRequest)(nil),         // 0: appuser.gateway.role.v1.CreateRoleRequest
 	(*CreateRoleResponse)(nil),        // 1: appuser.gateway.role.v1.CreateRoleResponse
@@ -1463,52 +1587,57 @@ var file_npool_appuser_gw_v1_role_role_proto_goTypes = []interface{}{
 	(*GetRoleUsersResponse)(nil),      // 13: appuser.gateway.role.v1.GetRoleUsersResponse
 	(*DeleteRoleUserRequest)(nil),     // 14: appuser.gateway.role.v1.DeleteRoleUserRequest
 	(*DeleteRoleUserResponse)(nil),    // 15: appuser.gateway.role.v1.DeleteRoleUserResponse
-	(*CreateAppRoleUserRequest)(nil),  // 16: appuser.gateway.role.v1.CreateAppRoleUserRequest
-	(*CreateAppRoleUserResponse)(nil), // 17: appuser.gateway.role.v1.CreateAppRoleUserResponse
-	(*GetAppRoleUsersRequest)(nil),    // 18: appuser.gateway.role.v1.GetAppRoleUsersRequest
-	(*GetAppRoleUsersResponse)(nil),   // 19: appuser.gateway.role.v1.GetAppRoleUsersResponse
-	(*role.Role)(nil),                 // 20: appuser.middleware.role.v1.Role
-	(*approle.AppRoleReq)(nil),        // 21: appuser.manager.approle.v2.AppRoleReq
-	(*role.RoleUser)(nil),             // 22: appuser.middleware.role.v1.RoleUser
-	(*approleuser.AppRoleUser)(nil),   // 23: appuser.manager.approleuser.v2.AppRoleUser
+	(*DeleteAppRoleUserRequest)(nil),  // 16: appuser.gateway.role.v1.DeleteAppRoleUserRequest
+	(*DeleteAppRoleUserResponse)(nil), // 17: appuser.gateway.role.v1.DeleteAppRoleUserResponse
+	(*CreateAppRoleUserRequest)(nil),  // 18: appuser.gateway.role.v1.CreateAppRoleUserRequest
+	(*CreateAppRoleUserResponse)(nil), // 19: appuser.gateway.role.v1.CreateAppRoleUserResponse
+	(*GetAppRoleUsersRequest)(nil),    // 20: appuser.gateway.role.v1.GetAppRoleUsersRequest
+	(*GetAppRoleUsersResponse)(nil),   // 21: appuser.gateway.role.v1.GetAppRoleUsersResponse
+	(*role.Role)(nil),                 // 22: appuser.middleware.role.v1.Role
+	(*approle.AppRoleReq)(nil),        // 23: appuser.manager.approle.v2.AppRoleReq
+	(*role.RoleUser)(nil),             // 24: appuser.middleware.role.v1.RoleUser
+	(*approleuser.AppRoleUser)(nil),   // 25: appuser.manager.approleuser.v2.AppRoleUser
 }
 var file_npool_appuser_gw_v1_role_role_proto_depIdxs = []int32{
-	20, // 0: appuser.gateway.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	20, // 1: appuser.gateway.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
-	21, // 2: appuser.gateway.role.v1.UpdateRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
-	20, // 3: appuser.gateway.role.v1.UpdateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	20, // 4: appuser.gateway.role.v1.CreateAppRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	20, // 5: appuser.gateway.role.v1.GetAppRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
-	22, // 6: appuser.gateway.role.v1.CreateRoleUserResponse.Info:type_name -> appuser.middleware.role.v1.RoleUser
-	22, // 7: appuser.gateway.role.v1.GetRoleUsersResponse.Infos:type_name -> appuser.middleware.role.v1.RoleUser
-	23, // 8: appuser.gateway.role.v1.DeleteRoleUserResponse.Info:type_name -> appuser.manager.approleuser.v2.AppRoleUser
-	22, // 9: appuser.gateway.role.v1.CreateAppRoleUserResponse.Info:type_name -> appuser.middleware.role.v1.RoleUser
-	22, // 10: appuser.gateway.role.v1.GetAppRoleUsersResponse.Infos:type_name -> appuser.middleware.role.v1.RoleUser
-	0,  // 11: appuser.gateway.role.v1.Gateway.CreateRole:input_type -> appuser.gateway.role.v1.CreateRoleRequest
-	2,  // 12: appuser.gateway.role.v1.Gateway.GetRoles:input_type -> appuser.gateway.role.v1.GetRolesRequest
-	4,  // 13: appuser.gateway.role.v1.Gateway.UpdateRole:input_type -> appuser.gateway.role.v1.UpdateRoleRequest
-	6,  // 14: appuser.gateway.role.v1.Gateway.CreateAppRole:input_type -> appuser.gateway.role.v1.CreateAppRoleRequest
-	8,  // 15: appuser.gateway.role.v1.Gateway.GetAppRoles:input_type -> appuser.gateway.role.v1.GetAppRolesRequest
-	10, // 16: appuser.gateway.role.v1.Gateway.CreateRoleUser:input_type -> appuser.gateway.role.v1.CreateRoleUserRequest
-	12, // 17: appuser.gateway.role.v1.Gateway.GetRoleUsers:input_type -> appuser.gateway.role.v1.GetRoleUsersRequest
-	14, // 18: appuser.gateway.role.v1.Gateway.DeleteRoleUser:input_type -> appuser.gateway.role.v1.DeleteRoleUserRequest
-	16, // 19: appuser.gateway.role.v1.Gateway.CreateAppRoleUser:input_type -> appuser.gateway.role.v1.CreateAppRoleUserRequest
-	18, // 20: appuser.gateway.role.v1.Gateway.GetAppRoleUsers:input_type -> appuser.gateway.role.v1.GetAppRoleUsersRequest
-	1,  // 21: appuser.gateway.role.v1.Gateway.CreateRole:output_type -> appuser.gateway.role.v1.CreateRoleResponse
-	3,  // 22: appuser.gateway.role.v1.Gateway.GetRoles:output_type -> appuser.gateway.role.v1.GetRolesResponse
-	5,  // 23: appuser.gateway.role.v1.Gateway.UpdateRole:output_type -> appuser.gateway.role.v1.UpdateRoleResponse
-	7,  // 24: appuser.gateway.role.v1.Gateway.CreateAppRole:output_type -> appuser.gateway.role.v1.CreateAppRoleResponse
-	9,  // 25: appuser.gateway.role.v1.Gateway.GetAppRoles:output_type -> appuser.gateway.role.v1.GetAppRolesResponse
-	11, // 26: appuser.gateway.role.v1.Gateway.CreateRoleUser:output_type -> appuser.gateway.role.v1.CreateRoleUserResponse
-	13, // 27: appuser.gateway.role.v1.Gateway.GetRoleUsers:output_type -> appuser.gateway.role.v1.GetRoleUsersResponse
-	15, // 28: appuser.gateway.role.v1.Gateway.DeleteRoleUser:output_type -> appuser.gateway.role.v1.DeleteRoleUserResponse
-	17, // 29: appuser.gateway.role.v1.Gateway.CreateAppRoleUser:output_type -> appuser.gateway.role.v1.CreateAppRoleUserResponse
-	19, // 30: appuser.gateway.role.v1.Gateway.GetAppRoleUsers:output_type -> appuser.gateway.role.v1.GetAppRoleUsersResponse
-	21, // [21:31] is the sub-list for method output_type
-	11, // [11:21] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	22, // 0: appuser.gateway.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	22, // 1: appuser.gateway.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
+	23, // 2: appuser.gateway.role.v1.UpdateRoleRequest.Info:type_name -> appuser.manager.approle.v2.AppRoleReq
+	22, // 3: appuser.gateway.role.v1.UpdateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	22, // 4: appuser.gateway.role.v1.CreateAppRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	22, // 5: appuser.gateway.role.v1.GetAppRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
+	24, // 6: appuser.gateway.role.v1.CreateRoleUserResponse.Info:type_name -> appuser.middleware.role.v1.RoleUser
+	24, // 7: appuser.gateway.role.v1.GetRoleUsersResponse.Infos:type_name -> appuser.middleware.role.v1.RoleUser
+	25, // 8: appuser.gateway.role.v1.DeleteRoleUserResponse.Info:type_name -> appuser.manager.approleuser.v2.AppRoleUser
+	25, // 9: appuser.gateway.role.v1.DeleteAppRoleUserResponse.Info:type_name -> appuser.manager.approleuser.v2.AppRoleUser
+	24, // 10: appuser.gateway.role.v1.CreateAppRoleUserResponse.Info:type_name -> appuser.middleware.role.v1.RoleUser
+	24, // 11: appuser.gateway.role.v1.GetAppRoleUsersResponse.Infos:type_name -> appuser.middleware.role.v1.RoleUser
+	0,  // 12: appuser.gateway.role.v1.Gateway.CreateRole:input_type -> appuser.gateway.role.v1.CreateRoleRequest
+	2,  // 13: appuser.gateway.role.v1.Gateway.GetRoles:input_type -> appuser.gateway.role.v1.GetRolesRequest
+	4,  // 14: appuser.gateway.role.v1.Gateway.UpdateRole:input_type -> appuser.gateway.role.v1.UpdateRoleRequest
+	6,  // 15: appuser.gateway.role.v1.Gateway.CreateAppRole:input_type -> appuser.gateway.role.v1.CreateAppRoleRequest
+	8,  // 16: appuser.gateway.role.v1.Gateway.GetAppRoles:input_type -> appuser.gateway.role.v1.GetAppRolesRequest
+	10, // 17: appuser.gateway.role.v1.Gateway.CreateRoleUser:input_type -> appuser.gateway.role.v1.CreateRoleUserRequest
+	12, // 18: appuser.gateway.role.v1.Gateway.GetRoleUsers:input_type -> appuser.gateway.role.v1.GetRoleUsersRequest
+	14, // 19: appuser.gateway.role.v1.Gateway.DeleteRoleUser:input_type -> appuser.gateway.role.v1.DeleteRoleUserRequest
+	16, // 20: appuser.gateway.role.v1.Gateway.DeleteAppRoleUser:input_type -> appuser.gateway.role.v1.DeleteAppRoleUserRequest
+	18, // 21: appuser.gateway.role.v1.Gateway.CreateAppRoleUser:input_type -> appuser.gateway.role.v1.CreateAppRoleUserRequest
+	20, // 22: appuser.gateway.role.v1.Gateway.GetAppRoleUsers:input_type -> appuser.gateway.role.v1.GetAppRoleUsersRequest
+	1,  // 23: appuser.gateway.role.v1.Gateway.CreateRole:output_type -> appuser.gateway.role.v1.CreateRoleResponse
+	3,  // 24: appuser.gateway.role.v1.Gateway.GetRoles:output_type -> appuser.gateway.role.v1.GetRolesResponse
+	5,  // 25: appuser.gateway.role.v1.Gateway.UpdateRole:output_type -> appuser.gateway.role.v1.UpdateRoleResponse
+	7,  // 26: appuser.gateway.role.v1.Gateway.CreateAppRole:output_type -> appuser.gateway.role.v1.CreateAppRoleResponse
+	9,  // 27: appuser.gateway.role.v1.Gateway.GetAppRoles:output_type -> appuser.gateway.role.v1.GetAppRolesResponse
+	11, // 28: appuser.gateway.role.v1.Gateway.CreateRoleUser:output_type -> appuser.gateway.role.v1.CreateRoleUserResponse
+	13, // 29: appuser.gateway.role.v1.Gateway.GetRoleUsers:output_type -> appuser.gateway.role.v1.GetRoleUsersResponse
+	15, // 30: appuser.gateway.role.v1.Gateway.DeleteRoleUser:output_type -> appuser.gateway.role.v1.DeleteRoleUserResponse
+	17, // 31: appuser.gateway.role.v1.Gateway.DeleteAppRoleUser:output_type -> appuser.gateway.role.v1.DeleteAppRoleUserResponse
+	19, // 32: appuser.gateway.role.v1.Gateway.CreateAppRoleUser:output_type -> appuser.gateway.role.v1.CreateAppRoleUserResponse
+	21, // 33: appuser.gateway.role.v1.Gateway.GetAppRoleUsers:output_type -> appuser.gateway.role.v1.GetAppRoleUsersResponse
+	23, // [23:34] is the sub-list for method output_type
+	12, // [12:23] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_npool_appuser_gw_v1_role_role_proto_init() }
@@ -1710,7 +1839,7 @@ func file_npool_appuser_gw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_role_role_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleUserRequest); i {
+			switch v := v.(*DeleteAppRoleUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1722,7 +1851,7 @@ func file_npool_appuser_gw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_role_role_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppRoleUserResponse); i {
+			switch v := v.(*DeleteAppRoleUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1734,7 +1863,7 @@ func file_npool_appuser_gw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_role_role_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppRoleUsersRequest); i {
+			switch v := v.(*CreateAppRoleUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1746,6 +1875,30 @@ func file_npool_appuser_gw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_role_role_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppRoleUserResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_gw_v1_role_role_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppRoleUsersRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_gw_v1_role_role_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAppRoleUsersResponse); i {
 			case 0:
 				return &v.state
@@ -1764,7 +1917,7 @@ func file_npool_appuser_gw_v1_role_role_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_appuser_gw_v1_role_role_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   20,
+			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

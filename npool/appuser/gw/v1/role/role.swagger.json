@@ -146,6 +146,38 @@
         ]
       }
     },
+    "/v1/delete/app/roleuser": {
+      "post": {
+        "operationId": "Gateway_DeleteAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/rolev1DeleteAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/rolev1DeleteAppRoleUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/delete/roleuser": {
       "post": {
         "operationId": "Gateway_DeleteRoleUser",
@@ -469,6 +501,26 @@
         }
       }
     },
+    "rolev1DeleteAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "rolev1DeleteAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2AppRoleUser"
+        }
+      }
+    },
     "rolev1GetAppRoleUsersRequest": {
       "type": "object",
       "properties": {
@@ -609,7 +661,7 @@
     "v1DeleteRoleUserRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string",
           "title": "Permissioned by path"
         },

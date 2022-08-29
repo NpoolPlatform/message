@@ -33,6 +33,7 @@ type GatewayClient interface {
 	CreateRoleUser(ctx context.Context, in *CreateRoleUserRequest, opts ...grpc.CallOption) (*CreateRoleUserResponse, error)
 	GetRoleUsers(ctx context.Context, in *GetRoleUsersRequest, opts ...grpc.CallOption) (*GetRoleUsersResponse, error)
 	DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRequest, opts ...grpc.CallOption) (*DeleteRoleUserResponse, error)
+	DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error)
 	CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error)
 	GetAppRoleUsers(ctx context.Context, in *GetAppRoleUsersRequest, opts ...grpc.CallOption) (*GetAppRoleUsersResponse, error)
 }
@@ -117,6 +118,15 @@ func (c *gatewayClient) DeleteRoleUser(ctx context.Context, in *DeleteRoleUserRe
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteAppRoleUser(ctx context.Context, in *DeleteAppRoleUserRequest, opts ...grpc.CallOption) (*DeleteAppRoleUserResponse, error) {
+	out := new(DeleteAppRoleUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/DeleteAppRoleUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) CreateAppRoleUser(ctx context.Context, in *CreateAppRoleUserRequest, opts ...grpc.CallOption) (*CreateAppRoleUserResponse, error) {
 	out := new(CreateAppRoleUserResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.role.v1.Gateway/CreateAppRoleUser", in, out, opts...)
@@ -150,6 +160,7 @@ type GatewayServer interface {
 	CreateRoleUser(context.Context, *CreateRoleUserRequest) (*CreateRoleUserResponse, error)
 	GetRoleUsers(context.Context, *GetRoleUsersRequest) (*GetRoleUsersResponse, error)
 	DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error)
+	DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error)
 	CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error)
 	GetAppRoleUsers(context.Context, *GetAppRoleUsersRequest) (*GetAppRoleUsersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -182,6 +193,9 @@ func (UnimplementedGatewayServer) GetRoleUsers(context.Context, *GetRoleUsersReq
 }
 func (UnimplementedGatewayServer) DeleteRoleUser(context.Context, *DeleteRoleUserRequest) (*DeleteRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRoleUser not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAppRoleUser(context.Context, *DeleteAppRoleUserRequest) (*DeleteAppRoleUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppRoleUser not implemented")
 }
 func (UnimplementedGatewayServer) CreateAppRoleUser(context.Context, *CreateAppRoleUserRequest) (*CreateAppRoleUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppRoleUser not implemented")
@@ -346,6 +360,24 @@ func _Gateway_DeleteRoleUser_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteAppRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppRoleUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAppRoleUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.role.v1.Gateway/DeleteAppRoleUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAppRoleUser(ctx, req.(*DeleteAppRoleUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_CreateAppRoleUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRoleUserRequest)
 	if err := dec(in); err != nil {
@@ -420,6 +452,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteRoleUser",
 			Handler:    _Gateway_DeleteRoleUser_Handler,
+		},
+		{
+			MethodName: "DeleteAppRoleUser",
+			Handler:    _Gateway_DeleteAppRoleUser_Handler,
 		},
 		{
 			MethodName: "CreateAppRoleUser",

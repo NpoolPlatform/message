@@ -69,6 +69,13 @@ service Gateway {
         };
     }
 
+    rpc DeleteAppRoleUser (DeleteAppRoleUserRequest) returns (DeleteAppRoleUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/roleuser"
+            body: "*"
+        };
+    }
+
     rpc CreateAppRoleUser(CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/roleuser"
@@ -169,11 +176,21 @@ message GetRoleUsersResponse {
 
 message DeleteRoleUserRequest {
     // Permissioned by path
-    string TargetAppID = 10;
+    string AppID       = 10;
     string RoleUserID  = 20;
 }
 
 message DeleteRoleUserResponse {
+    appuser.manager.approleuser.v2.AppRoleUser Info = 10;
+}
+
+message DeleteAppRoleUserRequest {
+    // Permissioned by path
+    string TargetAppID = 10;
+    string RoleUserID  = 20;
+}
+
+message DeleteAppRoleUserResponse {
     appuser.manager.approleuser.v2.AppRoleUser Info = 10;
 }
 
