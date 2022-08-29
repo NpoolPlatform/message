@@ -183,6 +183,7 @@ message ProxyPluginRequest {
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType = 100;
   TransactionType TransactionType = 110;
+  string Name = 111;
   string TransactionID = 120;
   sphinx.plugin.v1.UnsignedMessage Message = 130;
   bytes Payload = 140;
