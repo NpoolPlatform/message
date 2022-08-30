@@ -305,9 +305,6 @@
         "State": {
           "$ref": "#/definitions/v2ReviewState"
         },
-        "Trigger": {
-          "$ref": "#/definitions/v2ReviewTriggerType"
-        },
         "Message": {
           "type": "string"
         },
@@ -330,18 +327,6 @@
         "Rejected"
       ],
       "default": "DefaultReviewState"
-    },
-    "v2ReviewTriggerType": {
-      "type": "string",
-      "enum": [
-        "DefaultTriggerType",
-        "AutoReviewed",
-        "LargeAmount",
-        "InsufficientFunds",
-        "InsufficientGas"
-      ],
-      "default": "DefaultTriggerType",
-      "title": "- AutoReviewed: Withdrawal triggers"
     },
     "v2UpdateAppKycReviewRequest": {
       "type": "object",
