@@ -302,11 +302,11 @@
         "Reviewer": {
           "type": "string"
         },
-        "State": {
+        "ReviewState": {
           "$ref": "#/definitions/v2ReviewState"
         },
-        "Trigger": {
-          "$ref": "#/definitions/v2ReviewTriggerType"
+        "KycState": {
+          "$ref": "#/definitions/v2KycState"
         },
         "Message": {
           "type": "string"
@@ -321,6 +321,16 @@
         }
       }
     },
+    "v2KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v2ReviewState": {
       "type": "string",
       "enum": [
@@ -330,18 +340,6 @@
         "Rejected"
       ],
       "default": "DefaultReviewState"
-    },
-    "v2ReviewTriggerType": {
-      "type": "string",
-      "enum": [
-        "DefaultTriggerType",
-        "AutoReviewed",
-        "LargeAmount",
-        "InsufficientFunds",
-        "InsufficientGas"
-      ],
-      "default": "DefaultTriggerType",
-      "title": "- AutoReviewed: Withdrawal triggers"
     },
     "v2UpdateAppKycReviewRequest": {
       "type": "object",
