@@ -64,6 +64,7 @@ type CloudHashingInspireClient interface {
 	CreateUserInvitationCodeForOtherAppUser(ctx context.Context, in *CreateUserInvitationCodeForOtherAppUserRequest, opts ...grpc.CallOption) (*CreateUserInvitationCodeForOtherAppUserResponse, error)
 	CreateUserInvitationCodeForAppOtherUser(ctx context.Context, in *CreateUserInvitationCodeForAppOtherUserRequest, opts ...grpc.CallOption) (*CreateUserInvitationCodeForAppOtherUserResponse, error)
 	GetUserInvitationCode(ctx context.Context, in *GetUserInvitationCodeRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeResponse, error)
+	GetManyUserInvitationCodes(ctx context.Context, in *GetManyUserInvitationCodesRequest, opts ...grpc.CallOption) (*GetManyUserInvitationCodesResponse, error)
 	GetUserInvitationCodeByAppUser(ctx context.Context, in *GetUserInvitationCodeByAppUserRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeByAppUserResponse, error)
 	GetUserInvitationCodes(ctx context.Context, in *GetUserInvitationCodesRequest, opts ...grpc.CallOption) (*GetUserInvitationCodesResponse, error)
 	GetUserInvitationCodesByApp(ctx context.Context, in *GetUserInvitationCodesByAppRequest, opts ...grpc.CallOption) (*GetUserInvitationCodesByAppResponse, error)
@@ -486,6 +487,15 @@ func (c *cloudHashingInspireClient) CreateUserInvitationCodeForAppOtherUser(ctx 
 func (c *cloudHashingInspireClient) GetUserInvitationCode(ctx context.Context, in *GetUserInvitationCodeRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeResponse, error) {
 	out := new(GetUserInvitationCodeResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetUserInvitationCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingInspireClient) GetManyUserInvitationCodes(ctx context.Context, in *GetManyUserInvitationCodesRequest, opts ...grpc.CallOption) (*GetManyUserInvitationCodesResponse, error) {
+	out := new(GetManyUserInvitationCodesResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.inspire.v1.CloudHashingInspire/GetManyUserInvitationCodes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1139,6 +1149,7 @@ type CloudHashingInspireServer interface {
 	CreateUserInvitationCodeForOtherAppUser(context.Context, *CreateUserInvitationCodeForOtherAppUserRequest) (*CreateUserInvitationCodeForOtherAppUserResponse, error)
 	CreateUserInvitationCodeForAppOtherUser(context.Context, *CreateUserInvitationCodeForAppOtherUserRequest) (*CreateUserInvitationCodeForAppOtherUserResponse, error)
 	GetUserInvitationCode(context.Context, *GetUserInvitationCodeRequest) (*GetUserInvitationCodeResponse, error)
+	GetManyUserInvitationCodes(context.Context, *GetManyUserInvitationCodesRequest) (*GetManyUserInvitationCodesResponse, error)
 	GetUserInvitationCodeByAppUser(context.Context, *GetUserInvitationCodeByAppUserRequest) (*GetUserInvitationCodeByAppUserResponse, error)
 	GetUserInvitationCodes(context.Context, *GetUserInvitationCodesRequest) (*GetUserInvitationCodesResponse, error)
 	GetUserInvitationCodesByApp(context.Context, *GetUserInvitationCodesByAppRequest) (*GetUserInvitationCodesByAppResponse, error)
@@ -1329,6 +1340,9 @@ func (UnimplementedCloudHashingInspireServer) CreateUserInvitationCodeForAppOthe
 }
 func (UnimplementedCloudHashingInspireServer) GetUserInvitationCode(context.Context, *GetUserInvitationCodeRequest) (*GetUserInvitationCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInvitationCode not implemented")
+}
+func (UnimplementedCloudHashingInspireServer) GetManyUserInvitationCodes(context.Context, *GetManyUserInvitationCodesRequest) (*GetManyUserInvitationCodesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetManyUserInvitationCodes not implemented")
 }
 func (UnimplementedCloudHashingInspireServer) GetUserInvitationCodeByAppUser(context.Context, *GetUserInvitationCodeByAppUserRequest) (*GetUserInvitationCodeByAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInvitationCodeByAppUser not implemented")
@@ -2242,6 +2256,24 @@ func _CloudHashingInspire_GetUserInvitationCode_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingInspireServer).GetUserInvitationCode(ctx, req.(*GetUserInvitationCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingInspire_GetManyUserInvitationCodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetManyUserInvitationCodesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingInspireServer).GetManyUserInvitationCodes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.inspire.v1.CloudHashingInspire/GetManyUserInvitationCodes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingInspireServer).GetManyUserInvitationCodes(ctx, req.(*GetManyUserInvitationCodesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3614,6 +3646,10 @@ var CloudHashingInspire_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserInvitationCode",
 			Handler:    _CloudHashingInspire_GetUserInvitationCode_Handler,
+		},
+		{
+			MethodName: "GetManyUserInvitationCodes",
+			Handler:    _CloudHashingInspire_GetManyUserInvitationCodes_Handler,
 		},
 		{
 			MethodName: "GetUserInvitationCodeByAppUser",
