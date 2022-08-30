@@ -2320,6 +2320,38 @@
         ]
       }
     },
+    "/v1/get/many/user/invitation/code": {
+      "post": {
+        "operationId": "CloudHashingInspire_GetManyUserInvitationCodes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetManyUserInvitationCodesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetManyUserInvitationCodesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudHashingInspire"
+        ]
+      }
+    },
     "/v1/get/registration/invitation": {
       "post": {
         "operationId": "CloudHashingInspire_GetRegistrationInvitation",
@@ -5046,6 +5078,28 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1EventCoupon"
+          }
+        }
+      }
+    },
+    "v1GetManyUserInvitationCodesRequest": {
+      "type": "object",
+      "properties": {
+        "UserIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1GetManyUserInvitationCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
           }
         }
       }

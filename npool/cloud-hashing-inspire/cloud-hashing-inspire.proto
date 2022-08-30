@@ -254,6 +254,12 @@ service CloudHashingInspire {
             body: "*"
         };
     }
+    rpc GetManyUserInvitationCodes (GetManyUserInvitationCodesRequest) returns (GetManyUserInvitationCodesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/many/user/invitation/code"
+            body: "*"
+        };
+    }
     rpc GetUserInvitationCodeByAppUser (GetUserInvitationCodeByAppUserRequest) returns (GetUserInvitationCodeByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/invitation/code/by/app/user"
@@ -1042,6 +1048,14 @@ message GetUserInvitationCodeRequest {
 
 message GetUserInvitationCodeResponse {
     UserInvitationCode Info = 10;
+}
+
+message GetManyUserInvitationCodesRequest {
+    repeated string UserIDs = 10;
+}
+
+message GetManyUserInvitationCodesResponse {
+    repeated UserInvitationCode Infos = 10;
 }
 
 message GetUserInvitationCodeByAppUserRequest {
