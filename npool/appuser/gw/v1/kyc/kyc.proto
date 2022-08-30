@@ -129,6 +129,8 @@ message UpdateKycRequest {
     optional string FrontImg  = 50;
     optional string BackImg   = 60;
     optional string SelfieImg = 70;
+    optional appuser.manager.kyc.v2.KycDocumentType DocumentType = 80;
+    optional appuser.manager.kyc.v2.KycEntityType   EntityType   = 90;
 }
 
 message UpdateKycResponse {

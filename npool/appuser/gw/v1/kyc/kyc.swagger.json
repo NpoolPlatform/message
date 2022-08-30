@@ -416,6 +416,12 @@
         },
         "SelfieImg": {
           "type": "string"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v2KycDocumentType"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v2KycEntityType"
         }
       }
     },
