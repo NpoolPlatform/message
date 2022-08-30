@@ -38,12 +38,14 @@ service BuildChain {
 message CoinInfo {
   string ID = 10;
   string Name = 20;
-  string ChainType = 30;
-  string TokenType = 40;
-  string OfficialContract = 50;
-  string PrivateContract = 60;
-  string Remark = 80;
-  bytes Data = 90;
+  string Unit = 30;
+  string Decimal = 40;
+  string ChainType = 50;
+  string TokenType = 60;
+  string OfficialContract = 70;
+  string PrivateContract = 80;
+  string Remark = 90;
+  bytes Data = 100;
 }
 
 message CreateCoinInfoRequest {
