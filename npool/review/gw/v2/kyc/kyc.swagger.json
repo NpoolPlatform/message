@@ -302,8 +302,11 @@
         "Reviewer": {
           "type": "string"
         },
-        "State": {
+        "ReviewState": {
           "$ref": "#/definitions/v2ReviewState"
+        },
+        "KycState": {
+          "$ref": "#/definitions/v2KycState"
         },
         "Message": {
           "type": "string"
@@ -317,6 +320,16 @@
           "format": "int64"
         }
       }
+    },
+    "v2KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
     },
     "v2ReviewState": {
       "type": "string",
