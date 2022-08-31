@@ -195,6 +195,9 @@
     "v1CreateTokenInfoResponse": {
       "type": "object",
       "properties": {
+        "info": {
+          "$ref": "#/definitions/v1TokenInfo"
+        },
         "Success": {
           "type": "boolean"
         },
@@ -256,7 +259,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TokenInfoReq"
+            "$ref": "#/definitions/v1TokenInfo"
           }
         },
         "Total": {
@@ -298,29 +301,6 @@
         "Data": {
           "type": "string",
           "format": "byte"
-        }
-      }
-    },
-    "v1TokenInfoReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "ChainType": {
-          "type": "string"
-        },
-        "TokenType": {
-          "type": "string"
-        },
-        "PrivateContract": {
-          "type": "string"
-        },
-        "Remark": {
-          "type": "string"
         }
       }
     },
