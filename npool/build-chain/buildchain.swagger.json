@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/coin/info": {
+    "/v1/create/token/info": {
       "post": {
-        "operationId": "BuildChain_CreateCoinInfo",
+        "operationId": "BuildChain_CreateTokenInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinInfoResponse"
+              "$ref": "#/definitions/v1CreateTokenInfoResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateCoinInfoRequest"
+              "$ref": "#/definitions/v1CreateTokenInfoRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/coin/infos": {
+    "/v1/get/token/infos": {
       "post": {
-        "operationId": "BuildChain_GetCoinInfos",
+        "operationId": "BuildChain_GetTokenInfos",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinInfosResponse"
+              "$ref": "#/definitions/v1GetTokenInfosResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinInfosRequest"
+              "$ref": "#/definitions/v1GetTokenInfosRequest"
             }
           }
         ],
@@ -181,77 +181,18 @@
         }
       }
     },
-    "v1CoinInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Decimal": {
-          "type": "string"
-        },
-        "ChainType": {
-          "type": "string"
-        },
-        "TokenType": {
-          "type": "string"
-        },
-        "OfficialContract": {
-          "type": "string"
-        },
-        "PrivateContract": {
-          "type": "string"
-        },
-        "Remark": {
-          "type": "string"
-        },
-        "Data": {
-          "type": "string",
-          "format": "byte"
-        }
-      }
-    },
-    "v1CoinInfoReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "ChainType": {
-          "type": "string"
-        },
-        "TokenType": {
-          "type": "string"
-        },
-        "PrivateContract": {
-          "type": "string"
-        },
-        "Remark": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateCoinInfoRequest": {
+    "v1CreateTokenInfoRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinInfo"
+          "$ref": "#/definitions/v1TokenInfo"
         },
         "Force": {
           "type": "boolean"
         }
       }
     },
-    "v1CreateCoinInfoResponse": {
+    "v1CreateTokenInfoResponse": {
       "type": "object",
       "properties": {
         "Success": {
@@ -298,7 +239,7 @@
         }
       }
     },
-    "v1GetCoinInfosRequest": {
+    "v1GetTokenInfosRequest": {
       "type": "object",
       "properties": {
         "Conds": {
@@ -309,18 +250,77 @@
         }
       }
     },
-    "v1GetCoinInfosResponse": {
+    "v1GetTokenInfosResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinInfoReq"
+            "$ref": "#/definitions/v1TokenInfoReq"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1TokenInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "Decimal": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "TokenType": {
+          "type": "string"
+        },
+        "OfficialContract": {
+          "type": "string"
+        },
+        "PrivateContract": {
+          "type": "string"
+        },
+        "Remark": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1TokenInfoReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "TokenType": {
+          "type": "string"
+        },
+        "PrivateContract": {
+          "type": "string"
+        },
+        "Remark": {
+          "type": "string"
         }
       }
     },

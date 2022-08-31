@@ -25,8 +25,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BuildChainClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error)
-	CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error)
+	GetTokenInfos(ctx context.Context, in *GetTokenInfosRequest, opts ...grpc.CallOption) (*GetTokenInfosResponse, error)
+	CreateTokenInfo(ctx context.Context, in *CreateTokenInfoRequest, opts ...grpc.CallOption) (*CreateTokenInfoResponse, error)
 	Faucet(ctx context.Context, in *FaucetRequst, opts ...grpc.CallOption) (*FaucetResponse, error)
 }
 
@@ -47,18 +47,18 @@ func (c *buildChainClient) Version(ctx context.Context, in *emptypb.Empty, opts 
 	return out, nil
 }
 
-func (c *buildChainClient) GetCoinInfos(ctx context.Context, in *GetCoinInfosRequest, opts ...grpc.CallOption) (*GetCoinInfosResponse, error) {
-	out := new(GetCoinInfosResponse)
-	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/GetCoinInfos", in, out, opts...)
+func (c *buildChainClient) GetTokenInfos(ctx context.Context, in *GetTokenInfosRequest, opts ...grpc.CallOption) (*GetTokenInfosResponse, error) {
+	out := new(GetTokenInfosResponse)
+	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/GetTokenInfos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *buildChainClient) CreateCoinInfo(ctx context.Context, in *CreateCoinInfoRequest, opts ...grpc.CallOption) (*CreateCoinInfoResponse, error) {
-	out := new(CreateCoinInfoResponse)
-	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/CreateCoinInfo", in, out, opts...)
+func (c *buildChainClient) CreateTokenInfo(ctx context.Context, in *CreateTokenInfoRequest, opts ...grpc.CallOption) (*CreateTokenInfoResponse, error) {
+	out := new(CreateTokenInfoResponse)
+	err := c.cc.Invoke(ctx, "/build.chain.v1.BuildChain/CreateTokenInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,8 +79,8 @@ func (c *buildChainClient) Faucet(ctx context.Context, in *FaucetRequst, opts ..
 // for forward compatibility
 type BuildChainServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error)
-	CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error)
+	GetTokenInfos(context.Context, *GetTokenInfosRequest) (*GetTokenInfosResponse, error)
+	CreateTokenInfo(context.Context, *CreateTokenInfoRequest) (*CreateTokenInfoResponse, error)
 	Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error)
 	mustEmbedUnimplementedBuildChainServer()
 }
@@ -92,11 +92,11 @@ type UnimplementedBuildChainServer struct {
 func (UnimplementedBuildChainServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedBuildChainServer) GetCoinInfos(context.Context, *GetCoinInfosRequest) (*GetCoinInfosResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinInfos not implemented")
+func (UnimplementedBuildChainServer) GetTokenInfos(context.Context, *GetTokenInfosRequest) (*GetTokenInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTokenInfos not implemented")
 }
-func (UnimplementedBuildChainServer) CreateCoinInfo(context.Context, *CreateCoinInfoRequest) (*CreateCoinInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinInfo not implemented")
+func (UnimplementedBuildChainServer) CreateTokenInfo(context.Context, *CreateTokenInfoRequest) (*CreateTokenInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTokenInfo not implemented")
 }
 func (UnimplementedBuildChainServer) Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Faucet not implemented")
@@ -132,38 +132,38 @@ func _BuildChain_Version_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BuildChain_GetCoinInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinInfosRequest)
+func _BuildChain_GetTokenInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTokenInfosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BuildChainServer).GetCoinInfos(ctx, in)
+		return srv.(BuildChainServer).GetTokenInfos(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/build.chain.v1.BuildChain/GetCoinInfos",
+		FullMethod: "/build.chain.v1.BuildChain/GetTokenInfos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BuildChainServer).GetCoinInfos(ctx, req.(*GetCoinInfosRequest))
+		return srv.(BuildChainServer).GetTokenInfos(ctx, req.(*GetTokenInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BuildChain_CreateCoinInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCoinInfoRequest)
+func _BuildChain_CreateTokenInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTokenInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BuildChainServer).CreateCoinInfo(ctx, in)
+		return srv.(BuildChainServer).CreateTokenInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/build.chain.v1.BuildChain/CreateCoinInfo",
+		FullMethod: "/build.chain.v1.BuildChain/CreateTokenInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BuildChainServer).CreateCoinInfo(ctx, req.(*CreateCoinInfoRequest))
+		return srv.(BuildChainServer).CreateTokenInfo(ctx, req.(*CreateTokenInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -198,12 +198,12 @@ var BuildChain_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _BuildChain_Version_Handler,
 		},
 		{
-			MethodName: "GetCoinInfos",
-			Handler:    _BuildChain_GetCoinInfos_Handler,
+			MethodName: "GetTokenInfos",
+			Handler:    _BuildChain_GetTokenInfos_Handler,
 		},
 		{
-			MethodName: "CreateCoinInfo",
-			Handler:    _BuildChain_CreateCoinInfo_Handler,
+			MethodName: "CreateTokenInfo",
+			Handler:    _BuildChain_CreateTokenInfo_Handler,
 		},
 		{
 			MethodName: "Faucet",

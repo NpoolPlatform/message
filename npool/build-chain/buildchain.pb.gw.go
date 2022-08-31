@@ -66,8 +66,8 @@ func local_request_BuildChain_Version_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, client BuildChainClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinInfosRequest
+func request_BuildChain_GetTokenInfos_0(ctx context.Context, marshaler runtime.Marshaler, client BuildChainClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetTokenInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -78,13 +78,13 @@ func request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetCoinInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetTokenInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runtime.Marshaler, server BuildChainServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetCoinInfosRequest
+func local_request_BuildChain_GetTokenInfos_0(ctx context.Context, marshaler runtime.Marshaler, server BuildChainServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetTokenInfosRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -95,13 +95,13 @@ func local_request_BuildChain_GetCoinInfos_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetCoinInfos(ctx, &protoReq)
+	msg, err := server.GetTokenInfos(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_BuildChain_CreateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, client BuildChainClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinInfoRequest
+func request_BuildChain_CreateTokenInfo_0(ctx context.Context, marshaler runtime.Marshaler, client BuildChainClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateTokenInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -112,13 +112,13 @@ func request_BuildChain_CreateCoinInfo_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateCoinInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateTokenInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_BuildChain_CreateCoinInfo_0(ctx context.Context, marshaler runtime.Marshaler, server BuildChainServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateCoinInfoRequest
+func local_request_BuildChain_CreateTokenInfo_0(ctx context.Context, marshaler runtime.Marshaler, server BuildChainServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateTokenInfoRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -129,7 +129,7 @@ func local_request_BuildChain_CreateCoinInfo_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateCoinInfo(ctx, &protoReq)
+	msg, err := server.CreateTokenInfo(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -197,18 +197,18 @@ func RegisterBuildChainHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_BuildChain_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BuildChain_GetTokenInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/build.chain.v1.BuildChain/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/get/coin/infos"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/build.chain.v1.BuildChain/GetTokenInfos", runtime.WithHTTPPathPattern("/v1/get/token/infos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_BuildChain_GetCoinInfos_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BuildChain_GetTokenInfos_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -216,22 +216,22 @@ func RegisterBuildChainHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 			return
 		}
 
-		forward_BuildChain_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BuildChain_GetTokenInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_BuildChain_CreateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BuildChain_CreateTokenInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/build.chain.v1.BuildChain/CreateCoinInfo", runtime.WithHTTPPathPattern("/v1/create/coin/info"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/build.chain.v1.BuildChain/CreateTokenInfo", runtime.WithHTTPPathPattern("/v1/create/token/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_BuildChain_CreateCoinInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BuildChain_CreateTokenInfo_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -239,7 +239,7 @@ func RegisterBuildChainHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 			return
 		}
 
-		forward_BuildChain_CreateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BuildChain_CreateTokenInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -327,43 +327,43 @@ func RegisterBuildChainHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_BuildChain_GetCoinInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BuildChain_GetTokenInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/build.chain.v1.BuildChain/GetCoinInfos", runtime.WithHTTPPathPattern("/v1/get/coin/infos"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/build.chain.v1.BuildChain/GetTokenInfos", runtime.WithHTTPPathPattern("/v1/get/token/infos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_BuildChain_GetCoinInfos_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BuildChain_GetTokenInfos_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_BuildChain_GetCoinInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BuildChain_GetTokenInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_BuildChain_CreateCoinInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BuildChain_CreateTokenInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/build.chain.v1.BuildChain/CreateCoinInfo", runtime.WithHTTPPathPattern("/v1/create/coin/info"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/build.chain.v1.BuildChain/CreateTokenInfo", runtime.WithHTTPPathPattern("/v1/create/token/info"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_BuildChain_CreateCoinInfo_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BuildChain_CreateTokenInfo_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_BuildChain_CreateCoinInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BuildChain_CreateTokenInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -393,9 +393,9 @@ func RegisterBuildChainHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 var (
 	pattern_BuildChain_Version_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "version"}, ""))
 
-	pattern_BuildChain_GetCoinInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "coin", "infos"}, ""))
+	pattern_BuildChain_GetTokenInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "token", "infos"}, ""))
 
-	pattern_BuildChain_CreateCoinInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "coin", "info"}, ""))
+	pattern_BuildChain_CreateTokenInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "create", "token", "info"}, ""))
 
 	pattern_BuildChain_Faucet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "faucet"}, ""))
 )
@@ -403,9 +403,9 @@ var (
 var (
 	forward_BuildChain_Version_0 = runtime.ForwardResponseMessage
 
-	forward_BuildChain_GetCoinInfos_0 = runtime.ForwardResponseMessage
+	forward_BuildChain_GetTokenInfos_0 = runtime.ForwardResponseMessage
 
-	forward_BuildChain_CreateCoinInfo_0 = runtime.ForwardResponseMessage
+	forward_BuildChain_CreateTokenInfo_0 = runtime.ForwardResponseMessage
 
 	forward_BuildChain_Faucet_0 = runtime.ForwardResponseMessage
 )

@@ -15,15 +15,16 @@ service BuildChain {
     };
   }
 
-  rpc GetCoinInfos(GetCoinInfosRequest) returns (GetCoinInfosResponse) {
+  rpc GetTokenInfos(GetTokenInfosRequest) returns (GetTokenInfosResponse) {
     option (google.api.http) = {
-      post : "/v1/get/coin/infos"
+      post : "/v1/get/token/infos"
       body : "*"
     };
   }
-  rpc CreateCoinInfo(CreateCoinInfoRequest) returns (CreateCoinInfoResponse) {
+  rpc CreateTokenInfo(CreateTokenInfoRequest)
+      returns (CreateTokenInfoResponse) {
     option (google.api.http) = {
-      post : "/v1/create/coin/info"
+      post : "/v1/create/token/info"
       body : "*"
     };
   }
@@ -35,7 +36,7 @@ service BuildChain {
   }
 }
 
-message CoinInfo {
+message TokenInfo {
   string ID = 10;
   string Name = 20;
   string Unit = 30;
@@ -48,17 +49,17 @@ message CoinInfo {
   bytes Data = 100;
 }
 
-message CreateCoinInfoRequest {
-  CoinInfo Info = 10;
+message CreateTokenInfoRequest {
+  TokenInfo Info = 10;
   bool Force = 20;
 }
 
-message CreateCoinInfoResponse {
+message CreateTokenInfoResponse {
   bool Success = 10;
   string Msg = 20;
 }
 
-message CoinInfoReq {
+message TokenInfoReq {
   string ID = 10;
   string Name = 20;
   string ChainType = 30;
@@ -67,10 +68,10 @@ message CoinInfoReq {
   string Remark = 60;
 }
 
-message GetCoinInfosRequest { map<string, npool.v1.FilterCond> Conds = 20; }
+message GetTokenInfosRequest { map<string, npool.v1.FilterCond> Conds = 20; }
 
-message GetCoinInfosResponse {
-  repeated CoinInfoReq Infos = 10;
+message GetTokenInfosResponse {
+  repeated TokenInfoReq Infos = 10;
   uint32 Total = 20;
 }
 
