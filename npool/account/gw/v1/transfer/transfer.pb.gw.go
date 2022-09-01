@@ -66,7 +66,7 @@ func local_request_Gateway_CreateTransfer_0(ctx context.Context, marshaler runti
 }
 
 func request_Gateway_DeleteTransfer_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateTransferRequest
+	var protoReq DeleteTransferRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -83,7 +83,7 @@ func request_Gateway_DeleteTransfer_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func local_request_Gateway_DeleteTransfer_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateTransferRequest
+	var protoReq DeleteTransferRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

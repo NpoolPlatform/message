@@ -19,7 +19,7 @@ service Gateway {
         };
     }
 
-    rpc DeleteTransfer (CreateTransferRequest) returns (CreateTransferResponse) {
+    rpc DeleteTransfer (DeleteTransferRequest) returns (DeleteTransferResponse) {
         option (google.api.http) = {
             post: "/v1/delete/transfer"
             body: "*"

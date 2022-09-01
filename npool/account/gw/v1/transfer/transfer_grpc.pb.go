@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
-	DeleteTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
+	DeleteTransfer(ctx context.Context, in *DeleteTransferRequest, opts ...grpc.CallOption) (*DeleteTransferResponse, error)
 	GetTransfers(ctx context.Context, in *GetTransfersRequest, opts ...grpc.CallOption) (*GetTransfersResponse, error)
 	GetAppTransfers(ctx context.Context, in *GetAppTransfersRequest, opts ...grpc.CallOption) (*GetAppTransfersResponse, error)
 	GetNAppTransfers(ctx context.Context, in *GetNAppTransfersRequest, opts ...grpc.CallOption) (*GetNAppTransfersResponse, error)
@@ -46,8 +46,8 @@ func (c *gatewayClient) CreateTransfer(ctx context.Context, in *CreateTransferRe
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error) {
-	out := new(CreateTransferResponse)
+func (c *gatewayClient) DeleteTransfer(ctx context.Context, in *DeleteTransferRequest, opts ...grpc.CallOption) (*DeleteTransferResponse, error) {
+	out := new(DeleteTransferResponse)
 	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/DeleteTransfer", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -87,7 +87,7 @@ func (c *gatewayClient) GetNAppTransfers(ctx context.Context, in *GetNAppTransfe
 // for forward compatibility
 type GatewayServer interface {
 	CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
-	DeleteTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
+	DeleteTransfer(context.Context, *DeleteTransferRequest) (*DeleteTransferResponse, error)
 	GetTransfers(context.Context, *GetTransfersRequest) (*GetTransfersResponse, error)
 	GetAppTransfers(context.Context, *GetAppTransfersRequest) (*GetAppTransfersResponse, error)
 	GetNAppTransfers(context.Context, *GetNAppTransfersRequest) (*GetNAppTransfersResponse, error)
@@ -101,7 +101,7 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransfer not implemented")
 }
-func (UnimplementedGatewayServer) DeleteTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error) {
+func (UnimplementedGatewayServer) DeleteTransfer(context.Context, *DeleteTransferRequest) (*DeleteTransferResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTransfer not implemented")
 }
 func (UnimplementedGatewayServer) GetTransfers(context.Context, *GetTransfersRequest) (*GetTransfersResponse, error) {
@@ -145,7 +145,7 @@ func _Gateway_CreateTransfer_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _Gateway_DeleteTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTransferRequest)
+	in := new(DeleteTransferRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -157,7 +157,7 @@ func _Gateway_DeleteTransfer_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/account.gateway.user.v1.Gateway/DeleteTransfer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteTransfer(ctx, req.(*CreateTransferRequest))
+		return srv.(GatewayServer).DeleteTransfer(ctx, req.(*DeleteTransferRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

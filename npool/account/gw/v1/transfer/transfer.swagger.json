@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateTransferResponse"
+              "$ref": "#/definitions/v1DeleteTransferResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTransferRequest"
+              "$ref": "#/definitions/v1DeleteTransferRequest"
             }
           }
         ],
@@ -232,6 +232,22 @@
       }
     },
     "v1CreateTransferResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Transfer"
+        }
+      }
+    },
+    "v1DeleteTransferRequest": {
+      "type": "object",
+      "properties": {
+        "TransferID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteTransferResponse": {
       "type": "object",
       "properties": {
         "Info": {
