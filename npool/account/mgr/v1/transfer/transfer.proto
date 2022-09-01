@@ -11,7 +11,6 @@ import "npool/npool.proto";
 service Manager {
   rpc CreateTransfer     (CreateTransferRequest)     returns (CreateTransferResponse)     {}
   rpc CreateTransfers    (CreateTransfersRequest)    returns (CreateTransfersResponse)    {}
-  rpc UpdateTransfer     (UpdateTransferRequest)     returns (UpdateTransferResponse)     {}
   rpc GetTransfer        (GetTransferRequest)        returns (GetTransferResponse)        {}
   rpc GetTransferOnly    (GetTransferOnlyRequest)    returns (GetTransferOnlyResponse)    {}
   rpc GetTransfers       (GetTransfersRequest)       returns (GetTransfersResponse)       {}
@@ -58,14 +57,6 @@ message CreateTransfersRequest {
 
 message CreateTransfersResponse {
   repeated Transfer Infos = 10;
-}
-
-message UpdateTransferRequest {
-  TransferReq Info = 10;
-}
-
-message UpdateTransferResponse {
-  Transfer Info = 10;
 }
 
 message GetTransferRequest {
