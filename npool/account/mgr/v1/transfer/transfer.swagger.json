@@ -192,14 +192,6 @@
           "type": "string"
         }
       }
-    },
-    "v1UpdateTransferResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Transfer"
-        }
-      }
     }
   }
 }
