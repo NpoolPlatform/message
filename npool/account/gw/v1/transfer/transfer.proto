@@ -4,6 +4,7 @@ package account.gateway.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/transfer";
 
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -61,10 +62,10 @@ message CreateTransferRequest {
     string AppID             = 10;
     string UserID            = 20;
     string Account           = 30;
-    string AccountType       = 40;
+    appuser.manager.signmethod.v2.SignMethodType AccountType       = 40;
     string VerificationCode  = 50;
     string TargetAccount     = 60;
-    string TargetAccountType = 70;
+    appuser.manager.signmethod.v2.SignMethodType TargetAccountType = 70;
 
 }
 

@@ -218,7 +218,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "VerificationCode": {
           "type": "string"
@@ -227,7 +227,7 @@
           "type": "string"
         },
         "TargetAccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         }
       }
     },
@@ -358,6 +358,22 @@
           "format": "int64"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }
