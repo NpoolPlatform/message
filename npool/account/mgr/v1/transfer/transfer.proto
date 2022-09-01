@@ -32,13 +32,13 @@ message Transfer {
   string AppID        = 20;
   string UserID       = 30;
   string TargetUserID = 40;
-  uint32 CreatedAt    = 80;
+  uint32 CreatedAt    = 50;
 }
 
 message Conds {
-  optional npool.v1.StringVal ID         = 10;
-  optional npool.v1.StringVal AppID      = 20;
-  optional npool.v1.StringVal UserID     = 30;
+  optional npool.v1.StringVal ID           = 10;
+  optional npool.v1.StringVal AppID        = 20;
+  optional npool.v1.StringVal UserID       = 30;
   optional npool.v1.StringVal TargetUserID = 40;
 }
 
