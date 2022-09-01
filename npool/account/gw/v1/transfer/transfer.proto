@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package account.gateway.user.v1;
+package account.gateway.transfer.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/transfer";
 
