@@ -620,22 +620,23 @@
         "UserID": {
           "type": "string"
         },
+        "Account": {
+          "type": "string"
+        },
         "AccountType": {
           "$ref": "#/definitions/v2SignMethodType"
+        },
+        "VerificationCode": {
+          "type": "string"
+        },
+        "TransferID": {
+          "type": "string"
         },
         "Amount": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
-        },
-        "TargetUserID": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "VerificationCode": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },

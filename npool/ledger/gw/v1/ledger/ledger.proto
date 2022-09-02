@@ -319,11 +319,14 @@ message Transfer {
 message CreateTransferRequest {
     string AppID            = 10;
     string UserID           = 20;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
-    string Amount           = 40;
-    string CoinTypeID       = 50;
-    int32  TargetUserID     = 60;
-    int32  VerificationCode = 70;
+    string Account          = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    string VerificationCode = 50;
+    string TransferID       = 60;
+    string Amount           = 70;
+    string CoinTypeID       = 80;
+
+
 }
 
 message CreateTransferResponse {
