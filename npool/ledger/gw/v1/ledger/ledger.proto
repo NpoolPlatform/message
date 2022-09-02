@@ -322,7 +322,7 @@ message CreateTransferRequest {
     string Account          = 30;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string VerificationCode = 50;
-    string TransferID       = 60;
+    string TargetUserID     = 60;
     string Amount           = 70;
     string CoinTypeID       = 80;
 

@@ -629,7 +629,7 @@
         "VerificationCode": {
           "type": "string"
         },
-        "TransferID": {
+        "TargetUserID": {
           "type": "string"
         },
         "Amount": {
