@@ -373,6 +373,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "TargetUsername": {
+          "type": "string"
+        },
         "TargetFirstName": {
           "type": "string"
         },

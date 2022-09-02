@@ -56,9 +56,10 @@ message Transfer {
     string TargetUserID  = 40;
     string TargetAccount = 50;
     uint32 CreatedAt       = 60;
-    string TargetFirstName = 70;
-    string TargetLastName  = 80;
-    string TargetIDNumber  = 90;
+    string TargetUsername  = 70;
+    string TargetFirstName = 80;
+    string TargetLastName  = 90;
+    string TargetIDNumber  = 100;
 }
 
 message CreateTransferRequest {
