@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package account.gateway.user.v1;
+package account.gateway.transfer.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/transfer";
 
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -18,7 +19,7 @@ service Gateway {
         };
     }
 
-    rpc DeleteTransfer (CreateTransferRequest) returns (CreateTransferResponse) {
+    rpc DeleteTransfer (DeleteTransferRequest) returns (DeleteTransferResponse) {
         option (google.api.http) = {
             post: "/v1/delete/transfer"
             body: "*"
@@ -53,18 +54,22 @@ message Transfer {
     string AppID         = 20;
     string UserID        = 30;
     string TargetUserID  = 40;
-    string TargetAccount = 50;
-    string CreatedAt     = 60;
+    string TargetEmailAddress = 50;
+    string TargetPhoneNO   = 60;
+    uint32 CreatedAt       = 70;
+    string TargetUsername  = 80;
+    string TargetFirstName = 90;
+    string TargetLastName  = 100;
 }
 
 message CreateTransferRequest {
     string AppID             = 10;
     string UserID            = 20;
     string Account           = 30;
-    string AccountType       = 40;
+    appuser.manager.signmethod.v2.SignMethodType AccountType       = 40;
     string VerificationCode  = 50;
     string TargetAccount     = 60;
-    string TargetAccountType = 70;
+    appuser.manager.signmethod.v2.SignMethodType TargetAccountType = 70;
 
 }
 
