@@ -89,6 +89,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc CreateTransfer (CreateTransferRequest) returns (CreateTransferResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/transfer"
+            body: "*"
+        };
+    }
 }
 
 message General {
@@ -291,4 +298,34 @@ message GetNAppWithdrawsRequest {
 message GetNAppWithdrawsResponse {
     repeated Withdraw Infos = 10;
     uint32            Total = 20;
+}
+
+message Transfer {
+    string CoinTypeID    = 10;
+    string CoinName      = 20;
+    string CoinLogo      = 30;
+    string CoinUnit      = 40;
+    string Amount        = 50;
+    uint32 CreatedAt     = 60;
+
+    string TargetUserID       = 70;
+    string TargetEmailAddress = 80;
+    string TargetPhoneNO      = 90;
+    string TargetUsername     = 100;
+    string TargetFirstName    = 110;
+    string TargetLastName     = 120;
+}
+
+message CreateTransferRequest {
+    string AppID            = 10;
+    string UserID           = 20;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
+    string Amount           = 40;
+    string CoinTypeID       = 50;
+    int32  TargetUserID     = 60;
+    int32  VerificationCode = 70;
+}
+
+message CreateTransferResponse {
+    Transfer Info = 10;
 }
