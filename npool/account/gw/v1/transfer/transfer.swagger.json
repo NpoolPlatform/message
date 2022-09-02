@@ -366,7 +366,10 @@
         "TargetUserID": {
           "type": "string"
         },
-        "TargetAccount": {
+        "TargetEmailAddress": {
+          "type": "string"
+        },
+        "TargetPhoneNO": {
           "type": "string"
         },
         "CreatedAt": {

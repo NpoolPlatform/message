@@ -54,11 +54,12 @@ message Transfer {
     string AppID         = 20;
     string UserID        = 30;
     string TargetUserID  = 40;
-    string TargetAccount = 50;
-    uint32 CreatedAt       = 60;
-    string TargetUsername  = 70;
-    string TargetFirstName = 80;
-    string TargetLastName  = 90;
+    string TargetEmailAddress = 50;
+    string TargetPhoneNO   = 60;
+    uint32 CreatedAt       = 70;
+    string TargetUsername  = 80;
+    string TargetFirstName = 90;
+    string TargetLastName  = 100;
 }
 
 message CreateTransferRequest {
