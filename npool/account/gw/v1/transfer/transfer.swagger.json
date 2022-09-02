@@ -242,6 +242,12 @@
     "v1DeleteTransferRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "TransferID": {
           "type": "string"
         }

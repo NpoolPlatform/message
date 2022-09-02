@@ -78,7 +78,9 @@ message CreateTransferResponse {
 }
 
 message DeleteTransferRequest {
-    string TransferID = 10;
+    string AppID      = 10;
+    string UserID     = 20;
+    string TransferID = 30;
 }
 
 message DeleteTransferResponse {
