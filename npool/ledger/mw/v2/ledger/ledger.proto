@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ledger.middleware.ledger1.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger";
+
+import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
+
+// Service Name
+service Middleware {
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
+}
+
+message BookKeepingRequest {
+    ledger.manager.ledger.detail.v1.DetailReq Info = 10;
+}
+
+message BookKeepingResponse {
+}
