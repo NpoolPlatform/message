@@ -59,7 +59,6 @@ message Transfer {
     string TargetUsername  = 70;
     string TargetFirstName = 80;
     string TargetLastName  = 90;
-    string TargetIDNumber  = 100;
 }
 
 message CreateTransferRequest {

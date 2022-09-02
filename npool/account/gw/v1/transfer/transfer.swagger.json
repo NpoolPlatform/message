@@ -381,9 +381,6 @@
         },
         "TargetLastName": {
           "type": "string"
-        },
-        "TargetIDNumber": {
-          "type": "string"
         }
       }
     },
