@@ -372,6 +372,15 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "TargetFirstName": {
+          "type": "string"
+        },
+        "TargetLastName": {
+          "type": "string"
+        },
+        "TargetIDNumber": {
+          "type": "string"
         }
       }
     },
