@@ -96,6 +96,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetTransfers (GetTransfersRequest) returns (GetTransfersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/transfer"
+            body: "*"
+        };
+    }
 }
 
 message General {
@@ -331,4 +338,18 @@ message CreateTransferRequest {
 
 message CreateTransferResponse {
     Transfer Info = 10;
+    int32  Offset        = 20;
+    int32  Limit         = 30;
 }
+
+message GetTransfersRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetTransfersResponse {
+    Transfer Info = 10;
+}
+
