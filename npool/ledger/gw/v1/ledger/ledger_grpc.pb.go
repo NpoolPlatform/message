@@ -33,6 +33,7 @@ type GatewayClient interface {
 	GetIntervalWithdraws(ctx context.Context, in *GetIntervalWithdrawsRequest, opts ...grpc.CallOption) (*GetIntervalWithdrawsResponse, error)
 	GetAppWithdraws(ctx context.Context, in *GetAppWithdrawsRequest, opts ...grpc.CallOption) (*GetAppWithdrawsResponse, error)
 	GetNAppWithdraws(ctx context.Context, in *GetNAppWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppWithdrawsResponse, error)
+	CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
 }
 
 type gatewayClient struct {
@@ -142,6 +143,15 @@ func (c *gatewayClient) GetNAppWithdraws(ctx context.Context, in *GetNAppWithdra
 	return out, nil
 }
 
+func (c *gatewayClient) CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error) {
+	out := new(CreateTransferResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/CreateTransfer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -157,6 +167,7 @@ type GatewayServer interface {
 	GetIntervalWithdraws(context.Context, *GetIntervalWithdrawsRequest) (*GetIntervalWithdrawsResponse, error)
 	GetAppWithdraws(context.Context, *GetAppWithdrawsRequest) (*GetAppWithdrawsResponse, error)
 	GetNAppWithdraws(context.Context, *GetNAppWithdrawsRequest) (*GetNAppWithdrawsResponse, error)
+	CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -196,6 +207,9 @@ func (UnimplementedGatewayServer) GetAppWithdraws(context.Context, *GetAppWithdr
 }
 func (UnimplementedGatewayServer) GetNAppWithdraws(context.Context, *GetNAppWithdrawsRequest) (*GetNAppWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppWithdraws not implemented")
+}
+func (UnimplementedGatewayServer) CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransfer not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -408,6 +422,24 @@ func _Gateway_GetNAppWithdraws_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_CreateTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/CreateTransfer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateTransfer(ctx, req.(*CreateTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -458,6 +490,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNAppWithdraws",
 			Handler:    _Gateway_GetNAppWithdraws_Handler,
+		},
+		{
+			MethodName: "CreateTransfer",
+			Handler:    _Gateway_CreateTransfer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
