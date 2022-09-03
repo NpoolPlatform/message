@@ -87,7 +87,8 @@ const (
 	IOSubType_TechniqueFeeCommission IOSubType = 103
 	// I: record address in extra
 	IOSubType_Deposit IOSubType = 104
-	// I: record target in extra
+	// I: record from user in extra
+	// O: record target user id in extra
 	IOSubType_Transfer IOSubType = 105
 	// O
 	IOSubType_Withdrawal IOSubType = 200

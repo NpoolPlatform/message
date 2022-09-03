@@ -39,7 +39,8 @@ enum IOSubType {
     TechniqueFeeCommission    = 103;
     // I: record address in extra
     Deposit                   = 104;
-    // I: record target in extra
+    // I: record from user in extra
+    // O: record target user id in extra
     Transfer                  = 105;
 
     // O
