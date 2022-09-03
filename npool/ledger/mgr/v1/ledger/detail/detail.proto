@@ -40,7 +40,7 @@ enum IOSubType {
     // I: record address in extra
     Deposit                   = 104;
     // I: record from user in extra
-    // O: record target user id in extra
+    // O: record target user in extra
     Transfer                  = 105;
 
     // O

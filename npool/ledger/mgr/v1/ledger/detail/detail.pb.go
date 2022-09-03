@@ -88,7 +88,7 @@ const (
 	// I: record address in extra
 	IOSubType_Deposit IOSubType = 104
 	// I: record from user in extra
-	// O: record target user id in extra
+	// O: record target user in extra
 	IOSubType_Transfer IOSubType = 105
 	// O
 	IOSubType_Withdrawal IOSubType = 200
