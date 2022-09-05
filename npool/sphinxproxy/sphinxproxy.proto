@@ -156,7 +156,7 @@ message ProxyPluginResponse {
   string ENV                                = 111; // main or test
   string Unit                               = 112;
   string TransactionID                      = 120;
-
+  string Name                               = 130;
   string CID                                = 140;
   double Balance                            = 150;
   string BalanceStr                         = 160;
