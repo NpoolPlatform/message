@@ -80,6 +80,9 @@
     "v1BookKeepingResponse": {
       "type": "object"
     },
+    "v1DeleteResponse": {
+      "type": "object"
+    },
     "v1DetailReq": {
       "type": "object",
       "properties": {
