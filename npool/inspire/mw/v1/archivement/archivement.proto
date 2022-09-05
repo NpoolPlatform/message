@@ -19,6 +19,7 @@ service Middleware {
     }
 
     rpc BookKeeping (BookKeepingRequest)  returns (BookKeepingResponse) {}
+    rpc Delete      (DeleteRequest)       returns (DeleteResponse) {}
 }
 
 message BookKeepingRequest {
@@ -26,5 +27,12 @@ message BookKeepingRequest {
 }
 
 message BookKeepingResponse {
+}
+
+message DeleteRequest {
+    string OrderID = 10;
+}
+
+message DeleteResponse {
 }
 
