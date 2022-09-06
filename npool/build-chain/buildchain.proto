@@ -17,14 +17,14 @@ service BuildChain {
 
   rpc GetTokenInfos(GetTokenInfosRequest) returns (GetTokenInfosResponse) {
     option (google.api.http) = {
-      post : "/v1/get/token/infos"
+      post : "/v1/get/tokeninfos"
       body : "*"
     };
   }
   rpc CreateTokenInfo(CreateTokenInfoRequest)
       returns (CreateTokenInfoResponse) {
     option (google.api.http) = {
-      post : "/v1/create/token/info"
+      post : "/v1/create/tokeninfo"
       body : "*"
     };
   }
