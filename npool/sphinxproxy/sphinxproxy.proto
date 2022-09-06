@@ -12,229 +12,216 @@ import "npool/sphinxplugin/sphinxplugin.proto";
 // SphinxProxy http service only for inner
 service SphinxProxy {
   // sync
-  rpc Version (google.protobuf.Empty) returns (VersionResponse){
+  rpc Version(google.protobuf.Empty) returns (VersionResponse) {
     option (google.api.http) = {
-      post: "/version"
-      body: "*"
+      post : "/version"
+      body : "*"
     };
   }
-  rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {
+  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse) {
     option (google.api.http) = {
-      post: "/v1/get/balance"
-      body: "*"
+      post : "/v1/get/balance"
+      body : "*"
     };
   }
-  rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse) {
+  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {
     option (google.api.http) = {
-      post: "/v1/create/wallet"
-      body: "*"
+      post : "/v1/create/wallet"
+      body : "*"
     };
   }
-  rpc CreateTransaction (CreateTransactionRequest) returns (CreateTransactionResponse) {
+  rpc CreateTransaction(CreateTransactionRequest)
+      returns (CreateTransactionResponse) {
     option (google.api.http) = {
-      post: "/v1/create/transaction"
-      body: "*"
+      post : "/v1/create/transaction"
+      body : "*"
     };
   }
-  rpc UpdateTransaction (UpdateTransactionRequest) returns (UpdateTransactionResponse) {
+  rpc UpdateTransaction(UpdateTransactionRequest)
+      returns (UpdateTransactionResponse) {
     option (google.api.http) = {
-      post: "/v1/update/transaction"
-      body: "*"
+      post : "/v1/update/transaction"
+      body : "*"
     };
   }
-  rpc GetTransaction (GetTransactionRequest) returns (GetTransactionResponse) {
+  rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {
     option (google.api.http) = {
-      post: "/v1/get/transaction"
-      body: "*"
+      post : "/v1/get/transaction"
+      body : "*"
     };
   }
-  rpc GetTransactions (GetTransactionsRequest) returns (GetTransactionsResponse) {
+  rpc GetTransactions(GetTransactionsRequest)
+      returns (GetTransactionsResponse) {
     option (google.api.http) = {
-      post: "/v1/get/transactions"
-      body: "*"
+      post : "/v1/get/transactions"
+      body : "*"
     };
   }
 
   // async stream
-  rpc ProxyPlugin (stream ProxyPluginResponse) returns (stream ProxyPluginRequest) {}
-  rpc ProxySign (stream ProxySignResponse) returns (stream ProxySignRequest) {}
+  rpc ProxyPlugin(stream ProxyPluginResponse)
+      returns (stream ProxyPluginRequest) {}
+  rpc ProxySign(stream ProxySignResponse) returns (stream ProxySignRequest) {}
 }
 
 // ############################# sync
-message VersionResponse {
-  string Info = 100;
-}
+message VersionResponse { string Info = 100; }
 
 message GetBalanceRequest {
-  string Name     = 100;
-  string Address  = 110;
+  string Name = 100;
+  string Address = 110;
 }
 
 message BalanceInfo {
-  double Balance      = 100;
-  string BalanceStr   = 110;
+  double Balance = 100;
+  string BalanceStr = 110;
 }
 
-message GetBalanceResponse {
-  BalanceInfo Info = 100;
-}
+message GetBalanceResponse { BalanceInfo Info = 100; }
 
-message CreateWalletRequest {
-  string Name = 100;
-}
+message CreateWalletRequest { string Name = 100; }
 
-message WalletInfo {
-  string Address = 100;
-}
+message WalletInfo { string Address = 100; }
 
-message CreateWalletResponse {
-  WalletInfo Info = 100;
-}
+message CreateWalletResponse { WalletInfo Info = 100; }
 
 message CreateTransactionRequest {
-  string Name             = 100;
-  string TransactionID    = 110;
-  double Amount           = 120;
-  string From             = 130;
-  string To               = 140;
+  string Name = 100;
+  string TransactionID = 110;
+  double Amount = 120;
+  string From = 130;
+  string To = 140;
 }
 
-message CreateTransactionResponse {
-}
+message CreateTransactionResponse {}
 
 message UpdateTransactionRequest {
-  string            TransactionID         = 100;
-  TransactionState  TransactionState      = 110;
-  TransactionState  NextTransactionState  = 111;
-  bytes             Payload               = 120;
-  string            CID				            = 130;
-  int64             ExitCode              = 140;
+  string TransactionID = 100;
+  TransactionState TransactionState = 110;
+  TransactionState NextTransactionState = 111;
+  bytes Payload = 120;
+  string CID = 130;
+  int64 ExitCode = 140;
 }
 
-message UpdateTransactionResponse {
-}
+message UpdateTransactionResponse {}
 
-message GetTransactionRequest {
-  string TransactionID  = 100;
-}
+message GetTransactionRequest { string TransactionID = 100; }
 
 message TransactionInfo {
-	string TransactionID 	              = 100;
-	string Name 			                  = 110;
-	double Amount 			                = 120;
-	string From 			                  = 130;
-	string To 				                  = 140;
-	TransactionState TransactionState   = 150;
-  bytes Payload                       = 151;
-	string CID				                  = 160;
-  int64 ExitCode                      = 170;
-	uint32 CreatedAt 		                = 180;
-	uint32 UpdatedAt 		                = 190;
+  string TransactionID = 100;
+  string Name = 110;
+  double Amount = 120;
+  string From = 130;
+  string To = 140;
+  TransactionState TransactionState = 150;
+  bytes Payload = 151;
+  string CID = 160;
+  int64 ExitCode = 170;
+  uint32 CreatedAt = 180;
+  uint32 UpdatedAt = 190;
 }
 
-message GetTransactionResponse {
-  TransactionInfo Info = 100;
-}
+message GetTransactionResponse { TransactionInfo Info = 100; }
 
 message GetTransactionsRequest {
-  sphinx.plugin.v1.CoinType CoinType                = 100;
-  TransactionState TransactionState                 = 110;
-  string ENV                                        = 120; // main or test
-  uint32 Offset                                     = 130;
-  uint32 Limit                                      = 140;
+  sphinx.plugin.v1.CoinType CoinType = 100;
+  TransactionState TransactionState = 110;
+  string ENV = 120; // main or test
+  uint32 Offset = 130;
+  uint32 Limit = 140;
 }
 
 message GetTransactionsResponse {
-  repeated TransactionInfo Infos  = 100;
-  uint32 Total                    = 110;
+  repeated TransactionInfo Infos = 100;
+  uint32 Total = 110;
 }
 
 // ############################# async
 message ProxyPluginResponse {
-  sphinx.plugin.v1.CoinType CoinType        = 100;
-  TransactionType TransactionType           = 110;
-  string ENV                                = 111; // main or test
-  string Unit                               = 112;
-  string TransactionID                      = 120;
-  string Name                               = 130;
-  string CID                                = 140;
-  double Balance                            = 150;
-  string BalanceStr                         = 160;
-  sphinx.plugin.v1.UnsignedMessage  Message = 170;
-  int64  ExitCode                           = 180; // -1 find cid state on chain internal server error
-  string PluginWanIP                        = 190;
-  string PluginPosition                     = 200;
-  string RPCExitMessage                     = 1000;
+  sphinx.plugin.v1.CoinType CoinType = 100;
+  TransactionType TransactionType = 110;
+  string ENV = 111; // main or test
+  string Unit = 112;
+  string TransactionID = 120;
+  string CID = 140;
+  double Balance = 150;
+  string BalanceStr = 160;
+  sphinx.plugin.v1.UnsignedMessage Message = 170;
+  int64 ExitCode = 180; // -1 find cid state on chain internal server error
+  string PluginWanIP = 190;
+  string PluginPosition = 200;
+  string RPCExitMessage = 1000;
 
-  bytes Payload                             = 1100;
+  bytes Payload = 1100;
 }
 
 // MpoolGetNonce WalletBalance MpoolPush ..
 message ProxyPluginRequest {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
+  sphinx.plugin.v1.CoinType CoinType = 100;
+  TransactionType TransactionType = 110;
+  string TransactionID = 120;
   // query wallet account
-  string Address                              = 130;
-  sphinx.plugin.v1.UnsignedMessage Message    = 140;
+  string Address = 130;
+  sphinx.plugin.v1.UnsignedMessage Message = 140;
   // fil
-  sphinx.plugin.v1.Signature       Signature  = 150;
+  sphinx.plugin.v1.Signature Signature = 150;
   // btc
-  sphinx.plugin.v1.MsgTx           MsgTx      = 151;
+  sphinx.plugin.v1.MsgTx MsgTx = 151;
   // eth/usdt
-  string  SignedRawTxHex                      = 152;
-  string CID                                  = 160;
+  string SignedRawTxHex = 152;
+  string CID = 160;
 
   // gas fee
-  double Fee                                  = 170;
-  bytes Payload                               = 180;
+  double Fee = 170;
+  bytes Payload = 180;
 }
 
 message ProxySignRequest {
-  sphinx.plugin.v1.CoinType CoinType          = 100;
-  TransactionType TransactionType             = 110;
-  string TransactionID                        = 120;
-  sphinx.plugin.v1.UnsignedMessage Message    = 130;
+  sphinx.plugin.v1.CoinType CoinType = 100;
+  TransactionType TransactionType = 110;
+  string TransactionID = 120;
+  sphinx.plugin.v1.UnsignedMessage Message = 130;
 
   bytes Payload = 140;
 }
 
 message ProxySignResponse {
-  sphinx.plugin.v1.CoinType CoinType  = 100;
-  TransactionType TransactionType     = 110;
-  string TransactionID                = 120;
+  sphinx.plugin.v1.CoinType CoinType = 100;
+  TransactionType TransactionType = 110;
+  string TransactionID = 120;
   // fil
-  ProxySignResponseInfo Info          = 130;
+  ProxySignResponseInfo Info = 130;
   // btc
-  sphinx.plugin.v1.MsgTx  MsgTx       = 140;
+  sphinx.plugin.v1.MsgTx MsgTx = 140;
   // eth/usdt
-  string  SignedRawTxHex              = 150;
+  string SignedRawTxHex = 150;
 
-  string RPCExitMessage               = 1000;
+  string RPCExitMessage = 1000;
 
   bytes Payload = 1100;
 }
 
 message ProxySignResponseInfo {
-  string Address                              = 100;// create new account address
-  sphinx.plugin.v1.UnsignedMessage Message    = 110;
-  sphinx.plugin.v1.Signature       Signature  = 120;
+  string Address = 100; // create new account address
+  sphinx.plugin.v1.UnsignedMessage Message = 110;
+  sphinx.plugin.v1.Signature Signature = 120;
 }
 
 enum TransactionType {
-  Invalid         = 0;
-  WalletNew       = 1;
-  Balance         = 2;
-  RegisterCoin    = 3;
-  GasFee          = 4;
+  Invalid = 0;
+  WalletNew = 1;
+  Balance = 2;
+  RegisterCoin = 3;
+  GasFee = 4;
 }
 
 enum TransactionState {
-	TransactionStateUnKnow  			= 0;
-	TransactionStateWait  				= 1;
-	TransactionStateSign  				= 2;
-  TransactionStateBroadcast     = 20; // TODO: caution
-  TransactionStateSync  				= 3;
-	TransactionStateDone     			= 4;
-	TransactionStateFail     			= 5;
+  TransactionStateUnKnow = 0;
+  TransactionStateWait = 1;
+  TransactionStateSign = 2;
+  TransactionStateBroadcast = 20; // TODO: caution
+  TransactionStateSync = 3;
+  TransactionStateDone = 4;
+  TransactionStateFail = 5;
 }
