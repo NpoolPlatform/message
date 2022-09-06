@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/token/info": {
+    "/v1/create/tokeninfo": {
       "post": {
         "operationId": "BuildChain_CreateTokenInfo",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/token/infos": {
+    "/v1/get/tokeninfos": {
       "post": {
         "operationId": "BuildChain_GetTokenInfos",
         "responses": {
