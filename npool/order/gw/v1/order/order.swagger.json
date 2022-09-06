@@ -304,6 +304,38 @@
         ]
       }
     },
+    "/v1/update/app/user/order": {
+      "post": {
+        "operationId": "Gateway_UpdateAppUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/order": {
       "post": {
         "operationId": "Gateway_UpdateOrder",
@@ -328,6 +360,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/user/order": {
+      "post": {
+        "operationId": "Gateway_UpdateUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserOrderRequest"
             }
           }
         ],
@@ -873,6 +937,34 @@
       ],
       "default": "DefaultOrderType"
     },
+    "v1UpdateAppUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
+        }
+      }
+    },
     "v1UpdateOrderRequest": {
       "type": "object",
       "properties": {
@@ -894,6 +986,34 @@
       }
     },
     "v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
+        }
+      }
+    },
+    "v1UpdateUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateUserOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
