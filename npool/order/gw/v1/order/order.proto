@@ -26,6 +26,20 @@ service Gateway {
         };
     }
 
+    rpc UpdateUserOrder (UpdateUserOrderRequest) returns (UpdateUserOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/user/order"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppUserOrder (UpdateAppUserOrderRequest) returns (UpdateAppUserOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/order"
+            body: "*"
+        };
+    }
+
     rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
         option (google.api.http) = {
             post: "/v1/get/order"
@@ -174,6 +188,30 @@ message UpdateOrderRequest {
 }
 
 message UpdateOrderResponse {
+    Order Info = 10;
+}
+
+message UpdateUserOrderRequest {
+    string          AppID        = 10;
+    string          TargetUserID = 20;
+    string          ID           = 30;
+    string          PaymentID    = 40;
+    optional bool   Canceled     = 50;
+}
+
+message UpdateUserOrderResponse {
+    Order Info = 10;
+}
+
+message UpdateAppUserOrderRequest {
+    string          TargetAppID  = 10;
+    string          TargetUserID = 20;
+    string          ID           = 30;
+    string          PaymentID    = 40;
+    optional bool   Canceled     = 50;
+}
+
+message UpdateAppUserOrderResponse {
     Order Info = 10;
 }
 
