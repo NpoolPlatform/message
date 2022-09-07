@@ -332,8 +332,6 @@ message CreateTransferRequest {
     string TargetUserID     = 60;
     string Amount           = 70;
     string CoinTypeID       = 80;
-
-
 }
 
 message CreateTransferResponse {
@@ -341,10 +339,13 @@ message CreateTransferResponse {
 }
 
 message CreateAppUserDepositRequest {
-    string TargetAppID  = 10;
-    string TargetUserID = 20;
+    string AppID        = 10;
+    string UserID       = 20;
     string CoinTypeID   = 30;
     string Amount       = 40;
+    string TargetAppID  = 50;
+    string TargetUserID = 60;
+
 }
 
 message CreateAppUserDepositResponse {
