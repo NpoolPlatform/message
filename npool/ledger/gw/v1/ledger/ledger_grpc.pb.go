@@ -34,7 +34,7 @@ type GatewayClient interface {
 	GetAppWithdraws(ctx context.Context, in *GetAppWithdrawsRequest, opts ...grpc.CallOption) (*GetAppWithdrawsResponse, error)
 	GetNAppWithdraws(ctx context.Context, in *GetNAppWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppWithdrawsResponse, error)
 	CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
-	CreateAppUserEntry(ctx context.Context, in *CreateAppUserEntryRequest, opts ...grpc.CallOption) (*CreateAppUserEntryResponse, error)
+	CreateAppUserDeposit(ctx context.Context, in *CreateAppUserDepositRequest, opts ...grpc.CallOption) (*CreateAppUserDepositResponse, error)
 }
 
 type gatewayClient struct {
@@ -153,9 +153,9 @@ func (c *gatewayClient) CreateTransfer(ctx context.Context, in *CreateTransferRe
 	return out, nil
 }
 
-func (c *gatewayClient) CreateAppUserEntry(ctx context.Context, in *CreateAppUserEntryRequest, opts ...grpc.CallOption) (*CreateAppUserEntryResponse, error) {
-	out := new(CreateAppUserEntryResponse)
-	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/CreateAppUserEntry", in, out, opts...)
+func (c *gatewayClient) CreateAppUserDeposit(ctx context.Context, in *CreateAppUserDepositRequest, opts ...grpc.CallOption) (*CreateAppUserDepositResponse, error) {
+	out := new(CreateAppUserDepositResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/CreateAppUserDeposit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -178,7 +178,7 @@ type GatewayServer interface {
 	GetAppWithdraws(context.Context, *GetAppWithdrawsRequest) (*GetAppWithdrawsResponse, error)
 	GetNAppWithdraws(context.Context, *GetNAppWithdrawsRequest) (*GetNAppWithdrawsResponse, error)
 	CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
-	CreateAppUserEntry(context.Context, *CreateAppUserEntryRequest) (*CreateAppUserEntryResponse, error)
+	CreateAppUserDeposit(context.Context, *CreateAppUserDepositRequest) (*CreateAppUserDepositResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -222,8 +222,8 @@ func (UnimplementedGatewayServer) GetNAppWithdraws(context.Context, *GetNAppWith
 func (UnimplementedGatewayServer) CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransfer not implemented")
 }
-func (UnimplementedGatewayServer) CreateAppUserEntry(context.Context, *CreateAppUserEntryRequest) (*CreateAppUserEntryResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserEntry not implemented")
+func (UnimplementedGatewayServer) CreateAppUserDeposit(context.Context, *CreateAppUserDepositRequest) (*CreateAppUserDepositResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUserDeposit not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -454,20 +454,20 @@ func _Gateway_CreateTransfer_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CreateAppUserEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppUserEntryRequest)
+func _Gateway_CreateAppUserDeposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserDepositRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateAppUserEntry(ctx, in)
+		return srv.(GatewayServer).CreateAppUserDeposit(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/CreateAppUserEntry",
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/CreateAppUserDeposit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateAppUserEntry(ctx, req.(*CreateAppUserEntryRequest))
+		return srv.(GatewayServer).CreateAppUserDeposit(ctx, req.(*CreateAppUserDepositRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -528,8 +528,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateTransfer_Handler,
 		},
 		{
-			MethodName: "CreateAppUserEntry",
-			Handler:    _Gateway_CreateAppUserEntry_Handler,
+			MethodName: "CreateAppUserDeposit",
+			Handler:    _Gateway_CreateAppUserDeposit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

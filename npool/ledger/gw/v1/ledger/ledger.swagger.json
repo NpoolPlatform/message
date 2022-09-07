@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/user/entry": {
+    "/v1/create/app/user/deposit": {
       "post": {
-        "operationId": "Gateway_CreateAppUserEntry",
+        "operationId": "Gateway_CreateAppUserDeposit",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppUserEntryResponse"
+              "$ref": "#/definitions/v1CreateAppUserDepositResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppUserEntryRequest"
+              "$ref": "#/definitions/v1CreateAppUserDepositRequest"
             }
           }
         ],
@@ -643,7 +643,7 @@
         }
       }
     },
-    "v1CreateAppUserEntryRequest": {
+    "v1CreateAppUserDepositRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -660,7 +660,7 @@
         }
       }
     },
-    "v1CreateAppUserEntryResponse": {
+    "v1CreateAppUserDepositResponse": {
       "type": "object",
       "properties": {
         "Info": {
