@@ -96,6 +96,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc CreateAppUserDeposit (CreateAppUserDepositRequest) returns (CreateAppUserDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/deposit"
+            body: "*"
+        };
+    }
 }
 
 message General {
@@ -331,4 +338,15 @@ message CreateTransferRequest {
 
 message CreateTransferResponse {
     Transfer Info = 10;
+}
+
+message CreateAppUserDepositRequest {
+    string TargetAppID  = 10;
+    string TargetUserID = 20;
+    string CoinTypeID   = 30;
+    string Amount       = 40;
+}
+
+message CreateAppUserDepositResponse {
+    Detail Info = 10;
 }
