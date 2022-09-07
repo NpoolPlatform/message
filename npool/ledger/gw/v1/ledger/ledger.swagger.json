@@ -646,10 +646,10 @@
     "v1CreateAppUserDepositRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
-        "TargetUserID": {
+        "UserID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -658,10 +658,10 @@
         "Amount": {
           "type": "string"
         },
-        "DepositAppID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "DepositUserID": {
+        "TargetUserID": {
           "type": "string"
         }
       }
