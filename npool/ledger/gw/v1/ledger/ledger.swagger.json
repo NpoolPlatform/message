@@ -657,6 +657,12 @@
         },
         "Amount": {
           "type": "string"
+        },
+        "DepositAppID": {
+          "type": "string"
+        },
+        "DepositUserID": {
+          "type": "string"
         }
       }
     },
