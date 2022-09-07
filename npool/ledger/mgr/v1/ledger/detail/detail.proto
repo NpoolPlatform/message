@@ -42,7 +42,8 @@ enum IOSubType {
     // I: record from user in extra
     // O: record target user in extra
     Transfer                  = 105;
-
+    // I: record admin user deposit user in extra
+    AdminDeposit              = 106;
     // O
     Withdrawal                = 200;
 }

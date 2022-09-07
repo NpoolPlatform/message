@@ -1085,10 +1085,11 @@
         "TechniqueFeeCommission",
         "Deposit",
         "Transfer",
+        "AdminDeposit",
         "Withdrawal"
       ],
       "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O"
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - AdminDeposit: I: record admin user deposit user in extra\n - Withdrawal: O"
     },
     "v1IOType": {
       "type": "string",
