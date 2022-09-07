@@ -215,7 +215,7 @@
         "Amount": {
           "type": "string"
         },
-        "Contract": {
+        "OfficialContract": {
           "type": "string"
         }
       }
