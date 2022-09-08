@@ -65,8 +65,16 @@ service Gateway {
 }
 
 message CreateAppRequest {
-    // Permissioned by path
-    appuser.middleware.app.v1.AppReq Info = 10;
+    string CreatedBy   = 10;
+    string Name        = 20;
+    string Logo        = 30;
+    string Description = 40;
+    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 50;
+    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 60;
+    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 70;
+    bool KycEnable          = 80;
+    bool SigninVerifyEnable = 90;
+    bool InvitationCodeMust = 100;
 }
 
 message CreateAppResponse {
@@ -74,8 +82,16 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-    // Permissioned by path
-    appuser.middleware.app.v1.AppReq Info = 10;
+    string          ID          = 10;
+    optional string Name        = 20;
+    optional string Logo        = 30;
+    optional string Description = 40;
+    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 50;
+    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 60;
+    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 70;
+    optional bool KycEnable          = 80;
+    optional bool SigninVerifyEnable = 90;
+    optional bool InvitationCodeMust = 100;
 }
 
 message UpdateAppResponse {
