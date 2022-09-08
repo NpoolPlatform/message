@@ -397,6 +397,9 @@
     "appusergatewayappv1UpdateAppRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         },
