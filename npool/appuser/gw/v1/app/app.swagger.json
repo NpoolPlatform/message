@@ -259,10 +259,16 @@
           "type": "string"
         },
         "SignupMethods": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
         },
         "ExtSigninMethods": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v2RecaptchaType"
@@ -410,10 +416,16 @@
           "type": "string"
         },
         "SignupMethods": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
         },
         "ExtSigninMethods": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2SignMethodType"
+          }
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v2RecaptchaType"
