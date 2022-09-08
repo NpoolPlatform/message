@@ -246,9 +246,35 @@
     "appusergatewayappv1CreateAppRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1AppReq",
-          "title": "Permissioned by path"
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "SignupMethods": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "ExtSigninMethods": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v2RecaptchaType"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
         }
       }
     },
@@ -371,9 +397,32 @@
     "appusergatewayappv1UpdateAppRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1AppReq",
-          "title": "Permissioned by path"
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "SignupMethods": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "ExtSigninMethods": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v2RecaptchaType"
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
         }
       }
     },
@@ -474,60 +523,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
-        }
-      }
-    },
-    "appv1AppReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Base info"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Banned": {
-          "type": "boolean",
-          "title": "Banned"
-        },
-        "BanMessage": {
-          "type": "string"
-        },
-        "SignupMethods": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethodType"
-          },
-          "title": "Sign methods"
-        },
-        "ExtSigninMethods": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethodType"
-          }
-        },
-        "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType",
-          "title": "Control flag"
-        },
-        "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMust": {
-          "type": "boolean"
         }
       }
     },
