@@ -82,15 +82,16 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-    string Name        = 10;
-    string Logo        = 20;
-    string Description = 30;
-    appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 40;
-    appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 50;
-    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 60;
-    bool KycEnable          = 70;
-    bool SigninVerifyEnable = 80;
-    bool InvitationCodeMust = 90;
+    string ID          = 10;
+    string Name        = 20;
+    string Logo        = 30;
+    string Description = 40;
+    appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 50;
+    appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 60;
+    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 70;
+    bool KycEnable          = 80;
+    bool SigninVerifyEnable = 90;
+    bool InvitationCodeMust = 100;
 }
 
 message UpdateAppResponse {
