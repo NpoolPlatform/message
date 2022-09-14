@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/mgr/v1/template/email/sms.proto
+// source: npool/third/mgr/v1/template/email/email.proto
 
 package email
 
@@ -389,5 +389,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/mgr/v1/template/email/sms.proto",
+	Metadata: "npool/third/mgr/v1/template/email/email.proto",
 }
