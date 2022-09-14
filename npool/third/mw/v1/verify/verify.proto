@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package third.middleware.verify.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/verify";
+
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+
+service Middleware {
+    rpc VerifyCode (VerifyCodeRequest) returns (VerifyCodeResponse) {}
+}
+
+message VerifyCodeRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    appuser.manager.signmethod.v2.SignMethodType SignMethodType = 30;
+    string Account       = 40;
+    string UsedFor       = 60;
+    optional string Code = 50;
+}
+
+message VerifyCodeResponse {
+}
