@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/thirdgatewaycontactv1CreateContactResponse"
+              "$ref": "#/definitions/v1ContactViaEmailResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/thirdgatewaycontactv1CreateContactRequest"
+              "$ref": "#/definitions/v1ContactViaEmailRequest"
             }
           }
         ],
@@ -391,6 +391,35 @@
           "type": "string"
         }
       }
+    },
+    "v1ContactViaEmailRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "type": "string"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "SenderName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ContactViaEmailResponse": {
+      "type": "object"
     },
     "v1CreateAppContactRequest": {
       "type": "object",
