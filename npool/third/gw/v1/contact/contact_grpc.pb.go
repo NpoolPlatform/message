@@ -28,7 +28,7 @@ type GatewayClient interface {
 	GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
 	GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
 	UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error)
-	ContactViaEmail(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error)
+	ContactViaEmail(ctx context.Context, in *ContactViaEmailRequest, opts ...grpc.CallOption) (*ContactViaEmailResponse, error)
 }
 
 type gatewayClient struct {
@@ -93,8 +93,8 @@ func (c *gatewayClient) UpdateContact(ctx context.Context, in *UpdateContactRequ
 	return out, nil
 }
 
-func (c *gatewayClient) ContactViaEmail(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error) {
-	out := new(CreateContactResponse)
+func (c *gatewayClient) ContactViaEmail(ctx context.Context, in *ContactViaEmailRequest, opts ...grpc.CallOption) (*ContactViaEmailResponse, error) {
+	out := new(ContactViaEmailResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/ContactViaEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -112,7 +112,7 @@ type GatewayServer interface {
 	GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error)
 	GetAppContacts(context.Context, *GetAppContactsRequest) (*GetContactsResponse, error)
 	UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error)
-	ContactViaEmail(context.Context, *CreateContactRequest) (*CreateContactResponse, error)
+	ContactViaEmail(context.Context, *ContactViaEmailRequest) (*ContactViaEmailResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -138,7 +138,7 @@ func (UnimplementedGatewayServer) GetAppContacts(context.Context, *GetAppContact
 func (UnimplementedGatewayServer) UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
 }
-func (UnimplementedGatewayServer) ContactViaEmail(context.Context, *CreateContactRequest) (*CreateContactResponse, error) {
+func (UnimplementedGatewayServer) ContactViaEmail(context.Context, *ContactViaEmailRequest) (*ContactViaEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContactViaEmail not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
@@ -263,7 +263,7 @@ func _Gateway_UpdateContact_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 func _Gateway_ContactViaEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateContactRequest)
+	in := new(ContactViaEmailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -275,7 +275,7 @@ func _Gateway_ContactViaEmail_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/third.gateway.contact.v1.Gateway/ContactViaEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).ContactViaEmail(ctx, req.(*CreateContactRequest))
+		return srv.(GatewayServer).ContactViaEmail(ctx, req.(*ContactViaEmailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
