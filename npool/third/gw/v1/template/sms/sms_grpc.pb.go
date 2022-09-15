@@ -25,9 +25,8 @@ type GatewayClient interface {
 	CreateSMSTemplate(ctx context.Context, in *CreateSMSTemplateRequest, opts ...grpc.CallOption) (*CreateSMSTemplateResponse, error)
 	CreateAppSMSTemplate(ctx context.Context, in *CreateAppSMSTemplateRequest, opts ...grpc.CallOption) (*CreateAppSMSTemplateResponse, error)
 	GetSMSTemplate(ctx context.Context, in *GetSMSTemplateRequest, opts ...grpc.CallOption) (*GetSMSTemplateResponse, error)
-	GetAppSMSTemplate(ctx context.Context, in *GetAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateResponse, error)
-	GetNAppSMSTemplate(ctx context.Context, in *GetNAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetNAppSMSTemplateResponse, error)
 	GetSMSTemplates(ctx context.Context, in *GetSMSTemplatesRequest, opts ...grpc.CallOption) (*GetSMSTemplatesResponse, error)
+	GetAppSMSTemplates(ctx context.Context, in *GetAppSMSTemplatesRequest, opts ...grpc.CallOption) (*GetAppSMSTemplatesResponse, error)
 	UpdateSMSTemplate(ctx context.Context, in *UpdateSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateSMSTemplateResponse, error)
 }
 
@@ -66,27 +65,18 @@ func (c *gatewayClient) GetSMSTemplate(ctx context.Context, in *GetSMSTemplateRe
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppSMSTemplate(ctx context.Context, in *GetAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetAppSMSTemplateResponse, error) {
-	out := new(GetAppSMSTemplateResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNAppSMSTemplate(ctx context.Context, in *GetNAppSMSTemplateRequest, opts ...grpc.CallOption) (*GetNAppSMSTemplateResponse, error) {
-	out := new(GetNAppSMSTemplateResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.template.sms.v1.Gateway/GetNAppSMSTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetSMSTemplates(ctx context.Context, in *GetSMSTemplatesRequest, opts ...grpc.CallOption) (*GetSMSTemplatesResponse, error) {
 	out := new(GetSMSTemplatesResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.template.sms.v1.Gateway/GetSMSTemplates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppSMSTemplates(ctx context.Context, in *GetAppSMSTemplatesRequest, opts ...grpc.CallOption) (*GetAppSMSTemplatesResponse, error) {
+	out := new(GetAppSMSTemplatesResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,9 +99,8 @@ type GatewayServer interface {
 	CreateSMSTemplate(context.Context, *CreateSMSTemplateRequest) (*CreateSMSTemplateResponse, error)
 	CreateAppSMSTemplate(context.Context, *CreateAppSMSTemplateRequest) (*CreateAppSMSTemplateResponse, error)
 	GetSMSTemplate(context.Context, *GetSMSTemplateRequest) (*GetSMSTemplateResponse, error)
-	GetAppSMSTemplate(context.Context, *GetAppSMSTemplateRequest) (*GetAppSMSTemplateResponse, error)
-	GetNAppSMSTemplate(context.Context, *GetNAppSMSTemplateRequest) (*GetNAppSMSTemplateResponse, error)
 	GetSMSTemplates(context.Context, *GetSMSTemplatesRequest) (*GetSMSTemplatesResponse, error)
+	GetAppSMSTemplates(context.Context, *GetAppSMSTemplatesRequest) (*GetAppSMSTemplatesResponse, error)
 	UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -129,14 +118,11 @@ func (UnimplementedGatewayServer) CreateAppSMSTemplate(context.Context, *CreateA
 func (UnimplementedGatewayServer) GetSMSTemplate(context.Context, *GetSMSTemplateRequest) (*GetSMSTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSMSTemplate not implemented")
 }
-func (UnimplementedGatewayServer) GetAppSMSTemplate(context.Context, *GetAppSMSTemplateRequest) (*GetAppSMSTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppSMSTemplate not implemented")
-}
-func (UnimplementedGatewayServer) GetNAppSMSTemplate(context.Context, *GetNAppSMSTemplateRequest) (*GetNAppSMSTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppSMSTemplate not implemented")
-}
 func (UnimplementedGatewayServer) GetSMSTemplates(context.Context, *GetSMSTemplatesRequest) (*GetSMSTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSMSTemplates not implemented")
+}
+func (UnimplementedGatewayServer) GetAppSMSTemplates(context.Context, *GetAppSMSTemplatesRequest) (*GetAppSMSTemplatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppSMSTemplates not implemented")
 }
 func (UnimplementedGatewayServer) UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSMSTemplate not implemented")
@@ -208,42 +194,6 @@ func _Gateway_GetSMSTemplate_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppSMSTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppSMSTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppSMSTemplate(ctx, req.(*GetAppSMSTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppSMSTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppSMSTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.template.sms.v1.Gateway/GetNAppSMSTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppSMSTemplate(ctx, req.(*GetNAppSMSTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetSMSTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSMSTemplatesRequest)
 	if err := dec(in); err != nil {
@@ -258,6 +208,24 @@ func _Gateway_GetSMSTemplates_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetSMSTemplates(ctx, req.(*GetSMSTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppSMSTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppSMSTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppSMSTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppSMSTemplates(ctx, req.(*GetAppSMSTemplatesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,16 +268,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetSMSTemplate_Handler,
 		},
 		{
-			MethodName: "GetAppSMSTemplate",
-			Handler:    _Gateway_GetAppSMSTemplate_Handler,
-		},
-		{
-			MethodName: "GetNAppSMSTemplate",
-			Handler:    _Gateway_GetNAppSMSTemplate_Handler,
-		},
-		{
 			MethodName: "GetSMSTemplates",
 			Handler:    _Gateway_GetSMSTemplates_Handler,
+		},
+		{
+			MethodName: "GetAppSMSTemplates",
+			Handler:    _Gateway_GetAppSMSTemplates_Handler,
 		},
 		{
 			MethodName: "UpdateSMSTemplate",

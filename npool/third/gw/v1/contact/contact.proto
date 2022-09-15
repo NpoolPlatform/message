@@ -30,23 +30,16 @@ service Gateway {
         };
     }
 
-    rpc GetAppContact (GetAppContactRequest) returns (GetContactResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/contact"
-            body: "*"
-        };
-    }
-
-    rpc GetNAppContact (GetNAppContactRequest) returns (GetNAppContactResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/napp/contact"
-            body: "*"
-        };
-    }
-
     rpc GetContacts (GetContactsRequest) returns (GetContactsResponse) {
         option (google.api.http) = {
             post: "/v1/get/contacts"
+            body: "*"
+        };
+    }
+
+    rpc GetAppContacts (GetAppContactsRequest) returns (GetContactsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contacts"
             body: "*"
         };
     }
@@ -98,28 +91,29 @@ message GetContactResponse {
     third.manager.contact.v1.Contact Info = 10;
 }
 
-message GetAppContactRequest {
-    string AppID = 10;
-}
-
-message GetAppContactResponse {
-    third.manager.contact.v1.Contact Info = 10;
-}
-
-message GetNAppContactRequest {
-    string TargetAppID = 10;
-}
-
-message GetNAppContactResponse {
-    third.manager.contact.v1.Contact Info = 10;
-}
 
 message GetContactsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetContactsResponse {
     repeated third.manager.contact.v1.Contact Infos = 10;
+    uint32 Total = 20;
 }
+
+message GetAppContactsRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetAppContactsResponse {
+    third.manager.contact.v1.Contact Infos = 10;
+    uint32       Total = 20;
+}
+
 
 message UpdateContactRequest {
     string ID          = 10;

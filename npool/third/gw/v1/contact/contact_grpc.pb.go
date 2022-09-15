@@ -25,9 +25,8 @@ type GatewayClient interface {
 	CreateContact(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error)
 	CreateAppContact(ctx context.Context, in *CreateAppContactRequest, opts ...grpc.CallOption) (*CreateAppContactResponse, error)
 	GetContact(ctx context.Context, in *GetContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error)
-	GetAppContact(ctx context.Context, in *GetAppContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error)
-	GetNAppContact(ctx context.Context, in *GetNAppContactRequest, opts ...grpc.CallOption) (*GetNAppContactResponse, error)
 	GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
+	GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
 	UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error)
 	ContactViaEmail(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error)
 }
@@ -67,27 +66,18 @@ func (c *gatewayClient) GetContact(ctx context.Context, in *GetContactRequest, o
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppContact(ctx context.Context, in *GetAppContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error) {
-	out := new(GetContactResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/GetAppContact", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNAppContact(ctx context.Context, in *GetNAppContactRequest, opts ...grpc.CallOption) (*GetNAppContactResponse, error) {
-	out := new(GetNAppContactResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/GetNAppContact", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error) {
 	out := new(GetContactsResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/GetContacts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error) {
+	out := new(GetContactsResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/GetAppContacts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,9 +109,8 @@ type GatewayServer interface {
 	CreateContact(context.Context, *CreateContactRequest) (*CreateContactResponse, error)
 	CreateAppContact(context.Context, *CreateAppContactRequest) (*CreateAppContactResponse, error)
 	GetContact(context.Context, *GetContactRequest) (*GetContactResponse, error)
-	GetAppContact(context.Context, *GetAppContactRequest) (*GetContactResponse, error)
-	GetNAppContact(context.Context, *GetNAppContactRequest) (*GetNAppContactResponse, error)
 	GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error)
+	GetAppContacts(context.Context, *GetAppContactsRequest) (*GetContactsResponse, error)
 	UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error)
 	ContactViaEmail(context.Context, *CreateContactRequest) (*CreateContactResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -140,14 +129,11 @@ func (UnimplementedGatewayServer) CreateAppContact(context.Context, *CreateAppCo
 func (UnimplementedGatewayServer) GetContact(context.Context, *GetContactRequest) (*GetContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetContact not implemented")
 }
-func (UnimplementedGatewayServer) GetAppContact(context.Context, *GetAppContactRequest) (*GetContactResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppContact not implemented")
-}
-func (UnimplementedGatewayServer) GetNAppContact(context.Context, *GetNAppContactRequest) (*GetNAppContactResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppContact not implemented")
-}
 func (UnimplementedGatewayServer) GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetContacts not implemented")
+}
+func (UnimplementedGatewayServer) GetAppContacts(context.Context, *GetAppContactsRequest) (*GetContactsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppContacts not implemented")
 }
 func (UnimplementedGatewayServer) UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
@@ -222,42 +208,6 @@ func _Gateway_GetContact_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppContactRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppContact(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.contact.v1.Gateway/GetAppContact",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppContact(ctx, req.(*GetAppContactRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNAppContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppContactRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppContact(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.contact.v1.Gateway/GetNAppContact",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppContact(ctx, req.(*GetNAppContactRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetContactsRequest)
 	if err := dec(in); err != nil {
@@ -272,6 +222,24 @@ func _Gateway_GetContacts_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetContacts(ctx, req.(*GetContactsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppContactsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppContacts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.contact.v1.Gateway/GetAppContacts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppContacts(ctx, req.(*GetAppContactsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -332,16 +300,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetContact_Handler,
 		},
 		{
-			MethodName: "GetAppContact",
-			Handler:    _Gateway_GetAppContact_Handler,
-		},
-		{
-			MethodName: "GetNAppContact",
-			Handler:    _Gateway_GetNAppContact_Handler,
-		},
-		{
 			MethodName: "GetContacts",
 			Handler:    _Gateway_GetContacts_Handler,
+		},
+		{
+			MethodName: "GetAppContacts",
+			Handler:    _Gateway_GetAppContacts_Handler,
 		},
 		{
 			MethodName: "UpdateContact",

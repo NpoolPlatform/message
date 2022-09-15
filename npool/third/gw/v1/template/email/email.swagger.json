@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/app/emailtemplate": {
+    "/v1/get/app/emailtemplates": {
       "post": {
-        "operationId": "Gateway_GetAppEmailTemplate",
+        "operationId": "Gateway_GetAppEmailTemplates",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateResponse"
+              "$ref": "#/definitions/v1GetAppEmailTemplatesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppEmailTemplateRequest"
+              "$ref": "#/definitions/v1GetAppEmailTemplatesRequest"
             }
           }
         ],
@@ -168,38 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/thirdgatewaytemplateemailv1GetEmailTemplatesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/napp/emailtemplate": {
-      "post": {
-        "operationId": "Gateway_GetNAppEmailTemplate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppEmailTemplateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppEmailTemplateRequest"
             }
           }
         ],
@@ -314,16 +282,33 @@
       }
     },
     "thirdgatewaytemplateemailv1GetEmailTemplatesRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "thirdgatewaytemplateemailv1GetEmailTemplatesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1EmailTemplate"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -412,35 +397,34 @@
         }
       }
     },
-    "v1GetAppEmailTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppEmailTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EmailTemplate"
-        }
-      }
-    },
-    "v1GetNAppEmailTemplateRequest": {
+    "v1GetAppEmailTemplatesRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
-    "v1GetNAppEmailTemplateResponse": {
+    "v1GetAppEmailTemplatesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EmailTemplate"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

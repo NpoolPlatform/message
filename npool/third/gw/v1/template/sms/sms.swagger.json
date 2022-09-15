@@ -82,12 +82,12 @@
     },
     "/v1/get/app/smstemplate": {
       "post": {
-        "operationId": "Gateway_GetAppSMSTemplate",
+        "operationId": "Gateway_GetAppSMSTemplates",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateResponse"
+              "$ref": "#/definitions/v1GetAppSMSTemplatesResponse"
             }
           },
           "default": {
@@ -103,39 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppSMSTemplateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/napp/smstemplate": {
-      "post": {
-        "operationId": "Gateway_GetNAppSMSTemplate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppSMSTemplateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppSMSTemplateRequest"
+              "$ref": "#/definitions/v1GetAppSMSTemplatesRequest"
             }
           }
         ],
@@ -314,16 +282,33 @@
       }
     },
     "thirdgatewaytemplatesmsv1GetSMSTemplatesRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "thirdgatewaytemplatesmsv1GetSMSTemplatesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1SMSTemplate"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -371,35 +356,34 @@
         }
       }
     },
-    "v1GetAppSMSTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
-        }
-      }
-    },
-    "v1GetNAppSMSTemplateRequest": {
+    "v1GetAppSMSTemplatesRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
-    "v1GetNAppSMSTemplateResponse": {
+    "v1GetAppSMSTemplatesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1SMSTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

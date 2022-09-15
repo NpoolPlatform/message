@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/app/contact": {
+    "/v1/get/app/contacts": {
       "post": {
-        "operationId": "Gateway_GetAppContact",
+        "operationId": "Gateway_GetAppContacts",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/thirdgatewaycontactv1GetContactResponse"
+              "$ref": "#/definitions/thirdgatewaycontactv1GetContactsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppContactRequest"
+              "$ref": "#/definitions/v1GetAppContactsRequest"
             }
           }
         ],
@@ -200,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/thirdgatewaycontactv1GetContactsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/napp/contact": {
-      "post": {
-        "operationId": "Gateway_GetNAppContact",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppContactResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppContactRequest"
             }
           }
         ],
@@ -346,7 +314,20 @@
       }
     },
     "thirdgatewaycontactv1GetContactsRequest": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "thirdgatewaycontactv1GetContactsResponse": {
       "type": "object",
@@ -356,6 +337,10 @@
           "items": {
             "$ref": "#/definitions/v1Contact"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -435,27 +420,19 @@
         }
       }
     },
-    "v1GetAppContactRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetNAppContactRequest": {
+    "v1GetAppContactsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
           "type": "string"
-        }
-      }
-    },
-    "v1GetNAppContactResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Contact"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     }

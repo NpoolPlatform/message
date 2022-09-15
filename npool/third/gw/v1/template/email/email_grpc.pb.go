@@ -25,9 +25,8 @@ type GatewayClient interface {
 	CreateEmailTemplate(ctx context.Context, in *CreateEmailTemplateRequest, opts ...grpc.CallOption) (*CreateEmailTemplateResponse, error)
 	CreateAppEmailTemplate(ctx context.Context, in *CreateAppEmailTemplateRequest, opts ...grpc.CallOption) (*CreateAppEmailTemplateResponse, error)
 	GetEmailTemplate(ctx context.Context, in *GetEmailTemplateRequest, opts ...grpc.CallOption) (*GetEmailTemplateResponse, error)
-	GetAppEmailTemplate(ctx context.Context, in *GetAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateResponse, error)
-	GetNAppEmailTemplate(ctx context.Context, in *GetNAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetNAppEmailTemplateResponse, error)
 	GetEmailTemplates(ctx context.Context, in *GetEmailTemplatesRequest, opts ...grpc.CallOption) (*GetEmailTemplatesResponse, error)
+	GetAppEmailTemplates(ctx context.Context, in *GetAppEmailTemplatesRequest, opts ...grpc.CallOption) (*GetAppEmailTemplatesResponse, error)
 	UpdateEmailTemplate(ctx context.Context, in *UpdateEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateEmailTemplateResponse, error)
 }
 
@@ -66,27 +65,18 @@ func (c *gatewayClient) GetEmailTemplate(ctx context.Context, in *GetEmailTempla
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppEmailTemplate(ctx context.Context, in *GetAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetAppEmailTemplateResponse, error) {
-	out := new(GetAppEmailTemplateResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.template.email.v1.Gateway/GetAppEmailTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNAppEmailTemplate(ctx context.Context, in *GetNAppEmailTemplateRequest, opts ...grpc.CallOption) (*GetNAppEmailTemplateResponse, error) {
-	out := new(GetNAppEmailTemplateResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.template.email.v1.Gateway/GetNAppEmailTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetEmailTemplates(ctx context.Context, in *GetEmailTemplatesRequest, opts ...grpc.CallOption) (*GetEmailTemplatesResponse, error) {
 	out := new(GetEmailTemplatesResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.template.email.v1.Gateway/GetEmailTemplates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppEmailTemplates(ctx context.Context, in *GetAppEmailTemplatesRequest, opts ...grpc.CallOption) (*GetAppEmailTemplatesResponse, error) {
+	out := new(GetAppEmailTemplatesResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.template.email.v1.Gateway/GetAppEmailTemplates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,9 +99,8 @@ type GatewayServer interface {
 	CreateEmailTemplate(context.Context, *CreateEmailTemplateRequest) (*CreateEmailTemplateResponse, error)
 	CreateAppEmailTemplate(context.Context, *CreateAppEmailTemplateRequest) (*CreateAppEmailTemplateResponse, error)
 	GetEmailTemplate(context.Context, *GetEmailTemplateRequest) (*GetEmailTemplateResponse, error)
-	GetAppEmailTemplate(context.Context, *GetAppEmailTemplateRequest) (*GetAppEmailTemplateResponse, error)
-	GetNAppEmailTemplate(context.Context, *GetNAppEmailTemplateRequest) (*GetNAppEmailTemplateResponse, error)
 	GetEmailTemplates(context.Context, *GetEmailTemplatesRequest) (*GetEmailTemplatesResponse, error)
+	GetAppEmailTemplates(context.Context, *GetAppEmailTemplatesRequest) (*GetAppEmailTemplatesResponse, error)
 	UpdateEmailTemplate(context.Context, *UpdateEmailTemplateRequest) (*UpdateEmailTemplateResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -129,14 +118,11 @@ func (UnimplementedGatewayServer) CreateAppEmailTemplate(context.Context, *Creat
 func (UnimplementedGatewayServer) GetEmailTemplate(context.Context, *GetEmailTemplateRequest) (*GetEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmailTemplate not implemented")
 }
-func (UnimplementedGatewayServer) GetAppEmailTemplate(context.Context, *GetAppEmailTemplateRequest) (*GetAppEmailTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppEmailTemplate not implemented")
-}
-func (UnimplementedGatewayServer) GetNAppEmailTemplate(context.Context, *GetNAppEmailTemplateRequest) (*GetNAppEmailTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppEmailTemplate not implemented")
-}
 func (UnimplementedGatewayServer) GetEmailTemplates(context.Context, *GetEmailTemplatesRequest) (*GetEmailTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmailTemplates not implemented")
+}
+func (UnimplementedGatewayServer) GetAppEmailTemplates(context.Context, *GetAppEmailTemplatesRequest) (*GetAppEmailTemplatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppEmailTemplates not implemented")
 }
 func (UnimplementedGatewayServer) UpdateEmailTemplate(context.Context, *UpdateEmailTemplateRequest) (*UpdateEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateEmailTemplate not implemented")
@@ -208,42 +194,6 @@ func _Gateway_GetEmailTemplate_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppEmailTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppEmailTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.template.email.v1.Gateway/GetAppEmailTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppEmailTemplate(ctx, req.(*GetAppEmailTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppEmailTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppEmailTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/third.gateway.template.email.v1.Gateway/GetNAppEmailTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppEmailTemplate(ctx, req.(*GetNAppEmailTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetEmailTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetEmailTemplatesRequest)
 	if err := dec(in); err != nil {
@@ -258,6 +208,24 @@ func _Gateway_GetEmailTemplates_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetEmailTemplates(ctx, req.(*GetEmailTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppEmailTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppEmailTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppEmailTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.template.email.v1.Gateway/GetAppEmailTemplates",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppEmailTemplates(ctx, req.(*GetAppEmailTemplatesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,16 +268,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetEmailTemplate_Handler,
 		},
 		{
-			MethodName: "GetAppEmailTemplate",
-			Handler:    _Gateway_GetAppEmailTemplate_Handler,
-		},
-		{
-			MethodName: "GetNAppEmailTemplate",
-			Handler:    _Gateway_GetNAppEmailTemplate_Handler,
-		},
-		{
 			MethodName: "GetEmailTemplates",
 			Handler:    _Gateway_GetEmailTemplates_Handler,
+		},
+		{
+			MethodName: "GetAppEmailTemplates",
+			Handler:    _Gateway_GetAppEmailTemplates_Handler,
 		},
 		{
 			MethodName: "UpdateEmailTemplate",

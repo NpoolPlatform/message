@@ -30,23 +30,16 @@ service Gateway {
         };
     }
 
-    rpc GetAppEmailTemplate (GetAppEmailTemplateRequest) returns (GetAppEmailTemplateResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/emailtemplate"
-            body: "*"
-        };
-    }
-
-    rpc GetNAppEmailTemplate (GetNAppEmailTemplateRequest) returns (GetNAppEmailTemplateResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/napp/emailtemplate"
-            body: "*"
-        };
-    }
-
     rpc GetEmailTemplates (GetEmailTemplatesRequest) returns (GetEmailTemplatesResponse) {
         option (google.api.http) = {
             post: "/v1/get/emailtemplates"
+            body: "*"
+        };
+    }
+
+    rpc GetAppEmailTemplates (GetAppEmailTemplatesRequest) returns (GetAppEmailTemplatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/emailtemplates"
             body: "*"
         };
     }
@@ -91,28 +84,28 @@ message GetEmailTemplateResponse {
     third.manager.template.email.v1.EmailTemplate Info = 10;
 }
 
-message GetAppEmailTemplateRequest {
-    string AppID = 10;
-}
-
-message GetAppEmailTemplateResponse {
-    third.manager.template.email.v1.EmailTemplate Info = 10;
-}
-
-message GetNAppEmailTemplateRequest {
-    string TargetAppID = 10;
-}
-
-message GetNAppEmailTemplateResponse {
-    third.manager.template.email.v1.EmailTemplate Info = 10;
-}
-
 message GetEmailTemplatesRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetEmailTemplatesResponse {
-    repeated third.manager.template.email.v1.EmailTemplate Info = 10;
+    repeated third.manager.template.email.v1.EmailTemplate Infos = 10;
+    uint32 Total = 20;
 }
+
+message GetAppEmailTemplatesRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppEmailTemplatesResponse {
+    repeated third.manager.template.email.v1.EmailTemplate Infos = 10;
+    uint32 Total = 20;
+}
+
 
 message UpdateEmailTemplateRequest {
     string ID = 10;
