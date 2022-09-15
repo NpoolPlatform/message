@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package third.gateway.template.sms.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template/sms";
+
+import "google/api/annotations.proto";
+import "npool/third/mgr/v1/template/sms/sms.proto";
+import "npool/third/mgr/v1/template/email/email.proto";
+
+
+service Gateway {
+    rpc CreateSMSTemplate (CreateSMSTemplateRequest) returns (CreateSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppSMSTemplate (CreateAppSMSTemplateRequest) returns (CreateAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetSMSTemplate (GetSMSTemplateRequest) returns (GetSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetAppSMSTemplate (GetAppSMSTemplateRequest) returns (GetAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppSMSTemplate (GetNAppSMSTemplateRequest) returns (GetNAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/napp/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetSMSTemplates (GetSMSTemplatesRequest) returns (GetSMSTemplatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/smstemplates"
+            body: "*"
+        };
+    }
+
+    rpc UpdateSMSTemplate (UpdateSMSTemplateRequest) returns (UpdateSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/smstemplate"
+            body: "*"
+        };
+    }
+}
+
+message CreateSMSTemplateRequest {
+    string AppID   = 10;
+    string LangID  = 20;
+    string UsedFor = 30;
+    string Subject = 40;
+    string Message = 50;
+}
+
+message CreateSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message CreateAppSMSTemplateRequest {
+    string TargetAppID = 10;
+    string UsedFor     = 20;
+    string Account     = 30;
+    string AccountType = 40;
+    string Sender      = 50;
+}
+
+message CreateAppSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message GetSMSTemplateRequest {
+    string ID = 10;
+}
+
+message GetSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message GetAppSMSTemplateRequest {
+    string AppID = 10;
+}
+
+message GetAppSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message GetNAppSMSTemplateRequest {
+    string TargetAppID = 10;
+}
+
+message GetNAppSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message GetSMSTemplatesRequest {
+}
+
+message GetSMSTemplatesResponse {
+    repeated third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message UpdateSMSTemplateRequest {
+    string ID = 10;
+}
+
+message UpdateSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}

@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package third.gateway.template.email.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template/email";
+
+import "google/api/annotations.proto";
+import "npool/third/mgr/v1/template/email/email.proto";
+
+
+service Gateway {
+    rpc CreateEmailTemplate (CreateEmailTemplateRequest) returns (CreateEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/emailtemplate"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppEmailTemplate (CreateAppEmailTemplateRequest) returns (CreateAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/emailtemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetEmailTemplate (GetEmailTemplateRequest) returns (GetEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/emailtemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetAppEmailTemplate (GetAppEmailTemplateRequest) returns (GetAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/emailtemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppEmailTemplate (GetNAppEmailTemplateRequest) returns (GetNAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/napp/emailtemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetEmailTemplates (GetEmailTemplatesRequest) returns (GetEmailTemplatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/emailtemplates"
+            body: "*"
+        };
+    }
+
+    rpc UpdateEmailTemplate (UpdateEmailTemplateRequest) returns (UpdateEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/emailtemplate"
+            body: "*"
+        };
+    }
+}
+
+message CreateEmailTemplateRequest {
+    string AppID   = 10;
+    string LangID  = 20;
+    string UsedFor = 30;
+    string Subject = 40;
+    string Message = 50;
+}
+
+message CreateEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message CreateAppEmailTemplateRequest {
+    string TargetAppID = 10;
+    string UsedFor     = 20;
+    string Account     = 30;
+    string AccountType = 40;
+    string Sender      = 50;
+}
+
+message CreateAppEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message GetEmailTemplateRequest {
+    string ID = 10;
+}
+
+message GetEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message GetAppEmailTemplateRequest {
+    string AppID = 10;
+}
+
+message GetAppEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message GetNAppEmailTemplateRequest {
+    string TargetAppID = 10;
+}
+
+message GetNAppEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message GetEmailTemplatesRequest {
+}
+
+message GetEmailTemplatesResponse {
+    repeated third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message UpdateEmailTemplateRequest {
+    string ID = 10;
+}
+
+message UpdateEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
