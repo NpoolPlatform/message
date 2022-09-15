@@ -19,16 +19,16 @@ service Manager {
 }
 
 message EmailTemplateReq {
-    string ID                = 10;
-    string AppID             = 20;
-    string LangID            = 30;
-    string UsedFor           = 40;
-    string Sender            = 50;
-    repeated string ReplyTos = 60;
-    repeated string CCTos    = 70;
-    string Subject           = 80;
-    string Body              = 90;
-    string DefaultToUsername = 100;
+    optional string ID                = 10;
+    optional string AppID             = 20;
+    optional string LangID            = 30;
+    optional string UsedFor           = 40;
+    optional string Sender            = 50;
+    repeated string ReplyTos          = 60;
+    repeated string CCTos             = 70;
+    optional string Subject           = 80;
+    optional string Body              = 90;
+    optional string DefaultToUsername = 100;
 }
 
 message EmailTemplate {
