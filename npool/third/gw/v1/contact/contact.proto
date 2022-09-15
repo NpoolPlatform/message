@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/contact"
 
 import "google/api/annotations.proto";
 import "npool/third/mgr/v1/contact/contact.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 
 service Gateway {
@@ -61,7 +62,7 @@ service Gateway {
 
 message CreateContactRequest {
     string AppID       = 10;
-    string UsedFor     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor     = 20;
     string Account     = 30;
     string AccountType = 40;
     string Sender      = 50;
@@ -73,7 +74,7 @@ message CreateContactResponse {
 
 message CreateAppContactRequest {
     string TargetAppID = 10;
-    string UsedFor     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor     = 20;
     string Account     = 30;
     string AccountType = 40;
     string Sender      = 50;

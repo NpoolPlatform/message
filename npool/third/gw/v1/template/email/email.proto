@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template
 
 import "google/api/annotations.proto";
 import "npool/third/mgr/v1/template/email/email.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 
 service Gateway {
@@ -55,7 +56,7 @@ service Gateway {
 message CreateEmailTemplateRequest {
     string AppID   = 10;
     string LangID  = 20;
-    string UsedFor = 30;
+    third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Subject = 40;
     string Message = 50;
 }
@@ -66,7 +67,7 @@ message CreateEmailTemplateResponse {
 
 message CreateAppEmailTemplateRequest {
     string TargetAppID = 10;
-    string UsedFor     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor = 20;
     string Account     = 30;
     string AccountType = 40;
     string Sender      = 50;

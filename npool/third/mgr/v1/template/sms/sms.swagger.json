@@ -151,7 +151,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Subject": {
           "type": "string"
@@ -174,7 +174,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Subject": {
           "type": "string"
@@ -202,6 +202,23 @@
           "$ref": "#/definitions/v1SMSTemplate"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

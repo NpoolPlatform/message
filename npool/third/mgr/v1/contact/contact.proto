@@ -5,6 +5,7 @@ package third.manager.contact.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/verify/mgr/v1/contact";
 
 import "npool/npool.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 service Manager {
     rpc CreateContact     (CreateContactRequest)     returns (CreateContactResponse)     {}
@@ -21,7 +22,7 @@ service Manager {
 message ContactReq {
     optional string ID          = 10;
     optional string AppID       = 20;
-    optional string UsedFor     = 30;
+    optional third.manager.usedfor.v1.UsedFor UsedFor = 30;
     optional string Account     = 40;
     optional string AccountType = 50;
     optional string Sender      = 60;
@@ -30,7 +31,7 @@ message ContactReq {
 message Contact {
     string ID          = 10;
     string AppID       = 20;
-    string UsedFor     = 30;
+    third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Account     = 40;
     string AccountType = 50;
     string Sender      = 60;

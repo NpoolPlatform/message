@@ -247,7 +247,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Subject": {
           "type": "string"
@@ -335,7 +335,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Account": {
           "type": "string"
@@ -369,7 +369,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string"
@@ -427,6 +427,23 @@
           "format": "int64"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

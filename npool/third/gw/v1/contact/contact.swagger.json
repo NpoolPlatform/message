@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/contact/via/email": {
+    "/v1/contact/viaemail": {
       "post": {
         "operationId": "Gateway_ContactViaEmail",
         "responses": {
@@ -276,7 +276,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Account": {
           "type": "string"
@@ -379,7 +379,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Account": {
           "type": "string"
@@ -399,7 +399,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Account": {
           "type": "string"
@@ -435,6 +435,23 @@
           "format": "int32"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }
