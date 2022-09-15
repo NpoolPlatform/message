@@ -19,12 +19,12 @@ service Manager {
 }
 
 message ContactReq {
-    string ID          = 10;
-    string AppID       = 20;
-    string UsedFor     = 30;
-    string Account     = 40;
-    string AccountType = 50;
-    string Sender      = 60;
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string UsedFor     = 30;
+    optional string Account     = 40;
+    optional string AccountType = 50;
+    optional string Sender      = 60;
 }
 
 message Contact {
@@ -37,13 +37,10 @@ message Contact {
 }
 
 message Conds {
-    npool.v1.StringVal ID        = 10;
-    npool.v1.StringVal ContactID = 30;
-    npool.v1.StringVal LangID    = 40;
-    npool.v1.StringVal UsedFor   = 50;
-    npool.v1.StringVal Sender    = 60;
+    npool.v1.StringVal ID      = 10;
+    npool.v1.StringVal AppID   = 30;
+    npool.v1.StringVal UsedFor = 40;
 }
-
 
 message CreateContactRequest {
     ContactReq Info = 10;

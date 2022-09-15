@@ -50,16 +50,10 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ContactID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Sender": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
