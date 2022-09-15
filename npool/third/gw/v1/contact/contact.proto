@@ -53,7 +53,7 @@ service Gateway {
 
     rpc ContactViaEmail  (CreateContactRequest) returns (CreateContactResponse) {
         option (google.api.http) = {
-            post: "/v1/contact/via/email",
+            post: "/v1/contact/viaemail",
             body: "*"
         };
     }
