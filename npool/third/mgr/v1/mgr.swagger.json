@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mgr/mgr.proto",
+    "title": "npool/third/mgr/v1/mgr.proto",
     "version": "version not set"
   },
   "tags": [

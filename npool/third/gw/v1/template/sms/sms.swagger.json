@@ -393,7 +393,7 @@
         "ID": {
           "type": "string"
         },
-        "SMSTemplateID": {
+        "AppID": {
           "type": "string"
         },
         "LangID": {

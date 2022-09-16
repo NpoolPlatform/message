@@ -50,7 +50,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "SMSTemplateID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "LangID": {
@@ -144,7 +144,7 @@
         "ID": {
           "type": "string"
         },
-        "SMSTemplateID": {
+        "AppID": {
           "type": "string"
         },
         "LangID": {
@@ -167,7 +167,7 @@
         "ID": {
           "type": "string"
         },
-        "SMSTemplateID": {
+        "AppID": {
           "type": "string"
         },
         "LangID": {
