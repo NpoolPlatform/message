@@ -42,7 +42,6 @@ message Conds {
     npool.v1.StringVal AppID         = 30;
     npool.v1.StringVal LangID        = 40;
     npool.v1.StringVal UsedFor       = 50;
-    npool.v1.StringVal Sender        = 60;
 }
 
 
