@@ -77,7 +77,7 @@ message GetSMSTemplatesRequest {
 
 message GetSMSTemplatesResponse {
     repeated SMSTemplate Infos = 10;
-    uint32       Total = 20;
+    uint32               Total = 20;
 }
 
 message GetSMSTemplateOnlyRequest {

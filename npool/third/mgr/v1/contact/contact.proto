@@ -23,18 +23,18 @@ service Manager {
 message ContactReq {
     optional string ID          = 10;
     optional string AppID       = 20;
-    optional third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    optional string Account     = 40;
-    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 50;
+    optional string Account     = 30;
+    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    optional third.manager.usedfor.v1.UsedFor             UsedFor     = 50;
     optional string Sender      = 60;
 }
 
 message Contact {
     string ID          = 10;
     string AppID       = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Account     = 40;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 50;
+    string Account     = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    third.manager.usedfor.v1.UsedFor             UsedFor     = 50;
     string Sender      = 60;
 }
 

@@ -378,14 +378,14 @@
         "AppID": {
           "type": "string"
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
         "Account": {
           "type": "string"
         },
         "AccountType": {
           "$ref": "#/definitions/v2SignMethodType"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string"
