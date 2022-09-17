@@ -63,7 +63,7 @@ service Gateway {
 
 message CreateContactRequest {
     string AppID       = 10;
-    third.manager.usedfor.v1.UsedFor UsedFor     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor = 20;
     string Account     = 30;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string Sender      = 50;
@@ -75,7 +75,7 @@ message CreateContactResponse {
 
 message CreateAppContactRequest {
     string TargetAppID = 10;
-    third.manager.usedfor.v1.UsedFor UsedFor     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor = 20;
     string Account     = 30;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string Sender      = 50;
@@ -102,7 +102,7 @@ message GetContactsRequest {
 
 message GetContactsResponse {
     repeated third.manager.contact.v1.Contact Infos = 10;
-    uint32 Total = 20;
+    uint32                                    Total = 20;
 }
 
 message GetAppContactsRequest {
@@ -113,7 +113,7 @@ message GetAppContactsRequest {
 
 message GetAppContactsResponse {
     third.manager.contact.v1.Contact Infos = 10;
-    uint32       Total = 20;
+    uint32                           Total = 20;
 }
 
 
@@ -129,12 +129,12 @@ message UpdateContactResponse {
 }
 
 message ContactViaEmailRequest {
-    string AppID = 10;
-    string UserID = 20;
+    string AppID      = 10;
+    string UserID     = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Sender = 40;
-    string Subject = 60;
-    string Body = 70;
+    string Sender     = 40;
+    string Subject    = 60;
+    string Body       = 70;
     string SenderName = 80;
 }
 

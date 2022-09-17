@@ -87,25 +87,25 @@ message GetSMSTemplateResponse {
 }
 
 message GetSMSTemplatesRequest {
-    string AppID = 10;
+    string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
 
 message GetSMSTemplatesResponse {
     repeated third.manager.template.sms.v1.SMSTemplate Infos = 10;
-    uint32 Total = 20;
+    uint32                                             Total = 20;
 }
 
 message GetAppSMSTemplatesRequest {
     string TargetAppID = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
 message GetAppSMSTemplatesResponse {
     repeated third.manager.template.sms.v1.SMSTemplate Infos = 10;
-    uint32 Total = 20;
+    uint32                                             Total = 20;
 }
 
 message UpdateSMSTemplateRequest {

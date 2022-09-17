@@ -101,7 +101,7 @@ message GetEmailTemplatesRequest {
 
 message GetEmailTemplatesResponse {
     repeated third.manager.template.email.v1.EmailTemplate Infos = 10;
-    uint32 Total = 20;
+    uint32                                                 Total = 20;
 }
 
 message GetAppEmailTemplatesRequest {
@@ -112,7 +112,7 @@ message GetAppEmailTemplatesRequest {
 
 message GetAppEmailTemplatesResponse {
     repeated third.manager.template.email.v1.EmailTemplate Infos = 10;
-    uint32 Total = 20;
+    uint32                                                 Total = 20;
 }
 
 
