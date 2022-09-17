@@ -9,7 +9,7 @@ import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 service Middleware {
     rpc VerifyCode (VerifyCodeRequest) returns (VerifyCodeResponse) {}
-    rpc SendCode (SendCodeRequest) returns (SendCodeResponse) {}
+    rpc SendCode   (SendCodeRequest)   returns (SendCodeResponse)   {}
 }
 
 message VerifyCodeRequest {
@@ -24,10 +24,10 @@ message VerifyCodeResponse {
 }
 
 message SendCodeRequest {
-    string AppID            = 10;
+    string          AppID   = 10;
     optional string Account = 20;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
-    third.manager.usedfor.v1.UsedFor UsedFor = 40;
+    third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
 }
 
 message SendCodeResponse {
