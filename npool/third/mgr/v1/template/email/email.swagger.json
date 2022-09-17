@@ -57,7 +57,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Int32Val"
         },
         "Sender": {
           "$ref": "#/definitions/v1StringVal"
@@ -217,6 +217,18 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
