@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/send/code": {
       "post": {
-        "operationId": "Middleware_SendCode",
+        "operationId": "Gateway_SendCode",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,7 +44,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }
@@ -84,6 +84,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "Account": {
           "type": "string"
         },
         "AccountType": {
