@@ -131,7 +131,7 @@ message UpdateContactResponse {
 message ContactViaEmailRequest {
     string AppID = 10;
     string UserID = 20;
-    string UsedFor = 30;
+    third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Sender = 40;
     string Subject = 60;
     string Body = 70;

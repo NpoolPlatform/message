@@ -402,7 +402,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "type": "string"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string"
