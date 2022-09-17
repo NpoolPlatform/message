@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package third.manager.usedfor.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/mgr/v1/usedfor";
+
+enum UsedFor {
+    DefaultUsedFor        = 0;
+    Signup                = 10;
+    Signin                = 20;
+    Update                = 30;
+    Contact               = 40;
+    SetWithdrawAddress    = 50;
+    Withdraw              = 60;
+    CreateInvitationCode  = 70;
+    SetCommission         = 80;
+    SetTransferTargetUser = 90;
+    Transfer              = 100;
+}

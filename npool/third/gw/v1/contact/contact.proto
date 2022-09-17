@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package third.gateway.contact.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/contact";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/third/mgr/v1/contact/contact.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+
+
+service Gateway {
+    rpc CreateContact (CreateContactRequest) returns (CreateContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/contact"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppContact (CreateAppContactRequest) returns (CreateAppContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/contact"
+            body: "*"
+        };
+    }
+
+    rpc GetContact (GetContactRequest) returns (GetContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/contact"
+            body: "*"
+        };
+    }
+
+    rpc GetContacts (GetContactsRequest) returns (GetContactsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/contacts"
+            body: "*"
+        };
+    }
+
+    rpc GetAppContacts (GetAppContactsRequest) returns (GetContactsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/contacts"
+            body: "*"
+        };
+    }
+
+    rpc UpdateContact (UpdateContactRequest) returns (UpdateContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/contact"
+            body: "*"
+        };
+    }
+
+    rpc ContactViaEmail  (ContactViaEmailRequest) returns (ContactViaEmailResponse) {
+        option (google.api.http) = {
+            post: "/v1/contact/viaemail",
+            body: "*"
+        };
+    }
+}
+
+message CreateContactRequest {
+    string AppID       = 10;
+    third.manager.usedfor.v1.UsedFor UsedFor = 20;
+    string Account     = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    string Sender      = 50;
+}
+
+message CreateContactResponse {
+    third.manager.contact.v1.Contact Info = 10;
+}
+
+message CreateAppContactRequest {
+    string TargetAppID = 10;
+    third.manager.usedfor.v1.UsedFor UsedFor = 20;
+    string Account     = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    string Sender      = 50;
+}
+
+message CreateAppContactResponse {
+    third.manager.contact.v1.Contact Info = 10;
+}
+
+message GetContactRequest {
+    string ID = 10;
+}
+
+message GetContactResponse {
+    third.manager.contact.v1.Contact Info = 10;
+}
+
+
+message GetContactsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetContactsResponse {
+    repeated third.manager.contact.v1.Contact Infos = 10;
+    uint32                                    Total = 20;
+}
+
+message GetAppContactsRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetAppContactsResponse {
+    third.manager.contact.v1.Contact Infos = 10;
+    uint32                           Total = 20;
+}
+
+
+message UpdateContactRequest {
+    string ID          = 10;
+    string Account     = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    string Sender      = 50;
+}
+
+message UpdateContactResponse {
+    third.manager.contact.v1.Contact Info = 10;
+}
+
+message ContactViaEmailRequest {
+    string AppID      = 10;
+    string UserID     = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    string Sender     = 40;
+    string Subject    = 60;
+    string Body       = 70;
+    string SenderName = 80;
+}
+
+message ContactViaEmailResponse {
+}

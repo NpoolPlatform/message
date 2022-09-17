@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package third.gateway.verify.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/verify";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+
+service Gateway {
+    rpc SendCode (SendCodeRequest) returns (SendCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/send/code"
+            body: "*"
+        };
+    }
+}
+
+message SendCodeRequest {
+    string          AppID   = 10;
+    optional string UserID  = 20;
+    string          Account = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    third.manager.usedfor.v1.UsedFor UsedFor                 = 50;
+}
+
+message SendCodeResponse {
+}
