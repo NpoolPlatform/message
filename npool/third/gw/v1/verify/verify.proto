@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package third.gateway.verify.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/verify";
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/verify";
 
 import "google/api/annotations.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
