@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mw/v1/verify/verify.proto",
+    "title": "npool/third/gw/v1/verify/verify.proto",
     "version": "version not set"
   },
   "tags": [
@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/send/code": {
+      "post": {
+        "operationId": "Middleware_SendCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SendCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SendCodeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -44,6 +77,23 @@
         }
       }
     },
+    "v1SendCodeRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        }
+      }
+    },
     "v1SendCodeResponse": {
       "type": "object"
     },
@@ -63,9 +113,6 @@
         "Transfer"
       ],
       "default": "DefaultUsedFor"
-    },
-    "v1VerifyCodeResponse": {
-      "type": "object"
     },
     "v2SignMethodType": {
       "type": "string",
