@@ -12,9 +12,9 @@ service Middleware {
 
 message NotifyEmailRequest {
     string AppID        = 10;
-    string Account      = 20;
+    string FromAccount      = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string ReceiverID   = 40;
+    string ReceiverAccount   = 40;
     string LangID       = 50;
     string SenderName   = 60;
     string ReceiverName = 70;
