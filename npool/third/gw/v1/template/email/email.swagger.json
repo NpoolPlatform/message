@@ -249,10 +249,28 @@
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
         },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Subject": {
           "type": "string"
         },
-        "Message": {
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
           "type": "string"
         }
       }
@@ -317,6 +335,30 @@
       "properties": {
         "ID": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
         }
       }
     },
@@ -334,16 +376,34 @@
         "TargetAppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        },
         "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
           "type": "string"
         }
       }

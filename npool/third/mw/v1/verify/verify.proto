@@ -12,11 +12,10 @@ service Middleware {
 
 message VerifyCodeRequest {
     string AppID  = 10;
-    string UserID = 20;
-    appuser.manager.signmethod.v2.SignMethodType SignMethodType = 30;
-    string Account       = 40;
-    string UsedFor       = 60;
-    optional string Code = 50;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
+    optional string Account = 40;
+    string UsedFor = 60;
+    string Code    = 50;
 }
 
 message VerifyCodeResponse {

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/gw/gw.proto
+// source: npool/third/gw/v1/gw.proto
 
 package v1
 
@@ -103,5 +103,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/gw/gw.proto",
+	Metadata: "npool/third/gw/v1/gw.proto",
 }

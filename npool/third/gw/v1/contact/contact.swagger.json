@@ -282,7 +282,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -354,7 +354,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -385,7 +385,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -434,7 +434,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -481,6 +481,22 @@
         "Transfer"
       ],
       "default": "DefaultUsedFor"
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

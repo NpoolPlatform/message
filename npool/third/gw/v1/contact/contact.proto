@@ -5,6 +5,7 @@ package third.gateway.contact.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/contact";
 
 import "google/api/annotations.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/third/mgr/v1/contact/contact.proto";
 import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
@@ -64,7 +65,7 @@ message CreateContactRequest {
     string AppID       = 10;
     third.manager.usedfor.v1.UsedFor UsedFor     = 20;
     string Account     = 30;
-    string AccountType = 40;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string Sender      = 50;
 }
 
@@ -76,7 +77,7 @@ message CreateAppContactRequest {
     string TargetAppID = 10;
     third.manager.usedfor.v1.UsedFor UsedFor     = 20;
     string Account     = 30;
-    string AccountType = 40;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string Sender      = 50;
 }
 
@@ -119,7 +120,7 @@ message GetAppContactsResponse {
 message UpdateContactRequest {
     string ID          = 10;
     string Account     = 30;
-    string AccountType = 40;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     string Sender      = 50;
 }
 

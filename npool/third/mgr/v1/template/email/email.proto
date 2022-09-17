@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package third.manager.template.email.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/verify/mgr/v1/template/email";
+option go_package = "github.com/NpoolPlatform/message/npool/third/mgr/v1/template/email";
 
 import "npool/npool.proto";
 import "npool/third/mgr/v1/usedfor/userdfor.proto";

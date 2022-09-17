@@ -54,7 +54,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -74,7 +74,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -97,7 +97,7 @@
           "type": "string"
         },
         "AccountType": {
-          "type": "string"
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
           "type": "string"
@@ -178,6 +178,18 @@
         }
       }
     },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -213,6 +225,22 @@
         "Transfer"
       ],
       "default": "DefaultUsedFor"
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

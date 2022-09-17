@@ -58,9 +58,6 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Sender": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

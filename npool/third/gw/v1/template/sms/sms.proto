@@ -109,7 +109,9 @@ message GetAppSMSTemplatesResponse {
 }
 
 message UpdateSMSTemplateRequest {
-    string ID = 10;
+    string ID      = 10;
+    string Subject = 20;
+    string Message = 30;
 }
 
 message UpdateSMSTemplateResponse {
