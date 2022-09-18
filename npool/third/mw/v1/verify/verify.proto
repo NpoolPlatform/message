@@ -25,7 +25,7 @@ message VerifyCodeResponse {
 
 message SendCodeRequest {
     string          AppID   = 10;
-    optional string Account = 20;
+    string          Account = 20;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
     third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
 }
