@@ -24,10 +24,13 @@ message VerifyCodeResponse {
 }
 
 message SendCodeRequest {
-    string          AppID   = 10;
-    string          Account = 20;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
+    string AppID   = 10;
+    string LangID  = 20;
+    string Account = 30;
+    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    third.manager.usedfor.v1.UsedFor             UsedFor     = 50;
+    string ToUsername = 60;
+
 }
 
 message SendCodeResponse {
