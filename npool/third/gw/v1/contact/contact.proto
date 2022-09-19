@@ -118,10 +118,10 @@ message GetAppContactsResponse {
 
 
 message UpdateContactRequest {
-    string ID          = 10;
-    string Account     = 30;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
-    string Sender      = 50;
+    string          ID          = 10;
+    repeated string Account     = 30;
+    repeated appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    repeated string Sender      = 50;
 }
 
 message UpdateContactResponse {
