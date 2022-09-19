@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
+	GetUsedFor(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
 }
 
 type gatewayClient struct {
@@ -42,11 +43,21 @@ func (c *gatewayClient) SendCode(ctx context.Context, in *SendCodeRequest, opts 
 	return out, nil
 }
 
+func (c *gatewayClient) GetUsedFor(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error) {
+	out := new(SendCodeResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.verify.v1.Gateway/GetUsedFor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
+	GetUsedFor(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -56,6 +67,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendCode not implemented")
+}
+func (UnimplementedGatewayServer) GetUsedFor(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsedFor not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -88,6 +102,24 @@ func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetUsedFor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.verify.v1.Gateway/GetUsedFor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetUsedFor(ctx, req.(*SendCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +130,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendCode",
 			Handler:    _Gateway_SendCode_Handler,
+		},
+		{
+			MethodName: "GetUsedFor",
+			Handler:    _Gateway_GetUsedFor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
