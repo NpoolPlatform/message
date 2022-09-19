@@ -351,22 +351,13 @@
           "type": "string"
         },
         "Account": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         },
         "AccountType": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2SignMethodType"
-          }
+          "$ref": "#/definitions/v2SignMethodType"
         },
         "Sender": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
