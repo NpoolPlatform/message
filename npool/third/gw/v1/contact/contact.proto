@@ -39,7 +39,7 @@ service Gateway {
         };
     }
 
-    rpc GetAppContacts (GetAppContactsRequest) returns (GetContactsResponse) {
+    rpc GetAppContacts (GetAppContactsRequest) returns (GetAppContactsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/contacts"
             body: "*"

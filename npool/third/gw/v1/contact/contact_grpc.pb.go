@@ -26,7 +26,7 @@ type GatewayClient interface {
 	CreateAppContact(ctx context.Context, in *CreateAppContactRequest, opts ...grpc.CallOption) (*CreateAppContactResponse, error)
 	GetContact(ctx context.Context, in *GetContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error)
 	GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
-	GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
+	GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetAppContactsResponse, error)
 	UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error)
 	ContactViaEmail(ctx context.Context, in *ContactViaEmailRequest, opts ...grpc.CallOption) (*ContactViaEmailResponse, error)
 }
@@ -75,8 +75,8 @@ func (c *gatewayClient) GetContacts(ctx context.Context, in *GetContactsRequest,
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error) {
-	out := new(GetContactsResponse)
+func (c *gatewayClient) GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetAppContactsResponse, error) {
+	out := new(GetAppContactsResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/GetAppContacts", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -110,7 +110,7 @@ type GatewayServer interface {
 	CreateAppContact(context.Context, *CreateAppContactRequest) (*CreateAppContactResponse, error)
 	GetContact(context.Context, *GetContactRequest) (*GetContactResponse, error)
 	GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error)
-	GetAppContacts(context.Context, *GetAppContactsRequest) (*GetContactsResponse, error)
+	GetAppContacts(context.Context, *GetAppContactsRequest) (*GetAppContactsResponse, error)
 	UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error)
 	ContactViaEmail(context.Context, *ContactViaEmailRequest) (*ContactViaEmailResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -132,7 +132,7 @@ func (UnimplementedGatewayServer) GetContact(context.Context, *GetContactRequest
 func (UnimplementedGatewayServer) GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetContacts not implemented")
 }
-func (UnimplementedGatewayServer) GetAppContacts(context.Context, *GetAppContactsRequest) (*GetContactsResponse, error) {
+func (UnimplementedGatewayServer) GetAppContacts(context.Context, *GetAppContactsRequest) (*GetAppContactsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppContacts not implemented")
 }
 func (UnimplementedGatewayServer) UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error) {
