@@ -53,7 +53,7 @@ service Gateway {
         };
     }
 
-    rpc ContactViaEmail  (ContactViaEmailRequest) returns (ContactViaEmailResponse) {
+    rpc ContactViaEmail (ContactViaEmailRequest) returns (ContactViaEmailResponse) {
         option (google.api.http) = {
             post: "/v1/contact/viaemail",
             body: "*"
@@ -132,7 +132,8 @@ message ContactViaEmailRequest {
     string AppID      = 10;
     string UserID     = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Sender     = 40;
+    string Account    = 40;
+    string Sender     = 50;
     string Subject    = 60;
     string Body       = 70;
     string SenderName = 80;
