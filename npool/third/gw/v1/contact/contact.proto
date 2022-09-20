@@ -132,7 +132,6 @@ message ContactViaEmailRequest {
     string AppID      = 10;
     string UserID     = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Account    = 40;
     string Sender     = 50;
     string Subject    = 60;
     string Body       = 70;

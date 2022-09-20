@@ -404,9 +404,6 @@
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Account": {
-          "type": "string"
-        },
         "Sender": {
           "type": "string"
         },

@@ -13,11 +13,10 @@ service Middleware {
 message ContactViaEmailRequest {
     string AppID      = 10;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Account    = 40;
-    string Sender     = 50;
-    string Subject    = 60;
-    string Body       = 70;
-    string SenderName = 80;
+    string Sender     = 40;
+    string Subject    = 50;
+    string Body       = 60;
+    string SenderName = 70;
 }
 
 message ContactViaEmailResponse {
