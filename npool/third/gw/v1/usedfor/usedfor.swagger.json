@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/gw/v1/verify/verify.proto",
+    "title": "npool/third/gw/v1/usedfor/usedfor.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/send/code": {
+    "/v1/get/usedfor": {
       "post": {
-        "operationId": "Gateway_SendCode",
+        "operationId": "Gateway_GetUsedFor",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1SendCodeResponse"
+              "$ref": "#/definitions/v1GetUsedForResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1SendCodeRequest"
+              "$ref": "#/definitions/v1GetUsedForRequest"
             }
           }
         ],
@@ -77,31 +77,19 @@
         }
       }
     },
-    "v1SendCodeRequest": {
+    "v1GetUsedForRequest": {
+      "type": "object"
+    },
+    "v1GetUsedForResponse": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
-        },
         "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UsedFor"
+          }
         }
       }
-    },
-    "v1SendCodeResponse": {
-      "type": "object"
     },
     "v1UsedFor": {
       "type": "string",
@@ -119,22 +107,6 @@
         "Transfer"
       ],
       "default": "DefaultUsedFor"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

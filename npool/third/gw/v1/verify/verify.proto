@@ -15,13 +15,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetUsedFor (GetUsedForRequest) returns (GetUsedForResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/usedfor"
-            body: "*"
-        };
-    }
 }
 
 message SendCodeRequest {
@@ -35,11 +28,3 @@ message SendCodeRequest {
 
 message SendCodeResponse {
 }
-
-message GetUsedForRequest {
-}
-
-message GetUsedForResponse {
-    repeated third.manager.usedfor.v1.UsedFor UsedFor = 10;
-}
-

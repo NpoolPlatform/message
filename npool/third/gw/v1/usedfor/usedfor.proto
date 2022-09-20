@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package third.gateway.usedfor.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/usedfor";
+
+import "google/api/annotations.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+
+service Gateway {
+    rpc GetUsedFor (GetUsedForRequest) returns (GetUsedForResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/usedfor"
+            body: "*"
+        };
+    }
+}
+
+message GetUsedForRequest {
+}
+
+message GetUsedForResponse {
+    repeated third.manager.usedfor.v1.UsedFor UsedFor = 10;
+}
+

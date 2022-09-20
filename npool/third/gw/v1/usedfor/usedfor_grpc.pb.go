@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/gw/v1/verify/verify.proto
+// source: npool/third/gw/v1/usedfor/usedfor.proto
 
-package verify
+package usedfor
 
 import (
 	context "context"
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
+	GetUsedFor(ctx context.Context, in *GetUsedForRequest, opts ...grpc.CallOption) (*GetUsedForResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +33,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error) {
-	out := new(SendCodeResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.verify.v1.Gateway/SendCode", in, out, opts...)
+func (c *gatewayClient) GetUsedFor(ctx context.Context, in *GetUsedForRequest, opts ...grpc.CallOption) (*GetUsedForResponse, error) {
+	out := new(GetUsedForResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.usedfor.v1.Gateway/GetUsedFor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) SendCode(ctx context.Context, in *SendCodeRequest, opts 
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
+	GetUsedFor(context.Context, *GetUsedForRequest) (*GetUsedForResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendCode not implemented")
+func (UnimplementedGatewayServer) GetUsedFor(context.Context, *GetUsedForRequest) (*GetUsedForResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsedFor not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendCodeRequest)
+func _Gateway_GetUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsedForRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).SendCode(ctx, in)
+		return srv.(GatewayServer).GetUsedFor(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.verify.v1.Gateway/SendCode",
+		FullMethod: "/third.gateway.usedfor.v1.Gateway/GetUsedFor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).SendCode(ctx, req.(*SendCodeRequest))
+		return srv.(GatewayServer).GetUsedFor(ctx, req.(*GetUsedForRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,14 +92,14 @@ func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "third.gateway.verify.v1.Gateway",
+	ServiceName: "third.gateway.usedfor.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "SendCode",
-			Handler:    _Gateway_SendCode_Handler,
+			MethodName: "GetUsedFor",
+			Handler:    _Gateway_GetUsedFor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/gw/v1/verify/verify.proto",
+	Metadata: "npool/third/gw/v1/usedfor/usedfor.proto",
 }
