@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
-	GetUsedFor(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
+	GetUsedFor(ctx context.Context, in *GetUsedForRequest, opts ...grpc.CallOption) (*GetUsedForResponse, error)
 }
 
 type gatewayClient struct {
@@ -43,8 +43,8 @@ func (c *gatewayClient) SendCode(ctx context.Context, in *SendCodeRequest, opts 
 	return out, nil
 }
 
-func (c *gatewayClient) GetUsedFor(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error) {
-	out := new(SendCodeResponse)
+func (c *gatewayClient) GetUsedFor(ctx context.Context, in *GetUsedForRequest, opts ...grpc.CallOption) (*GetUsedForResponse, error) {
+	out := new(GetUsedForResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.verify.v1.Gateway/GetUsedFor", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -57,7 +57,7 @@ func (c *gatewayClient) GetUsedFor(ctx context.Context, in *SendCodeRequest, opt
 // for forward compatibility
 type GatewayServer interface {
 	SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
-	GetUsedFor(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
+	GetUsedFor(context.Context, *GetUsedForRequest) (*GetUsedForResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -68,7 +68,7 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendCode not implemented")
 }
-func (UnimplementedGatewayServer) GetUsedFor(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
+func (UnimplementedGatewayServer) GetUsedFor(context.Context, *GetUsedForRequest) (*GetUsedForResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUsedFor not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
@@ -103,7 +103,7 @@ func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(in
 }
 
 func _Gateway_GetUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendCodeRequest)
+	in := new(GetUsedForRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func _Gateway_GetUsedFor_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/third.gateway.verify.v1.Gateway/GetUsedFor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUsedFor(ctx, req.(*SendCodeRequest))
+		return srv.(GatewayServer).GetUsedFor(ctx, req.(*GetUsedForRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
