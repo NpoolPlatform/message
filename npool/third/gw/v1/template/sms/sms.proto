@@ -67,11 +67,11 @@ message CreateSMSTemplateResponse {
 }
 
 message CreateAppSMSTemplateRequest {
-    string AppID   = 10;
-    string LangID  = 20;
+    string TargetAppID = 10;
+    string LangID      = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Subject = 40;
-    string Message = 50;
+    string Subject     = 40;
+    string Message     = 50;
 }
 
 message CreateAppSMSTemplateResponse {
