@@ -9,6 +9,7 @@ import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 service Middleware {
     rpc VerifyCode (VerifyCodeRequest) returns (VerifyCodeResponse) {}
+    rpc VerifyGoogleRecaptchaV3 (VerifyGoogleRecaptchaV3Request) returns (VerifyGoogleRecaptchaV3Response) {}
     rpc SendCode   (SendCodeRequest)   returns (SendCodeResponse)   {}
 }
 
@@ -34,4 +35,12 @@ message SendCodeRequest {
 }
 
 message SendCodeResponse {
+}
+
+message VerifyGoogleRecaptchaV3Request {
+    string RecaptchaToken = 10;
+}
+
+message VerifyGoogleRecaptchaV3Response {
+
 }
