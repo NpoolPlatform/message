@@ -8,9 +8,9 @@ import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 service Middleware {
-    rpc VerifyCode (VerifyCodeRequest) returns (VerifyCodeResponse) {}
+    rpc VerifyCode              (VerifyCodeRequest)              returns (VerifyCodeResponse)              {}
     rpc VerifyGoogleRecaptchaV3 (VerifyGoogleRecaptchaV3Request) returns (VerifyGoogleRecaptchaV3Response) {}
-    rpc SendCode   (SendCodeRequest)   returns (SendCodeResponse)   {}
+    rpc SendCode                (SendCodeRequest)                returns (SendCodeResponse)                {}
 }
 
 message VerifyCodeRequest {
