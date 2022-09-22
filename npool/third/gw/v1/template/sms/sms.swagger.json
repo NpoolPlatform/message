@@ -337,7 +337,7 @@
     "v1CreateAppSMSTemplateRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "LangID": {

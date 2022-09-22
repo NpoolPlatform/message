@@ -53,6 +53,9 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AccountType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
         "UsedFor": {
           "$ref": "#/definitions/v1Int32Val"
         }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mw/v1/verify/verify.proto",
+    "title": "npool/third/mw/v1/contact/contact.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,7 +44,7 @@
         }
       }
     },
-    "v1SendCodeResponse": {
+    "v1ContactViaEmailResponse": {
       "type": "object"
     },
     "v1UsedFor": {
@@ -63,28 +63,6 @@
         "Transfer"
       ],
       "default": "DefaultUsedFor"
-    },
-    "v1VerifyCodeResponse": {
-      "type": "object"
-    },
-    "v1VerifyGoogleRecaptchaV3Response": {
-      "type": "object"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

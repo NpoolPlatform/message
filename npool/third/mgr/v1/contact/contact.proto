@@ -39,9 +39,10 @@ message Contact {
 }
 
 message Conds {
-    npool.v1.StringVal ID      = 10;
-    npool.v1.StringVal AppID   = 30;
-    npool.v1.Int32Val  UsedFor = 40;
+    npool.v1.StringVal ID          = 10;
+    npool.v1.StringVal AppID       = 30;
+    npool.v1.Int32Val  AccountType = 40;
+    npool.v1.Int32Val  UsedFor     = 50;
 }
 
 message CreateContactRequest {

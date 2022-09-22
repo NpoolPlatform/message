@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	VerifyCode(ctx context.Context, in *VerifyCodeRequest, opts ...grpc.CallOption) (*VerifyCodeResponse, error)
+	VerifyGoogleRecaptchaV3(ctx context.Context, in *VerifyGoogleRecaptchaV3Request, opts ...grpc.CallOption) (*VerifyGoogleRecaptchaV3Response, error)
 	SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error)
 }
 
@@ -43,6 +44,15 @@ func (c *middlewareClient) VerifyCode(ctx context.Context, in *VerifyCodeRequest
 	return out, nil
 }
 
+func (c *middlewareClient) VerifyGoogleRecaptchaV3(ctx context.Context, in *VerifyGoogleRecaptchaV3Request, opts ...grpc.CallOption) (*VerifyGoogleRecaptchaV3Response, error) {
+	out := new(VerifyGoogleRecaptchaV3Response)
+	err := c.cc.Invoke(ctx, "/third.middleware.verify.v1.Middleware/VerifyGoogleRecaptchaV3", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error) {
 	out := new(SendCodeResponse)
 	err := c.cc.Invoke(ctx, "/third.middleware.verify.v1.Middleware/SendCode", in, out, opts...)
@@ -57,6 +67,7 @@ func (c *middlewareClient) SendCode(ctx context.Context, in *SendCodeRequest, op
 // for forward compatibility
 type MiddlewareServer interface {
 	VerifyCode(context.Context, *VerifyCodeRequest) (*VerifyCodeResponse, error)
+	VerifyGoogleRecaptchaV3(context.Context, *VerifyGoogleRecaptchaV3Request) (*VerifyGoogleRecaptchaV3Response, error)
 	SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -67,6 +78,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) VerifyCode(context.Context, *VerifyCodeRequest) (*VerifyCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyCode not implemented")
+}
+func (UnimplementedMiddlewareServer) VerifyGoogleRecaptchaV3(context.Context, *VerifyGoogleRecaptchaV3Request) (*VerifyGoogleRecaptchaV3Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyGoogleRecaptchaV3 not implemented")
 }
 func (UnimplementedMiddlewareServer) SendCode(context.Context, *SendCodeRequest) (*SendCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendCode not implemented")
@@ -102,6 +116,24 @@ func _Middleware_VerifyCode_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_VerifyGoogleRecaptchaV3_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyGoogleRecaptchaV3Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).VerifyGoogleRecaptchaV3(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.middleware.verify.v1.Middleware/VerifyGoogleRecaptchaV3",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).VerifyGoogleRecaptchaV3(ctx, req.(*VerifyGoogleRecaptchaV3Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_SendCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SendCodeRequest)
 	if err := dec(in); err != nil {
@@ -130,6 +162,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "VerifyCode",
 			Handler:    _Middleware_VerifyCode_Handler,
+		},
+		{
+			MethodName: "VerifyGoogleRecaptchaV3",
+			Handler:    _Middleware_VerifyGoogleRecaptchaV3_Handler,
 		},
 		{
 			MethodName: "SendCode",

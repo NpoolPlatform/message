@@ -83,6 +83,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },

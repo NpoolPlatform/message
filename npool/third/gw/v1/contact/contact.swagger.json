@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/thirdgatewaycontactv1GetContactsResponse"
+              "$ref": "#/definitions/v1GetAppContactsResponse"
             }
           },
           "default": {
@@ -462,6 +462,21 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "v1GetAppContactsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Contact"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
