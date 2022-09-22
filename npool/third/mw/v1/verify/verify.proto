@@ -14,7 +14,8 @@ service Middleware {
 
 message VerifyCodeRequest {
     string          AppID   = 10;
-    optional string Account = 20;
+    //if AccountType is Google then Account is GoogleSecret
+    string          Account = 20;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
     third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
     string          Code    = 50;
