@@ -67,6 +67,9 @@
     "v1VerifyCodeResponse": {
       "type": "object"
     },
+    "v1VerifyGoogleRecaptchaV3Response": {
+      "type": "object"
+    },
     "v2SignMethodType": {
       "type": "string",
       "enum": [
