@@ -97,6 +97,9 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
+        },
+        "ToUsername": {
+          "type": "string"
         }
       }
     },
