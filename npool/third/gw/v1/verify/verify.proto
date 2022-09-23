@@ -24,7 +24,7 @@ message SendCodeRequest {
     optional string Account = 40;
     appuser.manager.signmethod.v2.SignMethodType AccountType = 50;
     third.manager.usedfor.v1.UsedFor             UsedFor     = 60;
-    string                                       ToUsername  = 70;
+    optional string                              ToUsername  = 70;
 }
 
 message SendCodeResponse {
