@@ -40,7 +40,7 @@ service Gateway {
 
     rpc GetAppSMSTemplates (GetAppSMSTemplatesRequest) returns (GetAppSMSTemplatesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/smstemplate"
+            post: "/v1/get/app/smstemplates"
             body: "*"
         };
     }

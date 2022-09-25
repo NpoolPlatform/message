@@ -339,7 +339,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates", runtime.WithHTTPPathPattern("/v1/get/app/smstemplate"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates", runtime.WithHTTPPathPattern("/v1/get/app/smstemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates", runtime.WithHTTPPathPattern("/v1/get/app/smstemplate"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/third.gateway.template.sms.v1.Gateway/GetAppSMSTemplates", runtime.WithHTTPPathPattern("/v1/get/app/smstemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -552,7 +552,7 @@ var (
 
 	pattern_Gateway_GetSMSTemplates_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "smstemplates"}, ""))
 
-	pattern_Gateway_GetAppSMSTemplates_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "smstemplate"}, ""))
+	pattern_Gateway_GetAppSMSTemplates_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "smstemplates"}, ""))
 
 	pattern_Gateway_UpdateSMSTemplate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "smstemplate"}, ""))
 )
