@@ -28,6 +28,7 @@ type GatewayClient interface {
 	GetSMSTemplates(ctx context.Context, in *GetSMSTemplatesRequest, opts ...grpc.CallOption) (*GetSMSTemplatesResponse, error)
 	GetAppSMSTemplates(ctx context.Context, in *GetAppSMSTemplatesRequest, opts ...grpc.CallOption) (*GetAppSMSTemplatesResponse, error)
 	UpdateSMSTemplate(ctx context.Context, in *UpdateSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateSMSTemplateResponse, error)
+	UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error)
 }
 
 type gatewayClient struct {
@@ -92,6 +93,15 @@ func (c *gatewayClient) UpdateSMSTemplate(ctx context.Context, in *UpdateSMSTemp
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateAppSMSTemplate(ctx context.Context, in *UpdateAppSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateAppSMSTemplateResponse, error) {
+	out := new(UpdateAppSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.template.sms.v1.Gateway/UpdateAppSMSTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type GatewayServer interface {
 	GetSMSTemplates(context.Context, *GetSMSTemplatesRequest) (*GetSMSTemplatesResponse, error)
 	GetAppSMSTemplates(context.Context, *GetAppSMSTemplatesRequest) (*GetAppSMSTemplatesResponse, error)
 	UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error)
+	UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedGatewayServer) GetAppSMSTemplates(context.Context, *GetAppSMS
 }
 func (UnimplementedGatewayServer) UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSMSTemplate not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppSMSTemplate(context.Context, *UpdateAppSMSTemplateRequest) (*UpdateAppSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppSMSTemplate not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -248,6 +262,24 @@ func _Gateway_UpdateSMSTemplate_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateAppSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.template.sms.v1.Gateway/UpdateAppSMSTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppSMSTemplate(ctx, req.(*UpdateAppSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateSMSTemplate",
 			Handler:    _Gateway_UpdateSMSTemplate_Handler,
+		},
+		{
+			MethodName: "UpdateAppSMSTemplate",
+			Handler:    _Gateway_UpdateAppSMSTemplate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

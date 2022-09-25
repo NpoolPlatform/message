@@ -28,6 +28,7 @@ type GatewayClient interface {
 	GetEmailTemplates(ctx context.Context, in *GetEmailTemplatesRequest, opts ...grpc.CallOption) (*GetEmailTemplatesResponse, error)
 	GetAppEmailTemplates(ctx context.Context, in *GetAppEmailTemplatesRequest, opts ...grpc.CallOption) (*GetAppEmailTemplatesResponse, error)
 	UpdateEmailTemplate(ctx context.Context, in *UpdateEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateEmailTemplateResponse, error)
+	UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error)
 }
 
 type gatewayClient struct {
@@ -92,6 +93,15 @@ func (c *gatewayClient) UpdateEmailTemplate(ctx context.Context, in *UpdateEmail
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateAppEmailTemplate(ctx context.Context, in *UpdateAppEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateAppEmailTemplateResponse, error) {
+	out := new(UpdateAppEmailTemplateResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.template.email.v1.Gateway/UpdateAppEmailTemplate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type GatewayServer interface {
 	GetEmailTemplates(context.Context, *GetEmailTemplatesRequest) (*GetEmailTemplatesResponse, error)
 	GetAppEmailTemplates(context.Context, *GetAppEmailTemplatesRequest) (*GetAppEmailTemplatesResponse, error)
 	UpdateEmailTemplate(context.Context, *UpdateEmailTemplateRequest) (*UpdateEmailTemplateResponse, error)
+	UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedGatewayServer) GetAppEmailTemplates(context.Context, *GetAppE
 }
 func (UnimplementedGatewayServer) UpdateEmailTemplate(context.Context, *UpdateEmailTemplateRequest) (*UpdateEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateEmailTemplate not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppEmailTemplate(context.Context, *UpdateAppEmailTemplateRequest) (*UpdateAppEmailTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppEmailTemplate not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -248,6 +262,24 @@ func _Gateway_UpdateEmailTemplate_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateAppEmailTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppEmailTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppEmailTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.template.email.v1.Gateway/UpdateAppEmailTemplate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppEmailTemplate(ctx, req.(*UpdateAppEmailTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateEmailTemplate",
 			Handler:    _Gateway_UpdateEmailTemplate_Handler,
+		},
+		{
+			MethodName: "UpdateAppEmailTemplate",
+			Handler:    _Gateway_UpdateAppEmailTemplate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

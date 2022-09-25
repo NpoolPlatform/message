@@ -28,6 +28,7 @@ type GatewayClient interface {
 	GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
 	GetAppContacts(ctx context.Context, in *GetAppContactsRequest, opts ...grpc.CallOption) (*GetAppContactsResponse, error)
 	UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error)
+	UpdateAppContact(ctx context.Context, in *UpdateAppContactRequest, opts ...grpc.CallOption) (*UpdateAppContactResponse, error)
 	ContactViaEmail(ctx context.Context, in *ContactViaEmailRequest, opts ...grpc.CallOption) (*ContactViaEmailResponse, error)
 }
 
@@ -93,6 +94,15 @@ func (c *gatewayClient) UpdateContact(ctx context.Context, in *UpdateContactRequ
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateAppContact(ctx context.Context, in *UpdateAppContactRequest, opts ...grpc.CallOption) (*UpdateAppContactResponse, error) {
+	out := new(UpdateAppContactResponse)
+	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/UpdateAppContact", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) ContactViaEmail(ctx context.Context, in *ContactViaEmailRequest, opts ...grpc.CallOption) (*ContactViaEmailResponse, error) {
 	out := new(ContactViaEmailResponse)
 	err := c.cc.Invoke(ctx, "/third.gateway.contact.v1.Gateway/ContactViaEmail", in, out, opts...)
@@ -112,6 +122,7 @@ type GatewayServer interface {
 	GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error)
 	GetAppContacts(context.Context, *GetAppContactsRequest) (*GetAppContactsResponse, error)
 	UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error)
+	UpdateAppContact(context.Context, *UpdateAppContactRequest) (*UpdateAppContactResponse, error)
 	ContactViaEmail(context.Context, *ContactViaEmailRequest) (*ContactViaEmailResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -137,6 +148,9 @@ func (UnimplementedGatewayServer) GetAppContacts(context.Context, *GetAppContact
 }
 func (UnimplementedGatewayServer) UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppContact(context.Context, *UpdateAppContactRequest) (*UpdateAppContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppContact not implemented")
 }
 func (UnimplementedGatewayServer) ContactViaEmail(context.Context, *ContactViaEmailRequest) (*ContactViaEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContactViaEmail not implemented")
@@ -262,6 +276,24 @@ func _Gateway_UpdateContact_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateAppContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.gateway.contact.v1.Gateway/UpdateAppContact",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppContact(ctx, req.(*UpdateAppContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_ContactViaEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ContactViaEmailRequest)
 	if err := dec(in); err != nil {
@@ -310,6 +342,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateContact",
 			Handler:    _Gateway_UpdateContact_Handler,
+		},
+		{
+			MethodName: "UpdateAppContact",
+			Handler:    _Gateway_UpdateAppContact_Handler,
 		},
 		{
 			MethodName: "ContactViaEmail",
