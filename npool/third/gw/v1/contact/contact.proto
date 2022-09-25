@@ -53,6 +53,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateAppContact (UpdateAppContactRequest) returns (UpdateAppContactResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/contact"
+            body: "*"
+        };
+    }
+
     rpc ContactViaEmail (ContactViaEmailRequest) returns (ContactViaEmailResponse) {
         option (google.api.http) = {
             post: "/v1/contact/viaemail",
@@ -116,9 +123,9 @@ message GetAppContactsResponse {
     uint32                                    Total = 20;
 }
 
-
 message UpdateContactRequest {
     string          ID          = 10;
+    string          AppID       = 20;
     optional string Account     = 30;
     optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
     optional string Sender      = 50;
@@ -127,6 +134,18 @@ message UpdateContactRequest {
 message UpdateContactResponse {
     third.manager.contact.v1.Contact Info = 10;
 }
+message UpdateAppContactRequest {
+    string          ID          = 10;
+    string          TargetAppID = 20;
+    optional string Account     = 30;
+    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    optional string Sender      = 50;
+}
+
+message UpdateAppContactResponse {
+    third.manager.contact.v1.Contact Info = 10;
+}
+
 
 message ContactViaEmailRequest {
     string AppID      = 10;

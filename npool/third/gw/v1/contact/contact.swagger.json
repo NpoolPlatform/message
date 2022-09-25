@@ -208,6 +208,38 @@
         ]
       }
     },
+    "/v1/update/app/contact": {
+      "post": {
+        "operationId": "Gateway_UpdateAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/contact": {
       "post": {
         "operationId": "Gateway_UpdateContact",
@@ -350,6 +382,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "Account": {
           "type": "string"
         },
@@ -477,6 +512,34 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
         }
       }
     },

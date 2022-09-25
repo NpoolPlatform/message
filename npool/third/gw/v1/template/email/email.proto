@@ -51,6 +51,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc UpdateAppEmailTemplate (UpdateAppEmailTemplateRequest) returns (UpdateAppEmailTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/emailtemplate"
+            body: "*"
+        };
+    }
 }
 
 message CreateEmailTemplateRequest {
@@ -115,18 +122,33 @@ message GetAppEmailTemplatesResponse {
     uint32                                                 Total = 20;
 }
 
-
 message UpdateEmailTemplateRequest {
     string ID                = 10;
-    string Sender            = 20;
-    repeated string ReplyTos = 30;
-    repeated string CCTos    = 40;
-    string Subject           = 50;
-    string Body              = 60;
-    string DefaultToUsername = 70;
+    string AppID             = 20;
+    string Sender            = 30;
+    repeated string ReplyTos = 40;
+    repeated string CCTos    = 50;
+    string Subject           = 60;
+    string Body              = 70;
+    string DefaultToUsername = 80;
 }
 
 message UpdateEmailTemplateResponse {
+    third.manager.template.email.v1.EmailTemplate Info = 10;
+}
+
+message UpdateAppEmailTemplateRequest {
+    string ID                = 10;
+    string TargetAppID       = 20;
+    string Sender            = 30;
+    repeated string ReplyTos = 40;
+    repeated string CCTos    = 50;
+    string Subject           = 60;
+    string Body              = 70;
+    string DefaultToUsername = 80;
+}
+
+message UpdateAppEmailTemplateResponse {
     third.manager.template.email.v1.EmailTemplate Info = 10;
 }
 

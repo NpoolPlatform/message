@@ -176,6 +176,38 @@
         ]
       }
     },
+    "/v1/update/app/smstemplate": {
+      "post": {
+        "operationId": "Gateway_UpdateAppSMSTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppSMSTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppSMSTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/smstemplate": {
       "post": {
         "operationId": "Gateway_UpdateSMSTemplate",
@@ -318,6 +350,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "Subject": {
           "type": "string"
         },
@@ -413,6 +448,31 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppSMSTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
         }
       }
     },

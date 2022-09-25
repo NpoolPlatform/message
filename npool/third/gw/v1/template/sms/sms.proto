@@ -45,10 +45,16 @@ service Gateway {
         };
     }
 
-
     rpc UpdateSMSTemplate (UpdateSMSTemplateRequest) returns (UpdateSMSTemplateResponse) {
         option (google.api.http) = {
             post: "/v1/update/smstemplate"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppSMSTemplate (UpdateAppSMSTemplateRequest) returns (UpdateAppSMSTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/smstemplate"
             body: "*"
         };
     }
@@ -110,10 +116,22 @@ message GetAppSMSTemplatesResponse {
 
 message UpdateSMSTemplateRequest {
     string ID      = 10;
-    string Subject = 20;
-    string Message = 30;
+    string AppID   = 20;
+    string Subject = 30;
+    string Message = 40;
 }
 
 message UpdateSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message UpdateAppSMSTemplateRequest {
+    string ID          = 10;
+    string TargetAppID = 20;
+    string Subject     = 30;
+    string Message     = 40;
+}
+
+message UpdateAppSMSTemplateResponse {
     third.manager.template.sms.v1.SMSTemplate Info = 10;
 }
