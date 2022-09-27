@@ -25,6 +25,13 @@ service Gateway {
         };
     }
 
+    rpc GetAppDepositAccounts (GetAppDepositAccountsRequest) returns (GetAppDepositAccountsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/depositaccounts"
+            body: "*"
+        };
+    }
+
     rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
         option (google.api.http) = {
             post: "/v1/get/useraccounts"
@@ -80,6 +87,17 @@ message GetDepositAccountRequest {
 
 message GetDepositAccountResponse {
     Account Info = 10;
+}
+
+message GetAppDepositAccountsRequest {
+    string TargetAppID      = 10;
+    int32 Offset            = 20;
+    int32 Limit             = 30;
+}
+
+message GetAppDepositAccountsResponse {
+    repeated Account Infos = 10;
+    uint32           Total = 20;
 }
 
 message GetAccountsRequest {
