@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	CreateWithdrawAccount(ctx context.Context, in *CreateWithdrawAccountRequest, opts ...grpc.CallOption) (*CreateWithdrawAccountResponse, error)
 	GetDepositAccount(ctx context.Context, in *GetDepositAccountRequest, opts ...grpc.CallOption) (*GetDepositAccountResponse, error)
+	GetAppDepositAccounts(ctx context.Context, in *GetAppDepositAccountsRequest, opts ...grpc.CallOption) (*GetAppDepositAccountsResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	GetAppAccounts(ctx context.Context, in *GetAppAccountsRequest, opts ...grpc.CallOption) (*GetAppAccountsResponse, error)
 }
@@ -54,6 +55,15 @@ func (c *gatewayClient) GetDepositAccount(ctx context.Context, in *GetDepositAcc
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppDepositAccounts(ctx context.Context, in *GetAppDepositAccountsRequest, opts ...grpc.CallOption) (*GetAppDepositAccountsResponse, error) {
+	out := new(GetAppDepositAccountsResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/GetAppDepositAccounts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
 	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/GetAccounts", in, out, opts...)
@@ -78,6 +88,7 @@ func (c *gatewayClient) GetAppAccounts(ctx context.Context, in *GetAppAccountsRe
 type GatewayServer interface {
 	CreateWithdrawAccount(context.Context, *CreateWithdrawAccountRequest) (*CreateWithdrawAccountResponse, error)
 	GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error)
+	GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	GetAppAccounts(context.Context, *GetAppAccountsRequest) (*GetAppAccountsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -92,6 +103,9 @@ func (UnimplementedGatewayServer) CreateWithdrawAccount(context.Context, *Create
 }
 func (UnimplementedGatewayServer) GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDepositAccount not implemented")
+}
+func (UnimplementedGatewayServer) GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppDepositAccounts not implemented")
 }
 func (UnimplementedGatewayServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
@@ -148,6 +162,24 @@ func _Gateway_GetDepositAccount_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppDepositAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppDepositAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppDepositAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/GetAppDepositAccounts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppDepositAccounts(ctx, req.(*GetAppDepositAccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountsRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +230,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDepositAccount",
 			Handler:    _Gateway_GetDepositAccount_Handler,
+		},
+		{
+			MethodName: "GetAppDepositAccounts",
+			Handler:    _Gateway_GetAppDepositAccounts_Handler,
 		},
 		{
 			MethodName: "GetAccounts",
