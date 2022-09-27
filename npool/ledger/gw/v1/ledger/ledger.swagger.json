@@ -565,6 +565,9 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
@@ -800,6 +803,9 @@
           "type": "string"
         },
         "Spendable": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         }
       }

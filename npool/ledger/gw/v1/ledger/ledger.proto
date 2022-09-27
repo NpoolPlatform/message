@@ -128,6 +128,7 @@ message General {
     string Locked     = 60;
     string Outcoming  = 70;
     string Spendable  = 80;
+    string UserID     = 90;
 }
 
 message GetGeneralsRequest {
@@ -177,6 +178,7 @@ message Detail {
     string Amount     = 70;
     string IOExtra    = 80;
     uint32 CreatedAt  = 90;
+    string UserID     = 100;
 }
 
 message GetDetailsRequest {
