@@ -120,15 +120,17 @@ service Gateway {
 }
 
 message General {
-    string CoinTypeID = 10;
-    string CoinName   = 20;
-    string CoinLogo   = 30;
-    string CoinUnit   = 40;
-    string Incoming   = 50;
-    string Locked     = 60;
-    string Outcoming  = 70;
-    string Spendable  = 80;
-    string UserID     = 90;
+    string CoinTypeID     = 10;
+    string CoinName       = 20;
+    string CoinLogo       = 30;
+    string CoinUnit       = 40;
+    string Incoming       = 50;
+    string Locked         = 60;
+    string Outcoming      = 70;
+    string Spendable      = 80;
+    string UserID         = 90;
+    string PhoneNo        = 100;
+    string EmailAddress   = 110;
 }
 
 message GetGeneralsRequest {
@@ -179,6 +181,8 @@ message Detail {
     string IOExtra    = 80;
     uint32 CreatedAt  = 90;
     string UserID     = 100;
+    string PhoneNo       = 110;
+    string EmailAddress  = 120;
 }
 
 message GetDetailsRequest {

@@ -568,6 +568,12 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "PhoneNo": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },
@@ -806,6 +812,12 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "PhoneNo": {
+          "type": "string"
+        },
+        "EmailAddress": {
           "type": "string"
         }
       }
