@@ -569,7 +569,7 @@
         "UserID": {
           "type": "string"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
@@ -814,7 +814,7 @@
         "UserID": {
           "type": "string"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {

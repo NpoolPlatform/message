@@ -62,7 +62,7 @@ message Account {
     account.manager.account1.v1.AccountUsedFor UsedFor = 110;
     repeated string Labels = 120;
     uint32 CreatedAt       = 130;
-    string PhoneNo         = 140;
+    string PhoneNO         = 140;
     string EmailAddress    = 150;
 }
 
