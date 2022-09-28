@@ -224,6 +224,12 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "PhoneNo": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },

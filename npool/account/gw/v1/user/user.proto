@@ -61,7 +61,9 @@ message Account {
     // Only [UserWithdraw, UserDirectBenefit, UserDeposit]
     account.manager.account1.v1.AccountUsedFor UsedFor = 110;
     repeated string Labels = 120;
-    uint32 CreatedAt  = 130;
+    uint32 CreatedAt       = 130;
+    string PhoneNo         = 140;
+    string EmailAddress    = 150;
 }
 
 message CreateWithdrawAccountRequest {
