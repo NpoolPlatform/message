@@ -225,7 +225,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "PhoneNo": {
+        "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
