@@ -62,7 +62,7 @@ service Gateway {
 
 message CreateEmailTemplateRequest {
     string AppID             = 10;
-    string LangID            = 20;
+    string TargetLangID      = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Sender            = 40;
     repeated string ReplyTos = 50;
@@ -70,7 +70,6 @@ message CreateEmailTemplateRequest {
     string Subject           = 70;
     string Body              = 80;
     string DefaultToUsername = 90;
-    string TargetLangID      = 100;
 }
 
 message CreateEmailTemplateResponse {
@@ -79,7 +78,7 @@ message CreateEmailTemplateResponse {
 
 message CreateAppEmailTemplateRequest {
     string TargetAppID       = 10;
-    string LangID            = 20;
+    string TargetLangID      = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Sender            = 40;
     repeated string ReplyTos = 50;
@@ -87,7 +86,6 @@ message CreateAppEmailTemplateRequest {
     string Subject           = 70;
     string Body              = 80;
     string DefaultToUsername = 90;
-    string TargetLangID      = 100;
 }
 
 message CreateAppEmailTemplateResponse {
