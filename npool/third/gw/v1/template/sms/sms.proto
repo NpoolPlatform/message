@@ -61,12 +61,11 @@ service Gateway {
 }
 
 message CreateSMSTemplateRequest {
-    string AppID   = 10;
-    string LangID  = 20;
+    string AppID         = 10;
+    string TargetLangID  = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Subject = 40;
     string Message = 50;
-    string TargetLangID = 60;
 }
 
 message CreateSMSTemplateResponse {
@@ -75,11 +74,10 @@ message CreateSMSTemplateResponse {
 
 message CreateAppSMSTemplateRequest {
     string TargetAppID    = 10;
-    string LangID         = 20;
+    string TargetLangID   = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Subject      = 40;
     string Message      = 50;
-    string TargetLangID = 60;
 }
 
 message CreateAppSMSTemplateResponse {
@@ -121,8 +119,7 @@ message UpdateSMSTemplateRequest {
     string AppID   = 20;
     string Subject = 30;
     string Message = 40;
-    string LangID  = 50;
-    string TargetLangID = 60;
+    string TargetLangID  = 50;
 }
 
 message UpdateSMSTemplateResponse {
@@ -132,10 +129,9 @@ message UpdateSMSTemplateResponse {
 message UpdateAppSMSTemplateRequest {
     string ID           = 10;
     string TargetAppID  = 20;
-    string LangID       = 30;
+    string TargetLangID = 30;
     string Subject      = 40;
     string Message      = 50;
-    string TargetLangID = 70;
 }
 
 message UpdateAppSMSTemplateResponse {
