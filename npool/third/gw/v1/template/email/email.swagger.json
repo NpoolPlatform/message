@@ -275,7 +275,7 @@
         "AppID": {
           "type": "string"
         },
-        "TargetLangID": {
+        "LangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -303,6 +303,9 @@
           "type": "string"
         },
         "DefaultToUsername": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }
@@ -414,7 +417,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "TargetLangID": {
+        "LangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -442,6 +445,9 @@
           "type": "string"
         },
         "DefaultToUsername": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }

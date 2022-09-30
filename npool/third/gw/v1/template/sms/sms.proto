@@ -61,7 +61,7 @@ service Gateway {
 }
 
 message CreateSMSTemplateRequest {
-    string AppID         = 10;
+    string AppID   = 10;
     string TargetLangID  = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
     string Subject = 40;
@@ -76,8 +76,8 @@ message CreateAppSMSTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
     third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Subject      = 40;
-    string Message      = 50;
+    string Subject     = 40;
+    string Message     = 50;
 }
 
 message CreateAppSMSTemplateResponse {
@@ -119,7 +119,7 @@ message UpdateSMSTemplateRequest {
     string AppID   = 20;
     string Subject = 30;
     string Message = 40;
-    string TargetLangID  = 50;
+    string TargetLangID = 50;
 }
 
 message UpdateSMSTemplateResponse {
