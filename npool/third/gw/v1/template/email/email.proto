@@ -70,6 +70,7 @@ message CreateEmailTemplateRequest {
     string Subject           = 70;
     string Body              = 80;
     string DefaultToUsername = 90;
+    string TargetLangID      = 100;
 }
 
 message CreateEmailTemplateResponse {
@@ -86,6 +87,7 @@ message CreateAppEmailTemplateRequest {
     string Subject           = 70;
     string Body              = 80;
     string DefaultToUsername = 90;
+    string TargetLangID      = 100;
 }
 
 message CreateAppEmailTemplateResponse {
@@ -131,6 +133,7 @@ message UpdateEmailTemplateRequest {
     string Subject           = 60;
     string Body              = 70;
     string DefaultToUsername = 80;
+    string TargetLangID      = 90;
 }
 
 message UpdateEmailTemplateResponse {
@@ -146,6 +149,7 @@ message UpdateAppEmailTemplateRequest {
     string Subject           = 60;
     string Body              = 70;
     string DefaultToUsername = 80;
+    string TargetLangID      = 90;
 }
 
 message UpdateAppEmailTemplateResponse {
