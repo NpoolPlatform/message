@@ -275,7 +275,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -358,6 +358,9 @@
         },
         "Message": {
           "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
         }
       }
     },
@@ -375,7 +378,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -458,6 +461,9 @@
           "type": "string"
         },
         "TargetAppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         },
         "Subject": {
