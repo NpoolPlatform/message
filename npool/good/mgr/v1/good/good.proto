@@ -57,7 +57,7 @@ message GoodReq {
     repeated string        SupportCoinTypeIDs = 130;
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
-    optional uint32        CreatedAt          = 160;
+    optional bool          TestOnly           = 160;
 }
 
 message Good {
@@ -76,9 +76,10 @@ message Good {
     string        SupportCoinTypeIDs = 130;
     uint32        DeliveryAt         = 140;
     uint32        StartAt            = 150;
-    uint32        CreatedAt          = 160;
-    uint32        UpdatedAt          = 170;
-    uint32        DeletedAt          = 180;
+    bool          TestOnly           = 160;
+    uint32        CreatedAt          = 170;
+    uint32        UpdatedAt          = 180;
+    uint32        DeletedAt          = 190;
 }
 
 message Conds {

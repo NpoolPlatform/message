@@ -204,6 +204,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "TestOnly": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -275,9 +278,8 @@
           "type": "integer",
           "format": "int64"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "TestOnly": {
+          "type": "boolean"
         }
       }
     },
