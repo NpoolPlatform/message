@@ -15,7 +15,6 @@ import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
-import "npool/appuser/mgr/v1/mgr.proto";
 import "npool/coininfo/coininfo.proto";
 
 // Cloud Hashing Goods
