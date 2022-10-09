@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package good.manager.deviceinfo.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/deviceinfo";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateDeviceInfo     (CreateDeviceInfoRequest)     returns (CreateDeviceInfoResponse)     {}
+    rpc CreateDeviceInfos    (CreateDeviceInfosRequest)    returns (CreateDeviceInfosResponse)    {}
+    rpc GetDeviceInfo        (GetDeviceInfoRequest)        returns (GetDeviceInfoResponse)        {}
+    rpc GetDeviceInfoOnly    (GetDeviceInfoOnlyRequest)    returns (GetDeviceInfoOnlyResponse)    {}
+    rpc GetDeviceInfos       (GetDeviceInfosRequest)       returns (GetDeviceInfosResponse)       {}
+    rpc ExistDeviceInfo      (ExistDeviceInfoRequest)      returns (ExistDeviceInfoResponse)      {}
+    rpc ExistDeviceInfoConds (ExistDeviceInfoCondsRequest) returns (ExistDeviceInfoCondsResponse) {}
+    rpc CountDeviceInfos     (CountDeviceInfosRequest)     returns (CountDeviceInfosResponse)     {}
+}
+
+message DeviceInfoReq {
+    optional string ID              = 10;
+    optional string Type            = 20;
+    optional string Manufacturer    = 30;
+    optional string PowerComsuption = 40;
+    optional uint32 ShipmentAt      = 50;
+    repeated string Posters         = 60;
+}
+
+message DeviceInfo {
+    string          ID              = 10;
+    string          Type            = 20;
+    string          Manufacturer    = 30;
+    string          PowerComsuption = 40;
+    uint32          ShipmentAt      = 50;
+    repeated string Posters         = 60;
+    uint32          CreatedAt       = 70;
+    uint32          UpdatedAt       = 80;
+    uint32          DeletedAt       = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID           = 10;
+    optional npool.v1.StringVal Type         = 20;
+    optional npool.v1.StringVal Manufacturer = 30;
+}
+
+
+message CreateDeviceInfoRequest {
+    DeviceInfoReq Info = 10;
+}
+
+message CreateDeviceInfoResponse {
+    DeviceInfo Info = 10;
+}
+
+message CreateDeviceInfosRequest {
+    repeated DeviceInfoReq Infos = 10;
+}
+
+message CreateDeviceInfosResponse {
+    repeated DeviceInfo Infos = 10;
+}
+
+message GetDeviceInfoRequest {
+    string ID = 10;
+}
+
+message GetDeviceInfoResponse {
+    DeviceInfo Info = 10;
+}
+
+message GetDeviceInfosRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetDeviceInfosResponse {
+    repeated DeviceInfo Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetDeviceInfoOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetDeviceInfoOnlyResponse {
+    DeviceInfo Info = 10;
+}
+
+message ExistDeviceInfoRequest {
+    string ID = 10;
+}
+
+message ExistDeviceInfoResponse {
+    bool Info = 10;
+}
+
+message ExistDeviceInfoCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistDeviceInfoCondsResponse {
+    bool Info = 10;
+}
+
+message CountDeviceInfosRequest {
+    Conds Conds = 10;
+}
+
+message CountDeviceInfosResponse {
+    uint32 Info = 10;
+}
+
