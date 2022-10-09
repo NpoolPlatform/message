@@ -28,11 +28,15 @@ enum BenefitType {
 }
 
 enum GoodType {
-    DefaultGoodType   = 0;
+    DefaultGoodType         = 0;
     // Classic good: user pay for both device and other material, get all benefit
-    GoodTypeClassic   = 10;
+    GoodTypeClassicMining   = 10;
     // Union good: user pay for a part of material, get part of benefit
-    GoodTypeUnion     = 20;
+    GoodTypeUnionMining     = 20;
+
+    // Fee good
+    GoodTypeTechniqueFee    = 30;
+    GoodTypeElectricityFee  = 40;
 }
 
 message GoodReq {
