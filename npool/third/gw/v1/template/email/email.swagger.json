@@ -304,6 +304,9 @@
         },
         "DefaultToUsername": {
           "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
         }
       }
     },
@@ -394,6 +397,9 @@
         },
         "DefaultToUsername": {
           "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
         }
       }
     },
@@ -439,6 +445,9 @@
           "type": "string"
         },
         "DefaultToUsername": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }
@@ -554,6 +563,9 @@
           "type": "string"
         },
         "DefaultToUsername": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         }
       }
