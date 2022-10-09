@@ -72,6 +72,14 @@
           "type": "integer",
           "format": "int32"
         },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -111,6 +119,14 @@
           "type": "string"
         },
         "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
           "type": "integer",
           "format": "int32"
         }

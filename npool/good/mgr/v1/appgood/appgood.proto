@@ -20,28 +20,32 @@ service Manager {
 }
 
 message AppGoodReq {
-    optional string ID           = 10;
-    optional string AppID        = 20;
-    optional string GoodID       = 30;
-    optional bool   Online       = 40;
-    optional bool   Visible      = 50;
-    optional string GoodName     = 60;
-    optional string Price        = 70;
-    optional int32  DisplayIndex = 80;
+    optional string ID                  = 10;
+    optional string AppID               = 20;
+    optional string GoodID              = 30;
+    optional bool   Online              = 40;
+    optional bool   Visible             = 50;
+    optional string GoodName            = 60;
+    optional string Price               = 70;
+    optional int32  DisplayIndex        = 80;
+    optional int32  PurchaseLimit       = 90;
+    optional int32  CommissionPercent   = 100;
 }
 
 message AppGood {
-    string ID           = 10;
-    string AppID        = 20;
-    string GoodID       = 30;
-    bool   Online       = 40;
-    bool   Visible      = 50;
-    string GoodName     = 60;
-    string Price        = 70;
-    int32  DisplayIndex = 80;
-    uint32 CreatedAt    = 90;
-    uint32 UpdatedAt    = 100;
-    uint32 DeletedAt    = 110;
+    string ID                = 10;
+    string AppID             = 20;
+    string GoodID            = 30;
+    bool   Online            = 40;
+    bool   Visible           = 50;
+    string GoodName          = 60;
+    string Price             = 70;
+    int32  DisplayIndex      = 80;
+    int32  PurchaseLimit     = 90;
+    int32  CommissionPercent = 100;
+    uint32 CreatedAt         = 110;
+    uint32 UpdatedAt         = 120;
+    uint32 DeletedAt         = 130;
 }
 
 message Conds {
