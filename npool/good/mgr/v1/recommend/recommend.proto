@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package good.manager.recommend.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/recommend";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateRecommend     (CreateRecommendRequest)     returns (CreateRecommendResponse)     {}
+    rpc CreateRecommends    (CreateRecommendsRequest)    returns (CreateRecommendsResponse)    {}
+    rpc GetRecommend        (GetRecommendRequest)        returns (GetRecommendResponse)        {}
+    rpc GetRecommendOnly    (GetRecommendOnlyRequest)    returns (GetRecommendOnlyResponse)    {}
+    rpc GetRecommends       (GetRecommendsRequest)       returns (GetRecommendsResponse)       {}
+    rpc ExistRecommend      (ExistRecommendRequest)      returns (ExistRecommendResponse)      {}
+    rpc ExistRecommendConds (ExistRecommendCondsRequest) returns (ExistRecommendCondsResponse) {}
+    rpc CountRecommends     (CountRecommendsRequest)     returns (CountRecommendsResponse)     {}
+}
+
+message RecommendReq {
+    optional string ID               = 10;
+    optional string AppID            = 20;
+    optional string GoodID           = 30;
+    optional string RecommenderID    = 40;
+    optional string Message          = 50;
+    optional float  RecommendIUndex  = 60;
+}
+
+message Recommend {
+    string ID               = 10;
+    string AppID            = 20;
+    string GoodID           = 30;
+    string RecommenderID    = 40;
+    string Message          = 50;
+    float  RecommendIUndex  = 60;
+    uint32 CreatedAt        = 70;
+    uint32 UpdatedAt        = 80;
+    uint32 DeletedAt        = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID     = 10;
+    optional npool.v1.StringVal AppID  = 20;
+    optional npool.v1.StringVal GoodID = 30;
+}
+
+
+message CreateRecommendRequest {
+    RecommendReq Info = 10;
+}
+
+message CreateRecommendResponse {
+    Recommend Info = 10;
+}
+
+message CreateRecommendsRequest {
+    repeated RecommendReq Infos = 10;
+}
+
+message CreateRecommendsResponse {
+    repeated Recommend Infos = 10;
+}
+
+message GetRecommendRequest {
+    string ID = 10;
+}
+
+message GetRecommendResponse {
+    Recommend Info = 10;
+}
+
+message GetRecommendsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetRecommendsResponse {
+    repeated Recommend Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetRecommendOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetRecommendOnlyResponse {
+    Recommend Info = 10;
+}
+
+message ExistRecommendRequest {
+    string ID = 10;
+}
+
+message ExistRecommendResponse {
+    bool Info = 10;
+}
+
+message ExistRecommendCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRecommendCondsResponse {
+    bool Info = 10;
+}
+
+message CountRecommendsRequest {
+    Conds Conds = 10;
+}
+
+message CountRecommendsResponse {
+    uint32 Info = 10;
+}
+
