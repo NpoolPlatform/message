@@ -86,6 +86,14 @@
         }
       }
     },
+    "v1DeletePromotionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Promotion"
+        }
+      }
+    },
     "v1ExistPromotionCondsResponse": {
       "type": "object",
       "properties": {
@@ -221,6 +229,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdatePromotionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Promotion"
         }
       }
     }

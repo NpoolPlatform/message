@@ -83,6 +83,14 @@
         }
       }
     },
+    "v1DeleteStockResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
     "v1ExistStockCondsResponse": {
       "type": "object",
       "properties": {
@@ -204,6 +212,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateStockResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
         }
       }
     }

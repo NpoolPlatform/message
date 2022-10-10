@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreatePromotion     (CreatePromotionRequest)     returns (CreatePromotionResponse)     {}
     rpc CreatePromotions    (CreatePromotionsRequest)    returns (CreatePromotionsResponse)    {}
+    rpc UpdatePromotion     (UpdatePromotionRequest)     returns (UpdatePromotionResponse)     {}
     rpc GetPromotion        (GetPromotionRequest)        returns (GetPromotionResponse)        {}
     rpc GetPromotionOnly    (GetPromotionOnlyRequest)    returns (GetPromotionOnlyResponse)    {}
     rpc GetPromotions       (GetPromotionsRequest)       returns (GetPromotionsResponse)       {}
     rpc ExistPromotion      (ExistPromotionRequest)      returns (ExistPromotionResponse)      {}
     rpc ExistPromotionConds (ExistPromotionCondsRequest) returns (ExistPromotionCondsResponse) {}
     rpc CountPromotions     (CountPromotionsRequest)     returns (CountPromotionsResponse)     {}
+    rpc DeletePromotion     (DeletePromotionRequest)     returns (DeletePromotionResponse)     {}
 }
 
 message PromotionReq {
@@ -65,6 +67,14 @@ message CreatePromotionsRequest {
 
 message CreatePromotionsResponse {
     repeated Promotion Infos = 10;
+}
+
+message UpdatePromotionRequest {
+    PromotionReq Info = 10;
+}
+
+message UpdatePromotionResponse {
+    Promotion Info = 10;
 }
 
 message GetPromotionRequest {
@@ -118,3 +128,10 @@ message CountPromotionsResponse {
     uint32 Info = 10;
 }
 
+message DeletePromotionRequest {
+    string ID = 10;
+}
+
+message DeletePromotionResponse {
+    Promotion Info = 10;
+}

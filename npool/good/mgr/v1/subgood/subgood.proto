@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateSubGood     (CreateSubGoodRequest)     returns (CreateSubGoodResponse)     {}
     rpc CreateSubGoods    (CreateSubGoodsRequest)    returns (CreateSubGoodsResponse)    {}
+    rpc UpdateSubGood     (UpdateSubGoodRequest)     returns (UpdateSubGoodResponse)     {}
     rpc GetSubGood        (GetSubGoodRequest)        returns (GetSubGoodResponse)        {}
     rpc GetSubGoodOnly    (GetSubGoodOnlyRequest)    returns (GetSubGoodOnlyResponse)    {}
     rpc GetSubGoods       (GetSubGoodsRequest)       returns (GetSubGoodsResponse)       {}
     rpc ExistSubGood      (ExistSubGoodRequest)      returns (ExistSubGoodResponse)      {}
     rpc ExistSubGoodConds (ExistSubGoodCondsRequest) returns (ExistSubGoodCondsResponse) {}
     rpc CountSubGoods     (CountSubGoodsRequest)     returns (CountSubGoodsResponse)     {}
+    rpc DeleteSubGood     (DeleteSubGoodRequest)     returns (DeleteSubGoodResponse)     {}
 }
 
 message SubGoodReq {
@@ -61,6 +63,14 @@ message CreateSubGoodsRequest {
 
 message CreateSubGoodsResponse {
     repeated SubGood Infos = 10;
+}
+
+message UpdateSubGoodRequest {
+    SubGoodReq Info = 10;
+}
+
+message UpdateSubGoodResponse {
+    SubGood Info = 10;
 }
 
 message GetSubGoodRequest {
@@ -112,5 +122,13 @@ message CountSubGoodsRequest {
 
 message CountSubGoodsResponse {
     uint32 Info = 10;
+}
+
+message DeleteSubGoodRequest {
+    string ID = 10;
+}
+
+message DeleteSubGoodResponse {
+    SubGood Info = 10;
 }
 

@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreatePromotion(ctx context.Context, in *CreatePromotionRequest, opts ...grpc.CallOption) (*CreatePromotionResponse, error)
 	CreatePromotions(ctx context.Context, in *CreatePromotionsRequest, opts ...grpc.CallOption) (*CreatePromotionsResponse, error)
+	UpdatePromotion(ctx context.Context, in *UpdatePromotionRequest, opts ...grpc.CallOption) (*UpdatePromotionResponse, error)
 	GetPromotion(ctx context.Context, in *GetPromotionRequest, opts ...grpc.CallOption) (*GetPromotionResponse, error)
 	GetPromotionOnly(ctx context.Context, in *GetPromotionOnlyRequest, opts ...grpc.CallOption) (*GetPromotionOnlyResponse, error)
 	GetPromotions(ctx context.Context, in *GetPromotionsRequest, opts ...grpc.CallOption) (*GetPromotionsResponse, error)
 	ExistPromotion(ctx context.Context, in *ExistPromotionRequest, opts ...grpc.CallOption) (*ExistPromotionResponse, error)
 	ExistPromotionConds(ctx context.Context, in *ExistPromotionCondsRequest, opts ...grpc.CallOption) (*ExistPromotionCondsResponse, error)
 	CountPromotions(ctx context.Context, in *CountPromotionsRequest, opts ...grpc.CallOption) (*CountPromotionsResponse, error)
+	DeletePromotion(ctx context.Context, in *DeletePromotionRequest, opts ...grpc.CallOption) (*DeletePromotionResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreatePromotion(ctx context.Context, in *CreatePromotion
 func (c *managerClient) CreatePromotions(ctx context.Context, in *CreatePromotionsRequest, opts ...grpc.CallOption) (*CreatePromotionsResponse, error) {
 	out := new(CreatePromotionsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.promotion.v1.Manager/CreatePromotions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdatePromotion(ctx context.Context, in *UpdatePromotionRequest, opts ...grpc.CallOption) (*UpdatePromotionResponse, error) {
+	out := new(UpdatePromotionResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.promotion.v1.Manager/UpdatePromotion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountPromotions(ctx context.Context, in *CountPromotions
 	return out, nil
 }
 
+func (c *managerClient) DeletePromotion(ctx context.Context, in *DeletePromotionRequest, opts ...grpc.CallOption) (*DeletePromotionResponse, error) {
+	out := new(DeletePromotionResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.promotion.v1.Manager/DeletePromotion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreatePromotion(context.Context, *CreatePromotionRequest) (*CreatePromotionResponse, error)
 	CreatePromotions(context.Context, *CreatePromotionsRequest) (*CreatePromotionsResponse, error)
+	UpdatePromotion(context.Context, *UpdatePromotionRequest) (*UpdatePromotionResponse, error)
 	GetPromotion(context.Context, *GetPromotionRequest) (*GetPromotionResponse, error)
 	GetPromotionOnly(context.Context, *GetPromotionOnlyRequest) (*GetPromotionOnlyResponse, error)
 	GetPromotions(context.Context, *GetPromotionsRequest) (*GetPromotionsResponse, error)
 	ExistPromotion(context.Context, *ExistPromotionRequest) (*ExistPromotionResponse, error)
 	ExistPromotionConds(context.Context, *ExistPromotionCondsRequest) (*ExistPromotionCondsResponse, error)
 	CountPromotions(context.Context, *CountPromotionsRequest) (*CountPromotionsResponse, error)
+	DeletePromotion(context.Context, *DeletePromotionRequest) (*DeletePromotionResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreatePromotion(context.Context, *CreatePromot
 }
 func (UnimplementedManagerServer) CreatePromotions(context.Context, *CreatePromotionsRequest) (*CreatePromotionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePromotions not implemented")
+}
+func (UnimplementedManagerServer) UpdatePromotion(context.Context, *UpdatePromotionRequest) (*UpdatePromotionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePromotion not implemented")
 }
 func (UnimplementedManagerServer) GetPromotion(context.Context, *GetPromotionRequest) (*GetPromotionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPromotion not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistPromotionConds(context.Context, *ExistPro
 }
 func (UnimplementedManagerServer) CountPromotions(context.Context, *CountPromotionsRequest) (*CountPromotionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountPromotions not implemented")
+}
+func (UnimplementedManagerServer) DeletePromotion(context.Context, *DeletePromotionRequest) (*DeletePromotionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeletePromotion not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreatePromotions_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreatePromotions(ctx, req.(*CreatePromotionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdatePromotion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePromotionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdatePromotion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.promotion.v1.Manager/UpdatePromotion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdatePromotion(ctx, req.(*UpdatePromotionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountPromotions_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeletePromotion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeletePromotionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeletePromotion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.promotion.v1.Manager/DeletePromotion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeletePromotion(ctx, req.(*DeletePromotionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreatePromotions",
 			Handler:    _Manager_CreatePromotions_Handler,
+		},
+		{
+			MethodName: "UpdatePromotion",
+			Handler:    _Manager_UpdatePromotion_Handler,
 		},
 		{
 			MethodName: "GetPromotion",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountPromotions",
 			Handler:    _Manager_CountPromotions_Handler,
+		},
+		{
+			MethodName: "DeletePromotion",
+			Handler:    _Manager_DeletePromotion_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

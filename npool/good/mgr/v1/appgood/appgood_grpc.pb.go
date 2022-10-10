@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateAppGood(ctx context.Context, in *CreateAppGoodRequest, opts ...grpc.CallOption) (*CreateAppGoodResponse, error)
 	CreateAppGoods(ctx context.Context, in *CreateAppGoodsRequest, opts ...grpc.CallOption) (*CreateAppGoodsResponse, error)
+	UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error)
 	GetAppGood(ctx context.Context, in *GetAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodResponse, error)
 	GetAppGoodOnly(ctx context.Context, in *GetAppGoodOnlyRequest, opts ...grpc.CallOption) (*GetAppGoodOnlyResponse, error)
 	GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error)
 	ExistAppGood(ctx context.Context, in *ExistAppGoodRequest, opts ...grpc.CallOption) (*ExistAppGoodResponse, error)
 	ExistAppGoodConds(ctx context.Context, in *ExistAppGoodCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodCondsResponse, error)
 	CountAppGoods(ctx context.Context, in *CountAppGoodsRequest, opts ...grpc.CallOption) (*CountAppGoodsResponse, error)
+	DeleteAppGoods(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateAppGood(ctx context.Context, in *CreateAppGoodRequ
 func (c *managerClient) CreateAppGoods(ctx context.Context, in *CreateAppGoodsRequest, opts ...grpc.CallOption) (*CreateAppGoodsResponse, error) {
 	out := new(CreateAppGoodsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.appgood.v1.Manager/CreateAppGoods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error) {
+	out := new(UpdateAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.appgood.v1.Manager/UpdateAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountAppGoods(ctx context.Context, in *CountAppGoodsRequ
 	return out, nil
 }
 
+func (c *managerClient) DeleteAppGoods(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error) {
+	out := new(DeleteAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.appgood.v1.Manager/DeleteAppGoods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateAppGood(context.Context, *CreateAppGoodRequest) (*CreateAppGoodResponse, error)
 	CreateAppGoods(context.Context, *CreateAppGoodsRequest) (*CreateAppGoodsResponse, error)
+	UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error)
 	GetAppGood(context.Context, *GetAppGoodRequest) (*GetAppGoodResponse, error)
 	GetAppGoodOnly(context.Context, *GetAppGoodOnlyRequest) (*GetAppGoodOnlyResponse, error)
 	GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error)
 	ExistAppGood(context.Context, *ExistAppGoodRequest) (*ExistAppGoodResponse, error)
 	ExistAppGoodConds(context.Context, *ExistAppGoodCondsRequest) (*ExistAppGoodCondsResponse, error)
 	CountAppGoods(context.Context, *CountAppGoodsRequest) (*CountAppGoodsResponse, error)
+	DeleteAppGoods(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateAppGood(context.Context, *CreateAppGoodR
 }
 func (UnimplementedManagerServer) CreateAppGoods(context.Context, *CreateAppGoodsRequest) (*CreateAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoods not implemented")
+}
+func (UnimplementedManagerServer) UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGood not implemented")
 }
 func (UnimplementedManagerServer) GetAppGood(context.Context, *GetAppGoodRequest) (*GetAppGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGood not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistAppGoodConds(context.Context, *ExistAppGo
 }
 func (UnimplementedManagerServer) CountAppGoods(context.Context, *CountAppGoodsRequest) (*CountAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppGoods not implemented")
+}
+func (UnimplementedManagerServer) DeleteAppGoods(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGoods not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateAppGoods_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateAppGoods(ctx, req.(*CreateAppGoodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateAppGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.appgood.v1.Manager/UpdateAppGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateAppGood(ctx, req.(*UpdateAppGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountAppGoods_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteAppGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteAppGoods(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.appgood.v1.Manager/DeleteAppGoods",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteAppGoods(ctx, req.(*DeleteAppGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAppGoods",
 			Handler:    _Manager_CreateAppGoods_Handler,
+		},
+		{
+			MethodName: "UpdateAppGood",
+			Handler:    _Manager_UpdateAppGood_Handler,
 		},
 		{
 			MethodName: "GetAppGood",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountAppGoods",
 			Handler:    _Manager_CountAppGoods_Handler,
+		},
+		{
+			MethodName: "DeleteAppGoods",
+			Handler:    _Manager_DeleteAppGoods_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

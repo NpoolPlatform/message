@@ -471,6 +471,100 @@ func (x *CreateSubGoodsResponse) GetInfos() []*SubGood {
 	return nil
 }
 
+type UpdateSubGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *SubGoodReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateSubGoodRequest) Reset() {
+	*x = UpdateSubGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSubGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSubGoodRequest) ProtoMessage() {}
+
+func (x *UpdateSubGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSubGoodRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSubGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *UpdateSubGoodRequest) GetInfo() *SubGoodReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateSubGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *SubGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateSubGoodResponse) Reset() {
+	*x = UpdateSubGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSubGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSubGoodResponse) ProtoMessage() {}
+
+func (x *UpdateSubGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSubGoodResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSubGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateSubGoodResponse) GetInfo() *SubGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type GetSubGoodRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -482,7 +576,7 @@ type GetSubGoodRequest struct {
 func (x *GetSubGoodRequest) Reset() {
 	*x = GetSubGoodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[7]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -495,7 +589,7 @@ func (x *GetSubGoodRequest) String() string {
 func (*GetSubGoodRequest) ProtoMessage() {}
 
 func (x *GetSubGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[7]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -508,7 +602,7 @@ func (x *GetSubGoodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodRequest.ProtoReflect.Descriptor instead.
 func (*GetSubGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{7}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetSubGoodRequest) GetID() string {
@@ -529,7 +623,7 @@ type GetSubGoodResponse struct {
 func (x *GetSubGoodResponse) Reset() {
 	*x = GetSubGoodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[8]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -542,7 +636,7 @@ func (x *GetSubGoodResponse) String() string {
 func (*GetSubGoodResponse) ProtoMessage() {}
 
 func (x *GetSubGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[8]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -555,7 +649,7 @@ func (x *GetSubGoodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodResponse.ProtoReflect.Descriptor instead.
 func (*GetSubGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{8}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetSubGoodResponse) GetInfo() *SubGood {
@@ -578,7 +672,7 @@ type GetSubGoodsRequest struct {
 func (x *GetSubGoodsRequest) Reset() {
 	*x = GetSubGoodsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[9]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +685,7 @@ func (x *GetSubGoodsRequest) String() string {
 func (*GetSubGoodsRequest) ProtoMessage() {}
 
 func (x *GetSubGoodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[9]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +698,7 @@ func (x *GetSubGoodsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodsRequest.ProtoReflect.Descriptor instead.
 func (*GetSubGoodsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{9}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetSubGoodsRequest) GetConds() *Conds {
@@ -640,7 +734,7 @@ type GetSubGoodsResponse struct {
 func (x *GetSubGoodsResponse) Reset() {
 	*x = GetSubGoodsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[10]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -653,7 +747,7 @@ func (x *GetSubGoodsResponse) String() string {
 func (*GetSubGoodsResponse) ProtoMessage() {}
 
 func (x *GetSubGoodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[10]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -666,7 +760,7 @@ func (x *GetSubGoodsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodsResponse.ProtoReflect.Descriptor instead.
 func (*GetSubGoodsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{10}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetSubGoodsResponse) GetInfos() []*SubGood {
@@ -694,7 +788,7 @@ type GetSubGoodOnlyRequest struct {
 func (x *GetSubGoodOnlyRequest) Reset() {
 	*x = GetSubGoodOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[11]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -707,7 +801,7 @@ func (x *GetSubGoodOnlyRequest) String() string {
 func (*GetSubGoodOnlyRequest) ProtoMessage() {}
 
 func (x *GetSubGoodOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[11]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -720,7 +814,7 @@ func (x *GetSubGoodOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetSubGoodOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{11}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetSubGoodOnlyRequest) GetConds() *Conds {
@@ -741,7 +835,7 @@ type GetSubGoodOnlyResponse struct {
 func (x *GetSubGoodOnlyResponse) Reset() {
 	*x = GetSubGoodOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[12]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -754,7 +848,7 @@ func (x *GetSubGoodOnlyResponse) String() string {
 func (*GetSubGoodOnlyResponse) ProtoMessage() {}
 
 func (x *GetSubGoodOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[12]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -767,7 +861,7 @@ func (x *GetSubGoodOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSubGoodOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetSubGoodOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{12}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetSubGoodOnlyResponse) GetInfo() *SubGood {
@@ -788,7 +882,7 @@ type ExistSubGoodRequest struct {
 func (x *ExistSubGoodRequest) Reset() {
 	*x = ExistSubGoodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[13]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -801,7 +895,7 @@ func (x *ExistSubGoodRequest) String() string {
 func (*ExistSubGoodRequest) ProtoMessage() {}
 
 func (x *ExistSubGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[13]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -814,7 +908,7 @@ func (x *ExistSubGoodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistSubGoodRequest.ProtoReflect.Descriptor instead.
 func (*ExistSubGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{13}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistSubGoodRequest) GetID() string {
@@ -835,7 +929,7 @@ type ExistSubGoodResponse struct {
 func (x *ExistSubGoodResponse) Reset() {
 	*x = ExistSubGoodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[14]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -848,7 +942,7 @@ func (x *ExistSubGoodResponse) String() string {
 func (*ExistSubGoodResponse) ProtoMessage() {}
 
 func (x *ExistSubGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[14]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -861,7 +955,7 @@ func (x *ExistSubGoodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistSubGoodResponse.ProtoReflect.Descriptor instead.
 func (*ExistSubGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{14}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistSubGoodResponse) GetInfo() bool {
@@ -882,7 +976,7 @@ type ExistSubGoodCondsRequest struct {
 func (x *ExistSubGoodCondsRequest) Reset() {
 	*x = ExistSubGoodCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[15]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -895,7 +989,7 @@ func (x *ExistSubGoodCondsRequest) String() string {
 func (*ExistSubGoodCondsRequest) ProtoMessage() {}
 
 func (x *ExistSubGoodCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[15]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -908,7 +1002,7 @@ func (x *ExistSubGoodCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistSubGoodCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistSubGoodCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{15}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ExistSubGoodCondsRequest) GetConds() *Conds {
@@ -929,7 +1023,7 @@ type ExistSubGoodCondsResponse struct {
 func (x *ExistSubGoodCondsResponse) Reset() {
 	*x = ExistSubGoodCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[16]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -942,7 +1036,7 @@ func (x *ExistSubGoodCondsResponse) String() string {
 func (*ExistSubGoodCondsResponse) ProtoMessage() {}
 
 func (x *ExistSubGoodCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[16]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -955,7 +1049,7 @@ func (x *ExistSubGoodCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistSubGoodCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistSubGoodCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{16}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExistSubGoodCondsResponse) GetInfo() bool {
@@ -976,7 +1070,7 @@ type CountSubGoodsRequest struct {
 func (x *CountSubGoodsRequest) Reset() {
 	*x = CountSubGoodsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[17]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -989,7 +1083,7 @@ func (x *CountSubGoodsRequest) String() string {
 func (*CountSubGoodsRequest) ProtoMessage() {}
 
 func (x *CountSubGoodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[17]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1002,7 +1096,7 @@ func (x *CountSubGoodsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountSubGoodsRequest.ProtoReflect.Descriptor instead.
 func (*CountSubGoodsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{17}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CountSubGoodsRequest) GetConds() *Conds {
@@ -1023,7 +1117,7 @@ type CountSubGoodsResponse struct {
 func (x *CountSubGoodsResponse) Reset() {
 	*x = CountSubGoodsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[18]
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1036,7 +1130,7 @@ func (x *CountSubGoodsResponse) String() string {
 func (*CountSubGoodsResponse) ProtoMessage() {}
 
 func (x *CountSubGoodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[18]
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1049,7 +1143,7 @@ func (x *CountSubGoodsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountSubGoodsResponse.ProtoReflect.Descriptor instead.
 func (*CountSubGoodsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{18}
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CountSubGoodsResponse) GetInfo() uint32 {
@@ -1057,6 +1151,100 @@ func (x *CountSubGoodsResponse) GetInfo() uint32 {
 		return x.Info
 	}
 	return 0
+}
+
+type DeleteSubGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *DeleteSubGoodRequest) Reset() {
+	*x = DeleteSubGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteSubGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteSubGoodRequest) ProtoMessage() {}
+
+func (x *DeleteSubGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteSubGoodRequest.ProtoReflect.Descriptor instead.
+func (*DeleteSubGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DeleteSubGoodRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type DeleteSubGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *SubGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteSubGoodResponse) Reset() {
+	*x = DeleteSubGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteSubGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteSubGoodResponse) ProtoMessage() {}
+
+func (x *DeleteSubGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteSubGoodResponse.ProtoReflect.Descriptor instead.
+func (*DeleteSubGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DeleteSubGoodResponse) GetInfo() *SubGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
 }
 
 var File_npool_good_mgr_v1_subgood_subgood_proto protoreflect.FileDescriptor
@@ -1133,7 +1321,17 @@ var file_npool_good_mgr_v1_subgood_subgood_proto_rawDesc = []byte{
 	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e,
 	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62,
 	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52,
-	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x23, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62,
+	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4f, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x37,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65,
+	0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20,
+	0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75,
+	0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x23, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62,
 	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49,
 	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x4a, 0x0a, 0x12, 0x47,
 	0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
@@ -1185,69 +1383,91 @@ var file_npool_good_mgr_v1_subgood_subgood_proto_rawDesc = []byte{
 	0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2b, 0x0a, 0x15, 0x43, 0x6f, 0x75,
 	0x6e, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x99, 0x07, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47,
-	0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
-	0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75,
-	0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74,
-	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2a, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64,
-	0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x53, 0x75,
-	0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47,
-	0x6f, 0x6f, 0x64, 0x12, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x7c, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f,
-	0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x6f, 0x6f,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a, 0x14, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
+	0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x4d,
+	0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e,
+	0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e,
+	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xfd, 0x08,
+	0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f,
+	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f,
+	0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
+	0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2e, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75,
+	0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75,
+	0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x70, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
+	0x64, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64,
+	0x12, 0x2a, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75,
+	0x62, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
+	0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x47,
+	0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2e, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f,
+	0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f,
+	0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x6a, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12,
+	0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73,
+	0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62,
+	0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
+	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0c,
+	0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2c, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f,
 	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
-	0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x70, 0x0a, 0x0d, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64,
-	0x73, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e,
-	0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
-	0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74,
-	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f,
-	0x64, 0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c, 0x0a, 0x11, 0x45,
+	0x78, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73,
+	0x12, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74,
+	0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x6f, 0x75,
+	0x6e, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f,
+	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f,
+	0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x75, 0x62,
+	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x73, 0x75, 0x62, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x75, 0x62, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3c, 0x5a,
+	0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x6d, 0x67, 0x72,
+	0x2f, 0x76, 0x31, 0x2f, 0x73, 0x75, 0x62, 0x67, 0x6f, 0x6f, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1262,7 +1482,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_rawDescGZIP() []byte {
 	return file_npool_good_mgr_v1_subgood_subgood_proto_rawDescData
 }
 
-var file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_npool_good_mgr_v1_subgood_subgood_proto_goTypes = []interface{}{
 	(*SubGoodReq)(nil),                // 0: good.manager.subgood.v1.SubGoodReq
 	(*SubGood)(nil),                   // 1: good.manager.subgood.v1.SubGood
@@ -1271,55 +1491,66 @@ var file_npool_good_mgr_v1_subgood_subgood_proto_goTypes = []interface{}{
 	(*CreateSubGoodResponse)(nil),     // 4: good.manager.subgood.v1.CreateSubGoodResponse
 	(*CreateSubGoodsRequest)(nil),     // 5: good.manager.subgood.v1.CreateSubGoodsRequest
 	(*CreateSubGoodsResponse)(nil),    // 6: good.manager.subgood.v1.CreateSubGoodsResponse
-	(*GetSubGoodRequest)(nil),         // 7: good.manager.subgood.v1.GetSubGoodRequest
-	(*GetSubGoodResponse)(nil),        // 8: good.manager.subgood.v1.GetSubGoodResponse
-	(*GetSubGoodsRequest)(nil),        // 9: good.manager.subgood.v1.GetSubGoodsRequest
-	(*GetSubGoodsResponse)(nil),       // 10: good.manager.subgood.v1.GetSubGoodsResponse
-	(*GetSubGoodOnlyRequest)(nil),     // 11: good.manager.subgood.v1.GetSubGoodOnlyRequest
-	(*GetSubGoodOnlyResponse)(nil),    // 12: good.manager.subgood.v1.GetSubGoodOnlyResponse
-	(*ExistSubGoodRequest)(nil),       // 13: good.manager.subgood.v1.ExistSubGoodRequest
-	(*ExistSubGoodResponse)(nil),      // 14: good.manager.subgood.v1.ExistSubGoodResponse
-	(*ExistSubGoodCondsRequest)(nil),  // 15: good.manager.subgood.v1.ExistSubGoodCondsRequest
-	(*ExistSubGoodCondsResponse)(nil), // 16: good.manager.subgood.v1.ExistSubGoodCondsResponse
-	(*CountSubGoodsRequest)(nil),      // 17: good.manager.subgood.v1.CountSubGoodsRequest
-	(*CountSubGoodsResponse)(nil),     // 18: good.manager.subgood.v1.CountSubGoodsResponse
-	(*npool.StringVal)(nil),           // 19: npool.v1.StringVal
+	(*UpdateSubGoodRequest)(nil),      // 7: good.manager.subgood.v1.UpdateSubGoodRequest
+	(*UpdateSubGoodResponse)(nil),     // 8: good.manager.subgood.v1.UpdateSubGoodResponse
+	(*GetSubGoodRequest)(nil),         // 9: good.manager.subgood.v1.GetSubGoodRequest
+	(*GetSubGoodResponse)(nil),        // 10: good.manager.subgood.v1.GetSubGoodResponse
+	(*GetSubGoodsRequest)(nil),        // 11: good.manager.subgood.v1.GetSubGoodsRequest
+	(*GetSubGoodsResponse)(nil),       // 12: good.manager.subgood.v1.GetSubGoodsResponse
+	(*GetSubGoodOnlyRequest)(nil),     // 13: good.manager.subgood.v1.GetSubGoodOnlyRequest
+	(*GetSubGoodOnlyResponse)(nil),    // 14: good.manager.subgood.v1.GetSubGoodOnlyResponse
+	(*ExistSubGoodRequest)(nil),       // 15: good.manager.subgood.v1.ExistSubGoodRequest
+	(*ExistSubGoodResponse)(nil),      // 16: good.manager.subgood.v1.ExistSubGoodResponse
+	(*ExistSubGoodCondsRequest)(nil),  // 17: good.manager.subgood.v1.ExistSubGoodCondsRequest
+	(*ExistSubGoodCondsResponse)(nil), // 18: good.manager.subgood.v1.ExistSubGoodCondsResponse
+	(*CountSubGoodsRequest)(nil),      // 19: good.manager.subgood.v1.CountSubGoodsRequest
+	(*CountSubGoodsResponse)(nil),     // 20: good.manager.subgood.v1.CountSubGoodsResponse
+	(*DeleteSubGoodRequest)(nil),      // 21: good.manager.subgood.v1.DeleteSubGoodRequest
+	(*DeleteSubGoodResponse)(nil),     // 22: good.manager.subgood.v1.DeleteSubGoodResponse
+	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
 }
 var file_npool_good_mgr_v1_subgood_subgood_proto_depIdxs = []int32{
-	19, // 0: good.manager.subgood.v1.Conds.ID:type_name -> npool.v1.StringVal
-	19, // 1: good.manager.subgood.v1.Conds.MainGoodID:type_name -> npool.v1.StringVal
+	23, // 0: good.manager.subgood.v1.Conds.ID:type_name -> npool.v1.StringVal
+	23, // 1: good.manager.subgood.v1.Conds.MainGoodID:type_name -> npool.v1.StringVal
 	0,  // 2: good.manager.subgood.v1.CreateSubGoodRequest.Info:type_name -> good.manager.subgood.v1.SubGoodReq
 	1,  // 3: good.manager.subgood.v1.CreateSubGoodResponse.Info:type_name -> good.manager.subgood.v1.SubGood
 	0,  // 4: good.manager.subgood.v1.CreateSubGoodsRequest.Infos:type_name -> good.manager.subgood.v1.SubGoodReq
 	1,  // 5: good.manager.subgood.v1.CreateSubGoodsResponse.Infos:type_name -> good.manager.subgood.v1.SubGood
-	1,  // 6: good.manager.subgood.v1.GetSubGoodResponse.Info:type_name -> good.manager.subgood.v1.SubGood
-	2,  // 7: good.manager.subgood.v1.GetSubGoodsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
-	1,  // 8: good.manager.subgood.v1.GetSubGoodsResponse.Infos:type_name -> good.manager.subgood.v1.SubGood
-	2,  // 9: good.manager.subgood.v1.GetSubGoodOnlyRequest.Conds:type_name -> good.manager.subgood.v1.Conds
-	1,  // 10: good.manager.subgood.v1.GetSubGoodOnlyResponse.Info:type_name -> good.manager.subgood.v1.SubGood
-	2,  // 11: good.manager.subgood.v1.ExistSubGoodCondsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
-	2,  // 12: good.manager.subgood.v1.CountSubGoodsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
-	3,  // 13: good.manager.subgood.v1.Manager.CreateSubGood:input_type -> good.manager.subgood.v1.CreateSubGoodRequest
-	5,  // 14: good.manager.subgood.v1.Manager.CreateSubGoods:input_type -> good.manager.subgood.v1.CreateSubGoodsRequest
-	7,  // 15: good.manager.subgood.v1.Manager.GetSubGood:input_type -> good.manager.subgood.v1.GetSubGoodRequest
-	11, // 16: good.manager.subgood.v1.Manager.GetSubGoodOnly:input_type -> good.manager.subgood.v1.GetSubGoodOnlyRequest
-	9,  // 17: good.manager.subgood.v1.Manager.GetSubGoods:input_type -> good.manager.subgood.v1.GetSubGoodsRequest
-	13, // 18: good.manager.subgood.v1.Manager.ExistSubGood:input_type -> good.manager.subgood.v1.ExistSubGoodRequest
-	15, // 19: good.manager.subgood.v1.Manager.ExistSubGoodConds:input_type -> good.manager.subgood.v1.ExistSubGoodCondsRequest
-	17, // 20: good.manager.subgood.v1.Manager.CountSubGoods:input_type -> good.manager.subgood.v1.CountSubGoodsRequest
-	4,  // 21: good.manager.subgood.v1.Manager.CreateSubGood:output_type -> good.manager.subgood.v1.CreateSubGoodResponse
-	6,  // 22: good.manager.subgood.v1.Manager.CreateSubGoods:output_type -> good.manager.subgood.v1.CreateSubGoodsResponse
-	8,  // 23: good.manager.subgood.v1.Manager.GetSubGood:output_type -> good.manager.subgood.v1.GetSubGoodResponse
-	12, // 24: good.manager.subgood.v1.Manager.GetSubGoodOnly:output_type -> good.manager.subgood.v1.GetSubGoodOnlyResponse
-	10, // 25: good.manager.subgood.v1.Manager.GetSubGoods:output_type -> good.manager.subgood.v1.GetSubGoodsResponse
-	14, // 26: good.manager.subgood.v1.Manager.ExistSubGood:output_type -> good.manager.subgood.v1.ExistSubGoodResponse
-	16, // 27: good.manager.subgood.v1.Manager.ExistSubGoodConds:output_type -> good.manager.subgood.v1.ExistSubGoodCondsResponse
-	18, // 28: good.manager.subgood.v1.Manager.CountSubGoods:output_type -> good.manager.subgood.v1.CountSubGoodsResponse
-	21, // [21:29] is the sub-list for method output_type
-	13, // [13:21] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	0,  // 6: good.manager.subgood.v1.UpdateSubGoodRequest.Info:type_name -> good.manager.subgood.v1.SubGoodReq
+	1,  // 7: good.manager.subgood.v1.UpdateSubGoodResponse.Info:type_name -> good.manager.subgood.v1.SubGood
+	1,  // 8: good.manager.subgood.v1.GetSubGoodResponse.Info:type_name -> good.manager.subgood.v1.SubGood
+	2,  // 9: good.manager.subgood.v1.GetSubGoodsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
+	1,  // 10: good.manager.subgood.v1.GetSubGoodsResponse.Infos:type_name -> good.manager.subgood.v1.SubGood
+	2,  // 11: good.manager.subgood.v1.GetSubGoodOnlyRequest.Conds:type_name -> good.manager.subgood.v1.Conds
+	1,  // 12: good.manager.subgood.v1.GetSubGoodOnlyResponse.Info:type_name -> good.manager.subgood.v1.SubGood
+	2,  // 13: good.manager.subgood.v1.ExistSubGoodCondsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
+	2,  // 14: good.manager.subgood.v1.CountSubGoodsRequest.Conds:type_name -> good.manager.subgood.v1.Conds
+	1,  // 15: good.manager.subgood.v1.DeleteSubGoodResponse.Info:type_name -> good.manager.subgood.v1.SubGood
+	3,  // 16: good.manager.subgood.v1.Manager.CreateSubGood:input_type -> good.manager.subgood.v1.CreateSubGoodRequest
+	5,  // 17: good.manager.subgood.v1.Manager.CreateSubGoods:input_type -> good.manager.subgood.v1.CreateSubGoodsRequest
+	7,  // 18: good.manager.subgood.v1.Manager.UpdateSubGood:input_type -> good.manager.subgood.v1.UpdateSubGoodRequest
+	9,  // 19: good.manager.subgood.v1.Manager.GetSubGood:input_type -> good.manager.subgood.v1.GetSubGoodRequest
+	13, // 20: good.manager.subgood.v1.Manager.GetSubGoodOnly:input_type -> good.manager.subgood.v1.GetSubGoodOnlyRequest
+	11, // 21: good.manager.subgood.v1.Manager.GetSubGoods:input_type -> good.manager.subgood.v1.GetSubGoodsRequest
+	15, // 22: good.manager.subgood.v1.Manager.ExistSubGood:input_type -> good.manager.subgood.v1.ExistSubGoodRequest
+	17, // 23: good.manager.subgood.v1.Manager.ExistSubGoodConds:input_type -> good.manager.subgood.v1.ExistSubGoodCondsRequest
+	19, // 24: good.manager.subgood.v1.Manager.CountSubGoods:input_type -> good.manager.subgood.v1.CountSubGoodsRequest
+	21, // 25: good.manager.subgood.v1.Manager.DeleteSubGood:input_type -> good.manager.subgood.v1.DeleteSubGoodRequest
+	4,  // 26: good.manager.subgood.v1.Manager.CreateSubGood:output_type -> good.manager.subgood.v1.CreateSubGoodResponse
+	6,  // 27: good.manager.subgood.v1.Manager.CreateSubGoods:output_type -> good.manager.subgood.v1.CreateSubGoodsResponse
+	8,  // 28: good.manager.subgood.v1.Manager.UpdateSubGood:output_type -> good.manager.subgood.v1.UpdateSubGoodResponse
+	10, // 29: good.manager.subgood.v1.Manager.GetSubGood:output_type -> good.manager.subgood.v1.GetSubGoodResponse
+	14, // 30: good.manager.subgood.v1.Manager.GetSubGoodOnly:output_type -> good.manager.subgood.v1.GetSubGoodOnlyResponse
+	12, // 31: good.manager.subgood.v1.Manager.GetSubGoods:output_type -> good.manager.subgood.v1.GetSubGoodsResponse
+	16, // 32: good.manager.subgood.v1.Manager.ExistSubGood:output_type -> good.manager.subgood.v1.ExistSubGoodResponse
+	18, // 33: good.manager.subgood.v1.Manager.ExistSubGoodConds:output_type -> good.manager.subgood.v1.ExistSubGoodCondsResponse
+	20, // 34: good.manager.subgood.v1.Manager.CountSubGoods:output_type -> good.manager.subgood.v1.CountSubGoodsResponse
+	22, // 35: good.manager.subgood.v1.Manager.DeleteSubGood:output_type -> good.manager.subgood.v1.DeleteSubGoodResponse
+	26, // [26:36] is the sub-list for method output_type
+	16, // [16:26] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_mgr_v1_subgood_subgood_proto_init() }
@@ -1413,7 +1644,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodRequest); i {
+			switch v := v.(*UpdateSubGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1425,7 +1656,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodResponse); i {
+			switch v := v.(*UpdateSubGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1437,7 +1668,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodsRequest); i {
+			switch v := v.(*GetSubGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1449,7 +1680,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodsResponse); i {
+			switch v := v.(*GetSubGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1461,7 +1692,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodOnlyRequest); i {
+			switch v := v.(*GetSubGoodsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1473,7 +1704,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubGoodOnlyResponse); i {
+			switch v := v.(*GetSubGoodsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1485,7 +1716,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistSubGoodRequest); i {
+			switch v := v.(*GetSubGoodOnlyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1497,7 +1728,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistSubGoodResponse); i {
+			switch v := v.(*GetSubGoodOnlyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1509,7 +1740,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistSubGoodCondsRequest); i {
+			switch v := v.(*ExistSubGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1521,7 +1752,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistSubGoodCondsResponse); i {
+			switch v := v.(*ExistSubGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1533,7 +1764,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountSubGoodsRequest); i {
+			switch v := v.(*ExistSubGoodCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1545,7 +1776,55 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistSubGoodCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CountSubGoodsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountSubGoodsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteSubGoodRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_subgood_subgood_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteSubGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1565,7 +1844,7 @@ func file_npool_good_mgr_v1_subgood_subgood_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_mgr_v1_subgood_subgood_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

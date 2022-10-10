@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error)
 	CreateRecommends(ctx context.Context, in *CreateRecommendsRequest, opts ...grpc.CallOption) (*CreateRecommendsResponse, error)
+	UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error)
 	GetRecommend(ctx context.Context, in *GetRecommendRequest, opts ...grpc.CallOption) (*GetRecommendResponse, error)
 	GetRecommendOnly(ctx context.Context, in *GetRecommendOnlyRequest, opts ...grpc.CallOption) (*GetRecommendOnlyResponse, error)
 	GetRecommends(ctx context.Context, in *GetRecommendsRequest, opts ...grpc.CallOption) (*GetRecommendsResponse, error)
 	ExistRecommend(ctx context.Context, in *ExistRecommendRequest, opts ...grpc.CallOption) (*ExistRecommendResponse, error)
 	ExistRecommendConds(ctx context.Context, in *ExistRecommendCondsRequest, opts ...grpc.CallOption) (*ExistRecommendCondsResponse, error)
 	CountRecommends(ctx context.Context, in *CountRecommendsRequest, opts ...grpc.CallOption) (*CountRecommendsResponse, error)
+	DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateRecommend(ctx context.Context, in *CreateRecommend
 func (c *managerClient) CreateRecommends(ctx context.Context, in *CreateRecommendsRequest, opts ...grpc.CallOption) (*CreateRecommendsResponse, error) {
 	out := new(CreateRecommendsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.recommend.v1.Manager/CreateRecommends", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error) {
+	out := new(UpdateRecommendResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.recommend.v1.Manager/UpdateRecommend", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountRecommends(ctx context.Context, in *CountRecommends
 	return out, nil
 }
 
+func (c *managerClient) DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error) {
+	out := new(DeleteRecommendResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.recommend.v1.Manager/DeleteRecommend", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error)
 	CreateRecommends(context.Context, *CreateRecommendsRequest) (*CreateRecommendsResponse, error)
+	UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error)
 	GetRecommend(context.Context, *GetRecommendRequest) (*GetRecommendResponse, error)
 	GetRecommendOnly(context.Context, *GetRecommendOnlyRequest) (*GetRecommendOnlyResponse, error)
 	GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error)
 	ExistRecommend(context.Context, *ExistRecommendRequest) (*ExistRecommendResponse, error)
 	ExistRecommendConds(context.Context, *ExistRecommendCondsRequest) (*ExistRecommendCondsResponse, error)
 	CountRecommends(context.Context, *CountRecommendsRequest) (*CountRecommendsResponse, error)
+	DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateRecommend(context.Context, *CreateRecomm
 }
 func (UnimplementedManagerServer) CreateRecommends(context.Context, *CreateRecommendsRequest) (*CreateRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommends not implemented")
+}
+func (UnimplementedManagerServer) UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecommend not implemented")
 }
 func (UnimplementedManagerServer) GetRecommend(context.Context, *GetRecommendRequest) (*GetRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecommend not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistRecommendConds(context.Context, *ExistRec
 }
 func (UnimplementedManagerServer) CountRecommends(context.Context, *CountRecommendsRequest) (*CountRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountRecommends not implemented")
+}
+func (UnimplementedManagerServer) DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecommend not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateRecommends_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateRecommends(ctx, req.(*CreateRecommendsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRecommendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateRecommend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.recommend.v1.Manager/UpdateRecommend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateRecommend(ctx, req.(*UpdateRecommendRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountRecommends_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRecommendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteRecommend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.recommend.v1.Manager/DeleteRecommend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteRecommend(ctx, req.(*DeleteRecommendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateRecommends",
 			Handler:    _Manager_CreateRecommends_Handler,
+		},
+		{
+			MethodName: "UpdateRecommend",
+			Handler:    _Manager_UpdateRecommend_Handler,
 		},
 		{
 			MethodName: "GetRecommend",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountRecommends",
 			Handler:    _Manager_CountRecommends_Handler,
+		},
+		{
+			MethodName: "DeleteRecommend",
+			Handler:    _Manager_DeleteRecommend_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

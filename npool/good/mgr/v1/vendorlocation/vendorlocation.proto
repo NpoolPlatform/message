@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateVendorLocation     (CreateVendorLocationRequest)     returns (CreateVendorLocationResponse)     {}
     rpc CreateVendorLocations    (CreateVendorLocationsRequest)    returns (CreateVendorLocationsResponse)    {}
+    rpc UpdateVendorLocation     (UpdateVendorLocationRequest)     returns (UpdateVendorLocationResponse)     {}
     rpc GetVendorLocation        (GetVendorLocationRequest)        returns (GetVendorLocationResponse)        {}
     rpc GetVendorLocationOnly    (GetVendorLocationOnlyRequest)    returns (GetVendorLocationOnlyResponse)    {}
     rpc GetVendorLocations       (GetVendorLocationsRequest)       returns (GetVendorLocationsResponse)       {}
     rpc ExistVendorLocation      (ExistVendorLocationRequest)      returns (ExistVendorLocationResponse)      {}
     rpc ExistVendorLocationConds (ExistVendorLocationCondsRequest) returns (ExistVendorLocationCondsResponse) {}
     rpc CountVendorLocations     (CountVendorLocationsRequest)     returns (CountVendorLocationsResponse)     {}
+    rpc DeleteVendorLocation     (DeleteVendorLocationRequest)     returns (DeleteVendorLocationResponse)     {}
 }
 
 message VendorLocationReq {
@@ -59,6 +61,14 @@ message CreateVendorLocationsRequest {
 
 message CreateVendorLocationsResponse {
     repeated VendorLocation Infos = 10;
+}
+
+message UpdateVendorLocationRequest {
+    VendorLocationReq Info = 10;
+}
+
+message UpdateVendorLocationResponse {
+    VendorLocation Info = 10;
 }
 
 message GetVendorLocationRequest {
@@ -112,3 +122,10 @@ message CountVendorLocationsResponse {
     uint32 Info = 10;
 }
 
+message DeleteVendorLocationRequest {
+    string ID = 10;
+}
+
+message DeleteVendorLocationResponse {
+    VendorLocation Info = 10;
+}

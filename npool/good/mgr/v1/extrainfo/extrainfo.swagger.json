@@ -89,6 +89,14 @@
         }
       }
     },
+    "v1DeleteExtraInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExtraInfo"
+        }
+      }
+    },
     "v1ExistExtraInfoCondsResponse": {
       "type": "object",
       "properties": {
@@ -218,6 +226,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateExtraInfoResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExtraInfo"
         }
       }
     }

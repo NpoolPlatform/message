@@ -216,6 +216,14 @@
         }
       }
     },
+    "middlewareappgoodv1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareappgoodv1Good"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -311,14 +319,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareappgoodv1Good"
         }
       }
     }

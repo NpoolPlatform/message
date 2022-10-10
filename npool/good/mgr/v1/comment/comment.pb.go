@@ -495,6 +495,100 @@ func (x *CreateCommentsResponse) GetInfos() []*Comment {
 	return nil
 }
 
+type UpdateCommentRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *CommentReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateCommentRequest) Reset() {
+	*x = UpdateCommentRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateCommentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCommentRequest) ProtoMessage() {}
+
+func (x *UpdateCommentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCommentRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCommentRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *UpdateCommentRequest) GetInfo() *CommentReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateCommentResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Comment `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateCommentResponse) Reset() {
+	*x = UpdateCommentResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateCommentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCommentResponse) ProtoMessage() {}
+
+func (x *UpdateCommentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCommentResponse.ProtoReflect.Descriptor instead.
+func (*UpdateCommentResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateCommentResponse) GetInfo() *Comment {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type GetCommentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -506,7 +600,7 @@ type GetCommentRequest struct {
 func (x *GetCommentRequest) Reset() {
 	*x = GetCommentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[7]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -519,7 +613,7 @@ func (x *GetCommentRequest) String() string {
 func (*GetCommentRequest) ProtoMessage() {}
 
 func (x *GetCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[7]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -532,7 +626,7 @@ func (x *GetCommentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentRequest.ProtoReflect.Descriptor instead.
 func (*GetCommentRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{7}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetCommentRequest) GetID() string {
@@ -553,7 +647,7 @@ type GetCommentResponse struct {
 func (x *GetCommentResponse) Reset() {
 	*x = GetCommentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[8]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -566,7 +660,7 @@ func (x *GetCommentResponse) String() string {
 func (*GetCommentResponse) ProtoMessage() {}
 
 func (x *GetCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[8]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -579,7 +673,7 @@ func (x *GetCommentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentResponse.ProtoReflect.Descriptor instead.
 func (*GetCommentResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{8}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetCommentResponse) GetInfo() *Comment {
@@ -602,7 +696,7 @@ type GetCommentsRequest struct {
 func (x *GetCommentsRequest) Reset() {
 	*x = GetCommentsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[9]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -615,7 +709,7 @@ func (x *GetCommentsRequest) String() string {
 func (*GetCommentsRequest) ProtoMessage() {}
 
 func (x *GetCommentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[9]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -628,7 +722,7 @@ func (x *GetCommentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentsRequest.ProtoReflect.Descriptor instead.
 func (*GetCommentsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{9}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetCommentsRequest) GetConds() *Conds {
@@ -664,7 +758,7 @@ type GetCommentsResponse struct {
 func (x *GetCommentsResponse) Reset() {
 	*x = GetCommentsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[10]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +771,7 @@ func (x *GetCommentsResponse) String() string {
 func (*GetCommentsResponse) ProtoMessage() {}
 
 func (x *GetCommentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[10]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +784,7 @@ func (x *GetCommentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentsResponse.ProtoReflect.Descriptor instead.
 func (*GetCommentsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{10}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetCommentsResponse) GetInfos() []*Comment {
@@ -718,7 +812,7 @@ type GetCommentOnlyRequest struct {
 func (x *GetCommentOnlyRequest) Reset() {
 	*x = GetCommentOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[11]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -731,7 +825,7 @@ func (x *GetCommentOnlyRequest) String() string {
 func (*GetCommentOnlyRequest) ProtoMessage() {}
 
 func (x *GetCommentOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[11]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -744,7 +838,7 @@ func (x *GetCommentOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetCommentOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{11}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetCommentOnlyRequest) GetConds() *Conds {
@@ -765,7 +859,7 @@ type GetCommentOnlyResponse struct {
 func (x *GetCommentOnlyResponse) Reset() {
 	*x = GetCommentOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[12]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -778,7 +872,7 @@ func (x *GetCommentOnlyResponse) String() string {
 func (*GetCommentOnlyResponse) ProtoMessage() {}
 
 func (x *GetCommentOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[12]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -791,7 +885,7 @@ func (x *GetCommentOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetCommentOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{12}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetCommentOnlyResponse) GetInfo() *Comment {
@@ -812,7 +906,7 @@ type ExistCommentRequest struct {
 func (x *ExistCommentRequest) Reset() {
 	*x = ExistCommentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[13]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -825,7 +919,7 @@ func (x *ExistCommentRequest) String() string {
 func (*ExistCommentRequest) ProtoMessage() {}
 
 func (x *ExistCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[13]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -838,7 +932,7 @@ func (x *ExistCommentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCommentRequest.ProtoReflect.Descriptor instead.
 func (*ExistCommentRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{13}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistCommentRequest) GetID() string {
@@ -859,7 +953,7 @@ type ExistCommentResponse struct {
 func (x *ExistCommentResponse) Reset() {
 	*x = ExistCommentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[14]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -872,7 +966,7 @@ func (x *ExistCommentResponse) String() string {
 func (*ExistCommentResponse) ProtoMessage() {}
 
 func (x *ExistCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[14]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -885,7 +979,7 @@ func (x *ExistCommentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCommentResponse.ProtoReflect.Descriptor instead.
 func (*ExistCommentResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{14}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistCommentResponse) GetInfo() bool {
@@ -906,7 +1000,7 @@ type ExistCommentCondsRequest struct {
 func (x *ExistCommentCondsRequest) Reset() {
 	*x = ExistCommentCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[15]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -919,7 +1013,7 @@ func (x *ExistCommentCondsRequest) String() string {
 func (*ExistCommentCondsRequest) ProtoMessage() {}
 
 func (x *ExistCommentCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[15]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -932,7 +1026,7 @@ func (x *ExistCommentCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCommentCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistCommentCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{15}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ExistCommentCondsRequest) GetConds() *Conds {
@@ -953,7 +1047,7 @@ type ExistCommentCondsResponse struct {
 func (x *ExistCommentCondsResponse) Reset() {
 	*x = ExistCommentCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[16]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -966,7 +1060,7 @@ func (x *ExistCommentCondsResponse) String() string {
 func (*ExistCommentCondsResponse) ProtoMessage() {}
 
 func (x *ExistCommentCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[16]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -979,7 +1073,7 @@ func (x *ExistCommentCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCommentCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistCommentCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{16}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExistCommentCondsResponse) GetInfo() bool {
@@ -1000,7 +1094,7 @@ type CountCommentsRequest struct {
 func (x *CountCommentsRequest) Reset() {
 	*x = CountCommentsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[17]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1013,7 +1107,7 @@ func (x *CountCommentsRequest) String() string {
 func (*CountCommentsRequest) ProtoMessage() {}
 
 func (x *CountCommentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[17]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1026,7 +1120,7 @@ func (x *CountCommentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountCommentsRequest.ProtoReflect.Descriptor instead.
 func (*CountCommentsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{17}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CountCommentsRequest) GetConds() *Conds {
@@ -1047,7 +1141,7 @@ type CountCommentsResponse struct {
 func (x *CountCommentsResponse) Reset() {
 	*x = CountCommentsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[18]
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1060,7 +1154,7 @@ func (x *CountCommentsResponse) String() string {
 func (*CountCommentsResponse) ProtoMessage() {}
 
 func (x *CountCommentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[18]
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1073,7 +1167,7 @@ func (x *CountCommentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountCommentsResponse.ProtoReflect.Descriptor instead.
 func (*CountCommentsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{18}
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CountCommentsResponse) GetInfo() uint32 {
@@ -1081,6 +1175,100 @@ func (x *CountCommentsResponse) GetInfo() uint32 {
 		return x.Info
 	}
 	return 0
+}
+
+type DeleteCommentRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *DeleteCommentRequest) Reset() {
+	*x = DeleteCommentRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteCommentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCommentRequest) ProtoMessage() {}
+
+func (x *DeleteCommentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCommentRequest.ProtoReflect.Descriptor instead.
+func (*DeleteCommentRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DeleteCommentRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type DeleteCommentResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Comment `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteCommentResponse) Reset() {
+	*x = DeleteCommentResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteCommentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCommentResponse) ProtoMessage() {}
+
+func (x *DeleteCommentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_comment_comment_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCommentResponse.ProtoReflect.Descriptor instead.
+func (*DeleteCommentResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DeleteCommentResponse) GetInfo() *Comment {
+	if x != nil {
+		return x.Info
+	}
+	return nil
 }
 
 var File_npool_good_mgr_v1_comment_comment_proto protoreflect.FileDescriptor
@@ -1163,7 +1351,17 @@ var file_npool_good_mgr_v1_comment_comment_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
 	0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f,
-	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x23, 0x0a, 0x11,
+	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4f, 0x0a, 0x14,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d,
+	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a,
+	0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
+	0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x23, 0x0a, 0x11,
 	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49,
 	0x44, 0x22, 0x4a, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52,
@@ -1215,69 +1413,91 @@ var file_npool_good_mgr_v1_comment_comment_proto_rawDesc = []byte{
 	0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22,
 	0x2b, 0x0a, 0x15, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x99, 0x07, 0x0a,
-	0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e,
-	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2e, 0x2e, 0x67,
-	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
-	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67,
-	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
-	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2a, 0x2e,
-	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43,
-	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
-	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
-	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a,
-	0x0b, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2b, 0x2e, 0x67,
-	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
-	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
-	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0c, 0x45, 0x78, 0x69,
-	0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
+	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a, 0x14,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x02, 0x49, 0x44, 0x22, 0x4d, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f,
+	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
+	0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x32, 0xfd, 0x08, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12,
+	0x70, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
+	0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x73, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
+	0x6e, 0x74, 0x73, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
 	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76,
-	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e,
-	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
-	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43,
-	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52,
+	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
 	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74,
-	0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x63,
-	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2a, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x73, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f,
+	0x6e, 0x6c, 0x79, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d,
+	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e,
+	0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
+	0x6e, 0x74, 0x12, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69,
+	0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x7c, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
+	0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
+	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e,
+	0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
+	0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x70, 0x0a, 0x0d, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73,
+	0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x70, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
+	0x6e, 0x74, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f,
+	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f,
+	0x6f, 0x64, 0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
+	0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1292,7 +1512,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_rawDescGZIP() []byte {
 	return file_npool_good_mgr_v1_comment_comment_proto_rawDescData
 }
 
-var file_npool_good_mgr_v1_comment_comment_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_good_mgr_v1_comment_comment_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_npool_good_mgr_v1_comment_comment_proto_goTypes = []interface{}{
 	(*CommentReq)(nil),                // 0: good.manager.comment.v1.CommentReq
 	(*Comment)(nil),                   // 1: good.manager.comment.v1.Comment
@@ -1301,57 +1521,68 @@ var file_npool_good_mgr_v1_comment_comment_proto_goTypes = []interface{}{
 	(*CreateCommentResponse)(nil),     // 4: good.manager.comment.v1.CreateCommentResponse
 	(*CreateCommentsRequest)(nil),     // 5: good.manager.comment.v1.CreateCommentsRequest
 	(*CreateCommentsResponse)(nil),    // 6: good.manager.comment.v1.CreateCommentsResponse
-	(*GetCommentRequest)(nil),         // 7: good.manager.comment.v1.GetCommentRequest
-	(*GetCommentResponse)(nil),        // 8: good.manager.comment.v1.GetCommentResponse
-	(*GetCommentsRequest)(nil),        // 9: good.manager.comment.v1.GetCommentsRequest
-	(*GetCommentsResponse)(nil),       // 10: good.manager.comment.v1.GetCommentsResponse
-	(*GetCommentOnlyRequest)(nil),     // 11: good.manager.comment.v1.GetCommentOnlyRequest
-	(*GetCommentOnlyResponse)(nil),    // 12: good.manager.comment.v1.GetCommentOnlyResponse
-	(*ExistCommentRequest)(nil),       // 13: good.manager.comment.v1.ExistCommentRequest
-	(*ExistCommentResponse)(nil),      // 14: good.manager.comment.v1.ExistCommentResponse
-	(*ExistCommentCondsRequest)(nil),  // 15: good.manager.comment.v1.ExistCommentCondsRequest
-	(*ExistCommentCondsResponse)(nil), // 16: good.manager.comment.v1.ExistCommentCondsResponse
-	(*CountCommentsRequest)(nil),      // 17: good.manager.comment.v1.CountCommentsRequest
-	(*CountCommentsResponse)(nil),     // 18: good.manager.comment.v1.CountCommentsResponse
-	(*npool.StringVal)(nil),           // 19: npool.v1.StringVal
+	(*UpdateCommentRequest)(nil),      // 7: good.manager.comment.v1.UpdateCommentRequest
+	(*UpdateCommentResponse)(nil),     // 8: good.manager.comment.v1.UpdateCommentResponse
+	(*GetCommentRequest)(nil),         // 9: good.manager.comment.v1.GetCommentRequest
+	(*GetCommentResponse)(nil),        // 10: good.manager.comment.v1.GetCommentResponse
+	(*GetCommentsRequest)(nil),        // 11: good.manager.comment.v1.GetCommentsRequest
+	(*GetCommentsResponse)(nil),       // 12: good.manager.comment.v1.GetCommentsResponse
+	(*GetCommentOnlyRequest)(nil),     // 13: good.manager.comment.v1.GetCommentOnlyRequest
+	(*GetCommentOnlyResponse)(nil),    // 14: good.manager.comment.v1.GetCommentOnlyResponse
+	(*ExistCommentRequest)(nil),       // 15: good.manager.comment.v1.ExistCommentRequest
+	(*ExistCommentResponse)(nil),      // 16: good.manager.comment.v1.ExistCommentResponse
+	(*ExistCommentCondsRequest)(nil),  // 17: good.manager.comment.v1.ExistCommentCondsRequest
+	(*ExistCommentCondsResponse)(nil), // 18: good.manager.comment.v1.ExistCommentCondsResponse
+	(*CountCommentsRequest)(nil),      // 19: good.manager.comment.v1.CountCommentsRequest
+	(*CountCommentsResponse)(nil),     // 20: good.manager.comment.v1.CountCommentsResponse
+	(*DeleteCommentRequest)(nil),      // 21: good.manager.comment.v1.DeleteCommentRequest
+	(*DeleteCommentResponse)(nil),     // 22: good.manager.comment.v1.DeleteCommentResponse
+	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
 }
 var file_npool_good_mgr_v1_comment_comment_proto_depIdxs = []int32{
-	19, // 0: good.manager.comment.v1.Conds.ID:type_name -> npool.v1.StringVal
-	19, // 1: good.manager.comment.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	19, // 2: good.manager.comment.v1.Conds.UserID:type_name -> npool.v1.StringVal
-	19, // 3: good.manager.comment.v1.Conds.GoodID:type_name -> npool.v1.StringVal
+	23, // 0: good.manager.comment.v1.Conds.ID:type_name -> npool.v1.StringVal
+	23, // 1: good.manager.comment.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	23, // 2: good.manager.comment.v1.Conds.UserID:type_name -> npool.v1.StringVal
+	23, // 3: good.manager.comment.v1.Conds.GoodID:type_name -> npool.v1.StringVal
 	0,  // 4: good.manager.comment.v1.CreateCommentRequest.Info:type_name -> good.manager.comment.v1.CommentReq
 	1,  // 5: good.manager.comment.v1.CreateCommentResponse.Info:type_name -> good.manager.comment.v1.Comment
 	0,  // 6: good.manager.comment.v1.CreateCommentsRequest.Infos:type_name -> good.manager.comment.v1.CommentReq
 	1,  // 7: good.manager.comment.v1.CreateCommentsResponse.Infos:type_name -> good.manager.comment.v1.Comment
-	1,  // 8: good.manager.comment.v1.GetCommentResponse.Info:type_name -> good.manager.comment.v1.Comment
-	2,  // 9: good.manager.comment.v1.GetCommentsRequest.Conds:type_name -> good.manager.comment.v1.Conds
-	1,  // 10: good.manager.comment.v1.GetCommentsResponse.Infos:type_name -> good.manager.comment.v1.Comment
-	2,  // 11: good.manager.comment.v1.GetCommentOnlyRequest.Conds:type_name -> good.manager.comment.v1.Conds
-	1,  // 12: good.manager.comment.v1.GetCommentOnlyResponse.Info:type_name -> good.manager.comment.v1.Comment
-	2,  // 13: good.manager.comment.v1.ExistCommentCondsRequest.Conds:type_name -> good.manager.comment.v1.Conds
-	2,  // 14: good.manager.comment.v1.CountCommentsRequest.Conds:type_name -> good.manager.comment.v1.Conds
-	3,  // 15: good.manager.comment.v1.Manager.CreateComment:input_type -> good.manager.comment.v1.CreateCommentRequest
-	5,  // 16: good.manager.comment.v1.Manager.CreateComments:input_type -> good.manager.comment.v1.CreateCommentsRequest
-	7,  // 17: good.manager.comment.v1.Manager.GetComment:input_type -> good.manager.comment.v1.GetCommentRequest
-	11, // 18: good.manager.comment.v1.Manager.GetCommentOnly:input_type -> good.manager.comment.v1.GetCommentOnlyRequest
-	9,  // 19: good.manager.comment.v1.Manager.GetComments:input_type -> good.manager.comment.v1.GetCommentsRequest
-	13, // 20: good.manager.comment.v1.Manager.ExistComment:input_type -> good.manager.comment.v1.ExistCommentRequest
-	15, // 21: good.manager.comment.v1.Manager.ExistCommentConds:input_type -> good.manager.comment.v1.ExistCommentCondsRequest
-	17, // 22: good.manager.comment.v1.Manager.CountComments:input_type -> good.manager.comment.v1.CountCommentsRequest
-	4,  // 23: good.manager.comment.v1.Manager.CreateComment:output_type -> good.manager.comment.v1.CreateCommentResponse
-	6,  // 24: good.manager.comment.v1.Manager.CreateComments:output_type -> good.manager.comment.v1.CreateCommentsResponse
-	8,  // 25: good.manager.comment.v1.Manager.GetComment:output_type -> good.manager.comment.v1.GetCommentResponse
-	12, // 26: good.manager.comment.v1.Manager.GetCommentOnly:output_type -> good.manager.comment.v1.GetCommentOnlyResponse
-	10, // 27: good.manager.comment.v1.Manager.GetComments:output_type -> good.manager.comment.v1.GetCommentsResponse
-	14, // 28: good.manager.comment.v1.Manager.ExistComment:output_type -> good.manager.comment.v1.ExistCommentResponse
-	16, // 29: good.manager.comment.v1.Manager.ExistCommentConds:output_type -> good.manager.comment.v1.ExistCommentCondsResponse
-	18, // 30: good.manager.comment.v1.Manager.CountComments:output_type -> good.manager.comment.v1.CountCommentsResponse
-	23, // [23:31] is the sub-list for method output_type
-	15, // [15:23] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	0,  // 8: good.manager.comment.v1.UpdateCommentRequest.Info:type_name -> good.manager.comment.v1.CommentReq
+	1,  // 9: good.manager.comment.v1.UpdateCommentResponse.Info:type_name -> good.manager.comment.v1.Comment
+	1,  // 10: good.manager.comment.v1.GetCommentResponse.Info:type_name -> good.manager.comment.v1.Comment
+	2,  // 11: good.manager.comment.v1.GetCommentsRequest.Conds:type_name -> good.manager.comment.v1.Conds
+	1,  // 12: good.manager.comment.v1.GetCommentsResponse.Infos:type_name -> good.manager.comment.v1.Comment
+	2,  // 13: good.manager.comment.v1.GetCommentOnlyRequest.Conds:type_name -> good.manager.comment.v1.Conds
+	1,  // 14: good.manager.comment.v1.GetCommentOnlyResponse.Info:type_name -> good.manager.comment.v1.Comment
+	2,  // 15: good.manager.comment.v1.ExistCommentCondsRequest.Conds:type_name -> good.manager.comment.v1.Conds
+	2,  // 16: good.manager.comment.v1.CountCommentsRequest.Conds:type_name -> good.manager.comment.v1.Conds
+	1,  // 17: good.manager.comment.v1.DeleteCommentResponse.Info:type_name -> good.manager.comment.v1.Comment
+	3,  // 18: good.manager.comment.v1.Manager.CreateComment:input_type -> good.manager.comment.v1.CreateCommentRequest
+	5,  // 19: good.manager.comment.v1.Manager.CreateComments:input_type -> good.manager.comment.v1.CreateCommentsRequest
+	7,  // 20: good.manager.comment.v1.Manager.UpdateComment:input_type -> good.manager.comment.v1.UpdateCommentRequest
+	9,  // 21: good.manager.comment.v1.Manager.GetComment:input_type -> good.manager.comment.v1.GetCommentRequest
+	13, // 22: good.manager.comment.v1.Manager.GetCommentOnly:input_type -> good.manager.comment.v1.GetCommentOnlyRequest
+	11, // 23: good.manager.comment.v1.Manager.GetComments:input_type -> good.manager.comment.v1.GetCommentsRequest
+	15, // 24: good.manager.comment.v1.Manager.ExistComment:input_type -> good.manager.comment.v1.ExistCommentRequest
+	17, // 25: good.manager.comment.v1.Manager.ExistCommentConds:input_type -> good.manager.comment.v1.ExistCommentCondsRequest
+	19, // 26: good.manager.comment.v1.Manager.CountComments:input_type -> good.manager.comment.v1.CountCommentsRequest
+	21, // 27: good.manager.comment.v1.Manager.DeleteComment:input_type -> good.manager.comment.v1.DeleteCommentRequest
+	4,  // 28: good.manager.comment.v1.Manager.CreateComment:output_type -> good.manager.comment.v1.CreateCommentResponse
+	6,  // 29: good.manager.comment.v1.Manager.CreateComments:output_type -> good.manager.comment.v1.CreateCommentsResponse
+	8,  // 30: good.manager.comment.v1.Manager.UpdateComment:output_type -> good.manager.comment.v1.UpdateCommentResponse
+	10, // 31: good.manager.comment.v1.Manager.GetComment:output_type -> good.manager.comment.v1.GetCommentResponse
+	14, // 32: good.manager.comment.v1.Manager.GetCommentOnly:output_type -> good.manager.comment.v1.GetCommentOnlyResponse
+	12, // 33: good.manager.comment.v1.Manager.GetComments:output_type -> good.manager.comment.v1.GetCommentsResponse
+	16, // 34: good.manager.comment.v1.Manager.ExistComment:output_type -> good.manager.comment.v1.ExistCommentResponse
+	18, // 35: good.manager.comment.v1.Manager.ExistCommentConds:output_type -> good.manager.comment.v1.ExistCommentCondsResponse
+	20, // 36: good.manager.comment.v1.Manager.CountComments:output_type -> good.manager.comment.v1.CountCommentsResponse
+	22, // 37: good.manager.comment.v1.Manager.DeleteComment:output_type -> good.manager.comment.v1.DeleteCommentResponse
+	28, // [28:38] is the sub-list for method output_type
+	18, // [18:28] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_mgr_v1_comment_comment_proto_init() }
@@ -1445,7 +1676,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentRequest); i {
+			switch v := v.(*UpdateCommentRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1457,7 +1688,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentResponse); i {
+			switch v := v.(*UpdateCommentResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1469,7 +1700,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentsRequest); i {
+			switch v := v.(*GetCommentRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1481,7 +1712,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentsResponse); i {
+			switch v := v.(*GetCommentResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1493,7 +1724,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentOnlyRequest); i {
+			switch v := v.(*GetCommentsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1505,7 +1736,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetCommentOnlyResponse); i {
+			switch v := v.(*GetCommentsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1517,7 +1748,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCommentRequest); i {
+			switch v := v.(*GetCommentOnlyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1529,7 +1760,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCommentResponse); i {
+			switch v := v.(*GetCommentOnlyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1541,7 +1772,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCommentCondsRequest); i {
+			switch v := v.(*ExistCommentRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1553,7 +1784,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCommentCondsResponse); i {
+			switch v := v.(*ExistCommentResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1565,7 +1796,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountCommentsRequest); i {
+			switch v := v.(*ExistCommentCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1577,7 +1808,55 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistCommentCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CountCommentsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountCommentsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteCommentRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_comment_comment_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteCommentResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1597,7 +1876,7 @@ func file_npool_good_mgr_v1_comment_comment_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_mgr_v1_comment_comment_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

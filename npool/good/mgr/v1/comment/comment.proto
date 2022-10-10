@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateComment     (CreateCommentRequest)     returns (CreateCommentResponse)     {}
     rpc CreateComments    (CreateCommentsRequest)    returns (CreateCommentsResponse)    {}
+    rpc UpdateComment     (UpdateCommentRequest)     returns (UpdateCommentResponse)     {}
     rpc GetComment        (GetCommentRequest)        returns (GetCommentResponse)        {}
     rpc GetCommentOnly    (GetCommentOnlyRequest)    returns (GetCommentOnlyResponse)    {}
     rpc GetComments       (GetCommentsRequest)       returns (GetCommentsResponse)       {}
     rpc ExistComment      (ExistCommentRequest)      returns (ExistCommentResponse)      {}
     rpc ExistCommentConds (ExistCommentCondsRequest) returns (ExistCommentCondsResponse) {}
     rpc CountComments     (CountCommentsRequest)     returns (CountCommentsResponse)     {}
+    rpc DeleteComment     (DeleteCommentRequest)     returns (DeleteCommentResponse)     {}
 }
 
 message CommentReq {
@@ -64,6 +66,14 @@ message CreateCommentsRequest {
 
 message CreateCommentsResponse {
     repeated Comment Infos = 10;
+}
+
+message UpdateCommentRequest {
+    CommentReq Info = 10;
+}
+
+message UpdateCommentResponse {
+    Comment Info = 10;
 }
 
 message GetCommentRequest {
@@ -117,3 +127,10 @@ message CountCommentsResponse {
     uint32 Info = 10;
 }
 
+message DeleteCommentRequest {
+    string ID = 10;
+}
+
+message DeleteCommentResponse {
+    Comment Info = 10;
+}

@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateRecommend     (CreateRecommendRequest)     returns (CreateRecommendResponse)     {}
     rpc CreateRecommends    (CreateRecommendsRequest)    returns (CreateRecommendsResponse)    {}
+    rpc UpdateRecommend     (UpdateRecommendRequest)     returns (UpdateRecommendResponse)     {}
     rpc GetRecommend        (GetRecommendRequest)        returns (GetRecommendResponse)        {}
     rpc GetRecommendOnly    (GetRecommendOnlyRequest)    returns (GetRecommendOnlyResponse)    {}
     rpc GetRecommends       (GetRecommendsRequest)       returns (GetRecommendsResponse)       {}
     rpc ExistRecommend      (ExistRecommendRequest)      returns (ExistRecommendResponse)      {}
     rpc ExistRecommendConds (ExistRecommendCondsRequest) returns (ExistRecommendCondsResponse) {}
     rpc CountRecommends     (CountRecommendsRequest)     returns (CountRecommendsResponse)     {}
+    rpc DeleteRecommend     (DeleteRecommendRequest)     returns (DeleteRecommendResponse)     {}
 }
 
 message RecommendReq {
@@ -61,6 +63,14 @@ message CreateRecommendsRequest {
 
 message CreateRecommendsResponse {
     repeated Recommend Infos = 10;
+}
+
+message UpdateRecommendRequest {
+    RecommendReq Info = 10;
+}
+
+message UpdateRecommendResponse {
+    Recommend Info = 10;
 }
 
 message GetRecommendRequest {
@@ -114,3 +124,10 @@ message CountRecommendsResponse {
     uint32 Info = 10;
 }
 
+message DeleteRecommendRequest {
+    string ID = 10;
+}
+
+message DeleteRecommendResponse {
+    Recommend Info = 10;
+}

@@ -535,6 +535,100 @@ func (x *CreateAppGoodsResponse) GetInfos() []*AppGood {
 	return nil
 }
 
+type UpdateAppGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppGoodReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppGoodRequest) Reset() {
+	*x = UpdateAppGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppGoodRequest) ProtoMessage() {}
+
+func (x *UpdateAppGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppGoodRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAppGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *UpdateAppGoodRequest) GetInfo() *AppGoodReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAppGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppGoodResponse) Reset() {
+	*x = UpdateAppGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppGoodResponse) ProtoMessage() {}
+
+func (x *UpdateAppGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppGoodResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAppGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateAppGoodResponse) GetInfo() *AppGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 type GetAppGoodRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -546,7 +640,7 @@ type GetAppGoodRequest struct {
 func (x *GetAppGoodRequest) Reset() {
 	*x = GetAppGoodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[7]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -559,7 +653,7 @@ func (x *GetAppGoodRequest) String() string {
 func (*GetAppGoodRequest) ProtoMessage() {}
 
 func (x *GetAppGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[7]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -572,7 +666,7 @@ func (x *GetAppGoodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodRequest.ProtoReflect.Descriptor instead.
 func (*GetAppGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{7}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAppGoodRequest) GetID() string {
@@ -593,7 +687,7 @@ type GetAppGoodResponse struct {
 func (x *GetAppGoodResponse) Reset() {
 	*x = GetAppGoodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[8]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -606,7 +700,7 @@ func (x *GetAppGoodResponse) String() string {
 func (*GetAppGoodResponse) ProtoMessage() {}
 
 func (x *GetAppGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[8]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -619,7 +713,7 @@ func (x *GetAppGoodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodResponse.ProtoReflect.Descriptor instead.
 func (*GetAppGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{8}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAppGoodResponse) GetInfo() *AppGood {
@@ -642,7 +736,7 @@ type GetAppGoodsRequest struct {
 func (x *GetAppGoodsRequest) Reset() {
 	*x = GetAppGoodsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[9]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -655,7 +749,7 @@ func (x *GetAppGoodsRequest) String() string {
 func (*GetAppGoodsRequest) ProtoMessage() {}
 
 func (x *GetAppGoodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[9]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -668,7 +762,7 @@ func (x *GetAppGoodsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodsRequest.ProtoReflect.Descriptor instead.
 func (*GetAppGoodsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{9}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetAppGoodsRequest) GetConds() *Conds {
@@ -704,7 +798,7 @@ type GetAppGoodsResponse struct {
 func (x *GetAppGoodsResponse) Reset() {
 	*x = GetAppGoodsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[10]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -717,7 +811,7 @@ func (x *GetAppGoodsResponse) String() string {
 func (*GetAppGoodsResponse) ProtoMessage() {}
 
 func (x *GetAppGoodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[10]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -730,7 +824,7 @@ func (x *GetAppGoodsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodsResponse.ProtoReflect.Descriptor instead.
 func (*GetAppGoodsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{10}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetAppGoodsResponse) GetInfos() []*AppGood {
@@ -758,7 +852,7 @@ type GetAppGoodOnlyRequest struct {
 func (x *GetAppGoodOnlyRequest) Reset() {
 	*x = GetAppGoodOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[11]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -771,7 +865,7 @@ func (x *GetAppGoodOnlyRequest) String() string {
 func (*GetAppGoodOnlyRequest) ProtoMessage() {}
 
 func (x *GetAppGoodOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[11]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -784,7 +878,7 @@ func (x *GetAppGoodOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetAppGoodOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{11}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetAppGoodOnlyRequest) GetConds() *Conds {
@@ -805,7 +899,7 @@ type GetAppGoodOnlyResponse struct {
 func (x *GetAppGoodOnlyResponse) Reset() {
 	*x = GetAppGoodOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[12]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -818,7 +912,7 @@ func (x *GetAppGoodOnlyResponse) String() string {
 func (*GetAppGoodOnlyResponse) ProtoMessage() {}
 
 func (x *GetAppGoodOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[12]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -831,7 +925,7 @@ func (x *GetAppGoodOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppGoodOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetAppGoodOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{12}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetAppGoodOnlyResponse) GetInfo() *AppGood {
@@ -852,7 +946,7 @@ type ExistAppGoodRequest struct {
 func (x *ExistAppGoodRequest) Reset() {
 	*x = ExistAppGoodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[13]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -865,7 +959,7 @@ func (x *ExistAppGoodRequest) String() string {
 func (*ExistAppGoodRequest) ProtoMessage() {}
 
 func (x *ExistAppGoodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[13]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -878,7 +972,7 @@ func (x *ExistAppGoodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAppGoodRequest.ProtoReflect.Descriptor instead.
 func (*ExistAppGoodRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{13}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistAppGoodRequest) GetID() string {
@@ -899,7 +993,7 @@ type ExistAppGoodResponse struct {
 func (x *ExistAppGoodResponse) Reset() {
 	*x = ExistAppGoodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[14]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -912,7 +1006,7 @@ func (x *ExistAppGoodResponse) String() string {
 func (*ExistAppGoodResponse) ProtoMessage() {}
 
 func (x *ExistAppGoodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[14]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -925,7 +1019,7 @@ func (x *ExistAppGoodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAppGoodResponse.ProtoReflect.Descriptor instead.
 func (*ExistAppGoodResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{14}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistAppGoodResponse) GetInfo() bool {
@@ -946,7 +1040,7 @@ type ExistAppGoodCondsRequest struct {
 func (x *ExistAppGoodCondsRequest) Reset() {
 	*x = ExistAppGoodCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[15]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -959,7 +1053,7 @@ func (x *ExistAppGoodCondsRequest) String() string {
 func (*ExistAppGoodCondsRequest) ProtoMessage() {}
 
 func (x *ExistAppGoodCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[15]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -972,7 +1066,7 @@ func (x *ExistAppGoodCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAppGoodCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistAppGoodCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{15}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ExistAppGoodCondsRequest) GetConds() *Conds {
@@ -993,7 +1087,7 @@ type ExistAppGoodCondsResponse struct {
 func (x *ExistAppGoodCondsResponse) Reset() {
 	*x = ExistAppGoodCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[16]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1006,7 +1100,7 @@ func (x *ExistAppGoodCondsResponse) String() string {
 func (*ExistAppGoodCondsResponse) ProtoMessage() {}
 
 func (x *ExistAppGoodCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[16]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1019,7 +1113,7 @@ func (x *ExistAppGoodCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAppGoodCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistAppGoodCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{16}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExistAppGoodCondsResponse) GetInfo() bool {
@@ -1040,7 +1134,7 @@ type CountAppGoodsRequest struct {
 func (x *CountAppGoodsRequest) Reset() {
 	*x = CountAppGoodsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[17]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1053,7 +1147,7 @@ func (x *CountAppGoodsRequest) String() string {
 func (*CountAppGoodsRequest) ProtoMessage() {}
 
 func (x *CountAppGoodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[17]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1066,7 +1160,7 @@ func (x *CountAppGoodsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountAppGoodsRequest.ProtoReflect.Descriptor instead.
 func (*CountAppGoodsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{17}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CountAppGoodsRequest) GetConds() *Conds {
@@ -1087,7 +1181,7 @@ type CountAppGoodsResponse struct {
 func (x *CountAppGoodsResponse) Reset() {
 	*x = CountAppGoodsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[18]
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1100,7 +1194,7 @@ func (x *CountAppGoodsResponse) String() string {
 func (*CountAppGoodsResponse) ProtoMessage() {}
 
 func (x *CountAppGoodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[18]
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1113,7 +1207,7 @@ func (x *CountAppGoodsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountAppGoodsResponse.ProtoReflect.Descriptor instead.
 func (*CountAppGoodsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{18}
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CountAppGoodsResponse) GetInfo() uint32 {
@@ -1121,6 +1215,100 @@ func (x *CountAppGoodsResponse) GetInfo() uint32 {
 		return x.Info
 	}
 	return 0
+}
+
+type DeleteAppGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *DeleteAppGoodRequest) Reset() {
+	*x = DeleteAppGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAppGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAppGoodRequest) ProtoMessage() {}
+
+func (x *DeleteAppGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAppGoodRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAppGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DeleteAppGoodRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type DeleteAppGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteAppGoodResponse) Reset() {
+	*x = DeleteAppGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAppGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAppGoodResponse) ProtoMessage() {}
+
+func (x *DeleteAppGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAppGoodResponse.ProtoReflect.Descriptor instead.
+func (*DeleteAppGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DeleteAppGoodResponse) GetInfo() *AppGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
 }
 
 var File_npool_good_mgr_v1_appgood_appgood_proto protoreflect.FileDescriptor
@@ -1218,7 +1406,17 @@ var file_npool_good_mgr_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x65, 0x12, 0x36, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
 	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x47, 0x6f,
-	0x6f, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x23, 0x0a, 0x11, 0x47, 0x65, 0x74,
+	0x6f, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4f, 0x0a, 0x14, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x23, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61,
+	0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
+	0x64, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4d, 0x0a, 0x15, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x47,
+	0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x23, 0x0a, 0x11, 0x47, 0x65, 0x74,
 	0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
 	0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x4a,
 	0x0a, 0x12, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70,
@@ -1270,69 +1468,91 @@ var file_npool_good_mgr_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2b, 0x0a, 0x15,
 	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x99, 0x07, 0x0a, 0x07, 0x4d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
-	0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
-	0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
-	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2a, 0x2e, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47,
-	0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x0b, 0x47, 0x65,
-	0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41,
-	0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70,
-	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
-	0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e,
+	0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a, 0x14, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49,
+	0x44, 0x22, 0x4d, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f,
+	0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e,
+	0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e,
+	0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x32, 0xfe, 0x08, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x70, 0x0a, 0x0d,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73,
+	0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73,
+	0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
+	0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47,
+	0x6f, 0x6f, 0x64, 0x12, 0x2a, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61,
+	0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73,
+	0x0a, 0x0e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79,
+	0x12, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
+	0x64, 0x73, 0x12, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61,
+	0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x6d, 0x0a, 0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x12,
+	0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61,
+	0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41,
+	0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e,
 	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70,
 	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70,
-	0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47,
-	0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f,
-	0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
-	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
-	0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x67,
-	0x6f, 0x6f, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c,
+	0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f,
+	0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
+	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6e,
+	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x0d,
+	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2d, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47,
+	0x6f, 0x6f, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x71,
+	0x0a, 0x0e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x73,
+	0x12, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
+	0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x61,
+	0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64,
+	0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1347,7 +1567,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_rawDescGZIP() []byte {
 	return file_npool_good_mgr_v1_appgood_appgood_proto_rawDescData
 }
 
-var file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_npool_good_mgr_v1_appgood_appgood_proto_goTypes = []interface{}{
 	(*AppGoodReq)(nil),                // 0: good.manager.appgood.v1.AppGoodReq
 	(*AppGood)(nil),                   // 1: good.manager.appgood.v1.AppGood
@@ -1356,56 +1576,67 @@ var file_npool_good_mgr_v1_appgood_appgood_proto_goTypes = []interface{}{
 	(*CreateAppGoodResponse)(nil),     // 4: good.manager.appgood.v1.CreateAppGoodResponse
 	(*CreateAppGoodsRequest)(nil),     // 5: good.manager.appgood.v1.CreateAppGoodsRequest
 	(*CreateAppGoodsResponse)(nil),    // 6: good.manager.appgood.v1.CreateAppGoodsResponse
-	(*GetAppGoodRequest)(nil),         // 7: good.manager.appgood.v1.GetAppGoodRequest
-	(*GetAppGoodResponse)(nil),        // 8: good.manager.appgood.v1.GetAppGoodResponse
-	(*GetAppGoodsRequest)(nil),        // 9: good.manager.appgood.v1.GetAppGoodsRequest
-	(*GetAppGoodsResponse)(nil),       // 10: good.manager.appgood.v1.GetAppGoodsResponse
-	(*GetAppGoodOnlyRequest)(nil),     // 11: good.manager.appgood.v1.GetAppGoodOnlyRequest
-	(*GetAppGoodOnlyResponse)(nil),    // 12: good.manager.appgood.v1.GetAppGoodOnlyResponse
-	(*ExistAppGoodRequest)(nil),       // 13: good.manager.appgood.v1.ExistAppGoodRequest
-	(*ExistAppGoodResponse)(nil),      // 14: good.manager.appgood.v1.ExistAppGoodResponse
-	(*ExistAppGoodCondsRequest)(nil),  // 15: good.manager.appgood.v1.ExistAppGoodCondsRequest
-	(*ExistAppGoodCondsResponse)(nil), // 16: good.manager.appgood.v1.ExistAppGoodCondsResponse
-	(*CountAppGoodsRequest)(nil),      // 17: good.manager.appgood.v1.CountAppGoodsRequest
-	(*CountAppGoodsResponse)(nil),     // 18: good.manager.appgood.v1.CountAppGoodsResponse
-	(*npool.StringVal)(nil),           // 19: npool.v1.StringVal
+	(*UpdateAppGoodRequest)(nil),      // 7: good.manager.appgood.v1.UpdateAppGoodRequest
+	(*UpdateAppGoodResponse)(nil),     // 8: good.manager.appgood.v1.UpdateAppGoodResponse
+	(*GetAppGoodRequest)(nil),         // 9: good.manager.appgood.v1.GetAppGoodRequest
+	(*GetAppGoodResponse)(nil),        // 10: good.manager.appgood.v1.GetAppGoodResponse
+	(*GetAppGoodsRequest)(nil),        // 11: good.manager.appgood.v1.GetAppGoodsRequest
+	(*GetAppGoodsResponse)(nil),       // 12: good.manager.appgood.v1.GetAppGoodsResponse
+	(*GetAppGoodOnlyRequest)(nil),     // 13: good.manager.appgood.v1.GetAppGoodOnlyRequest
+	(*GetAppGoodOnlyResponse)(nil),    // 14: good.manager.appgood.v1.GetAppGoodOnlyResponse
+	(*ExistAppGoodRequest)(nil),       // 15: good.manager.appgood.v1.ExistAppGoodRequest
+	(*ExistAppGoodResponse)(nil),      // 16: good.manager.appgood.v1.ExistAppGoodResponse
+	(*ExistAppGoodCondsRequest)(nil),  // 17: good.manager.appgood.v1.ExistAppGoodCondsRequest
+	(*ExistAppGoodCondsResponse)(nil), // 18: good.manager.appgood.v1.ExistAppGoodCondsResponse
+	(*CountAppGoodsRequest)(nil),      // 19: good.manager.appgood.v1.CountAppGoodsRequest
+	(*CountAppGoodsResponse)(nil),     // 20: good.manager.appgood.v1.CountAppGoodsResponse
+	(*DeleteAppGoodRequest)(nil),      // 21: good.manager.appgood.v1.DeleteAppGoodRequest
+	(*DeleteAppGoodResponse)(nil),     // 22: good.manager.appgood.v1.DeleteAppGoodResponse
+	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
 }
 var file_npool_good_mgr_v1_appgood_appgood_proto_depIdxs = []int32{
-	19, // 0: good.manager.appgood.v1.Conds.ID:type_name -> npool.v1.StringVal
-	19, // 1: good.manager.appgood.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	19, // 2: good.manager.appgood.v1.Conds.GoodID:type_name -> npool.v1.StringVal
+	23, // 0: good.manager.appgood.v1.Conds.ID:type_name -> npool.v1.StringVal
+	23, // 1: good.manager.appgood.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	23, // 2: good.manager.appgood.v1.Conds.GoodID:type_name -> npool.v1.StringVal
 	0,  // 3: good.manager.appgood.v1.CreateAppGoodRequest.Info:type_name -> good.manager.appgood.v1.AppGoodReq
 	1,  // 4: good.manager.appgood.v1.CreateAppGoodResponse.Info:type_name -> good.manager.appgood.v1.AppGood
 	0,  // 5: good.manager.appgood.v1.CreateAppGoodsRequest.Infos:type_name -> good.manager.appgood.v1.AppGoodReq
 	1,  // 6: good.manager.appgood.v1.CreateAppGoodsResponse.Infos:type_name -> good.manager.appgood.v1.AppGood
-	1,  // 7: good.manager.appgood.v1.GetAppGoodResponse.Info:type_name -> good.manager.appgood.v1.AppGood
-	2,  // 8: good.manager.appgood.v1.GetAppGoodsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
-	1,  // 9: good.manager.appgood.v1.GetAppGoodsResponse.Infos:type_name -> good.manager.appgood.v1.AppGood
-	2,  // 10: good.manager.appgood.v1.GetAppGoodOnlyRequest.Conds:type_name -> good.manager.appgood.v1.Conds
-	1,  // 11: good.manager.appgood.v1.GetAppGoodOnlyResponse.Info:type_name -> good.manager.appgood.v1.AppGood
-	2,  // 12: good.manager.appgood.v1.ExistAppGoodCondsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
-	2,  // 13: good.manager.appgood.v1.CountAppGoodsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
-	3,  // 14: good.manager.appgood.v1.Manager.CreateAppGood:input_type -> good.manager.appgood.v1.CreateAppGoodRequest
-	5,  // 15: good.manager.appgood.v1.Manager.CreateAppGoods:input_type -> good.manager.appgood.v1.CreateAppGoodsRequest
-	7,  // 16: good.manager.appgood.v1.Manager.GetAppGood:input_type -> good.manager.appgood.v1.GetAppGoodRequest
-	11, // 17: good.manager.appgood.v1.Manager.GetAppGoodOnly:input_type -> good.manager.appgood.v1.GetAppGoodOnlyRequest
-	9,  // 18: good.manager.appgood.v1.Manager.GetAppGoods:input_type -> good.manager.appgood.v1.GetAppGoodsRequest
-	13, // 19: good.manager.appgood.v1.Manager.ExistAppGood:input_type -> good.manager.appgood.v1.ExistAppGoodRequest
-	15, // 20: good.manager.appgood.v1.Manager.ExistAppGoodConds:input_type -> good.manager.appgood.v1.ExistAppGoodCondsRequest
-	17, // 21: good.manager.appgood.v1.Manager.CountAppGoods:input_type -> good.manager.appgood.v1.CountAppGoodsRequest
-	4,  // 22: good.manager.appgood.v1.Manager.CreateAppGood:output_type -> good.manager.appgood.v1.CreateAppGoodResponse
-	6,  // 23: good.manager.appgood.v1.Manager.CreateAppGoods:output_type -> good.manager.appgood.v1.CreateAppGoodsResponse
-	8,  // 24: good.manager.appgood.v1.Manager.GetAppGood:output_type -> good.manager.appgood.v1.GetAppGoodResponse
-	12, // 25: good.manager.appgood.v1.Manager.GetAppGoodOnly:output_type -> good.manager.appgood.v1.GetAppGoodOnlyResponse
-	10, // 26: good.manager.appgood.v1.Manager.GetAppGoods:output_type -> good.manager.appgood.v1.GetAppGoodsResponse
-	14, // 27: good.manager.appgood.v1.Manager.ExistAppGood:output_type -> good.manager.appgood.v1.ExistAppGoodResponse
-	16, // 28: good.manager.appgood.v1.Manager.ExistAppGoodConds:output_type -> good.manager.appgood.v1.ExistAppGoodCondsResponse
-	18, // 29: good.manager.appgood.v1.Manager.CountAppGoods:output_type -> good.manager.appgood.v1.CountAppGoodsResponse
-	22, // [22:30] is the sub-list for method output_type
-	14, // [14:22] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	0,  // 7: good.manager.appgood.v1.UpdateAppGoodRequest.Info:type_name -> good.manager.appgood.v1.AppGoodReq
+	1,  // 8: good.manager.appgood.v1.UpdateAppGoodResponse.Info:type_name -> good.manager.appgood.v1.AppGood
+	1,  // 9: good.manager.appgood.v1.GetAppGoodResponse.Info:type_name -> good.manager.appgood.v1.AppGood
+	2,  // 10: good.manager.appgood.v1.GetAppGoodsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
+	1,  // 11: good.manager.appgood.v1.GetAppGoodsResponse.Infos:type_name -> good.manager.appgood.v1.AppGood
+	2,  // 12: good.manager.appgood.v1.GetAppGoodOnlyRequest.Conds:type_name -> good.manager.appgood.v1.Conds
+	1,  // 13: good.manager.appgood.v1.GetAppGoodOnlyResponse.Info:type_name -> good.manager.appgood.v1.AppGood
+	2,  // 14: good.manager.appgood.v1.ExistAppGoodCondsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
+	2,  // 15: good.manager.appgood.v1.CountAppGoodsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
+	1,  // 16: good.manager.appgood.v1.DeleteAppGoodResponse.Info:type_name -> good.manager.appgood.v1.AppGood
+	3,  // 17: good.manager.appgood.v1.Manager.CreateAppGood:input_type -> good.manager.appgood.v1.CreateAppGoodRequest
+	5,  // 18: good.manager.appgood.v1.Manager.CreateAppGoods:input_type -> good.manager.appgood.v1.CreateAppGoodsRequest
+	7,  // 19: good.manager.appgood.v1.Manager.UpdateAppGood:input_type -> good.manager.appgood.v1.UpdateAppGoodRequest
+	9,  // 20: good.manager.appgood.v1.Manager.GetAppGood:input_type -> good.manager.appgood.v1.GetAppGoodRequest
+	13, // 21: good.manager.appgood.v1.Manager.GetAppGoodOnly:input_type -> good.manager.appgood.v1.GetAppGoodOnlyRequest
+	11, // 22: good.manager.appgood.v1.Manager.GetAppGoods:input_type -> good.manager.appgood.v1.GetAppGoodsRequest
+	15, // 23: good.manager.appgood.v1.Manager.ExistAppGood:input_type -> good.manager.appgood.v1.ExistAppGoodRequest
+	17, // 24: good.manager.appgood.v1.Manager.ExistAppGoodConds:input_type -> good.manager.appgood.v1.ExistAppGoodCondsRequest
+	19, // 25: good.manager.appgood.v1.Manager.CountAppGoods:input_type -> good.manager.appgood.v1.CountAppGoodsRequest
+	21, // 26: good.manager.appgood.v1.Manager.DeleteAppGoods:input_type -> good.manager.appgood.v1.DeleteAppGoodRequest
+	4,  // 27: good.manager.appgood.v1.Manager.CreateAppGood:output_type -> good.manager.appgood.v1.CreateAppGoodResponse
+	6,  // 28: good.manager.appgood.v1.Manager.CreateAppGoods:output_type -> good.manager.appgood.v1.CreateAppGoodsResponse
+	8,  // 29: good.manager.appgood.v1.Manager.UpdateAppGood:output_type -> good.manager.appgood.v1.UpdateAppGoodResponse
+	10, // 30: good.manager.appgood.v1.Manager.GetAppGood:output_type -> good.manager.appgood.v1.GetAppGoodResponse
+	14, // 31: good.manager.appgood.v1.Manager.GetAppGoodOnly:output_type -> good.manager.appgood.v1.GetAppGoodOnlyResponse
+	12, // 32: good.manager.appgood.v1.Manager.GetAppGoods:output_type -> good.manager.appgood.v1.GetAppGoodsResponse
+	16, // 33: good.manager.appgood.v1.Manager.ExistAppGood:output_type -> good.manager.appgood.v1.ExistAppGoodResponse
+	18, // 34: good.manager.appgood.v1.Manager.ExistAppGoodConds:output_type -> good.manager.appgood.v1.ExistAppGoodCondsResponse
+	20, // 35: good.manager.appgood.v1.Manager.CountAppGoods:output_type -> good.manager.appgood.v1.CountAppGoodsResponse
+	22, // 36: good.manager.appgood.v1.Manager.DeleteAppGoods:output_type -> good.manager.appgood.v1.DeleteAppGoodResponse
+	27, // [27:37] is the sub-list for method output_type
+	17, // [17:27] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_mgr_v1_appgood_appgood_proto_init() }
@@ -1499,7 +1730,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodRequest); i {
+			switch v := v.(*UpdateAppGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1511,7 +1742,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodResponse); i {
+			switch v := v.(*UpdateAppGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1523,7 +1754,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodsRequest); i {
+			switch v := v.(*GetAppGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1535,7 +1766,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodsResponse); i {
+			switch v := v.(*GetAppGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1547,7 +1778,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodOnlyRequest); i {
+			switch v := v.(*GetAppGoodsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1559,7 +1790,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppGoodOnlyResponse); i {
+			switch v := v.(*GetAppGoodsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1571,7 +1802,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAppGoodRequest); i {
+			switch v := v.(*GetAppGoodOnlyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1583,7 +1814,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAppGoodResponse); i {
+			switch v := v.(*GetAppGoodOnlyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1595,7 +1826,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAppGoodCondsRequest); i {
+			switch v := v.(*ExistAppGoodRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1607,7 +1838,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAppGoodCondsResponse); i {
+			switch v := v.(*ExistAppGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1619,7 +1850,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountAppGoodsRequest); i {
+			switch v := v.(*ExistAppGoodCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1631,7 +1862,55 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistAppGoodCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CountAppGoodsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountAppGoodsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAppGoodRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mgr_v1_appgood_appgood_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAppGoodResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1651,7 +1930,7 @@ func file_npool_good_mgr_v1_appgood_appgood_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_mgr_v1_appgood_appgood_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

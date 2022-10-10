@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateAppGood     (CreateAppGoodRequest)     returns (CreateAppGoodResponse)     {}
     rpc CreateAppGoods    (CreateAppGoodsRequest)    returns (CreateAppGoodsResponse)    {}
+    rpc UpdateAppGood     (UpdateAppGoodRequest)     returns (UpdateAppGoodResponse)     {}
     rpc GetAppGood        (GetAppGoodRequest)        returns (GetAppGoodResponse)        {}
     rpc GetAppGoodOnly    (GetAppGoodOnlyRequest)    returns (GetAppGoodOnlyResponse)    {}
     rpc GetAppGoods       (GetAppGoodsRequest)       returns (GetAppGoodsResponse)       {}
     rpc ExistAppGood      (ExistAppGoodRequest)      returns (ExistAppGoodResponse)      {}
     rpc ExistAppGoodConds (ExistAppGoodCondsRequest) returns (ExistAppGoodCondsResponse) {}
     rpc CountAppGoods     (CountAppGoodsRequest)     returns (CountAppGoodsResponse)     {}
+    rpc DeleteAppGoods    (DeleteAppGoodRequest)     returns (DeleteAppGoodResponse)     {}
 }
 
 message AppGoodReq {
@@ -71,6 +73,14 @@ message CreateAppGoodsResponse {
     repeated AppGood Infos = 10;
 }
 
+message UpdateAppGoodRequest {
+    AppGoodReq Info = 10;
+}
+
+message UpdateAppGoodResponse {
+    AppGood Info = 10;
+}
+
 message GetAppGoodRequest {
     string ID = 10;
 }
@@ -122,3 +132,10 @@ message CountAppGoodsResponse {
     uint32 Info = 10;
 }
 
+message DeleteAppGoodRequest {
+    string ID = 10;
+}
+
+message DeleteAppGoodResponse {
+    AppGood Info = 10;
+}

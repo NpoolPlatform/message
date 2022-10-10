@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateComment(ctx context.Context, in *CreateCommentRequest, opts ...grpc.CallOption) (*CreateCommentResponse, error)
 	CreateComments(ctx context.Context, in *CreateCommentsRequest, opts ...grpc.CallOption) (*CreateCommentsResponse, error)
+	UpdateComment(ctx context.Context, in *UpdateCommentRequest, opts ...grpc.CallOption) (*UpdateCommentResponse, error)
 	GetComment(ctx context.Context, in *GetCommentRequest, opts ...grpc.CallOption) (*GetCommentResponse, error)
 	GetCommentOnly(ctx context.Context, in *GetCommentOnlyRequest, opts ...grpc.CallOption) (*GetCommentOnlyResponse, error)
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
 	ExistComment(ctx context.Context, in *ExistCommentRequest, opts ...grpc.CallOption) (*ExistCommentResponse, error)
 	ExistCommentConds(ctx context.Context, in *ExistCommentCondsRequest, opts ...grpc.CallOption) (*ExistCommentCondsResponse, error)
 	CountComments(ctx context.Context, in *CountCommentsRequest, opts ...grpc.CallOption) (*CountCommentsResponse, error)
+	DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateComment(ctx context.Context, in *CreateCommentRequ
 func (c *managerClient) CreateComments(ctx context.Context, in *CreateCommentsRequest, opts ...grpc.CallOption) (*CreateCommentsResponse, error) {
 	out := new(CreateCommentsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.comment.v1.Manager/CreateComments", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateComment(ctx context.Context, in *UpdateCommentRequest, opts ...grpc.CallOption) (*UpdateCommentResponse, error) {
+	out := new(UpdateCommentResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.comment.v1.Manager/UpdateComment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountComments(ctx context.Context, in *CountCommentsRequ
 	return out, nil
 }
 
+func (c *managerClient) DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error) {
+	out := new(DeleteCommentResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.comment.v1.Manager/DeleteComment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateComment(context.Context, *CreateCommentRequest) (*CreateCommentResponse, error)
 	CreateComments(context.Context, *CreateCommentsRequest) (*CreateCommentsResponse, error)
+	UpdateComment(context.Context, *UpdateCommentRequest) (*UpdateCommentResponse, error)
 	GetComment(context.Context, *GetCommentRequest) (*GetCommentResponse, error)
 	GetCommentOnly(context.Context, *GetCommentOnlyRequest) (*GetCommentOnlyResponse, error)
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
 	ExistComment(context.Context, *ExistCommentRequest) (*ExistCommentResponse, error)
 	ExistCommentConds(context.Context, *ExistCommentCondsRequest) (*ExistCommentCondsResponse, error)
 	CountComments(context.Context, *CountCommentsRequest) (*CountCommentsResponse, error)
+	DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateComment(context.Context, *CreateCommentR
 }
 func (UnimplementedManagerServer) CreateComments(context.Context, *CreateCommentsRequest) (*CreateCommentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateComments not implemented")
+}
+func (UnimplementedManagerServer) UpdateComment(context.Context, *UpdateCommentRequest) (*UpdateCommentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateComment not implemented")
 }
 func (UnimplementedManagerServer) GetComment(context.Context, *GetCommentRequest) (*GetCommentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetComment not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistCommentConds(context.Context, *ExistComme
 }
 func (UnimplementedManagerServer) CountComments(context.Context, *CountCommentsRequest) (*CountCommentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountComments not implemented")
+}
+func (UnimplementedManagerServer) DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteComment not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateComments_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateComments(ctx, req.(*CreateCommentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.comment.v1.Manager/UpdateComment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateComment(ctx, req.(*UpdateCommentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountComments_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.comment.v1.Manager/DeleteComment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteComment(ctx, req.(*DeleteCommentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateComments",
 			Handler:    _Manager_CreateComments_Handler,
+		},
+		{
+			MethodName: "UpdateComment",
+			Handler:    _Manager_UpdateComment_Handler,
 		},
 		{
 			MethodName: "GetComment",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountComments",
 			Handler:    _Manager_CountComments_Handler,
+		},
+		{
+			MethodName: "DeleteComment",
+			Handler:    _Manager_DeleteComment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

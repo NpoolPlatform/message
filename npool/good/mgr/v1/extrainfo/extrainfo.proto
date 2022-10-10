@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateExtraInfo     (CreateExtraInfoRequest)     returns (CreateExtraInfoResponse)     {}
     rpc CreateExtraInfos    (CreateExtraInfosRequest)    returns (CreateExtraInfosResponse)    {}
+    rpc UpdateExtraInfo     (UpdateExtraInfoRequest)     returns (UpdateExtraInfoResponse)     {}
     rpc GetExtraInfo        (GetExtraInfoRequest)        returns (GetExtraInfoResponse)        {}
     rpc GetExtraInfoOnly    (GetExtraInfoOnlyRequest)    returns (GetExtraInfoOnlyResponse)    {}
     rpc GetExtraInfos       (GetExtraInfosRequest)       returns (GetExtraInfosResponse)       {}
     rpc ExistExtraInfo      (ExistExtraInfoRequest)      returns (ExistExtraInfoResponse)      {}
     rpc ExistExtraInfoConds (ExistExtraInfoCondsRequest) returns (ExistExtraInfoCondsResponse) {}
     rpc CountExtraInfos     (CountExtraInfosRequest)     returns (CountExtraInfosResponse)     {}
+    rpc DeleteExtraInfo     (DeleteExtraInfoRequest)     returns (DeleteExtraInfoResponse)     {}
 }
 
 message ExtraInfoReq {
@@ -62,6 +64,14 @@ message CreateExtraInfosRequest {
 
 message CreateExtraInfosResponse {
     repeated ExtraInfo Infos = 10;
+}
+
+message UpdateExtraInfoRequest {
+    ExtraInfoReq Info = 10;
+}
+
+message UpdateExtraInfoResponse {
+    ExtraInfo Info = 10;
 }
 
 message GetExtraInfoRequest {
@@ -115,3 +125,10 @@ message CountExtraInfosResponse {
     uint32 Info = 10;
 }
 
+message DeleteExtraInfoRequest {
+    string ID = 10;
+}
+
+message DeleteExtraInfoResponse {
+    ExtraInfo Info = 10;
+}

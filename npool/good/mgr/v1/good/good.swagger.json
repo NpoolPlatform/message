@@ -105,6 +105,14 @@
         }
       }
     },
+    "v1DeleteGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
     "v1ExistGoodCondsResponse": {
       "type": "object",
       "properties": {
@@ -318,6 +326,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
         }
       }
     }

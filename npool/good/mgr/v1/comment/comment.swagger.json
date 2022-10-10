@@ -153,6 +153,14 @@
         }
       }
     },
+    "v1DeleteCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
     "v1ExistCommentCondsResponse": {
       "type": "object",
       "properties": {
@@ -208,6 +216,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
         }
       }
     }

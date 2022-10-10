@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateVendorLocation(ctx context.Context, in *CreateVendorLocationRequest, opts ...grpc.CallOption) (*CreateVendorLocationResponse, error)
 	CreateVendorLocations(ctx context.Context, in *CreateVendorLocationsRequest, opts ...grpc.CallOption) (*CreateVendorLocationsResponse, error)
+	UpdateVendorLocation(ctx context.Context, in *UpdateVendorLocationRequest, opts ...grpc.CallOption) (*UpdateVendorLocationResponse, error)
 	GetVendorLocation(ctx context.Context, in *GetVendorLocationRequest, opts ...grpc.CallOption) (*GetVendorLocationResponse, error)
 	GetVendorLocationOnly(ctx context.Context, in *GetVendorLocationOnlyRequest, opts ...grpc.CallOption) (*GetVendorLocationOnlyResponse, error)
 	GetVendorLocations(ctx context.Context, in *GetVendorLocationsRequest, opts ...grpc.CallOption) (*GetVendorLocationsResponse, error)
 	ExistVendorLocation(ctx context.Context, in *ExistVendorLocationRequest, opts ...grpc.CallOption) (*ExistVendorLocationResponse, error)
 	ExistVendorLocationConds(ctx context.Context, in *ExistVendorLocationCondsRequest, opts ...grpc.CallOption) (*ExistVendorLocationCondsResponse, error)
 	CountVendorLocations(ctx context.Context, in *CountVendorLocationsRequest, opts ...grpc.CallOption) (*CountVendorLocationsResponse, error)
+	DeleteVendorLocation(ctx context.Context, in *DeleteVendorLocationRequest, opts ...grpc.CallOption) (*DeleteVendorLocationResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateVendorLocation(ctx context.Context, in *CreateVend
 func (c *managerClient) CreateVendorLocations(ctx context.Context, in *CreateVendorLocationsRequest, opts ...grpc.CallOption) (*CreateVendorLocationsResponse, error) {
 	out := new(CreateVendorLocationsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.vendorlocation.v1.Manager/CreateVendorLocations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateVendorLocation(ctx context.Context, in *UpdateVendorLocationRequest, opts ...grpc.CallOption) (*UpdateVendorLocationResponse, error) {
+	out := new(UpdateVendorLocationResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.vendorlocation.v1.Manager/UpdateVendorLocation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountVendorLocations(ctx context.Context, in *CountVendo
 	return out, nil
 }
 
+func (c *managerClient) DeleteVendorLocation(ctx context.Context, in *DeleteVendorLocationRequest, opts ...grpc.CallOption) (*DeleteVendorLocationResponse, error) {
+	out := new(DeleteVendorLocationResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.vendorlocation.v1.Manager/DeleteVendorLocation", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateVendorLocation(context.Context, *CreateVendorLocationRequest) (*CreateVendorLocationResponse, error)
 	CreateVendorLocations(context.Context, *CreateVendorLocationsRequest) (*CreateVendorLocationsResponse, error)
+	UpdateVendorLocation(context.Context, *UpdateVendorLocationRequest) (*UpdateVendorLocationResponse, error)
 	GetVendorLocation(context.Context, *GetVendorLocationRequest) (*GetVendorLocationResponse, error)
 	GetVendorLocationOnly(context.Context, *GetVendorLocationOnlyRequest) (*GetVendorLocationOnlyResponse, error)
 	GetVendorLocations(context.Context, *GetVendorLocationsRequest) (*GetVendorLocationsResponse, error)
 	ExistVendorLocation(context.Context, *ExistVendorLocationRequest) (*ExistVendorLocationResponse, error)
 	ExistVendorLocationConds(context.Context, *ExistVendorLocationCondsRequest) (*ExistVendorLocationCondsResponse, error)
 	CountVendorLocations(context.Context, *CountVendorLocationsRequest) (*CountVendorLocationsResponse, error)
+	DeleteVendorLocation(context.Context, *DeleteVendorLocationRequest) (*DeleteVendorLocationResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateVendorLocation(context.Context, *CreateV
 }
 func (UnimplementedManagerServer) CreateVendorLocations(context.Context, *CreateVendorLocationsRequest) (*CreateVendorLocationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateVendorLocations not implemented")
+}
+func (UnimplementedManagerServer) UpdateVendorLocation(context.Context, *UpdateVendorLocationRequest) (*UpdateVendorLocationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateVendorLocation not implemented")
 }
 func (UnimplementedManagerServer) GetVendorLocation(context.Context, *GetVendorLocationRequest) (*GetVendorLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVendorLocation not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistVendorLocationConds(context.Context, *Exi
 }
 func (UnimplementedManagerServer) CountVendorLocations(context.Context, *CountVendorLocationsRequest) (*CountVendorLocationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountVendorLocations not implemented")
+}
+func (UnimplementedManagerServer) DeleteVendorLocation(context.Context, *DeleteVendorLocationRequest) (*DeleteVendorLocationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteVendorLocation not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateVendorLocations_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateVendorLocations(ctx, req.(*CreateVendorLocationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateVendorLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateVendorLocationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateVendorLocation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.vendorlocation.v1.Manager/UpdateVendorLocation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateVendorLocation(ctx, req.(*UpdateVendorLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountVendorLocations_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteVendorLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteVendorLocationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteVendorLocation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.vendorlocation.v1.Manager/DeleteVendorLocation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteVendorLocation(ctx, req.(*DeleteVendorLocationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateVendorLocations",
 			Handler:    _Manager_CreateVendorLocations_Handler,
+		},
+		{
+			MethodName: "UpdateVendorLocation",
+			Handler:    _Manager_UpdateVendorLocation_Handler,
 		},
 		{
 			MethodName: "GetVendorLocation",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountVendorLocations",
 			Handler:    _Manager_CountVendorLocations_Handler,
+		},
+		{
+			MethodName: "DeleteVendorLocation",
+			Handler:    _Manager_DeleteVendorLocation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

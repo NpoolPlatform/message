@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateExtraInfo(ctx context.Context, in *CreateExtraInfoRequest, opts ...grpc.CallOption) (*CreateExtraInfoResponse, error)
 	CreateExtraInfos(ctx context.Context, in *CreateExtraInfosRequest, opts ...grpc.CallOption) (*CreateExtraInfosResponse, error)
+	UpdateExtraInfo(ctx context.Context, in *UpdateExtraInfoRequest, opts ...grpc.CallOption) (*UpdateExtraInfoResponse, error)
 	GetExtraInfo(ctx context.Context, in *GetExtraInfoRequest, opts ...grpc.CallOption) (*GetExtraInfoResponse, error)
 	GetExtraInfoOnly(ctx context.Context, in *GetExtraInfoOnlyRequest, opts ...grpc.CallOption) (*GetExtraInfoOnlyResponse, error)
 	GetExtraInfos(ctx context.Context, in *GetExtraInfosRequest, opts ...grpc.CallOption) (*GetExtraInfosResponse, error)
 	ExistExtraInfo(ctx context.Context, in *ExistExtraInfoRequest, opts ...grpc.CallOption) (*ExistExtraInfoResponse, error)
 	ExistExtraInfoConds(ctx context.Context, in *ExistExtraInfoCondsRequest, opts ...grpc.CallOption) (*ExistExtraInfoCondsResponse, error)
 	CountExtraInfos(ctx context.Context, in *CountExtraInfosRequest, opts ...grpc.CallOption) (*CountExtraInfosResponse, error)
+	DeleteExtraInfo(ctx context.Context, in *DeleteExtraInfoRequest, opts ...grpc.CallOption) (*DeleteExtraInfoResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateExtraInfo(ctx context.Context, in *CreateExtraInfo
 func (c *managerClient) CreateExtraInfos(ctx context.Context, in *CreateExtraInfosRequest, opts ...grpc.CallOption) (*CreateExtraInfosResponse, error) {
 	out := new(CreateExtraInfosResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.extrainfo.v1.Manager/CreateExtraInfos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateExtraInfo(ctx context.Context, in *UpdateExtraInfoRequest, opts ...grpc.CallOption) (*UpdateExtraInfoResponse, error) {
+	out := new(UpdateExtraInfoResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.extrainfo.v1.Manager/UpdateExtraInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountExtraInfos(ctx context.Context, in *CountExtraInfos
 	return out, nil
 }
 
+func (c *managerClient) DeleteExtraInfo(ctx context.Context, in *DeleteExtraInfoRequest, opts ...grpc.CallOption) (*DeleteExtraInfoResponse, error) {
+	out := new(DeleteExtraInfoResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.extrainfo.v1.Manager/DeleteExtraInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateExtraInfo(context.Context, *CreateExtraInfoRequest) (*CreateExtraInfoResponse, error)
 	CreateExtraInfos(context.Context, *CreateExtraInfosRequest) (*CreateExtraInfosResponse, error)
+	UpdateExtraInfo(context.Context, *UpdateExtraInfoRequest) (*UpdateExtraInfoResponse, error)
 	GetExtraInfo(context.Context, *GetExtraInfoRequest) (*GetExtraInfoResponse, error)
 	GetExtraInfoOnly(context.Context, *GetExtraInfoOnlyRequest) (*GetExtraInfoOnlyResponse, error)
 	GetExtraInfos(context.Context, *GetExtraInfosRequest) (*GetExtraInfosResponse, error)
 	ExistExtraInfo(context.Context, *ExistExtraInfoRequest) (*ExistExtraInfoResponse, error)
 	ExistExtraInfoConds(context.Context, *ExistExtraInfoCondsRequest) (*ExistExtraInfoCondsResponse, error)
 	CountExtraInfos(context.Context, *CountExtraInfosRequest) (*CountExtraInfosResponse, error)
+	DeleteExtraInfo(context.Context, *DeleteExtraInfoRequest) (*DeleteExtraInfoResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateExtraInfo(context.Context, *CreateExtraI
 }
 func (UnimplementedManagerServer) CreateExtraInfos(context.Context, *CreateExtraInfosRequest) (*CreateExtraInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateExtraInfos not implemented")
+}
+func (UnimplementedManagerServer) UpdateExtraInfo(context.Context, *UpdateExtraInfoRequest) (*UpdateExtraInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateExtraInfo not implemented")
 }
 func (UnimplementedManagerServer) GetExtraInfo(context.Context, *GetExtraInfoRequest) (*GetExtraInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExtraInfo not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistExtraInfoConds(context.Context, *ExistExt
 }
 func (UnimplementedManagerServer) CountExtraInfos(context.Context, *CountExtraInfosRequest) (*CountExtraInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountExtraInfos not implemented")
+}
+func (UnimplementedManagerServer) DeleteExtraInfo(context.Context, *DeleteExtraInfoRequest) (*DeleteExtraInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteExtraInfo not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateExtraInfos_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateExtraInfos(ctx, req.(*CreateExtraInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateExtraInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateExtraInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateExtraInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.extrainfo.v1.Manager/UpdateExtraInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateExtraInfo(ctx, req.(*UpdateExtraInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountExtraInfos_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteExtraInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteExtraInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteExtraInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.extrainfo.v1.Manager/DeleteExtraInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteExtraInfo(ctx, req.(*DeleteExtraInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateExtraInfos",
 			Handler:    _Manager_CreateExtraInfos_Handler,
+		},
+		{
+			MethodName: "UpdateExtraInfo",
+			Handler:    _Manager_UpdateExtraInfo_Handler,
 		},
 		{
 			MethodName: "GetExtraInfo",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountExtraInfos",
 			Handler:    _Manager_CountExtraInfos_Handler,
+		},
+		{
+			MethodName: "DeleteExtraInfo",
+			Handler:    _Manager_DeleteExtraInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error)
 	CreateDeviceInfos(ctx context.Context, in *CreateDeviceInfosRequest, opts ...grpc.CallOption) (*CreateDeviceInfosResponse, error)
+	UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error)
 	GetDeviceInfoOnly(ctx context.Context, in *GetDeviceInfoOnlyRequest, opts ...grpc.CallOption) (*GetDeviceInfoOnlyResponse, error)
 	GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error)
 	ExistDeviceInfo(ctx context.Context, in *ExistDeviceInfoRequest, opts ...grpc.CallOption) (*ExistDeviceInfoResponse, error)
 	ExistDeviceInfoConds(ctx context.Context, in *ExistDeviceInfoCondsRequest, opts ...grpc.CallOption) (*ExistDeviceInfoCondsResponse, error)
 	CountDeviceInfos(ctx context.Context, in *CountDeviceInfosRequest, opts ...grpc.CallOption) (*CountDeviceInfosResponse, error)
+	DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateDeviceInfo(ctx context.Context, in *CreateDeviceIn
 func (c *managerClient) CreateDeviceInfos(ctx context.Context, in *CreateDeviceInfosRequest, opts ...grpc.CallOption) (*CreateDeviceInfosResponse, error) {
 	out := new(CreateDeviceInfosResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.deviceinfo.v1.Manager/CreateDeviceInfos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error) {
+	out := new(UpdateDeviceInfoResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.deviceinfo.v1.Manager/UpdateDeviceInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountDeviceInfos(ctx context.Context, in *CountDeviceInf
 	return out, nil
 }
 
+func (c *managerClient) DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error) {
+	out := new(DeleteDeviceInfoResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.deviceinfo.v1.Manager/DeleteDeviceInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error)
 	CreateDeviceInfos(context.Context, *CreateDeviceInfosRequest) (*CreateDeviceInfosResponse, error)
+	UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error)
 	GetDeviceInfoOnly(context.Context, *GetDeviceInfoOnlyRequest) (*GetDeviceInfoOnlyResponse, error)
 	GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error)
 	ExistDeviceInfo(context.Context, *ExistDeviceInfoRequest) (*ExistDeviceInfoResponse, error)
 	ExistDeviceInfoConds(context.Context, *ExistDeviceInfoCondsRequest) (*ExistDeviceInfoCondsResponse, error)
 	CountDeviceInfos(context.Context, *CountDeviceInfosRequest) (*CountDeviceInfosResponse, error)
+	DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateDeviceInfo(context.Context, *CreateDevic
 }
 func (UnimplementedManagerServer) CreateDeviceInfos(context.Context, *CreateDeviceInfosRequest) (*CreateDeviceInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDeviceInfos not implemented")
+}
+func (UnimplementedManagerServer) UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeviceInfo not implemented")
 }
 func (UnimplementedManagerServer) GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfo not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistDeviceInfoConds(context.Context, *ExistDe
 }
 func (UnimplementedManagerServer) CountDeviceInfos(context.Context, *CountDeviceInfosRequest) (*CountDeviceInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountDeviceInfos not implemented")
+}
+func (UnimplementedManagerServer) DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeviceInfo not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateDeviceInfos_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateDeviceInfos(ctx, req.(*CreateDeviceInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDeviceInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateDeviceInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.deviceinfo.v1.Manager/UpdateDeviceInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateDeviceInfo(ctx, req.(*UpdateDeviceInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountDeviceInfos_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDeviceInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteDeviceInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.deviceinfo.v1.Manager/DeleteDeviceInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteDeviceInfo(ctx, req.(*DeleteDeviceInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateDeviceInfos",
 			Handler:    _Manager_CreateDeviceInfos_Handler,
+		},
+		{
+			MethodName: "UpdateDeviceInfo",
+			Handler:    _Manager_UpdateDeviceInfo_Handler,
 		},
 		{
 			MethodName: "GetDeviceInfo",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountDeviceInfos",
 			Handler:    _Manager_CountDeviceInfos_Handler,
+		},
+		{
+			MethodName: "DeleteDeviceInfo",
+			Handler:    _Manager_DeleteDeviceInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -83,6 +83,14 @@
         }
       }
     },
+    "v1DeleteSubGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SubGood"
+        }
+      }
+    },
     "v1ExistSubGoodCondsResponse": {
       "type": "object",
       "properties": {
@@ -200,6 +208,14 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateSubGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SubGood"
         }
       }
     }

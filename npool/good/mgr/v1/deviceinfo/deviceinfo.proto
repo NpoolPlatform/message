@@ -11,12 +11,14 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateDeviceInfo     (CreateDeviceInfoRequest)     returns (CreateDeviceInfoResponse)     {}
     rpc CreateDeviceInfos    (CreateDeviceInfosRequest)    returns (CreateDeviceInfosResponse)    {}
+    rpc UpdateDeviceInfo     (UpdateDeviceInfoRequest)     returns (UpdateDeviceInfoResponse)     {}
     rpc GetDeviceInfo        (GetDeviceInfoRequest)        returns (GetDeviceInfoResponse)        {}
     rpc GetDeviceInfoOnly    (GetDeviceInfoOnlyRequest)    returns (GetDeviceInfoOnlyResponse)    {}
     rpc GetDeviceInfos       (GetDeviceInfosRequest)       returns (GetDeviceInfosResponse)       {}
     rpc ExistDeviceInfo      (ExistDeviceInfoRequest)      returns (ExistDeviceInfoResponse)      {}
     rpc ExistDeviceInfoConds (ExistDeviceInfoCondsRequest) returns (ExistDeviceInfoCondsResponse) {}
     rpc CountDeviceInfos     (CountDeviceInfosRequest)     returns (CountDeviceInfosResponse)     {}
+    rpc DeleteDeviceInfo     (DeleteDeviceInfoRequest)     returns (DeleteDeviceInfoResponse)     {}
 }
 
 message DeviceInfoReq {
@@ -61,6 +63,14 @@ message CreateDeviceInfosRequest {
 
 message CreateDeviceInfosResponse {
     repeated DeviceInfo Infos = 10;
+}
+
+message UpdateDeviceInfoRequest {
+    DeviceInfoReq Info = 10;
+}
+
+message UpdateDeviceInfoResponse {
+    DeviceInfo Info = 10;
 }
 
 message GetDeviceInfoRequest {
@@ -114,3 +124,10 @@ message CountDeviceInfosResponse {
     uint32 Info = 10;
 }
 
+message DeleteDeviceInfoRequest {
+    string ID = 10;
+}
+
+message DeleteDeviceInfoResponse {
+    DeviceInfo Info = 10;
+}

@@ -24,12 +24,14 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	CreateGoods(ctx context.Context, in *CreateGoodsRequest, opts ...grpc.CallOption) (*CreateGoodsResponse, error)
+	UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error)
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
 	GetGoodOnly(ctx context.Context, in *GetGoodOnlyRequest, opts ...grpc.CallOption) (*GetGoodOnlyResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
 	ExistGood(ctx context.Context, in *ExistGoodRequest, opts ...grpc.CallOption) (*ExistGoodResponse, error)
 	ExistGoodConds(ctx context.Context, in *ExistGoodCondsRequest, opts ...grpc.CallOption) (*ExistGoodCondsResponse, error)
 	CountGoods(ctx context.Context, in *CountGoodsRequest, opts ...grpc.CallOption) (*CountGoodsResponse, error)
+	DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error)
 }
 
 type managerClient struct {
@@ -52,6 +54,15 @@ func (c *managerClient) CreateGood(ctx context.Context, in *CreateGoodRequest, o
 func (c *managerClient) CreateGoods(ctx context.Context, in *CreateGoodsRequest, opts ...grpc.CallOption) (*CreateGoodsResponse, error) {
 	out := new(CreateGoodsResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.good.v1.Manager/CreateGoods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error) {
+	out := new(UpdateGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.good.v1.Manager/UpdateGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,18 +123,29 @@ func (c *managerClient) CountGoods(ctx context.Context, in *CountGoodsRequest, o
 	return out, nil
 }
 
+func (c *managerClient) DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error) {
+	out := new(DeleteGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.good.v1.Manager/DeleteGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
 	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	CreateGoods(context.Context, *CreateGoodsRequest) (*CreateGoodsResponse, error)
+	UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error)
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
 	GetGoodOnly(context.Context, *GetGoodOnlyRequest) (*GetGoodOnlyResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
 	ExistGood(context.Context, *ExistGoodRequest) (*ExistGoodResponse, error)
 	ExistGoodConds(context.Context, *ExistGoodCondsRequest) (*ExistGoodCondsResponse, error)
 	CountGoods(context.Context, *CountGoodsRequest) (*CountGoodsResponse, error)
+	DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -136,6 +158,9 @@ func (UnimplementedManagerServer) CreateGood(context.Context, *CreateGoodRequest
 }
 func (UnimplementedManagerServer) CreateGoods(context.Context, *CreateGoodsRequest) (*CreateGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGoods not implemented")
+}
+func (UnimplementedManagerServer) UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGood not implemented")
 }
 func (UnimplementedManagerServer) GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGood not implemented")
@@ -154,6 +179,9 @@ func (UnimplementedManagerServer) ExistGoodConds(context.Context, *ExistGoodCond
 }
 func (UnimplementedManagerServer) CountGoods(context.Context, *CountGoodsRequest) (*CountGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountGoods not implemented")
+}
+func (UnimplementedManagerServer) DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGood not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -200,6 +228,24 @@ func _Manager_CreateGoods_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateGoods(ctx, req.(*CreateGoodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.good.v1.Manager/UpdateGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateGood(ctx, req.(*UpdateGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -312,6 +358,24 @@ func _Manager_CountGoods_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.good.v1.Manager/DeleteGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteGood(ctx, req.(*DeleteGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -326,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateGoods",
 			Handler:    _Manager_CreateGoods_Handler,
+		},
+		{
+			MethodName: "UpdateGood",
+			Handler:    _Manager_UpdateGood_Handler,
 		},
 		{
 			MethodName: "GetGood",
@@ -350,6 +418,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CountGoods",
 			Handler:    _Manager_CountGoods_Handler,
+		},
+		{
+			MethodName: "DeleteGood",
+			Handler:    _Manager_DeleteGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
