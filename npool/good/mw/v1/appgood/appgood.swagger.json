@@ -1,0 +1,270 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/mw/v1/appgood/appgood.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "managerappgoodv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "middlewareappgoodv1GetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareappgoodv1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewareappgoodv1Good": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DeviceType": {
+          "type": "string"
+        },
+        "DeviceManufacturer": {
+          "type": "string"
+        },
+        "DevicePowerComsuption": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeviceShipmentAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DevicePosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "VendorLocationCountry": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SupportCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "GoodTotal": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodLocked": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodInService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodSold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppGoodReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "GoodTypeClassicMining",
+        "GoodTypeUnionMining",
+        "GoodTypeTechniqueFee",
+        "GoodTypeElectricityFee"
+      ],
+      "default": "DefaultGoodType",
+      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareappgoodv1Good"
+        }
+      }
+    }
+  }
+}
