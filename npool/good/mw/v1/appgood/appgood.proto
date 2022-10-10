@@ -49,8 +49,10 @@ message Good {
     uint32           GoodInService      = 270;
     uint32           GoodSold           = 280;
 
-    uint32           StartAt            = 290;
-    uint32           CreatedAt          = 300;
+    repeated Good    SubGoods           = 290;
+
+    uint32           StartAt            = 300;
+    uint32           CreatedAt          = 310;
 }
 
 message GetGoodsRequest {

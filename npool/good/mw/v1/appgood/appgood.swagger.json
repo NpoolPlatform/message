@@ -150,6 +150,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "SubGoods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareappgoodv1Good"
+          }
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
