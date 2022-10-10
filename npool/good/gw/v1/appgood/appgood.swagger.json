@@ -190,12 +190,31 @@
         "RecommenderID": {
           "type": "string"
         },
+        "RecommenderEmailAddress": {
+          "type": "string"
+        },
+        "RecommenderPhoneNO": {
+          "type": "string"
+        },
+        "RecommenderUsername": {
+          "type": "string"
+        },
+        "RecommenderFirstName": {
+          "type": "string"
+        },
+        "RecommenderLastName": {
+          "type": "string"
+        },
         "RecommendMessage": {
           "type": "string"
         },
         "RecommendIndex": {
           "type": "number",
           "format": "float"
+        },
+        "RecommendAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "DeviceType": {
           "type": "string"

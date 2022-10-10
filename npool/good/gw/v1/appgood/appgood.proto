@@ -51,36 +51,42 @@ message Good {
     repeated string  PromotionPosters            = 140;
 
     optional string  RecommenderID               = 150;
-    optional string  RecommendMessage            = 160;
-    optional float   RecommendIndex              = 170;
+    optional string  RecommenderEmailAddress     = 160;
+    optional string  RecommenderPhoneNO          = 170;
+    optional string  RecommenderUsername         = 180;
+    optional string  RecommenderFirstName        = 190;
+    optional string  RecommenderLastName         = 200;
+    optional string  RecommendMessage            = 210;
+    optional float   RecommendIndex              = 220;
+    optional uint32  RecommendAt                 = 230;
 
-    string           DeviceType                  = 180;
-    string           DeviceManufacturer          = 190;
-    uint32           DevicePowerComsuption       = 200;
-    uint32           DeviceShipmentAt            = 210;
-    repeated string  DevicePosters               = 220;
+    string           DeviceType                  = 240;
+    string           DeviceManufacturer          = 250;
+    uint32           DevicePowerComsuption       = 260;
+    uint32           DeviceShipmentAt            = 270;
+    repeated string  DevicePosters               = 280;
 
-    int32            DurationDays                = 230;
-    string           VendorLocationCountry       = 240;
+    int32            DurationDays                = 290;
+    string           VendorLocationCountry       = 300;
 
-    string           CoinTypeID                  = 250;
-    string           CoinLogo                    = 260;
-    string           CoinName                    = 270;
-    string           CoinUnit                    = 280;
-    string           CoinPreSale                 = 290;
+    string           CoinTypeID                  = 310;
+    string           CoinLogo                    = 320;
+    string           CoinName                    = 330;
+    string           CoinUnit                    = 340;
+    string           CoinPreSale                 = 350;
 
-    good.manager.good.v1.GoodType    GoodType    = 300;
-    good.manager.good.v1.BenefitType BenefitType = 310;
+    good.manager.good.v1.GoodType    GoodType    = 360;
+    good.manager.good.v1.BenefitType BenefitType = 370;
 
-    string           Title              = 320;
-    string           Unit               = 330;
-    int32            UnitAmount         = 340;
+    string           Title              = 380;
+    string           Unit               = 390;
+    int32            UnitAmount         = 400;
 
-    bool             TestOnly           = 350;
-    repeated string  Posters            = 360;
-    repeated string  Labels             = 370;
-    uint32           VoteCount          = 380;
-    float            Rating             = 390;
+    bool             TestOnly           = 410;
+    repeated string  Posters            = 420;
+    repeated string  Labels             = 430;
+    uint32           VoteCount          = 440;
+    float            Rating             = 450;
 
     message CoinInfo {
         string CoinTypeID  = 10;
@@ -89,17 +95,17 @@ message Good {
         string CoinUnit    = 40;
         string CoinPreSale = 50;
     }
-    repeated CoinInfo SupportCoins      = 400;
+    repeated CoinInfo SupportCoins      = 460;
 
-    uint32           GoodTotal          = 410;
-    uint32           GoodLocked         = 420;
-    uint32           GoodInService      = 430;
-    uint32           GoodSold           = 440;
+    uint32           GoodTotal          = 470;
+    uint32           GoodLocked         = 480;
+    uint32           GoodInService      = 490;
+    uint32           GoodSold           = 510;
 
-    repeated Good    SubGoods           = 450;
+    repeated Good    SubGoods           = 520;
 
-    uint32           StartAt            = 460;
-    uint32           CreatedAt          = 470;
+    uint32           StartAt            = 530;
+    uint32           CreatedAt          = 540;
 }
 
 message CreateAppGoodRequest {
