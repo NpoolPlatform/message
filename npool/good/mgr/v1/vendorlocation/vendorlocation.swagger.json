@@ -160,8 +160,7 @@
           "type": "string"
         },
         "Address": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -193,8 +192,7 @@
           "type": "string"
         },
         "Address": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     }
