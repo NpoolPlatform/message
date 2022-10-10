@@ -25,34 +25,44 @@ message Good {
     int32            PurchaseLimit               = 80;
     int32            CommissionPercent           = 90;
 
-    string           DeviceType                  = 100;
-    string           DeviceManufacturer          = 110;
-    uint32           DevicePowerComsuption       = 120;
-    uint32           DeviceShipmentAt            = 130;
-    repeated string  DevicePosters               = 140;
+    optional uint32  PromotionStartAt            = 100;
+    optional uint32  PromotionEndAt              = 110;
+    optional string  PromotionMessage            = 120;
+    optional string  PromotionPrice              = 130;
+    repeated string  PromotionPosters            = 140;
 
-    int32            DurationDays                = 150;
-    string           CoinTypeID                  = 160;
-    string           VendorLocationCountry       = 170;
+    optional string  RecommenderID               = 150;
+    optional string  RecommendMessage            = 160;
+    optional float   RecommendIndex              = 170;
 
-    good.manager.good.v1.GoodType    GoodType    = 180;
-    good.manager.good.v1.BenefitType BenefitType = 190;
+    string           DeviceType                  = 180;
+    string           DeviceManufacturer          = 190;
+    uint32           DevicePowerComsuption       = 200;
+    uint32           DeviceShipmentAt            = 210;
+    repeated string  DevicePosters               = 220;
 
-    string           Title              = 200;
-    string           Unit               = 210;
-    int32            UnitAmount         = 220;
-    repeated string  SupportCoinTypeIDs = 230;
-    bool             TestOnly           = 240;
+    int32            DurationDays                = 230;
+    string           CoinTypeID                  = 240;
+    string           VendorLocationCountry       = 250;
 
-    uint32           GoodTotal          = 250;
-    uint32           GoodLocked         = 260;
-    uint32           GoodInService      = 270;
-    uint32           GoodSold           = 280;
+    good.manager.good.v1.GoodType    GoodType    = 260;
+    good.manager.good.v1.BenefitType BenefitType = 270;
 
-    repeated Good    SubGoods           = 290;
+    string           Title              = 280;
+    string           Unit               = 290;
+    int32            UnitAmount         = 300;
+    repeated string  SupportCoinTypeIDs = 310;
+    bool             TestOnly           = 320;
 
-    uint32           StartAt            = 300;
-    uint32           CreatedAt          = 310;
+    uint32           GoodTotal          = 330;
+    uint32           GoodLocked         = 340;
+    uint32           GoodInService      = 350;
+    uint32           GoodSold           = 360;
+
+    repeated Good    SubGoods           = 370;
+
+    uint32           StartAt            = 380;
+    uint32           CreatedAt          = 390;
 }
 
 message GetGoodsRequest {

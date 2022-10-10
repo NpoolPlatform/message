@@ -151,7 +151,7 @@
         "Message": {
           "type": "string"
         },
-        "RecommendIUndex": {
+        "RecommendIndex": {
           "type": "number",
           "format": "float"
         },
@@ -187,7 +187,7 @@
         "Message": {
           "type": "string"
         },
-        "RecommendIUndex": {
+        "RecommendIndex": {
           "type": "number",
           "format": "float"
         }

@@ -25,7 +25,7 @@ message RecommendReq {
     optional string GoodID           = 30;
     optional string RecommenderID    = 40;
     optional string Message          = 50;
-    optional float  RecommendIUndex  = 60;
+    optional float  RecommendIndex   = 60;
 }
 
 message Recommend {
@@ -34,7 +34,7 @@ message Recommend {
     string GoodID           = 30;
     string RecommenderID    = 40;
     string Message          = 50;
-    float  RecommendIUndex  = 60;
+    float  RecommendIndex   = 60;
     uint32 CreatedAt        = 70;
     uint32 UpdatedAt        = 80;
     uint32 DeletedAt        = 90;
