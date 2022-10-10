@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppGoodResponse"
+              "$ref": "#/definitions/goodgatewayappgoodv1UpdateAppGoodResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppGoodRequest"
+              "$ref": "#/definitions/goodgatewayappgoodv1UpdateAppGoodRequest"
             }
           }
         ],
@@ -382,6 +382,22 @@
         }
       }
     },
+    "goodgatewayappgoodv1UpdateAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodReq"
+        }
+      }
+    },
+    "goodgatewayappgoodv1UpdateAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayappgoodv1Good"
+        }
+      }
+    },
     "managerappgoodv1Conds": {
       "type": "object",
       "properties": {
@@ -491,22 +507,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1UpdateAppGoodRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodReq"
-        }
-      }
-    },
-    "v1UpdateAppGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
         }
       }
     }
