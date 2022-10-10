@@ -23,7 +23,7 @@ message DeviceInfoReq {
     optional string ID              = 10;
     optional string Type            = 20;
     optional string Manufacturer    = 30;
-    optional string PowerComsuption = 40;
+    optional uint32 PowerComsuption = 40;
     optional uint32 ShipmentAt      = 50;
     repeated string Posters         = 60;
 }
@@ -32,7 +32,7 @@ message DeviceInfo {
     string          ID              = 10;
     string          Type            = 20;
     string          Manufacturer    = 30;
-    string          PowerComsuption = 40;
+    uint32          PowerComsuption = 40;
     uint32          ShipmentAt      = 50;
     repeated string Posters         = 60;
     uint32          CreatedAt       = 70;
