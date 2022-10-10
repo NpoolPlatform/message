@@ -9,9 +9,33 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
+    rpc CreateGood  (CreateGoodRequest)  returns (CreateGoodResponse)  {}
     rpc GetGood     (GetGoodRequest)     returns (GetGoodResponse)     {}
     rpc GetGoods    (GetGoodsRequest)    returns (GetGoodsResponse)    {}
     rpc UpdateGood  (UpdateGoodRequest)  returns (UpdateGoodResponse)  {}
+}
+
+message GoodReq {
+    optional string        ID                 = 10;
+    optional string        DeviceInfoID       = 20;
+    optional int32         DurationDays       = 30;
+    optional string        CoinTypeID         = 40;
+    optional string        InheritFromGoodID  = 50;
+    optional string        VendorLocationID   = 60;
+    optional string        Price              = 70;
+    optional good.manager.good.v1.BenefitType BenefitType = 80;
+    optional good.manager.good.v1.GoodType    GoodType    = 90;
+    optional string        Title              = 100;
+    optional string        Unit               = 110;
+    optional int32         UnitAmount         = 120;
+    repeated string        SupportCoinTypeIDs = 130;
+    optional uint32        DeliveryAt         = 140;
+    optional uint32        StartAt            = 150;
+    optional bool          TestOnly           = 160;
+    optional uint32        Total              = 170;
+    optional uint32        Locked             = 180;
+    optional uint32        InService          = 190;
+    optional uint32        Sold               = 200;
 }
 
 message Good {
@@ -47,18 +71,30 @@ message Good {
     int32            UnitAmount         = 240;
     repeated string  SupportCoinTypeIDs = 250;
     bool             TestOnly           = 260;
+    repeated string  Posters            = 270;
+    repeated string  Labels             = 280;
+    uint32           VoteCount          = 290;
+    float            Rating             = 300;
 
-    string           GoodStockID        = 270;
-    uint32           GoodTotal          = 280;
-    uint32           GoodLocked         = 290;
-    uint32           GoodInService      = 300;
-    uint32           GoodSold           = 310;
+    string           GoodStockID        = 310;
+    uint32           GoodTotal          = 320;
+    uint32           GoodLocked         = 330;
+    uint32           GoodInService      = 340;
+    uint32           GoodSold           = 350;
 
-    uint32           DeliveryAt         = 320;
-    uint32           StartAt            = 330;
-    uint32           CreatedAt          = 340;
-    uint32           UpdatedAt          = 350;
-    uint32           DeletedAt          = 360;
+    uint32           DeliveryAt         = 360;
+    uint32           StartAt            = 370;
+    uint32           CreatedAt          = 380;
+    uint32           UpdatedAt          = 390;
+    uint32           DeletedAt          = 400;
+}
+
+message CreateGoodRequest {
+    GoodReq Info = 10;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
 }
 
 message GetGoodRequest {
@@ -81,7 +117,7 @@ message GetGoodsResponse {
 }
 
 message UpdateGoodRequest {
-    good.manager.good.v1.GoodReq Info = 10;
+    GoodReq Info = 10;
 }
 
 message UpdateGoodResponse {

@@ -164,6 +164,26 @@
         "TestOnly": {
           "type": "boolean"
         },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "VoteCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Rating": {
+          "type": "number",
+          "format": "float"
+        },
         "GoodTotal": {
           "type": "integer",
           "format": "int64"

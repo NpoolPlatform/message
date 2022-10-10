@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/good.proto",
+    "title": "npool/good/gw/v1/good/good.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -15,31 +15,212 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/create/good": {
+      "post": {
+        "operationId": "Gateway_CreateGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/good": {
+      "post": {
+        "operationId": "Gateway_GetGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/goods": {
+      "post": {
+        "operationId": "Gateway_GetGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/good": {
+      "post": {
+        "operationId": "Gateway_UpdateGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
-    "middlewaregood1v1CreateGoodResponse": {
+    "GoodCoinInfo": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
+          "type": "string"
         }
       }
     },
-    "middlewaregood1v1GetGoodResponse": {
+    "goodgatewaygood1v1CreateGoodRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
+          "$ref": "#/definitions/middlewaregood1v1GoodReq"
         }
       }
     },
-    "middlewaregood1v1GetGoodsResponse": {
+    "goodgatewaygood1v1CreateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewaregood1v1Good"
+            "$ref": "#/definitions/goodgatewaygood1v1Good"
           }
         },
         "Total": {
@@ -48,7 +229,7 @@
         }
       }
     },
-    "middlewaregood1v1Good": {
+    "goodgatewaygood1v1Good": {
       "type": "object",
       "properties": {
         "ID": {
@@ -82,6 +263,18 @@
           "format": "int32"
         },
         "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
           "type": "string"
         },
         "InheritFromGoodID": {
@@ -130,12 +323,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "TestOnly": {
           "type": "boolean"
         },
@@ -158,6 +345,12 @@
         "Rating": {
           "type": "number",
           "format": "float"
+        },
+        "SupportCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GoodCoinInfo"
+          }
         },
         "GoodStockID": {
           "type": "string"
@@ -197,6 +390,22 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "goodgatewaygood1v1UpdateGoodRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewaregood1v1GoodReq"
+        }
+      }
+    },
+    "goodgatewaygood1v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
         }
       }
     },
@@ -368,14 +577,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
         }
       }
     }

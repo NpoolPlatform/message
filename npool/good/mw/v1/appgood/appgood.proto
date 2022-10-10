@@ -53,16 +53,20 @@ message Good {
     int32            UnitAmount         = 300;
     repeated string  SupportCoinTypeIDs = 310;
     bool             TestOnly           = 320;
+    repeated string  Posters            = 330;
+    repeated string  Labels             = 340;
+    uint32           VoteCount          = 350;
+    float            Rating             = 360;
 
-    uint32           GoodTotal          = 330;
-    uint32           GoodLocked         = 340;
-    uint32           GoodInService      = 350;
-    uint32           GoodSold           = 360;
+    uint32           GoodTotal          = 370;
+    uint32           GoodLocked         = 380;
+    uint32           GoodInService      = 390;
+    uint32           GoodSold           = 400;
 
-    repeated Good    SubGoods           = 370;
+    repeated Good    SubGoods           = 410;
 
-    uint32           StartAt            = 380;
-    uint32           CreatedAt          = 390;
+    uint32           StartAt            = 420;
+    uint32           CreatedAt          = 430;
 }
 
 message GetGoodsRequest {
