@@ -24,7 +24,7 @@ message VendorLocationReq {
     optional string Country   = 20;
     optional string Province  = 30;
     optional string City      = 40;
-    optional uint32 Address   = 50;
+    optional string Address   = 50;
 }
 
 message VendorLocation {
@@ -32,7 +32,7 @@ message VendorLocation {
     string Country   = 20;
     string Province  = 30;
     string City      = 40;
-    uint32 Address   = 50;
+    string Address   = 50;
     uint32 CreatedAt = 60;
     uint32 UpdatedAt = 70;
     uint32 DeletedAt = 80;
