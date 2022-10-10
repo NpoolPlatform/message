@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package good.gateway.appgood.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/appgood";
+
+import "npool/good/mgr/v1/good/good.proto";
+import "npool/good/mgr/v1/appgood/appgood.proto";
+import "npool/npool.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/appgood"
+            body: "*"
+        };
+    }
+
+    rpc GetAppGoods (GetAppGoodsRequest) returns (GetAppGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/appgoods"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppGood (UpdateAppGoodRequest) returns (UpdateAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/appgood"
+            body: "*"
+        };
+    }
+}
+
+message Good {
+    string           ID                          = 10;
+    string           AppID                       = 20;
+    string           GoodID                      = 30;
+    bool             Online                      = 40;
+    bool             Visible                     = 50;
+    string           Price                       = 60;
+    int32            DisplayIndex                = 70;
+    int32            PurchaseLimit               = 80;
+    int32            CommissionPercent           = 90;
+
+    optional uint32  PromotionStartAt            = 100;
+    optional uint32  PromotionEndAt              = 110;
+    optional string  PromotionMessage            = 120;
+    optional string  PromotionPrice              = 130;
+    repeated string  PromotionPosters            = 140;
+
+    optional string  RecommenderID               = 150;
+    optional string  RecommendMessage            = 160;
+    optional float   RecommendIndex              = 170;
+
+    string           DeviceType                  = 180;
+    string           DeviceManufacturer          = 190;
+    uint32           DevicePowerComsuption       = 200;
+    uint32           DeviceShipmentAt            = 210;
+    repeated string  DevicePosters               = 220;
+
+    int32            DurationDays                = 230;
+    string           VendorLocationCountry       = 240;
+
+    string           CoinTypeID                  = 250;
+    string           CoinLogo                    = 260;
+    string           CoinName                    = 270;
+    string           CoinUnit                    = 280;
+    string           CoinPreSale                 = 290;
+
+    good.manager.good.v1.GoodType    GoodType    = 300;
+    good.manager.good.v1.BenefitType BenefitType = 310;
+
+    string           Title              = 320;
+    string           Unit               = 330;
+    int32            UnitAmount         = 340;
+
+    bool             TestOnly           = 350;
+    repeated string  Posters            = 360;
+    repeated string  Labels             = 370;
+    uint32           VoteCount          = 380;
+    float            Rating             = 390;
+
+    message CoinInfo {
+        string CoinTypeID  = 10;
+        string CoinLogo    = 20;
+        string CoinName    = 30;
+        string CoinUnit    = 40;
+        string CoinPreSale = 50;
+    }
+    repeated CoinInfo SupportCoins      = 400;
+
+    uint32           GoodTotal          = 410;
+    uint32           GoodLocked         = 420;
+    uint32           GoodInService      = 430;
+    uint32           GoodSold           = 440;
+
+    repeated Good    SubGoods           = 450;
+
+    uint32           StartAt            = 460;
+    uint32           CreatedAt          = 470;
+}
+
+message CreateAppGoodRequest {
+    good.manager.appgood.v1.AppGoodReq Info = 10;
+}
+
+message CreateAppGoodResponse {
+    Good Info = 10;
+}
+
+message GetAppGoodsRequest {
+    good.manager.appgood.v1.Conds Conds  = 10;
+    int32                         Offset = 20;
+    int32                         Limit  = 30;
+}
+
+message GetAppGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message UpdateAppGoodRequest {
+    good.manager.appgood.v1.AppGoodReq Info = 10;
+}
+
+message UpdateAppGoodResponse {
+    Good Info = 10;
+}
