@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package good.middleware.stock.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/stock";
+
+import "npool/good/mgr/v1/stock/stock.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc UpdateStock (UpdateStockRequest) returns (UpdateStockResponse) {}
+}
+
+message UpdateStockRequest {
+    good.manager.stock.v1.StockReq Info = 10;
+}
+
+message UpdateStockResponse {
+    good.manager.stock.v1.Stock Info = 10;
+}
