@@ -31,7 +31,7 @@ type ManagerClient interface {
 	ExistAppGood(ctx context.Context, in *ExistAppGoodRequest, opts ...grpc.CallOption) (*ExistAppGoodResponse, error)
 	ExistAppGoodConds(ctx context.Context, in *ExistAppGoodCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodCondsResponse, error)
 	CountAppGoods(ctx context.Context, in *CountAppGoodsRequest, opts ...grpc.CallOption) (*CountAppGoodsResponse, error)
-	DeleteAppGoods(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error)
+	DeleteAppGood(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error)
 }
 
 type managerClient struct {
@@ -123,9 +123,9 @@ func (c *managerClient) CountAppGoods(ctx context.Context, in *CountAppGoodsRequ
 	return out, nil
 }
 
-func (c *managerClient) DeleteAppGoods(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error) {
+func (c *managerClient) DeleteAppGood(ctx context.Context, in *DeleteAppGoodRequest, opts ...grpc.CallOption) (*DeleteAppGoodResponse, error) {
 	out := new(DeleteAppGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.manager.appgood.v1.Manager/DeleteAppGoods", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.manager.appgood.v1.Manager/DeleteAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +145,7 @@ type ManagerServer interface {
 	ExistAppGood(context.Context, *ExistAppGoodRequest) (*ExistAppGoodResponse, error)
 	ExistAppGoodConds(context.Context, *ExistAppGoodCondsRequest) (*ExistAppGoodCondsResponse, error)
 	CountAppGoods(context.Context, *CountAppGoodsRequest) (*CountAppGoodsResponse, error)
-	DeleteAppGoods(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error)
+	DeleteAppGood(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -180,8 +180,8 @@ func (UnimplementedManagerServer) ExistAppGoodConds(context.Context, *ExistAppGo
 func (UnimplementedManagerServer) CountAppGoods(context.Context, *CountAppGoodsRequest) (*CountAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountAppGoods not implemented")
 }
-func (UnimplementedManagerServer) DeleteAppGoods(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGoods not implemented")
+func (UnimplementedManagerServer) DeleteAppGood(context.Context, *DeleteAppGoodRequest) (*DeleteAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGood not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -358,20 +358,20 @@ func _Manager_CountAppGoods_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteAppGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_DeleteAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppGoodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteAppGoods(ctx, in)
+		return srv.(ManagerServer).DeleteAppGood(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.manager.appgood.v1.Manager/DeleteAppGoods",
+		FullMethod: "/good.manager.appgood.v1.Manager/DeleteAppGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteAppGoods(ctx, req.(*DeleteAppGoodRequest))
+		return srv.(ManagerServer).DeleteAppGood(ctx, req.(*DeleteAppGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -420,8 +420,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CountAppGoods_Handler,
 		},
 		{
-			MethodName: "DeleteAppGoods",
-			Handler:    _Manager_DeleteAppGoods_Handler,
+			MethodName: "DeleteAppGood",
+			Handler:    _Manager_DeleteAppGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -18,7 +18,7 @@ service Manager {
     rpc ExistAppGood      (ExistAppGoodRequest)      returns (ExistAppGoodResponse)      {}
     rpc ExistAppGoodConds (ExistAppGoodCondsRequest) returns (ExistAppGoodCondsResponse) {}
     rpc CountAppGoods     (CountAppGoodsRequest)     returns (CountAppGoodsResponse)     {}
-    rpc DeleteAppGoods    (DeleteAppGoodRequest)     returns (DeleteAppGoodResponse)     {}
+    rpc DeleteAppGood     (DeleteAppGoodRequest)     returns (DeleteAppGoodResponse)     {}
 }
 
 message AppGoodReq {
