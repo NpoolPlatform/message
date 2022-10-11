@@ -275,7 +275,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -285,9 +285,6 @@
           "type": "string"
         },
         "Message": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }
@@ -362,9 +359,6 @@
         "Message": {
           "type": "string"
         },
-        "LangID": {
-          "type": "string"
-        },
         "TargetLangID": {
           "type": "string"
         }
@@ -384,7 +378,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -394,9 +388,6 @@
           "type": "string"
         },
         "Message": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }
@@ -472,16 +463,13 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "Subject": {
           "type": "string"
         },
         "Message": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }
