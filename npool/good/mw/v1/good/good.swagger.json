@@ -197,7 +197,7 @@
         },
         "LabelsStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
+          "title": "@inject_tag: sql:\"labels\""
         },
         "VoteCount": {
           "type": "integer",

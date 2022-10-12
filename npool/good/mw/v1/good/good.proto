@@ -109,7 +109,7 @@ message Good {
     string           PostersStr         = 271;
 
     repeated string  Labels             = 280;
-    // @inject_tag: sql:"posters"
+    // @inject_tag: sql:"labels"
     string           LabelsStr          = 281;
 
     // @inject_tag: sql:"vote_count"

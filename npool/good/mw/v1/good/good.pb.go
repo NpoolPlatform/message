@@ -286,8 +286,8 @@ type Good struct {
 	// @inject_tag: sql:"posters"
 	PostersStr string   `protobuf:"bytes,271,opt,name=PostersStr,proto3" json:"PostersStr,omitempty" sql:"posters"`
 	Labels     []string `protobuf:"bytes,280,rep,name=Labels,proto3" json:"Labels,omitempty"`
-	// @inject_tag: sql:"posters"
-	LabelsStr string `protobuf:"bytes,281,opt,name=LabelsStr,proto3" json:"LabelsStr,omitempty" sql:"posters"`
+	// @inject_tag: sql:"labels"
+	LabelsStr string `protobuf:"bytes,281,opt,name=LabelsStr,proto3" json:"LabelsStr,omitempty" sql:"labels"`
 	// @inject_tag: sql:"vote_count"
 	VoteCount uint32 `protobuf:"varint,290,opt,name=VoteCount,proto3" json:"VoteCount,omitempty" sql:"vote_count"`
 	// @inject_tag: sql:"rating"
