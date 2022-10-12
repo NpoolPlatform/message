@@ -12,6 +12,7 @@ service Manager {
     rpc CreateStock     (CreateStockRequest)     returns (CreateStockResponse)     {}
     rpc CreateStocks    (CreateStocksRequest)    returns (CreateStocksResponse)    {}
     rpc UpdateStock     (UpdateStockRequest)     returns (UpdateStockResponse)     {}
+    rpc AddStockFields  (AddStockFieldsRequest)  returns (AddStockFieldsResponse)  {}
     rpc GetStock        (GetStockRequest)        returns (GetStockResponse)        {}
     rpc GetStockOnly    (GetStockOnlyRequest)    returns (GetStockOnlyResponse)    {}
     rpc GetStocks       (GetStocksRequest)       returns (GetStocksResponse)       {}
@@ -69,6 +70,14 @@ message UpdateStockRequest {
 }
 
 message UpdateStockResponse {
+    Stock Info = 10;
+}
+
+message AddStockFieldsRequest {
+    StockReq Info = 10;
+}
+
+message AddStockFieldsResponse {
     Stock Info = 10;
 }
 

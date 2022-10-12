@@ -25,6 +25,7 @@ type ManagerClient interface {
 	CreateStock(ctx context.Context, in *CreateStockRequest, opts ...grpc.CallOption) (*CreateStockResponse, error)
 	CreateStocks(ctx context.Context, in *CreateStocksRequest, opts ...grpc.CallOption) (*CreateStocksResponse, error)
 	UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error)
+	AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error)
 	GetStock(ctx context.Context, in *GetStockRequest, opts ...grpc.CallOption) (*GetStockResponse, error)
 	GetStockOnly(ctx context.Context, in *GetStockOnlyRequest, opts ...grpc.CallOption) (*GetStockOnlyResponse, error)
 	GetStocks(ctx context.Context, in *GetStocksRequest, opts ...grpc.CallOption) (*GetStocksResponse, error)
@@ -63,6 +64,15 @@ func (c *managerClient) CreateStocks(ctx context.Context, in *CreateStocksReques
 func (c *managerClient) UpdateStock(ctx context.Context, in *UpdateStockRequest, opts ...grpc.CallOption) (*UpdateStockResponse, error) {
 	out := new(UpdateStockResponse)
 	err := c.cc.Invoke(ctx, "/good.manager.stock.v1.Manager/UpdateStock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) AddStockFields(ctx context.Context, in *AddStockFieldsRequest, opts ...grpc.CallOption) (*AddStockFieldsResponse, error) {
+	out := new(AddStockFieldsResponse)
+	err := c.cc.Invoke(ctx, "/good.manager.stock.v1.Manager/AddStockFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -139,6 +149,7 @@ type ManagerServer interface {
 	CreateStock(context.Context, *CreateStockRequest) (*CreateStockResponse, error)
 	CreateStocks(context.Context, *CreateStocksRequest) (*CreateStocksResponse, error)
 	UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error)
+	AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error)
 	GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error)
 	GetStockOnly(context.Context, *GetStockOnlyRequest) (*GetStockOnlyResponse, error)
 	GetStocks(context.Context, *GetStocksRequest) (*GetStocksResponse, error)
@@ -161,6 +172,9 @@ func (UnimplementedManagerServer) CreateStocks(context.Context, *CreateStocksReq
 }
 func (UnimplementedManagerServer) UpdateStock(context.Context, *UpdateStockRequest) (*UpdateStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStock not implemented")
+}
+func (UnimplementedManagerServer) AddStockFields(context.Context, *AddStockFieldsRequest) (*AddStockFieldsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddStockFields not implemented")
 }
 func (UnimplementedManagerServer) GetStock(context.Context, *GetStockRequest) (*GetStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStock not implemented")
@@ -246,6 +260,24 @@ func _Manager_UpdateStock_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateStock(ctx, req.(*UpdateStockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_AddStockFields_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddStockFieldsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).AddStockFields(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.manager.stock.v1.Manager/AddStockFields",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).AddStockFields(ctx, req.(*AddStockFieldsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +426,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateStock",
 			Handler:    _Manager_UpdateStock_Handler,
+		},
+		{
+			MethodName: "AddStockFields",
+			Handler:    _Manager_AddStockFields_Handler,
 		},
 		{
 			MethodName: "GetStock",

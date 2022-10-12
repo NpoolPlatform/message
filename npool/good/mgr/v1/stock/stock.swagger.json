@@ -44,6 +44,14 @@
         }
       }
     },
+    "v1AddStockFieldsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
