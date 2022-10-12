@@ -36,6 +36,8 @@ message GoodReq {
     optional uint32        Locked             = 180;
     optional uint32        InService          = 190;
     optional uint32        Sold               = 200;
+    repeated string        Posters            = 210;
+    repeated string        Labels             = 220;
 }
 
 message Good {
