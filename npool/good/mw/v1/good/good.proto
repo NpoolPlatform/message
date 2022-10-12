@@ -132,7 +132,7 @@ message Good {
     uint32           DeliveryAt         = 360;
     // @inject_tag: sql:"start_at"
     uint32           StartAt            = 370;
-    // @inject_tag: sql:"create_at"
+    // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 380;
     // @inject_tag: sql:"updated_at"
     uint32           UpdatedAt          = 390;

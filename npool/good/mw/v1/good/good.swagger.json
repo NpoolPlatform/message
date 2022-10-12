@@ -246,7 +246,7 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"create_at\""
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",

@@ -306,8 +306,8 @@ type Good struct {
 	DeliveryAt uint32 `protobuf:"varint,360,opt,name=DeliveryAt,proto3" json:"DeliveryAt,omitempty" sql:"delivery_at"`
 	// @inject_tag: sql:"start_at"
 	StartAt uint32 `protobuf:"varint,370,opt,name=StartAt,proto3" json:"StartAt,omitempty" sql:"start_at"`
-	// @inject_tag: sql:"create_at"
-	CreatedAt uint32 `protobuf:"varint,380,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"create_at"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,380,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
 	UpdatedAt uint32 `protobuf:"varint,390,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
