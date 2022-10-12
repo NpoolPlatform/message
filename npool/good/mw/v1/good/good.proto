@@ -65,10 +65,12 @@ message Good {
     optional string  InheritFromGoodID           = 100;
     // @inject_tag: sql:"inherit_from_good_name"
     optional string  InheritFromGoodName         = 110;
-    // @inject_tag: sql:"inherit_from_good_type"
     optional good.manager.good.v1.GoodType    InheritFromGoodType        = 120;
-    // @inject_tag: sql:"inherit_from_good_benefit_type"
+    // @inject_tag: sql:"inherit_from_good_type"
+    optional string  InheritFromGoodTypeStr      = 121;
     optional good.manager.good.v1.BenefitType InheritFromGoodBenefitType = 130;
+    // @inject_tag: sql:"inherit_from_good_benefit_type"
+    optional string  InheritFromGoodBenefitTypeStr = 131;
 
     // @inject_tag: sql:"vendor_location_id"
     string           VendorLocationID            = 140;
@@ -83,11 +85,11 @@ message Good {
 
     good.manager.good.v1.GoodType    GoodType    = 190;
     // @inject_tag: sql:"good_type"
-    int32            GoodTypeInt                 = 191;
+    string           GoodTypeStr                 = 191;
 
     good.manager.good.v1.BenefitType BenefitType = 200;
     // @inject_tag: sql:"benefit_type"
-    int32            BenefitTypeInt              = 201;
+    string           BenefitTypeStr              = 201;
 
     // @inject_tag: sql:"price"
     string           Price              = 210;
