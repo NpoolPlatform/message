@@ -52,24 +52,30 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "DeviceInfoID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_info_id\""
         },
         "DeviceType": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_type\""
         },
         "DeviceManufacturer": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_manufacturer\""
         },
         "DevicePowerComsuption": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_power_comsuption\""
         },
         "DeviceShipmentAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_shipment_at\""
         },
         "DevicePosters": {
           "type": "array",
@@ -77,58 +83,87 @@
             "type": "string"
           }
         },
+        "DevicePostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_posters\""
+        },
         "DurationDays": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "title": "@inject_tag: sql:\"duration_days\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "InheritFromGoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_id\""
         },
         "InheritFromGoodName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_name\""
         },
         "InheritFromGoodType": {
-          "$ref": "#/definitions/v1GoodType"
+          "$ref": "#/definitions/v1GoodType",
+          "title": "@inject_tag: sql:\"inherit_from_good_type\""
         },
         "InheritFromGoodBenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
+          "$ref": "#/definitions/v1BenefitType",
+          "title": "@inject_tag: sql:\"inherit_from_good_benefit_type\""
         },
         "VendorLocationID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_id\""
         },
         "VendorLocationCountry": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_country\""
         },
         "VendorLocationProvince": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_province\""
         },
         "VendorLocationCity": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_city\""
         },
         "VendorLocationAddress": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_address\""
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "GoodTypeInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
+        "BenefitTypeInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
         "Price": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"price\""
         },
         "Title": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
         },
         "Unit": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
         },
         "UnitAmount": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "title": "@inject_tag: sql:\"unit_amount\""
         },
         "SupportCoinTypeIDs": {
           "type": "array",
@@ -136,8 +171,13 @@
             "type": "string"
           }
         },
+        "SupportCoinTypeIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+        },
         "TestOnly": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
         },
         "Posters": {
           "type": "array",
@@ -145,58 +185,73 @@
             "type": "string"
           }
         },
+        "PostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"posters\""
+        },
         "Labels": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
+        "LabelsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"posters\""
+        },
         "VoteCount": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"vote_count\""
         },
         "Rating": {
           "type": "number",
-          "format": "float"
+          "format": "float",
+          "title": "@inject_tag: sql:\"rating\""
         },
         "GoodStockID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
         },
         "GoodTotal": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_total\""
         },
         "GoodLocked": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_locked\""
         },
         "GoodInService": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_in_service\""
         },
         "GoodSold": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_sold\""
         },
         "DeliveryAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"delivery_at\""
         },
         "StartAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"create_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

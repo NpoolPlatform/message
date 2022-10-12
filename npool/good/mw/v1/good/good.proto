@@ -39,54 +39,103 @@ message GoodReq {
 }
 
 message Good {
+    // @inject_tag: sql:"id"
     string           ID                          = 10;
 
+    // @inject_tag: sql:"device_info_id"
     string           DeviceInfoID                = 20;
+    // @inject_tag: sql:"device_type"
     string           DeviceType                  = 30;
+    // @inject_tag: sql:"device_manufacturer"
     string           DeviceManufacturer          = 40;
+    // @inject_tag: sql:"device_power_comsuption"
     uint32           DevicePowerComsuption       = 50;
+    // @inject_tag: sql:"device_shipment_at"
     uint32           DeviceShipmentAt            = 60;
     repeated string  DevicePosters               = 70;
+    // @inject_tag: sql:"device_posters"
+    string           DevicePostersStr            = 71;
 
+    // @inject_tag: sql:"duration_days"
     int32            DurationDays                = 80;
+    // @inject_tag: sql:"coin_type_id"
     string           CoinTypeID                  = 90;
 
+    // @inject_tag: sql:"inherit_from_good_id"
     optional string  InheritFromGoodID           = 100;
+    // @inject_tag: sql:"inherit_from_good_name"
     optional string  InheritFromGoodName         = 110;
+    // @inject_tag: sql:"inherit_from_good_type"
     optional good.manager.good.v1.GoodType    InheritFromGoodType        = 120;
+    // @inject_tag: sql:"inherit_from_good_benefit_type"
     optional good.manager.good.v1.BenefitType InheritFromGoodBenefitType = 130;
 
+    // @inject_tag: sql:"vendor_location_id"
     string           VendorLocationID            = 140;
+    // @inject_tag: sql:"vendor_location_country"
     string           VendorLocationCountry       = 150;
+    // @inject_tag: sql:"vendor_location_province"
     string           VendorLocationProvince      = 160;
+    // @inject_tag: sql:"vendor_location_city"
     string           VendorLocationCity          = 170;
+    // @inject_tag: sql:"vendor_location_address"
     string           VendorLocationAddress       = 180;
 
     good.manager.good.v1.GoodType    GoodType    = 190;
-    good.manager.good.v1.BenefitType BenefitType = 200;
+    // @inject_tag: sql:"good_type"
+    int32            GoodTypeInt                 = 191;
 
+    good.manager.good.v1.BenefitType BenefitType = 200;
+    // @inject_tag: sql:"benefit_type"
+    int32            BenefitTypeInt              = 201;
+
+    // @inject_tag: sql:"price"
     string           Price              = 210;
+    // @inject_tag: sql:"title"
     string           Title              = 220;
+    // @inject_tag: sql:"unit"
     string           Unit               = 230;
+    // @inject_tag: sql:"unit_amount"
     int32            UnitAmount         = 240;
+
     repeated string  SupportCoinTypeIDs = 250;
+    // @inject_tag: sql:"support_coin_type_ids"
+    string           SupportCoinTypeIDsStr = 251;
+
+    // @inject_tag: sql:"test_only"
     bool             TestOnly           = 260;
     repeated string  Posters            = 270;
+    // @inject_tag: sql:"posters"
+    string           PostersStr         = 271;
+
     repeated string  Labels             = 280;
+    // @inject_tag: sql:"posters"
+    string           LabelsStr          = 281;
+
+    // @inject_tag: sql:"vote_count"
     uint32           VoteCount          = 290;
+    // @inject_tag: sql:"rating"
     float            Rating             = 300;
 
+    // @inject_tag: sql:"good_stock_id"
     string           GoodStockID        = 310;
+    // @inject_tag: sql:"good_total"
     uint32           GoodTotal          = 320;
+    // @inject_tag: sql:"good_locked"
     uint32           GoodLocked         = 330;
+    // @inject_tag: sql:"good_in_service"
     uint32           GoodInService      = 340;
+    // @inject_tag: sql:"good_sold"
     uint32           GoodSold           = 350;
 
+    // @inject_tag: sql:"delivery_at"
     uint32           DeliveryAt         = 360;
+    // @inject_tag: sql:"start_at"
     uint32           StartAt            = 370;
+    // @inject_tag: sql:"create_at"
     uint32           CreatedAt          = 380;
+    // @inject_tag: sql:"updated_at"
     uint32           UpdatedAt          = 390;
-    uint32           DeletedAt          = 400;
 }
 
 message CreateGoodRequest {
