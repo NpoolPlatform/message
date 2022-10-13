@@ -113,8 +113,8 @@ type Good struct {
 	GoodTotal uint32 `protobuf:"varint,370,opt,name=GoodTotal,proto3" json:"GoodTotal,omitempty" sql:"good_total"`
 	// @inject_tag: sql:"good_locked"
 	GoodLocked uint32 `protobuf:"varint,380,opt,name=GoodLocked,proto3" json:"GoodLocked,omitempty" sql:"good_locked"`
-	// @inject_tag: sql:"good_inservice"
-	GoodInService uint32 `protobuf:"varint,390,opt,name=GoodInService,proto3" json:"GoodInService,omitempty" sql:"good_inservice"`
+	// @inject_tag: sql:"good_in_service"
+	GoodInService uint32 `protobuf:"varint,390,opt,name=GoodInService,proto3" json:"GoodInService,omitempty" sql:"good_in_service"`
 	// @inject_tag: sql:"good_sold"
 	GoodSold uint32 `protobuf:"varint,400,opt,name=GoodSold,proto3" json:"GoodSold,omitempty" sql:"good_sold"`
 	// @inject_tag: sql:"start_at"

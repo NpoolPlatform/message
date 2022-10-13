@@ -108,7 +108,7 @@ message Good {
     uint32           GoodTotal          = 370;
     // @inject_tag: sql:"good_locked"
     uint32           GoodLocked         = 380;
-    // @inject_tag: sql:"good_inservice"
+    // @inject_tag: sql:"good_in_service"
     uint32           GoodInService      = 390;
     // @inject_tag: sql:"good_sold"
     uint32           GoodSold           = 400;

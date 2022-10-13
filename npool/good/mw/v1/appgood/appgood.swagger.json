@@ -262,7 +262,7 @@
         "GoodInService": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"good_inservice\""
+          "title": "@inject_tag: sql:\"good_in_service\""
         },
         "GoodSold": {
           "type": "integer",
