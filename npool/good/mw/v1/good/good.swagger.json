@@ -415,6 +415,21 @@
         }
       }
     },
+    "v1GetManyGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewaregood1v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
