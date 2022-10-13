@@ -162,7 +162,7 @@
           "type": "string"
         },
         "CoinPreSale": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
@@ -275,7 +275,7 @@
           "type": "string"
         },
         "CoinPreSale": {
-          "type": "string"
+          "type": "boolean"
         },
         "InheritFromGoodID": {
           "type": "string"
