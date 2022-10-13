@@ -85,12 +85,13 @@ message Good {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID               = 10;
-    optional npool.v1.StringVal DeviceInfoID     = 20;
-    optional npool.v1.StringVal CoinTypeID       = 30;
-    optional npool.v1.StringVal VendorLocationID = 40;
-    optional npool.v1.Int32Val  BenefitType      = 50;
-    optional npool.v1.Int32Val  GoodType         = 60;
+    optional npool.v1.StringVal      ID               = 10;
+    optional npool.v1.StringVal      DeviceInfoID     = 20;
+    optional npool.v1.StringVal      CoinTypeID       = 30;
+    optional npool.v1.StringVal      VendorLocationID = 40;
+    optional npool.v1.Int32Val       BenefitType      = 50;
+    optional npool.v1.Int32Val       GoodType         = 60;
+    optional npool.v1.StringSliceVal IDs              = 70;
 }
 
 
