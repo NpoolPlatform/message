@@ -75,7 +75,7 @@
         "VisibleInt": {
           "type": "integer",
           "format": "int32",
-          "title": "@inject_tag: sql:\"online\""
+          "title": "@inject_tag: sql:\"visible\""
         },
         "Price": {
           "type": "string",

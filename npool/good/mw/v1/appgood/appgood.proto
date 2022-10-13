@@ -25,7 +25,7 @@ message Good {
     // @inject_tag: sql:"online"
     int32            OnlineInt                   = 41;
     bool             Visible                     = 50;
-    // @inject_tag: sql:"online"
+    // @inject_tag: sql:"visible"
     int32            VisibleInt                  = 51;
     // @inject_tag: sql:"price"
     string           Price                       = 60;

@@ -38,8 +38,8 @@ type Good struct {
 	// @inject_tag: sql:"online"
 	OnlineInt int32 `protobuf:"varint,41,opt,name=OnlineInt,proto3" json:"OnlineInt,omitempty" sql:"online"`
 	Visible   bool  `protobuf:"varint,50,opt,name=Visible,proto3" json:"Visible,omitempty"`
-	// @inject_tag: sql:"online"
-	VisibleInt int32 `protobuf:"varint,51,opt,name=VisibleInt,proto3" json:"VisibleInt,omitempty" sql:"online"`
+	// @inject_tag: sql:"visible"
+	VisibleInt int32 `protobuf:"varint,51,opt,name=VisibleInt,proto3" json:"VisibleInt,omitempty" sql:"visible"`
 	// @inject_tag: sql:"price"
 	Price string `protobuf:"bytes,60,opt,name=Price,proto3" json:"Price,omitempty" sql:"price"`
 	// @inject_tag: sql:"display_index"
