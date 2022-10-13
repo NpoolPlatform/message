@@ -76,14 +76,14 @@ message Good {
 
     good.manager.good.v1.GoodType    GoodType    = 260;
     // @inject_tag: sql:"good_type"
-    int32            GoodTypeInt                 = 261;
+    string           GoodTypeStr                 = 261;
 
     good.manager.good.v1.BenefitType BenefitType = 270;
     // @inject_tag: sql:"benefit_type"
-    int32            BenefitTypeInt              = 271;
+    string           BenefitTypeStr              = 271;
 
-    // @inject_tag: sql:"title"
-    string           Title              = 280;
+    // @inject_tag: sql:"good_name"
+    string           GoodName           = 280;
     // @inject_tag: sql:"unit"
     string           Unit               = 290;
     // @inject_tag: sql:"unit_amount"

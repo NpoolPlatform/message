@@ -181,22 +181,20 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
-        "GoodTypeInt": {
-          "type": "integer",
-          "format": "int32",
+        "GoodTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"good_type\""
         },
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "BenefitTypeInt": {
-          "type": "integer",
-          "format": "int32",
+        "BenefitTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
         },
-        "Title": {
+        "GoodName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"title\""
+          "title": "@inject_tag: sql:\"good_name\""
         },
         "Unit": {
           "type": "string",
