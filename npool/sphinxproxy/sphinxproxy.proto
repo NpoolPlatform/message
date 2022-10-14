@@ -143,7 +143,9 @@ message ProxyPluginResponse {
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
   string Unit = 112;
+  string Name = 113;
   string TransactionID = 120;
+
   string CID = 140;
   double Balance = 150;
   string BalanceStr = 160;
@@ -163,6 +165,7 @@ message ProxyPluginRequest {
   string TransactionID = 120;
   // query wallet account
   string Address = 130;
+  string Name = 131;
   sphinx.plugin.v1.UnsignedMessage Message = 140;
   // fil
   sphinx.plugin.v1.Signature Signature = 150;
@@ -180,9 +183,9 @@ message ProxyPluginRequest {
 message ProxySignRequest {
   sphinx.plugin.v1.CoinType CoinType = 100;
   TransactionType TransactionType = 110;
+  string Name = 111;
   string TransactionID = 120;
   sphinx.plugin.v1.UnsignedMessage Message = 130;
-
   bytes Payload = 140;
 }
 

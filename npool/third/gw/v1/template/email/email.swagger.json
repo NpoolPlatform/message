@@ -275,7 +275,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -303,9 +303,6 @@
           "type": "string"
         },
         "DefaultToUsername": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }
@@ -374,6 +371,9 @@
         "AppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Sender": {
           "type": "string"
         },
@@ -397,9 +397,6 @@
         },
         "DefaultToUsername": {
           "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
         }
       }
     },
@@ -417,7 +414,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "UsedFor": {
@@ -445,9 +442,6 @@
           "type": "string"
         },
         "DefaultToUsername": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }
@@ -541,6 +535,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Sender": {
           "type": "string"
         },
@@ -563,9 +560,6 @@
           "type": "string"
         },
         "DefaultToUsername": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         }
       }

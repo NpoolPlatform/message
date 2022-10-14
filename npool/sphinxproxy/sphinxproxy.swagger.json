@@ -479,6 +479,9 @@
           "type": "string",
           "title": "query wallet account"
         },
+        "Name": {
+          "type": "string"
+        },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
         },
@@ -517,6 +520,9 @@
         },
         "TransactionType": {
           "$ref": "#/definitions/v1TransactionType"
+        },
+        "Name": {
+          "type": "string"
         },
         "TransactionID": {
           "type": "string"
