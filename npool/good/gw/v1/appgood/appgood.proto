@@ -104,8 +104,13 @@ message Good {
 
     repeated Good    SubGoods           = 520;
 
-    uint32           StartAt            = 530;
-    uint32           CreatedAt          = 540;
+    // For subgood: main good must select sub good in one order
+    bool             Must               = 530;
+    // For subgood: sub good will be charged commission, value defined in sub good's good
+    bool             Commission         = 540;
+
+    uint32           StartAt            = 550;
+    uint32           CreatedAt          = 560;
 }
 
 message CreateAppGoodRequest {
