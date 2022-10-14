@@ -78,7 +78,7 @@ message Good {
     good.manager.good.v1.GoodType    GoodType    = 360;
     good.manager.good.v1.BenefitType BenefitType = 370;
 
-    string           Title              = 380;
+    string           GoodName           = 380;
     string           Unit               = 390;
     int32            UnitAmount         = 400;
 
