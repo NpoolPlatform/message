@@ -325,6 +325,14 @@
             "$ref": "#/definitions/gatewayappgoodv1Good"
           }
         },
+        "Must": {
+          "type": "boolean",
+          "title": "For subgood: main good must select sub good in one order"
+        },
+        "Commission": {
+          "type": "boolean",
+          "title": "For subgood: sub good will be charged commission, value defined in sub good's good"
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
