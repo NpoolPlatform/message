@@ -73,12 +73,12 @@ message Good {
     string           CoinLogo                    = 320;
     string           CoinName                    = 330;
     string           CoinUnit                    = 340;
-    string           CoinPreSale                 = 350;
+    bool             CoinPreSale                 = 350;
 
     good.manager.good.v1.GoodType    GoodType    = 360;
     good.manager.good.v1.BenefitType BenefitType = 370;
 
-    string           Title              = 380;
+    string           GoodName           = 380;
     string           Unit               = 390;
     int32            UnitAmount         = 400;
 
@@ -93,7 +93,7 @@ message Good {
         string CoinLogo    = 20;
         string CoinName    = 30;
         string CoinUnit    = 40;
-        string CoinPreSale = 50;
+        bool   CoinPreSale = 50;
     }
     repeated CoinInfo SupportCoins      = 460;
 

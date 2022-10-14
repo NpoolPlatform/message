@@ -130,7 +130,7 @@
           "type": "string"
         },
         "CoinPreSale": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
@@ -256,7 +256,7 @@
           "type": "string"
         },
         "CoinPreSale": {
-          "type": "string"
+          "type": "boolean"
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
@@ -264,7 +264,7 @@
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "Title": {
+        "GoodName": {
           "type": "string"
         },
         "Unit": {

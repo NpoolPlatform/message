@@ -153,6 +153,11 @@
           "format": "float",
           "title": "@inject_tag: sql:\"recommend_index\""
         },
+        "RecommendAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"recommend_at\""
+        },
         "DeviceType": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_type\""

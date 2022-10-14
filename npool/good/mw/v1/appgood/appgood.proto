@@ -57,6 +57,8 @@ message Good {
     optional string  RecommendMessage            = 160;
     // @inject_tag: sql:"recommend_index"
     optional float   RecommendIndex              = 170;
+    // @inject_tag: sql:"recommend_at"
+    optional uint32  RecommendAt                 = 171;
 
     // @inject_tag: sql:"device_type"
     string           DeviceType                  = 180;
