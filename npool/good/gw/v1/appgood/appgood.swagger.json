@@ -264,7 +264,7 @@
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "Title": {
+        "GoodName": {
           "type": "string"
         },
         "Unit": {
