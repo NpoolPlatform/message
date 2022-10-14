@@ -205,7 +205,10 @@
           "format": "int32"
         },
         "SupportCoinTypeIDs": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "DeliveryAt": {
           "type": "integer",

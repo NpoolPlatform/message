@@ -116,7 +116,7 @@ message CreateGoodRequest {
     string        Title              = 100;
     string        Unit               = 110;
     int32         UnitAmount         = 120;
-    string        SupportCoinTypeIDs = 130;
+    repeated string SupportCoinTypeIDs = 130;
     uint32        DeliveryAt         = 140;
     uint32        StartAt            = 150;
     bool          TestOnly           = 160;
