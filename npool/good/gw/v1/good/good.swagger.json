@@ -169,8 +169,76 @@
     "goodgatewaygood1v1CreateGoodRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1GoodReq"
+        "DeviceInfoID": {
+          "type": "string"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "InheritFromGoodID": {
+          "type": "string"
+        },
+        "VendorLocationID": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SupportCoinTypeIDs": {
+          "type": "string"
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Locked": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Posters": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "string"
         }
       }
     },
@@ -201,9 +269,6 @@
     "goodgatewaygood1v1GetGoodsRequest": {
       "type": "object",
       "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -396,22 +461,6 @@
     "goodgatewaygood1v1UpdateGoodRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1GoodReq"
-        }
-      }
-    },
-    "goodgatewaygood1v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/goodgatewaygood1v1Good"
-        }
-      }
-    },
-    "middlewaregood1v1GoodReq": {
-      "type": "object",
-      "properties": {
         "ID": {
           "type": "string"
         },
@@ -433,12 +482,6 @@
         },
         "Price": {
           "type": "string"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
         },
         "Title": {
           "type": "string"
@@ -471,14 +514,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "Locked": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InService": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Sold": {
           "type": "integer",
           "format": "int64"
@@ -494,6 +529,14 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "goodgatewaygood1v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
         }
       }
     },
@@ -534,32 +577,6 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DeviceInfoID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "VendorLocationID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -571,43 +588,6 @@
       ],
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
     }
   }
 }

@@ -105,7 +105,27 @@ message Good {
 }
 
 message CreateGoodRequest {
-    good.middleware.good1.v1.GoodReq Info = 10;
+    string        DeviceInfoID       = 20;
+    int32         DurationDays       = 30;
+    string        CoinTypeID         = 40;
+    string        InheritFromGoodID  = 50;
+    string        VendorLocationID   = 60;
+    string        Price              = 70;
+    good.manager.good.v1.BenefitType BenefitType = 80;
+    good.manager.good.v1.GoodType    GoodType    = 90;
+    string        Title              = 100;
+    string        Unit               = 110;
+    int32         UnitAmount         = 120;
+    string        SupportCoinTypeIDs = 130;
+    uint32        DeliveryAt         = 140;
+    uint32        StartAt            = 150;
+    bool          TestOnly           = 160;
+    uint32        Total              = 170;
+    uint32        Locked             = 180;
+    uint32        InService          = 190;
+    uint32        Sold               = 200;
+    string        Posters            = 210;
+    string        Labels             = 220;
 }
 
 message CreateGoodResponse {
@@ -121,9 +141,8 @@ message GetGoodResponse {
 }
 
 message GetGoodsRequest {
-    good.manager.good.v1.Conds Conds  = 10;
-    int32                      Offset = 20;
-    int32                      Limit  = 30;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetGoodsResponse {
@@ -132,7 +151,24 @@ message GetGoodsResponse {
 }
 
 message UpdateGoodRequest {
-    good.middleware.good1.v1.GoodReq Info = 10;
+    string                 ID                 = 10;
+    optional string        DeviceInfoID       = 20;
+    optional int32         DurationDays       = 30;
+    optional string        CoinTypeID         = 40;
+    optional string        InheritFromGoodID  = 50;
+    optional string        VendorLocationID   = 60;
+    optional string        Price              = 70;
+    optional string        Title              = 100;
+    optional string        Unit               = 110;
+    optional int32         UnitAmount         = 120;
+    repeated string        SupportCoinTypeIDs = 130;
+    optional uint32        DeliveryAt         = 140;
+    optional uint32        StartAt            = 150;
+    optional bool          TestOnly           = 160;
+    optional uint32        Total              = 170;
+    optional uint32        Sold               = 200;
+    repeated string        Posters            = 210;
+    repeated string        Labels             = 220;
 }
 
 message UpdateGoodResponse {
