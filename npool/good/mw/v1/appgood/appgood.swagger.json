@@ -31,6 +31,14 @@
         }
       }
     },
+    "middlewareappgoodv1CreateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareappgoodv1Good"
+        }
+      }
+    },
     "middlewareappgoodv1GetGoodResponse": {
       "type": "object",
       "properties": {

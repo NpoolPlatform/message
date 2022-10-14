@@ -10,9 +10,10 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc GetGood    (GetGoodRequest)    returns (GetGoodResponse)    {}
-    rpc GetGoods   (GetGoodsRequest)   returns (GetGoodsResponse)   {}
-    rpc UpdateGood (UpdateGoodRequest) returns (UpdateGoodResponse) {}
+    rpc CreateGood    (CreateGoodRequest)    returns (CreateGoodResponse)    {}
+    rpc GetGood       (GetGoodRequest)       returns (GetGoodResponse)       {}
+    rpc GetGoods      (GetGoodsRequest)      returns (GetGoodsResponse)      {}
+    rpc UpdateGood    (UpdateGoodRequest)    returns (UpdateGoodResponse)    {}
 }
 
 message Good {
@@ -118,6 +119,14 @@ message Good {
     uint32           StartAt            = 410;
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 420;
+}
+
+message CreateGoodRequest {
+    good.manager.appgood.v1.AppGoodReq Info = 10;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
 }
 
 message GetGoodRequest {
