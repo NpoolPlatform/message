@@ -70,7 +70,7 @@ message GetTokenInfosResponse {
 message FaucetRequst {
   string To = 10;
   string Amount = 20;
-  string Contract = 30;
+  string OfficialContract = 30;
 }
 
 message FaucetResponse {
