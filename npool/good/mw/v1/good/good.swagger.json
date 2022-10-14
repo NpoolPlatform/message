@@ -323,11 +323,11 @@
         },
         "Locked": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "InService": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Sold": {
           "type": "integer",

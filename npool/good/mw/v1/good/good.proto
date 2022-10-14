@@ -34,8 +34,8 @@ message GoodReq {
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
     optional uint32        Total              = 170;
-    optional uint32        Locked             = 180;
-    optional uint32        InService          = 190;
+    optional int32         Locked             = 180;
+    optional int32         InService          = 190;
     optional uint32        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
