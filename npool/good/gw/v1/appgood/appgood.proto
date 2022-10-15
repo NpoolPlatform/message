@@ -114,15 +114,15 @@ message Good {
 }
 
 message CreateAppGoodRequest {
-    string AppID               = 20;
-    string GoodID              = 30;
-    bool   Online              = 40;
-    bool   Visible             = 50;
-    string GoodName            = 60;
-    string Price               = 70;
-    int32  DisplayIndex        = 80;
-    int32  PurchaseLimit       = 90;
-    int32  CommissionPercent   = 100;
+    string AppID               = 10;
+    string GoodID              = 20;
+    bool   Online              = 30;
+    bool   Visible             = 40;
+    string GoodName            = 50;
+    string Price               = 60;
+    int32  DisplayIndex        = 70;
+    int32  PurchaseLimit       = 80;
+    int32  CommissionPercent   = 90;
 }
 
 message CreateAppGoodResponse {
@@ -141,14 +141,14 @@ message GetAppGoodsResponse {
 }
 
 message UpdateAppGoodRequest {
-    string ID                           = 10;
-    optional bool   Online              = 40;
-    optional bool   Visible             = 50;
-    optional string GoodName            = 60;
-    optional string Price               = 70;
-    optional int32  DisplayIndex        = 80;
-    optional int32  PurchaseLimit       = 90;
-    optional int32  CommissionPercent   = 100;
+    string          ID                  = 10;
+    optional bool   Online              = 20;
+    optional bool   Visible             = 30;
+    optional string GoodName            = 40;
+    optional string Price               = 50;
+    optional int32  DisplayIndex        = 60;
+    optional int32  PurchaseLimit       = 70;
+    optional int32  CommissionPercent   = 80;
 }
 
 message UpdateAppGoodResponse {
