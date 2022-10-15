@@ -10,7 +10,7 @@ import "npool/npool.proto";
 import "google/api/annotations.proto";
 
 // Service Name
-service Middleware {
+service Gateway {
     rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/appgood"

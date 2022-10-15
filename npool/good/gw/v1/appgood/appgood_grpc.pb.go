@@ -18,158 +18,158 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// MiddlewareClient is the client API for Middleware service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type GatewayClient interface {
 	CreateAppGood(ctx context.Context, in *CreateAppGoodRequest, opts ...grpc.CallOption) (*CreateAppGoodResponse, error)
 	GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error)
 	UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error)
 }
 
-type middlewareClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *middlewareClient) CreateAppGood(ctx context.Context, in *CreateAppGoodRequest, opts ...grpc.CallOption) (*CreateAppGoodResponse, error) {
+func (c *gatewayClient) CreateAppGood(ctx context.Context, in *CreateAppGoodRequest, opts ...grpc.CallOption) (*CreateAppGoodResponse, error) {
 	out := new(CreateAppGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Middleware/CreateAppGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/CreateAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error) {
+func (c *gatewayClient) GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error) {
 	out := new(GetAppGoodsResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Middleware/GetAppGoods", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/GetAppGoods", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error) {
+func (c *gatewayClient) UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error) {
 	out := new(UpdateAppGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Middleware/UpdateAppGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/UpdateAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type MiddlewareServer interface {
+type GatewayServer interface {
 	CreateAppGood(context.Context, *CreateAppGoodRequest) (*CreateAppGoodResponse, error)
 	GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error)
 	UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateAppGood(context.Context, *CreateAppGoodRequest) (*CreateAppGoodResponse, error) {
+func (UnimplementedGatewayServer) CreateAppGood(context.Context, *CreateAppGoodRequest) (*CreateAppGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGood not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error) {
+func (UnimplementedGatewayServer) GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoods not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error) {
+func (UnimplementedGatewayServer) UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGood not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Middleware_CreateAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppGoodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAppGood(ctx, in)
+		return srv.(GatewayServer).CreateAppGood(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Middleware/CreateAppGood",
+		FullMethod: "/good.gateway.appgood.v1.Gateway/CreateAppGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAppGood(ctx, req.(*CreateAppGoodRequest))
+		return srv.(GatewayServer).CreateAppGood(ctx, req.(*CreateAppGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAppGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAppGoods(ctx, in)
+		return srv.(GatewayServer).GetAppGoods(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Middleware/GetAppGoods",
+		FullMethod: "/good.gateway.appgood.v1.Gateway/GetAppGoods",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAppGoods(ctx, req.(*GetAppGoodsRequest))
+		return srv.(GatewayServer).GetAppGoods(ctx, req.(*GetAppGoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppGoodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateAppGood(ctx, in)
+		return srv.(GatewayServer).UpdateAppGood(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Middleware/UpdateAppGood",
+		FullMethod: "/good.gateway.appgood.v1.Gateway/UpdateAppGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateAppGood(ctx, req.(*UpdateAppGoodRequest))
+		return srv.(GatewayServer).UpdateAppGood(ctx, req.(*UpdateAppGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.appgood.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "good.gateway.appgood.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAppGood",
-			Handler:    _Middleware_CreateAppGood_Handler,
+			Handler:    _Gateway_CreateAppGood_Handler,
 		},
 		{
 			MethodName: "GetAppGoods",
-			Handler:    _Middleware_GetAppGoods_Handler,
+			Handler:    _Gateway_GetAppGoods_Handler,
 		},
 		{
 			MethodName: "UpdateAppGood",
-			Handler:    _Middleware_UpdateAppGood_Handler,
+			Handler:    _Gateway_UpdateAppGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
