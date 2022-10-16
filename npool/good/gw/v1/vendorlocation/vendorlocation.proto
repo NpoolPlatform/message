@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package good.gateway.vendorlocation.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/vendorlocation";
+
+import "google/api/annotations.proto";
+import "npool/good/mgr/v1/vendorlocation/vendorlocation.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateVendorLocation(CreateVendorLocationRequest) returns (CreateVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/vendorlocation"
+            body: "*"
+        };
+    }
+    rpc UpdateVendorLocation(UpdateVendorLocationRequest) returns (UpdateVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/vendorlocation"
+            body: "*"
+        };
+    }
+    rpc GetVendorLocation(GetVendorLocationRequest) returns (GetVendorLocationResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/vendorlocation"
+            body: "*"
+        };
+    }
+    rpc GetVendorLocations(GetVendorLocationsRequest) returns (GetVendorLocationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/vendorlocations"
+            body: "*"
+        };
+    }
+}
+
+message CreateVendorLocationRequest {
+    string Type            = 10;
+    string Manufacturer    = 20;
+    uint32 PowerComsuption = 30;
+    uint32 ShipmentAt      = 40;
+    string Posters         = 50;
+}
+
+message CreateVendorLocationResponse {
+    manager.vendorlocation.v1.VendorLocation Info = 10;
+}
+
+message UpdateVendorLocationRequest {
+    string          ID              = 10;
+    optional string Type            = 20;
+    optional string Manufacturer    = 30;
+    optional uint32 PowerComsuption = 40;
+    optional uint32 ShipmentAt      = 50;
+    repeated string Posters         = 60;
+}
+
+message UpdateVendorLocationResponse {
+    manager.vendorlocation.v1.VendorLocation Info = 10;
+}
+
+message GetVendorLocationRequest {
+    string ID = 10;
+}
+
+message GetVendorLocationResponse {
+    manager.vendorlocation.v1.VendorLocation Info = 10;
+}
+
+message GetVendorLocationsRequest {
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetVendorLocationsResponse {
+    repeated manager.vendorlocation.v1.VendorLocation Infos = 10;
+    uint32                                    Total = 20;
+}

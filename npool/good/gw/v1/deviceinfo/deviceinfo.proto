@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package good.gateway.deviceinfo.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/deviceinfo";
+
+import "npool/good/mgr/v1/deviceinfo/deviceinfo.proto";
+import "google/api/annotations.proto";;
+
+// Service Name
+service Gateway {
+    rpc CreateDeviceInfo(CreateDeviceInfoRequest) returns (CreateDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/deviceinfo"
+            body: "*"
+        };
+    }
+    rpc UpdateDeviceInfo(UpdateDeviceInfoRequest) returns (UpdateDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/deviceinfo"
+            body: "*"
+        };
+    }
+    rpc GetDeviceInfo(GetDeviceInfoRequest) returns (GetDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/deviceinfo"
+            body: "*"
+        };
+    }
+    rpc GetDeviceInfos(GetDeviceInfosRequest) returns (GetDeviceInfosResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/deviceinfos"
+            body: "*"
+        };
+    }
+}
+
+message CreateDeviceInfoRequest {
+    string Type            = 10;
+    string Manufacturer    = 20;
+    uint32 PowerComsuption = 30;
+    uint32 ShipmentAt      = 40;
+    string Posters         = 50;
+}
+
+message CreateDeviceInfoResponse {
+    manager.deviceinfo.v1.DeviceInfo Info = 10;
+}
+
+message UpdateDeviceInfoRequest {
+    string          ID              = 10;
+    optional string Type            = 20;
+    optional string Manufacturer    = 30;
+    optional uint32 PowerComsuption = 40;
+    optional uint32 ShipmentAt      = 50;
+    repeated string Posters         = 60;
+}
+
+message UpdateDeviceInfoResponse {
+    manager.deviceinfo.v1.DeviceInfo Info = 10;
+}
+
+message GetDeviceInfoRequest {
+    string ID = 10;
+}
+
+message GetDeviceInfoResponse {
+    manager.deviceinfo.v1.DeviceInfo Info = 10;
+}
+
+message GetDeviceInfosRequest {
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetDeviceInfosResponse {
+    repeated manager.deviceinfo.v1.DeviceInfo Infos = 10;
+    uint32                                    Total = 20;
+}
