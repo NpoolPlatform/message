@@ -36,11 +36,11 @@ service Gateway {
 }
 
 message CreateDeviceInfoRequest {
-    string Type            = 10;
-    string Manufacturer    = 20;
-    uint32 PowerComsuption = 30;
-    uint32 ShipmentAt      = 40;
-    string Posters         = 50;
+    string Type             = 10;
+    string Manufacturer     = 20;
+    uint32 PowerComsuption  = 30;
+    uint32 ShipmentAt       = 40;
+    repeated string Posters = 50;
 }
 
 message CreateDeviceInfoResponse {
