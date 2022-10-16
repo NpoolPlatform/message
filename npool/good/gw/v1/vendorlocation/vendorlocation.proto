@@ -36,11 +36,10 @@ service Gateway {
 }
 
 message CreateVendorLocationRequest {
-    string Type            = 10;
-    string Manufacturer    = 20;
-    uint32 PowerComsuption = 30;
-    uint32 ShipmentAt      = 40;
-    string Posters         = 50;
+    string Country   = 10;
+    string Province  = 20;
+    string City      = 30;
+    string Address   = 40;
 }
 
 message CreateVendorLocationResponse {
@@ -48,12 +47,11 @@ message CreateVendorLocationResponse {
 }
 
 message UpdateVendorLocationRequest {
-    string          ID              = 10;
-    optional string Type            = 20;
-    optional string Manufacturer    = 30;
-    optional uint32 PowerComsuption = 40;
-    optional uint32 ShipmentAt      = 50;
-    repeated string Posters         = 60;
+    string          ID        = 10;
+    optional string Country   = 20;
+    optional string Province  = 30;
+    optional string City      = 40;
+    optional string Address   = 50;
 }
 
 message UpdateVendorLocationResponse {

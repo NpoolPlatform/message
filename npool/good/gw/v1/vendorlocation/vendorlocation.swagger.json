@@ -149,21 +149,16 @@
     "goodgatewayvendorlocationv1CreateVendorLocationRequest": {
       "type": "object",
       "properties": {
-        "Type": {
+        "Country": {
           "type": "string"
         },
-        "Manufacturer": {
+        "Province": {
           "type": "string"
         },
-        "PowerComsuption": {
-          "type": "integer",
-          "format": "int64"
+        "City": {
+          "type": "string"
         },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Posters": {
+        "Address": {
           "type": "string"
         }
       }
@@ -226,25 +221,17 @@
         "ID": {
           "type": "string"
         },
-        "Type": {
+        "Country": {
           "type": "string"
         },
-        "Manufacturer": {
+        "Province": {
           "type": "string"
         },
-        "PowerComsuption": {
-          "type": "integer",
-          "format": "int64"
+        "City": {
+          "type": "string"
         },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "Address": {
+          "type": "string"
         }
       }
     },
