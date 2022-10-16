@@ -51,9 +51,10 @@ message AppGood {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID     = 10;
-    optional npool.v1.StringVal AppID  = 20;
-    optional npool.v1.StringVal GoodID = 30;
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      AppID  = 20;
+    optional npool.v1.StringVal      GoodID = 30;
+    optional npool.v1.StringSliceVal GoodIDs = 40;
 }
 
 
