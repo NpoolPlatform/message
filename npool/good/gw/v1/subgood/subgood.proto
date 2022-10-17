@@ -77,10 +77,10 @@ message CreateAppSubGoodResponse {
 }
 
 message UpdateSubGoodRequest {
-    string ID          = 10;
-    string SubGoodID   = 20;
-    bool   Must        = 30;
-    bool   Commission  = 40;
+    string          ID          = 10;
+    optional string SubGoodID   = 20;
+    optional bool   Must        = 30;
+    optional bool   Commission  = 40;
 }
 
 message UpdateSubGoodResponse {
@@ -88,10 +88,10 @@ message UpdateSubGoodResponse {
 }
 
 message UpdateAppSubGoodRequest {
-    string ID          = 10;
-    string SubGoodID   = 20;
-    bool   Must        = 30;
-    bool   Commission  = 40;
+    string          ID          = 10;
+    optional string SubGoodID   = 20;
+    optional bool   Must        = 30;
+    optional bool   Commission  = 40;
 }
 
 message UpdateAppSubGoodResponse {
