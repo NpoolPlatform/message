@@ -39,7 +39,7 @@ service Gateway {
         };
     }
 
-    rpc UpdateNAppGood (UpdateNAppGoodRequest) returns (UpdateAppGoodResponse) {
+    rpc UpdateNAppGood (UpdateNAppGoodRequest) returns (UpdateNAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/update/n/appgood"
             body: "*"

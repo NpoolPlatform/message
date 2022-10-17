@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayappgoodv1UpdateAppGoodResponse"
+              "$ref": "#/definitions/v1UpdateNAppGoodResponse"
             }
           },
           "default": {
@@ -630,6 +630,14 @@
         "CommissionPercent": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "v1UpdateNAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayappgoodv1Good"
         }
       }
     }

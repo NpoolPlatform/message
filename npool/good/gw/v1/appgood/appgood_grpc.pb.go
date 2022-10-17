@@ -26,7 +26,7 @@ type GatewayClient interface {
 	GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error)
 	GetNAppGoods(ctx context.Context, in *GetNAppGoodsRequest, opts ...grpc.CallOption) (*GetNAppGoodsResponse, error)
 	UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error)
-	UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error)
+	UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRequest, opts ...grpc.CallOption) (*UpdateNAppGoodResponse, error)
 }
 
 type gatewayClient struct {
@@ -73,8 +73,8 @@ func (c *gatewayClient) UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequ
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error) {
-	out := new(UpdateAppGoodResponse)
+func (c *gatewayClient) UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRequest, opts ...grpc.CallOption) (*UpdateNAppGoodResponse, error) {
+	out := new(UpdateNAppGoodResponse)
 	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/UpdateNAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -90,7 +90,7 @@ type GatewayServer interface {
 	GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error)
 	GetNAppGoods(context.Context, *GetNAppGoodsRequest) (*GetNAppGoodsResponse, error)
 	UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error)
-	UpdateNAppGood(context.Context, *UpdateNAppGoodRequest) (*UpdateAppGoodResponse, error)
+	UpdateNAppGood(context.Context, *UpdateNAppGoodRequest) (*UpdateNAppGoodResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -110,7 +110,7 @@ func (UnimplementedGatewayServer) GetNAppGoods(context.Context, *GetNAppGoodsReq
 func (UnimplementedGatewayServer) UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGood not implemented")
 }
-func (UnimplementedGatewayServer) UpdateNAppGood(context.Context, *UpdateNAppGoodRequest) (*UpdateAppGoodResponse, error) {
+func (UnimplementedGatewayServer) UpdateNAppGood(context.Context, *UpdateNAppGoodRequest) (*UpdateNAppGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNAppGood not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
