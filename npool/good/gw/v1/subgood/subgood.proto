@@ -1,79 +1,121 @@
 syntax = "proto3";
 
-package good.gateway.deviceinfo.v1;
+package good.gateway.subgood.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/deviceinfo";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/subgood";
 
-import "npool/good/mgr/v1/deviceinfo/deviceinfo.proto";
+import "npool/good/mgr/v1/subgood/subgood.proto";
 import "google/api/annotations.proto";;
 
 // Service Name
 service Gateway {
-    rpc CreateDeviceInfo(CreateDeviceInfoRequest) returns (CreateDeviceInfoResponse) {
+    rpc CreateSubGood(CreateSubGoodRequest) returns (CreateSubGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/create/deviceinfo"
+            post: "/v1/create/subgood"
             body: "*"
         };
     }
-    rpc UpdateDeviceInfo(UpdateDeviceInfoRequest) returns (UpdateDeviceInfoResponse) {
+
+    rpc CreateAppSubGood(CreateAppSubGoodRequest) returns (CreateAppSubGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/update/deviceinfo"
+            post: "/v1/create/app/subgood"
             body: "*"
         };
     }
-    rpc GetDeviceInfo(GetDeviceInfoRequest) returns (GetDeviceInfoResponse) {
+
+    rpc UpdateSubGood(UpdateSubGoodRequest) returns (UpdateSubGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/deviceinfo"
+            post: "/v1/update/subgood"
             body: "*"
         };
     }
-    rpc GetDeviceInfos(GetDeviceInfosRequest) returns (GetDeviceInfosResponse) {
+
+    rpc UpdateAppSubGood(UpdateAppSubGoodRequest) returns (UpdateAppSubGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/get/deviceinfos"
+            post: "/v1/update/app/subgood"
+            body: "*"
+        };
+    }
+
+    rpc GetSubGoods(GetSubGoodsRequest) returns (GetSubGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/subgoods"
+            body: "*"
+        };
+    }
+
+    rpc GetAppSubGoods(GetAppSubGoodsRequest) returns (GetAppSubGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/subgoods"
             body: "*"
         };
     }
 }
 
-message CreateDeviceInfoRequest {
-    string Type             = 10;
-    string Manufacturer     = 20;
-    uint32 PowerComsuption  = 30;
-    uint32 ShipmentAt       = 40;
-    repeated string Posters = 50;
+message CreateSubGoodRequest {
+    string AppID       = 10;
+    string MainGoodID  = 20;
+    string SubGoodID   = 30;
+    bool   Must        = 40;
+    bool   Commission  = 50;
 }
 
-message CreateDeviceInfoResponse {
-    manager.deviceinfo.v1.DeviceInfo Info = 10;
+message CreateSubGoodResponse {
+    manager.subgood.v1.SubGood Info = 10;
 }
 
-message UpdateDeviceInfoRequest {
-    string          ID              = 10;
-    optional string Type            = 20;
-    optional string Manufacturer    = 30;
-    optional uint32 PowerComsuption = 40;
-    optional uint32 ShipmentAt      = 50;
-    repeated string Posters         = 60;
+message CreateAppSubGoodRequest {
+    string TargetAppID = 10;
+    string MainGoodID  = 20;
+    string SubGoodID   = 30;
+    bool   Must        = 40;
+    bool   Commission  = 50;
 }
 
-message UpdateDeviceInfoResponse {
-    manager.deviceinfo.v1.DeviceInfo Info = 10;
+message CreateAppSubGoodResponse {
+    manager.subgood.v1.SubGood Info = 10;
 }
 
-message GetDeviceInfoRequest {
-    string ID = 10;
+message UpdateSubGoodRequest {
+    string ID          = 10;
+    string SubGoodID   = 20;
+    bool   Must        = 30;
+    bool   Commission  = 40;
 }
 
-message GetDeviceInfoResponse {
-    manager.deviceinfo.v1.DeviceInfo Info = 10;
+message UpdateSubGoodResponse {
+    manager.subgood.v1.SubGood Info = 10;
 }
 
-message GetDeviceInfosRequest {
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+message UpdateAppSubGoodRequest {
+    string ID          = 10;
+    string SubGoodID   = 20;
+    bool   Must        = 30;
+    bool   Commission  = 40;
 }
 
-message GetDeviceInfosResponse {
-    repeated manager.deviceinfo.v1.DeviceInfo Infos = 10;
-    uint32                                    Total = 20;
+message UpdateAppSubGoodResponse {
+    manager.subgood.v1.SubGood Info = 10;
+}
+
+message GetSubGoodsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetSubGoodsResponse {
+    repeated manager.subgood.v1.SubGood Infos = 10;
+    uint32                              Total = 20;
+}
+
+message GetAppSubGoodsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppSubGoodsResponse {
+    repeated manager.subgood.v1.SubGood Infos = 10;
+    uint32                              Total = 20;
 }
