@@ -444,6 +444,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "Online": {
           "type": "boolean"
         },
@@ -605,6 +608,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
           "type": "string"
         },
         "Online": {

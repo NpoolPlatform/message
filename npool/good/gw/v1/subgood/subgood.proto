@@ -52,6 +52,19 @@ service Gateway {
     }
 }
 
+message SubGood {
+    string ID           = 10;
+    string AppID        = 20;
+    string MainGoodID   = 30;
+    string MainGoodName = 40;
+    string SubGoodID    = 50;
+    string SubGoodName  = 60;
+    bool   Must         = 70;
+    bool   Commission   = 80;
+    uint32 CreatedAt    = 90;
+    uint32 UpdatedAt    = 100;
+}
+
 message CreateSubGoodRequest {
     string AppID       = 10;
     string MainGoodID  = 20;
@@ -61,7 +74,7 @@ message CreateSubGoodRequest {
 }
 
 message CreateSubGoodResponse {
-    manager.subgood.v1.SubGood Info = 10;
+    SubGood Info = 10;
 }
 
 message CreateAppSubGoodRequest {
@@ -73,7 +86,7 @@ message CreateAppSubGoodRequest {
 }
 
 message CreateAppSubGoodResponse {
-    manager.subgood.v1.SubGood Info = 10;
+    SubGood Info = 10;
 }
 
 message UpdateSubGoodRequest {
@@ -84,7 +97,7 @@ message UpdateSubGoodRequest {
 }
 
 message UpdateSubGoodResponse {
-    manager.subgood.v1.SubGood Info = 10;
+    SubGood Info = 10;
 }
 
 message UpdateAppSubGoodRequest {
@@ -95,7 +108,7 @@ message UpdateAppSubGoodRequest {
 }
 
 message UpdateAppSubGoodResponse {
-    manager.subgood.v1.SubGood Info = 10;
+    SubGood Info = 10;
 }
 
 message GetSubGoodsRequest {
@@ -105,8 +118,8 @@ message GetSubGoodsRequest {
 }
 
 message GetSubGoodsResponse {
-    repeated manager.subgood.v1.SubGood Infos = 10;
-    uint32                              Total = 20;
+    repeated SubGood Infos = 10;
+    uint32           Total = 20;
 }
 
 message GetAppSubGoodsRequest {
@@ -116,6 +129,6 @@ message GetAppSubGoodsRequest {
 }
 
 message GetAppSubGoodsResponse {
-    repeated manager.subgood.v1.SubGood Infos = 10;
-    uint32                              Total = 20;
+    repeated SubGood Infos = 10;
+    uint32           Total = 20;
 }

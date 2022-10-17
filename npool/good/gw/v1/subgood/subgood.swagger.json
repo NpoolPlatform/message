@@ -234,7 +234,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubGood"
+          "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
         }
       }
     },
@@ -260,10 +260,47 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1SubGood"
+            "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "goodgatewaysubgoodv1SubGood": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "MainGoodID": {
+          "type": "string"
+        },
+        "MainGoodName": {
+          "type": "string"
+        },
+        "SubGoodID": {
+          "type": "string"
+        },
+        "SubGoodName": {
+          "type": "string"
+        },
+        "Must": {
+          "type": "boolean"
+        },
+        "Commission": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -290,7 +327,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubGood"
+          "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
         }
       }
     },
@@ -345,7 +382,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubGood"
+          "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
         }
       }
     },
@@ -371,45 +408,10 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1SubGood"
+            "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1SubGood": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "MainGoodID": {
-          "type": "string"
-        },
-        "SubGoodID": {
-          "type": "string"
-        },
-        "Must": {
-          "type": "boolean"
-        },
-        "Commission": {
-          "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -436,7 +438,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubGood"
+          "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
         }
       }
     }

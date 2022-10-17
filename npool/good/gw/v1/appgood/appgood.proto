@@ -167,13 +167,14 @@ message GetNAppGoodsResponse {
 
 message UpdateAppGoodRequest {
     string          ID                  = 10;
-    optional bool   Online              = 20;
-    optional bool   Visible             = 30;
-    optional string GoodName            = 40;
-    optional string Price               = 50;
-    optional int32  DisplayIndex        = 60;
-    optional int32  PurchaseLimit       = 70;
-    optional int32  CommissionPercent   = 80;
+    string          AppID               = 20;
+    optional bool   Online              = 30;
+    optional bool   Visible             = 40;
+    optional string GoodName            = 50;
+    optional string Price               = 60;
+    optional int32  DisplayIndex        = 70;
+    optional int32  PurchaseLimit       = 80;
+    optional int32  CommissionPercent   = 90;
 }
 
 message UpdateAppGoodResponse {
@@ -182,13 +183,14 @@ message UpdateAppGoodResponse {
 
 message UpdateNAppGoodRequest {
     string          ID                  = 10;
-    optional bool   Online              = 20;
-    optional bool   Visible             = 30;
-    optional string GoodName            = 40;
-    optional string Price               = 50;
-    optional int32  DisplayIndex        = 60;
-    optional int32  PurchaseLimit       = 70;
-    optional int32  CommissionPercent   = 80;
+    string          TargetAppID         = 20;
+    optional bool   Online              = 30;
+    optional bool   Visible             = 40;
+    optional string GoodName            = 50;
+    optional string Price               = 60;
+    optional int32  DisplayIndex        = 70;
+    optional int32  PurchaseLimit       = 80;
+    optional int32  CommissionPercent   = 90;
 }
 
 message UpdateNAppGoodResponse {
