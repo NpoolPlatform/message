@@ -312,6 +312,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "SubGoodID": {
           "type": "string"
         },
@@ -421,6 +424,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
           "type": "string"
         },
         "SubGoodID": {
