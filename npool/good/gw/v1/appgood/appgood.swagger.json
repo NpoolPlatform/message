@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/appgood": {
+    "/v1/create/n/appgood": {
       "post": {
-        "operationId": "Gateway_CreateAppGood",
+        "operationId": "Gateway_CreateNAppGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayappgoodv1CreateAppGoodResponse"
+              "$ref": "#/definitions/v1CreateNAppGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayappgoodv1CreateAppGoodRequest"
+              "$ref": "#/definitions/v1CreateNAppGoodRequest"
             }
           }
         ],
@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/get/n/appgoods": {
+      "post": {
+        "operationId": "Gateway_GetNAppGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/appgood": {
       "post": {
         "operationId": "Gateway_UpdateAppGood",
@@ -104,6 +136,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/goodgatewayappgoodv1UpdateAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/n/appgood": {
+      "post": {
+        "operationId": "Gateway_UpdateNAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappgoodv1UpdateAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppGoodRequest"
             }
           }
         ],
@@ -343,49 +407,6 @@
         }
       }
     },
-    "goodgatewayappgoodv1CreateAppGoodRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "goodgatewayappgoodv1CreateAppGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
-        }
-      }
-    },
     "goodgatewayappgoodv1GetAppGoodsRequest": {
       "type": "object",
       "properties": {
@@ -494,6 +515,80 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
+    "v1CreateNAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1CreateNAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayappgoodv1Good"
+        }
+      }
+    },
+    "v1GetNAppGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayappgoodv1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -505,6 +600,38 @@
       ],
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    },
+    "v1UpdateNAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     }
   }
 }

@@ -11,9 +11,9 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
+    rpc CreateNAppGood (CreateNAppGoodRequest) returns (CreateNAppGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/create/appgood"
+            post: "/v1/create/n/appgood"
             body: "*"
         };
     }
@@ -25,9 +25,23 @@ service Gateway {
         };
     }
 
+    rpc GetNAppGoods (GetNAppGoodsRequest) returns (GetNAppGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/appgoods"
+            body: "*"
+        };
+    }
+
     rpc UpdateAppGood (UpdateAppGoodRequest) returns (UpdateAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/update/appgood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNAppGood (UpdateNAppGoodRequest) returns (UpdateAppGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/appgood"
             body: "*"
         };
     }
@@ -113,8 +127,8 @@ message Good {
     uint32           CreatedAt          = 560;
 }
 
-message CreateAppGoodRequest {
-    string AppID               = 10;
+message CreateNAppGoodRequest {
+    string TargetAppID         = 10;
     string GoodID              = 20;
     bool   Online              = 30;
     bool   Visible             = 40;
@@ -125,7 +139,7 @@ message CreateAppGoodRequest {
     int32  CommissionPercent   = 90;
 }
 
-message CreateAppGoodResponse {
+message CreateNAppGoodResponse {
     Good Info = 10;
 }
 
@@ -136,6 +150,17 @@ message GetAppGoodsRequest {
 }
 
 message GetAppGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetNAppGoodsRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetNAppGoodsResponse {
     repeated Good Infos = 10;
     uint32        Total = 20;
 }
@@ -152,5 +177,20 @@ message UpdateAppGoodRequest {
 }
 
 message UpdateAppGoodResponse {
+    Good Info = 10;
+}
+
+message UpdateNAppGoodRequest {
+    string          ID                  = 10;
+    optional bool   Online              = 20;
+    optional bool   Visible             = 30;
+    optional string GoodName            = 40;
+    optional string Price               = 50;
+    optional int32  DisplayIndex        = 60;
+    optional int32  PurchaseLimit       = 70;
+    optional int32  CommissionPercent   = 80;
+}
+
+message UpdateNAppGoodResponse {
     Good Info = 10;
 }
