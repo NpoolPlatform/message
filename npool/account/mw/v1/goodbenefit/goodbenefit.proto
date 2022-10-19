@@ -53,9 +53,6 @@ message Account {
     string LockedByStr   = 91;
     // @inject_tag: sql:"blocked"
     bool   Blocked       = 100;
-    account.manager.account1.v1.AccountUsedFor UsedFor  = 110;
-    // @inject_tag: sql:"used_for"
-    string UsedForStr    = 111;
     // @inject_tag: sql:"transaction_id"
     string TransactionID = 120;
     // @inject_tag: sql:"created_at"

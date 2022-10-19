@@ -63,13 +63,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"blocked\""
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
-        },
-        "UsedForStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"used_for\""
-        },
         "TransactionID": {
           "type": "string",
           "title": "@inject_tag: sql:\"transaction_id\""
@@ -224,23 +217,6 @@
           }
         }
       }
-    },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor"
     },
     "v1BoolVal": {
       "type": "object",
