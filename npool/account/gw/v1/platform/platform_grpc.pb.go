@@ -36,7 +36,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.platform.v1.Gateway/CreateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.gateway.platform.v1.Gateway/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *gatewayClient) CreateAccount(ctx context.Context, in *CreateAccountRequ
 
 func (c *gatewayClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
-	err := c.cc.Invoke(ctx, "/account.middleware.platform.v1.Gateway/GetAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/account.gateway.platform.v1.Gateway/GetAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _Gateway_CreateAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.platform.v1.Gateway/CreateAccount",
+		FullMethod: "/account.gateway.platform.v1.Gateway/CreateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateAccount(ctx, req.(*CreateAccountRequest))
@@ -112,7 +112,7 @@ func _Gateway_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.middleware.platform.v1.Gateway/GetAccounts",
+		FullMethod: "/account.gateway.platform.v1.Gateway/GetAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAccounts(ctx, req.(*GetAccountsRequest))
@@ -124,7 +124,7 @@ func _Gateway_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.middleware.platform.v1.Gateway",
+	ServiceName: "account.gateway.platform.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

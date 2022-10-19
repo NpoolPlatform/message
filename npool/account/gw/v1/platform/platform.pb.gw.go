@@ -111,7 +111,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.platform.v1.Gateway/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/platformaccount"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.platform.v1.Gateway/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/platformaccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.platform.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/platformaccounts"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.platform.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/platformaccounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.platform.v1.Gateway/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/platformaccount"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.platform.v1.Gateway/CreateAccount", runtime.WithHTTPPathPattern("/v1/create/platformaccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.platform.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/platformaccounts"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.platform.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/platformaccounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

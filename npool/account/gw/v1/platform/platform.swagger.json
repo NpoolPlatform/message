@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/middlewareplatformv1CreateAccountResponse"
+              "$ref": "#/definitions/gatewayplatformv1CreateAccountResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/middlewareplatformv1CreateAccountRequest"
+              "$ref": "#/definitions/gatewayplatformv1CreateAccountRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/middlewareplatformv1GetAccountsResponse"
+              "$ref": "#/definitions/gatewayplatformv1GetAccountsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/middlewareplatformv1GetAccountsRequest"
+              "$ref": "#/definitions/gatewayplatformv1GetAccountsRequest"
             }
           }
         ],
@@ -82,7 +82,7 @@
     }
   },
   "definitions": {
-    "middlewareplatformv1Account": {
+    "gatewayplatformv1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -136,7 +136,7 @@
         }
       }
     },
-    "middlewareplatformv1CreateAccountRequest": {
+    "gatewayplatformv1CreateAccountRequest": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -150,15 +150,15 @@
         }
       }
     },
-    "middlewareplatformv1CreateAccountResponse": {
+    "gatewayplatformv1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewareplatformv1Account"
+          "$ref": "#/definitions/gatewayplatformv1Account"
         }
       }
     },
-    "middlewareplatformv1GetAccountsRequest": {
+    "gatewayplatformv1GetAccountsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -171,13 +171,13 @@
         }
       }
     },
-    "middlewareplatformv1GetAccountsResponse": {
+    "gatewayplatformv1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewareplatformv1Account"
+            "$ref": "#/definitions/gatewayplatformv1Account"
           }
         },
         "Total": {
