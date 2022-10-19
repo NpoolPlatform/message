@@ -93,8 +93,8 @@ message GetDepositAccountResponse {
 
 message GetAppDepositAccountsRequest {
     string TargetAppID      = 10;
-    int32 Offset            = 20;
-    int32 Limit             = 30;
+    int32  Offset            = 20;
+    int32  Limit             = 30;
 }
 
 message GetAppDepositAccountsResponse {
@@ -106,8 +106,8 @@ message GetAccountsRequest {
     string AppID   = 10;
     string UserID  = 20;
     account.manager.account1.v1.AccountUsedFor UsedFor = 30;
-    int32 Offset   = 40;
-    int32 Limit    = 50;
+    int32  Offset   = 40;
+    int32  Limit    = 50;
 }
 
 message GetAccountsResponse {
@@ -118,8 +118,8 @@ message GetAccountsResponse {
 
 message GetAppAccountsRequest {
     string AppID   = 10;
-    int32 Offset   = 20;
-    int32 Limit    = 30;
+    int32  Offset   = 20;
+    int32  Limit    = 30;
 }
 
 message GetAppAccountsResponse {

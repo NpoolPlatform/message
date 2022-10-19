@@ -46,8 +46,8 @@ message Account {
 }
 
 message CreateAccountRequest {
-    string CoinTypeID  = 10;
-    string Address     = 20;
+    string          CoinTypeID  = 10;
+    optional string Address     = 20;
     account.manager.account1.v1.AccountUsedFor UsedFor = 30;
 }
 
