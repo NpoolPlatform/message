@@ -57,8 +57,6 @@ message Account {
     string LabelsStr  = 101;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 110;
-    // @inject_tag: sql:"locked"
-    bool   Locked     = 120;
 }
 
 message Conds {
