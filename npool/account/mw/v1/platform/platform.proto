@@ -32,16 +32,27 @@ message AccountReq {
 }
 
 message Account {
+    // @inject_tag: sql:"id"
     string         ID          = 10;
+    // @inject_tag: sql:"coin_type_id"
     string         CoinTypeID  = 20;
+    // @inject_tag: sql:"used_for"
     account.manager.account1.v1.AccountUsedFor UsedFor  = 30;
+    // @inject_tag: sql:"account_id"
     string         AccountID   = 40;
+    // @inject_tag: sql:"address"
     string         Address     = 50;
+    // @inject_tag: sql:"backup"
     bool           Backup      = 60;
+    // @inject_tag: sql:"active"
     bool           Active      = 70;
+    // @inject_tag: sql:"locked"
     bool           Locked      = 80;
+    // @inject_tag: sql:"locked_by"
     account.manager.account1.v1.LockedBy       LockedBy = 90;
+    // @inject_tag: sql:"blocked"
     bool           Blocked     = 100;
+    // @inject_tag: sql:"created_at"
     uint32         CreatedAt   = 110;
 }
 

@@ -148,17 +148,28 @@ type Account struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID         string                 `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	CoinTypeID string                 `protobuf:"bytes,20,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
-	UsedFor    account.AccountUsedFor `protobuf:"varint,30,opt,name=UsedFor,proto3,enum=account.manager.account1.v1.AccountUsedFor" json:"UsedFor,omitempty"`
-	AccountID  string                 `protobuf:"bytes,40,opt,name=AccountID,proto3" json:"AccountID,omitempty"`
-	Address    string                 `protobuf:"bytes,50,opt,name=Address,proto3" json:"Address,omitempty"`
-	Backup     bool                   `protobuf:"varint,60,opt,name=Backup,proto3" json:"Backup,omitempty"`
-	Active     bool                   `protobuf:"varint,70,opt,name=Active,proto3" json:"Active,omitempty"`
-	Locked     bool                   `protobuf:"varint,80,opt,name=Locked,proto3" json:"Locked,omitempty"`
-	LockedBy   account.LockedBy       `protobuf:"varint,90,opt,name=LockedBy,proto3,enum=account.manager.account1.v1.LockedBy" json:"LockedBy,omitempty"`
-	Blocked    bool                   `protobuf:"varint,100,opt,name=Blocked,proto3" json:"Blocked,omitempty"`
-	CreatedAt  uint32                 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"coin_type_id"
+	CoinTypeID string `protobuf:"bytes,20,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty" sql:"coin_type_id"`
+	// @inject_tag: sql:"used_for"
+	UsedFor account.AccountUsedFor `protobuf:"varint,30,opt,name=UsedFor,proto3,enum=account.manager.account1.v1.AccountUsedFor" json:"UsedFor,omitempty" sql:"used_for"`
+	// @inject_tag: sql:"account_id"
+	AccountID string `protobuf:"bytes,40,opt,name=AccountID,proto3" json:"AccountID,omitempty" sql:"account_id"`
+	// @inject_tag: sql:"address"
+	Address string `protobuf:"bytes,50,opt,name=Address,proto3" json:"Address,omitempty" sql:"address"`
+	// @inject_tag: sql:"backup"
+	Backup bool `protobuf:"varint,60,opt,name=Backup,proto3" json:"Backup,omitempty" sql:"backup"`
+	// @inject_tag: sql:"active"
+	Active bool `protobuf:"varint,70,opt,name=Active,proto3" json:"Active,omitempty" sql:"active"`
+	// @inject_tag: sql:"locked"
+	Locked bool `protobuf:"varint,80,opt,name=Locked,proto3" json:"Locked,omitempty" sql:"locked"`
+	// @inject_tag: sql:"locked_by"
+	LockedBy account.LockedBy `protobuf:"varint,90,opt,name=LockedBy,proto3,enum=account.manager.account1.v1.LockedBy" json:"LockedBy,omitempty" sql:"locked_by"`
+	// @inject_tag: sql:"blocked"
+	Blocked bool `protobuf:"varint,100,opt,name=Blocked,proto3" json:"Blocked,omitempty" sql:"blocked"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 }
 
 func (x *Account) Reset() {
