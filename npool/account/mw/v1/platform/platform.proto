@@ -48,8 +48,9 @@ message Account {
     bool           Active      = 70;
     // @inject_tag: sql:"locked"
     bool           Locked      = 80;
-    // @inject_tag: sql:"locked_by"
     account.manager.account1.v1.LockedBy       LockedBy = 90;
+    // @inject_tag: sql:"locked_by"
+    string         LockedByStr = 91;
     // @inject_tag: sql:"blocked"
     bool           Blocked     = 100;
     // @inject_tag: sql:"created_at"
