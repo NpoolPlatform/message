@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package good.manager.comment.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/comment";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateComment     (CreateCommentRequest)     returns (CreateCommentResponse)     {}
+    rpc CreateComments    (CreateCommentsRequest)    returns (CreateCommentsResponse)    {}
+    rpc UpdateComment     (UpdateCommentRequest)     returns (UpdateCommentResponse)     {}
+    rpc GetComment        (GetCommentRequest)        returns (GetCommentResponse)        {}
+    rpc GetCommentOnly    (GetCommentOnlyRequest)    returns (GetCommentOnlyResponse)    {}
+    rpc GetComments       (GetCommentsRequest)       returns (GetCommentsResponse)       {}
+    rpc ExistComment      (ExistCommentRequest)      returns (ExistCommentResponse)      {}
+    rpc ExistCommentConds (ExistCommentCondsRequest) returns (ExistCommentCondsResponse) {}
+    rpc CountComments     (CountCommentsRequest)     returns (CountCommentsResponse)     {}
+    rpc DeleteComment     (DeleteCommentRequest)     returns (DeleteCommentResponse)     {}
+}
+
+message CommentReq {
+    optional string ID        = 10;
+    optional string AppID     = 20;
+    optional string UserID    = 30;
+    optional string GoodID    = 40;
+    optional string OrderID   = 50;
+    optional string Content   = 60;
+    optional string ReplyToID = 70;
+}
+
+message Comment {
+    string ID        = 10;
+    string AppID     = 20;
+    string UserID    = 30;
+    string GoodID    = 40;
+    string OrderID   = 50;
+    string Content   = 60;
+    string ReplyToID = 70;
+    uint32 CreatedAt = 80;
+    uint32 UpdatedAt = 90;
+    uint32 DeletedAt = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID     = 10;
+    optional npool.v1.StringVal AppID  = 20;
+    optional npool.v1.StringVal UserID = 30;
+    optional npool.v1.StringVal GoodID = 40;
+}
+
+
+message CreateCommentRequest {
+    CommentReq Info = 10;
+}
+
+message CreateCommentResponse {
+    Comment Info = 10;
+}
+
+message CreateCommentsRequest {
+    repeated CommentReq Infos = 10;
+}
+
+message CreateCommentsResponse {
+    repeated Comment Infos = 10;
+}
+
+message UpdateCommentRequest {
+    CommentReq Info = 10;
+}
+
+message UpdateCommentResponse {
+    Comment Info = 10;
+}
+
+message GetCommentRequest {
+    string ID = 10;
+}
+
+message GetCommentResponse {
+    Comment Info = 10;
+}
+
+message GetCommentsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetCommentsResponse {
+    repeated Comment Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetCommentOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCommentOnlyResponse {
+    Comment Info = 10;
+}
+
+message ExistCommentRequest {
+    string ID = 10;
+}
+
+message ExistCommentResponse {
+    bool Info = 10;
+}
+
+message ExistCommentCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCommentCondsResponse {
+    bool Info = 10;
+}
+
+message CountCommentsRequest {
+    Conds Conds = 10;
+}
+
+message CountCommentsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteCommentRequest {
+    string ID = 10;
+}
+
+message DeleteCommentResponse {
+    Comment Info = 10;
+}

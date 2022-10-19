@@ -1,0 +1,176 @@
+syntax = "proto3";
+
+package good.gateway.good1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good";
+
+import "npool/good/mgr/v1/good/good.proto";
+import "npool/good/mw/v1/good/good.proto";
+import "npool/npool.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/good"
+            body: "*"
+        };
+    }
+
+    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/good"
+            body: "*"
+        };
+    }
+
+    rpc UpdateGood (UpdateGoodRequest) returns (UpdateGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/good"
+            body: "*"
+        };
+    }
+
+    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goods"
+            body: "*"
+        };
+    }
+}
+
+message Good {
+    string           ID                          = 10;
+
+    string           DeviceInfoID                = 20;
+    string           DeviceType                  = 30;
+    string           DeviceManufacturer          = 40;
+    uint32           DevicePowerComsuption       = 50;
+    uint32           DeviceShipmentAt            = 60;
+    repeated string  DevicePosters               = 70;
+
+    int32            DurationDays                = 80;
+
+    string           CoinTypeID                  = 90;
+    string           CoinLogo                    = 100;
+    string           CoinName                    = 110;
+    string           CoinUnit                    = 120;
+    bool             CoinPreSale                 = 130;
+
+    optional string  InheritFromGoodID           = 140;
+    optional string  InheritFromGoodName         = 150;
+    optional good.manager.good.v1.GoodType    InheritFromGoodType        = 160;
+    optional good.manager.good.v1.BenefitType InheritFromGoodBenefitType = 170;
+
+    string           VendorLocationID            = 180;
+    string           VendorLocationCountry       = 190;
+    string           VendorLocationProvince      = 200;
+    string           VendorLocationCity          = 210;
+    string           VendorLocationAddress       = 220;
+
+    good.manager.good.v1.GoodType    GoodType    = 230;
+    good.manager.good.v1.BenefitType BenefitType = 240;
+
+    string           Price              = 250;
+    string           Title              = 260;
+    string           Unit               = 270;
+    int32            UnitAmount         = 280;
+    bool             TestOnly           = 290;
+    repeated string  Posters            = 300;
+    repeated string  Labels             = 310;
+    uint32           VoteCount          = 320;
+    float            Rating             = 330;
+
+    message CoinInfo {
+        string CoinTypeID  = 10;
+        string CoinLogo    = 20;
+        string CoinName    = 30;
+        string CoinUnit    = 40;
+        bool   CoinPreSale = 50;
+    }
+    repeated CoinInfo SupportCoins      = 340;
+
+    string           GoodStockID        = 350;
+    uint32           GoodTotal          = 360;
+    uint32           GoodLocked         = 370;
+    uint32           GoodInService      = 380;
+    uint32           GoodSold           = 390;
+
+    uint32           DeliveryAt         = 400;
+    uint32           StartAt            = 410;
+    uint32           CreatedAt          = 420;
+    uint32           UpdatedAt          = 430;
+    uint32           DeletedAt          = 440;
+}
+
+message CreateGoodRequest {
+    string          DeviceInfoID       = 20;
+    int32           DurationDays       = 30;
+    string          CoinTypeID         = 40;
+    string          InheritFromGoodID  = 50;
+    string          VendorLocationID   = 60;
+    string          Price              = 70;
+    good.manager.good.v1.BenefitType BenefitType = 80;
+    good.manager.good.v1.GoodType    GoodType    = 90;
+    string          Title              = 100;
+    string          Unit               = 110;
+    int32           UnitAmount         = 120;
+    repeated string SupportCoinTypeIDs = 130;
+    uint32          DeliveryAt         = 140;
+    uint32          StartAt            = 150;
+    bool            TestOnly           = 160;
+    uint32          Total              = 170;
+    uint32          Locked             = 180;
+    uint32          InService          = 190;
+    uint32          Sold               = 200;
+    repeated string Posters            = 210;
+    repeated string Labels             = 220;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodRequest {
+    string ID = 10;
+}
+
+message GetGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodsRequest {
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message UpdateGoodRequest {
+    string                 ID                 = 10;
+    optional string        DeviceInfoID       = 20;
+    optional int32         DurationDays       = 30;
+    optional string        CoinTypeID         = 40;
+    optional string        InheritFromGoodID  = 50;
+    optional string        VendorLocationID   = 60;
+    optional string        Price              = 70;
+    optional string        Title              = 100;
+    optional string        Unit               = 110;
+    optional int32         UnitAmount         = 120;
+    repeated string        SupportCoinTypeIDs = 130;
+    optional uint32        DeliveryAt         = 140;
+    optional uint32        StartAt            = 150;
+    optional bool          TestOnly           = 160;
+    optional uint32        Total              = 170;
+    optional uint32        Sold               = 200;
+    repeated string        Posters            = 210;
+    repeated string        Labels             = 220;
+}
+
+message UpdateGoodResponse {
+    Good Info = 10;
+}

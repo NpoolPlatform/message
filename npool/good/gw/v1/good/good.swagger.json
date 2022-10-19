@@ -1,0 +1,602 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/gw/v1/good/good.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/good": {
+      "post": {
+        "operationId": "Gateway_CreateGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/good": {
+      "post": {
+        "operationId": "Gateway_GetGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/goods": {
+      "post": {
+        "operationId": "Gateway_GetGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/good": {
+      "post": {
+        "operationId": "Gateway_UpdateGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GoodCoinInfo": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
+          "type": "boolean"
+        }
+      }
+    },
+    "goodgatewaygood1v1CreateGoodRequest": {
+      "type": "object",
+      "properties": {
+        "DeviceInfoID": {
+          "type": "string"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "InheritFromGoodID": {
+          "type": "string"
+        },
+        "VendorLocationID": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SupportCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Locked": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "goodgatewaygood1v1CreateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/goodgatewaygood1v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "goodgatewaygood1v1Good": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "DeviceInfoID": {
+          "type": "string"
+        },
+        "DeviceType": {
+          "type": "string"
+        },
+        "DeviceManufacturer": {
+          "type": "string"
+        },
+        "DevicePowerComsuption": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeviceShipmentAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DevicePosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
+          "type": "boolean"
+        },
+        "InheritFromGoodID": {
+          "type": "string"
+        },
+        "InheritFromGoodName": {
+          "type": "string"
+        },
+        "InheritFromGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "InheritFromGoodBenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "VendorLocationID": {
+          "type": "string"
+        },
+        "VendorLocationCountry": {
+          "type": "string"
+        },
+        "VendorLocationProvince": {
+          "type": "string"
+        },
+        "VendorLocationCity": {
+          "type": "string"
+        },
+        "VendorLocationAddress": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "VoteCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Rating": {
+          "type": "number",
+          "format": "float"
+        },
+        "SupportCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GoodCoinInfo"
+          }
+        },
+        "GoodStockID": {
+          "type": "string"
+        },
+        "GoodTotal": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodLocked": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodInService": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodSold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "goodgatewaygood1v1UpdateGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "DeviceInfoID": {
+          "type": "string"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "InheritFromGoodID": {
+          "type": "string"
+        },
+        "VendorLocationID": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SupportCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "goodgatewaygood1v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewaygood1v1Good"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "GoodTypeClassicMining",
+        "GoodTypeUnionMining",
+        "GoodTypeTechniqueFee",
+        "GoodTypeElectricityFee"
+      ],
+      "default": "DefaultGoodType",
+      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    }
+  }
+}

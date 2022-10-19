@@ -1,0 +1,190 @@
+syntax = "proto3";
+
+package good.middleware.good1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good";
+
+import "npool/good/mgr/v1/good/good.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateGood      (CreateGoodRequest)      returns (CreateGoodResponse)      {}
+    rpc GetGood         (GetGoodRequest)         returns (GetGoodResponse)         {}
+    rpc GetGoods        (GetGoodsRequest)        returns (GetGoodsResponse)        {}
+    rpc GetManyGoods    (GetManyGoodsRequest)    returns (GetManyGoodsResponse)    {}
+    rpc UpdateGood      (UpdateGoodRequest)      returns (UpdateGoodResponse)      {}
+}
+
+message GoodReq {
+    optional string        ID                 = 10;
+    optional string        DeviceInfoID       = 20;
+    optional int32         DurationDays       = 30;
+    optional string        CoinTypeID         = 40;
+    optional string        InheritFromGoodID  = 50;
+    optional string        VendorLocationID   = 60;
+    optional string        Price              = 70;
+    optional good.manager.good.v1.BenefitType BenefitType = 80;
+    optional good.manager.good.v1.GoodType    GoodType    = 90;
+    optional string        Title              = 100;
+    optional string        Unit               = 110;
+    optional int32         UnitAmount         = 120;
+    repeated string        SupportCoinTypeIDs = 130;
+    optional uint32        DeliveryAt         = 140;
+    optional uint32        StartAt            = 150;
+    optional bool          TestOnly           = 160;
+    optional uint32        Total              = 170;
+    optional int32         Locked             = 180;
+    optional int32         InService          = 190;
+    optional uint32        Sold               = 200;
+    repeated string        Posters            = 210;
+    repeated string        Labels             = 220;
+}
+
+message Good {
+    // @inject_tag: sql:"id"
+    string           ID                          = 10;
+
+    // @inject_tag: sql:"device_info_id"
+    string           DeviceInfoID                = 20;
+    // @inject_tag: sql:"device_type"
+    string           DeviceType                  = 30;
+    // @inject_tag: sql:"device_manufacturer"
+    string           DeviceManufacturer          = 40;
+    // @inject_tag: sql:"device_power_comsuption"
+    uint32           DevicePowerComsuption       = 50;
+    // @inject_tag: sql:"device_shipment_at"
+    uint32           DeviceShipmentAt            = 60;
+    repeated string  DevicePosters               = 70;
+    // @inject_tag: sql:"device_posters"
+    string           DevicePostersStr            = 71;
+
+    // @inject_tag: sql:"duration_days"
+    int32            DurationDays                = 80;
+    // @inject_tag: sql:"coin_type_id"
+    string           CoinTypeID                  = 90;
+
+    // @inject_tag: sql:"inherit_from_good_id"
+    optional string  InheritFromGoodID           = 100;
+    // @inject_tag: sql:"inherit_from_good_name"
+    optional string  InheritFromGoodName         = 110;
+    optional good.manager.good.v1.GoodType    InheritFromGoodType        = 120;
+    // @inject_tag: sql:"inherit_from_good_type"
+    optional string  InheritFromGoodTypeStr      = 121;
+    optional good.manager.good.v1.BenefitType InheritFromGoodBenefitType = 130;
+    // @inject_tag: sql:"inherit_from_good_benefit_type"
+    optional string  InheritFromGoodBenefitTypeStr = 131;
+
+    // @inject_tag: sql:"vendor_location_id"
+    string           VendorLocationID            = 140;
+    // @inject_tag: sql:"vendor_location_country"
+    string           VendorLocationCountry       = 150;
+    // @inject_tag: sql:"vendor_location_province"
+    string           VendorLocationProvince      = 160;
+    // @inject_tag: sql:"vendor_location_city"
+    string           VendorLocationCity          = 170;
+    // @inject_tag: sql:"vendor_location_address"
+    string           VendorLocationAddress       = 180;
+
+    good.manager.good.v1.GoodType    GoodType    = 190;
+    // @inject_tag: sql:"good_type"
+    string           GoodTypeStr                 = 191;
+
+    good.manager.good.v1.BenefitType BenefitType = 200;
+    // @inject_tag: sql:"benefit_type"
+    string           BenefitTypeStr              = 201;
+
+    // @inject_tag: sql:"price"
+    string           Price              = 210;
+    // @inject_tag: sql:"title"
+    string           Title              = 220;
+    // @inject_tag: sql:"unit"
+    string           Unit               = 230;
+    // @inject_tag: sql:"unit_amount"
+    int32            UnitAmount         = 240;
+
+    repeated string  SupportCoinTypeIDs = 250;
+    // @inject_tag: sql:"support_coin_type_ids"
+    string           SupportCoinTypeIDsStr = 251;
+
+    // @inject_tag: sql:"test_only"
+    bool             TestOnly           = 260;
+    repeated string  Posters            = 270;
+    // @inject_tag: sql:"posters"
+    string           PostersStr         = 271;
+
+    repeated string  Labels             = 280;
+    // @inject_tag: sql:"labels"
+    string           LabelsStr          = 281;
+
+    // @inject_tag: sql:"vote_count"
+    uint32           VoteCount          = 290;
+    // @inject_tag: sql:"rating"
+    float            Rating             = 300;
+
+    // @inject_tag: sql:"good_stock_id"
+    string           GoodStockID        = 310;
+    // @inject_tag: sql:"good_total"
+    uint32           GoodTotal          = 320;
+    // @inject_tag: sql:"good_locked"
+    uint32           GoodLocked         = 330;
+    // @inject_tag: sql:"good_in_service"
+    uint32           GoodInService      = 340;
+    // @inject_tag: sql:"good_sold"
+    uint32           GoodSold           = 350;
+
+    // @inject_tag: sql:"delivery_at"
+    uint32           DeliveryAt         = 360;
+    // @inject_tag: sql:"start_at"
+    uint32           StartAt            = 370;
+    // @inject_tag: sql:"created_at"
+    uint32           CreatedAt          = 380;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 390;
+}
+
+message CreateGoodRequest {
+    GoodReq Info = 10;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodRequest {
+    string ID = 10;
+}
+
+message GetGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodsRequest {
+    good.manager.good.v1.Conds Conds  = 10;
+    int32                      Offset = 20;
+    int32                      Limit  = 30;
+}
+
+message GetGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetManyGoodsRequest {
+    repeated string IDs    = 10;
+    int32           Offset = 20;
+    int32           Limit  = 30;
+}
+
+message GetManyGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message UpdateGoodRequest {
+    GoodReq Info = 10;
+}
+
+message UpdateGoodResponse {
+    Good Info = 10;
+}

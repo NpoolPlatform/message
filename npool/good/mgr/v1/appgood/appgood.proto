@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package good.manager.appgood.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/appgood";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateAppGood     (CreateAppGoodRequest)     returns (CreateAppGoodResponse)     {}
+    rpc CreateAppGoods    (CreateAppGoodsRequest)    returns (CreateAppGoodsResponse)    {}
+    rpc UpdateAppGood     (UpdateAppGoodRequest)     returns (UpdateAppGoodResponse)     {}
+    rpc GetAppGood        (GetAppGoodRequest)        returns (GetAppGoodResponse)        {}
+    rpc GetAppGoodOnly    (GetAppGoodOnlyRequest)    returns (GetAppGoodOnlyResponse)    {}
+    rpc GetAppGoods       (GetAppGoodsRequest)       returns (GetAppGoodsResponse)       {}
+    rpc ExistAppGood      (ExistAppGoodRequest)      returns (ExistAppGoodResponse)      {}
+    rpc ExistAppGoodConds (ExistAppGoodCondsRequest) returns (ExistAppGoodCondsResponse) {}
+    rpc CountAppGoods     (CountAppGoodsRequest)     returns (CountAppGoodsResponse)     {}
+    rpc DeleteAppGood     (DeleteAppGoodRequest)     returns (DeleteAppGoodResponse)     {}
+}
+
+message AppGoodReq {
+    optional string ID                  = 10;
+    optional string AppID               = 20;
+    optional string GoodID              = 30;
+    optional bool   Online              = 40;
+    optional bool   Visible             = 50;
+    optional string GoodName            = 60;
+    optional string Price               = 70;
+    optional int32  DisplayIndex        = 80;
+    optional int32  PurchaseLimit       = 90;
+    optional int32  CommissionPercent   = 100;
+}
+
+message AppGood {
+    string ID                = 10;
+    string AppID             = 20;
+    string GoodID            = 30;
+    bool   Online            = 40;
+    bool   Visible           = 50;
+    string GoodName          = 60;
+    string Price             = 70;
+    int32  DisplayIndex      = 80;
+    int32  PurchaseLimit     = 90;
+    int32  CommissionPercent = 100;
+    uint32 CreatedAt         = 110;
+    uint32 UpdatedAt         = 120;
+    uint32 DeletedAt         = 130;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      AppID  = 20;
+    optional npool.v1.StringVal      GoodID = 30;
+    optional npool.v1.StringSliceVal GoodIDs = 40;
+}
+
+
+message CreateAppGoodRequest {
+    AppGoodReq Info = 10;
+}
+
+message CreateAppGoodResponse {
+    AppGood Info = 10;
+}
+
+message CreateAppGoodsRequest {
+    repeated AppGoodReq Infos = 10;
+}
+
+message CreateAppGoodsResponse {
+    repeated AppGood Infos = 10;
+}
+
+message UpdateAppGoodRequest {
+    AppGoodReq Info = 10;
+}
+
+message UpdateAppGoodResponse {
+    AppGood Info = 10;
+}
+
+message GetAppGoodRequest {
+    string ID = 10;
+}
+
+message GetAppGoodResponse {
+    AppGood Info = 10;
+}
+
+message GetAppGoodsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAppGoodsResponse {
+    repeated AppGood Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetAppGoodOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppGoodOnlyResponse {
+    AppGood Info = 10;
+}
+
+message ExistAppGoodRequest {
+    string ID = 10;
+}
+
+message ExistAppGoodResponse {
+    bool Info = 10;
+}
+
+message ExistAppGoodCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppGoodCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppGoodsRequest {
+    Conds Conds = 10;
+}
+
+message CountAppGoodsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppGoodRequest {
+    string ID = 10;
+}
+
+message DeleteAppGoodResponse {
+    AppGood Info = 10;
+}

@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package good.manager.good.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/good";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateGood     (CreateGoodRequest)     returns (CreateGoodResponse)     {}
+    rpc CreateGoods    (CreateGoodsRequest)    returns (CreateGoodsResponse)    {}
+    rpc UpdateGood     (UpdateGoodRequest)     returns (UpdateGoodResponse)     {}
+    rpc GetGood        (GetGoodRequest)        returns (GetGoodResponse)        {}
+    rpc GetGoodOnly    (GetGoodOnlyRequest)    returns (GetGoodOnlyResponse)    {}
+    rpc GetGoods       (GetGoodsRequest)       returns (GetGoodsResponse)       {}
+    rpc ExistGood      (ExistGoodRequest)      returns (ExistGoodResponse)      {}
+    rpc ExistGoodConds (ExistGoodCondsRequest) returns (ExistGoodCondsResponse) {}
+    rpc CountGoods     (CountGoodsRequest)     returns (CountGoodsResponse)     {}
+    rpc DeleteGood     (DeleteGoodRequest)     returns (DeleteGoodResponse)     {}
+}
+
+enum BenefitType {
+    DefaultBenefitType   = 0;
+    // Platform receive benefit, then distribute benefit to user
+    BenefitTypePlatform  = 10;
+    // User receive benefit from pool directly
+    BenefitTypePool      = 20;
+}
+
+enum GoodType {
+    DefaultGoodType         = 0;
+    // Classic good: user pay for both device and other material, get all benefit
+    GoodTypeClassicMining   = 10;
+    // Union good: user pay for a part of material, get part of benefit
+    GoodTypeUnionMining     = 20;
+
+    // Fee good
+    GoodTypeTechniqueFee    = 30;
+    GoodTypeElectricityFee  = 40;
+}
+
+message GoodReq {
+    optional string        ID                 = 10;
+    optional string        DeviceInfoID       = 20;
+    optional int32         DurationDays       = 30;
+    optional string        CoinTypeID         = 40;
+    optional string        InheritFromGoodID  = 50;
+    optional string        VendorLocationID   = 60;
+    optional string        Price              = 70;
+    optional BenefitType   BenefitType        = 80;
+    optional GoodType      GoodType           = 90;
+    optional string        Title              = 100;
+    optional string        Unit               = 110;
+    // For normal good, it's unit amount, or a percent
+    optional int32         UnitAmount         = 120;
+    // Except the main coin type mining, this device also support multiple coin type mining
+    repeated string        SupportCoinTypeIDs = 130;
+    optional uint32        DeliveryAt         = 140;
+    optional uint32        StartAt            = 150;
+    optional bool          TestOnly           = 160;
+}
+
+message Good {
+    string          ID                 = 10;
+    string          DeviceInfoID       = 20;
+    int32           DurationDays       = 30;
+    string          CoinTypeID         = 40;
+    string          InheritFromGoodID  = 50;
+    string          VendorLocationID   = 60;
+    string          Price              = 70;
+    BenefitType     BenefitType        = 80;
+    GoodType        GoodType           = 90;
+    string          Title              = 100;
+    string          Unit               = 110;
+    int32           UnitAmount         = 120;
+    repeated string SupportCoinTypeIDs = 130;
+    uint32          DeliveryAt         = 140;
+    uint32          StartAt            = 150;
+    bool            TestOnly           = 160;
+    uint32          CreatedAt          = 170;
+    uint32          UpdatedAt          = 180;
+    uint32          DeletedAt          = 190;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID               = 10;
+    optional npool.v1.StringVal      DeviceInfoID     = 20;
+    optional npool.v1.StringVal      CoinTypeID       = 30;
+    optional npool.v1.StringVal      VendorLocationID = 40;
+    optional npool.v1.Int32Val       BenefitType      = 50;
+    optional npool.v1.Int32Val       GoodType         = 60;
+    optional npool.v1.StringSliceVal IDs              = 70;
+}
+
+
+message CreateGoodRequest {
+    GoodReq Info = 10;
+}
+
+message CreateGoodResponse {
+    Good Info = 10;
+}
+
+message CreateGoodsRequest {
+    repeated GoodReq Infos = 10;
+}
+
+message CreateGoodsResponse {
+    repeated Good Infos = 10;
+}
+
+message UpdateGoodRequest {
+    GoodReq Info = 10;
+}
+
+message UpdateGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodRequest {
+    string ID = 10;
+}
+
+message GetGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetGoodsResponse {
+    repeated Good Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetGoodOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetGoodOnlyResponse {
+    Good Info = 10;
+}
+
+message ExistGoodRequest {
+    string ID = 10;
+}
+
+message ExistGoodResponse {
+    bool Info = 10;
+}
+
+message ExistGoodCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistGoodCondsResponse {
+    bool Info = 10;
+}
+
+message CountGoodsRequest {
+    Conds Conds = 10;
+}
+
+message CountGoodsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteGoodRequest {
+    string ID = 10;
+}
+
+message DeleteGoodResponse {
+    Good Info = 10;
+}

@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package good.manager.promotion.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/promotion";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreatePromotion     (CreatePromotionRequest)     returns (CreatePromotionResponse)     {}
+    rpc CreatePromotions    (CreatePromotionsRequest)    returns (CreatePromotionsResponse)    {}
+    rpc UpdatePromotion     (UpdatePromotionRequest)     returns (UpdatePromotionResponse)     {}
+    rpc GetPromotion        (GetPromotionRequest)        returns (GetPromotionResponse)        {}
+    rpc GetPromotionOnly    (GetPromotionOnlyRequest)    returns (GetPromotionOnlyResponse)    {}
+    rpc GetPromotions       (GetPromotionsRequest)       returns (GetPromotionsResponse)       {}
+    rpc ExistPromotion      (ExistPromotionRequest)      returns (ExistPromotionResponse)      {}
+    rpc ExistPromotionConds (ExistPromotionCondsRequest) returns (ExistPromotionCondsResponse) {}
+    rpc CountPromotions     (CountPromotionsRequest)     returns (CountPromotionsResponse)     {}
+    rpc DeletePromotion     (DeletePromotionRequest)     returns (DeletePromotionResponse)     {}
+}
+
+message PromotionReq {
+    optional string ID        = 10;
+    optional string AppID     = 20;
+    optional string GoodID    = 30;
+    optional string Message   = 40;
+    optional uint32 StartAt   = 50;
+    optional uint32 EndAt     = 60;
+    optional string Price     = 70;
+    repeated string Posters   = 80;
+}
+
+message Promotion {
+    string          ID        = 10;
+    string          AppID     = 20;
+    string          GoodID    = 30;
+    string          Message   = 40;
+    uint32          StartAt   = 50;
+    uint32          EndAt     = 60;
+    string          Price     = 70;
+    repeated string Posters   = 80;
+    uint32          CreatedAt = 90;
+    uint32          UpdatedAt = 100;
+    uint32          DeletedAt = 110;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID     = 10;
+    optional npool.v1.StringVal AppID  = 20;
+    optional npool.v1.StringVal GoodID = 30;
+}
+
+
+message CreatePromotionRequest {
+    PromotionReq Info = 10;
+}
+
+message CreatePromotionResponse {
+    Promotion Info = 10;
+}
+
+message CreatePromotionsRequest {
+    repeated PromotionReq Infos = 10;
+}
+
+message CreatePromotionsResponse {
+    repeated Promotion Infos = 10;
+}
+
+message UpdatePromotionRequest {
+    PromotionReq Info = 10;
+}
+
+message UpdatePromotionResponse {
+    Promotion Info = 10;
+}
+
+message GetPromotionRequest {
+    string ID = 10;
+}
+
+message GetPromotionResponse {
+    Promotion Info = 10;
+}
+
+message GetPromotionsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetPromotionsResponse {
+    repeated Promotion Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetPromotionOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetPromotionOnlyResponse {
+    Promotion Info = 10;
+}
+
+message ExistPromotionRequest {
+    string ID = 10;
+}
+
+message ExistPromotionResponse {
+    bool Info = 10;
+}
+
+message ExistPromotionCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistPromotionCondsResponse {
+    bool Info = 10;
+}
+
+message CountPromotionsRequest {
+    Conds Conds = 10;
+}
+
+message CountPromotionsResponse {
+    uint32 Info = 10;
+}
+
+message DeletePromotionRequest {
+    string ID = 10;
+}
+
+message DeletePromotionResponse {
+    Promotion Info = 10;
+}

@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package good.manager.subgood.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/subgood";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateSubGood     (CreateSubGoodRequest)     returns (CreateSubGoodResponse)     {}
+    rpc CreateSubGoods    (CreateSubGoodsRequest)    returns (CreateSubGoodsResponse)    {}
+    rpc UpdateSubGood     (UpdateSubGoodRequest)     returns (UpdateSubGoodResponse)     {}
+    rpc GetSubGood        (GetSubGoodRequest)        returns (GetSubGoodResponse)        {}
+    rpc GetSubGoodOnly    (GetSubGoodOnlyRequest)    returns (GetSubGoodOnlyResponse)    {}
+    rpc GetSubGoods       (GetSubGoodsRequest)       returns (GetSubGoodsResponse)       {}
+    rpc ExistSubGood      (ExistSubGoodRequest)      returns (ExistSubGoodResponse)      {}
+    rpc ExistSubGoodConds (ExistSubGoodCondsRequest) returns (ExistSubGoodCondsResponse) {}
+    rpc CountSubGoods     (CountSubGoodsRequest)     returns (CountSubGoodsResponse)     {}
+    rpc DeleteSubGood     (DeleteSubGoodRequest)     returns (DeleteSubGoodResponse)     {}
+}
+
+message SubGoodReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string MainGoodID  = 30;
+    optional string SubGoodID   = 40;
+    optional bool   Must        = 50;
+    optional bool   Commission  = 60;
+    optional uint32 CreatedAt   = 70;
+}
+
+message SubGood {
+    string ID          = 10;
+    string AppID       = 20;
+    string MainGoodID  = 30;
+    string SubGoodID   = 40;
+    bool   Must        = 50;
+    bool   Commission  = 60;
+    uint32 CreatedAt   = 70;
+    uint32 UpdatedAt   = 80;
+    uint32 DeletedAt   = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID          = 10;
+    optional npool.v1.StringVal      MainGoodID  = 20;
+    optional npool.v1.StringSliceVal MainGoodIDs = 30;
+    optional npool.v1.StringVal      AppID       = 40;
+}
+
+
+message CreateSubGoodRequest {
+    SubGoodReq Info = 10;
+}
+
+message CreateSubGoodResponse {
+    SubGood Info = 10;
+}
+
+message CreateSubGoodsRequest {
+    repeated SubGoodReq Infos = 10;
+}
+
+message CreateSubGoodsResponse {
+    repeated SubGood Infos = 10;
+}
+
+message UpdateSubGoodRequest {
+    SubGoodReq Info = 10;
+}
+
+message UpdateSubGoodResponse {
+    SubGood Info = 10;
+}
+
+message GetSubGoodRequest {
+    string ID = 10;
+}
+
+message GetSubGoodResponse {
+    SubGood Info = 10;
+}
+
+message GetSubGoodsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetSubGoodsResponse {
+    repeated SubGood Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetSubGoodOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetSubGoodOnlyResponse {
+    SubGood Info = 10;
+}
+
+message ExistSubGoodRequest {
+    string ID = 10;
+}
+
+message ExistSubGoodResponse {
+    bool Info = 10;
+}
+
+message ExistSubGoodCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistSubGoodCondsResponse {
+    bool Info = 10;
+}
+
+message CountSubGoodsRequest {
+    Conds Conds = 10;
+}
+
+message CountSubGoodsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteSubGoodRequest {
+    string ID = 10;
+}
+
+message DeleteSubGoodResponse {
+    SubGood Info = 10;
+}
+
