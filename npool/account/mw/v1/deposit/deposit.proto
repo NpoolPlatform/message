@@ -63,7 +63,7 @@ message Account {
     // @inject_tag: sql:"outcoming"
     string Outcoming     = 190;
     // @inject_tag: sql:"scannable_at"
-    string ScannableAt   = 200;
+    uint32 ScannableAt   = 200;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt     = 210;
 }

@@ -76,7 +76,8 @@
           "title": "@inject_tag: sql:\"outcoming\""
         },
         "ScannableAt": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"scannable_at\""
         },
         "CreatedAt": {
