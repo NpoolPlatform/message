@@ -63,13 +63,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"blocked\""
         },
-        "UsedForStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"used_for\""
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
-        },
         "CollectingTID": {
           "type": "string",
           "title": "@inject_tag: sql:\"collecting_tid\""
@@ -244,23 +237,6 @@
           }
         }
       }
-    },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor"
     },
     "v1BoolVal": {
       "type": "object",

@@ -56,9 +56,6 @@ message Account {
     account.manager.account1.v1.LockedBy       LockedBy = 120;
     // @inject_tag: sql:"blocked"
     bool   Blocked       = 140;
-    // @inject_tag: sql:"used_for"
-    string UsedForStr    = 150;
-    account.manager.account1.v1.AccountUsedFor UsedFor  = 160;
     // @inject_tag: sql:"collecting_tid"
     string CollectingTID = 170;
     // @inject_tag: sql:"incoming"
