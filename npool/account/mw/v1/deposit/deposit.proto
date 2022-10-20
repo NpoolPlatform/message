@@ -48,16 +48,13 @@ message Account {
     // @inject_tag: sql:"address"
     string Address       = 60;
     // @inject_tag: sql:"active"
-    int32  ActiveInt     = 70;
     bool   Active        = 80;
     // @inject_tag: sql:"locked"
-    int32  LockedInt     = 90;
     bool   Locked        = 100;
     // @inject_tag: sql:"locked_by"
     string LockedByStr   = 110;
     account.manager.account1.v1.LockedBy       LockedBy = 120;
     // @inject_tag: sql:"blocked"
-    string BlockedInt    = 130;
     bool   Blocked       = 140;
     // @inject_tag: sql:"used_for"
     string UsedForStr    = 150;

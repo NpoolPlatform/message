@@ -44,21 +44,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"address\""
         },
-        "ActiveInt": {
-          "type": "integer",
-          "format": "int32",
+        "Active": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"active\""
         },
-        "Active": {
-          "type": "boolean"
-        },
-        "LockedInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"locked\""
-        },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
         },
         "LockedByStr": {
           "type": "string",
@@ -67,12 +59,9 @@
         "LockedBy": {
           "$ref": "#/definitions/v1LockedBy"
         },
-        "BlockedInt": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"blocked\""
-        },
         "Blocked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
         },
         "UsedForStr": {
           "type": "string",
