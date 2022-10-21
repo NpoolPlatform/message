@@ -27,7 +27,18 @@ type CloudHashingApisClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
 	GetGoodsByApp(ctx context.Context, in *GetGoodsByAppRequest, opts ...grpc.CallOption) (*GetGoodsByAppResponse, error)
+	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
+	GetRecommendGoodsByApp(ctx context.Context, in *GetRecommendGoodsByAppRequest, opts ...grpc.CallOption) (*GetRecommendGoodsByAppResponse, error)
+	SubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*SubmitOrderResponse, error)
+	SubmitUserOrder(ctx context.Context, in *SubmitUserOrderRequest, opts ...grpc.CallOption) (*SubmitUserOrderResponse, error)
+	SubmitAppUserOrder(ctx context.Context, in *SubmitAppUserOrderRequest, opts ...grpc.CallOption) (*SubmitAppUserOrderResponse, error)
+	CreateOrderPayment(ctx context.Context, in *CreateOrderPaymentRequest, opts ...grpc.CallOption) (*CreateOrderPaymentResponse, error)
+	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
+	GetOrdersByAppUser(ctx context.Context, in *GetOrdersByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersByAppUserResponse, error)
+	GetOrdersByApp(ctx context.Context, in *GetOrdersByAppRequest, opts ...grpc.CallOption) (*GetOrdersByAppResponse, error)
+	GetOrdersByOtherApp(ctx context.Context, in *GetOrdersByOtherAppRequest, opts ...grpc.CallOption) (*GetOrdersByOtherAppResponse, error)
+	GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error)
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	UpdatePassword(ctx context.Context, in *UpdatePasswordRequest, opts ...grpc.CallOption) (*UpdatePasswordResponse, error)
 	UpdatePasswordByAppUser(ctx context.Context, in *UpdatePasswordByAppUserRequest, opts ...grpc.CallOption) (*UpdatePasswordByAppUserResponse, error)
@@ -47,6 +58,7 @@ type CloudHashingApisClient interface {
 	GetKycReviews(ctx context.Context, in *GetKycReviewsRequest, opts ...grpc.CallOption) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(ctx context.Context, in *GetKycReviewsByAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(ctx context.Context, in *GetKycReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByOtherAppResponse, error)
+	GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error)
 	GetWithdrawReviews(ctx context.Context, in *GetWithdrawReviewsRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsResponse, error)
 	GetWithdrawReviewsByApp(ctx context.Context, in *GetWithdrawReviewsByAppRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsByAppResponse, error)
 	GetWithdrawReviewsByOtherApp(ctx context.Context, in *GetWithdrawReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetWithdrawReviewsByOtherAppResponse, error)
@@ -110,9 +122,108 @@ func (c *cloudHashingApisClient) GetGoodsByApp(ctx context.Context, in *GetGoods
 	return out, nil
 }
 
+func (c *cloudHashingApisClient) CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error) {
+	out := new(CreateGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudHashingApisClient) GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error) {
 	out := new(GetGoodResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetRecommendGoodsByApp(ctx context.Context, in *GetRecommendGoodsByAppRequest, opts ...grpc.CallOption) (*GetRecommendGoodsByAppResponse, error) {
+	out := new(GetRecommendGoodsByAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetRecommendGoodsByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) SubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*SubmitOrderResponse, error) {
+	out := new(SubmitOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) SubmitUserOrder(ctx context.Context, in *SubmitUserOrderRequest, opts ...grpc.CallOption) (*SubmitUserOrderResponse, error) {
+	out := new(SubmitUserOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) SubmitAppUserOrder(ctx context.Context, in *SubmitAppUserOrderRequest, opts ...grpc.CallOption) (*SubmitAppUserOrderResponse, error) {
+	out := new(SubmitAppUserOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/SubmitAppUserOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) CreateOrderPayment(ctx context.Context, in *CreateOrderPaymentRequest, opts ...grpc.CallOption) (*CreateOrderPaymentResponse, error) {
+	out := new(CreateOrderPaymentResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/CreateOrderPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error) {
+	out := new(GetOrderResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetOrdersByAppUser(ctx context.Context, in *GetOrdersByAppUserRequest, opts ...grpc.CallOption) (*GetOrdersByAppUserResponse, error) {
+	out := new(GetOrdersByAppUserResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetOrdersByApp(ctx context.Context, in *GetOrdersByAppRequest, opts ...grpc.CallOption) (*GetOrdersByAppResponse, error) {
+	out := new(GetOrdersByAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetOrdersByOtherApp(ctx context.Context, in *GetOrdersByOtherAppRequest, opts ...grpc.CallOption) (*GetOrdersByOtherAppResponse, error) {
+	out := new(GetOrdersByOtherAppResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetOrdersByGood(ctx context.Context, in *GetOrdersByGoodRequest, opts ...grpc.CallOption) (*GetOrdersByGoodResponse, error) {
+	out := new(GetOrdersByGoodResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -284,6 +395,15 @@ func (c *cloudHashingApisClient) GetKycReviewsByApp(ctx context.Context, in *Get
 func (c *cloudHashingApisClient) GetKycReviewsByOtherApp(ctx context.Context, in *GetKycReviewsByOtherAppRequest, opts ...grpc.CallOption) (*GetKycReviewsByOtherAppResponse, error) {
 	out := new(GetKycReviewsByOtherAppResponse)
 	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetKycReviewsByOtherApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudHashingApisClient) GetGoodReviews(ctx context.Context, in *GetGoodReviewsRequest, opts ...grpc.CallOption) (*GetGoodReviewsResponse, error) {
+	out := new(GetGoodReviewsResponse)
+	err := c.cc.Invoke(ctx, "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodReviews", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -531,7 +651,18 @@ type CloudHashingApisServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
 	GetGoodsByApp(context.Context, *GetGoodsByAppRequest) (*GetGoodsByAppResponse, error)
+	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
+	GetRecommendGoodsByApp(context.Context, *GetRecommendGoodsByAppRequest) (*GetRecommendGoodsByAppResponse, error)
+	SubmitOrder(context.Context, *SubmitOrderRequest) (*SubmitOrderResponse, error)
+	SubmitUserOrder(context.Context, *SubmitUserOrderRequest) (*SubmitUserOrderResponse, error)
+	SubmitAppUserOrder(context.Context, *SubmitAppUserOrderRequest) (*SubmitAppUserOrderResponse, error)
+	CreateOrderPayment(context.Context, *CreateOrderPaymentRequest) (*CreateOrderPaymentResponse, error)
+	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
+	GetOrdersByAppUser(context.Context, *GetOrdersByAppUserRequest) (*GetOrdersByAppUserResponse, error)
+	GetOrdersByApp(context.Context, *GetOrdersByAppRequest) (*GetOrdersByAppResponse, error)
+	GetOrdersByOtherApp(context.Context, *GetOrdersByOtherAppRequest) (*GetOrdersByOtherAppResponse, error)
+	GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error)
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	UpdatePassword(context.Context, *UpdatePasswordRequest) (*UpdatePasswordResponse, error)
 	UpdatePasswordByAppUser(context.Context, *UpdatePasswordByAppUserRequest) (*UpdatePasswordByAppUserResponse, error)
@@ -551,6 +682,7 @@ type CloudHashingApisServer interface {
 	GetKycReviews(context.Context, *GetKycReviewsRequest) (*GetKycReviewsResponse, error)
 	GetKycReviewsByApp(context.Context, *GetKycReviewsByAppRequest) (*GetKycReviewsByAppResponse, error)
 	GetKycReviewsByOtherApp(context.Context, *GetKycReviewsByOtherAppRequest) (*GetKycReviewsByOtherAppResponse, error)
+	GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error)
 	GetWithdrawReviews(context.Context, *GetWithdrawReviewsRequest) (*GetWithdrawReviewsResponse, error)
 	GetWithdrawReviewsByApp(context.Context, *GetWithdrawReviewsByAppRequest) (*GetWithdrawReviewsByAppResponse, error)
 	GetWithdrawReviewsByOtherApp(context.Context, *GetWithdrawReviewsByOtherAppRequest) (*GetWithdrawReviewsByOtherAppResponse, error)
@@ -593,8 +725,41 @@ func (UnimplementedCloudHashingApisServer) GetGoods(context.Context, *GetGoodsRe
 func (UnimplementedCloudHashingApisServer) GetGoodsByApp(context.Context, *GetGoodsByAppRequest) (*GetGoodsByAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsByApp not implemented")
 }
+func (UnimplementedCloudHashingApisServer) CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGood not implemented")
+}
 func (UnimplementedCloudHashingApisServer) GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGood not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetRecommendGoodsByApp(context.Context, *GetRecommendGoodsByAppRequest) (*GetRecommendGoodsByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRecommendGoodsByApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitOrder(context.Context, *SubmitOrderRequest) (*SubmitOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitUserOrder(context.Context, *SubmitUserOrderRequest) (*SubmitUserOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitUserOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) SubmitAppUserOrder(context.Context, *SubmitAppUserOrderRequest) (*SubmitAppUserOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitAppUserOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) CreateOrderPayment(context.Context, *CreateOrderPaymentRequest) (*CreateOrderPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderPayment not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetOrdersByAppUser(context.Context, *GetOrdersByAppUserRequest) (*GetOrdersByAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByAppUser not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetOrdersByApp(context.Context, *GetOrdersByAppRequest) (*GetOrdersByAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetOrdersByOtherApp(context.Context, *GetOrdersByOtherAppRequest) (*GetOrdersByOtherAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByOtherApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetOrdersByGood(context.Context, *GetOrdersByGoodRequest) (*GetOrdersByGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdersByGood not implemented")
 }
 func (UnimplementedCloudHashingApisServer) Signup(context.Context, *SignupRequest) (*SignupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Signup not implemented")
@@ -652,6 +817,9 @@ func (UnimplementedCloudHashingApisServer) GetKycReviewsByApp(context.Context, *
 }
 func (UnimplementedCloudHashingApisServer) GetKycReviewsByOtherApp(context.Context, *GetKycReviewsByOtherAppRequest) (*GetKycReviewsByOtherAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycReviewsByOtherApp not implemented")
+}
+func (UnimplementedCloudHashingApisServer) GetGoodReviews(context.Context, *GetGoodReviewsRequest) (*GetGoodReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodReviews not implemented")
 }
 func (UnimplementedCloudHashingApisServer) GetWithdrawReviews(context.Context, *GetWithdrawReviewsRequest) (*GetWithdrawReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawReviews not implemented")
@@ -798,6 +966,24 @@ func _CloudHashingApis_GetGoodsByApp_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudHashingApis_CreateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateGood(ctx, req.(*CreateGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudHashingApis_GetGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGoodRequest)
 	if err := dec(in); err != nil {
@@ -812,6 +998,186 @@ func _CloudHashingApis_GetGood_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).GetGood(ctx, req.(*GetGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetRecommendGoodsByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRecommendGoodsByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetRecommendGoodsByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetRecommendGoodsByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetRecommendGoodsByApp(ctx, req.(*GetRecommendGoodsByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_SubmitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitOrder(ctx, req.(*SubmitOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_SubmitUserOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitUserOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitUserOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitUserOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitUserOrder(ctx, req.(*SubmitUserOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_SubmitAppUserOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAppUserOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).SubmitAppUserOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/SubmitAppUserOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).SubmitAppUserOrder(ctx, req.(*SubmitAppUserOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_CreateOrderPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrderPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).CreateOrderPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/CreateOrderPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).CreateOrderPayment(ctx, req.(*CreateOrderPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetOrder(ctx, req.(*GetOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetOrdersByAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersByAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetOrdersByAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetOrdersByAppUser(ctx, req.(*GetOrdersByAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetOrdersByApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersByAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetOrdersByApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetOrdersByApp(ctx, req.(*GetOrdersByAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetOrdersByOtherApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersByOtherAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetOrdersByOtherApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByOtherApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetOrdersByOtherApp(ctx, req.(*GetOrdersByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetOrdersByGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdersByGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetOrdersByGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetOrdersByGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetOrdersByGood(ctx, req.(*GetOrdersByGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1154,6 +1520,24 @@ func _CloudHashingApis_GetKycReviewsByOtherApp_Handler(srv interface{}, ctx cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudHashingApisServer).GetKycReviewsByOtherApp(ctx, req.(*GetKycReviewsByOtherAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudHashingApis_GetGoodReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudHashingApisServer).GetGoodReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud.hashing.apis.v1.CloudHashingApis/GetGoodReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudHashingApisServer).GetGoodReviews(ctx, req.(*GetGoodReviewsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1646,8 +2030,52 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudHashingApis_GetGoodsByApp_Handler,
 		},
 		{
+			MethodName: "CreateGood",
+			Handler:    _CloudHashingApis_CreateGood_Handler,
+		},
+		{
 			MethodName: "GetGood",
 			Handler:    _CloudHashingApis_GetGood_Handler,
+		},
+		{
+			MethodName: "GetRecommendGoodsByApp",
+			Handler:    _CloudHashingApis_GetRecommendGoodsByApp_Handler,
+		},
+		{
+			MethodName: "SubmitOrder",
+			Handler:    _CloudHashingApis_SubmitOrder_Handler,
+		},
+		{
+			MethodName: "SubmitUserOrder",
+			Handler:    _CloudHashingApis_SubmitUserOrder_Handler,
+		},
+		{
+			MethodName: "SubmitAppUserOrder",
+			Handler:    _CloudHashingApis_SubmitAppUserOrder_Handler,
+		},
+		{
+			MethodName: "CreateOrderPayment",
+			Handler:    _CloudHashingApis_CreateOrderPayment_Handler,
+		},
+		{
+			MethodName: "GetOrder",
+			Handler:    _CloudHashingApis_GetOrder_Handler,
+		},
+		{
+			MethodName: "GetOrdersByAppUser",
+			Handler:    _CloudHashingApis_GetOrdersByAppUser_Handler,
+		},
+		{
+			MethodName: "GetOrdersByApp",
+			Handler:    _CloudHashingApis_GetOrdersByApp_Handler,
+		},
+		{
+			MethodName: "GetOrdersByOtherApp",
+			Handler:    _CloudHashingApis_GetOrdersByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetOrdersByGood",
+			Handler:    _CloudHashingApis_GetOrdersByGood_Handler,
 		},
 		{
 			MethodName: "Signup",
@@ -1724,6 +2152,10 @@ var CloudHashingApis_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetKycReviewsByOtherApp",
 			Handler:    _CloudHashingApis_GetKycReviewsByOtherApp_Handler,
+		},
+		{
+			MethodName: "GetGoodReviews",
+			Handler:    _CloudHashingApis_GetGoodReviews_Handler,
 		},
 		{
 			MethodName: "GetWithdrawReviews",
