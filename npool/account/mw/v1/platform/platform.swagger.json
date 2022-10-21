@@ -21,38 +21,55 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
+        },
         "AccountID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
         },
         "Address": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
         },
         "Backup": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"backup\""
         },
         "Active": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"active\""
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
         },
         "LockedBy": {
           "$ref": "#/definitions/v1LockedBy"
         },
+        "LockedByStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked_by\""
+        },
         "Blocked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         }
       }
     },

@@ -48,70 +48,6 @@
         ]
       }
     },
-    "/v1/create/app/user/control": {
-      "post": {
-        "operationId": "CloudHashingApis_CreateAppUserControl",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateAppUserControlResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateAppUserControlRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/create/app/user/extra": {
-      "post": {
-        "operationId": "CloudHashingApis_CreateAppUserExtra",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateAppUserExtraResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateAppUserExtraRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/create/good": {
       "post": {
         "operationId": "CloudHashingApis_CreateGood",
@@ -168,38 +104,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateInvitationCodeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/create/kyc": {
-      "post": {
-        "operationId": "CloudHashingApis_CreateKyc",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateKycResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateKycRequest"
             }
           }
         ],
@@ -528,38 +432,6 @@
         ]
       }
     },
-    "/v1/get/good/reviews": {
-      "post": {
-        "operationId": "CloudHashingApis_GetGoodReviews",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodReviewsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodReviewsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/get/goods": {
       "post": {
         "operationId": "CloudHashingApis_GetGoods",
@@ -616,166 +488,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1GetGoodsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/kyc/by/app/user": {
-      "post": {
-        "operationId": "CloudHashingApis_GetKycByAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetKycByAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetKycByAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/kyc/reviews": {
-      "post": {
-        "operationId": "CloudHashingApis_GetKycReviews",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/kyc/reviews/by/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetKycReviewsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/kyc/reviews/by/other/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetKycReviewsByOtherApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsByOtherAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetKycReviewsByOtherAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/layered/referrals": {
-      "post": {
-        "operationId": "CloudHashingApis_GetLayeredReferrals",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetLayeredReferralsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetLayeredReferralsRequest"
             }
           }
         ],
@@ -976,38 +688,6 @@
         ]
       }
     },
-    "/v1/get/referrals": {
-      "post": {
-        "operationId": "CloudHashingApis_GetReferrals",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetReferralsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetReferralsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/get/user/good/commissions": {
       "post": {
         "operationId": "CloudHashingApis_GetUserGoodCommissions",
@@ -1032,38 +712,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserGoodCommissionsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/user/referrals": {
-      "post": {
-        "operationId": "CloudHashingApis_GetUserReferrals",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserReferralsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserReferralsRequest"
             }
           }
         ],
@@ -1232,102 +880,6 @@
         ]
       }
     },
-    "/v1/get/withdraw/reviews": {
-      "post": {
-        "operationId": "CloudHashingApis_GetWithdrawReviews",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/withdraw/reviews/by/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetWithdrawReviewsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/withdraw/reviews/by/other/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetWithdrawReviewsByOtherApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsByOtherAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetWithdrawReviewsByOtherAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/set/withdraw/address": {
       "post": {
         "operationId": "CloudHashingApis_SetWithdrawAddress",
@@ -1352,38 +904,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1SetWithdrawAddressRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/signup": {
-      "post": {
-        "operationId": "CloudHashingApis_Signup",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SignupResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SignupRequest"
             }
           }
         ],
@@ -1520,358 +1040,6 @@
         ]
       }
     },
-    "/v1/update/account": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateAccount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAccountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAccountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/app/user/control": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateAppUserControl",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateAppUserControlRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/app/user/extra": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateAppUserExtra",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateAppUserExtraResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateAppUserExtraRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/emailaddress": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateEmailAddress",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateEmailAddressResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateEmailAddressRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/kyc": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateKyc",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateKycResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1UpdateKycRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/kyc/review": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateKycReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateKycReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateKycReviewRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/password": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdatePassword",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePasswordResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePasswordRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/password/by/app/user": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdatePasswordByAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePasswordByAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePasswordByAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/phoneno": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdatePhoneNO",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePhoneNOResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdatePhoneNORequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/user/withdraw/review": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateUserWithdrawReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateUserWithdrawReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateUserWithdrawReviewRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/user/withdraw/review/for/other/app": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateUserWithdrawReviewForOtherAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateUserWithdrawReviewForOtherAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateUserWithdrawReviewForOtherAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/update/withdraw/address/review": {
       "post": {
         "operationId": "CloudHashingApis_UpdateWithdrawAddressReview",
@@ -1896,38 +1064,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateWithdrawAddressReviewRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/update/withdraw/review": {
-      "post": {
-        "operationId": "CloudHashingApis_UpdateWithdrawReview",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateWithdrawReviewResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateWithdrawReviewRequest"
             }
           }
         ],
@@ -1970,38 +1106,6 @@
     }
   },
   "definitions": {
-    "hashingapisv1CreateAppUserControlRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserControl"
-        }
-      }
-    },
-    "hashingapisv1CreateAppUserControlResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "hashingapisv1CreateAppUserExtraRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserExtra"
-        }
-      }
-    },
-    "hashingapisv1CreateAppUserExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
     "hashingapisv1CreateGoodRequest": {
       "type": "object",
       "properties": {
@@ -2015,22 +1119,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/hashingapisv1Good"
-        }
-      }
-    },
-    "hashingapisv1CreateKycRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1KycInfo"
-        }
-      }
-    },
-    "hashingapisv1CreateKycResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
@@ -2320,54 +1408,6 @@
         },
         "Recommend": {
           "$ref": "#/definitions/v1Recommend"
-        }
-      }
-    },
-    "hashingapisv1UpdateAppUserControlRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserControl"
-        }
-      }
-    },
-    "hashingapisv1UpdateAppUserControlResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "hashingapisv1UpdateAppUserExtraRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserExtra"
-        }
-      }
-    },
-    "hashingapisv1UpdateAppUserExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "hashingapisv1UpdateKycRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1KycInfo"
-        }
-      }
-    },
-    "hashingapisv1UpdateKycResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
@@ -2832,199 +1872,6 @@
         }
       }
     },
-    "v1AppRole": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1AppUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "ImportFromApp": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1AppUserControl": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "SigninVerifyByGoogleAuthentication": {
-          "type": "boolean"
-        },
-        "GoogleAuthenticationVerified": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1AppUserExtra": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "AddressFields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Gender": {
-          "type": "string"
-        },
-        "PostalCode": {
-          "type": "string"
-        },
-        "Age": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Birthday": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Avatar": {
-          "type": "string"
-        },
-        "Organization": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "IDNumber": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AppUserInfo": {
-      "type": "object",
-      "properties": {
-        "User": {
-          "$ref": "#/definitions/v1AppUser"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1AppUserExtra"
-        },
-        "Ctrl": {
-          "$ref": "#/definitions/v1AppUserControl"
-        },
-        "Ban": {
-          "$ref": "#/definitions/v1BanAppUser"
-        },
-        "Roles": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppRole"
-          }
-        },
-        "SecretMap": {
-          "$ref": "#/definitions/v1AppUserSecretMap"
-        }
-      }
-    },
-    "v1AppUserSecret": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "Salt": {
-          "type": "string"
-        },
-        "GoogleSecret": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AppUserSecretMap": {
-      "type": "object",
-      "properties": {
-        "HasGoogleSecret": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1BanAppUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -3096,28 +1943,6 @@
           "type": "string"
         },
         "Specs": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CoinSummary": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        },
-        "Unit": {
           "type": "string"
         }
       }
@@ -3402,28 +2227,6 @@
         }
       }
     },
-    "v1DeviceInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Type": {
-          "type": "string"
-        },
-        "Manufacturer": {
-          "type": "string"
-        },
-        "PowerComsuption": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1DiscountPool": {
       "type": "object",
       "properties": {
@@ -3452,52 +2255,6 @@
           "type": "string"
         },
         "Name": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Fee": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "FeeTypeID": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "v1FeeDetail": {
-      "type": "object",
-      "properties": {
-        "Fee": {
-          "$ref": "#/definitions/v1Fee"
-        },
-        "FeeType": {
-          "$ref": "#/definitions/v1FeeType"
-        }
-      }
-    },
-    "v1FeeType": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "FeeType": {
-          "type": "string"
-        },
-        "FeeDescription": {
-          "type": "string"
-        },
-        "PayType": {
           "type": "string"
         }
       }
@@ -3622,140 +2379,6 @@
         }
       }
     },
-    "v1GetGoodReviewsRequest": {
-      "type": "object"
-    },
-    "v1GetGoodReviewsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodReview"
-          }
-        }
-      }
-    },
-    "v1GetKycByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetKycByAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Kyc"
-        }
-      }
-    },
-    "v1GetKycReviewsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetKycReviewsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1KycReview"
-          }
-        }
-      }
-    },
-    "v1GetKycReviewsByOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetKycReviewsByOtherAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1KycReview"
-          }
-        }
-      }
-    },
-    "v1GetKycReviewsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetKycReviewsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1KycReview"
-          }
-        }
-      }
-    },
-    "v1GetLayeredReferralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetLayeredReferralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Referral"
-          }
-        }
-      }
-    },
-    "v1GetReferralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetReferralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Referral"
-          }
-        }
-      }
-    },
     "v1GetUserGoodCommissionsRequest": {
       "type": "object",
       "properties": {
@@ -3774,28 +2397,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodCommission"
-          }
-        }
-      }
-    },
-    "v1GetUserReferralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetUserReferralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Referral"
           }
         }
       }
@@ -3879,63 +2480,6 @@
         }
       }
     },
-    "v1GetWithdrawReviewsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetWithdrawReviewsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1WithdrawReview"
-          }
-        }
-      }
-    },
-    "v1GetWithdrawReviewsByOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetWithdrawReviewsByOtherAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1WithdrawReview"
-          }
-        }
-      }
-    },
-    "v1GetWithdrawReviewsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetWithdrawReviewsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1WithdrawReview"
-          }
-        }
-      }
-    },
     "v1GoodCommission": {
       "type": "object",
       "properties": {
@@ -3961,72 +2505,6 @@
         "Contribution": {
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "v1GoodDetail": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "DeviceInfo": {
-          "$ref": "#/definitions/v1DeviceInfo"
-        },
-        "InheritFromGood": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "VendorLocation": {
-          "$ref": "#/definitions/v1VendorLocationInfo"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1GoodExtraInfo"
-        },
-        "PriceCurrency": {
-          "$ref": "#/definitions/v1PriceCurrency"
-        },
-        "Fees": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeDetail"
-          }
-        }
-      }
-    },
-    "v1GoodExtraInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "OutSale": {
-          "type": "boolean"
-        },
-        "PreSale": {
-          "type": "boolean"
-        },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float"
         }
       }
     },
@@ -4118,49 +2596,6 @@
       },
       "title": "request body and response"
     },
-    "v1GoodReview": {
-      "type": "object",
-      "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "CreatedBy": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
-        }
-      }
-    },
-    "v1GoodSummary": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Percent": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -4172,72 +2607,6 @@
       ],
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
-    },
-    "v1Kyc": {
-      "type": "object",
-      "properties": {
-        "Kyc": {
-          "$ref": "#/definitions/v1KycInfo"
-        },
-        "State": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "v1KycInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CardType": {
-          "type": "string"
-        },
-        "CardID": {
-          "type": "string"
-        },
-        "FrontCardImg": {
-          "type": "string"
-        },
-        "BackCardImg": {
-          "type": "string"
-        },
-        "UserHandingCardImg": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdateAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "title": "request body and response"
-    },
-    "v1KycReview": {
-      "type": "object",
-      "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "User": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Kyc": {
-          "$ref": "#/definitions/v1KycInfo"
-        }
-      }
     },
     "v1OrderDetail": {
       "type": "object",
@@ -4384,23 +2753,6 @@
         }
       }
     },
-    "v1PriceCurrency": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Symbol": {
-          "type": "string"
-        }
-      }
-    },
     "v1Recommend": {
       "type": "object",
       "properties": {
@@ -4418,68 +2770,6 @@
         },
         "Message": {
           "type": "string"
-        }
-      }
-    },
-    "v1Referral": {
-      "type": "object",
-      "properties": {
-        "User": {
-          "$ref": "#/definitions/v1AppUser"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1AppUserExtra"
-        },
-        "Invitation": {
-          "$ref": "#/definitions/v1RegistrationInvitation"
-        },
-        "USDAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "SubUSDAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "InvitedCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Summaries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinSummary"
-          }
-        },
-        "GoodSummaries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodSummary"
-          }
-        }
-      }
-    },
-    "v1RegistrationInvitation": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "InviterID": {
-          "type": "string"
-        },
-        "InviteeID": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -4562,40 +2852,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1WithdrawAddress"
-        }
-      }
-    },
-    "v1SignupRequest": {
-      "type": "object",
-      "properties": {
-        "Username": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "InvitationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SignupResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUser"
         }
       }
     },
@@ -4732,239 +2988,6 @@
         }
       }
     },
-    "v1UpdateAccountRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        },
-        "VerificationCodes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1VerificationCode"
-          }
-        }
-      }
-    },
-    "v1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "v1UpdateEmailAddressRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "OldVerificationCode": {
-          "type": "string"
-        },
-        "OldAccount": {
-          "type": "string"
-        },
-        "OldAccountType": {
-          "type": "string"
-        },
-        "NewEmailAddress": {
-          "type": "string"
-        },
-        "NewEmailVerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateEmailAddressResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "v1UpdateKycReviewRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "TargetLangID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateKycReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1KycReview"
-        }
-      }
-    },
-    "v1UpdatePasswordByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        },
-        "OldPasswordHash": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdatePasswordByAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserSecret"
-        }
-      }
-    },
-    "v1UpdatePasswordRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        },
-        "PasswordHash": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdatePasswordResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserSecret"
-        }
-      }
-    },
-    "v1UpdatePhoneNORequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "OldVerificationCode": {
-          "type": "string"
-        },
-        "OldAccount": {
-          "type": "string"
-        },
-        "OldAccountType": {
-          "type": "string"
-        },
-        "NewPhoneNO": {
-          "type": "string"
-        },
-        "NewPhoneVerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdatePhoneNOResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        }
-      }
-    },
-    "v1UpdateUserWithdrawReviewForOtherAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Reviewer"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string",
-          "title": "Target"
-        },
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        }
-      }
-    },
-    "v1UpdateUserWithdrawReviewForOtherAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1WithdrawReview"
-        }
-      }
-    },
-    "v1UpdateUserWithdrawReviewRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Reviewer"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Info": {
-          "$ref": "#/definitions/v1Review"
-        }
-      }
-    },
-    "v1UpdateUserWithdrawReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1WithdrawReview"
-        }
-      }
-    },
     "v1UpdateWithdrawAddressReviewRequest": {
       "type": "object",
       "properties": {
@@ -4984,22 +3007,186 @@
         }
       }
     },
-    "v1UpdateWithdrawReviewRequest": {
+    "v1User": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Review"
+        "ID": {
+          "type": "string",
+          "title": "Base\n@inject_tag: sql:\"id\""
         },
-        "LangID": {
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"email_address\""
+        },
+        "PhoneNO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"phone_no\""
+        },
+        "ImportedFromAppID": {
+          "type": "string",
+          "title": "Imported\n@inject_tag: sql:\"import_from_app\""
+        },
+        "ImportedFromAppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_name\""
+        },
+        "ImportedFromAppLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_logo\""
+        },
+        "ImportedFromAppHome": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"imported_from_app_home\""
+        },
+        "Username": {
+          "type": "string",
+          "title": "Extra\n@inject_tag: sql:\"username\""
+        },
+        "AddressFieldsString": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address_fields\""
+        },
+        "AddressFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Gender": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"gender\""
+        },
+        "PostalCode": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"postal_code\""
+        },
+        "Age": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"age\""
+        },
+        "Birthday": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"birthday\""
+        },
+        "Avatar": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"avatar\""
+        },
+        "Organization": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"organization\""
+        },
+        "FirstName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"first_name\""
+        },
+        "LastName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_name\""
+        },
+        "IDNumber": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id_number\""
+        },
+        "SigninVerifyTypeStr": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "SigninVerifyByGoogleAuthInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
+        },
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean"
+        },
+        "GoogleAuthVerifiedInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
+        },
+        "GoogleAuthVerified": {
+          "type": "boolean"
+        },
+        "BanAppUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_app_user_id\""
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "GoogleSecret": {
+          "type": "string",
+          "title": "Secret map\n@inject_tag: sql:\"google_secret\""
+        },
+        "HasGoogleSecret": {
+          "type": "boolean"
+        },
+        "GoogleOTPAuth": {
           "type": "string"
-        }
-      }
-    },
-    "v1UpdateWithdrawReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1WithdrawReview"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Role"
+        },
+        "Logined": {
+          "type": "boolean",
+          "title": "Login info"
+        },
+        "LoginAccount": {
+          "type": "string"
+        },
+        "LoginAccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "LoginToken": {
+          "type": "string"
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "InvitationCodeConfirmed": {
+          "type": "boolean"
+        },
+        "InvitationCodeID": {
+          "type": "string"
+        },
+        "LoginVerified": {
+          "type": "boolean"
+        },
+        "KycStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"kyc_state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v2KycState"
         }
       }
     },
@@ -5103,41 +3290,6 @@
         }
       }
     },
-    "v1VendorLocationInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      },
-      "title": "Request body and response"
-    },
-    "v1VerificationCode": {
-      "type": "object",
-      "properties": {
-        "VerificationCode": {
-          "type": "string"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "type": "string"
-        }
-      }
-    },
     "v1WithdrawAddress": {
       "type": "object",
       "properties": {
@@ -5162,7 +3314,7 @@
           "$ref": "#/definitions/v1Review"
         },
         "User": {
-          "$ref": "#/definitions/v1AppUserInfo"
+          "$ref": "#/definitions/v1User"
         },
         "Address": {
           "$ref": "#/definitions/hashingbillingv1UserWithdraw"
@@ -5172,19 +3324,31 @@
         }
       }
     },
-    "v1WithdrawReview": {
-      "type": "object",
-      "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "User": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Withdraw": {
-          "$ref": "#/definitions/v1UserWithdrawItem"
-        }
-      }
+    "v2KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }

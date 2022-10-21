@@ -24,7 +24,7 @@ message AccountReq {
     optional string CoinTypeID = 40;
     optional string AccountID  = 50;
     optional string Address    = 60;
-    // Only [UserWithdraw, UserDeposit, UserDirectBenefit]
+    // Only [UserWithdraw, UserDirectBenefit]
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 70;
     repeated string Labels     = 80;   // For withdraw and benefit address
     optional bool   Active     = 90;
@@ -33,16 +33,29 @@ message AccountReq {
 }
 
 message Account {
+    // @inject_tag: sql:"id"
     string ID         = 10;
+    // @inject_tag: sql:"app_id"
     string AppID      = 20;
+    // @inject_tag: sql:"user_id"
     string UserID     = 30;
+    // @inject_tag: sql:"coin_type_id"
     string CoinTypeID = 40;
+    // @inject_tag: sql:"account_id"
     string AccountID  = 50;
+    // @inject_tag: sql:"address"
     string Address    = 60;
+    // @inject_tag: sql:"active"
     bool   Active     = 70;
+    // @inject_tag: sql:"blocked"
     bool   Blocked    = 80;
     account.manager.account1.v1.AccountUsedFor UsedFor = 90;
+    // @inject_tag: sql:"used_for"
+    string UsedForStr = 91;
     repeated string Labels = 100;
+    // @inject_tag: sql:"labels"
+    string LabelsStr  = 101;
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 110;
 }
 

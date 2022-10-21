@@ -7,7 +7,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-apis";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+
 import "npool/good/mw/v1/good/good.proto";
+
+import "npool/appuser/mw/v1/user/user.proto";
+
 import "npool/npool.proto";
 import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
@@ -15,7 +19,6 @@ import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
-import "npool/appuser/mgr/v1/mgr.proto";
 import "npool/coininfo/coininfo.proto";
 
 // Cloud Hashing Goods
@@ -114,86 +117,6 @@ service CloudHashingApis {
             body: "*"
         };
     }
-
-    rpc Signup (SignupRequest) returns (SignupResponse) {
-        option (google.api.http) = {
-            post: "/v1/signup"
-            body: "*"
-        };
-    }
-    rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/password"
-            body: "*"
-        };
-    }
-    rpc UpdatePasswordByAppUser (UpdatePasswordByAppUserRequest) returns (UpdatePasswordByAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/password/by/app/user"
-            body: "*"
-        };
-    }
-    rpc UpdateEmailAddress (UpdateEmailAddressRequest) returns (UpdateEmailAddressResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/emailaddress"
-            body: "*"
-        };
-    }
-    rpc UpdatePhoneNO (UpdatePhoneNORequest) returns (UpdatePhoneNOResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/phoneno"
-            body: "*"
-        };
-    }
-    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/account"
-            body: "*"
-        };
-    }
-    rpc CreateAppUserExtra (CreateAppUserExtraRequest) returns (CreateAppUserExtraResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/user/extra"
-            body: "*"
-        };
-    }
-    rpc UpdateAppUserExtra (UpdateAppUserExtraRequest) returns (UpdateAppUserExtraResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app/user/extra"
-            body: "*"
-        };
-    }
-    rpc CreateAppUserControl (CreateAppUserControlRequest) returns (CreateAppUserControlResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/user/control"
-            body: "*"
-        };
-    }
-    rpc UpdateAppUserControl (UpdateAppUserControlRequest) returns (UpdateAppUserControlResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app/user/control"
-            body: "*"
-        };
-    }
-    rpc GetUserReferrals (GetUserReferralsRequest) returns (GetUserReferralsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/user/referrals",
-            body: "*"
-        };
-    }
-    rpc GetReferrals (GetReferralsRequest) returns (GetReferralsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/referrals",
-            body: "*"
-        };
-    }
-    rpc GetLayeredReferrals (GetLayeredReferralsRequest) returns (GetLayeredReferralsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/layered/referrals"
-            body: "*"
-        };
-    }
-
     rpc GetAmountSettings (GetAmountSettingsRequest) returns (GetAmountSettingsResponse) {
         option (google.api.http) = {
             post: "/v1/get/amount/settings"
@@ -213,48 +136,6 @@ service CloudHashingApis {
         };
     }
 
-    rpc GetKycReviews (GetKycReviewsRequest) returns (GetKycReviewsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/kyc/reviews"
-            body: "*"
-        };
-    }
-    rpc GetKycReviewsByApp (GetKycReviewsByAppRequest) returns (GetKycReviewsByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/kyc/reviews/by/app"
-            body: "*"
-        };
-    }
-    rpc GetKycReviewsByOtherApp (GetKycReviewsByOtherAppRequest) returns (GetKycReviewsByOtherAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/kyc/reviews/by/other/app"
-            body: "*"
-        };
-    }
-    rpc GetGoodReviews (GetGoodReviewsRequest) returns (GetGoodReviewsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/reviews"
-            body: "*"
-        };
-    }
-    rpc GetWithdrawReviews (GetWithdrawReviewsRequest) returns (GetWithdrawReviewsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/withdraw/reviews"
-            body: "*"
-        };
-    }
-    rpc GetWithdrawReviewsByApp (GetWithdrawReviewsByAppRequest) returns (GetWithdrawReviewsByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/withdraw/reviews/by/app"
-            body: "*"
-        };
-    }
-    rpc GetWithdrawReviewsByOtherApp (GetWithdrawReviewsByOtherAppRequest) returns (GetWithdrawReviewsByOtherAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/withdraw/reviews/by/other/app"
-            body: "*"
-        };
-    }
     rpc GetWithdrawAddressReviews (GetWithdrawAddressReviewsRequest) returns (GetWithdrawAddressReviewsResponse) {
         option (google.api.http) = {
             post: "/v1/get/withdraw/address/reviews"
@@ -270,25 +151,6 @@ service CloudHashingApis {
     rpc GetWithdrawAddressReviewsByOtherApp (GetWithdrawAddressReviewsByOtherAppRequest) returns (GetWithdrawAddressReviewsByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/withdraw/address/reviews/by/other/app"
-            body: "*"
-        };
-    }
-
-    rpc CreateKyc (CreateKycRequest) returns (CreateKycResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/kyc"
-            body: "*"
-        };
-    }
-    rpc UpdateKyc (UpdateKycRequest) returns (UpdateKycResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/kyc"
-            body: "*"
-        };
-    }
-    rpc GetKycByAppUser(GetKycByAppUserRequest) returns (GetKycByAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/kyc/by/app/user"
             body: "*"
         };
     }
@@ -312,18 +174,7 @@ service CloudHashingApis {
             body: "*"
         };
     }
-    rpc UpdateUserWithdrawReview (UpdateUserWithdrawReviewRequest) returns (UpdateUserWithdrawReviewResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/user/withdraw/review"
-            body: "*"
-        };
-    }
-    rpc UpdateUserWithdrawReviewForOtherAppUser (UpdateUserWithdrawReviewForOtherAppUserRequest) returns (UpdateUserWithdrawReviewForOtherAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/user/withdraw/review/for/other/app"
-            body: "*"
-        };
-    }
+
     rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraws/by/app/user"
@@ -374,20 +225,6 @@ service CloudHashingApis {
     rpc GetUserGoodCommissions (GetUserGoodCommissionsRequest) returns (GetUserGoodCommissionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/good/commissions"
-            body: "*"
-        };
-    }
-
-    rpc UpdateKycReview (UpdateKycReviewRequest) returns (UpdateKycReviewResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/kyc/review"
-            body: "*"
-        };
-    }
-
-    rpc UpdateWithdrawReview (UpdateWithdrawReviewRequest) returns (UpdateWithdrawReviewResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/withdraw/review"
             body: "*"
         };
     }
@@ -581,74 +418,6 @@ message CreateOrderPaymentResponse {
     Order Info = 10;
 }
 
-message SignupRequest {
-    string Username = 10;
-    string PasswordHash = 20;
-    string Account = 30;
-    string AccountType = 40;
-    string VerificationCode = 50;
-    string AppID = 60;
-    string InvitationCode = 70;
-}
-
-message SignupResponse {
-    appuser.manager.v1.AppUser Info = 10;
-}
-
-message UpdatePasswordRequest {
-    string AppID = 10;
-    string Account = 20;
-    string AccountType = 30;
-    string PasswordHash = 40;
-    string VerificationCode = 50;
-}
-
-message UpdatePasswordResponse {
-    appuser.manager.v1.AppUserSecret Info = 10;
-}
-
-message UpdatePasswordByAppUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-    string Account = 30;
-    string AccountType = 40;
-    string OldPasswordHash = 50;
-    string PasswordHash = 60;
-    string VerificationCode = 70;
-}
-
-message UpdatePasswordByAppUserResponse {
-    appuser.manager.v1.AppUserSecret Info = 10;
-}
-
-message UpdateEmailAddressRequest {
-    string AppID = 10;
-    string UserID = 20;
-    string OldVerificationCode = 30;
-    string OldAccount = 40;
-    string OldAccountType = 50;
-    string NewEmailAddress = 60;
-    string NewEmailVerificationCode = 70;
-}
-
-message UpdateEmailAddressResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
-message UpdatePhoneNORequest {
-    string AppID = 10;
-    string UserID = 20;
-    string OldVerificationCode = 30;
-    string OldAccount = 40;
-    string OldAccountType = 50;
-    string NewPhoneNO = 60;
-    string NewPhoneVerificationCode = 70;
-}
-
-message UpdatePhoneNOResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
 message VerificationCode {
     string VerificationCode = 10;
     string Account = 20;
@@ -662,42 +431,6 @@ message UpdateAccountRequest {
     string Account = 40;
     string AccountType = 50;
     repeated VerificationCode VerificationCodes = 60;
-}
-
-message UpdateAccountResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
-message UpdateAppUserExtraRequest {
-    appuser.manager.v1.AppUserExtra Info = 10;
-}
-
-message UpdateAppUserExtraResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
-message CreateAppUserExtraRequest {
-    appuser.manager.v1.AppUserExtra Info = 10;
-}
-
-message CreateAppUserExtraResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
-message CreateAppUserControlRequest {
-    appuser.manager.v1.AppUserControl Info = 10;
-}
-
-message CreateAppUserControlResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
-}
-
-message UpdateAppUserControlRequest {
-    appuser.manager.v1.AppUserControl Info = 10;
-}
-
-message UpdateAppUserControlResponse {
-    appuser.manager.v1.AppUserInfo Info = 10;
 }
 
 message CoinSummary {
@@ -716,45 +449,6 @@ message GoodSummary {
     double Amount = 50;
     string Unit = 60;
     uint32 Percent = 70;
-}
-
-message Referral {
-    appuser.manager.v1.AppUser User = 10;
-    appuser.manager.v1.AppUserExtra Extra = 20;
-    cloud.hashing.inspire.v1.RegistrationInvitation Invitation = 30;
-    double USDAmount = 40;
-    double SubUSDAmount = 50;
-    bool Kol = 60;
-    uint32 InvitedCount = 70;
-    repeated CoinSummary Summaries = 80;
-    repeated GoodSummary GoodSummaries = 90;
-}
-
-message GetReferralsRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetReferralsResponse {
-    repeated Referral Infos = 10;
-}
-
-message GetUserReferralsRequest {
-    string AppID = 10;
-    string TargetUserID = 20;
-}
-
-message GetUserReferralsResponse {
-    repeated Referral Infos = 10;
-}
-
-message GetLayeredReferralsRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetLayeredReferralsResponse {
-    repeated Referral Infos = 10;
 }
 
 message GetAmountSettingsRequest {
@@ -794,80 +488,6 @@ message CreateInvitationCodeResponse {
     cloud.hashing.inspire.v1.UserInvitationCode Info = 10;
 }
 
-message KycReview {
-    review.service.v1.Review Review = 10;
-    appuser.manager.v1.AppUserInfo User = 20;
-    kyc.management.v1.KycInfo Kyc = 30;
-}
-
-message GetKycReviewsRequest {
-    string AppID = 10;
-}
-
-message GetKycReviewsResponse {
-    repeated  KycReview Infos = 10;
-}
-
-message GetKycReviewsByAppRequest {
-    string AppID = 10;
-}
-
-message GetKycReviewsByAppResponse {
-    repeated  KycReview Infos = 10;
-}
-
-message GetKycReviewsByOtherAppRequest {
-    string TargetAppID = 10;
-}
-
-message GetKycReviewsByOtherAppResponse {
-    repeated  KycReview Infos = 10;
-}
-
-message GoodReview {
-    review.service.v1.Review Review = 10;
-    appuser.manager.v1.AppUserInfo CreatedBy = 20;
-    cloud.hashing.goods.v1.GoodDetail Good = 30;
-}
-
-message GetGoodReviewsRequest {
-}
-
-message GetGoodReviewsResponse {
-    repeated GoodReview Infos = 10;
-}
-
-message Kyc {
-    kyc.management.v1.KycInfo Kyc = 10;
-    string State = 20;
-    string Message = 30;
-}
-
-message GetKycByAppUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetKycByAppUserResponse {
-    Kyc Info = 10;
-}
-
-message CreateKycRequest {
-    kyc.management.v1.KycInfo Info = 10;
-}
-
-message CreateKycResponse {
-    Kyc Info = 10;
-}
-
-message UpdateKycRequest {
-    kyc.management.v1.KycInfo Info = 30;
-}
-
-message UpdateKycResponse {
-    Kyc Info = 10;
-}
-
 message CreatePlatformCoinAccountRequest {
     string CoinTypeID = 10;
 }
@@ -898,39 +518,8 @@ message UserWithdraw {
     string Message = 30;
 }
 
-message WithdrawReview {
-    review.service.v1.Review Review = 10;
-    appuser.manager.v1.AppUserInfo User = 20;
-    cloud.hashing.billing.v1.UserWithdrawItem Withdraw = 30;
-}
-
-
 message SubmitUserWithdrawResponse {
     UserWithdraw Info = 10;
-}
-
-message UpdateUserWithdrawReviewRequest {
-    // Reviewer
-    string AppID = 10;
-    string UserID = 20;
-    review.service.v1.Review Info = 30;
-}
-
-message UpdateUserWithdrawReviewResponse {
-    WithdrawReview Info = 10;
-}
-
-message UpdateUserWithdrawReviewForOtherAppUserRequest {
-    // Reviewer
-    string AppID = 10;
-    string UserID = 20;
-    // Target
-    string TargetAppID = 30;
-    review.service.v1.Review Info = 40;
-}
-
-message UpdateUserWithdrawReviewForOtherAppUserResponse {
-    WithdrawReview Info = 10;
 }
 
 message GetUserWithdrawsByAppUserRequest {
@@ -940,30 +529,6 @@ message GetUserWithdrawsByAppUserRequest {
 
 message GetUserWithdrawsByAppUserResponse {
     repeated UserWithdraw Infos = 10;
-}
-
-message GetWithdrawReviewsRequest {
-    string AppID = 10;
-}
-
-message GetWithdrawReviewsResponse {
-    repeated WithdrawReview Infos = 10;
-}
-
-message GetWithdrawReviewsByAppRequest {
-    string AppID = 10;
-}
-
-message GetWithdrawReviewsByAppResponse {
-    repeated WithdrawReview Infos = 10;
-}
-
-message GetWithdrawReviewsByOtherAppRequest {
-    string TargetAppID = 10;
-}
-
-message GetWithdrawReviewsByOtherAppResponse {
-    repeated WithdrawReview Infos = 10;
 }
 
 message WithdrawAddress {
@@ -1010,7 +575,7 @@ message GetWithdrawAddressesByAppUserResponse {
 
 message WithdrawAddressReview {
     review.service.v1.Review Review = 10;
-    appuser.manager.v1.AppUserInfo User = 20;
+    appuser.middleware.user.v1.User User = 20;
     cloud.hashing.billing.v1.UserWithdraw Address = 30;
     cloud.hashing.billing.v1.CoinAccountInfo Account = 40;
 }
@@ -1104,24 +669,6 @@ message GetUserGoodCommissionsRequest {
 
 message GetUserGoodCommissionsResponse {
     repeated GoodCommission Infos = 10;
-}
-
-message UpdateKycReviewRequest {
-    review.service.v1.Review Info = 10;
-    string TargetLangID = 20;
-}
-
-message UpdateKycReviewResponse {
-    KycReview Info = 10;
-}
-
-message UpdateWithdrawReviewRequest {
-    review.service.v1.Review Info = 10;
-    string LangID = 20;
-}
-
-message UpdateWithdrawReviewResponse {
-    WithdrawReview Info = 10;
 }
 
 message UpdateWithdrawAddressReviewRequest {

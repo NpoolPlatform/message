@@ -21,48 +21,61 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "AccountID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
         },
         "Backup": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"backup\""
         },
         "Address": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
         },
         "Active": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"active\""
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
         },
         "LockedBy": {
           "$ref": "#/definitions/v1LockedBy"
         },
-        "Blocked": {
-          "type": "boolean"
+        "LockedByStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked_by\""
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+        "Blocked": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
         },
         "TransactionID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"transaction_id\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -204,23 +217,6 @@
           }
         }
       }
-    },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor"
     },
     "v1BoolVal": {
       "type": "object",
