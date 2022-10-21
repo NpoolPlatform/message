@@ -7,8 +7,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-apis";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+import "npool/good/mw/v1/good/good.proto";
 import "npool/npool.proto";
-import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
 import "npool/cloud-hashing-billing/cloud-hashing-billing.proto";
 import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
@@ -38,78 +38,9 @@ service CloudHashingApis {
             body: "*"
         };
     }
-    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/good"
-            body: "*"
-        };
-    }
     rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/good"
-            body: "*"
-        };
-    }
-    rpc GetRecommendGoodsByApp (GetRecommendGoodsByAppRequest) returns (GetRecommendGoodsByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/recommend/goods/by/app"
-            body: "*"
-        };
-    }
-
-    rpc SubmitOrder (SubmitOrderRequest) returns (SubmitOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/submit/order"
-            body: "*"
-        };
-    }
-    rpc SubmitUserOrder (SubmitUserOrderRequest) returns (SubmitUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/submit/user/order"
-            body: "*"
-        };
-    }
-    rpc SubmitAppUserOrder (SubmitAppUserOrderRequest) returns (SubmitAppUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/submit/app/user/order"
-            body: "*"
-        };
-    }
-    rpc CreateOrderPayment (CreateOrderPaymentRequest) returns (CreateOrderPaymentResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/order/payment"
-            body: "*"
-        };
-    }
-
-    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/order"
-            body: "*"
-        };
-    }
-
-    rpc GetOrdersByAppUser (GetOrdersByAppUserRequest) returns (GetOrdersByAppUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/orders/by/app/user"
-            body: "*"
-        };
-    }
-    rpc GetOrdersByApp (GetOrdersByAppRequest) returns (GetOrdersByAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/orders/by/app"
-            body: "*"
-        };
-    }
-    rpc GetOrdersByOtherApp (GetOrdersByOtherAppRequest) returns (GetOrdersByOtherAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/orders/by/other/app"
-            body: "*"
-        };
-    }
-    rpc GetOrdersByGood (GetOrdersByGoodRequest) returns (GetOrdersByGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/orders/by/good"
             body: "*"
         };
     }
@@ -227,12 +158,6 @@ service CloudHashingApis {
     rpc GetKycReviewsByOtherApp (GetKycReviewsByOtherAppRequest) returns (GetKycReviewsByOtherAppResponse) {
         option (google.api.http) = {
             post: "/v1/get/kyc/reviews/by/other/app"
-            body: "*"
-        };
-    }
-    rpc GetGoodReviews (GetGoodReviewsRequest) returns (GetGoodReviewsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good/reviews"
             body: "*"
         };
     }
@@ -413,21 +338,13 @@ message PageInfo {
 
 // Request body and response
 message Good {
-    cloud.hashing.goods.v1.GoodDetail Good = 10;
+    good.middleware.good1.v1.Good Good = 10;
     sphinx.coininfo.v1.CoinInfo Main = 20;
     repeated sphinx.coininfo.v1.CoinInfo SupportCoins = 30;
     repeated review.service.v1.Review Reviews = 40;
     uint32 Sold = 50;
 }
 
-message RecommendGood {
-    Good Good = 10;
-    cloud.hashing.goods.v1.Recommend Recommend = 20;
-}
-
-message CreateGoodRequest {
-    cloud.hashing.goods.v1.GoodInfo Info = 10;
-}
 
 message CreateGoodResponse {
     Good Info = 10;
@@ -460,124 +377,9 @@ message GetGoodsByAppResponse {
     int32 Total = 20;
 }
 
-message GetRecommendGoodsByAppRequest {
-    string AppID = 10;
-}
-
-message GetRecommendGoodsByAppResponse {
-    repeated RecommendGood Infos = 10;
-}
-
-message Order {
-    cloud.hashing.order.v1.OrderDetail Order = 10;
-    cloud.hashing.billing.v1.CoinAccountInfo PayToAccount = 20;
-    Good Good = 30;
-    sphinx.coininfo.v1.CoinInfo PayWithCoin = 40;
-    cloud.hashing.inspire.v1.CouponAllocatedDetail FixAmountCoupon = 50;
-    cloud.hashing.inspire.v1.CouponAllocatedDetail DiscountCoupon = 60;
-    cloud.hashing.inspire.v1.UserSpecialReduction UserSpecialReduction = 70;
-    uint32 PaymentDeadline = 80;
-    cloud.hashing.goods.v1.AppGoodInfo AppGood = 90;
-    cloud.hashing.goods.v1.AppGoodPromotion Promotion = 100;
-}
-
-message GetOrderRequest {
-    string ID = 10;
-}
-
-message GetOrderResponse {
-    Order Info = 10;
-}
-
-message GetOrdersByAppUserRequest {
-    string AppID = 10;
-    string UserID = 20;
-}
-
-message GetOrdersByAppUserResponse {
-    repeated Order Infos = 10;
-}
-
-message GetOrdersByAppRequest {
-    string AppID = 10;
-}
-
-message GetOrdersByAppResponse {
-    repeated Order Infos = 10;
-}
-
-message GetOrdersByOtherAppRequest {
-    string TargetAppID = 10;
-}
-
-message GetOrdersByOtherAppResponse {
-    repeated Order Infos = 10;
-}
-
-
-message GetOrdersByGoodRequest {
-    string GoodID = 10;
-}
-
-message GetOrdersByGoodResponse {
-    repeated Order Infos = 10;
-}
-
 message OrderFee {
     string ID = 10;
     uint32 DurationDays = 20;
-}
-
-message SubmitOrderRequest {
-    string GoodID = 10;
-    uint32 Units = 20;
-    string UserID = 30;
-    string AppID = 40;
-    string CouponID = 50;
-    string DiscountCouponID = 60;
-    string UserSpecialReductionID = 70;
-}
-
-message SubmitOrderResponse {
-    Order Info = 10;
-}
-
-message SubmitUserOrderRequest {
-    string GoodID = 10;
-    uint32 Units = 20;
-    string TargetUserID = 30;
-    string AppID = 40;
-    string CouponID = 50;
-    string DiscountCouponID = 60;
-    string UserSpecialReductionID = 70;
-}
-
-message SubmitUserOrderResponse {
-    Order Info = 10;
-}
-
-message SubmitAppUserOrderRequest {
-    string GoodID = 10;
-    uint32 Units = 20;
-    string TargetUserID = 30;
-    string TargetAppID = 40;
-    string CouponID = 50;
-    string DiscountCouponID = 60;
-    string UserSpecialReductionID = 70;
-}
-
-message SubmitAppUserOrderResponse {
-    Order Info = 10;
-}
-
-message CreateOrderPaymentRequest {
-    string OrderID = 10;
-    string PaymentCoinTypeID = 20;
-    repeated OrderFee Fees = 30;
-}
-
-message CreateOrderPaymentResponse {
-    Order Info = 10;
 }
 
 message SignupRequest {
@@ -821,19 +623,6 @@ message GetKycReviewsByOtherAppRequest {
 
 message GetKycReviewsByOtherAppResponse {
     repeated  KycReview Infos = 10;
-}
-
-message GoodReview {
-    review.service.v1.Review Review = 10;
-    appuser.manager.v1.AppUserInfo CreatedBy = 20;
-    cloud.hashing.goods.v1.GoodDetail Good = 30;
-}
-
-message GetGoodReviewsRequest {
-}
-
-message GetGoodReviewsResponse {
-    repeated GoodReview Infos = 10;
 }
 
 message Kyc {

@@ -112,38 +112,6 @@
         ]
       }
     },
-    "/v1/create/good": {
-      "post": {
-        "operationId": "CloudHashingApis_CreateGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1CreateGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/create/invitation/code": {
       "post": {
         "operationId": "CloudHashingApis_CreateInvitationCode",
@@ -200,38 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/hashingapisv1CreateKycRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/create/order/payment": {
-      "post": {
-        "operationId": "CloudHashingApis_CreateOrderPayment",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateOrderPaymentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateOrderPaymentRequest"
             }
           }
         ],
@@ -528,38 +464,6 @@
         ]
       }
     },
-    "/v1/get/good/reviews": {
-      "post": {
-        "operationId": "CloudHashingApis_GetGoodReviews",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodReviewsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodReviewsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
     "/v1/get/goods": {
       "post": {
         "operationId": "CloudHashingApis_GetGoods",
@@ -599,7 +503,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/hashingapisv1GetGoodsByAppResponse"
+              "$ref": "#/definitions/v1GetGoodsByAppResponse"
             }
           },
           "default": {
@@ -615,7 +519,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/hashingapisv1GetGoodsByAppRequest"
+              "$ref": "#/definitions/v1GetGoodsByAppRequest"
             }
           }
         ],
@@ -776,198 +680,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetLayeredReferralsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/order": {
-      "post": {
-        "operationId": "CloudHashingApis_GetOrder",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrderResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/orders/by/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetOrdersByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/orders/by/app/user": {
-      "post": {
-        "operationId": "CloudHashingApis_GetOrdersByAppUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByAppUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByAppUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/orders/by/good": {
-      "post": {
-        "operationId": "CloudHashingApis_GetOrdersByGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/orders/by/other/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetOrdersByOtherApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByOtherAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetOrdersByOtherAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/get/recommend/goods/by/app": {
-      "post": {
-        "operationId": "CloudHashingApis_GetRecommendGoodsByApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetRecommendGoodsByAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hashingapisv1GetRecommendGoodsByAppRequest"
             }
           }
         ],
@@ -1384,102 +1096,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1SignupRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/submit/app/user/order": {
-      "post": {
-        "operationId": "CloudHashingApis_SubmitAppUserOrder",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SubmitAppUserOrderResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SubmitAppUserOrderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/submit/order": {
-      "post": {
-        "operationId": "CloudHashingApis_SubmitOrder",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SubmitOrderResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SubmitOrderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CloudHashingApis"
-        ]
-      }
-    },
-    "/v1/submit/user/order": {
-      "post": {
-        "operationId": "CloudHashingApis_SubmitUserOrder",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SubmitUserOrderResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SubmitUserOrderRequest"
             }
           }
         ],
@@ -2002,22 +1618,6 @@
         }
       }
     },
-    "hashingapisv1CreateGoodRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodInfo"
-        }
-      }
-    },
-    "hashingapisv1CreateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
     "hashingapisv1CreateKycRequest": {
       "type": "object",
       "properties": {
@@ -2046,33 +1646,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "hashingapisv1GetGoodsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "PageInfo": {
-          "$ref": "#/definitions/hashingapisv1PageInfo"
-        }
-      }
-    },
-    "hashingapisv1GetGoodsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int32"
+          "$ref": "#/definitions/hashingapisv1Good"
         }
       }
     },
@@ -2090,126 +1664,12 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Good"
+            "$ref": "#/definitions/hashingapisv1Good"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int32"
-        }
-      }
-    },
-    "hashingapisv1GetOrderRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingapisv1Order"
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/hashingapisv1Order"
-          }
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByAppUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByAppUserResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/hashingapisv1Order"
-          }
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByGoodRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/hashingapisv1Order"
-          }
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByOtherAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetOrdersByOtherAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/hashingapisv1Order"
-          }
-        }
-      }
-    },
-    "hashingapisv1GetRecommendGoodsByAppRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "hashingapisv1GetRecommendGoodsByAppResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/hashingapisv1RecommendGood"
-          }
         }
       }
     },
@@ -2235,41 +1695,33 @@
         }
       }
     },
-    "hashingapisv1Order": {
+    "hashingapisv1Good": {
       "type": "object",
       "properties": {
-        "Order": {
-          "$ref": "#/definitions/v1OrderDetail"
-        },
-        "PayToAccount": {
-          "$ref": "#/definitions/v1CoinAccountInfo"
-        },
         "Good": {
-          "$ref": "#/definitions/v1Good"
+          "$ref": "#/definitions/middlewaregood1v1Good"
         },
-        "PayWithCoin": {
+        "Main": {
           "$ref": "#/definitions/v1CoinInfo"
         },
-        "FixAmountCoupon": {
-          "$ref": "#/definitions/v1CouponAllocatedDetail"
+        "SupportCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinInfo"
+          }
         },
-        "DiscountCoupon": {
-          "$ref": "#/definitions/v1CouponAllocatedDetail"
+        "Reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
+          }
         },
-        "UserSpecialReduction": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
-        },
-        "PaymentDeadline": {
+        "Sold": {
           "type": "integer",
           "format": "int64"
-        },
-        "AppGood": {
-          "$ref": "#/definitions/v1AppGoodInfo"
-        },
-        "Promotion": {
-          "$ref": "#/definitions/v1AppGoodPromotion"
         }
-      }
+      },
+      "title": "Request body and response"
     },
     "hashingapisv1PageInfo": {
       "type": "object",
@@ -2281,17 +1733,6 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
-        }
-      }
-    },
-    "hashingapisv1RecommendGood": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1Good"
-        },
-        "Recommend": {
-          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
@@ -2397,51 +1838,214 @@
         }
       }
     },
-    "hashingorderv1Order": {
+    "middlewaregood1v1Good": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
-        "GoodID": {
-          "type": "string"
+        "DeviceInfoID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_info_id\""
         },
-        "AppID": {
-          "type": "string"
+        "DeviceType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_type\""
         },
-        "UserID": {
-          "type": "string"
+        "DeviceManufacturer": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_manufacturer\""
         },
-        "Units": {
+        "DevicePowerComsuption": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_power_comsuption\""
         },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        },
-        "Start": {
+        "DeviceShipmentAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_shipment_at\""
         },
-        "End": {
+        "DevicePosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DevicePostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_posters\""
+        },
+        "DurationDays": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32",
+          "title": "@inject_tag: sql:\"duration_days\""
         },
-        "CouponID": {
-          "type": "string"
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "CreateAt": {
+        "InheritFromGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_id\""
+        },
+        "InheritFromGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_name\""
+        },
+        "InheritFromGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "InheritFromGoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_type\""
+        },
+        "InheritFromGoodBenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "InheritFromGoodBenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_benefit_type\""
+        },
+        "VendorLocationID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_id\""
+        },
+        "VendorLocationCountry": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_country\""
+        },
+        "VendorLocationProvince": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_province\""
+        },
+        "VendorLocationCity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_city\""
+        },
+        "VendorLocationAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_address\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
+        "Price": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"price\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "UnitAmount": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32",
+          "title": "@inject_tag: sql:\"unit_amount\""
         },
-        "PromotionID": {
-          "type": "string"
+        "SupportCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "OrderType": {
-          "type": "string"
+        "SupportCoinTypeIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+        },
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "PostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"posters\""
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LabelsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"labels\""
+        },
+        "VoteCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"vote_count\""
+        },
+        "Rating": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"rating\""
+        },
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "GoodTotal": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_total\""
+        },
+        "GoodLocked": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_locked\""
+        },
+        "GoodInService": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_in_service\""
+        },
+        "GoodSold": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_sold\""
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"delivery_at\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -2477,74 +2081,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1AppGoodInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Price": {
-          "type": "number",
-          "format": "double"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "InitAreaStrategy": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1AppGoodPromotion": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "number",
-          "format": "double"
         }
       }
     },
@@ -2786,6 +2322,16 @@
         }
       }
     },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
     "v1CoinAccountInfo": {
       "type": "object",
       "properties": {
@@ -2886,28 +2432,6 @@
         }
       }
     },
-    "v1Compensate": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
     "v1Coupon": {
       "type": "object",
       "properties": {
@@ -2915,7 +2439,7 @@
           "$ref": "#/definitions/v1CouponAllocatedDetail"
         },
         "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
+          "$ref": "#/definitions/v1Order"
         }
       }
     },
@@ -3077,31 +2601,6 @@
         }
       }
     },
-    "v1CreateOrderPaymentRequest": {
-      "type": "object",
-      "properties": {
-        "OrderID": {
-          "type": "string"
-        },
-        "PaymentCoinTypeID": {
-          "type": "string"
-        },
-        "Fees": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderFee"
-          }
-        }
-      }
-    },
-    "v1CreateOrderPaymentResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingapisv1Order"
-        }
-      }
-    },
     "v1CreatePlatformCoinAccountRequest": {
       "type": "object",
       "properties": {
@@ -3153,28 +2652,6 @@
         }
       }
     },
-    "v1DeviceInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Type": {
-          "type": "string"
-        },
-        "Manufacturer": {
-          "type": "string"
-        },
-        "PowerComsuption": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1DiscountPool": {
       "type": "object",
       "properties": {
@@ -3203,73 +2680,6 @@
           "type": "string"
         },
         "Name": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Fee": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "FeeTypeID": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "v1FeeDetail": {
-      "type": "object",
-      "properties": {
-        "Fee": {
-          "$ref": "#/definitions/v1Fee"
-        },
-        "FeeType": {
-          "$ref": "#/definitions/v1FeeType"
-        }
-      }
-    },
-    "v1FeeType": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "FeeType": {
-          "type": "string"
-        },
-        "FeeDescription": {
-          "type": "string"
-        },
-        "PayType": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GasPaying": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "PaymentID": {
-          "type": "string"
-        },
-        "DurationMinutes": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "FeeTypeID": {
           "type": "string"
         }
       }
@@ -3373,17 +2783,29 @@
         }
       }
     },
-    "v1GetGoodReviewsRequest": {
-      "type": "object"
+    "v1GetGoodsByAppRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "PageInfo": {
+          "$ref": "#/definitions/hashingapisv1PageInfo"
+        }
+      }
     },
-    "v1GetGoodReviewsResponse": {
+    "v1GetGoodsByAppResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GoodReview"
+            "$ref": "#/definitions/hashingapisv1Good"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -3687,34 +3109,6 @@
         }
       }
     },
-    "v1Good": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
-        },
-        "Main": {
-          "$ref": "#/definitions/v1CoinInfo"
-        },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinInfo"
-          }
-        },
-        "Reviews": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Review"
-          }
-        },
-        "Sold": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "title": "Request body and response"
-    },
     "v1GoodCommission": {
       "type": "object",
       "properties": {
@@ -3740,174 +3134,6 @@
         "Contribution": {
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "v1GoodDetail": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "DeviceInfo": {
-          "$ref": "#/definitions/v1DeviceInfo"
-        },
-        "InheritFromGood": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "VendorLocation": {
-          "$ref": "#/definitions/v1VendorLocationInfo"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1GoodExtraInfo"
-        },
-        "PriceCurrency": {
-          "$ref": "#/definitions/v1PriceCurrency"
-        },
-        "Fees": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeDetail"
-          }
-        }
-      }
-    },
-    "v1GoodExtraInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "OutSale": {
-          "type": "boolean"
-        },
-        "PreSale": {
-          "type": "boolean"
-        },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float"
-        }
-      }
-    },
-    "v1GoodInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "DeviceInfoID": {
-          "type": "string"
-        },
-        "SeparateFee": {
-          "type": "boolean"
-        },
-        "UnitPower": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CoinInfoID": {
-          "type": "string"
-        },
-        "Actuals": {
-          "type": "boolean"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InheritFromGoodID": {
-          "type": "string"
-        },
-        "VendorLocationID": {
-          "type": "string"
-        },
-        "Price": {
-          "type": "number",
-          "format": "double"
-        },
-        "BenefitType": {
-          "type": "string"
-        },
-        "Classic": {
-          "type": "boolean"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "PriceCurrency": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "FeeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GoodPaying": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "PaymentID": {
-          "type": "string"
-        }
-      },
-      "title": "request body and response"
-    },
-    "v1GoodReview": {
-      "type": "object",
-      "properties": {
-        "Review": {
-          "$ref": "#/definitions/v1Review"
-        },
-        "CreatedBy": {
-          "$ref": "#/definitions/v1AppUserInfo"
-        },
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
         }
       }
     },
@@ -3939,6 +3165,18 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "GoodTypeClassicMining",
+        "GoodTypeUnionMining",
+        "GoodTypeTechniqueFee",
+        "GoodTypeElectricityFee"
+      ],
+      "default": "DefaultGoodType",
+      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
     },
     "v1Kyc": {
       "type": "object",
@@ -4006,57 +3244,29 @@
         }
       }
     },
-    "v1OrderDetail": {
-      "type": "object",
-      "properties": {
-        "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
-        },
-        "GoodPaying": {
-          "$ref": "#/definitions/v1GoodPaying"
-        },
-        "GasPayings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GasPaying"
-          }
-        },
-        "Compensates": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Compensate"
-          }
-        },
-        "OutOfGases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OutOfGas"
-          }
-        },
-        "Payment": {
-          "$ref": "#/definitions/v1Payment"
-        }
-      }
-    },
-    "v1OrderFee": {
+    "v1Order": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "DurationDays": {
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Units": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1OutOfGas": {
-      "type": "object",
-      "properties": {
-        "ID": {
+        },
+        "DiscountCouponID": {
           "type": "string"
         },
-        "OrderID": {
+        "UserSpecialReductionID": {
           "type": "string"
         },
         "Start": {
@@ -4066,124 +3276,18 @@
         "End": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Payment": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "StartAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        },
-        "CoinInfoID": {
-          "type": "string"
-        },
-        "State": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "PlatformTransactionID": {
+        "CouponID": {
           "type": "string"
         },
         "CreateAt": {
           "type": "integer",
           "format": "int64"
         },
-        "CoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "FinishAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "UserSetPaid": {
-          "type": "boolean"
-        },
-        "UserPaymentTXID": {
+        "PromotionID": {
           "type": "string"
         },
-        "UserSetCanceled": {
-          "type": "boolean"
-        },
-        "LocalCoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "LiveCoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "UpdateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "FakePayment": {
-          "type": "boolean"
-        },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1PriceCurrency": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Symbol": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Recommend": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "RecommenderID": {
-          "type": "string"
-        },
-        "Message": {
+        "OrderType": {
           "type": "string"
         }
       }
@@ -4363,111 +3467,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppUser"
-        }
-      }
-    },
-    "v1SubmitAppUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SubmitAppUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingapisv1Order"
-        }
-      }
-    },
-    "v1SubmitOrderRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SubmitOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingapisv1Order"
-        }
-      }
-    },
-    "v1SubmitUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SubmitUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/hashingapisv1Order"
         }
       }
     },
@@ -4801,7 +3800,7 @@
           "$ref": "#/definitions/v1UserSpecialReduction"
         },
         "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
+          "$ref": "#/definitions/v1Order"
         }
       }
     },
@@ -4869,27 +3868,6 @@
           "type": "boolean"
         }
       }
-    },
-    "v1VendorLocationInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      },
-      "title": "Request body and response"
     },
     "v1VerificationCode": {
       "type": "object",
