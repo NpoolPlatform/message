@@ -50,9 +50,6 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "AccountID": {
           "type": "string"
         },
@@ -79,9 +76,6 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "AccountID": {
           "type": "string"
         },
@@ -98,9 +92,6 @@
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AccountID": {
