@@ -23,9 +23,6 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
@@ -47,9 +44,6 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
           "title": "Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]"
@@ -66,9 +60,6 @@
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
