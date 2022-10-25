@@ -210,235 +210,6 @@
     }
   },
   "definitions": {
-    "gatewayappgoodv1Good": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PromotionStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionMessage": {
-          "type": "string"
-        },
-        "PromotionPrice": {
-          "type": "string"
-        },
-        "PromotionPosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "RecommenderID": {
-          "type": "string"
-        },
-        "RecommenderEmailAddress": {
-          "type": "string"
-        },
-        "RecommenderPhoneNO": {
-          "type": "string"
-        },
-        "RecommenderUsername": {
-          "type": "string"
-        },
-        "RecommenderFirstName": {
-          "type": "string"
-        },
-        "RecommenderLastName": {
-          "type": "string"
-        },
-        "RecommendMessage": {
-          "type": "string"
-        },
-        "RecommendIndex": {
-          "type": "number",
-          "format": "float"
-        },
-        "RecommendAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeviceType": {
-          "type": "string"
-        },
-        "DeviceManufacturer": {
-          "type": "string"
-        },
-        "DevicePowerComsuption": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeviceShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DevicePosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "VendorLocationCountry": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "TestOnly": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float"
-        },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/gatewayappgoodv1GoodCoinInfo"
-          }
-        },
-        "GoodTotal": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodLocked": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodInService": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodSold": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SubGoods": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/gatewayappgoodv1Good"
-          }
-        },
-        "Must": {
-          "type": "boolean",
-          "title": "For subgood: main good must select sub good in one order"
-        },
-        "Commission": {
-          "type": "boolean",
-          "title": "For subgood: sub good will be charged commission, value defined in sub good's good"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "gatewayappgoodv1GoodCoinInfo": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -465,16 +236,6 @@
           }
         }
       }
-    },
-    "v1BenefitType": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitType",
-        "BenefitTypePlatform",
-        "BenefitTypePool"
-      ],
-      "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
     "v1CreateAppPromotionRequest": {
       "type": "object",
@@ -511,7 +272,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
+          "$ref": "#/definitions/v1Promotion"
         }
       }
     },
@@ -550,7 +311,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
+          "$ref": "#/definitions/v1Promotion"
         }
       }
     },
@@ -576,7 +337,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/gatewayappgoodv1Good"
+            "$ref": "#/definitions/v1Promotion"
           }
         },
         "Total": {
@@ -607,7 +368,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/gatewayappgoodv1Good"
+            "$ref": "#/definitions/v1Promotion"
           }
         },
         "Total": {
@@ -616,17 +377,50 @@
         }
       }
     },
-    "v1GoodType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodType",
-        "GoodTypeClassicMining",
-        "GoodTypeUnionMining",
-        "GoodTypeTechniqueFee",
-        "GoodTypeElectricityFee"
-      ],
-      "default": "DefaultGoodType",
-      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    "v1Promotion": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1UpdateAppPromotionRequest": {
       "type": "object",
@@ -663,7 +457,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
+          "$ref": "#/definitions/v1Promotion"
         }
       }
     },
@@ -702,7 +496,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappgoodv1Good"
+          "$ref": "#/definitions/v1Promotion"
         }
       }
     }

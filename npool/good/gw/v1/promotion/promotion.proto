@@ -55,6 +55,20 @@ service Gateway {
     }
 }
 
+message Promotion {
+    string          ID        = 10;
+    string          AppID     = 20;
+    string          GoodID    = 30;
+    string          GoodName  = 40;
+    string          Message   = 50;
+    uint32          StartAt   = 60;
+    uint32          EndAt     = 70;
+    string          Price     = 80;
+    repeated string Posters   = 90;
+    uint32          CreatedAt = 100;
+    uint32          UpdatedAt = 110;
+}
+
 message CreatePromotionRequest {
     string          AppID   = 10;
     string          GoodID  = 20;
@@ -66,7 +80,7 @@ message CreatePromotionRequest {
 }
 
 message CreatePromotionResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Promotion Info = 10;
 }
 
 message CreateAppPromotionRequest {
@@ -80,7 +94,7 @@ message CreateAppPromotionRequest {
 }
 
 message CreateAppPromotionResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Promotion Info = 10;
 }
 
 message UpdatePromotionRequest {
@@ -94,7 +108,7 @@ message UpdatePromotionRequest {
 }
 
 message UpdatePromotionResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Promotion Info = 10;
 }
 
 message UpdateAppPromotionRequest {
@@ -108,7 +122,7 @@ message UpdateAppPromotionRequest {
 }
 
 message UpdateAppPromotionResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Promotion Info = 10;
 }
 
 message GetPromotionsRequest {
@@ -118,8 +132,8 @@ message GetPromotionsRequest {
 }
 
 message GetPromotionsResponse {
-    repeated good.gateway.appgood.v1.Good Infos = 10;
-    uint32                                Total = 20;
+    repeated Promotion Infos = 10;
+    uint32             Total = 20;
 }
 
 message GetAppPromotionsRequest {
@@ -129,6 +143,6 @@ message GetAppPromotionsRequest {
 }
 
 message GetAppPromotionsResponse {
-    repeated good.gateway.appgood.v1.Good Infos = 10;
-    uint32                                Total = 20;
+    repeated Promotion Infos = 10;
+    uint32             Total = 20;
 }
