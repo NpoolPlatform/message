@@ -44,12 +44,11 @@ message Account {
     string         AccountID     = 80;
     string         Address       = 90;
     bool           Backup        = 100;
-    string         CollectingTID = 110;
-    bool           Active        = 120;
-    bool           Locked        = 130;
-    account.manager.account1.v1.LockedBy       LockedBy = 140;
-    bool           Blocked       = 150;
-    uint32         CreatedAt     = 160;
+    bool           Active        = 110;
+    bool           Locked        = 120;
+    account.manager.account1.v1.LockedBy       LockedBy = 130;
+    bool           Blocked       = 140;
+    uint32         CreatedAt     = 150;
 }
 
 message CreateAccountRequest {
