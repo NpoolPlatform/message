@@ -108,7 +108,7 @@ message CreateGoodRequest {
     string          DeviceInfoID       = 20;
     int32           DurationDays       = 30;
     string          CoinTypeID         = 40;
-    string          InheritFromGoodID  = 50;
+    optional string InheritFromGoodID  = 50;
     string          VendorLocationID   = 60;
     string          Price              = 70;
     good.manager.good.v1.BenefitType BenefitType = 80;
