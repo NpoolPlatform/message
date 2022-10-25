@@ -79,6 +79,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/goodbenefitaccount": {
+      "post": {
+        "operationId": "Gateway_UpdateAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewaygoodbenefitv1UpdateAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewaygoodbenefitv1UpdateAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -184,6 +216,25 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewaygoodbenefitv1UpdateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gatewaygoodbenefitv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewaygoodbenefitv1Account"
         }
       }
     },

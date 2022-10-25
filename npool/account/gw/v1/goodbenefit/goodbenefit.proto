@@ -18,6 +18,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/goodbenefitaccount"
+            body: "*"
+        };
+    }
+
     rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
         option (google.api.http) = {
             post: "/v1/get/goodbenefitaccounts"
@@ -52,6 +59,15 @@ message CreateAccountRequest {
 }
 
 message CreateAccountResponse {
+    Account Info = 10;
+}
+
+message UpdateAccountRequest {
+    string ID     = 10;
+    bool   Backup = 20;
+}
+
+message UpdateAccountResponse {
     Account Info = 10;
 }
 
