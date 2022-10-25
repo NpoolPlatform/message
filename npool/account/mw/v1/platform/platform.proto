@@ -56,6 +56,8 @@ message Account {
     bool           Blocked     = 120;
     // @inject_tag: sql:"created_at"
     uint32         CreatedAt   = 130;
+    // @inject_tag: sql:"collecting_tid"
+    string         CollectingTID = 140;
 }
 
 message Conds {
