@@ -91,11 +91,11 @@ message Good {
     }
     repeated CoinInfo SupportCoins      = 340;
 
-    string           GoodStockID        = 350;
-    uint32           GoodTotal          = 360;
-    uint32           GoodLocked         = 370;
-    uint32           GoodInService      = 380;
-    uint32           GoodSold           = 390;
+    string           StockID        = 350;
+    uint32           Total          = 360;
+    uint32           Locked         = 370;
+    uint32           InService      = 380;
+    uint32           Sold           = 390;
 
     uint32           DeliveryAt         = 400;
     uint32           StartAt            = 410;
