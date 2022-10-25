@@ -56,13 +56,13 @@ service Gateway {
 }
 
 message CreatePromotionRequest {
-    string          AppID     = 10;
-    string          GoodID    = 20;
-    string          Message   = 30;
-    uint32          StartAt   = 40;
-    uint32          EndAt     = 50;
-    string          Price     = 60;
-    repeated string Posters   = 70;
+    string          AppID   = 10;
+    string          GoodID  = 20;
+    string          Message = 30;
+    uint32          StartAt = 40;
+    uint32          EndAt   = 50;
+    string          Price   = 60;
+    repeated string Posters = 70;
 }
 
 message CreatePromotionResponse {
@@ -101,7 +101,7 @@ message UpdateAppPromotionRequest {
     string          ID          = 10;
     string          TargetAppID = 20;
     optional string Message     = 30;
-    optional uint32 tartAt      = 40;
+    optional uint32 StartAt     = 40;
     optional uint32 EndAt       = 50;
     optional string Price       = 60;
     repeated string Posters     = 70;
