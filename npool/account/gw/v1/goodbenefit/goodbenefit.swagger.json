@@ -227,6 +227,12 @@
         },
         "Backup": {
           "type": "boolean"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
         }
       }
     },
