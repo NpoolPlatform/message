@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/promotion/promotion.proto",
+    "title": "npool/good/gw/v1/recommend/recommend.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/promotion": {
+    "/v1/create/app/recommend": {
       "post": {
-        "operationId": "Gateway_CreateAppPromotion",
+        "operationId": "Gateway_CreateAppRecommend",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppPromotionResponse"
+              "$ref": "#/definitions/v1CreateAppRecommendResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppPromotionRequest"
+              "$ref": "#/definitions/v1CreateAppRecommendRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/create/promotion": {
+    "/v1/create/recommend": {
       "post": {
-        "operationId": "Gateway_CreatePromotion",
+        "operationId": "Gateway_CreateRecommend",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreatePromotionResponse"
+              "$ref": "#/definitions/v1CreateRecommendResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreatePromotionRequest"
+              "$ref": "#/definitions/v1CreateRecommendRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/app/promotions": {
+    "/v1/get/app/recommends": {
       "post": {
-        "operationId": "Gateway_GetAppPromotions",
+        "operationId": "Gateway_GetAppRecommends",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppPromotionsResponse"
+              "$ref": "#/definitions/v1GetAppRecommendsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppPromotionsRequest"
+              "$ref": "#/definitions/v1GetAppRecommendsRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/promotions": {
+    "/v1/get/recommends": {
       "post": {
-        "operationId": "Gateway_GetPromotions",
+        "operationId": "Gateway_GetRecommends",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPromotionsResponse"
+              "$ref": "#/definitions/v1GetRecommendsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPromotionsRequest"
+              "$ref": "#/definitions/v1GetRecommendsRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/update/app/promotion": {
+    "/v1/update/app/recommend": {
       "post": {
-        "operationId": "Gateway_UpdateAppPromotion",
+        "operationId": "Gateway_UpdateAppRecommend",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppPromotionResponse"
+              "$ref": "#/definitions/v1UpdateAppRecommendResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppPromotionRequest"
+              "$ref": "#/definitions/v1UpdateAppRecommendRequest"
             }
           }
         ],
@@ -176,14 +176,14 @@
         ]
       }
     },
-    "/v1/update/promotion": {
+    "/v1/update/recommend": {
       "post": {
-        "operationId": "Gateway_UpdatePromotion",
+        "operationId": "Gateway_UpdateRecommend",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdatePromotionResponse"
+              "$ref": "#/definitions/v1UpdateRecommendResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdatePromotionRequest"
+              "$ref": "#/definitions/v1UpdateRecommendRequest"
             }
           }
         ],
@@ -237,7 +237,7 @@
         }
       }
     },
-    "v1CreateAppPromotionRequest": {
+    "v1CreateAppRecommendRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -246,37 +246,27 @@
         "GoodID": {
           "type": "string"
         },
+        "RecommenderID": {
+          "type": "string"
+        },
         "Message": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "RecommendIndex": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
-    "v1CreateAppPromotionResponse": {
+    "v1CreateAppRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Promotion"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1CreatePromotionRequest": {
+    "v1CreateRecommendRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -285,37 +275,27 @@
         "GoodID": {
           "type": "string"
         },
+        "RecommenderID": {
+          "type": "string"
+        },
         "Message": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "RecommendIndex": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
-    "v1CreatePromotionResponse": {
+    "v1CreateRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Promotion"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1GetAppPromotionsRequest": {
+    "v1GetAppRecommendsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -331,13 +311,13 @@
         }
       }
     },
-    "v1GetAppPromotionsResponse": {
+    "v1GetAppRecommendsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Promotion"
+            "$ref": "#/definitions/v1Recommend"
           }
         },
         "Total": {
@@ -346,7 +326,7 @@
         }
       }
     },
-    "v1GetPromotionsRequest": {
+    "v1GetRecommendsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -362,13 +342,13 @@
         }
       }
     },
-    "v1GetPromotionsResponse": {
+    "v1GetRecommendsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Promotion"
+            "$ref": "#/definitions/v1Recommend"
           }
         },
         "Total": {
@@ -377,7 +357,7 @@
         }
       }
     },
-    "v1Promotion": {
+    "v1Recommend": {
       "type": "object",
       "properties": {
         "ID": {
@@ -392,25 +372,30 @@
         "GoodName": {
           "type": "string"
         },
+        "RecommenderID": {
+          "type": "string"
+        },
+        "RecommenderUsername": {
+          "type": "string"
+        },
+        "RecommenderFirstName": {
+          "type": "string"
+        },
+        "RecommenderLastName": {
+          "type": "string"
+        },
+        "RecommenderEmailAddress": {
+          "type": "string"
+        },
+        "RecommenderPhoneNo": {
+          "type": "string"
+        },
         "Message": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "RecommendIndex": {
+          "type": "number",
+          "format": "float"
         },
         "CreatedAt": {
           "type": "integer",
@@ -422,7 +407,7 @@
         }
       }
     },
-    "v1UpdateAppPromotionRequest": {
+    "v1UpdateAppRecommendRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -434,34 +419,21 @@
         "Message": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "RecommendIndex": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
-    "v1UpdateAppPromotionResponse": {
+    "v1UpdateAppRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Promotion"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1UpdatePromotionRequest": {
+    "v1UpdateRecommendRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -473,30 +445,17 @@
         "Message": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Price": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "RecommendIndex": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
-    "v1UpdatePromotionResponse": {
+    "v1UpdateRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Promotion"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     }
