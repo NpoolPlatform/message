@@ -426,22 +426,22 @@
             "$ref": "#/definitions/GoodCoinInfo"
           }
         },
-        "GoodStockID": {
+        "StockID": {
           "type": "string"
         },
-        "GoodTotal": {
+        "Total": {
           "type": "integer",
           "format": "int64"
         },
-        "GoodLocked": {
+        "Locked": {
           "type": "integer",
           "format": "int64"
         },
-        "GoodInService": {
+        "InService": {
           "type": "integer",
           "format": "int64"
         },
-        "GoodSold": {
+        "Sold": {
           "type": "integer",
           "format": "int64"
         },
