@@ -7,7 +7,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/cloud-hashing-apis";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+
+import "npool/good/mw/v1/good/good.proto";
+
 import "npool/appuser/mw/v1/user/user.proto";
+
 import "npool/npool.proto";
 import "npool/cloud-hashing-goods/cloud-hashing-goods.proto";
 import "npool/cloud-hashing-order/cloud-hashing-order.proto";
@@ -150,6 +154,7 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
     rpc CreatePlatformCoinAccount (CreatePlatformCoinAccountRequest) returns (CreatePlatformCoinAccountResponse) {
         option (google.api.http) = {
             post: "/v1/create/platform/coin/account"
@@ -169,6 +174,7 @@ service CloudHashingApis {
             body: "*"
         };
     }
+
     rpc GetUserWithdrawsByAppUser (GetUserWithdrawsByAppUserRequest) returns (GetUserWithdrawsByAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/get/user/withdraws/by/app/user"
@@ -245,7 +251,7 @@ message PageInfo {
 
 // Request body and response
 message Good {
-    cloud.hashing.goods.v1.GoodDetail Good = 10;
+    good.middleware.good1.v1.Good Good = 10;
     sphinx.coininfo.v1.CoinInfo Main = 20;
     repeated sphinx.coininfo.v1.CoinInfo SupportCoins = 30;
     repeated review.service.v1.Review Reviews = 40;

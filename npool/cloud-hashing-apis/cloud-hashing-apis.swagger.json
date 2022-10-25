@@ -1118,7 +1118,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Good"
+          "$ref": "#/definitions/hashingapisv1Good"
         }
       }
     },
@@ -1134,7 +1134,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Good"
+          "$ref": "#/definitions/hashingapisv1Good"
         }
       }
     },
@@ -1155,7 +1155,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Good"
+            "$ref": "#/definitions/hashingapisv1Good"
           }
         },
         "Total": {
@@ -1178,7 +1178,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Good"
+            "$ref": "#/definitions/hashingapisv1Good"
           }
         },
         "Total": {
@@ -1323,6 +1323,34 @@
         }
       }
     },
+    "hashingapisv1Good": {
+      "type": "object",
+      "properties": {
+        "Good": {
+          "$ref": "#/definitions/middlewaregood1v1Good"
+        },
+        "Main": {
+          "$ref": "#/definitions/v1CoinInfo"
+        },
+        "SupportCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinInfo"
+          }
+        },
+        "Reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Review"
+          }
+        },
+        "Sold": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Request body and response"
+    },
     "hashingapisv1Order": {
       "type": "object",
       "properties": {
@@ -1333,7 +1361,7 @@
           "$ref": "#/definitions/v1CoinAccountInfo"
         },
         "Good": {
-          "$ref": "#/definitions/v1Good"
+          "$ref": "#/definitions/hashingapisv1Good"
         },
         "PayWithCoin": {
           "$ref": "#/definitions/v1CoinInfo"
@@ -1376,7 +1404,7 @@
       "type": "object",
       "properties": {
         "Good": {
-          "$ref": "#/definitions/v1Good"
+          "$ref": "#/definitions/hashingapisv1Good"
         },
         "Recommend": {
           "$ref": "#/definitions/v1Recommend"
@@ -1482,6 +1510,217 @@
         },
         "OrderType": {
           "type": "string"
+        }
+      }
+    },
+    "middlewaregood1v1Good": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "DeviceInfoID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_info_id\""
+        },
+        "DeviceType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_type\""
+        },
+        "DeviceManufacturer": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_manufacturer\""
+        },
+        "DevicePowerComsuption": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_power_comsuption\""
+        },
+        "DeviceShipmentAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_shipment_at\""
+        },
+        "DevicePosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DevicePostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_posters\""
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"duration_days\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "InheritFromGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_id\""
+        },
+        "InheritFromGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_name\""
+        },
+        "InheritFromGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "InheritFromGoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_type\""
+        },
+        "InheritFromGoodBenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "InheritFromGoodBenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"inherit_from_good_benefit_type\""
+        },
+        "VendorLocationID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_id\""
+        },
+        "VendorLocationCountry": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_country\""
+        },
+        "VendorLocationProvince": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_province\""
+        },
+        "VendorLocationCity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_city\""
+        },
+        "VendorLocationAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_location_address\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
+        "Price": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"price\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"unit_amount\""
+        },
+        "SupportCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SupportCoinTypeIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+        },
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "PostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"posters\""
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LabelsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"labels\""
+        },
+        "VoteCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"vote_count\""
+        },
+        "Rating": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"rating\""
+        },
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "GoodTotal": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_total\""
+        },
+        "GoodLocked": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_locked\""
+        },
+        "GoodInService": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_in_service\""
+        },
+        "GoodSold": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_sold\""
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"delivery_at\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -1632,6 +1871,16 @@
           "type": "string"
         }
       }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
     "v1CoinAccountInfo": {
       "type": "object",
@@ -1978,28 +2227,6 @@
         }
       }
     },
-    "v1DeviceInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Type": {
-          "type": "string"
-        },
-        "Manufacturer": {
-          "type": "string"
-        },
-        "PowerComsuption": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1DiscountPool": {
       "type": "object",
       "properties": {
@@ -2028,52 +2255,6 @@
           "type": "string"
         },
         "Name": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Fee": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "FeeTypeID": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "v1FeeDetail": {
-      "type": "object",
-      "properties": {
-        "Fee": {
-          "$ref": "#/definitions/v1Fee"
-        },
-        "FeeType": {
-          "$ref": "#/definitions/v1FeeType"
-        }
-      }
-    },
-    "v1FeeType": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "FeeType": {
-          "type": "string"
-        },
-        "FeeDescription": {
-          "type": "string"
-        },
-        "PayType": {
           "type": "string"
         }
       }
@@ -2299,34 +2480,6 @@
         }
       }
     },
-    "v1Good": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1GoodDetail"
-        },
-        "Main": {
-          "$ref": "#/definitions/v1CoinInfo"
-        },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinInfo"
-          }
-        },
-        "Reviews": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Review"
-          }
-        },
-        "Sold": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "title": "Request body and response"
-    },
     "v1GoodCommission": {
       "type": "object",
       "properties": {
@@ -2352,72 +2505,6 @@
         "Contribution": {
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "v1GoodDetail": {
-      "type": "object",
-      "properties": {
-        "Good": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "DeviceInfo": {
-          "$ref": "#/definitions/v1DeviceInfo"
-        },
-        "InheritFromGood": {
-          "$ref": "#/definitions/v1GoodInfo"
-        },
-        "VendorLocation": {
-          "$ref": "#/definitions/v1VendorLocationInfo"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1GoodExtraInfo"
-        },
-        "PriceCurrency": {
-          "$ref": "#/definitions/v1PriceCurrency"
-        },
-        "Fees": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeDetail"
-          }
-        }
-      }
-    },
-    "v1GoodExtraInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "OutSale": {
-          "type": "boolean"
-        },
-        "PreSale": {
-          "type": "boolean"
-        },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float"
         }
       }
     },
@@ -2508,6 +2595,18 @@
         }
       },
       "title": "request body and response"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "GoodTypeClassicMining",
+        "GoodTypeUnionMining",
+        "GoodTypeTechniqueFee",
+        "GoodTypeElectricityFee"
+      ],
+      "default": "DefaultGoodType",
+      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
     },
     "v1OrderDetail": {
       "type": "object",
@@ -2650,23 +2749,6 @@
           "type": "boolean"
         },
         "PayWithBalanceAmount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1PriceCurrency": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Symbol": {
           "type": "string"
         }
       }
@@ -3207,27 +3289,6 @@
           "type": "boolean"
         }
       }
-    },
-    "v1VendorLocationInfo": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      },
-      "title": "Request body and response"
     },
     "v1WithdrawAddress": {
       "type": "object",
