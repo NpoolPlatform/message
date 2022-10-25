@@ -54,6 +54,23 @@ service Gateway {
     }
 }
 
+message Recommend {
+    string ID                       = 10;
+    string AppID                    = 20;
+    string GoodID                   = 30;
+    string GoodName                 = 31;
+    string RecommenderID            = 40;
+    string RecommenderUsername      = 50;
+    string RecommenderFirstName     = 60;
+    string RecommenderLastName      = 70;
+    string RecommenderEmailAddress  = 80;
+    string RecommenderPhoneNo       = 90;
+    string Message                  = 100;
+    float  RecommendIndex           = 110;
+    uint32 CreatedAt                = 120;
+    uint32 UpdatedAt                = 130;
+}
+
 message CreateRecommendRequest {
     string AppID          = 10;
     string GoodID         = 20;
@@ -63,7 +80,7 @@ message CreateRecommendRequest {
 }
 
 message CreateRecommendResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Recommend Info = 10;
 }
 
 message CreateAppRecommendRequest {
@@ -75,7 +92,7 @@ message CreateAppRecommendRequest {
 }
 
 message CreateAppRecommendResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Recommend Info = 10;
 }
 
 message UpdateRecommendRequest {
@@ -86,7 +103,7 @@ message UpdateRecommendRequest {
 }
 
 message UpdateRecommendResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Recommend Info = 10;
 }
 
 message UpdateAppRecommendRequest {
@@ -97,7 +114,7 @@ message UpdateAppRecommendRequest {
 }
 
 message UpdateAppRecommendResponse {
-    good.gateway.appgood.v1.Good Info = 10;
+    Recommend Info = 10;
 }
 
 message GetRecommendsRequest {
@@ -107,8 +124,8 @@ message GetRecommendsRequest {
 }
 
 message GetRecommendsResponse {
-    repeated good.gateway.appgood.v1.Good Infos = 10;
-    uint32                                Total = 20;
+    repeated Recommend Infos = 10;
+    uint32             Total = 20;
 }
 
 message GetAppRecommendsRequest {
@@ -118,6 +135,6 @@ message GetAppRecommendsRequest {
 }
 
 message GetAppRecommendsResponse {
-    repeated good.gateway.appgood.v1.Good Infos = 10;
-    uint32                                Total = 20;
+    repeated Recommend Infos = 10;
+    uint32             Total = 20;
 }
