@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package good.gateway.recommend.v1;
+
+import "google/api/annotations.proto";
+import "npool/good/gw/v1/appgood/appgood.proto";
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/recommend";
+
+;
+
+// Service Name
+service Gateway {
+    rpc CreateRecommend(CreateRecommendRequest) returns (CreateRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/recommend"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppRecommend(CreateAppRecommendRequest) returns (CreateAppRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/recommend"
+            body: "*"
+        };
+    }
+
+    rpc UpdateRecommend(UpdateRecommendRequest) returns (UpdateRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/recommend"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppRecommend(UpdateAppRecommendRequest) returns (UpdateAppRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/recommend"
+            body: "*"
+        };
+    }
+
+    rpc GetRecommends(GetRecommendsRequest) returns (GetRecommendsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recommends"
+            body: "*"
+        };
+    }
+
+    rpc GetAppRecommends(GetAppRecommendsRequest) returns (GetAppRecommendsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/recommends"
+            body: "*"
+        };
+    }
+}
+
+message CreateRecommendRequest {
+    string AppID          = 10;
+    string GoodID         = 20;
+    string RecommenderID  = 30;
+    string Message        = 40;
+    float  RecommendIndex = 50;
+}
+
+message CreateRecommendResponse {
+    good.gateway.appgood.v1.Good Info = 10;
+}
+
+message CreateAppRecommendRequest {
+    string TargetAppID    = 10;
+    string GoodID         = 20;
+    string RecommenderID  = 30;
+    string Message        = 40;
+    float  RecommendIndex = 50;
+}
+
+message CreateAppRecommendResponse {
+    good.gateway.appgood.v1.Good Info = 10;
+}
+
+message UpdateRecommendRequest {
+    string          ID             = 10;
+    string          AppID          = 20;
+    optional string Message        = 30;
+    optional float  RecommendIndex = 40;
+}
+
+message UpdateRecommendResponse {
+    good.gateway.appgood.v1.Good Info = 10;
+}
+
+message UpdateAppRecommendRequest {
+    string          ID             = 10;
+    string          TargetAppID    = 20;
+    optional string Message        = 30;
+    optional float  RecommendIndex = 40;
+}
+
+message UpdateAppRecommendResponse {
+    good.gateway.appgood.v1.Good Info = 10;
+}
+
+message GetRecommendsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetRecommendsResponse {
+    repeated good.gateway.appgood.v1.Good Infos = 10;
+    uint32                                Total = 20;
+}
+
+message GetAppRecommendsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppRecommendsResponse {
+    repeated good.gateway.appgood.v1.Good Infos = 10;
+    uint32                                Total = 20;
+}
