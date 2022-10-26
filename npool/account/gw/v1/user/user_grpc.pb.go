@@ -23,12 +23,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetDepositAccount(ctx context.Context, in *GetDepositAccountRequest, opts ...grpc.CallOption) (*GetDepositAccountResponse, error)
+	GetDepositAccounts(ctx context.Context, in *GetDepositAccountsRequest, opts ...grpc.CallOption) (*GetDepositAccountsResponse, error)
 	GetAppDepositAccounts(ctx context.Context, in *GetAppDepositAccountsRequest, opts ...grpc.CallOption) (*GetAppDepositAccountsResponse, error)
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	UpdateAppUserAccount(ctx context.Context, in *UpdateAppUserAccountRequest, opts ...grpc.CallOption) (*UpdateAppUserAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	GetAppAccounts(ctx context.Context, in *GetAppAccountsRequest, opts ...grpc.CallOption) (*GetAppAccountsResponse, error)
+	GetNAppAccounts(ctx context.Context, in *GetNAppAccountsRequest, opts ...grpc.CallOption) (*GetNAppAccountsResponse, error)
 }
 
 type gatewayClient struct {
@@ -42,6 +44,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) GetDepositAccount(ctx context.Context, in *GetDepositAccountRequest, opts ...grpc.CallOption) (*GetDepositAccountResponse, error) {
 	out := new(GetDepositAccountResponse)
 	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/GetDepositAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetDepositAccounts(ctx context.Context, in *GetDepositAccountsRequest, opts ...grpc.CallOption) (*GetDepositAccountsResponse, error) {
+	out := new(GetDepositAccountsResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/GetDepositAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -102,17 +113,28 @@ func (c *gatewayClient) GetAppAccounts(ctx context.Context, in *GetAppAccountsRe
 	return out, nil
 }
 
+func (c *gatewayClient) GetNAppAccounts(ctx context.Context, in *GetNAppAccountsRequest, opts ...grpc.CallOption) (*GetNAppAccountsResponse, error) {
+	out := new(GetNAppAccountsResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/GetNAppAccounts", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error)
+	GetDepositAccounts(context.Context, *GetDepositAccountsRequest) (*GetDepositAccountsResponse, error)
 	GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error)
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	UpdateAppUserAccount(context.Context, *UpdateAppUserAccountRequest) (*UpdateAppUserAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	GetAppAccounts(context.Context, *GetAppAccountsRequest) (*GetAppAccountsResponse, error)
+	GetNAppAccounts(context.Context, *GetNAppAccountsRequest) (*GetNAppAccountsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -122,6 +144,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDepositAccount not implemented")
+}
+func (UnimplementedGatewayServer) GetDepositAccounts(context.Context, *GetDepositAccountsRequest) (*GetDepositAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDepositAccounts not implemented")
 }
 func (UnimplementedGatewayServer) GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppDepositAccounts not implemented")
@@ -140,6 +165,9 @@ func (UnimplementedGatewayServer) GetAccounts(context.Context, *GetAccountsReque
 }
 func (UnimplementedGatewayServer) GetAppAccounts(context.Context, *GetAppAccountsRequest) (*GetAppAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAccounts not implemented")
+}
+func (UnimplementedGatewayServer) GetNAppAccounts(context.Context, *GetNAppAccountsRequest) (*GetNAppAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppAccounts not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -168,6 +196,24 @@ func _Gateway_GetDepositAccount_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetDepositAccount(ctx, req.(*GetDepositAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetDepositAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDepositAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetDepositAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/GetDepositAccounts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetDepositAccounts(ctx, req.(*GetDepositAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -280,6 +326,24 @@ func _Gateway_GetAppAccounts_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetNAppAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNAppAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNAppAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/GetNAppAccounts",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNAppAccounts(ctx, req.(*GetNAppAccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -290,6 +354,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDepositAccount",
 			Handler:    _Gateway_GetDepositAccount_Handler,
+		},
+		{
+			MethodName: "GetDepositAccounts",
+			Handler:    _Gateway_GetDepositAccounts_Handler,
 		},
 		{
 			MethodName: "GetAppDepositAccounts",
@@ -314,6 +382,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppAccounts",
 			Handler:    _Gateway_GetAppAccounts_Handler,
+		},
+		{
+			MethodName: "GetNAppAccounts",
+			Handler:    _Gateway_GetNAppAccounts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
