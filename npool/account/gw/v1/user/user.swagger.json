@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/withdrawaccount": {
+    "/v1/create/useraccount": {
       "post": {
-        "operationId": "Gateway_CreateWithdrawAccount",
+        "operationId": "Gateway_CreateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateWithdrawAccountResponse"
+              "$ref": "#/definitions/gatewayuserv1CreateAccountResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateWithdrawAccountRequest"
+              "$ref": "#/definitions/gatewayuserv1CreateAccountRequest"
             }
           }
         ],
@@ -176,14 +176,14 @@
         ]
       }
     },
-    "/v1/update/app/user/withdrawaccount": {
+    "/v1/update/app/user/useraccount": {
       "post": {
-        "operationId": "Gateway_UpdateAppUserWithdrawAccount",
+        "operationId": "Gateway_UpdateAppUserAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserWithdrawAccountResponse"
+              "$ref": "#/definitions/v1UpdateAppUserAccountResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserWithdrawAccountRequest"
+              "$ref": "#/definitions/v1UpdateAppUserAccountRequest"
             }
           }
         ],
@@ -208,14 +208,14 @@
         ]
       }
     },
-    "/v1/update/withdrawaccount": {
+    "/v1/update/useraccount": {
       "post": {
-        "operationId": "Gateway_UpdateWithdrawAccount",
+        "operationId": "Gateway_UpdateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateWithdrawAccountResponse"
+              "$ref": "#/definitions/gatewayuserv1UpdateAccountResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateWithdrawAccountRequest"
+              "$ref": "#/definitions/gatewayuserv1UpdateAccountRequest"
             }
           }
         ],
@@ -303,6 +303,41 @@
         }
       }
     },
+    "gatewayuserv1CreateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Only could be withdraw or direct benefit address\nDeposit address will be created by platform\nDirect benefit address will be set with order"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gatewayuserv1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
+        }
+      }
+    },
     "gatewayuserv1GetAccountsRequest": {
       "type": "object",
       "properties": {
@@ -337,6 +372,34 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewayuserv1UpdateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gatewayuserv1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
         }
       }
     },
@@ -383,38 +446,6 @@
         "UserDirectBenefit"
       ],
       "default": "DefaultAccountUsedFor"
-    },
-    "v1CreateWithdrawAccountRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Only could be withdraw address\nDeposit address will be created by platform\nDirect benefit address will be set with order"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1CreateWithdrawAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
-        }
-      }
     },
     "v1GetAppAccountsRequest": {
       "type": "object",
@@ -500,7 +531,7 @@
         }
       }
     },
-    "v1UpdateAppUserWithdrawAccountRequest": {
+    "v1UpdateAppUserAccountRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -520,35 +551,7 @@
         }
       }
     },
-    "v1UpdateAppUserWithdrawAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
-        }
-      }
-    },
-    "v1UpdateWithdrawAccountRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1UpdateWithdrawAccountResponse": {
+    "v1UpdateAppUserAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
