@@ -18,6 +18,20 @@ service Gateway {
         };
     }
 
+    rpc UpdateWithdrawAccount (UpdateWithdrawAccountRequest) returns (UpdateWithdrawAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/withdrawaccount"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppUserWithdrawAccount (UpdateAppUserWithdrawAccountRequest) returns (UpdateAppUserWithdrawAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/user/withdrawaccount"
+            body: "*"
+        };
+    }
+
     rpc GetDepositAccount (GetDepositAccountRequest) returns (GetDepositAccountResponse) {
         option (google.api.http) = {
             post: "/v1/get/depositaccount"
@@ -64,6 +78,8 @@ message Account {
     uint32 CreatedAt       = 130;
     string PhoneNO         = 140;
     string EmailAddress    = 150;
+    bool   Active          = 160;
+    bool   Blocked         = 170;
 }
 
 message CreateWithdrawAccountRequest {
@@ -78,6 +94,29 @@ message CreateWithdrawAccountRequest {
 }
 
 message CreateWithdrawAccountResponse {
+    Account Info = 10;
+}
+
+message UpdateWithdrawAccountRequest {
+    string          ID     = 10;
+    string          AppID  = 20;
+    string          UserID = 30;
+    repeated string Labels = 40;
+}
+
+message UpdateWithdrawAccountResponse {
+    Account Info = 10;
+}
+
+message UpdateAppUserWithdrawAccountRequest {
+    string        ID           = 10;
+    string        TargetAppID  = 20;
+    string        TargetUserID = 30;
+    optional bool Active       = 40;
+    optional bool Blocked      = 50;
+}
+
+message UpdateAppUserWithdrawAccountResponse {
     Account Info = 10;
 }
 

@@ -175,6 +175,70 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/app/user/withdrawaccount": {
+      "post": {
+        "operationId": "Gateway_UpdateAppUserWithdrawAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserWithdrawAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserWithdrawAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/withdrawaccount": {
+      "post": {
+        "operationId": "Gateway_UpdateWithdrawAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWithdrawAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -230,6 +294,12 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
         }
       }
     },
@@ -423,6 +493,62 @@
       }
     },
     "v1GetDepositAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
+        }
+      }
+    },
+    "v1UpdateAppUserWithdrawAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppUserWithdrawAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
+        }
+      }
+    },
+    "v1UpdateWithdrawAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1UpdateWithdrawAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {

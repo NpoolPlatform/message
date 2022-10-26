@@ -23,6 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateWithdrawAccount(ctx context.Context, in *CreateWithdrawAccountRequest, opts ...grpc.CallOption) (*CreateWithdrawAccountResponse, error)
+	UpdateWithdrawAccount(ctx context.Context, in *UpdateWithdrawAccountRequest, opts ...grpc.CallOption) (*UpdateWithdrawAccountResponse, error)
+	UpdateAppUserWithdrawAccount(ctx context.Context, in *UpdateAppUserWithdrawAccountRequest, opts ...grpc.CallOption) (*UpdateAppUserWithdrawAccountResponse, error)
 	GetDepositAccount(ctx context.Context, in *GetDepositAccountRequest, opts ...grpc.CallOption) (*GetDepositAccountResponse, error)
 	GetAppDepositAccounts(ctx context.Context, in *GetAppDepositAccountsRequest, opts ...grpc.CallOption) (*GetAppDepositAccountsResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -40,6 +42,24 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateWithdrawAccount(ctx context.Context, in *CreateWithdrawAccountRequest, opts ...grpc.CallOption) (*CreateWithdrawAccountResponse, error) {
 	out := new(CreateWithdrawAccountResponse)
 	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/CreateWithdrawAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateWithdrawAccount(ctx context.Context, in *UpdateWithdrawAccountRequest, opts ...grpc.CallOption) (*UpdateWithdrawAccountResponse, error) {
+	out := new(UpdateWithdrawAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/UpdateWithdrawAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateAppUserWithdrawAccount(ctx context.Context, in *UpdateAppUserWithdrawAccountRequest, opts ...grpc.CallOption) (*UpdateAppUserWithdrawAccountResponse, error) {
+	out := new(UpdateAppUserWithdrawAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/UpdateAppUserWithdrawAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +107,8 @@ func (c *gatewayClient) GetAppAccounts(ctx context.Context, in *GetAppAccountsRe
 // for forward compatibility
 type GatewayServer interface {
 	CreateWithdrawAccount(context.Context, *CreateWithdrawAccountRequest) (*CreateWithdrawAccountResponse, error)
+	UpdateWithdrawAccount(context.Context, *UpdateWithdrawAccountRequest) (*UpdateWithdrawAccountResponse, error)
+	UpdateAppUserWithdrawAccount(context.Context, *UpdateAppUserWithdrawAccountRequest) (*UpdateAppUserWithdrawAccountResponse, error)
 	GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error)
 	GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
@@ -100,6 +122,12 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateWithdrawAccount(context.Context, *CreateWithdrawAccountRequest) (*CreateWithdrawAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdrawAccount not implemented")
+}
+func (UnimplementedGatewayServer) UpdateWithdrawAccount(context.Context, *UpdateWithdrawAccountRequest) (*UpdateWithdrawAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdrawAccount not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppUserWithdrawAccount(context.Context, *UpdateAppUserWithdrawAccountRequest) (*UpdateAppUserWithdrawAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserWithdrawAccount not implemented")
 }
 func (UnimplementedGatewayServer) GetDepositAccount(context.Context, *GetDepositAccountRequest) (*GetDepositAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDepositAccount not implemented")
@@ -140,6 +168,42 @@ func _Gateway_CreateWithdrawAccount_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateWithdrawAccount(ctx, req.(*CreateWithdrawAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateWithdrawAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateWithdrawAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateWithdrawAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/UpdateWithdrawAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateWithdrawAccount(ctx, req.(*UpdateWithdrawAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateAppUserWithdrawAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppUserWithdrawAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppUserWithdrawAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/UpdateAppUserWithdrawAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppUserWithdrawAccount(ctx, req.(*UpdateAppUserWithdrawAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,6 +290,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateWithdrawAccount",
 			Handler:    _Gateway_CreateWithdrawAccount_Handler,
+		},
+		{
+			MethodName: "UpdateWithdrawAccount",
+			Handler:    _Gateway_UpdateWithdrawAccount_Handler,
+		},
+		{
+			MethodName: "UpdateAppUserWithdrawAccount",
+			Handler:    _Gateway_UpdateAppUserWithdrawAccount_Handler,
 		},
 		{
 			MethodName: "GetDepositAccount",
