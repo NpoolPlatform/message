@@ -11,6 +11,13 @@ import "npool/npool.proto";
 
 // Service Name
 service Gateway {
+    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/paymentaccount"
+            body: "*"
+        };
+    }
+
     rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
         option (google.api.http) = {
             post: "/v1/get/paymentaccounts"
@@ -36,6 +43,17 @@ message Account {
     uint32     CreatedAt     = 160;
     uint32     AvailableAt   = 170;
     uint32     UpdatedAt     = 180;
+}
+
+message UpdateAccountRequest {
+    string        ID       = 10;
+    optional bool Active   = 20;
+    optional bool Blocked  = 30;
+    optional bool Locked   = 40;
+}
+
+message UpdateAccountResponse {
+    Account Info = 10;
 }
 
 message GetAccountsRequest {
