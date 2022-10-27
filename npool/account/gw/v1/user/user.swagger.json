@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/useraccount": {
+      "post": {
+        "operationId": "Gateway_DeleteAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayuserv1DeleteAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayuserv1DeleteAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/depositaccounts": {
       "post": {
         "operationId": "Gateway_GetAppDepositAccounts",
@@ -395,6 +427,28 @@
       }
     },
     "gatewayuserv1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayuserv1Account"
+        }
+      }
+    },
+    "gatewayuserv1DeleteAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewayuserv1DeleteAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {

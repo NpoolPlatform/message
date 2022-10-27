@@ -46,6 +46,13 @@ service Gateway {
         };
     }
 
+    rpc DeleteAccount (DeleteAccountRequest) returns (DeleteAccountResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/useraccount"
+            body: "*"
+        };
+    }
+
     rpc UpdateAppUserAccount (UpdateAppUserAccountRequest) returns (UpdateAppUserAccountResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user/useraccount"
@@ -152,6 +159,16 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message DeleteAccountRequest {
+    string ID     = 10;
+    string AppID  = 20;
+    string UserID = 30;
+}
+
+message DeleteAccountResponse {
     Account Info = 10;
 }
 

@@ -27,6 +27,7 @@ type GatewayClient interface {
 	GetAppDepositAccounts(ctx context.Context, in *GetAppDepositAccountsRequest, opts ...grpc.CallOption) (*GetAppDepositAccountsResponse, error)
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
+	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
 	UpdateAppUserAccount(ctx context.Context, in *UpdateAppUserAccountRequest, opts ...grpc.CallOption) (*UpdateAppUserAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	GetAppAccounts(ctx context.Context, in *GetAppAccountsRequest, opts ...grpc.CallOption) (*GetAppAccountsResponse, error)
@@ -86,6 +87,15 @@ func (c *gatewayClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequ
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
+	out := new(DeleteAccountResponse)
+	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/DeleteAccount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) UpdateAppUserAccount(ctx context.Context, in *UpdateAppUserAccountRequest, opts ...grpc.CallOption) (*UpdateAppUserAccountResponse, error) {
 	out := new(UpdateAppUserAccountResponse)
 	err := c.cc.Invoke(ctx, "/account.gateway.user.v1.Gateway/UpdateAppUserAccount", in, out, opts...)
@@ -131,6 +141,7 @@ type GatewayServer interface {
 	GetAppDepositAccounts(context.Context, *GetAppDepositAccountsRequest) (*GetAppDepositAccountsResponse, error)
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
+	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
 	UpdateAppUserAccount(context.Context, *UpdateAppUserAccountRequest) (*UpdateAppUserAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	GetAppAccounts(context.Context, *GetAppAccountsRequest) (*GetAppAccountsResponse, error)
@@ -156,6 +167,9 @@ func (UnimplementedGatewayServer) CreateAccount(context.Context, *CreateAccountR
 }
 func (UnimplementedGatewayServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
 }
 func (UnimplementedGatewayServer) UpdateAppUserAccount(context.Context, *UpdateAppUserAccountRequest) (*UpdateAppUserAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserAccount not implemented")
@@ -272,6 +286,24 @@ func _Gateway_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.gateway.user.v1.Gateway/DeleteAccount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_UpdateAppUserAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppUserAccountRequest)
 	if err := dec(in); err != nil {
@@ -370,6 +402,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAccount",
 			Handler:    _Gateway_UpdateAccount_Handler,
+		},
+		{
+			MethodName: "DeleteAccount",
+			Handler:    _Gateway_DeleteAccount_Handler,
 		},
 		{
 			MethodName: "UpdateAppUserAccount",
