@@ -70,10 +70,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
         }
       }
     },
@@ -110,9 +106,6 @@
         },
         "Blocked": {
           "type": "boolean"
-        },
-        "GoodID": {
-          "type": "string"
         }
       }
     },
@@ -145,9 +138,6 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

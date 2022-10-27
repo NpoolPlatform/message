@@ -162,12 +162,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodName": {
-          "type": "string"
         }
       }
     },
@@ -182,9 +176,6 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
-        },
-        "GoodID": {
-          "type": "string"
         }
       }
     },

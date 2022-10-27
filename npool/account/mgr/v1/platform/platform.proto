@@ -28,7 +28,6 @@ message AccountReq {
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 20;
     optional string         AccountID   = 30;
     optional bool           Backup      = 40;
-    optional string         GoodID      = 50;
 }
 
 message Account {
@@ -37,7 +36,6 @@ message Account {
     string          AccountID   = 30;
     bool            Backup      = 40;
     uint32          CreatedAt   = 50;
-    string          GoodID      = 60;
 }
 
 message Conds {
@@ -45,7 +43,6 @@ message Conds {
     optional npool.v1.Int32Val  UsedFor     = 20;
     optional npool.v1.StringVal AccountID   = 30;
     optional npool.v1.BoolVal   Backup      = 40;
-    optional npool.v1.StringVal GoodID      = 50;
 }
 
 
