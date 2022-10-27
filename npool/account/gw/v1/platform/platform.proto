@@ -49,12 +49,15 @@ message Account {
     account.manager.account1.v1.LockedBy       LockedBy = 130;
     bool           Blocked       = 140;
     uint32         CreatedAt     = 150;
+    string         GoodID        = 160;
+    string         GoodName      = 170;
 }
 
 message CreateAccountRequest {
     string          CoinTypeID  = 10;
     optional string Address     = 20;
     account.manager.account1.v1.AccountUsedFor UsedFor = 30;
+    optional string GoodID      = 40;
 }
 
 message CreateAccountResponse {
