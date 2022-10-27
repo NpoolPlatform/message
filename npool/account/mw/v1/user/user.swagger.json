@@ -115,6 +115,10 @@
         },
         "Locked": {
           "type": "boolean"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -151,14 +155,6 @@
       }
     },
     "middlewareuserv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1DeleteAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
