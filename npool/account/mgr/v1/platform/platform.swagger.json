@@ -35,6 +35,9 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },
@@ -53,6 +56,9 @@
         },
         "Backup": {
           "type": "boolean"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },
@@ -70,6 +76,9 @@
         },
         "Backup": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
