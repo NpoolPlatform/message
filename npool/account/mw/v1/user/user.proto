@@ -12,6 +12,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
+    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
 
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
@@ -30,7 +31,6 @@ message AccountReq {
     optional bool   Active     = 90;
     optional bool   Blocked    = 100;
     optional bool   Locked     = 110;
-    optional uint32 DeletedAt  = 120;
 }
 
 message Account {
@@ -86,6 +86,14 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message DeleteAccountRequest {
+    string ID = 10;
+}
+
+message DeleteAccountResponse {
     Account Info = 10;
 }
 
