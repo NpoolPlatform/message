@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/get/appgood": {
+      "post": {
+        "operationId": "Gateway_GetAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappgoodv1GetAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappgoodv1GetAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/appgoods": {
       "post": {
         "operationId": "Gateway_GetAppGoods",
@@ -404,6 +436,25 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "goodgatewayappgoodv1GetAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewayappgoodv1GetAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayappgoodv1Good"
         }
       }
     },
