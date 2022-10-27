@@ -29,6 +29,7 @@ message AccountReq {
     optional bool           Locked      = 80;   // Locked when collecting
     optional account.manager.account1.v1.LockedBy LockedBy = 90;
     optional bool           Blocked     = 100;
+    optional string         GoodID      = 110;
 }
 
 message Account {
@@ -56,6 +57,8 @@ message Account {
     bool           Blocked     = 120;
     // @inject_tag: sql:"created_at"
     uint32         CreatedAt   = 130;
+    // @inject_tag: sql:"good_id"
+    string         GoodID      = 140;
 }
 
 message Conds {
@@ -67,7 +70,8 @@ message Conds {
     optional npool.v1.BoolVal   Active      = 60;
     optional npool.v1.BoolVal   Locked      = 70;
     optional npool.v1.Int32Val  LockedBy    = 80;
-    optional npool.v1.BoolVal   Blocked     = 100;
+    optional npool.v1.BoolVal   Blocked     = 90;
+    optional npool.v1.StringVal GoodID      = 100;
 }
 
 

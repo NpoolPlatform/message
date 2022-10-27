@@ -37,7 +37,7 @@ message Account {
     string          AccountID   = 30;
     bool            Backup      = 40;
     uint32          CreatedAt   = 50;
-    optional string GoodID      = 60;
+    string          GoodID      = 60;
 }
 
 message Conds {
