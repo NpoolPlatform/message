@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	CreateNAppGood(ctx context.Context, in *CreateNAppGoodRequest, opts ...grpc.CallOption) (*CreateNAppGoodResponse, error)
 	GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error)
+	GetAppGood(ctx context.Context, in *GetAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodResponse, error)
 	GetNAppGoods(ctx context.Context, in *GetNAppGoodsRequest, opts ...grpc.CallOption) (*GetNAppGoodsResponse, error)
 	UpdateAppGood(ctx context.Context, in *UpdateAppGoodRequest, opts ...grpc.CallOption) (*UpdateAppGoodResponse, error)
 	UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRequest, opts ...grpc.CallOption) (*UpdateNAppGoodResponse, error)
@@ -49,6 +50,15 @@ func (c *gatewayClient) CreateNAppGood(ctx context.Context, in *CreateNAppGoodRe
 func (c *gatewayClient) GetAppGoods(ctx context.Context, in *GetAppGoodsRequest, opts ...grpc.CallOption) (*GetAppGoodsResponse, error) {
 	out := new(GetAppGoodsResponse)
 	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/GetAppGoods", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppGood(ctx context.Context, in *GetAppGoodRequest, opts ...grpc.CallOption) (*GetAppGoodResponse, error) {
+	out := new(GetAppGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/GetAppGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,6 +98,7 @@ func (c *gatewayClient) UpdateNAppGood(ctx context.Context, in *UpdateNAppGoodRe
 type GatewayServer interface {
 	CreateNAppGood(context.Context, *CreateNAppGoodRequest) (*CreateNAppGoodResponse, error)
 	GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error)
+	GetAppGood(context.Context, *GetAppGoodRequest) (*GetAppGoodResponse, error)
 	GetNAppGoods(context.Context, *GetNAppGoodsRequest) (*GetNAppGoodsResponse, error)
 	UpdateAppGood(context.Context, *UpdateAppGoodRequest) (*UpdateAppGoodResponse, error)
 	UpdateNAppGood(context.Context, *UpdateNAppGoodRequest) (*UpdateNAppGoodResponse, error)
@@ -103,6 +114,9 @@ func (UnimplementedGatewayServer) CreateNAppGood(context.Context, *CreateNAppGoo
 }
 func (UnimplementedGatewayServer) GetAppGoods(context.Context, *GetAppGoodsRequest) (*GetAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoods not implemented")
+}
+func (UnimplementedGatewayServer) GetAppGood(context.Context, *GetAppGoodRequest) (*GetAppGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGood not implemented")
 }
 func (UnimplementedGatewayServer) GetNAppGoods(context.Context, *GetNAppGoodsRequest) (*GetNAppGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppGoods not implemented")
@@ -158,6 +172,24 @@ func _Gateway_GetAppGoods_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppGoods(ctx, req.(*GetAppGoodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.gateway.appgood.v1.Gateway/GetAppGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppGood(ctx, req.(*GetAppGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -230,6 +262,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppGoods",
 			Handler:    _Gateway_GetAppGoods_Handler,
+		},
+		{
+			MethodName: "GetAppGood",
+			Handler:    _Gateway_GetAppGood_Handler,
 		},
 		{
 			MethodName: "GetNAppGoods",
