@@ -109,6 +109,10 @@
         },
         "Blocked": {
           "type": "boolean"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
