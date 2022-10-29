@@ -113,11 +113,14 @@ message Good {
     float            Rating             = 450;
 
     message CoinInfo {
-        string CoinTypeID  = 10;
-        string CoinLogo    = 20;
-        string CoinName    = 30;
-        string CoinUnit    = 40;
-        bool   CoinPreSale = 50;
+        string CoinTypeID    = 10;
+        string CoinLogo      = 20;
+        string CoinName      = 30;
+        string CoinUnit      = 40;
+        bool   CoinPreSale   = 50;
+        string CoinEnv       = 60;
+        string CoinHomePage  = 70;
+        string CoinSpecs     = 80;
     }
     repeated CoinInfo SupportCoins      = 460;
 

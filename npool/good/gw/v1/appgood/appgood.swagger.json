@@ -227,6 +227,15 @@
         },
         "CoinPreSale": {
           "type": "boolean"
+        },
+        "CoinEnv": {
+          "type": "string"
+        },
+        "CoinHomePage": {
+          "type": "string"
+        },
+        "CoinSpecs": {
+          "type": "string"
         }
       }
     },
