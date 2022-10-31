@@ -225,18 +225,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "Locked": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InService": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Sold": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Posters": {
           "type": "array",
           "items": {

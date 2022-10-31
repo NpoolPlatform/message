@@ -121,9 +121,6 @@ message CreateGoodRequest {
     uint32          StartAt            = 150;
     bool            TestOnly           = 160;
     uint32          Total              = 170;
-    uint32          Locked             = 180;
-    uint32          InService          = 190;
-    uint32          Sold               = 200;
     repeated string Posters            = 210;
     repeated string Labels             = 220;
 }
