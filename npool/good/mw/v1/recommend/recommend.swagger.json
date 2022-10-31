@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "goodmiddlewarerecommendv1CreateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,14 +49,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1CreateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Recommend"
         }
       }
     },

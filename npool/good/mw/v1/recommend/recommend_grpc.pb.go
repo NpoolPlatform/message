@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
+	CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error)
 }
 
 type middlewareClient struct {
@@ -33,9 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error) {
-	out := new(CreateGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.middleware.recommend.v1.Middleware/CreateGood", in, out, opts...)
+func (c *middlewareClient) CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error) {
+	out := new(CreateRecommendResponse)
+	err := c.cc.Invoke(ctx, "/good.middleware.recommend.v1.Middleware/CreateRecommend", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) CreateGood(ctx context.Context, in *CreateGoodRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
+	CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -54,8 +54,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGood not implemented")
+func (UnimplementedMiddlewareServer) CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommend not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -70,20 +70,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_CreateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodRequest)
+func _Middleware_CreateRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRecommendRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateGood(ctx, in)
+		return srv.(MiddlewareServer).CreateRecommend(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.middleware.recommend.v1.Middleware/CreateGood",
+		FullMethod: "/good.middleware.recommend.v1.Middleware/CreateRecommend",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateGood(ctx, req.(*CreateGoodRequest))
+		return srv.(MiddlewareServer).CreateRecommend(ctx, req.(*CreateRecommendRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +96,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateGood",
-			Handler:    _Middleware_CreateGood_Handler,
+			MethodName: "CreateRecommend",
+			Handler:    _Middleware_CreateRecommend_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

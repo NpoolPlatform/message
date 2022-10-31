@@ -8,13 +8,13 @@ import "npool/good/mgr/v1/recommend/recommend.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateGood    (CreateGoodRequest)    returns (CreateGoodResponse)    {}
+    rpc CreateRecommend    (CreateRecommendRequest)    returns (CreateRecommendResponse)    {}
 }
 
-message CreateGoodRequest {
+message CreateRecommendRequest {
     good.manager.recommend.v1.RecommendReq Info = 10;
 }
 
-message CreateGoodResponse {
+message CreateRecommendResponse {
     good.manager.recommend.v1.Recommend Info = 10;
 }
