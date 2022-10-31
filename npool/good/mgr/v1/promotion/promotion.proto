@@ -47,9 +47,11 @@ message Promotion {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID     = 10;
-    optional npool.v1.StringVal AppID  = 20;
-    optional npool.v1.StringVal GoodID = 30;
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal GoodID  = 30;
+    optional npool.v1.Uint32Val StartAt = 40;
+    optional npool.v1.Uint32Val EndAt   = 50;
 }
 
 
