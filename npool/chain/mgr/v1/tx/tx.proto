@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateTx     (CreateTxRequest)     returns (CreateTxResponse)     {}
     rpc CreateTxs    (CreateTxsRequest)    returns (CreateTxsResponse)    {}
-    rpc AddTx        (AddTxRequest)        returns (AddTxResponse)        {}
+    rpc UpdateTx     (UpdateTxRequest)     returns (UpdateTxResponse)     {}
     rpc GetTx        (GetTxRequest)        returns (GetTxResponse)        {}
     rpc GetTxOnly    (GetTxOnlyRequest)    returns (GetTxOnlyResponse)    {}
     rpc GetTxs       (GetTxsRequest)       returns (GetTxsResponse)       {}
@@ -77,11 +77,11 @@ message CreateTxsResponse {
     repeated Tx Infos = 10;
 }
 
-message AddTxRequest {
+message UpdateTxRequest {
     TxReq Info = 10;
 }
 
-message AddTxResponse {
+message UpdateTxResponse {
     Tx Info = 10;
 }
 

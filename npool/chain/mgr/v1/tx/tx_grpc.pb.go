@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateTx(ctx context.Context, in *CreateTxRequest, opts ...grpc.CallOption) (*CreateTxResponse, error)
 	CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error)
-	AddTx(ctx context.Context, in *AddTxRequest, opts ...grpc.CallOption) (*AddTxResponse, error)
+	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
 	GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error)
 	GetTxOnly(ctx context.Context, in *GetTxOnlyRequest, opts ...grpc.CallOption) (*GetTxOnlyResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateTxs(ctx context.Context, in *CreateTxsRequest, opt
 	return out, nil
 }
 
-func (c *managerClient) AddTx(ctx context.Context, in *AddTxRequest, opts ...grpc.CallOption) (*AddTxResponse, error) {
-	out := new(AddTxResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.tx.v1.Manager/AddTx", in, out, opts...)
+func (c *managerClient) UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error) {
+	out := new(UpdateTxResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.tx.v1.Manager/UpdateTx", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteTx(ctx context.Context, in *DeleteTxRequest, opts 
 type ManagerServer interface {
 	CreateTx(context.Context, *CreateTxRequest) (*CreateTxResponse, error)
 	CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error)
-	AddTx(context.Context, *AddTxRequest) (*AddTxResponse, error)
+	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
 	GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error)
 	GetTxOnly(context.Context, *GetTxOnlyRequest) (*GetTxOnlyResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateTx(context.Context, *CreateTxRequest) (*
 func (UnimplementedManagerServer) CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTxs not implemented")
 }
-func (UnimplementedManagerServer) AddTx(context.Context, *AddTxRequest) (*AddTxResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddTx not implemented")
+func (UnimplementedManagerServer) UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateTx not implemented")
 }
 func (UnimplementedManagerServer) GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTx not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateTxs_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddTxRequest)
+func _Manager_UpdateTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTxRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddTx(ctx, in)
+		return srv.(ManagerServer).UpdateTx(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.tx.v1.Manager/AddTx",
+		FullMethod: "/chain.manager.tx.v1.Manager/UpdateTx",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddTx(ctx, req.(*AddTxRequest))
+		return srv.(ManagerServer).UpdateTx(ctx, req.(*UpdateTxRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateTxs_Handler,
 		},
 		{
-			MethodName: "AddTx",
-			Handler:    _Manager_AddTx_Handler,
+			MethodName: "UpdateTx",
+			Handler:    _Manager_UpdateTx_Handler,
 		},
 		{
 			MethodName: "GetTx",

@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Tx"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -251,6 +243,14 @@
         "StateFail"
       ],
       "default": "DefaultTxState"
+    },
+    "v1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
     }
   }
 }
