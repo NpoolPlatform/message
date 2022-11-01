@@ -56,7 +56,7 @@
         "AccountIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "TxState": {
+        "State": {
           "$ref": "#/definitions/v1Int32Val"
         }
       }

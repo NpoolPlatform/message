@@ -58,7 +58,7 @@ message Conds {
     optional npool.v1.StringVal      ID          = 10;
     optional npool.v1.StringVal      AccountID   = 20;
     optional npool.v1.StringSliceVal AccountIDs  = 30;
-    optional npool.v1.Int32Val       TxState     = 40;
+    optional npool.v1.Int32Val       State       = 40;
 }
 
 
