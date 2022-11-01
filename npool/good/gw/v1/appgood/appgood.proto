@@ -95,6 +95,9 @@ message Good {
     string           CoinName                    = 330;
     string           CoinUnit                    = 340;
     bool             CoinPreSale                 = 350;
+    string           CoinEnv                     = 351;
+    string           CoinHomePage                = 352;
+    string           CoinSpecs                   = 353;
 
     good.manager.good.v1.GoodType    GoodType    = 360;
     good.manager.good.v1.BenefitType BenefitType = 370;
@@ -110,11 +113,14 @@ message Good {
     float            Rating             = 450;
 
     message CoinInfo {
-        string CoinTypeID  = 10;
-        string CoinLogo    = 20;
-        string CoinName    = 30;
-        string CoinUnit    = 40;
-        bool   CoinPreSale = 50;
+        string CoinTypeID    = 10;
+        string CoinLogo      = 20;
+        string CoinName      = 30;
+        string CoinUnit      = 40;
+        bool   CoinPreSale   = 50;
+        string CoinEnv       = 60;
+        string CoinHomePage  = 70;
+        string CoinSpecs     = 80;
     }
     repeated CoinInfo SupportCoins      = 460;
 

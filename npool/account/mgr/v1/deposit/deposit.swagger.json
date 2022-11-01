@@ -29,9 +29,6 @@
         "UserID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "AccountID": {
           "type": "string"
         },
@@ -66,9 +63,6 @@
         "UserID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "AccountID": {
           "type": "string"
         },
@@ -97,9 +91,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AccountID": {

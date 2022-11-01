@@ -51,6 +51,7 @@ message AccountReq {
     optional bool           Locked     = 70;
     optional LockedBy       LockedBy   = 80;
     optional bool           Blocked    = 90;
+    optional uint32         DeletedAt  = 100;
 }
 
 message Account {

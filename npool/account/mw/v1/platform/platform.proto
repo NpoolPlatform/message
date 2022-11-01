@@ -38,24 +38,24 @@ message Account {
     string         CoinTypeID  = 20;
     account.manager.account1.v1.AccountUsedFor UsedFor  = 30;
     // @inject_tag: sql:"used_for"
-    string         UsedForStr  = 31;
+    string         UsedForStr  = 40;
     // @inject_tag: sql:"account_id"
-    string         AccountID   = 40;
+    string         AccountID   = 50;
     // @inject_tag: sql:"address"
-    string         Address     = 50;
+    string         Address     = 60;
     // @inject_tag: sql:"backup"
-    bool           Backup      = 60;
+    bool           Backup      = 70;
     // @inject_tag: sql:"active"
-    bool           Active      = 70;
+    bool           Active      = 80;
     // @inject_tag: sql:"locked"
-    bool           Locked      = 80;
-    account.manager.account1.v1.LockedBy       LockedBy = 90;
+    bool           Locked      = 90;
+    account.manager.account1.v1.LockedBy       LockedBy = 100;
     // @inject_tag: sql:"locked_by"
-    string         LockedByStr = 91;
+    string         LockedByStr = 110;
     // @inject_tag: sql:"blocked"
-    bool           Blocked     = 100;
+    bool           Blocked     = 120;
     // @inject_tag: sql:"created_at"
-    uint32         CreatedAt   = 110;
+    uint32         CreatedAt   = 130;
 }
 
 message Conds {

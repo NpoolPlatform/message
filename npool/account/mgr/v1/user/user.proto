@@ -31,6 +31,7 @@ message AccountReq {
     // Only [UserWithdraw, UserDirectBenefit]
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 60;
     repeated string Labels     = 70;
+    optional uint32 DeletedAt  = 80;
 }
 
 message Account {
