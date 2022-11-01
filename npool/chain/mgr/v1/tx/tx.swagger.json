@@ -58,6 +58,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "AccountIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
