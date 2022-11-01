@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package chain.manager.coin.exchangerage.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/exchangerage";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateExchangeRate     (CreateExchangeRateRequest)     returns (CreateExchangeRateResponse)     {}
+    rpc CreateExchangeRates    (CreateExchangeRatesRequest)    returns (CreateExchangeRatesResponse)    {}
+    rpc AddExchangeRate        (AddExchangeRateRequest)        returns (AddExchangeRateResponse)        {}
+    rpc GetExchangeRate        (GetExchangeRateRequest)        returns (GetExchangeRateResponse)        {}
+    rpc GetExchangeRateOnly    (GetExchangeRateOnlyRequest)    returns (GetExchangeRateOnlyResponse)    {}
+    rpc GetExchangeRates       (GetExchangeRatesRequest)       returns (GetExchangeRatesResponse)       {}
+    rpc ExistExchangeRate      (ExistExchangeRateRequest)      returns (ExistExchangeRateResponse)      {}
+    rpc ExistExchangeRateConds (ExistExchangeRateCondsRequest) returns (ExistExchangeRateCondsResponse) {}
+    rpc CountExchangeRates     (CountExchangeRatesRequest)     returns (CountExchangeRatesResponse)     {}
+    rpc DeleteExchangeRate     (DeleteExchangeRateRequest)     returns (DeleteExchangeRateResponse)     {}
+}
+
+message ExchangeRateReq {
+    optional string    ID               = 10;
+    optional string    CoinTypeID       = 20;
+    optional string    MarketValue      = 30;
+    optional string    SettleValue      = 40;
+    optional string    Setter           = 50;
+}
+
+message ExchangeRate {
+    string ID               = 10;
+    string CoinTypeID       = 20;
+    string MarketValue      = 30;
+    string SettleValue      = 40;
+    string Setter           = 50;
+    uint32 CreatedAt        = 60;
+    uint32 UpdatedAt        = 70;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID            = 10;
+    optional npool.v1.StringVal CoinTypeID    = 20;
+}
+
+
+message CreateExchangeRateRequest {
+    ExchangeRateReq Info = 10;
+}
+
+message CreateExchangeRateResponse {
+    ExchangeRate Info = 10;
+}
+
+message CreateExchangeRatesRequest {
+    repeated ExchangeRateReq Infos = 10;
+}
+
+message CreateExchangeRatesResponse {
+    repeated ExchangeRate Infos = 10;
+}
+
+message AddExchangeRateRequest {
+    ExchangeRateReq Info = 10;
+}
+
+message AddExchangeRateResponse {
+    ExchangeRate Info = 10;
+}
+
+message GetExchangeRateRequest {
+    string ID = 10;
+}
+
+message GetExchangeRateResponse {
+    ExchangeRate Info = 10;
+}
+
+message GetExchangeRatesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetExchangeRatesResponse {
+    repeated ExchangeRate Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetExchangeRateOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetExchangeRateOnlyResponse {
+    ExchangeRate Info = 10;
+}
+
+message ExistExchangeRateRequest {
+    string ID = 10;
+}
+
+message ExistExchangeRateResponse {
+    bool Info = 10;
+}
+
+message ExistExchangeRateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistExchangeRateCondsResponse {
+    bool Info = 10;
+}
+
+message CountExchangeRatesRequest {
+    Conds Conds = 10;
+}
+
+message CountExchangeRatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteExchangeRateRequest {
+    string ID = 10;
+}
+
+message DeleteExchangeRateResponse {
+    ExchangeRate Info = 10;
+}
+
