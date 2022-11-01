@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/coin.proto",
+    "title": "npool/chain/mgr/v1/coin/appcoin/appcoin.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,11 +44,59 @@
         }
       }
     },
-    "v1AddCoinResponse": {
+    "v1AddAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "$ref": "#/definitions/v1AppCoin"
+        }
+      }
+    },
+    "v1AppCoin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AppCoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
         }
       }
     },
@@ -63,87 +111,21 @@
         }
       }
     },
-    "v1Coin": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Presale": {
-          "type": "boolean"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "ENV": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CoinReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Presale": {
-          "type": "boolean"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "ENV": {
-          "type": "string"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "ENV": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Presale": {
-          "$ref": "#/definitions/v1BoolVal"
         },
         "ForPay": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1CountCoinsResponse": {
+    "v1CountAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -152,42 +134,34 @@
         }
       }
     },
-    "v1CreateCoinResponse": {
+    "v1CreateAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1CreateCoinsResponse": {
+    "v1CreateAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Coin"
+            "$ref": "#/definitions/v1AppCoin"
           }
         }
       }
     },
-    "v1DeleteCoinResponse": {
+    "v1DeleteAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1ExistCoinCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCoinResponse": {
+    "v1ExistAppCoinCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -195,29 +169,37 @@
         }
       }
     },
-    "v1GetCoinOnlyResponse": {
+    "v1ExistAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "type": "boolean"
         }
       }
     },
-    "v1GetCoinResponse": {
+    "v1GetAppCoinOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1GetCoinsResponse": {
+    "v1GetAppCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCoin"
+        }
+      }
+    },
+    "v1GetAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Coin"
+            "$ref": "#/definitions/v1AppCoin"
           }
         },
         "Total": {
