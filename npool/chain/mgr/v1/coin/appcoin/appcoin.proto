@@ -22,27 +22,32 @@ service Manager {
 }
 
 message AppCoinReq {
-    optional string    ID      = 10;
-    optional string    AppID   = 20;
-    optional string    Name    = 30;
-    optional string    Logo    = 40;
-    optional bool      ForPay  = 50;
+    optional string    ID                       = 10;
+    optional string    AppID                    = 20;
+    optional string    CoinTypeID               = 30;
+    optional string    Name                     = 40;
+    optional string    Logo                     = 50;
+    optional bool      ForPay                   = 60;
+    optional string    WithdrawAutoReviewAmount = 70;
 }
 
 message AppCoin {
-    string ID        = 10;
-    string AppID     = 20;
-    string Name      = 30;
-    string Logo      = 40;
-    bool   ForPay    = 50;
-    uint32 CreatedAt = 60;
-    uint32 UpdatedAt = 70;
+    string ID                       = 10;
+    string AppID                    = 20;
+    string CoinTypeID               = 30;
+    string Name                     = 40;
+    string Logo                     = 50;
+    bool   ForPay                   = 60;
+    string WithdrawAutoReviewAmount = 70;
+    uint32 CreatedAt                = 80;
+    uint32 UpdatedAt                = 90;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID       = 10;
-    optional npool.v1.StringVal AppID    = 20;
-    optional npool.v1.BoolVal   ForPay   = 30;
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal CoinTypeID = 30;
+    optional npool.v1.BoolVal   ForPay     = 40;
 }
 
 

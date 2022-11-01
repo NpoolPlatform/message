@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/appcoin/appcoin.proto",
+    "title": "npool/chain/mgr/v1/coin/setting/setting.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,36 +44,27 @@
         }
       }
     },
-    "v1AddAppCoinResponse": {
+    "v1AddCoinSettingResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppCoin"
+          "$ref": "#/definitions/v1CoinSetting"
         }
       }
     },
-    "v1AppCoin": {
+    "v1CoinSetting": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },
-        "Name": {
+        "WarmAccountAmount": {
           "type": "string"
         },
-        "Logo": {
-          "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "WithdrawAutoReviewAmount": {
+        "PaymentAccountAmount": {
           "type": "string"
         },
         "CreatedAt": {
@@ -86,40 +77,20 @@
         }
       }
     },
-    "v1AppCoinReq": {
+    "v1CoinSettingReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },
-        "Name": {
+        "WarmAccountAmount": {
           "type": "string"
         },
-        "Logo": {
+        "PaymentAccountAmount": {
           "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "WithdrawAutoReviewAmount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -129,18 +100,12 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "ForPay": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1CountAppCoinsResponse": {
+    "v1CountCoinSettingsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -149,42 +114,34 @@
         }
       }
     },
-    "v1CreateAppCoinResponse": {
+    "v1CreateCoinSettingResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppCoin"
+          "$ref": "#/definitions/v1CoinSetting"
         }
       }
     },
-    "v1CreateAppCoinsResponse": {
+    "v1CreateCoinSettingsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppCoin"
+            "$ref": "#/definitions/v1CoinSetting"
           }
         }
       }
     },
-    "v1DeleteAppCoinResponse": {
+    "v1DeleteCoinSettingResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppCoin"
+          "$ref": "#/definitions/v1CoinSetting"
         }
       }
     },
-    "v1ExistAppCoinCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAppCoinResponse": {
+    "v1ExistCoinSettingCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -192,29 +149,37 @@
         }
       }
     },
-    "v1GetAppCoinOnlyResponse": {
+    "v1ExistCoinSettingResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppCoin"
+          "type": "boolean"
         }
       }
     },
-    "v1GetAppCoinResponse": {
+    "v1GetCoinSettingOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppCoin"
+          "$ref": "#/definitions/v1CoinSetting"
         }
       }
     },
-    "v1GetAppCoinsResponse": {
+    "v1GetCoinSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinSetting"
+        }
+      }
+    },
+    "v1GetCoinSettingsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppCoin"
+            "$ref": "#/definitions/v1CoinSetting"
           }
         },
         "Total": {
