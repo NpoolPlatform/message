@@ -198,6 +198,9 @@
         "State": {
           "$ref": "#/definitions/v1TxState"
         },
+        "Extra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -231,6 +234,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
         }
       }
     },

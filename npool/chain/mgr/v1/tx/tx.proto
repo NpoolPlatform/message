@@ -38,6 +38,7 @@ message TxReq {
     optional string    FeeAmount      = 50;
     optional string    ChainTxID      = 60;
     optional TxState   State          = 70;
+    optional string    Extra          = 80;
 }
 
 message Tx {
@@ -48,8 +49,9 @@ message Tx {
     string  FeeAmount      = 50;
     string  ChainTxID      = 60;
     TxState State          = 70;
-    uint32 CreatedAt       = 80;
-    uint32 UpdatedAt       = 90;
+    string  Extra          = 80;
+    uint32  CreatedAt      = 90;
+    uint32  UpdatedAt      = 100;
 }
 
 message Conds {
