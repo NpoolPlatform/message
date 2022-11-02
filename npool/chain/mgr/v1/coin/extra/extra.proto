@@ -36,8 +36,8 @@ message CoinExtra {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID       = 10;
-    optional npool.v1.StringVal HomePage = 20;
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal CoinTypeID = 20;
 }
 
 

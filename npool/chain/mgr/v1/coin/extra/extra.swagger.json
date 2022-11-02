@@ -94,7 +94,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "HomePage": {
+        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
