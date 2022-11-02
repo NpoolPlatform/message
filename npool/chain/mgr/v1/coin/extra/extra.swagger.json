@@ -94,7 +94,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
+        "HomePage": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
