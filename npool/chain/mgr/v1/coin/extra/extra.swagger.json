@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddCoinExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
-        }
-      }
-    },
     "v1CoinExtra": {
       "type": "object",
       "properties": {
@@ -190,6 +182,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinExtra"
         }
       }
     }

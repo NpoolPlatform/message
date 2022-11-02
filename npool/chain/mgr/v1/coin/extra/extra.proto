@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateCoinExtra     (CreateCoinExtraRequest)     returns (CreateCoinExtraResponse)     {}
     rpc CreateCoinExtras    (CreateCoinExtrasRequest)    returns (CreateCoinExtrasResponse)    {}
-    rpc AddCoinExtra        (AddCoinExtraRequest)        returns (AddCoinExtraResponse)        {}
+    rpc UpdateCoinExtra     (UpdateCoinExtraRequest)     returns (UpdateCoinExtraResponse)        {}
     rpc GetCoinExtra        (GetCoinExtraRequest)        returns (GetCoinExtraResponse)        {}
     rpc GetCoinExtraOnly    (GetCoinExtraOnlyRequest)    returns (GetCoinExtraOnlyResponse)    {}
     rpc GetCoinExtras       (GetCoinExtrasRequest)       returns (GetCoinExtrasResponse)       {}
@@ -57,11 +57,11 @@ message CreateCoinExtrasResponse {
     repeated CoinExtra Infos = 10;
 }
 
-message AddCoinExtraRequest {
+message UpdateCoinExtraRequest {
     CoinExtraReq Info = 10;
 }
 
-message AddCoinExtraResponse {
+message UpdateCoinExtraResponse {
     CoinExtra Info = 10;
 }
 

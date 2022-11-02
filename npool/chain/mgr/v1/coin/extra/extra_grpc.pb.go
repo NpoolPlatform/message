@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateCoinExtra(ctx context.Context, in *CreateCoinExtraRequest, opts ...grpc.CallOption) (*CreateCoinExtraResponse, error)
 	CreateCoinExtras(ctx context.Context, in *CreateCoinExtrasRequest, opts ...grpc.CallOption) (*CreateCoinExtrasResponse, error)
-	AddCoinExtra(ctx context.Context, in *AddCoinExtraRequest, opts ...grpc.CallOption) (*AddCoinExtraResponse, error)
+	UpdateCoinExtra(ctx context.Context, in *UpdateCoinExtraRequest, opts ...grpc.CallOption) (*UpdateCoinExtraResponse, error)
 	GetCoinExtra(ctx context.Context, in *GetCoinExtraRequest, opts ...grpc.CallOption) (*GetCoinExtraResponse, error)
 	GetCoinExtraOnly(ctx context.Context, in *GetCoinExtraOnlyRequest, opts ...grpc.CallOption) (*GetCoinExtraOnlyResponse, error)
 	GetCoinExtras(ctx context.Context, in *GetCoinExtrasRequest, opts ...grpc.CallOption) (*GetCoinExtrasResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateCoinExtras(ctx context.Context, in *CreateCoinExtr
 	return out, nil
 }
 
-func (c *managerClient) AddCoinExtra(ctx context.Context, in *AddCoinExtraRequest, opts ...grpc.CallOption) (*AddCoinExtraResponse, error) {
-	out := new(AddCoinExtraResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.extra.v1.Manager/AddCoinExtra", in, out, opts...)
+func (c *managerClient) UpdateCoinExtra(ctx context.Context, in *UpdateCoinExtraRequest, opts ...grpc.CallOption) (*UpdateCoinExtraResponse, error) {
+	out := new(UpdateCoinExtraResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.extra.v1.Manager/UpdateCoinExtra", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteCoinExtra(ctx context.Context, in *DeleteCoinExtra
 type ManagerServer interface {
 	CreateCoinExtra(context.Context, *CreateCoinExtraRequest) (*CreateCoinExtraResponse, error)
 	CreateCoinExtras(context.Context, *CreateCoinExtrasRequest) (*CreateCoinExtrasResponse, error)
-	AddCoinExtra(context.Context, *AddCoinExtraRequest) (*AddCoinExtraResponse, error)
+	UpdateCoinExtra(context.Context, *UpdateCoinExtraRequest) (*UpdateCoinExtraResponse, error)
 	GetCoinExtra(context.Context, *GetCoinExtraRequest) (*GetCoinExtraResponse, error)
 	GetCoinExtraOnly(context.Context, *GetCoinExtraOnlyRequest) (*GetCoinExtraOnlyResponse, error)
 	GetCoinExtras(context.Context, *GetCoinExtrasRequest) (*GetCoinExtrasResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateCoinExtra(context.Context, *CreateCoinEx
 func (UnimplementedManagerServer) CreateCoinExtras(context.Context, *CreateCoinExtrasRequest) (*CreateCoinExtrasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinExtras not implemented")
 }
-func (UnimplementedManagerServer) AddCoinExtra(context.Context, *AddCoinExtraRequest) (*AddCoinExtraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddCoinExtra not implemented")
+func (UnimplementedManagerServer) UpdateCoinExtra(context.Context, *UpdateCoinExtraRequest) (*UpdateCoinExtraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinExtra not implemented")
 }
 func (UnimplementedManagerServer) GetCoinExtra(context.Context, *GetCoinExtraRequest) (*GetCoinExtraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinExtra not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateCoinExtras_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddCoinExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddCoinExtraRequest)
+func _Manager_UpdateCoinExtra_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCoinExtraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddCoinExtra(ctx, in)
+		return srv.(ManagerServer).UpdateCoinExtra(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.extra.v1.Manager/AddCoinExtra",
+		FullMethod: "/chain.manager.coin.extra.v1.Manager/UpdateCoinExtra",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddCoinExtra(ctx, req.(*AddCoinExtraRequest))
+		return srv.(ManagerServer).UpdateCoinExtra(ctx, req.(*UpdateCoinExtraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateCoinExtras_Handler,
 		},
 		{
-			MethodName: "AddCoinExtra",
-			Handler:    _Manager_AddCoinExtra_Handler,
+			MethodName: "UpdateCoinExtra",
+			Handler:    _Manager_UpdateCoinExtra_Handler,
 		},
 		{
 			MethodName: "GetCoinExtra",
