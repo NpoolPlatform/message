@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddAppCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppCoin"
-        }
-      }
-    },
     "v1AppCoin": {
       "type": "object",
       "properties": {
@@ -231,6 +223,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     }
