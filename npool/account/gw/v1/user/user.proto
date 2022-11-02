@@ -4,6 +4,7 @@ package account.gateway.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/user";
 
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -113,6 +114,8 @@ message CreateAccountRequest {
     string          Address     = 40;
     account.manager.account1.v1.AccountUsedFor UsedFor = 50;
     repeated string Labels      = 60;
+    appuser.manager.signmethod.v2.SignMethodType AccountType       = 70;
+    string VerificationCode     = 80;
 }
 
 message GetDepositAccountRequest {
