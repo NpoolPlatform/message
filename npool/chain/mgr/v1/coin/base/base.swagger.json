@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddCoinBaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinBase"
-        }
-      }
-    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -241,6 +233,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinBaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinBase"
         }
       }
     }

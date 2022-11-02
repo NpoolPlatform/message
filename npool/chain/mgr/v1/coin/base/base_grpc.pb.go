@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateCoinBase(ctx context.Context, in *CreateCoinBaseRequest, opts ...grpc.CallOption) (*CreateCoinBaseResponse, error)
 	CreateCoinBases(ctx context.Context, in *CreateCoinBasesRequest, opts ...grpc.CallOption) (*CreateCoinBasesResponse, error)
-	AddCoinBase(ctx context.Context, in *AddCoinBaseRequest, opts ...grpc.CallOption) (*AddCoinBaseResponse, error)
+	UpdateCoinBase(ctx context.Context, in *UpdateCoinBaseRequest, opts ...grpc.CallOption) (*UpdateCoinBaseResponse, error)
 	GetCoinBase(ctx context.Context, in *GetCoinBaseRequest, opts ...grpc.CallOption) (*GetCoinBaseResponse, error)
 	GetCoinBaseOnly(ctx context.Context, in *GetCoinBaseOnlyRequest, opts ...grpc.CallOption) (*GetCoinBaseOnlyResponse, error)
 	GetCoinBases(ctx context.Context, in *GetCoinBasesRequest, opts ...grpc.CallOption) (*GetCoinBasesResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateCoinBases(ctx context.Context, in *CreateCoinBases
 	return out, nil
 }
 
-func (c *managerClient) AddCoinBase(ctx context.Context, in *AddCoinBaseRequest, opts ...grpc.CallOption) (*AddCoinBaseResponse, error) {
-	out := new(AddCoinBaseResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.base.v1.Manager/AddCoinBase", in, out, opts...)
+func (c *managerClient) UpdateCoinBase(ctx context.Context, in *UpdateCoinBaseRequest, opts ...grpc.CallOption) (*UpdateCoinBaseResponse, error) {
+	out := new(UpdateCoinBaseResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.base.v1.Manager/UpdateCoinBase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteCoinBase(ctx context.Context, in *DeleteCoinBaseRe
 type ManagerServer interface {
 	CreateCoinBase(context.Context, *CreateCoinBaseRequest) (*CreateCoinBaseResponse, error)
 	CreateCoinBases(context.Context, *CreateCoinBasesRequest) (*CreateCoinBasesResponse, error)
-	AddCoinBase(context.Context, *AddCoinBaseRequest) (*AddCoinBaseResponse, error)
+	UpdateCoinBase(context.Context, *UpdateCoinBaseRequest) (*UpdateCoinBaseResponse, error)
 	GetCoinBase(context.Context, *GetCoinBaseRequest) (*GetCoinBaseResponse, error)
 	GetCoinBaseOnly(context.Context, *GetCoinBaseOnlyRequest) (*GetCoinBaseOnlyResponse, error)
 	GetCoinBases(context.Context, *GetCoinBasesRequest) (*GetCoinBasesResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateCoinBase(context.Context, *CreateCoinBas
 func (UnimplementedManagerServer) CreateCoinBases(context.Context, *CreateCoinBasesRequest) (*CreateCoinBasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinBases not implemented")
 }
-func (UnimplementedManagerServer) AddCoinBase(context.Context, *AddCoinBaseRequest) (*AddCoinBaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddCoinBase not implemented")
+func (UnimplementedManagerServer) UpdateCoinBase(context.Context, *UpdateCoinBaseRequest) (*UpdateCoinBaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinBase not implemented")
 }
 func (UnimplementedManagerServer) GetCoinBase(context.Context, *GetCoinBaseRequest) (*GetCoinBaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinBase not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateCoinBases_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddCoinBase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddCoinBaseRequest)
+func _Manager_UpdateCoinBase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCoinBaseRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddCoinBase(ctx, in)
+		return srv.(ManagerServer).UpdateCoinBase(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.base.v1.Manager/AddCoinBase",
+		FullMethod: "/chain.manager.coin.base.v1.Manager/UpdateCoinBase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddCoinBase(ctx, req.(*AddCoinBaseRequest))
+		return srv.(ManagerServer).UpdateCoinBase(ctx, req.(*UpdateCoinBaseRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateCoinBases_Handler,
 		},
 		{
-			MethodName: "AddCoinBase",
-			Handler:    _Manager_AddCoinBase_Handler,
+			MethodName: "UpdateCoinBase",
+			Handler:    _Manager_UpdateCoinBase_Handler,
 		},
 		{
 			MethodName: "GetCoinBase",
