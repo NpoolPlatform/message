@@ -123,6 +123,7 @@ message GetDepositAccountRequest {
     string AppID       = 10;
     string UserID      = 20;
     string CoinTypeID  = 30;
+    account.manager.account1.v1.AccountUsedFor UsedFor = 40;
 }
 
 message GetDepositAccountResponse {

@@ -647,6 +647,9 @@
         },
         "CoinTypeID": {
           "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         }
       }
     },
