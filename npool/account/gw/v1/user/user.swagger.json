@@ -423,6 +423,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v2SignMethodType"
+        },
+        "VerificationCode": {
+          "type": "string"
         }
       }
     },
@@ -738,6 +744,22 @@
           "$ref": "#/definitions/gatewayuserv1Account"
         }
       }
+    },
+    "v2SignMethodType": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethodType",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethodType"
     }
   }
 }
