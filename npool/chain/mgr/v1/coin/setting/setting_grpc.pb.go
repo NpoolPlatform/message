@@ -22,16 +22,16 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
-	CreateCoinSetting(ctx context.Context, in *CreateCoinSettingRequest, opts ...grpc.CallOption) (*CreateCoinSettingResponse, error)
-	CreateCoinSettings(ctx context.Context, in *CreateCoinSettingsRequest, opts ...grpc.CallOption) (*CreateCoinSettingsResponse, error)
-	AddCoinSetting(ctx context.Context, in *AddCoinSettingRequest, opts ...grpc.CallOption) (*AddCoinSettingResponse, error)
-	GetCoinSetting(ctx context.Context, in *GetCoinSettingRequest, opts ...grpc.CallOption) (*GetCoinSettingResponse, error)
-	GetCoinSettingOnly(ctx context.Context, in *GetCoinSettingOnlyRequest, opts ...grpc.CallOption) (*GetCoinSettingOnlyResponse, error)
-	GetCoinSettings(ctx context.Context, in *GetCoinSettingsRequest, opts ...grpc.CallOption) (*GetCoinSettingsResponse, error)
-	ExistCoinSetting(ctx context.Context, in *ExistCoinSettingRequest, opts ...grpc.CallOption) (*ExistCoinSettingResponse, error)
-	ExistCoinSettingConds(ctx context.Context, in *ExistCoinSettingCondsRequest, opts ...grpc.CallOption) (*ExistCoinSettingCondsResponse, error)
-	CountCoinSettings(ctx context.Context, in *CountCoinSettingsRequest, opts ...grpc.CallOption) (*CountCoinSettingsResponse, error)
-	DeleteCoinSetting(ctx context.Context, in *DeleteCoinSettingRequest, opts ...grpc.CallOption) (*DeleteCoinSettingResponse, error)
+	CreateSetting(ctx context.Context, in *CreateSettingRequest, opts ...grpc.CallOption) (*CreateSettingResponse, error)
+	CreateSettings(ctx context.Context, in *CreateSettingsRequest, opts ...grpc.CallOption) (*CreateSettingsResponse, error)
+	UpdateSetting(ctx context.Context, in *UpdateSettingRequest, opts ...grpc.CallOption) (*UpdateSettingResponse, error)
+	GetSetting(ctx context.Context, in *GetSettingRequest, opts ...grpc.CallOption) (*GetSettingResponse, error)
+	GetSettingOnly(ctx context.Context, in *GetSettingOnlyRequest, opts ...grpc.CallOption) (*GetSettingOnlyResponse, error)
+	GetSettings(ctx context.Context, in *GetSettingsRequest, opts ...grpc.CallOption) (*GetSettingsResponse, error)
+	ExistSetting(ctx context.Context, in *ExistSettingRequest, opts ...grpc.CallOption) (*ExistSettingResponse, error)
+	ExistSettingConds(ctx context.Context, in *ExistSettingCondsRequest, opts ...grpc.CallOption) (*ExistSettingCondsResponse, error)
+	CountSettings(ctx context.Context, in *CountSettingsRequest, opts ...grpc.CallOption) (*CountSettingsResponse, error)
+	DeleteSetting(ctx context.Context, in *DeleteSettingRequest, opts ...grpc.CallOption) (*DeleteSettingResponse, error)
 }
 
 type managerClient struct {
@@ -42,90 +42,90 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
-func (c *managerClient) CreateCoinSetting(ctx context.Context, in *CreateCoinSettingRequest, opts ...grpc.CallOption) (*CreateCoinSettingResponse, error) {
-	out := new(CreateCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CreateCoinSetting", in, out, opts...)
+func (c *managerClient) CreateSetting(ctx context.Context, in *CreateSettingRequest, opts ...grpc.CallOption) (*CreateSettingResponse, error) {
+	out := new(CreateSettingResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CreateSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateCoinSettings(ctx context.Context, in *CreateCoinSettingsRequest, opts ...grpc.CallOption) (*CreateCoinSettingsResponse, error) {
-	out := new(CreateCoinSettingsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CreateCoinSettings", in, out, opts...)
+func (c *managerClient) CreateSettings(ctx context.Context, in *CreateSettingsRequest, opts ...grpc.CallOption) (*CreateSettingsResponse, error) {
+	out := new(CreateSettingsResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CreateSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) AddCoinSetting(ctx context.Context, in *AddCoinSettingRequest, opts ...grpc.CallOption) (*AddCoinSettingResponse, error) {
-	out := new(AddCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/AddCoinSetting", in, out, opts...)
+func (c *managerClient) UpdateSetting(ctx context.Context, in *UpdateSettingRequest, opts ...grpc.CallOption) (*UpdateSettingResponse, error) {
+	out := new(UpdateSettingResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/UpdateSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetCoinSetting(ctx context.Context, in *GetCoinSettingRequest, opts ...grpc.CallOption) (*GetCoinSettingResponse, error) {
-	out := new(GetCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetCoinSetting", in, out, opts...)
+func (c *managerClient) GetSetting(ctx context.Context, in *GetSettingRequest, opts ...grpc.CallOption) (*GetSettingResponse, error) {
+	out := new(GetSettingResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetCoinSettingOnly(ctx context.Context, in *GetCoinSettingOnlyRequest, opts ...grpc.CallOption) (*GetCoinSettingOnlyResponse, error) {
-	out := new(GetCoinSettingOnlyResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetCoinSettingOnly", in, out, opts...)
+func (c *managerClient) GetSettingOnly(ctx context.Context, in *GetSettingOnlyRequest, opts ...grpc.CallOption) (*GetSettingOnlyResponse, error) {
+	out := new(GetSettingOnlyResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetSettingOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetCoinSettings(ctx context.Context, in *GetCoinSettingsRequest, opts ...grpc.CallOption) (*GetCoinSettingsResponse, error) {
-	out := new(GetCoinSettingsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetCoinSettings", in, out, opts...)
+func (c *managerClient) GetSettings(ctx context.Context, in *GetSettingsRequest, opts ...grpc.CallOption) (*GetSettingsResponse, error) {
+	out := new(GetSettingsResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/GetSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistCoinSetting(ctx context.Context, in *ExistCoinSettingRequest, opts ...grpc.CallOption) (*ExistCoinSettingResponse, error) {
-	out := new(ExistCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/ExistCoinSetting", in, out, opts...)
+func (c *managerClient) ExistSetting(ctx context.Context, in *ExistSettingRequest, opts ...grpc.CallOption) (*ExistSettingResponse, error) {
+	out := new(ExistSettingResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/ExistSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistCoinSettingConds(ctx context.Context, in *ExistCoinSettingCondsRequest, opts ...grpc.CallOption) (*ExistCoinSettingCondsResponse, error) {
-	out := new(ExistCoinSettingCondsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/ExistCoinSettingConds", in, out, opts...)
+func (c *managerClient) ExistSettingConds(ctx context.Context, in *ExistSettingCondsRequest, opts ...grpc.CallOption) (*ExistSettingCondsResponse, error) {
+	out := new(ExistSettingCondsResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/ExistSettingConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CountCoinSettings(ctx context.Context, in *CountCoinSettingsRequest, opts ...grpc.CallOption) (*CountCoinSettingsResponse, error) {
-	out := new(CountCoinSettingsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CountCoinSettings", in, out, opts...)
+func (c *managerClient) CountSettings(ctx context.Context, in *CountSettingsRequest, opts ...grpc.CallOption) (*CountSettingsResponse, error) {
+	out := new(CountSettingsResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/CountSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteCoinSetting(ctx context.Context, in *DeleteCoinSettingRequest, opts ...grpc.CallOption) (*DeleteCoinSettingResponse, error) {
-	out := new(DeleteCoinSettingResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/DeleteCoinSetting", in, out, opts...)
+func (c *managerClient) DeleteSetting(ctx context.Context, in *DeleteSettingRequest, opts ...grpc.CallOption) (*DeleteSettingResponse, error) {
+	out := new(DeleteSettingResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.setting.v1.Manager/DeleteSetting", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,16 +136,16 @@ func (c *managerClient) DeleteCoinSetting(ctx context.Context, in *DeleteCoinSet
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
-	CreateCoinSetting(context.Context, *CreateCoinSettingRequest) (*CreateCoinSettingResponse, error)
-	CreateCoinSettings(context.Context, *CreateCoinSettingsRequest) (*CreateCoinSettingsResponse, error)
-	AddCoinSetting(context.Context, *AddCoinSettingRequest) (*AddCoinSettingResponse, error)
-	GetCoinSetting(context.Context, *GetCoinSettingRequest) (*GetCoinSettingResponse, error)
-	GetCoinSettingOnly(context.Context, *GetCoinSettingOnlyRequest) (*GetCoinSettingOnlyResponse, error)
-	GetCoinSettings(context.Context, *GetCoinSettingsRequest) (*GetCoinSettingsResponse, error)
-	ExistCoinSetting(context.Context, *ExistCoinSettingRequest) (*ExistCoinSettingResponse, error)
-	ExistCoinSettingConds(context.Context, *ExistCoinSettingCondsRequest) (*ExistCoinSettingCondsResponse, error)
-	CountCoinSettings(context.Context, *CountCoinSettingsRequest) (*CountCoinSettingsResponse, error)
-	DeleteCoinSetting(context.Context, *DeleteCoinSettingRequest) (*DeleteCoinSettingResponse, error)
+	CreateSetting(context.Context, *CreateSettingRequest) (*CreateSettingResponse, error)
+	CreateSettings(context.Context, *CreateSettingsRequest) (*CreateSettingsResponse, error)
+	UpdateSetting(context.Context, *UpdateSettingRequest) (*UpdateSettingResponse, error)
+	GetSetting(context.Context, *GetSettingRequest) (*GetSettingResponse, error)
+	GetSettingOnly(context.Context, *GetSettingOnlyRequest) (*GetSettingOnlyResponse, error)
+	GetSettings(context.Context, *GetSettingsRequest) (*GetSettingsResponse, error)
+	ExistSetting(context.Context, *ExistSettingRequest) (*ExistSettingResponse, error)
+	ExistSettingConds(context.Context, *ExistSettingCondsRequest) (*ExistSettingCondsResponse, error)
+	CountSettings(context.Context, *CountSettingsRequest) (*CountSettingsResponse, error)
+	DeleteSetting(context.Context, *DeleteSettingRequest) (*DeleteSettingResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -153,35 +153,35 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedManagerServer) CreateCoinSetting(context.Context, *CreateCoinSettingRequest) (*CreateCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinSetting not implemented")
+func (UnimplementedManagerServer) CreateSetting(context.Context, *CreateSettingRequest) (*CreateSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSetting not implemented")
 }
-func (UnimplementedManagerServer) CreateCoinSettings(context.Context, *CreateCoinSettingsRequest) (*CreateCoinSettingsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinSettings not implemented")
+func (UnimplementedManagerServer) CreateSettings(context.Context, *CreateSettingsRequest) (*CreateSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSettings not implemented")
 }
-func (UnimplementedManagerServer) AddCoinSetting(context.Context, *AddCoinSettingRequest) (*AddCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddCoinSetting not implemented")
+func (UnimplementedManagerServer) UpdateSetting(context.Context, *UpdateSettingRequest) (*UpdateSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSetting not implemented")
 }
-func (UnimplementedManagerServer) GetCoinSetting(context.Context, *GetCoinSettingRequest) (*GetCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSetting not implemented")
+func (UnimplementedManagerServer) GetSetting(context.Context, *GetSettingRequest) (*GetSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSetting not implemented")
 }
-func (UnimplementedManagerServer) GetCoinSettingOnly(context.Context, *GetCoinSettingOnlyRequest) (*GetCoinSettingOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSettingOnly not implemented")
+func (UnimplementedManagerServer) GetSettingOnly(context.Context, *GetSettingOnlyRequest) (*GetSettingOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSettingOnly not implemented")
 }
-func (UnimplementedManagerServer) GetCoinSettings(context.Context, *GetCoinSettingsRequest) (*GetCoinSettingsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinSettings not implemented")
+func (UnimplementedManagerServer) GetSettings(context.Context, *GetSettingsRequest) (*GetSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSettings not implemented")
 }
-func (UnimplementedManagerServer) ExistCoinSetting(context.Context, *ExistCoinSettingRequest) (*ExistCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinSetting not implemented")
+func (UnimplementedManagerServer) ExistSetting(context.Context, *ExistSettingRequest) (*ExistSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSetting not implemented")
 }
-func (UnimplementedManagerServer) ExistCoinSettingConds(context.Context, *ExistCoinSettingCondsRequest) (*ExistCoinSettingCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinSettingConds not implemented")
+func (UnimplementedManagerServer) ExistSettingConds(context.Context, *ExistSettingCondsRequest) (*ExistSettingCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSettingConds not implemented")
 }
-func (UnimplementedManagerServer) CountCoinSettings(context.Context, *CountCoinSettingsRequest) (*CountCoinSettingsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountCoinSettings not implemented")
+func (UnimplementedManagerServer) CountSettings(context.Context, *CountSettingsRequest) (*CountSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSettings not implemented")
 }
-func (UnimplementedManagerServer) DeleteCoinSetting(context.Context, *DeleteCoinSettingRequest) (*DeleteCoinSettingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoinSetting not implemented")
+func (UnimplementedManagerServer) DeleteSetting(context.Context, *DeleteSettingRequest) (*DeleteSettingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSetting not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -196,182 +196,182 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Manager_CreateCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCoinSettingRequest)
+func _Manager_CreateSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSettingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateCoinSetting(ctx, in)
+		return srv.(ManagerServer).CreateSetting(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/CreateCoinSetting",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/CreateSetting",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateCoinSetting(ctx, req.(*CreateCoinSettingRequest))
+		return srv.(ManagerServer).CreateSetting(ctx, req.(*CreateSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateCoinSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCoinSettingsRequest)
+func _Manager_CreateSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSettingsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateCoinSettings(ctx, in)
+		return srv.(ManagerServer).CreateSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/CreateCoinSettings",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/CreateSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateCoinSettings(ctx, req.(*CreateCoinSettingsRequest))
+		return srv.(ManagerServer).CreateSettings(ctx, req.(*CreateSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddCoinSettingRequest)
+func _Manager_UpdateSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSettingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddCoinSetting(ctx, in)
+		return srv.(ManagerServer).UpdateSetting(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/AddCoinSetting",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/UpdateSetting",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddCoinSetting(ctx, req.(*AddCoinSettingRequest))
+		return srv.(ManagerServer).UpdateSetting(ctx, req.(*UpdateSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinSettingRequest)
+func _Manager_GetSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSettingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCoinSetting(ctx, in)
+		return srv.(ManagerServer).GetSetting(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetCoinSetting",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetSetting",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCoinSetting(ctx, req.(*GetCoinSettingRequest))
+		return srv.(ManagerServer).GetSetting(ctx, req.(*GetSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCoinSettingOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinSettingOnlyRequest)
+func _Manager_GetSettingOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSettingOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCoinSettingOnly(ctx, in)
+		return srv.(ManagerServer).GetSettingOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetCoinSettingOnly",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetSettingOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCoinSettingOnly(ctx, req.(*GetCoinSettingOnlyRequest))
+		return srv.(ManagerServer).GetSettingOnly(ctx, req.(*GetSettingOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCoinSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinSettingsRequest)
+func _Manager_GetSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSettingsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCoinSettings(ctx, in)
+		return srv.(ManagerServer).GetSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetCoinSettings",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/GetSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCoinSettings(ctx, req.(*GetCoinSettingsRequest))
+		return srv.(ManagerServer).GetSettings(ctx, req.(*GetSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistCoinSettingRequest)
+func _Manager_ExistSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSettingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistCoinSetting(ctx, in)
+		return srv.(ManagerServer).ExistSetting(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/ExistCoinSetting",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/ExistSetting",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistCoinSetting(ctx, req.(*ExistCoinSettingRequest))
+		return srv.(ManagerServer).ExistSetting(ctx, req.(*ExistSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistCoinSettingConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistCoinSettingCondsRequest)
+func _Manager_ExistSettingConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSettingCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistCoinSettingConds(ctx, in)
+		return srv.(ManagerServer).ExistSettingConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/ExistCoinSettingConds",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/ExistSettingConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistCoinSettingConds(ctx, req.(*ExistCoinSettingCondsRequest))
+		return srv.(ManagerServer).ExistSettingConds(ctx, req.(*ExistSettingCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountCoinSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountCoinSettingsRequest)
+func _Manager_CountSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSettingsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountCoinSettings(ctx, in)
+		return srv.(ManagerServer).CountSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/CountCoinSettings",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/CountSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountCoinSettings(ctx, req.(*CountCoinSettingsRequest))
+		return srv.(ManagerServer).CountSettings(ctx, req.(*CountSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteCoinSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCoinSettingRequest)
+func _Manager_DeleteSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSettingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteCoinSetting(ctx, in)
+		return srv.(ManagerServer).DeleteSetting(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.setting.v1.Manager/DeleteCoinSetting",
+		FullMethod: "/chain.manager.coin.setting.v1.Manager/DeleteSetting",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteCoinSetting(ctx, req.(*DeleteCoinSettingRequest))
+		return srv.(ManagerServer).DeleteSetting(ctx, req.(*DeleteSettingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -384,44 +384,44 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateCoinSetting",
-			Handler:    _Manager_CreateCoinSetting_Handler,
+			MethodName: "CreateSetting",
+			Handler:    _Manager_CreateSetting_Handler,
 		},
 		{
-			MethodName: "CreateCoinSettings",
-			Handler:    _Manager_CreateCoinSettings_Handler,
+			MethodName: "CreateSettings",
+			Handler:    _Manager_CreateSettings_Handler,
 		},
 		{
-			MethodName: "AddCoinSetting",
-			Handler:    _Manager_AddCoinSetting_Handler,
+			MethodName: "UpdateSetting",
+			Handler:    _Manager_UpdateSetting_Handler,
 		},
 		{
-			MethodName: "GetCoinSetting",
-			Handler:    _Manager_GetCoinSetting_Handler,
+			MethodName: "GetSetting",
+			Handler:    _Manager_GetSetting_Handler,
 		},
 		{
-			MethodName: "GetCoinSettingOnly",
-			Handler:    _Manager_GetCoinSettingOnly_Handler,
+			MethodName: "GetSettingOnly",
+			Handler:    _Manager_GetSettingOnly_Handler,
 		},
 		{
-			MethodName: "GetCoinSettings",
-			Handler:    _Manager_GetCoinSettings_Handler,
+			MethodName: "GetSettings",
+			Handler:    _Manager_GetSettings_Handler,
 		},
 		{
-			MethodName: "ExistCoinSetting",
-			Handler:    _Manager_ExistCoinSetting_Handler,
+			MethodName: "ExistSetting",
+			Handler:    _Manager_ExistSetting_Handler,
 		},
 		{
-			MethodName: "ExistCoinSettingConds",
-			Handler:    _Manager_ExistCoinSettingConds_Handler,
+			MethodName: "ExistSettingConds",
+			Handler:    _Manager_ExistSettingConds_Handler,
 		},
 		{
-			MethodName: "CountCoinSettings",
-			Handler:    _Manager_CountCoinSettings_Handler,
+			MethodName: "CountSettings",
+			Handler:    _Manager_CountSettings_Handler,
 		},
 		{
-			MethodName: "DeleteCoinSetting",
-			Handler:    _Manager_DeleteCoinSetting_Handler,
+			MethodName: "DeleteSetting",
+			Handler:    _Manager_DeleteSetting_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

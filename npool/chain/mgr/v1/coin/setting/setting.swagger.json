@@ -44,15 +44,104 @@
         }
       }
     },
-    "v1AddCoinSettingResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinSetting"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SettingCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CoinSetting": {
+    "v1CountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1CreateSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Setting"
+          }
+        }
+      }
+    },
+    "v1DeleteSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1ExistSettingCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetSettingOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1GetSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1GetSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Setting"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Setting": {
       "type": "object",
       "properties": {
         "ID": {
@@ -61,10 +150,29 @@
         "CoinTypeID": {
           "type": "string"
         },
+        "SettingCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawSettingByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawSettingAmount": {
+          "type": "string"
+        },
+        "CollectSettingAmount": {
+          "type": "string"
+        },
+        "HotWalletSettingAmount": {
+          "type": "string"
+        },
+        "LowSettingAmount": {
+          "type": "string",
+          "title": "Low than this value, we need to deposit gas"
+        },
         "WarmAccountAmount": {
           "type": "string"
         },
-        "PaymentAccountAmount": {
+        "PaymentAccountCollectAmount": {
           "type": "string"
         },
         "CreatedAt": {
@@ -77,114 +185,38 @@
         }
       }
     },
-    "v1CoinSettingReq": {
+    "v1SettingReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
         "CoinTypeID": {
+          "type": "string"
+        },
+        "SettingCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawSettingByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawSettingAmount": {
+          "type": "string"
+        },
+        "CollectSettingAmount": {
+          "type": "string"
+        },
+        "HotWalletSettingAmount": {
+          "type": "string"
+        },
+        "LowSettingAmount": {
           "type": "string"
         },
         "WarmAccountAmount": {
           "type": "string"
         },
-        "PaymentAccountAmount": {
+        "PaymentAccountCollectAmount": {
           "type": "string"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CountCoinSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateCoinSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinSetting"
-        }
-      }
-    },
-    "v1CreateCoinSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinSetting"
-          }
-        }
-      }
-    },
-    "v1DeleteCoinSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinSetting"
-        }
-      }
-    },
-    "v1ExistCoinSettingCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCoinSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetCoinSettingOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinSetting"
-        }
-      }
-    },
-    "v1GetCoinSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinSetting"
-        }
-      }
-    },
-    "v1GetCoinSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinSetting"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -196,6 +228,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
         }
       }
     }

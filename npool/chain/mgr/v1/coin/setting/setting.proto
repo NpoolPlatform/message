@@ -9,120 +9,134 @@ import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc CreateCoinSetting     (CreateCoinSettingRequest)     returns (CreateCoinSettingResponse)     {}
-    rpc CreateCoinSettings    (CreateCoinSettingsRequest)    returns (CreateCoinSettingsResponse)    {}
-    rpc AddCoinSetting        (AddCoinSettingRequest)        returns (AddCoinSettingResponse)        {}
-    rpc GetCoinSetting        (GetCoinSettingRequest)        returns (GetCoinSettingResponse)        {}
-    rpc GetCoinSettingOnly    (GetCoinSettingOnlyRequest)    returns (GetCoinSettingOnlyResponse)    {}
-    rpc GetCoinSettings       (GetCoinSettingsRequest)       returns (GetCoinSettingsResponse)       {}
-    rpc ExistCoinSetting      (ExistCoinSettingRequest)      returns (ExistCoinSettingResponse)      {}
-    rpc ExistCoinSettingConds (ExistCoinSettingCondsRequest) returns (ExistCoinSettingCondsResponse) {}
-    rpc CountCoinSettings     (CountCoinSettingsRequest)     returns (CountCoinSettingsResponse)     {}
-    rpc DeleteCoinSetting     (DeleteCoinSettingRequest)     returns (DeleteCoinSettingResponse)     {}
+    rpc CreateSetting     (CreateSettingRequest)     returns (CreateSettingResponse)     {}
+    rpc CreateSettings    (CreateSettingsRequest)    returns (CreateSettingsResponse)    {}
+    rpc UpdateSetting     (UpdateSettingRequest)     returns (UpdateSettingResponse)     {}
+    rpc GetSetting        (GetSettingRequest)        returns (GetSettingResponse)        {}
+    rpc GetSettingOnly    (GetSettingOnlyRequest)    returns (GetSettingOnlyResponse)    {}
+    rpc GetSettings       (GetSettingsRequest)       returns (GetSettingsResponse)       {}
+    rpc ExistSetting      (ExistSettingRequest)      returns (ExistSettingResponse)      {}
+    rpc ExistSettingConds (ExistSettingCondsRequest) returns (ExistSettingCondsResponse) {}
+    rpc CountSettings     (CountSettingsRequest)     returns (CountSettingsResponse)     {}
+    rpc DeleteSetting     (DeleteSettingRequest)     returns (DeleteSettingResponse)     {}
 }
 
-message CoinSettingReq {
-    optional string    ID                   = 10;
-    optional string    CoinTypeID           = 20;
-    optional string    WarmAccountAmount    = 30;
-    optional string    PaymentAccountAmount = 40;
+message SettingReq {
+    optional string    ID                          = 10;
+    optional string    CoinTypeID                  = 20;
+    optional string    SettingCoinTypeID           = 30;
+    optional bool      WithdrawSettingByStableUSD  = 40;
+    optional string    WithdrawSettingAmount       = 50;
+    optional string    CollectSettingAmount        = 60;
+    optional string    HotWalletSettingAmount      = 70;
+    optional string    LowSettingAmount            = 80;
+    optional string    WarmAccountAmount           = 90;
+    optional string    PaymentAccountCollectAmount = 100;
 }
 
-message CoinSetting {
-    string ID                     = 10;
-    string CoinTypeID             = 20;
-    string WarmAccountAmount      = 30;
-    string PaymentAccountAmount   = 40;
-    uint32 CreatedAt              = 50;
-    uint32 UpdatedAt              = 60;
+message Setting {
+    string ID                          = 10;
+    string CoinTypeID                  = 20;
+    string SettingCoinTypeID           = 30;
+    bool   WithdrawSettingByStableUSD  = 40;
+    string WithdrawSettingAmount       = 50;
+    string CollectSettingAmount        = 60;
+    string HotWalletSettingAmount      = 70;
+    // Low than this value, we need to deposit gas
+    string LowSettingAmount            = 80;
+    string WarmAccountAmount           = 90;
+    string PaymentAccountCollectAmount = 100;
+    uint32 CreatedAt                   = 110;
+    uint32 UpdatedAt                   = 120;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal CoinTypeID  = 20;
+    optional npool.v1.StringVal ID            = 10;
+    optional npool.v1.StringVal CoinTypeID    = 20;
+    optional npool.v1.StringVal SettingCoinTypeID = 30;
 }
 
 
-message CreateCoinSettingRequest {
-    CoinSettingReq Info = 10;
+message CreateSettingRequest {
+    SettingReq Info = 10;
 }
 
-message CreateCoinSettingResponse {
-    CoinSetting Info = 10;
+message CreateSettingResponse {
+    Setting Info = 10;
 }
 
-message CreateCoinSettingsRequest {
-    repeated CoinSettingReq Infos = 10;
+message CreateSettingsRequest {
+    repeated SettingReq Infos = 10;
 }
 
-message CreateCoinSettingsResponse {
-    repeated CoinSetting Infos = 10;
+message CreateSettingsResponse {
+    repeated Setting Infos = 10;
 }
 
-message AddCoinSettingRequest {
-    CoinSettingReq Info = 10;
+message UpdateSettingRequest {
+    SettingReq Info = 10;
 }
 
-message AddCoinSettingResponse {
-    CoinSetting Info = 10;
+message UpdateSettingResponse {
+    Setting Info = 10;
 }
 
-message GetCoinSettingRequest {
+message GetSettingRequest {
     string ID = 10;
 }
 
-message GetCoinSettingResponse {
-    CoinSetting Info = 10;
+message GetSettingResponse {
+    Setting Info = 10;
 }
 
-message GetCoinSettingsRequest {
+message GetSettingsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetCoinSettingsResponse {
-    repeated CoinSetting Infos = 10;
-    uint32               Total = 20;
+message GetSettingsResponse {
+    repeated Setting Infos = 10;
+    uint32       Total = 20;
 }
 
-message GetCoinSettingOnlyRequest {
+message GetSettingOnlyRequest {
     Conds Conds = 10;
 }
 
-message GetCoinSettingOnlyResponse {
-    CoinSetting Info = 10;
+message GetSettingOnlyResponse {
+    Setting Info = 10;
 }
 
-message ExistCoinSettingRequest {
+message ExistSettingRequest {
     string ID = 10;
 }
 
-message ExistCoinSettingResponse {
+message ExistSettingResponse {
     bool Info = 10;
 }
 
-message ExistCoinSettingCondsRequest {
+message ExistSettingCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistCoinSettingCondsResponse {
+message ExistSettingCondsResponse {
     bool Info = 10;
 }
 
-message CountCoinSettingsRequest {
+message CountSettingsRequest {
     Conds Conds = 10;
 }
 
-message CountCoinSettingsResponse {
+message CountSettingsResponse {
     uint32 Info = 10;
 }
 
-message DeleteCoinSettingRequest {
+message DeleteSettingRequest {
     string ID = 10;
 }
 
-message DeleteCoinSettingResponse {
-    CoinSetting Info = 10;
+message DeleteSettingResponse {
+    Setting Info = 10;
 }
 
