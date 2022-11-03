@@ -58,6 +58,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         }
@@ -105,6 +108,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -113,6 +119,10 @@
         },
         "SettleValue": {
           "type": "string"
+        },
+        "SettlePercent": {
+          "type": "integer",
+          "format": "int64"
         },
         "Setter": {
           "type": "string"
@@ -133,6 +143,9 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -141,6 +154,10 @@
         },
         "SettleValue": {
           "type": "string"
+        },
+        "SettlePercent": {
+          "type": "integer",
+          "format": "int64"
         },
         "Setter": {
           "type": "string"

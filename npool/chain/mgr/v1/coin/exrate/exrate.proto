@@ -23,25 +23,30 @@ service Manager {
 
 message ExchangeRateReq {
     optional string    ID               = 10;
-    optional string    CoinTypeID       = 20;
-    optional string    MarketValue      = 30;
-    optional string    SettleValue      = 40;
-    optional string    Setter           = 50;
+    optional string    AppID            = 20;
+    optional string    CoinTypeID       = 30;
+    optional string    MarketValue      = 40;
+    optional string    SettleValue      = 50;
+    optional uint32    SettlePercent    = 60;
+    optional string    Setter           = 70;
 }
 
 message ExchangeRate {
     string ID               = 10;
-    string CoinTypeID       = 20;
-    string MarketValue      = 30;
-    string SettleValue      = 40;
-    string Setter           = 50;
-    uint32 CreatedAt        = 60;
-    uint32 UpdatedAt        = 70;
+    string AppID            = 20;
+    string CoinTypeID       = 30;
+    string MarketValue      = 40;
+    string SettleValue      = 50;
+    uint32 SettlePercent    = 60;
+    string Setter           = 70;
+    uint32 CreatedAt        = 80;
+    uint32 UpdatedAt        = 90;
 }
 
 message Conds {
     optional npool.v1.StringVal ID            = 10;
-    optional npool.v1.StringVal CoinTypeID    = 20;
+    optional npool.v1.StringVal AppID         = 20;
+    optional npool.v1.StringVal CoinTypeID    = 30;
 }
 
 
