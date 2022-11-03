@@ -36,7 +36,7 @@ message Fee {
     string ID                      = 10;
     string CoinTypeID              = 20;
     string FeeCoinTypeID           = 30;
-    bool   WithdrawFeeByStableCoin = 40;
+    bool   WithdrawFeeByStableUSD  = 40;
     string WithdrawFeeAmount       = 50;
     string CollectFeeAmount        = 60;
     string HotWalletFeeAmount      = 70;
