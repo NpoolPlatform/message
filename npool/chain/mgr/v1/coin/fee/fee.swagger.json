@@ -122,10 +122,13 @@
         "FeeCoinTypeID": {
           "type": "string"
         },
-        "TxFeeAmount": {
+        "WithdrawFeeAmount": {
           "type": "string"
         },
         "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
           "type": "string"
         },
         "LowFeeAmount": {
@@ -154,10 +157,13 @@
         "FeeCoinTypeID": {
           "type": "string"
         },
-        "TxFeeAmount": {
+        "WithdrawFeeAmount": {
           "type": "string"
         },
         "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
           "type": "string"
         },
         "LowFeeAmount": {
