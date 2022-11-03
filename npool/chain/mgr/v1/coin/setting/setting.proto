@@ -25,11 +25,11 @@ message SettingReq {
     optional string    ID                          = 10;
     optional string    CoinTypeID                  = 20;
     optional string    FeeCoinTypeID               = 30;
-    optional bool      WithdrawSettingByStableUSD  = 40;
-    optional string    WithdrawSettingAmount       = 50;
-    optional string    CollectSettingAmount        = 60;
-    optional string    HotWalletSettingAmount      = 70;
-    optional string    LowSettingAmount            = 80;
+    optional bool      WithdrawFeeByStableUSD      = 40;
+    optional string    WithdrawFeeAmount           = 50;
+    optional string    CollectFeeAmount            = 60;
+    optional string    HotWalletFeeAmount          = 70;
+    optional string    LowFeeAmount                = 80;
     optional string    WarmAccountAmount           = 90;
     optional string    PaymentAccountCollectAmount = 100;
 }
@@ -38,12 +38,12 @@ message Setting {
     string ID                          = 10;
     string CoinTypeID                  = 20;
     string FeeCoinTypeID               = 30;
-    bool   WithdrawSettingByStableUSD  = 40;
-    string WithdrawSettingAmount       = 50;
-    string CollectSettingAmount        = 60;
-    string HotWalletSettingAmount      = 70;
+    bool   WithdrawFeeByStableUSD      = 40;
+    string WithdrawFeeAmount           = 50;
+    string CollectFeeAmount            = 60;
+    string HotWalletFeeAmount          = 70;
     // Low than this value, we need to deposit gas
-    string LowSettingAmount            = 80;
+    string LowFeeAmount                = 80;
     string WarmAccountAmount           = 90;
     string PaymentAccountCollectAmount = 100;
     uint32 CreatedAt                   = 110;

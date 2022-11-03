@@ -153,19 +153,19 @@
         "FeeCoinTypeID": {
           "type": "string"
         },
-        "WithdrawSettingByStableUSD": {
+        "WithdrawFeeByStableUSD": {
           "type": "boolean"
         },
-        "WithdrawSettingAmount": {
+        "WithdrawFeeAmount": {
           "type": "string"
         },
-        "CollectSettingAmount": {
+        "CollectFeeAmount": {
           "type": "string"
         },
-        "HotWalletSettingAmount": {
+        "HotWalletFeeAmount": {
           "type": "string"
         },
-        "LowSettingAmount": {
+        "LowFeeAmount": {
           "type": "string",
           "title": "Low than this value, we need to deposit gas"
         },
@@ -197,19 +197,19 @@
         "FeeCoinTypeID": {
           "type": "string"
         },
-        "WithdrawSettingByStableUSD": {
+        "WithdrawFeeByStableUSD": {
           "type": "boolean"
         },
-        "WithdrawSettingAmount": {
+        "WithdrawFeeAmount": {
           "type": "string"
         },
-        "CollectSettingAmount": {
+        "CollectFeeAmount": {
           "type": "string"
         },
-        "HotWalletSettingAmount": {
+        "HotWalletFeeAmount": {
           "type": "string"
         },
-        "LowSettingAmount": {
+        "LowFeeAmount": {
           "type": "string"
         },
         "WarmAccountAmount": {
