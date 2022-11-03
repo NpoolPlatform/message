@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddExchangeRateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ExchangeRate"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -219,6 +211,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateExchangeRateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExchangeRate"
         }
       }
     }

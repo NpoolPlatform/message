@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateExchangeRate     (CreateExchangeRateRequest)     returns (CreateExchangeRateResponse)     {}
     rpc CreateExchangeRates    (CreateExchangeRatesRequest)    returns (CreateExchangeRatesResponse)    {}
-    rpc AddExchangeRate        (AddExchangeRateRequest)        returns (AddExchangeRateResponse)        {}
+    rpc UpdateExchangeRate     (UpdateExchangeRateRequest)     returns (UpdateExchangeRateResponse)     {}
     rpc GetExchangeRate        (GetExchangeRateRequest)        returns (GetExchangeRateResponse)        {}
     rpc GetExchangeRateOnly    (GetExchangeRateOnlyRequest)    returns (GetExchangeRateOnlyResponse)    {}
     rpc GetExchangeRates       (GetExchangeRatesRequest)       returns (GetExchangeRatesResponse)       {}
@@ -66,11 +66,11 @@ message CreateExchangeRatesResponse {
     repeated ExchangeRate Infos = 10;
 }
 
-message AddExchangeRateRequest {
+message UpdateExchangeRateRequest {
     ExchangeRateReq Info = 10;
 }
 
-message AddExchangeRateResponse {
+message UpdateExchangeRateResponse {
     ExchangeRate Info = 10;
 }
 

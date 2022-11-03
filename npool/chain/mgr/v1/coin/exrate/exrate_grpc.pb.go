@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateExchangeRate(ctx context.Context, in *CreateExchangeRateRequest, opts ...grpc.CallOption) (*CreateExchangeRateResponse, error)
 	CreateExchangeRates(ctx context.Context, in *CreateExchangeRatesRequest, opts ...grpc.CallOption) (*CreateExchangeRatesResponse, error)
-	AddExchangeRate(ctx context.Context, in *AddExchangeRateRequest, opts ...grpc.CallOption) (*AddExchangeRateResponse, error)
+	UpdateExchangeRate(ctx context.Context, in *UpdateExchangeRateRequest, opts ...grpc.CallOption) (*UpdateExchangeRateResponse, error)
 	GetExchangeRate(ctx context.Context, in *GetExchangeRateRequest, opts ...grpc.CallOption) (*GetExchangeRateResponse, error)
 	GetExchangeRateOnly(ctx context.Context, in *GetExchangeRateOnlyRequest, opts ...grpc.CallOption) (*GetExchangeRateOnlyResponse, error)
 	GetExchangeRates(ctx context.Context, in *GetExchangeRatesRequest, opts ...grpc.CallOption) (*GetExchangeRatesResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateExchangeRates(ctx context.Context, in *CreateExcha
 	return out, nil
 }
 
-func (c *managerClient) AddExchangeRate(ctx context.Context, in *AddExchangeRateRequest, opts ...grpc.CallOption) (*AddExchangeRateResponse, error) {
-	out := new(AddExchangeRateResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.exchangerage.v1.Manager/AddExchangeRate", in, out, opts...)
+func (c *managerClient) UpdateExchangeRate(ctx context.Context, in *UpdateExchangeRateRequest, opts ...grpc.CallOption) (*UpdateExchangeRateResponse, error) {
+	out := new(UpdateExchangeRateResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.exchangerage.v1.Manager/UpdateExchangeRate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteExchangeRate(ctx context.Context, in *DeleteExchan
 type ManagerServer interface {
 	CreateExchangeRate(context.Context, *CreateExchangeRateRequest) (*CreateExchangeRateResponse, error)
 	CreateExchangeRates(context.Context, *CreateExchangeRatesRequest) (*CreateExchangeRatesResponse, error)
-	AddExchangeRate(context.Context, *AddExchangeRateRequest) (*AddExchangeRateResponse, error)
+	UpdateExchangeRate(context.Context, *UpdateExchangeRateRequest) (*UpdateExchangeRateResponse, error)
 	GetExchangeRate(context.Context, *GetExchangeRateRequest) (*GetExchangeRateResponse, error)
 	GetExchangeRateOnly(context.Context, *GetExchangeRateOnlyRequest) (*GetExchangeRateOnlyResponse, error)
 	GetExchangeRates(context.Context, *GetExchangeRatesRequest) (*GetExchangeRatesResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateExchangeRate(context.Context, *CreateExc
 func (UnimplementedManagerServer) CreateExchangeRates(context.Context, *CreateExchangeRatesRequest) (*CreateExchangeRatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateExchangeRates not implemented")
 }
-func (UnimplementedManagerServer) AddExchangeRate(context.Context, *AddExchangeRateRequest) (*AddExchangeRateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddExchangeRate not implemented")
+func (UnimplementedManagerServer) UpdateExchangeRate(context.Context, *UpdateExchangeRateRequest) (*UpdateExchangeRateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateExchangeRate not implemented")
 }
 func (UnimplementedManagerServer) GetExchangeRate(context.Context, *GetExchangeRateRequest) (*GetExchangeRateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExchangeRate not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateExchangeRates_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddExchangeRate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddExchangeRateRequest)
+func _Manager_UpdateExchangeRate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateExchangeRateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddExchangeRate(ctx, in)
+		return srv.(ManagerServer).UpdateExchangeRate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.exchangerage.v1.Manager/AddExchangeRate",
+		FullMethod: "/chain.manager.coin.exchangerage.v1.Manager/UpdateExchangeRate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddExchangeRate(ctx, req.(*AddExchangeRateRequest))
+		return srv.(ManagerServer).UpdateExchangeRate(ctx, req.(*UpdateExchangeRateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateExchangeRates_Handler,
 		},
 		{
-			MethodName: "AddExchangeRate",
-			Handler:    _Manager_AddExchangeRate_Handler,
+			MethodName: "UpdateExchangeRate",
+			Handler:    _Manager_UpdateExchangeRate_Handler,
 		},
 		{
 			MethodName: "GetExchangeRate",
