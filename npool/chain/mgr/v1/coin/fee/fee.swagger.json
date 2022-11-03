@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddFeeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fee"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -212,6 +204,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateFeeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Fee"
         }
       }
     }

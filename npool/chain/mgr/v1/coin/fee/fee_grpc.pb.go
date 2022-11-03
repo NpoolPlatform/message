@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateFee(ctx context.Context, in *CreateFeeRequest, opts ...grpc.CallOption) (*CreateFeeResponse, error)
 	CreateFees(ctx context.Context, in *CreateFeesRequest, opts ...grpc.CallOption) (*CreateFeesResponse, error)
-	AddFee(ctx context.Context, in *AddFeeRequest, opts ...grpc.CallOption) (*AddFeeResponse, error)
+	UpdateFee(ctx context.Context, in *UpdateFeeRequest, opts ...grpc.CallOption) (*UpdateFeeResponse, error)
 	GetFee(ctx context.Context, in *GetFeeRequest, opts ...grpc.CallOption) (*GetFeeResponse, error)
 	GetFeeOnly(ctx context.Context, in *GetFeeOnlyRequest, opts ...grpc.CallOption) (*GetFeeOnlyResponse, error)
 	GetFees(ctx context.Context, in *GetFeesRequest, opts ...grpc.CallOption) (*GetFeesResponse, error)
@@ -60,9 +60,9 @@ func (c *managerClient) CreateFees(ctx context.Context, in *CreateFeesRequest, o
 	return out, nil
 }
 
-func (c *managerClient) AddFee(ctx context.Context, in *AddFeeRequest, opts ...grpc.CallOption) (*AddFeeResponse, error) {
-	out := new(AddFeeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.fee.v1.Manager/AddFee", in, out, opts...)
+func (c *managerClient) UpdateFee(ctx context.Context, in *UpdateFeeRequest, opts ...grpc.CallOption) (*UpdateFeeResponse, error) {
+	out := new(UpdateFeeResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.fee.v1.Manager/UpdateFee", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func (c *managerClient) DeleteFee(ctx context.Context, in *DeleteFeeRequest, opt
 type ManagerServer interface {
 	CreateFee(context.Context, *CreateFeeRequest) (*CreateFeeResponse, error)
 	CreateFees(context.Context, *CreateFeesRequest) (*CreateFeesResponse, error)
-	AddFee(context.Context, *AddFeeRequest) (*AddFeeResponse, error)
+	UpdateFee(context.Context, *UpdateFeeRequest) (*UpdateFeeResponse, error)
 	GetFee(context.Context, *GetFeeRequest) (*GetFeeResponse, error)
 	GetFeeOnly(context.Context, *GetFeeOnlyRequest) (*GetFeeOnlyResponse, error)
 	GetFees(context.Context, *GetFeesRequest) (*GetFeesResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedManagerServer) CreateFee(context.Context, *CreateFeeRequest) 
 func (UnimplementedManagerServer) CreateFees(context.Context, *CreateFeesRequest) (*CreateFeesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFees not implemented")
 }
-func (UnimplementedManagerServer) AddFee(context.Context, *AddFeeRequest) (*AddFeeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddFee not implemented")
+func (UnimplementedManagerServer) UpdateFee(context.Context, *UpdateFeeRequest) (*UpdateFeeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFee not implemented")
 }
 func (UnimplementedManagerServer) GetFee(context.Context, *GetFeeRequest) (*GetFeeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFee not implemented")
@@ -232,20 +232,20 @@ func _Manager_CreateFees_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_AddFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddFeeRequest)
+func _Manager_UpdateFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).AddFee(ctx, in)
+		return srv.(ManagerServer).UpdateFee(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.fee.v1.Manager/AddFee",
+		FullMethod: "/chain.manager.coin.fee.v1.Manager/UpdateFee",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).AddFee(ctx, req.(*AddFeeRequest))
+		return srv.(ManagerServer).UpdateFee(ctx, req.(*UpdateFeeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -392,8 +392,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateFees_Handler,
 		},
 		{
-			MethodName: "AddFee",
-			Handler:    _Manager_AddFee_Handler,
+			MethodName: "UpdateFee",
+			Handler:    _Manager_UpdateFee_Handler,
 		},
 		{
 			MethodName: "GetFee",

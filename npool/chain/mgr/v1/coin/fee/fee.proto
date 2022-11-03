@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateFee     (CreateFeeRequest)     returns (CreateFeeResponse)     {}
     rpc CreateFees    (CreateFeesRequest)    returns (CreateFeesResponse)    {}
-    rpc AddFee        (AddFeeRequest)        returns (AddFeeResponse)        {}
+    rpc UpdateFee     (UpdateFeeRequest)     returns (UpdateFeeResponse)     {}
     rpc GetFee        (GetFeeRequest)        returns (GetFeeResponse)        {}
     rpc GetFeeOnly    (GetFeeOnlyRequest)    returns (GetFeeOnlyResponse)    {}
     rpc GetFees       (GetFeesRequest)       returns (GetFeesResponse)       {}
@@ -65,11 +65,11 @@ message CreateFeesResponse {
     repeated Fee Infos = 10;
 }
 
-message AddFeeRequest {
+message UpdateFeeRequest {
     FeeReq Info = 10;
 }
 
-message AddFeeResponse {
+message UpdateFeeResponse {
     Fee Info = 10;
 }
 
