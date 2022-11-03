@@ -24,7 +24,7 @@ service Manager {
 message SettingReq {
     optional string    ID                          = 10;
     optional string    CoinTypeID                  = 20;
-    optional string    SettingCoinTypeID           = 30;
+    optional string    FeeCoinTypeID               = 30;
     optional bool      WithdrawSettingByStableUSD  = 40;
     optional string    WithdrawSettingAmount       = 50;
     optional string    CollectSettingAmount        = 60;
@@ -37,7 +37,7 @@ message SettingReq {
 message Setting {
     string ID                          = 10;
     string CoinTypeID                  = 20;
-    string SettingCoinTypeID           = 30;
+    string FeeCoinTypeID               = 30;
     bool   WithdrawSettingByStableUSD  = 40;
     string WithdrawSettingAmount       = 50;
     string CollectSettingAmount        = 60;
@@ -53,7 +53,7 @@ message Setting {
 message Conds {
     optional npool.v1.StringVal ID            = 10;
     optional npool.v1.StringVal CoinTypeID    = 20;
-    optional npool.v1.StringVal SettingCoinTypeID = 30;
+    optional npool.v1.StringVal FeeCoinTypeID = 30;
 }
 
 
