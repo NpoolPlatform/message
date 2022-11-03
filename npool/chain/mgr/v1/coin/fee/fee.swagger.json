@@ -122,6 +122,9 @@
         "FeeCoinTypeID": {
           "type": "string"
         },
+        "WithdrawFeeByStableCoin": {
+          "type": "boolean"
+        },
         "WithdrawFeeAmount": {
           "type": "string"
         },
@@ -156,6 +159,9 @@
         },
         "FeeCoinTypeID": {
           "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
         },
         "WithdrawFeeAmount": {
           "type": "string"

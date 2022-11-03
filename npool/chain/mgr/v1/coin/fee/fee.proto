@@ -22,26 +22,28 @@ service Manager {
 }
 
 message FeeReq {
-    optional string    ID                  = 10;
-    optional string    CoinTypeID          = 20;
-    optional string    FeeCoinTypeID       = 30;
-    optional string    WithdrawFeeAmount   = 40;
-    optional string    CollectFeeAmount    = 50;
-    optional string    HotWalletFeeAmount  = 60;
-    optional string    LowFeeAmount        = 70;
+    optional string    ID                      = 10;
+    optional string    CoinTypeID              = 20;
+    optional string    FeeCoinTypeID           = 30;
+    optional bool      WithdrawFeeByStableUSD  = 40;
+    optional string    WithdrawFeeAmount       = 50;
+    optional string    CollectFeeAmount        = 60;
+    optional string    HotWalletFeeAmount      = 70;
+    optional string    LowFeeAmount            = 80;
 }
 
 message Fee {
-    string ID                 = 10;
-    string CoinTypeID         = 20;
-    string FeeCoinTypeID      = 30;
-    string WithdrawFeeAmount  = 40;
-    string CollectFeeAmount   = 50;
-    string HotWalletFeeAmount = 60;
+    string ID                      = 10;
+    string CoinTypeID              = 20;
+    string FeeCoinTypeID           = 30;
+    bool   WithdrawFeeByStableCoin = 40;
+    string WithdrawFeeAmount       = 50;
+    string CollectFeeAmount        = 60;
+    string HotWalletFeeAmount      = 70;
     // Low than this value, we need to deposit gas
-    string LowFeeAmount       = 70;
-    uint32 CreatedAt          = 80;
-    uint32 UpdatedAt          = 90;
+    string LowFeeAmount            = 80;
+    uint32 CreatedAt               = 90;
+    uint32 UpdatedAt               = 100;
 }
 
 message Conds {
