@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/order/state/state.proto",
+    "title": "npool/order/mgr/v1/compensate/compensate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,6 +44,49 @@
         }
       }
     },
+    "v1Compensate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "End": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CompensateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "string"
+        },
+        "End": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -53,12 +96,15 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "State": {
-          "$ref": "#/definitions/v1Int32Val"
+        "Start": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "End": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountStatesResponse": {
+    "v1CountCompensatesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -67,41 +113,34 @@
         }
       }
     },
-    "v1CreateStateResponse": {
+    "v1CreateCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1State"
+          "$ref": "#/definitions/v1Compensate"
         }
       }
     },
-    "v1CreateStatesResponse": {
+    "v1CreateCompensatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1State"
+            "$ref": "#/definitions/v1Compensate"
           }
         }
       }
     },
-    "v1EState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "UserCanceled",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+    "v1DeleteCompensateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Compensate"
+        }
+      }
     },
-    "v1ExistStateCondsResponse": {
+    "v1ExistCompensateCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -109,7 +148,7 @@
         }
       }
     },
-    "v1ExistStateResponse": {
+    "v1ExistCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -117,74 +156,34 @@
         }
       }
     },
-    "v1GetStateOnlyResponse": {
+    "v1GetCompensateOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1State"
+          "$ref": "#/definitions/v1Compensate"
         }
       }
     },
-    "v1GetStateResponse": {
+    "v1GetCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1State"
+          "$ref": "#/definitions/v1Compensate"
         }
       }
     },
-    "v1GetStatesResponse": {
+    "v1GetCompensatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1State"
+            "$ref": "#/definitions/v1Compensate"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1State": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1EState"
-        }
-      }
-    },
-    "v1StateReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1EState"
         }
       }
     },
@@ -199,11 +198,23 @@
         }
       }
     },
-    "v1UpdateStateResponse": {
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1State"
+          "$ref": "#/definitions/v1Compensate"
         }
       }
     }

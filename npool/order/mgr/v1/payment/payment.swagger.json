@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/order/order.proto",
+    "title": "npool/order/mgr/v1/payment/payment.proto",
     "version": "version not set"
   },
   "tags": [
@@ -50,24 +50,30 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Type": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinInfoID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountOrdersResponse": {
+    "v1CountPaymentsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -76,42 +82,34 @@
         }
       }
     },
-    "v1CreateOrderResponse": {
+    "v1CreatePaymentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1Payment"
         }
       }
     },
-    "v1CreateOrdersResponse": {
+    "v1CreatePaymentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1Payment"
           }
         }
       }
     },
-    "v1DeleteOrderResponse": {
+    "v1DeletePaymentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1Payment"
         }
       }
     },
-    "v1ExistOrderCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistOrderResponse": {
+    "v1ExistPaymentCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -119,29 +117,37 @@
         }
       }
     },
-    "v1GetOrderOnlyResponse": {
+    "v1ExistPaymentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "type": "boolean"
         }
       }
     },
-    "v1GetOrderResponse": {
+    "v1GetPaymentOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1Payment"
         }
       }
     },
-    "v1GetOrdersResponse": {
+    "v1GetPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Payment"
+        }
+      }
+    },
+    "v1GetPaymentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1Payment"
           }
         },
         "Total": {
@@ -150,13 +156,10 @@
         }
       }
     },
-    "v1Order": {
+    "v1Payment": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "AppID": {
@@ -165,41 +168,50 @@
         "UserID": {
           "type": "string"
         },
-        "ParentOrderID": {
+        "GoodID": {
           "type": "string"
         },
-        "PayWithParent": {
-          "type": "boolean"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionID": {
+        "OrderID": {
           "type": "string"
         },
-        "DiscountCouponID": {
+        "AccountID": {
           "type": "string"
         },
-        "UserSpecialReductionID": {
+        "StartAmount": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CouponID": {
+        "Amount": {
           "type": "string"
         },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "FinishAmount": {
+          "type": "string"
+        },
+        "CoinUsdCurrency": {
+          "type": "string"
+        },
+        "LocalCoinUsdCurrency": {
+          "type": "string"
+        },
+        "CoinInfoID": {
+          "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1OrderState"
+          "$ref": "#/definitions/v1PaymentState"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "UserSetPaid": {
+          "type": "boolean"
+        },
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "FakePayment": {
+          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
@@ -215,13 +227,10 @@
         }
       }
     },
-    "v1OrderReq": {
+    "v1PaymentReq": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "AppID": {
@@ -230,68 +239,68 @@
         "UserID": {
           "type": "string"
         },
-        "ParentOrderID": {
+        "GoodID": {
           "type": "string"
         },
-        "PayWithParent": {
-          "type": "boolean"
-        },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionID": {
+        "OrderID": {
           "type": "string"
         },
-        "DiscountCouponID": {
+        "AccountID": {
           "type": "string"
         },
-        "UserSpecialReductionID": {
+        "StartAmount": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CouponID": {
+        "Amount": {
           "type": "string"
         },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "FinishAmount": {
+          "type": "string"
+        },
+        "CoinUsdCurrency": {
+          "type": "string"
+        },
+        "LocalCoinUsdCurrency": {
+          "type": "string"
+        },
+        "CoinInfoID": {
+          "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1OrderState"
+          "$ref": "#/definitions/v1PaymentState"
         },
-        "CreatedAt": {
+        "ChainTransactionID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserSetPaid": {
+          "type": "boolean"
+        },
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "FakePayment": {
+          "type": "boolean"
+        },
+        "CreateAt": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1OrderState": {
+    "v1PaymentState": {
       "type": "string",
       "enum": [
         "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
+        "Wait",
+        "Done",
         "UserCanceled",
-        "Canceled",
-        "InService",
-        "Expired"
+        "TimeOut"
       ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
-    },
-    "v1OrderType": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderType",
-        "Normal",
-        "Offline",
-        "Airdrop"
-      ],
-      "default": "DefaultOrderType"
+      "default": "DefaultState"
     },
     "v1StringVal": {
       "type": "object",
@@ -316,11 +325,11 @@
         }
       }
     },
-    "v1UpdateOrderResponse": {
+    "v1UpdatePaymentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1Payment"
         }
       }
     }

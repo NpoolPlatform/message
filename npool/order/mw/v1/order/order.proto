@@ -4,8 +4,7 @@ package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
-import "npool/order/mgr/v1/order/state/state.proto";
-import "npool/order/mgr/v1/order/order/order.proto";
+import "npool/order/mgr/v1/order/order.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -26,7 +25,7 @@ message OrderReq {
     optional string UserID                    = 20;
     optional string GoodID                    = 30;
     optional uint32 Units                     = 40;
-    optional order.manager.order.order.v1.OrderType OrderType = 50;
+    optional order.manager.order.v1.OrderType OrderType = 50;
 
     optional string ParentOrderID             = 60;
     optional bool   PayWithParent             = 70;
@@ -68,7 +67,7 @@ message Order {
     uint32 Units                  = 50;
     // @inject_tag: sql:"order_type"
     string OrderTypeStr           = 60;
-    order.manager.order.order.v1.OrderType OrderType = 61;
+    order.manager.order.v1.OrderType OrderType = 61;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
@@ -117,8 +116,8 @@ message Order {
     // @inject_tag: sql:"user_canceled"
     uint32 UserCanceled           = 251;
 
-    order.manager.order.state.v1.EState    State                        = 260;
-    bool                                   PayWithParent                = 280;
+    order.manager.order.v1.OrderState State                        = 260;
+    bool                              PayWithParent                = 280;
 }
 
 message Conds {

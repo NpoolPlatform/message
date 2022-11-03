@@ -174,7 +174,7 @@
           "title": "@inject_tag: sql:\"user_canceled\""
         },
         "State": {
-          "$ref": "#/definitions/v1EState"
+          "$ref": "#/definitions/v1OrderState"
         },
         "PayWithParent": {
           "type": "boolean"
@@ -262,6 +262,14 @@
         }
       }
     },
+    "middlewareorder1v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareorder1v1Order"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -289,21 +297,6 @@
         }
       }
     },
-    "v1EState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "UserCanceled",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
-    },
     "v1GetAppOrdersResponse": {
       "type": "object",
       "properties": {
@@ -319,6 +312,21 @@
         }
       }
     },
+    "v1OrderState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "UserCanceled",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+    },
     "v1OrderType": {
       "type": "string",
       "enum": [
@@ -328,14 +336,6 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
-    },
-    "v1UpdateOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
-        }
-      }
     }
   }
 }
