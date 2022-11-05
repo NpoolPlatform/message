@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateAppCoin     (CreateAppCoinRequest)     returns (CreateAppCoinResponse)     {}
     rpc CreateAppCoins    (CreateAppCoinsRequest)    returns (CreateAppCoinsResponse)    {}
-    rpc UpdateAppCoin     (UpdateAppCoinRequest)     returns (UpdateAppCoinResponse)        {}
+    rpc UpdateAppCoin     (UpdateAppCoinRequest)     returns (UpdateAppCoinResponse)     {}
     rpc GetAppCoin        (GetAppCoinRequest)        returns (GetAppCoinResponse)        {}
     rpc GetAppCoinOnly    (GetAppCoinOnlyRequest)    returns (GetAppCoinOnlyResponse)    {}
     rpc GetAppCoins       (GetAppCoinsRequest)       returns (GetAppCoinsResponse)       {}

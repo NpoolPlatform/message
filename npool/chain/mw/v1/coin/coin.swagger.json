@@ -15,41 +15,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/v1/version": {
-      "post": {
-        "summary": "Method Version",
-        "operationId": "Middleware_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -78,11 +44,193 @@
         }
       }
     },
-    "v1VersionResponse": {
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Presale": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"presale\""
+        },
+        "ReservedAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reserved_amount\""
+        },
+        "ForPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"for_pay\""
+        },
+        "HomePage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"home_page\""
+        },
+        "Specs": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"specs\""
+        },
+        "FeeCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_type_id\""
+        },
+        "FeeCoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_name\""
+        },
+        "FeeCoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_logo\""
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"withdraw_fee_by_stable_usd\""
+        },
+        "WithdrawFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"withdraw_fee_amount\""
+        },
+        "CollectFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"collect_fee_amount\""
+        },
+        "HotWalletFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_fee_amount\""
+        },
+        "LowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"low_fee_amount\""
+        },
+        "HotWalletAccountAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_account_amount\""
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_account_collect_amount\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Presale": {
+          "type": "boolean"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "ENV": {
+          "type": "string"
+        },
+        "ReservedAmount": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Presale": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "ENV": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ForPay": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1CreateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "v1GetCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "v1GetCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
           "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
         }
       }
     }

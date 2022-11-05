@@ -212,7 +212,7 @@
         "LowFeeAmount": {
           "type": "string"
         },
-        "WarmAccountAmount": {
+        "HotWalletAccountAmount": {
           "type": "string"
         },
         "PaymentAccountCollectAmount": {

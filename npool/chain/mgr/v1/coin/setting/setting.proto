@@ -30,7 +30,7 @@ message SettingReq {
     optional string    CollectFeeAmount            = 60;
     optional string    HotWalletFeeAmount          = 70;
     optional string    LowFeeAmount                = 80;
-    optional string    WarmAccountAmount           = 90;
+    optional string    HotWalletAccountAmount      = 90;
     optional string    PaymentAccountCollectAmount = 100;
 }
 

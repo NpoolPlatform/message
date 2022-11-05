@@ -11,7 +11,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateCoinBase     (CreateCoinBaseRequest)     returns (CreateCoinBaseResponse)     {}
     rpc CreateCoinBases    (CreateCoinBasesRequest)    returns (CreateCoinBasesResponse)    {}
-    rpc UpdateCoinBase     (UpdateCoinBaseRequest)     returns (UpdateCoinBaseResponse)        {}
+    rpc UpdateCoinBase     (UpdateCoinBaseRequest)     returns (UpdateCoinBaseResponse)     {}
     rpc GetCoinBase        (GetCoinBaseRequest)        returns (GetCoinBaseResponse)        {}
     rpc GetCoinBaseOnly    (GetCoinBaseOnlyRequest)    returns (GetCoinBaseOnlyResponse)    {}
     rpc GetCoinBases       (GetCoinBasesRequest)       returns (GetCoinBasesResponse)       {}
