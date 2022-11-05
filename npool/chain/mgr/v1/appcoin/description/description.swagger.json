@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/extra/extra.proto",
+    "title": "npool/chain/mgr/v1/appcoin/description/description.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,19 +44,25 @@
         }
       }
     },
-    "v1CoinExtra": {
+    "v1CoinDescription": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
-        "HomePage": {
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
           "type": "string"
         },
-        "Specs": {
+        "Message": {
           "type": "string"
         },
         "CreatedAt": {
@@ -69,19 +75,25 @@
         }
       }
     },
-    "v1CoinExtraReq": {
+    "v1CoinDescriptionReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
-        "HomePage": {
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
           "type": "string"
         },
-        "Specs": {
+        "Message": {
           "type": "string"
         }
       }
@@ -92,12 +104,15 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CountCoinExtrasResponse": {
+    "v1CountCoinDescriptionsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -106,42 +121,34 @@
         }
       }
     },
-    "v1CreateCoinExtraResponse": {
+    "v1CreateCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CoinDescription"
         }
       }
     },
-    "v1CreateCoinExtrasResponse": {
+    "v1CreateCoinDescriptionsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinExtra"
+            "$ref": "#/definitions/v1CoinDescription"
           }
         }
       }
     },
-    "v1DeleteCoinExtraResponse": {
+    "v1DeleteCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CoinDescription"
         }
       }
     },
-    "v1ExistCoinExtraCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCoinExtraResponse": {
+    "v1ExistCoinDescriptionCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -149,29 +156,37 @@
         }
       }
     },
-    "v1GetCoinExtraOnlyResponse": {
+    "v1ExistCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "type": "boolean"
         }
       }
     },
-    "v1GetCoinExtraResponse": {
+    "v1GetCoinDescriptionOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CoinDescription"
         }
       }
     },
-    "v1GetCoinExtrasResponse": {
+    "v1GetCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinDescription"
+        }
+      }
+    },
+    "v1GetCoinDescriptionsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinExtra"
+            "$ref": "#/definitions/v1CoinDescription"
           }
         },
         "Total": {
@@ -191,13 +206,21 @@
         }
       }
     },
-    "v1UpdateCoinExtraResponse": {
+    "v1UpdateCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CoinDescription"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

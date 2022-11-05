@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mgr/v1/coin/appcoin/appcoin.proto
+// source: npool/chain/mgr/v1/appcoin/appcoin.proto
 
 package appcoin
 
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateAppCoin(ctx context.Context, in *CreateAppCoinRequest, opts ...grpc.CallOption) (*CreateAppCoinResponse, error) {
 	out := new(CreateAppCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/CreateAppCoin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/CreateAppCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateAppCoin(ctx context.Context, in *CreateAppCoinRequ
 
 func (c *managerClient) CreateAppCoins(ctx context.Context, in *CreateAppCoinsRequest, opts ...grpc.CallOption) (*CreateAppCoinsResponse, error) {
 	out := new(CreateAppCoinsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/CreateAppCoins", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/CreateAppCoins", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateAppCoins(ctx context.Context, in *CreateAppCoinsRe
 
 func (c *managerClient) UpdateAppCoin(ctx context.Context, in *UpdateAppCoinRequest, opts ...grpc.CallOption) (*UpdateAppCoinResponse, error) {
 	out := new(UpdateAppCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/UpdateAppCoin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/UpdateAppCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateAppCoin(ctx context.Context, in *UpdateAppCoinRequ
 
 func (c *managerClient) GetAppCoin(ctx context.Context, in *GetAppCoinRequest, opts ...grpc.CallOption) (*GetAppCoinResponse, error) {
 	out := new(GetAppCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/GetAppCoin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/GetAppCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetAppCoin(ctx context.Context, in *GetAppCoinRequest, o
 
 func (c *managerClient) GetAppCoinOnly(ctx context.Context, in *GetAppCoinOnlyRequest, opts ...grpc.CallOption) (*GetAppCoinOnlyResponse, error) {
 	out := new(GetAppCoinOnlyResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/GetAppCoinOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/GetAppCoinOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetAppCoinOnly(ctx context.Context, in *GetAppCoinOnlyRe
 
 func (c *managerClient) GetAppCoins(ctx context.Context, in *GetAppCoinsRequest, opts ...grpc.CallOption) (*GetAppCoinsResponse, error) {
 	out := new(GetAppCoinsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/GetAppCoins", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/GetAppCoins", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetAppCoins(ctx context.Context, in *GetAppCoinsRequest,
 
 func (c *managerClient) ExistAppCoin(ctx context.Context, in *ExistAppCoinRequest, opts ...grpc.CallOption) (*ExistAppCoinResponse, error) {
 	out := new(ExistAppCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/ExistAppCoin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/ExistAppCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistAppCoin(ctx context.Context, in *ExistAppCoinReques
 
 func (c *managerClient) ExistAppCoinConds(ctx context.Context, in *ExistAppCoinCondsRequest, opts ...grpc.CallOption) (*ExistAppCoinCondsResponse, error) {
 	out := new(ExistAppCoinCondsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/ExistAppCoinConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/ExistAppCoinConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistAppCoinConds(ctx context.Context, in *ExistAppCoinC
 
 func (c *managerClient) CountAppCoins(ctx context.Context, in *CountAppCoinsRequest, opts ...grpc.CallOption) (*CountAppCoinsResponse, error) {
 	out := new(CountAppCoinsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/CountAppCoins", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/CountAppCoins", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountAppCoins(ctx context.Context, in *CountAppCoinsRequ
 
 func (c *managerClient) DeleteAppCoin(ctx context.Context, in *DeleteAppCoinRequest, opts ...grpc.CallOption) (*DeleteAppCoinResponse, error) {
 	out := new(DeleteAppCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.appcoin.v1.Manager/DeleteAppCoin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.appcoin.v1.Manager/DeleteAppCoin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateAppCoin_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/CreateAppCoin",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/CreateAppCoin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateAppCoin(ctx, req.(*CreateAppCoinRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateAppCoins_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/CreateAppCoins",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/CreateAppCoins",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateAppCoins(ctx, req.(*CreateAppCoinsRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateAppCoin_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/UpdateAppCoin",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/UpdateAppCoin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateAppCoin(ctx, req.(*UpdateAppCoinRequest))
@@ -260,7 +260,7 @@ func _Manager_GetAppCoin_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/GetAppCoin",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/GetAppCoin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAppCoin(ctx, req.(*GetAppCoinRequest))
@@ -278,7 +278,7 @@ func _Manager_GetAppCoinOnly_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/GetAppCoinOnly",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/GetAppCoinOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAppCoinOnly(ctx, req.(*GetAppCoinOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetAppCoins_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/GetAppCoins",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/GetAppCoins",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetAppCoins(ctx, req.(*GetAppCoinsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistAppCoin_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/ExistAppCoin",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/ExistAppCoin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistAppCoin(ctx, req.(*ExistAppCoinRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistAppCoinConds_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/ExistAppCoinConds",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/ExistAppCoinConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistAppCoinConds(ctx, req.(*ExistAppCoinCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountAppCoins_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/CountAppCoins",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/CountAppCoins",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountAppCoins(ctx, req.(*CountAppCoinsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteAppCoin_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.appcoin.v1.Manager/DeleteAppCoin",
+		FullMethod: "/chain.manager.appcoin.v1.Manager/DeleteAppCoin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteAppCoin(ctx, req.(*DeleteAppCoinRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteAppCoin_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.manager.coin.appcoin.v1.Manager",
+	ServiceName: "chain.manager.appcoin.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mgr/v1/coin/appcoin/appcoin.proto",
+	Metadata: "npool/chain/mgr/v1/appcoin/appcoin.proto",
 }

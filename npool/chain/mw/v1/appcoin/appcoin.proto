@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package chain.middleware.appcoin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/appcoin";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    // Method Version
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
+}
+
+message Coin {
+    string ID = 10;
+}

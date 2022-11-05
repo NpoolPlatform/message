@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+package chain.manager.appcoin.description.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/appcoin/description";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateCoinDescription     (CreateCoinDescriptionRequest)     returns (CreateCoinDescriptionResponse)     {}
+    rpc CreateCoinDescriptions    (CreateCoinDescriptionsRequest)    returns (CreateCoinDescriptionsResponse)    {}
+    rpc UpdateCoinDescription     (UpdateCoinDescriptionRequest)     returns (UpdateCoinDescriptionResponse)     {}
+    rpc GetCoinDescription        (GetCoinDescriptionRequest)        returns (GetCoinDescriptionResponse)        {}
+    rpc GetCoinDescriptionOnly    (GetCoinDescriptionOnlyRequest)    returns (GetCoinDescriptionOnlyResponse)    {}
+    rpc GetCoinDescriptions       (GetCoinDescriptionsRequest)       returns (GetCoinDescriptionsResponse)       {}
+    rpc ExistCoinDescription      (ExistCoinDescriptionRequest)      returns (ExistCoinDescriptionResponse)      {}
+    rpc ExistCoinDescriptionConds (ExistCoinDescriptionCondsRequest) returns (ExistCoinDescriptionCondsResponse) {}
+    rpc CountCoinDescriptions     (CountCoinDescriptionsRequest)     returns (CountCoinDescriptionsResponse)     {}
+    rpc DeleteCoinDescription     (DeleteCoinDescriptionRequest)     returns (DeleteCoinDescriptionResponse)     {}
+}
+
+enum UsedFor {
+    DefaultUsedFor  = 0;
+    ProductPage     = 10;
+}
+
+message CoinDescriptionReq {
+    optional string    ID         = 10;
+    optional string    AppID      = 20;
+    optional string    CoinTypeID = 30;
+    optional UsedFor   UsedFor    = 40;
+    optional string    Title      = 50;
+    optional string    Message    = 60;
+}
+
+message CoinDescription {
+    string  ID         = 10;
+    string  AppID      = 20;
+    string  CoinTypeID = 30;
+    UsedFor UsedFor    = 40;
+    string  Title      = 50;
+    string  Message    = 60;
+    uint32  CreatedAt  = 70;
+    uint32  UpdatedAt  = 80;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal CoinTypeID = 30;
+}
+
+
+message CreateCoinDescriptionRequest {
+    CoinDescriptionReq Info = 10;
+}
+
+message CreateCoinDescriptionResponse {
+    CoinDescription Info = 10;
+}
+
+message CreateCoinDescriptionsRequest {
+    repeated CoinDescriptionReq Infos = 10;
+}
+
+message CreateCoinDescriptionsResponse {
+    repeated CoinDescription Infos = 10;
+}
+
+message UpdateCoinDescriptionRequest {
+    CoinDescriptionReq Info = 10;
+}
+
+message UpdateCoinDescriptionResponse {
+    CoinDescription Info = 10;
+}
+
+message GetCoinDescriptionRequest {
+    string ID = 10;
+}
+
+message GetCoinDescriptionResponse {
+    CoinDescription Info = 10;
+}
+
+message GetCoinDescriptionsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCoinDescriptionsResponse {
+    repeated CoinDescription Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetCoinDescriptionOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCoinDescriptionOnlyResponse {
+    CoinDescription Info = 10;
+}
+
+message ExistCoinDescriptionRequest {
+    string ID = 10;
+}
+
+message ExistCoinDescriptionResponse {
+    bool Info = 10;
+}
+
+message ExistCoinDescriptionCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCoinDescriptionCondsResponse {
+    bool Info = 10;
+}
+
+message CountCoinDescriptionsRequest {
+    Conds Conds = 10;
+}
+
+message CountCoinDescriptionsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteCoinDescriptionRequest {
+    string ID = 10;
+}
+
+message DeleteCoinDescriptionResponse {
+    CoinDescription Info = 10;
+}
+
