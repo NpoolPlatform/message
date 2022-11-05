@@ -1,0 +1,268 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/mw/v1/tx/tx.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "chainmiddlewaretxv1CreateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+        }
+      }
+    },
+    "chainmiddlewaretxv1GetTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+        }
+      }
+    },
+    "chainmiddlewaretxv1GetTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chainmiddlewaretxv1Tx": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+        "CoinLogo": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
+        "FromAccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"from_account_id\""
+        },
+        "ToAccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"to_account_id\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "FeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_amount\""
+        },
+        "ChainTxID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_tx_id\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "Extra": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"extra\""
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        },
+        "TypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "chainmiddlewaretxv1TxReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "FromAccountID": {
+          "type": "string"
+        },
+        "ToAccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "ChainTxID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        }
+      }
+    },
+    "chainmiddlewaretxv1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TxState": {
+      "type": "string",
+      "enum": [
+        "DefaultTxState",
+        "StateCreated",
+        "StateWait",
+        "StateTransferring",
+        "StateSuccessful",
+        "StateFail"
+      ],
+      "default": "DefaultTxState"
+    },
+    "v1TxType": {
+      "type": "string",
+      "enum": [
+        "DefaultTxType",
+        "TxWithdraw",
+        "TxFeedGas",
+        "TxPaymentCollect",
+        "TxBenefit"
+      ],
+      "default": "DefaultTxType"
+    }
+  }
+}

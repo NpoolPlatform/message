@@ -30,6 +30,14 @@ enum TxState {
     StateFail          = 50;
 }
 
+enum TxType {
+    DefaultTxType    = 0;
+    TxWithdraw       = 10;
+    TxFeedGas        = 20;
+    TxPaymentCollect = 30;
+    TxBenefit        = 40;
+}
+
 message TxReq {
     optional string    ID             = 10;
     optional string    FromAccountID  = 20;
@@ -39,6 +47,7 @@ message TxReq {
     optional string    ChainTxID      = 60;
     optional TxState   State          = 70;
     optional string    Extra          = 80;
+    optional TxType    Type           = 90;
 }
 
 message Tx {
@@ -50,8 +59,9 @@ message Tx {
     string  ChainTxID      = 60;
     TxState State          = 70;
     string  Extra          = 80;
-    uint32  CreatedAt      = 90;
-    uint32  UpdatedAt      = 100;
+    TxType  Type           = 90;
+    uint32  CreatedAt      = 100;
+    uint32  UpdatedAt      = 110;
 }
 
 message Conds {
@@ -59,6 +69,7 @@ message Conds {
     optional npool.v1.StringVal      AccountID   = 20;
     optional npool.v1.StringSliceVal AccountIDs  = 30;
     optional npool.v1.Int32Val       State       = 40;
+    optional npool.v1.Int32Val       Type        = 50;
 }
 
 

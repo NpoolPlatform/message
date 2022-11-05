@@ -16,57 +16,65 @@ service Middleware {
 }
 
 message CoinReq {
-    optional string ID              = 10;
-    optional string Name            = 20;
-    optional string Logo            = 30;
-    optional bool   Presale         = 40;
-    optional string Unit            = 50;
-    optional string ENV             = 60;
-    optional string ReservedAmount  = 70;
-    optional bool   ForPay          = 80;
+    optional string ID                           = 10;
+    optional string Name                         = 20;
+    optional string Logo                         = 30;
+    optional bool   Presale                      = 40;
+    optional string Unit                         = 50;
+    optional string ENV                          = 60;
+    optional string ReservedAmount               = 70;
+    optional bool   ForPay                       = 80;
+    optional string HomePage                     = 90;
+    optional string Specs                        = 100;
+    optional string FeeCoinTypeID                = 110;
+    optional bool   WithdrawFeeByStableUSD       = 120;
+    optional string WithdrawFeeAmount            = 130;
+    optional string CollectFeeAmount             = 140;
+    optional string HotWalletFeeAmount           = 150;
+    optional string PaymentAccountCollectAmount  = 160;
 }
 
 message Coin {
     // @inject_tag: sql:"id"
     string ID                           = 10;
     // @inject_tag: sql:"name"
-    string Name                         = 40;
+    string Name                         = 20;
     // @inject_tag: sql:"logo"
-    string Logo                         = 50;
+    string Logo                         = 30;
     // @inject_tag: sql:"presale"
-    bool   Presale                      = 60;
+    bool   Presale                      = 40;
     // @inject_tag: sql:"reserved_amount"
-    string ReservedAmount               = 70;
+    string ReservedAmount               = 50;
     // @inject_tag: sql:"for_pay"
-    bool   ForPay                       = 80;
+    bool   ForPay                       = 60;
     // @inject_tag: sql:"home_page"
-    string HomePage                     = 90;
+    string HomePage                     = 70;
     // @inject_tag: sql:"specs"
-    string Specs                        = 100;
+    string Specs                        = 80;
     // @inject_tag: sql:"fee_coin_type_id"
-    string FeeCoinTypeID                = 110;
+    string FeeCoinTypeID                = 90;
     // @inject_tag: sql:"fee_coin_name"
-    string FeeCoinName                  = 120;
+    string FeeCoinName                  = 100;
     // @inject_tag: sql:"fee_coin_logo"
-    string FeeCoinLogo                  = 130;
+    string FeeCoinLogo                  = 110;
     // @inject_tag: sql:"withdraw_fee_by_stable_usd"
-    bool   WithdrawFeeByStableUSD       = 140;
+    bool   WithdrawFeeByStableUSD       = 120;
     // @inject_tag: sql:"withdraw_fee_amount"
-    string WithdrawFeeAmount            = 150;
+    string WithdrawFeeAmount            = 130;
     // @inject_tag: sql:"collect_fee_amount"
-    string CollectFeeAmount             = 160;
+    string CollectFeeAmount             = 140;
     // @inject_tag: sql:"hot_wallet_fee_amount"
-    string HotWalletFeeAmount           = 170;
+    string HotWalletFeeAmount           = 150;
     // @inject_tag: sql:"low_fee_amount"
-    string LowFeeAmount                 = 180;
+    string LowFeeAmount                 = 160;
     // @inject_tag: sql:"hot_wallet_account_amount"
-    string HotWalletAccountAmount       = 190;
+    string HotWalletAccountAmount       = 170;
     // @inject_tag: sql:"payment_account_collect_amount"
-    string PaymentAccountCollectAmount  = 200;
+    string PaymentAccountCollectAmount  = 180;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 250;
+    uint32 CreatedAt                    = 190;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 260;
+    uint32 UpdatedAt                    = 200;
 }
 
 message Conds {

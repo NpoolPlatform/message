@@ -111,6 +111,7 @@ message GetCoinsRequest {
 
 message GetCoinsResponse {
     repeated Coin Infos = 10;
+    uint32        Total = 20;
 }
 
 message UpdateCoinRequest {

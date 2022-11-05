@@ -246,6 +246,10 @@
           "items": {
             "$ref": "#/definitions/v1Coin"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

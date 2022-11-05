@@ -58,6 +58,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -208,6 +211,9 @@
         "Extra": {
           "type": "string"
         },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -244,6 +250,9 @@
         },
         "Extra": {
           "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
         }
       }
     },
@@ -258,6 +267,17 @@
         "StateFail"
       ],
       "default": "DefaultTxState"
+    },
+    "v1TxType": {
+      "type": "string",
+      "enum": [
+        "DefaultTxType",
+        "TxWithdraw",
+        "TxFeedGas",
+        "TxPaymentCollect",
+        "TxBenefit"
+      ],
+      "default": "DefaultTxType"
     },
     "v1UpdateTxResponse": {
       "type": "object",

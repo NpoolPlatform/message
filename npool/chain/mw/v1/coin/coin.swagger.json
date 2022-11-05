@@ -168,6 +168,30 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
         }
       }
     },
