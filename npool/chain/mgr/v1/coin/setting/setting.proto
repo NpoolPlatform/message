@@ -44,7 +44,7 @@ message Setting {
     string HotWalletFeeAmount          = 70;
     // Low than this value, we need to deposit gas
     string LowFeeAmount                = 80;
-    string WarmAccountAmount           = 90;
+    string HotWalletAccountAmount      = 90;
     string PaymentAccountCollectAmount = 100;
     uint32 CreatedAt                   = 110;
     uint32 UpdatedAt                   = 120;

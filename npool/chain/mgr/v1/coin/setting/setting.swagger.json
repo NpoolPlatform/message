@@ -169,7 +169,7 @@
           "type": "string",
           "title": "Low than this value, we need to deposit gas"
         },
-        "WarmAccountAmount": {
+        "HotWalletAccountAmount": {
           "type": "string"
         },
         "PaymentAccountCollectAmount": {
