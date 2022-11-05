@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package chain.manager.appcoin.exchangerage.v1;
+package chain.manager.appcoin.exchangerate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/appcoin/exchangerage";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/appcoin/exchangerate";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
