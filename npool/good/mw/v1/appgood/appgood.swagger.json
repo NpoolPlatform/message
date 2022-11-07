@@ -388,6 +388,14 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
+    "v1GetOnlyGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareappgoodv1Good"
+        }
+      }
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
