@@ -26,7 +26,7 @@ message OutOfGasReq {
     optional string     OrderID   = 20;
     optional uint32     Start     = 30;
     optional uint32     End       = 40;
-    optional bool       CreatedAt = 50;
+    optional uint32     CreatedAt = 50;
 }
 
 message OutOfGas {
