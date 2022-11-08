@@ -47,38 +47,42 @@ message Coin {
     string ReservedAmount               = 50;
     // @inject_tag: sql:"unit"
     string Unit                         = 60;
+    // @inject_tag: sql:"env"
+    string ENV                          = 70;
     // @inject_tag: sql:"for_pay"
-    bool   ForPay                       = 70;
+    bool   ForPay                       = 80;
     // @inject_tag: sql:"home_page"
-    string HomePage                     = 80;
+    string HomePage                     = 90;
     // @inject_tag: sql:"specs"
-    string Specs                        = 90;
+    string Specs                        = 100;
     // @inject_tag: sql:"fee_coin_type_id"
-    string FeeCoinTypeID                = 100;
+    string FeeCoinTypeID                = 110;
     // @inject_tag: sql:"fee_coin_name"
-    string FeeCoinName                  = 110;
+    string FeeCoinName                  = 120;
     // @inject_tag: sql:"fee_coin_logo"
-    string FeeCoinLogo                  = 120;
+    string FeeCoinLogo                  = 130;
     // @inject_tag: sql:"fee_coin_unit"
-    string FeeCoinUnit                  = 130;
+    string FeeCoinUnit                  = 140;
+    // @inject_tag: sql:"fee_coin_env"
+    string FeeCoinENV                   = 150;
     // @inject_tag: sql:"withdraw_fee_by_stable_usd"
-    bool   WithdrawFeeByStableUSD       = 140;
+    bool   WithdrawFeeByStableUSD       = 160;
     // @inject_tag: sql:"withdraw_fee_amount"
-    string WithdrawFeeAmount            = 150;
+    string WithdrawFeeAmount            = 170;
     // @inject_tag: sql:"collect_fee_amount"
-    string CollectFeeAmount             = 160;
+    string CollectFeeAmount             = 180;
     // @inject_tag: sql:"hot_wallet_fee_amount"
-    string HotWalletFeeAmount           = 170;
+    string HotWalletFeeAmount           = 190;
     // @inject_tag: sql:"low_fee_amount"
-    string LowFeeAmount                 = 180;
+    string LowFeeAmount                 = 200;
     // @inject_tag: sql:"hot_wallet_account_amount"
-    string HotWalletAccountAmount       = 190;
+    string HotWalletAccountAmount       = 210;
     // @inject_tag: sql:"payment_account_collect_amount"
-    string PaymentAccountCollectAmount  = 200;
+    string PaymentAccountCollectAmount  = 220;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 210;
+    uint32 CreatedAt                    = 230;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 220;
+    uint32 UpdatedAt                    = 240;
 }
 
 message Conds {
