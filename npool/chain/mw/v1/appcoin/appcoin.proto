@@ -20,11 +20,13 @@ message CoinReq {
     optional string ID                       = 10;
     optional string AppID                    = 20;
     optional string CoinTypeID               = 30;
-    optional bool   ForPay                   = 40;
-    optional string WithdrawAutoReviewAmount = 50;
-    optional string MarketValue              = 60;
-    optional uint32 SettlePercent            = 70;
-    optional string Setter                   = 80;
+    optional string Name                     = 40;
+    optional string Logo                     = 50;
+    optional bool   ForPay                   = 60;
+    optional string WithdrawAutoReviewAmount = 70;
+    optional string MarketValue              = 80;
+    optional uint32 SettlePercent            = 90;
+    optional string Setter                   = 100;
 }
 
 message Coin {

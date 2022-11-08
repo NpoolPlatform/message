@@ -179,6 +179,12 @@
         "CoinTypeID": {
           "type": "string"
         },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
         "ForPay": {
           "type": "boolean"
         },
