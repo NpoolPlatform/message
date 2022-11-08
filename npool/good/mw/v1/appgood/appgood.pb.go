@@ -709,7 +709,7 @@ func (x *GetGoodResponse) GetInfo() *Good {
 	return nil
 }
 
-type GetOnlyGoodRequest struct {
+type GetGoodOnlyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -717,8 +717,8 @@ type GetOnlyGoodRequest struct {
 	Conds *appgood.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
-func (x *GetOnlyGoodRequest) Reset() {
-	*x = GetOnlyGoodRequest{}
+func (x *GetGoodOnlyRequest) Reset() {
+	*x = GetGoodOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -726,13 +726,13 @@ func (x *GetOnlyGoodRequest) Reset() {
 	}
 }
 
-func (x *GetOnlyGoodRequest) String() string {
+func (x *GetGoodOnlyRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetOnlyGoodRequest) ProtoMessage() {}
+func (*GetGoodOnlyRequest) ProtoMessage() {}
 
-func (x *GetOnlyGoodRequest) ProtoReflect() protoreflect.Message {
+func (x *GetGoodOnlyRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -744,19 +744,19 @@ func (x *GetOnlyGoodRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetOnlyGoodRequest.ProtoReflect.Descriptor instead.
-func (*GetOnlyGoodRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetGoodOnlyRequest.ProtoReflect.Descriptor instead.
+func (*GetGoodOnlyRequest) Descriptor() ([]byte, []int) {
 	return file_npool_good_mw_v1_appgood_appgood_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetOnlyGoodRequest) GetConds() *appgood.Conds {
+func (x *GetGoodOnlyRequest) GetConds() *appgood.Conds {
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
-type GetOnlyGoodResponse struct {
+type GetGoodOnlyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -764,8 +764,8 @@ type GetOnlyGoodResponse struct {
 	Info *Good `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *GetOnlyGoodResponse) Reset() {
-	*x = GetOnlyGoodResponse{}
+func (x *GetGoodOnlyResponse) Reset() {
+	*x = GetGoodOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -773,13 +773,13 @@ func (x *GetOnlyGoodResponse) Reset() {
 	}
 }
 
-func (x *GetOnlyGoodResponse) String() string {
+func (x *GetGoodOnlyResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetOnlyGoodResponse) ProtoMessage() {}
+func (*GetGoodOnlyResponse) ProtoMessage() {}
 
-func (x *GetOnlyGoodResponse) ProtoReflect() protoreflect.Message {
+func (x *GetGoodOnlyResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -791,12 +791,12 @@ func (x *GetOnlyGoodResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetOnlyGoodResponse.ProtoReflect.Descriptor instead.
-func (*GetOnlyGoodResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetGoodOnlyResponse.ProtoReflect.Descriptor instead.
+func (*GetGoodOnlyResponse) Descriptor() ([]byte, []int) {
 	return file_npool_good_mw_v1_appgood_appgood_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetOnlyGoodResponse) GetInfo() *Good {
+func (x *GetGoodOnlyResponse) GetInfo() *Good {
 	if x != nil {
 		return x.Info
 	}
@@ -1177,12 +1177,12 @@ var file_npool_good_mw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f,
 	0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x4a, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52,
+	0x22, 0x4a, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x61, 0x6e,
 	0x61, 0x67, 0x65, 0x72, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e,
 	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x4b, 0x0a, 0x13,
-	0x47, 0x65, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x20, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 	0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47,
@@ -1224,13 +1224,13 @@ var file_npool_good_mw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x74, 0x1a, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 	0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x70, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x12,
+	0x12, 0x70, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x12,
 	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x4f, 0x6e, 0x6c, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x4f, 0x6e, 0x6c, 0x79, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x47, 0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x22, 0x00, 0x12, 0x67, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x73, 0x12, 0x2b,
 	0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x47,
@@ -1270,8 +1270,8 @@ var file_npool_good_mw_v1_appgood_appgood_proto_goTypes = []interface{}{
 	(*CreateGoodResponse)(nil),  // 2: good.middleware.appgood.v1.CreateGoodResponse
 	(*GetGoodRequest)(nil),      // 3: good.middleware.appgood.v1.GetGoodRequest
 	(*GetGoodResponse)(nil),     // 4: good.middleware.appgood.v1.GetGoodResponse
-	(*GetOnlyGoodRequest)(nil),  // 5: good.middleware.appgood.v1.GetOnlyGoodRequest
-	(*GetOnlyGoodResponse)(nil), // 6: good.middleware.appgood.v1.GetOnlyGoodResponse
+	(*GetGoodOnlyRequest)(nil),  // 5: good.middleware.appgood.v1.GetGoodOnlyRequest
+	(*GetGoodOnlyResponse)(nil), // 6: good.middleware.appgood.v1.GetGoodOnlyResponse
 	(*GetGoodsRequest)(nil),     // 7: good.middleware.appgood.v1.GetGoodsRequest
 	(*GetGoodsResponse)(nil),    // 8: good.middleware.appgood.v1.GetGoodsResponse
 	(*UpdateGoodRequest)(nil),   // 9: good.middleware.appgood.v1.UpdateGoodRequest
@@ -1287,20 +1287,20 @@ var file_npool_good_mw_v1_appgood_appgood_proto_depIdxs = []int32{
 	13, // 2: good.middleware.appgood.v1.CreateGoodRequest.Info:type_name -> good.manager.appgood.v1.AppGoodReq
 	0,  // 3: good.middleware.appgood.v1.CreateGoodResponse.Info:type_name -> good.middleware.appgood.v1.Good
 	0,  // 4: good.middleware.appgood.v1.GetGoodResponse.Info:type_name -> good.middleware.appgood.v1.Good
-	14, // 5: good.middleware.appgood.v1.GetOnlyGoodRequest.Conds:type_name -> good.manager.appgood.v1.Conds
-	0,  // 6: good.middleware.appgood.v1.GetOnlyGoodResponse.Info:type_name -> good.middleware.appgood.v1.Good
+	14, // 5: good.middleware.appgood.v1.GetGoodOnlyRequest.Conds:type_name -> good.manager.appgood.v1.Conds
+	0,  // 6: good.middleware.appgood.v1.GetGoodOnlyResponse.Info:type_name -> good.middleware.appgood.v1.Good
 	14, // 7: good.middleware.appgood.v1.GetGoodsRequest.Conds:type_name -> good.manager.appgood.v1.Conds
 	0,  // 8: good.middleware.appgood.v1.GetGoodsResponse.Infos:type_name -> good.middleware.appgood.v1.Good
 	13, // 9: good.middleware.appgood.v1.UpdateGoodRequest.Info:type_name -> good.manager.appgood.v1.AppGoodReq
 	0,  // 10: good.middleware.appgood.v1.UpdateGoodResponse.Info:type_name -> good.middleware.appgood.v1.Good
 	1,  // 11: good.middleware.appgood.v1.Middleware.CreateGood:input_type -> good.middleware.appgood.v1.CreateGoodRequest
 	3,  // 12: good.middleware.appgood.v1.Middleware.GetGood:input_type -> good.middleware.appgood.v1.GetGoodRequest
-	5,  // 13: good.middleware.appgood.v1.Middleware.GetOnlyGood:input_type -> good.middleware.appgood.v1.GetOnlyGoodRequest
+	5,  // 13: good.middleware.appgood.v1.Middleware.GetGoodOnly:input_type -> good.middleware.appgood.v1.GetGoodOnlyRequest
 	7,  // 14: good.middleware.appgood.v1.Middleware.GetGoods:input_type -> good.middleware.appgood.v1.GetGoodsRequest
 	9,  // 15: good.middleware.appgood.v1.Middleware.UpdateGood:input_type -> good.middleware.appgood.v1.UpdateGoodRequest
 	2,  // 16: good.middleware.appgood.v1.Middleware.CreateGood:output_type -> good.middleware.appgood.v1.CreateGoodResponse
 	4,  // 17: good.middleware.appgood.v1.Middleware.GetGood:output_type -> good.middleware.appgood.v1.GetGoodResponse
-	6,  // 18: good.middleware.appgood.v1.Middleware.GetOnlyGood:output_type -> good.middleware.appgood.v1.GetOnlyGoodResponse
+	6,  // 18: good.middleware.appgood.v1.Middleware.GetGoodOnly:output_type -> good.middleware.appgood.v1.GetGoodOnlyResponse
 	8,  // 19: good.middleware.appgood.v1.Middleware.GetGoods:output_type -> good.middleware.appgood.v1.GetGoodsResponse
 	10, // 20: good.middleware.appgood.v1.Middleware.UpdateGood:output_type -> good.middleware.appgood.v1.UpdateGoodResponse
 	16, // [16:21] is the sub-list for method output_type
@@ -1377,7 +1377,7 @@ func file_npool_good_mw_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetOnlyGoodRequest); i {
+			switch v := v.(*GetGoodOnlyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1389,7 +1389,7 @@ func file_npool_good_mw_v1_appgood_appgood_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_appgood_appgood_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetOnlyGoodResponse); i {
+			switch v := v.(*GetGoodOnlyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
