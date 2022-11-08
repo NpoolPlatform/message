@@ -78,6 +78,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"logo\""
         },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
         "Presale": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"presale\""
@@ -109,6 +113,10 @@
         "FeeCoinLogo": {
           "type": "string",
           "title": "@inject_tag: sql:\"fee_coin_logo\""
+        },
+        "FeeCoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_unit\""
         },
         "WithdrawFeeByStableUSD": {
           "type": "boolean",
