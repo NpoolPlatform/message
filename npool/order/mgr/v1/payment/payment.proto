@@ -64,6 +64,7 @@ message Payment {
     optional string       FinishAmount          = 100;
     optional string       CoinUsdCurrency       = 110;
     optional string       LocalCoinUsdCurrency  = 120;
+    optional string       LiveCoinUsdCurrency   = 130;
     optional string       CoinInfoID            = 150;
     optional PaymentState State                 = 160;
     optional string       ChainTransactionID    = 170;
