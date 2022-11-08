@@ -206,6 +206,12 @@
         "HotWalletFeeAmount": {
           "type": "string"
         },
+        "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
         "PaymentAccountCollectAmount": {
           "type": "string"
         }

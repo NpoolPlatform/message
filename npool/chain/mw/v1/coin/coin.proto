@@ -31,7 +31,9 @@ message CoinReq {
     optional string WithdrawFeeAmount            = 130;
     optional string CollectFeeAmount             = 140;
     optional string HotWalletFeeAmount           = 150;
-    optional string PaymentAccountCollectAmount  = 160;
+    optional string LowFeeAmount                 = 160;
+    optional string HotWalletAccountAmount       = 170;
+    optional string PaymentAccountCollectAmount  = 180;
 }
 
 message Coin {
