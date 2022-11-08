@@ -16,18 +16,6 @@ service Middleware {
     rpc UpdateTx     (UpdateTxRequest)   returns (UpdateTxResponse)    {}
 }
 
-message TxReq {
-    optional string ID              = 10;
-    optional string FromAccountID   = 20;
-    optional string ToAccountID     = 30;
-    optional string Amount          = 40;
-    optional string FeeAmount       = 50;
-    optional string ChainTxID       = 60;
-    optional chain.manager.tx.v1.TxState State = 70;
-    optional string Extra           = 80;
-    optional chain.manager.tx.v1.TxType  Type  = 90;
-}
-
 message Tx {
     // @inject_tag: sql:"id"
     string                      ID             = 10;
@@ -62,7 +50,7 @@ message Tx {
 }
 
 message CreateTxRequest {
-    TxReq Info = 10;
+    chain.manager.tx.v1.TxReq Info = 10;
 }
 
 message CreateTxResponse {
@@ -87,7 +75,7 @@ message GetTxsResponse {
 }
 
 message UpdateTxRequest {
-    TxReq Info = 10;
+    chain.manager.tx.v1.TxReq Info = 10;
 }
 
 message UpdateTxResponse {

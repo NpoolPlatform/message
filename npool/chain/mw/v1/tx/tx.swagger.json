@@ -117,38 +117,6 @@
         }
       }
     },
-    "chainmiddlewaretxv1TxReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "FromAccountID": {
-          "type": "string"
-        },
-        "ToAccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "FeeAmount": {
-          "type": "string"
-        },
-        "ChainTxID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1TxState"
-        },
-        "Extra": {
-          "type": "string"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1TxType"
-        }
-      }
-    },
     "chainmiddlewaretxv1UpdateTxResponse": {
       "type": "object",
       "properties": {
@@ -238,6 +206,38 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1TxReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "FromAccountID": {
+          "type": "string"
+        },
+        "ToAccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "ChainTxID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
         }
       }
     },
