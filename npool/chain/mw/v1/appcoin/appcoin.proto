@@ -48,44 +48,48 @@ message Coin {
     string ReservedAmount               = 80;
     // @inject_tag: sql:"for_pay"
     bool   ForPay                       = 90;
+    // @inject_tag: sql:"env"
+    string ENV                          = 100;
     // @inject_tag: sql:"home_page"
-    string HomePage                     = 100;
+    string HomePage                     = 110;
     // @inject_tag: sql:"specs"
-    string Specs                        = 110;
+    string Specs                        = 120;
     // @inject_tag: sql:"fee_coin_type_id"
-    string FeeCoinTypeID                = 120;
+    string FeeCoinTypeID                = 130;
     // @inject_tag: sql:"fee_coin_name"
-    string FeeCoinName                  = 130;
+    string FeeCoinName                  = 140;
     // @inject_tag: sql:"fee_coin_logo"
-    string FeeCoinLogo                  = 140;
+    string FeeCoinLogo                  = 150;
     // @inject_tag: sql:"fee_coin_unit"
-    string FeeCoinUnit                  = 150;
+    string FeeCoinUnit                  = 160;
+    // @inject_tag: sql:"fee_coin_env"
+    string FeeCoinENV                   = 170;
     // @inject_tag: sql:"withdraw_fee_by_stable_usd"
-    bool   WithdrawFeeByStableUSD       = 160;
+    bool   WithdrawFeeByStableUSD       = 180;
     // @inject_tag: sql:"withdraw_fee_amount"
-    string WithdrawFeeAmount            = 170;
+    string WithdrawFeeAmount            = 190;
     // @inject_tag: sql:"collect_fee_amount"
-    string CollectFeeAmount             = 180;
+    string CollectFeeAmount             = 200;
     // @inject_tag: sql:"hot_wallet_fee_amount"
-    string HotWalletFeeAmount           = 190;
+    string HotWalletFeeAmount           = 210;
     // @inject_tag: sql:"low_fee_amount"
-    string LowFeeAmount                 = 200;
+    string LowFeeAmount                 = 220;
     // @inject_tag: sql:"hot_wallet_account_amount"
-    string HotWalletAccountAmount       = 210;
+    string HotWalletAccountAmount       = 230;
     // @inject_tag: sql:"payment_account_collect_amount"
-    string PaymentAccountCollectAmount  = 220;
+    string PaymentAccountCollectAmount  = 240;
     // @inject_tag: sql:"withdraw_auto_review_amount"
-    string WithdrawAutoReviewAmount     = 230;
+    string WithdrawAutoReviewAmount     = 250;
     // @inject_tag: sql:"market_value"
-    string MarketValue                  = 240;
+    string MarketValue                  = 260;
     // @inject_tag: sql:"settle_value"
-    string SettleValue                  = 250;
+    string SettleValue                  = 270;
     // @inject_tag: sql:"settle_percent"
-    uint32 SettlePercent                = 260;
+    uint32 SettlePercent                = 280;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 270;
+    uint32 CreatedAt                    = 290;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 280;
+    uint32 UpdatedAt                    = 300;
 }
 
 message Conds {
