@@ -25,28 +25,32 @@ message Tx {
     string                      CoinName       = 30;
     // @inject_tag: sql:"coin_logo"
     bool                        CoinLogo       = 40;
+    // @inject_tag: sql:"coin_unit"
+    bool                        CoinUnit       = 50;
+    // @inject_tag: sql:"coin_env"
+    bool                        CoinENV        = 60;
     // @inject_tag: sql:"from_account_id"
-    string                      FromAccountID  = 50;
+    string                      FromAccountID  = 70;
     // @inject_tag: sql:"to_account_id"
-    string                      ToAccountID    = 60;
+    string                      ToAccountID    = 80;
     // @inject_tag: sql:"amount"
-    string                      Amount         = 70;
+    string                      Amount         = 90;
     // @inject_tag: sql:"fee_amount"
-    string                      FeeAmount      = 80;
+    string                      FeeAmount      = 100;
     // @inject_tag: sql:"chain_tx_id"
-    string                      ChainTxID      = 90;
-    chain.manager.tx.v1.TxState State          = 100;
+    string                      ChainTxID      = 110;
+    chain.manager.tx.v1.TxState State          = 120;
     // @inject_tag: sql:"state"
-    string                      StateStr       = 110;
+    string                      StateStr       = 130;
     // @inject_tag: sql:"extra"
-    string                      Extra          = 120;
-    chain.manager.tx.v1.TxType  Type           = 130;
+    string                      Extra          = 140;
+    chain.manager.tx.v1.TxType  Type           = 150;
     // @inject_tag: sql:"type"
-    string                      TypeStr        = 140;
+    string                      TypeStr        = 160;
     // @inject_tag: sql:"created_at"
-    uint32                      CreatedAt      = 150;
+    uint32                      CreatedAt      = 170;
     // @inject_tag: sql:"updated_at"
-    uint32                      UpdatedAt      = 160;
+    uint32                      UpdatedAt      = 180;
 }
 
 message CreateTxRequest {

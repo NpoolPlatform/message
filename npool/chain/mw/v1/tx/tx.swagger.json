@@ -67,6 +67,14 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"coin_logo\""
         },
+        "CoinUnit": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinENV": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_env\""
+        },
         "FromAccountID": {
           "type": "string",
           "title": "@inject_tag: sql:\"from_account_id\""
@@ -158,6 +166,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -213,6 +224,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "FromAccountID": {

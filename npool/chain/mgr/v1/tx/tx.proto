@@ -40,36 +40,39 @@ enum TxType {
 
 message TxReq {
     optional string    ID             = 10;
-    optional string    FromAccountID  = 20;
-    optional string    ToAccountID    = 30;
-    optional string    Amount         = 40;
-    optional string    FeeAmount      = 50;
-    optional string    ChainTxID      = 60;
-    optional TxState   State          = 70;
-    optional string    Extra          = 80;
-    optional TxType    Type           = 90;
+    optional string    CoinTypeID     = 20;
+    optional string    FromAccountID  = 30;
+    optional string    ToAccountID    = 40;
+    optional string    Amount         = 50;
+    optional string    FeeAmount      = 60;
+    optional string    ChainTxID      = 70;
+    optional TxState   State          = 80;
+    optional string    Extra          = 90;
+    optional TxType    Type           = 100;
 }
 
 message Tx {
     string  ID             = 10;
-    string  FromAccountID  = 20;
-    string  ToAccountID    = 30;
-    string  Amount         = 40;
-    string  FeeAmount      = 50;
-    string  ChainTxID      = 60;
-    TxState State          = 70;
-    string  Extra          = 80;
-    TxType  Type           = 90;
-    uint32  CreatedAt      = 100;
-    uint32  UpdatedAt      = 110;
+    string  CoinTypeID     = 20;
+    string  FromAccountID  = 30;
+    string  ToAccountID    = 40;
+    string  Amount         = 50;
+    string  FeeAmount      = 60;
+    string  ChainTxID      = 70;
+    TxState State          = 80;
+    string  Extra          = 90;
+    TxType  Type           = 100;
+    uint32  CreatedAt      = 110;
+    uint32  UpdatedAt      = 120;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID          = 10;
-    optional npool.v1.StringVal      AccountID   = 20;
-    optional npool.v1.StringSliceVal AccountIDs  = 30;
-    optional npool.v1.Int32Val       State       = 40;
-    optional npool.v1.Int32Val       Type        = 50;
+    optional npool.v1.StringVal      CoinTypeID  = 20;
+    optional npool.v1.StringVal      AccountID   = 30;
+    optional npool.v1.StringSliceVal AccountIDs  = 40;
+    optional npool.v1.Int32Val       State       = 50;
+    optional npool.v1.Int32Val       Type        = 60;
 }
 
 

@@ -50,6 +50,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -190,6 +193,9 @@
         "ID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "FromAccountID": {
           "type": "string"
         },
@@ -228,6 +234,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "FromAccountID": {
