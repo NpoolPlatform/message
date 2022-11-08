@@ -24,11 +24,11 @@ message Tx {
     // @inject_tag: sql:"coin_name"
     string                      CoinName       = 30;
     // @inject_tag: sql:"coin_logo"
-    bool                        CoinLogo       = 40;
+    string                      CoinLogo       = 40;
     // @inject_tag: sql:"coin_unit"
-    bool                        CoinUnit       = 50;
+    string                      CoinUnit       = 50;
     // @inject_tag: sql:"coin_env"
-    bool                        CoinENV        = 60;
+    string                      CoinENV        = 60;
     // @inject_tag: sql:"from_account_id"
     string                      FromAccountID  = 70;
     // @inject_tag: sql:"to_account_id"

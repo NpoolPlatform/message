@@ -64,15 +64,15 @@
           "title": "@inject_tag: sql:\"coin_name\""
         },
         "CoinLogo": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"coin_logo\""
         },
         "CoinUnit": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"coin_unit\""
         },
         "CoinENV": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"coin_env\""
         },
         "FromAccountID": {
