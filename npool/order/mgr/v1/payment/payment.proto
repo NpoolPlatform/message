@@ -42,13 +42,14 @@ message PaymentReq {
     optional string       FinishAmount          = 100;
     optional string       CoinUsdCurrency       = 110;
     optional string       LocalCoinUsdCurrency  = 120;
-    optional string       CoinInfoID            = 130;
-    optional PaymentState State                 = 140;
-    optional uint32       ChainTransactionID    = 150;
-    optional bool         UserSetPaid           = 160;
-    optional bool         UserSetCanceled       = 170;
-    optional bool         FakePayment           = 180;
-    optional uint32       CreateAt              = 190;
+    optional string       LiveCoinUsdCurrency   = 130;
+    optional string       CoinInfoID            = 140;
+    optional PaymentState State                 = 150;
+    optional string       ChainTransactionID    = 160;
+    optional bool         UserSetPaid           = 170;
+    optional bool         UserSetCanceled       = 180;
+    optional bool         FakePayment           = 190;
+    optional uint32       CreateAt              = 200;
 }
 
 message Payment {
@@ -65,15 +66,15 @@ message Payment {
     optional string       CoinUsdCurrency       = 110;
     optional string       LocalCoinUsdCurrency  = 120;
     optional string       LiveCoinUsdCurrency   = 130;
-    optional string       CoinInfoID            = 150;
-    optional PaymentState State                 = 160;
-    optional string       ChainTransactionID    = 170;
-    optional bool         UserSetPaid           = 180;
-    optional bool         UserSetCanceled       = 190;
-    optional bool         FakePayment           = 200;
-    optional uint32       CreatedAt             = 210;
-    optional uint32       UpdatedAt             = 220;
-    optional uint32       DeletedAt             = 230;
+    optional string       CoinInfoID            = 140;
+    optional PaymentState State                 = 150;
+    optional string       ChainTransactionID    = 160;
+    optional bool         UserSetPaid           = 170;
+    optional bool         UserSetCanceled       = 180;
+    optional bool         FakePayment           = 290;
+    optional uint32       CreatedAt             = 200;
+    optional uint32       UpdatedAt             = 210;
+    optional uint32       DeletedAt             = 220;
 }
 
 message Conds {

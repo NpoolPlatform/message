@@ -269,6 +269,9 @@
         "LocalCoinUsdCurrency": {
           "type": "string"
         },
+        "LiveCoinUsdCurrency": {
+          "type": "string"
+        },
         "CoinInfoID": {
           "type": "string"
         },
@@ -276,8 +279,7 @@
           "$ref": "#/definitions/v1PaymentState"
         },
         "ChainTransactionID": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "UserSetPaid": {
           "type": "boolean"
