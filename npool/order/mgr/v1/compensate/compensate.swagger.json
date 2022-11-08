@@ -53,14 +53,28 @@
         "OrderID": {
           "type": "string"
         },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
         "End": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
         },
         "CreatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -74,16 +88,19 @@
           "type": "string"
         },
         "Start": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "End": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
         },
         "CreatedAt": {
-          "type": "boolean"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

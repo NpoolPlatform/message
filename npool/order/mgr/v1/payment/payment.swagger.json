@@ -195,6 +195,9 @@
         "LocalCoinUsdCurrency": {
           "type": "string"
         },
+        "LiveCoinUsdCurrency": {
+          "type": "string"
+        },
         "CoinInfoID": {
           "type": "string"
         },

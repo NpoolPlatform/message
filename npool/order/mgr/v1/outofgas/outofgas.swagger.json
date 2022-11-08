@@ -153,11 +153,25 @@
         "OrderID": {
           "type": "string"
         },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
         "End": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeleteAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -171,10 +185,12 @@
           "type": "string"
         },
         "Start": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "End": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "boolean"
