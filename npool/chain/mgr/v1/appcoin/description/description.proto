@@ -50,6 +50,7 @@ message Conds {
     optional npool.v1.StringVal ID         = 10;
     optional npool.v1.StringVal AppID      = 20;
     optional npool.v1.StringVal CoinTypeID = 30;
+    optional npool.v1.Int32Val  UsedFor    = 40;
 }
 
 
