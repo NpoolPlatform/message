@@ -253,6 +253,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CouponID": {
           "type": "string"
         },

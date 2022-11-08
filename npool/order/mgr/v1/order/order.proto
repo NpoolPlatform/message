@@ -59,10 +59,11 @@ message OrderReq {
     optional string     DiscountCouponID        = 90;
     optional string     UserSpecialReductionID  = 100;
     optional uint32     StartAt                 = 110;
-    optional string     CouponID                = 120; 
-    optional OrderType  Type                    = 130;
+    optional uint32     EndAt                   = 120;
+    optional string     CouponID                = 130;
+    optional OrderType  Type                    = 140;
     optional OrderState State                   = 150;
-    optional uint32     CreatedAt               = 140;
+    optional uint32     CreatedAt               = 160;
 }
 
 message Order {
