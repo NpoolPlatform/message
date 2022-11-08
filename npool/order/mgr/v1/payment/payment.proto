@@ -49,7 +49,7 @@ message PaymentReq {
     optional bool         UserSetPaid           = 170;
     optional bool         UserSetCanceled       = 180;
     optional bool         FakePayment           = 190;
-    optional uint32       CreateAt              = 200;
+    optional uint32       CreatedAt              = 200;
 }
 
 message Payment {

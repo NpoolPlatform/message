@@ -290,7 +290,7 @@
         "FakePayment": {
           "type": "boolean"
         },
-        "CreateAt": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
