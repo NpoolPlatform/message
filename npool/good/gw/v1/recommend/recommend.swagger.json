@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/delete/recommend": {
+      "post": {
+        "operationId": "Gateway_DeleteRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRecommendRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/recommends": {
       "post": {
         "operationId": "Gateway_GetAppRecommends",
@@ -288,6 +320,25 @@
       }
     },
     "v1CreateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1DeleteRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {

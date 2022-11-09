@@ -52,6 +52,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc DeleteRecommend(DeleteRecommendRequest) returns (DeleteRecommendResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/recommend"
+            body: "*"
+        };
+    }
 }
 
 message Recommend {
@@ -138,3 +145,14 @@ message GetAppRecommendsResponse {
     repeated Recommend Infos = 10;
     uint32             Total = 20;
 }
+
+
+message DeleteRecommendRequest {
+    string ID    = 10;
+    string AppID = 20;
+}
+
+message DeleteRecommendResponse {
+    Recommend Info = 10;
+}
+

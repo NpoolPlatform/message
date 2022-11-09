@@ -69,6 +69,10 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "IntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -89,6 +93,10 @@
         },
         "TransactionID": {
           "type": "string"
+        },
+        "IntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -28,6 +28,7 @@ type GatewayClient interface {
 	UpdateAppRecommend(ctx context.Context, in *UpdateAppRecommendRequest, opts ...grpc.CallOption) (*UpdateAppRecommendResponse, error)
 	GetRecommends(ctx context.Context, in *GetRecommendsRequest, opts ...grpc.CallOption) (*GetRecommendsResponse, error)
 	GetAppRecommends(ctx context.Context, in *GetAppRecommendsRequest, opts ...grpc.CallOption) (*GetAppRecommendsResponse, error)
+	DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error)
 }
 
 type gatewayClient struct {
@@ -92,6 +93,15 @@ func (c *gatewayClient) GetAppRecommends(ctx context.Context, in *GetAppRecommen
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error) {
+	out := new(DeleteRecommendResponse)
+	err := c.cc.Invoke(ctx, "/good.gateway.recommend.v1.Gateway/DeleteRecommend", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type GatewayServer interface {
 	UpdateAppRecommend(context.Context, *UpdateAppRecommendRequest) (*UpdateAppRecommendResponse, error)
 	GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error)
 	GetAppRecommends(context.Context, *GetAppRecommendsRequest) (*GetAppRecommendsResponse, error)
+	DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedGatewayServer) GetRecommends(context.Context, *GetRecommendsR
 }
 func (UnimplementedGatewayServer) GetAppRecommends(context.Context, *GetAppRecommendsRequest) (*GetAppRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppRecommends not implemented")
+}
+func (UnimplementedGatewayServer) DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecommend not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -248,6 +262,24 @@ func _Gateway_GetAppRecommends_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRecommendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteRecommend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.gateway.recommend.v1.Gateway/DeleteRecommend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteRecommend(ctx, req.(*DeleteRecommendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppRecommends",
 			Handler:    _Gateway_GetAppRecommends_Handler,
+		},
+		{
+			MethodName: "DeleteRecommend",
+			Handler:    _Gateway_DeleteRecommend_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
