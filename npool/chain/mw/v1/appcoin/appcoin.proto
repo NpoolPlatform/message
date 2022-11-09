@@ -117,7 +117,9 @@ message GetCoinResponse {
 }
 
 message GetCoinsRequest {
-    Conds Conds = 10;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetCoinsResponse {
