@@ -65,16 +65,19 @@ message Order {
     string GoodID                 = 40;
     // @inject_tag: sql:"units"
     uint32 Units                  = 50;
-    // @inject_tag: sql:"order_type"
+    // @inject_tag: sql:"type"
     string OrderTypeStr           = 60;
     order.manager.order.v1.OrderType OrderType = 61;
+    // @inject_tag: sql:"state"
+    string OrderStateStr             = 62;
+    order.manager.order.v1.OrderState OrderState = 63;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
     string ParentOrderGoodID      = 80;
-    // @inject_tag: sql:"start"
+    // @inject_tag: sql:"start_at"
     uint32 Start                  = 90;
-    // @inject_tag: sql:"end"
+    // @inject_tag: sql:"end_at"
     uint32 End                    = 100;
     // @inject_tag: sql:"pay_with_parent"
     int32  PayWithParentInt       = 110;
@@ -104,7 +107,7 @@ message Order {
     // @inject_tag: sql:"payment_finish_amount"
     string PaymentFinishAmount    = 212;
 
-    // @inject_tag: sql:"coupon_id"
+    // @inject_tag: sql:"fix_amount_coupon_id"
     string FixAmountID            = 220;
     // @inject_tag: sql:"discount_coupon_id"
     string DiscountID             = 230;
@@ -116,6 +119,7 @@ message Order {
     // @inject_tag: sql:"user_canceled"
     uint32 UserCanceled           = 251;
 
+    // @inject_tag: sql:"state"
     order.manager.order.v1.OrderState State                        = 260;
     bool                              PayWithParent                = 280;
 }
