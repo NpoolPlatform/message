@@ -118,9 +118,6 @@ message Order {
     uint32 CreatedAt              = 250;
     // @inject_tag: sql:"user_canceled"
     uint32 UserCanceled           = 251;
-
-    // @inject_tag: sql:"state"
-    order.manager.order.v1.OrderState State                        = 260;
     bool                              PayWithParent                = 280;
 }
 
