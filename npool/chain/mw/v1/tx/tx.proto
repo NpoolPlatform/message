@@ -70,7 +70,9 @@ message GetTxResponse {
 }
 
 message GetTxsRequest {
-    chain.manager.tx.v1.Conds Conds = 10;
+    chain.manager.tx.v1.Conds Conds  = 10;
+    int32                     Offset = 20;
+    int32                     Limit  = 30;
 }
 
 message GetTxsResponse {
