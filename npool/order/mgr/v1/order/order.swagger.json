@@ -192,7 +192,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CouponID": {
+        "FixAmountCouponID": {
           "type": "string"
         },
         "Type": {
@@ -257,7 +257,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CouponID": {
+        "FixAmountCouponID": {
           "type": "string"
         },
         "Type": {

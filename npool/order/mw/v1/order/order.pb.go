@@ -317,8 +317,8 @@ type Order struct {
 	DiscountID string `protobuf:"bytes,230,opt,name=DiscountID,proto3" json:"DiscountID,omitempty" sql:"discount_coupon_id"`
 	// @inject_tag: sql:"user_special_reduction_id"
 	SpecialOfferID string `protobuf:"bytes,240,opt,name=SpecialOfferID,proto3" json:"SpecialOfferID,omitempty" sql:"user_special_reduction_id"`
-	// @inject_tag: sql:"create_at"
-	CreatedAt uint32 `protobuf:"varint,250,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"create_at"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,250,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"user_canceled"
 	UserCanceled uint32 `protobuf:"varint,251,opt,name=UserCanceled,proto3" json:"UserCanceled,omitempty" sql:"user_canceled"`
 	// @inject_tag: sql:"state"

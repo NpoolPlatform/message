@@ -74,10 +74,17 @@
         },
         "OrderTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_type\""
+          "title": "@inject_tag: sql:\"type\""
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "OrderStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
         },
         "ParentOrderID": {
           "type": "string",
@@ -90,12 +97,12 @@
         "Start": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"start\""
+          "title": "@inject_tag: sql:\"start_at\""
         },
         "End": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"end\""
+          "title": "@inject_tag: sql:\"end_at\""
         },
         "PayWithParentInt": {
           "type": "integer",
@@ -153,7 +160,7 @@
         },
         "FixAmountID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
+          "title": "@inject_tag: sql:\"fix_amount_coupon_id\""
         },
         "DiscountID": {
           "type": "string",
@@ -166,7 +173,7 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"create_at\""
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UserCanceled": {
           "type": "integer",
@@ -174,7 +181,8 @@
           "title": "@inject_tag: sql:\"user_canceled\""
         },
         "State": {
-          "$ref": "#/definitions/v1OrderState"
+          "$ref": "#/definitions/v1OrderState",
+          "title": "@inject_tag: sql:\"state\""
         },
         "PayWithParent": {
           "type": "boolean"

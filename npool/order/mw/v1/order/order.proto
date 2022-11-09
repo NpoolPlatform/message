@@ -114,7 +114,7 @@ message Order {
     // @inject_tag: sql:"user_special_reduction_id"
     string SpecialOfferID         = 240;
 
-    // @inject_tag: sql:"create_at"
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt              = 250;
     // @inject_tag: sql:"user_canceled"
     uint32 UserCanceled           = 251;
