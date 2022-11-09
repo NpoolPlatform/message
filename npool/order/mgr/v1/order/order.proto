@@ -60,7 +60,7 @@ message OrderReq {
     optional string     UserSpecialReductionID  = 100;
     optional uint32     StartAt                 = 110;
     optional uint32     EndAt                   = 120;
-    optional string     CouponID                = 130;
+    optional string     FixAmountCouponID       = 130;
     optional OrderType  Type                    = 140;
     optional OrderState State                   = 150;
     optional uint32     CreatedAt               = 160;
@@ -79,7 +79,7 @@ message Order {
     string     UserSpecialReductionID  = 100;
     uint32     StartAt                 = 110;
     uint32     EndAt                   = 120;
-    string     CouponID                = 130;
+    string     FixAmountCouponID       = 130;
     OrderType  Type                    = 140;
     OrderState State                   = 150;
     uint32     CreatedAt               = 160;
