@@ -53,6 +53,9 @@
         "MainGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "SubGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "MainGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },

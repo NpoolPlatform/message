@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
+	GetGoodOnly(ctx context.Context, in *GetGoodOnlyRequest, opts ...grpc.CallOption) (*GetGoodOnlyResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
 	UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error)
 }
@@ -54,6 +55,15 @@ func (c *middlewareClient) GetGood(ctx context.Context, in *GetGoodRequest, opts
 	return out, nil
 }
 
+func (c *middlewareClient) GetGoodOnly(ctx context.Context, in *GetGoodOnlyRequest, opts ...grpc.CallOption) (*GetGoodOnlyResponse, error) {
+	out := new(GetGoodOnlyResponse)
+	err := c.cc.Invoke(ctx, "/good.middleware.appgood.v1.Middleware/GetGoodOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error) {
 	out := new(GetGoodsResponse)
 	err := c.cc.Invoke(ctx, "/good.middleware.appgood.v1.Middleware/GetGoods", in, out, opts...)
@@ -78,6 +88,7 @@ func (c *middlewareClient) UpdateGood(ctx context.Context, in *UpdateGoodRequest
 type MiddlewareServer interface {
 	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
+	GetGoodOnly(context.Context, *GetGoodOnlyRequest) (*GetGoodOnlyResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
 	UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -92,6 +103,9 @@ func (UnimplementedMiddlewareServer) CreateGood(context.Context, *CreateGoodRequ
 }
 func (UnimplementedMiddlewareServer) GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGood not implemented")
+}
+func (UnimplementedMiddlewareServer) GetGoodOnly(context.Context, *GetGoodOnlyRequest) (*GetGoodOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoods not implemented")
@@ -148,6 +162,24 @@ func _Middleware_GetGood_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetGoodOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetGoodOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.middleware.appgood.v1.Middleware/GetGoodOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetGoodOnly(ctx, req.(*GetGoodOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetGoodsRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +230,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGood",
 			Handler:    _Middleware_GetGood_Handler,
+		},
+		{
+			MethodName: "GetGoodOnly",
+			Handler:    _Middleware_GetGoodOnly_Handler,
 		},
 		{
 			MethodName: "GetGoods",
