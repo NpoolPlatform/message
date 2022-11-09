@@ -193,7 +193,8 @@
           "format": "int64"
         },
         "CreatedAt": {
-          "type": "boolean"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
