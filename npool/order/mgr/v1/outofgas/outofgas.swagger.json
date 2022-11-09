@@ -165,11 +165,11 @@
           "type": "integer",
           "format": "int64"
         },
-        "UpdateAt": {
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         },
-        "DeleteAt": {
+        "DeletedAt": {
           "type": "integer",
           "format": "int64"
         }
