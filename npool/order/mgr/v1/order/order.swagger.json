@@ -64,6 +64,15 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixAmountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DiscountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserSpecialReductionID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

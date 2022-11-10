@@ -171,8 +171,7 @@
           "title": "@inject_tag: sql:\"created_at\""
         },
         "UserCanceled": {
-          "type": "integer",
-          "format": "int64",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"user_canceled\""
         },
         "PayWithParent": {
