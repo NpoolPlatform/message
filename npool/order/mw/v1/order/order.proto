@@ -115,7 +115,7 @@ message Order {
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt              = 250;
     // @inject_tag: sql:"user_canceled"
-    uint32 UserCanceled           = 251;
+    bool   UserCanceled           = 251;
 
     // @inject_tag: sql:"pay_with_parent"
     bool   PayWithParent          = 280;
