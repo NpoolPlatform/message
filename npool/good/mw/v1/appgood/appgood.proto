@@ -12,6 +12,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateGood    (CreateGoodRequest)    returns (CreateGoodResponse)    {}
     rpc GetGood       (GetGoodRequest)       returns (GetGoodResponse)       {}
+    rpc GetGoodOnly   (GetGoodOnlyRequest)   returns (GetGoodOnlyResponse)   {}
     rpc GetGoods      (GetGoodsRequest)      returns (GetGoodsResponse)      {}
     rpc UpdateGood    (UpdateGoodRequest)    returns (UpdateGoodResponse)    {}
 }
@@ -136,6 +137,14 @@ message GetGoodRequest {
 }
 
 message GetGoodResponse {
+    Good Info = 10;
+}
+
+message GetGoodOnlyRequest {
+    good.manager.appgood.v1.Conds Conds  = 10;
+}
+
+message GetGoodOnlyResponse {
     Good Info = 10;
 }
 

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/goodbenefit/goodbenefit.proto",
+    "title": "npool/chain/mgr/v1/appcoin/appcoin.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,22 +44,28 @@
         }
       }
     },
-    "v1Account": {
+    "v1AppCoin": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
           "type": "string"
         },
-        "AccountID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Backup": {
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ForPay": {
           "type": "boolean"
         },
-        "TransactionID": {
+        "WithdrawAutoReviewAmount": {
           "type": "string"
         },
         "CreatedAt": {
@@ -69,34 +75,32 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v1AccountReq": {
+    "v1AppCoinReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
           "type": "string"
         },
-        "AccountID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Backup": {
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ForPay": {
           "type": "boolean"
         },
-        "TransactionID": {
+        "WithdrawAutoReviewAmount": {
           "type": "string"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -117,18 +121,18 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AccountID": {
+        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Backup": {
+        "ForPay": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1CountAccountsResponse": {
+    "v1CountAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -137,42 +141,34 @@
         }
       }
     },
-    "v1CreateAccountResponse": {
+    "v1CreateAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1CreateAccountsResponse": {
+    "v1CreateAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1AppCoin"
           }
         }
       }
     },
-    "v1DeleteAccountResponse": {
+    "v1DeleteAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAccountResponse": {
+    "v1ExistAppCoinCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -180,29 +176,37 @@
         }
       }
     },
-    "v1GetAccountOnlyResponse": {
+    "v1ExistAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "type": "boolean"
         }
       }
     },
-    "v1GetAccountResponse": {
+    "v1GetAppCoinOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     },
-    "v1GetAccountsResponse": {
+    "v1GetAppCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCoin"
+        }
+      }
+    },
+    "v1GetAppCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1AppCoin"
           }
         },
         "Total": {
@@ -222,11 +226,11 @@
         }
       }
     },
-    "v1UpdateAccountResponse": {
+    "v1UpdateAppCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1AppCoin"
         }
       }
     }

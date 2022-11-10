@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/goodbenefit/goodbenefit.proto",
+    "title": "npool/chain/mgr/v1/coin/extra/extra.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,22 +44,19 @@
         }
       }
     },
-    "v1Account": {
+    "v1CoinExtra": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "AccountID": {
+        "HomePage": {
           "type": "string"
         },
-        "Backup": {
-          "type": "boolean"
-        },
-        "TransactionID": {
+        "Specs": {
           "type": "string"
         },
         "CreatedAt": {
@@ -69,45 +66,23 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v1AccountReq": {
+    "v1CoinExtraReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "AccountID": {
+        "HomePage": {
           "type": "string"
         },
-        "Backup": {
-          "type": "boolean"
-        },
-        "TransactionID": {
+        "Specs": {
           "type": "string"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -117,18 +92,12 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Backup": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1CountAccountsResponse": {
+    "v1CountCoinExtrasResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -137,42 +106,34 @@
         }
       }
     },
-    "v1CreateAccountResponse": {
+    "v1CreateCoinExtraResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1CoinExtra"
         }
       }
     },
-    "v1CreateAccountsResponse": {
+    "v1CreateCoinExtrasResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1CoinExtra"
           }
         }
       }
     },
-    "v1DeleteAccountResponse": {
+    "v1DeleteCoinExtraResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1CoinExtra"
         }
       }
     },
-    "v1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAccountResponse": {
+    "v1ExistCoinExtraCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -180,29 +141,37 @@
         }
       }
     },
-    "v1GetAccountOnlyResponse": {
+    "v1ExistCoinExtraResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "type": "boolean"
         }
       }
     },
-    "v1GetAccountResponse": {
+    "v1GetCoinExtraOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1CoinExtra"
         }
       }
     },
-    "v1GetAccountsResponse": {
+    "v1GetCoinExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinExtra"
+        }
+      }
+    },
+    "v1GetCoinExtrasResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1CoinExtra"
           }
         },
         "Total": {
@@ -222,11 +191,11 @@
         }
       }
     },
-    "v1UpdateAccountResponse": {
+    "v1UpdateCoinExtraResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1CoinExtra"
         }
       }
     }

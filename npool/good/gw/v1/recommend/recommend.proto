@@ -148,9 +148,11 @@ message GetAppRecommendsResponse {
 
 
 message DeleteRecommendRequest {
-    string ID = 10;
+    string ID    = 10;
+    string AppID = 20;
 }
 
 message DeleteRecommendResponse {
     Recommend Info = 10;
 }
+

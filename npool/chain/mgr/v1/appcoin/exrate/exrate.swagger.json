@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/goodbenefit/goodbenefit.proto",
+    "title": "npool/chain/mgr/v1/appcoin/exrate/exrate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,22 +44,79 @@
         }
       }
     },
-    "v1Account": {
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountExchangeRatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateExchangeRateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExchangeRate"
+        }
+      }
+    },
+    "v1CreateExchangeRatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ExchangeRate"
+          }
+        }
+      }
+    },
+    "v1DeleteExchangeRateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExchangeRate"
+        }
+      }
+    },
+    "v1ExchangeRate": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
           "type": "string"
         },
-        "AccountID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Backup": {
-          "type": "boolean"
+        "MarketValue": {
+          "type": "string"
         },
-        "TransactionID": {
+        "SettleValue": {
+          "type": "string"
+        },
+        "SettlePercent": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Setter": {
           "type": "string"
         },
         "CreatedAt": {
@@ -69,140 +126,75 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v1AccountReq": {
+    "v1ExchangeRateReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
           "type": "string"
         },
-        "AccountID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Backup": {
-          "type": "boolean"
-        },
-        "TransactionID": {
+        "MarketValue": {
           "type": "string"
         },
-        "IntervalHours": {
+        "SettleValue": {
+          "type": "string"
+        },
+        "SettlePercent": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
+        },
+        "Setter": {
           "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Backup": {
-          "$ref": "#/definitions/v1BoolVal"
-        }
-      }
-    },
-    "v1CountAccountsResponse": {
+    "v1ExistExchangeRateCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "type": "boolean"
         }
       }
     },
-    "v1CreateAccountResponse": {
+    "v1ExistExchangeRateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "type": "boolean"
         }
       }
     },
-    "v1CreateAccountsResponse": {
+    "v1GetExchangeRateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExchangeRate"
+        }
+      }
+    },
+    "v1GetExchangeRateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ExchangeRate"
+        }
+      }
+    },
+    "v1GetExchangeRatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Account"
-          }
-        }
-      }
-    },
-    "v1DeleteAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Account"
+            "$ref": "#/definitions/v1ExchangeRate"
           }
         },
         "Total": {
@@ -222,11 +214,11 @@
         }
       }
     },
-    "v1UpdateAccountResponse": {
+    "v1UpdateExchangeRateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "$ref": "#/definitions/v1ExchangeRate"
         }
       }
     }

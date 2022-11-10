@@ -58,6 +58,10 @@ message Account {
     string LabelsStr  = 101;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 110;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt  = 120;
+    // @inject_tag: sql:"deleted_at"
+    uint32 DeletedAt  = 130;
 }
 
 message Conds {

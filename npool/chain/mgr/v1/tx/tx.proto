@@ -1,0 +1,161 @@
+syntax = "proto3";
+
+package chain.manager.tx.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/tx";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateTx     (CreateTxRequest)     returns (CreateTxResponse)     {}
+    rpc CreateTxs    (CreateTxsRequest)    returns (CreateTxsResponse)    {}
+    rpc UpdateTx     (UpdateTxRequest)     returns (UpdateTxResponse)     {}
+    rpc GetTx        (GetTxRequest)        returns (GetTxResponse)        {}
+    rpc GetTxOnly    (GetTxOnlyRequest)    returns (GetTxOnlyResponse)    {}
+    rpc GetTxs       (GetTxsRequest)       returns (GetTxsResponse)       {}
+    rpc ExistTx      (ExistTxRequest)      returns (ExistTxResponse)      {}
+    rpc ExistTxConds (ExistTxCondsRequest) returns (ExistTxCondsResponse) {}
+    rpc CountTxs     (CountTxsRequest)     returns (CountTxsResponse)     {}
+    rpc DeleteTx     (DeleteTxRequest)     returns (DeleteTxResponse)     {}
+}
+
+enum TxState {
+    DefaultTxState     = 0;
+    StateCreated       = 10;
+    StateWait          = 20;
+    StateTransferring  = 30;
+    StateSuccessful    = 40;
+    StateFail          = 50;
+}
+
+enum TxType {
+    DefaultTxType    = 0;
+    TxWithdraw       = 10;
+    TxFeedGas        = 20;
+    TxPaymentCollect = 30;
+    TxBenefit        = 40;
+}
+
+message TxReq {
+    optional string    ID             = 10;
+    optional string    CoinTypeID     = 20;
+    optional string    FromAccountID  = 30;
+    optional string    ToAccountID    = 40;
+    optional string    Amount         = 50;
+    optional string    FeeAmount      = 60;
+    optional string    ChainTxID      = 70;
+    optional TxState   State          = 80;
+    optional string    Extra          = 90;
+    optional TxType    Type           = 100;
+}
+
+message Tx {
+    string  ID             = 10;
+    string  CoinTypeID     = 20;
+    string  FromAccountID  = 30;
+    string  ToAccountID    = 40;
+    string  Amount         = 50;
+    string  FeeAmount      = 60;
+    string  ChainTxID      = 70;
+    TxState State          = 80;
+    string  Extra          = 90;
+    TxType  Type           = 100;
+    uint32  CreatedAt      = 110;
+    uint32  UpdatedAt      = 120;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID          = 10;
+    optional npool.v1.StringVal      CoinTypeID  = 20;
+    optional npool.v1.StringVal      AccountID   = 30;
+    optional npool.v1.StringSliceVal AccountIDs  = 40;
+    optional npool.v1.Int32Val       State       = 50;
+    optional npool.v1.Int32Val       Type        = 60;
+}
+
+
+message CreateTxRequest {
+    TxReq Info = 10;
+}
+
+message CreateTxResponse {
+    Tx Info = 10;
+}
+
+message CreateTxsRequest {
+    repeated TxReq Infos = 10;
+}
+
+message CreateTxsResponse {
+    repeated Tx Infos = 10;
+}
+
+message UpdateTxRequest {
+    TxReq Info = 10;
+}
+
+message UpdateTxResponse {
+    Tx Info = 10;
+}
+
+message GetTxRequest {
+    string ID = 10;
+}
+
+message GetTxResponse {
+    Tx Info = 10;
+}
+
+message GetTxsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetTxsResponse {
+    repeated Tx Infos = 10;
+    uint32      Total = 20;
+}
+
+message GetTxOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetTxOnlyResponse {
+    Tx Info = 10;
+}
+
+message ExistTxRequest {
+    string ID = 10;
+}
+
+message ExistTxResponse {
+    bool Info = 10;
+}
+
+message ExistTxCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistTxCondsResponse {
+    bool Info = 10;
+}
+
+message CountTxsRequest {
+    Conds Conds = 10;
+}
+
+message CountTxsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteTxRequest {
+    string ID = 10;
+}
+
+message DeleteTxResponse {
+    Tx Info = 10;
+}
+

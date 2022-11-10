@@ -332,6 +332,9 @@
       "properties": {
         "ID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },

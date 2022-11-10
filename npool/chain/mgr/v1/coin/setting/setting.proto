@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package chain.manager.coin.setting.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/setting";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateSetting     (CreateSettingRequest)     returns (CreateSettingResponse)     {}
+    rpc CreateSettings    (CreateSettingsRequest)    returns (CreateSettingsResponse)    {}
+    rpc UpdateSetting     (UpdateSettingRequest)     returns (UpdateSettingResponse)     {}
+    rpc GetSetting        (GetSettingRequest)        returns (GetSettingResponse)        {}
+    rpc GetSettingOnly    (GetSettingOnlyRequest)    returns (GetSettingOnlyResponse)    {}
+    rpc GetSettings       (GetSettingsRequest)       returns (GetSettingsResponse)       {}
+    rpc ExistSetting      (ExistSettingRequest)      returns (ExistSettingResponse)      {}
+    rpc ExistSettingConds (ExistSettingCondsRequest) returns (ExistSettingCondsResponse) {}
+    rpc CountSettings     (CountSettingsRequest)     returns (CountSettingsResponse)     {}
+    rpc DeleteSetting     (DeleteSettingRequest)     returns (DeleteSettingResponse)     {}
+}
+
+message SettingReq {
+    optional string    ID                          = 10;
+    optional string    CoinTypeID                  = 20;
+    optional string    FeeCoinTypeID               = 30;
+    optional bool      WithdrawFeeByStableUSD      = 40;
+    optional string    WithdrawFeeAmount           = 50;
+    optional string    CollectFeeAmount            = 60;
+    optional string    HotWalletFeeAmount          = 70;
+    optional string    LowFeeAmount                = 80;
+    optional string    HotWalletAccountAmount      = 90;
+    optional string    PaymentAccountCollectAmount = 100;
+}
+
+message Setting {
+    string ID                          = 10;
+    string CoinTypeID                  = 20;
+    string FeeCoinTypeID               = 30;
+    bool   WithdrawFeeByStableUSD      = 40;
+    string WithdrawFeeAmount           = 50;
+    string CollectFeeAmount            = 60;
+    string HotWalletFeeAmount          = 70;
+    // Low than this value, we need to deposit gas
+    string LowFeeAmount                = 80;
+    string HotWalletAccountAmount      = 90;
+    string PaymentAccountCollectAmount = 100;
+    uint32 CreatedAt                   = 110;
+    uint32 UpdatedAt                   = 120;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID            = 10;
+    optional npool.v1.StringVal CoinTypeID    = 20;
+    optional npool.v1.StringVal FeeCoinTypeID = 30;
+}
+
+
+message CreateSettingRequest {
+    SettingReq Info = 10;
+}
+
+message CreateSettingResponse {
+    Setting Info = 10;
+}
+
+message CreateSettingsRequest {
+    repeated SettingReq Infos = 10;
+}
+
+message CreateSettingsResponse {
+    repeated Setting Infos = 10;
+}
+
+message UpdateSettingRequest {
+    SettingReq Info = 10;
+}
+
+message UpdateSettingResponse {
+    Setting Info = 10;
+}
+
+message GetSettingRequest {
+    string ID = 10;
+}
+
+message GetSettingResponse {
+    Setting Info = 10;
+}
+
+message GetSettingsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetSettingsResponse {
+    repeated Setting Infos = 10;
+    uint32       Total = 20;
+}
+
+message GetSettingOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetSettingOnlyResponse {
+    Setting Info = 10;
+}
+
+message ExistSettingRequest {
+    string ID = 10;
+}
+
+message ExistSettingResponse {
+    bool Info = 10;
+}
+
+message ExistSettingCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistSettingCondsResponse {
+    bool Info = 10;
+}
+
+message CountSettingsRequest {
+    Conds Conds = 10;
+}
+
+message CountSettingsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteSettingRequest {
+    string ID = 10;
+}
+
+message DeleteSettingResponse {
+    Setting Info = 10;
+}
+

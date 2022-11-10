@@ -1,0 +1,243 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/mgr/v1/coin/setting/setting.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FeeCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1CreateSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Setting"
+          }
+        }
+      }
+    },
+    "v1DeleteSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1ExistSettingCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetSettingOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1GetSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    },
+    "v1GetSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Setting"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Setting": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "LowFeeAmount": {
+          "type": "string",
+          "title": "Low than this value, we need to deposit gas"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettingReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Setting"
+        }
+      }
+    }
+  }
+}
