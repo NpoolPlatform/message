@@ -79,8 +79,6 @@ message Order {
     uint32 Start                  = 90;
     // @inject_tag: sql:"end_at"
     uint32 End                    = 100;
-    // @inject_tag: sql:"pay_with_parent"
-    int32  PayWithParentInt       = 110;
 
     // @inject_tag: sql:"payment_coin_type_id"
     string PaymentCoinTypeID       = 120;
@@ -118,7 +116,9 @@ message Order {
     uint32 CreatedAt              = 250;
     // @inject_tag: sql:"user_canceled"
     uint32 UserCanceled           = 251;
-    bool                              PayWithParent                = 280;
+
+    // @inject_tag: sql:"pay_with_parent"
+    bool   PayWithParent          = 280;
 }
 
 message Conds {
