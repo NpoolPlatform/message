@@ -1,0 +1,252 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/gw/v1/tx/tx.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "chaingatewaytxv1CreateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chaingatewaytxv1Tx"
+        }
+      }
+    },
+    "chaingatewaytxv1GetTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chaingatewaytxv1Tx"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewaytxv1Tx": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinENV": {
+          "type": "string"
+        },
+        "FromAddress": {
+          "type": "string"
+        },
+        "ToAddress": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "ChainTxID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewaytxv1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chaingatewaytxv1Tx"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TxReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FromAccountID": {
+          "type": "string"
+        },
+        "ToAccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "ChainTxID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        }
+      }
+    },
+    "v1TxState": {
+      "type": "string",
+      "enum": [
+        "DefaultTxState",
+        "StateCreated",
+        "StateWait",
+        "StateTransferring",
+        "StateSuccessful",
+        "StateFail"
+      ],
+      "default": "DefaultTxState"
+    },
+    "v1TxType": {
+      "type": "string",
+      "enum": [
+        "DefaultTxType",
+        "TxWithdraw",
+        "TxFeedGas",
+        "TxPaymentCollect",
+        "TxBenefit"
+      ],
+      "default": "DefaultTxType"
+    }
+  }
+}
