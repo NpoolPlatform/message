@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app/coindescription": {
       "post": {
-        "operationId": "Middleware_CreateAppCoinDescription",
+        "operationId": "Gateway_CreateAppCoinDescription",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/create/coindescription": {
       "post": {
-        "operationId": "Middleware_CreateCoinDescription",
+        "operationId": "Gateway_CreateCoinDescription",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/coindescriptions": {
       "post": {
-        "operationId": "Middleware_GetAppCoinDescriptions",
+        "operationId": "Gateway_GetAppCoinDescriptions",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/coindescriptions": {
       "post": {
-        "operationId": "Middleware_GetCoinDescriptions",
+        "operationId": "Gateway_GetCoinDescriptions",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/update/coindescription": {
       "post": {
-        "operationId": "Middleware_UpdateCoinDescription",
+        "operationId": "Gateway_UpdateCoinDescription",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }

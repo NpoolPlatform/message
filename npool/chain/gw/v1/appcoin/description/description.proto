@@ -10,7 +10,7 @@ import "npool/chain/mw/v1/appcoin/description/description.proto";
 import "npool/chain/mgr/v1/appcoin/description/description.proto";
 
 // Service Name
-service Middleware {
+service Gateway {
     rpc CreateCoinDescription (CreateCoinDescriptionRequest) returns (CreateCoinDescriptionResponse) {
         option (google.api.http) = {
             post: "/v1/create/coindescription"

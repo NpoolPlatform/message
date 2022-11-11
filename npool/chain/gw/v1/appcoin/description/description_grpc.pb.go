@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// MiddlewareClient is the client API for Middleware service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type GatewayClient interface {
 	CreateCoinDescription(ctx context.Context, in *CreateCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateCoinDescriptionResponse, error)
 	CreateAppCoinDescription(ctx context.Context, in *CreateAppCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateAppCoinDescriptionResponse, error)
 	GetCoinDescriptions(ctx context.Context, in *GetCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetCoinDescriptionsResponse, error)
@@ -29,219 +29,219 @@ type MiddlewareClient interface {
 	UpdateCoinDescription(ctx context.Context, in *UpdateCoinDescriptionRequest, opts ...grpc.CallOption) (*UpdateCoinDescriptionResponse, error)
 }
 
-type middlewareClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *middlewareClient) CreateCoinDescription(ctx context.Context, in *CreateCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateCoinDescriptionResponse, error) {
+func (c *gatewayClient) CreateCoinDescription(ctx context.Context, in *CreateCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateCoinDescriptionResponse, error) {
 	out := new(CreateCoinDescriptionResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Middleware/CreateCoinDescription", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) CreateAppCoinDescription(ctx context.Context, in *CreateAppCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateAppCoinDescriptionResponse, error) {
+func (c *gatewayClient) CreateAppCoinDescription(ctx context.Context, in *CreateAppCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateAppCoinDescriptionResponse, error) {
 	out := new(CreateAppCoinDescriptionResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Middleware/CreateAppCoinDescription", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetCoinDescriptions(ctx context.Context, in *GetCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetCoinDescriptionsResponse, error) {
+func (c *gatewayClient) GetCoinDescriptions(ctx context.Context, in *GetCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetCoinDescriptionsResponse, error) {
 	out := new(GetCoinDescriptionsResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Middleware/GetCoinDescriptions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Gateway/GetCoinDescriptions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetAppCoinDescriptions(ctx context.Context, in *GetAppCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionsResponse, error) {
+func (c *gatewayClient) GetAppCoinDescriptions(ctx context.Context, in *GetAppCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetAppCoinDescriptionsResponse, error) {
 	out := new(GetAppCoinDescriptionsResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Middleware/GetAppCoinDescriptions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateCoinDescription(ctx context.Context, in *UpdateCoinDescriptionRequest, opts ...grpc.CallOption) (*UpdateCoinDescriptionResponse, error) {
+func (c *gatewayClient) UpdateCoinDescription(ctx context.Context, in *UpdateCoinDescriptionRequest, opts ...grpc.CallOption) (*UpdateCoinDescriptionResponse, error) {
 	out := new(UpdateCoinDescriptionResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Middleware/UpdateCoinDescription", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type MiddlewareServer interface {
+type GatewayServer interface {
 	CreateCoinDescription(context.Context, *CreateCoinDescriptionRequest) (*CreateCoinDescriptionResponse, error)
 	CreateAppCoinDescription(context.Context, *CreateAppCoinDescriptionRequest) (*CreateAppCoinDescriptionResponse, error)
 	GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error)
 	GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error)
 	UpdateCoinDescription(context.Context, *UpdateCoinDescriptionRequest) (*UpdateCoinDescriptionResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateCoinDescription(context.Context, *CreateCoinDescriptionRequest) (*CreateCoinDescriptionResponse, error) {
+func (UnimplementedGatewayServer) CreateCoinDescription(context.Context, *CreateCoinDescriptionRequest) (*CreateCoinDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinDescription not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateAppCoinDescription(context.Context, *CreateAppCoinDescriptionRequest) (*CreateAppCoinDescriptionResponse, error) {
+func (UnimplementedGatewayServer) CreateAppCoinDescription(context.Context, *CreateAppCoinDescriptionRequest) (*CreateAppCoinDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCoinDescription not implemented")
 }
-func (UnimplementedMiddlewareServer) GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error) {
+func (UnimplementedGatewayServer) GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinDescriptions not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error) {
+func (UnimplementedGatewayServer) GetAppCoinDescriptions(context.Context, *GetAppCoinDescriptionsRequest) (*GetAppCoinDescriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoinDescriptions not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateCoinDescription(context.Context, *UpdateCoinDescriptionRequest) (*UpdateCoinDescriptionResponse, error) {
+func (UnimplementedGatewayServer) UpdateCoinDescription(context.Context, *UpdateCoinDescriptionRequest) (*UpdateCoinDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinDescription not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Middleware_CreateCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateCoinDescriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateCoinDescription(ctx, in)
+		return srv.(GatewayServer).CreateCoinDescription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.appcoin.description.v1.Middleware/CreateCoinDescription",
+		FullMethod: "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateCoinDescription(ctx, req.(*CreateCoinDescriptionRequest))
+		return srv.(GatewayServer).CreateCoinDescription(ctx, req.(*CreateCoinDescriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateAppCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAppCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppCoinDescriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAppCoinDescription(ctx, in)
+		return srv.(GatewayServer).CreateAppCoinDescription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.appcoin.description.v1.Middleware/CreateAppCoinDescription",
+		FullMethod: "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAppCoinDescription(ctx, req.(*CreateAppCoinDescriptionRequest))
+		return srv.(GatewayServer).CreateAppCoinDescription(ctx, req.(*CreateAppCoinDescriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCoinDescriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetCoinDescriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinDescriptionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCoinDescriptions(ctx, in)
+		return srv.(GatewayServer).GetCoinDescriptions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.appcoin.description.v1.Middleware/GetCoinDescriptions",
+		FullMethod: "/chain.gateway.appcoin.description.v1.Gateway/GetCoinDescriptions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCoinDescriptions(ctx, req.(*GetCoinDescriptionsRequest))
+		return srv.(GatewayServer).GetCoinDescriptions(ctx, req.(*GetCoinDescriptionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAppCoinDescriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppCoinDescriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppCoinDescriptionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAppCoinDescriptions(ctx, in)
+		return srv.(GatewayServer).GetAppCoinDescriptions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.appcoin.description.v1.Middleware/GetAppCoinDescriptions",
+		FullMethod: "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAppCoinDescriptions(ctx, req.(*GetAppCoinDescriptionsRequest))
+		return srv.(GatewayServer).GetAppCoinDescriptions(ctx, req.(*GetAppCoinDescriptionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCoinDescriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateCoinDescription(ctx, in)
+		return srv.(GatewayServer).UpdateCoinDescription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.appcoin.description.v1.Middleware/UpdateCoinDescription",
+		FullMethod: "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateCoinDescription(ctx, req.(*UpdateCoinDescriptionRequest))
+		return srv.(GatewayServer).UpdateCoinDescription(ctx, req.(*UpdateCoinDescriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.appcoin.description.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "chain.gateway.appcoin.description.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateCoinDescription",
-			Handler:    _Middleware_CreateCoinDescription_Handler,
+			Handler:    _Gateway_CreateCoinDescription_Handler,
 		},
 		{
 			MethodName: "CreateAppCoinDescription",
-			Handler:    _Middleware_CreateAppCoinDescription_Handler,
+			Handler:    _Gateway_CreateAppCoinDescription_Handler,
 		},
 		{
 			MethodName: "GetCoinDescriptions",
-			Handler:    _Middleware_GetCoinDescriptions_Handler,
+			Handler:    _Gateway_GetCoinDescriptions_Handler,
 		},
 		{
 			MethodName: "GetAppCoinDescriptions",
-			Handler:    _Middleware_GetAppCoinDescriptions_Handler,
+			Handler:    _Gateway_GetAppCoinDescriptions_Handler,
 		},
 		{
 			MethodName: "UpdateCoinDescription",
-			Handler:    _Middleware_UpdateCoinDescription_Handler,
+			Handler:    _Gateway_UpdateCoinDescription_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
