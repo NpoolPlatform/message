@@ -29,6 +29,7 @@ message ExchangeRateReq {
     optional string    SettleValue      = 50;
     optional uint32    SettlePercent    = 60;
     optional string    Setter           = 70;
+    optional uint32    DeletedAt        = 80;
 }
 
 message ExchangeRate {

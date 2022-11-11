@@ -101,6 +101,10 @@
         },
         "WithdrawAutoReviewAmount": {
           "type": "string"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
