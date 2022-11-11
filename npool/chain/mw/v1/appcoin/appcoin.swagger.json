@@ -171,6 +171,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"settle_percent\""
         },
+        "Setter": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"setter\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",

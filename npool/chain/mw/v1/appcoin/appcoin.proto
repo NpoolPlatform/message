@@ -86,10 +86,12 @@ message Coin {
     string SettleValue                  = 270;
     // @inject_tag: sql:"settle_percent"
     uint32 SettlePercent                = 280;
+    // @inject_tag: sql:"setter"
+    string Setter                       = 290;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 290;
+    uint32 CreatedAt                    = 300;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 300;
+    uint32 UpdatedAt                    = 310;
 }
 
 message Conds {
