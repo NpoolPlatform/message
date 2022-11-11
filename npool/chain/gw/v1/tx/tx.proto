@@ -46,9 +46,8 @@ message Tx {
 }
 
 message GetTxsRequest {
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
+    int32  Offset      = 10;
+    int32  Limit       = 20;
 }
 
 message GetTxsResponse {
