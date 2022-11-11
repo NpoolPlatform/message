@@ -108,35 +108,23 @@
         "AppName": {
           "type": "string"
         },
-        "FromUserID": {
-          "type": "string"
-        },
-        "FromUserEmailAddress": {
-          "type": "string"
-        },
-        "FromUserPhoneNO": {
-          "type": "string"
-        },
         "FromAccountID": {
           "type": "string"
         },
         "FromAddress": {
           "type": "string"
         },
-        "ToUserID": {
-          "type": "string"
-        },
-        "ToUserEmailAddress": {
-          "type": "string"
-        },
-        "ToUserPhoneNO": {
-          "type": "string"
+        "FromUsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         },
         "ToAccountID": {
           "type": "string"
         },
         "ToAddress": {
           "type": "string"
+        },
+        "ToUsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         },
         "Amount": {
           "type": "string"
@@ -192,6 +180,23 @@
           }
         }
       }
+    },
+    "v1AccountUsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultAccountUsedFor",
+        "GoodBenefit",
+        "UserBenefitHot",
+        "UserBenefitCold",
+        "PlatformBenefitCold",
+        "GasProvider",
+        "UserWithdraw",
+        "UserDeposit",
+        "GoodPayment",
+        "PaymentCollector",
+        "UserDirectBenefit"
+      ],
+      "default": "DefaultAccountUsedFor"
     },
     "v1TxState": {
       "type": "string",

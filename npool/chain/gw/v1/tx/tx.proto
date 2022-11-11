@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "npool/npool.proto";
 import "npool/chain/mgr/v1/tx/tx.proto";
 import "npool/chain/mw/v1/tx/tx.proto";
+import "npool/account/mgr/v1/account/account.proto";
 
 // Service Name
 service Gateway {
@@ -28,24 +29,20 @@ message Tx {
     string                      CoinENV              = 60;
     string                      AppID                = 70;
     string                      AppName              = 80;
-    string                      FromUserID           = 90;
-    string                      FromUserEmailAddress = 100;
-    string                      FromUserPhoneNO      = 110;
-    string                      FromAccountID        = 120;
-    string                      FromAddress          = 130;
-    string                      ToUserID             = 140;
-    string                      ToUserEmailAddress   = 150;
-    string                      ToUserPhoneNO        = 160;
-    string                      ToAccountID          = 170;
-    string                      ToAddress            = 180;
-    string                      Amount               = 190;
-    string                      FeeAmount            = 200;
-    string                      ChainTxID            = 210;
-    chain.manager.tx.v1.TxState State                = 220;
-    string                      Extra                = 230;
-    chain.manager.tx.v1.TxType  Type                 = 240;
-    uint32                      CreatedAt            = 250;
-    uint32                      UpdatedAt            = 260;
+    string                      FromAccountID        = 90;
+    string                      FromAddress          = 100;
+    account.manager.account1.v1.AccountUsedFor FromUsedFor  = 110;
+    string                      ToAccountID          = 120;
+    string                      ToAddress            = 130;
+    account.manager.account1.v1.AccountUsedFor ToUsedFor    = 140;
+    string                      Amount               = 150;
+    string                      FeeAmount            = 160;
+    string                      ChainTxID            = 170;
+    chain.manager.tx.v1.TxState State                = 180;
+    string                      Extra                = 190;
+    chain.manager.tx.v1.TxType  Type                 = 200;
+    uint32                      CreatedAt            = 210;
+    uint32                      UpdatedAt            = 220;
 }
 
 message GetTxsRequest {
