@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package account.middleware.account1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/account";
+
+import "npool/account/mgr/v1/account/account.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {}
+}
+
+message GetAccountsRequest {
+    account.manager.account1.v1.Conds Conds  = 10;
+    int32                             Offset = 20;
+    int32                             Limit  = 30;
+}
+
+message GetAccountsResponse {
+    repeated account.manager.account1.v1.Account Infos = 10;
+    uint32                                       Total = 20;
+}
+
+
