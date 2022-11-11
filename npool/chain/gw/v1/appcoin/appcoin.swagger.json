@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/appcoin": {
       "post": {
-        "operationId": "Middleware_CreateCoin",
+        "operationId": "Gateway_CreateCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/appcoin": {
       "post": {
-        "operationId": "Middleware_DeleteCoin",
+        "operationId": "Gateway_DeleteCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/appcoins": {
       "post": {
-        "operationId": "Middleware_GetCoins",
+        "operationId": "Gateway_GetCoins",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/n/appcoins": {
       "post": {
-        "operationId": "Middleware_GetAppCoins",
+        "operationId": "Gateway_GetAppCoins",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/update/appcoin": {
       "post": {
-        "operationId": "Middleware_UpdateCoin",
+        "operationId": "Gateway_UpdateCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,7 +172,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }
