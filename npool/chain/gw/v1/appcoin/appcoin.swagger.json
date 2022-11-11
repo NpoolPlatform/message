@@ -259,6 +259,9 @@
         "UserID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         },
