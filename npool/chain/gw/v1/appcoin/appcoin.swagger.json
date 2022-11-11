@@ -203,7 +203,7 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }

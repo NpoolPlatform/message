@@ -91,8 +91,8 @@ message UpdateCoinResponse {
 }
 
 message DeleteCoinRequest {
-    string ID    = 10;
-    string AppID = 20;
+    string ID          = 10;
+    string TargetAppID = 20;
 }
 
 message DeleteCoinResponse {
