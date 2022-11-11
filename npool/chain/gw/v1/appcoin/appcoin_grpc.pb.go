@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateCoin(ctx context.Context, in *CreateCoinRequest, opts ...grpc.CallOption) (*CreateCoinResponse, error)
 	GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error)
+	GetAppCoins(ctx context.Context, in *GetAppCoinsRequest, opts ...grpc.CallOption) (*GetAppCoinsResponse, error)
 	UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error)
 	DeleteCoin(ctx context.Context, in *DeleteCoinRequest, opts ...grpc.CallOption) (*DeleteCoinResponse, error)
 }
@@ -54,6 +55,15 @@ func (c *middlewareClient) GetCoins(ctx context.Context, in *GetCoinsRequest, op
 	return out, nil
 }
 
+func (c *middlewareClient) GetAppCoins(ctx context.Context, in *GetAppCoinsRequest, opts ...grpc.CallOption) (*GetAppCoinsResponse, error) {
+	out := new(GetAppCoinsResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.v1.Middleware/GetAppCoins", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error) {
 	out := new(UpdateCoinResponse)
 	err := c.cc.Invoke(ctx, "/chain.gateway.appcoin.v1.Middleware/UpdateCoin", in, out, opts...)
@@ -78,6 +88,7 @@ func (c *middlewareClient) DeleteCoin(ctx context.Context, in *DeleteCoinRequest
 type MiddlewareServer interface {
 	CreateCoin(context.Context, *CreateCoinRequest) (*CreateCoinResponse, error)
 	GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error)
+	GetAppCoins(context.Context, *GetAppCoinsRequest) (*GetAppCoinsResponse, error)
 	UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error)
 	DeleteCoin(context.Context, *DeleteCoinRequest) (*DeleteCoinResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -92,6 +103,9 @@ func (UnimplementedMiddlewareServer) CreateCoin(context.Context, *CreateCoinRequ
 }
 func (UnimplementedMiddlewareServer) GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoins not implemented")
+}
+func (UnimplementedMiddlewareServer) GetAppCoins(context.Context, *GetAppCoinsRequest) (*GetAppCoinsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCoins not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoin not implemented")
@@ -148,6 +162,24 @@ func _Middleware_GetCoins_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetAppCoins_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCoinsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetAppCoins(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.gateway.appcoin.v1.Middleware/GetAppCoins",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetAppCoins(ctx, req.(*GetAppCoinsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_UpdateCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCoinRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +230,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoins",
 			Handler:    _Middleware_GetCoins_Handler,
+		},
+		{
+			MethodName: "GetAppCoins",
+			Handler:    _Middleware_GetAppCoins_Handler,
 		},
 		{
 			MethodName: "UpdateCoin",

@@ -11,53 +11,50 @@ import "npool/chain/mw/v1/tx/tx.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateTx     (CreateTxRequest)   returns (CreateTxResponse)    {}
-    rpc GetTxs       (GetTxsRequest)     returns (GetTxsResponse)      {}
-    rpc UpdateTx     (UpdateTxRequest)   returns (UpdateTxResponse)    {}
+    rpc GetTxs (GetTxsRequest) returns (GetTxsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/txs"
+            body: "*"
+        };
+    }
 }
 
 message Tx {
-    string                      ID             = 10;
-    string                      CoinTypeID     = 20;
-    string                      CoinName       = 30;
-    string                      CoinLogo       = 40;
-    string                      CoinUnit       = 50;
-    string                      CoinENV        = 60;
-    string                      FromAddress    = 70;
-    string                      ToAddress      = 80;
-    string                      Amount         = 90;
-    string                      FeeAmount      = 100;
-    string                      ChainTxID      = 110;
-    chain.manager.tx.v1.TxState State          = 120;
-    string                      Extra          = 130;
-    chain.manager.tx.v1.TxType  Type           = 140;
-    uint32                      CreatedAt      = 150;
-    uint32                      UpdatedAt      = 160;
-}
-
-message CreateTxRequest {
-    chain.manager.tx.v1.TxReq Info = 10;
-}
-
-message CreateTxResponse {
-    Tx Info = 10;
+    string                      ID                   = 10;
+    string                      CoinTypeID           = 20;
+    string                      CoinName             = 30;
+    string                      CoinLogo             = 40;
+    string                      CoinUnit             = 50;
+    string                      CoinENV              = 60;
+    string                      AppID                = 70;
+    string                      AppName              = 80;
+    string                      FromUserID           = 90;
+    string                      FromUserEmailAddress = 100;
+    string                      FromUserPhoneNO      = 110;
+    string                      FromAccountID        = 120;
+    string                      FromAddress          = 130;
+    string                      ToUserID             = 140;
+    string                      ToUserEmailAddress   = 150;
+    string                      ToUserPhoneNO        = 160;
+    string                      ToAccountID          = 170;
+    string                      ToAddress            = 180;
+    string                      Amount               = 190;
+    string                      FeeAmount            = 200;
+    string                      ChainTxID            = 210;
+    chain.manager.tx.v1.TxState State                = 220;
+    string                      Extra                = 230;
+    chain.manager.tx.v1.TxType  Type                 = 240;
+    uint32                      CreatedAt            = 250;
+    uint32                      UpdatedAt            = 260;
 }
 
 message GetTxsRequest {
-    chain.manager.tx.v1.Conds Conds  = 10;
-    int32                     Offset = 20;
-    int32                     Limit  = 30;
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
 message GetTxsResponse {
     repeated Tx Infos = 10;
     uint32      Total = 20;
-}
-
-message UpdateTxRequest {
-    chain.manager.tx.v1.TxReq Info = 10;
-}
-
-message UpdateTxResponse {
-    Tx Info = 10;
 }

@@ -22,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateCoin(ctx context.Context, in *CreateCoinRequest, opts ...grpc.CallOption) (*CreateCoinResponse, error)
 	GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error)
 	UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error)
 }
@@ -33,15 +32,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) CreateCoin(ctx context.Context, in *CreateCoinRequest, opts ...grpc.CallOption) (*CreateCoinResponse, error) {
-	out := new(CreateCoinResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.v1.Gateway/CreateCoin", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error) {
@@ -66,7 +56,6 @@ func (c *gatewayClient) UpdateCoin(ctx context.Context, in *UpdateCoinRequest, o
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateCoin(context.Context, *CreateCoinRequest) (*CreateCoinResponse, error)
 	GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error)
 	UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -76,9 +65,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateCoin(context.Context, *CreateCoinRequest) (*CreateCoinResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCoin not implemented")
-}
 func (UnimplementedGatewayServer) GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoins not implemented")
 }
@@ -96,24 +82,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_CreateCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCoinRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateCoin(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/chain.gateway.coin.v1.Gateway/CreateCoin",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateCoin(ctx, req.(*CreateCoinRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetCoins_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -159,10 +127,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "chain.gateway.coin.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateCoin",
-			Handler:    _Gateway_CreateCoin_Handler,
-		},
 		{
 			MethodName: "GetCoins",
 			Handler:    _Gateway_GetCoins_Handler,

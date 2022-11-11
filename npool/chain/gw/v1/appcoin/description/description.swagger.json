@@ -15,13 +15,210 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/create/app/coindescription": {
+      "post": {
+        "operationId": "Middleware_CreateAppCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/create/coindescription": {
+      "post": {
+        "operationId": "Middleware_CreateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1CreateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1CreateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/app/coindescriptions": {
+      "post": {
+        "operationId": "Middleware_GetAppCoinDescriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinDescriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinDescriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/coindescriptions": {
+      "post": {
+        "operationId": "Middleware_GetCoinDescriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1GetCoinDescriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1GetCoinDescriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/update/coindescription": {
+      "post": {
+        "operationId": "Middleware_UpdateCoinDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1UpdateCoinDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoindescriptionv1UpdateCoinDescriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "chaingatewayappcoindescriptionv1CreateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
     "chaingatewayappcoindescriptionv1CreateCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+        }
+      }
+    },
+    "chaingatewayappcoindescriptionv1GetCoinDescriptionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -37,6 +234,23 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "chaingatewayappcoindescriptionv1UpdateCoinDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -133,13 +347,10 @@
         }
       }
     },
-    "v1CoinDescriptionReq": {
+    "v1CreateAppCoinDescriptionRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -156,43 +367,42 @@
         }
       }
     },
-    "v1Conds": {
+    "v1CreateAppCoinDescriptionResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
         }
       }
     },
-    "v1Int32Val": {
+    "v1GetAppCoinDescriptionsRequest": {
       "type": "object",
       "properties": {
-        "Op": {
+        "TargetAppID": {
           "type": "string"
         },
-        "Value": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
           "type": "integer",
           "format": "int32"
         }
       }
     },
-    "v1StringVal": {
+    "v1GetAppCoinDescriptionsResponse": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+          }
         },
-        "Value": {
-          "type": "string"
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

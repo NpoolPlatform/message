@@ -15,8 +15,180 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/create/appcoin": {
+      "post": {
+        "operationId": "Middleware_CreateCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/delete/appcoin": {
+      "post": {
+        "operationId": "Middleware_DeleteCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/appcoins": {
+      "post": {
+        "operationId": "Middleware_GetCoins",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/n/appcoins": {
+      "post": {
+        "operationId": "Middleware_GetAppCoins",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCoinsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/update/appcoin": {
+      "post": {
+        "operationId": "Middleware_UpdateCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "chaingatewayappcoinv1CreateCoinRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
     "chaingatewayappcoinv1CreateCoinResponse": {
       "type": "object",
       "properties": {
@@ -25,11 +197,38 @@
         }
       }
     },
+    "chaingatewayappcoinv1DeleteCoinRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
     "chaingatewayappcoinv1DeleteCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "chaingatewayappcoinv1GetCoinsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -43,6 +242,39 @@
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewayappcoinv1UpdateCoinRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        },
+        "WithdrawAutoReviewAmount": {
+          "type": "string"
+        },
+        "MarketValue": {
+          "type": "string"
+        },
+        "SettlePercent": {
           "type": "integer",
           "format": "int64"
         }
@@ -80,17 +312,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -226,84 +447,34 @@
         }
       }
     },
-    "v1CoinReq": {
+    "v1GetAppCoinsRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "WithdrawAutoReviewAmount": {
-          "type": "string"
-        },
-        "MarketValue": {
-          "type": "string"
-        },
-        "SettlePercent": {
+        "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
-        "Setter": {
-          "type": "string"
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
-    "v1Conds": {
+    "v1GetAppCoinsResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ForPay": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
+        "Infos": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1Coin"
           }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
         },
-        "Value": {
-          "type": "string"
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

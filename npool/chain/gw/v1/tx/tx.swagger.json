@@ -15,13 +15,54 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/get/txs": {
+      "post": {
+        "operationId": "Gateway_GetTxs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaytxv1GetTxsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaytxv1GetTxsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
-    "chaingatewaytxv1CreateTxResponse": {
+    "chaingatewaytxv1GetTxsRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/chaingatewaytxv1Tx"
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -61,7 +102,37 @@
         "CoinENV": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "FromUserID": {
+          "type": "string"
+        },
+        "FromUserEmailAddress": {
+          "type": "string"
+        },
+        "FromUserPhoneNO": {
+          "type": "string"
+        },
+        "FromAccountID": {
+          "type": "string"
+        },
         "FromAddress": {
+          "type": "string"
+        },
+        "ToUserID": {
+          "type": "string"
+        },
+        "ToUserEmailAddress": {
+          "type": "string"
+        },
+        "ToUserPhoneNO": {
+          "type": "string"
+        },
+        "ToAccountID": {
           "type": "string"
         },
         "ToAddress": {
@@ -95,14 +166,6 @@
         }
       }
     },
-    "chaingatewaytxv1UpdateTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chaingatewaytxv1Tx"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -127,101 +190,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "State": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1Int32Val"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1TxReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FromAccountID": {
-          "type": "string"
-        },
-        "ToAccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "FeeAmount": {
-          "type": "string"
-        },
-        "ChainTxID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1TxState"
-        },
-        "Extra": {
-          "type": "string"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1TxType"
         }
       }
     },

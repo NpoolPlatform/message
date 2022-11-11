@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/coin": {
-      "post": {
-        "operationId": "Gateway_CreateCoin",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/chaingatewaycoinv1CreateCoinResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/chaingatewaycoinv1CreateCoinRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/coins": {
       "post": {
         "operationId": "Gateway_GetCoins",
@@ -114,28 +82,9 @@
     }
   },
   "definitions": {
-    "chaingatewaycoinv1CreateCoinRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinReq"
-        }
-      }
-    },
-    "chaingatewaycoinv1CreateCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
-    },
     "chaingatewaycoinv1GetCoinsRequest": {
       "type": "object",
       "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -164,8 +113,47 @@
     "chaingatewaycoinv1UpdateCoinRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinReq"
+        "ID": {
+          "type": "string"
+        },
+        "Presale": {
+          "type": "boolean"
+        },
+        "ReservedAmount": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
         }
       }
     },
@@ -201,17 +189,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -315,110 +292,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1CoinReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Presale": {
-          "type": "boolean"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "ENV": {
-          "type": "string"
-        },
-        "ReservedAmount": {
-          "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "HomePage": {
-          "type": "string"
-        },
-        "Specs": {
-          "type": "string"
-        },
-        "FeeCoinTypeID": {
-          "type": "string"
-        },
-        "WithdrawFeeByStableUSD": {
-          "type": "boolean"
-        },
-        "WithdrawFeeAmount": {
-          "type": "string"
-        },
-        "CollectFeeAmount": {
-          "type": "string"
-        },
-        "HotWalletFeeAmount": {
-          "type": "string"
-        },
-        "LowFeeAmount": {
-          "type": "string"
-        },
-        "HotWalletAccountAmount": {
-          "type": "string"
-        },
-        "PaymentAccountCollectAmount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Presale": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "ENV": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ForPay": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
         }
       }
     }

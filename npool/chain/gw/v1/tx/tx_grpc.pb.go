@@ -22,9 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateTx(ctx context.Context, in *CreateTxRequest, opts ...grpc.CallOption) (*CreateTxResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
-	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,15 +31,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) CreateTx(ctx context.Context, in *CreateTxRequest, opts ...grpc.CallOption) (*CreateTxResponse, error) {
-	out := new(CreateTxResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.tx.v1.Gateway/CreateTx", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error) {
@@ -53,22 +42,11 @@ func (c *gatewayClient) GetTxs(ctx context.Context, in *GetTxsRequest, opts ...g
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error) {
-	out := new(UpdateTxResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.tx.v1.Gateway/UpdateTx", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateTx(context.Context, *CreateTxRequest) (*CreateTxResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
-	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -76,14 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateTx(context.Context, *CreateTxRequest) (*CreateTxResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateTx not implemented")
-}
 func (UnimplementedGatewayServer) GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTxs not implemented")
-}
-func (UnimplementedGatewayServer) UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateTx not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -96,24 +68,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_CreateTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTxRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateTx(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/chain.gateway.tx.v1.Gateway/CreateTx",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateTx(ctx, req.(*CreateTxRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetTxs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -134,24 +88,6 @@ func _Gateway_GetTxs_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTxRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateTx(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/chain.gateway.tx.v1.Gateway/UpdateTx",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateTx(ctx, req.(*UpdateTxRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -160,16 +96,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateTx",
-			Handler:    _Gateway_CreateTx_Handler,
-		},
-		{
 			MethodName: "GetTxs",
 			Handler:    _Gateway_GetTxs_Handler,
-		},
-		{
-			MethodName: "UpdateTx",
-			Handler:    _Gateway_UpdateTx_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
