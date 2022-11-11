@@ -25,7 +25,7 @@ enum PaymentState {
     DefaultState = 0;
     Wait         = 10;
     Done         = 20;
-    UserCanceled = 30;
+    Canceled     = 30;
     TimeOut      = 40;
 }
 

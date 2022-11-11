@@ -302,7 +302,7 @@
         "DefaultState",
         "Wait",
         "Done",
-        "UserCanceled",
+        "Canceled",
         "TimeOut"
       ],
       "default": "DefaultState"
