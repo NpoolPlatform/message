@@ -94,6 +94,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"for_pay\""
         },
+        "Product_Page": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"product_page\""
+        },
         "ENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"env\""
@@ -219,6 +223,9 @@
           "format": "int64"
         },
         "Setter": {
+          "type": "string"
+        },
+        "ProductPage": {
           "type": "string"
         }
       }

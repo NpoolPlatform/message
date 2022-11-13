@@ -27,6 +27,7 @@ message CoinReq {
     optional string MarketValue              = 80;
     optional uint32 SettlePercent            = 90;
     optional string Setter                   = 100;
+    optional string ProductPage              = 110;
 }
 
 message Coin {
@@ -48,6 +49,8 @@ message Coin {
     string ReservedAmount               = 80;
     // @inject_tag: sql:"for_pay"
     bool   ForPay                       = 90;
+    // @inject_tag: sql:"product_page"
+    bool   Product_Page                 = 91;
     // @inject_tag: sql:"env"
     string ENV                          = 100;
     // @inject_tag: sql:"home_page"
