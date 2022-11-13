@@ -68,6 +68,9 @@
         "WithdrawAutoReviewAmount": {
           "type": "string"
         },
+        "ProductPage": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -105,6 +108,9 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
         }
       }
     },
