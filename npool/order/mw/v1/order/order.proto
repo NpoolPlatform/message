@@ -39,6 +39,7 @@ message OrderReq {
     optional string PaymentCoinUSDCurrency    = 130;
     optional string PaymentLiveUSDCurrency    = 140;
     optional string PaymentLocalUSDCurrency   = 150;
+    optional  order.manager.payment.v1.PaymentState PaymentState = 151;
 
     optional string FixAmountID               = 160;
     optional string DiscountID                = 170;

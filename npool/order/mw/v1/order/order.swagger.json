@@ -232,6 +232,9 @@
         "PaymentLocalUSDCurrency": {
           "type": "string"
         },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
+        },
         "FixAmountID": {
           "type": "string"
         },
