@@ -11,6 +11,7 @@ import "npool/ledger/mgr/v1/ledger/general/general.proto";
 service Middleware {
     rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
     rpc GetGeneralOnly            (GetGeneralOnlyRequest)            returns (GetGeneralOnlyResponse)       {}
+    rpc AddGeneral                (AddGeneralRequest)                returns (AddGeneralResponse)           {}
 }
 
 message BookKeepingRequest {
@@ -25,5 +26,13 @@ message GetGeneralOnlyRequest {
 }
 
 message GetGeneralOnlyResponse {
+    ledger.manager.ledger.general.v1.General Info = 10;
+}
+
+message AddGeneralRequest {
+    ledger.manager.ledger.general.v1.GeneralReq Info = 10;
+}
+
+message AddGeneralResponse {
     ledger.manager.ledger.general.v1.General Info = 10;
 }

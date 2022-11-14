@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "ledger1v2AddGeneralResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1General"
+        }
+      }
+    },
     "ledger1v2GetGeneralOnlyResponse": {
       "type": "object",
       "properties": {
@@ -125,6 +133,35 @@
       }
     },
     "v1General": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "Spendable": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GeneralReq": {
       "type": "object",
       "properties": {
         "ID": {
