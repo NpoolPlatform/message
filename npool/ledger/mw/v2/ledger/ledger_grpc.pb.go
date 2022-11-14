@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
+	GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error)
 }
 
 type middlewareClient struct {
@@ -42,11 +43,21 @@ func (c *middlewareClient) BookKeeping(ctx context.Context, in *BookKeepingReque
 	return out, nil
 }
 
+func (c *middlewareClient) GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error) {
+	out := new(GetGeneralOnlyResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.v2.Middleware/GetGeneralOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
+	GetGeneralOnly(context.Context, *GetGeneralOnlyRequest) (*GetGeneralOnlyResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -56,6 +67,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BookKeeping not implemented")
+}
+func (UnimplementedMiddlewareServer) GetGeneralOnly(context.Context, *GetGeneralOnlyRequest) (*GetGeneralOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGeneralOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -88,6 +102,24 @@ func _Middleware_BookKeeping_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetGeneralOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGeneralOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetGeneralOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.ledger1.v2.Middleware/GetGeneralOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetGeneralOnly(ctx, req.(*GetGeneralOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +130,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BookKeeping",
 			Handler:    _Middleware_BookKeeping_Handler,
+		},
+		{
+			MethodName: "GetGeneralOnly",
+			Handler:    _Middleware_GetGeneralOnly_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

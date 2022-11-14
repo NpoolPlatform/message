@@ -17,6 +17,46 @@
   ],
   "paths": {},
   "definitions": {
+    "ledger1v2GetGeneralOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1General"
+        }
+      }
+    },
+    "ledgergeneralv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Incoming": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Outcoming": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Spendable": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -84,6 +124,35 @@
         }
       }
     },
+    "v1General": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "Spendable": {
+          "type": "string"
+        }
+      }
+    },
     "v1IOSubType": {
       "type": "string",
       "enum": [
@@ -107,6 +176,31 @@
         "Outcoming"
       ],
       "default": "DefaultType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
     },
     "v2BookKeepingResponse": {
       "type": "object"

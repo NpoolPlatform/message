@@ -5,10 +5,12 @@ package ledger.middleware.ledger1.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger";
 
 import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
+import "npool/ledger/mgr/v1/ledger/general/general.proto";
 
 // Service Name
 service Middleware {
     rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
+    rpc GetGeneralOnly            (GetGeneralOnlyRequest)            returns (GetGeneralOnlyResponse)       {}
 }
 
 message BookKeepingRequest {
@@ -16,4 +18,12 @@ message BookKeepingRequest {
 }
 
 message BookKeepingResponse {
+}
+
+message GetGeneralOnlyRequest {
+    ledger.manager.ledger.general.v1.Conds Conds = 10;
+}
+
+message GetGeneralOnlyResponse {
+    ledger.manager.ledger.general.v1.General Info = 10;
 }
