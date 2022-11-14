@@ -132,9 +132,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_amount\""
         },
-        "PaymentState": {
+        "PaymentStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_state\""
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
         },
         "PayWithBalanceAmount": {
           "type": "string",
@@ -335,6 +338,17 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Wait",
+        "Done",
+        "Canceled",
+        "TimeOut"
+      ],
+      "default": "DefaultState"
     }
   }
 }

@@ -5,6 +5,7 @@ package order.middleware.order1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
 import "npool/order/mgr/v1/order/order.proto";
+import "npool/order/mgr/v1/payment/payment.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -95,7 +96,8 @@ message Order {
     // @inject_tag: sql:"payment_amount"
     string PaymentAmount          = 180;
     // @inject_tag: sql:"payment_state"
-    string PaymentState           = 190;
+    string PaymentStateStr        = 190;
+    order.manager.payment.v1.PaymentState PaymentState = 191;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 200;
     // @inject_tag: sql:"paid_at"
