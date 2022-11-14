@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mgr/v1/account/account.proto",
+    "title": "npool/account/mw/v1/account/account.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -17,6 +17,21 @@
   ],
   "paths": {},
   "definitions": {
+    "accountmiddlewareaccount1v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -75,42 +90,6 @@
           "type": "boolean"
         },
         "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1AccountReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
-        },
-        "PlatformHoldPrivateKey": {
-          "type": "boolean"
-        },
-        "Active": {
-          "type": "boolean"
-        },
-        "Locked": {
-          "type": "boolean"
-        },
-        "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
-        },
-        "Blocked": {
-          "type": "boolean"
-        },
-        "DeletedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -182,89 +161,6 @@
         }
       }
     },
-    "v1CountAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1CreateAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Account"
-          }
-        }
-      }
-    },
-    "v1DeleteAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1ExistAccountCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "v1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Account"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1Int32Val": {
       "type": "object",
       "properties": {
@@ -320,14 +216,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
         }
       }
     }

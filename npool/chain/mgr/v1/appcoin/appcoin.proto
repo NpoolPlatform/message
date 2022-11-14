@@ -29,6 +29,8 @@ message AppCoinReq {
     optional string    Logo                     = 50;
     optional bool      ForPay                   = 60;
     optional string    WithdrawAutoReviewAmount = 70;
+    optional uint32    DeletedAt                = 80;
+    optional string    ProductPage              = 90;
 }
 
 message AppCoin {
@@ -39,8 +41,9 @@ message AppCoin {
     string Logo                     = 50;
     bool   ForPay                   = 60;
     string WithdrawAutoReviewAmount = 70;
-    uint32 CreatedAt                = 80;
-    uint32 UpdatedAt                = 90;
+    string ProductPage              = 80;
+    uint32 CreatedAt                = 90;
+    uint32 UpdatedAt                = 100;
 }
 
 message Conds {

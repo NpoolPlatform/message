@@ -53,6 +53,9 @@
         },
         "Backup": {
           "type": "boolean"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },

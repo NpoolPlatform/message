@@ -33,6 +33,7 @@ message CoinDescriptionReq {
     optional UsedFor   UsedFor    = 40;
     optional string    Title      = 50;
     optional string    Message    = 60;
+    optional uint32    DeletedAt  = 70;
 }
 
 message CoinDescription {

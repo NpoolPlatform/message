@@ -1,0 +1,299 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/gw/v1/coin/coin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/get/coins": {
+      "post": {
+        "operationId": "Gateway_GetCoins",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1GetCoinsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1GetCoinsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/coin": {
+      "post": {
+        "operationId": "Gateway_UpdateCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1UpdateCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1UpdateCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "chaingatewaycoinv1GetCoinsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "chaingatewaycoinv1GetCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewaycoinv1UpdateCoinRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Presale": {
+          "type": "boolean"
+        },
+        "ReservedAmount": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
+        }
+      }
+    },
+    "chaingatewaycoinv1UpdateCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Presale": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"presale\""
+        },
+        "ReservedAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reserved_amount\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "ENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"env\""
+        },
+        "ForPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"for_pay\""
+        },
+        "HomePage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"home_page\""
+        },
+        "Specs": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"specs\""
+        },
+        "FeeCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_type_id\""
+        },
+        "FeeCoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_name\""
+        },
+        "FeeCoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_logo\""
+        },
+        "FeeCoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_unit\""
+        },
+        "FeeCoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_env\""
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"withdraw_fee_by_stable_usd\""
+        },
+        "WithdrawFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"withdraw_fee_amount\""
+        },
+        "CollectFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"collect_fee_amount\""
+        },
+        "HotWalletFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_fee_amount\""
+        },
+        "LowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"low_fee_amount\""
+        },
+        "HotWalletAccountAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_account_amount\""
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_account_collect_amount\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    }
+  }
+}
