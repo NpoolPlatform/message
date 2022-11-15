@@ -33,6 +33,7 @@ message OrderReq {
     optional string PaymentAccountID          = 100;
     optional string PaymentAmount             = 110;
     optional string PaymentAccountStartAmount = 120;
+    optional string PaymentFinishAmount       = 121;
     optional string PaymentCoinUSDCurrency    = 130;
     optional string PaymentLiveUSDCurrency    = 140;
     optional string PaymentLocalUSDCurrency   = 150;
@@ -51,6 +52,7 @@ message OrderReq {
     optional string ID                        = 220;
     optional string PaymentID                 = 230;
     optional bool   Canceled                  = 240;
+    optional bool   FakePayment               = 250;
 }
 
 message Order {

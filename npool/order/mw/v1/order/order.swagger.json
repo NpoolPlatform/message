@@ -17,6 +17,38 @@
   ],
   "paths": {},
   "definitions": {
+    "managerorderv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixAmountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DiscountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserSpecialReductionID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "middlewareorder1v1CreateOrderResponse": {
       "type": "object",
       "properties": {
@@ -223,6 +255,9 @@
         "PaymentAccountStartAmount": {
           "type": "string"
         },
+        "PaymentFinishAmount": {
+          "type": "string"
+        },
         "PaymentCoinUSDCurrency": {
           "type": "string"
         },
@@ -264,6 +299,9 @@
         },
         "Canceled": {
           "type": "boolean"
+        },
+        "FakePayment": {
+          "type": "boolean"
         }
       }
     },
@@ -302,21 +340,6 @@
         }
       }
     },
-    "v1GetAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/middlewareorder1v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1OrderState": {
       "type": "string",
       "enum": [
@@ -352,6 +375,29 @@
         "TimeOut"
       ],
       "default": "DefaultState"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
