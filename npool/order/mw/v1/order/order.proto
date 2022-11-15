@@ -53,6 +53,7 @@ message OrderReq {
     optional string PaymentID                 = 230;
     optional bool   Canceled                  = 240;
     optional bool   FakePayment               = 250;
+    optional order.manager.order.v1.OrderState State  = 260;
 }
 
 message Order {

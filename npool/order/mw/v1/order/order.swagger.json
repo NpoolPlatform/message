@@ -302,6 +302,9 @@
         },
         "FakePayment": {
           "type": "boolean"
+        },
+        "State": {
+          "$ref": "#/definitions/v1OrderState"
         }
       }
     },
