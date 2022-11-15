@@ -1106,6 +1106,54 @@
     }
   },
   "definitions": {
+    "cloudhashingorderv1Order": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DiscountCouponID": {
+          "type": "string"
+        },
+        "UserSpecialReductionID": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PromotionID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "type": "string"
+        }
+      }
+    },
     "hashingapisv1CreateGoodRequest": {
       "type": "object",
       "properties": {
@@ -1465,13 +1513,10 @@
         }
       }
     },
-    "hashingorderv1Order": {
+    "hashingorderv1Payment": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "AppID": {
@@ -1480,35 +1525,72 @@
         "UserID": {
           "type": "string"
         },
-        "Units": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DiscountCouponID": {
+        "GoodID": {
           "type": "string"
         },
-        "UserSpecialReductionID": {
+        "OrderID": {
           "type": "string"
         },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
+        "AccountID": {
+          "type": "string"
         },
-        "End": {
-          "type": "integer",
-          "format": "int64"
+        "StartAmount": {
+          "type": "number",
+          "format": "double"
         },
-        "CouponID": {
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "CoinInfoID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "PlatformTransactionID": {
           "type": "string"
         },
         "CreateAt": {
           "type": "integer",
           "format": "int64"
         },
-        "PromotionID": {
+        "CoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "FinishAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "UserSetPaid": {
+          "type": "boolean"
+        },
+        "UserPaymentTXID": {
           "type": "string"
         },
-        "OrderType": {
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "number",
+          "format": "double"
+        },
+        "UpdateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "FakePayment": {
+          "type": "boolean"
+        },
+        "PayWithBalanceAmount": {
           "type": "string"
         }
       }
@@ -1721,6 +1803,141 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "middlewareorder1v1Order": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "Units": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"units\""
+        },
+        "OrderTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "OrderStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "ParentOrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_order_id\""
+        },
+        "ParentOrderGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_order_good_id\""
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "PaymentCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_type_id\""
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
+        },
+        "PaymentLocalUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
+        },
+        "PaymentLiveUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
+        },
+        "PaymentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
+        },
+        "PaymentAccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_account_id\""
+        },
+        "PaymentAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_amount\""
+        },
+        "PaymentStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_state\""
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pay_with_balance_amount\""
+        },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"paid_at\""
+        },
+        "PaymentStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_start_amount\""
+        },
+        "PaymentFinishAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_finish_amount\""
+        },
+        "FixAmountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fix_amount_coupon_id\""
+        },
+        "DiscountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"discount_coupon_id\""
+        },
+        "SpecialOfferID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_special_reduction_id\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UserCanceled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"user_canceled\""
+        },
+        "PayWithParent": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"pay_with_parent\""
         }
       }
     },
@@ -1989,7 +2206,7 @@
           "$ref": "#/definitions/v1CouponAllocatedDetail"
         },
         "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
+          "$ref": "#/definitions/cloudhashingorderv1Order"
         }
       }
     },
@@ -2612,7 +2829,7 @@
       "type": "object",
       "properties": {
         "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
+          "$ref": "#/definitions/cloudhashingorderv1Order"
         },
         "GoodPaying": {
           "$ref": "#/definitions/v1GoodPaying"
@@ -2636,7 +2853,7 @@
           }
         },
         "Payment": {
-          "$ref": "#/definitions/v1Payment"
+          "$ref": "#/definitions/hashingorderv1Payment"
         }
       }
     },
@@ -2651,6 +2868,31 @@
           "format": "int64"
         }
       }
+    },
+    "v1OrderState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "UserCanceled",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+    },
+    "v1OrderType": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderType",
+        "Normal",
+        "Offline",
+        "Airdrop"
+      ],
+      "default": "DefaultOrderType"
     },
     "v1OutOfGas": {
       "type": "object",
@@ -2671,87 +2913,16 @@
         }
       }
     },
-    "v1Payment": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "StartAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "Amount": {
-          "type": "number",
-          "format": "double"
-        },
-        "CoinInfoID": {
-          "type": "string"
-        },
-        "State": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "FinishAmount": {
-          "type": "number",
-          "format": "double"
-        },
-        "UserSetPaid": {
-          "type": "boolean"
-        },
-        "UserPaymentTXID": {
-          "type": "string"
-        },
-        "UserSetCanceled": {
-          "type": "boolean"
-        },
-        "LocalCoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "LiveCoinUSDCurrency": {
-          "type": "number",
-          "format": "double"
-        },
-        "UpdateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "FakePayment": {
-          "type": "boolean"
-        },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        }
-      }
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Wait",
+        "Done",
+        "Canceled",
+        "TimeOut"
+      ],
+      "default": "DefaultState"
     },
     "v1Recommend": {
       "type": "object",
@@ -3221,7 +3392,7 @@
           "$ref": "#/definitions/v1UserSpecialReduction"
         },
         "Order": {
-          "$ref": "#/definitions/hashingorderv1Order"
+          "$ref": "#/definitions/middlewareorder1v1Order"
         }
       }
     },
