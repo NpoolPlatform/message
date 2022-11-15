@@ -2206,7 +2206,7 @@
           "$ref": "#/definitions/v1CouponAllocatedDetail"
         },
         "Order": {
-          "$ref": "#/definitions/cloudhashingorderv1Order"
+          "$ref": "#/definitions/middlewareorder1v1Order"
         }
       }
     },

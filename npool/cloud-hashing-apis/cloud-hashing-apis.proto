@@ -608,7 +608,7 @@ message GetWithdrawAddressReviewsByOtherAppResponse {
 
 message Coupon {
     cloud.hashing.inspire.v1.CouponAllocatedDetail Coupon = 10;
-    cloud.hashing.order.v1.Order Order = 20;
+    .order.middleware.order1.v1.Order Order = 20;
 }
 
 message UserSpecial {
