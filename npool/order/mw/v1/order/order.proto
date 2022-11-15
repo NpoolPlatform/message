@@ -16,6 +16,7 @@ service Middleware {
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
+    rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
 }
 
 message OrderReq {
@@ -170,4 +171,12 @@ message GetOrdersRequest {
 message GetOrdersResponse {
     repeated Order Infos = 10;
     uint32         Total = 20;
+}
+
+message GetOrderOnlyRequest {
+    order.manager.order.v1.Conds Conds  = 10;
+}
+
+message GetOrderOnlyResponse {
+    Order Info = 10;
 }
