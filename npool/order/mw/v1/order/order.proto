@@ -136,6 +136,7 @@ message Conds {
     optional npool.v1.StringVal      PaymentAmount      = 80;
     optional npool.v1.Uint32Val      OrderType          = 90;
     optional npool.v1.Uint32Val      CreatedAt          = 100;
+    optional npool.v1.Uint32Val      GoodID             = 110;
 }
 
 message CreateOrderRequest {

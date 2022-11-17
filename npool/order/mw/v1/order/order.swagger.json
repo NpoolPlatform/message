@@ -49,6 +49,9 @@
         },
         "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
