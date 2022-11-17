@@ -35,8 +35,6 @@ enum OrderState {
     WaitPayment       = 10;
     Paid              = 20;
     PaymentTimeout    = 30;
-    // User set canceled
-    UserCanceled      = 31;
     // Platform confirm canceled
     Canceled          = 40;
 
