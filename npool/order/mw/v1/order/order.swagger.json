@@ -52,6 +52,21 @@
         },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixAmountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DiscountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserSpecialReductionID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
