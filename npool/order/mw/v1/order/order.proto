@@ -163,9 +163,9 @@ message GetOrderResponse {
 }
 
 message GetOrdersRequest {
-    order.manager.order.v1.Conds Conds  = 10;
-    int32                        Offset = 30;
-    int32                        Limit  = 40;
+    Conds Conds  = 10;
+    int32 Offset = 30;
+    int32 Limit  = 40;
 }
 
 message GetOrdersResponse {
@@ -174,7 +174,7 @@ message GetOrdersResponse {
 }
 
 message GetOrderOnlyRequest {
-    order.manager.order.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
 }
 
 message GetOrderOnlyResponse {

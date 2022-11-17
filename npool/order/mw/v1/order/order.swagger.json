@@ -17,14 +17,14 @@
   ],
   "paths": {},
   "definitions": {
-    "managerorderv1Conds": {
+    "middlewareorder1v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -32,20 +32,23 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Type": {
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ParentOrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "State": {
+        "PaymentAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "FixAmountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DiscountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserSpecialReductionID": {
-          "$ref": "#/definitions/v1StringVal"
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -358,13 +361,12 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
-        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
@@ -386,6 +388,20 @@
         "TimeOut"
       ],
       "default": "DefaultState"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
