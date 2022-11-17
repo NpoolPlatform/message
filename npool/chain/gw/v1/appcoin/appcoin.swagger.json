@@ -361,6 +361,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"product_page\""
         },
+        "CoinForPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_for_pay\""
+        },
         "ENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"env\""

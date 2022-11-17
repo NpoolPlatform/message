@@ -52,6 +52,8 @@ message Coin {
     bool   ForPay                       = 90;
     // @inject_tag: sql:"product_page"
     bool   Product_Page                 = 91;
+    // @inject_tag: sql:"coin_for_pay"
+    bool   CoinForPay                   = 92;
     // @inject_tag: sql:"env"
     string ENV                          = 100;
     // @inject_tag: sql:"home_page"
