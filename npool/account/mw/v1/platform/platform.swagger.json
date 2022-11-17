@@ -149,6 +149,14 @@
         }
       }
     },
+    "middlewareplatformv1GetAccountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareplatformv1Account"
+        }
+      }
+    },
     "middlewareplatformv1GetAccountResponse": {
       "type": "object",
       "properties": {
