@@ -28,6 +28,7 @@ message CoinReq {
     optional uint32 SettlePercent            = 90;
     optional string Setter                   = 100;
     optional string ProductPage              = 110;
+    optional bool   Disabled                 = 120;
 }
 
 message Coin {
@@ -91,10 +92,12 @@ message Coin {
     uint32 SettlePercent                = 280;
     // @inject_tag: sql:"setter"
     string Setter                       = 290;
+    // @inject_tag: sql:"disabled"
+    bool   Disabled                     = 300;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 300;
+    uint32 CreatedAt                    = 310;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 310;
+    uint32 UpdatedAt                    = 320;
 }
 
 message Conds {
@@ -102,7 +105,8 @@ message Conds {
     optional npool.v1.StringVal  AppID        = 20;
     optional npool.v1.StringVal  CoinTypeID   = 30;
     optional npool.v1.BoolVal    ForPay       = 40;
-    optional npool.v1.StringSliceVal IDs      = 50;
+    optional npool.v1.BoolVal    Disabled     = 50;
+    optional npool.v1.StringSliceVal IDs      = 60;
 }
 
 message CreateCoinRequest {
