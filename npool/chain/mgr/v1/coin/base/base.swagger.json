@@ -83,6 +83,9 @@
           "type": "boolean",
           "title": "Only platform coin can be for pay, then app can be for pay"
         },
+        "Disabled": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -119,6 +122,9 @@
         },
         "ForPay": {
           "type": "boolean"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -138,6 +144,9 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "ForPay": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }

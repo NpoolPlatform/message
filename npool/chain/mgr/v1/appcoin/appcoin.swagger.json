@@ -71,6 +71,9 @@
         "ProductPage": {
           "type": "string"
         },
+        "Disabled": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -111,6 +114,9 @@
         },
         "ProductPage": {
           "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -138,6 +144,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "ForPay": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
