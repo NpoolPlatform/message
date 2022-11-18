@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/extra/extra.proto",
+    "title": "npool/chain/mgr/v1/coin/currency/feed.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,18 +44,46 @@
         }
       }
     },
-    "v1BoolVal": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "Value": {
-          "type": "boolean"
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CoinExtra": {
+    "v1CountCurrencyFeedsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateCurrencyFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CurrencyFeed"
+        }
+      }
+    },
+    "v1CreateCurrencyFeedsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CurrencyFeed"
+          }
+        }
+      }
+    },
+    "v1CurrencyFeed": {
       "type": "object",
       "properties": {
         "ID": {
@@ -64,14 +92,11 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "HomePage": {
+        "FeedSource": {
           "type": "string"
         },
-        "Specs": {
-          "type": "string"
-        },
-        "StableUSD": {
-          "type": "boolean"
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -83,7 +108,7 @@
         }
       }
     },
-    "v1CoinExtraReq": {
+    "v1CurrencyFeedReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -92,106 +117,70 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "HomePage": {
+        "FeedSource": {
           "type": "string"
         },
-        "Specs": {
-          "type": "string"
-        },
-        "StableUSD": {
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
+        }
+      }
+    },
+    "v1DeleteCurrencyFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CurrencyFeed"
+        }
+      }
+    },
+    "v1ExistCurrencyFeedCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
           "type": "boolean"
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "StableUSD": {
-          "$ref": "#/definitions/v1BoolVal"
-        }
-      }
-    },
-    "v1CountCoinExtrasResponse": {
+    "v1ExistCurrencyFeedResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "type": "boolean"
         }
       }
     },
-    "v1CreateCoinExtraResponse": {
+    "v1FeedType": {
+      "type": "string",
+      "enum": [
+        "DefaultFeedType",
+        "CoinGecko",
+        "CoinBase"
+      ],
+      "default": "DefaultFeedType"
+    },
+    "v1GetCurrencyFeedOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CurrencyFeed"
         }
       }
     },
-    "v1CreateCoinExtrasResponse": {
+    "v1GetCurrencyFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CurrencyFeed"
+        }
+      }
+    },
+    "v1GetCurrencyFeedsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinExtra"
-          }
-        }
-      }
-    },
-    "v1DeleteCoinExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
-        }
-      }
-    },
-    "v1ExistCoinExtraCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCoinExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetCoinExtraOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
-        }
-      }
-    },
-    "v1GetCoinExtraResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
-        }
-      }
-    },
-    "v1GetCoinExtrasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CoinExtra"
+            "$ref": "#/definitions/v1CurrencyFeed"
           }
         },
         "Total": {
@@ -211,11 +200,11 @@
         }
       }
     },
-    "v1UpdateCoinExtraResponse": {
+    "v1UpdateCurrencyFeedResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinExtra"
+          "$ref": "#/definitions/v1CurrencyFeed"
         }
       }
     }
