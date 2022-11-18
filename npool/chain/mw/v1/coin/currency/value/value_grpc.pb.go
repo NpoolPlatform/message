@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/chain/mw/v1/coin/currency/value/value.proto
 
-package currency
+package value
 
 import (
 	context "context"
@@ -37,7 +37,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
 	out := new(GetCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyReque
 
 func (c *middlewareClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *middlewareClient) GetCurrencies(ctx context.Context, in *GetCurrenciesR
 
 func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _Middleware_GetCurrency_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetCurrency",
+		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
@@ -126,7 +126,7 @@ func _Middleware_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetCurrencies",
+		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
@@ -144,7 +144,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetHistories",
+		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistories(ctx, req.(*GetHistoriesRequest))
@@ -156,7 +156,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.middleware.coin.currency.v1.Middleware",
+	ServiceName: "chain.middleware.coin.currency.value.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mw/v1/coin/currency/value/value.proto",
+    "title": "npool/chain/gw/v1/coin/currency/value/value.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -17,23 +17,33 @@
   ],
   "paths": {},
   "definitions": {
-    "currencyvaluev1Conds": {
+    "chaingatewaycoincurrencyvaluev1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Currency"
+          }
         },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewaycoincurrencyvaluev1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Currency"
+          }
         },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -123,81 +133,6 @@
         "CoinBase"
       ],
       "default": "DefaultFeedType"
-    },
-    "v1GetCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Currency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-    "v1GetHistoriesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Currency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     }
   }
 }
