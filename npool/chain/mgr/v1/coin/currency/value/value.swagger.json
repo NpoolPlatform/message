@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/currency/feed.proto",
+    "title": "npool/chain/mgr/v1/coin/currency/value/value.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "currencyvaluev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,18 +61,7 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CountCurrencyFeedsResponse": {
+    "v1CountCurrencyValuesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -64,26 +70,26 @@
         }
       }
     },
-    "v1CreateCurrencyFeedResponse": {
+    "v1CreateCurrencyValueResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyFeed"
+          "$ref": "#/definitions/v1CurrencyValue"
         }
       }
     },
-    "v1CreateCurrencyFeedsResponse": {
+    "v1CreateCurrencyValuesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CurrencyFeed"
+            "$ref": "#/definitions/v1CurrencyValue"
           }
         }
       }
     },
-    "v1CurrencyFeed": {
+    "v1CurrencyValue": {
       "type": "object",
       "properties": {
         "ID": {
@@ -92,7 +98,7 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeedSource": {
+        "FeedSourceID": {
           "type": "string"
         },
         "FeedType": {
@@ -108,7 +114,7 @@
         }
       }
     },
-    "v1CurrencyFeedReq": {
+    "v1CurrencyValueReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -117,7 +123,10 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeedSource": {
+        "MarketValue": {
+          "type": "string"
+        },
+        "FeedSourceID": {
           "type": "string"
         },
         "FeedType": {
@@ -125,15 +134,15 @@
         }
       }
     },
-    "v1DeleteCurrencyFeedResponse": {
+    "v1DeleteCurrencyValueResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyFeed"
+          "$ref": "#/definitions/v1CurrencyValue"
         }
       }
     },
-    "v1ExistCurrencyFeedCondsResponse": {
+    "v1ExistCurrencyValueCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -141,7 +150,7 @@
         }
       }
     },
-    "v1ExistCurrencyFeedResponse": {
+    "v1ExistCurrencyValueResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -158,29 +167,29 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1GetCurrencyFeedOnlyResponse": {
+    "v1GetCurrencyValueOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyFeed"
+          "$ref": "#/definitions/v1CurrencyValue"
         }
       }
     },
-    "v1GetCurrencyFeedResponse": {
+    "v1GetCurrencyValueResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyFeed"
+          "$ref": "#/definitions/v1CurrencyValue"
         }
       }
     },
-    "v1GetCurrencyFeedsResponse": {
+    "v1GetCurrencyValuesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CurrencyFeed"
+            "$ref": "#/definitions/v1CurrencyValue"
           }
         },
         "Total": {
@@ -200,11 +209,23 @@
         }
       }
     },
-    "v1UpdateCurrencyFeedResponse": {
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCurrencyValueResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyFeed"
+          "$ref": "#/definitions/v1CurrencyValue"
         }
       }
     }

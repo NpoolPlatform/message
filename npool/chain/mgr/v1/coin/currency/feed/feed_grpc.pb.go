@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mgr/v1/coin/currency/feed.proto
+// source: npool/chain/mgr/v1/coin/currency/feed/feed.proto
 
-package currency
+package feed
 
 import (
 	context "context"
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateCurrencyFeed(ctx context.Context, in *CreateCurrencyFeedRequest, opts ...grpc.CallOption) (*CreateCurrencyFeedResponse, error) {
 	out := new(CreateCurrencyFeedResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/CreateCurrencyFeed", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/CreateCurrencyFeed", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateCurrencyFeed(ctx context.Context, in *CreateCurren
 
 func (c *managerClient) CreateCurrencyFeeds(ctx context.Context, in *CreateCurrencyFeedsRequest, opts ...grpc.CallOption) (*CreateCurrencyFeedsResponse, error) {
 	out := new(CreateCurrencyFeedsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/CreateCurrencyFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/CreateCurrencyFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateCurrencyFeeds(ctx context.Context, in *CreateCurre
 
 func (c *managerClient) UpdateCurrencyFeed(ctx context.Context, in *UpdateCurrencyFeedRequest, opts ...grpc.CallOption) (*UpdateCurrencyFeedResponse, error) {
 	out := new(UpdateCurrencyFeedResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/UpdateCurrencyFeed", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/UpdateCurrencyFeed", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateCurrencyFeed(ctx context.Context, in *UpdateCurren
 
 func (c *managerClient) GetCurrencyFeed(ctx context.Context, in *GetCurrencyFeedRequest, opts ...grpc.CallOption) (*GetCurrencyFeedResponse, error) {
 	out := new(GetCurrencyFeedResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeed", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeed", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetCurrencyFeed(ctx context.Context, in *GetCurrencyFeed
 
 func (c *managerClient) GetCurrencyFeedOnly(ctx context.Context, in *GetCurrencyFeedOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyFeedOnlyResponse, error) {
 	out := new(GetCurrencyFeedOnlyResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeedOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeedOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetCurrencyFeedOnly(ctx context.Context, in *GetCurrency
 
 func (c *managerClient) GetCurrencyFeeds(ctx context.Context, in *GetCurrencyFeedsRequest, opts ...grpc.CallOption) (*GetCurrencyFeedsResponse, error) {
 	out := new(GetCurrencyFeedsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetCurrencyFeeds(ctx context.Context, in *GetCurrencyFee
 
 func (c *managerClient) ExistCurrencyFeed(ctx context.Context, in *ExistCurrencyFeedRequest, opts ...grpc.CallOption) (*ExistCurrencyFeedResponse, error) {
 	out := new(ExistCurrencyFeedResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/ExistCurrencyFeed", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/ExistCurrencyFeed", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistCurrencyFeed(ctx context.Context, in *ExistCurrency
 
 func (c *managerClient) ExistCurrencyFeedConds(ctx context.Context, in *ExistCurrencyFeedCondsRequest, opts ...grpc.CallOption) (*ExistCurrencyFeedCondsResponse, error) {
 	out := new(ExistCurrencyFeedCondsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/ExistCurrencyFeedConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/ExistCurrencyFeedConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistCurrencyFeedConds(ctx context.Context, in *ExistCur
 
 func (c *managerClient) CountCurrencyFeeds(ctx context.Context, in *CountCurrencyFeedsRequest, opts ...grpc.CallOption) (*CountCurrencyFeedsResponse, error) {
 	out := new(CountCurrencyFeedsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/CountCurrencyFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/CountCurrencyFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountCurrencyFeeds(ctx context.Context, in *CountCurrenc
 
 func (c *managerClient) DeleteCurrencyFeed(ctx context.Context, in *DeleteCurrencyFeedRequest, opts ...grpc.CallOption) (*DeleteCurrencyFeedResponse, error) {
 	out := new(DeleteCurrencyFeedResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.v1.Manager/DeleteCurrencyFeed", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.feed.v1.Manager/DeleteCurrencyFeed", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateCurrencyFeed_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/CreateCurrencyFeed",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/CreateCurrencyFeed",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateCurrencyFeed(ctx, req.(*CreateCurrencyFeedRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateCurrencyFeeds_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/CreateCurrencyFeeds",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/CreateCurrencyFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateCurrencyFeeds(ctx, req.(*CreateCurrencyFeedsRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateCurrencyFeed_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/UpdateCurrencyFeed",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/UpdateCurrencyFeed",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateCurrencyFeed(ctx, req.(*UpdateCurrencyFeedRequest))
@@ -260,7 +260,7 @@ func _Manager_GetCurrencyFeed_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeed",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeed",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetCurrencyFeed(ctx, req.(*GetCurrencyFeedRequest))
@@ -278,7 +278,7 @@ func _Manager_GetCurrencyFeedOnly_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeedOnly",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeedOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetCurrencyFeedOnly(ctx, req.(*GetCurrencyFeedOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetCurrencyFeeds_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/GetCurrencyFeeds",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/GetCurrencyFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetCurrencyFeeds(ctx, req.(*GetCurrencyFeedsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistCurrencyFeed_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/ExistCurrencyFeed",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/ExistCurrencyFeed",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistCurrencyFeed(ctx, req.(*ExistCurrencyFeedRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistCurrencyFeedConds_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/ExistCurrencyFeedConds",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/ExistCurrencyFeedConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistCurrencyFeedConds(ctx, req.(*ExistCurrencyFeedCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountCurrencyFeeds_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/CountCurrencyFeeds",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/CountCurrencyFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountCurrencyFeeds(ctx, req.(*CountCurrencyFeedsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteCurrencyFeed_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.v1.Manager/DeleteCurrencyFeed",
+		FullMethod: "/chain.manager.coin.currency.feed.v1.Manager/DeleteCurrencyFeed",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteCurrencyFeed(ctx, req.(*DeleteCurrencyFeedRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteCurrencyFeed_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.manager.coin.currency.v1.Manager",
+	ServiceName: "chain.manager.coin.currency.feed.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mgr/v1/coin/currency/feed.proto",
+	Metadata: "npool/chain/mgr/v1/coin/currency/feed/feed.proto",
 }
