@@ -158,6 +158,9 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1FeedType"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },

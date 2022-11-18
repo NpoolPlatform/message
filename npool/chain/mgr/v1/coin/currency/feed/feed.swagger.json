@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -52,6 +63,9 @@
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -98,6 +112,9 @@
         "FeedType": {
           "$ref": "#/definitions/v1FeedType"
         },
+        "Disabled": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -122,6 +139,9 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1FeedType"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
