@@ -104,6 +104,12 @@
         "FeedType": {
           "$ref": "#/definitions/v1FeedType"
         },
+        "MarketValueHigh": {
+          "type": "string"
+        },
+        "MarketValueLow": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
