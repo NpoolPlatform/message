@@ -74,6 +74,8 @@ message Conds {
     optional npool.v1.BoolVal   Active     = 70;
     optional npool.v1.BoolVal   Blocked    = 80;
     optional npool.v1.Int32Val  UsedFor    = 90;
+    optional npool.v1.StringSliceVal IDs   = 100;
+    optional npool.v1.StringSliceVal AccountIDs = 110;
 }
 
 
