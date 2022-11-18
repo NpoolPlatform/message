@@ -86,6 +86,14 @@
         }
       }
     },
+    "chainmiddlewarecoincurrencyfeedv1DeleteCurrencyFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
+        }
+      }
+    },
     "chainmiddlewarecoincurrencyfeedv1GetCurrencyFeedsResponse": {
       "type": "object",
       "properties": {

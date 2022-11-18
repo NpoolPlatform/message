@@ -12,6 +12,7 @@ import "npool/chain/mgr/v1/coin/currency/feed/feed.proto";
 service Middleware {
     rpc CreateCurrencyFeed   (CreateCurrencyFeedRequest)  returns  (CreateCurrencyFeedResponse)  {}
     rpc UpdateCurrencyFeed   (UpdateCurrencyFeedRequest)  returns  (UpdateCurrencyFeedResponse)  {}
+    rpc DeleteCurrencyFeed   (DeleteCurrencyFeedRequest)  returns  (DeleteCurrencyFeedResponse)  {}
     rpc GetCurrencyFeeds     (GetCurrencyFeedsRequest)    returns  (GetCurrencyFeedsResponse)    {}
 }
 
@@ -71,3 +72,10 @@ message GetCurrencyFeedsResponse {
     uint32                Total = 20;
 }
 
+message DeleteCurrencyFeedRequest {
+    string ID = 10;
+}
+
+message DeleteCurrencyFeedResponse {
+    CurrencyFeed Info = 10;
+}

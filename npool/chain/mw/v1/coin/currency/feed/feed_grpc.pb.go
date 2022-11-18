@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateCurrencyFeed(ctx context.Context, in *CreateCurrencyFeedRequest, opts ...grpc.CallOption) (*CreateCurrencyFeedResponse, error)
 	UpdateCurrencyFeed(ctx context.Context, in *UpdateCurrencyFeedRequest, opts ...grpc.CallOption) (*UpdateCurrencyFeedResponse, error)
+	DeleteCurrencyFeed(ctx context.Context, in *DeleteCurrencyFeedRequest, opts ...grpc.CallOption) (*DeleteCurrencyFeedResponse, error)
 	GetCurrencyFeeds(ctx context.Context, in *GetCurrencyFeedsRequest, opts ...grpc.CallOption) (*GetCurrencyFeedsResponse, error)
 }
 
@@ -53,6 +54,15 @@ func (c *middlewareClient) UpdateCurrencyFeed(ctx context.Context, in *UpdateCur
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteCurrencyFeed(ctx context.Context, in *DeleteCurrencyFeedRequest, opts ...grpc.CallOption) (*DeleteCurrencyFeedResponse, error) {
+	out := new(DeleteCurrencyFeedResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.feed.v1.Middleware/DeleteCurrencyFeed", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetCurrencyFeeds(ctx context.Context, in *GetCurrencyFeedsRequest, opts ...grpc.CallOption) (*GetCurrencyFeedsResponse, error) {
 	out := new(GetCurrencyFeedsResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.feed.v1.Middleware/GetCurrencyFeeds", in, out, opts...)
@@ -68,6 +78,7 @@ func (c *middlewareClient) GetCurrencyFeeds(ctx context.Context, in *GetCurrency
 type MiddlewareServer interface {
 	CreateCurrencyFeed(context.Context, *CreateCurrencyFeedRequest) (*CreateCurrencyFeedResponse, error)
 	UpdateCurrencyFeed(context.Context, *UpdateCurrencyFeedRequest) (*UpdateCurrencyFeedResponse, error)
+	DeleteCurrencyFeed(context.Context, *DeleteCurrencyFeedRequest) (*DeleteCurrencyFeedResponse, error)
 	GetCurrencyFeeds(context.Context, *GetCurrencyFeedsRequest) (*GetCurrencyFeedsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -81,6 +92,9 @@ func (UnimplementedMiddlewareServer) CreateCurrencyFeed(context.Context, *Create
 }
 func (UnimplementedMiddlewareServer) UpdateCurrencyFeed(context.Context, *UpdateCurrencyFeedRequest) (*UpdateCurrencyFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCurrencyFeed not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteCurrencyFeed(context.Context, *DeleteCurrencyFeedRequest) (*DeleteCurrencyFeedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurrencyFeed not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCurrencyFeeds(context.Context, *GetCurrencyFeedsRequest) (*GetCurrencyFeedsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyFeeds not implemented")
@@ -134,6 +148,24 @@ func _Middleware_UpdateCurrencyFeed_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteCurrencyFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCurrencyFeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteCurrencyFeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.currency.feed.v1.Middleware/DeleteCurrencyFeed",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteCurrencyFeed(ctx, req.(*DeleteCurrencyFeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetCurrencyFeeds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrencyFeedsRequest)
 	if err := dec(in); err != nil {
@@ -166,6 +198,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateCurrencyFeed",
 			Handler:    _Middleware_UpdateCurrencyFeed_Handler,
+		},
+		{
+			MethodName: "DeleteCurrencyFeed",
+			Handler:    _Middleware_DeleteCurrencyFeed_Handler,
 		},
 		{
 			MethodName: "GetCurrencyFeeds",
