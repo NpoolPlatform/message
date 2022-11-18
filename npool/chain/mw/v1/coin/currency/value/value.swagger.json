@@ -124,6 +124,14 @@
       ],
       "default": "DefaultFeedType"
     },
+    "v1GetCoinCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {

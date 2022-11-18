@@ -11,6 +11,7 @@ import "npool/chain/mgr/v1/coin/currency/feed/feed.proto";
 // Service Name
 service Middleware {
     rpc GetCurrency        (GetCurrencyRequest)      returns (GetCurrencyResponse)       {}
+    rpc GetCoinCurrency    (GetCoinCurrencyRequest)  returns (GetCoinCurrencyResponse)   {}
     rpc GetCurrencies      (GetCurrenciesRequest)    returns (GetCurrenciesResponse)     {}
     rpc GetHistories       (GetHistoriesRequest)     returns (GetHistoriesResponse)      {}
 }
@@ -53,6 +54,14 @@ message GetCurrencyRequest {
 }
 
 message GetCurrencyResponse {
+    Currency Info = 10;
+}
+
+message GetCoinCurrencyRequest {
+    string CoinTypeID = 10;
+}
+
+message GetCoinCurrencyResponse {
     Currency Info = 10;
 }
 
