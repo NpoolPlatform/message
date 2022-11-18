@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/cu
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/chain/mgr/v1/coin/currency/feed/feed.proto";
 
 // Service Name
 service Manager {
@@ -27,18 +26,16 @@ message CurrencyValueReq {
     optional string    CoinTypeID   = 20;
     optional string    MarketValue  = 30;
     optional string    FeedSourceID = 40;
-    optional chain.manager.coin.currency.feed.v1.FeedType FeedType = 50;
 }
 
 message CurrencyValue {
     string   ID                = 10;
     string   CoinTypeID        = 20;
     string   FeedSourceID      = 30;
-    chain.manager.coin.currency.feed.v1.FeedType FeedType = 40;
-    string   MarketValueHigh   = 50;
-    string   MarketValueLow    = 60;
-    uint32   CreatedAt         = 70;
-    uint32   UpdatedAt         = 80;
+    string   MarketValueHigh   = 40;
+    string   MarketValueLow    = 50;
+    uint32   CreatedAt         = 60;
+    uint32   UpdatedAt         = 70;
 }
 
 message Conds {
@@ -89,7 +86,7 @@ message GetCurrencyValuesRequest {
 
 message GetCurrencyValuesResponse {
     repeated CurrencyValue Infos = 10;
-    uint32             Total = 20;
+    uint32                 Total = 20;
 }
 
 message GetCurrencyValueOnlyRequest {

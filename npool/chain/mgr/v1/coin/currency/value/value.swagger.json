@@ -17,23 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "currencyvaluev1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -58,6 +41,23 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -101,9 +101,6 @@
         "FeedSourceID": {
           "type": "string"
         },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
-        },
         "MarketValueHigh": {
           "type": "string"
         },
@@ -134,9 +131,6 @@
         },
         "FeedSourceID": {
           "type": "string"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
         }
       }
     },
@@ -163,15 +157,6 @@
           "type": "boolean"
         }
       }
-    },
-    "v1FeedType": {
-      "type": "string",
-      "enum": [
-        "DefaultFeedType",
-        "CoinGecko",
-        "CoinBase"
-      ],
-      "default": "DefaultFeedType"
     },
     "v1GetCurrencyValueOnlyResponse": {
       "type": "object",
