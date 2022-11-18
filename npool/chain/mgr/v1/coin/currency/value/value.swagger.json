@@ -126,10 +126,13 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "MarketValue": {
+        "FeedSourceID": {
           "type": "string"
         },
-        "FeedSourceID": {
+        "MarketValueHigh": {
+          "type": "string"
+        },
+        "MarketValueLow": {
           "type": "string"
         }
       }

@@ -22,10 +22,11 @@ service Manager {
 }
 
 message CurrencyValueReq {
-    optional string    ID           = 10;
-    optional string    CoinTypeID   = 20;
-    optional string    MarketValue  = 30;
-    optional string    FeedSourceID = 40;
+    optional string    ID              = 10;
+    optional string    CoinTypeID      = 20;
+    optional string    FeedSourceID    = 30;
+    optional string    MarketValueHigh = 40;
+    optional string    MarketValueLow  = 50;
 }
 
 message CurrencyValue {
