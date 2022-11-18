@@ -679,7 +679,10 @@
           "type": "string"
         },
         "AddressLabels": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
