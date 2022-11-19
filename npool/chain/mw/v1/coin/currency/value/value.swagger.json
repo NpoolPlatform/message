@@ -140,10 +140,6 @@
           "items": {
             "$ref": "#/definitions/v1Currency"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
