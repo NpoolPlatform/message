@@ -34,11 +34,12 @@ message CurrencyFeed {
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt    = 80;
     // @inject_tag: sql:"feed_type"
-    chain.manager.coin.currency.feed.v1.FeedType FeedType = 90;
+    string FeedTypeStr  = 90;
+    chain.manager.coin.currency.feed.v1.FeedType FeedType = 100;
     // @inject_tag: sql:"feed_source"
-    string FeedSource   = 100;
+    string FeedSource   = 120;
     // @inject_tag: sql:"disabled"
-    bool   Disabled     = 110;
+    bool   Disabled     = 130;
 }
 
 message Conds {
