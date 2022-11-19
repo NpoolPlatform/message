@@ -111,9 +111,13 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
-        "MarketValue": {
+        "MarketValueHigh": {
           "type": "string",
-          "title": "@inject_tag: sql:\"market_value\""
+          "title": "@inject_tag: sql:\"market_value_high\""
+        },
+        "MarketValueLow": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"market_value_low\""
         },
         "FeedType": {
           "$ref": "#/definitions/v1FeedType",

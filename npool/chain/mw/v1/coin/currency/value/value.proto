@@ -33,12 +33,14 @@ message Currency {
     uint32 CreatedAt    = 70;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt    = 80;
-    // @inject_tag: sql:"market_value"
-    string MarketValue  = 90;
+    // @inject_tag: sql:"market_value_high"
+    string MarketValueHigh  = 90;
+    // @inject_tag: sql:"market_value_low"
+    string MarketValueLow   = 100;
     // @inject_tag: sql:"feed_type"
-    chain.manager.coin.currency.feed.v1.FeedType FeedType = 100;
+    chain.manager.coin.currency.feed.v1.FeedType FeedType = 110;
     // @inject_tag: sql:"feed_source"
-    string FeedSource   = 110;
+    string FeedSource   = 120;
 }
 
 message Conds {
