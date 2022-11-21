@@ -103,6 +103,17 @@
         }
       }
     },
+    "chainmiddlewarecoincurrencyvaluev1GetCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
+          }
+        }
+      }
+    },
     "chainmiddlewarecoincurrencyvaluev1GetCurrencyResponse": {
       "type": "object",
       "properties": {
@@ -172,17 +183,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
-        }
-      }
-    },
-    "v1GetCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
-          }
         }
       }
     },

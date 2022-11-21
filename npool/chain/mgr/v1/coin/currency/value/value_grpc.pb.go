@@ -23,14 +23,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
 	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
-	CreateCurrencys(ctx context.Context, in *CreateCurrencysRequest, opts ...grpc.CallOption) (*CreateCurrencysResponse, error)
+	CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error)
 	UpdateCurrency(ctx context.Context, in *UpdateCurrencyRequest, opts ...grpc.CallOption) (*UpdateCurrencyResponse, error)
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error)
-	GetCurrencys(ctx context.Context, in *GetCurrencysRequest, opts ...grpc.CallOption) (*GetCurrencysResponse, error)
+	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 	ExistCurrency(ctx context.Context, in *ExistCurrencyRequest, opts ...grpc.CallOption) (*ExistCurrencyResponse, error)
 	ExistCurrencyConds(ctx context.Context, in *ExistCurrencyCondsRequest, opts ...grpc.CallOption) (*ExistCurrencyCondsResponse, error)
-	CountCurrencys(ctx context.Context, in *CountCurrencysRequest, opts ...grpc.CallOption) (*CountCurrencysResponse, error)
+	CountCurrencies(ctx context.Context, in *CountCurrenciesRequest, opts ...grpc.CallOption) (*CountCurrenciesResponse, error)
 	DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error)
 }
 
@@ -51,9 +51,9 @@ func (c *managerClient) CreateCurrency(ctx context.Context, in *CreateCurrencyRe
 	return out, nil
 }
 
-func (c *managerClient) CreateCurrencys(ctx context.Context, in *CreateCurrencysRequest, opts ...grpc.CallOption) (*CreateCurrencysResponse, error) {
-	out := new(CreateCurrencysResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/CreateCurrencys", in, out, opts...)
+func (c *managerClient) CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error) {
+	out := new(CreateCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/CreateCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,9 +87,9 @@ func (c *managerClient) GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnly
 	return out, nil
 }
 
-func (c *managerClient) GetCurrencys(ctx context.Context, in *GetCurrencysRequest, opts ...grpc.CallOption) (*GetCurrencysResponse, error) {
-	out := new(GetCurrencysResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/GetCurrencys", in, out, opts...)
+func (c *managerClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
+	out := new(GetCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/GetCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -114,9 +114,9 @@ func (c *managerClient) ExistCurrencyConds(ctx context.Context, in *ExistCurrenc
 	return out, nil
 }
 
-func (c *managerClient) CountCurrencys(ctx context.Context, in *CountCurrencysRequest, opts ...grpc.CallOption) (*CountCurrencysResponse, error) {
-	out := new(CountCurrencysResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/CountCurrencys", in, out, opts...)
+func (c *managerClient) CountCurrencies(ctx context.Context, in *CountCurrenciesRequest, opts ...grpc.CallOption) (*CountCurrenciesResponse, error) {
+	out := new(CountCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.manager.coin.currency.value.v1.Manager/CountCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,14 +137,14 @@ func (c *managerClient) DeleteCurrency(ctx context.Context, in *DeleteCurrencyRe
 // for forward compatibility
 type ManagerServer interface {
 	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
-	CreateCurrencys(context.Context, *CreateCurrencysRequest) (*CreateCurrencysResponse, error)
+	CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error)
 	UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error)
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error)
-	GetCurrencys(context.Context, *GetCurrencysRequest) (*GetCurrencysResponse, error)
+	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
 	ExistCurrency(context.Context, *ExistCurrencyRequest) (*ExistCurrencyResponse, error)
 	ExistCurrencyConds(context.Context, *ExistCurrencyCondsRequest) (*ExistCurrencyCondsResponse, error)
-	CountCurrencys(context.Context, *CountCurrencysRequest) (*CountCurrencysResponse, error)
+	CountCurrencies(context.Context, *CountCurrenciesRequest) (*CountCurrenciesResponse, error)
 	DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
@@ -156,8 +156,8 @@ type UnimplementedManagerServer struct {
 func (UnimplementedManagerServer) CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrency not implemented")
 }
-func (UnimplementedManagerServer) CreateCurrencys(context.Context, *CreateCurrencysRequest) (*CreateCurrencysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrencys not implemented")
+func (UnimplementedManagerServer) CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrencies not implemented")
 }
 func (UnimplementedManagerServer) UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCurrency not implemented")
@@ -168,8 +168,8 @@ func (UnimplementedManagerServer) GetCurrency(context.Context, *GetCurrencyReque
 func (UnimplementedManagerServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyOnly not implemented")
 }
-func (UnimplementedManagerServer) GetCurrencys(context.Context, *GetCurrencysRequest) (*GetCurrencysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencys not implemented")
+func (UnimplementedManagerServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
 }
 func (UnimplementedManagerServer) ExistCurrency(context.Context, *ExistCurrencyRequest) (*ExistCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCurrency not implemented")
@@ -177,8 +177,8 @@ func (UnimplementedManagerServer) ExistCurrency(context.Context, *ExistCurrencyR
 func (UnimplementedManagerServer) ExistCurrencyConds(context.Context, *ExistCurrencyCondsRequest) (*ExistCurrencyCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCurrencyConds not implemented")
 }
-func (UnimplementedManagerServer) CountCurrencys(context.Context, *CountCurrencysRequest) (*CountCurrencysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountCurrencys not implemented")
+func (UnimplementedManagerServer) CountCurrencies(context.Context, *CountCurrenciesRequest) (*CountCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountCurrencies not implemented")
 }
 func (UnimplementedManagerServer) DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurrency not implemented")
@@ -214,20 +214,20 @@ func _Manager_CreateCurrency_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateCurrencys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCurrencysRequest)
+func _Manager_CreateCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateCurrencys(ctx, in)
+		return srv.(ManagerServer).CreateCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/CreateCurrencys",
+		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/CreateCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateCurrencys(ctx, req.(*CreateCurrencysRequest))
+		return srv.(ManagerServer).CreateCurrencies(ctx, req.(*CreateCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -286,20 +286,20 @@ func _Manager_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCurrencys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCurrencysRequest)
+func _Manager_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCurrencys(ctx, in)
+		return srv.(ManagerServer).GetCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/GetCurrencys",
+		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/GetCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCurrencys(ctx, req.(*GetCurrencysRequest))
+		return srv.(ManagerServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -340,20 +340,20 @@ func _Manager_ExistCurrencyConds_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountCurrencys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountCurrencysRequest)
+func _Manager_CountCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountCurrencys(ctx, in)
+		return srv.(ManagerServer).CountCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/CountCurrencys",
+		FullMethod: "/chain.manager.coin.currency.value.v1.Manager/CountCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountCurrencys(ctx, req.(*CountCurrencysRequest))
+		return srv.(ManagerServer).CountCurrencies(ctx, req.(*CountCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -388,8 +388,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateCurrency_Handler,
 		},
 		{
-			MethodName: "CreateCurrencys",
-			Handler:    _Manager_CreateCurrencys_Handler,
+			MethodName: "CreateCurrencies",
+			Handler:    _Manager_CreateCurrencies_Handler,
 		},
 		{
 			MethodName: "UpdateCurrency",
@@ -404,8 +404,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_GetCurrencyOnly_Handler,
 		},
 		{
-			MethodName: "GetCurrencys",
-			Handler:    _Manager_GetCurrencys_Handler,
+			MethodName: "GetCurrencies",
+			Handler:    _Manager_GetCurrencies_Handler,
 		},
 		{
 			MethodName: "ExistCurrency",
@@ -416,8 +416,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_ExistCurrencyConds_Handler,
 		},
 		{
-			MethodName: "CountCurrencys",
-			Handler:    _Manager_CountCurrencys_Handler,
+			MethodName: "CountCurrencies",
+			Handler:    _Manager_CountCurrencies_Handler,
 		},
 		{
 			MethodName: "DeleteCurrency",

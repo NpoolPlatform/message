@@ -10,14 +10,14 @@ import "npool/npool.proto";
 // Service Name
 service Manager {
     rpc CreateCurrency     (CreateCurrencyRequest)     returns (CreateCurrencyResponse)     {}
-    rpc CreateCurrencys    (CreateCurrencysRequest)    returns (CreateCurrencysResponse)    {}
+    rpc CreateCurrencies   (CreateCurrenciesRequest)   returns (CreateCurrenciesResponse)   {}
     rpc UpdateCurrency     (UpdateCurrencyRequest)     returns (UpdateCurrencyResponse)     {}
     rpc GetCurrency        (GetCurrencyRequest)        returns (GetCurrencyResponse)        {}
     rpc GetCurrencyOnly    (GetCurrencyOnlyRequest)    returns (GetCurrencyOnlyResponse)    {}
-    rpc GetCurrencys       (GetCurrencysRequest)       returns (GetCurrencysResponse)       {}
+    rpc GetCurrencies      (GetCurrenciesRequest)      returns (GetCurrenciesResponse)      {}
     rpc ExistCurrency      (ExistCurrencyRequest)      returns (ExistCurrencyResponse)      {}
     rpc ExistCurrencyConds (ExistCurrencyCondsRequest) returns (ExistCurrencyCondsResponse) {}
-    rpc CountCurrencys     (CountCurrencysRequest)     returns (CountCurrencysResponse)     {}
+    rpc CountCurrencies    (CountCurrenciesRequest)    returns (CountCurrenciesResponse)    {}
     rpc DeleteCurrency     (DeleteCurrencyRequest)     returns (DeleteCurrencyResponse)     {}
 }
 
@@ -55,11 +55,11 @@ message CreateCurrencyResponse {
     Currency Info = 10;
 }
 
-message CreateCurrencysRequest {
+message CreateCurrenciesRequest {
     repeated CurrencyReq Infos = 10;
 }
 
-message CreateCurrencysResponse {
+message CreateCurrenciesResponse {
     repeated Currency Infos = 10;
 }
 
@@ -79,13 +79,13 @@ message GetCurrencyResponse {
     Currency Info = 10;
 }
 
-message GetCurrencysRequest {
+message GetCurrenciesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetCurrencysResponse {
+message GetCurrenciesResponse {
     repeated Currency Infos = 10;
     uint32            Total = 20;
 }
@@ -114,11 +114,11 @@ message ExistCurrencyCondsResponse {
     bool Info = 10;
 }
 
-message CountCurrencysRequest {
+message CountCurrenciesRequest {
     Conds Conds = 10;
 }
 
-message CountCurrencysResponse {
+message CountCurrenciesResponse {
     uint32 Info = 10;
 }
 

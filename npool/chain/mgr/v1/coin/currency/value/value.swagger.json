@@ -61,7 +61,7 @@
         }
       }
     },
-    "v1CountCurrencysResponse": {
+    "v1CountCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -70,15 +70,7 @@
         }
       }
     },
-    "v1CreateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-    "v1CreateCurrencysResponse": {
+    "v1CreateCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -86,6 +78,14 @@
           "items": {
             "$ref": "#/definitions/v1Currency"
           }
+        }
+      }
+    },
+    "v1CreateCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
@@ -161,6 +161,21 @@
         }
       }
     },
+    "v1GetCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Currency"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetCurrencyOnlyResponse": {
       "type": "object",
       "properties": {
@@ -174,21 +189,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-    "v1GetCurrencysResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Currency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
