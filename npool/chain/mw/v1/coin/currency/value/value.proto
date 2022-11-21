@@ -80,6 +80,8 @@ message GetCoinCurrencyResponse {
 
 message GetCurrenciesRequest {
     Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetCurrenciesResponse {
