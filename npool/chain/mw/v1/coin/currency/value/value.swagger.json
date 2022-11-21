@@ -90,9 +90,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_low\""
         },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType",
+        "FeedTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"feed_type\""
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
         },
         "FeedSource": {
           "type": "string",
