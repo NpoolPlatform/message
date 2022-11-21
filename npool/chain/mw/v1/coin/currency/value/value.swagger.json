@@ -111,6 +111,10 @@
           "items": {
             "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
