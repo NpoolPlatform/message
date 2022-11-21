@@ -61,7 +61,7 @@
         }
       }
     },
-    "v1CountCurrencyValuesResponse": {
+    "v1CountCurrencysResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -70,26 +70,26 @@
         }
       }
     },
-    "v1CreateCurrencyValueResponse": {
+    "v1CreateCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyValue"
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
-    "v1CreateCurrencyValuesResponse": {
+    "v1CreateCurrencysResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CurrencyValue"
+            "$ref": "#/definitions/v1Currency"
           }
         }
       }
     },
-    "v1CurrencyValue": {
+    "v1Currency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -117,7 +117,7 @@
         }
       }
     },
-    "v1CurrencyValueReq": {
+    "v1CurrencyReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -137,23 +137,15 @@
         }
       }
     },
-    "v1DeleteCurrencyValueResponse": {
+    "v1DeleteCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyValue"
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
-    "v1ExistCurrencyValueCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCurrencyValueResponse": {
+    "v1ExistCurrencyCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -161,29 +153,37 @@
         }
       }
     },
-    "v1GetCurrencyValueOnlyResponse": {
+    "v1ExistCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyValue"
+          "type": "boolean"
         }
       }
     },
-    "v1GetCurrencyValueResponse": {
+    "v1GetCurrencyOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyValue"
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },
-    "v1GetCurrencyValuesResponse": {
+    "v1GetCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1GetCurrencysResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CurrencyValue"
+            "$ref": "#/definitions/v1Currency"
           }
         },
         "Total": {
@@ -215,11 +215,11 @@
         }
       }
     },
-    "v1UpdateCurrencyValueResponse": {
+    "v1UpdateCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CurrencyValue"
+          "$ref": "#/definitions/v1Currency"
         }
       }
     }

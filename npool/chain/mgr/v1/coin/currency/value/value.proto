@@ -9,19 +9,19 @@ import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc CreateCurrencyValue     (CreateCurrencyValueRequest)     returns (CreateCurrencyValueResponse)     {}
-    rpc CreateCurrencyValues    (CreateCurrencyValuesRequest)    returns (CreateCurrencyValuesResponse)    {}
-    rpc UpdateCurrencyValue     (UpdateCurrencyValueRequest)     returns (UpdateCurrencyValueResponse)     {}
-    rpc GetCurrencyValue        (GetCurrencyValueRequest)        returns (GetCurrencyValueResponse)        {}
-    rpc GetCurrencyValueOnly    (GetCurrencyValueOnlyRequest)    returns (GetCurrencyValueOnlyResponse)    {}
-    rpc GetCurrencyValues       (GetCurrencyValuesRequest)       returns (GetCurrencyValuesResponse)       {}
-    rpc ExistCurrencyValue      (ExistCurrencyValueRequest)      returns (ExistCurrencyValueResponse)      {}
-    rpc ExistCurrencyValueConds (ExistCurrencyValueCondsRequest) returns (ExistCurrencyValueCondsResponse) {}
-    rpc CountCurrencyValues     (CountCurrencyValuesRequest)     returns (CountCurrencyValuesResponse)     {}
-    rpc DeleteCurrencyValue     (DeleteCurrencyValueRequest)     returns (DeleteCurrencyValueResponse)     {}
+    rpc CreateCurrency     (CreateCurrencyRequest)     returns (CreateCurrencyResponse)     {}
+    rpc CreateCurrencys    (CreateCurrencysRequest)    returns (CreateCurrencysResponse)    {}
+    rpc UpdateCurrency     (UpdateCurrencyRequest)     returns (UpdateCurrencyResponse)     {}
+    rpc GetCurrency        (GetCurrencyRequest)        returns (GetCurrencyResponse)        {}
+    rpc GetCurrencyOnly    (GetCurrencyOnlyRequest)    returns (GetCurrencyOnlyResponse)    {}
+    rpc GetCurrencys       (GetCurrencysRequest)       returns (GetCurrencysResponse)       {}
+    rpc ExistCurrency      (ExistCurrencyRequest)      returns (ExistCurrencyResponse)      {}
+    rpc ExistCurrencyConds (ExistCurrencyCondsRequest) returns (ExistCurrencyCondsResponse) {}
+    rpc CountCurrencys     (CountCurrencysRequest)     returns (CountCurrencysResponse)     {}
+    rpc DeleteCurrency     (DeleteCurrencyRequest)     returns (DeleteCurrencyResponse)     {}
 }
 
-message CurrencyValueReq {
+message CurrencyReq {
     optional string    ID              = 10;
     optional string    CoinTypeID      = 20;
     optional string    FeedSourceID    = 30;
@@ -29,7 +29,7 @@ message CurrencyValueReq {
     optional string    MarketValueLow  = 50;
 }
 
-message CurrencyValue {
+message Currency {
     string   ID                = 10;
     string   CoinTypeID        = 20;
     string   FeedSourceID      = 30;
@@ -47,86 +47,86 @@ message Conds {
 }
 
 
-message CreateCurrencyValueRequest {
-    CurrencyValueReq Info = 10;
+message CreateCurrencyRequest {
+    CurrencyReq Info = 10;
 }
 
-message CreateCurrencyValueResponse {
-    CurrencyValue Info = 10;
+message CreateCurrencyResponse {
+    Currency Info = 10;
 }
 
-message CreateCurrencyValuesRequest {
-    repeated CurrencyValueReq Infos = 10;
+message CreateCurrencysRequest {
+    repeated CurrencyReq Infos = 10;
 }
 
-message CreateCurrencyValuesResponse {
-    repeated CurrencyValue Infos = 10;
+message CreateCurrencysResponse {
+    repeated Currency Infos = 10;
 }
 
-message UpdateCurrencyValueRequest {
-    CurrencyValueReq Info = 10;
+message UpdateCurrencyRequest {
+    CurrencyReq Info = 10;
 }
 
-message UpdateCurrencyValueResponse {
-    CurrencyValue Info = 10;
+message UpdateCurrencyResponse {
+    Currency Info = 10;
 }
 
-message GetCurrencyValueRequest {
+message GetCurrencyRequest {
     string ID = 10;
 }
 
-message GetCurrencyValueResponse {
-    CurrencyValue Info = 10;
+message GetCurrencyResponse {
+    Currency Info = 10;
 }
 
-message GetCurrencyValuesRequest {
+message GetCurrencysRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetCurrencyValuesResponse {
-    repeated CurrencyValue Infos = 10;
-    uint32                 Total = 20;
+message GetCurrencysResponse {
+    repeated Currency Infos = 10;
+    uint32            Total = 20;
 }
 
-message GetCurrencyValueOnlyRequest {
+message GetCurrencyOnlyRequest {
     Conds Conds = 10;
 }
 
-message GetCurrencyValueOnlyResponse {
-    CurrencyValue Info = 10;
+message GetCurrencyOnlyResponse {
+    Currency Info = 10;
 }
 
-message ExistCurrencyValueRequest {
+message ExistCurrencyRequest {
     string ID = 10;
 }
 
-message ExistCurrencyValueResponse {
+message ExistCurrencyResponse {
     bool Info = 10;
 }
 
-message ExistCurrencyValueCondsRequest {
+message ExistCurrencyCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistCurrencyValueCondsResponse {
+message ExistCurrencyCondsResponse {
     bool Info = 10;
 }
 
-message CountCurrencyValuesRequest {
+message CountCurrencysRequest {
     Conds Conds = 10;
 }
 
-message CountCurrencyValuesResponse {
+message CountCurrencysResponse {
     uint32 Info = 10;
 }
 
-message DeleteCurrencyValueRequest {
+message DeleteCurrencyRequest {
     string ID = 10;
 }
 
-message DeleteCurrencyValueResponse {
-    CurrencyValue Info = 10;
+message DeleteCurrencyResponse {
+    Currency Info = 10;
 }
 

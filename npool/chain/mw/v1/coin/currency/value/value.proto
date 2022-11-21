@@ -7,9 +7,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/cur
 import "google/api/annotations.proto";
 import "npool/npool.proto";
 import "npool/chain/mgr/v1/coin/currency/feed/feed.proto";
+import "npool/chain/mgr/v1/coin/currency/value/value.proto";
 
 // Service Name
 service Middleware {
+    rpc CreateCurrency     (CreateCurrencyRequest)   returns (CreateCurrencyResponse)    {}
     rpc GetCurrency        (GetCurrencyRequest)      returns (GetCurrencyResponse)       {}
     rpc GetCoinCurrency    (GetCoinCurrencyRequest)  returns (GetCoinCurrencyResponse)   {}
     rpc GetCurrencies      (GetCurrenciesRequest)    returns (GetCurrenciesResponse)     {}
@@ -49,6 +51,14 @@ message Conds {
     optional npool.v1.StringSliceVal CoinTypeIDs = 30;
     optional npool.v1.Uint32Val      StartAt     = 40;
     optional npool.v1.Uint32Val      EndAt       = 50;
+}
+
+message CreateCurrencyRequest {
+    chain.manager.coin.currency.value.v1.CurrencyReq Info = 10;
+}
+
+message CreateCurrencyResponse {
+    Currency Info = 10;
 }
 
 message GetCurrencyRequest {
