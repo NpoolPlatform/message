@@ -32,6 +32,7 @@ message AppCoinReq {
     optional uint32    DeletedAt                = 80;
     optional string    ProductPage              = 90;
     optional bool      Disabled                 = 100;
+    optional string    DailyRewardAmount        = 110;
 }
 
 message AppCoin {

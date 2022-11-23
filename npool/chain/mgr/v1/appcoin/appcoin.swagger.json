@@ -120,6 +120,9 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
