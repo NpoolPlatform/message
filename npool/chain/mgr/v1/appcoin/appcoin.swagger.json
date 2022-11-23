@@ -74,6 +74,9 @@
         "Disabled": {
           "type": "boolean"
         },
+        "DailyRewardAmount": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

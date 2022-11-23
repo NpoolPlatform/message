@@ -44,8 +44,9 @@ message AppCoin {
     string WithdrawAutoReviewAmount = 70;
     string ProductPage              = 80;
     bool   Disabled                 = 90;
-    uint32 CreatedAt                = 100;
-    uint32 UpdatedAt                = 110;
+    string DailyRewardAmount        = 100;
+    uint32 CreatedAt                = 110;
+    uint32 UpdatedAt                = 120;
 }
 
 message Conds {
