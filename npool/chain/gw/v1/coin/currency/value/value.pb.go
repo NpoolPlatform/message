@@ -8,6 +8,7 @@ package value
 
 import (
 	_ "github.com/NpoolPlatform/message/npool"
+	value "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/currency/value"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -82,8 +83,8 @@ type GetCurrenciesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32      `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*value.Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32            `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetCurrenciesResponse) Reset() {
@@ -118,7 +119,7 @@ func (*GetCurrenciesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_chain_gw_v1_coin_currency_value_value_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetCurrenciesResponse) GetInfos() []*Currency {
+func (x *GetCurrenciesResponse) GetInfos() []*value.Currency {
 	if x != nil {
 		return x.Infos
 	}
@@ -200,8 +201,8 @@ type GetHistoriesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32      `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*value.Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32            `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetHistoriesResponse) Reset() {
@@ -236,7 +237,7 @@ func (*GetHistoriesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_chain_gw_v1_coin_currency_value_value_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetHistoriesResponse) GetInfos() []*Currency {
+func (x *GetHistoriesResponse) GetInfos() []*value.Currency {
 	if x != nil {
 		return x.Infos
 	}
@@ -316,7 +317,7 @@ var file_npool_chain_gw_v1_coin_currency_value_value_proto_rawDesc = []byte{
 	0x72, 0x69, 0x65, 0x73, 0x3a, 0x01, 0x2a, 0x42, 0x48, 0x5a, 0x46, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
 	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
-	0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f,
+	0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f,
 	0x69, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x76, 0x61, 0x6c, 0x75,
 	0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -339,7 +340,7 @@ var file_npool_chain_gw_v1_coin_currency_value_value_proto_goTypes = []interface
 	(*GetCurrenciesResponse)(nil), // 1: chain.gateway.coin.currency.value.v1.GetCurrenciesResponse
 	(*GetHistoriesRequest)(nil),   // 2: chain.gateway.coin.currency.value.v1.GetHistoriesRequest
 	(*GetHistoriesResponse)(nil),  // 3: chain.gateway.coin.currency.value.v1.GetHistoriesResponse
-	(*Currency)(nil),              // 4: chain.middleware.coin.currency.value.v1.Currency
+	(*value.Currency)(nil),        // 4: chain.middleware.coin.currency.value.v1.Currency
 }
 var file_npool_chain_gw_v1_coin_currency_value_value_proto_depIdxs = []int32{
 	4, // 0: chain.gateway.coin.currency.value.v1.GetCurrenciesResponse.Infos:type_name -> chain.middleware.coin.currency.value.v1.Currency
@@ -360,7 +361,6 @@ func file_npool_chain_gw_v1_coin_currency_value_value_proto_init() {
 	if File_npool_chain_gw_v1_coin_currency_value_value_proto != nil {
 		return
 	}
-	file_npool_chain_mw_v1_coin_currency_value_value_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_npool_chain_gw_v1_coin_currency_value_value_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrenciesRequest); i {

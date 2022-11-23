@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package chain.gateway.coin.currency.value.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/currency/value";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin/currency/value";
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";
