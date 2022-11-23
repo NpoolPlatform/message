@@ -15,13 +15,137 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/create/currencyfeed": {
+      "post": {
+        "operationId": "Gateway_CreateCurrencyFeed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1CreateCurrencyFeedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1CreateCurrencyFeedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/currencyfeeds": {
+      "post": {
+        "operationId": "Gateway_GetCurrencyFeeds",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1GetCurrencyFeedsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1GetCurrencyFeedsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/currencyfeed": {
+      "post": {
+        "operationId": "Gateway_UpdateCurrencyFeed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1UpdateCurrencyFeedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoincurrencyfeedv1UpdateCurrencyFeedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "chaingatewaycoincurrencyfeedv1CreateCurrencyFeedRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FeedSource": {
+          "type": "string"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
+        }
+      }
+    },
     "chaingatewaycoincurrencyfeedv1CreateCurrencyFeedResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
+        }
+      }
+    },
+    "chaingatewaycoincurrencyfeedv1GetCurrencyFeedsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -37,6 +161,17 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "chaingatewaycoincurrencyfeedv1UpdateCurrencyFeedRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "FeedSource": {
+          "type": "string"
         }
       }
     },

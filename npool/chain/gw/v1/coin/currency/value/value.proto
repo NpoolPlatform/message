@@ -10,8 +10,18 @@ import "npool/chain/mw/v1/coin/currency/value/value.proto";
 
 // Service Name
 service Gateway {
-    rpc GetCurrencies      (GetCurrenciesRequest)    returns (GetCurrenciesResponse)     {}
-    rpc GetHistories       (GetHistoriesRequest)     returns (GetHistoriesResponse)      {}
+    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currencies"
+            body: "*"
+        };
+    }
+    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/histories"
+            body: "*"
+        };
+    }
 }
 
 message GetCurrenciesRequest {

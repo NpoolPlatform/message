@@ -11,9 +11,24 @@ import "npool/chain/mw/v1/coin/currency/feed/feed.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateCurrencyFeed   (CreateCurrencyFeedRequest)  returns  (CreateCurrencyFeedResponse)  {}
-    rpc UpdateCurrencyFeed   (UpdateCurrencyFeedRequest)  returns  (UpdateCurrencyFeedResponse)  {}
-    rpc GetCurrencyFeeds     (GetCurrencyFeedsRequest)    returns  (GetCurrencyFeedsResponse)    {}
+    rpc CreateCurrencyFeed (CreateCurrencyFeedRequest) returns (CreateCurrencyFeedResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/currencyfeed"
+            body: "*"
+        };
+    }
+    rpc UpdateCurrencyFeed (UpdateCurrencyFeedRequest) returns (UpdateCurrencyFeedResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/currencyfeed"
+            body: "*"
+        };
+    }
+    rpc GetCurrencyFeeds (GetCurrencyFeedsRequest) returns (GetCurrencyFeedsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currencyfeeds"
+            body: "*"
+        };
+    }
 }
 
 message CreateCurrencyFeedRequest {
