@@ -738,18 +738,6 @@
         "ParentOrderID": {
           "type": "string"
         },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         }
@@ -783,18 +771,6 @@
           "type": "string"
         },
         "ParentOrderID": {
-          "type": "string"
-        },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
           "type": "string"
         },
         "OrderType": {
@@ -947,13 +923,12 @@
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
-        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",

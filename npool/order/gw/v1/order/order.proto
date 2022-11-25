@@ -250,10 +250,6 @@ message CreateUserOrderRequest {
     uint32          Units                = 40;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
-    optional string PayWithBalanceAmount = 70;
-    optional string FixAmountID          = 80;
-    optional string DiscountID           = 90;
-    optional string SpecialOfferID       = 100;
     order.manager.order.v1.OrderType OrderType = 110;
 }
 
@@ -268,10 +264,6 @@ message CreateAppUserOrderRequest {
     uint32          Units                = 40;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
-    optional string PayWithBalanceAmount = 70;
-    optional string FixAmountID          = 80;
-    optional string DiscountID           = 90;
-    optional string SpecialOfferID       = 100;
     order.manager.order.v1.OrderType OrderType = 110;
 }
 
