@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
+	CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error)
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCoinCurrency(ctx context.Context, in *GetCoinCurrencyRequest, opts ...grpc.CallOption) (*GetCoinCurrencyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
@@ -40,6 +41,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error) {
 	out := new(CreateCurrencyResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error) {
+	out := new(CreateCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +97,7 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
+	CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error)
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCoinCurrency(context.Context, *GetCoinCurrencyRequest) (*GetCoinCurrencyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
@@ -100,6 +111,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrency not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrencies not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
@@ -140,6 +154,24 @@ func _Middleware_CreateCurrency_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCurrency(ctx, req.(*CreateCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateCurrencies(ctx, req.(*CreateCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,6 +258,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCurrency",
 			Handler:    _Middleware_CreateCurrency_Handler,
+		},
+		{
+			MethodName: "CreateCurrencies",
+			Handler:    _Middleware_CreateCurrencies_Handler,
 		},
 		{
 			MethodName: "GetCurrency",

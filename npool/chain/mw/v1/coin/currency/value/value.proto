@@ -12,6 +12,7 @@ import "npool/chain/mgr/v1/coin/currency/value/value.proto";
 // Service Name
 service Middleware {
     rpc CreateCurrency     (CreateCurrencyRequest)   returns (CreateCurrencyResponse)    {}
+    rpc CreateCurrencies   (CreateCurrenciesRequest) returns (CreateCurrenciesResponse)  {}
     rpc GetCurrency        (GetCurrencyRequest)      returns (GetCurrencyResponse)       {}
     rpc GetCoinCurrency    (GetCoinCurrencyRequest)  returns (GetCoinCurrencyResponse)   {}
     rpc GetCurrencies      (GetCurrenciesRequest)    returns (GetCurrenciesResponse)     {}
@@ -60,6 +61,14 @@ message CreateCurrencyRequest {
 
 message CreateCurrencyResponse {
     Currency Info = 10;
+}
+
+message CreateCurrenciesRequest {
+    repeated chain.manager.coin.currency.value.v1.CurrencyReq Infos = 10;
+}
+
+message CreateCurrenciesResponse {
+    repeated Currency Infos = 10;
 }
 
 message GetCurrencyRequest {
