@@ -31,6 +31,8 @@ message AppCoinReq {
     optional string    WithdrawAutoReviewAmount = 70;
     optional uint32    DeletedAt                = 80;
     optional string    ProductPage              = 90;
+    optional bool      Disabled                 = 100;
+    optional string    DailyRewardAmount        = 110;
 }
 
 message AppCoin {
@@ -42,8 +44,10 @@ message AppCoin {
     bool   ForPay                   = 60;
     string WithdrawAutoReviewAmount = 70;
     string ProductPage              = 80;
-    uint32 CreatedAt                = 90;
-    uint32 UpdatedAt                = 100;
+    bool   Disabled                 = 90;
+    string DailyRewardAmount        = 100;
+    uint32 CreatedAt                = 110;
+    uint32 UpdatedAt                = 120;
 }
 
 message Conds {
@@ -51,6 +55,8 @@ message Conds {
     optional npool.v1.StringVal AppID      = 20;
     optional npool.v1.StringVal CoinTypeID = 30;
     optional npool.v1.BoolVal   ForPay     = 40;
+    optional npool.v1.BoolVal   Disabled   = 50;
+    optional npool.v1.StringSliceVal IDs   = 60;
 }
 
 

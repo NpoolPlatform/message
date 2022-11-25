@@ -264,7 +264,8 @@
         "AutoReviewed",
         "LargeAmount",
         "InsufficientFunds",
-        "InsufficientGas"
+        "InsufficientGas",
+        "InsufficientFundsGas"
       ],
       "default": "DefaultTriggerType",
       "title": "- AutoReviewed: Withdrawal triggers"

@@ -104,6 +104,12 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -251,6 +257,20 @@
         "Value": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

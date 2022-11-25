@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package account.middleware.transfer.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/transfer";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/account/mgr/v1/transfer/transfer.proto";
+
+// Service Name
+service Middleware {
+  rpc ExistTransferConds (ExistTransferCondsRequest) returns (ExistTransferCondsResponse) {}
+}
+
+message ExistTransferCondsRequest {
+  account.manager.transfer.v1.Conds Conds = 10;
+}
+
+message ExistTransferCondsResponse {
+  bool Info = 10;
+}
+

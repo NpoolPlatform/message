@@ -30,6 +30,7 @@ message CoinBaseReq {
     optional string    ENV            = 60;
     optional string    ReservedAmount = 70;
     optional bool      ForPay         = 80;
+    optional bool      Disabled       = 90;
 }
 
 message CoinBase {
@@ -42,8 +43,9 @@ message CoinBase {
     string ReservedAmount = 70;
     // Only platform coin can be for pay, then app can be for pay
     bool   ForPay         = 80;
-    uint32 CreatedAt      = 90;
-    uint32 UpdatedAt      = 100;
+    bool   Disabled       = 90;
+    uint32 CreatedAt      = 100;
+    uint32 UpdatedAt      = 110;
 }
 
 message Conds {
@@ -52,6 +54,7 @@ message Conds {
     optional npool.v1.StringVal ENV      = 30;
     optional npool.v1.BoolVal   Presale  = 40;
     optional npool.v1.BoolVal   ForPay   = 50;
+    optional npool.v1.BoolVal   Disabled = 60;
 }
 
 

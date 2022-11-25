@@ -84,6 +84,7 @@ message UpdateCoinRequest {
     optional string WithdrawAutoReviewAmount = 80;
     optional string MarketValue              = 90;
     optional uint32 SettlePercent            = 100;
+    optional string DailyRewardAmount        = 110;
 }
 
 message UpdateCoinResponse {

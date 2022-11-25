@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package chain.gateway.coin.currency.value.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin/currency/value";
+
+import "google/api/annotations.proto";
+import "npool/npool.proto";
+import "npool/chain/mw/v1/coin/currency/value/value.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/currencies"
+            body: "*"
+        };
+    }
+    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/histories"
+            body: "*"
+        };
+    }
+}
+
+message GetCurrenciesRequest {
+    int32 Offset = 10;
+    int32 Limit  = 20;
+}
+
+message GetCurrenciesResponse {
+    repeated chain.middleware.coin.currency.value.v1.Currency Infos = 10;
+    uint32                                                    Total = 20;
+}
+
+message GetHistoriesRequest {
+    optional string CoinTypeID = 10;
+    int32           Offset     = 20;
+    int32           Limit      = 30;
+}
+
+message GetHistoriesResponse {
+    repeated chain.middleware.coin.currency.value.v1.Currency Infos = 10;
+    uint32                                                    Total = 20;
+}

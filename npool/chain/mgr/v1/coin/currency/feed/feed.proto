@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package chain.manager.coin.currency.feed.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/currency/feed";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateCurrencyFeed     (CreateCurrencyFeedRequest)     returns (CreateCurrencyFeedResponse)     {}
+    rpc CreateCurrencyFeeds    (CreateCurrencyFeedsRequest)    returns (CreateCurrencyFeedsResponse)    {}
+    rpc UpdateCurrencyFeed     (UpdateCurrencyFeedRequest)     returns (UpdateCurrencyFeedResponse)     {}
+    rpc GetCurrencyFeed        (GetCurrencyFeedRequest)        returns (GetCurrencyFeedResponse)        {}
+    rpc GetCurrencyFeedOnly    (GetCurrencyFeedOnlyRequest)    returns (GetCurrencyFeedOnlyResponse)    {}
+    rpc GetCurrencyFeeds       (GetCurrencyFeedsRequest)       returns (GetCurrencyFeedsResponse)       {}
+    rpc ExistCurrencyFeed      (ExistCurrencyFeedRequest)      returns (ExistCurrencyFeedResponse)      {}
+    rpc ExistCurrencyFeedConds (ExistCurrencyFeedCondsRequest) returns (ExistCurrencyFeedCondsResponse) {}
+    rpc CountCurrencyFeeds     (CountCurrencyFeedsRequest)     returns (CountCurrencyFeedsResponse)     {}
+    rpc DeleteCurrencyFeed     (DeleteCurrencyFeedRequest)     returns (DeleteCurrencyFeedResponse)     {}
+}
+
+enum FeedType {
+    DefaultFeedType   = 0;
+    CoinGecko         = 10;
+    CoinBase          = 20;
+}
+
+message CurrencyFeedReq {
+    optional string    ID         = 10;
+    optional string    CoinTypeID = 20;
+    optional string    FeedSource = 30;
+    optional FeedType  FeedType   = 40;
+    optional bool      Disabled   = 50;
+}
+
+message CurrencyFeed {
+    string   ID         = 10;
+    string   CoinTypeID = 20;
+    string   FeedSource = 30;
+    FeedType FeedType   = 40;
+    bool     Disabled   = 50;
+    uint32   CreatedAt  = 60;
+    uint32   UpdatedAt  = 70;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal CoinTypeID = 20;
+    optional npool.v1.BoolVal   Disabled   = 30;
+}
+
+
+message CreateCurrencyFeedRequest {
+    CurrencyFeedReq Info = 10;
+}
+
+message CreateCurrencyFeedResponse {
+    CurrencyFeed Info = 10;
+}
+
+message CreateCurrencyFeedsRequest {
+    repeated CurrencyFeedReq Infos = 10;
+}
+
+message CreateCurrencyFeedsResponse {
+    repeated CurrencyFeed Infos = 10;
+}
+
+message UpdateCurrencyFeedRequest {
+    CurrencyFeedReq Info = 10;
+}
+
+message UpdateCurrencyFeedResponse {
+    CurrencyFeed Info = 10;
+}
+
+message GetCurrencyFeedRequest {
+    string ID = 10;
+}
+
+message GetCurrencyFeedResponse {
+    CurrencyFeed Info = 10;
+}
+
+message GetCurrencyFeedsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCurrencyFeedsResponse {
+    repeated CurrencyFeed Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetCurrencyFeedOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCurrencyFeedOnlyResponse {
+    CurrencyFeed Info = 10;
+}
+
+message ExistCurrencyFeedRequest {
+    string ID = 10;
+}
+
+message ExistCurrencyFeedResponse {
+    bool Info = 10;
+}
+
+message ExistCurrencyFeedCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCurrencyFeedCondsResponse {
+    bool Info = 10;
+}
+
+message CountCurrencyFeedsRequest {
+    Conds Conds = 10;
+}
+
+message CountCurrencyFeedsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteCurrencyFeedRequest {
+    string ID = 10;
+}
+
+message DeleteCurrencyFeedResponse {
+    CurrencyFeed Info = 10;
+}
+

@@ -95,8 +95,12 @@
           "title": "@inject_tag: sql:\"for_pay\""
         },
         "Product_Page": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"product_page\""
+        },
+        "CoinForPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_for_pay\""
         },
         "ENV": {
           "type": "string",
@@ -179,6 +183,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"setter\""
         },
+        "Disabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"disabled\""
+        },
+        "CoinDisabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coin_disabled\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -188,6 +200,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DailyRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"daily_reward_amount\""
         }
       }
     },
@@ -227,6 +243,12 @@
         },
         "ProductPage": {
           "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
@@ -245,6 +267,9 @@
         "ForPay": {
           "$ref": "#/definitions/v1BoolVal"
         },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -259,6 +284,14 @@
       }
     },
     "v1DeleteCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "v1GetCoinOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {

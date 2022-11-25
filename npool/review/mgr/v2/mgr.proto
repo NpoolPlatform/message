@@ -35,4 +35,5 @@ enum ReviewTriggerType {
     LargeAmount           = 20;
     InsufficientFunds     = 30;
     InsufficientGas       = 40;
+    InsufficientFundsGas  = 50;
 }

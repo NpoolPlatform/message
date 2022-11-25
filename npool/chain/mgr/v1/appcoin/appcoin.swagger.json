@@ -71,6 +71,12 @@
         "ProductPage": {
           "type": "string"
         },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -111,6 +117,12 @@
         },
         "ProductPage": {
           "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
@@ -139,6 +151,12 @@
         },
         "ForPay": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -222,6 +240,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

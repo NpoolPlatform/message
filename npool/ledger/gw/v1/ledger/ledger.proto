@@ -280,7 +280,7 @@ message Withdraw {
     uint32        CreatedAt     = 60;
 
     string        Address       = 70;
-    string        AddressLabels = 80;
+    repeated string AddressLabels = 80;
 
     ledger.manager.ledger.withdraw.v1.WithdrawState State = 90;
     string        Message       = 100;

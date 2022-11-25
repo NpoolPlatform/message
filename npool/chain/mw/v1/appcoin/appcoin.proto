@@ -11,6 +11,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateCoin     (CreateCoinRequest)   returns (CreateCoinResponse)    {}
     rpc GetCoin        (GetCoinRequest)      returns (GetCoinResponse)       {}
+    rpc GetCoinOnly    (GetCoinOnlyRequest)  returns (GetCoinOnlyResponse)   {}
     rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
     rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
     rpc DeleteCoin     (DeleteCoinRequest)   returns (DeleteCoinResponse)    {}
@@ -28,6 +29,8 @@ message CoinReq {
     optional uint32 SettlePercent            = 90;
     optional string Setter                   = 100;
     optional string ProductPage              = 110;
+    optional bool   Disabled                 = 120;
+    optional string DailyRewardAmount        = 130;
 }
 
 message Coin {
@@ -50,7 +53,9 @@ message Coin {
     // @inject_tag: sql:"for_pay"
     bool   ForPay                       = 90;
     // @inject_tag: sql:"product_page"
-    bool   Product_Page                 = 91;
+    string   Product_Page                 = 91;
+    // @inject_tag: sql:"coin_for_pay"
+    bool   CoinForPay                   = 92;
     // @inject_tag: sql:"env"
     string ENV                          = 100;
     // @inject_tag: sql:"home_page"
@@ -91,10 +96,16 @@ message Coin {
     uint32 SettlePercent                = 280;
     // @inject_tag: sql:"setter"
     string Setter                       = 290;
+    // @inject_tag: sql:"disabled"
+    bool   Disabled                     = 300;
+    // @inject_tag: sql:"coin_disabled"
+    bool   CoinDisabled                 = 310;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                    = 300;
+    uint32 CreatedAt                    = 320;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                    = 310;
+    uint32 UpdatedAt                    = 330;
+    // @inject_tag: sql:"daily_reward_amount"
+    string DailyRewardAmount            = 340;
 }
 
 message Conds {
@@ -102,7 +113,8 @@ message Conds {
     optional npool.v1.StringVal  AppID        = 20;
     optional npool.v1.StringVal  CoinTypeID   = 30;
     optional npool.v1.BoolVal    ForPay       = 40;
-    optional npool.v1.StringSliceVal IDs      = 50;
+    optional npool.v1.BoolVal    Disabled     = 50;
+    optional npool.v1.StringSliceVal IDs      = 60;
 }
 
 message CreateCoinRequest {
@@ -118,6 +130,14 @@ message GetCoinRequest {
 }
 
 message GetCoinResponse {
+    Coin Info = 10;
+}
+
+message GetCoinOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCoinOnlyResponse {
     Coin Info = 10;
 }
 
