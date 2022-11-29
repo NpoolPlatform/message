@@ -64,11 +64,9 @@ message CreateCurrencyResponse {
 }
 
 message CreateCurrenciesRequest {
-    repeated chain.manager.coin.currency.value.v1.CurrencyReq Infos = 10;
 }
 
 message CreateCurrenciesResponse {
-    repeated Currency Infos = 10;
 }
 
 message GetCurrencyRequest {

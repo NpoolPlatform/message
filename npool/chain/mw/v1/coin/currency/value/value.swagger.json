@@ -38,15 +38,7 @@
       }
     },
     "chainmiddlewarecoincurrencyvaluev1CreateCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
-          }
-        }
-      }
+      "type": "object"
     },
     "chainmiddlewarecoincurrencyvaluev1CreateCurrencyResponse": {
       "type": "object",
