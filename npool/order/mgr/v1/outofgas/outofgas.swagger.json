@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/order/order.proto",
+    "title": "npool/order/mgr/v1/outofgas/outofgas.proto",
     "version": "version not set"
   },
   "tags": [
@@ -50,33 +50,18 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Type": {
+        "Start": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "State": {
+        "End": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "FixAmountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DiscountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserSpecialReductionID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CountOrdersResponse": {
+    "v1CountOutOfGassResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -85,42 +70,34 @@
         }
       }
     },
-    "v1CreateOrderResponse": {
+    "v1CreateOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     },
-    "v1CreateOrdersResponse": {
+    "v1CreateOutOfGassResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1OutOfGas"
           }
         }
       }
     },
-    "v1DeleteOrderResponse": {
+    "v1DeleteOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     },
-    "v1ExistOrderCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistOrderResponse": {
+    "v1ExistOutOfGasCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -128,29 +105,37 @@
         }
       }
     },
-    "v1GetOrderOnlyResponse": {
+    "v1ExistOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "type": "boolean"
         }
       }
     },
-    "v1GetOrderResponse": {
+    "v1GetOutOfGasOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     },
-    "v1GetOrdersResponse": {
+    "v1GetOutOfGasResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGas"
+        }
+      }
+    },
+    "v1GetOutOfGassResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1OutOfGas"
           }
         },
         "Total": {
@@ -159,56 +144,22 @@
         }
       }
     },
-    "v1Order": {
+    "v1OutOfGas": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "OrderID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "PayWithParent": {
-          "type": "boolean"
-        },
-        "Units": {
+        "Start": {
           "type": "integer",
           "format": "int64"
         },
-        "PromotionID": {
-          "type": "string"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        },
-        "StartAt": {
+        "End": {
           "type": "integer",
           "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "FixAmountCouponID": {
-          "type": "string"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "State": {
-          "$ref": "#/definitions/v1OrderState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -224,86 +175,28 @@
         }
       }
     },
-    "v1OrderReq": {
+    "v1OutOfGasReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "OrderID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "PayWithParent": {
-          "type": "boolean"
-        },
-        "Units": {
+        "Start": {
           "type": "integer",
           "format": "int64"
         },
-        "PromotionID": {
-          "type": "string"
-        },
-        "DiscountCouponID": {
-          "type": "string"
-        },
-        "UserSpecialReductionID": {
-          "type": "string"
-        },
-        "StartAt": {
+        "End": {
           "type": "integer",
           "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "FixAmountCouponID": {
-          "type": "string"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "State": {
-          "$ref": "#/definitions/v1OrderState"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
       }
-    },
-    "v1OrderState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
-    },
-    "v1OrderType": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderType",
-        "Normal",
-        "Offline",
-        "Airdrop"
-      ],
-      "default": "DefaultOrderType"
     },
     "v1StringVal": {
       "type": "object",
@@ -328,11 +221,11 @@
         }
       }
     },
-    "v1UpdateOrderResponse": {
+    "v1UpdateOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     }

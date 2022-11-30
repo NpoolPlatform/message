@@ -20,6 +20,7 @@ import "npool/cloud-hashing-inspire/cloud-hashing-inspire.proto";
 import "npool/kyc/kyc-management.proto";
 import "npool/review-service/review-service.proto";
 import "npool/coininfo/coininfo.proto";
+import "npool/order/mw/v1/order/order.proto";
 
 // Cloud Hashing Goods
 service CloudHashingApis {
@@ -607,12 +608,12 @@ message GetWithdrawAddressReviewsByOtherAppResponse {
 
 message Coupon {
     cloud.hashing.inspire.v1.CouponAllocatedDetail Coupon = 10;
-    cloud.hashing.order.v1.Order Order = 20;
+    .order.middleware.order1.v1.Order Order = 20;
 }
 
 message UserSpecial {
     cloud.hashing.inspire.v1.UserSpecialReduction Coupon = 10;
-    cloud.hashing.order.v1.Order Order = 20;
+    .order.middleware.order1.v1.Order Order = 20;
 }
 
 message Coupons {
