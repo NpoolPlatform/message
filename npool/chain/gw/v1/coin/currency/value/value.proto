@@ -38,6 +38,8 @@ message GetHistoriesRequest {
     optional string CoinTypeID = 10;
     int32           Offset     = 20;
     int32           Limit      = 30;
+    uint32          StartAt    = 40;
+    uint32          EndAt      = 50;
 }
 
 message GetHistoriesResponse {
