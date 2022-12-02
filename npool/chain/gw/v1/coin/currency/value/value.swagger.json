@@ -123,6 +123,14 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

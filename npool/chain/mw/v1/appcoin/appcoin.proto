@@ -62,6 +62,8 @@ message Coin {
     string HomePage                     = 110;
     // @inject_tag: sql:"specs"
     string Specs                        = 120;
+    // @inject_tag: sql:"stable_usd"
+    string StableUSD                    = 101;
     // @inject_tag: sql:"fee_coin_type_id"
     string FeeCoinTypeID                = 130;
     // @inject_tag: sql:"fee_coin_name"
@@ -115,6 +117,7 @@ message Conds {
     optional npool.v1.BoolVal    ForPay       = 40;
     optional npool.v1.BoolVal    Disabled     = 50;
     optional npool.v1.StringSliceVal IDs      = 60;
+    optional npool.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
 message CreateCoinRequest {
