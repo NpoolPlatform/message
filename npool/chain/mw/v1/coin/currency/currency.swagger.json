@@ -173,7 +173,7 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeeType": {
+        "FeedType": {
           "$ref": "#/definitions/v1FeedType"
         },
         "MarketValueHigh": {

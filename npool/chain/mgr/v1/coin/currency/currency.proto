@@ -31,7 +31,7 @@ enum FeedType {
 message CurrencyReq {
     optional string    ID              = 10;
     optional string    CoinTypeID      = 20;
-    optional FeedType  FeeType         = 30;
+    optional FeedType  FeedType        = 30;
     optional string    MarketValueHigh = 40;
     optional string    MarketValueLow  = 50;
 }
