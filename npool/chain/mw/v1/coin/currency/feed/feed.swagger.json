@@ -190,7 +190,8 @@
       "enum": [
         "DefaultFeedType",
         "CoinGecko",
-        "CoinBase"
+        "CoinBase",
+        "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
     },

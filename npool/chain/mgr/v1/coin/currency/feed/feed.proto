@@ -25,6 +25,7 @@ enum FeedType {
     DefaultFeedType   = 0;
     CoinGecko         = 10;
     CoinBase          = 20;
+    StableUSDHardCode = 30;
 }
 
 message CurrencyFeedReq {
