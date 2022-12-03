@@ -182,6 +182,14 @@
         }
       }
     },
+    "middlewareuserv1GetAccountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareuserv1Account"
+        }
+      }
+    },
     "middlewareuserv1GetAccountResponse": {
       "type": "object",
       "properties": {
