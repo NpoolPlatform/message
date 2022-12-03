@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
 	CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error)
+	RefreshCurrencies(ctx context.Context, in *RefreshCurrenciesRequest, opts ...grpc.CallOption) (*RefreshCurrenciesResponse, error)
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCoinCurrency(ctx context.Context, in *GetCoinCurrencyRequest, opts ...grpc.CallOption) (*GetCoinCurrencyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
@@ -50,6 +51,15 @@ func (c *middlewareClient) CreateCurrency(ctx context.Context, in *CreateCurrenc
 func (c *middlewareClient) CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error) {
 	out := new(CreateCurrenciesResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) RefreshCurrencies(ctx context.Context, in *RefreshCurrenciesRequest, opts ...grpc.CallOption) (*RefreshCurrenciesResponse, error) {
+	out := new(RefreshCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/RefreshCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,6 +108,7 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 type MiddlewareServer interface {
 	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
 	CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error)
+	RefreshCurrencies(context.Context, *RefreshCurrenciesRequest) (*RefreshCurrenciesResponse, error)
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCoinCurrency(context.Context, *GetCoinCurrencyRequest) (*GetCoinCurrencyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
@@ -114,6 +125,9 @@ func (UnimplementedMiddlewareServer) CreateCurrency(context.Context, *CreateCurr
 }
 func (UnimplementedMiddlewareServer) CreateCurrencies(context.Context, *CreateCurrenciesRequest) (*CreateCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrencies not implemented")
+}
+func (UnimplementedMiddlewareServer) RefreshCurrencies(context.Context, *RefreshCurrenciesRequest) (*RefreshCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshCurrencies not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
@@ -172,6 +186,24 @@ func _Middleware_CreateCurrencies_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCurrencies(ctx, req.(*CreateCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_RefreshCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).RefreshCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/RefreshCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).RefreshCurrencies(ctx, req.(*RefreshCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -262,6 +294,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCurrencies",
 			Handler:    _Middleware_CreateCurrencies_Handler,
+		},
+		{
+			MethodName: "RefreshCurrencies",
+			Handler:    _Middleware_RefreshCurrencies_Handler,
 		},
 		{
 			MethodName: "GetCurrency",

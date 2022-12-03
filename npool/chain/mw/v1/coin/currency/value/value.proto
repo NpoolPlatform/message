@@ -11,12 +11,13 @@ import "npool/chain/mgr/v1/coin/currency/value/value.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCurrency     (CreateCurrencyRequest)   returns (CreateCurrencyResponse)    {}
-    rpc CreateCurrencies   (CreateCurrenciesRequest) returns (CreateCurrenciesResponse)  {}
-    rpc GetCurrency        (GetCurrencyRequest)      returns (GetCurrencyResponse)       {}
-    rpc GetCoinCurrency    (GetCoinCurrencyRequest)  returns (GetCoinCurrencyResponse)   {}
-    rpc GetCurrencies      (GetCurrenciesRequest)    returns (GetCurrenciesResponse)     {}
-    rpc GetHistories       (GetHistoriesRequest)     returns (GetHistoriesResponse)      {}
+    rpc CreateCurrency     (CreateCurrencyRequest)    returns (CreateCurrencyResponse)    {}
+    rpc CreateCurrencies   (CreateCurrenciesRequest)  returns (CreateCurrenciesResponse)  {}
+    rpc RefreshCurrencies  (RefreshCurrenciesRequest) returns (RefreshCurrenciesResponse) {}
+    rpc GetCurrency        (GetCurrencyRequest)       returns (GetCurrencyResponse)       {}
+    rpc GetCoinCurrency    (GetCoinCurrencyRequest)   returns (GetCoinCurrencyResponse)   {}
+    rpc GetCurrencies      (GetCurrenciesRequest)     returns (GetCurrenciesResponse)     {}
+    rpc GetHistories       (GetHistoriesRequest)      returns (GetHistoriesResponse)      {}
 }
 
 message Currency {
@@ -64,9 +65,17 @@ message CreateCurrencyResponse {
 }
 
 message CreateCurrenciesRequest {
+    repeated chain.manager.coin.currency.value.v1.CurrencyReq Infos = 10;
 }
 
 message CreateCurrenciesResponse {
+    repeated Currency Infos = 10;
+}
+
+message RefreshCurrenciesRequest {
+}
+
+message RefreshCurrenciesResponse {
 }
 
 message GetCurrencyRequest {
