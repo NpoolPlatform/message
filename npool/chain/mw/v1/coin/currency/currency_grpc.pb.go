@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mw/v1/coin/currency/value/value.proto
+// source: npool/chain/mw/v1/coin/currency/currency.proto
 
-package value
+package currency
 
 import (
 	context "context"
@@ -41,7 +41,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error) {
 	out := new(CreateCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/CreateCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *middlewareClient) CreateCurrency(ctx context.Context, in *CreateCurrenc
 
 func (c *middlewareClient) CreateCurrencies(ctx context.Context, in *CreateCurrenciesRequest, opts ...grpc.CallOption) (*CreateCurrenciesResponse, error) {
 	out := new(CreateCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/CreateCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func (c *middlewareClient) CreateCurrencies(ctx context.Context, in *CreateCurre
 
 func (c *middlewareClient) RefreshCurrencies(ctx context.Context, in *RefreshCurrenciesRequest, opts ...grpc.CallOption) (*RefreshCurrenciesResponse, error) {
 	out := new(RefreshCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/RefreshCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/RefreshCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *middlewareClient) RefreshCurrencies(ctx context.Context, in *RefreshCur
 
 func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
 	out := new(GetCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyReque
 
 func (c *middlewareClient) GetCoinCurrency(ctx context.Context, in *GetCoinCurrencyRequest, opts ...grpc.CallOption) (*GetCoinCurrencyResponse, error) {
 	out := new(GetCoinCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetCoinCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetCoinCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,7 +86,7 @@ func (c *middlewareClient) GetCoinCurrency(ctx context.Context, in *GetCoinCurre
 
 func (c *middlewareClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func (c *middlewareClient) GetCurrencies(ctx context.Context, in *GetCurrenciesR
 
 func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.value.v1.Middleware/GetHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.currency.v1.Middleware/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -164,7 +164,7 @@ func _Middleware_CreateCurrency_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrency",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/CreateCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCurrency(ctx, req.(*CreateCurrencyRequest))
@@ -182,7 +182,7 @@ func _Middleware_CreateCurrencies_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/CreateCurrencies",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/CreateCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCurrencies(ctx, req.(*CreateCurrenciesRequest))
@@ -200,7 +200,7 @@ func _Middleware_RefreshCurrencies_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/RefreshCurrencies",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/RefreshCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).RefreshCurrencies(ctx, req.(*RefreshCurrenciesRequest))
@@ -218,7 +218,7 @@ func _Middleware_GetCurrency_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrency",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
@@ -236,7 +236,7 @@ func _Middleware_GetCoinCurrency_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetCoinCurrency",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetCoinCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCoinCurrency(ctx, req.(*GetCoinCurrencyRequest))
@@ -254,7 +254,7 @@ func _Middleware_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetCurrencies",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
@@ -272,7 +272,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.currency.value.v1.Middleware/GetHistories",
+		FullMethod: "/chain.middleware.coin.currency.v1.Middleware/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistories(ctx, req.(*GetHistoriesRequest))
@@ -284,7 +284,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.middleware.coin.currency.value.v1.Middleware",
+	ServiceName: "chain.middleware.coin.currency.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -317,5 +317,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mw/v1/coin/currency/value/value.proto",
+	Metadata: "npool/chain/mw/v1/coin/currency/currency.proto",
 }

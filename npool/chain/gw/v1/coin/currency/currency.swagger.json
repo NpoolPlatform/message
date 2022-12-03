@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/coin/currency/value/value.proto",
+    "title": "npool/chain/gw/v1/coin/currency/currency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyvaluev1GetCurrenciesResponse"
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrenciesResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyvaluev1GetCurrenciesRequest"
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrenciesRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyvaluev1GetHistoriesResponse"
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetHistoriesResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyvaluev1GetHistoriesRequest"
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetHistoriesRequest"
             }
           }
         ],
@@ -82,7 +82,7 @@
     }
   },
   "definitions": {
-    "chaingatewaycoincurrencyvaluev1GetCurrenciesRequest": {
+    "chaingatewaycoincurrencyv1GetCurrenciesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -95,13 +95,13 @@
         }
       }
     },
-    "chaingatewaycoincurrencyvaluev1GetCurrenciesResponse": {
+    "chaingatewaycoincurrencyv1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
           }
         },
         "Total": {
@@ -110,7 +110,7 @@
         }
       }
     },
-    "chaingatewaycoincurrencyvaluev1GetHistoriesRequest": {
+    "chaingatewaycoincurrencyv1GetHistoriesRequest": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -134,13 +134,13 @@
         }
       }
     },
-    "chaingatewaycoincurrencyvaluev1GetHistoriesResponse": {
+    "chaingatewaycoincurrencyv1GetHistoriesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyvaluev1Currency"
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
           }
         },
         "Total": {
@@ -149,7 +149,7 @@
         }
       }
     },
-    "chainmiddlewarecoincurrencyvaluev1Currency": {
+    "chainmiddlewarecoincurrencyv1Currency": {
       "type": "object",
       "properties": {
         "ID": {

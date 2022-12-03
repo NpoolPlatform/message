@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mw/v1/coin/currency/feed/feed.proto",
+    "title": "npool/chain/mw/v1/coin/currency/currency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "chainmiddlewarecoincurrencyfeedv1Conds": {
+    "chainmiddlewarecoincurrencyv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -29,20 +29,34 @@
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "Disabled": {
-          "$ref": "#/definitions/v1BoolVal"
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "chainmiddlewarecoincurrencyfeedv1CreateCurrencyFeedResponse": {
+    "chainmiddlewarecoincurrencyv1CreateCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+          }
+        }
+      }
+    },
+    "chainmiddlewarecoincurrencyv1CreateCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
+          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
         }
       }
     },
-    "chainmiddlewarecoincurrencyfeedv1CurrencyFeed": {
+    "chainmiddlewarecoincurrencyv1Currency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -79,6 +93,14 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
+        "MarketValueHigh": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"market_value_high\""
+        },
+        "MarketValueLow": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"market_value_low\""
+        },
         "FeedTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_type\""
@@ -89,28 +111,16 @@
         "FeedSource": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_source\""
-        },
-        "Disabled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"disabled\""
         }
       }
     },
-    "chainmiddlewarecoincurrencyfeedv1DeleteCurrencyFeedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
-        }
-      }
-    },
-    "chainmiddlewarecoincurrencyfeedv1GetCurrencyFeedsResponse": {
+    "chainmiddlewarecoincurrencyv1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
           }
         },
         "Total": {
@@ -119,11 +129,11 @@
         }
       }
     },
-    "chainmiddlewarecoincurrencyfeedv1UpdateCurrencyFeedResponse": {
+    "chainmiddlewarecoincurrencyv1GetCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyfeedv1CurrencyFeed"
+          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
         }
       }
     },
@@ -154,18 +164,7 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CurrencyFeedReq": {
+    "v1CurrencyReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -174,14 +173,14 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeedSource": {
+        "FeedSourceID": {
           "type": "string"
         },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
+        "MarketValueHigh": {
+          "type": "string"
         },
-        "Disabled": {
-          "type": "boolean"
+        "MarketValueLow": {
+          "type": "string"
         }
       }
     },
@@ -194,6 +193,32 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
+    },
+    "v1GetCoinCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+        }
+      }
+    },
+    "v1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RefreshCurrenciesResponse": {
+      "type": "object"
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -217,6 +242,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

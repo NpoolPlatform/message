@@ -1,13 +1,12 @@
 syntax = "proto3";
 
-package chain.middleware.coin.currency.value.v1;
+package chain.middleware.coin.currency.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/currency/value";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/currency";
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";
-import "npool/chain/mgr/v1/coin/currency/feed/feed.proto";
-import "npool/chain/mgr/v1/coin/currency/value/value.proto";
+import "npool/chain/mgr/v1/coin/currency/currency.proto";
 
 // Service Name
 service Middleware {
@@ -43,7 +42,7 @@ message Currency {
     string MarketValueLow   = 100;
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr      = 110;
-    chain.manager.coin.currency.feed.v1.FeedType FeedType = 120;
+    chain.manager.coin.currency.v1.FeedType FeedType = 120;
     // @inject_tag: sql:"feed_source"
     string FeedSource   = 130;
 }
@@ -57,7 +56,7 @@ message Conds {
 }
 
 message CreateCurrencyRequest {
-    chain.manager.coin.currency.value.v1.CurrencyReq Info = 10;
+    chain.manager.coin.currency.v1.CurrencyReq Info = 10;
 }
 
 message CreateCurrencyResponse {
@@ -65,7 +64,7 @@ message CreateCurrencyResponse {
 }
 
 message CreateCurrenciesRequest {
-    repeated chain.manager.coin.currency.value.v1.CurrencyReq Infos = 10;
+    repeated chain.manager.coin.currency.v1.CurrencyReq Infos = 10;
 }
 
 message CreateCurrenciesResponse {

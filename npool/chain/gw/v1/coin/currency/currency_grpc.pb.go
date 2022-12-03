@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/gw/v1/coin/currency/value/value.proto
+// source: npool/chain/gw/v1/coin/currency/currency.proto
 
-package value
+package currency
 
 import (
 	context "context"
@@ -36,7 +36,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.currency.value.v1.Gateway/GetCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequ
 
 func (c *gatewayClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.currency.value.v1.Gateway/GetHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _Gateway_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.coin.currency.value.v1.Gateway/GetCurrencies",
+		FullMethod: "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
@@ -112,7 +112,7 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.coin.currency.value.v1.Gateway/GetHistories",
+		FullMethod: "/chain.gateway.coin.currency.v1.Gateway/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetHistories(ctx, req.(*GetHistoriesRequest))
@@ -124,7 +124,7 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.coin.currency.value.v1.Gateway",
+	ServiceName: "chain.gateway.coin.currency.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -137,5 +137,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/gw/v1/coin/currency/value/value.proto",
+	Metadata: "npool/chain/gw/v1/coin/currency/currency.proto",
 }

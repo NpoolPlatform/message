@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package chain.manager.coin.currency.value.v1;
+package chain.manager.coin.currency.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/currency/value";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/currency";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -19,6 +19,13 @@ service Manager {
     rpc ExistCurrencyConds (ExistCurrencyCondsRequest) returns (ExistCurrencyCondsResponse) {}
     rpc CountCurrencies    (CountCurrenciesRequest)    returns (CountCurrenciesResponse)    {}
     rpc DeleteCurrency     (DeleteCurrencyRequest)     returns (DeleteCurrencyResponse)     {}
+}
+
+enum FeedType {
+    DefaultFeedType   = 0;
+    CoinGecko         = 10;
+    CoinBase          = 20;
+    StableUSDHardCode = 30;
 }
 
 message CurrencyReq {
