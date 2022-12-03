@@ -58,6 +58,9 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -98,8 +101,8 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeedSourceID": {
-          "type": "string"
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
         },
         "MarketValueHigh": {
           "type": "string"
@@ -126,8 +129,8 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "FeedSourceID": {
-          "type": "string"
+        "FeeType": {
+          "$ref": "#/definitions/v1FeedType"
         },
         "MarketValueHigh": {
           "type": "string"
@@ -161,6 +164,16 @@
         }
       }
     },
+    "v1FeedType": {
+      "type": "string",
+      "enum": [
+        "DefaultFeedType",
+        "CoinGecko",
+        "CoinBase",
+        "StableUSDHardCode"
+      ],
+      "default": "DefaultFeedType"
+    },
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -189,6 +202,18 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

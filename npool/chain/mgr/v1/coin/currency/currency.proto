@@ -31,7 +31,7 @@ enum FeedType {
 message CurrencyReq {
     optional string    ID              = 10;
     optional string    CoinTypeID      = 20;
-    optional string    FeedSourceID    = 30;
+    optional FeedType  FeeType         = 30;
     optional string    MarketValueHigh = 40;
     optional string    MarketValueLow  = 50;
 }
@@ -39,7 +39,7 @@ message CurrencyReq {
 message Currency {
     string   ID                = 10;
     string   CoinTypeID        = 20;
-    string   FeedSourceID      = 30;
+    FeedType FeedType          = 30;
     string   MarketValueHigh   = 40;
     string   MarketValueLow    = 50;
     uint32   CreatedAt         = 60;
@@ -51,6 +51,7 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID = 20;
     optional npool.v1.Uint32Val StartAt    = 30;
     optional npool.v1.Uint32Val EndAt      = 40;
+    optional npool.v1.Int32Val  FeedType   = 50;
 }
 
 
