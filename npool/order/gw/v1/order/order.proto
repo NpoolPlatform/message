@@ -4,8 +4,7 @@ package order.gateway.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 
-import "npool/order/mgr/v1/order/state/state.proto";
-import "npool/order/mgr/v1/order/order/order.proto";
+import "npool/order/mgr/v1/order/order.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -154,8 +153,8 @@ message Order {
     uint32 CreatedAt              = 350;
     uint32 PaidAt                 = 360;
 
-    order.manager.order.state.v1.EState    State     = 370;
-    order.manager.order.order.v1.OrderType OrderType = 380;
+    order.manager.order.v1.OrderState State     = 370;
+    order.manager.order.v1.OrderType  OrderType = 380;
 
     uint32 Start                  = 390;
     uint32 End                    = 400;
@@ -172,7 +171,7 @@ message CreateOrderRequest {
     optional string FixAmountID          = 80;
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
-    order.manager.order.order.v1.OrderType OrderType = 110;
+    order.manager.order.v1.OrderType OrderType = 110;
 }
 
 message CreateOrderResponse {
@@ -251,11 +250,7 @@ message CreateUserOrderRequest {
     uint32          Units                = 40;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
-    optional string PayWithBalanceAmount = 70;
-    optional string FixAmountID          = 80;
-    optional string DiscountID           = 90;
-    optional string SpecialOfferID       = 100;
-    order.manager.order.order.v1.OrderType OrderType = 110;
+    order.manager.order.v1.OrderType OrderType = 110;
 }
 
 message CreateUserOrderResponse {
@@ -269,11 +264,7 @@ message CreateAppUserOrderRequest {
     uint32          Units                = 40;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
-    optional string PayWithBalanceAmount = 70;
-    optional string FixAmountID          = 80;
-    optional string DiscountID           = 90;
-    optional string SpecialOfferID       = 100;
-    order.manager.order.order.v1.OrderType OrderType = 110;
+    order.manager.order.v1.OrderType OrderType = 110;
 }
 
 message CreateAppUserOrderResponse {

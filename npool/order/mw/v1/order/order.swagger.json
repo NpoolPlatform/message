@@ -17,7 +17,68 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareorder1v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ParentOrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "PaymentAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixAmountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DiscountCouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserSpecialReductionID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "middlewareorder1v1CreateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareorder1v1Order"
+        }
+      }
+    },
+    "middlewareorder1v1GetOrderOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -74,10 +135,17 @@
         },
         "OrderTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_type\""
+          "title": "@inject_tag: sql:\"type\""
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "OrderStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
         },
         "ParentOrderID": {
           "type": "string",
@@ -90,17 +158,12 @@
         "Start": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"start\""
+          "title": "@inject_tag: sql:\"start_at\""
         },
         "End": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"end\""
-        },
-        "PayWithParentInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"pay_with_parent\""
+          "title": "@inject_tag: sql:\"end_at\""
         },
         "PaymentCoinTypeID": {
           "type": "string",
@@ -130,9 +193,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_amount\""
         },
-        "PaymentState": {
+        "PaymentStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_state\""
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
         },
         "PayWithBalanceAmount": {
           "type": "string",
@@ -153,7 +219,7 @@
         },
         "FixAmountID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
+          "title": "@inject_tag: sql:\"fix_amount_coupon_id\""
         },
         "DiscountID": {
           "type": "string",
@@ -166,18 +232,15 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"create_at\""
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UserCanceled": {
-          "type": "integer",
-          "format": "int64",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"user_canceled\""
         },
-        "State": {
-          "$ref": "#/definitions/v1EState"
-        },
         "PayWithParent": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"pay_with_parent\""
         }
       }
     },
@@ -221,6 +284,9 @@
         "PaymentAccountStartAmount": {
           "type": "string"
         },
+        "PaymentFinishAmount": {
+          "type": "string"
+        },
         "PaymentCoinUSDCurrency": {
           "type": "string"
         },
@@ -229,6 +295,9 @@
         },
         "PaymentLocalUSDCurrency": {
           "type": "string"
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
         },
         "FixAmountID": {
           "type": "string"
@@ -259,6 +328,20 @@
         },
         "Canceled": {
           "type": "boolean"
+        },
+        "FakePayment": {
+          "type": "boolean"
+        },
+        "State": {
+          "$ref": "#/definitions/v1OrderState"
+        }
+      }
+    },
+    "middlewareorder1v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewareorder1v1Order"
         }
       }
     },
@@ -289,35 +372,19 @@
         }
       }
     },
-    "v1EState": {
+    "v1OrderState": {
       "type": "string",
       "enum": [
         "DefaultState",
         "WaitPayment",
         "Paid",
         "PaymentTimeout",
-        "UserCanceled",
         "Canceled",
         "InService",
         "Expired"
       ],
       "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
-    },
-    "v1GetAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/middlewareorder1v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
@@ -329,11 +396,51 @@
       ],
       "default": "DefaultOrderType"
     },
-    "v1UpdateOrderResponse": {
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Wait",
+        "Done",
+        "Canceled",
+        "TimeOut"
+      ],
+      "default": "DefaultState"
+    },
+    "v1StringSliceVal": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

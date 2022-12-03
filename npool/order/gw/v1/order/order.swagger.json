@@ -343,7 +343,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderResponse"
+              "$ref": "#/definitions/gatewayorder1v1UpdateOrderResponse"
             }
           },
           "default": {
@@ -359,7 +359,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderRequest"
+              "$ref": "#/definitions/gatewayorder1v1UpdateOrderRequest"
             }
           }
         ],
@@ -646,7 +646,7 @@
           "format": "int64"
         },
         "State": {
-          "$ref": "#/definitions/v1EState"
+          "$ref": "#/definitions/v1OrderState"
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
@@ -658,6 +658,34 @@
         "End": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewayorder1v1UpdateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gatewayorder1v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewayorder1v1Order"
         }
       }
     },
@@ -710,18 +738,6 @@
         "ParentOrderID": {
           "type": "string"
         },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         }
@@ -757,18 +773,6 @@
         "ParentOrderID": {
           "type": "string"
         },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         }
@@ -781,21 +785,6 @@
           "$ref": "#/definitions/gatewayorder1v1Order"
         }
       }
-    },
-    "v1EState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "UserCanceled",
-        "Canceled",
-        "InService",
-        "Expired"
-      ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - UserCanceled: User set canceled\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
     },
     "v1GetAppOrdersRequest": {
       "type": "object",
@@ -927,6 +916,20 @@
         }
       }
     },
+    "v1OrderState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitPayment",
+        "Paid",
+        "PaymentTimeout",
+        "Canceled",
+        "InService",
+        "Expired"
+      ],
+      "default": "DefaultState",
+      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+    },
     "v1OrderType": {
       "type": "string",
       "enum": [
@@ -958,34 +961,6 @@
       }
     },
     "v1UpdateAppUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayorder1v1Order"
-        }
-      }
-    },
-    "v1UpdateOrderRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "string"
-        },
-        "PaymentID": {
-          "type": "string"
-        },
-        "Canceled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {

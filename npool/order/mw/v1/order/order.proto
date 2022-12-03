@@ -4,8 +4,8 @@ package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
-import "npool/order/mgr/v1/order/state/state.proto";
-import "npool/order/mgr/v1/order/order/order.proto";
+import "npool/order/mgr/v1/order/order.proto";
+import "npool/order/mgr/v1/payment/payment.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -16,9 +16,7 @@ service Middleware {
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
-
-    // Admin apis
-    rpc GetAppOrders    (GetAppOrdersRequest)   returns (GetAppOrdersResponse)   {}
+    rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
 }
 
 message OrderReq {
@@ -26,7 +24,7 @@ message OrderReq {
     optional string UserID                    = 20;
     optional string GoodID                    = 30;
     optional uint32 Units                     = 40;
-    optional order.manager.order.order.v1.OrderType OrderType = 50;
+    optional order.manager.order.v1.OrderType OrderType = 50;
 
     optional string ParentOrderID             = 60;
     optional bool   PayWithParent             = 70;
@@ -36,9 +34,11 @@ message OrderReq {
     optional string PaymentAccountID          = 100;
     optional string PaymentAmount             = 110;
     optional string PaymentAccountStartAmount = 120;
+    optional string PaymentFinishAmount       = 121;
     optional string PaymentCoinUSDCurrency    = 130;
     optional string PaymentLiveUSDCurrency    = 140;
     optional string PaymentLocalUSDCurrency   = 150;
+    optional  order.manager.payment.v1.PaymentState PaymentState = 151;
 
     optional string FixAmountID               = 160;
     optional string DiscountID                = 170;
@@ -53,6 +53,8 @@ message OrderReq {
     optional string ID                        = 220;
     optional string PaymentID                 = 230;
     optional bool   Canceled                  = 240;
+    optional bool   FakePayment               = 250;
+    optional order.manager.order.v1.OrderState State  = 260;
 }
 
 message Order {
@@ -66,19 +68,20 @@ message Order {
     string GoodID                 = 40;
     // @inject_tag: sql:"units"
     uint32 Units                  = 50;
-    // @inject_tag: sql:"order_type"
+    // @inject_tag: sql:"type"
     string OrderTypeStr           = 60;
-    order.manager.order.order.v1.OrderType OrderType = 61;
+    order.manager.order.v1.OrderType OrderType = 61;
+    // @inject_tag: sql:"state"
+    string OrderStateStr             = 62;
+    order.manager.order.v1.OrderState OrderState = 63;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
     string ParentOrderGoodID      = 80;
-    // @inject_tag: sql:"start"
+    // @inject_tag: sql:"start_at"
     uint32 Start                  = 90;
-    // @inject_tag: sql:"end"
+    // @inject_tag: sql:"end_at"
     uint32 End                    = 100;
-    // @inject_tag: sql:"pay_with_parent"
-    int32  PayWithParentInt       = 110;
 
     // @inject_tag: sql:"payment_coin_type_id"
     string PaymentCoinTypeID       = 120;
@@ -95,7 +98,8 @@ message Order {
     // @inject_tag: sql:"payment_amount"
     string PaymentAmount          = 180;
     // @inject_tag: sql:"payment_state"
-    string PaymentState           = 190;
+    string PaymentStateStr        = 190;
+    order.manager.payment.v1.PaymentState PaymentState = 191;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 200;
     // @inject_tag: sql:"paid_at"
@@ -105,20 +109,20 @@ message Order {
     // @inject_tag: sql:"payment_finish_amount"
     string PaymentFinishAmount    = 212;
 
-    // @inject_tag: sql:"coupon_id"
+    // @inject_tag: sql:"fix_amount_coupon_id"
     string FixAmountID            = 220;
     // @inject_tag: sql:"discount_coupon_id"
     string DiscountID             = 230;
     // @inject_tag: sql:"user_special_reduction_id"
     string SpecialOfferID         = 240;
 
-    // @inject_tag: sql:"create_at"
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt              = 250;
     // @inject_tag: sql:"user_canceled"
-    uint32 UserCanceled           = 251;
+    bool   UserCanceled           = 251;
 
-    order.manager.order.state.v1.EState    State                        = 260;
-    bool                                   PayWithParent                = 280;
+    // @inject_tag: sql:"pay_with_parent"
+    bool   PayWithParent          = 280;
 }
 
 message Conds {
@@ -132,6 +136,12 @@ message Conds {
     optional npool.v1.StringVal      PaymentAmount      = 80;
     optional npool.v1.Uint32Val      OrderType          = 90;
     optional npool.v1.Uint32Val      CreatedAt          = 100;
+    optional npool.v1.StringVal      GoodID             = 110;
+    optional npool.v1.Uint32Val      Type               = 120;
+    optional npool.v1.Uint32Val      State              = 130;
+    optional npool.v1.StringVal      FixAmountCouponID        = 140;
+    optional npool.v1.StringVal      DiscountCouponID         = 150;
+    optional npool.v1.StringVal      UserSpecialReductionID   = 160;
 }
 
 message CreateOrderRequest {
@@ -159,10 +169,9 @@ message GetOrderResponse {
 }
 
 message GetOrdersRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    Conds Conds  = 10;
+    int32 Offset = 30;
+    int32 Limit  = 40;
 }
 
 message GetOrdersResponse {
@@ -170,14 +179,10 @@ message GetOrdersResponse {
     uint32         Total = 20;
 }
 
-message GetAppOrdersRequest {
-    string AppID   = 10;
-    int32  Offset  = 20;
-    int32  Limit   = 30;
+message GetOrderOnlyRequest {
+    Conds Conds  = 10;
 }
 
-message GetAppOrdersResponse {
-    repeated Order Infos = 10;
-    uint32         Total = 20;
+message GetOrderOnlyResponse {
+    Order Info = 10;
 }
-
