@@ -59,7 +59,7 @@ message Coin {
     // @inject_tag: sql:"specs"
     string Specs                        = 100;
     // @inject_tag: sql:"stable_usd"
-    string StableUSD                    = 101;
+    bool   StableUSD                    = 101;
     // @inject_tag: sql:"fee_coin_type_id"
     string FeeCoinTypeID                = 110;
     // @inject_tag: sql:"fee_coin_name"
