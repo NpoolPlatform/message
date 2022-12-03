@@ -40,6 +40,7 @@ message Account {
 message Conds {
     optional npool.v1.StringVal ID          = 10;
     optional npool.v1.StringVal AccountID   = 20;
+    optional npool.v1.StringSliceVal AccountIDs = 30;
 }
 
 

@@ -380,6 +380,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"specs\""
         },
+        "StableUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"stable_usd\""
+        },
         "FeeCoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"fee_coin_type_id\""

@@ -138,6 +138,9 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -257,6 +260,20 @@
         "Collecting"
       ],
       "default": "DefaultLockedBy"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
