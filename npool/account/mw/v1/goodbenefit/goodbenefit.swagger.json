@@ -169,6 +169,14 @@
         }
       }
     },
+    "middlewaregoodbenefitv1GetAccountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewaregoodbenefitv1Account"
+        }
+      }
+    },
     "middlewaregoodbenefitv1GetAccountResponse": {
       "type": "object",
       "properties": {

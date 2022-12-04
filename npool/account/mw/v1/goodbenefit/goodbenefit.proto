@@ -14,6 +14,7 @@ service Middleware {
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
 
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
+    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
 }
 
@@ -98,6 +99,14 @@ message GetAccountRequest {
 }
 
 message GetAccountResponse {
+    Account Info = 10;
+}
+
+message GetAccountOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAccountOnlyResponse {
     Account Info = 10;
 }
 
