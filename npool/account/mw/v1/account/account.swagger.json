@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "accountmiddlewareaccount1v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
     "accountmiddlewareaccount1v1GetAccountsResponse": {
       "type": "object",
       "properties": {

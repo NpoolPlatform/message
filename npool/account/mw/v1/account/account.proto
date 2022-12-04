@@ -10,7 +10,16 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
+    rpc GetAccount  (GetAccountRequest)  returns (GetAccountResponse)  {}
     rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {}
+}
+
+message GetAccountRequest {
+    string ID = 10;
+}
+
+message GetAccountResponse {
+    account.manager.account1.v1.Account Info = 10;
 }
 
 message GetAccountsRequest {
