@@ -29,6 +29,7 @@ message AccountReq {
     optional account.manager.account1.v1.LockedBy LockedBy = 90;
     optional bool   Blocked       = 100;
     optional string TransactionID = 110;
+    optional uint32 IntervalHours = 120;
 }
 
 message Account {
@@ -55,6 +56,8 @@ message Account {
     bool   Blocked       = 100;
     // @inject_tag: sql:"transaction_id"
     string TransactionID = 120;
+    // @inject_tag: sql:"interval_hours"
+    uint32 IntervalHours = 121;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt     = 130;
     // @inject_tag: sql:"updated_at"

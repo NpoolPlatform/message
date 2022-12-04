@@ -34,28 +34,30 @@ service Gateway {
 }
 
 message Account {
-    string ID         = 10;
-    string GoodID     = 20;
-    string GoodName   = 30;
-    string GoodUnit   = 40;
-    string CoinTypeID = 50;
-    string CoinName   = 60;
-    string CoinUnit   = 70;
-    string CoinEnv    = 80;
-    string CoinLogo   = 90;
-    string AccountID  = 100;
-    bool   Backup     = 110;
-    string Address    = 120;
-    bool   Active     = 130;
-    bool   Locked     = 140;
+    string ID            = 10;
+    string GoodID        = 20;
+    string GoodName      = 30;
+    string GoodUnit      = 40;
+    string CoinTypeID    = 50;
+    string CoinName      = 60;
+    string CoinUnit      = 70;
+    string CoinEnv       = 80;
+    string CoinLogo      = 90;
+    string AccountID     = 100;
+    bool   Backup        = 110;
+    string Address       = 120;
+    bool   Active        = 130;
+    bool   Locked        = 140;
     account.manager.account1.v1.LockedBy LockedBy = 150;
-    bool   Blocked    = 160;
-    uint32 CreatedAt  = 170;
-    uint32 UpdatedAt  = 180;
+    bool   Blocked       = 160;
+    uint32 IntervalHours = 161;
+    uint32 CreatedAt     = 170;
+    uint32 UpdatedAt     = 180;
 }
 
 message CreateAccountRequest {
-    string GoodID = 10;
+    string GoodID        = 10;
+    uint32 IntervalHours = 20;
 }
 
 message CreateAccountResponse {
@@ -63,11 +65,12 @@ message CreateAccountResponse {
 }
 
 message UpdateAccountRequest {
-    string        ID      = 10;
-    optional bool Backup  = 20;
-    optional bool Active  = 30;
-    optional bool Blocked = 40;
-    optional bool Locked  = 50;
+    string          ID            = 10;
+    optional bool   Backup        = 20;
+    optional bool   Active        = 30;
+    optional bool   Blocked       = 40;
+    optional bool   Locked        = 50;
+    optional uint32 IntervalHours = 60;
 }
 
 message UpdateAccountResponse {

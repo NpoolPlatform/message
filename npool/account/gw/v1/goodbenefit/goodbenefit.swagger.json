@@ -165,6 +165,10 @@
         "Blocked": {
           "type": "boolean"
         },
+        "IntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -180,6 +184,10 @@
       "properties": {
         "GoodID": {
           "type": "string"
+        },
+        "IntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -236,6 +244,10 @@
         },
         "Locked": {
           "type": "boolean"
+        },
+        "IntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
