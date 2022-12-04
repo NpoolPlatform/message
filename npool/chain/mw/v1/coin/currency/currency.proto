@@ -43,8 +43,6 @@ message Currency {
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr      = 110;
     chain.manager.coin.currency.v1.FeedType FeedType = 120;
-    // @inject_tag: sql:"feed_source"
-    string FeedSource   = 130;
 }
 
 message Conds {
