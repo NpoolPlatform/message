@@ -214,7 +214,8 @@
         "TxWithdraw",
         "TxFeedGas",
         "TxPaymentCollect",
-        "TxBenefit"
+        "TxBenefit",
+        "TxLimitation"
       ],
       "default": "DefaultTxType"
     }

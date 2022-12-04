@@ -36,6 +36,7 @@ enum TxType {
     TxFeedGas        = 20;
     TxPaymentCollect = 30;
     TxBenefit        = 40;
+    TxLimitation     = 50;
 }
 
 message TxReq {
