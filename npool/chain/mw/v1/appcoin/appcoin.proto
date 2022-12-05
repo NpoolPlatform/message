@@ -42,6 +42,8 @@ message Coin {
     string CoinTypeID                   = 30;
     // @inject_tag: sql:"name"
     string Name                         = 40;
+    // @inject_tag: sql:"coin_name"
+    string CoinName                     = 41;
     // @inject_tag: sql:"logo"
     string Logo                         = 50;
     // @inject_tag: sql:"unit"
@@ -53,7 +55,7 @@ message Coin {
     // @inject_tag: sql:"for_pay"
     bool   ForPay                       = 90;
     // @inject_tag: sql:"product_page"
-    string   Product_Page                 = 91;
+    string ProductPage                  = 91;
     // @inject_tag: sql:"coin_for_pay"
     bool   CoinForPay                   = 92;
     // @inject_tag: sql:"env"
