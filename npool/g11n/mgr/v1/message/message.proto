@@ -37,8 +37,8 @@ message Message {
     string LangID     = 30;
     string MessageID  = 40;
     string Message    = 50;
-    string GetIndex   = 60;
-    string Disabled   = 70;
+    uint32 GetIndex   = 60;
+    bool   Disabled   = 70;
 }
 
 message Conds {
@@ -46,6 +46,7 @@ message Conds {
     optional npool.v1.StringVal AppID      = 20;
     optional npool.v1.StringVal LangID     = 30;
     optional npool.v1.StringVal MessageID  = 40;
+    optional npool.v1.BoolVal   Disabled   = 50;
 }
 
 

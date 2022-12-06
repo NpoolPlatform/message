@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -58,6 +69,9 @@
         },
         "MessageID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -163,10 +177,11 @@
           "type": "string"
         },
         "GetIndex": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Disabled": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
