@@ -177,7 +177,7 @@
           "type": "string"
         },
         "Name": {
-          "type": "boolean"
+          "type": "string"
         },
         "Short": {
           "type": "string"

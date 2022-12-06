@@ -25,7 +25,7 @@ message LangReq {
     optional string ID    = 10;
     optional string Lang  = 20;
     optional string Logo  = 30;
-    optional bool   Name  = 40;
+    optional string Name  = 40;
     optional string Short = 50;
 }
 
