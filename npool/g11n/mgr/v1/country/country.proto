@@ -10,14 +10,14 @@ import "npool/npool.proto";
 // Service Name
 service Manager {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
-    rpc CreateCountrys    (CreateCountrysRequest)    returns (CreateCountrysResponse)    {}
+    rpc CreateCountries    (CreateCountriesRequest)    returns (CreateCountriesResponse)    {}
     rpc UpdateCountry     (UpdateCountryRequest)     returns (UpdateCountryResponse)     {}
     rpc GetCountry        (GetCountryRequest)        returns (GetCountryResponse)        {}
     rpc GetCountryOnly    (GetCountryOnlyRequest)    returns (GetCountryOnlyResponse)    {}
-    rpc GetCountrys       (GetCountrysRequest)       returns (GetCountrysResponse)       {}
+    rpc GetCountries       (GetCountriesRequest)       returns (GetCountriesResponse)       {}
     rpc ExistCountry      (ExistCountryRequest)      returns (ExistCountryResponse)      {}
     rpc ExistCountryConds (ExistCountryCondsRequest) returns (ExistCountryCondsResponse) {}
-    rpc CountCountrys     (CountCountrysRequest)     returns (CountCountrysResponse)     {}
+    rpc CountCountries     (CountCountriesRequest)     returns (CountCountriesResponse)     {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
 }
 
@@ -53,11 +53,11 @@ message CreateCountryResponse {
     Country Info = 10;
 }
 
-message CreateCountrysRequest {
+message CreateCountriesRequest {
     repeated CountryReq Infos = 10;
 }
 
-message CreateCountrysResponse {
+message CreateCountriesResponse {
     repeated Country Infos = 10;
 }
 
@@ -77,13 +77,13 @@ message GetCountryResponse {
     Country Info = 10;
 }
 
-message GetCountrysRequest {
+message GetCountriesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetCountrysResponse {
+message GetCountriesResponse {
     repeated Country Infos = 10;
     uint32           Total = 20;
 }
@@ -112,11 +112,11 @@ message ExistCountryCondsResponse {
     bool Info = 10;
 }
 
-message CountCountrysRequest {
+message CountCountriesRequest {
     Conds Conds = 10;
 }
 
-message CountCountrysResponse {
+message CountCountriesResponse {
     uint32 Info = 10;
 }
 

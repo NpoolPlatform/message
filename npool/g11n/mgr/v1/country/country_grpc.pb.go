@@ -23,14 +23,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
 	CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error)
-	CreateCountrys(ctx context.Context, in *CreateCountrysRequest, opts ...grpc.CallOption) (*CreateCountrysResponse, error)
+	CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error)
 	UpdateCountry(ctx context.Context, in *UpdateCountryRequest, opts ...grpc.CallOption) (*UpdateCountryResponse, error)
 	GetCountry(ctx context.Context, in *GetCountryRequest, opts ...grpc.CallOption) (*GetCountryResponse, error)
 	GetCountryOnly(ctx context.Context, in *GetCountryOnlyRequest, opts ...grpc.CallOption) (*GetCountryOnlyResponse, error)
-	GetCountrys(ctx context.Context, in *GetCountrysRequest, opts ...grpc.CallOption) (*GetCountrysResponse, error)
+	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
 	ExistCountry(ctx context.Context, in *ExistCountryRequest, opts ...grpc.CallOption) (*ExistCountryResponse, error)
 	ExistCountryConds(ctx context.Context, in *ExistCountryCondsRequest, opts ...grpc.CallOption) (*ExistCountryCondsResponse, error)
-	CountCountrys(ctx context.Context, in *CountCountrysRequest, opts ...grpc.CallOption) (*CountCountrysResponse, error)
+	CountCountries(ctx context.Context, in *CountCountriesRequest, opts ...grpc.CallOption) (*CountCountriesResponse, error)
 	DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error)
 }
 
@@ -51,9 +51,9 @@ func (c *managerClient) CreateCountry(ctx context.Context, in *CreateCountryRequ
 	return out, nil
 }
 
-func (c *managerClient) CreateCountrys(ctx context.Context, in *CreateCountrysRequest, opts ...grpc.CallOption) (*CreateCountrysResponse, error) {
-	out := new(CreateCountrysResponse)
-	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/CreateCountrys", in, out, opts...)
+func (c *managerClient) CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error) {
+	out := new(CreateCountriesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/CreateCountries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,9 +87,9 @@ func (c *managerClient) GetCountryOnly(ctx context.Context, in *GetCountryOnlyRe
 	return out, nil
 }
 
-func (c *managerClient) GetCountrys(ctx context.Context, in *GetCountrysRequest, opts ...grpc.CallOption) (*GetCountrysResponse, error) {
-	out := new(GetCountrysResponse)
-	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/GetCountrys", in, out, opts...)
+func (c *managerClient) GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error) {
+	out := new(GetCountriesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/GetCountries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -114,9 +114,9 @@ func (c *managerClient) ExistCountryConds(ctx context.Context, in *ExistCountryC
 	return out, nil
 }
 
-func (c *managerClient) CountCountrys(ctx context.Context, in *CountCountrysRequest, opts ...grpc.CallOption) (*CountCountrysResponse, error) {
-	out := new(CountCountrysResponse)
-	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/CountCountrys", in, out, opts...)
+func (c *managerClient) CountCountries(ctx context.Context, in *CountCountriesRequest, opts ...grpc.CallOption) (*CountCountriesResponse, error) {
+	out := new(CountCountriesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.country.v1.Manager/CountCountries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,14 +137,14 @@ func (c *managerClient) DeleteCountry(ctx context.Context, in *DeleteCountryRequ
 // for forward compatibility
 type ManagerServer interface {
 	CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error)
-	CreateCountrys(context.Context, *CreateCountrysRequest) (*CreateCountrysResponse, error)
+	CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error)
 	UpdateCountry(context.Context, *UpdateCountryRequest) (*UpdateCountryResponse, error)
 	GetCountry(context.Context, *GetCountryRequest) (*GetCountryResponse, error)
 	GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error)
-	GetCountrys(context.Context, *GetCountrysRequest) (*GetCountrysResponse, error)
+	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
 	ExistCountry(context.Context, *ExistCountryRequest) (*ExistCountryResponse, error)
 	ExistCountryConds(context.Context, *ExistCountryCondsRequest) (*ExistCountryCondsResponse, error)
-	CountCountrys(context.Context, *CountCountrysRequest) (*CountCountrysResponse, error)
+	CountCountries(context.Context, *CountCountriesRequest) (*CountCountriesResponse, error)
 	DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
@@ -156,8 +156,8 @@ type UnimplementedManagerServer struct {
 func (UnimplementedManagerServer) CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCountry not implemented")
 }
-func (UnimplementedManagerServer) CreateCountrys(context.Context, *CreateCountrysRequest) (*CreateCountrysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCountrys not implemented")
+func (UnimplementedManagerServer) CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCountries not implemented")
 }
 func (UnimplementedManagerServer) UpdateCountry(context.Context, *UpdateCountryRequest) (*UpdateCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCountry not implemented")
@@ -168,8 +168,8 @@ func (UnimplementedManagerServer) GetCountry(context.Context, *GetCountryRequest
 func (UnimplementedManagerServer) GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountryOnly not implemented")
 }
-func (UnimplementedManagerServer) GetCountrys(context.Context, *GetCountrysRequest) (*GetCountrysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCountrys not implemented")
+func (UnimplementedManagerServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
 }
 func (UnimplementedManagerServer) ExistCountry(context.Context, *ExistCountryRequest) (*ExistCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCountry not implemented")
@@ -177,8 +177,8 @@ func (UnimplementedManagerServer) ExistCountry(context.Context, *ExistCountryReq
 func (UnimplementedManagerServer) ExistCountryConds(context.Context, *ExistCountryCondsRequest) (*ExistCountryCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCountryConds not implemented")
 }
-func (UnimplementedManagerServer) CountCountrys(context.Context, *CountCountrysRequest) (*CountCountrysResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountCountrys not implemented")
+func (UnimplementedManagerServer) CountCountries(context.Context, *CountCountriesRequest) (*CountCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountCountries not implemented")
 }
 func (UnimplementedManagerServer) DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCountry not implemented")
@@ -214,20 +214,20 @@ func _Manager_CreateCountry_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateCountrys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCountrysRequest)
+func _Manager_CreateCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCountriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateCountrys(ctx, in)
+		return srv.(ManagerServer).CreateCountries(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.manager.country.v1.Manager/CreateCountrys",
+		FullMethod: "/g11n.manager.country.v1.Manager/CreateCountries",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateCountrys(ctx, req.(*CreateCountrysRequest))
+		return srv.(ManagerServer).CreateCountries(ctx, req.(*CreateCountriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -286,20 +286,20 @@ func _Manager_GetCountryOnly_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCountrys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCountrysRequest)
+func _Manager_GetCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCountriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCountrys(ctx, in)
+		return srv.(ManagerServer).GetCountries(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.manager.country.v1.Manager/GetCountrys",
+		FullMethod: "/g11n.manager.country.v1.Manager/GetCountries",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCountrys(ctx, req.(*GetCountrysRequest))
+		return srv.(ManagerServer).GetCountries(ctx, req.(*GetCountriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -340,20 +340,20 @@ func _Manager_ExistCountryConds_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountCountrys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountCountrysRequest)
+func _Manager_CountCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountCountriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountCountrys(ctx, in)
+		return srv.(ManagerServer).CountCountries(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.manager.country.v1.Manager/CountCountrys",
+		FullMethod: "/g11n.manager.country.v1.Manager/CountCountries",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountCountrys(ctx, req.(*CountCountrysRequest))
+		return srv.(ManagerServer).CountCountries(ctx, req.(*CountCountriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -388,8 +388,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateCountry_Handler,
 		},
 		{
-			MethodName: "CreateCountrys",
-			Handler:    _Manager_CreateCountrys_Handler,
+			MethodName: "CreateCountries",
+			Handler:    _Manager_CreateCountries_Handler,
 		},
 		{
 			MethodName: "UpdateCountry",
@@ -404,8 +404,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_GetCountryOnly_Handler,
 		},
 		{
-			MethodName: "GetCountrys",
-			Handler:    _Manager_GetCountrys_Handler,
+			MethodName: "GetCountries",
+			Handler:    _Manager_GetCountries_Handler,
 		},
 		{
 			MethodName: "ExistCountry",
@@ -416,8 +416,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_ExistCountryConds_Handler,
 		},
 		{
-			MethodName: "CountCountrys",
-			Handler:    _Manager_CountCountrys_Handler,
+			MethodName: "CountCountries",
+			Handler:    _Manager_CountCountries_Handler,
 		},
 		{
 			MethodName: "DeleteCountry",
