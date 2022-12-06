@@ -154,6 +154,12 @@
         },
         "PaymentAccountCollectAmount": {
           "type": "string"
+        },
+        "StableUSD": {
+          "type": "boolean"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },

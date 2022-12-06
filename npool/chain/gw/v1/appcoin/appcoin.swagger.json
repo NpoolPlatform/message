@@ -283,6 +283,15 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "StableUSD": {
+          "type": "boolean"
+        },
+        "CoinDisabled": {
+          "type": "boolean"
         }
       }
     },

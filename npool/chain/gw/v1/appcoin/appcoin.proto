@@ -85,6 +85,9 @@ message UpdateCoinRequest {
     optional string MarketValue              = 90;
     optional uint32 SettlePercent            = 100;
     optional string DailyRewardAmount        = 110;
+    optional string ProductPage              = 120;
+    optional bool   StableUSD                = 130;
+    optional bool   CoinDisabled             = 140;
 }
 
 message UpdateCoinResponse {

@@ -49,6 +49,8 @@ message UpdateCoinRequest {
     optional string LowFeeAmount                = 120;
     optional string HotWalletAccountAmount      = 130;
     optional string PaymentAccountCollectAmount = 140;
+    optional bool   StableUSD                   = 150;
+    optional bool   Disabled                    = 160;
 }
 
 message UpdateCoinResponse {
