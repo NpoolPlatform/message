@@ -80,7 +80,7 @@ message UpdateCoinRequest {
     string          CoinTypeID               = 40;
     optional string Name                     = 50;
     optional string Logo                     = 60;
-    optional bool   ForPay                   = 70;
+    optional bool   CoinForPay               = 70;
     optional string WithdrawAutoReviewAmount = 80;
     optional string MarketValue              = 90;
     optional uint32 SettlePercent            = 100;
