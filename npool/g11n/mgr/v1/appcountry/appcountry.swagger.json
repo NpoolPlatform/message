@@ -58,7 +58,7 @@
         }
       }
     },
-    "v1CountCountrysResponse": {
+    "v1CountCountriesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -95,15 +95,7 @@
         }
       }
     },
-    "v1CreateCountryResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Country"
-        }
-      }
-    },
-    "v1CreateCountrysResponse": {
+    "v1CreateCountriesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -111,6 +103,14 @@
           "items": {
             "$ref": "#/definitions/v1Country"
           }
+        }
+      }
+    },
+    "v1CreateCountryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Country"
         }
       }
     },
@@ -138,6 +138,21 @@
         }
       }
     },
+    "v1GetCountriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Country"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetCountryOnlyResponse": {
       "type": "object",
       "properties": {
@@ -151,21 +166,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Country"
-        }
-      }
-    },
-    "v1GetCountrysResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Country"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
