@@ -268,7 +268,7 @@
         "Logo": {
           "type": "string"
         },
-        "ForPay": {
+        "CoinForPay": {
           "type": "boolean"
         },
         "WithdrawAutoReviewAmount": {
