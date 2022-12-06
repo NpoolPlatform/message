@@ -86,8 +86,7 @@ message UpdateCoinRequest {
     optional uint32 SettlePercent            = 100;
     optional string DailyRewardAmount        = 110;
     optional string ProductPage              = 120;
-    optional bool   StableUSD                = 130;
-    optional bool   CoinDisabled             = 140;
+    optional bool   CoinDisabled             = 130;
 }
 
 message UpdateCoinResponse {
