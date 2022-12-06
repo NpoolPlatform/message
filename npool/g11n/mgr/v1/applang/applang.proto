@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+package g11n.manager.applang.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/g11n/mgr/v1/applang";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateLang     (CreateLangRequest)     returns (CreateLangResponse)     {}
+    rpc CreateLangs    (CreateLangsRequest)    returns (CreateLangsResponse)    {}
+    rpc UpdateLang     (UpdateLangRequest)     returns (UpdateLangResponse)     {}
+    rpc GetLang        (GetLangRequest)        returns (GetLangResponse)        {}
+    rpc GetLangOnly    (GetLangOnlyRequest)    returns (GetLangOnlyResponse)    {}
+    rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
+    rpc ExistLang      (ExistLangRequest)      returns (ExistLangResponse)      {}
+    rpc ExistLangConds (ExistLangCondsRequest) returns (ExistLangCondsResponse) {}
+    rpc CountLangs     (CountLangsRequest)     returns (CountLangsResponse)     {}
+    rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
+}
+
+message LangReq {
+    optional string ID     = 10;
+    optional string AppID  = 20;
+    optional string LangID = 30;
+    optional bool   Main   = 40;
+}
+
+message Lang {
+    string ID      = 10;
+    string AppID   = 20;
+    string LangID  = 30;
+    bool   Main    = 40;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal LangID  = 30;
+}
+
+
+message CreateLangRequest {
+    LangReq Info = 10;
+}
+
+message CreateLangResponse {
+    Lang Info = 10;
+}
+
+message CreateLangsRequest {
+    repeated LangReq Infos = 10;
+}
+
+message CreateLangsResponse {
+    repeated Lang Infos = 10;
+}
+
+message UpdateLangRequest {
+    LangReq Info = 10;
+}
+
+message UpdateLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangRequest {
+    string ID = 10;
+}
+
+message GetLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetLangsResponse {
+    repeated Lang Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetLangOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetLangOnlyResponse {
+    Lang Info = 10;
+}
+
+message ExistLangRequest {
+    string ID = 10;
+}
+
+message ExistLangResponse {
+    bool Info = 10;
+}
+
+message ExistLangCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistLangCondsResponse {
+    bool Info = 10;
+}
+
+message CountLangsRequest {
+    Conds Conds = 10;
+}
+
+message CountLangsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteLangRequest {
+    string ID = 10;
+}
+
+message DeleteLangResponse {
+    Lang Info = 10;
+}
+
