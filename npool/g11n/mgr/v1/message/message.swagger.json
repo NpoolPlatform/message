@@ -156,7 +156,7 @@
         "LangID": {
           "type": "string"
         },
-        "MesssageID": {
+        "MessageID": {
           "type": "string"
         },
         "Message": {
