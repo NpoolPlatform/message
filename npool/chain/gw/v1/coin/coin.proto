@@ -51,6 +51,7 @@ message UpdateCoinRequest {
     optional string PaymentAccountCollectAmount = 140;
     optional bool   StableUSD                   = 150;
     optional bool   Disabled                    = 160;
+    optional string ENV                         = 170;
 }
 
 message UpdateCoinResponse {
