@@ -11,6 +11,11 @@ import "npool/npool.proto";
 // Service Name
 service Manager {
     // Method Version
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
+    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {
+        option (google.api.http) = {
+            post: "/v1/version"
+            body: "*"
+        };
+    }
 }
 
