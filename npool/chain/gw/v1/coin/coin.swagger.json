@@ -160,9 +160,6 @@
         },
         "Disabled": {
           "type": "boolean"
-        },
-        "ENV": {
-          "type": "string"
         }
       }
     },
