@@ -283,6 +283,12 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
