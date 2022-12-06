@@ -225,6 +225,9 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "StableUSD": {
+          "type": "boolean"
         }
       }
     },

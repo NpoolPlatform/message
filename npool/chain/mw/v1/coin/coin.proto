@@ -36,6 +36,7 @@ message CoinReq {
     optional string HotWalletAccountAmount       = 170;
     optional string PaymentAccountCollectAmount  = 180;
     optional bool   Disabled                     = 190;
+    optional bool   StableUSD                    = 200;
 }
 
 message Coin {
