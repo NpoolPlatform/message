@@ -103,7 +103,7 @@
           "type": "string"
         },
         "Code": {
-          "type": "boolean"
+          "type": "string"
         },
         "Short": {
           "type": "string"

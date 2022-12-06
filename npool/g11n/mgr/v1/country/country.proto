@@ -25,7 +25,7 @@ message CountryReq {
     optional string    ID      = 10;
     optional string    Country = 20;
     optional string    Flag    = 30;
-    optional bool      Code    = 40;
+    optional string    Code    = 40;
     optional string    Short   = 50;
 }
 
