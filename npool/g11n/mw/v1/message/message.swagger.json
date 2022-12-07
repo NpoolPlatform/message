@@ -1,0 +1,197 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/g11n/mw/v1/message/message.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "g11nmiddlewaremessage1v1CreateMessageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11nmiddlewaremessage1v1Message"
+        }
+      }
+    },
+    "g11nmiddlewaremessage1v1CreateMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11nmiddlewaremessage1v1Message"
+          }
+        }
+      }
+    },
+    "g11nmiddlewaremessage1v1DeleteMessageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11nmiddlewaremessage1v1Message"
+        }
+      }
+    },
+    "g11nmiddlewaremessage1v1GetMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11nmiddlewaremessage1v1Message"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "g11nmiddlewaremessage1v1Message": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "MessageID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "GetIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "g11nmiddlewaremessage1v1UpdateMessageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11nmiddlewaremessage1v1Message"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "MessageID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1MessageReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "MessageID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "GetIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

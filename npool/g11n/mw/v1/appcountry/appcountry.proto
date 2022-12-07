@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package g11n.middleware.appcountry.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/g11n/mgr/v1/appcountry";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/g11n/mgr/v1/appcountry/appcountry.proto";
+
+// Service Name
+service Manager {
+    rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
+    rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
+    rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
+}
+
+message Country {
+    string ID         = 10;
+    string AppID      = 20;
+    string CountryID  = 30;
+    string Country    = 40;
+    string Flag       = 50;
+    string Code       = 60;
+    string Short      = 70;
+}
+
+message CreateCountryRequest {
+    g11n.manager.appcountry.v1.CountryReq Info = 10;
+}
+
+message CreateCountryResponse {
+    Country Info = 10;
+}
+
+message GetCountriesRequest {
+    g11n.manager.appcountry.v1.Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCountriesResponse {
+    repeated Country Infos = 10;
+    uint32           Total = 20;
+}
+
+message DeleteCountryRequest {
+    string ID = 10;
+}
+
+message DeleteCountryResponse {
+    Country Info = 10;
+}
+

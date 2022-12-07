@@ -10,14 +10,14 @@ import "npool/npool.proto";
 // Service Name
 service Manager {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
-    rpc CreateCountries    (CreateCountriesRequest)    returns (CreateCountriesResponse)    {}
+    rpc CreateCountries   (CreateCountriesRequest)   returns (CreateCountriesResponse)   {}
     rpc UpdateCountry     (UpdateCountryRequest)     returns (UpdateCountryResponse)     {}
     rpc GetCountry        (GetCountryRequest)        returns (GetCountryResponse)        {}
     rpc GetCountryOnly    (GetCountryOnlyRequest)    returns (GetCountryOnlyResponse)    {}
-    rpc GetCountries       (GetCountriesRequest)       returns (GetCountriesResponse)       {}
+    rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
     rpc ExistCountry      (ExistCountryRequest)      returns (ExistCountryResponse)      {}
     rpc ExistCountryConds (ExistCountryCondsRequest) returns (ExistCountryCondsResponse) {}
-    rpc CountCountries     (CountCountriesRequest)     returns (CountCountriesResponse)     {}
+    rpc CountCountries    (CountCountriesRequest)    returns (CountCountriesResponse)    {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
 }
 
