@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error)
+	CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error)
 	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
 	DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error)
 }
@@ -38,6 +39,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error) {
 	out := new(CreateCountryResponse)
 	err := c.cc.Invoke(ctx, "/g11n.middleware.appcountry.v1.Middleware/CreateCountry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error) {
+	out := new(CreateCountriesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.middleware.appcountry.v1.Middleware/CreateCountries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *middlewareClient) DeleteCountry(ctx context.Context, in *DeleteCountryR
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error)
+	CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error)
 	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
 	DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -78,6 +89,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCountry not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCountries not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
@@ -112,6 +126,24 @@ func _Middleware_CreateCountry_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCountry(ctx, req.(*CreateCountryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCountriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateCountries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.middleware.appcountry.v1.Middleware/CreateCountries",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateCountries(ctx, req.(*CreateCountriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -162,6 +194,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCountry",
 			Handler:    _Middleware_CreateCountry_Handler,
+		},
+		{
+			MethodName: "CreateCountries",
+			Handler:    _Middleware_CreateCountries_Handler,
 		},
 		{
 			MethodName: "GetCountries",

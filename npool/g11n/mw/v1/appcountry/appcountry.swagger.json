@@ -50,6 +50,17 @@
         }
       }
     },
+    "g11nmiddlewareappcountryv1CreateCountriesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11nmiddlewareappcountryv1Country"
+          }
+        }
+      }
+    },
     "g11nmiddlewareappcountryv1CreateCountryResponse": {
       "type": "object",
       "properties": {

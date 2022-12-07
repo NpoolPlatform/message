@@ -11,6 +11,7 @@ import "npool/g11n/mgr/v1/appcountry/appcountry.proto";
 // Service Name
 service Middleware {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
+    rpc CreateCountries   (CreateCountriesRequest)   returns (CreateCountriesResponse)   {}
     rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
 }
@@ -38,6 +39,14 @@ message CreateCountryRequest {
 
 message CreateCountryResponse {
     Country Info = 10;
+}
+
+message CreateCountriesRequest {
+    repeated g11n.manager.appcountry.v1.CountryReq Info = 10;
+}
+
+message CreateCountriesResponse {
+    repeated Country Info = 10;
 }
 
 message GetCountriesRequest {
