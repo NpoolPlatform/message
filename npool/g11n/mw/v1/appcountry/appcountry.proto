@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package g11n.middleware.appcountry.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/g11n/mgr/v1/appcountry";
+option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/appcountry";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";

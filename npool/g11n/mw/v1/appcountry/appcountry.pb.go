@@ -8,6 +8,7 @@ package appcountry
 
 import (
 	_ "github.com/NpoolPlatform/message/npool"
+	appcountry "github.com/NpoolPlatform/message/npool/g11n/mgr/v1/appcountry"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	_ "google.golang.org/protobuf/types/known/emptypb"
@@ -129,7 +130,7 @@ type CreateCountryRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *CountryReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *appcountry.CountryReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateCountryRequest) Reset() {
@@ -164,7 +165,7 @@ func (*CreateCountryRequest) Descriptor() ([]byte, []int) {
 	return file_npool_g11n_mw_v1_appcountry_appcountry_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateCountryRequest) GetInfo() *CountryReq {
+func (x *CreateCountryRequest) GetInfo() *appcountry.CountryReq {
 	if x != nil {
 		return x.Info
 	}
@@ -223,7 +224,7 @@ type CreateCountriesRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info []*CountryReq `protobuf:"bytes,10,rep,name=Info,proto3" json:"Info,omitempty"`
+	Info []*appcountry.CountryReq `protobuf:"bytes,10,rep,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateCountriesRequest) Reset() {
@@ -258,7 +259,7 @@ func (*CreateCountriesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_g11n_mw_v1_appcountry_appcountry_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateCountriesRequest) GetInfo() []*CountryReq {
+func (x *CreateCountriesRequest) GetInfo() []*appcountry.CountryReq {
 	if x != nil {
 		return x.Info
 	}
@@ -317,9 +318,9 @@ type GetCountriesRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Conds  *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-	Offset int32  `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
-	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
+	Conds  *appcountry.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+	Offset int32             `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  int32             `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
 func (x *GetCountriesRequest) Reset() {
@@ -354,7 +355,7 @@ func (*GetCountriesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_g11n_mw_v1_appcountry_appcountry_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetCountriesRequest) GetConds() *Conds {
+func (x *GetCountriesRequest) GetConds() *appcountry.Conds {
 	if x != nil {
 		return x.Conds
 	}
@@ -624,12 +625,12 @@ var file_npool_g11n_mw_v1_appcountry_appcountry_proto_rawDesc = []byte{
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72,
 	0x79, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74,
-	0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3f, 0x5a, 0x3d,
+	0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3e, 0x5a, 0x3c,
 	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c,
 	0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x67, 0x72, 0x2f,
-	0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76,
+	0x31, 0x2f, 0x61, 0x70, 0x70, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -655,8 +656,8 @@ var file_npool_g11n_mw_v1_appcountry_appcountry_proto_goTypes = []interface{}{
 	(*GetCountriesResponse)(nil),    // 6: g11n.middleware.appcountry.v1.GetCountriesResponse
 	(*DeleteCountryRequest)(nil),    // 7: g11n.middleware.appcountry.v1.DeleteCountryRequest
 	(*DeleteCountryResponse)(nil),   // 8: g11n.middleware.appcountry.v1.DeleteCountryResponse
-	(*CountryReq)(nil),              // 9: g11n.manager.appcountry.v1.CountryReq
-	(*Conds)(nil),                   // 10: g11n.manager.appcountry.v1.Conds
+	(*appcountry.CountryReq)(nil),   // 9: g11n.manager.appcountry.v1.CountryReq
+	(*appcountry.Conds)(nil),        // 10: g11n.manager.appcountry.v1.Conds
 }
 var file_npool_g11n_mw_v1_appcountry_appcountry_proto_depIdxs = []int32{
 	9,  // 0: g11n.middleware.appcountry.v1.CreateCountryRequest.Info:type_name -> g11n.manager.appcountry.v1.CountryReq
@@ -686,7 +687,6 @@ func file_npool_g11n_mw_v1_appcountry_appcountry_proto_init() {
 	if File_npool_g11n_mw_v1_appcountry_appcountry_proto != nil {
 		return
 	}
-	file_npool_g11n_mgr_v1_appcountry_appcountry_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_npool_g11n_mw_v1_appcountry_appcountry_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Country); i {
