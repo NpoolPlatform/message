@@ -53,7 +53,7 @@
     "g11nmiddlewareappcountryv1CreateCountriesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/g11nmiddlewareappcountryv1Country"

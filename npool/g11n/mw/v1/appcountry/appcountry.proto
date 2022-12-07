@@ -46,7 +46,7 @@ message CreateCountriesRequest {
 }
 
 message CreateCountriesResponse {
-    repeated Country Info = 10;
+    repeated Country Infos = 10;
 }
 
 message GetCountriesRequest {
