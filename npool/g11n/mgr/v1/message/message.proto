@@ -39,6 +39,8 @@ message Message {
     string Message    = 50;
     uint32 GetIndex   = 60;
     bool   Disabled   = 70;
+    uint32 CreatedAt  = 80;
+    uint32 UpdatedAt  = 90;
 }
 
 message Conds {

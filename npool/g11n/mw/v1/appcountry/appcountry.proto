@@ -31,6 +31,10 @@ message Country {
     string Code       = 60;
     // @inject_tag: sql:"short"
     string Short      = 70;
+    // @inject_tag: sql:"created_at"
+    string CreatedAt  = 80;
+    // @inject_tag: sql:"updated_at"
+    string UpdatedAt  = 90;
 }
 
 message CreateCountryRequest {

@@ -81,6 +81,8 @@ message Message {
     string Message    = 60;
     uint32 GetIndex   = 70;
     bool   Disabled   = 80;
+    uint32 CreatedAt  = 90;
+    uint32 UpdatedAt  = 100;
 }
 
 message CreateMessageRequest {

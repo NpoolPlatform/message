@@ -43,6 +43,8 @@ message Lang {
     string Logo    = 30;
     string Name    = 40;
     string Short   = 50;
+    uint32 CreatedAt  = 60;
+    uint32 UpdatedAt  = 70;
 }
 
 message CreateLangRequest {

@@ -52,6 +52,8 @@ message Lang {
     string Name    = 70;
     string Short   = 80;
     bool   Main    = 90;
+    uint32 CreatedAt  = 100;
+    uint32 UpdatedAt  = 110;
 }
 
 message CreateLangRequest {

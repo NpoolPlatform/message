@@ -34,6 +34,10 @@ message Lang {
     string Short   = 70;
     // @inject_tag: sql:"main"
     bool   Main    = 80;
+    // @inject_tag: sql:"created_at"
+    string CreatedAt  = 90;
+    // @inject_tag: sql:"updated_at"
+    string UpdatedAt  = 100;
 }
 
 message CreateLangRequest {

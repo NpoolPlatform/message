@@ -34,6 +34,10 @@ message Message {
     uint32 GetIndex   = 70;
     // @inject_tag: sql:"disabled"
     bool   Disabled   = 80;
+    // @inject_tag: sql:"created_at"
+    string CreatedAt  = 90;
+    // @inject_tag: sql:"updated_at"
+    string UpdatedAt  = 100;
 }
 
 message CreateMessageRequest {

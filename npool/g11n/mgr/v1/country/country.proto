@@ -35,6 +35,8 @@ message Country {
     string Flag    = 30;
     string Code    = 40;
     string Short   = 50;
+    uint32 CreatedAt  = 60;
+    uint32 UpdatedAt  = 70;
 }
 
 message Conds {

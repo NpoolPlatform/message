@@ -45,6 +45,8 @@ message Country {
     string Flag       = 60;
     string Code       = 70;
     string Short      = 80;
+    uint32 CreatedAt  = 90;
+    uint32 UpdatedAt  = 100;
 }
 
 message CreateCountryRequest {
