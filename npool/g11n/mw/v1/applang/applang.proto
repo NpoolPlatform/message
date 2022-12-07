@@ -11,6 +11,7 @@ import "npool/g11n/mgr/v1/applang/applang.proto";
 // Service Name
 service Middleware {
     rpc CreateLang     (CreateLangRequest)     returns (CreateLangResponse)     {}
+    rpc CreateLangs    (CreateLangsRequest)    returns (CreateLangsResponse)    {}
     rpc UpdateLang     (UpdateLangRequest)     returns (UpdateLangResponse)     {}
     rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
     rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
@@ -33,6 +34,14 @@ message CreateLangRequest {
 
 message CreateLangResponse {
     Lang Info = 10;
+}
+
+message CreateLangsRequest {
+    repeated g11n.manager.applang.v1.LangReq Infos = 10;
+}
+
+message CreateLangsResponse {
+    repeated Lang Infos = 10;
 }
 
 message UpdateLangRequest {

@@ -25,6 +25,17 @@
         }
       }
     },
+    "g11nmiddlewareapplangv1CreateLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11nmiddlewareapplangv1Lang"
+          }
+        }
+      }
+    },
     "g11nmiddlewareapplangv1DeleteLangResponse": {
       "type": "object",
       "properties": {

@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error)
+	CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error)
 	UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
 	DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error)
@@ -39,6 +40,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error) {
 	out := new(CreateLangResponse)
 	err := c.cc.Invoke(ctx, "/g11n.middleware.applang.v1.Middleware/CreateLang", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error) {
+	out := new(CreateLangsResponse)
+	err := c.cc.Invoke(ctx, "/g11n.middleware.applang.v1.Middleware/CreateLangs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *middlewareClient) DeleteLang(ctx context.Context, in *DeleteLangRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error)
+	CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error)
 	UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
 	DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLang not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateLangs not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLang not implemented")
@@ -126,6 +140,24 @@ func _Middleware_CreateLang_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateLang(ctx, req.(*CreateLangRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateLangs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLangsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateLangs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.middleware.applang.v1.Middleware/CreateLangs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateLangs(ctx, req.(*CreateLangsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateLang",
 			Handler:    _Middleware_CreateLang_Handler,
+		},
+		{
+			MethodName: "CreateLangs",
+			Handler:    _Middleware_CreateLangs_Handler,
 		},
 		{
 			MethodName: "UpdateLang",
