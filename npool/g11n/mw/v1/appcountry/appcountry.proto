@@ -42,7 +42,7 @@ message CreateCountryResponse {
 }
 
 message CreateCountriesRequest {
-    repeated g11n.manager.appcountry.v1.CountryReq Info = 10;
+    repeated g11n.manager.appcountry.v1.CountryReq Infos = 10;
 }
 
 message CreateCountriesResponse {
