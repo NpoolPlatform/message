@@ -7,7 +7,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/appcountr
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/g11n/mgr/v1/message/message.proto";
 
 // Service Name
 service Manager {
