@@ -16,12 +16,19 @@ service Middleware {
 }
 
 message Country {
+    // @inject_tag: sql:"id"
     string ID         = 10;
+    // @inject_tag: sql:"app_id"
     string AppID      = 20;
+    // @inject_tag: sql:"country_id"
     string CountryID  = 30;
+    // @inject_tag: sql:"country"
     string Country    = 40;
+    // @inject_tag: sql:"flag"
     string Flag       = 50;
+    // @inject_tag: sql:"code"
     string Code       = 60;
+    // @inject_tag: sql:"short"
     string Short      = 70;
 }
 

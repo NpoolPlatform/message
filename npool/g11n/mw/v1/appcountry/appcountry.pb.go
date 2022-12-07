@@ -27,13 +27,20 @@ type Country struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID     string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	CountryID string `protobuf:"bytes,30,opt,name=CountryID,proto3" json:"CountryID,omitempty"`
-	Country   string `protobuf:"bytes,40,opt,name=Country,proto3" json:"Country,omitempty"`
-	Flag      string `protobuf:"bytes,50,opt,name=Flag,proto3" json:"Flag,omitempty"`
-	Code      string `protobuf:"bytes,60,opt,name=Code,proto3" json:"Code,omitempty"`
-	Short     string `protobuf:"bytes,70,opt,name=Short,proto3" json:"Short,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"country_id"
+	CountryID string `protobuf:"bytes,30,opt,name=CountryID,proto3" json:"CountryID,omitempty" sql:"country_id"`
+	// @inject_tag: sql:"country"
+	Country string `protobuf:"bytes,40,opt,name=Country,proto3" json:"Country,omitempty" sql:"country"`
+	// @inject_tag: sql:"flag"
+	Flag string `protobuf:"bytes,50,opt,name=Flag,proto3" json:"Flag,omitempty" sql:"flag"`
+	// @inject_tag: sql:"code"
+	Code string `protobuf:"bytes,60,opt,name=Code,proto3" json:"Code,omitempty" sql:"code"`
+	// @inject_tag: sql:"short"
+	Short string `protobuf:"bytes,70,opt,name=Short,proto3" json:"Short,omitempty" sql:"short"`
 }
 
 func (x *Country) Reset() {

@@ -28,14 +28,22 @@ type Message struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID     string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	LangID    string `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty"`
-	Lang      string `protobuf:"bytes,40,opt,name=Lang,proto3" json:"Lang,omitempty"`
-	MessageID string `protobuf:"bytes,50,opt,name=MessageID,proto3" json:"MessageID,omitempty"`
-	Message   string `protobuf:"bytes,60,opt,name=Message,proto3" json:"Message,omitempty"`
-	GetIndex  uint32 `protobuf:"varint,70,opt,name=GetIndex,proto3" json:"GetIndex,omitempty"`
-	Disabled  bool   `protobuf:"varint,80,opt,name=Disabled,proto3" json:"Disabled,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"lang_id"
+	LangID string `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
+	// @inject_tag: sql:"lang"
+	Lang string `protobuf:"bytes,40,opt,name=Lang,proto3" json:"Lang,omitempty" sql:"lang"`
+	// @inject_tag: sql:"message_id"
+	MessageID string `protobuf:"bytes,50,opt,name=MessageID,proto3" json:"MessageID,omitempty" sql:"message_id"`
+	// @inject_tag: sql:"message"
+	Message string `protobuf:"bytes,60,opt,name=Message,proto3" json:"Message,omitempty" sql:"message"`
+	// @inject_tag: sql:"get_index"
+	GetIndex uint32 `protobuf:"varint,70,opt,name=GetIndex,proto3" json:"GetIndex,omitempty" sql:"get_index"`
+	// @inject_tag: sql:"disabled"
+	Disabled bool `protobuf:"varint,80,opt,name=Disabled,proto3" json:"Disabled,omitempty" sql:"disabled"`
 }
 
 func (x *Message) Reset() {
