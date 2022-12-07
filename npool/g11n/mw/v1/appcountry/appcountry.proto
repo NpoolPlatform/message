@@ -9,7 +9,7 @@ import "npool/npool.proto";
 import "npool/g11n/mgr/v1/appcountry/appcountry.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
     rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}

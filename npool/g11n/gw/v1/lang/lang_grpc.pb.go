@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/g11n/gw/v1/applang/applang.proto
+// source: npool/g11n/gw/v1/lang/lang.proto
 
-package applang
+package lang
 
 import (
 	context "context"
@@ -23,10 +23,9 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error)
+	CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error)
 	UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
-	GetAppLangs(ctx context.Context, in *GetAppLangsRequest, opts ...grpc.CallOption) (*GetAppLangsResponse, error)
-	DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error)
 }
 
 type gatewayClient struct {
@@ -39,7 +38,16 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error) {
 	out := new(CreateLangResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.applang.v1.Gateway/CreateLang", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.lang.v1.Gateway/CreateLang", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error) {
+	out := new(CreateLangsResponse)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.lang.v1.Gateway/CreateLangs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +56,7 @@ func (c *gatewayClient) CreateLang(ctx context.Context, in *CreateLangRequest, o
 
 func (c *gatewayClient) UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error) {
 	out := new(UpdateLangResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.applang.v1.Gateway/UpdateLang", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.lang.v1.Gateway/UpdateLang", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,25 +65,7 @@ func (c *gatewayClient) UpdateLang(ctx context.Context, in *UpdateLangRequest, o
 
 func (c *gatewayClient) GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error) {
 	out := new(GetLangsResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.applang.v1.Gateway/GetLangs", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetAppLangs(ctx context.Context, in *GetAppLangsRequest, opts ...grpc.CallOption) (*GetAppLangsResponse, error) {
-	out := new(GetAppLangsResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.applang.v1.Gateway/GetAppLangs", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error) {
-	out := new(DeleteLangResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.applang.v1.Gateway/DeleteLang", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.lang.v1.Gateway/GetLangs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,10 +77,9 @@ func (c *gatewayClient) DeleteLang(ctx context.Context, in *DeleteLangRequest, o
 // for forward compatibility
 type GatewayServer interface {
 	CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error)
+	CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error)
 	UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
-	GetAppLangs(context.Context, *GetAppLangsRequest) (*GetAppLangsResponse, error)
-	DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -101,17 +90,14 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLang not implemented")
 }
+func (UnimplementedGatewayServer) CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateLangs not implemented")
+}
 func (UnimplementedGatewayServer) UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLang not implemented")
 }
 func (UnimplementedGatewayServer) GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLangs not implemented")
-}
-func (UnimplementedGatewayServer) GetAppLangs(context.Context, *GetAppLangsRequest) (*GetAppLangsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppLangs not implemented")
-}
-func (UnimplementedGatewayServer) DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteLang not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -136,10 +122,28 @@ func _Gateway_CreateLang_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.applang.v1.Gateway/CreateLang",
+		FullMethod: "/g11n.gateway.lang.v1.Gateway/CreateLang",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateLang(ctx, req.(*CreateLangRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateLangs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLangsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateLangs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.gateway.lang.v1.Gateway/CreateLangs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateLangs(ctx, req.(*CreateLangsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -154,7 +158,7 @@ func _Gateway_UpdateLang_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.applang.v1.Gateway/UpdateLang",
+		FullMethod: "/g11n.gateway.lang.v1.Gateway/UpdateLang",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateLang(ctx, req.(*UpdateLangRequest))
@@ -172,46 +176,10 @@ func _Gateway_GetLangs_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.applang.v1.Gateway/GetLangs",
+		FullMethod: "/g11n.gateway.lang.v1.Gateway/GetLangs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetLangs(ctx, req.(*GetLangsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetAppLangs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppLangsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppLangs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/g11n.gateway.applang.v1.Gateway/GetAppLangs",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppLangs(ctx, req.(*GetAppLangsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_DeleteLang_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteLangRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).DeleteLang(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/g11n.gateway.applang.v1.Gateway/DeleteLang",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteLang(ctx, req.(*DeleteLangRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -220,12 +188,16 @@ func _Gateway_DeleteLang_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.gateway.applang.v1.Gateway",
+	ServiceName: "g11n.gateway.lang.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateLang",
 			Handler:    _Gateway_CreateLang_Handler,
+		},
+		{
+			MethodName: "CreateLangs",
+			Handler:    _Gateway_CreateLangs_Handler,
 		},
 		{
 			MethodName: "UpdateLang",
@@ -235,15 +207,7 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetLangs",
 			Handler:    _Gateway_GetLangs_Handler,
 		},
-		{
-			MethodName: "GetAppLangs",
-			Handler:    _Gateway_GetAppLangs_Handler,
-		},
-		{
-			MethodName: "DeleteLang",
-			Handler:    _Gateway_DeleteLang_Handler,
-		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/g11n/gw/v1/applang/applang.proto",
+	Metadata: "npool/g11n/gw/v1/lang/lang.proto",
 }

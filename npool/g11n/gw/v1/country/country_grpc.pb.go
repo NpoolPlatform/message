@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/g11n/gw/v1/appcountry/appcountry.proto
+// source: npool/g11n/gw/v1/country/country.proto
 
-package appcountry
+package country
 
 import (
 	context "context"
@@ -23,9 +23,9 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error)
+	CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error)
+	UpdateCountry(ctx context.Context, in *UpdateCountryRequest, opts ...grpc.CallOption) (*UpdateCountryResponse, error)
 	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
-	GetAppCountries(ctx context.Context, in *GetAppCountriesRequest, opts ...grpc.CallOption) (*GetAppCountriesResponse, error)
-	DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error)
 }
 
 type gatewayClient struct {
@@ -38,7 +38,25 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error) {
 	out := new(CreateCountryResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.appcountry.v1.Gateway/CreateCountry", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.country.v1.Gateway/CreateCountry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error) {
+	out := new(CreateCountriesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.country.v1.Gateway/CreateCountries", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateCountry(ctx context.Context, in *UpdateCountryRequest, opts ...grpc.CallOption) (*UpdateCountryResponse, error) {
+	out := new(UpdateCountryResponse)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.country.v1.Gateway/UpdateCountry", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,25 +65,7 @@ func (c *gatewayClient) CreateCountry(ctx context.Context, in *CreateCountryRequ
 
 func (c *gatewayClient) GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error) {
 	out := new(GetCountriesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.appcountry.v1.Gateway/GetCountries", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetAppCountries(ctx context.Context, in *GetAppCountriesRequest, opts ...grpc.CallOption) (*GetAppCountriesResponse, error) {
-	out := new(GetAppCountriesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.appcountry.v1.Gateway/GetAppCountries", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error) {
-	out := new(DeleteCountryResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.appcountry.v1.Gateway/DeleteCountry", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.country.v1.Gateway/GetCountries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,9 +77,9 @@ func (c *gatewayClient) DeleteCountry(ctx context.Context, in *DeleteCountryRequ
 // for forward compatibility
 type GatewayServer interface {
 	CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error)
+	CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error)
+	UpdateCountry(context.Context, *UpdateCountryRequest) (*UpdateCountryResponse, error)
 	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
-	GetAppCountries(context.Context, *GetAppCountriesRequest) (*GetAppCountriesResponse, error)
-	DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,14 +90,14 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCountry not implemented")
 }
+func (UnimplementedGatewayServer) CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCountries not implemented")
+}
+func (UnimplementedGatewayServer) UpdateCountry(context.Context, *UpdateCountryRequest) (*UpdateCountryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCountry not implemented")
+}
 func (UnimplementedGatewayServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
-}
-func (UnimplementedGatewayServer) GetAppCountries(context.Context, *GetAppCountriesRequest) (*GetAppCountriesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppCountries not implemented")
-}
-func (UnimplementedGatewayServer) DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCountry not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -122,10 +122,46 @@ func _Gateway_CreateCountry_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.appcountry.v1.Gateway/CreateCountry",
+		FullMethod: "/g11n.gateway.country.v1.Gateway/CreateCountry",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateCountry(ctx, req.(*CreateCountryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCountriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateCountries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.gateway.country.v1.Gateway/CreateCountries",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateCountries(ctx, req.(*CreateCountriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCountryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateCountry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.gateway.country.v1.Gateway/UpdateCountry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateCountry(ctx, req.(*UpdateCountryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -140,46 +176,10 @@ func _Gateway_GetCountries_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.appcountry.v1.Gateway/GetCountries",
+		FullMethod: "/g11n.gateway.country.v1.Gateway/GetCountries",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetCountries(ctx, req.(*GetCountriesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetAppCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppCountriesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppCountries(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/g11n.gateway.appcountry.v1.Gateway/GetAppCountries",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppCountries(ctx, req.(*GetAppCountriesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_DeleteCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCountryRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).DeleteCountry(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/g11n.gateway.appcountry.v1.Gateway/DeleteCountry",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteCountry(ctx, req.(*DeleteCountryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -188,7 +188,7 @@ func _Gateway_DeleteCountry_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.gateway.appcountry.v1.Gateway",
+	ServiceName: "g11n.gateway.country.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -196,18 +196,18 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateCountry_Handler,
 		},
 		{
+			MethodName: "CreateCountries",
+			Handler:    _Gateway_CreateCountries_Handler,
+		},
+		{
+			MethodName: "UpdateCountry",
+			Handler:    _Gateway_UpdateCountry_Handler,
+		},
+		{
 			MethodName: "GetCountries",
 			Handler:    _Gateway_GetCountries_Handler,
 		},
-		{
-			MethodName: "GetAppCountries",
-			Handler:    _Gateway_GetAppCountries_Handler,
-		},
-		{
-			MethodName: "DeleteCountry",
-			Handler:    _Gateway_DeleteCountry_Handler,
-		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/g11n/gw/v1/appcountry/appcountry.proto",
+	Metadata: "npool/g11n/gw/v1/country/country.proto",
 }

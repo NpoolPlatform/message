@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
+service Gateway {
     rpc CreateLang (CreateLangRequest) returns (CreateLangResponse) {
         option (google.api.http) = {
             post: "/v1/create/applang"

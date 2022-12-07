@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/g11n/gw/v1/applang/applang.proto",
+    "title": "npool/g11n/gw/v1/country/country.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/applang": {
+    "/v1/create/countries": {
       "post": {
-        "operationId": "Gateway_CreateLang",
+        "operationId": "Gateway_CreateCountries",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateLangResponse"
+              "$ref": "#/definitions/g11ngatewaycountryv1CreateCountriesResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateLangRequest"
+              "$ref": "#/definitions/g11ngatewaycountryv1CreateCountriesRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/applang": {
+    "/v1/create/country": {
       "post": {
-        "operationId": "Gateway_DeleteLang",
+        "operationId": "Gateway_CreateCountry",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteLangResponse"
+              "$ref": "#/definitions/g11ngatewaycountryv1CreateCountryResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteLangRequest"
+              "$ref": "#/definitions/g11ngatewaycountryv1CreateCountryRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/app/applangs": {
+    "/v1/get/countries": {
       "post": {
-        "operationId": "Gateway_GetAppLangs",
+        "operationId": "Gateway_GetCountries",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppLangsResponse"
+              "$ref": "#/definitions/g11ngatewaycountryv1GetCountriesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppLangsRequest"
+              "$ref": "#/definitions/g11ngatewaycountryv1GetCountriesRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/applangs": {
+    "/v1/update/country": {
       "post": {
-        "operationId": "Gateway_GetLangs",
+        "operationId": "Gateway_UpdateCountry",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetLangsResponse"
+              "$ref": "#/definitions/g11ngatewaycountryv1UpdateCountryResponse"
             }
           },
           "default": {
@@ -135,39 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetLangsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/applang": {
-      "post": {
-        "operationId": "Gateway_UpdateLang",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateLangResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateLangRequest"
+              "$ref": "#/definitions/g11ngatewaycountryv1UpdateCountryRequest"
             }
           }
         ],
@@ -178,6 +146,152 @@
     }
   },
   "definitions": {
+    "g11ngatewaycountryv1Country": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
+    "g11ngatewaycountryv1CreateCountriesRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11nmanagercountryv1Country"
+          }
+        }
+      }
+    },
+    "g11ngatewaycountryv1CreateCountriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11ngatewaycountryv1Country"
+          }
+        }
+      }
+    },
+    "g11ngatewaycountryv1CreateCountryRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
+    "g11ngatewaycountryv1CreateCountryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11ngatewaycountryv1Country"
+        }
+      }
+    },
+    "g11ngatewaycountryv1GetCountriesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "g11ngatewaycountryv1GetCountriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/g11ngatewaycountryv1Country"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "g11ngatewaycountryv1UpdateCountryRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
+    "g11ngatewaycountryv1UpdateCountryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11ngatewaycountryv1Country"
+        }
+      }
+    },
+    "g11nmanagercountryv1Country": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -202,163 +316,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1CreateLangRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "Main": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CreateLangResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Lang"
-        }
-      }
-    },
-    "v1DeleteLangRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteLangResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Lang"
-        }
-      }
-    },
-    "v1GetAppLangsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppLangsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Lang"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetLangsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetLangsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Lang"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Lang": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "Lang": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Short": {
-          "type": "string"
-        },
-        "Main": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateLangRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Main": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateLangResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Lang"
         }
       }
     }

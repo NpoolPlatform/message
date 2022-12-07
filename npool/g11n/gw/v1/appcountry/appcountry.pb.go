@@ -636,8 +636,8 @@ var file_npool_g11n_gw_v1_appcountry_appcountry_proto_rawDesc = []byte{
 	0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x23, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61,
 	0x70, 0x70, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75,
-	0x6e, 0x74, 0x72, 0x79, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xef, 0x04, 0x0a, 0x07, 0x4d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x96, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x6e, 0x74, 0x72, 0x79, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xef, 0x04, 0x0a, 0x07, 0x47,
+	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x96, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x30, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
 	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x63, 0x6f, 0x75, 0x6e, 0x74,
 	0x72, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x6e,
@@ -712,14 +712,14 @@ var file_npool_g11n_gw_v1_appcountry_appcountry_proto_depIdxs = []int32{
 	0, // 1: g11n.gateway.appcountry.v1.GetCountriesResponse.Infos:type_name -> g11n.gateway.appcountry.v1.Country
 	0, // 2: g11n.gateway.appcountry.v1.GetAppCountriesResponse.Infos:type_name -> g11n.gateway.appcountry.v1.Country
 	0, // 3: g11n.gateway.appcountry.v1.DeleteCountryResponse.Info:type_name -> g11n.gateway.appcountry.v1.Country
-	1, // 4: g11n.gateway.appcountry.v1.Manager.CreateCountry:input_type -> g11n.gateway.appcountry.v1.CreateCountryRequest
-	3, // 5: g11n.gateway.appcountry.v1.Manager.GetCountries:input_type -> g11n.gateway.appcountry.v1.GetCountriesRequest
-	5, // 6: g11n.gateway.appcountry.v1.Manager.GetAppCountries:input_type -> g11n.gateway.appcountry.v1.GetAppCountriesRequest
-	7, // 7: g11n.gateway.appcountry.v1.Manager.DeleteCountry:input_type -> g11n.gateway.appcountry.v1.DeleteCountryRequest
-	2, // 8: g11n.gateway.appcountry.v1.Manager.CreateCountry:output_type -> g11n.gateway.appcountry.v1.CreateCountryResponse
-	4, // 9: g11n.gateway.appcountry.v1.Manager.GetCountries:output_type -> g11n.gateway.appcountry.v1.GetCountriesResponse
-	6, // 10: g11n.gateway.appcountry.v1.Manager.GetAppCountries:output_type -> g11n.gateway.appcountry.v1.GetAppCountriesResponse
-	8, // 11: g11n.gateway.appcountry.v1.Manager.DeleteCountry:output_type -> g11n.gateway.appcountry.v1.DeleteCountryResponse
+	1, // 4: g11n.gateway.appcountry.v1.Gateway.CreateCountry:input_type -> g11n.gateway.appcountry.v1.CreateCountryRequest
+	3, // 5: g11n.gateway.appcountry.v1.Gateway.GetCountries:input_type -> g11n.gateway.appcountry.v1.GetCountriesRequest
+	5, // 6: g11n.gateway.appcountry.v1.Gateway.GetAppCountries:input_type -> g11n.gateway.appcountry.v1.GetAppCountriesRequest
+	7, // 7: g11n.gateway.appcountry.v1.Gateway.DeleteCountry:input_type -> g11n.gateway.appcountry.v1.DeleteCountryRequest
+	2, // 8: g11n.gateway.appcountry.v1.Gateway.CreateCountry:output_type -> g11n.gateway.appcountry.v1.CreateCountryResponse
+	4, // 9: g11n.gateway.appcountry.v1.Gateway.GetCountries:output_type -> g11n.gateway.appcountry.v1.GetCountriesResponse
+	6, // 10: g11n.gateway.appcountry.v1.Gateway.GetAppCountries:output_type -> g11n.gateway.appcountry.v1.GetAppCountriesResponse
+	8, // 11: g11n.gateway.appcountry.v1.Gateway.DeleteCountry:output_type -> g11n.gateway.appcountry.v1.DeleteCountryResponse
 	8, // [8:12] is the sub-list for method output_type
 	4, // [4:8] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

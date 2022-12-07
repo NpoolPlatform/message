@@ -771,7 +771,7 @@ var file_npool_g11n_gw_v1_applang_applang_proto_rawDesc = []byte{
 	0x65, 0x12, 0x31, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x1d, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61,
 	0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa8, 0x05, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa8, 0x05, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
 	0x12, 0x84, 0x01, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x12,
 	0x2a, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61,
 	0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
@@ -853,16 +853,16 @@ var file_npool_g11n_gw_v1_applang_applang_proto_depIdxs = []int32{
 	0,  // 2: g11n.gateway.applang.v1.GetLangsResponse.Infos:type_name -> g11n.gateway.applang.v1.Lang
 	0,  // 3: g11n.gateway.applang.v1.GetAppLangsResponse.Infos:type_name -> g11n.gateway.applang.v1.Lang
 	0,  // 4: g11n.gateway.applang.v1.DeleteLangResponse.Info:type_name -> g11n.gateway.applang.v1.Lang
-	1,  // 5: g11n.gateway.applang.v1.Manager.CreateLang:input_type -> g11n.gateway.applang.v1.CreateLangRequest
-	3,  // 6: g11n.gateway.applang.v1.Manager.UpdateLang:input_type -> g11n.gateway.applang.v1.UpdateLangRequest
-	5,  // 7: g11n.gateway.applang.v1.Manager.GetLangs:input_type -> g11n.gateway.applang.v1.GetLangsRequest
-	7,  // 8: g11n.gateway.applang.v1.Manager.GetAppLangs:input_type -> g11n.gateway.applang.v1.GetAppLangsRequest
-	9,  // 9: g11n.gateway.applang.v1.Manager.DeleteLang:input_type -> g11n.gateway.applang.v1.DeleteLangRequest
-	2,  // 10: g11n.gateway.applang.v1.Manager.CreateLang:output_type -> g11n.gateway.applang.v1.CreateLangResponse
-	4,  // 11: g11n.gateway.applang.v1.Manager.UpdateLang:output_type -> g11n.gateway.applang.v1.UpdateLangResponse
-	6,  // 12: g11n.gateway.applang.v1.Manager.GetLangs:output_type -> g11n.gateway.applang.v1.GetLangsResponse
-	8,  // 13: g11n.gateway.applang.v1.Manager.GetAppLangs:output_type -> g11n.gateway.applang.v1.GetAppLangsResponse
-	10, // 14: g11n.gateway.applang.v1.Manager.DeleteLang:output_type -> g11n.gateway.applang.v1.DeleteLangResponse
+	1,  // 5: g11n.gateway.applang.v1.Gateway.CreateLang:input_type -> g11n.gateway.applang.v1.CreateLangRequest
+	3,  // 6: g11n.gateway.applang.v1.Gateway.UpdateLang:input_type -> g11n.gateway.applang.v1.UpdateLangRequest
+	5,  // 7: g11n.gateway.applang.v1.Gateway.GetLangs:input_type -> g11n.gateway.applang.v1.GetLangsRequest
+	7,  // 8: g11n.gateway.applang.v1.Gateway.GetAppLangs:input_type -> g11n.gateway.applang.v1.GetAppLangsRequest
+	9,  // 9: g11n.gateway.applang.v1.Gateway.DeleteLang:input_type -> g11n.gateway.applang.v1.DeleteLangRequest
+	2,  // 10: g11n.gateway.applang.v1.Gateway.CreateLang:output_type -> g11n.gateway.applang.v1.CreateLangResponse
+	4,  // 11: g11n.gateway.applang.v1.Gateway.UpdateLang:output_type -> g11n.gateway.applang.v1.UpdateLangResponse
+	6,  // 12: g11n.gateway.applang.v1.Gateway.GetLangs:output_type -> g11n.gateway.applang.v1.GetLangsResponse
+	8,  // 13: g11n.gateway.applang.v1.Gateway.GetAppLangs:output_type -> g11n.gateway.applang.v1.GetAppLangsResponse
+	10, // 14: g11n.gateway.applang.v1.Gateway.DeleteLang:output_type -> g11n.gateway.applang.v1.DeleteLangResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name

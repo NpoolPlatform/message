@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Manager_CreateLang_0(ctx context.Context, marshaler runtime.Marshaler, client ManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_CreateLang_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_Manager_CreateLang_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func local_request_Manager_CreateLang_0(ctx context.Context, marshaler runtime.Marshaler, server ManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_CreateLang_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_Manager_CreateLang_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_Manager_UpdateLang_0(ctx context.Context, marshaler runtime.Marshaler, client ManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_UpdateLang_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_Manager_UpdateLang_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func local_request_Manager_UpdateLang_0(ctx context.Context, marshaler runtime.Marshaler, server ManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_UpdateLang_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UpdateLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_Manager_UpdateLang_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_Manager_GetLangs_0(ctx context.Context, marshaler runtime.Marshaler, client ManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetLangs_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetLangsRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_Manager_GetLangs_0(ctx context.Context, marshaler runtime.Marshaler
 
 }
 
-func local_request_Manager_GetLangs_0(ctx context.Context, marshaler runtime.Marshaler, server ManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetLangs_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetLangsRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_Manager_GetLangs_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func request_Manager_GetAppLangs_0(ctx context.Context, marshaler runtime.Marshaler, client ManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_GetAppLangs_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppLangsRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_Manager_GetAppLangs_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func local_request_Manager_GetAppLangs_0(ctx context.Context, marshaler runtime.Marshaler, server ManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_GetAppLangs_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppLangsRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_Manager_GetAppLangs_0(ctx context.Context, marshaler runtime.
 
 }
 
-func request_Manager_DeleteLang_0(ctx context.Context, marshaler runtime.Marshaler, client ManagerClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Gateway_DeleteLang_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_Manager_DeleteLang_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func local_request_Manager_DeleteLang_0(ctx context.Context, marshaler runtime.Marshaler, server ManagerServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Gateway_DeleteLang_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteLangRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,24 +201,24 @@ func local_request_Manager_DeleteLang_0(ctx context.Context, marshaler runtime.M
 
 }
 
-// RegisterManagerHandlerServer registers the http handlers for service Manager to "mux".
-// UnaryRPC     :call ManagerServer directly.
+// RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
+// UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterManagerHandlerFromEndpoint instead.
-func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ManagerServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
+func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
-	mux.Handle("POST", pattern_Manager_CreateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/CreateLang", runtime.WithHTTPPathPattern("/v1/create/applang"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/CreateLang", runtime.WithHTTPPathPattern("/v1/create/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Manager_CreateLang_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateLang_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -226,22 +226,22 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Manager_CreateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_UpdateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_UpdateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/UpdateLang", runtime.WithHTTPPathPattern("/v1/update/applang"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/UpdateLang", runtime.WithHTTPPathPattern("/v1/update/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Manager_UpdateLang_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_UpdateLang_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -249,22 +249,22 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Manager_UpdateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_GetLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/GetLangs", runtime.WithHTTPPathPattern("/v1/get/applangs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/GetLangs", runtime.WithHTTPPathPattern("/v1/get/applangs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Manager_GetLangs_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetLangs_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -272,22 +272,22 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Manager_GetLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_GetAppLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetAppLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/GetAppLangs", runtime.WithHTTPPathPattern("/v1/get/app/applangs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/GetAppLangs", runtime.WithHTTPPathPattern("/v1/get/app/applangs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Manager_GetAppLangs_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetAppLangs_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -295,22 +295,22 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Manager_GetAppLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetAppLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_DeleteLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_DeleteLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/DeleteLang", runtime.WithHTTPPathPattern("/v1/delete/applang"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/DeleteLang", runtime.WithHTTPPathPattern("/v1/delete/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Manager_DeleteLang_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_DeleteLang_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -318,16 +318,16 @@ func RegisterManagerHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Manager_DeleteLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_DeleteLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterManagerHandlerFromEndpoint is same as RegisterManagerHandler but
+// RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -347,119 +347,119 @@ func RegisterManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterManagerHandler(ctx, mux, conn)
+	return RegisterGatewayHandler(ctx, mux, conn)
 }
 
-// RegisterManagerHandler registers the http handlers for service Manager to "mux".
+// RegisterGatewayHandler registers the http handlers for service Gateway to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterManagerHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterManagerHandlerClient(ctx, mux, NewManagerClient(conn))
+func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGatewayHandlerClient(ctx, mux, NewGatewayClient(conn))
 }
 
-// RegisterManagerHandlerClient registers the http handlers for service Manager
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ManagerClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ManagerClient"
+// RegisterGatewayHandlerClient registers the http handlers for service Gateway
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GatewayClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GatewayClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ManagerClient" to call the correct interceptors.
-func RegisterManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ManagerClient) error {
+// "GatewayClient" to call the correct interceptors.
+func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
 
-	mux.Handle("POST", pattern_Manager_CreateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CreateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/CreateLang", runtime.WithHTTPPathPattern("/v1/create/applang"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/CreateLang", runtime.WithHTTPPathPattern("/v1/create/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Manager_CreateLang_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CreateLang_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Manager_CreateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_UpdateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_UpdateLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/UpdateLang", runtime.WithHTTPPathPattern("/v1/update/applang"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/UpdateLang", runtime.WithHTTPPathPattern("/v1/update/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Manager_UpdateLang_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_UpdateLang_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Manager_UpdateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_GetLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/GetLangs", runtime.WithHTTPPathPattern("/v1/get/applangs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/GetLangs", runtime.WithHTTPPathPattern("/v1/get/applangs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Manager_GetLangs_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetLangs_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Manager_GetLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_GetAppLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetAppLangs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/GetAppLangs", runtime.WithHTTPPathPattern("/v1/get/app/applangs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/GetAppLangs", runtime.WithHTTPPathPattern("/v1/get/app/applangs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Manager_GetAppLangs_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetAppLangs_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Manager_GetAppLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetAppLangs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Manager_DeleteLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_DeleteLang_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Manager/DeleteLang", runtime.WithHTTPPathPattern("/v1/delete/applang"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/g11n.gateway.applang.v1.Gateway/DeleteLang", runtime.WithHTTPPathPattern("/v1/delete/applang"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Manager_DeleteLang_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_DeleteLang_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Manager_DeleteLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_DeleteLang_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -467,25 +467,25 @@ func RegisterManagerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Manager_CreateLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "applang"}, ""))
+	pattern_Gateway_CreateLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "applang"}, ""))
 
-	pattern_Manager_UpdateLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "applang"}, ""))
+	pattern_Gateway_UpdateLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "applang"}, ""))
 
-	pattern_Manager_GetLangs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "applangs"}, ""))
+	pattern_Gateway_GetLangs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "applangs"}, ""))
 
-	pattern_Manager_GetAppLangs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "applangs"}, ""))
+	pattern_Gateway_GetAppLangs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "applangs"}, ""))
 
-	pattern_Manager_DeleteLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "applang"}, ""))
+	pattern_Gateway_DeleteLang_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "applang"}, ""))
 )
 
 var (
-	forward_Manager_CreateLang_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CreateLang_0 = runtime.ForwardResponseMessage
 
-	forward_Manager_UpdateLang_0 = runtime.ForwardResponseMessage
+	forward_Gateway_UpdateLang_0 = runtime.ForwardResponseMessage
 
-	forward_Manager_GetLangs_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetLangs_0 = runtime.ForwardResponseMessage
 
-	forward_Manager_GetAppLangs_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetAppLangs_0 = runtime.ForwardResponseMessage
 
-	forward_Manager_DeleteLang_0 = runtime.ForwardResponseMessage
+	forward_Gateway_DeleteLang_0 = runtime.ForwardResponseMessage
 )

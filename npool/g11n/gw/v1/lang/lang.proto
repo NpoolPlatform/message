@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package g11n.gateway.lang.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/lang";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/g11n/mgr/v1/lang/lang.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateLang (CreateLangRequest) returns (CreateLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/lang"
+            body: "*"
+        };
+    }
+    rpc CreateLangs (CreateLangsRequest) returns (CreateLangsResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/langs"
+            body: "*"
+        };
+    }
+    rpc UpdateLang (UpdateLangRequest) returns (UpdateLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/lang"
+            body: "*"
+        };
+    }
+    rpc GetLangs (GetLangsRequest) returns (GetLangsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/langs"
+            body: "*"
+        };
+    }
+}
+
+message Lang {
+    string ID      = 10;
+    string Lang    = 20;
+    string Logo    = 30;
+    string Name    = 40;
+    string Short   = 50;
+}
+
+message CreateLangRequest {
+    optional string ID     = 10;
+    string          Lang   = 20;
+    string          Logo   = 30;
+    string          Name   = 40;
+    string          Short  = 50;
+}
+
+message CreateLangResponse {
+    Lang Info = 10;
+}
+
+message CreateLangsRequest {
+    repeated g11n.manager.lang.v1.Lang Infos = 10;
+}
+
+message CreateLangsResponse {
+    repeated Lang Infos = 10;
+}
+
+message UpdateLangRequest {
+    string          ID    = 10;
+    optional string Lang  = 20;
+    optional string Logo  = 30;
+    optional string Name  = 40;
+    optional string Short = 50;
+}
+
+message UpdateLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangsRequest {
+    int32  Offset   = 10;
+    int32  Limit    = 20;
+}
+
+message GetLangsResponse {
+    repeated Lang Infos = 10;
+    uint32        Total = 20;
+}
+
+
