@@ -577,6 +577,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "Infos": {
           "type": "array",
           "items": {

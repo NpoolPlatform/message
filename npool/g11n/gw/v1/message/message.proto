@@ -119,8 +119,9 @@ message CreateMessagesResponse {
 }
 
 message CreateAppMessagesRequest {
-    string                                       TargetAppID = 10;
-    repeated g11n.manager.message1.v1.MessageReq Infos       = 20;
+    string                                       TargetAppID  = 10;
+    string                                       TargetLangID = 20;
+    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateAppMessagesResponse {
