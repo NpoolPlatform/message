@@ -211,7 +211,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "Main": {

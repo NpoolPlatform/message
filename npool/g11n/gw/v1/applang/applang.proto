@@ -57,9 +57,9 @@ message Lang {
 }
 
 message CreateLangRequest {
-    string          TargetAppID = 10;
-    string          LangID      = 20;
-    optional bool   Main        = 30;
+    string          TargetAppID  = 10;
+    string          TargetLangID = 20;
+    optional bool   Main         = 30;
 }
 
 message CreateLangResponse {
