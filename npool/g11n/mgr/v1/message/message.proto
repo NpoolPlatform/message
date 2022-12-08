@@ -49,6 +49,7 @@ message Conds {
     optional npool.v1.StringVal LangID     = 30;
     optional npool.v1.StringVal MessageID  = 40;
     optional npool.v1.BoolVal   Disabled   = 50;
+    optional npool.v1.StringSliceVal MessageIDs  = 60;
 }
 
 

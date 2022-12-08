@@ -72,6 +72,9 @@
         },
         "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "MessageIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -217,6 +220,20 @@
         },
         "Disabled": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
