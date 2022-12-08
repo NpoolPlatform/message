@@ -35,9 +35,9 @@ message Message {
     // @inject_tag: sql:"disabled"
     bool   Disabled   = 80;
     // @inject_tag: sql:"created_at"
-    string CreatedAt  = 90;
+    uint32 CreatedAt  = 90;
     // @inject_tag: sql:"updated_at"
-    string UpdatedAt  = 100;
+    uint32 UpdatedAt  = 100;
 }
 
 message CreateMessageRequest {

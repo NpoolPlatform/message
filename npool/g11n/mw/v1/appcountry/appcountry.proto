@@ -32,9 +32,9 @@ message Country {
     // @inject_tag: sql:"short"
     string Short      = 70;
     // @inject_tag: sql:"created_at"
-    string CreatedAt  = 80;
+    uint32 CreatedAt  = 80;
     // @inject_tag: sql:"updated_at"
-    string UpdatedAt  = 90;
+    uint32 UpdatedAt  = 90;
 }
 
 message CreateCountryRequest {
