@@ -486,7 +486,13 @@
         "AppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "MessageID": {
+          "type": "string"
+        },
+        "Message": {
           "type": "string"
         },
         "GetIndex": {
@@ -685,7 +691,13 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetLangID": {
+          "type": "string"
+        },
         "MessageID": {
+          "type": "string"
+        },
+        "Message": {
           "type": "string"
         },
         "GetIndex": {

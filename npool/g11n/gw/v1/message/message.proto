@@ -128,11 +128,13 @@ message CreateAppMessagesResponse {
 }
 
 message UpdateMessageRequest {
-    string          ID         = 10;
-    string          AppID      = 20;
-    optional string MessageID  = 30;
-    optional uint32 GetIndex   = 40;
-    optional bool   Disabled   = 50;
+    string          ID           = 10;
+    string          AppID        = 20;
+    string          TargetLangID = 30;
+    optional string MessageID    = 40;
+    optional string Message      = 50;
+    optional uint32 GetIndex     = 60;
+    optional bool   Disabled     = 70;
 }
 
 message UpdateMessageResponse {
@@ -140,12 +142,14 @@ message UpdateMessageResponse {
 }
 
 message UpdateAppMessageRequest {
-    string          ID          = 10;
-    string          AppID       = 20;
-    string          TargetAppID = 30;
-    optional string MessageID   = 40;
-    optional uint32 GetIndex    = 50;
-    optional bool   Disabled    = 60;
+    string          ID           = 10;
+    string          AppID        = 20;
+    string          TargetAppID  = 30;
+    string          TargetLangID = 40;
+    optional string MessageID    = 50;
+    optional string Message      = 60;
+    optional uint32 GetIndex     = 70;
+    optional bool   Disabled     = 80;
 }
 
 message UpdateAppMessageResponse {
