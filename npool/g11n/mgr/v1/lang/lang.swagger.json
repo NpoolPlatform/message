@@ -58,6 +58,9 @@
         },
         "Short": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Langs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -189,6 +192,20 @@
         },
         "Short": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

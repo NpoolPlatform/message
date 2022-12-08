@@ -44,6 +44,7 @@ message Conds {
     optional npool.v1.StringVal Country  = 20;
     optional npool.v1.StringVal Code     = 30;
     optional npool.v1.StringVal Short    = 40;
+    optional npool.v1.StringSliceVal Countries = 50;
 }
 
 
