@@ -20,88 +20,88 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// MiddlewareClient is the client API for Middleware service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type GatewayClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
-type middlewareClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *middlewareClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
+func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.v1.Middleware/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.v1.Gateway/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type MiddlewareServer interface {
+type GatewayServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedMiddlewareServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Middleware_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).Version(ctx, in)
+		return srv.(GatewayServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.v1.Middleware/Version",
+		FullMethod: "/g11n.gateway.v1.Gateway/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(GatewayServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.gateway.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "g11n.gateway.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _Middleware_Version_Handler,
+			Handler:    _Gateway_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

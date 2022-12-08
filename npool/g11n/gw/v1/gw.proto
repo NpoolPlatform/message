@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
-service Middleware {
+service Gateway {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {
         option (google.api.http) = {

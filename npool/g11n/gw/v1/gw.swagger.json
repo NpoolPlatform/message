@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "Middleware_Version",
+        "operationId": "Gateway_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }
