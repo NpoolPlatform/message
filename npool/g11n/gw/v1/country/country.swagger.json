@@ -152,7 +152,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Country"
+            "$ref": "#/definitions/v1CountryReq"
           }
         }
       }
@@ -304,6 +304,26 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1CountryReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
         }
       }
     }

@@ -50,7 +50,7 @@ message CreateCountryResponse {
 }
 
 message CreateCountriesRequest {
-    repeated g11n.manager.country.v1.Country Infos = 10;
+    repeated g11n.manager.country.v1.CountryReq Infos = 10;
 }
 
 message CreateCountriesResponse {
