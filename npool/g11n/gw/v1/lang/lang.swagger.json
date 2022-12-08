@@ -180,7 +180,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11nmanagerlangv1Lang"
+            "$ref": "#/definitions/v1LangReq"
           }
         }
       }
@@ -280,34 +280,6 @@
         }
       }
     },
-    "g11nmanagerlangv1Lang": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Lang": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Short": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -332,6 +304,26 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1LangReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
         }
       }
     }
