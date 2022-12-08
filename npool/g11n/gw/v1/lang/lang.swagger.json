@@ -170,7 +170,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/g11ngatewaylangv1Lang"
+          "$ref": "#/definitions/v1Lang"
         }
       }
     },
@@ -191,7 +191,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11ngatewaylangv1Lang"
+            "$ref": "#/definitions/v1Lang"
           }
         }
       }
@@ -215,38 +215,10 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11ngatewaylangv1Lang"
+            "$ref": "#/definitions/v1Lang"
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "g11ngatewaylangv1Lang": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Lang": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Short": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -276,7 +248,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/g11ngatewaylangv1Lang"
+          "$ref": "#/definitions/v1Lang"
         }
       }
     },
@@ -304,6 +276,34 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1Lang": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

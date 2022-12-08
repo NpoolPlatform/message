@@ -37,16 +37,6 @@ service Gateway {
     }
 }
 
-message Country {
-    string ID      = 10;
-    string Country = 20;
-    string Flag    = 30;
-    string Code    = 40;
-    string Short   = 50;
-    uint32 CreatedAt  = 60;
-    uint32 UpdatedAt  = 70;
-}
-
 message CreateCountryRequest {
     optional string ID        = 10;
     string          Country   = 20;
@@ -56,7 +46,7 @@ message CreateCountryRequest {
 }
 
 message CreateCountryResponse {
-    Country Info = 10;
+    g11n.manager.country.v1.Country Info = 10;
 }
 
 message CreateCountriesRequest {
@@ -64,7 +54,7 @@ message CreateCountriesRequest {
 }
 
 message CreateCountriesResponse {
-    repeated Country Infos = 10;
+    repeated g11n.manager.country.v1.Country Infos = 10;
 }
 
 message UpdateCountryRequest {
@@ -76,7 +66,7 @@ message UpdateCountryRequest {
 }
 
 message UpdateCountryResponse {
-    Country Info = 10;
+    g11n.manager.country.v1.Country Info = 10;
 }
 
 message GetCountriesRequest {
@@ -85,8 +75,8 @@ message GetCountriesRequest {
 }
 
 message GetCountriesResponse {
-    repeated Country Infos = 10;
-    uint32           Total = 20;
+    repeated g11n.manager.country.v1.Country Infos = 10;
+    uint32                                   Total = 20;
 }
 
 

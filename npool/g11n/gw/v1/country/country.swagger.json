@@ -146,41 +146,13 @@
     }
   },
   "definitions": {
-    "g11ngatewaycountryv1Country": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Flag": {
-          "type": "string"
-        },
-        "Code": {
-          "type": "string"
-        },
-        "Short": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "g11ngatewaycountryv1CreateCountriesRequest": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11nmanagercountryv1Country"
+            "$ref": "#/definitions/v1Country"
           }
         }
       }
@@ -191,7 +163,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11ngatewaycountryv1Country"
+            "$ref": "#/definitions/v1Country"
           }
         }
       }
@@ -220,7 +192,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/g11ngatewaycountryv1Country"
+          "$ref": "#/definitions/v1Country"
         }
       }
     },
@@ -243,7 +215,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/g11ngatewaycountryv1Country"
+            "$ref": "#/definitions/v1Country"
           }
         },
         "Total": {
@@ -276,35 +248,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/g11ngatewaycountryv1Country"
-        }
-      }
-    },
-    "g11nmanagercountryv1Country": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Flag": {
-          "type": "string"
-        },
-        "Code": {
-          "type": "string"
-        },
-        "Short": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1Country"
         }
       }
     },
@@ -332,6 +276,34 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1Country": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
