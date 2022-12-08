@@ -344,7 +344,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "MessageID": {
@@ -548,7 +548,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "MessageID": {

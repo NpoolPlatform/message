@@ -86,11 +86,11 @@ message Message {
 }
 
 message CreateMessageRequest {
-    string          AppID     = 10;
-    string          LangID    = 20;
-    string          MessageID = 30;
-    string          Message   = 40;
-    optional uint32 GetIndex  = 50;
+    string          AppID        = 10;
+    string          TargetLangID = 20;
+    string          MessageID    = 30;
+    string          Message      = 40;
+    optional uint32 GetIndex     = 50;
 }
 
 message CreateMessageResponse {
@@ -98,12 +98,12 @@ message CreateMessageResponse {
 }
 
 message CreateAppMessageRequest {
-    string          AppID       = 10;
-    string          TargetAppID = 20;
-    string          LangID      = 30;
-    string          MessageID   = 40;
-    string          Message     = 50;
-    optional uint32 GetIndex    = 60;
+    string          AppID         = 10;
+    string          TargetAppID   = 20;
+    string          TargetLangID  = 30;
+    string          MessageID     = 40;
+    string          Message       = 50;
+    optional uint32 GetIndex      = 60;
 }
 
 message CreateAppMessageResponse {
