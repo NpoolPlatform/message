@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/app/message": {
       "post": {
-        "operationId": "Manager_CreateAppMessage",
+        "operationId": "Gateway_CreateAppMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/create/app/messages": {
       "post": {
-        "operationId": "Manager_CreateAppMessages",
+        "operationId": "Gateway_CreateAppMessages",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/create/message": {
       "post": {
-        "operationId": "Manager_CreateMessage",
+        "operationId": "Gateway_CreateMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,13 +108,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/create/messages": {
       "post": {
-        "operationId": "Manager_CreateMessages",
+        "operationId": "Gateway_CreateMessages",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -140,13 +140,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/app/message": {
       "post": {
-        "operationId": "Manager_DeleteAppMessage",
+        "operationId": "Gateway_DeleteAppMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -172,13 +172,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/delete/message": {
       "post": {
-        "operationId": "Manager_DeleteMessage",
+        "operationId": "Gateway_DeleteMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -204,13 +204,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/get/app/messages": {
       "post": {
-        "operationId": "Manager_GetAppMessages",
+        "operationId": "Gateway_GetAppMessages",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -236,13 +236,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/get/messages": {
       "post": {
-        "operationId": "Manager_GetMessages",
+        "operationId": "Gateway_GetMessages",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -268,13 +268,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/update/app/message": {
       "post": {
-        "operationId": "Manager_UpdateAppMessage",
+        "operationId": "Gateway_UpdateAppMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -300,13 +300,13 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     },
     "/v1/update/message": {
       "post": {
-        "operationId": "Manager_UpdateMessage",
+        "operationId": "Gateway_UpdateMessage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -332,7 +332,7 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     }

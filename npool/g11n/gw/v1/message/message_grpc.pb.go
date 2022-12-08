@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ManagerClient is the client API for Manager service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type GatewayClient interface {
 	CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error)
 	CreateAppMessage(ctx context.Context, in *CreateAppMessageRequest, opts ...grpc.CallOption) (*CreateAppMessageResponse, error)
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
@@ -34,108 +34,108 @@ type ManagerClient interface {
 	DeleteAppMessage(ctx context.Context, in *DeleteAppMessageRequest, opts ...grpc.CallOption) (*DeleteAppMessageResponse, error)
 }
 
-type managerClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *managerClient) CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error) {
+func (c *gatewayClient) CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error) {
 	out := new(CreateMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/CreateMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/CreateMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateAppMessage(ctx context.Context, in *CreateAppMessageRequest, opts ...grpc.CallOption) (*CreateAppMessageResponse, error) {
+func (c *gatewayClient) CreateAppMessage(ctx context.Context, in *CreateAppMessageRequest, opts ...grpc.CallOption) (*CreateAppMessageResponse, error) {
 	out := new(CreateAppMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/CreateAppMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/CreateAppMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error) {
+func (c *gatewayClient) CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error) {
 	out := new(CreateMessagesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/CreateMessages", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/CreateMessages", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateAppMessages(ctx context.Context, in *CreateAppMessagesRequest, opts ...grpc.CallOption) (*CreateAppMessagesResponse, error) {
+func (c *gatewayClient) CreateAppMessages(ctx context.Context, in *CreateAppMessagesRequest, opts ...grpc.CallOption) (*CreateAppMessagesResponse, error) {
 	out := new(CreateAppMessagesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/CreateAppMessages", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/CreateAppMessages", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error) {
+func (c *gatewayClient) UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error) {
 	out := new(UpdateMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/UpdateMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/UpdateMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateAppMessage(ctx context.Context, in *UpdateAppMessageRequest, opts ...grpc.CallOption) (*UpdateAppMessageResponse, error) {
+func (c *gatewayClient) UpdateAppMessage(ctx context.Context, in *UpdateAppMessageRequest, opts ...grpc.CallOption) (*UpdateAppMessageResponse, error) {
 	out := new(UpdateAppMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/UpdateAppMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/UpdateAppMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
+func (c *gatewayClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
 	out := new(GetMessagesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/GetMessages", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/GetMessages", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetAppMessages(ctx context.Context, in *GetAppMessagesRequest, opts ...grpc.CallOption) (*GetAppMessagesResponse, error) {
+func (c *gatewayClient) GetAppMessages(ctx context.Context, in *GetAppMessagesRequest, opts ...grpc.CallOption) (*GetAppMessagesResponse, error) {
 	out := new(GetAppMessagesResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/GetAppMessages", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/GetAppMessages", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error) {
+func (c *gatewayClient) DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error) {
 	out := new(DeleteMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/DeleteMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/DeleteMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteAppMessage(ctx context.Context, in *DeleteAppMessageRequest, opts ...grpc.CallOption) (*DeleteAppMessageResponse, error) {
+func (c *gatewayClient) DeleteAppMessage(ctx context.Context, in *DeleteAppMessageRequest, opts ...grpc.CallOption) (*DeleteAppMessageResponse, error) {
 	out := new(DeleteAppMessageResponse)
-	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Manager/DeleteAppMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/g11n.gateway.message1.v1.Gateway/DeleteAppMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type ManagerServer interface {
+type GatewayServer interface {
 	CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error)
 	CreateAppMessage(context.Context, *CreateAppMessageRequest) (*CreateAppMessageResponse, error)
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
@@ -146,282 +146,282 @@ type ManagerServer interface {
 	GetAppMessages(context.Context, *GetAppMessagesRequest) (*GetAppMessagesResponse, error)
 	DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error)
 	DeleteAppMessage(context.Context, *DeleteAppMessageRequest) (*DeleteAppMessageResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedManagerServer) CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error) {
+func (UnimplementedGatewayServer) CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessage not implemented")
 }
-func (UnimplementedManagerServer) CreateAppMessage(context.Context, *CreateAppMessageRequest) (*CreateAppMessageResponse, error) {
+func (UnimplementedGatewayServer) CreateAppMessage(context.Context, *CreateAppMessageRequest) (*CreateAppMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppMessage not implemented")
 }
-func (UnimplementedManagerServer) CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error) {
+func (UnimplementedGatewayServer) CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessages not implemented")
 }
-func (UnimplementedManagerServer) CreateAppMessages(context.Context, *CreateAppMessagesRequest) (*CreateAppMessagesResponse, error) {
+func (UnimplementedGatewayServer) CreateAppMessages(context.Context, *CreateAppMessagesRequest) (*CreateAppMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppMessages not implemented")
 }
-func (UnimplementedManagerServer) UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error) {
+func (UnimplementedGatewayServer) UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMessage not implemented")
 }
-func (UnimplementedManagerServer) UpdateAppMessage(context.Context, *UpdateAppMessageRequest) (*UpdateAppMessageResponse, error) {
+func (UnimplementedGatewayServer) UpdateAppMessage(context.Context, *UpdateAppMessageRequest) (*UpdateAppMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppMessage not implemented")
 }
-func (UnimplementedManagerServer) GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error) {
+func (UnimplementedGatewayServer) GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessages not implemented")
 }
-func (UnimplementedManagerServer) GetAppMessages(context.Context, *GetAppMessagesRequest) (*GetAppMessagesResponse, error) {
+func (UnimplementedGatewayServer) GetAppMessages(context.Context, *GetAppMessagesRequest) (*GetAppMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppMessages not implemented")
 }
-func (UnimplementedManagerServer) DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error) {
+func (UnimplementedGatewayServer) DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMessage not implemented")
 }
-func (UnimplementedManagerServer) DeleteAppMessage(context.Context, *DeleteAppMessageRequest) (*DeleteAppMessageResponse, error) {
+func (UnimplementedGatewayServer) DeleteAppMessage(context.Context, *DeleteAppMessageRequest) (*DeleteAppMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppMessage not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Manager_CreateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateMessage(ctx, in)
+		return srv.(GatewayServer).CreateMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/CreateMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/CreateMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateMessage(ctx, req.(*CreateMessageRequest))
+		return srv.(GatewayServer).CreateMessage(ctx, req.(*CreateMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAppMessage(ctx, in)
+		return srv.(GatewayServer).CreateAppMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/CreateAppMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/CreateAppMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAppMessage(ctx, req.(*CreateAppMessageRequest))
+		return srv.(GatewayServer).CreateAppMessage(ctx, req.(*CreateAppMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMessagesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateMessages(ctx, in)
+		return srv.(GatewayServer).CreateMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/CreateMessages",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/CreateMessages",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateMessages(ctx, req.(*CreateMessagesRequest))
+		return srv.(GatewayServer).CreateMessages(ctx, req.(*CreateMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateAppMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAppMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppMessagesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateAppMessages(ctx, in)
+		return srv.(GatewayServer).CreateAppMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/CreateAppMessages",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/CreateAppMessages",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateAppMessages(ctx, req.(*CreateAppMessagesRequest))
+		return srv.(GatewayServer).CreateAppMessages(ctx, req.(*CreateAppMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateMessage(ctx, in)
+		return srv.(GatewayServer).UpdateMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/UpdateMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/UpdateMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateMessage(ctx, req.(*UpdateMessageRequest))
+		return srv.(GatewayServer).UpdateMessage(ctx, req.(*UpdateMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateAppMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateAppMessage(ctx, in)
+		return srv.(GatewayServer).UpdateAppMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/UpdateAppMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/UpdateAppMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateAppMessage(ctx, req.(*UpdateAppMessageRequest))
+		return srv.(GatewayServer).UpdateAppMessage(ctx, req.(*UpdateAppMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetMessagesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetMessages(ctx, in)
+		return srv.(GatewayServer).GetMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/GetMessages",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/GetMessages",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetMessages(ctx, req.(*GetMessagesRequest))
+		return srv.(GatewayServer).GetMessages(ctx, req.(*GetMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetAppMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppMessagesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetAppMessages(ctx, in)
+		return srv.(GatewayServer).GetAppMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/GetAppMessages",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/GetAppMessages",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetAppMessages(ctx, req.(*GetAppMessagesRequest))
+		return srv.(GatewayServer).GetAppMessages(ctx, req.(*GetAppMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_DeleteMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteMessage(ctx, in)
+		return srv.(GatewayServer).DeleteMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/DeleteMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/DeleteMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteMessage(ctx, req.(*DeleteMessageRequest))
+		return srv.(GatewayServer).DeleteMessage(ctx, req.(*DeleteMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_DeleteAppMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteAppMessage(ctx, in)
+		return srv.(GatewayServer).DeleteAppMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/g11n.gateway.message1.v1.Manager/DeleteAppMessage",
+		FullMethod: "/g11n.gateway.message1.v1.Gateway/DeleteAppMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteAppMessage(ctx, req.(*DeleteAppMessageRequest))
+		return srv.(GatewayServer).DeleteAppMessage(ctx, req.(*DeleteAppMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.gateway.message1.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "g11n.gateway.message1.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateMessage",
-			Handler:    _Manager_CreateMessage_Handler,
+			Handler:    _Gateway_CreateMessage_Handler,
 		},
 		{
 			MethodName: "CreateAppMessage",
-			Handler:    _Manager_CreateAppMessage_Handler,
+			Handler:    _Gateway_CreateAppMessage_Handler,
 		},
 		{
 			MethodName: "CreateMessages",
-			Handler:    _Manager_CreateMessages_Handler,
+			Handler:    _Gateway_CreateMessages_Handler,
 		},
 		{
 			MethodName: "CreateAppMessages",
-			Handler:    _Manager_CreateAppMessages_Handler,
+			Handler:    _Gateway_CreateAppMessages_Handler,
 		},
 		{
 			MethodName: "UpdateMessage",
-			Handler:    _Manager_UpdateMessage_Handler,
+			Handler:    _Gateway_UpdateMessage_Handler,
 		},
 		{
 			MethodName: "UpdateAppMessage",
-			Handler:    _Manager_UpdateAppMessage_Handler,
+			Handler:    _Gateway_UpdateAppMessage_Handler,
 		},
 		{
 			MethodName: "GetMessages",
-			Handler:    _Manager_GetMessages_Handler,
+			Handler:    _Gateway_GetMessages_Handler,
 		},
 		{
 			MethodName: "GetAppMessages",
-			Handler:    _Manager_GetAppMessages_Handler,
+			Handler:    _Gateway_GetAppMessages_Handler,
 		},
 		{
 			MethodName: "DeleteMessage",
-			Handler:    _Manager_DeleteMessage_Handler,
+			Handler:    _Gateway_DeleteMessage_Handler,
 		},
 		{
 			MethodName: "DeleteAppMessage",
-			Handler:    _Manager_DeleteAppMessage_Handler,
+			Handler:    _Gateway_DeleteAppMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

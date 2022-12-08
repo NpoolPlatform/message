@@ -10,7 +10,7 @@ import "npool/npool.proto";
 import "npool/g11n/mgr/v1/message/message.proto";
 
 // Service Name
-service Manager {
+service Gateway {
     rpc CreateMessage (CreateMessageRequest) returns (CreateMessageResponse) {
         option (google.api.http) = {
             post: "/v1/create/message"

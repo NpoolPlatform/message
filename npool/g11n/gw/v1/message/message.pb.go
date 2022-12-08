@@ -1492,7 +1492,7 @@ var file_npool_g11n_gw_v1_message_message_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x67, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e,
 	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xf6, 0x0b,
-	0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x8f, 0x01, 0x0a, 0x0d, 0x43, 0x72,
+	0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x8f, 0x01, 0x0a, 0x0d, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x2e, 0x2e, 0x67, 0x31,
 	0x31, 0x6e, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61,
 	0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73,
@@ -1644,26 +1644,26 @@ var file_npool_g11n_gw_v1_message_message_proto_depIdxs = []int32{
 	0,  // 9: g11n.gateway.message1.v1.GetAppMessagesResponse.Infos:type_name -> g11n.gateway.message1.v1.Message
 	0,  // 10: g11n.gateway.message1.v1.DeleteMessageResponse.Info:type_name -> g11n.gateway.message1.v1.Message
 	0,  // 11: g11n.gateway.message1.v1.DeleteAppMessageResponse.Info:type_name -> g11n.gateway.message1.v1.Message
-	1,  // 12: g11n.gateway.message1.v1.Manager.CreateMessage:input_type -> g11n.gateway.message1.v1.CreateMessageRequest
-	3,  // 13: g11n.gateway.message1.v1.Manager.CreateAppMessage:input_type -> g11n.gateway.message1.v1.CreateAppMessageRequest
-	5,  // 14: g11n.gateway.message1.v1.Manager.CreateMessages:input_type -> g11n.gateway.message1.v1.CreateMessagesRequest
-	7,  // 15: g11n.gateway.message1.v1.Manager.CreateAppMessages:input_type -> g11n.gateway.message1.v1.CreateAppMessagesRequest
-	9,  // 16: g11n.gateway.message1.v1.Manager.UpdateMessage:input_type -> g11n.gateway.message1.v1.UpdateMessageRequest
-	11, // 17: g11n.gateway.message1.v1.Manager.UpdateAppMessage:input_type -> g11n.gateway.message1.v1.UpdateAppMessageRequest
-	13, // 18: g11n.gateway.message1.v1.Manager.GetMessages:input_type -> g11n.gateway.message1.v1.GetMessagesRequest
-	15, // 19: g11n.gateway.message1.v1.Manager.GetAppMessages:input_type -> g11n.gateway.message1.v1.GetAppMessagesRequest
-	17, // 20: g11n.gateway.message1.v1.Manager.DeleteMessage:input_type -> g11n.gateway.message1.v1.DeleteMessageRequest
-	19, // 21: g11n.gateway.message1.v1.Manager.DeleteAppMessage:input_type -> g11n.gateway.message1.v1.DeleteAppMessageRequest
-	2,  // 22: g11n.gateway.message1.v1.Manager.CreateMessage:output_type -> g11n.gateway.message1.v1.CreateMessageResponse
-	4,  // 23: g11n.gateway.message1.v1.Manager.CreateAppMessage:output_type -> g11n.gateway.message1.v1.CreateAppMessageResponse
-	6,  // 24: g11n.gateway.message1.v1.Manager.CreateMessages:output_type -> g11n.gateway.message1.v1.CreateMessagesResponse
-	8,  // 25: g11n.gateway.message1.v1.Manager.CreateAppMessages:output_type -> g11n.gateway.message1.v1.CreateAppMessagesResponse
-	10, // 26: g11n.gateway.message1.v1.Manager.UpdateMessage:output_type -> g11n.gateway.message1.v1.UpdateMessageResponse
-	12, // 27: g11n.gateway.message1.v1.Manager.UpdateAppMessage:output_type -> g11n.gateway.message1.v1.UpdateAppMessageResponse
-	14, // 28: g11n.gateway.message1.v1.Manager.GetMessages:output_type -> g11n.gateway.message1.v1.GetMessagesResponse
-	16, // 29: g11n.gateway.message1.v1.Manager.GetAppMessages:output_type -> g11n.gateway.message1.v1.GetAppMessagesResponse
-	18, // 30: g11n.gateway.message1.v1.Manager.DeleteMessage:output_type -> g11n.gateway.message1.v1.DeleteMessageResponse
-	20, // 31: g11n.gateway.message1.v1.Manager.DeleteAppMessage:output_type -> g11n.gateway.message1.v1.DeleteAppMessageResponse
+	1,  // 12: g11n.gateway.message1.v1.Gateway.CreateMessage:input_type -> g11n.gateway.message1.v1.CreateMessageRequest
+	3,  // 13: g11n.gateway.message1.v1.Gateway.CreateAppMessage:input_type -> g11n.gateway.message1.v1.CreateAppMessageRequest
+	5,  // 14: g11n.gateway.message1.v1.Gateway.CreateMessages:input_type -> g11n.gateway.message1.v1.CreateMessagesRequest
+	7,  // 15: g11n.gateway.message1.v1.Gateway.CreateAppMessages:input_type -> g11n.gateway.message1.v1.CreateAppMessagesRequest
+	9,  // 16: g11n.gateway.message1.v1.Gateway.UpdateMessage:input_type -> g11n.gateway.message1.v1.UpdateMessageRequest
+	11, // 17: g11n.gateway.message1.v1.Gateway.UpdateAppMessage:input_type -> g11n.gateway.message1.v1.UpdateAppMessageRequest
+	13, // 18: g11n.gateway.message1.v1.Gateway.GetMessages:input_type -> g11n.gateway.message1.v1.GetMessagesRequest
+	15, // 19: g11n.gateway.message1.v1.Gateway.GetAppMessages:input_type -> g11n.gateway.message1.v1.GetAppMessagesRequest
+	17, // 20: g11n.gateway.message1.v1.Gateway.DeleteMessage:input_type -> g11n.gateway.message1.v1.DeleteMessageRequest
+	19, // 21: g11n.gateway.message1.v1.Gateway.DeleteAppMessage:input_type -> g11n.gateway.message1.v1.DeleteAppMessageRequest
+	2,  // 22: g11n.gateway.message1.v1.Gateway.CreateMessage:output_type -> g11n.gateway.message1.v1.CreateMessageResponse
+	4,  // 23: g11n.gateway.message1.v1.Gateway.CreateAppMessage:output_type -> g11n.gateway.message1.v1.CreateAppMessageResponse
+	6,  // 24: g11n.gateway.message1.v1.Gateway.CreateMessages:output_type -> g11n.gateway.message1.v1.CreateMessagesResponse
+	8,  // 25: g11n.gateway.message1.v1.Gateway.CreateAppMessages:output_type -> g11n.gateway.message1.v1.CreateAppMessagesResponse
+	10, // 26: g11n.gateway.message1.v1.Gateway.UpdateMessage:output_type -> g11n.gateway.message1.v1.UpdateMessageResponse
+	12, // 27: g11n.gateway.message1.v1.Gateway.UpdateAppMessage:output_type -> g11n.gateway.message1.v1.UpdateAppMessageResponse
+	14, // 28: g11n.gateway.message1.v1.Gateway.GetMessages:output_type -> g11n.gateway.message1.v1.GetMessagesResponse
+	16, // 29: g11n.gateway.message1.v1.Gateway.GetAppMessages:output_type -> g11n.gateway.message1.v1.GetAppMessagesResponse
+	18, // 30: g11n.gateway.message1.v1.Gateway.DeleteMessage:output_type -> g11n.gateway.message1.v1.DeleteMessageResponse
+	20, // 31: g11n.gateway.message1.v1.Gateway.DeleteAppMessage:output_type -> g11n.gateway.message1.v1.DeleteAppMessageResponse
 	22, // [22:32] is the sub-list for method output_type
 	12, // [12:22] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
