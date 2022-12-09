@@ -802,6 +802,9 @@
         "CoinUnit": {
           "type": "string"
         },
+        "CoinDisabled": {
+          "type": "boolean"
+        },
         "Incoming": {
           "type": "string"
         },
