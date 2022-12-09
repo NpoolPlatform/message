@@ -803,7 +803,7 @@
           "type": "string"
         },
         "CoinDisabled": {
-          "type": "string"
+          "type": "boolean"
         },
         "Incoming": {
           "type": "string"
