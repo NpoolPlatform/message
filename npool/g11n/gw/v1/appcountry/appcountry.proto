@@ -30,7 +30,7 @@ service Gateway {
     }
     rpc DeleteCountry (DeleteCountryRequest) returns (DeleteCountryResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/country"
+            post: "/v1/delete/appcountry"
             body: "*"
         };
     }
