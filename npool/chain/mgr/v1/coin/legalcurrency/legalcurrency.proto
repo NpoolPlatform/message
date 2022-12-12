@@ -30,7 +30,7 @@ enum FeedType {
 
 message LegalCurrencyReq {
     optional string    ID              = 10;
-    optional string    CoinTypeID      = 20;
+    optional string    LegalTypeID     = 20;
     optional FeedType  FeedType        = 30;
     optional string    MarketValueHigh = 40;
     optional string    MarketValueLow  = 50;
@@ -38,7 +38,7 @@ message LegalCurrencyReq {
 
 message LegalCurrency {
     string   ID                = 10;
-    string   CoinTypeID        = 20;
+    string   LegalTypeID       = 20;
     FeedType FeedType          = 30;
     string   MarketValueHigh   = 40;
     string   MarketValueLow    = 50;
@@ -47,11 +47,11 @@ message LegalCurrency {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal CoinTypeID = 20;
-    optional npool.v1.Uint32Val StartAt    = 30;
-    optional npool.v1.Uint32Val EndAt      = 40;
-    optional npool.v1.Int32Val  FeedType   = 50;
+    optional npool.v1.StringVal ID          = 10;
+    optional npool.v1.StringVal LegalTypeID = 20;
+    optional npool.v1.Uint32Val StartAt     = 30;
+    optional npool.v1.Uint32Val EndAt       = 40;
+    optional npool.v1.Int32Val  FeedType    = 50;
 }
 
 

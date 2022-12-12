@@ -50,7 +50,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinTypeID": {
+        "LegalTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "StartAt": {
@@ -175,7 +175,7 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "LegalTypeID": {
           "type": "string"
         },
         "FeedType": {
@@ -203,7 +203,7 @@
         "ID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "LegalTypeID": {
           "type": "string"
         },
         "FeedType": {
