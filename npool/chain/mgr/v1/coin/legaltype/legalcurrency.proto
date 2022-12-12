@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package chain.manager.coin.legaltype.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/legaltype";
+
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateLegalType     (CreateLegalTypeRequest)     returns (CreateLegalTypeResponse)     {}
+    rpc CreateLegalTypes    (CreateLegalTypesRequest)    returns (CreateLegalTypesResponse)    {}
+    rpc UpdateLegalType     (UpdateLegalTypeRequest)     returns (UpdateLegalTypeResponse)     {}
+    rpc GetLegalType        (GetLegalTypeRequest)        returns (GetLegalTypeResponse)        {}
+    rpc GetLegalTypeOnly    (GetLegalTypeOnlyRequest)    returns (GetLegalTypeOnlyResponse)    {}
+    rpc GetLegalTypes       (GetLegalTypesRequest)       returns (GetLegalTypesResponse)       {}
+    rpc ExistLegalType      (ExistLegalTypeRequest)      returns (ExistLegalTypeResponse)      {}
+    rpc ExistLegalTypeConds (ExistLegalTypeCondsRequest) returns (ExistLegalTypeCondsResponse) {}
+    rpc CountLegalTypes     (CountLegalTypesRequest)     returns (CountLegalTypesResponse)     {}
+    rpc DeleteLegalType     (DeleteLegalTypeRequest)     returns (DeleteLegalTypeResponse)     {}
+}
+
+message LegalTypeReq {
+    optional string    ID   = 10;
+    optional string    Name = 20;
+}
+
+message LegalType {
+    string   ID        = 10;
+    string   Name      = 20;
+    uint32   CreatedAt = 30;
+    uint32   UpdatedAt = 40;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID   = 10;
+    optional npool.v1.StringVal Name = 20;
+}
+
+
+message CreateLegalTypeRequest {
+    LegalTypeReq Info = 10;
+}
+
+message CreateLegalTypeResponse {
+    LegalType Info = 10;
+}
+
+message CreateLegalTypesRequest {
+    repeated LegalTypeReq Infos = 10;
+}
+
+message CreateLegalTypesResponse {
+    repeated LegalType Infos = 10;
+}
+
+message UpdateLegalTypeRequest {
+    LegalTypeReq Info = 10;
+}
+
+message UpdateLegalTypeResponse {
+    LegalType Info = 10;
+}
+
+message GetLegalTypeRequest {
+    string ID = 10;
+}
+
+message GetLegalTypeResponse {
+    LegalType Info = 10;
+}
+
+message GetLegalTypesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetLegalTypesResponse {
+    repeated LegalType Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetLegalTypeOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetLegalTypeOnlyResponse {
+    LegalType Info = 10;
+}
+
+message ExistLegalTypeRequest {
+    string ID = 10;
+}
+
+message ExistLegalTypeResponse {
+    bool Info = 10;
+}
+
+message ExistLegalTypeCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistLegalTypeCondsResponse {
+    bool Info = 10;
+}
+
+message CountLegalTypesRequest {
+    Conds Conds = 10;
+}
+
+message CountLegalTypesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteLegalTypeRequest {
+    string ID = 10;
+}
+
+message DeleteLegalTypeResponse {
+    LegalType Info = 10;
+}
+
