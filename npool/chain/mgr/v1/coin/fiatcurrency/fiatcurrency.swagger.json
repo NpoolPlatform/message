@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/coin/legalcurrency/legalcurrency.proto",
+    "title": "npool/chain/mgr/v1/coin/fiatcurrency/fiatcurrency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,13 +17,13 @@
   ],
   "paths": {},
   "definitions": {
-    "coinlegalcurrencyv1Conds": {
+    "coinfiatcurrencyv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LegalTypeID": {
+        "FiatTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "StartAt": {
@@ -64,7 +64,7 @@
         }
       }
     },
-    "v1CountLegalCurrenciesResponse": {
+    "v1CountFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -73,34 +73,34 @@
         }
       }
     },
-    "v1CreateLegalCurrenciesResponse": {
+    "v1CreateFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1LegalCurrency"
+            "$ref": "#/definitions/v1FiatCurrency"
           }
         }
       }
     },
-    "v1CreateLegalCurrencyResponse": {
+    "v1CreateFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalCurrency"
+          "$ref": "#/definitions/v1FiatCurrency"
         }
       }
     },
-    "v1DeleteLegalCurrencyResponse": {
+    "v1DeleteFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalCurrency"
+          "$ref": "#/definitions/v1FiatCurrency"
         }
       }
     },
-    "v1ExistLegalCurrencyCondsResponse": {
+    "v1ExistFiatCurrencyCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "v1ExistLegalCurrencyResponse": {
+    "v1ExistFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -126,56 +126,13 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1GetLegalCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1LegalCurrency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetLegalCurrencyOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1LegalCurrency"
-        }
-      }
-    },
-    "v1GetLegalCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1LegalCurrency"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1LegalCurrency": {
+    "v1FiatCurrency": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "LegalTypeID": {
+        "FiatTypeID": {
           "type": "string"
         },
         "FeedType": {
@@ -197,13 +154,13 @@
         }
       }
     },
-    "v1LegalCurrencyReq": {
+    "v1FiatCurrencyReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "LegalTypeID": {
+        "FiatTypeID": {
           "type": "string"
         },
         "FeedType": {
@@ -214,6 +171,49 @@
         },
         "MarketValueLow": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FiatCurrency"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetFiatCurrencyOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1GetFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -240,11 +240,11 @@
         }
       }
     },
-    "v1UpdateLegalCurrencyResponse": {
+    "v1UpdateFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalCurrency"
+          "$ref": "#/definitions/v1FiatCurrency"
         }
       }
     }

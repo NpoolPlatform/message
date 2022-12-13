@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/coin/legalcurrency/legalcurrency.proto",
+    "title": "npool/chain/gw/v1/coin/fiatcurrency/fiatcurrency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/coinlegalcurrencies": {
+    "/v1/get/coinfiatcurrencies": {
       "post": {
-        "operationId": "Gateway_GetCoinLegalCurrencies",
+        "operationId": "Gateway_GetCoinFiatCurrencies",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinLegalCurrenciesResponse"
+              "$ref": "#/definitions/v1GetCoinFiatCurrenciesResponse"
             }
           },
           "default": {
@@ -39,7 +39,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinLegalCurrenciesRequest"
+              "$ref": "#/definitions/v1GetCoinFiatCurrenciesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/fiatcurrencies": {
+      "post": {
+        "operationId": "Gateway_GetFiatCurrencies",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesRequest"
             }
           }
         ],
@@ -55,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoinlegalcurrencyv1GetHistoriesResponse"
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetHistoriesResponse"
             }
           },
           "default": {
@@ -71,39 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoinlegalcurrencyv1GetHistoriesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/legalcurrencies": {
-      "post": {
-        "operationId": "Gateway_GetLegalCurrencies",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/chaingatewaycoinlegalcurrencyv1GetLegalCurrenciesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/chaingatewaycoinlegalcurrencyv1GetLegalCurrenciesRequest"
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetHistoriesRequest"
             }
           }
         ],
@@ -114,7 +114,35 @@
     }
   },
   "definitions": {
-    "chaingatewaycoinlegalcurrencyv1GetHistoriesRequest": {
+    "chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chaingatewaycoinfiatcurrencyv1GetHistoriesRequest": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -138,13 +166,13 @@
         }
       }
     },
-    "chaingatewaycoinlegalcurrencyv1GetHistoriesResponse": {
+    "chaingatewaycoinfiatcurrencyv1GetHistoriesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinlegalcurrencyv1LegalCurrency"
+            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
           }
         },
         "Total": {
@@ -153,46 +181,18 @@
         }
       }
     },
-    "chaingatewaycoinlegalcurrencyv1GetLegalCurrenciesRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "chaingatewaycoinlegalcurrencyv1GetLegalCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinlegalcurrencyv1LegalCurrency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "chainmiddlewarecoinlegalcurrencyv1LegalCurrency": {
+    "chainmiddlewarecoinfiatcurrencyv1FiatCurrency": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "LegalTypeID": {
+        "FiatTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "LegalName": {
+        "FiatName": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
         },
@@ -260,7 +260,7 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1GetCoinLegalCurrenciesRequest": {
+    "v1GetCoinFiatCurrenciesRequest": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -268,11 +268,11 @@
         }
       }
     },
-    "v1GetCoinLegalCurrenciesResponse": {
+    "v1GetCoinFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinlegalcurrencyv1LegalCurrency"
+          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
         }
       }
     }

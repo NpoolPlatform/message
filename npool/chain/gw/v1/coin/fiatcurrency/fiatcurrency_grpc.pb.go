@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/gw/v1/coin/legalcurrency/legalcurrency.proto
+// source: npool/chain/gw/v1/coin/fiatcurrency/fiatcurrency.proto
 
-package legalcurrency
+package fiatcurrency
 
 import (
 	context "context"
@@ -22,8 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetLegalCurrencies(ctx context.Context, in *GetLegalCurrenciesRequest, opts ...grpc.CallOption) (*GetLegalCurrenciesResponse, error)
-	GetCoinLegalCurrencies(ctx context.Context, in *GetCoinLegalCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinLegalCurrenciesResponse, error)
+	GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error)
+	GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 }
 
@@ -35,18 +35,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetLegalCurrencies(ctx context.Context, in *GetLegalCurrenciesRequest, opts ...grpc.CallOption) (*GetLegalCurrenciesResponse, error) {
-	out := new(GetLegalCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.legalcurrency.v1.Gateway/GetLegalCurrencies", in, out, opts...)
+func (c *gatewayClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error) {
+	out := new(GetFiatCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetCoinLegalCurrencies(ctx context.Context, in *GetCoinLegalCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinLegalCurrenciesResponse, error) {
-	out := new(GetCoinLegalCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.legalcurrency.v1.Gateway/GetCoinLegalCurrencies", in, out, opts...)
+func (c *gatewayClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error) {
+	out := new(GetCoinFiatCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetCoinFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *gatewayClient) GetCoinLegalCurrencies(ctx context.Context, in *GetCoinL
 
 func (c *gatewayClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.legalcurrency.v1.Gateway/GetHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,8 +66,8 @@ func (c *gatewayClient) GetHistories(ctx context.Context, in *GetHistoriesReques
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetLegalCurrencies(context.Context, *GetLegalCurrenciesRequest) (*GetLegalCurrenciesResponse, error)
-	GetCoinLegalCurrencies(context.Context, *GetCoinLegalCurrenciesRequest) (*GetCoinLegalCurrenciesResponse, error)
+	GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error)
+	GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -76,11 +76,11 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetLegalCurrencies(context.Context, *GetLegalCurrenciesRequest) (*GetLegalCurrenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetLegalCurrencies not implemented")
+func (UnimplementedGatewayServer) GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrencies not implemented")
 }
-func (UnimplementedGatewayServer) GetCoinLegalCurrencies(context.Context, *GetCoinLegalCurrenciesRequest) (*GetCoinLegalCurrenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinLegalCurrencies not implemented")
+func (UnimplementedGatewayServer) GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinFiatCurrencies not implemented")
 }
 func (UnimplementedGatewayServer) GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistories not implemented")
@@ -98,38 +98,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetLegalCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLegalCurrenciesRequest)
+func _Gateway_GetFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFiatCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetLegalCurrencies(ctx, in)
+		return srv.(GatewayServer).GetFiatCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.coin.legalcurrency.v1.Gateway/GetLegalCurrencies",
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetLegalCurrencies(ctx, req.(*GetLegalCurrenciesRequest))
+		return srv.(GatewayServer).GetFiatCurrencies(ctx, req.(*GetFiatCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetCoinLegalCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinLegalCurrenciesRequest)
+func _Gateway_GetCoinFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinFiatCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetCoinLegalCurrencies(ctx, in)
+		return srv.(GatewayServer).GetCoinFiatCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.coin.legalcurrency.v1.Gateway/GetCoinLegalCurrencies",
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetCoinFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCoinLegalCurrencies(ctx, req.(*GetCoinLegalCurrenciesRequest))
+		return srv.(GatewayServer).GetCoinFiatCurrencies(ctx, req.(*GetCoinFiatCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -144,7 +144,7 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.gateway.coin.legalcurrency.v1.Gateway/GetHistories",
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetHistories(ctx, req.(*GetHistoriesRequest))
@@ -156,16 +156,16 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.coin.legalcurrency.v1.Gateway",
+	ServiceName: "chain.gateway.coin.fiatcurrency.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetLegalCurrencies",
-			Handler:    _Gateway_GetLegalCurrencies_Handler,
+			MethodName: "GetFiatCurrencies",
+			Handler:    _Gateway_GetFiatCurrencies_Handler,
 		},
 		{
-			MethodName: "GetCoinLegalCurrencies",
-			Handler:    _Gateway_GetCoinLegalCurrencies_Handler,
+			MethodName: "GetCoinFiatCurrencies",
+			Handler:    _Gateway_GetCoinFiatCurrencies_Handler,
 		},
 		{
 			MethodName: "GetHistories",
@@ -173,5 +173,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/gw/v1/coin/legalcurrency/legalcurrency.proto",
+	Metadata: "npool/chain/gw/v1/coin/fiatcurrency/fiatcurrency.proto",
 }
