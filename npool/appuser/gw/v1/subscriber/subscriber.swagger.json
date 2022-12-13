@@ -167,7 +167,7 @@
           "title": "@inject_tag: sql:\"email_address\""
         },
         "Registered": {
-          "type": "string",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"registered\""
         },
         "CreatedAt": {
