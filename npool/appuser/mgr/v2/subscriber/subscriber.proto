@@ -8,14 +8,14 @@ import "npool/npool.proto";
 
 service Manager {
     rpc CreateSubscriber     (CreateSubscriberRequest)     returns (CreateSubscriberResponse)     {}
-    rpc CreateSubscribers    (CreateSubscribersRequest)    returns (CreateSubscribersResponse)    {}
+    rpc CreateSubscriberes   (CreateSubscriberesRequest)   returns (CreateSubscriberesResponse)   {}
     rpc UpdateSubscriber     (UpdateSubscriberRequest)     returns (UpdateSubscriberResponse)     {}
     rpc GetSubscriber        (GetSubscriberRequest)        returns (GetSubscriberResponse)        {}
     rpc GetSubscriberOnly    (GetSubscriberOnlyRequest)    returns (GetSubscriberOnlyResponse)    {}
-    rpc GetSubscribers       (GetSubscribersRequest)       returns (GetSubscribersResponse)       {}
+    rpc GetSubscriberes      (GetSubscriberesRequest)      returns (GetSubscriberesResponse)      {}
     rpc ExistSubscriber      (ExistSubscriberRequest)      returns (ExistSubscriberResponse)      {}
     rpc ExistSubscriberConds (ExistSubscriberCondsRequest) returns (ExistSubscriberCondsResponse) {}
-    rpc CountSubscribers     (CountSubscribersRequest)     returns (CountSubscribersResponse)     {}
+    rpc CountSubscriberes    (CountSubscriberesRequest)    returns (CountSubscriberesResponse)    {}
     rpc DeleteSubscriber     (DeleteSubscriberRequest)     returns (DeleteSubscriberResponse)     {}
 }
 
@@ -48,11 +48,11 @@ message CreateSubscriberResponse {
     Subscriber Info = 10;
 }
 
-message CreateSubscribersRequest {
+message CreateSubscriberesRequest {
     repeated SubscriberReq Infos = 10;
 }
 
-message CreateSubscribersResponse {
+message CreateSubscriberesResponse {
     repeated Subscriber Infos = 10;
 }
 
@@ -64,13 +64,13 @@ message GetSubscriberResponse {
     Subscriber Info = 10;
 }
 
-message GetSubscribersRequest {
+message GetSubscriberesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetSubscribersResponse {
+message GetSubscriberesResponse {
     repeated Subscriber Infos = 10;
     uint32              Total = 20;
 }
@@ -107,11 +107,11 @@ message ExistSubscriberCondsResponse {
     bool Info = 10;
 }
 
-message CountSubscribersRequest {
+message CountSubscriberesRequest {
     Conds Conds = 10;
 }
 
-message CountSubscribersResponse {
+message CountSubscriberesResponse {
     uint32 Info = 10;
 }
 

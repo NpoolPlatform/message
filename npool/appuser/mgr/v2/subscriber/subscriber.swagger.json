@@ -83,7 +83,7 @@
         }
       }
     },
-    "v2CountSubscribersResponse": {
+    "v2CountSubscriberesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -100,7 +100,7 @@
         }
       }
     },
-    "v2CreateSubscribersResponse": {
+    "v2CreateSubscriberesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -151,7 +151,7 @@
         }
       }
     },
-    "v2GetSubscribersResponse": {
+    "v2GetSubscriberesResponse": {
       "type": "object",
       "properties": {
         "Infos": {

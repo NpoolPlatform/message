@@ -68,6 +68,21 @@
         }
       }
     },
+    "subscriberv1GetSubscriberesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subscriberv1Subscriber"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "subscriberv1Subscriber": {
       "type": "object",
       "properties": {
@@ -119,21 +134,6 @@
         },
         "Value": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetSubscriberesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/subscriberv1Subscriber"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
