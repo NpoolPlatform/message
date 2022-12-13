@@ -23,19 +23,21 @@ message SubscriberReq {
     optional string ID            = 10;
     optional string AppID         = 20;
     optional string EmailAddress  = 30;
+    optional bool   Registered    = 40;
 }
 
 message Subscriber {
     string ID            = 10;
     string AppID         = 20;
     string EmailAddress  = 30;
+    bool   Registered    = 40;
 }
 
 message Conds {
     npool.v1.StringVal ID            = 10;
     npool.v1.StringVal AppID         = 20;
     npool.v1.StringVal EmailAddress  = 30;
-    npool.v1.StringSliceVal IDs      = 40;
+    npool.v1.BoolVal   Registered    = 40;
 }
 
 message CreateSubscriberRequest {

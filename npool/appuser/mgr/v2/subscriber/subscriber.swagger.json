@@ -44,17 +44,14 @@
         }
       }
     },
-    "v1StringSliceVal": {
+    "v1BoolVal": {
       "type": "object",
       "properties": {
         "Op": {
           "type": "string"
         },
         "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "boolean"
         }
       }
     },
@@ -81,8 +78,8 @@
         "EmailAddress": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "Registered": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -180,6 +177,9 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "Registered": {
+          "type": "boolean"
         }
       }
     },
@@ -194,6 +194,9 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "Registered": {
+          "type": "boolean"
         }
       }
     },
