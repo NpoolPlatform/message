@@ -1,0 +1,209 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/mgr/v2/subscriber/subscriber.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EmailAddress": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v2CountSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2CreateSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Subscriber"
+        }
+      }
+    },
+    "v2CreateSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Subscriber"
+          }
+        }
+      }
+    },
+    "v2DeleteSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Subscriber"
+        }
+      }
+    },
+    "v2ExistSubscriberCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2ExistSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2GetSubscriberOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Subscriber"
+        }
+      }
+    },
+    "v2GetSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Subscriber"
+        }
+      }
+    },
+    "v2GetSubscribersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Subscriber"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2Subscriber": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2SubscriberReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Subscriber"
+        }
+      }
+    }
+  }
+}
