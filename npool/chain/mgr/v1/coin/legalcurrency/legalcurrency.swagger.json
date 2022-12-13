@@ -17,6 +17,26 @@
   ],
   "paths": {},
   "definitions": {
+    "coinlegalcurrencyv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LegalTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,26 +61,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LegalTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },

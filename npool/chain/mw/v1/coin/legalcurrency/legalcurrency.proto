@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/leg
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";
+import "npool/chain/mgr/v1/coin/currency/currency.proto";
 import "npool/chain/mgr/v1/coin/legalcurrency/legalcurrency.proto";
 
 // Service Name
@@ -48,7 +49,7 @@ message Conds {
 }
 
 message CreateLegalCurrencyRequest {
-    chain.manager.coin.currency.v1.LegalCurrencyReq Info = 10;
+    chain.manager.coin.legalcurrency.v1.LegalCurrencyReq Info = 10;
 }
 
 message CreateLegalCurrencyResponse {
@@ -56,7 +57,7 @@ message CreateLegalCurrencyResponse {
 }
 
 message CreateLegalCurrenciesRequest {
-    repeated chain.manager.coin.currency.v1.LegalCurrencyReq Infos = 10;
+    repeated chain.manager.coin.legalcurrency.v1.LegalCurrencyReq Infos = 10;
 }
 
 message CreateLegalCurrenciesResponse {
