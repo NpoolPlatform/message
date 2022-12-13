@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package appuser.gateway.subscriber.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/subscriber";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+import "npool/appuser/mw/v1/subscriber/subscriber.proto";
+
+service Gateway {
+    rpc CreateSubscriber (CreateSubscriberRequest) returns (CreateSubscriberResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/subscriber"
+            body: "*"
+        };
+    }
+
+    rpc DeleteSubscriber (DeleteSubscriberRequest) returns (DeleteSubscriberResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/subscriber"
+            body: "*"
+        };
+    }
+}
+
+message CreateSubscriberRequest {
+    string AppID        = 10;
+    string EmailAddress = 20;
+}
+
+message CreateSubscriberResponse {
+    appuser.middleware.subscriber.v1.Subscriber Info = 10;
+}
+
+message DeleteSubscriberRequest {
+    string AppID        = 10;
+    string EmailAddress = 20;
+}
+
+message DeleteSubscriberResponse {
+    optional appuser.middleware.subscriber.v1.Subscriber Info = 10;
+}

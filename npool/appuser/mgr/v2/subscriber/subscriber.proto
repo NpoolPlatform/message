@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package appuser.manager.subscriber.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/subscriber";
+
+import "npool/npool.proto";
+
+service Manager {
+    rpc CreateSubscriber     (CreateSubscriberRequest)     returns (CreateSubscriberResponse)     {}
+    rpc CreateSubscribers    (CreateSubscribersRequest)    returns (CreateSubscribersResponse)    {}
+    rpc UpdateSubscriber     (UpdateSubscriberRequest)     returns (UpdateSubscriberResponse)     {}
+    rpc GetSubscriber        (GetSubscriberRequest)        returns (GetSubscriberResponse)        {}
+    rpc GetSubscriberOnly    (GetSubscriberOnlyRequest)    returns (GetSubscriberOnlyResponse)    {}
+    rpc GetSubscribers       (GetSubscribersRequest)       returns (GetSubscribersResponse)       {}
+    rpc ExistSubscriber      (ExistSubscriberRequest)      returns (ExistSubscriberResponse)      {}
+    rpc ExistSubscriberConds (ExistSubscriberCondsRequest) returns (ExistSubscriberCondsResponse) {}
+    rpc CountSubscribers     (CountSubscribersRequest)     returns (CountSubscribersResponse)     {}
+    rpc DeleteSubscriber     (DeleteSubscriberRequest)     returns (DeleteSubscriberResponse)     {}
+}
+
+message SubscriberReq {
+    optional string ID            = 10;
+    optional string AppID         = 20;
+    optional string EmailAddress  = 30;
+    optional bool   Registered    = 40;
+}
+
+message Subscriber {
+    string ID            = 10;
+    string AppID         = 20;
+    string EmailAddress  = 30;
+    bool   Registered    = 40;
+}
+
+message Conds {
+    npool.v1.StringVal ID            = 10;
+    npool.v1.StringVal AppID         = 20;
+    npool.v1.StringVal EmailAddress  = 30;
+    npool.v1.BoolVal   Registered    = 40;
+}
+
+message CreateSubscriberRequest {
+    SubscriberReq Info = 10;
+}
+
+message CreateSubscriberResponse {
+    Subscriber Info = 10;
+}
+
+message CreateSubscribersRequest {
+    repeated SubscriberReq Infos = 10;
+}
+
+message CreateSubscribersResponse {
+    repeated Subscriber Infos = 10;
+}
+
+message GetSubscriberRequest {
+    string ID = 10;
+}
+
+message GetSubscriberResponse {
+    Subscriber Info = 10;
+}
+
+message GetSubscribersRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetSubscribersResponse {
+    repeated Subscriber Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetSubscriberOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetSubscriberOnlyResponse {
+    Subscriber Info = 10;
+}
+
+message UpdateSubscriberRequest {
+    SubscriberReq Info = 10;
+}
+
+message UpdateSubscriberResponse {
+    Subscriber Info = 10;
+}
+
+message ExistSubscriberRequest {
+    string ID = 10;
+}
+
+message ExistSubscriberResponse {
+    bool Info = 10;
+}
+
+message ExistSubscriberCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistSubscriberCondsResponse {
+    bool Info = 10;
+}
+
+message CountSubscribersRequest {
+    Conds Conds = 10;
+}
+
+message CountSubscribersResponse {
+    uint32 Info = 10;
+}
+
+message DeleteSubscriberRequest {
+    string ID = 10;
+}
+
+message DeleteSubscriberResponse {
+    Subscriber Info = 10;
+}
