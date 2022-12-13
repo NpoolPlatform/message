@@ -16,7 +16,7 @@ service Middleware {
     rpc GetLegalCurrency        (GetLegalCurrencyRequest)       returns (GetLegalCurrencyResponse)       {}
     rpc GetCoinLegalCurrency    (GetCoinLegalCurrencyRequest)   returns (GetCoinLegalCurrencyResponse)   {}
     rpc GetLegalCurrencies      (GetLegalCurrenciesRequest)     returns (GetLegalCurrenciesResponse)     {}
-    rpc GetHistories            (GetHistoriesRequest)           returns (GetHistoriesResponse)      {}
+    rpc GetHistories            (GetHistoriesRequest)           returns (GetHistoriesResponse)           {}
 }
 
 message LegalCurrency {
@@ -36,7 +36,7 @@ message LegalCurrency {
     string MarketValueLow  = 70;
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr     = 80;
-    chain.manager.coin.legalcurrency.v1.FeedType FeedType = 90;
+    chain.manager.coin.currency.v1.FeedType FeedType = 90;
 }
 
 message Conds {
@@ -48,7 +48,7 @@ message Conds {
 }
 
 message CreateLegalCurrencyRequest {
-    chain.manager.coin.legalcurrency.v1.LegalCurrencyReq Info = 10;
+    chain.manager.coin.currency.v1.LegalCurrencyReq Info = 10;
 }
 
 message CreateLegalCurrencyResponse {
@@ -56,7 +56,7 @@ message CreateLegalCurrencyResponse {
 }
 
 message CreateLegalCurrenciesRequest {
-    repeated chain.manager.coin.legalcurrency.v1.LegalCurrencyReq Infos = 10;
+    repeated chain.manager.coin.currency.v1.LegalCurrencyReq Infos = 10;
 }
 
 message CreateLegalCurrenciesResponse {
@@ -101,5 +101,5 @@ message GetHistoriesRequest {
 
 message GetHistoriesResponse {
     repeated LegalCurrency Infos = 10;
-    uint32            Total = 20;
+    uint32                 Total = 20;
 }

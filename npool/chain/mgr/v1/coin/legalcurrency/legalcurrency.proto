@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/le
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-
+import "npool/chain/mgr/v1/coin/currency/currency.proto";
 // Service Name
 service Manager {
     rpc CreateLegalCurrency     (CreateLegalCurrencyRequest)     returns (CreateLegalCurrencyResponse)     {}
@@ -21,17 +21,10 @@ service Manager {
     rpc DeleteLegalCurrency     (DeleteLegalCurrencyRequest)     returns (DeleteLegalCurrencyResponse)     {}
 }
 
-enum FeedType {
-    DefaultFeedType   = 0;
-    CoinGecko         = 10;
-    CoinBase          = 20;
-    StableUSDHardCode = 30;
-}
-
 message LegalCurrencyReq {
     optional string    ID              = 10;
     optional string    LegalTypeID     = 20;
-    optional FeedType  FeedType        = 30;
+    optional chain.manager.coin.currency.v1.FeedType FeedType = 30;
     optional string    MarketValueHigh = 40;
     optional string    MarketValueLow  = 50;
 }
@@ -39,7 +32,7 @@ message LegalCurrencyReq {
 message LegalCurrency {
     string   ID                = 10;
     string   LegalTypeID       = 20;
-    FeedType FeedType          = 30;
+    chain.manager.coin.currency.v1.FeedType FeedType = 30;
     string   MarketValueHigh   = 40;
     string   MarketValueLow    = 50;
     uint32   CreatedAt         = 60;
