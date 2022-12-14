@@ -16,7 +16,7 @@ service Middleware {
     rpc RefreshFiatCurrencies  (RefreshFiatCurrenciesRequest) returns (RefreshFiatCurrenciesResponse) {}
     rpc GetFiatCurrency        (GetFiatCurrencyRequest)       returns (GetFiatCurrencyResponse)       {}
     rpc GetCoinFiatCurrency    (GetCoinFiatCurrencyRequest)   returns (GetCoinFiatCurrencyResponse)   {}
-    rpc GetCoinFiatCurrencies    (GetCoinFiatCurrenciesRequest)   returns (GetCoinFiatCurrenciesResponse)   {}
+    rpc GetCoinFiatCurrencies  (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {}
     rpc GetFiatCurrencies      (GetFiatCurrenciesRequest)     returns (GetFiatCurrenciesResponse)     {}
     rpc GetHistories           (GetHistoriesRequest)          returns (GetHistoriesResponse)          {}
 }
@@ -25,9 +25,9 @@ message FiatCurrency {
     // @inject_tag: sql:"id"
     string ID              = 10;
     // @inject_tag: sql:"coin_type_id"
-    string FiatTypeID     = 20;
+    string FiatCurrencyTypeID     = 20;
     // @inject_tag: sql:"coin_name"
-    string FiatName       = 30;
+    string FiatCurrencyName       = 30;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt       = 40;
     // @inject_tag: sql:"updated_at"
@@ -53,8 +53,8 @@ message FiatCurrency {
 
 message Conds {
     optional npool.v1.StringVal      ID          = 10;
-    optional npool.v1.StringVal      FiatTypeID  = 20;
-    optional npool.v1.StringSliceVal FiatTypeIDs = 30;
+    optional npool.v1.StringVal      FiatCurrencyTypeID  = 20;
+    optional npool.v1.StringSliceVal FiatCurrencyTypeIDs = 30;
     optional npool.v1.Uint32Val      StartAt     = 40;
     optional npool.v1.Uint32Val      EndAt       = 50;
     optional npool.v1.StringVal      CoinTypeID  = 60;

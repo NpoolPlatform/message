@@ -204,11 +204,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "FiatTypeID": {
+        "FiatCurrencyTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "FiatName": {
+        "FiatCurrencyName": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
         },
