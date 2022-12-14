@@ -87,6 +87,7 @@ message UpdateCoinRequest {
     optional string DailyRewardAmount        = 110;
     optional string ProductPage              = 120;
     optional bool   Disabled                 = 130;
+    optional bool   Display                  = 140;
 }
 
 message UpdateCoinResponse {
