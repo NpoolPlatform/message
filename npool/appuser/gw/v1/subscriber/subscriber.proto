@@ -49,6 +49,7 @@ message GetSubscriberesRequest {
 
 message GetSubscriberesResponse {
     repeated appuser.middleware.subscriber.v1.Subscriber Infos = 10;
+    uint32                                               Total = 20;
 }
 
 message DeleteSubscriberRequest {

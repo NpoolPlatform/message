@@ -176,6 +176,10 @@
           "items": {
             "$ref": "#/definitions/subscriberv1Subscriber"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
