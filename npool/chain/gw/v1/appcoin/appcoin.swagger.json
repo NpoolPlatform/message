@@ -289,6 +289,9 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Display": {
+          "type": "boolean"
         }
       }
     },
@@ -485,7 +488,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"daily_reward_amount\""
         },
-        "DisPlay": {
+        "Display": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"display\""
         }
