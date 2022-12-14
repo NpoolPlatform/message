@@ -17,6 +17,13 @@ service Gateway {
         };
     }
 
+    rpc GetSubscriberes (GetSubscriberesRequest) returns (GetSubscriberesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/subscriberes"
+            body: "*"
+        };
+    }
+
     rpc DeleteSubscriber (DeleteSubscriberRequest) returns (DeleteSubscriberResponse) {
         option (google.api.http) = {
             post: "/v1/delete/subscriber"
@@ -32,6 +39,16 @@ message CreateSubscriberRequest {
 
 message CreateSubscriberResponse {
     appuser.middleware.subscriber.v1.Subscriber Info = 10;
+}
+
+message GetSubscriberesRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetSubscriberesResponse {
+    repeated appuser.middleware.subscriber.v1.Subscriber Infos = 10;
 }
 
 message DeleteSubscriberRequest {

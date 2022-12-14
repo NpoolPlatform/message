@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateSubscriber(ctx context.Context, in *CreateSubscriberRequest, opts ...grpc.CallOption) (*CreateSubscriberResponse, error)
+	GetSubscriberes(ctx context.Context, in *GetSubscriberesRequest, opts ...grpc.CallOption) (*GetSubscriberesResponse, error)
 	DeleteSubscriber(ctx context.Context, in *DeleteSubscriberRequest, opts ...grpc.CallOption) (*DeleteSubscriberResponse, error)
 }
 
@@ -43,6 +44,15 @@ func (c *gatewayClient) CreateSubscriber(ctx context.Context, in *CreateSubscrib
 	return out, nil
 }
 
+func (c *gatewayClient) GetSubscriberes(ctx context.Context, in *GetSubscriberesRequest, opts ...grpc.CallOption) (*GetSubscriberesResponse, error) {
+	out := new(GetSubscriberesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.subscriber.v1.Gateway/GetSubscriberes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) DeleteSubscriber(ctx context.Context, in *DeleteSubscriberRequest, opts ...grpc.CallOption) (*DeleteSubscriberResponse, error) {
 	out := new(DeleteSubscriberResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.subscriber.v1.Gateway/DeleteSubscriber", in, out, opts...)
@@ -57,6 +67,7 @@ func (c *gatewayClient) DeleteSubscriber(ctx context.Context, in *DeleteSubscrib
 // for forward compatibility
 type GatewayServer interface {
 	CreateSubscriber(context.Context, *CreateSubscriberRequest) (*CreateSubscriberResponse, error)
+	GetSubscriberes(context.Context, *GetSubscriberesRequest) (*GetSubscriberesResponse, error)
 	DeleteSubscriber(context.Context, *DeleteSubscriberRequest) (*DeleteSubscriberResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -67,6 +78,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateSubscriber(context.Context, *CreateSubscriberRequest) (*CreateSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscriber not implemented")
+}
+func (UnimplementedGatewayServer) GetSubscriberes(context.Context, *GetSubscriberesRequest) (*GetSubscriberesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriberes not implemented")
 }
 func (UnimplementedGatewayServer) DeleteSubscriber(context.Context, *DeleteSubscriberRequest) (*DeleteSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSubscriber not implemented")
@@ -102,6 +116,24 @@ func _Gateway_CreateSubscriber_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetSubscriberes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscriberesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetSubscriberes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.subscriber.v1.Gateway/GetSubscriberes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetSubscriberes(ctx, req.(*GetSubscriberesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_DeleteSubscriber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteSubscriberRequest)
 	if err := dec(in); err != nil {
@@ -130,6 +162,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSubscriber",
 			Handler:    _Gateway_CreateSubscriber_Handler,
+		},
+		{
+			MethodName: "GetSubscriberes",
+			Handler:    _Gateway_GetSubscriberes_Handler,
 		},
 		{
 			MethodName: "DeleteSubscriber",
