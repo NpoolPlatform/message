@@ -16,6 +16,7 @@ service Middleware {
     rpc RefreshFiatCurrencies  (RefreshFiatCurrenciesRequest) returns (RefreshFiatCurrenciesResponse) {}
     rpc GetFiatCurrency        (GetFiatCurrencyRequest)       returns (GetFiatCurrencyResponse)       {}
     rpc GetCoinFiatCurrency    (GetCoinFiatCurrencyRequest)   returns (GetCoinFiatCurrencyResponse)   {}
+    rpc GetCoinFiatCurrencies    (GetCoinFiatCurrenciesRequest)   returns (GetCoinFiatCurrenciesResponse)   {}
     rpc GetFiatCurrencies      (GetFiatCurrenciesRequest)     returns (GetFiatCurrenciesResponse)     {}
     rpc GetHistories           (GetHistoriesRequest)          returns (GetHistoriesResponse)          {}
 }
@@ -38,14 +39,26 @@ message FiatCurrency {
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr     = 80;
     chain.manager.coin.currency.v1.FeedType FeedType = 90;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID      = 100;
+    // @inject_tag: sql:"coin_name"
+    string CoinName        = 110;
+    // @inject_tag: sql:"coin_logo"
+    string CoinLogo        = 120;
+    // @inject_tag: sql:"coin_unit"
+    string CoinUnit        = 130;
+    // @inject_tag: sql:"coin_env"
+    string CoinENV         = 140;
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID           = 10;
+    optional npool.v1.StringVal      ID          = 10;
     optional npool.v1.StringVal      FiatTypeID  = 20;
     optional npool.v1.StringSliceVal FiatTypeIDs = 30;
-    optional npool.v1.Uint32Val      StartAt      = 40;
-    optional npool.v1.Uint32Val      EndAt        = 50;
+    optional npool.v1.Uint32Val      StartAt     = 40;
+    optional npool.v1.Uint32Val      EndAt       = 50;
+    optional npool.v1.StringVal      CoinTypeID  = 60;
+    optional npool.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
 message CreateFiatCurrencyRequest {
@@ -84,6 +97,14 @@ message GetCoinFiatCurrencyRequest {
 
 message GetCoinFiatCurrencyResponse {
     FiatCurrency Info = 10;
+}
+
+message GetCoinFiatCurrenciesRequest {
+    string CoinTypeID = 10;
+}
+
+message GetCoinFiatCurrenciesResponse {
+    repeated FiatCurrency Info = 10;
 }
 
 message GetFiatCurrenciesRequest {

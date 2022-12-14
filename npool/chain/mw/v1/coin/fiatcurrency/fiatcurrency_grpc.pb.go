@@ -27,6 +27,7 @@ type MiddlewareClient interface {
 	RefreshFiatCurrencies(ctx context.Context, in *RefreshFiatCurrenciesRequest, opts ...grpc.CallOption) (*RefreshFiatCurrenciesResponse, error)
 	GetFiatCurrency(ctx context.Context, in *GetFiatCurrencyRequest, opts ...grpc.CallOption) (*GetFiatCurrencyResponse, error)
 	GetCoinFiatCurrency(ctx context.Context, in *GetCoinFiatCurrencyRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrencyResponse, error)
+	GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error)
 	GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 }
@@ -84,6 +85,15 @@ func (c *middlewareClient) GetCoinFiatCurrency(ctx context.Context, in *GetCoinF
 	return out, nil
 }
 
+func (c *middlewareClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error) {
+	out := new(GetCoinFiatCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetCoinFiatCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error) {
 	out := new(GetFiatCurrenciesResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrencies", in, out, opts...)
@@ -111,6 +121,7 @@ type MiddlewareServer interface {
 	RefreshFiatCurrencies(context.Context, *RefreshFiatCurrenciesRequest) (*RefreshFiatCurrenciesResponse, error)
 	GetFiatCurrency(context.Context, *GetFiatCurrencyRequest) (*GetFiatCurrencyResponse, error)
 	GetCoinFiatCurrency(context.Context, *GetCoinFiatCurrencyRequest) (*GetCoinFiatCurrencyResponse, error)
+	GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error)
 	GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -134,6 +145,9 @@ func (UnimplementedMiddlewareServer) GetFiatCurrency(context.Context, *GetFiatCu
 }
 func (UnimplementedMiddlewareServer) GetCoinFiatCurrency(context.Context, *GetCoinFiatCurrencyRequest) (*GetCoinFiatCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinFiatCurrency not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinFiatCurrencies not implemented")
 }
 func (UnimplementedMiddlewareServer) GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrencies not implemented")
@@ -244,6 +258,24 @@ func _Middleware_GetCoinFiatCurrency_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetCoinFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinFiatCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCoinFiatCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetCoinFiatCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCoinFiatCurrencies(ctx, req.(*GetCoinFiatCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetFiatCurrenciesRequest)
 	if err := dec(in); err != nil {
@@ -306,6 +338,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoinFiatCurrency",
 			Handler:    _Middleware_GetCoinFiatCurrency_Handler,
+		},
+		{
+			MethodName: "GetCoinFiatCurrencies",
+			Handler:    _Middleware_GetCoinFiatCurrencies_Handler,
 		},
 		{
 			MethodName: "GetFiatCurrencies",

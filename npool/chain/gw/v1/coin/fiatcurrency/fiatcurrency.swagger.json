@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCoinFiatCurrenciesResponse"
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCoinFiatCurrenciesRequest"
+              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesRequest"
             }
           }
         ],
@@ -114,6 +114,22 @@
     }
   },
   "definitions": {
+    "chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+        }
+      }
+    },
     "chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesRequest": {
       "type": "object",
       "properties": {
@@ -220,6 +236,26 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1FeedType"
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+        "CoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
+        "CoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_env\""
         }
       }
     },
@@ -259,22 +295,6 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
-    },
-    "v1GetCoinFiatCurrenciesRequest": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetCoinFiatCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-        }
-      }
     }
   }
 }
