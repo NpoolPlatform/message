@@ -33,6 +33,7 @@ message AppCoinReq {
     optional string    ProductPage              = 90;
     optional bool      Disabled                 = 100;
     optional string    DailyRewardAmount        = 110;
+    optional bool      Display                  = 120;
 }
 
 message AppCoin {
@@ -48,6 +49,7 @@ message AppCoin {
     string DailyRewardAmount        = 100;
     uint32 CreatedAt                = 110;
     uint32 UpdatedAt                = 120;
+    bool   Display                  = 130;
 }
 
 message Conds {
