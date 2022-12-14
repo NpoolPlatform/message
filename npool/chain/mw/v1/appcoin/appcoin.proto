@@ -112,7 +112,7 @@ message Coin {
     // @inject_tag: sql:"daily_reward_amount"
     string DailyRewardAmount            = 340;
     // @inject_tag: sql:"display"
-    bool   DisPlay                      = 350;
+    bool   Display                      = 350;
 }
 
 message Conds {
