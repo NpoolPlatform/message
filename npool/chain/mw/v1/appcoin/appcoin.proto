@@ -31,6 +31,7 @@ message CoinReq {
     optional string ProductPage              = 110;
     optional bool   Disabled                 = 120;
     optional string DailyRewardAmount        = 130;
+    optional bool   Display                  = 140;
 }
 
 message Coin {
@@ -110,6 +111,8 @@ message Coin {
     uint32 UpdatedAt                    = 330;
     // @inject_tag: sql:"daily_reward_amount"
     string DailyRewardAmount            = 340;
+    // @inject_tag: sql:"display"
+    bool   DisPlay                      = 350;
 }
 
 message Conds {
