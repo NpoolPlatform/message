@@ -1,32 +1,32 @@
 syntax = "proto3";
 
-package chain.manager.coin.legaltype.v1;
+package chain.manager.coin.fiatcurrencytype.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/legaltype";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/fiatcurrencytype";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc CreateLegalType     (CreateLegalTypeRequest)     returns (CreateLegalTypeResponse)     {}
-    rpc CreateLegalTypes    (CreateLegalTypesRequest)    returns (CreateLegalTypesResponse)    {}
-    rpc UpdateLegalType     (UpdateLegalTypeRequest)     returns (UpdateLegalTypeResponse)     {}
-    rpc GetLegalType        (GetLegalTypeRequest)        returns (GetLegalTypeResponse)        {}
-    rpc GetLegalTypeOnly    (GetLegalTypeOnlyRequest)    returns (GetLegalTypeOnlyResponse)    {}
-    rpc GetLegalTypes       (GetLegalTypesRequest)       returns (GetLegalTypesResponse)       {}
-    rpc ExistLegalType      (ExistLegalTypeRequest)      returns (ExistLegalTypeResponse)      {}
-    rpc ExistLegalTypeConds (ExistLegalTypeCondsRequest) returns (ExistLegalTypeCondsResponse) {}
-    rpc CountLegalTypes     (CountLegalTypesRequest)     returns (CountLegalTypesResponse)     {}
-    rpc DeleteLegalType     (DeleteLegalTypeRequest)     returns (DeleteLegalTypeResponse)     {}
+    rpc CreateFiatCurrencyType     (CreateFiatCurrencyTypeRequest)     returns (CreateFiatCurrencyTypeResponse)     {}
+    rpc CreateFiatCurrencyTypes    (CreateFiatCurrencyTypesRequest)    returns (CreateFiatCurrencyTypesResponse)    {}
+    rpc UpdateFiatCurrencyType     (UpdateFiatCurrencyTypeRequest)     returns (UpdateFiatCurrencyTypeResponse)     {}
+    rpc GetFiatCurrencyType        (GetFiatCurrencyTypeRequest)        returns (GetFiatCurrencyTypeResponse)        {}
+    rpc GetFiatCurrencyTypeOnly    (GetFiatCurrencyTypeOnlyRequest)    returns (GetFiatCurrencyTypeOnlyResponse)    {}
+    rpc GetFiatCurrencyTypes       (GetFiatCurrencyTypesRequest)       returns (GetFiatCurrencyTypesResponse)       {}
+    rpc ExistFiatCurrencyType      (ExistFiatCurrencyTypeRequest)      returns (ExistFiatCurrencyTypeResponse)      {}
+    rpc ExistFiatCurrencyTypeConds (ExistFiatCurrencyTypeCondsRequest) returns (ExistFiatCurrencyTypeCondsResponse) {}
+    rpc CountFiatCurrencyTypes     (CountFiatCurrencyTypesRequest)     returns (CountFiatCurrencyTypesResponse)     {}
+    rpc DeleteFiatCurrencyType     (DeleteFiatCurrencyTypeRequest)     returns (DeleteFiatCurrencyTypeResponse)     {}
 }
 
-message LegalTypeReq {
+message FiatCurrencyTypeReq {
     optional string    ID   = 10;
     optional string    Name = 20;
 }
 
-message LegalType {
+message FiatCurrencyType {
     string   ID        = 10;
     string   Name      = 20;
     uint32   CreatedAt = 30;
@@ -39,86 +39,86 @@ message Conds {
 }
 
 
-message CreateLegalTypeRequest {
-    LegalTypeReq Info = 10;
+message CreateFiatCurrencyTypeRequest {
+    FiatCurrencyTypeReq Info = 10;
 }
 
-message CreateLegalTypeResponse {
-    LegalType Info = 10;
+message CreateFiatCurrencyTypeResponse {
+    FiatCurrencyType Info = 10;
 }
 
-message CreateLegalTypesRequest {
-    repeated LegalTypeReq Infos = 10;
+message CreateFiatCurrencyTypesRequest {
+    repeated FiatCurrencyTypeReq Infos = 10;
 }
 
-message CreateLegalTypesResponse {
-    repeated LegalType Infos = 10;
+message CreateFiatCurrencyTypesResponse {
+    repeated FiatCurrencyType Infos = 10;
 }
 
-message UpdateLegalTypeRequest {
-    LegalTypeReq Info = 10;
+message UpdateFiatCurrencyTypeRequest {
+    FiatCurrencyTypeReq Info = 10;
 }
 
-message UpdateLegalTypeResponse {
-    LegalType Info = 10;
+message UpdateFiatCurrencyTypeResponse {
+    FiatCurrencyType Info = 10;
 }
 
-message GetLegalTypeRequest {
+message GetFiatCurrencyTypeRequest {
     string ID = 10;
 }
 
-message GetLegalTypeResponse {
-    LegalType Info = 10;
+message GetFiatCurrencyTypeResponse {
+    FiatCurrencyType Info = 10;
 }
 
-message GetLegalTypesRequest {
+message GetFiatCurrencyTypesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetLegalTypesResponse {
-    repeated LegalType Infos = 10;
+message GetFiatCurrencyTypesResponse {
+    repeated FiatCurrencyType Infos = 10;
     uint32            Total = 20;
 }
 
-message GetLegalTypeOnlyRequest {
+message GetFiatCurrencyTypeOnlyRequest {
     Conds Conds = 10;
 }
 
-message GetLegalTypeOnlyResponse {
-    LegalType Info = 10;
+message GetFiatCurrencyTypeOnlyResponse {
+    FiatCurrencyType Info = 10;
 }
 
-message ExistLegalTypeRequest {
+message ExistFiatCurrencyTypeRequest {
     string ID = 10;
 }
 
-message ExistLegalTypeResponse {
+message ExistFiatCurrencyTypeResponse {
     bool Info = 10;
 }
 
-message ExistLegalTypeCondsRequest {
+message ExistFiatCurrencyTypeCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistLegalTypeCondsResponse {
+message ExistFiatCurrencyTypeCondsResponse {
     bool Info = 10;
 }
 
-message CountLegalTypesRequest {
+message CountFiatCurrencyTypesRequest {
     Conds Conds = 10;
 }
 
-message CountLegalTypesResponse {
+message CountFiatCurrencyTypesResponse {
     uint32 Info = 10;
 }
 
-message DeleteLegalTypeRequest {
+message DeleteFiatCurrencyTypeRequest {
     string ID = 10;
 }
 
-message DeleteLegalTypeResponse {
-    LegalType Info = 10;
+message DeleteFiatCurrencyTypeResponse {
+    FiatCurrencyType Info = 10;
 }
 

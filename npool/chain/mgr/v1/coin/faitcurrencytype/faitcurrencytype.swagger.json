@@ -55,7 +55,7 @@
         }
       }
     },
-    "v1CountLegalTypesResponse": {
+    "v1CountFiatCurrencyTypesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -64,34 +64,34 @@
         }
       }
     },
-    "v1CreateLegalTypeResponse": {
+    "v1CreateFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalType"
+          "$ref": "#/definitions/v1FiatCurrencyType"
         }
       }
     },
-    "v1CreateLegalTypesResponse": {
+    "v1CreateFiatCurrencyTypesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1LegalType"
+            "$ref": "#/definitions/v1FiatCurrencyType"
           }
         }
       }
     },
-    "v1DeleteLegalTypeResponse": {
+    "v1DeleteFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalType"
+          "$ref": "#/definitions/v1FiatCurrencyType"
         }
       }
     },
-    "v1ExistLegalTypeCondsResponse": {
+    "v1ExistFiatCurrencyTypeCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -99,7 +99,7 @@
         }
       }
     },
-    "v1ExistLegalTypeResponse": {
+    "v1ExistFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -107,38 +107,7 @@
         }
       }
     },
-    "v1GetLegalTypeOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1LegalType"
-        }
-      }
-    },
-    "v1GetLegalTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1LegalType"
-        }
-      }
-    },
-    "v1GetLegalTypesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1LegalType"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1LegalType": {
+    "v1FiatCurrencyType": {
       "type": "object",
       "properties": {
         "ID": {
@@ -157,7 +126,7 @@
         }
       }
     },
-    "v1LegalTypeReq": {
+    "v1FiatCurrencyTypeReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -165,6 +134,37 @@
         },
         "Name": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetFiatCurrencyTypeOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrencyType"
+        }
+      }
+    },
+    "v1GetFiatCurrencyTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrencyType"
+        }
+      }
+    },
+    "v1GetFiatCurrencyTypesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FiatCurrencyType"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -179,11 +179,11 @@
         }
       }
     },
-    "v1UpdateLegalTypeResponse": {
+    "v1UpdateFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1LegalType"
+          "$ref": "#/definitions/v1FiatCurrencyType"
         }
       }
     }
