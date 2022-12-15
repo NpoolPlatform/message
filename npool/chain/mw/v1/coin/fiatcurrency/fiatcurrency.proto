@@ -110,6 +110,7 @@ message GetCoinFiatCurrenciesResponse {
 
 message GetFiatCurrenciesRequest {
     repeated string FiatCurrencyTypeIDs = 10;
+    repeated string CoinTypeIDs         = 20;
 }
 
 message GetFiatCurrenciesResponse {

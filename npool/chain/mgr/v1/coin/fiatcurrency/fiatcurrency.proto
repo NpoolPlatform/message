@@ -22,16 +22,16 @@ service Manager {
 }
 
 message FiatCurrencyReq {
-    optional string    ID              = 10;
-    optional string    FiatTypeID      = 20;
+    optional string    ID                 = 10;
+    optional string    FiatCurrencyTypeID = 20;
     optional chain.manager.coin.currency.v1.FeedType FeedType = 30;
     optional string    MarketValueHigh = 40;
     optional string    MarketValueLow  = 50;
 }
 
 message FiatCurrency {
-    string   ID                = 10;
-    string   FiatTypeID        = 20;
+    string   ID                 = 10;
+    string   FiatCurrencyTypeID = 20;
     chain.manager.coin.currency.v1.FeedType FeedType = 30;
     string   MarketValueHigh   = 40;
     string   MarketValueLow    = 50;
@@ -40,9 +40,9 @@ message FiatCurrency {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal FiatTypeID = 20;
-    optional npool.v1.Uint32Val StartAt     = 30;
+    optional npool.v1.StringVal ID                 = 10;
+    optional npool.v1.StringVal FiatCurrencyTypeID = 20;
+    optional npool.v1.Uint32Val StartAt            = 30;
     optional npool.v1.Uint32Val EndAt       = 40;
     optional npool.v1.Int32Val  FeedType    = 50;
 }

@@ -186,7 +186,7 @@
         "ID": {
           "type": "string"
         },
-        "FiatTypeID": {
+        "FiatCurrencyTypeID": {
           "type": "string"
         },
         "FeedType": {

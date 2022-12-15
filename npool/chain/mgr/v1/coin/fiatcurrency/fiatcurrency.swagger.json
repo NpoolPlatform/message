@@ -23,7 +23,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "FiatTypeID": {
+        "FiatCurrencyTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "StartAt": {
@@ -132,7 +132,7 @@
         "ID": {
           "type": "string"
         },
-        "FiatTypeID": {
+        "FiatCurrencyTypeID": {
           "type": "string"
         },
         "FeedType": {
@@ -160,7 +160,7 @@
         "ID": {
           "type": "string"
         },
-        "FiatTypeID": {
+        "FiatCurrencyTypeID": {
           "type": "string"
         },
         "FeedType": {
