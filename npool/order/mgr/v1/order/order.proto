@@ -62,6 +62,7 @@ message OrderReq {
     optional OrderType  Type                    = 140;
     optional OrderState State                   = 150;
     optional uint32     CreatedAt               = 160;
+    optional npool.v1.StringSliceVal IDs        = 170;
 }
 
 message Order {
