@@ -101,7 +101,7 @@ message GetCoinFiatCurrencyResponse {
 }
 
 message GetCoinFiatCurrenciesRequest {
-    Conds Conds  = 10;
+    repeated string CoinTypeIDs = 10;
 }
 
 message GetCoinFiatCurrenciesResponse {
@@ -109,12 +109,13 @@ message GetCoinFiatCurrenciesResponse {
 }
 
 message GetFiatCurrenciesRequest {
-    Conds Conds  = 10;
+    repeated string FiatCurrencyTypeIDs = 10;
 }
 
 message GetFiatCurrenciesResponse {
-    repeated FiatCurrency Infos = 10;
+    repeated FiatCurrency Info = 10;
 }
+
 
 message GetHistoriesRequest {
     Conds Conds  = 10;
