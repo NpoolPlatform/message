@@ -156,6 +156,11 @@ message CreateNAppGoodRequest {
     int32  DisplayIndex        = 70;
     int32  PurchaseLimit       = 80;
     int32  CommissionPercent   = 90;
+    optional uint32 SaleStartAt    = 100;
+    optional uint32 SaleEndAt      = 110;
+    optional uint32 ServiceStartAt = 120;
+    optional uint32 TechnicalFeeRatio    = 130;
+    optional uint32 ElectricityFeeRatio  = 140;
 }
 
 message CreateNAppGoodResponse {
@@ -203,6 +208,8 @@ message UpdateAppGoodRequest {
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional int32  CommissionPercent   = 90;
+    optional uint32 SaleStartAt         = 100;
+    optional uint32 SaleEndAt           = 110;
 }
 
 message UpdateAppGoodResponse {
@@ -219,6 +226,9 @@ message UpdateNAppGoodRequest {
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional int32  CommissionPercent   = 90;
+    optional uint32 ServiceStartAt      = 100;
+    optional uint32 TechnicalFeeRatio   = 110;
+    optional uint32 ElectricityFeeRatio = 120;
 }
 
 message UpdateNAppGoodResponse {

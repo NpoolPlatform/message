@@ -35,6 +35,8 @@ message AppGoodReq {
     optional uint32 SaleStartAt         = 110;
     optional uint32 SaleEndAt           = 120;
     optional uint32 ServiceStartAt      = 130;
+    optional uint32 TechnicalFeeRatio   = 140;
+    optional uint32 ElectricityFeeRatio = 150;
 }
 
 message AppGood {
