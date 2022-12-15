@@ -267,6 +267,15 @@
         "PhoneNO": {
           "type": "string"
         },
+        "Username": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
         "KycID": {
           "type": "string",
           "title": "kyc"
