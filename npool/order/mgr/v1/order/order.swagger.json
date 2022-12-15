@@ -73,6 +73,9 @@
         },
         "UserSpecialReductionID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -278,9 +281,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
