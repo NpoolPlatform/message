@@ -567,6 +567,18 @@
         "SaleEndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

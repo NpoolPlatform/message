@@ -210,6 +210,9 @@ message UpdateAppGoodRequest {
     optional int32  CommissionPercent   = 90;
     optional uint32 SaleStartAt         = 100;
     optional uint32 SaleEndAt           = 110;
+    optional uint32 ServiceStartAt      = 120;
+    optional uint32 TechnicalFeeRatio   = 130;
+    optional uint32 ElectricityFeeRatio = 140;
 }
 
 message UpdateAppGoodResponse {
