@@ -127,7 +127,7 @@
     "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "Info": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
