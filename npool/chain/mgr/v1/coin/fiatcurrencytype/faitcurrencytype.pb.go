@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.18.1
-// source: npool/chain/mgr/v1/coin/faitcurrencytype/faitcurrencytype.proto
+// source: npool/chain/mgr/v1/coin/fiatcurrencytype/faitcurrencytype.proto
 
 package fiatcurrencytype
 
@@ -34,7 +34,7 @@ type FiatCurrencyTypeReq struct {
 func (x *FiatCurrencyTypeReq) Reset() {
 	*x = FiatCurrencyTypeReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[0]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -47,7 +47,7 @@ func (x *FiatCurrencyTypeReq) String() string {
 func (*FiatCurrencyTypeReq) ProtoMessage() {}
 
 func (x *FiatCurrencyTypeReq) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[0]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *FiatCurrencyTypeReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FiatCurrencyTypeReq.ProtoReflect.Descriptor instead.
 func (*FiatCurrencyTypeReq) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{0}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *FiatCurrencyTypeReq) GetID() string {
@@ -91,7 +91,7 @@ type FiatCurrencyType struct {
 func (x *FiatCurrencyType) Reset() {
 	*x = FiatCurrencyType{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[1]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -104,7 +104,7 @@ func (x *FiatCurrencyType) String() string {
 func (*FiatCurrencyType) ProtoMessage() {}
 
 func (x *FiatCurrencyType) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[1]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -117,7 +117,7 @@ func (x *FiatCurrencyType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FiatCurrencyType.ProtoReflect.Descriptor instead.
 func (*FiatCurrencyType) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{1}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *FiatCurrencyType) GetID() string {
@@ -160,7 +160,7 @@ type Conds struct {
 func (x *Conds) Reset() {
 	*x = Conds{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[2]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -173,7 +173,7 @@ func (x *Conds) String() string {
 func (*Conds) ProtoMessage() {}
 
 func (x *Conds) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[2]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -186,7 +186,7 @@ func (x *Conds) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Conds.ProtoReflect.Descriptor instead.
 func (*Conds) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{2}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Conds) GetID() *npool.StringVal {
@@ -214,7 +214,7 @@ type CreateFiatCurrencyTypeRequest struct {
 func (x *CreateFiatCurrencyTypeRequest) Reset() {
 	*x = CreateFiatCurrencyTypeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[3]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -227,7 +227,7 @@ func (x *CreateFiatCurrencyTypeRequest) String() string {
 func (*CreateFiatCurrencyTypeRequest) ProtoMessage() {}
 
 func (x *CreateFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[3]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -240,7 +240,7 @@ func (x *CreateFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFiatCurrencyTypeRequest.ProtoReflect.Descriptor instead.
 func (*CreateFiatCurrencyTypeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{3}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateFiatCurrencyTypeRequest) GetInfo() *FiatCurrencyTypeReq {
@@ -261,7 +261,7 @@ type CreateFiatCurrencyTypeResponse struct {
 func (x *CreateFiatCurrencyTypeResponse) Reset() {
 	*x = CreateFiatCurrencyTypeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[4]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -274,7 +274,7 @@ func (x *CreateFiatCurrencyTypeResponse) String() string {
 func (*CreateFiatCurrencyTypeResponse) ProtoMessage() {}
 
 func (x *CreateFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[4]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -287,7 +287,7 @@ func (x *CreateFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFiatCurrencyTypeResponse.ProtoReflect.Descriptor instead.
 func (*CreateFiatCurrencyTypeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{4}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateFiatCurrencyTypeResponse) GetInfo() *FiatCurrencyType {
@@ -308,7 +308,7 @@ type CreateFiatCurrencyTypesRequest struct {
 func (x *CreateFiatCurrencyTypesRequest) Reset() {
 	*x = CreateFiatCurrencyTypesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[5]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -321,7 +321,7 @@ func (x *CreateFiatCurrencyTypesRequest) String() string {
 func (*CreateFiatCurrencyTypesRequest) ProtoMessage() {}
 
 func (x *CreateFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[5]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -334,7 +334,7 @@ func (x *CreateFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFiatCurrencyTypesRequest.ProtoReflect.Descriptor instead.
 func (*CreateFiatCurrencyTypesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{5}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateFiatCurrencyTypesRequest) GetInfos() []*FiatCurrencyTypeReq {
@@ -355,7 +355,7 @@ type CreateFiatCurrencyTypesResponse struct {
 func (x *CreateFiatCurrencyTypesResponse) Reset() {
 	*x = CreateFiatCurrencyTypesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[6]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -368,7 +368,7 @@ func (x *CreateFiatCurrencyTypesResponse) String() string {
 func (*CreateFiatCurrencyTypesResponse) ProtoMessage() {}
 
 func (x *CreateFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[6]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -381,7 +381,7 @@ func (x *CreateFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFiatCurrencyTypesResponse.ProtoReflect.Descriptor instead.
 func (*CreateFiatCurrencyTypesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{6}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CreateFiatCurrencyTypesResponse) GetInfos() []*FiatCurrencyType {
@@ -402,7 +402,7 @@ type UpdateFiatCurrencyTypeRequest struct {
 func (x *UpdateFiatCurrencyTypeRequest) Reset() {
 	*x = UpdateFiatCurrencyTypeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[7]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -415,7 +415,7 @@ func (x *UpdateFiatCurrencyTypeRequest) String() string {
 func (*UpdateFiatCurrencyTypeRequest) ProtoMessage() {}
 
 func (x *UpdateFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[7]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -428,7 +428,7 @@ func (x *UpdateFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFiatCurrencyTypeRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFiatCurrencyTypeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{7}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdateFiatCurrencyTypeRequest) GetInfo() *FiatCurrencyTypeReq {
@@ -449,7 +449,7 @@ type UpdateFiatCurrencyTypeResponse struct {
 func (x *UpdateFiatCurrencyTypeResponse) Reset() {
 	*x = UpdateFiatCurrencyTypeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[8]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -462,7 +462,7 @@ func (x *UpdateFiatCurrencyTypeResponse) String() string {
 func (*UpdateFiatCurrencyTypeResponse) ProtoMessage() {}
 
 func (x *UpdateFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[8]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -475,7 +475,7 @@ func (x *UpdateFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFiatCurrencyTypeResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFiatCurrencyTypeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{8}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *UpdateFiatCurrencyTypeResponse) GetInfo() *FiatCurrencyType {
@@ -496,7 +496,7 @@ type GetFiatCurrencyTypeRequest struct {
 func (x *GetFiatCurrencyTypeRequest) Reset() {
 	*x = GetFiatCurrencyTypeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[9]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -509,7 +509,7 @@ func (x *GetFiatCurrencyTypeRequest) String() string {
 func (*GetFiatCurrencyTypeRequest) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[9]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -522,7 +522,7 @@ func (x *GetFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypeRequest.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{9}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetFiatCurrencyTypeRequest) GetID() string {
@@ -543,7 +543,7 @@ type GetFiatCurrencyTypeResponse struct {
 func (x *GetFiatCurrencyTypeResponse) Reset() {
 	*x = GetFiatCurrencyTypeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[10]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -556,7 +556,7 @@ func (x *GetFiatCurrencyTypeResponse) String() string {
 func (*GetFiatCurrencyTypeResponse) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[10]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -569,7 +569,7 @@ func (x *GetFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypeResponse.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{10}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetFiatCurrencyTypeResponse) GetInfo() *FiatCurrencyType {
@@ -592,7 +592,7 @@ type GetFiatCurrencyTypesRequest struct {
 func (x *GetFiatCurrencyTypesRequest) Reset() {
 	*x = GetFiatCurrencyTypesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[11]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -605,7 +605,7 @@ func (x *GetFiatCurrencyTypesRequest) String() string {
 func (*GetFiatCurrencyTypesRequest) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[11]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -618,7 +618,7 @@ func (x *GetFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypesRequest.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{11}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetFiatCurrencyTypesRequest) GetConds() *Conds {
@@ -654,7 +654,7 @@ type GetFiatCurrencyTypesResponse struct {
 func (x *GetFiatCurrencyTypesResponse) Reset() {
 	*x = GetFiatCurrencyTypesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[12]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -667,7 +667,7 @@ func (x *GetFiatCurrencyTypesResponse) String() string {
 func (*GetFiatCurrencyTypesResponse) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[12]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -680,7 +680,7 @@ func (x *GetFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypesResponse.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{12}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetFiatCurrencyTypesResponse) GetInfos() []*FiatCurrencyType {
@@ -708,7 +708,7 @@ type GetFiatCurrencyTypeOnlyRequest struct {
 func (x *GetFiatCurrencyTypeOnlyRequest) Reset() {
 	*x = GetFiatCurrencyTypeOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[13]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -721,7 +721,7 @@ func (x *GetFiatCurrencyTypeOnlyRequest) String() string {
 func (*GetFiatCurrencyTypeOnlyRequest) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypeOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[13]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -734,7 +734,7 @@ func (x *GetFiatCurrencyTypeOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypeOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypeOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{13}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetFiatCurrencyTypeOnlyRequest) GetConds() *Conds {
@@ -755,7 +755,7 @@ type GetFiatCurrencyTypeOnlyResponse struct {
 func (x *GetFiatCurrencyTypeOnlyResponse) Reset() {
 	*x = GetFiatCurrencyTypeOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[14]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -768,7 +768,7 @@ func (x *GetFiatCurrencyTypeOnlyResponse) String() string {
 func (*GetFiatCurrencyTypeOnlyResponse) ProtoMessage() {}
 
 func (x *GetFiatCurrencyTypeOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[14]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -781,7 +781,7 @@ func (x *GetFiatCurrencyTypeOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFiatCurrencyTypeOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetFiatCurrencyTypeOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{14}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetFiatCurrencyTypeOnlyResponse) GetInfo() *FiatCurrencyType {
@@ -802,7 +802,7 @@ type ExistFiatCurrencyTypeRequest struct {
 func (x *ExistFiatCurrencyTypeRequest) Reset() {
 	*x = ExistFiatCurrencyTypeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[15]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -815,7 +815,7 @@ func (x *ExistFiatCurrencyTypeRequest) String() string {
 func (*ExistFiatCurrencyTypeRequest) ProtoMessage() {}
 
 func (x *ExistFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[15]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -828,7 +828,7 @@ func (x *ExistFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistFiatCurrencyTypeRequest.ProtoReflect.Descriptor instead.
 func (*ExistFiatCurrencyTypeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{15}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistFiatCurrencyTypeRequest) GetID() string {
@@ -849,7 +849,7 @@ type ExistFiatCurrencyTypeResponse struct {
 func (x *ExistFiatCurrencyTypeResponse) Reset() {
 	*x = ExistFiatCurrencyTypeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[16]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -862,7 +862,7 @@ func (x *ExistFiatCurrencyTypeResponse) String() string {
 func (*ExistFiatCurrencyTypeResponse) ProtoMessage() {}
 
 func (x *ExistFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[16]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -875,7 +875,7 @@ func (x *ExistFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistFiatCurrencyTypeResponse.ProtoReflect.Descriptor instead.
 func (*ExistFiatCurrencyTypeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{16}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistFiatCurrencyTypeResponse) GetInfo() bool {
@@ -896,7 +896,7 @@ type ExistFiatCurrencyTypeCondsRequest struct {
 func (x *ExistFiatCurrencyTypeCondsRequest) Reset() {
 	*x = ExistFiatCurrencyTypeCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[17]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -909,7 +909,7 @@ func (x *ExistFiatCurrencyTypeCondsRequest) String() string {
 func (*ExistFiatCurrencyTypeCondsRequest) ProtoMessage() {}
 
 func (x *ExistFiatCurrencyTypeCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[17]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -922,7 +922,7 @@ func (x *ExistFiatCurrencyTypeCondsRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ExistFiatCurrencyTypeCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistFiatCurrencyTypeCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{17}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ExistFiatCurrencyTypeCondsRequest) GetConds() *Conds {
@@ -943,7 +943,7 @@ type ExistFiatCurrencyTypeCondsResponse struct {
 func (x *ExistFiatCurrencyTypeCondsResponse) Reset() {
 	*x = ExistFiatCurrencyTypeCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[18]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -956,7 +956,7 @@ func (x *ExistFiatCurrencyTypeCondsResponse) String() string {
 func (*ExistFiatCurrencyTypeCondsResponse) ProtoMessage() {}
 
 func (x *ExistFiatCurrencyTypeCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[18]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -969,7 +969,7 @@ func (x *ExistFiatCurrencyTypeCondsResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ExistFiatCurrencyTypeCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistFiatCurrencyTypeCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{18}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExistFiatCurrencyTypeCondsResponse) GetInfo() bool {
@@ -990,7 +990,7 @@ type CountFiatCurrencyTypesRequest struct {
 func (x *CountFiatCurrencyTypesRequest) Reset() {
 	*x = CountFiatCurrencyTypesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[19]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1003,7 +1003,7 @@ func (x *CountFiatCurrencyTypesRequest) String() string {
 func (*CountFiatCurrencyTypesRequest) ProtoMessage() {}
 
 func (x *CountFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[19]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1016,7 +1016,7 @@ func (x *CountFiatCurrencyTypesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountFiatCurrencyTypesRequest.ProtoReflect.Descriptor instead.
 func (*CountFiatCurrencyTypesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{19}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CountFiatCurrencyTypesRequest) GetConds() *Conds {
@@ -1037,7 +1037,7 @@ type CountFiatCurrencyTypesResponse struct {
 func (x *CountFiatCurrencyTypesResponse) Reset() {
 	*x = CountFiatCurrencyTypesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[20]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1050,7 +1050,7 @@ func (x *CountFiatCurrencyTypesResponse) String() string {
 func (*CountFiatCurrencyTypesResponse) ProtoMessage() {}
 
 func (x *CountFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[20]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1063,7 +1063,7 @@ func (x *CountFiatCurrencyTypesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountFiatCurrencyTypesResponse.ProtoReflect.Descriptor instead.
 func (*CountFiatCurrencyTypesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{20}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CountFiatCurrencyTypesResponse) GetInfo() uint32 {
@@ -1084,7 +1084,7 @@ type DeleteFiatCurrencyTypeRequest struct {
 func (x *DeleteFiatCurrencyTypeRequest) Reset() {
 	*x = DeleteFiatCurrencyTypeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[21]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1097,7 +1097,7 @@ func (x *DeleteFiatCurrencyTypeRequest) String() string {
 func (*DeleteFiatCurrencyTypeRequest) ProtoMessage() {}
 
 func (x *DeleteFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[21]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1110,7 +1110,7 @@ func (x *DeleteFiatCurrencyTypeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFiatCurrencyTypeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFiatCurrencyTypeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{21}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *DeleteFiatCurrencyTypeRequest) GetID() string {
@@ -1131,7 +1131,7 @@ type DeleteFiatCurrencyTypeResponse struct {
 func (x *DeleteFiatCurrencyTypeResponse) Reset() {
 	*x = DeleteFiatCurrencyTypeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[22]
+		mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1144,7 +1144,7 @@ func (x *DeleteFiatCurrencyTypeResponse) String() string {
 func (*DeleteFiatCurrencyTypeResponse) ProtoMessage() {}
 
 func (x *DeleteFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[22]
+	mi := &file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1157,7 +1157,7 @@ func (x *DeleteFiatCurrencyTypeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFiatCurrencyTypeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteFiatCurrencyTypeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{22}
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DeleteFiatCurrencyTypeResponse) GetInfo() *FiatCurrencyType {
@@ -1167,11 +1167,11 @@ func (x *DeleteFiatCurrencyTypeResponse) GetInfo() *FiatCurrencyType {
 	return nil
 }
 
-var File_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto protoreflect.FileDescriptor
+var File_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto protoreflect.FileDescriptor
 
-var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDesc = []byte{
+var file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x67,
-	0x72, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x66, 0x61, 0x69, 0x74, 0x63, 0x75,
+	0x72, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x66, 0x69, 0x61, 0x74, 0x63, 0x75,
 	0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x74, 0x79, 0x70, 0x65, 0x2f, 0x66, 0x61, 0x69, 0x74, 0x63,
 	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x26, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
@@ -1436,19 +1436,19 @@ var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDesc
 }
 
 var (
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescOnce sync.Once
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescData = file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDesc
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescOnce sync.Once
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescData = file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDesc
 )
 
-func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescGZIP() []byte {
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescOnce.Do(func() {
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescData)
+func file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescGZIP() []byte {
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescOnce.Do(func() {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescData)
 	})
-	return file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDescData
+	return file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDescData
 }
 
-var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_goTypes = []interface{}{
+var file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_goTypes = []interface{}{
 	(*FiatCurrencyTypeReq)(nil),                // 0: chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyTypeReq
 	(*FiatCurrencyType)(nil),                   // 1: chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType
 	(*Conds)(nil),                              // 2: chain.manager.coin.fiatcurrencytype.v1.Conds
@@ -1474,7 +1474,7 @@ var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_goTypes
 	(*DeleteFiatCurrencyTypeResponse)(nil),     // 22: chain.manager.coin.fiatcurrencytype.v1.DeleteFiatCurrencyTypeResponse
 	(*npool.StringVal)(nil),                    // 23: npool.v1.StringVal
 }
-var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_depIdxs = []int32{
+var file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_depIdxs = []int32{
 	23, // 0: chain.manager.coin.fiatcurrencytype.v1.Conds.ID:type_name -> npool.v1.StringVal
 	23, // 1: chain.manager.coin.fiatcurrencytype.v1.Conds.Name:type_name -> npool.v1.StringVal
 	0,  // 2: chain.manager.coin.fiatcurrencytype.v1.CreateFiatCurrencyTypeRequest.Info:type_name -> chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyTypeReq
@@ -1518,13 +1518,13 @@ var file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_depIdxs
 	0,  // [0:16] is the sub-list for field type_name
 }
 
-func init() { file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init() }
-func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init() {
-	if File_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto != nil {
+func init() { file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_init() }
+func file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_init() {
+	if File_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FiatCurrencyTypeReq); i {
 			case 0:
 				return &v.state
@@ -1536,7 +1536,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FiatCurrencyType); i {
 			case 0:
 				return &v.state
@@ -1548,7 +1548,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Conds); i {
 			case 0:
 				return &v.state
@@ -1560,7 +1560,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFiatCurrencyTypeRequest); i {
 			case 0:
 				return &v.state
@@ -1572,7 +1572,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFiatCurrencyTypeResponse); i {
 			case 0:
 				return &v.state
@@ -1584,7 +1584,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFiatCurrencyTypesRequest); i {
 			case 0:
 				return &v.state
@@ -1596,7 +1596,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFiatCurrencyTypesResponse); i {
 			case 0:
 				return &v.state
@@ -1608,7 +1608,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFiatCurrencyTypeRequest); i {
 			case 0:
 				return &v.state
@@ -1620,7 +1620,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFiatCurrencyTypeResponse); i {
 			case 0:
 				return &v.state
@@ -1632,7 +1632,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypeRequest); i {
 			case 0:
 				return &v.state
@@ -1644,7 +1644,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypeResponse); i {
 			case 0:
 				return &v.state
@@ -1656,7 +1656,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypesRequest); i {
 			case 0:
 				return &v.state
@@ -1668,7 +1668,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypesResponse); i {
 			case 0:
 				return &v.state
@@ -1680,7 +1680,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypeOnlyRequest); i {
 			case 0:
 				return &v.state
@@ -1692,7 +1692,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFiatCurrencyTypeOnlyResponse); i {
 			case 0:
 				return &v.state
@@ -1704,7 +1704,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistFiatCurrencyTypeRequest); i {
 			case 0:
 				return &v.state
@@ -1716,7 +1716,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistFiatCurrencyTypeResponse); i {
 			case 0:
 				return &v.state
@@ -1728,7 +1728,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistFiatCurrencyTypeCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1740,7 +1740,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistFiatCurrencyTypeCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1752,7 +1752,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountFiatCurrencyTypesRequest); i {
 			case 0:
 				return &v.state
@@ -1764,7 +1764,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountFiatCurrencyTypesResponse); i {
 			case 0:
 				return &v.state
@@ -1776,7 +1776,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFiatCurrencyTypeRequest); i {
 			case 0:
 				return &v.state
@@ -1788,7 +1788,7 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 				return nil
 			}
 		}
-		file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFiatCurrencyTypeResponse); i {
 			case 0:
 				return &v.state
@@ -1801,24 +1801,24 @@ func file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_init()
 			}
 		}
 	}
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes[2].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDesc,
+			RawDescriptor: file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_goTypes,
-		DependencyIndexes: file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_depIdxs,
-		MessageInfos:      file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_msgTypes,
+		GoTypes:           file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_goTypes,
+		DependencyIndexes: file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_depIdxs,
+		MessageInfos:      file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_msgTypes,
 	}.Build()
-	File_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto = out.File
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_rawDesc = nil
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_goTypes = nil
-	file_npool_chain_mgr_v1_coin_faitcurrencytype_faitcurrencytype_proto_depIdxs = nil
+	File_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto = out.File
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_rawDesc = nil
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_goTypes = nil
+	file_npool_chain_mgr_v1_coin_fiatcurrencytype_faitcurrencytype_proto_depIdxs = nil
 }

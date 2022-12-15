@@ -84,7 +84,7 @@ message RefreshFiatCurrenciesResponse {
 }
 
 message GetFiatCurrencyRequest {
-    string ID = 10;
+    string FiatCurrencyTypeID = 10;
 }
 
 message GetFiatCurrencyResponse {

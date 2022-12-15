@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mgr/v1/coin/faitcurrencytype/faitcurrencytype.proto
+// source: npool/chain/mgr/v1/coin/fiatcurrencytype/faitcurrencytype.proto
 
 package fiatcurrencytype
 
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mgr/v1/coin/faitcurrencytype/faitcurrencytype.proto",
+	Metadata: "npool/chain/mgr/v1/coin/fiatcurrencytype/faitcurrencytype.proto",
 }
