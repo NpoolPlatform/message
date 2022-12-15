@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
 	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
-	UpdateOrderes(ctx context.Context, in *UpdateOrderesRequest, opts ...grpc.CallOption) (*UpdateOrderesResponse, error)
+	UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	GetOrderOnly(ctx context.Context, in *GetOrderOnlyRequest, opts ...grpc.CallOption) (*GetOrderOnlyResponse, error)
@@ -56,9 +56,9 @@ func (c *middlewareClient) UpdateOrder(ctx context.Context, in *UpdateOrderReque
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateOrderes(ctx context.Context, in *UpdateOrderesRequest, opts ...grpc.CallOption) (*UpdateOrderesResponse, error) {
-	out := new(UpdateOrderesResponse)
-	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/UpdateOrderes", in, out, opts...)
+func (c *middlewareClient) UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error) {
+	out := new(UpdateOrdersResponse)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/UpdateOrders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *middlewareClient) GetOrderOnly(ctx context.Context, in *GetOrderOnlyReq
 type MiddlewareServer interface {
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
-	UpdateOrderes(context.Context, *UpdateOrderesRequest) (*UpdateOrderesResponse, error)
+	UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error)
@@ -115,8 +115,8 @@ func (UnimplementedMiddlewareServer) CreateOrder(context.Context, *CreateOrderRe
 func (UnimplementedMiddlewareServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateOrderes(context.Context, *UpdateOrderesRequest) (*UpdateOrderesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrderes not implemented")
+func (UnimplementedMiddlewareServer) UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
@@ -176,20 +176,20 @@ func _Middleware_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateOrderes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOrderesRequest)
+func _Middleware_UpdateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrdersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateOrderes(ctx, in)
+		return srv.(MiddlewareServer).UpdateOrders(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.middleware.order1.v1.Middleware/UpdateOrderes",
+		FullMethod: "/order.middleware.order1.v1.Middleware/UpdateOrders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateOrderes(ctx, req.(*UpdateOrderesRequest))
+		return srv.(MiddlewareServer).UpdateOrders(ctx, req.(*UpdateOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -264,8 +264,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_UpdateOrder_Handler,
 		},
 		{
-			MethodName: "UpdateOrderes",
-			Handler:    _Middleware_UpdateOrderes_Handler,
+			MethodName: "UpdateOrders",
+			Handler:    _Middleware_UpdateOrders_Handler,
 		},
 		{
 			MethodName: "GetOrder",

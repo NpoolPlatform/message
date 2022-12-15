@@ -444,7 +444,7 @@
         }
       }
     },
-    "v1UpdateOrderesResponse": {
+    "v1UpdateOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
