@@ -138,6 +138,12 @@ message Good {
 
     uint32           StartAt            = 550;
     uint32           CreatedAt          = 560;
+
+    uint32           SaleStartAt         = 570;
+    uint32           SaleEndAt           = 580;
+    uint32           ServiceStartAt      = 590;
+    uint32           TechnicalFeeRatio   = 600;
+    uint32           ElectricityFeeRatio = 610;
 }
 
 message CreateNAppGoodRequest {

@@ -32,22 +32,30 @@ message AppGoodReq {
     optional int32  DisplayIndex        = 80;
     optional int32  PurchaseLimit       = 90;
     optional int32  CommissionPercent   = 100;
+    optional uint32 SaleStartAt         = 110;
+    optional uint32 SaleEndAt           = 120;
+    optional uint32 ServiceStartAt      = 130;
 }
 
 message AppGood {
-    string ID                = 10;
-    string AppID             = 20;
-    string GoodID            = 30;
-    bool   Online            = 40;
-    bool   Visible           = 50;
-    string GoodName          = 60;
-    string Price             = 70;
-    int32  DisplayIndex      = 80;
-    int32  PurchaseLimit     = 90;
-    int32  CommissionPercent = 100;
-    uint32 CreatedAt         = 110;
-    uint32 UpdatedAt         = 120;
-    uint32 DeletedAt         = 130;
+    string ID                  = 10;
+    string AppID               = 20;
+    string GoodID              = 30;
+    bool   Online              = 40;
+    bool   Visible             = 50;
+    string GoodName            = 60;
+    string Price               = 70;
+    int32  DisplayIndex        = 80;
+    int32  PurchaseLimit       = 90;
+    int32  CommissionPercent   = 100;
+    uint32 CreatedAt           = 110;
+    uint32 UpdatedAt           = 120;
+    uint32 DeletedAt           = 130;
+    uint32 SaleStartAt         = 140;
+    uint32 SaleEndAt           = 150;
+    uint32 ServiceStartAt      = 160;
+    uint32 TechnicalFeeRatio   = 170;
+    uint32 ElectricityFeeRatio = 180;
 }
 
 message Conds {
