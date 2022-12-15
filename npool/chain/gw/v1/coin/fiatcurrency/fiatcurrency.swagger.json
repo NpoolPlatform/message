@@ -206,11 +206,26 @@
         },
         "FiatCurrencyTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "title": "@inject_tag: sql:\"fiat_currency_type_id\""
+        },
+        "FeedTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"feed_type\""
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
         },
         "FiatCurrencyName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_name\""
+          "title": "@inject_tag: sql:\"fiat_currency_name\""
+        },
+        "MarketValueHigh": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"market_value_high\""
+        },
+        "MarketValueLow": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"market_value_low\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -221,21 +236,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "MarketValueHigh": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"market_value_high\""
-        },
-        "MarketValueLow": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"market_value_low\""
-        },
-        "FeedTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"feed_type\""
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
         },
         "CoinTypeID": {
           "type": "string",

@@ -24,21 +24,21 @@ service Middleware {
 message FiatCurrency {
     // @inject_tag: sql:"id"
     string ID              = 10;
-    // @inject_tag: sql:"coin_type_id"
-    string FiatCurrencyTypeID     = 20;
-    // @inject_tag: sql:"coin_name"
-    string FiatCurrencyName       = 30;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt       = 40;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt       = 50;
+    // @inject_tag: sql:"fiat_currency_type_id"
+    string FiatCurrencyTypeID = 20;
+    // @inject_tag: sql:"feed_type"
+    string FeedTypeStr       = 80;
+    chain.manager.coin.currency.v1.FeedType FeedType = 90;
+    // @inject_tag: sql:"fiat_currency_name"
+    string FiatCurrencyName    = 30;
     // @inject_tag: sql:"market_value_high"
     string MarketValueHigh = 60;
     // @inject_tag: sql:"market_value_low"
     string MarketValueLow  = 70;
-    // @inject_tag: sql:"feed_type"
-    string FeedTypeStr     = 80;
-    chain.manager.coin.currency.v1.FeedType FeedType = 90;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt       = 40;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt       = 50;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID      = 100;
     // @inject_tag: sql:"coin_name"
@@ -93,6 +93,7 @@ message GetFiatCurrencyResponse {
 
 message GetCoinFiatCurrencyRequest {
     string CoinTypeID = 10;
+    string FiatCurrencyTypeID = 20;
 }
 
 message GetCoinFiatCurrencyResponse {
@@ -100,7 +101,7 @@ message GetCoinFiatCurrencyResponse {
 }
 
 message GetCoinFiatCurrenciesRequest {
-    string CoinTypeID = 10;
+    Conds Conds  = 10;
 }
 
 message GetCoinFiatCurrenciesResponse {
