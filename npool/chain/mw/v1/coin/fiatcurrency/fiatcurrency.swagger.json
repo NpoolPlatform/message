@@ -34,12 +34,6 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -121,6 +115,28 @@
         "CoinENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_env\""
+        }
+      }
+    },
+    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+          }
+        }
+      }
+    },
+    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+          }
         }
       }
     },

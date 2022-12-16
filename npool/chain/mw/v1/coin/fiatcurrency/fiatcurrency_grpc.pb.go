@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateFiatCurrency(ctx context.Context, in *CreateFiatCurrencyRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyResponse, error)
 	CreateFiatCurrencies(ctx context.Context, in *CreateFiatCurrenciesRequest, opts ...grpc.CallOption) (*CreateFiatCurrenciesResponse, error)
+	GetFiatCurrency(ctx context.Context, in *GetFiatCurrencyRequest, opts ...grpc.CallOption) (*GetFiatCurrencyResponse, error)
+	GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 }
@@ -54,6 +56,24 @@ func (c *middlewareClient) CreateFiatCurrencies(ctx context.Context, in *CreateF
 	return out, nil
 }
 
+func (c *middlewareClient) GetFiatCurrency(ctx context.Context, in *GetFiatCurrencyRequest, opts ...grpc.CallOption) (*GetFiatCurrencyResponse, error) {
+	out := new(GetFiatCurrencyResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error) {
+	out := new(GetFiatCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error) {
 	out := new(GetCoinFiatCurrenciesResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetCoinFiatCurrencies", in, out, opts...)
@@ -78,6 +98,8 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 type MiddlewareServer interface {
 	CreateFiatCurrency(context.Context, *CreateFiatCurrencyRequest) (*CreateFiatCurrencyResponse, error)
 	CreateFiatCurrencies(context.Context, *CreateFiatCurrenciesRequest) (*CreateFiatCurrenciesResponse, error)
+	GetFiatCurrency(context.Context, *GetFiatCurrencyRequest) (*GetFiatCurrencyResponse, error)
+	GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -92,6 +114,12 @@ func (UnimplementedMiddlewareServer) CreateFiatCurrency(context.Context, *Create
 }
 func (UnimplementedMiddlewareServer) CreateFiatCurrencies(context.Context, *CreateFiatCurrenciesRequest) (*CreateFiatCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFiatCurrencies not implemented")
+}
+func (UnimplementedMiddlewareServer) GetFiatCurrency(context.Context, *GetFiatCurrencyRequest) (*GetFiatCurrencyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrency not implemented")
+}
+func (UnimplementedMiddlewareServer) GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrencies not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinFiatCurrencies not implemented")
@@ -148,6 +176,42 @@ func _Middleware_CreateFiatCurrencies_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetFiatCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFiatCurrencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetFiatCurrency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrency",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetFiatCurrency(ctx, req.(*GetFiatCurrencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFiatCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetFiatCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetFiatCurrencies(ctx, req.(*GetFiatCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetCoinFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinFiatCurrenciesRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +262,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateFiatCurrencies",
 			Handler:    _Middleware_CreateFiatCurrencies_Handler,
+		},
+		{
+			MethodName: "GetFiatCurrency",
+			Handler:    _Middleware_GetFiatCurrency_Handler,
+		},
+		{
+			MethodName: "GetFiatCurrencies",
+			Handler:    _Middleware_GetFiatCurrencies_Handler,
 		},
 		{
 			MethodName: "GetCoinFiatCurrencies",

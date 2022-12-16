@@ -13,6 +13,8 @@ import "npool/chain/mgr/v1/coin/fiatcurrency/fiatcurrency.proto";
 service Middleware {
     rpc CreateFiatCurrency     (CreateFiatCurrencyRequest)    returns (CreateFiatCurrencyResponse)    {}
     rpc CreateFiatCurrencies   (CreateFiatCurrenciesRequest)  returns (CreateFiatCurrenciesResponse)  {}
+    rpc GetFiatCurrency        (GetFiatCurrencyRequest)       returns (GetFiatCurrencyResponse)       {}
+    rpc GetFiatCurrencies      (GetFiatCurrenciesRequest)     returns (GetFiatCurrenciesResponse)     {}
     rpc GetCoinFiatCurrencies  (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {}
     rpc GetHistories           (GetHistoriesRequest)          returns (GetHistoriesResponse)          {}
 }
@@ -53,8 +55,6 @@ message Conds {
     optional npool.v1.StringSliceVal FiatCurrencyTypeIDs = 30;
     optional npool.v1.Uint32Val      StartAt     = 40;
     optional npool.v1.Uint32Val      EndAt       = 50;
-    optional npool.v1.StringVal      CoinTypeID  = 60;
-    optional npool.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
 message CreateFiatCurrencyRequest {
@@ -77,6 +77,23 @@ message RefreshFiatCurrenciesRequest {
 }
 
 message RefreshFiatCurrenciesResponse {
+}
+
+message GetFiatCurrencyRequest {
+    Conds Conds = 10;
+}
+
+message GetFiatCurrencyResponse {
+    repeated FiatCurrency Info = 10;
+}
+
+
+message GetFiatCurrenciesRequest {
+    Conds Conds = 10;
+}
+
+message GetFiatCurrenciesResponse {
+    repeated FiatCurrency Infos = 10;
 }
 
 message GetCoinFiatCurrenciesRequest {
