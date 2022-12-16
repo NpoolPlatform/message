@@ -49,7 +49,7 @@ message GetCoinFiatCurrenciesRequest {
 }
 
 message GetCoinFiatCurrenciesResponse {
-    chain.middleware.coin.fiatcurrency.v1.FiatCurrency Info = 10;
+    repeated chain.middleware.coin.fiatcurrency.v1.FiatCurrency Infos = 10;
 }
 
 message GetHistoriesRequest {
