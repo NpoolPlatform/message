@@ -38,23 +38,10 @@
       }
     },
     "chainmiddlewarecoinfiatcurrencyv1CreateFiatCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-          }
-        }
-      }
+      "type": "object"
     },
     "chainmiddlewarecoinfiatcurrencyv1CreateFiatCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-        }
-      }
+      "type": "object"
     },
     "chainmiddlewarecoinfiatcurrencyv1FiatCurrency": {
       "type": "object",
