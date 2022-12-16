@@ -37,6 +37,7 @@ message AppGoodReq {
     optional uint32 ServiceStartAt      = 130;
     optional uint32 TechnicalFeeRatio   = 140;
     optional uint32 ElectricityFeeRatio = 150;
+    optional string DailyRewardAmount   = 160;
 }
 
 message AppGood {
@@ -58,6 +59,7 @@ message AppGood {
     uint32 ServiceStartAt      = 160;
     uint32 TechnicalFeeRatio   = 170;
     uint32 ElectricityFeeRatio = 180;
+    string DailyRewardAmount   = 190;
 }
 
 message Conds {

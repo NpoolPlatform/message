@@ -144,6 +144,7 @@ message Good {
     uint32           ServiceStartAt      = 590;
     uint32           TechnicalFeeRatio   = 600;
     uint32           ElectricityFeeRatio = 610;
+    string           DailyRewardAmount   = 620;
 }
 
 message CreateNAppGoodRequest {

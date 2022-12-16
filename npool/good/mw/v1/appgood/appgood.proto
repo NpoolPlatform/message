@@ -133,6 +133,8 @@ message Good {
     uint32           TechnicalFeeRatio   = 460;
     // @inject_tag: sql:"electricity_fee_ratio"
     uint32           ElectricityFeeRatio = 470;
+    // @inject_tag: sql:"daily_reward_amount"
+    string           DailyRewardAmount   = 480;
 }
 
 message CreateGoodRequest {

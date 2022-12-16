@@ -111,6 +111,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
@@ -169,6 +172,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
