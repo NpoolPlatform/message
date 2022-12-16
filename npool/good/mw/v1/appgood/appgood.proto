@@ -122,6 +122,9 @@ message Good {
     uint32           StartAt            = 410;
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 420;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 421;
+
 
     // @inject_tag: sql:"sale_start_at"
     uint32           SaleStartAt         = 430;
