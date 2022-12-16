@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package ledger.manager.mining.profit.general.v1;
+package ledger.manager.mining.general.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/profit/general";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/general";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -37,12 +37,8 @@ message GeneralReq {
     optional string GoodID     = 20;
     optional string CoinTypeID = 30;
     optional string Amount     = 40;
-    // Benefit belong to platform
     optional string ToPlatform = 50;
-    // Benefit belong to user
     optional string ToUser     = 60;
-    optional string TransferredToPlatform = 70;
-    optional string TransferredToUser     = 80;
 }
 
 message General {

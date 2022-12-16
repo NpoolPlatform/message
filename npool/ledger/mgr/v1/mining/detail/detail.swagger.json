@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/profit/detail/detail.proto",
+    "title": "npool/ledger/mgr/v1/mining/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
@@ -134,8 +134,7 @@
         },
         "BenefitDate": {
           "type": "integer",
-          "format": "int64",
-          "title": "E.g. when pay with non-USDT coin"
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -210,14 +209,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
         }
       }
     }

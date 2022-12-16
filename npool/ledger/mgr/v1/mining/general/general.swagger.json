@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/profit/general/general.proto",
+    "title": "npool/ledger/mgr/v1/mining/general/general.proto",
     "version": "version not set"
   },
   "tags": [
@@ -178,17 +178,9 @@
           "type": "string"
         },
         "ToPlatform": {
-          "type": "string",
-          "title": "Benefit belong to platform"
-        },
-        "ToUser": {
-          "type": "string",
-          "title": "Benefit belong to user"
-        },
-        "TransferredToPlatform": {
           "type": "string"
         },
-        "TransferredToUser": {
+        "ToUser": {
           "type": "string"
         }
       }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/ledger/mgr/v1/mining/profit/unsold/unsold.proto
+// source: npool/ledger/mgr/v1/mining/unsold/unsold.proto
 
 package unsold
 
@@ -45,7 +45,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -54,7 +54,7 @@ func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 
 func (c *managerClient) CreateUnsold(ctx context.Context, in *CreateUnsoldRequest, opts ...grpc.CallOption) (*CreateUnsoldResponse, error) {
 	out := new(CreateUnsoldResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/CreateUnsold", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/CreateUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -63,7 +63,7 @@ func (c *managerClient) CreateUnsold(ctx context.Context, in *CreateUnsoldReques
 
 func (c *managerClient) CreateUnsolds(ctx context.Context, in *CreateUnsoldsRequest, opts ...grpc.CallOption) (*CreateUnsoldsResponse, error) {
 	out := new(CreateUnsoldsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/CreateUnsolds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/CreateUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func (c *managerClient) CreateUnsolds(ctx context.Context, in *CreateUnsoldsRequ
 
 func (c *managerClient) GetUnsold(ctx context.Context, in *GetUnsoldRequest, opts ...grpc.CallOption) (*GetUnsoldResponse, error) {
 	out := new(GetUnsoldResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsold", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/GetUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func (c *managerClient) GetUnsold(ctx context.Context, in *GetUnsoldRequest, opt
 
 func (c *managerClient) GetUnsoldOnly(ctx context.Context, in *GetUnsoldOnlyRequest, opts ...grpc.CallOption) (*GetUnsoldOnlyResponse, error) {
 	out := new(GetUnsoldOnlyResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsoldOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/GetUnsoldOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +90,7 @@ func (c *managerClient) GetUnsoldOnly(ctx context.Context, in *GetUnsoldOnlyRequ
 
 func (c *managerClient) GetUnsolds(ctx context.Context, in *GetUnsoldsRequest, opts ...grpc.CallOption) (*GetUnsoldsResponse, error) {
 	out := new(GetUnsoldsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsolds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/GetUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func (c *managerClient) GetUnsolds(ctx context.Context, in *GetUnsoldsRequest, o
 
 func (c *managerClient) ExistUnsold(ctx context.Context, in *ExistUnsoldRequest, opts ...grpc.CallOption) (*ExistUnsoldResponse, error) {
 	out := new(ExistUnsoldResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/ExistUnsold", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/ExistUnsold", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func (c *managerClient) ExistUnsold(ctx context.Context, in *ExistUnsoldRequest,
 
 func (c *managerClient) ExistUnsoldConds(ctx context.Context, in *ExistUnsoldCondsRequest, opts ...grpc.CallOption) (*ExistUnsoldCondsResponse, error) {
 	out := new(ExistUnsoldCondsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/ExistUnsoldConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/ExistUnsoldConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (c *managerClient) ExistUnsoldConds(ctx context.Context, in *ExistUnsoldCon
 
 func (c *managerClient) CountUnsolds(ctx context.Context, in *CountUnsoldsRequest, opts ...grpc.CallOption) (*CountUnsoldsResponse, error) {
 	out := new(CountUnsoldsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.unsold.v1.Manager/CountUnsolds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.unsold.v1.Manager/CountUnsolds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -194,7 +194,7 @@ func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/Version",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
@@ -212,7 +212,7 @@ func _Manager_CreateUnsold_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/CreateUnsold",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/CreateUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateUnsold(ctx, req.(*CreateUnsoldRequest))
@@ -230,7 +230,7 @@ func _Manager_CreateUnsolds_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/CreateUnsolds",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/CreateUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateUnsolds(ctx, req.(*CreateUnsoldsRequest))
@@ -248,7 +248,7 @@ func _Manager_GetUnsold_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsold",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/GetUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetUnsold(ctx, req.(*GetUnsoldRequest))
@@ -266,7 +266,7 @@ func _Manager_GetUnsoldOnly_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsoldOnly",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/GetUnsoldOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetUnsoldOnly(ctx, req.(*GetUnsoldOnlyRequest))
@@ -284,7 +284,7 @@ func _Manager_GetUnsolds_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/GetUnsolds",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/GetUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetUnsolds(ctx, req.(*GetUnsoldsRequest))
@@ -302,7 +302,7 @@ func _Manager_ExistUnsold_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/ExistUnsold",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/ExistUnsold",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistUnsold(ctx, req.(*ExistUnsoldRequest))
@@ -320,7 +320,7 @@ func _Manager_ExistUnsoldConds_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/ExistUnsoldConds",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/ExistUnsoldConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistUnsoldConds(ctx, req.(*ExistUnsoldCondsRequest))
@@ -338,7 +338,7 @@ func _Manager_CountUnsolds_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.unsold.v1.Manager/CountUnsolds",
+		FullMethod: "/ledger.manager.mining.unsold.v1.Manager/CountUnsolds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountUnsolds(ctx, req.(*CountUnsoldsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountUnsolds_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.manager.mining.profit.unsold.v1.Manager",
+	ServiceName: "ledger.manager.mining.unsold.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -391,5 +391,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mgr/v1/mining/profit/unsold/unsold.proto",
+	Metadata: "npool/ledger/mgr/v1/mining/unsold/unsold.proto",
 }
