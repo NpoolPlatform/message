@@ -13,11 +13,7 @@ import "npool/chain/mgr/v1/coin/fiatcurrency/fiatcurrency.proto";
 service Middleware {
     rpc CreateFiatCurrency     (CreateFiatCurrencyRequest)    returns (CreateFiatCurrencyResponse)    {}
     rpc CreateFiatCurrencies   (CreateFiatCurrenciesRequest)  returns (CreateFiatCurrenciesResponse)  {}
-    rpc RefreshFiatCurrencies  (RefreshFiatCurrenciesRequest) returns (RefreshFiatCurrenciesResponse) {}
-    rpc GetFiatCurrency        (GetFiatCurrencyRequest)       returns (GetFiatCurrencyResponse)       {}
-    rpc GetCoinFiatCurrency    (GetCoinFiatCurrencyRequest)   returns (GetCoinFiatCurrencyResponse)   {}
     rpc GetCoinFiatCurrencies  (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {}
-    rpc GetFiatCurrencies      (GetFiatCurrenciesRequest)     returns (GetFiatCurrenciesResponse)     {}
     rpc GetHistories           (GetHistoriesRequest)          returns (GetHistoriesResponse)          {}
 }
 
@@ -83,40 +79,14 @@ message RefreshFiatCurrenciesRequest {
 message RefreshFiatCurrenciesResponse {
 }
 
-message GetFiatCurrencyRequest {
-    string FiatCurrencyTypeID = 10;
-}
-
-message GetFiatCurrencyResponse {
-    FiatCurrency Info = 10;
-}
-
-message GetCoinFiatCurrencyRequest {
-    string CoinTypeID = 10;
-    string FiatCurrencyTypeID = 20;
-}
-
-message GetCoinFiatCurrencyResponse {
-    FiatCurrency Info = 10;
-}
-
 message GetCoinFiatCurrenciesRequest {
-    repeated string CoinTypeIDs = 10;
-}
-
-message GetCoinFiatCurrenciesResponse {
-    repeated FiatCurrency Info = 10;
-}
-
-message GetFiatCurrenciesRequest {
     repeated string FiatCurrencyTypeIDs = 10;
     repeated string CoinTypeIDs         = 20;
 }
 
-message GetFiatCurrenciesResponse {
+message GetCoinFiatCurrenciesResponse {
     repeated FiatCurrency Infos = 10;
 }
-
 
 message GetHistoriesRequest {
     Conds Conds  = 10;

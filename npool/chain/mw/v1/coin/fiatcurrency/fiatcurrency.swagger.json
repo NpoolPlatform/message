@@ -124,25 +124,6 @@
         }
       }
     },
-    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-          }
-        }
-      }
-    },
-    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -203,19 +184,11 @@
     "v1GetCoinFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
           }
-        }
-      }
-    },
-    "v1GetCoinFiatCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
         }
       }
     },
@@ -233,9 +206,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1RefreshFiatCurrenciesResponse": {
-      "type": "object"
     },
     "v1StringSliceVal": {
       "type": "object",
