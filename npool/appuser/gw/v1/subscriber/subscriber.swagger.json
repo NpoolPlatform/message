@@ -79,6 +79,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/get/subscriberes": {
+      "post": {
+        "operationId": "Gateway_GetSubscriberes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewaysubscriberv1GetSubscriberesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewaysubscriberv1GetSubscriberesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -117,6 +149,37 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/subscriberv1Subscriber"
+        }
+      }
+    },
+    "appusergatewaysubscriberv1GetSubscriberesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewaysubscriberv1GetSubscriberesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subscriberv1Subscriber"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -167,7 +230,7 @@
           "title": "@inject_tag: sql:\"email_address\""
         },
         "Registered": {
-          "type": "string",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"registered\""
         },
         "CreatedAt": {

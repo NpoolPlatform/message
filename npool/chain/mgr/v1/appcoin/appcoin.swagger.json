@@ -84,6 +84,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Display": {
+          "type": "boolean"
         }
       }
     },
@@ -123,6 +126,9 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "Display": {
+          "type": "boolean"
         }
       }
     },

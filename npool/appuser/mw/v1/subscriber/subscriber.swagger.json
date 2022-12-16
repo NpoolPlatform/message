@@ -68,6 +68,21 @@
         }
       }
     },
+    "subscriberv1GetSubscriberesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subscriberv1Subscriber"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "subscriberv1Subscriber": {
       "type": "object",
       "properties": {
@@ -88,7 +103,7 @@
           "title": "@inject_tag: sql:\"email_address\""
         },
         "Registered": {
-          "type": "string",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"registered\""
         },
         "CreatedAt": {
@@ -119,21 +134,6 @@
         },
         "Value": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetSubscriberesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/subscriberv1Subscriber"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

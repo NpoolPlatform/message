@@ -95,6 +95,7 @@ message Conds {
     optional npool.v1.StringVal FixAmountCouponID        = 70;
     optional npool.v1.StringVal DiscountCouponID         = 80;
     optional npool.v1.StringVal UserSpecialReductionID   = 90;
+    optional npool.v1.StringSliceVal IDs                 = 100;
 }
 
 

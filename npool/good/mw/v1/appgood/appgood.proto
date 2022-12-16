@@ -122,6 +122,22 @@ message Good {
     uint32           StartAt            = 410;
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 420;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 421;
+
+
+    // @inject_tag: sql:"sale_start_at"
+    uint32           SaleStartAt         = 430;
+    // @inject_tag: sql:"sale_end_at"
+    uint32           SaleEndAt           = 440;
+    // @inject_tag: sql:"service_start_at"
+    uint32           ServiceStartAt      = 450;
+    // @inject_tag: sql:"technical_fee_ratio"
+    uint32           TechnicalFeeRatio   = 460;
+    // @inject_tag: sql:"electricity_fee_ratio"
+    uint32           ElectricityFeeRatio = 470;
+    // @inject_tag: sql:"daily_reward_amount"
+    string           DailyRewardAmount   = 480;
 }
 
 message CreateGoodRequest {

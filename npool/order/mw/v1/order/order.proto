@@ -14,6 +14,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
+    rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
@@ -158,6 +159,14 @@ message UpdateOrderRequest {
 
 message UpdateOrderResponse {
     Order Info = 10;
+}
+
+message UpdateOrdersRequest {
+    repeated OrderReq Infos = 10;
+}
+
+message UpdateOrdersResponse {
+    repeated Order Infos = 10;
 }
 
 message GetOrderRequest {

@@ -310,6 +310,40 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_start_at\""
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_end_at\""
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"technical_fee_ratio\""
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"electricity_fee_ratio\""
+        },
+        "DailyRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"daily_reward_amount\""
         }
       }
     },
@@ -383,6 +417,29 @@
         "CommissionPercent": {
           "type": "integer",
           "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },

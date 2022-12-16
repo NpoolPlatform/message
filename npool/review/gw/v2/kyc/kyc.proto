@@ -46,9 +46,12 @@ message KycReview {
     string UserID       = 10;
     string EmailAddress = 20;
     string PhoneNO      = 30;
+    string Username     = 31;
+    string FirstName    = 32;
+    string LastName     = 33;
 
     // kyc
-    string KycID                                         = 40;
+    string                                 KycID         = 40;
     appuser.manager.kyc.v2.KycDocumentType DocumentType  = 60;
     string                                 IDNumber      = 70;
     string                                 FrontImg      = 80;

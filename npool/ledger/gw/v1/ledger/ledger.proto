@@ -125,6 +125,7 @@ message General {
     string CoinLogo       = 30;
     string CoinUnit       = 40;
     bool   CoinDisabled   = 41;
+    bool   CoinDisplay    = 42;
     string Incoming       = 50;
     string Locked         = 60;
     string Outcoming      = 70;

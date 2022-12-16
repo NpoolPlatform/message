@@ -70,6 +70,7 @@ message Conds {
     optional npool.v1.Int32Val  LockedBy    = 70;
     optional npool.v1.BoolVal   Blocked     = 80;
     optional npool.v1.StringSliceVal AccountIDs = 90;
+    optional npool.v1.Uint32Val AvailableAt = 100;
 }
 
 message CreateAccountRequest {

@@ -25,7 +25,7 @@ message Subscriber {
     // @inject_tag: sql:"email_address"
     string  EmailAddress = 40;
     // @inject_tag: sql:"registered"
-    string  Registered   = 50;
+    bool    Registered   = 50;
     // @inject_tag: sql:"created_at"
     uint32  CreatedAt    = 60;
     // @inject_tag: sql:"updated_at"

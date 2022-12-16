@@ -23,14 +23,14 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
 	CreateSubscriber(ctx context.Context, in *CreateSubscriberRequest, opts ...grpc.CallOption) (*CreateSubscriberResponse, error)
-	CreateSubscribers(ctx context.Context, in *CreateSubscribersRequest, opts ...grpc.CallOption) (*CreateSubscribersResponse, error)
+	CreateSubscriberes(ctx context.Context, in *CreateSubscriberesRequest, opts ...grpc.CallOption) (*CreateSubscriberesResponse, error)
 	UpdateSubscriber(ctx context.Context, in *UpdateSubscriberRequest, opts ...grpc.CallOption) (*UpdateSubscriberResponse, error)
 	GetSubscriber(ctx context.Context, in *GetSubscriberRequest, opts ...grpc.CallOption) (*GetSubscriberResponse, error)
 	GetSubscriberOnly(ctx context.Context, in *GetSubscriberOnlyRequest, opts ...grpc.CallOption) (*GetSubscriberOnlyResponse, error)
-	GetSubscribers(ctx context.Context, in *GetSubscribersRequest, opts ...grpc.CallOption) (*GetSubscribersResponse, error)
+	GetSubscriberes(ctx context.Context, in *GetSubscriberesRequest, opts ...grpc.CallOption) (*GetSubscriberesResponse, error)
 	ExistSubscriber(ctx context.Context, in *ExistSubscriberRequest, opts ...grpc.CallOption) (*ExistSubscriberResponse, error)
 	ExistSubscriberConds(ctx context.Context, in *ExistSubscriberCondsRequest, opts ...grpc.CallOption) (*ExistSubscriberCondsResponse, error)
-	CountSubscribers(ctx context.Context, in *CountSubscribersRequest, opts ...grpc.CallOption) (*CountSubscribersResponse, error)
+	CountSubscriberes(ctx context.Context, in *CountSubscriberesRequest, opts ...grpc.CallOption) (*CountSubscriberesResponse, error)
 	DeleteSubscriber(ctx context.Context, in *DeleteSubscriberRequest, opts ...grpc.CallOption) (*DeleteSubscriberResponse, error)
 }
 
@@ -51,9 +51,9 @@ func (c *managerClient) CreateSubscriber(ctx context.Context, in *CreateSubscrib
 	return out, nil
 }
 
-func (c *managerClient) CreateSubscribers(ctx context.Context, in *CreateSubscribersRequest, opts ...grpc.CallOption) (*CreateSubscribersResponse, error) {
-	out := new(CreateSubscribersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/CreateSubscribers", in, out, opts...)
+func (c *managerClient) CreateSubscriberes(ctx context.Context, in *CreateSubscriberesRequest, opts ...grpc.CallOption) (*CreateSubscriberesResponse, error) {
+	out := new(CreateSubscriberesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/CreateSubscriberes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,9 +87,9 @@ func (c *managerClient) GetSubscriberOnly(ctx context.Context, in *GetSubscriber
 	return out, nil
 }
 
-func (c *managerClient) GetSubscribers(ctx context.Context, in *GetSubscribersRequest, opts ...grpc.CallOption) (*GetSubscribersResponse, error) {
-	out := new(GetSubscribersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/GetSubscribers", in, out, opts...)
+func (c *managerClient) GetSubscriberes(ctx context.Context, in *GetSubscriberesRequest, opts ...grpc.CallOption) (*GetSubscriberesResponse, error) {
+	out := new(GetSubscriberesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/GetSubscriberes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -114,9 +114,9 @@ func (c *managerClient) ExistSubscriberConds(ctx context.Context, in *ExistSubsc
 	return out, nil
 }
 
-func (c *managerClient) CountSubscribers(ctx context.Context, in *CountSubscribersRequest, opts ...grpc.CallOption) (*CountSubscribersResponse, error) {
-	out := new(CountSubscribersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/CountSubscribers", in, out, opts...)
+func (c *managerClient) CountSubscriberes(ctx context.Context, in *CountSubscriberesRequest, opts ...grpc.CallOption) (*CountSubscriberesResponse, error) {
+	out := new(CountSubscriberesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.manager.subscriber.v2.Manager/CountSubscriberes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,14 +137,14 @@ func (c *managerClient) DeleteSubscriber(ctx context.Context, in *DeleteSubscrib
 // for forward compatibility
 type ManagerServer interface {
 	CreateSubscriber(context.Context, *CreateSubscriberRequest) (*CreateSubscriberResponse, error)
-	CreateSubscribers(context.Context, *CreateSubscribersRequest) (*CreateSubscribersResponse, error)
+	CreateSubscriberes(context.Context, *CreateSubscriberesRequest) (*CreateSubscriberesResponse, error)
 	UpdateSubscriber(context.Context, *UpdateSubscriberRequest) (*UpdateSubscriberResponse, error)
 	GetSubscriber(context.Context, *GetSubscriberRequest) (*GetSubscriberResponse, error)
 	GetSubscriberOnly(context.Context, *GetSubscriberOnlyRequest) (*GetSubscriberOnlyResponse, error)
-	GetSubscribers(context.Context, *GetSubscribersRequest) (*GetSubscribersResponse, error)
+	GetSubscriberes(context.Context, *GetSubscriberesRequest) (*GetSubscriberesResponse, error)
 	ExistSubscriber(context.Context, *ExistSubscriberRequest) (*ExistSubscriberResponse, error)
 	ExistSubscriberConds(context.Context, *ExistSubscriberCondsRequest) (*ExistSubscriberCondsResponse, error)
-	CountSubscribers(context.Context, *CountSubscribersRequest) (*CountSubscribersResponse, error)
+	CountSubscriberes(context.Context, *CountSubscriberesRequest) (*CountSubscriberesResponse, error)
 	DeleteSubscriber(context.Context, *DeleteSubscriberRequest) (*DeleteSubscriberResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
@@ -156,8 +156,8 @@ type UnimplementedManagerServer struct {
 func (UnimplementedManagerServer) CreateSubscriber(context.Context, *CreateSubscriberRequest) (*CreateSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscriber not implemented")
 }
-func (UnimplementedManagerServer) CreateSubscribers(context.Context, *CreateSubscribersRequest) (*CreateSubscribersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscribers not implemented")
+func (UnimplementedManagerServer) CreateSubscriberes(context.Context, *CreateSubscriberesRequest) (*CreateSubscriberesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscriberes not implemented")
 }
 func (UnimplementedManagerServer) UpdateSubscriber(context.Context, *UpdateSubscriberRequest) (*UpdateSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscriber not implemented")
@@ -168,8 +168,8 @@ func (UnimplementedManagerServer) GetSubscriber(context.Context, *GetSubscriberR
 func (UnimplementedManagerServer) GetSubscriberOnly(context.Context, *GetSubscriberOnlyRequest) (*GetSubscriberOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriberOnly not implemented")
 }
-func (UnimplementedManagerServer) GetSubscribers(context.Context, *GetSubscribersRequest) (*GetSubscribersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscribers not implemented")
+func (UnimplementedManagerServer) GetSubscriberes(context.Context, *GetSubscriberesRequest) (*GetSubscriberesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriberes not implemented")
 }
 func (UnimplementedManagerServer) ExistSubscriber(context.Context, *ExistSubscriberRequest) (*ExistSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistSubscriber not implemented")
@@ -177,8 +177,8 @@ func (UnimplementedManagerServer) ExistSubscriber(context.Context, *ExistSubscri
 func (UnimplementedManagerServer) ExistSubscriberConds(context.Context, *ExistSubscriberCondsRequest) (*ExistSubscriberCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistSubscriberConds not implemented")
 }
-func (UnimplementedManagerServer) CountSubscribers(context.Context, *CountSubscribersRequest) (*CountSubscribersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountSubscribers not implemented")
+func (UnimplementedManagerServer) CountSubscriberes(context.Context, *CountSubscriberesRequest) (*CountSubscriberesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSubscriberes not implemented")
 }
 func (UnimplementedManagerServer) DeleteSubscriber(context.Context, *DeleteSubscriberRequest) (*DeleteSubscriberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSubscriber not implemented")
@@ -214,20 +214,20 @@ func _Manager_CreateSubscriber_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateSubscribersRequest)
+func _Manager_CreateSubscriberes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSubscriberesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateSubscribers(ctx, in)
+		return srv.(ManagerServer).CreateSubscriberes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.subscriber.v2.Manager/CreateSubscribers",
+		FullMethod: "/appuser.manager.subscriber.v2.Manager/CreateSubscriberes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateSubscribers(ctx, req.(*CreateSubscribersRequest))
+		return srv.(ManagerServer).CreateSubscriberes(ctx, req.(*CreateSubscriberesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -286,20 +286,20 @@ func _Manager_GetSubscriberOnly_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscribersRequest)
+func _Manager_GetSubscriberes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscriberesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetSubscribers(ctx, in)
+		return srv.(ManagerServer).GetSubscriberes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.subscriber.v2.Manager/GetSubscribers",
+		FullMethod: "/appuser.manager.subscriber.v2.Manager/GetSubscriberes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetSubscribers(ctx, req.(*GetSubscribersRequest))
+		return srv.(ManagerServer).GetSubscriberes(ctx, req.(*GetSubscriberesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -340,20 +340,20 @@ func _Manager_ExistSubscriberConds_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountSubscribersRequest)
+func _Manager_CountSubscriberes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSubscriberesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountSubscribers(ctx, in)
+		return srv.(ManagerServer).CountSubscriberes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.manager.subscriber.v2.Manager/CountSubscribers",
+		FullMethod: "/appuser.manager.subscriber.v2.Manager/CountSubscriberes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountSubscribers(ctx, req.(*CountSubscribersRequest))
+		return srv.(ManagerServer).CountSubscriberes(ctx, req.(*CountSubscriberesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -388,8 +388,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_CreateSubscriber_Handler,
 		},
 		{
-			MethodName: "CreateSubscribers",
-			Handler:    _Manager_CreateSubscribers_Handler,
+			MethodName: "CreateSubscriberes",
+			Handler:    _Manager_CreateSubscriberes_Handler,
 		},
 		{
 			MethodName: "UpdateSubscriber",
@@ -404,8 +404,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_GetSubscriberOnly_Handler,
 		},
 		{
-			MethodName: "GetSubscribers",
-			Handler:    _Manager_GetSubscribers_Handler,
+			MethodName: "GetSubscriberes",
+			Handler:    _Manager_GetSubscriberes_Handler,
 		},
 		{
 			MethodName: "ExistSubscriber",
@@ -416,8 +416,8 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Manager_ExistSubscriberConds_Handler,
 		},
 		{
-			MethodName: "CountSubscribers",
-			Handler:    _Manager_CountSubscribers_Handler,
+			MethodName: "CountSubscriberes",
+			Handler:    _Manager_CountSubscriberes_Handler,
 		},
 		{
 			MethodName: "DeleteSubscriber",

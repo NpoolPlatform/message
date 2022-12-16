@@ -138,6 +138,13 @@ message Good {
 
     uint32           StartAt            = 550;
     uint32           CreatedAt          = 560;
+
+    uint32           SaleStartAt         = 570;
+    uint32           SaleEndAt           = 580;
+    uint32           ServiceStartAt      = 590;
+    uint32           TechnicalFeeRatio   = 600;
+    uint32           ElectricityFeeRatio = 610;
+    string           DailyRewardAmount   = 620;
 }
 
 message CreateNAppGoodRequest {
@@ -150,6 +157,11 @@ message CreateNAppGoodRequest {
     int32  DisplayIndex        = 70;
     int32  PurchaseLimit       = 80;
     int32  CommissionPercent   = 90;
+    optional uint32 SaleStartAt    = 100;
+    optional uint32 SaleEndAt      = 110;
+    optional uint32 ServiceStartAt = 120;
+    optional uint32 TechnicalFeeRatio    = 130;
+    optional uint32 ElectricityFeeRatio  = 140;
 }
 
 message CreateNAppGoodResponse {
@@ -197,6 +209,11 @@ message UpdateAppGoodRequest {
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional int32  CommissionPercent   = 90;
+    optional uint32 SaleStartAt         = 100;
+    optional uint32 SaleEndAt           = 110;
+    optional uint32 ServiceStartAt      = 120;
+    optional uint32 TechnicalFeeRatio   = 130;
+    optional uint32 ElectricityFeeRatio = 140;
 }
 
 message UpdateAppGoodResponse {
@@ -213,6 +230,9 @@ message UpdateNAppGoodRequest {
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional int32  CommissionPercent   = 90;
+    optional uint32 ServiceStartAt      = 100;
+    optional uint32 TechnicalFeeRatio   = 110;
+    optional uint32 ElectricityFeeRatio = 120;
 }
 
 message UpdateNAppGoodResponse {

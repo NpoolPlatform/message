@@ -805,6 +805,9 @@
         "CoinDisabled": {
           "type": "boolean"
         },
+        "CoinDisplay": {
+          "type": "boolean"
+        },
         "Incoming": {
           "type": "string"
         },

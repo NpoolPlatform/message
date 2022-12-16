@@ -454,6 +454,29 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
         }
       }
     },
@@ -539,6 +562,26 @@
         "CommissionPercent": {
           "type": "integer",
           "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -619,6 +662,26 @@
         "CommissionPercent": {
           "type": "integer",
           "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -705,6 +768,18 @@
         "CommissionPercent": {
           "type": "integer",
           "format": "int32"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

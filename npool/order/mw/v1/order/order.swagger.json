@@ -443,6 +443,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareorder1v1Order"
+          }
+        }
+      }
     }
   }
 }
