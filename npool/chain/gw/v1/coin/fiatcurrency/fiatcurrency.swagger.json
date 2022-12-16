@@ -198,8 +198,11 @@
     "chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+          }
         }
       }
     },
@@ -351,6 +354,9 @@
     "coinfiatcurrencyv1UpdateFiatCurrencyTypeRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         }

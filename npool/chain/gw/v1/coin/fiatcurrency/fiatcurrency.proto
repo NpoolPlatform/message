@@ -84,7 +84,8 @@ message CreateFiatCurrencyTypeResponse {
 }
 
 message UpdateFiatCurrencyTypeRequest {
-    string Name = 10;
+    string ID   = 10;
+    string Name = 20;
 }
 
 message  UpdateFiatCurrencyTypeResponse {
