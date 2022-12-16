@@ -62,7 +62,6 @@ message CreateFiatCurrencyRequest {
 }
 
 message CreateFiatCurrencyResponse {
-    FiatCurrency Info = 10;
 }
 
 message CreateFiatCurrenciesRequest {
@@ -70,7 +69,6 @@ message CreateFiatCurrenciesRequest {
 }
 
 message CreateFiatCurrenciesResponse {
-    repeated FiatCurrency Infos = 10;
 }
 
 message RefreshFiatCurrenciesRequest {
