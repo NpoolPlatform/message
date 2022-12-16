@@ -114,7 +114,7 @@ message GetFiatCurrenciesRequest {
 }
 
 message GetFiatCurrenciesResponse {
-    repeated FiatCurrency Info = 10;
+    repeated FiatCurrency Infos = 10;
 }
 
 
