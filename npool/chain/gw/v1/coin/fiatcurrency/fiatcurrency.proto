@@ -43,18 +43,9 @@ service Gateway {
     }
 }
 
-message GetFiatCurrenciesRequest {
+message GetCoinFiatCurrenciesRequest {
     repeated string FiatCurrencyTypeIDs = 10;
     repeated string CoinTypeIDs         = 20;
-}
-
-message GetFiatCurrenciesResponse {
-    repeated chain.middleware.coin.fiatcurrency.v1.FiatCurrency Infos = 10;
-    uint32                                                      Total = 20;
-}
-
-message GetCoinFiatCurrenciesRequest {
-    string CoinTypeID = 10;
 }
 
 message GetCoinFiatCurrenciesResponse {

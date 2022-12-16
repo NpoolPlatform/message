@@ -181,8 +181,17 @@
     "chaingatewaycoinfiatcurrencyv1GetCoinFiatCurrenciesRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
-          "type": "string"
+        "FiatCurrencyTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
