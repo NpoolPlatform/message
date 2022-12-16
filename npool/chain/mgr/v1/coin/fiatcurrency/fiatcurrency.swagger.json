@@ -26,6 +26,9 @@
         "FiatCurrencyTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "FiatCurrencyTypeIDs": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },

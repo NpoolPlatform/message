@@ -40,11 +40,12 @@ message FiatCurrency {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID                 = 10;
-    optional npool.v1.StringVal FiatCurrencyTypeID = 20;
-    optional npool.v1.Uint32Val StartAt            = 30;
-    optional npool.v1.Uint32Val EndAt       = 40;
-    optional npool.v1.Int32Val  FeedType    = 50;
+    optional npool.v1.StringVal ID                  = 10;
+    optional npool.v1.StringVal FiatCurrencyTypeID  = 20;
+    optional npool.v1.StringVal FiatCurrencyTypeIDs = 30;
+    optional npool.v1.Uint32Val StartAt             = 40;
+    optional npool.v1.Uint32Val EndAt               = 50;
+    optional npool.v1.Int32Val  FeedType            = 60;
 }
 
 
@@ -88,7 +89,7 @@ message GetFiatCurrenciesRequest {
 
 message GetFiatCurrenciesResponse {
     repeated FiatCurrency Infos = 10;
-    uint32            Total = 20;
+    uint32                Total = 20;
 }
 
 message GetFiatCurrencyOnlyRequest {
