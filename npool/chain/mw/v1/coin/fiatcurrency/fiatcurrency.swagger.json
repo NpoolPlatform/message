@@ -133,10 +133,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-          }
+          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
         }
       }
     },
