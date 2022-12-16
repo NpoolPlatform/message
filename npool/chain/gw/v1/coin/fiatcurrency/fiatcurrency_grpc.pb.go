@@ -22,9 +22,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
+	GetFiatCurrencyTypes(ctx context.Context, in *GetFiatCurrencyTypesRequest, opts ...grpc.CallOption) (*GetFiatCurrencyTypesResponse, error)
+	CreateFiatCurrencyType(ctx context.Context, in *CreateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyTypeResponse, error)
+	UpdateFiatCurrencyType(ctx context.Context, in *UpdateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*UpdateFiatCurrencyTypeResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,15 +35,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error) {
-	out := new(GetFiatCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencies", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error) {
@@ -62,13 +55,42 @@ func (c *gatewayClient) GetHistories(ctx context.Context, in *GetHistoriesReques
 	return out, nil
 }
 
+func (c *gatewayClient) GetFiatCurrencyTypes(ctx context.Context, in *GetFiatCurrencyTypesRequest, opts ...grpc.CallOption) (*GetFiatCurrencyTypesResponse, error) {
+	out := new(GetFiatCurrencyTypesResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencyTypes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateFiatCurrencyType(ctx context.Context, in *CreateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyTypeResponse, error) {
+	out := new(CreateFiatCurrencyTypeResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/CreateFiatCurrencyType", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateFiatCurrencyType(ctx context.Context, in *UpdateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*UpdateFiatCurrencyTypeResponse, error) {
+	out := new(UpdateFiatCurrencyTypeResponse)
+	err := c.cc.Invoke(ctx, "/chain.gateway.coin.fiatcurrency.v1.Gateway/UpdateFiatCurrencyType", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
+	GetFiatCurrencyTypes(context.Context, *GetFiatCurrencyTypesRequest) (*GetFiatCurrencyTypesResponse, error)
+	CreateFiatCurrencyType(context.Context, *CreateFiatCurrencyTypeRequest) (*CreateFiatCurrencyTypeResponse, error)
+	UpdateFiatCurrencyType(context.Context, *UpdateFiatCurrencyTypeRequest) (*UpdateFiatCurrencyTypeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -76,14 +98,20 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrencies not implemented")
-}
 func (UnimplementedGatewayServer) GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinFiatCurrencies not implemented")
 }
 func (UnimplementedGatewayServer) GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistories not implemented")
+}
+func (UnimplementedGatewayServer) GetFiatCurrencyTypes(context.Context, *GetFiatCurrencyTypesRequest) (*GetFiatCurrencyTypesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFiatCurrencyTypes not implemented")
+}
+func (UnimplementedGatewayServer) CreateFiatCurrencyType(context.Context, *CreateFiatCurrencyTypeRequest) (*CreateFiatCurrencyTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFiatCurrencyType not implemented")
+}
+func (UnimplementedGatewayServer) UpdateFiatCurrencyType(context.Context, *UpdateFiatCurrencyTypeRequest) (*UpdateFiatCurrencyTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFiatCurrencyType not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -96,24 +124,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFiatCurrenciesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetFiatCurrencies(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencies",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetFiatCurrencies(ctx, req.(*GetFiatCurrenciesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetCoinFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -152,6 +162,60 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetFiatCurrencyTypes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFiatCurrencyTypesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetFiatCurrencyTypes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/GetFiatCurrencyTypes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetFiatCurrencyTypes(ctx, req.(*GetFiatCurrencyTypesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateFiatCurrencyType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFiatCurrencyTypeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateFiatCurrencyType(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/CreateFiatCurrencyType",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateFiatCurrencyType(ctx, req.(*CreateFiatCurrencyTypeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateFiatCurrencyType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFiatCurrencyTypeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateFiatCurrencyType(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.gateway.coin.fiatcurrency.v1.Gateway/UpdateFiatCurrencyType",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateFiatCurrencyType(ctx, req.(*UpdateFiatCurrencyTypeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -160,16 +224,24 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetFiatCurrencies",
-			Handler:    _Gateway_GetFiatCurrencies_Handler,
-		},
-		{
 			MethodName: "GetCoinFiatCurrencies",
 			Handler:    _Gateway_GetCoinFiatCurrencies_Handler,
 		},
 		{
 			MethodName: "GetHistories",
 			Handler:    _Gateway_GetHistories_Handler,
+		},
+		{
+			MethodName: "GetFiatCurrencyTypes",
+			Handler:    _Gateway_GetFiatCurrencyTypes_Handler,
+		},
+		{
+			MethodName: "CreateFiatCurrencyType",
+			Handler:    _Gateway_CreateFiatCurrencyType_Handler,
+		},
+		{
+			MethodName: "UpdateFiatCurrencyType",
+			Handler:    _Gateway_UpdateFiatCurrencyType_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

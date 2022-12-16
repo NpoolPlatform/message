@@ -7,15 +7,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin/fia
 import "google/api/annotations.proto";
 import "npool/npool.proto";
 import "npool/chain/mw/v1/coin/fiatcurrency/fiatcurrency.proto";
+import "npool/chain/mgr/v1/coin/fiatcurrencytype/faitcurrencytype.proto";
 
 // Service Name
 service Gateway {
-    rpc GetFiatCurrencies (GetFiatCurrenciesRequest) returns (GetFiatCurrenciesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/fiatcurrencies"
-            body: "*"
-        };
-    }
     rpc GetCoinFiatCurrencies (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {
         option (google.api.http) = {
             post: "/v1/get/coinfiatcurrencies"
@@ -28,11 +23,29 @@ service Gateway {
             body: "*"
         };
     }
+    rpc GetFiatCurrencyTypes (GetFiatCurrencyTypesRequest) returns (GetFiatCurrencyTypesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fiatcurrencytypes"
+            body: "*"
+        };
+    }
+    rpc CreateFiatCurrencyType (CreateFiatCurrencyTypeRequest) returns (CreateFiatCurrencyTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/fiatcurrencytype"
+            body: "*"
+        };
+    }
+    rpc UpdateFiatCurrencyType (UpdateFiatCurrencyTypeRequest) returns (UpdateFiatCurrencyTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/fiatcurrencytype"
+            body: "*"
+        };
+    }
 }
 
 message GetFiatCurrenciesRequest {
-    int32 Offset = 10;
-    int32 Limit  = 20;
+    repeated string FiatCurrencyTypeIDs = 10;
+    repeated string CoinTypeIDs         = 20;
 }
 
 message GetFiatCurrenciesResponse {
@@ -59,4 +72,30 @@ message GetHistoriesRequest {
 message GetHistoriesResponse {
     repeated chain.middleware.coin.fiatcurrency.v1.FiatCurrency Infos = 10;
     uint32                                                      Total = 20;
+}
+
+message GetFiatCurrencyTypesRequest {
+    int32           Offset     = 20;
+    int32           Limit      = 30;
+}
+
+message GetFiatCurrencyTypesResponse {
+    repeated chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Infos = 10;
+    uint32                                                       Total = 20;
+}
+
+message CreateFiatCurrencyTypeRequest {
+    string Name = 10;
+}
+
+message CreateFiatCurrencyTypeResponse {
+    chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Info = 10;
+}
+
+message UpdateFiatCurrencyTypeRequest {
+    string Name = 10;
+}
+
+message  UpdateFiatCurrencyTypeResponse {
+    chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Info = 10;
 }

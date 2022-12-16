@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/fiatcurrencytype": {
+      "post": {
+        "operationId": "Gateway_CreateFiatCurrencyType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/coinfiatcurrencyv1CreateFiatCurrencyTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/coinfiatcurrencyv1CreateFiatCurrencyTypeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/coinfiatcurrencies": {
       "post": {
         "operationId": "Gateway_GetCoinFiatCurrencies",
@@ -48,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/fiatcurrencies": {
+    "/v1/get/fiatcurrencytypes": {
       "post": {
-        "operationId": "Gateway_GetFiatCurrencies",
+        "operationId": "Gateway_GetFiatCurrencyTypes",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesResponse"
+              "$ref": "#/definitions/coinfiatcurrencyv1GetFiatCurrencyTypesResponse"
             }
           },
           "default": {
@@ -71,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesRequest"
+              "$ref": "#/definitions/coinfiatcurrencyv1GetFiatCurrencyTypesRequest"
             }
           }
         ],
@@ -111,6 +143,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/fiatcurrencytype": {
+      "post": {
+        "operationId": "Gateway_UpdateFiatCurrencyType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/coinfiatcurrencyv1UpdateFiatCurrencyTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/coinfiatcurrencyv1UpdateFiatCurrencyTypeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -127,34 +191,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-        }
-      }
-    },
-    "chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "chaingatewaycoinfiatcurrencyv1GetFiatCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -259,6 +295,66 @@
         }
       }
     },
+    "coinfiatcurrencyv1CreateFiatCurrencyTypeRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "coinfiatcurrencyv1CreateFiatCurrencyTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrencyType"
+        }
+      }
+    },
+    "coinfiatcurrencyv1GetFiatCurrencyTypesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "coinfiatcurrencyv1GetFiatCurrencyTypesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FiatCurrencyType"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "coinfiatcurrencyv1UpdateFiatCurrencyTypeRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "coinfiatcurrencyv1UpdateFiatCurrencyTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrencyType"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -295,6 +391,25 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
+    },
+    "v1FiatCurrencyType": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
