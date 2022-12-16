@@ -62,7 +62,7 @@ message GetCoinFiatCurrenciesResponse {
 }
 
 message GetHistoriesRequest {
-    optional string CoinTypeID = 10;
+    optional string FiatCurrencyTypeID = 10;
     int32           Offset     = 20;
     int32           Limit      = 30;
     optional uint32 StartAt    = 40;

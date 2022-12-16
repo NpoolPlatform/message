@@ -197,7 +197,7 @@
     "chaingatewaycoinfiatcurrencyv1GetHistoriesRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "FiatCurrencyTypeID": {
           "type": "string"
         },
         "Offset": {
