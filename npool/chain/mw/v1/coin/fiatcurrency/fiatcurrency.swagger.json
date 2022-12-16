@@ -207,6 +207,9 @@
         }
       }
     },
+    "v1RefreshFiatCurrenciesResponse": {
+      "type": "object"
+    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {

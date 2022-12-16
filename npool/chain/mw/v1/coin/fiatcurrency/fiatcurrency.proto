@@ -17,6 +17,7 @@ service Middleware {
     rpc GetFiatCurrencies      (GetFiatCurrenciesRequest)     returns (GetFiatCurrenciesResponse)     {}
     rpc GetCoinFiatCurrencies  (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {}
     rpc GetHistories           (GetHistoriesRequest)          returns (GetHistoriesResponse)          {}
+    rpc RefreshFiatCurrencies  (RefreshFiatCurrenciesRequest) returns (RefreshFiatCurrenciesResponse)          {}
 }
 
 message FiatCurrency {

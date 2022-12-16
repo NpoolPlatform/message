@@ -28,6 +28,7 @@ type MiddlewareClient interface {
 	GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
+	RefreshFiatCurrencies(ctx context.Context, in *RefreshFiatCurrenciesRequest, opts ...grpc.CallOption) (*RefreshFiatCurrenciesResponse, error)
 }
 
 type middlewareClient struct {
@@ -92,6 +93,15 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 	return out, nil
 }
 
+func (c *middlewareClient) RefreshFiatCurrencies(ctx context.Context, in *RefreshFiatCurrenciesRequest, opts ...grpc.CallOption) (*RefreshFiatCurrenciesResponse, error) {
+	out := new(RefreshFiatCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/RefreshFiatCurrencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type MiddlewareServer interface {
 	GetFiatCurrencies(context.Context, *GetFiatCurrenciesRequest) (*GetFiatCurrenciesResponse, error)
 	GetCoinFiatCurrencies(context.Context, *GetCoinFiatCurrenciesRequest) (*GetCoinFiatCurrenciesResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
+	RefreshFiatCurrencies(context.Context, *RefreshFiatCurrenciesRequest) (*RefreshFiatCurrenciesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedMiddlewareServer) GetCoinFiatCurrencies(context.Context, *Get
 }
 func (UnimplementedMiddlewareServer) GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistories not implemented")
+}
+func (UnimplementedMiddlewareServer) RefreshFiatCurrencies(context.Context, *RefreshFiatCurrenciesRequest) (*RefreshFiatCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshFiatCurrencies not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -248,6 +262,24 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_RefreshFiatCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshFiatCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).RefreshFiatCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/RefreshFiatCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).RefreshFiatCurrencies(ctx, req.(*RefreshFiatCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetHistories",
 			Handler:    _Middleware_GetHistories_Handler,
+		},
+		{
+			MethodName: "RefreshFiatCurrencies",
+			Handler:    _Middleware_RefreshFiatCurrencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
