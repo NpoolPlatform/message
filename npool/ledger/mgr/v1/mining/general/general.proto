@@ -48,19 +48,14 @@ message General {
     string Amount     = 40;
     string ToPlatform = 50;
     string ToUser     = 60;
-    string TransferredToPlatform = 70;
-    string TransferredToUser     = 80;
+    uint32 CreatedAt  = 70;
+    uint32 UpdatedAt  = 80;
 }
 
 message Conds {
     optional npool.v1.StringVal ID         = 10;
     optional npool.v1.StringVal GoodID     = 20;
     optional npool.v1.StringVal CoinTypeID = 30;
-    optional npool.v1.StringVal Amount     = 40;
-    optional npool.v1.StringVal ToPlatform = 50;
-    optional npool.v1.StringVal ToUser     = 60;
-    optional npool.v1.StringVal TransferredToPlatform = 70;
-    optional npool.v1.StringVal TransferredToUser     = 80;
 }
 
 

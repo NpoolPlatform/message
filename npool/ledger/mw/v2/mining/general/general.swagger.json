@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/general/general.proto",
+    "title": "npool/ledger/mw/v2/mining/general/general.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -17,6 +17,30 @@
   ],
   "paths": {},
   "definitions": {
+    "generalv2AddGeneralResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1General"
+        }
+      }
+    },
+    "generalv2CreateGeneralResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1General"
+        }
+      }
+    },
+    "generalv2GetGeneralOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1General"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,14 +68,6 @@
         }
       }
     },
-    "v1AddGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -63,58 +79,6 @@
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CountGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1CreateGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        }
-      }
-    },
-    "v1DeleteGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1ExistGeneralCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
         }
       }
     },
@@ -172,37 +136,6 @@
         }
       }
     },
-    "v1GetGeneralOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1GetGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1GetGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -210,14 +143,6 @@
           "type": "string"
         },
         "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
           "type": "string"
         }
       }
