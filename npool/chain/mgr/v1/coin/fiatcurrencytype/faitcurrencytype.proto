@@ -24,6 +24,7 @@ service Manager {
 message FiatCurrencyTypeReq {
     optional string    ID   = 10;
     optional string    Name = 20;
+    optional string    Logo = 30;
 }
 
 message FiatCurrencyType {

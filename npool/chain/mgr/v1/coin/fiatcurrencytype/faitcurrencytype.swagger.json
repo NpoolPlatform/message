@@ -137,6 +137,9 @@
         },
         "Name": {
           "type": "string"
+        },
+        "Logo": {
+          "type": "string"
         }
       }
     },
