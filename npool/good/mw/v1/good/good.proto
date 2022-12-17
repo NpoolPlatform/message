@@ -39,6 +39,7 @@ message GoodReq {
     optional uint32        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
+    optional uint32        BenefitIntervalHours = 230;
 }
 
 message Good {
@@ -141,6 +142,9 @@ message Good {
     uint32           CreatedAt          = 380;
     // @inject_tag: sql:"updated_at"
     uint32           UpdatedAt          = 390;
+
+    // @inject_tag: sql:"benefit_interval_hours"
+    uint32           BenefitIntervalHours = 400;
 }
 
 message CreateGoodRequest {

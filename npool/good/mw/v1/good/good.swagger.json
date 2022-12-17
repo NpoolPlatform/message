@@ -256,6 +256,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
         }
       }
     },
@@ -344,6 +349,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

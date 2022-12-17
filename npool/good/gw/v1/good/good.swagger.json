@@ -236,6 +236,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -452,6 +456,10 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -522,6 +530,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
