@@ -56,6 +56,9 @@ message Conds {
     optional npool.v1.StringVal ID         = 10;
     optional npool.v1.StringVal GoodID     = 20;
     optional npool.v1.StringVal CoinTypeID = 30;
+    optional npool.v1.StringVal Amount     = 40;
+    optional npool.v1.StringVal ToPlatform = 50;
+    optional npool.v1.StringVal ToUser     = 60;
 }
 
 

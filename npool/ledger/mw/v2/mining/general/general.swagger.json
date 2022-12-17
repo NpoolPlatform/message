@@ -79,6 +79,15 @@
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ToPlatform": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ToUser": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
