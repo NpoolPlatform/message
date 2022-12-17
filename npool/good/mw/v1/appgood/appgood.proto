@@ -108,6 +108,8 @@ message Good {
     uint32           VoteCount          = 350;
     // @inject_tag: sql:"rating"
     float            Rating             = 360;
+    // @inject_tag: sql:"benefit_interval_hours"
+    uint32           BenefitIntervalHours = 361;
 
     // @inject_tag: sql:"good_total"
     uint32           GoodTotal          = 370;

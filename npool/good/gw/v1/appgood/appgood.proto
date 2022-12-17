@@ -105,6 +105,7 @@ message Good {
     string           GoodName           = 380;
     string           Unit               = 390;
     int32            UnitAmount         = 400;
+    uint32           BenefitIntervalHours = 401;
 
     bool             TestOnly           = 410;
     repeated string  Posters            = 420;
