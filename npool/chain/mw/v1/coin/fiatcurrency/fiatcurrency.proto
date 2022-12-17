@@ -22,32 +22,34 @@ service Middleware {
 
 message FiatCurrency {
     // @inject_tag: sql:"id"
-    string ID              = 10;
+    string ID                   = 10;
     // @inject_tag: sql:"fiat_currency_type_id"
-    string FiatCurrencyTypeID = 20;
+    string FiatCurrencyTypeID   = 20;
     // @inject_tag: sql:"feed_type"
-    string FeedTypeStr       = 80;
-    chain.manager.coin.currency.v1.FeedType FeedType = 90;
+    string FeedTypeStr          = 30;
+    chain.manager.coin.currency.v1.FeedType FeedType = 40;
     // @inject_tag: sql:"fiat_currency_name"
-    string FiatCurrencyName    = 30;
+    string FiatCurrencyName     = 50;
+    // @inject_tag: sql:"fiat_currency_name"
+    string FiatCurrencyLogo     = 60;
     // @inject_tag: sql:"market_value_high"
-    string MarketValueHigh = 60;
+    string MarketValueHigh      = 70;
     // @inject_tag: sql:"market_value_low"
-    string MarketValueLow  = 70;
+    string MarketValueLow       = 80;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt       = 40;
+    uint32 CreatedAt            = 90;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt       = 50;
+    uint32 UpdatedAt            = 100;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID      = 100;
+    string CoinTypeID           = 110;
     // @inject_tag: sql:"coin_name"
-    string CoinName        = 110;
+    string CoinName             = 120;
     // @inject_tag: sql:"coin_logo"
-    string CoinLogo        = 120;
+    string CoinLogo             = 130;
     // @inject_tag: sql:"coin_unit"
-    string CoinUnit        = 130;
+    string CoinUnit             = 140;
     // @inject_tag: sql:"coin_env"
-    string CoinENV         = 140;
+    string CoinENV              = 150;
 }
 
 message Conds {

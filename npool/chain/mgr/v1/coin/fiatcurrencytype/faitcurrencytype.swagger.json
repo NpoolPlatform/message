@@ -116,6 +116,9 @@
         "Name": {
           "type": "string"
         },
+        "Logo": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

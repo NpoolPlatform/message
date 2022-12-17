@@ -29,8 +29,9 @@ message FiatCurrencyTypeReq {
 message FiatCurrencyType {
     string   ID        = 10;
     string   Name      = 20;
-    uint32   CreatedAt = 30;
-    uint32   UpdatedAt = 40;
+    string   Logo      = 30;
+    uint32   CreatedAt = 40;
+    uint32   UpdatedAt = 50;
 }
 
 message Conds {

@@ -267,6 +267,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_currency_name\""
         },
+        "FiatCurrencyLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fiat_currency_name\""
+        },
         "MarketValueHigh": {
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_high\""
@@ -414,6 +418,9 @@
           "type": "string"
         },
         "Name": {
+          "type": "string"
+        },
+        "Logo": {
           "type": "string"
         },
         "CreatedAt": {
