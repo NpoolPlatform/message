@@ -60,6 +60,7 @@ message GoodReq {
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
+    optional uint32        BenefitIntervalHours = 170;
 }
 
 message Good {
@@ -82,6 +83,7 @@ message Good {
     uint32          CreatedAt          = 170;
     uint32          UpdatedAt          = 180;
     uint32          DeletedAt          = 190;
+    uint32          BenefitIntervalHours = 200;
 }
 
 message Conds {

@@ -2,17 +2,15 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/ledger/mgr/v1/mining/profit/detail/detail.proto
+// source: npool/ledger/mgr/v1/mining/detail/detail.proto
 
 package detail
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
 	CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error)
 	GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error)
@@ -43,18 +40,9 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
-func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/Version", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *managerClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
 	out := new(CreateDetailResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/CreateDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/CreateDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -63,7 +51,7 @@ func (c *managerClient) CreateDetail(ctx context.Context, in *CreateDetailReques
 
 func (c *managerClient) CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error) {
 	out := new(CreateDetailsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/CreateDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/CreateDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +60,7 @@ func (c *managerClient) CreateDetails(ctx context.Context, in *CreateDetailsRequ
 
 func (c *managerClient) GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error) {
 	out := new(GetDetailResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/GetDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/GetDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +69,7 @@ func (c *managerClient) GetDetail(ctx context.Context, in *GetDetailRequest, opt
 
 func (c *managerClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
 	out := new(GetDetailOnlyResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/GetDetailOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/GetDetailOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +78,7 @@ func (c *managerClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequ
 
 func (c *managerClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
 	out := new(GetDetailsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/GetDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/GetDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +87,7 @@ func (c *managerClient) GetDetails(ctx context.Context, in *GetDetailsRequest, o
 
 func (c *managerClient) ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error) {
 	out := new(ExistDetailResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/ExistDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/ExistDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +96,7 @@ func (c *managerClient) ExistDetail(ctx context.Context, in *ExistDetailRequest,
 
 func (c *managerClient) ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error) {
 	out := new(ExistDetailCondsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/ExistDetailConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/ExistDetailConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +105,7 @@ func (c *managerClient) ExistDetailConds(ctx context.Context, in *ExistDetailCon
 
 func (c *managerClient) CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error) {
 	out := new(CountDetailsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.detail.v1.Manager/CountDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.detail.v1.Manager/CountDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +116,6 @@ func (c *managerClient) CountDetails(ctx context.Context, in *CountDetailsReques
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
 	CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error)
 	GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error)
@@ -144,9 +131,6 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
 func (UnimplementedManagerServer) CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDetail not implemented")
 }
@@ -184,24 +168,6 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).Version(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/Version",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Manager_CreateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDetailRequest)
 	if err := dec(in); err != nil {
@@ -212,7 +178,7 @@ func _Manager_CreateDetail_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/CreateDetail",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/CreateDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateDetail(ctx, req.(*CreateDetailRequest))
@@ -230,7 +196,7 @@ func _Manager_CreateDetails_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/CreateDetails",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/CreateDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateDetails(ctx, req.(*CreateDetailsRequest))
@@ -248,7 +214,7 @@ func _Manager_GetDetail_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/GetDetail",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/GetDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetDetail(ctx, req.(*GetDetailRequest))
@@ -266,7 +232,7 @@ func _Manager_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/GetDetailOnly",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/GetDetailOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
@@ -284,7 +250,7 @@ func _Manager_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/GetDetails",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/GetDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetDetails(ctx, req.(*GetDetailsRequest))
@@ -302,7 +268,7 @@ func _Manager_ExistDetail_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/ExistDetail",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/ExistDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistDetail(ctx, req.(*ExistDetailRequest))
@@ -320,7 +286,7 @@ func _Manager_ExistDetailConds_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/ExistDetailConds",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/ExistDetailConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistDetailConds(ctx, req.(*ExistDetailCondsRequest))
@@ -338,7 +304,7 @@ func _Manager_CountDetails_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.detail.v1.Manager/CountDetails",
+		FullMethod: "/ledger.manager.mining.detail.v1.Manager/CountDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountDetails(ctx, req.(*CountDetailsRequest))
@@ -350,13 +316,9 @@ func _Manager_CountDetails_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.manager.mining.profit.detail.v1.Manager",
+	ServiceName: "ledger.manager.mining.detail.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Version",
-			Handler:    _Manager_Version_Handler,
-		},
 		{
 			MethodName: "CreateDetail",
 			Handler:    _Manager_CreateDetail_Handler,
@@ -391,5 +353,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mgr/v1/mining/profit/detail/detail.proto",
+	Metadata: "npool/ledger/mgr/v1/mining/detail/detail.proto",
 }

@@ -41,6 +41,8 @@ message General {
     string Locked     = 60;
     string Outcoming  = 70;
     string Spendable  = 80;
+    uint32 CreatedAt  = 90;
+    uint32 UpdatedAt  = 100;
 }
 
 message Conds {

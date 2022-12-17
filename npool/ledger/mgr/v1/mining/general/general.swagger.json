@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/profit/general/general.proto",
+    "title": "npool/ledger/mgr/v1/mining/general/general.proto",
     "version": "version not set"
   },
   "tags": [
@@ -71,12 +71,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "ToUser": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "TransferredToPlatform": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "TransferredToUser": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
@@ -154,11 +148,13 @@
         "ToUser": {
           "type": "string"
         },
-        "TransferredToPlatform": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         },
-        "TransferredToUser": {
-          "type": "string"
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -178,17 +174,9 @@
           "type": "string"
         },
         "ToPlatform": {
-          "type": "string",
-          "title": "Benefit belong to platform"
-        },
-        "ToUser": {
-          "type": "string",
-          "title": "Benefit belong to user"
-        },
-        "TransferredToPlatform": {
           "type": "string"
         },
-        "TransferredToUser": {
+        "ToUser": {
           "type": "string"
         }
       }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/profit/unsold/unsold.proto",
+    "title": "npool/ledger/mgr/v1/mining/unsold/unsold.proto",
     "version": "version not set"
   },
   "tags": [

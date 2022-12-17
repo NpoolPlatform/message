@@ -27,7 +27,6 @@ message AccountReq {
     optional string AccountID     = 30;
     optional bool   Backup        = 40;
     optional string TransactionID = 50;
-    optional uint32 IntervalHours = 60;
 }
 
 message Account {
@@ -38,7 +37,6 @@ message Account {
     string TransactionID = 50;
     uint32 CreatedAt     = 60;
     uint32 UpdatedAt     = 70;
-    uint32 IntervalHours = 80;
 }
 
 message Conds {
