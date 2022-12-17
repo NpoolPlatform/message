@@ -25,6 +25,27 @@
         }
       }
     },
+    "detailv2DetailReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "detailv2GetDetailOnlyResponse": {
       "type": "object",
       "properties": {
@@ -81,31 +102,6 @@
       }
     },
     "v1Detail": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1DetailReq": {
       "type": "object",
       "properties": {
         "ID": {

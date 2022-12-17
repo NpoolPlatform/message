@@ -60,6 +60,31 @@
         }
       }
     },
+    "unsoldv2UnsoldReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -104,31 +129,6 @@
       }
     },
     "v1Unsold": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UnsoldReq": {
       "type": "object",
       "properties": {
         "ID": {

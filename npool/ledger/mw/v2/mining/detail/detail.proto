@@ -12,8 +12,16 @@ service Middleware {
     rpc GetDetailOnly (GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
 }
 
+message DetailReq {
+    optional string     ID                    = 10;
+    optional string     GoodID                = 20;
+    optional string     CoinTypeID            = 30;
+    optional string     Amount                = 40;
+    optional uint32     BenefitIntervalHours  = 50;
+}
+
 message CreateDetailRequest {
-    ledger.manager.mining.detail.v1.DetailReq Info = 10;
+    DetailReq Info = 10;
 }
 
 message CreateDetailResponse {
