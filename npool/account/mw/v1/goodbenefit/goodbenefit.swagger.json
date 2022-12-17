@@ -67,11 +67,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"transaction_id\""
         },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"interval_hours\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -119,10 +114,6 @@
         },
         "TransactionID": {
           "type": "string"
-        },
-        "IntervalHours": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

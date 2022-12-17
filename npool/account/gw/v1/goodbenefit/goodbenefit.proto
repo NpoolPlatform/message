@@ -50,14 +50,12 @@ message Account {
     bool   Locked        = 140;
     account.manager.account1.v1.LockedBy LockedBy = 150;
     bool   Blocked       = 160;
-    uint32 IntervalHours = 161;
     uint32 CreatedAt     = 170;
     uint32 UpdatedAt     = 180;
 }
 
 message CreateAccountRequest {
     string GoodID        = 10;
-    uint32 IntervalHours = 20;
 }
 
 message CreateAccountResponse {
@@ -70,7 +68,6 @@ message UpdateAccountRequest {
     optional bool   Active        = 30;
     optional bool   Blocked       = 40;
     optional bool   Locked        = 50;
-    optional uint32 IntervalHours = 60;
 }
 
 message UpdateAccountResponse {
