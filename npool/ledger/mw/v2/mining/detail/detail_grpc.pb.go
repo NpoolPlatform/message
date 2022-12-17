@@ -36,7 +36,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
 	out := new(CreateDetailResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.mining.detail.v2.Middleware/CreateDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/CreateDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *middlewareClient) CreateDetail(ctx context.Context, in *CreateDetailReq
 
 func (c *middlewareClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
 	out := new(GetDetailOnlyResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.ledger1.mining.detail.v2.Middleware/GetDetailOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/GetDetailOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _Middleware_CreateDetail_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.middleware.ledger1.mining.detail.v2.Middleware/CreateDetail",
+		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/CreateDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateDetail(ctx, req.(*CreateDetailRequest))
@@ -112,7 +112,7 @@ func _Middleware_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.middleware.ledger1.mining.detail.v2.Middleware/GetDetailOnly",
+		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/GetDetailOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
@@ -124,7 +124,7 @@ func _Middleware_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.middleware.ledger1.mining.detail.v2.Middleware",
+	ServiceName: "ledger.middleware.mining.detail.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ledger.middleware.ledger1.mining.detail.v2;
+package ledger.middleware.mining.detail.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/mining/detail";
 
