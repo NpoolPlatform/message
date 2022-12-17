@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package chain.gateway.coin.fiatcurrency.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin/fiatcurrency";
+
+import "google/api/annotations.proto";
+import "npool/npool.proto";
+import "npool/chain/mw/v1/coin/fiatcurrency/fiatcurrency.proto";
+import "npool/chain/mgr/v1/coin/fiatcurrencytype/faitcurrencytype.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCoinFiatCurrencies (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coinfiatcurrencies"
+            body: "*"
+        };
+    }
+    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/histories"
+            body: "*"
+        };
+    }
+    rpc GetFiatCurrencyTypes (GetFiatCurrencyTypesRequest) returns (GetFiatCurrencyTypesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fiatcurrencytypes"
+            body: "*"
+        };
+    }
+    rpc CreateFiatCurrencyType (CreateFiatCurrencyTypeRequest) returns (CreateFiatCurrencyTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/fiatcurrencytype"
+            body: "*"
+        };
+    }
+    rpc UpdateFiatCurrencyType (UpdateFiatCurrencyTypeRequest) returns (UpdateFiatCurrencyTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/fiatcurrencytype"
+            body: "*"
+        };
+    }
+}
+
+message GetCoinFiatCurrenciesRequest {
+    repeated string FiatCurrencyTypeIDs = 10;
+    repeated string CoinTypeIDs         = 20;
+}
+
+message GetCoinFiatCurrenciesResponse {
+    repeated chain.middleware.coin.fiatcurrency.v1.FiatCurrency Infos = 10;
+}
+
+message GetHistoriesRequest {
+    optional string FiatCurrencyTypeID = 10;
+    int32           Offset     = 20;
+    int32           Limit      = 30;
+    optional uint32 StartAt    = 40;
+    optional uint32 EndAt      = 50;
+}
+
+message GetHistoriesResponse {
+    repeated chain.middleware.coin.fiatcurrency.v1.FiatCurrency Infos = 10;
+    uint32                                                      Total = 20;
+}
+
+message GetFiatCurrencyTypesRequest {
+    int32           Offset     = 20;
+    int32           Limit      = 30;
+}
+
+message GetFiatCurrencyTypesResponse {
+    repeated chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Infos = 10;
+    uint32                                                       Total = 20;
+}
+
+message CreateFiatCurrencyTypeRequest {
+    string Name = 10;
+}
+
+message CreateFiatCurrencyTypeResponse {
+    chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Info = 10;
+}
+
+message UpdateFiatCurrencyTypeRequest {
+    string ID   = 10;
+    string Name = 20;
+}
+
+message  UpdateFiatCurrencyTypeResponse {
+    chain.manager.coin.fiatcurrencytype.v1.FiatCurrencyType Info = 10;
+}
