@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ledger.middleware.mining.detail.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/mining/detail";
+
+import "npool/ledger/mgr/v1/mining/detail/detail.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateDetail  (CreateDetailRequest)  returns (CreateDetailResponse)  {}
+    rpc GetDetailOnly (GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
+}
+
+message CreateDetailRequest {
+    ledger.manager.mining.detail.v1.DetailReq Info = 10;
+}
+
+message CreateDetailResponse {
+    ledger.manager.mining.detail.v1.Detail Info = 10;
+}
+
+message GetDetailOnlyRequest {
+    ledger.manager.mining.detail.v1.Conds Conds = 10;
+}
+
+message GetDetailOnlyResponse {
+    ledger.manager.mining.detail.v1.Detail Info = 10;
+}
+

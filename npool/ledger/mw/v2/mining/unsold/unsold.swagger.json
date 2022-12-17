@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/mining/profit/unsold/unsold.proto",
+    "title": "npool/ledger/mw/v2/mining/unsold/unsold.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -44,6 +44,22 @@
         }
       }
     },
+    "unsoldv2CreateUnsoldResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Unsold"
+        }
+      }
+    },
+    "unsoldv2GetUnsoldOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Unsold"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -61,81 +77,6 @@
         },
         "BenefitDate": {
           "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v1CountUnsoldsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateUnsoldResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Unsold"
-        }
-      }
-    },
-    "v1CreateUnsoldsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Unsold"
-          }
-        }
-      }
-    },
-    "v1ExistUnsoldCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUnsoldResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetUnsoldOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Unsold"
-        }
-      }
-    },
-    "v1GetUnsoldResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Unsold"
-        }
-      }
-    },
-    "v1GetUnsoldsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Unsold"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -209,14 +150,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
         }
       }
     }

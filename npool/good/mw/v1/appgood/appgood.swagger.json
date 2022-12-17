@@ -281,6 +281,11 @@
           "format": "float",
           "title": "@inject_tag: sql:\"rating\""
         },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
         "GoodTotal": {
           "type": "integer",
           "format": "int64",

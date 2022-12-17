@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package ledger.manager.mining.profit.unsold.v1;
+package ledger.manager.mining.unsold.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/profit/unsold";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/unsold";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";

@@ -232,6 +232,10 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -294,6 +298,10 @@
         },
         "TestOnly": {
           "type": "boolean"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

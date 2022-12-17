@@ -102,6 +102,8 @@ message Good {
     uint32           CreatedAt          = 420;
     uint32           UpdatedAt          = 430;
     uint32           DeletedAt          = 440;
+
+    uint32           BenefitIntervalHours = 450;
 }
 
 message CreateGoodRequest {
@@ -123,6 +125,7 @@ message CreateGoodRequest {
     uint32          Total              = 170;
     repeated string Posters            = 210;
     repeated string Labels             = 220;
+    optional uint32 BenefitIntervalHours = 230;
 }
 
 message CreateGoodResponse {
@@ -165,6 +168,7 @@ message UpdateGoodRequest {
     optional uint32        Total              = 170;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
+    optional uint32        BenefitIntervalHours = 230;
 }
 
 message UpdateGoodResponse {

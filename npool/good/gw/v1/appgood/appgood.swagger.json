@@ -388,6 +388,10 @@
           "type": "integer",
           "format": "int32"
         },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        },
         "TestOnly": {
           "type": "boolean"
         },

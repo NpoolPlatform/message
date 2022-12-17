@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/ledger/mgr/v1/mining/profit/general/general.proto
+// source: npool/ledger/mgr/v1/mining/general/general.proto
 
 package general
 
@@ -47,7 +47,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/Version", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 
 func (c *managerClient) CreateGeneral(ctx context.Context, in *CreateGeneralRequest, opts ...grpc.CallOption) (*CreateGeneralResponse, error) {
 	out := new(CreateGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/CreateGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/CreateGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *managerClient) CreateGeneral(ctx context.Context, in *CreateGeneralRequ
 
 func (c *managerClient) CreateGenerals(ctx context.Context, in *CreateGeneralsRequest, opts ...grpc.CallOption) (*CreateGeneralsResponse, error) {
 	out := new(CreateGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/CreateGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/CreateGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +74,7 @@ func (c *managerClient) CreateGenerals(ctx context.Context, in *CreateGeneralsRe
 
 func (c *managerClient) AddGeneral(ctx context.Context, in *AddGeneralRequest, opts ...grpc.CallOption) (*AddGeneralResponse, error) {
 	out := new(AddGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/AddGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/AddGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func (c *managerClient) AddGeneral(ctx context.Context, in *AddGeneralRequest, o
 
 func (c *managerClient) GetGeneral(ctx context.Context, in *GetGeneralRequest, opts ...grpc.CallOption) (*GetGeneralResponse, error) {
 	out := new(GetGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/GetGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/GetGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,7 +92,7 @@ func (c *managerClient) GetGeneral(ctx context.Context, in *GetGeneralRequest, o
 
 func (c *managerClient) GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRequest, opts ...grpc.CallOption) (*GetGeneralOnlyResponse, error) {
 	out := new(GetGeneralOnlyResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/GetGeneralOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/GetGeneralOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ func (c *managerClient) GetGeneralOnly(ctx context.Context, in *GetGeneralOnlyRe
 
 func (c *managerClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error) {
 	out := new(GetGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/GetGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/GetGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,7 +110,7 @@ func (c *managerClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest,
 
 func (c *managerClient) ExistGeneral(ctx context.Context, in *ExistGeneralRequest, opts ...grpc.CallOption) (*ExistGeneralResponse, error) {
 	out := new(ExistGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/ExistGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/ExistGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,7 +119,7 @@ func (c *managerClient) ExistGeneral(ctx context.Context, in *ExistGeneralReques
 
 func (c *managerClient) ExistGeneralConds(ctx context.Context, in *ExistGeneralCondsRequest, opts ...grpc.CallOption) (*ExistGeneralCondsResponse, error) {
 	out := new(ExistGeneralCondsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/ExistGeneralConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/ExistGeneralConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +128,7 @@ func (c *managerClient) ExistGeneralConds(ctx context.Context, in *ExistGeneralC
 
 func (c *managerClient) CountGenerals(ctx context.Context, in *CountGeneralsRequest, opts ...grpc.CallOption) (*CountGeneralsResponse, error) {
 	out := new(CountGeneralsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/CountGenerals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/CountGenerals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,7 +137,7 @@ func (c *managerClient) CountGenerals(ctx context.Context, in *CountGeneralsRequ
 
 func (c *managerClient) DeleteGeneral(ctx context.Context, in *DeleteGeneralRequest, opts ...grpc.CallOption) (*DeleteGeneralResponse, error) {
 	out := new(DeleteGeneralResponse)
-	err := c.cc.Invoke(ctx, "/ledger.manager.mining.profit.general.v1.Manager/DeleteGeneral", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ledger.manager.mining.general.v1.Manager/DeleteGeneral", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -222,7 +222,7 @@ func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/Version",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/Version",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
@@ -240,7 +240,7 @@ func _Manager_CreateGeneral_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/CreateGeneral",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/CreateGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateGeneral(ctx, req.(*CreateGeneralRequest))
@@ -258,7 +258,7 @@ func _Manager_CreateGenerals_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/CreateGenerals",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/CreateGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateGenerals(ctx, req.(*CreateGeneralsRequest))
@@ -276,7 +276,7 @@ func _Manager_AddGeneral_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/AddGeneral",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/AddGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).AddGeneral(ctx, req.(*AddGeneralRequest))
@@ -294,7 +294,7 @@ func _Manager_GetGeneral_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/GetGeneral",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/GetGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetGeneral(ctx, req.(*GetGeneralRequest))
@@ -312,7 +312,7 @@ func _Manager_GetGeneralOnly_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/GetGeneralOnly",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/GetGeneralOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetGeneralOnly(ctx, req.(*GetGeneralOnlyRequest))
@@ -330,7 +330,7 @@ func _Manager_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/GetGenerals",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/GetGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetGenerals(ctx, req.(*GetGeneralsRequest))
@@ -348,7 +348,7 @@ func _Manager_ExistGeneral_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/ExistGeneral",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/ExistGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistGeneral(ctx, req.(*ExistGeneralRequest))
@@ -366,7 +366,7 @@ func _Manager_ExistGeneralConds_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/ExistGeneralConds",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/ExistGeneralConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistGeneralConds(ctx, req.(*ExistGeneralCondsRequest))
@@ -384,7 +384,7 @@ func _Manager_CountGenerals_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/CountGenerals",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/CountGenerals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountGenerals(ctx, req.(*CountGeneralsRequest))
@@ -402,7 +402,7 @@ func _Manager_DeleteGeneral_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.manager.mining.profit.general.v1.Manager/DeleteGeneral",
+		FullMethod: "/ledger.manager.mining.general.v1.Manager/DeleteGeneral",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteGeneral(ctx, req.(*DeleteGeneralRequest))
@@ -414,7 +414,7 @@ func _Manager_DeleteGeneral_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.manager.mining.profit.general.v1.Manager",
+	ServiceName: "ledger.manager.mining.general.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -463,5 +463,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mgr/v1/mining/profit/general/general.proto",
+	Metadata: "npool/ledger/mgr/v1/mining/general/general.proto",
 }

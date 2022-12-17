@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/ledger/general/general.proto",
+    "title": "npool/ledger/mgr/v1/mining/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,47 +44,27 @@
         }
       }
     },
-    "v1AddGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
+        "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "BenefitDate": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountGeneralsResponse": {
+    "v1CountDetailsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -93,157 +73,119 @@
         }
       }
     },
-    "v1CreateGeneralResponse": {
+    "v1CreateDetailResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "$ref": "#/definitions/v1Detail"
         }
       }
     },
-    "v1CreateGeneralsResponse": {
+    "v1CreateDetailsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Detail"
           }
         }
       }
     },
-    "v1DeleteGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1ExistGeneralCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1General": {
+    "v1Detail": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
+        "GoodID": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v1GeneralReq": {
+    "v1DetailReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
+        "GoodID": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
-          "type": "string"
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
-    "v1GetGeneralOnlyResponse": {
+    "v1ExistDetailCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "type": "boolean"
         }
       }
     },
-    "v1GetGeneralResponse": {
+    "v1ExistDetailResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "type": "boolean"
         }
       }
     },
-    "v1GetGeneralsResponse": {
+    "v1GetDetailOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
+    "v1GetDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
+    "v1GetDetailsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Detail"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
@@ -255,6 +197,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

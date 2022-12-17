@@ -1,16 +1,14 @@
 syntax = "proto3";
 
-package ledger.manager.mining.profit.detail.v1;
+package ledger.manager.mining.detail.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/profit/detail";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mgr/v1/mining/detail";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse) {}
-
     rpc CreateDetail (CreateDetailRequest) returns (CreateDetailResponse) {}
 
     rpc CreateDetails (CreateDetailsRequest) returns (CreateDetailsResponse) {}
@@ -33,7 +31,6 @@ message DetailReq {
     optional string     GoodID           = 20;
     optional string     CoinTypeID       = 30;
     optional string     Amount           = 40;
-    // E.g. when pay with non-USDT coin
     optional uint32     BenefitDate      = 50;
     optional uint32     CreatedAt        = 60;
 }

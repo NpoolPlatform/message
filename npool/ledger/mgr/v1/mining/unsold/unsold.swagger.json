@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/ledger/transaction/transaction.proto",
+    "title": "npool/ledger/mgr/v1/mining/unsold/unsold.proto",
     "version": "version not set"
   },
   "tags": [
@@ -50,27 +50,21 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "FromAccountID": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ToAccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "State": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "TxType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "CreatedAt": {
+        "BenefitDate": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountTransactionsResponse": {
+    "v1CountUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -79,34 +73,26 @@
         }
       }
     },
-    "v1CreateTransactionResponse": {
+    "v1CreateUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Transaction"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1CreateTransactionsResponse": {
+    "v1CreateUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Transaction"
+            "$ref": "#/definitions/v1Unsold"
           }
         }
       }
     },
-    "v1DeleteTransactionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Transaction"
-        }
-      }
-    },
-    "v1ExistTransactionCondsResponse": {
+    "v1ExistUnsoldCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -114,7 +100,7 @@
         }
       }
     },
-    "v1ExistTransactionResponse": {
+    "v1ExistUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -122,46 +108,34 @@
         }
       }
     },
-    "v1GetTransactionOnlyResponse": {
+    "v1GetUnsoldOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Transaction"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1GetTransactionResponse": {
+    "v1GetUnsoldResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Transaction"
+          "$ref": "#/definitions/v1Unsold"
         }
       }
     },
-    "v1GetTransactionsResponse": {
+    "v1GetUnsoldsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Transaction"
+            "$ref": "#/definitions/v1Unsold"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
@@ -176,103 +150,6 @@
         }
       }
     },
-    "v1Transaction": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FromAccountID": {
-          "type": "string"
-        },
-        "ToAccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1TransactionState"
-        },
-        "TxType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
-        "TxExtra": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1TransactionReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FromAccountID": {
-          "type": "string"
-        },
-        "ToAccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1TransactionState"
-        },
-        "TxType": {
-          "$ref": "#/definitions/v1TransactionType"
-        },
-        "TxExtra": {
-          "type": "string"
-        }
-      }
-    },
-    "v1TransactionState": {
-      "type": "string",
-      "enum": [
-        "DefaultTransactionState",
-        "Created",
-        "Wait",
-        "Transferring",
-        "TransactionFail",
-        "Successful"
-      ],
-      "default": "DefaultTransactionState"
-    },
-    "v1TransactionType": {
-      "type": "string",
-      "enum": [
-        "DefaultTransactionType",
-        "UserGoodBenefit",
-        "UserHotLimitation",
-        "PlatformGoodBenefit",
-        "PaymentCollector",
-        "GasFeeding",
-        "Withdrawal"
-      ],
-      "default": "DefaultTransactionType"
-    },
     "v1Uint32Val": {
       "type": "object",
       "properties": {
@@ -285,11 +162,61 @@
         }
       }
     },
-    "v1UpdateTransactionResponse": {
+    "v1Unsold": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UnsoldReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1VersionResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Transaction"
+          "type": "string"
         }
       }
     }
