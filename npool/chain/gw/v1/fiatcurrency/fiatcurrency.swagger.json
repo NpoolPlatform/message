@@ -249,11 +249,8 @@
     "chaingatewayfiatcurrencyv1GetFiatCurrencyResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
-          }
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
         }
       }
     },

@@ -54,7 +54,7 @@ message GetFiatCurrencyRequest {
 }
 
 message GetFiatCurrencyResponse {
-    repeated chain.middleware.fiatcurrency.v1.FiatCurrency Infos = 10;
+    chain.middleware.fiatcurrency.v1.FiatCurrency Info = 10;
 }
 
 message GetCoinFiatCurrenciesRequest {
