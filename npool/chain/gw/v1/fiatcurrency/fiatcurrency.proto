@@ -11,6 +11,12 @@ import "npool/chain/mgr/v1/fiatcurrencytype/faitcurrencytype.proto";
 
 // Service Name
 service Gateway {
+    rpc GetFiatCurrency (GetFiatCurrencyRequest) returns (GetFiatCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fiatcurrency"
+            body: "*"
+        };
+    }
     rpc GetCoinFiatCurrencies (GetCoinFiatCurrenciesRequest) returns (GetCoinFiatCurrenciesResponse) {
         option (google.api.http) = {
             post: "/v1/get/coinfiatcurrencies"
@@ -41,6 +47,14 @@ service Gateway {
             body: "*"
         };
     }
+}
+
+message GetFiatCurrencyRequest {
+    string FiatCurrencyTypeName = 10;
+}
+
+message GetFiatCurrencyResponse {
+    repeated chain.middleware.fiatcurrency.v1.FiatCurrency Infos = 10;
 }
 
 message GetCoinFiatCurrenciesRequest {
