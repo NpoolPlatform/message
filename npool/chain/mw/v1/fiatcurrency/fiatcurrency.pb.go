@@ -38,8 +38,8 @@ type FiatCurrency struct {
 	FeedType    currency.FeedType `protobuf:"varint,40,opt,name=FeedType,proto3,enum=chain.manager.coin.currency.v1.FeedType" json:"FeedType,omitempty"`
 	// @inject_tag: sql:"fiat_currency_name"
 	FiatCurrencyName string `protobuf:"bytes,50,opt,name=FiatCurrencyName,proto3" json:"FiatCurrencyName,omitempty" sql:"fiat_currency_name"`
-	// @inject_tag: sql:"fiat_currency_name"
-	FiatCurrencyLogo string `protobuf:"bytes,60,opt,name=FiatCurrencyLogo,proto3" json:"FiatCurrencyLogo,omitempty" sql:"fiat_currency_name"`
+	// @inject_tag: sql:"fiat_currency_logo"
+	FiatCurrencyLogo string `protobuf:"bytes,60,opt,name=FiatCurrencyLogo,proto3" json:"FiatCurrencyLogo,omitempty" sql:"fiat_currency_logo"`
 	// @inject_tag: sql:"market_value_high"
 	MarketValueHigh string `protobuf:"bytes,70,opt,name=MarketValueHigh,proto3" json:"MarketValueHigh,omitempty" sql:"market_value_high"`
 	// @inject_tag: sql:"market_value_low"

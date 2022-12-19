@@ -317,7 +317,7 @@
         },
         "FiatCurrencyLogo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_currency_name\""
+          "title": "@inject_tag: sql:\"fiat_currency_logo\""
         },
         "MarketValueHigh": {
           "type": "string",

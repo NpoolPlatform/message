@@ -30,7 +30,7 @@ message FiatCurrency {
     chain.manager.coin.currency.v1.FeedType FeedType = 40;
     // @inject_tag: sql:"fiat_currency_name"
     string FiatCurrencyName     = 50;
-    // @inject_tag: sql:"fiat_currency_name"
+    // @inject_tag: sql:"fiat_currency_logo"
     string FiatCurrencyLogo     = 60;
     // @inject_tag: sql:"market_value_high"
     string MarketValueHigh      = 70;
