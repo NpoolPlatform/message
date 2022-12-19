@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mw/v1/coin/fiatcurrency/fiatcurrency.proto",
+    "title": "npool/chain/mw/v1/fiat/currency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "chainmiddlewarecoinfiatcurrencyv1Conds": {
+    "chainmiddlewarefiatcurrencyv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -37,13 +37,13 @@
         }
       }
     },
-    "chainmiddlewarecoinfiatcurrencyv1CreateFiatCurrenciesResponse": {
+    "chainmiddlewarefiatcurrencyv1CreateFiatCurrenciesResponse": {
       "type": "object"
     },
-    "chainmiddlewarecoinfiatcurrencyv1CreateFiatCurrencyResponse": {
+    "chainmiddlewarefiatcurrencyv1CreateFiatCurrencyResponse": {
       "type": "object"
     },
-    "chainmiddlewarecoinfiatcurrencyv1FiatCurrency": {
+    "chainmiddlewarefiatcurrencyv1FiatCurrency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -67,7 +67,7 @@
         },
         "FiatCurrencyLogo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_currency_name\""
+          "title": "@inject_tag: sql:\"fiat_currency_logo\""
         },
         "MarketValueHigh": {
           "type": "string",
@@ -109,22 +109,22 @@
         }
       }
     },
-    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrenciesResponse": {
+    "chainmiddlewarefiatcurrencyv1GetFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
           }
         }
       }
     },
-    "chainmiddlewarecoinfiatcurrencyv1GetFiatCurrencyResponse": {
+    "chainmiddlewarefiatcurrencyv1GetFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+          "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
         }
       }
     },
@@ -191,7 +191,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
           }
         }
       }
@@ -202,7 +202,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarecoinfiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
           }
         },
         "Total": {

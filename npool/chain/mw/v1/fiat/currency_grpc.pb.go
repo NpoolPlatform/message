@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mw/v1/coin/fiatcurrency/fiatcurrency.proto
+// source: npool/chain/mw/v1/fiat/currency.proto
 
-package fiatcurrency
+package currency
 
 import (
 	context "context"
@@ -41,7 +41,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreateFiatCurrency(ctx context.Context, in *CreateFiatCurrencyRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyResponse, error) {
 	out := new(CreateFiatCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/CreateFiatCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/CreateFiatCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *middlewareClient) CreateFiatCurrency(ctx context.Context, in *CreateFia
 
 func (c *middlewareClient) CreateFiatCurrencies(ctx context.Context, in *CreateFiatCurrenciesRequest, opts ...grpc.CallOption) (*CreateFiatCurrenciesResponse, error) {
 	out := new(CreateFiatCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/CreateFiatCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/CreateFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func (c *middlewareClient) CreateFiatCurrencies(ctx context.Context, in *CreateF
 
 func (c *middlewareClient) GetFiatCurrency(ctx context.Context, in *GetFiatCurrencyRequest, opts ...grpc.CallOption) (*GetFiatCurrencyResponse, error) {
 	out := new(GetFiatCurrencyResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrency", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/GetFiatCurrency", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *middlewareClient) GetFiatCurrency(ctx context.Context, in *GetFiatCurre
 
 func (c *middlewareClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetFiatCurrenciesResponse, error) {
 	out := new(GetFiatCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/GetFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (c *middlewareClient) GetFiatCurrencies(ctx context.Context, in *GetFiatCur
 
 func (c *middlewareClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoinFiatCurrenciesRequest, opts ...grpc.CallOption) (*GetCoinFiatCurrenciesResponse, error) {
 	out := new(GetCoinFiatCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetCoinFiatCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/GetCoinFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,7 +86,7 @@ func (c *middlewareClient) GetCoinFiatCurrencies(ctx context.Context, in *GetCoi
 
 func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/GetHistories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 
 func (c *middlewareClient) RefreshFiatCurrencies(ctx context.Context, in *RefreshFiatCurrenciesRequest, opts ...grpc.CallOption) (*RefreshFiatCurrenciesResponse, error) {
 	out := new(RefreshFiatCurrenciesResponse)
-	err := c.cc.Invoke(ctx, "/chain.middleware.coin.fiatcurrency.v1.Middleware/RefreshFiatCurrencies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.middleware.fiat.currency.v1.Middleware/RefreshFiatCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -164,7 +164,7 @@ func _Middleware_CreateFiatCurrency_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/CreateFiatCurrency",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/CreateFiatCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateFiatCurrency(ctx, req.(*CreateFiatCurrencyRequest))
@@ -182,7 +182,7 @@ func _Middleware_CreateFiatCurrencies_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/CreateFiatCurrencies",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/CreateFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateFiatCurrencies(ctx, req.(*CreateFiatCurrenciesRequest))
@@ -200,7 +200,7 @@ func _Middleware_GetFiatCurrency_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrency",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/GetFiatCurrency",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetFiatCurrency(ctx, req.(*GetFiatCurrencyRequest))
@@ -218,7 +218,7 @@ func _Middleware_GetFiatCurrencies_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetFiatCurrencies",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/GetFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetFiatCurrencies(ctx, req.(*GetFiatCurrenciesRequest))
@@ -236,7 +236,7 @@ func _Middleware_GetCoinFiatCurrencies_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetCoinFiatCurrencies",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/GetCoinFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCoinFiatCurrencies(ctx, req.(*GetCoinFiatCurrenciesRequest))
@@ -254,7 +254,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/GetHistories",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/GetHistories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistories(ctx, req.(*GetHistoriesRequest))
@@ -272,7 +272,7 @@ func _Middleware_RefreshFiatCurrencies_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.middleware.coin.fiatcurrency.v1.Middleware/RefreshFiatCurrencies",
+		FullMethod: "/chain.middleware.fiat.currency.v1.Middleware/RefreshFiatCurrencies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).RefreshFiatCurrencies(ctx, req.(*RefreshFiatCurrenciesRequest))
@@ -284,7 +284,7 @@ func _Middleware_RefreshFiatCurrencies_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.middleware.coin.fiatcurrency.v1.Middleware",
+	ServiceName: "chain.middleware.fiat.currency.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -317,5 +317,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mw/v1/coin/fiatcurrency/fiatcurrency.proto",
+	Metadata: "npool/chain/mw/v1/fiat/currency.proto",
 }

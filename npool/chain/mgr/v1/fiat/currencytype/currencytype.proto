@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package chain.manager.coin.fiatcurrencytype.v1;
+package chain.manager.fiat.currencytype.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/fiatcurrencytype";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/fiat/currencytype";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
