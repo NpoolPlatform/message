@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package chain.middleware.fiat.currency.v1;
+package chain.middleware.fiat.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/fiat/currency";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/fiat";
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";

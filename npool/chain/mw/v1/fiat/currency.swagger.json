@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "chainmiddlewarefiatcurrencyv1Conds": {
+    "middlewarefiatv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -37,13 +37,13 @@
         }
       }
     },
-    "chainmiddlewarefiatcurrencyv1CreateFiatCurrenciesResponse": {
+    "middlewarefiatv1CreateFiatCurrenciesResponse": {
       "type": "object"
     },
-    "chainmiddlewarefiatcurrencyv1CreateFiatCurrencyResponse": {
+    "middlewarefiatv1CreateFiatCurrencyResponse": {
       "type": "object"
     },
-    "chainmiddlewarefiatcurrencyv1FiatCurrency": {
+    "middlewarefiatv1FiatCurrency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -109,22 +109,22 @@
         }
       }
     },
-    "chainmiddlewarefiatcurrencyv1GetFiatCurrenciesResponse": {
+    "middlewarefiatv1GetFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
           }
         }
       }
     },
-    "chainmiddlewarefiatcurrencyv1GetFiatCurrencyResponse": {
+    "middlewarefiatv1GetFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
+          "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
         }
       }
     },
@@ -191,7 +191,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
           }
         }
       }
@@ -202,7 +202,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chainmiddlewarefiatcurrencyv1FiatCurrency"
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
           }
         },
         "Total": {
