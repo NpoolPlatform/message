@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mgr/v1/fiatcurrencytype/faitcurrencytype.proto",
+    "title": "npool/chain/mgr/v1/fiat/currencytype/currencytype.proto",
     "version": "version not set"
   },
   "tags": [

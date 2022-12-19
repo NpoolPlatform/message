@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package chain.middleware.fiatcurrency.v1;
+package chain.middleware.fiat.currency.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/fiatcurrency";
+option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/fiat/currency";
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";
 import "npool/chain/mgr/v1/coin/currency/currency.proto";
-import "npool/chain/mgr/v1/fiatcurrency/fiatcurrency.proto";
+import "npool/chain/mgr/v1/fiat/currency/currency.proto";
 
 // Service Name
 service Middleware {
@@ -61,14 +61,14 @@ message Conds {
 }
 
 message CreateFiatCurrencyRequest {
-    chain.manager.fiatcurrency.v1.FiatCurrencyReq Info = 10;
+    chain.manager.fiat.currency.v1.FiatCurrencyReq Info = 10;
 }
 
 message CreateFiatCurrencyResponse {
 }
 
 message CreateFiatCurrenciesRequest {
-    repeated chain.manager.fiatcurrency.v1.FiatCurrencyReq Infos = 10;
+    repeated chain.manager.fiat.currency.v1.FiatCurrencyReq Infos = 10;
 }
 
 message CreateFiatCurrenciesResponse {

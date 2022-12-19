@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/fiatcurrency/fiatcurrency.proto",
+    "title": "npool/chain/gw/v1/fiat/currency.proto",
     "version": "version not set"
   },
   "tags": [
@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1CreateFiatCurrencyTypeResponse"
+              "$ref": "#/definitions/fiatcurrencyv1CreateFiatCurrencyTypeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1CreateFiatCurrencyTypeRequest"
+              "$ref": "#/definitions/fiatcurrencyv1CreateFiatCurrencyTypeRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1GetFiatCurrencyTypesResponse"
+              "$ref": "#/definitions/fiatcurrencyv1GetFiatCurrencyTypesResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1GetFiatCurrencyTypesRequest"
+              "$ref": "#/definitions/fiatcurrencyv1GetFiatCurrencyTypesRequest"
             }
           }
         ],
@@ -183,7 +183,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1UpdateFiatCurrencyTypeResponse"
+              "$ref": "#/definitions/fiatcurrencyv1UpdateFiatCurrencyTypeResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayfiatcurrencyv1UpdateFiatCurrencyTypeRequest"
+              "$ref": "#/definitions/fiatcurrencyv1UpdateFiatCurrencyTypeRequest"
             }
           }
         ],
@@ -359,7 +359,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1CreateFiatCurrencyTypeRequest": {
+    "fiatcurrencyv1CreateFiatCurrencyTypeRequest": {
       "type": "object",
       "properties": {
         "Name": {
@@ -367,7 +367,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1CreateFiatCurrencyTypeResponse": {
+    "fiatcurrencyv1CreateFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -375,7 +375,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1GetFiatCurrencyTypesRequest": {
+    "fiatcurrencyv1GetFiatCurrencyTypesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -388,7 +388,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1GetFiatCurrencyTypesResponse": {
+    "fiatcurrencyv1GetFiatCurrencyTypesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -403,7 +403,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1UpdateFiatCurrencyTypeRequest": {
+    "fiatcurrencyv1UpdateFiatCurrencyTypeRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -414,7 +414,7 @@
         }
       }
     },
-    "gatewayfiatcurrencyv1UpdateFiatCurrencyTypeResponse": {
+    "fiatcurrencyv1UpdateFiatCurrencyTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {

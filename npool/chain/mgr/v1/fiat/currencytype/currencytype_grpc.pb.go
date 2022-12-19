@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/chain/mgr/v1/fiatcurrencytype/faitcurrencytype.proto
+// source: npool/chain/mgr/v1/fiat/currencytype/currencytype.proto
 
-package fiatcurrencytype
+package currencytype
 
 import (
 	context "context"
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateFiatCurrencyType(ctx context.Context, in *CreateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyTypeResponse, error) {
 	out := new(CreateFiatCurrencyTypeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/CreateFiatCurrencyType", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/CreateFiatCurrencyType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateFiatCurrencyType(ctx context.Context, in *CreateFi
 
 func (c *managerClient) CreateFiatCurrencyTypes(ctx context.Context, in *CreateFiatCurrencyTypesRequest, opts ...grpc.CallOption) (*CreateFiatCurrencyTypesResponse, error) {
 	out := new(CreateFiatCurrencyTypesResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/CreateFiatCurrencyTypes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/CreateFiatCurrencyTypes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateFiatCurrencyTypes(ctx context.Context, in *CreateF
 
 func (c *managerClient) UpdateFiatCurrencyType(ctx context.Context, in *UpdateFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*UpdateFiatCurrencyTypeResponse, error) {
 	out := new(UpdateFiatCurrencyTypeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/UpdateFiatCurrencyType", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/UpdateFiatCurrencyType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateFiatCurrencyType(ctx context.Context, in *UpdateFi
 
 func (c *managerClient) GetFiatCurrencyType(ctx context.Context, in *GetFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*GetFiatCurrencyTypeResponse, error) {
 	out := new(GetFiatCurrencyTypeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyType", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetFiatCurrencyType(ctx context.Context, in *GetFiatCurr
 
 func (c *managerClient) GetFiatCurrencyTypeOnly(ctx context.Context, in *GetFiatCurrencyTypeOnlyRequest, opts ...grpc.CallOption) (*GetFiatCurrencyTypeOnlyResponse, error) {
 	out := new(GetFiatCurrencyTypeOnlyResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyTypeOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyTypeOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetFiatCurrencyTypeOnly(ctx context.Context, in *GetFiat
 
 func (c *managerClient) GetFiatCurrencyTypes(ctx context.Context, in *GetFiatCurrencyTypesRequest, opts ...grpc.CallOption) (*GetFiatCurrencyTypesResponse, error) {
 	out := new(GetFiatCurrencyTypesResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyTypes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyTypes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetFiatCurrencyTypes(ctx context.Context, in *GetFiatCur
 
 func (c *managerClient) ExistFiatCurrencyType(ctx context.Context, in *ExistFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*ExistFiatCurrencyTypeResponse, error) {
 	out := new(ExistFiatCurrencyTypeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/ExistFiatCurrencyType", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/ExistFiatCurrencyType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistFiatCurrencyType(ctx context.Context, in *ExistFiat
 
 func (c *managerClient) ExistFiatCurrencyTypeConds(ctx context.Context, in *ExistFiatCurrencyTypeCondsRequest, opts ...grpc.CallOption) (*ExistFiatCurrencyTypeCondsResponse, error) {
 	out := new(ExistFiatCurrencyTypeCondsResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/ExistFiatCurrencyTypeConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/ExistFiatCurrencyTypeConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistFiatCurrencyTypeConds(ctx context.Context, in *Exis
 
 func (c *managerClient) CountFiatCurrencyTypes(ctx context.Context, in *CountFiatCurrencyTypesRequest, opts ...grpc.CallOption) (*CountFiatCurrencyTypesResponse, error) {
 	out := new(CountFiatCurrencyTypesResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/CountFiatCurrencyTypes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/CountFiatCurrencyTypes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountFiatCurrencyTypes(ctx context.Context, in *CountFia
 
 func (c *managerClient) DeleteFiatCurrencyType(ctx context.Context, in *DeleteFiatCurrencyTypeRequest, opts ...grpc.CallOption) (*DeleteFiatCurrencyTypeResponse, error) {
 	out := new(DeleteFiatCurrencyTypeResponse)
-	err := c.cc.Invoke(ctx, "/chain.manager.fiatcurrencytype.v1.Manager/DeleteFiatCurrencyType", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/chain.manager.fiat.currencytype.v1.Manager/DeleteFiatCurrencyType", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateFiatCurrencyType_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/CreateFiatCurrencyType",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/CreateFiatCurrencyType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateFiatCurrencyType(ctx, req.(*CreateFiatCurrencyTypeRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateFiatCurrencyTypes_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/CreateFiatCurrencyTypes",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/CreateFiatCurrencyTypes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateFiatCurrencyTypes(ctx, req.(*CreateFiatCurrencyTypesRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateFiatCurrencyType_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/UpdateFiatCurrencyType",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/UpdateFiatCurrencyType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateFiatCurrencyType(ctx, req.(*UpdateFiatCurrencyTypeRequest))
@@ -260,7 +260,7 @@ func _Manager_GetFiatCurrencyType_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyType",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetFiatCurrencyType(ctx, req.(*GetFiatCurrencyTypeRequest))
@@ -278,7 +278,7 @@ func _Manager_GetFiatCurrencyTypeOnly_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyTypeOnly",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyTypeOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetFiatCurrencyTypeOnly(ctx, req.(*GetFiatCurrencyTypeOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetFiatCurrencyTypes_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/GetFiatCurrencyTypes",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/GetFiatCurrencyTypes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetFiatCurrencyTypes(ctx, req.(*GetFiatCurrencyTypesRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistFiatCurrencyType_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/ExistFiatCurrencyType",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/ExistFiatCurrencyType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistFiatCurrencyType(ctx, req.(*ExistFiatCurrencyTypeRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistFiatCurrencyTypeConds_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/ExistFiatCurrencyTypeConds",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/ExistFiatCurrencyTypeConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistFiatCurrencyTypeConds(ctx, req.(*ExistFiatCurrencyTypeCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountFiatCurrencyTypes_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/CountFiatCurrencyTypes",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/CountFiatCurrencyTypes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountFiatCurrencyTypes(ctx, req.(*CountFiatCurrencyTypesRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteFiatCurrencyType_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/chain.manager.fiatcurrencytype.v1.Manager/DeleteFiatCurrencyType",
+		FullMethod: "/chain.manager.fiat.currencytype.v1.Manager/DeleteFiatCurrencyType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteFiatCurrencyType(ctx, req.(*DeleteFiatCurrencyTypeRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteFiatCurrencyType_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.manager.fiatcurrencytype.v1.Manager",
+	ServiceName: "chain.manager.fiat.currencytype.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/mgr/v1/fiatcurrencytype/faitcurrencytype.proto",
+	Metadata: "npool/chain/mgr/v1/fiat/currencytype/currencytype.proto",
 }
