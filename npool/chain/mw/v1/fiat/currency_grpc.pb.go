@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/chain/mw/v1/fiat/currency.proto
 
-package currency
+package fiat
 
 import (
 	context "context"
