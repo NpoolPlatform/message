@@ -9,7 +9,7 @@ package fiatcurrency
 import (
 	npool "github.com/NpoolPlatform/message/npool"
 	currency "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/currency"
-	fiatcurrency "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/fiatcurrency"
+	"github.com/NpoolPlatform/message/npool/chain/mgr/v1/fiatcurrency"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
