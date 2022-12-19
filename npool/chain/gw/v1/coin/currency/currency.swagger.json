@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/currencies": {
+    "/v1/get/coincurrencies": {
       "post": {
         "operationId": "Gateway_GetCurrencies",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/histories": {
+    "/v1/get/coincurrencyhistories": {
       "post": {
         "operationId": "Gateway_GetHistories",
         "responses": {

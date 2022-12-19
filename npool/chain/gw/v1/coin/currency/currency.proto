@@ -12,13 +12,13 @@ import "npool/chain/mw/v1/coin/currency/currency.proto";
 service Gateway {
     rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/currencies"
+            post: "/v1/get/coincurrencies"
             body: "*"
         };
     }
     rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/histories"
+            post: "/v1/get/coincurrencyhistories"
             body: "*"
         };
     }

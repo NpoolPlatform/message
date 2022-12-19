@@ -111,7 +111,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/currencies"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/histories"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/coincurrencyhistories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/currencies"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/histories"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/coincurrencyhistories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,9 +236,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_GetCurrencies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "currencies"}, ""))
+	pattern_Gateway_GetCurrencies_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coincurrencies"}, ""))
 
-	pattern_Gateway_GetHistories_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "histories"}, ""))
+	pattern_Gateway_GetHistories_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "coincurrencyhistories"}, ""))
 )
 
 var (

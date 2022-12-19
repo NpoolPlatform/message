@@ -25,7 +25,7 @@ service Gateway {
     }
     rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/histories"
+            post: "/v1/get/fiatcurrencyhistories"
             body: "*"
         };
     }

@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/get/fiatcurrencyhistories": {
+      "post": {
+        "operationId": "Gateway_GetHistories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetHistoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/fiatcurrencytypes": {
       "post": {
         "operationId": "Gateway_GetFiatCurrencyTypes",
@@ -136,38 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/fiatcurrencyv1GetFiatCurrencyTypesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/histories": {
-      "post": {
-        "operationId": "Gateway_GetHistories",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetHistoriesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetHistoriesRequest"
             }
           }
         ],
