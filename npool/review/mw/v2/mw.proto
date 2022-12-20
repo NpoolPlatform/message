@@ -12,6 +12,7 @@ service Middleware {
     rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
     rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
     rpc GetObjectReview  (GetObjectReviewRequest)  returns (GetObjectReviewResponse)  {}
+    rpc GetObjectReviews (GetObjectReviewsRequest) returns (GetObjectReviewsResponse) {}
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
 }
 
@@ -51,5 +52,15 @@ message GetObjectReviewRequest {
 
 message GetObjectReviewResponse {
     review.manager.v2.Review Info = 10;
+}
+
+message GetObjectReviewsRequest {
+    string AppID     = 10;
+    string Domain    = 20;
+    review.manager.v2.ReviewObjectType ObjectType = 50;
+}
+
+message GetObjectReviewsResponse {
+    repeated review.manager.v2.Review Infos = 10;
 }
 

@@ -135,6 +135,17 @@
         }
       }
     },
+    "v2GetObjectReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Review"
+          }
+        }
+      }
+    },
     "v2Review": {
       "type": "object",
       "properties": {
