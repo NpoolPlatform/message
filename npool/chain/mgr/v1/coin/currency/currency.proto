@@ -4,7 +4,6 @@ package chain.manager.coin.currency.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/coin/currency";
 
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
