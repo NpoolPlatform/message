@@ -7,7 +7,10 @@
 package v2
 
 import (
+	context "context"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -19,6 +22,16 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
+	CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error)
+	CreateReviews(ctx context.Context, in *CreateReviewsRequest, opts ...grpc.CallOption) (*CreateReviewsResponse, error)
+	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
+	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error)
+	GetReviewOnly(ctx context.Context, in *GetReviewOnlyRequest, opts ...grpc.CallOption) (*GetReviewOnlyResponse, error)
+	GetReviews(ctx context.Context, in *GetReviewsRequest, opts ...grpc.CallOption) (*GetReviewsResponse, error)
+	ExistReview(ctx context.Context, in *ExistReviewRequest, opts ...grpc.CallOption) (*ExistReviewResponse, error)
+	ExistReviewConds(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error)
+	CountReviews(ctx context.Context, in *CountReviewsRequest, opts ...grpc.CallOption) (*CountReviewsResponse, error)
+	DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error)
 }
 
 type managerClient struct {
@@ -29,10 +42,110 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
+func (c *managerClient) CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error) {
+	out := new(CreateReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/CreateReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) CreateReviews(ctx context.Context, in *CreateReviewsRequest, opts ...grpc.CallOption) (*CreateReviewsResponse, error) {
+	out := new(CreateReviewsResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/CreateReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error) {
+	out := new(UpdateReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/UpdateReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error) {
+	out := new(GetReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/GetReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) GetReviewOnly(ctx context.Context, in *GetReviewOnlyRequest, opts ...grpc.CallOption) (*GetReviewOnlyResponse, error) {
+	out := new(GetReviewOnlyResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/GetReviewOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) GetReviews(ctx context.Context, in *GetReviewsRequest, opts ...grpc.CallOption) (*GetReviewsResponse, error) {
+	out := new(GetReviewsResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/GetReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) ExistReview(ctx context.Context, in *ExistReviewRequest, opts ...grpc.CallOption) (*ExistReviewResponse, error) {
+	out := new(ExistReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/ExistReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) ExistReviewConds(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error) {
+	out := new(ExistReviewCondsResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/ExistReviewConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) CountReviews(ctx context.Context, in *CountReviewsRequest, opts ...grpc.CallOption) (*CountReviewsResponse, error) {
+	out := new(CountReviewsResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/CountReviews", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error) {
+	out := new(DeleteReviewResponse)
+	err := c.cc.Invoke(ctx, "/review.manager.v2.Manager/DeleteReview", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
+	CreateReview(context.Context, *CreateReviewRequest) (*CreateReviewResponse, error)
+	CreateReviews(context.Context, *CreateReviewsRequest) (*CreateReviewsResponse, error)
+	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
+	GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error)
+	GetReviewOnly(context.Context, *GetReviewOnlyRequest) (*GetReviewOnlyResponse, error)
+	GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error)
+	ExistReview(context.Context, *ExistReviewRequest) (*ExistReviewResponse, error)
+	ExistReviewConds(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error)
+	CountReviews(context.Context, *CountReviewsRequest) (*CountReviewsResponse, error)
+	DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -40,6 +153,36 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
+func (UnimplementedManagerServer) CreateReview(context.Context, *CreateReviewRequest) (*CreateReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateReview not implemented")
+}
+func (UnimplementedManagerServer) CreateReviews(context.Context, *CreateReviewsRequest) (*CreateReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateReviews not implemented")
+}
+func (UnimplementedManagerServer) UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateReview not implemented")
+}
+func (UnimplementedManagerServer) GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReview not implemented")
+}
+func (UnimplementedManagerServer) GetReviewOnly(context.Context, *GetReviewOnlyRequest) (*GetReviewOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReviewOnly not implemented")
+}
+func (UnimplementedManagerServer) GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReviews not implemented")
+}
+func (UnimplementedManagerServer) ExistReview(context.Context, *ExistReviewRequest) (*ExistReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistReview not implemented")
+}
+func (UnimplementedManagerServer) ExistReviewConds(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistReviewConds not implemented")
+}
+func (UnimplementedManagerServer) CountReviews(context.Context, *CountReviewsRequest) (*CountReviewsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountReviews not implemented")
+}
+func (UnimplementedManagerServer) DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteReview not implemented")
+}
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
 // UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
@@ -53,13 +196,234 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
+func _Manager_CreateReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).CreateReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/CreateReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).CreateReview(ctx, req.(*CreateReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_CreateReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).CreateReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/CreateReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).CreateReviews(ctx, req.(*CreateReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/UpdateReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateReview(ctx, req.(*UpdateReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_GetReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).GetReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/GetReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).GetReview(ctx, req.(*GetReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_GetReviewOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).GetReviewOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/GetReviewOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).GetReviewOnly(ctx, req.(*GetReviewOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_GetReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).GetReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/GetReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).GetReviews(ctx, req.(*GetReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_ExistReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).ExistReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/ExistReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).ExistReview(ctx, req.(*ExistReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_ExistReviewConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistReviewCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).ExistReviewConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/ExistReviewConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).ExistReviewConds(ctx, req.(*ExistReviewCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_CountReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountReviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).CountReviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/CountReviews",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).CountReviews(ctx, req.(*CountReviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_DeleteReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/review.manager.v2.Manager/DeleteReview",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteReview(ctx, req.(*DeleteReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "review.manager.v2.Manager",
 	HandlerType: (*ManagerServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams:     []grpc.StreamDesc{},
-	Metadata:    "npool/review/mgr/v2/mgr.proto",
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateReview",
+			Handler:    _Manager_CreateReview_Handler,
+		},
+		{
+			MethodName: "CreateReviews",
+			Handler:    _Manager_CreateReviews_Handler,
+		},
+		{
+			MethodName: "UpdateReview",
+			Handler:    _Manager_UpdateReview_Handler,
+		},
+		{
+			MethodName: "GetReview",
+			Handler:    _Manager_GetReview_Handler,
+		},
+		{
+			MethodName: "GetReviewOnly",
+			Handler:    _Manager_GetReviewOnly_Handler,
+		},
+		{
+			MethodName: "GetReviews",
+			Handler:    _Manager_GetReviews_Handler,
+		},
+		{
+			MethodName: "ExistReview",
+			Handler:    _Manager_ExistReview_Handler,
+		},
+		{
+			MethodName: "ExistReviewConds",
+			Handler:    _Manager_ExistReviewConds_Handler,
+		},
+		{
+			MethodName: "CountReviews",
+			Handler:    _Manager_CountReviews_Handler,
+		},
+		{
+			MethodName: "DeleteReview",
+			Handler:    _Manager_DeleteReview_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "npool/review/mgr/v2/mgr.proto",
 }

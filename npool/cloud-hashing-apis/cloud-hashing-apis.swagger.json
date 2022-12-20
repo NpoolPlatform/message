@@ -1389,7 +1389,7 @@
         "Reviews": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Review"
+            "$ref": "#/definitions/servicev1Review"
           }
         },
         "Sold": {
@@ -1978,6 +1978,42 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "servicev1Review": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ObjectType": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Trigger": {
+          "type": "string"
         }
       }
     },
@@ -2948,42 +2984,6 @@
         }
       }
     },
-    "v1Review": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "ObjectType": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "ReviewerID": {
-          "type": "string"
-        },
-        "State": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "ObjectID": {
-          "type": "string"
-        },
-        "Domain": {
-          "type": "string"
-        },
-        "CreateAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Trigger": {
-          "type": "string"
-        }
-      }
-    },
     "v1SetWithdrawAddressRequest": {
       "type": "object",
       "properties": {
@@ -3167,7 +3167,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/servicev1Review"
         },
         "LangID": {
           "type": "string"
@@ -3486,7 +3486,7 @@
       "type": "object",
       "properties": {
         "Review": {
-          "$ref": "#/definitions/v1Review"
+          "$ref": "#/definitions/servicev1Review"
         },
         "User": {
           "$ref": "#/definitions/v1User"

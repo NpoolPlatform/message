@@ -17,6 +17,32 @@
   ],
   "paths": {},
   "definitions": {
+    "managerkycv2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDNumber": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -52,32 +78,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ReviewID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDNumber": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DocumentType": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EntityType": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
