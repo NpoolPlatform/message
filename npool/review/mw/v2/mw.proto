@@ -11,7 +11,7 @@ import "npool/review/mgr/v2/mgr.proto";
 service Middleware {
     rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
     rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
-    rpc GetReviewOnly    (GetReviewOnlyRequest)    returns (GetReviewOnlyResponse)    {}
+    rpc GetObjectReview  (GetObjectReviewRequest)  returns (GetObjectReviewResponse)  {}
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
 }
 
@@ -42,11 +42,11 @@ message GetReviewsResponse {
     uint32                            Total = 20;
 }
 
-message GetReviewOnlyRequest {
+message GetObjectReviewRequest {
     review.manager.v2.Conds Conds = 10;
 }
 
-message GetReviewOnlyResponse {
+message GetObjectReviewResponse {
     review.manager.v2.Review Info = 10;
 }
 
