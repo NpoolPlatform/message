@@ -91,6 +91,7 @@ message GetFiatCurrencyTypesResponse {
 
 message CreateFiatCurrencyTypeRequest {
     string Name = 10;
+    string Logo = 20;
 }
 
 message CreateFiatCurrencyTypeResponse {
@@ -100,6 +101,7 @@ message CreateFiatCurrencyTypeResponse {
 message UpdateFiatCurrencyTypeRequest {
     string ID   = 10;
     string Name = 20;
+    string Logo = 30;
 }
 
 message  UpdateFiatCurrencyTypeResponse {
