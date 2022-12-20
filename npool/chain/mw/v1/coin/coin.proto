@@ -102,6 +102,7 @@ message Conds {
     optional npool.v1.StringSliceVal IDs      = 50;
     optional npool.v1.BoolVal        Disabled = 60;
     optional npool.v1.StringVal      Name     = 70;
+    optional npool.v1.StringSliceVal Names    = 80;
 }
 
 message CreateCoinRequest {
