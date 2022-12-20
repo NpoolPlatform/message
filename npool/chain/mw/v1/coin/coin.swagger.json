@@ -254,6 +254,9 @@
         },
         "Name": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Names": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
