@@ -43,7 +43,10 @@ message GetReviewsResponse {
 }
 
 message GetObjectReviewRequest {
-    review.manager.v2.Conds Conds = 10;
+    string AppID     = 10;
+    string Domain    = 20;
+    string ObjectID  = 30;
+    review.manager.v2.ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewResponse {
