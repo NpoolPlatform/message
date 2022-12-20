@@ -64,6 +64,15 @@ service SphinxProxy {
   rpc ProxySign(stream ProxySignResponse) returns (stream ProxySignRequest) {}
 }
 
+enum RPCExitCode {
+  RPCExitCodeUnKnow = 0;
+  // proxy communicate with plugin and sign grpc error code
+  // common error code start from 1
+  RPCExitCodeNotSupportCoin = 1;
+  // plugin error code start from 50
+  // sign error code start from 100
+}
+
 // ############################# sync
 message VersionResponse { string Info = 100; }
 
@@ -154,6 +163,7 @@ message ProxyPluginResponse {
   string PluginWanIP = 190;
   string PluginPosition = 200;
   string RPCExitMessage = 1000;
+  RPCExitCode RPCExitCode = 1001;
 
   bytes Payload = 1100;
 }
@@ -201,6 +211,7 @@ message ProxySignResponse {
   string SignedRawTxHex = 150;
 
   string RPCExitMessage = 1000;
+  RPCExitCode RPCExitCode = 1001;
 
   bytes Payload = 1100;
 }
@@ -219,12 +230,16 @@ enum TransactionType {
   GasFee = 4;
 }
 
+// state step by 10
 enum TransactionState {
   TransactionStateUnKnow = 0;
   TransactionStateWait = 1;
   TransactionStateSign = 2;
-  TransactionStateBroadcast = 20; // TODO: caution
   TransactionStateSync = 3;
   TransactionStateDone = 4;
   TransactionStateFail = 5;
+  TransactionStateBroadcast = 20; // TODO: caution
+  // some coin such as aleo 
+  // first use address to sign service retrieve private info
+  TransactionStateRetrievePrivateInfo = 30;
 }
