@@ -137,6 +137,9 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "Names": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "ENV": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -231,6 +234,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
