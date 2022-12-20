@@ -21,7 +21,7 @@
       "type": "object",
       "properties": {
         "Conds": {
-          "$ref": "#/definitions/kycv2Conds"
+          "$ref": "#/definitions/managerkycv2Conds"
         }
       }
     },
@@ -135,7 +135,7 @@
         }
       }
     },
-    "kycv2Conds": {
+    "managerkycv2Conds": {
       "type": "object",
       "properties": {
         "ID": {
