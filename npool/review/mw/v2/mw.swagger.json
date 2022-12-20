@@ -1,0 +1,243 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/review/mw/v2/mw.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "reviewmiddlewarev2CreateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
+    "reviewmiddlewarev2GetReviewOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
+    "reviewmiddlewarev2GetReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Review"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "reviewmiddlewarev2UpdateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewerID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Domain": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ObjectID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "ObjectType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
+    "v2Review": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v2ReviewTriggerType"
+        },
+        "ObjectType": {
+          "$ref": "#/definitions/v2ReviewObjectType"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2ReviewObjectType": {
+      "type": "string",
+      "enum": [
+        "DefaultObjectType",
+        "ObjectKyc",
+        "ObjectWithdrawal"
+      ],
+      "default": "DefaultObjectType"
+    },
+    "v2ReviewReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ReviewerID": {
+          "type": "string"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "ObjectID": {
+          "type": "string"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v2ReviewTriggerType"
+        },
+        "ObjectType": {
+          "$ref": "#/definitions/v2ReviewObjectType"
+        },
+        "State": {
+          "$ref": "#/definitions/v2ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
+    },
+    "v2ReviewTriggerType": {
+      "type": "string",
+      "enum": [
+        "DefaultTriggerType",
+        "AutoReviewed",
+        "LargeAmount",
+        "InsufficientFunds",
+        "InsufficientGas",
+        "InsufficientFundsGas"
+      ],
+      "default": "DefaultTriggerType",
+      "title": "- AutoReviewed: Withdrawal triggers"
+    }
+  }
+}

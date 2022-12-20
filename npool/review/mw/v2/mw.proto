@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package review.middleware.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2";
+
+import "npool/npool.proto";
+import "npool/review/mgr/v2/mgr.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
+    rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
+    rpc GetReviewOnly    (GetReviewOnlyRequest)    returns (GetReviewOnlyResponse)    {}
+    rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
+}
+
+message CreateReviewRequest {
+    review.manager.v2.ReviewReq Info = 10;
+}
+
+message CreateReviewResponse {
+    review.manager.v2.Review Info = 10;
+}
+
+message UpdateReviewRequest {
+    review.manager.v2.ReviewReq Info = 10;
+}
+
+message UpdateReviewResponse {
+    review.manager.v2.Review Info = 10;
+}
+
+message GetReviewsRequest {
+    review.manager.v2.Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetReviewsResponse {
+    repeated review.manager.v2.Review Infos = 10;
+    uint32                            Total = 20;
+}
+
+message GetReviewOnlyRequest {
+    review.manager.v2.Conds Conds = 10;
+}
+
+message GetReviewOnlyResponse {
+    review.manager.v2.Review Info = 10;
+}
+
