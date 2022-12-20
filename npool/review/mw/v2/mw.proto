@@ -55,9 +55,10 @@ message GetObjectReviewResponse {
 }
 
 message GetObjectReviewsRequest {
-    string AppID     = 10;
-    string Domain    = 20;
-    review.manager.v2.ReviewObjectType ObjectType = 50;
+    string          AppID     = 10;
+    string          Domain    = 20;
+    repeated string ObjectIDs = 30;
+    review.manager.v2.ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewsResponse {
