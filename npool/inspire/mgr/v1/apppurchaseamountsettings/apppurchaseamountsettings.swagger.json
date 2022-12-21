@@ -1,0 +1,282 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mgr/v1/apppurchaseamountsettings/apppurchaseamountsettings.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppPurchaseAmountSetting": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "BadgeLarge": {
+          "type": "string"
+        },
+        "BadgeSmall": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AppPurchaseAmountSettingReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "BadgeLarge": {
+          "type": "string"
+        },
+        "BadgeSmall": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountAppPurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateAppPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreateAppPurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        }
+      }
+    },
+    "v1DeleteAppPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1ExistAppPurchaseAmountSettingCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistAppPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    },
+    "v1GetAppPurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mgr/v1/invitation/userinvitationcode/userinvitioncode.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "InvitationCode": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Confirmed": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1CountUserInvitationCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1CreateUserInvitationCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
+          }
+        }
+      }
+    },
+    "v1DeleteUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1ExistUserInvitationCodeCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetUserInvitationCodeOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1GetUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1GetUserInvitationCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserInvitationCode"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserInvitationCode"
+        }
+      }
+    },
+    "v1UserInvitationCode": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "Confirmed": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UserInvitationCodeReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "Confirmed": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
