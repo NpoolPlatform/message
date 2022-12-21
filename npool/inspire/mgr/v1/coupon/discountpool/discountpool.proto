@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+package inspire.manager.coupon.discountpool.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/coupon/discountpool";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateDiscountPool     (CreateDiscountPoolRequest)     returns (CreateDiscountPoolResponse)     {}
+    rpc CreateDiscountPools    (CreateDiscountPoolsRequest)    returns (CreateDiscountPoolsResponse)    {}
+    rpc UpdateDiscountPool     (UpdateDiscountPoolRequest)     returns (UpdateDiscountPoolResponse)     {}
+    rpc GetDiscountPool        (GetDiscountPoolRequest)        returns (GetDiscountPoolResponse)        {}
+    rpc GetDiscountPoolOnly    (GetDiscountPoolOnlyRequest)    returns (GetDiscountPoolOnlyResponse)    {}
+    rpc GetDiscountPools       (GetDiscountPoolsRequest)       returns (GetDiscountPoolsResponse)       {}
+    rpc ExistDiscountPool      (ExistDiscountPoolRequest)      returns (ExistDiscountPoolResponse)      {}
+    rpc ExistDiscountPoolConds (ExistDiscountPoolCondsRequest) returns (ExistDiscountPoolCondsResponse) {}
+    rpc CountDiscountPools     (CountDiscountPoolsRequest)     returns (CountDiscountPoolsResponse)     {}
+    rpc DeleteDiscountPool     (DeleteDiscountPoolRequest)     returns (DeleteDiscountPoolResponse)     {}
+}
+
+message DiscountPoolReq {
+    optional string ID              = 10;
+    optional string AppID           = 20;
+    optional uint32 Discount        = 30;
+    optional string ReleaseByUserID = 40;
+    optional uint32 Start           = 50;
+    optional uint32 DurationDays    = 60;
+    optional string Message         = 70;
+    optional string Name            = 80;
+}
+
+message DiscountPool {
+    string ID              = 10;
+    string AppID           = 20;
+    uint32 Discount        = 30;
+    string ReleaseByUserID = 40;
+    string Start           = 50;
+    uint32 DurationDays    = 60;
+    string Message         = 70;
+    string Name            = 80;
+    uint32 CreatedAt       = 90;
+    uint32 UpdatedAt       = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID              = 10;
+    optional npool.v1.StringVal AppID           = 20;
+    optional npool.v1.StringVal ReleaseByUserID = 30;
+    optional npool.v1.Uint32Val Start           = 40;
+    optional npool.v1.Uint32Val DurationDays    = 50;
+    optional npool.v1.StringVal Name            = 60;
+}
+
+
+message CreateDiscountPoolRequest {
+    DiscountPoolReq Info = 10;
+}
+
+message CreateDiscountPoolResponse {
+    DiscountPool Info = 10;
+}
+
+message CreateDiscountPoolsRequest {
+    repeated DiscountPoolReq Infos = 10;
+}
+
+message CreateDiscountPoolsResponse {
+    repeated DiscountPool Infos = 10;
+}
+
+message UpdateDiscountPoolRequest {
+    DiscountPoolReq Info = 10;
+}
+
+message UpdateDiscountPoolResponse {
+    DiscountPool Info = 10;
+}
+
+message GetDiscountPoolRequest {
+    string ID = 10;
+}
+
+message GetDiscountPoolResponse {
+    DiscountPool Info = 10;
+}
+
+message GetDiscountPoolsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetDiscountPoolsResponse {
+    repeated DiscountPool Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetDiscountPoolOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetDiscountPoolOnlyResponse {
+    DiscountPool Info = 10;
+}
+
+message ExistDiscountPoolRequest {
+    string ID = 10;
+}
+
+message ExistDiscountPoolResponse {
+    bool Info = 10;
+}
+
+message ExistDiscountPoolCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistDiscountPoolCondsResponse {
+    bool Info = 10;
+}
+
+message CountDiscountPoolsRequest {
+    Conds Conds = 10;
+}
+
+message CountDiscountPoolsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteDiscountPoolRequest {
+    string ID = 10;
+}
+
+message DeleteDiscountPoolResponse {
+    DiscountPool Info = 10;
+}
