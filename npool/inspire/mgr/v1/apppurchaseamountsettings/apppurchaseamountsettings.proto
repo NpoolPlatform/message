@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package inspire.manager.coupon.apppurchaseamountsetting.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/coupon/apppurchaseamountsetting";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateAppPurchaseAmountSetting     (CreateAppPurchaseAmountSettingRequest)     returns (CreateAppPurchaseAmountSettingResponse)     {}
+    rpc CreateAppPurchaseAmountSettings    (CreateAppPurchaseAmountSettingsRequest)    returns (CreateAppPurchaseAmountSettingsResponse)    {}
+    rpc UpdateAppPurchaseAmountSetting     (UpdateAppPurchaseAmountSettingRequest)     returns (UpdateAppPurchaseAmountSettingResponse)     {}
+    rpc GetAppPurchaseAmountSetting        (GetAppPurchaseAmountSettingRequest)        returns (GetAppPurchaseAmountSettingResponse)        {}
+    rpc GetAppPurchaseAmountSettingOnly    (GetAppPurchaseAmountSettingOnlyRequest)    returns (GetAppPurchaseAmountSettingOnlyResponse)    {}
+    rpc GetAppPurchaseAmountSettings       (GetAppPurchaseAmountSettingsRequest)       returns (GetAppPurchaseAmountSettingsResponse)       {}
+    rpc ExistAppPurchaseAmountSetting      (ExistAppPurchaseAmountSettingRequest)      returns (ExistAppPurchaseAmountSettingResponse)      {}
+    rpc ExistAppPurchaseAmountSettingConds (ExistAppPurchaseAmountSettingCondsRequest) returns (ExistAppPurchaseAmountSettingCondsResponse) {}
+    rpc CountAppPurchaseAmountSettings     (CountAppPurchaseAmountSettingsRequest)     returns (CountAppPurchaseAmountSettingsResponse)     {}
+    rpc DeleteAppPurchaseAmountSetting     (DeleteAppPurchaseAmountSettingRequest)     returns (DeleteAppPurchaseAmountSettingResponse)     {}
+}
+
+message AppPurchaseAmountSettingReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string Title      = 40;
+    optional string Amount     = 50;
+    optional string Percent    = 60;
+    optional uint32 StartAt    = 70;
+    optional uint32 EndAt      = 80;
+    optional string BadgeLarge = 90;
+    optional string BadgeSmall = 100;
+    optional string GoodID     = 110;
+    optional string CoinTypeID = 120;
+}
+
+message AppPurchaseAmountSetting {
+    string ID         = 10;
+    string AppID      = 20;
+    string UserID     = 30;
+    string Title      = 40;
+    string Amount     = 50;
+    string Percent    = 60;
+    uint32 StartAt    = 70;
+    uint32 EndAt      = 80;
+    string BadgeLarge = 90;
+    string BadgeSmall = 100;
+    string GoodID     = 110;
+    string CoinTypeID = 120;
+    uint32 CreatedAt  = 130;
+    uint32 UpdatedAt  = 140;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.Uint32Val StartAt    = 40;
+    optional npool.v1.Uint32Val EndAt      = 50;
+    optional npool.v1.StringVal GoodID     = 60;
+    optional npool.v1.StringVal CoinTypeID = 70;
+}
+
+
+message CreateAppPurchaseAmountSettingRequest {
+    AppPurchaseAmountSettingReq Info = 10;
+}
+
+message CreateAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message CreateAppPurchaseAmountSettingsRequest {
+    repeated AppPurchaseAmountSettingReq Infos = 10;
+}
+
+message CreateAppPurchaseAmountSettingsResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
+}
+
+message UpdateAppPurchaseAmountSettingRequest {
+    AppPurchaseAmountSettingReq Info = 10;
+}
+
+message UpdateAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message GetAppPurchaseAmountSettingRequest {
+    string ID = 10;
+}
+
+message GetAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message GetAppPurchaseAmountSettingsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAppPurchaseAmountSettingsResponse {
+    repeated AppPurchaseAmountSetting Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetAppPurchaseAmountSettingOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppPurchaseAmountSettingOnlyResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
+
+message ExistAppPurchaseAmountSettingRequest {
+    string ID = 10;
+}
+
+message ExistAppPurchaseAmountSettingResponse {
+    bool Info = 10;
+}
+
+message ExistAppPurchaseAmountSettingCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppPurchaseAmountSettingCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppPurchaseAmountSettingsRequest {
+    Conds Conds = 10;
+}
+
+message CountAppPurchaseAmountSettingsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppPurchaseAmountSettingRequest {
+    string ID = 10;
+}
+
+message DeleteAppPurchaseAmountSettingResponse {
+    AppPurchaseAmountSetting Info = 10;
+}
