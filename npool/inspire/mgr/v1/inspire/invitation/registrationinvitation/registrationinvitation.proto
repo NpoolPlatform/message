@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package inspire.manager.invitation.registrationinvitation.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/invitation/registrationinvitation";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateRegistrationInvitation     (CreateRegistrationInvitationRequest)     returns (CreateRegistrationInvitationResponse)     {}
+    rpc CreateRegistrationInvitations    (CreateRegistrationInvitationsRequest)    returns (CreateRegistrationInvitationsResponse)    {}
+    rpc UpdateRegistrationInvitation     (UpdateRegistrationInvitationRequest)     returns (UpdateRegistrationInvitationResponse)     {}
+    rpc GetRegistrationInvitation        (GetRegistrationInvitationRequest)        returns (GetRegistrationInvitationResponse)        {}
+    rpc GetRegistrationInvitationOnly    (GetRegistrationInvitationOnlyRequest)    returns (GetRegistrationInvitationOnlyResponse)    {}
+    rpc GetRegistrationInvitations       (GetRegistrationInvitationsRequest)       returns (GetRegistrationInvitationsResponse)       {}
+    rpc ExistRegistrationInvitation      (ExistRegistrationInvitationRequest)      returns (ExistRegistrationInvitationResponse)      {}
+    rpc ExistRegistrationInvitationConds (ExistRegistrationInvitationCondsRequest) returns (ExistRegistrationInvitationCondsResponse) {}
+    rpc CountRegistrationInvitations     (CountRegistrationInvitationsRequest)     returns (CountRegistrationInvitationsResponse)     {}
+    rpc DeleteRegistrationInvitation     (DeleteRegistrationInvitationRequest)     returns (DeleteRegistrationInvitationResponse)     {}
+}
+
+message RegistrationInvitationReq {
+    optional string ID        = 10;
+    optional string AppID     = 20;
+    optional string InviterID = 30;
+    optional string InviteeID = 40;
+}
+
+message RegistrationInvitation {
+    string ID        = 10;
+    string AppID     = 20;
+    string InviterID = 30;
+    string InviteeID = 40;
+    uint32 CreatedAt = 50;
+    uint32 UpdatedAt = 60;
+
+}
+
+message Conds {
+    optional npool.v1.StringVal ID        = 10;
+    optional npool.v1.StringVal AppID     = 20;
+    optional npool.v1.StringVal InviterID = 30;
+    optional npool.v1.StringVal InviteeID = 40;
+}
+
+
+message CreateRegistrationInvitationRequest {
+    RegistrationInvitationReq Info = 10;
+}
+
+message CreateRegistrationInvitationResponse {
+    RegistrationInvitation Info = 10;
+}
+
+message CreateRegistrationInvitationsRequest {
+    repeated RegistrationInvitationReq Infos = 10;
+}
+
+message CreateRegistrationInvitationsResponse {
+    repeated RegistrationInvitation Infos = 10;
+}
+
+message UpdateRegistrationInvitationRequest {
+    RegistrationInvitationReq Info = 10;
+}
+
+message UpdateRegistrationInvitationResponse {
+    RegistrationInvitation Info = 10;
+}
+
+message GetRegistrationInvitationRequest {
+    string ID = 10;
+}
+
+message GetRegistrationInvitationResponse {
+    RegistrationInvitation Info = 10;
+}
+
+message GetRegistrationInvitationsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetRegistrationInvitationsResponse {
+    repeated RegistrationInvitation Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetRegistrationInvitationOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetRegistrationInvitationOnlyResponse {
+    RegistrationInvitation Info = 10;
+}
+
+message ExistRegistrationInvitationRequest {
+    string ID = 10;
+}
+
+message ExistRegistrationInvitationResponse {
+    bool Info = 10;
+}
+
+message ExistRegistrationInvitationCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRegistrationInvitationCondsResponse {
+    bool Info = 10;
+}
+
+message CountRegistrationInvitationsRequest {
+    Conds Conds = 10;
+}
+
+message CountRegistrationInvitationsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteRegistrationInvitationRequest {
+    RegistrationInvitation Info = 10;
+}
+
+
+message DeleteRegistrationInvitationResponse {
+    RegistrationInvitation Info = 10;
+}
