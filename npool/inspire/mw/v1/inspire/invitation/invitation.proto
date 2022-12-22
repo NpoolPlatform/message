@@ -77,3 +77,4 @@ message GetPercentsResponse {
     repeated Percent Infos = 10;
     uint32           Total = 20;
 }
+
