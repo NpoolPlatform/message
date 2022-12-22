@@ -267,6 +267,9 @@
         "AccountID": {
           "type": "string"
         },
+        "Address": {
+          "type": "string"
+        },
         "Amount": {
           "type": "string"
         },
@@ -301,6 +304,9 @@
           "type": "string"
         },
         "AccountID": {
+          "type": "string"
+        },
+        "Address": {
           "type": "string"
         },
         "Amount": {

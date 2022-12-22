@@ -280,10 +280,8 @@ message Withdraw {
     string        CoinUnit      = 40;
     string        Amount        = 50;
     uint32        CreatedAt     = 60;
-
     string        Address       = 70;
     repeated string AddressLabels = 80;
-
     ledger.manager.ledger.withdraw.v1.WithdrawState State = 90;
     string        Message       = 100;
 }
