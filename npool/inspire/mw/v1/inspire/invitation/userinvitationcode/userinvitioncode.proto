@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package inspire.middleware.inspire1.invitation.userinvitationcode.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/inspire/userinvitationcode";
+
+import "npool/inspire/mgr/v1/inspire/invitation/userinvitationcode/userinvitioncode.proto";
+
+// Service Name
+service Middleware {
+    rpc GetUserInvitationCode (GetUserInvitationCodeRequest) returns (GetUserInvitationCodeResponse) {}
+}
+
+message GetUserInvitationCodeRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetUserInvitationCodeResponse {
+    inspire.manager.invitation.userinvitationcode.v1.UserInvitationCode Info = 10;
+}

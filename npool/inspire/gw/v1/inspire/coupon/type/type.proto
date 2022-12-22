@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package inspire.gateway.inspire2.coupon.type.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/inspire/coupon/type";
+
+import "google/api/annotations.proto";
+import "npool/inspire/mgr/v1/inspire/coupon/allocated/allocated.proto";
+import "npool/inspire/mw/v1/inspire/coupon/type/type.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCouponType (GetCouponRequest) returns (GetCouponResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupontype"
+            body: "*"
+        };
+    }
+    rpc GetCouponTypes (GetCouponsRequest) returns (GetCouponsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/coupontypes"
+            body: "*"
+        };
+    }
+    rpc GetAppCouponTypes (GetCouponsRequest) returns (GetCouponsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/coupontypes"
+            body: "*"
+        };
+    }
+    rpc CreateCouponType (CreateCouponTypeRequest) returns (CreateCouponTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coupontype"
+            body: "*"
+        };
+    }
+    rpc UpdateCouponType (UpdateCouponTypeRequest) returns (UpdateCouponTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/coupontype"
+            body: "*"
+        };
+    }
+    rpc CreateAppCouponType (CreateCouponTypeRequest) returns (CreateCouponTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/coupontype"
+            body: "*"
+        };
+    }
+    rpc UpdateAppCouponType (UpdateCouponTypeRequest) returns (UpdateCouponTypeResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/coupontype"
+            body: "*"
+        };
+    }
+}
+
+message Conds {
+    optional npool.v1.StringVal ID       = 10;
+    optional npool.v1.StringVal UserID   = 20;
+    optional npool.v1.StringVal AppID    = 30;
+    optional npool.v1.Uint32Val Type     = 31;
+    optional npool.v1.StringVal CouponID = 40;
+}
+
+message GetCouponRequest {
+    string                                                 ID   = 10;
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 20;
+}
+
+message GetCouponResponse {
+    string                                                ID   = 10;
+    inspire.middleware.inspire1.coupon.type.v1.CouponType Info = 20;
+}
+
+message GetCouponsRequest {
+    string AppID  = 10;
+    uint32 Offset = 20;
+    uint32 Limit  = 30;
+}
+
+message GetCouponsResponse {
+    repeated inspire.middleware.inspire1.coupon.type.v1.CouponType Infos = 10;
+    uint32                                                         Total = 20;
+}
+
+message GetAppUserCouponsRequest {
+    string TargetAppID = 10;
+    uint32 Offset      = 20;
+    uint32 Limit       = 30;
+}
+
+message GetAppUserCouponsResponse {
+    repeated inspire.middleware.inspire1.coupon.type.v1.CouponType Infos = 10;
+    uint32                                                         Total = 20;
+}
+
+message CreateCouponTypeRequest {
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
+    string          AppID        = 20;
+    string          Value        = 30;
+    // if CouponType = FixAmount Required
+    optional string Circulation  = 40;
+    string          UserID       = 50;
+    uint32          StartAt      = 60;
+    uint32          DurationDays = 70;
+    string          Message      = 80;
+    string          Name         = 90;
+    // if CouponType = SpecialOffer Required
+    string          TargetUserID = 100;
+
+}
+
+message CreateCouponTypeResponse {
+    inspire.middleware.inspire1.coupon.type.v1.CouponType Info = 10;
+}
+
+message UpdateCouponTypeRequest {
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
+    string          AppID        = 20;
+    optional string Value        = 30;
+    // if CouponType = FixAmount Required
+    optional string Circulation  = 40;
+    string          UserID       = 50;
+    optional uint32 StartAt      = 60;
+    optional uint32 DurationDays = 70;
+    optional string Message      = 80;
+    optional string Name         = 90;
+    // if CouponType = SpecialOffer Required
+    optional string TargetUserID = 100;
+}
+
+message UpdateCouponTypeResponse {
+    inspire.middleware.inspire1.coupon.type.v1.CouponType Info = 10;
+}
+
+message CreateAppCouponTypeRequest {
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
+    string          TargetAppID  = 20;
+    string          Value        = 30;
+    // if CouponType = FixAmount Required
+    optional string Circulation  = 40;
+    string          UserID       = 50;
+    uint32          StartAt      = 60;
+    uint32          DurationDays = 70;
+    string          Message      = 80;
+    string          Name         = 90;
+    // if CouponType = SpecialOffer Required
+    string          TargetUserID = 100;
+
+}
+
+message CreateAppCouponTypeResponse {
+    inspire.middleware.inspire1.coupon.type.v1.CouponType Info = 10;
+}
+
+message UpdateAppCouponTypeRequest {
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
+    string          TargetAppID  = 20;
+    optional string Value        = 30;
+    // if CouponType = FixAmount Required
+    optional string Circulation  = 40;
+    string          UserID       = 50;
+    optional uint32 StartAt      = 60;
+    optional uint32 DurationDays = 70;
+    optional string Message      = 80;
+    optional string Name         = 90;
+    // if CouponType = SpecialOffer Required
+    optional string TargetUserID = 100;
+}
+
+message UpdateAppCouponTypeResponse {
+    inspire.middleware.inspire1.coupon.type.v1.CouponType Info = 10;
+}

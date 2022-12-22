@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package inspire.manager.invitation.userinvitationcode.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/invitation/userinvitationcode";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateUserInvitationCode     (CreateUserInvitationCodeRequest)     returns (CreateUserInvitationCodeResponse)     {}
+    rpc CreateUserInvitationCodes    (CreateUserInvitationCodesRequest)    returns (CreateUserInvitationCodesResponse)    {}
+    rpc UpdateUserInvitationCode     (UpdateUserInvitationCodeRequest)     returns (UpdateUserInvitationCodeResponse)     {}
+    rpc GetUserInvitationCode        (GetUserInvitationCodeRequest)        returns (GetUserInvitationCodeResponse)        {}
+    rpc GetUserInvitationCodeOnly    (GetUserInvitationCodeOnlyRequest)    returns (GetUserInvitationCodeOnlyResponse)    {}
+    rpc GetUserInvitationCodes       (GetUserInvitationCodesRequest)       returns (GetUserInvitationCodesResponse)       {}
+    rpc ExistUserInvitationCode      (ExistUserInvitationCodeRequest)      returns (ExistUserInvitationCodeResponse)      {}
+    rpc ExistUserInvitationCodeConds (ExistUserInvitationCodeCondsRequest) returns (ExistUserInvitationCodeCondsResponse) {}
+    rpc CountUserInvitationCodes     (CountUserInvitationCodesRequest)     returns (CountUserInvitationCodesResponse)     {}
+    rpc DeleteUserInvitationCode     (DeleteUserInvitationCodeRequest)     returns (DeleteUserInvitationCodeResponse)     {}
+}
+
+message UserInvitationCodeReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string InvitationCode = 40;
+    optional bool   Confirmed      = 50;
+}
+
+message UserInvitationCode {
+    string ID             = 10;
+    string AppID          = 20;
+    string UserID         = 30;
+    string InvitationCode = 40;
+    bool   Confirmed      = 50;
+    uint32 CreatedAt      = 60;
+    uint32 UpdatedAt      = 70;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID             = 10;
+    optional npool.v1.StringVal AppID          = 20;
+    optional npool.v1.StringVal UserID         = 30;
+    optional npool.v1.StringVal InvitationCode = 40;
+    optional npool.v1.BoolVal   Confirmed      = 50;
+}
+
+
+message CreateUserInvitationCodeRequest {
+    UserInvitationCodeReq Info = 10;
+}
+
+message CreateUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
+
+message CreateUserInvitationCodesRequest {
+    repeated UserInvitationCodeReq Infos = 10;
+}
+
+message CreateUserInvitationCodesResponse {
+    repeated UserInvitationCode Infos = 10;
+}
+
+message UpdateUserInvitationCodeRequest {
+    UserInvitationCodeReq Info = 10;
+}
+
+message UpdateUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
+
+message GetUserInvitationCodeRequest {
+    string ID = 10;
+}
+
+message GetUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
+
+message GetUserInvitationCodesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetUserInvitationCodesResponse {
+    repeated UserInvitationCode Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetUserInvitationCodeOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetUserInvitationCodeOnlyResponse {
+    UserInvitationCode Info = 10;
+}
+
+message ExistUserInvitationCodeRequest {
+    string ID = 10;
+}
+
+message ExistUserInvitationCodeResponse {
+    bool Info = 10;
+}
+
+message ExistUserInvitationCodeCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistUserInvitationCodeCondsResponse {
+    bool Info = 10;
+}
+
+message CountUserInvitationCodesRequest {
+    Conds Conds = 10;
+}
+
+message CountUserInvitationCodesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteUserInvitationCodeRequest {
+    UserInvitationCode Info = 10;
+}
+
+
+message DeleteUserInvitationCodeResponse {
+    UserInvitationCode Info = 10;
+}
