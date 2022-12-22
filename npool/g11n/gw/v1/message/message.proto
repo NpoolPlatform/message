@@ -159,7 +159,7 @@ message UpdateAppMessageResponse {
 
 message GetMessagesRequest {
     string        AppID    = 10;
-    string        LangID   = 11;
+    optional string LangID   = 11;
     optional bool Disabled = 20;
     int32         Offset   = 30;
     int32         Limit    = 40;
