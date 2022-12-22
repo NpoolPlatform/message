@@ -1,39 +1,40 @@
 syntax = "proto3";
 
-package inspire.middleware.inspire.coupon.v1;
+package inspire.middleware.inspire1.coupon.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/inspire/coupon";
 
-import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
+import "npool/inspire/mgr/v1/inspire/coupon/allocated/allocated.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Middleware {
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetManyCoupons (GetManyCouponsRequest) returns (GetManyCouponsResponse) {}
+    rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
+    rpc GetCouponOnly  (GetCouponOnlyRequest)  returns (GetCouponOnlyResponse)  {}
 }
 
-enum CouponType {
-    DefaultCouponType  = 0;
-    FixAmount          = 10;
-    Discount           = 20;
-    SpecialOffer       = 30;
-    ThresholdReduction = 40;
+message Conds {
+    optional npool.v1.StringVal ID       = 10;
+    optional npool.v1.StringVal UserID   = 20;
+    optional npool.v1.StringVal AppID    = 30;
+    optional npool.v1.Uint32Val Type     = 31;
+    optional npool.v1.StringVal CouponID = 40;
 }
 
 message Coupon {
     // @inject_tag: sql:"id"
     string     ID              = 10;
-    CouponType Type            = 20;
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 20;
     // @inject_tag: sql:"value"
     string     Value           = 30;
     string     ThresholdAmount = 40;
     // @inject_tag: sql:"start"
-    uint32     Start           = 50;
+    uint32     StartAt         = 50;
     // @inject_tag: sql:"duration_days"
     uint32     DurationDays    = 60;
-    uint32     End             = 70;
+    uint32     EndAt           = 70;
     // @inject_tag: sql:"coupon_id"
     string     CouponID        = 71;
     // @inject_tag: sql:"name"
@@ -51,8 +52,8 @@ message Coupon {
 }
 
 message GetCouponRequest {
-    string     ID   = 10;
-    CouponType Type = 20;
+    string                                                 ID   = 10;
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 20;
 }
 
 message GetCouponResponse {
@@ -60,10 +61,29 @@ message GetCouponResponse {
 }
 
 message GetManyCouponsRequest {
-    repeated string IDs  = 10;
-    CouponType      Type = 20;
+    repeated string                                        IDs  = 10;
+    inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 20;
 }
 
 message GetManyCouponsResponse {
     repeated Coupon Infos = 10;
+}
+
+message GetCouponsRequest {
+    Conds Coupon  = 10;
+    uint32 Offset = 20;
+    uint32 Limit  = 30;
+}
+
+message GetCouponsResponse {
+    repeated Coupon Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetCouponOnlyRequest {
+    Conds Coupon = 10;
+}
+
+message GetCouponOnlyResponse {
+    Coupon Info = 10;
 }

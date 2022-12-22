@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
 	GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error)
+	GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error)
+	GetCouponOnly(ctx context.Context, in *GetCouponOnlyRequest, opts ...grpc.CallOption) (*GetCouponOnlyResponse, error)
 }
 
 type middlewareClient struct {
@@ -36,7 +38,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error) {
 	out := new(GetCouponResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire.coupon.v1.Middleware/GetCoupon", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCoupon", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +47,25 @@ func (c *middlewareClient) GetCoupon(ctx context.Context, in *GetCouponRequest, 
 
 func (c *middlewareClient) GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error) {
 	out := new(GetManyCouponsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire.coupon.v1.Middleware/GetManyCoupons", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.coupon.v1.Middleware/GetManyCoupons", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error) {
+	out := new(GetCouponsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCoupons", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetCouponOnly(ctx context.Context, in *GetCouponOnlyRequest, opts ...grpc.CallOption) (*GetCouponOnlyResponse, error) {
+	out := new(GetCouponOnlyResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCouponOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -58,6 +78,8 @@ func (c *middlewareClient) GetManyCoupons(ctx context.Context, in *GetManyCoupon
 type MiddlewareServer interface {
 	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
 	GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error)
+	GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error)
+	GetCouponOnly(context.Context, *GetCouponOnlyRequest) (*GetCouponOnlyResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -70,6 +92,12 @@ func (UnimplementedMiddlewareServer) GetCoupon(context.Context, *GetCouponReques
 }
 func (UnimplementedMiddlewareServer) GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManyCoupons not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoupons not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCouponOnly(context.Context, *GetCouponOnlyRequest) (*GetCouponOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCouponOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -94,7 +122,7 @@ func _Middleware_GetCoupon_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.inspire.coupon.v1.Middleware/GetCoupon",
+		FullMethod: "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCoupon",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCoupon(ctx, req.(*GetCouponRequest))
@@ -112,10 +140,46 @@ func _Middleware_GetManyCoupons_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.inspire.coupon.v1.Middleware/GetManyCoupons",
+		FullMethod: "/inspire.middleware.inspire1.coupon.v1.Middleware/GetManyCoupons",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetManyCoupons(ctx, req.(*GetManyCouponsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCoupons(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCoupons",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCoupons(ctx, req.(*GetCouponsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetCouponOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCouponOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.inspire1.coupon.v1.Middleware/GetCouponOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCouponOnly(ctx, req.(*GetCouponOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -124,7 +188,7 @@ func _Middleware_GetManyCoupons_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.inspire.coupon.v1.Middleware",
+	ServiceName: "inspire.middleware.inspire1.coupon.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -134,6 +198,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetManyCoupons",
 			Handler:    _Middleware_GetManyCoupons_Handler,
+		},
+		{
+			MethodName: "GetCoupons",
+			Handler:    _Middleware_GetCoupons_Handler,
+		},
+		{
+			MethodName: "GetCouponOnly",
+			Handler:    _Middleware_GetCouponOnly_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
