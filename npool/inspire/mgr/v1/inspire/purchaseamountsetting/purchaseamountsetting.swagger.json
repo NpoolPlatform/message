@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/inspire/apppurchaseamountsettings/apppurchaseamountsettings.proto",
+    "title": "npool/inspire/mgr/v1/inspire/purchaseamountsetting/purchaseamountsetting.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,7 +44,116 @@
         }
       }
     },
-    "v1AppPurchaseAmountSetting": {
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountPurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreatePurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PurchaseAmountSetting"
+        }
+      }
+    },
+    "v1CreatePurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PurchaseAmountSetting"
+          }
+        }
+      }
+    },
+    "v1DeletePurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PurchaseAmountSetting"
+        }
+      }
+    },
+    "v1ExistPurchaseAmountSettingCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetPurchaseAmountSettingOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PurchaseAmountSetting"
+        }
+      }
+    },
+    "v1GetPurchaseAmountSettingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PurchaseAmountSetting"
+        }
+      }
+    },
+    "v1GetPurchaseAmountSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PurchaseAmountSetting"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1PurchaseAmountSetting": {
       "type": "object",
       "properties": {
         "ID": {
@@ -95,7 +204,7 @@
         }
       }
     },
-    "v1AppPurchaseAmountSettingReq": {
+    "v1PurchaseAmountSettingReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -138,115 +247,6 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CountAppPurchaseAmountSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateAppPurchaseAmountSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1CreateAppPurchaseAmountSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-          }
-        }
-      }
-    },
-    "v1DeleteAppPurchaseAmountSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1ExistAppPurchaseAmountSettingCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAppPurchaseAmountSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetAppPurchaseAmountSettingOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1GetAppPurchaseAmountSettingResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-        }
-      }
-    },
-    "v1GetAppPurchaseAmountSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppPurchaseAmountSetting"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -270,11 +270,11 @@
         }
       }
     },
-    "v1UpdateAppPurchaseAmountSettingResponse": {
+    "v1UpdatePurchaseAmountSettingResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppPurchaseAmountSetting"
+          "$ref": "#/definitions/v1PurchaseAmountSetting"
         }
       }
     }
