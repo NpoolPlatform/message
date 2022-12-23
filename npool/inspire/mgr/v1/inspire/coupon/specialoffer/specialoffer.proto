@@ -26,8 +26,8 @@ message SpecialOfferReq {
     optional string UserID          = 30;
     optional string Amount          = 40;
     optional string ReleaseByUserID = 50;
-    optional string StartAt         = 60;
-    optional string DurationDays    = 70;
+    optional uint32 StartAt         = 60;
+    optional uint32 DurationDays    = 70;
     optional string Message         = 80;
 }
 
@@ -37,11 +37,11 @@ message SpecialOffer {
     string UserID          = 30;
     string Amount          = 40;
     string ReleaseByUserID = 50;
-    string StartAt         = 60;
-    string DurationDays    = 70;
+    uint32 StartAt         = 60;
+    uint32 DurationDays    = 70;
     string Message         = 80;
-    string CreatedAt       = 100;
-    string UpdatedAt       = 110;
+    uint32 CreatedAt       = 100;
+    uint32 UpdatedAt       = 110;
 }
 
 message Conds {

@@ -163,19 +163,23 @@
           "type": "string"
         },
         "StartAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "DurationDays": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
         },
         "CreatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "UpdatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -198,10 +202,12 @@
           "type": "string"
         },
         "StartAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "DurationDays": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
