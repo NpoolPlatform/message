@@ -50,10 +50,10 @@
         "ID": {
           "type": "string"
         },
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "Type": {
@@ -78,10 +78,10 @@
         "ID": {
           "type": "string"
         },
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "Type": {
@@ -98,10 +98,10 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UserID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Type": {
