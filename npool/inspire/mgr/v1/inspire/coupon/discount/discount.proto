@@ -23,7 +23,7 @@ service Manager {
 message DiscountReq {
     optional string ID              = 10;
     optional string AppID           = 20;
-    optional uint32 Discount        = 30;
+    optional string Discount        = 30;
     optional string ReleaseByUserID = 40;
     optional uint32 StartAt         = 50;
     optional uint32 DurationDays    = 60;
