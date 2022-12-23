@@ -30,16 +30,16 @@ enum CouponType {
 
 message AllocatedReq {
     optional string     ID       = 10;
-    optional string     UserID   = 20;
-    optional string     AppID    = 30;
+    optional string     AppID    = 20;
+    optional string     UserID   = 30;
     optional CouponType Type     = 40;
     optional string     CouponID = 50;
 }
 
 message Allocated {
     string     ID        = 10;
-    string     UserID    = 20;
-    string     AppID     = 30;
+    string     AppID     = 20;
+    string     UserID    = 30;
     CouponType Type      = 40;
     string     CouponID  = 50;
     uint32     CreatedAt = 60;
@@ -48,10 +48,10 @@ message Allocated {
 
 message Conds {
     optional npool.v1.StringVal ID       = 10;
-    optional npool.v1.StringVal UserID   = 20;
-    optional npool.v1.StringVal AppID    = 30;
-    optional npool.v1.Uint32Val Type     = 31;
-    optional npool.v1.StringVal CouponID = 40;
+    optional npool.v1.StringVal AppID    = 20;
+    optional npool.v1.StringVal UserID   = 30;
+    optional npool.v1.Uint32Val Type     = 40;
+    optional npool.v1.StringVal CouponID = 50;
 }
 
 
