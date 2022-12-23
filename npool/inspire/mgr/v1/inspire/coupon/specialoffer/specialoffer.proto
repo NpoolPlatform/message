@@ -128,7 +128,7 @@ message CountSpecialOffersResponse {
 }
 
 message DeleteSpecialOfferRequest {
-    SpecialOffer Info = 10;
+    string ID = 10;
 }
 
 

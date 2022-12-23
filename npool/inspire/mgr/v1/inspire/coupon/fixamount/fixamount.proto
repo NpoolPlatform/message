@@ -132,7 +132,7 @@ message CountFixAmountsResponse {
 }
 
 message DeleteFixAmountRequest {
-    FixAmount Info = 10;
+    string ID = 10;
 }
 
 
