@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/inspire/coupon/userspecialreduction/userspecialreduction.proto",
+    "title": "npool/inspire/mgr/v1/inspire/coupon/specialoffer/specialoffer.proto",
     "version": "version not set"
   },
   "tags": [
@@ -61,7 +61,7 @@
         }
       }
     },
-    "v1CountUserSpecialReductionsResponse": {
+    "v1CountSpecialOffersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -70,42 +70,34 @@
         }
       }
     },
-    "v1CreateUserSpecialReductionResponse": {
+    "v1CreateSpecialOfferResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
+          "$ref": "#/definitions/v1SpecialOffer"
         }
       }
     },
-    "v1CreateUserSpecialReductionsResponse": {
+    "v1CreateSpecialOffersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1UserSpecialReduction"
+            "$ref": "#/definitions/v1SpecialOffer"
           }
         }
       }
     },
-    "v1DeleteUserSpecialReductionResponse": {
+    "v1DeleteSpecialOfferResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
+          "$ref": "#/definitions/v1SpecialOffer"
         }
       }
     },
-    "v1ExistUserSpecialReductionCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUserSpecialReductionResponse": {
+    "v1ExistSpecialOfferCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -113,29 +105,37 @@
         }
       }
     },
-    "v1GetUserSpecialReductionOnlyResponse": {
+    "v1ExistSpecialOfferResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
+          "type": "boolean"
         }
       }
     },
-    "v1GetUserSpecialReductionResponse": {
+    "v1GetSpecialOfferOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
+          "$ref": "#/definitions/v1SpecialOffer"
         }
       }
     },
-    "v1GetUserSpecialReductionsResponse": {
+    "v1GetSpecialOfferResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SpecialOffer"
+        }
+      }
+    },
+    "v1GetSpecialOffersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1UserSpecialReduction"
+            "$ref": "#/definitions/v1SpecialOffer"
           }
         },
         "Total": {
@@ -144,38 +144,7 @@
         }
       }
     },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateUserSpecialReductionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserSpecialReduction"
-        }
-      }
-    },
-    "v1UserSpecialReduction": {
+    "v1SpecialOffer": {
       "type": "object",
       "properties": {
         "ID": {
@@ -210,7 +179,7 @@
         }
       }
     },
-    "v1UserSpecialReductionReq": {
+    "v1SpecialOfferReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -236,6 +205,37 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateSpecialOfferResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SpecialOffer"
         }
       }
     }

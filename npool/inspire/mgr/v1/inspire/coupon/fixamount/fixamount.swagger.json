@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/inspire/coupon/discountpool/discountpool.proto",
+    "title": "npool/inspire/mgr/v1/inspire/coupon/fixamount/fixamount.proto",
     "version": "version not set"
   },
   "tags": [
@@ -67,7 +67,7 @@
         }
       }
     },
-    "v1CountDiscountPoolsResponse": {
+    "v1CountFixAmountsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -76,34 +76,50 @@
         }
       }
     },
-    "v1CreateDiscountPoolResponse": {
+    "v1CreateFixAmountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DiscountPool"
+          "$ref": "#/definitions/v1FixAmount"
         }
       }
     },
-    "v1CreateDiscountPoolsResponse": {
+    "v1CreateFixAmountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1DiscountPool"
+            "$ref": "#/definitions/v1FixAmount"
           }
         }
       }
     },
-    "v1DeleteDiscountPoolResponse": {
+    "v1DeleteFixAmountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DiscountPool"
+          "$ref": "#/definitions/v1FixAmount"
         }
       }
     },
-    "v1DiscountPool": {
+    "v1ExistFixAmountCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistFixAmountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FixAmount": {
       "type": "object",
       "properties": {
         "ID": {
@@ -112,9 +128,11 @@
         "AppID": {
           "type": "string"
         },
-        "Discount": {
-          "type": "integer",
-          "format": "int64"
+        "Denomination": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
         },
         "ReleaseByUserID": {
           "type": "string"
@@ -123,8 +141,7 @@
           "type": "string"
         },
         "DurationDays": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Message": {
           "type": "string"
@@ -133,16 +150,14 @@
           "type": "string"
         },
         "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     },
-    "v1DiscountPoolReq": {
+    "v1FixAmountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -151,20 +166,20 @@
         "AppID": {
           "type": "string"
         },
-        "Discount": {
-          "type": "integer",
-          "format": "int64"
+        "Denomination": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
         },
         "ReleaseByUserID": {
           "type": "string"
         },
         "Start": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "DurationDays": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Message": {
           "type": "string"
@@ -174,45 +189,29 @@
         }
       }
     },
-    "v1ExistDiscountPoolCondsResponse": {
+    "v1GetFixAmountOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "boolean"
+          "$ref": "#/definitions/v1FixAmount"
         }
       }
     },
-    "v1ExistDiscountPoolResponse": {
+    "v1GetFixAmountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "boolean"
+          "$ref": "#/definitions/v1FixAmount"
         }
       }
     },
-    "v1GetDiscountPoolOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1DiscountPool"
-        }
-      }
-    },
-    "v1GetDiscountPoolResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1DiscountPool"
-        }
-      }
-    },
-    "v1GetDiscountPoolsResponse": {
+    "v1GetFixAmountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1DiscountPool"
+            "$ref": "#/definitions/v1FixAmount"
           }
         },
         "Total": {
@@ -244,11 +243,11 @@
         }
       }
     },
-    "v1UpdateDiscountPoolResponse": {
+    "v1UpdateFixAmountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DiscountPool"
+          "$ref": "#/definitions/v1FixAmount"
         }
       }
     }
