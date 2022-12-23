@@ -42,8 +42,8 @@ message FixAmount {
     uint32 DurationDays    = 70;
     string Message         = 80;
     string Name            = 90;
-    string CreatedAt       = 100;
-    string UpdatedAt       = 110;
+    uint32 CreatedAt       = 100;
+    uint32 UpdatedAt       = 110;
 }
 
 message Conds {
