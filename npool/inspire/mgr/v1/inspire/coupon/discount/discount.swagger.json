@@ -151,8 +151,7 @@
           "type": "string"
         },
         "Discount": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ReleaseByUserID": {
           "type": "string"
