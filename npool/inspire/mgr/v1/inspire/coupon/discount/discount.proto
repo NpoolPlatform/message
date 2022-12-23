@@ -36,7 +36,7 @@ message Discount {
     string AppID           = 20;
     string Discount        = 30;
     string ReleaseByUserID = 40;
-    string StartAt         = 50;
+    uint32 StartAt         = 50;
     uint32 DurationDays    = 60;
     string Message         = 70;
     string Name            = 80;
