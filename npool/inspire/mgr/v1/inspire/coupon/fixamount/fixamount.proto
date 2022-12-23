@@ -26,8 +26,8 @@ message FixAmountReq {
     optional string Denomination    = 30;
     optional string Circulation     = 40;
     optional string ReleaseByUserID = 50;
-    optional string StartAt         = 60;
-    optional string DurationDays    = 70;
+    optional uint32 StartAt         = 60;
+    optional uint32 DurationDays    = 70;
     optional string Message         = 80;
     optional string Name            = 90;
 }
@@ -38,8 +38,8 @@ message FixAmount {
     string Denomination    = 30;
     string Circulation     = 40;
     string ReleaseByUserID = 50;
-    string StartAt         = 60;
-    string DurationDays    = 70;
+    uint32 StartAt         = 60;
+    uint32 DurationDays    = 70;
     string Message         = 80;
     string Name            = 90;
     string CreatedAt       = 100;
