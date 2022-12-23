@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/inspire/invitation/userinvitationcode/userinvitioncode.proto",
+    "title": "npool/inspire/mw/v1/inspire/invitation/invitationcode/invitationcode.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,11 +17,11 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareinspire1invitationuserinvitationcodev1GetUserInvitationCodeResponse": {
+    "middlewareinspire1invitationinvitationcodev1GetInvitationCodeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
+          "$ref": "#/definitions/v1InvitationCode"
         }
       }
     },
@@ -52,7 +52,7 @@
         }
       }
     },
-    "v1UserInvitationCode": {
+    "v1InvitationCode": {
       "type": "object",
       "properties": {
         "ID": {
