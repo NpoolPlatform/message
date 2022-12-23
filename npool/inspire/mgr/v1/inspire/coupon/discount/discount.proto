@@ -34,7 +34,7 @@ message DiscountReq {
 message Discount {
     string ID              = 10;
     string AppID           = 20;
-    uint32 Discount        = 30;
+    string Discount        = 30;
     string ReleaseByUserID = 40;
     string StartAt         = 50;
     uint32 DurationDays    = 60;
