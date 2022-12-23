@@ -339,10 +339,10 @@
     "v1CreateAppUserCouponRequest": {
       "type": "object",
       "properties": {
-        "TargetUserID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "TargetAppID": {
+        "TargetUserID": {
           "type": "string"
         },
         "Type": {
@@ -364,10 +364,10 @@
     "v1CreateCouponRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "AppID": {
           "type": "string"
         },
-        "AppID": {
+        "UserID": {
           "type": "string"
         },
         "Type": {

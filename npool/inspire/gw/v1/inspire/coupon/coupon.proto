@@ -45,10 +45,10 @@ service Gateway {
 
 message Conds {
     optional npool.v1.StringVal ID       = 10;
-    optional npool.v1.StringVal UserID   = 20;
-    optional npool.v1.StringVal AppID    = 30;
-    optional npool.v1.Uint32Val Type     = 31;
-    optional npool.v1.StringVal CouponID = 40;
+    optional npool.v1.StringVal AppID    = 20;
+    optional npool.v1.StringVal UserID   = 30;
+    optional npool.v1.Uint32Val Type     = 40;
+    optional npool.v1.StringVal CouponID = 50;
 }
 
 message GetCouponRequest {
@@ -98,10 +98,10 @@ message GetCouponOnlyResponse {
 }
 
 message CreateCouponRequest {
+    string     AppID     = 10;
     string     UserID    = 20;
-    string     AppID     = 30;
     inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 40;
-    string     CouponID  = 50;
+    string     CouponID  = 30;
 }
 
 message CreateCouponResponse {
@@ -109,10 +109,10 @@ message CreateCouponResponse {
 }
 
 message CreateAppUserCouponRequest {
+    string     TargetAppID     = 10;
     string     TargetUserID    = 20;
-    string     TargetAppID     = 30;
     inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 40;
-    string     CouponID        = 50;
+    string     CouponID        = 30;
 }
 
 message CreateAppUserCouponResponse {
