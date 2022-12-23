@@ -138,10 +138,12 @@
           "type": "string"
         },
         "StartAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "DurationDays": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
@@ -176,10 +178,12 @@
           "type": "string"
         },
         "StartAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "DurationDays": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Message": {
           "type": "string"
