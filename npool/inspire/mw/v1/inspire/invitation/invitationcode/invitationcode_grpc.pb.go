@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/inspire/invitation/userinvitationcode/userinvitioncode.proto
+// source: npool/inspire/mw/v1/inspire/invitation/invitationcode/invitationcode.proto
 
-package userinvitationcode
+package invitationcode
 
 import (
 	context "context"
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetUserInvitationCode(ctx context.Context, in *GetUserInvitationCodeRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeResponse, error)
+	GetInvitationCode(ctx context.Context, in *GetInvitationCodeRequest, opts ...grpc.CallOption) (*GetInvitationCodeResponse, error)
 }
 
 type middlewareClient struct {
@@ -33,9 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GetUserInvitationCode(ctx context.Context, in *GetUserInvitationCodeRequest, opts ...grpc.CallOption) (*GetUserInvitationCodeResponse, error) {
-	out := new(GetUserInvitationCodeResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.invitation.userinvitationcode.v1.Middleware/GetUserInvitationCode", in, out, opts...)
+func (c *middlewareClient) GetInvitationCode(ctx context.Context, in *GetInvitationCodeRequest, opts ...grpc.CallOption) (*GetInvitationCodeResponse, error) {
+	out := new(GetInvitationCodeResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.invitation.invitationcode.v1.Middleware/GetInvitationCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) GetUserInvitationCode(ctx context.Context, in *GetUse
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetUserInvitationCode(context.Context, *GetUserInvitationCodeRequest) (*GetUserInvitationCodeResponse, error)
+	GetInvitationCode(context.Context, *GetInvitationCodeRequest) (*GetInvitationCodeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -54,8 +54,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetUserInvitationCode(context.Context, *GetUserInvitationCodeRequest) (*GetUserInvitationCodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserInvitationCode not implemented")
+func (UnimplementedMiddlewareServer) GetInvitationCode(context.Context, *GetInvitationCodeRequest) (*GetInvitationCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationCode not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -70,20 +70,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_GetUserInvitationCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserInvitationCodeRequest)
+func _Middleware_GetInvitationCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvitationCodeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetUserInvitationCode(ctx, in)
+		return srv.(MiddlewareServer).GetInvitationCode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.middleware.inspire1.invitation.userinvitationcode.v1.Middleware/GetUserInvitationCode",
+		FullMethod: "/inspire.middleware.inspire1.invitation.invitationcode.v1.Middleware/GetInvitationCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetUserInvitationCode(ctx, req.(*GetUserInvitationCodeRequest))
+		return srv.(MiddlewareServer).GetInvitationCode(ctx, req.(*GetInvitationCodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,14 +92,14 @@ func _Middleware_GetUserInvitationCode_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.inspire1.invitation.userinvitationcode.v1.Middleware",
+	ServiceName: "inspire.middleware.inspire1.invitation.invitationcode.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetUserInvitationCode",
-			Handler:    _Middleware_GetUserInvitationCode_Handler,
+			MethodName: "GetInvitationCode",
+			Handler:    _Middleware_GetInvitationCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/inspire/invitation/userinvitationcode/userinvitioncode.proto",
+	Metadata: "npool/inspire/mw/v1/inspire/invitation/invitationcode/invitationcode.proto",
 }

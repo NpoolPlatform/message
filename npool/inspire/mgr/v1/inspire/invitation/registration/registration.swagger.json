@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/inspire/invitation/userinvitationcode/userinvitioncode.proto",
+    "title": "npool/inspire/mgr/v1/inspire/invitation/registration/registration.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,17 +44,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,18 +53,15 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UserID": {
+        "InviterID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "InvitationCode": {
+        "InviteeID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Confirmed": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1CountUserInvitationCodesResponse": {
+    "v1CountRegistrationsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -84,42 +70,34 @@
         }
       }
     },
-    "v1CreateUserInvitationCodeResponse": {
+    "v1CreateRegistrationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
+          "$ref": "#/definitions/v1Registration"
         }
       }
     },
-    "v1CreateUserInvitationCodesResponse": {
+    "v1CreateRegistrationsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1UserInvitationCode"
+            "$ref": "#/definitions/v1Registration"
           }
         }
       }
     },
-    "v1DeleteUserInvitationCodeResponse": {
+    "v1DeleteRegistrationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
+          "$ref": "#/definitions/v1Registration"
         }
       }
     },
-    "v1ExistUserInvitationCodeCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUserInvitationCodeResponse": {
+    "v1ExistRegistrationCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -127,34 +105,84 @@
         }
       }
     },
-    "v1GetUserInvitationCodeOnlyResponse": {
+    "v1ExistRegistrationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
+          "type": "boolean"
         }
       }
     },
-    "v1GetUserInvitationCodeResponse": {
+    "v1GetRegistrationOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
+          "$ref": "#/definitions/v1Registration"
         }
       }
     },
-    "v1GetUserInvitationCodesResponse": {
+    "v1GetRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
+    "v1GetRegistrationsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1UserInvitationCode"
+            "$ref": "#/definitions/v1Registration"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Registration": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "InviterID": {
+          "type": "string"
+        },
+        "InviteeID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RegistrationReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "InviterID": {
+          "type": "string"
+        },
+        "InviteeID": {
+          "type": "string"
         }
       }
     },
@@ -169,59 +197,11 @@
         }
       }
     },
-    "v1UpdateUserInvitationCodeResponse": {
+    "v1UpdateRegistrationResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserInvitationCode"
-        }
-      }
-    },
-    "v1UserInvitationCode": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "InvitationCode": {
-          "type": "string"
-        },
-        "Confirmed": {
-          "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UserInvitationCodeReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "InvitationCode": {
-          "type": "string"
-        },
-        "Confirmed": {
-          "type": "boolean"
+          "$ref": "#/definitions/v1Registration"
         }
       }
     }
