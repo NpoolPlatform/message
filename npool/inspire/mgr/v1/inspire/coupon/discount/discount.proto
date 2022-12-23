@@ -25,7 +25,7 @@ message DiscountReq {
     optional string AppID           = 20;
     optional uint32 Discount        = 30;
     optional string ReleaseByUserID = 40;
-    optional uint32 Start           = 50;
+    optional uint32 StartAt         = 50;
     optional uint32 DurationDays    = 60;
     optional string Message         = 70;
     optional string Name            = 80;
@@ -36,7 +36,7 @@ message Discount {
     string AppID           = 20;
     uint32 Discount        = 30;
     string ReleaseByUserID = 40;
-    string Start           = 50;
+    string StartAt         = 50;
     uint32 DurationDays    = 60;
     string Message         = 70;
     string Name            = 80;
@@ -48,7 +48,7 @@ message Conds {
     optional npool.v1.StringVal ID              = 10;
     optional npool.v1.StringVal AppID           = 20;
     optional npool.v1.StringVal ReleaseByUserID = 30;
-    optional npool.v1.Uint32Val Start           = 40;
+    optional npool.v1.Uint32Val StartAt         = 40;
     optional npool.v1.Uint32Val DurationDays    = 50;
     optional npool.v1.StringVal Name            = 60;
 }

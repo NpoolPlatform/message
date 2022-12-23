@@ -26,7 +26,7 @@ message SpecialOfferReq {
     optional string UserID          = 30;
     optional string Amount          = 40;
     optional string ReleaseByUserID = 50;
-    optional string Start           = 60;
+    optional string StartAt         = 60;
     optional string DurationDays    = 70;
     optional string Message         = 80;
 }
@@ -37,7 +37,7 @@ message SpecialOffer {
     string UserID          = 30;
     string Amount          = 40;
     string ReleaseByUserID = 50;
-    string Start           = 60;
+    string StartAt         = 60;
     string DurationDays    = 70;
     string Message         = 80;
     string CreatedAt       = 100;
@@ -45,10 +45,10 @@ message SpecialOffer {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID     = 10;
-    optional npool.v1.StringVal AppID  = 20;
-    optional npool.v1.StringVal UserID = 30;
-    optional npool.v1.Uint32Val Start  = 40;
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal UserID  = 30;
+    optional npool.v1.Uint32Val StartAt = 40;
 }
 
 
