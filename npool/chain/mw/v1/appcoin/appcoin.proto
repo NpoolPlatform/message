@@ -48,7 +48,7 @@ message Coin {
     // @inject_tag: sql:"coin_name"
     string CoinName                     = 41;
     // @inject_tag: sql:"display_names"
-    string DisplayNameStr               = 42;
+    string DisplayNamesStr              = 42;
     repeated string DisplayNames        = 43;
     // @inject_tag: sql:"logo"
     string Logo                         = 50;

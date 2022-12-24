@@ -78,7 +78,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
         },
-        "DisplayNameStr": {
+        "DisplayNamesStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"display_names\""
         },
