@@ -485,8 +485,7 @@
           "title": "@inject_tag: sql:\"settle_percent\""
         },
         "SettleTipsStr": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"settle_tips\""
         },
         "SettleTips": {

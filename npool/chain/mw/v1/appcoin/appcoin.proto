@@ -105,7 +105,7 @@ message Coin {
     // @inject_tag: sql:"settle_percent"
     uint32 SettlePercent                = 280;
     // @inject_tag: sql:"settle_tips"
-    uint32 SettleTipsStr                = 281;
+    string SettleTipsStr                = 281;
     repeated string SettleTips          = 282;
     // @inject_tag: sql:"setter"
     string Setter                       = 290;
