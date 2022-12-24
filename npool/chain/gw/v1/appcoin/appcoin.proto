@@ -90,6 +90,7 @@ message UpdateCoinRequest {
     optional string ProductPage              = 120;
     optional bool   Disabled                 = 130;
     optional bool   Display                  = 140;
+    optional uint32 DisplayIndex             = 150;
 }
 
 message UpdateCoinResponse {

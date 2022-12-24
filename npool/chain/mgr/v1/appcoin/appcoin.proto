@@ -35,6 +35,7 @@ message AppCoinReq {
     optional bool      Disabled                 = 100;
     optional string    DailyRewardAmount        = 110;
     optional bool      Display                  = 120;
+    optional uint32    DisplayIndex             = 130;
 }
 
 message AppCoin {
@@ -52,6 +53,7 @@ message AppCoin {
     uint32 CreatedAt                = 110;
     uint32 UpdatedAt                = 120;
     bool   Display                  = 130;
+    uint32 DisplayIndex             = 140;
 }
 
 message Conds {

@@ -304,6 +304,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -523,6 +527,11 @@
         "Display": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"display\""
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"display_index\""
         }
       }
     },

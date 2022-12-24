@@ -93,6 +93,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -141,6 +145,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
