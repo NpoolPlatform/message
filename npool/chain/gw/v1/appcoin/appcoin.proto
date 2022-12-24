@@ -79,11 +79,13 @@ message UpdateCoinRequest {
     string          UserID                   = 30;
     string          CoinTypeID               = 40;
     optional string Name                     = 50;
+    repeated string DisplayNames             = 51;
     optional string Logo                     = 60;
     optional bool   ForPay                   = 70;
     optional string WithdrawAutoReviewAmount = 80;
     optional string MarketValue              = 90;
     optional uint32 SettlePercent            = 100;
+    repeated string SettleTips               = 101;
     optional string DailyRewardAmount        = 110;
     optional string ProductPage              = 120;
     optional bool   Disabled                 = 130;

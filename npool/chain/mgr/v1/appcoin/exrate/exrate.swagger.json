@@ -116,6 +116,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "SettleTips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Setter": {
           "type": "string"
         },
@@ -150,6 +156,12 @@
         "SettlePercent": {
           "type": "integer",
           "format": "int64"
+        },
+        "SettleTips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "Setter": {
           "type": "string"

@@ -26,6 +26,7 @@ message AppCoinReq {
     optional string    AppID                    = 20;
     optional string    CoinTypeID               = 30;
     optional string    Name                     = 40;
+    repeated string    DisplayNames             = 41;
     optional string    Logo                     = 50;
     optional bool      ForPay                   = 60;
     optional string    WithdrawAutoReviewAmount = 70;
@@ -41,6 +42,7 @@ message AppCoin {
     string AppID                    = 20;
     string CoinTypeID               = 30;
     string Name                     = 40;
+    repeated string DisplayNames    = 41;
     string Logo                     = 50;
     bool   ForPay                   = 60;
     string WithdrawAutoReviewAmount = 70;

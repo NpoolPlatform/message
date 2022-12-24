@@ -59,6 +59,12 @@
         "Name": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Logo": {
           "type": "string"
         },
@@ -104,6 +110,12 @@
         },
         "Name": {
           "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "Logo": {
           "type": "string"

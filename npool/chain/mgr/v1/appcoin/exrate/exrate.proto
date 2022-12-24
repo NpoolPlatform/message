@@ -28,6 +28,7 @@ message ExchangeRateReq {
     optional string    MarketValue      = 40;
     optional string    SettleValue      = 50;
     optional uint32    SettlePercent    = 60;
+    repeated string    SettleTips       = 61;
     optional string    Setter           = 70;
     optional uint32    DeletedAt        = 80;
 }
@@ -39,6 +40,7 @@ message ExchangeRate {
     string MarketValue      = 40;
     string SettleValue      = 50;
     uint32 SettlePercent    = 60;
+    repeated string SettleTips = 61;
     string Setter           = 70;
     uint32 CreatedAt        = 80;
     uint32 UpdatedAt        = 90;

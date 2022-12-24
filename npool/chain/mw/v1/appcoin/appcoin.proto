@@ -22,11 +22,13 @@ message CoinReq {
     optional string AppID                    = 20;
     optional string CoinTypeID               = 30;
     optional string Name                     = 40;
+    repeated string DisplayNames             = 41;
     optional string Logo                     = 50;
     optional bool   ForPay                   = 60;
     optional string WithdrawAutoReviewAmount = 70;
     optional string MarketValue              = 80;
     optional uint32 SettlePercent            = 90;
+    repeated string SettleTips               = 91;
     optional string Setter                   = 100;
     optional string ProductPage              = 110;
     optional bool   Disabled                 = 120;
@@ -45,6 +47,9 @@ message Coin {
     string Name                         = 40;
     // @inject_tag: sql:"coin_name"
     string CoinName                     = 41;
+    // @inject_tag: sql:"display_names"
+    string DisplayNameStr               = 42;
+    repeated string DisplayNames        = 43;
     // @inject_tag: sql:"logo"
     string Logo                         = 50;
     // @inject_tag: sql:"unit"
@@ -99,6 +104,9 @@ message Coin {
     string SettleValue                  = 270;
     // @inject_tag: sql:"settle_percent"
     uint32 SettlePercent                = 280;
+    // @inject_tag: sql:"settle_tips"
+    uint32 SettleTipsStr                = 281;
+    repeated string SettleTips          = 282;
     // @inject_tag: sql:"setter"
     string Setter                       = 290;
     // @inject_tag: sql:"disabled"
