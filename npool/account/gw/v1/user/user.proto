@@ -89,6 +89,7 @@ message Account {
     string UserID     = 30;
     string CoinTypeID = 40;
     string CoinName   = 50;
+    repeated string CoinDisplayNames = 51;
     string CoinUnit   = 60;
     string CoinEnv    = 70;
     string CoinLogo   = 80;

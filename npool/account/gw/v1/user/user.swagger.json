@@ -356,6 +356,12 @@
         "CoinName": {
           "type": "string"
         },
+        "CoinDisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CoinUnit": {
           "type": "string"
         },
