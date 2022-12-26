@@ -114,7 +114,10 @@
           "type": "string"
         },
         "Domains": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "Depracated": {
           "type": "boolean"

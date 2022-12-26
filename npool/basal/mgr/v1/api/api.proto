@@ -56,7 +56,7 @@ message API {
     string     Path           = 60;
     bool       Exported       = 70;
     string     PathPrefix     = 80;
-    string     Domains        = 90;
+   repeated  string Domains   = 90;
     bool       Depracated     = 100;
     uint32     CreatedAt      = 110;
     uint32     UpdatedAt      = 120;
