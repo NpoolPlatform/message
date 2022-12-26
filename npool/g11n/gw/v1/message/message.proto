@@ -75,7 +75,8 @@ service Gateway {
 
 message Message {
     string ID         = 10;
-    string AppName    = 30;
+    string AppName    = 20;
+    string LangID     = 30;
     string Lang       = 40;
     string MessageID  = 50;
     string Message    = 60;
@@ -111,8 +112,9 @@ message CreateAppMessageResponse {
 }
 
 message CreateMessagesRequest {
-    string                                       TargetLangID = 10;
-    repeated g11n.manager.message1.v1.MessageReq Infos        = 20;
+    string                                       AppID        = 10;
+    string                                       TargetLangID = 20;
+    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateMessagesResponse {
