@@ -544,6 +544,12 @@
         "CoinName": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CoinLogo": {
           "type": "string"
         },
@@ -661,6 +667,12 @@
         },
         "CoinName": {
           "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "CoinLogo": {
           "type": "string"
@@ -795,6 +807,12 @@
         },
         "CoinName": {
           "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "CoinLogo": {
           "type": "string"
@@ -1217,6 +1235,12 @@
         "CoinName": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CoinLogo": {
           "type": "string"
         },
@@ -1261,6 +1285,12 @@
         "CoinName": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CoinLogo": {
           "type": "string"
         },
@@ -1280,6 +1310,12 @@
         },
         "CoinName": {
           "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "CoinLogo": {
           "type": "string"

@@ -59,6 +59,12 @@
         "Name": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Logo": {
           "type": "string"
         },
@@ -87,6 +93,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -104,6 +114,12 @@
         },
         "Name": {
           "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "Logo": {
           "type": "string"
@@ -129,6 +145,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -303,7 +303,7 @@
           "title": "review"
         },
         "ObjectType": {
-          "type": "string"
+          "$ref": "#/definitions/v2ReviewObjectType"
         },
         "Domain": {
           "type": "string"
@@ -339,6 +339,15 @@
         "Rejected"
       ],
       "default": "DefaultState"
+    },
+    "v2ReviewObjectType": {
+      "type": "string",
+      "enum": [
+        "DefaultObjectType",
+        "ObjectKyc",
+        "ObjectWithdrawal"
+      ],
+      "default": "DefaultObjectType"
     },
     "v2ReviewState": {
       "type": "string",

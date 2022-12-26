@@ -122,6 +122,7 @@ service Gateway {
 message General {
     string CoinTypeID     = 10;
     string CoinName       = 20;
+    repeated string DisplayNames = 21;
     string CoinLogo       = 30;
     string CoinUnit       = 40;
     bool   CoinDisabled   = 41;
@@ -175,6 +176,7 @@ message GetAppGeneralsResponse {
 message Detail {
     string CoinTypeID = 10;
     string CoinName   = 20;
+    repeated string DisplayNames = 21;
     string CoinLogo   = 30;
     string CoinUnit   = 40;
     ledger.manager.ledger.detail.v1.IOType    IOType    = 50;
@@ -215,6 +217,7 @@ message GetAppDetailsResponse {
 message Profit {
     string CoinTypeID = 10;
     string CoinName   = 20;
+    repeated string DisplayNames = 21;
     string CoinLogo   = 30;
     string CoinUnit   = 40;
     string Incoming   = 50;
@@ -254,6 +257,7 @@ message GoodProfit {
     uint32 Units      = 40;
     string CoinTypeID = 50;
     string CoinName   = 60;
+    repeated string DisplayNames = 61;
     string CoinLogo   = 70;
     string CoinUnit   = 80;
     string Incoming   = 90;
@@ -276,14 +280,13 @@ message GetGoodProfitsResponse {
 message Withdraw {
     string        CoinTypeID    = 10;
     string        CoinName      = 20;
+    repeated string DisplayNames = 21;
     string        CoinLogo      = 30;
     string        CoinUnit      = 40;
     string        Amount        = 50;
     uint32        CreatedAt     = 60;
-
     string        Address       = 70;
     repeated string AddressLabels = 80;
-
     ledger.manager.ledger.withdraw.v1.WithdrawState State = 90;
     string        Message       = 100;
 }
@@ -354,6 +357,7 @@ message GetNAppWithdrawsResponse {
 message Transfer {
     string CoinTypeID    = 10;
     string CoinName      = 20;
+    repeated string DisplayNames = 21;
     string CoinLogo      = 30;
     string CoinUnit      = 40;
     string Amount        = 50;

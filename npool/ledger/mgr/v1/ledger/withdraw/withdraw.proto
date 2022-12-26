@@ -37,6 +37,7 @@ message WithdrawReq {
     optional string UserID                 = 30;
     optional string CoinTypeID             = 40;
     optional string AccountID              = 50;
+    optional string Address                = 51;
     optional string Amount                 = 60;
     optional string PlatformTransactionID  = 70;
     optional string ChainTransactionID     = 80;
@@ -49,6 +50,7 @@ message Withdraw {
     string UserID                 = 30;
     string CoinTypeID             = 40;
     string AccountID              = 50;
+    string Address                = 51;
     string Amount                 = 60;
     uint32 CreatedAt              = 70;
     string PlatformTransactionID  = 80;

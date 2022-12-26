@@ -50,7 +50,7 @@ message WithdrawReview {
     string EmailAddress                         = 60;
     string PhoneNO                              = 70;
     string Reviewer                             = 80;
-    string ObjectType                           = 90;
+    review.manager.v2.ReviewObjectType ObjectType = 90;
     string Domain                               = 100;
     uint32 CreatedAt                            = 110;
     uint32 UpdatedAt                            = 120;

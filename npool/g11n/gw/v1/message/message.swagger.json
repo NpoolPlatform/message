@@ -414,6 +414,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Disabled": {
           "type": "boolean"
         },

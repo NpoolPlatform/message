@@ -61,7 +61,7 @@ message KycReview {
 
     // review
     string ReviewID                             = 140;
-    string ObjectType                           = 150;
+    review.manager.v2.ReviewObjectType ObjectType = 150;
     string Domain                               = 160;
     string Reviewer                             = 170;
     review.manager.v2.ReviewState       ReviewState   = 180;

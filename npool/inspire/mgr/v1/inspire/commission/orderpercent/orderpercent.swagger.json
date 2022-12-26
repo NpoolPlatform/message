@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/inspire/purchaseamountsetting/purchaseamountsetting.proto",
+    "title": "npool/inspire/mgr/v1/inspire/commission/orderpercent/orderpercent.proto",
     "version": "version not set"
   },
   "tags": [
@@ -56,21 +56,18 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CountPurchaseAmountSettingsResponse": {
+    "v1CountOrderPercentsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -79,42 +76,34 @@
         }
       }
     },
-    "v1CreatePurchaseAmountSettingResponse": {
+    "v1CreateOrderPercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PurchaseAmountSetting"
+          "$ref": "#/definitions/v1OrderPercent"
         }
       }
     },
-    "v1CreatePurchaseAmountSettingsResponse": {
+    "v1CreateOrderPercentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1PurchaseAmountSetting"
+            "$ref": "#/definitions/v1OrderPercent"
           }
         }
       }
     },
-    "v1DeletePurchaseAmountSettingResponse": {
+    "v1DeleteOrderPercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PurchaseAmountSetting"
+          "$ref": "#/definitions/v1OrderPercent"
         }
       }
     },
-    "v1ExistPurchaseAmountSettingCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistPurchaseAmountSettingResponse": {
+    "v1ExistOrderPercentCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -122,29 +111,37 @@
         }
       }
     },
-    "v1GetPurchaseAmountSettingOnlyResponse": {
+    "v1ExistOrderPercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PurchaseAmountSetting"
+          "type": "boolean"
         }
       }
     },
-    "v1GetPurchaseAmountSettingResponse": {
+    "v1GetOrderPercentOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PurchaseAmountSetting"
+          "$ref": "#/definitions/v1OrderPercent"
         }
       }
     },
-    "v1GetPurchaseAmountSettingsResponse": {
+    "v1GetOrderPercentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderPercent"
+        }
+      }
+    },
+    "v1GetOrderPercentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1PurchaseAmountSetting"
+            "$ref": "#/definitions/v1OrderPercent"
           }
         },
         "Total": {
@@ -153,7 +150,7 @@
         }
       }
     },
-    "v1PurchaseAmountSetting": {
+    "v1OrderPercent": {
       "type": "object",
       "properties": {
         "ID": {
@@ -163,6 +160,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "Title": {
@@ -186,12 +186,6 @@
           "type": "string"
         },
         "BadgeSmall": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
           "type": "string"
         },
         "CreatedAt": {
@@ -204,7 +198,7 @@
         }
       }
     },
-    "v1PurchaseAmountSettingReq": {
+    "v1OrderPercentReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -214,6 +208,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "Title": {
@@ -237,12 +234,6 @@
           "type": "string"
         },
         "BadgeSmall": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
           "type": "string"
         }
       }
@@ -270,11 +261,11 @@
         }
       }
     },
-    "v1UpdatePurchaseAmountSettingResponse": {
+    "v1UpdateOrderPercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PurchaseAmountSetting"
+          "$ref": "#/definitions/v1OrderPercent"
         }
       }
     }

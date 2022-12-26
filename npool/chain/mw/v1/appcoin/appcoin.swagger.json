@@ -78,6 +78,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
         },
+        "DisplayNamesStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"display_names\""
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Logo": {
           "type": "string",
           "title": "@inject_tag: sql:\"logo\""
@@ -187,6 +197,16 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"settle_percent\""
         },
+        "SettleTipsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_tips\""
+        },
+        "SettleTips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Setter": {
           "type": "string",
           "title": "@inject_tag: sql:\"setter\""
@@ -216,6 +236,11 @@
         "Display": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"display\""
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"display_index\""
         }
       }
     },
@@ -234,6 +259,12 @@
         "Name": {
           "type": "string"
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Logo": {
           "type": "string"
         },
@@ -250,6 +281,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "SettleTips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "Setter": {
           "type": "string"
         },
@@ -264,6 +301,10 @@
         },
         "Display": {
           "type": "boolean"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
