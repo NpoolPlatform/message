@@ -370,6 +370,9 @@
     "g11ngatewaymessage1v1CreateMessagesRequest": {
       "type": "object",
       "properties": {
+        "TargetLangID": {
+          "type": "string"
+        },
         "Infos": {
           "type": "array",
           "items": {
