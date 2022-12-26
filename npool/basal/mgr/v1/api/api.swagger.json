@@ -148,6 +148,9 @@
         "Method": {
           "$ref": "#/definitions/v1Int32Val"
         },
+        "Exported": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "Depracated": {
           "$ref": "#/definitions/v1BoolVal"
         }
