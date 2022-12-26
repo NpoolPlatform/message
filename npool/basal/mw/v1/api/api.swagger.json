@@ -1,0 +1,240 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/basal/mw/v1/api/api.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "basalmiddlewareapiv1CreateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "basalmiddlewareapiv1CreateAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        }
+      }
+    },
+    "basalmiddlewareapiv1GetAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "basalmiddlewareapiv1UpdateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1API": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Protocol"
+        },
+        "ServiceName": {
+          "type": "string"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Method"
+        },
+        "MethodName": {
+          "type": "string"
+        },
+        "Path": {
+          "type": "string"
+        },
+        "Exported": {
+          "type": "boolean"
+        },
+        "PathPrefix": {
+          "type": "string"
+        },
+        "Domains": {
+          "type": "string"
+        },
+        "Depracated": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1APIReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Protocol"
+        },
+        "ServiceName": {
+          "type": "string"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Method"
+        },
+        "MethodName": {
+          "type": "string"
+        },
+        "Path": {
+          "type": "string"
+        },
+        "Exported": {
+          "type": "boolean"
+        },
+        "PathPrefix": {
+          "type": "string"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Depracated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Depracated": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Method": {
+      "type": "string",
+      "enum": [
+        "DefaultMethod",
+        "GET",
+        "POST"
+      ],
+      "default": "DefaultMethod"
+    },
+    "v1Protocol": {
+      "type": "string",
+      "enum": [
+        "DefaultProtocol",
+        "GRPC",
+        "HTTP"
+      ],
+      "default": "DefaultProtocol"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
