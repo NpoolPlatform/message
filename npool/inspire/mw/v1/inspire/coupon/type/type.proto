@@ -21,7 +21,6 @@ message Conds {
     optional npool.v1.StringVal AppID        = 20;
     optional npool.v1.StringVal UserID       = 30;
     optional npool.v1.Uint32Val Type         = 31;
-    optional npool.v1.StringVal CouponTypeID = 40;
 }
 
 message CouponTypeReq {
@@ -40,18 +39,18 @@ message CouponTypeReq {
 
 message CouponType {
     inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
-    string          ID           = 20;
-    string          AppID        = 30;
-    string          Value        = 40;
-    string          Circulation  = 50;
-    string          UserID       = 60;
-    uint32          StartAt      = 70;
-    uint32          DurationDays = 80;
-    string          Message      = 90;
-    string          Name         = 100;
-    string          TargetUserID = 110;
-    uint32          CreatedAt    = 120;
-    uint32          UpdateAt     = 130;
+    string          ID              = 20;
+    string          AppID           = 30;
+    string          Value           = 40;
+    string          Circulation     = 50;
+    string          ReleaseByUserID = 60;
+    uint32          StartAt         = 70;
+    uint32          DurationDays    = 80;
+    string          Message         = 90;
+    string          Name            = 100;
+    string          UserID          = 110;
+    uint32          CreatedAt       = 120;
+    uint32          UpdateAt        = 130;
 }
 
 message GetCouponTypeRequest {
