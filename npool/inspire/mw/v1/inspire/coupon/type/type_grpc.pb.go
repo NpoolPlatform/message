@@ -26,7 +26,7 @@ type MiddlewareClient interface {
 	GetCouponTypes(ctx context.Context, in *GetCouponTypesRequest, opts ...grpc.CallOption) (*GetCouponTypesResponse, error)
 	GetCouponTypeOnly(ctx context.Context, in *GetCouponTypeOnlyRequest, opts ...grpc.CallOption) (*GetCouponTypeOnlyResponse, error)
 	CreateCouponType(ctx context.Context, in *CreateCouponTypeRequest, opts ...grpc.CallOption) (*CreateCouponTypeResponse, error)
-	UpdateCouponType(ctx context.Context, in *CreateCouponTypeRequest, opts ...grpc.CallOption) (*CreateCouponTypeResponse, error)
+	UpdateCouponType(ctx context.Context, in *UpdateCouponTypeRequest, opts ...grpc.CallOption) (*UpdateCouponTypeResponse, error)
 }
 
 type middlewareClient struct {
@@ -73,8 +73,8 @@ func (c *middlewareClient) CreateCouponType(ctx context.Context, in *CreateCoupo
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateCouponType(ctx context.Context, in *CreateCouponTypeRequest, opts ...grpc.CallOption) (*CreateCouponTypeResponse, error) {
-	out := new(CreateCouponTypeResponse)
+func (c *middlewareClient) UpdateCouponType(ctx context.Context, in *UpdateCouponTypeRequest, opts ...grpc.CallOption) (*UpdateCouponTypeResponse, error) {
+	out := new(UpdateCouponTypeResponse)
 	err := c.cc.Invoke(ctx, "/inspire.middleware.inspire1.coupon.type.v1.Middleware/UpdateCouponType", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -90,7 +90,7 @@ type MiddlewareServer interface {
 	GetCouponTypes(context.Context, *GetCouponTypesRequest) (*GetCouponTypesResponse, error)
 	GetCouponTypeOnly(context.Context, *GetCouponTypeOnlyRequest) (*GetCouponTypeOnlyResponse, error)
 	CreateCouponType(context.Context, *CreateCouponTypeRequest) (*CreateCouponTypeResponse, error)
-	UpdateCouponType(context.Context, *CreateCouponTypeRequest) (*CreateCouponTypeResponse, error)
+	UpdateCouponType(context.Context, *UpdateCouponTypeRequest) (*UpdateCouponTypeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -110,7 +110,7 @@ func (UnimplementedMiddlewareServer) GetCouponTypeOnly(context.Context, *GetCoup
 func (UnimplementedMiddlewareServer) CreateCouponType(context.Context, *CreateCouponTypeRequest) (*CreateCouponTypeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCouponType not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateCouponType(context.Context, *CreateCouponTypeRequest) (*CreateCouponTypeResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateCouponType(context.Context, *UpdateCouponTypeRequest) (*UpdateCouponTypeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCouponType not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
@@ -199,7 +199,7 @@ func _Middleware_CreateCouponType_Handler(srv interface{}, ctx context.Context, 
 }
 
 func _Middleware_UpdateCouponType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCouponTypeRequest)
+	in := new(UpdateCouponTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -211,7 +211,7 @@ func _Middleware_UpdateCouponType_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/inspire.middleware.inspire1.coupon.type.v1.Middleware/UpdateCouponType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateCouponType(ctx, req.(*CreateCouponTypeRequest))
+		return srv.(MiddlewareServer).UpdateCouponType(ctx, req.(*UpdateCouponTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

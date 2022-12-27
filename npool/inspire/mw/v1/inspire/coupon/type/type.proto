@@ -13,7 +13,7 @@ service Middleware {
     rpc GetCouponTypes     (GetCouponTypesRequest)     returns (GetCouponTypesResponse)     {}
     rpc GetCouponTypeOnly  (GetCouponTypeOnlyRequest)  returns (GetCouponTypeOnlyResponse)  {}
     rpc CreateCouponType   (CreateCouponTypeRequest)   returns (CreateCouponTypeResponse)   {}
-    rpc UpdateCouponType   (CreateCouponTypeRequest)   returns (CreateCouponTypeResponse)   {}
+    rpc UpdateCouponType   (UpdateCouponTypeRequest)   returns (UpdateCouponTypeResponse)   {}
 }
 
 message Conds {
@@ -63,7 +63,7 @@ message GetCouponTypeResponse {
 }
 
 message GetCouponTypesRequest {
-    Conds Conds = 10;
+    Conds  Conds     = 10;
     uint32 Offset    = 20;
     uint32 Limit     = 30;
 }
