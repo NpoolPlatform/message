@@ -85,6 +85,9 @@
     "basalgatewayapiv1GetAPIsRequest": {
       "type": "object",
       "properties": {
+        "Exported": {
+          "type": "boolean"
+        },
         "Depracated": {
           "type": "boolean"
         },

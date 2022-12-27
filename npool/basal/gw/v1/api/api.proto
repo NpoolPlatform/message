@@ -35,9 +35,10 @@ message UpdateAPIResponse {
 }
 
 message GetAPIsRequest {
-    optional bool Depracated = 10;
-    int32         Offset     = 20;
-    int32         Limit      = 30;
+    optional bool Exported   = 10;
+    optional bool Depracated = 20;
+    int32         Offset     = 30;
+    int32         Limit      = 40;
 }
 
 message GetAPIsResponse {
