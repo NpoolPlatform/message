@@ -87,7 +87,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "UpdateAt": {
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }

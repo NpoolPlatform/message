@@ -83,7 +83,7 @@ message GetCouponsResponse {
 
 message GetCouponOnlyRequest {
     inspire.manager.inspire.coupon.allocated.v1.CouponType Type = 10;
-    Conds Coupon = 20;
+    Conds Conds = 20;
 }
 
 message GetCouponOnlyResponse {
