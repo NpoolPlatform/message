@@ -30,8 +30,9 @@ enum Protocol {
 enum Method {
     DefaultMethod   = 0;
 
-    GET   = 10;
-    POST  = 20;
+    GET    = 10;
+    POST   = 20;
+    STREAM = 30;
 }
 
 message APIReq {

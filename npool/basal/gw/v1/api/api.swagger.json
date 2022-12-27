@@ -213,7 +213,8 @@
       "enum": [
         "DefaultMethod",
         "GET",
-        "POST"
+        "POST",
+        "STREAM"
       ],
       "default": "DefaultMethod"
     },
