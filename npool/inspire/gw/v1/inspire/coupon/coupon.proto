@@ -57,12 +57,7 @@ message GetCouponRequest {
 }
 
 message GetCouponResponse {
-    string                                       ID = 10;
     inspire.middleware.inspire1.coupon.v1.Coupon Info = 20;
-}
-
-message GetManyCouponsResponse {
-    repeated inspire.middleware.inspire1.coupon.v1.Coupon Infos = 10;
 }
 
 message GetCouponsRequest {
