@@ -221,6 +221,14 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdateCouponTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/coupontypev1CouponType"
+        }
+      }
     }
   }
 }
