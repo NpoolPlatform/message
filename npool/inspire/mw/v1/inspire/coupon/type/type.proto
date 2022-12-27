@@ -50,7 +50,7 @@ message CouponType {
     string          Name            = 100;
     string          UserID          = 110;
     uint32          CreatedAt       = 120;
-    uint32          UpdateAt        = 130;
+    uint32          UpdatedAt       = 130;
 }
 
 message GetCouponTypeRequest {
