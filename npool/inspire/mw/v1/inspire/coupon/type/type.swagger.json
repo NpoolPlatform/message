@@ -42,9 +42,6 @@
         },
         "Type": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CouponTypeID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -66,7 +63,7 @@
         "Circulation": {
           "type": "string"
         },
-        "UserID": {
+        "ReleaseByUserID": {
           "type": "string"
         },
         "StartAt": {
@@ -83,7 +80,7 @@
         "Name": {
           "type": "string"
         },
-        "TargetUserID": {
+        "UserID": {
           "type": "string"
         },
         "CreatedAt": {

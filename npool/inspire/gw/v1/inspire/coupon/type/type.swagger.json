@@ -271,7 +271,7 @@
         "Circulation": {
           "type": "string"
         },
-        "UserID": {
+        "ReleaseByUserID": {
           "type": "string"
         },
         "StartAt": {
@@ -288,7 +288,7 @@
         "Name": {
           "type": "string"
         },
-        "TargetUserID": {
+        "UserID": {
           "type": "string"
         },
         "CreatedAt": {
