@@ -64,11 +64,13 @@ message API {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID         = 10;
-    optional npool.v1.Int32Val       Protocol   = 20;
-    optional npool.v1.Int32Val       Method     = 30;
-    optional npool.v1.BoolVal        Exported   = 40;
-    optional npool.v1.BoolVal        Depracated = 50;
+    optional npool.v1.StringVal      ID          = 10;
+    optional npool.v1.Int32Val       Protocol    = 20;
+    optional npool.v1.StringVal      ServiceName = 30;
+    optional npool.v1.Int32Val       Method      = 40;
+    optional npool.v1.StringVal      Path        = 50;
+    optional npool.v1.BoolVal        Exported    = 60;
+    optional npool.v1.BoolVal        Depracated  = 70;
 }
 
 

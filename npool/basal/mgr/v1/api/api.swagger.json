@@ -148,8 +148,14 @@
         "Protocol": {
           "$ref": "#/definitions/v1Int32Val"
         },
+        "ServiceName": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Method": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "Path": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "Exported": {
           "$ref": "#/definitions/v1BoolVal"
