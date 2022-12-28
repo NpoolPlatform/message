@@ -12,3 +12,9 @@ enum SettleType {
     AmountThreshold     = 30;
 }
 
+enum SettleMode {
+    DefaultSettleMode       = 0;
+
+    SettleWithGoodValue     = 10;
+    SettleWithPaymentAmount = 20;
+}

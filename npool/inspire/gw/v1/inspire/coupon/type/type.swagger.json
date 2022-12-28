@@ -249,7 +249,12 @@
         "FixAmount",
         "Discount",
         "SpecialOffer",
-        "ThresholdReduction"
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
       ],
       "default": "DefaultCouponType"
     },
