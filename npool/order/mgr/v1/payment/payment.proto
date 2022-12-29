@@ -4,7 +4,6 @@ package order.manager.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mgr/v1/payment";
 
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name

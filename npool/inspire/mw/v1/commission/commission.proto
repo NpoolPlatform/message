@@ -21,9 +21,11 @@ message CommissionReq {
     optional string UserID   = 30;
     optional string GoodID   = 40;
     optional inspire.manager.commission.v1.SettleType SettleType = 50;
-    optional string Amount   = 60;
-    optional string Percent  = 70;
-    optional uint32 StartAt  = 80;
+    optional inspire.manager.commission.v1.SettleMode SettleMode = 60;
+    optional inspire.manager.commission.v1.SettleInterval SettleInterval = 70;
+    optional string Amount   = 80;
+    optional string Percent  = 90;
+    optional uint32 StartAt  = 100;
 }
 
 // If good commission exist, use good commission

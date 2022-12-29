@@ -6,19 +6,26 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/commis
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
+import "npool/inspire/mgr/v1/commission/commission.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Gateway {
-    rpc GetPercents (GetPercentsRequest) returns (GetPercentsResponse) {
+    rpc GetCommissions (GetCommissionsRequest) returns (GetCommissionsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/commissionpercents"
+            post: "/v1/get/commissionhistories"
+            body: "*"
+        };
+    }
+    rpc GetAppCommissions (GetAppCommissionsRequest) returns (GetAppCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/commissions"
             body: "*"
         };
     }
 }
 
-message Percent {
+message Commission {
     string UserID        = 10;
     string Username      = 20;
     string EmailAddress  = 30;
@@ -27,28 +34,46 @@ message Percent {
     string LastName      = 60;
     bool   Kol           = 70;
 
-    string GoodID        = 80;
-    string GoodName      = 90;
+    inspire.manager.commission.v1.SettleType SettleType = 80;
+    inspire.manager.commission.v1.SettleMode SettleMode = 90;
+    inspire.manager.commission.v1.SettleInterval SettleInterval = 100;
 
-    string CoinTypeID    = 100;
-    string CoinName      = 110;
-    string CoinLogo      = 120;
+    optional string GoodID     = 110;
+    optional string GoodName   = 120;
+    optional string CoinTypeID = 130;
+    optional string CoinName   = 140;
+    optional string CoinLogo   = 150;
 
-    uint32 Percent       = 130;
+    optional string Percent    = 160;
+    optional string Amount     = 170;
+    optional string Threshold  = 180;
 
-    uint32 StartAt       = 140;
-    uint32 EndAt         = 150;
-    uint32 CreatedAt     = 160;
+    uint32 StartAt       = 190;
+    uint32 EndAt         = 200;
+    uint32 CreatedAt     = 210;
+    uint32 UpdatedAt     = 220;
 }
 
-message GetPercentsRequest {
+message GetCommissionsRequest {
     string AppID   = 10;
     string UserID  = 20;
     int32  Offset  = 30;
     int32  Limit   = 40;
 }
 
-message GetPercentsResponse {
-    repeated Percent Infos         = 10;
-    uint32           Total         = 20;
+message GetCommissionsResponse {
+    repeated Commission Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetAppCommissionsRequest {
+    string AppID   = 10;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetAppCommissionsResponse {
+    repeated Commission Infos = 10;
+    uint32              Total = 20;
 }

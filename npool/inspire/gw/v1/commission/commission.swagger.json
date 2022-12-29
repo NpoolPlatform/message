@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/commissionpercents": {
+    "/v1/get/app/commissions": {
       "post": {
-        "operationId": "Gateway_GetPercents",
+        "operationId": "Gateway_GetAppCommissions",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPercentsResponse"
+              "$ref": "#/definitions/v1GetAppCommissionsResponse"
             }
           },
           "default": {
@@ -39,7 +39,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPercentsRequest"
+              "$ref": "#/definitions/v1GetAppCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/commissionhistories": {
+      "post": {
+        "operationId": "Gateway_GetCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCommissionsRequest"
             }
           }
         ],
@@ -77,41 +109,7 @@
         }
       }
     },
-    "v1GetPercentsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetPercentsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Percent"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Percent": {
+    "v1Commission": {
       "type": "object",
       "properties": {
         "UserID": {
@@ -135,6 +133,15 @@
         "Kol": {
           "type": "boolean"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -151,8 +158,13 @@
           "type": "string"
         },
         "Percent": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
         },
         "StartAt": {
           "type": "integer",
@@ -165,8 +177,110 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
+    },
+    "v1GetAppCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Commission"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Commission"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettleInterval": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleInterval",
+        "SettleAggregate",
+        "SettleMonthly",
+        "SettleYearly"
+      ],
+      "default": "DefaultSettleInterval"
+    },
+    "v1SettleMode": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleMode",
+        "SettleWithGoodValue",
+        "SettleWithPaymentAmount"
+      ],
+      "default": "DefaultSettleMode"
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "LimitedOrderPercent",
+        "AmountThreshold"
+      ],
+      "default": "DefaultSettleType"
     }
   }
 }

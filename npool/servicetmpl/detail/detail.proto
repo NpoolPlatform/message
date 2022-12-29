@@ -4,7 +4,6 @@ package service.template.detail.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/detail";
 
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
