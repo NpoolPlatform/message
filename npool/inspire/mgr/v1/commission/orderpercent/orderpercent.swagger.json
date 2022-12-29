@@ -165,9 +165,6 @@
         "GoodID": {
           "type": "string"
         },
-        "Title": {
-          "type": "string"
-        },
         "Percent": {
           "type": "string"
         },
@@ -178,12 +175,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "BadgeLarge": {
-          "type": "string"
-        },
-        "BadgeSmall": {
-          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -210,9 +201,6 @@
         "GoodID": {
           "type": "string"
         },
-        "Title": {
-          "type": "string"
-        },
         "Percent": {
           "type": "string"
         },
@@ -223,12 +211,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "BadgeLarge": {
-          "type": "string"
-        },
-        "BadgeSmall": {
-          "type": "string"
         }
       }
     },

@@ -25,12 +25,9 @@ message OrderPercentReq {
     optional string AppID      = 20;
     optional string UserID     = 30;
     optional string GoodID     = 40;
-    optional string Title      = 50;
-    optional string Percent    = 60;
-    optional uint32 StartAt    = 70;
-    optional uint32 EndAt      = 80;
-    optional string BadgeLarge = 90;
-    optional string BadgeSmall = 100;
+    optional string Percent    = 50;
+    optional uint32 StartAt    = 60;
+    optional uint32 EndAt      = 70;
 }
 
 message OrderPercent {
@@ -38,14 +35,11 @@ message OrderPercent {
     string AppID      = 20;
     string UserID     = 30;
     string GoodID     = 40;
-    string Title      = 50;
-    string Percent    = 60;
-    uint32 StartAt    = 70;
-    uint32 EndAt      = 80;
-    string BadgeLarge = 90;
-    string BadgeSmall = 100;
-    uint32 CreatedAt  = 110;
-    uint32 UpdatedAt  = 120;
+    string Percent    = 50;
+    uint32 StartAt    = 60;
+    uint32 EndAt      = 70;
+    uint32 CreatedAt  = 80;
+    uint32 UpdatedAt  = 90;
 }
 
 message Conds {
