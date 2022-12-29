@@ -11,15 +11,8 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
-        option (google.api.http) = {
-            post: "/v1/version"
-            body: "*"
-        };
-    }
-
     rpc BookKeeping (BookKeepingRequest)  returns (BookKeepingResponse) {}
-    rpc Delete      (DeleteRequest)       returns (DeleteResponse) {}
+    rpc Expropriate (ExpropriateRequest)  returns (ExpropriateResponse) {}
 }
 
 message BookKeepingRequest {
@@ -29,10 +22,10 @@ message BookKeepingRequest {
 message BookKeepingResponse {
 }
 
-message DeleteRequest {
+message ExpropriateRequest {
     string OrderID = 10;
 }
 
-message DeleteResponse {
+message ExpropriateResponse {
 }
 
