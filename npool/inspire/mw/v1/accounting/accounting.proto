@@ -9,6 +9,12 @@ service Middleware {
     rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
 }
 
+message Commission {
+    string AppID    = 10;
+    string UserID   = 20;
+    string Amount   = 30;
+}
+
 message AccountingRequest {
     string AppID          = 10;
     string UserID         = 20;
@@ -19,5 +25,6 @@ message AccountingRequest {
 }
 
 message AccountingResponse {
+    repeated Commission Infos = 10;
 }
 

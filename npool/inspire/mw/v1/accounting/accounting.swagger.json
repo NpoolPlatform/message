@@ -45,7 +45,29 @@
       }
     },
     "v1AccountingResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Commission"
+          }
+        }
+      }
+    },
+    "v1Commission": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
     }
   }
 }
