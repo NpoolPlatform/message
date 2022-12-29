@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package inspire.middleware.invitation.registration.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/registration";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    // Method Version
+    rpc GetInvitees (GetInviteesRequest) returns (GetInviteesResponse) {}
+    rpc GetInviters (GetInvitersRequest) returns (GetInvitersResponse) {}
+}
+
+message Invitation {
+    // @inject_tag: sql:"id"
+    string ID        = 10;
+    // @inject_tag: sql:"inviter_id"
+    string InviterID = 20;
+    // @inject_tag: sql:"invitee_id"
+    string InviteeID = 30;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 40;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 50;
+}
+
+message GetInviteesRequest {
+    string          AppID   = 10;
+    repeated string UserIDs = 20;
+    int32           Offset  = 30;
+    int32           Limit   = 40;
+}
+
+message GetInviteesResponse {
+    repeated Invitation Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetInvitersRequest {
+    string          AppID   = 10;
+    repeated string UserIDs = 20;
+    int32           Offset  = 30;
+    int32           Limit   = 40;
+}
+
+message GetInvitersResponse {
+    repeated Invitation Infos = 10;
+    uint32              Total = 20;
+}
+
+
