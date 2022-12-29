@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package inspire.manager.commission.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commission";
+
+enum SettleType {
+    DefaultSettleType   = 0;
+
+    OrderPercent        = 10;
+    LimitedOrderPercent = 20;
+    AmountThreshold     = 30;
+}
+
+enum SettleMode {
+    DefaultSettleMode       = 0;
+
+    SettleWithGoodValue     = 10;
+    SettleWithPaymentAmount = 20;
+}
