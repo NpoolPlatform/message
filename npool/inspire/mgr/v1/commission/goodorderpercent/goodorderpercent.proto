@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package inspire.manager.commission.orderpercent.v1;
+package inspire.manager.commission.goodorderpercent.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commission/orderpercent";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commission/goodorderpercent";
 
 import "npool/npool.proto";
 

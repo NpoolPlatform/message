@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/inspire/mgr/v1/commission/goodorderpercent/goodorderpercent.proto
 
-package orderpercent
+package goodorderpercent
 
 import (
 	context "context"
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateOrderPercent(ctx context.Context, in *CreateOrderPercentRequest, opts ...grpc.CallOption) (*CreateOrderPercentResponse, error) {
 	out := new(CreateOrderPercentResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/CreateOrderPercent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/CreateOrderPercent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateOrderPercent(ctx context.Context, in *CreateOrderP
 
 func (c *managerClient) CreateOrderPercents(ctx context.Context, in *CreateOrderPercentsRequest, opts ...grpc.CallOption) (*CreateOrderPercentsResponse, error) {
 	out := new(CreateOrderPercentsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/CreateOrderPercents", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/CreateOrderPercents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateOrderPercents(ctx context.Context, in *CreateOrder
 
 func (c *managerClient) UpdateOrderPercent(ctx context.Context, in *UpdateOrderPercentRequest, opts ...grpc.CallOption) (*UpdateOrderPercentResponse, error) {
 	out := new(UpdateOrderPercentResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/UpdateOrderPercent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/UpdateOrderPercent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateOrderPercent(ctx context.Context, in *UpdateOrderP
 
 func (c *managerClient) GetOrderPercent(ctx context.Context, in *GetOrderPercentRequest, opts ...grpc.CallOption) (*GetOrderPercentResponse, error) {
 	out := new(GetOrderPercentResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetOrderPercent(ctx context.Context, in *GetOrderPercent
 
 func (c *managerClient) GetOrderPercentOnly(ctx context.Context, in *GetOrderPercentOnlyRequest, opts ...grpc.CallOption) (*GetOrderPercentOnlyResponse, error) {
 	out := new(GetOrderPercentOnlyResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercentOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercentOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetOrderPercentOnly(ctx context.Context, in *GetOrderPer
 
 func (c *managerClient) GetOrderPercents(ctx context.Context, in *GetOrderPercentsRequest, opts ...grpc.CallOption) (*GetOrderPercentsResponse, error) {
 	out := new(GetOrderPercentsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercents", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetOrderPercents(ctx context.Context, in *GetOrderPercen
 
 func (c *managerClient) ExistOrderPercent(ctx context.Context, in *ExistOrderPercentRequest, opts ...grpc.CallOption) (*ExistOrderPercentResponse, error) {
 	out := new(ExistOrderPercentResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/ExistOrderPercent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/ExistOrderPercent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistOrderPercent(ctx context.Context, in *ExistOrderPer
 
 func (c *managerClient) ExistOrderPercentConds(ctx context.Context, in *ExistOrderPercentCondsRequest, opts ...grpc.CallOption) (*ExistOrderPercentCondsResponse, error) {
 	out := new(ExistOrderPercentCondsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/ExistOrderPercentConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/ExistOrderPercentConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistOrderPercentConds(ctx context.Context, in *ExistOrd
 
 func (c *managerClient) CountOrderPercents(ctx context.Context, in *CountOrderPercentsRequest, opts ...grpc.CallOption) (*CountOrderPercentsResponse, error) {
 	out := new(CountOrderPercentsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/CountOrderPercents", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/CountOrderPercents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountOrderPercents(ctx context.Context, in *CountOrderPe
 
 func (c *managerClient) DeleteOrderPercent(ctx context.Context, in *DeleteOrderPercentRequest, opts ...grpc.CallOption) (*DeleteOrderPercentResponse, error) {
 	out := new(DeleteOrderPercentResponse)
-	err := c.cc.Invoke(ctx, "/inspire.manager.commission.orderpercent.v1.Manager/DeleteOrderPercent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.manager.commission.goodorderpercent.v1.Manager/DeleteOrderPercent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateOrderPercent_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/CreateOrderPercent",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/CreateOrderPercent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateOrderPercent(ctx, req.(*CreateOrderPercentRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateOrderPercents_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/CreateOrderPercents",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/CreateOrderPercents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateOrderPercents(ctx, req.(*CreateOrderPercentsRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateOrderPercent_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/UpdateOrderPercent",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/UpdateOrderPercent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateOrderPercent(ctx, req.(*UpdateOrderPercentRequest))
@@ -260,7 +260,7 @@ func _Manager_GetOrderPercent_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercent",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetOrderPercent(ctx, req.(*GetOrderPercentRequest))
@@ -278,7 +278,7 @@ func _Manager_GetOrderPercentOnly_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercentOnly",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercentOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetOrderPercentOnly(ctx, req.(*GetOrderPercentOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetOrderPercents_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/GetOrderPercents",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/GetOrderPercents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetOrderPercents(ctx, req.(*GetOrderPercentsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistOrderPercent_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/ExistOrderPercent",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/ExistOrderPercent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistOrderPercent(ctx, req.(*ExistOrderPercentRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistOrderPercentConds_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/ExistOrderPercentConds",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/ExistOrderPercentConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistOrderPercentConds(ctx, req.(*ExistOrderPercentCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountOrderPercents_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/CountOrderPercents",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/CountOrderPercents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountOrderPercents(ctx, req.(*CountOrderPercentsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteOrderPercent_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.manager.commission.orderpercent.v1.Manager/DeleteOrderPercent",
+		FullMethod: "/inspire.manager.commission.goodorderpercent.v1.Manager/DeleteOrderPercent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteOrderPercent(ctx, req.(*DeleteOrderPercentRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteOrderPercent_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.manager.commission.orderpercent.v1.Manager",
+	ServiceName: "inspire.manager.commission.goodorderpercent.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
