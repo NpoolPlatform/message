@@ -168,9 +168,6 @@
         "Title": {
           "type": "string"
         },
-        "Amount": {
-          "type": "string"
-        },
         "Percent": {
           "type": "string"
         },
@@ -214,9 +211,6 @@
           "type": "string"
         },
         "Title": {
-          "type": "string"
-        },
-        "Amount": {
           "type": "string"
         },
         "Percent": {
