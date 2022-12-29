@@ -118,6 +118,12 @@
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
         "Amount": {
           "type": "string"
         },
