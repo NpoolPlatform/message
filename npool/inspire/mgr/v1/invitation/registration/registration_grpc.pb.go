@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/mgr/v1/inspire/invitation/registration/registration.proto
+// source: npool/inspire/mgr/v1/invitation/registration/registration.proto
 
 package registration
 
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mgr/v1/inspire/invitation/registration/registration.proto",
+	Metadata: "npool/inspire/mgr/v1/invitation/registration/registration.proto",
 }
