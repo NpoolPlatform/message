@@ -232,12 +232,11 @@ type Conds struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID      *npool.StringVal `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
-	AppID   *npool.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
-	UserID  *npool.StringVal `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
-	GoodID  *npool.StringVal `protobuf:"bytes,40,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"`
-	StartAt *npool.Uint32Val `protobuf:"bytes,50,opt,name=StartAt,proto3,oneof" json:"StartAt,omitempty"`
-	EndAt   *npool.Uint32Val `protobuf:"bytes,60,opt,name=EndAt,proto3,oneof" json:"EndAt,omitempty"`
+	ID     *npool.StringVal `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
+	AppID  *npool.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
+	UserID *npool.StringVal `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
+	GoodID *npool.StringVal `protobuf:"bytes,40,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"`
+	EndAt  *npool.Uint32Val `protobuf:"bytes,50,opt,name=EndAt,proto3,oneof" json:"EndAt,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -296,13 +295,6 @@ func (x *Conds) GetUserID() *npool.StringVal {
 func (x *Conds) GetGoodID() *npool.StringVal {
 	if x != nil {
 		return x.GoodID
-	}
-	return nil
-}
-
-func (x *Conds) GetStartAt() *npool.Uint32Val {
-	if x != nil {
-		return x.StartAt
 	}
 	return nil
 }
@@ -1322,7 +1314,7 @@ var file_npool_inspire_mgr_v1_commission_goodorderpercent_goodorderpercent_proto
 	0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0d,
 	0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x55,
 	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x5a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xe6, 0x02, 0x0a, 0x05, 0x43, 0x6f,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xa6, 0x02, 0x0a, 0x05, 0x43, 0x6f,
 	0x6e, 0x64, 0x73, 0x12, 0x28, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e,
 	0x67, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x2e, 0x0a,
@@ -1335,16 +1327,12 @@ var file_npool_inspire_mgr_v1_commission_goodorderpercent_goodorderpercent_proto
 	0x30, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e,
 	0x67, 0x56, 0x61, 0x6c, 0x48, 0x03, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x88, 0x01,
-	0x01, 0x12, 0x32, 0x0a, 0x07, 0x53, 0x74, 0x61, 0x72, 0x74, 0x41, 0x74, 0x18, 0x32, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69,
-	0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x04, 0x52, 0x07, 0x53, 0x74, 0x61, 0x72, 0x74,
-	0x41, 0x74, 0x88, 0x01, 0x01, 0x12, 0x2e, 0x0a, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x18, 0x3c,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e,
-	0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x05, 0x52, 0x05, 0x45, 0x6e, 0x64,
-	0x41, 0x74, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x08, 0x0a, 0x06,
-	0x5f, 0x41, 0x70, 0x70, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x55, 0x73, 0x65, 0x72, 0x49,
-	0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x42, 0x0a, 0x0a, 0x08,
-	0x5f, 0x53, 0x74, 0x61, 0x72, 0x74, 0x41, 0x74, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x45, 0x6e, 0x64,
+	0x01, 0x12, 0x2e, 0x0a, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x18, 0x32, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74,
+	0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x04, 0x52, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x88, 0x01,
+	0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x41, 0x70, 0x70,
+	0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x42, 0x09, 0x0a,
+	0x07, 0x5f, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x45, 0x6e, 0x64,
 	0x41, 0x74, 0x22, 0x70, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65,
 	0x72, 0x50, 0x65, 0x72, 0x63, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x53, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e,
@@ -1629,47 +1617,46 @@ var file_npool_inspire_mgr_v1_commission_goodorderpercent_goodorderpercent_proto
 	23, // 1: inspire.manager.commission.goodorderpercent.v1.Conds.AppID:type_name -> npool.v1.StringVal
 	23, // 2: inspire.manager.commission.goodorderpercent.v1.Conds.UserID:type_name -> npool.v1.StringVal
 	23, // 3: inspire.manager.commission.goodorderpercent.v1.Conds.GoodID:type_name -> npool.v1.StringVal
-	24, // 4: inspire.manager.commission.goodorderpercent.v1.Conds.StartAt:type_name -> npool.v1.Uint32Val
-	24, // 5: inspire.manager.commission.goodorderpercent.v1.Conds.EndAt:type_name -> npool.v1.Uint32Val
-	0,  // 6: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentRequest.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
-	1,  // 7: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	0,  // 8: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsRequest.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
-	1,  // 9: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsResponse.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	0,  // 10: inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentRequest.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
-	1,  // 11: inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	1,  // 12: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	2,  // 13: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
-	1,  // 14: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsResponse.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	2,  // 15: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
-	1,  // 16: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	2,  // 17: inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
-	2,  // 18: inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
-	1,  // 19: inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
-	3,  // 20: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentRequest
-	5,  // 21: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsRequest
-	7,  // 22: inspire.manager.commission.goodorderpercent.v1.Manager.UpdateOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentRequest
-	9,  // 23: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentRequest
-	13, // 24: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercentOnly:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyRequest
-	11, // 25: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsRequest
-	15, // 26: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentRequest
-	17, // 27: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercentConds:input_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsRequest
-	19, // 28: inspire.manager.commission.goodorderpercent.v1.Manager.CountOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsRequest
-	21, // 29: inspire.manager.commission.goodorderpercent.v1.Manager.DeleteOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentRequest
-	4,  // 30: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentResponse
-	6,  // 31: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsResponse
-	8,  // 32: inspire.manager.commission.goodorderpercent.v1.Manager.UpdateOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentResponse
-	10, // 33: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentResponse
-	14, // 34: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercentOnly:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyResponse
-	12, // 35: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsResponse
-	16, // 36: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentResponse
-	18, // 37: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercentConds:output_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsResponse
-	20, // 38: inspire.manager.commission.goodorderpercent.v1.Manager.CountOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsResponse
-	22, // 39: inspire.manager.commission.goodorderpercent.v1.Manager.DeleteOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentResponse
-	30, // [30:40] is the sub-list for method output_type
-	20, // [20:30] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	24, // 4: inspire.manager.commission.goodorderpercent.v1.Conds.EndAt:type_name -> npool.v1.Uint32Val
+	0,  // 5: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentRequest.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
+	1,  // 6: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	0,  // 7: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsRequest.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
+	1,  // 8: inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsResponse.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	0,  // 9: inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentRequest.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercentReq
+	1,  // 10: inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	1,  // 11: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	2,  // 12: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
+	1,  // 13: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsResponse.Infos:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	2,  // 14: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
+	1,  // 15: inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	2,  // 16: inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
+	2,  // 17: inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsRequest.Conds:type_name -> inspire.manager.commission.goodorderpercent.v1.Conds
+	1,  // 18: inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentResponse.Info:type_name -> inspire.manager.commission.goodorderpercent.v1.OrderPercent
+	3,  // 19: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentRequest
+	5,  // 20: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsRequest
+	7,  // 21: inspire.manager.commission.goodorderpercent.v1.Manager.UpdateOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentRequest
+	9,  // 22: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentRequest
+	13, // 23: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercentOnly:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyRequest
+	11, // 24: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsRequest
+	15, // 25: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentRequest
+	17, // 26: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercentConds:input_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsRequest
+	19, // 27: inspire.manager.commission.goodorderpercent.v1.Manager.CountOrderPercents:input_type -> inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsRequest
+	21, // 28: inspire.manager.commission.goodorderpercent.v1.Manager.DeleteOrderPercent:input_type -> inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentRequest
+	4,  // 29: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentResponse
+	6,  // 30: inspire.manager.commission.goodorderpercent.v1.Manager.CreateOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.CreateOrderPercentsResponse
+	8,  // 31: inspire.manager.commission.goodorderpercent.v1.Manager.UpdateOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.UpdateOrderPercentResponse
+	10, // 32: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentResponse
+	14, // 33: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercentOnly:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentOnlyResponse
+	12, // 34: inspire.manager.commission.goodorderpercent.v1.Manager.GetOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.GetOrderPercentsResponse
+	16, // 35: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentResponse
+	18, // 36: inspire.manager.commission.goodorderpercent.v1.Manager.ExistOrderPercentConds:output_type -> inspire.manager.commission.goodorderpercent.v1.ExistOrderPercentCondsResponse
+	20, // 37: inspire.manager.commission.goodorderpercent.v1.Manager.CountOrderPercents:output_type -> inspire.manager.commission.goodorderpercent.v1.CountOrderPercentsResponse
+	22, // 38: inspire.manager.commission.goodorderpercent.v1.Manager.DeleteOrderPercent:output_type -> inspire.manager.commission.goodorderpercent.v1.DeleteOrderPercentResponse
+	29, // [29:39] is the sub-list for method output_type
+	19, // [19:29] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mgr_v1_commission_goodorderpercent_goodorderpercent_proto_init() }
