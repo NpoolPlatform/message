@@ -22,6 +22,7 @@ service Manager {
 
 enum CouponType {
     DefaultCouponType      = 0;
+
     FixAmount              = 10;
     Discount               = 20;
     SpecialOffer           = 30;
@@ -31,6 +32,15 @@ enum CouponType {
     GoodDiscount           = 70;
     GoodThresholdFixAmount = 80;
     GoodThresholdDiscount  = 90;
+}
+
+enum CouponConstraint {
+    DefaultCouponConstraint = 0;
+
+    Normal           = 10;
+    Threshold        = 20;
+    GoodOnly         = 30;
+    GoodThreshold    = 40;
 }
 
 message AllocatedReq {
