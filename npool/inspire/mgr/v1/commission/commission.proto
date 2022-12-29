@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commi
 enum SettleType {
     DefaultSettleType   = 0;
 
-    OrderPercent        = 10;
+    GoodOrderPercent    = 10;
     LimitedOrderPercent = 20;
     AmountThreshold     = 30;
 }
