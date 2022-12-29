@@ -15,40 +15,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/v1/version": {
-      "post": {
-        "operationId": "Middleware_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -78,9 +45,6 @@
       }
     },
     "v1BookKeepingResponse": {
-      "type": "object"
-    },
-    "v1DeleteResponse": {
       "type": "object"
     },
     "v1DetailReq": {
@@ -138,13 +102,8 @@
         }
       }
     },
-    "v1VersionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
+    "v1ExpropriateResponse": {
+      "type": "object"
     }
   }
 }

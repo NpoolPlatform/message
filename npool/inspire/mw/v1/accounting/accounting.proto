@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package inspire.middleware.accounting.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/accounting";
+
+// Service Name
+service Middleware {
+    rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
+}
+
+message AccountingRequest {
+    string AppID          = 10;
+    string UserID         = 20;
+    string GoodID         = 30;
+    string OrderID        = 40;
+    string PaymentAmount  = 50;
+    string GoodValue      = 60;
+}
+
+message AccountingResponse {
+}
+
