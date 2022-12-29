@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/mgr/v1/commission/orderpercent/orderpercent.proto
+// source: npool/inspire/mgr/v1/commission/goodorderpercent/goodorderpercent.proto
 
 package orderpercent
 
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mgr/v1/commission/orderpercent/orderpercent.proto",
+	Metadata: "npool/inspire/mgr/v1/commission/goodorderpercent/goodorderpercent.proto",
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/commission/orderpercent/orderpercent.proto",
+    "title": "npool/inspire/mgr/v1/commission/goodorderpercent/goodorderpercent.proto",
     "version": "version not set"
   },
   "tags": [
