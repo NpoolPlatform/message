@@ -18,3 +18,11 @@ enum SettleMode {
     SettleWithGoodValue     = 10;
     SettleWithPaymentAmount = 20;
 }
+
+enum SettleInterval {
+    DefaultSettleInterval   = 0;
+
+    SettleAggregate     = 10;
+    SettleMonthly       = 20;
+    SettleYearly        = 30;
+}
