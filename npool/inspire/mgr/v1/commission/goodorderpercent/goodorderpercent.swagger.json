@@ -59,9 +59,6 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
