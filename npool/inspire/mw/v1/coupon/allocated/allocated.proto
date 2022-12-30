@@ -22,6 +22,8 @@ message CouponReq {
     optional string AppID    = 30;
     optional string CouponID = 40;
     optional string UserID   = 50;
+    optional bool   Used     = 60;
+    optional string UsedByOrderID = 70;
 }
 
 message Coupon {
@@ -73,6 +75,8 @@ message Conds {
     optional npool.v1.StringVal AppID      = 30;
     optional npool.v1.Int32Val  CouponType = 40;
     optional npool.v1.StringVal CouponID   = 50;
+    optional npool.v1.BoolVal   Used       = 60;
+    optional npool.v1.StringVal UsedByOrderID = 70;
 }
 
 message CreateCouponRequest {

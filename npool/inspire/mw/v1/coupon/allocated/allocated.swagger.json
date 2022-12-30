@@ -34,6 +34,12 @@
         },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Used": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UsedByOrderID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -61,6 +67,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
@@ -175,6 +192,12 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "Used": {
+          "type": "boolean"
+        },
+        "UsedByOrderID": {
           "type": "string"
         }
       }

@@ -65,6 +65,12 @@
         "Value": {
           "type": "string"
         },
+        "Used": {
+          "type": "boolean"
+        },
+        "UsedByOrderID": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -92,6 +98,23 @@
         },
         "CouponID": {
           "type": "string"
+        },
+        "Used": {
+          "type": "boolean"
+        },
+        "UsedByOrderID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
@@ -111,6 +134,12 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Used": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UsedByOrderID": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
