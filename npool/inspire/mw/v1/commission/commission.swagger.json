@@ -196,7 +196,8 @@
         "DefaultSettleInterval",
         "SettleAggregate",
         "SettleMonthly",
-        "SettleYearly"
+        "SettleYearly",
+        "SettleEveryOrder"
       ],
       "default": "DefaultSettleInterval"
     },
