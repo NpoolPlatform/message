@@ -31,6 +31,8 @@ message CouponReq {
     optional string GoodID       = 120;
     // For threshold coupon
     optional string Threshold    = 130;
+    // We may have random amount coupon
+    optional string Allocated    = 140;
 }
 
 message Coupon {
@@ -47,8 +49,9 @@ message Coupon {
     optional string UserID          = 110;
     optional string GoodID          = 120;
     optional string Threshold       = 130;
-    uint32          CreatedAt       = 140;
-    uint32          UpdatedAt       = 150;
+    string          Allocated       = 140;
+    uint32          CreatedAt       = 150;
+    uint32          UpdatedAt       = 160;
 }
 
 message Conds {

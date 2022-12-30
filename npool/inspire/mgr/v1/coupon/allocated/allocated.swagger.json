@@ -62,6 +62,9 @@
         "CouponID": {
           "type": "string"
         },
+        "Value": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
