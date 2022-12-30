@@ -53,7 +53,7 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "StartAt": {
@@ -115,7 +115,7 @@
         "Discount": {
           "type": "string"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "type": "string"
         },
         "StartAt": {
@@ -154,7 +154,7 @@
         "Discount": {
           "type": "string"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "type": "string"
         },
         "StartAt": {

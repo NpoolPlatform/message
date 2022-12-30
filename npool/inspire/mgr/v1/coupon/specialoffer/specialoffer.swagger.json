@@ -159,7 +159,7 @@
         "Amount": {
           "type": "string"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "type": "string"
         },
         "StartAt": {
@@ -198,7 +198,7 @@
         "Amount": {
           "type": "string"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "type": "string"
         },
         "StartAt": {
