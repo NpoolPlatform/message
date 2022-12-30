@@ -90,8 +90,8 @@ message GetCommissionOnlyResponse {
 
 message GetCommissionsRequest {
     Conds  Conds  = 10;
-    uint32 Offset = 20;
-    uint32 Limit  = 30;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetCommissionsResponse {
