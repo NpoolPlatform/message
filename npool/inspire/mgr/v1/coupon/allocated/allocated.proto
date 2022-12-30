@@ -61,9 +61,10 @@ message Allocated {
     string     CouponID  = 50;
     string     Value     = 60;
     bool       Used      = 70;
-    string     UsedByOrderID = 80;
-    uint32     CreatedAt = 90;
-    uint32     UpdatedAt = 100;
+    uint32     UsedAt    = 80;
+    string     UsedByOrderID = 90;
+    uint32     CreatedAt = 100;
+    uint32     UpdatedAt = 110;
 }
 
 message Conds {

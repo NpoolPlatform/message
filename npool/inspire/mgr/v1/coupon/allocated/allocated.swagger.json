@@ -68,6 +68,10 @@
         "Used": {
           "type": "boolean"
         },
+        "UsedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "UsedByOrderID": {
           "type": "string"
         },
