@@ -13,6 +13,7 @@ service Middleware {
     rpc CreateLang     (CreateLangRequest)     returns (CreateLangResponse)     {}
     rpc CreateLangs    (CreateLangsRequest)    returns (CreateLangsResponse)    {}
     rpc UpdateLang     (UpdateLangRequest)     returns (UpdateLangResponse)     {}
+    rpc GetLangOnly    (GetLangOnlyRequest)    returns (GetLangOnlyResponse)    {}
     rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
     rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
 }
@@ -61,6 +62,14 @@ message UpdateLangRequest {
 }
 
 message UpdateLangResponse {
+    Lang Info = 10;
+}
+
+message GetLangOnlyRequest {
+    g11n.manager.applang.v1.Conds Conds  = 10;
+}
+
+message GetLangOnlyResponse {
     Lang Info = 10;
 }
 
