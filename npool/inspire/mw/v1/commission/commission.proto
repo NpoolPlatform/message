@@ -26,6 +26,7 @@ message CommissionReq {
     optional string Amount   = 80;
     optional string Percent  = 90;
     optional uint32 StartAt  = 100;
+    optional string Threshold = 110;
 }
 
 // If good commission exist, use good commission
