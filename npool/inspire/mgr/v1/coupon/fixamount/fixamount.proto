@@ -30,6 +30,7 @@ message FixAmountReq {
     optional uint32 DurationDays    = 70;
     optional string Message         = 80;
     optional string Name            = 90;
+    optional uint32 Allocated       = 100;
 }
 
 message FixAmount {
@@ -42,8 +43,9 @@ message FixAmount {
     uint32 DurationDays    = 70;
     string Message         = 80;
     string Name            = 90;
-    uint32 CreatedAt       = 100;
-    uint32 UpdatedAt       = 110;
+    uint32 Allocated       = 100;
+    uint32 CreatedAt       = 110;
+    uint32 UpdatedAt       = 120;
 }
 
 message Conds {

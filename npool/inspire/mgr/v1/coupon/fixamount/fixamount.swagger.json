@@ -151,6 +151,10 @@
         "Name": {
           "type": "string"
         },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -192,6 +196,10 @@
         },
         "Name": {
           "type": "string"
+        },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
