@@ -62,7 +62,7 @@ message Allocated {
     string     Value     = 60;
     bool       Used      = 70;
     uint32     UsedAt    = 80;
-    string     UsedByOrderID = 90;
+    optional string UsedByOrderID = 90;
     uint32     CreatedAt = 100;
     uint32     UpdatedAt = 110;
 }
