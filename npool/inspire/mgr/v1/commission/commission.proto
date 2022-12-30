@@ -25,4 +25,5 @@ enum SettleInterval {
     SettleAggregate     = 10;
     SettleMonthly       = 20;
     SettleYearly        = 30;
+    SettleEveryOrder    = 40;
 }
