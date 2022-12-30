@@ -79,7 +79,7 @@
         "Circulation": {
           "type": "string"
         },
-        "ReleaseByUserID": {
+        "ReleasedByUserID": {
           "type": "string"
         },
         "StartAt": {
