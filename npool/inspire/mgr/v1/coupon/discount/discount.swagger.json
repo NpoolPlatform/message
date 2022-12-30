@@ -115,6 +115,10 @@
         "Discount": {
           "type": "string"
         },
+        "Circulation": {
+          "type": "integer",
+          "format": "int64"
+        },
         "ReleasedByUserID": {
           "type": "string"
         },
@@ -131,6 +135,10 @@
         },
         "Name": {
           "type": "string"
+        },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -154,6 +162,10 @@
         "Discount": {
           "type": "string"
         },
+        "Circulation": {
+          "type": "integer",
+          "format": "int64"
+        },
         "ReleasedByUserID": {
           "type": "string"
         },
@@ -170,6 +182,10 @@
         },
         "Name": {
           "type": "string"
+        },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
