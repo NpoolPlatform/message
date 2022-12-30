@@ -39,7 +39,7 @@ message Coupon {
     string          AppID           = 30;
     string          Value           = 40;
     string          Circulation     = 50;
-    string          ReleaseByUserID = 60;
+    string          ReleasedByUserID = 60;
     uint32          StartAt         = 70;
     uint32          DurationDays    = 80;
     string          Message         = 90;
