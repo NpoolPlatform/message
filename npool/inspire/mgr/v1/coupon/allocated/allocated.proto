@@ -49,6 +49,8 @@ message AllocatedReq {
     optional string     UserID   = 30;
     optional CouponType Type     = 40;
     optional string     CouponID = 50;
+    optional bool       Used     = 60;
+    optional string     UsedByOrderID = 70;
 }
 
 message Allocated {
@@ -58,8 +60,10 @@ message Allocated {
     CouponType Type      = 40;
     string     CouponID  = 50;
     string     Value     = 60;
-    uint32     CreatedAt = 70;
-    uint32     UpdatedAt = 80;
+    bool       Used      = 70;
+    string     UsedByOrderID = 80;
+    uint32     CreatedAt = 90;
+    uint32     UpdatedAt = 100;
 }
 
 message Conds {
@@ -68,6 +72,8 @@ message Conds {
     optional npool.v1.StringVal UserID   = 30;
     optional npool.v1.Uint32Val Type     = 40;
     optional npool.v1.StringVal CouponID = 50;
+    optional npool.v1.BoolVal   Used     = 60;
+    optional npool.v1.StringVal UsedByOrderID = 70;
 }
 
 
