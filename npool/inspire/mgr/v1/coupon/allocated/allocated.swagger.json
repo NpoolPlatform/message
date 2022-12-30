@@ -56,7 +56,7 @@
         "UserID": {
           "type": "string"
         },
-        "Type": {
+        "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
         "CouponID": {
@@ -97,7 +97,7 @@
         "UserID": {
           "type": "string"
         },
-        "Type": {
+        "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
         "CouponID": {
@@ -134,7 +134,7 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Type": {
+        "CouponType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "CouponID": {
