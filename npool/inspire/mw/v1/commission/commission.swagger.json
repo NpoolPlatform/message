@@ -133,6 +133,9 @@
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Threshold": {
+          "type": "string"
         }
       }
     },
