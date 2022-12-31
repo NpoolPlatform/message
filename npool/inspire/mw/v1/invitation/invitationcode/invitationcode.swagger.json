@@ -33,6 +33,14 @@
         }
       }
     },
+    "inspiremiddlewareinvitationinvitationcodev1UpdateInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1InvitationCode"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -85,6 +93,26 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1InvitationCodeReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "Confirmed": {
+          "type": "boolean"
         }
       }
     }
