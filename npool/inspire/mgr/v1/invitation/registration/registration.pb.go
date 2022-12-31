@@ -97,12 +97,18 @@ type Registration struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID     string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	InviterID string `protobuf:"bytes,30,opt,name=InviterID,proto3" json:"InviterID,omitempty"`
-	InviteeID string `protobuf:"bytes,40,opt,name=InviteeID,proto3" json:"InviteeID,omitempty"`
-	CreatedAt uint32 `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt uint32 `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"inviter_id"
+	InviterID string `protobuf:"bytes,30,opt,name=InviterID,proto3" json:"InviterID,omitempty" sql:"inviter_id"`
+	// @inject_tag: sql:"invitee_id"
+	InviteeID string `protobuf:"bytes,40,opt,name=InviteeID,proto3" json:"InviteeID,omitempty" sql:"invitee_id"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *Registration) Reset() {
