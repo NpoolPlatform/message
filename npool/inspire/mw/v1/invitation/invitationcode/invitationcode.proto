@@ -8,14 +8,13 @@ import "npool/inspire/mgr/v1/invitation/invitationcode/invitationcode.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateInvitationCode (CreateInvitationCodeRequest) returns (CreateInvitationCodeResponse) {}
-    rpc UpdateInvitationCode (UpdateInvitationCodeRequest) returns (UpdateInvitationCodeResponse) {}
-    rpc GetInvitationCode    (GetInvitationCodeRequest)    returns (GetInvitationCodeResponse)    {}
+    rpc CreateInvitationCode  (CreateInvitationCodeRequest)  returns (CreateInvitationCodeResponse)  {}
+    rpc UpdateInvitationCode  (UpdateInvitationCodeRequest)  returns (UpdateInvitationCodeResponse)  {}
+    rpc GetInvitationCodeOnly (GetInvitationCodeOnlyRequest) returns (GetInvitationCodeOnlyResponse) {}
 }
 
 message CreateInvitationCodeRequest {
-    string AppID  = 10;
-    string UserID = 20;
+    inspire.manager.invitation.invitationcode.v1.InvitationCodeReq Info = 10;
 }
 
 message CreateInvitationCodeResponse {
@@ -30,11 +29,10 @@ message UpdateInvitationCodeResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
 }
 
-message GetInvitationCodeRequest {
-    string AppID  = 10;
-    string UserID = 20;
+message GetInvitationCodeOnlyRequest {
+    inspire.manager.invitation.invitationcode.v1.Conds Conds = 10;
 }
 
-message GetInvitationCodeResponse {
+message GetInvitationCodeOnlyResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
 }
