@@ -78,8 +78,7 @@ message CreateCouponResponse {
 }
 
 message GetCouponRequest {
-    string                                         ID         = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    string ID = 10;
 }
 
 message GetCouponResponse {
@@ -87,8 +86,7 @@ message GetCouponResponse {
 }
 
 message GetManyCouponsRequest {
-    repeated string                                IDs        = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    repeated string IDs = 10;
 }
 
 message GetManyCouponsResponse {
