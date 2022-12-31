@@ -75,6 +75,8 @@ message Conds {
     optional npool.v1.StringVal CouponID = 50;
     optional npool.v1.BoolVal   Used     = 60;
     optional npool.v1.StringVal UsedByOrderID = 70;
+    optional npool.v1.StringSliceVal IDs = 80;
+    optional npool.v1.StringSliceVal UsedByOrderIDs = 90;
 }
 
 
