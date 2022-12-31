@@ -4,6 +4,8 @@ package inspire.middleware.accounting.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/accounting";
 
+import "npool/inspire/mgr/v1/commission/commission.proto";
+
 // Service Name
 service Middleware {
     rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
@@ -22,6 +24,7 @@ message AccountingRequest {
     string OrderID        = 40;
     string PaymentAmount  = 50;
     string GoodValue      = 60;
+    inspire.manager.commission.v1.SettleType SettleType = 70;
 }
 
 message AccountingResponse {
