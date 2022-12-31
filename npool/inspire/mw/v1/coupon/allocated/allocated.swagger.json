@@ -17,32 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "inspiremiddlewarecouponallocatedv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "CouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Used": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "UsedByOrderID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -78,6 +52,38 @@
         },
         "Value": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Used": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UsedByOrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedByOrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -268,15 +274,17 @@
         }
       }
     },
-    "v1Int32Val": {
+    "v1StringSliceVal": {
       "type": "object",
       "properties": {
         "Op": {
           "type": "string"
         },
         "Value": {
-          "type": "integer",
-          "format": "int32"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -288,6 +296,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
