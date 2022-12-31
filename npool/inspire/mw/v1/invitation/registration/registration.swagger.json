@@ -97,6 +97,12 @@
         },
         "InviteeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "InviterIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "InviteeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -175,6 +181,20 @@
         },
         "InviteeID": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

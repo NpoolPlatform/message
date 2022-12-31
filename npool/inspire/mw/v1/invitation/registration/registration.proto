@@ -56,10 +56,9 @@ message GetRegistrationOnlyResponse {
 }
 
 message GetInviteesRequest {
-    string          AppID   = 10;
-    repeated string UserIDs = 20;
-    int32           Offset  = 30;
-    int32           Limit   = 40;
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
 }
 
 message GetInviteesResponse {
@@ -68,10 +67,9 @@ message GetInviteesResponse {
 }
 
 message GetInvitersRequest {
-    string          AppID   = 10;
-    repeated string UserIDs = 20;
-    int32           Offset  = 30;
-    int32           Limit   = 40;
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
 }
 
 message GetInvitersResponse {

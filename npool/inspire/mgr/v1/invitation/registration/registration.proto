@@ -47,6 +47,8 @@ message Conds {
     optional npool.v1.StringVal AppID     = 20;
     optional npool.v1.StringVal InviterID = 30;
     optional npool.v1.StringVal InviteeID = 40;
+    optional npool.v1.StringSliceVal InviterIDs = 50;
+    optional npool.v1.StringSliceVal InviteeIDs = 60;
 }
 
 
