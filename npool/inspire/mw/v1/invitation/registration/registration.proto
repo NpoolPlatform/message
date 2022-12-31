@@ -16,8 +16,6 @@ service Middleware {
     rpc UpdateRegistration  (UpdateRegistrationRequest)  returns (UpdateRegistrationResponse)  {}
     rpc GetRegistrations    (GetRegistrationsRequest)    returns (GetRegistrationsResponse)    {}
     rpc GetRegistrationOnly (GetRegistrationOnlyRequest) returns (GetRegistrationOnlyResponse) {}
-    rpc GetInvitees         (GetInviteesRequest)         returns (GetInviteesResponse)         {}
-    rpc GetInviters         (GetInvitersRequest)         returns (GetInvitersResponse)         {}
 }
 
 message CreateRegistrationRequest {
@@ -53,28 +51,6 @@ message GetRegistrationOnlyRequest {
 
 message GetRegistrationOnlyResponse {
     inspire.manager.invitation.registration.v1.Registration Info = 10;
-}
-
-message GetInviteesRequest {
-    inspire.manager.invitation.registration.v1.Conds Conds = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
-}
-
-message GetInviteesResponse {
-    repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
-    uint32 Total = 20;
-}
-
-message GetInvitersRequest {
-    inspire.manager.invitation.registration.v1.Conds Conds = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
-}
-
-message GetInvitersResponse {
-    repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
-    uint32 Total = 20;
 }
 
 
