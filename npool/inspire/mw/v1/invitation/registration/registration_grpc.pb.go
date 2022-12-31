@@ -23,6 +23,10 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	// Method Version
+	CreateRegistration(ctx context.Context, in *CreateRegistrationRequest, opts ...grpc.CallOption) (*CreateRegistrationResponse, error)
+	UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error)
+	GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error)
+	GetRegistrationOnly(ctx context.Context, in *GetRegistrationOnlyRequest, opts ...grpc.CallOption) (*GetRegistrationOnlyResponse, error)
 	GetInvitees(ctx context.Context, in *GetInviteesRequest, opts ...grpc.CallOption) (*GetInviteesResponse, error)
 	GetInviters(ctx context.Context, in *GetInvitersRequest, opts ...grpc.CallOption) (*GetInvitersResponse, error)
 }
@@ -33,6 +37,42 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateRegistration(ctx context.Context, in *CreateRegistrationRequest, opts ...grpc.CallOption) (*CreateRegistrationResponse, error) {
+	out := new(CreateRegistrationResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error) {
+	out := new(UpdateRegistrationResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error) {
+	out := new(GetRegistrationsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistrations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetRegistrationOnly(ctx context.Context, in *GetRegistrationOnlyRequest, opts ...grpc.CallOption) (*GetRegistrationOnlyResponse, error) {
+	out := new(GetRegistrationOnlyResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistrationOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetInvitees(ctx context.Context, in *GetInviteesRequest, opts ...grpc.CallOption) (*GetInviteesResponse, error) {
@@ -58,6 +98,10 @@ func (c *middlewareClient) GetInviters(ctx context.Context, in *GetInvitersReque
 // for forward compatibility
 type MiddlewareServer interface {
 	// Method Version
+	CreateRegistration(context.Context, *CreateRegistrationRequest) (*CreateRegistrationResponse, error)
+	UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error)
+	GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error)
+	GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error)
 	GetInvitees(context.Context, *GetInviteesRequest) (*GetInviteesResponse, error)
 	GetInviters(context.Context, *GetInvitersRequest) (*GetInvitersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -67,6 +111,18 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateRegistration(context.Context, *CreateRegistrationRequest) (*CreateRegistrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRegistration not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRegistration not implemented")
+}
+func (UnimplementedMiddlewareServer) GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRegistrations not implemented")
+}
+func (UnimplementedMiddlewareServer) GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRegistrationOnly not implemented")
+}
 func (UnimplementedMiddlewareServer) GetInvitees(context.Context, *GetInviteesRequest) (*GetInviteesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInvitees not implemented")
 }
@@ -84,6 +140,78 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateRegistration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRegistrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateRegistration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateRegistration(ctx, req.(*CreateRegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateRegistration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRegistrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateRegistration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateRegistration(ctx, req.(*UpdateRegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetRegistrations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRegistrationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetRegistrations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistrations",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetRegistrations(ctx, req.(*GetRegistrationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetRegistrationOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRegistrationOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetRegistrationOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistrationOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetRegistrationOnly(ctx, req.(*GetRegistrationOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetInvitees_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -129,6 +257,22 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "inspire.middleware.invitation.registration.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateRegistration",
+			Handler:    _Middleware_CreateRegistration_Handler,
+		},
+		{
+			MethodName: "UpdateRegistration",
+			Handler:    _Middleware_UpdateRegistration_Handler,
+		},
+		{
+			MethodName: "GetRegistrations",
+			Handler:    _Middleware_GetRegistrations_Handler,
+		},
+		{
+			MethodName: "GetRegistrationOnly",
+			Handler:    _Middleware_GetRegistrationOnly_Handler,
+		},
 		{
 			MethodName: "GetInvitees",
 			Handler:    _Middleware_GetInvitees_Handler,
