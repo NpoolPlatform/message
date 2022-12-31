@@ -55,6 +55,7 @@ message Conds {
     optional npool.v1.Uint32Val StartAt         = 40;
     optional npool.v1.Uint32Val DurationDays    = 50;
     optional npool.v1.StringVal Name            = 60;
+    optional npool.v1.StringSliceVal IDs        = 70;
 }
 
 
