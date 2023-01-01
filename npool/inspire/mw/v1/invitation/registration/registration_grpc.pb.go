@@ -27,6 +27,8 @@ type MiddlewareClient interface {
 	UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error)
 	GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error)
 	GetRegistrationOnly(ctx context.Context, in *GetRegistrationOnlyRequest, opts ...grpc.CallOption) (*GetRegistrationOnlyResponse, error)
+	GetSubordinates(ctx context.Context, in *GetSubordinatesRequest, opts ...grpc.CallOption) (*GetSubordinatesResponse, error)
+	GetSuperiores(ctx context.Context, in *GetSuperioresRequest, opts ...grpc.CallOption) (*GetSuperioresResponse, error)
 }
 
 type middlewareClient struct {
@@ -73,6 +75,24 @@ func (c *middlewareClient) GetRegistrationOnly(ctx context.Context, in *GetRegis
 	return out, nil
 }
 
+func (c *middlewareClient) GetSubordinates(ctx context.Context, in *GetSubordinatesRequest, opts ...grpc.CallOption) (*GetSubordinatesResponse, error) {
+	out := new(GetSubordinatesResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/GetSubordinates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetSuperiores(ctx context.Context, in *GetSuperioresRequest, opts ...grpc.CallOption) (*GetSuperioresResponse, error) {
+	out := new(GetSuperioresResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -82,6 +102,8 @@ type MiddlewareServer interface {
 	UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error)
 	GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error)
 	GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error)
+	GetSubordinates(context.Context, *GetSubordinatesRequest) (*GetSubordinatesResponse, error)
+	GetSuperiores(context.Context, *GetSuperioresRequest) (*GetSuperioresResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -100,6 +122,12 @@ func (UnimplementedMiddlewareServer) GetRegistrations(context.Context, *GetRegis
 }
 func (UnimplementedMiddlewareServer) GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRegistrationOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetSubordinates(context.Context, *GetSubordinatesRequest) (*GetSubordinatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubordinates not implemented")
+}
+func (UnimplementedMiddlewareServer) GetSuperiores(context.Context, *GetSuperioresRequest) (*GetSuperioresResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSuperiores not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -186,6 +214,42 @@ func _Middleware_GetRegistrationOnly_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetSubordinates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubordinatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetSubordinates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/GetSubordinates",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetSubordinates(ctx, req.(*GetSubordinatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetSuperiores_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSuperioresRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetSuperiores(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetSuperiores(ctx, req.(*GetSuperioresRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -208,6 +272,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRegistrationOnly",
 			Handler:    _Middleware_GetRegistrationOnly_Handler,
+		},
+		{
+			MethodName: "GetSubordinates",
+			Handler:    _Middleware_GetSubordinates_Handler,
+		},
+		{
+			MethodName: "GetSuperiores",
+			Handler:    _Middleware_GetSuperiores_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
