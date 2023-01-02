@@ -28,9 +28,8 @@ message AccountingRequest {
     string PaymentCoinUSDCurrency = 80;
     uint32 Units                  = 90;
     string PaymentAmount          = 100;
-    string PaymentUSDAmount       = 110;
-    string GoodUSDValue           = 120;
-    inspire.manager.commission.v1.SettleType SettleType = 130;
+    string GoodValue              = 110;
+    inspire.manager.commission.v1.SettleType SettleType = 120;
 }
 
 message AccountingResponse {
