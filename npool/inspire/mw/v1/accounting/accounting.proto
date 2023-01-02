@@ -18,13 +18,19 @@ message Commission {
 }
 
 message AccountingRequest {
-    string AppID          = 10;
-    string UserID         = 20;
-    string GoodID         = 30;
-    string OrderID        = 40;
-    string PaymentAmount  = 50;
-    string GoodValue      = 60;
-    inspire.manager.commission.v1.SettleType SettleType = 70;
+    string AppID                  = 10;
+    string UserID                 = 20;
+    string GoodID                 = 30;
+    string OrderID                = 40;
+    string PaymentID              = 50;
+    string CoinTypeID             = 60;
+    string PaymentCoinTypeID      = 70;
+    string PaymentCoinUSDCurrency = 80;
+    uint32 Units                  = 90;
+    string PaymentAmount          = 100;
+    string PaymentUSDAmount       = 110;
+    string GoodUSDValue           = 120;
+    inspire.manager.commission.v1.SettleType SettleType = 130;
 }
 
 message AccountingResponse {
