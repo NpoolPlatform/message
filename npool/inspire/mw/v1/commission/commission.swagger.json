@@ -159,6 +159,12 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -234,6 +240,20 @@
         "AmountThreshold"
       ],
       "default": "DefaultSettleType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

@@ -62,6 +62,8 @@ message Conds {
     optional npool.v1.StringVal GoodID = 40;
     optional npool.v1.Int32Val  SettleType = 50;
     optional npool.v1.Uint32Val EndAt  = 60;
+    optional npool.v1.StringSliceVal UserIDs = 70;
+    optional npool.v1.StringSliceVal GoodIDs = 80;
 }
 
 message CreateCommissionRequest {
