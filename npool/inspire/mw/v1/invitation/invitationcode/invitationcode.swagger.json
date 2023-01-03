@@ -96,6 +96,9 @@
         },
         "Confirmed": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -115,6 +118,9 @@
           "type": "string"
         },
         "Confirmed": {
+          "type": "boolean"
+        },
+        "Disabled": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -143,6 +149,9 @@
           "type": "string"
         },
         "Confirmed": {
+          "type": "boolean"
+        },
+        "Disabled": {
           "type": "boolean"
         }
       }
