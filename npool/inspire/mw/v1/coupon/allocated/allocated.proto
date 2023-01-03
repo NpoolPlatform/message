@@ -10,6 +10,7 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {}
+    rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetManyCoupons (GetManyCouponsRequest) returns (GetManyCouponsResponse) {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
@@ -55,6 +56,14 @@ message CreateCouponRequest {
 }
 
 message CreateCouponResponse {
+    Coupon Info = 10;
+}
+
+message UpdateCouponRequest {
+    CouponReq Info = 10;
+}
+
+message UpdateCouponResponse {
     Coupon Info = 10;
 }
 
