@@ -193,8 +193,7 @@
           "type": "string"
         },
         "CommissionPercent": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "CoinTypeID": {
           "type": "string"

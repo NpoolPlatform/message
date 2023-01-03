@@ -29,7 +29,7 @@ message GoodArchivement {
     string GoodID             = 10;
     string GoodName           = 20;
     string GoodUnit           = 30;
-    uint32 CommissionPercent  = 40;
+    string CommissionPercent  = 40;
 
     string CoinTypeID         = 50;
     string CoinName           = 60;
