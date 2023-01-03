@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package inspire.gateway.invitation.invitationcode.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/invitation/invitationcode";
+
+import "google/api/annotations.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateInvitationCode (CreateInvitationCodeRequest) returns (CreateInvitationCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/invitationcode"
+            body: "*"
+        };
+    }
+    rpc GetInvitationCodes (GetInvitationCodesRequest) returns (GetInvitationCodesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/invitationcodes"
+            body: "*"
+        };
+    }
+    rpc GetAppInvitationCodes (GetAppInvitationCodesRequest) returns (GetAppInvitationCodesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/invitationcodes"
+            body: "*"
+        };
+    }
+}
+
+message InvitationCode {
+    string AppID            = 10;
+    string UserID           = 20;
+    string EmailAddress     = 30;
+    string PhoneNO          = 40;
+    string Username         = 50;
+    string InvitationCode   = 60;
+    bool   Confirmed        = 70;
+    bool   Disabled         = 80;
+    uint32 CreatedAt        = 90;
+    uint32 UpdatedAt        = 100;
+}
+
+message CreateInvitationCodeRequest {
+    string AppID        = 10;
+    string TargetUserID = 20;
+}
+
+message CreateInvitationCodeResponse {
+    InvitationCode Info = 10;
+}
+
+message GetInvitationCodesRequest {
+    string AppID    = 10;
+    int32  Offset   = 20;
+    int32  Limit    = 30;
+}
+
+message GetInvitationCodesResponse {
+    repeated InvitationCode Infos = 10;
+}
+
+message GetAppInvitationCodesRequest {
+    string TargetAppID    = 10;
+    int32  Offset         = 20;
+    int32  Limit          = 30;
+}
+
+message GetAppInvitationCodesResponse {
+    repeated InvitationCode Infos = 10;
+}
