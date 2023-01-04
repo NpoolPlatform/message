@@ -8,8 +8,8 @@ package app
 
 import (
 	_ "github.com/NpoolPlatform/message/npool"
-	appcontrol "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontrol"
 	_ "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/app"
+	appcontrol "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appcontrol"
 	recaptcha "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/recaptcha"
 	signmethod "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/signmethod"
 	app "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app"

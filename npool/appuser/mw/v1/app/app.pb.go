@@ -7,8 +7,8 @@
 package app
 
 import (
-	appcontrol "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontrol"
 	_ "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/app"
+	appcontrol "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appcontrol"
 	recaptcha "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/recaptcha"
 	signmethod "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/signmethod"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

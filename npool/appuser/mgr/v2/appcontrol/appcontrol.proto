@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package appuser.manager.appcontrol.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/app/mgr/v2/appcontrol";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appcontrol";
 
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
