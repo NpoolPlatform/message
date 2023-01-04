@@ -83,6 +83,9 @@
         },
         "SigninVerifyType": {
           "$ref": "#/definitions/v2SignMethodType"
+        },
+        "Kol": {
+          "type": "boolean"
         }
       }
     },
@@ -103,6 +106,9 @@
         },
         "SigninVerifyType": {
           "$ref": "#/definitions/v2SignMethodType"
+        },
+        "Kol": {
+          "type": "boolean"
         }
       }
     },
@@ -119,6 +125,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "GoogleAuthVerified": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Kol": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
