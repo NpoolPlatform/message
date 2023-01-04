@@ -34,6 +34,7 @@ message AppUserExtraReq {
     optional string Organization  = 120;
     optional string IDNumber      = 130;
     repeated string AddressFields = 140;
+    optional bool   Kol           = 150;
 }
 
 message AppUserExtra {

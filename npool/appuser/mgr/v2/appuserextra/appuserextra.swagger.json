@@ -168,6 +168,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "Kol": {
+          "type": "boolean"
         }
       }
     },

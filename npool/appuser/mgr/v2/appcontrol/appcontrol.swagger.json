@@ -98,6 +98,9 @@
         },
         "InvitationCodeMust": {
           "type": "boolean"
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
         }
       }
     },
@@ -133,6 +136,9 @@
         },
         "InvitationCodeMust": {
           "type": "boolean"
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
         }
       }
     },
@@ -183,6 +189,16 @@
           }
         }
       }
+    },
+    "v2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "v2DeleteAppControlResponse": {
       "type": "object",

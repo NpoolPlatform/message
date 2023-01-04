@@ -21,6 +21,14 @@ service Manager {
     rpc DeleteAppControl     (DeleteAppControlRequest)     returns (DeleteAppControlResponse)     {}
 }
 
+enum CreateInvitationCodeWhen {
+    DefaultWhen     = 0;
+
+    Registration    = 10;
+    SetToKol        = 20;
+    HasPaidOrder    = 30;
+}
+
 message AppControlReq {
     optional string ID                  = 10;
     optional string AppID               = 20;
@@ -30,6 +38,7 @@ message AppControlReq {
     optional bool KycEnable             = 60;
     optional bool SigninVerifyEnable    = 70;
     optional bool InvitationCodeMust    = 80;
+    optional CreateInvitationCodeWhen CreateInvitationCodeWhen = 90;
 }
 
 message AppControl {
@@ -41,6 +50,7 @@ message AppControl {
     bool KycEnable                      = 60;
     bool SigninVerifyEnable             = 70;
     bool InvitationCodeMust             = 80;
+    CreateInvitationCodeWhen CreateInvitationCodeWhen = 90;
 }
 
 message Conds {
