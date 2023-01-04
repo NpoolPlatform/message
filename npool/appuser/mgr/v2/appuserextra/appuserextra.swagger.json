@@ -44,17 +44,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -127,9 +116,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "Kol": {
-          "type": "boolean"
         }
       }
     },
@@ -182,9 +168,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "Kol": {
-          "type": "boolean"
         }
       }
     },
@@ -229,9 +212,6 @@
         },
         "IDNumber": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Kol": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

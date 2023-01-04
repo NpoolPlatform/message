@@ -39,6 +39,7 @@ message AppControlReq {
     optional bool SigninVerifyEnable    = 70;
     optional bool InvitationCodeMust    = 80;
     optional CreateInvitationCodeWhen CreateInvitationCodeWhen = 90;
+    optional uint32 MaxTypedCouponsPerOrder = 100;
 }
 
 message AppControl {
@@ -51,6 +52,7 @@ message AppControl {
     bool SigninVerifyEnable             = 70;
     bool InvitationCodeMust             = 80;
     CreateInvitationCodeWhen CreateInvitationCodeWhen = 90;
+    uint32 MaxTypedCouponsPerOrder      = 100;
 }
 
 message Conds {
