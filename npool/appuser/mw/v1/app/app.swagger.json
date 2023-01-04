@@ -109,7 +109,7 @@
         },
         "CreateInvitationCodeWhenStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"creawte_invitation_code_when\""
+          "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
           "$ref": "#/definitions/v2CreateInvitationCodeWhen"
