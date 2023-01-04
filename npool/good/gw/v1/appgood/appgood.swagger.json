@@ -589,6 +589,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
