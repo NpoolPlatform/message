@@ -25,6 +25,7 @@ type GatewayClient interface {
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
+	UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error)
 	ResetUser(ctx context.Context, in *ResetUserRequest, opts ...grpc.CallOption) (*ResetUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
@@ -64,6 +65,15 @@ func (c *gatewayClient) CreateUser(ctx context.Context, in *CreateUserRequest, o
 func (c *gatewayClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
 	out := new(UpdateUserResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error) {
+	out := new(UpdateUserKolResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/UpdateUserKol", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -149,6 +159,7 @@ type GatewayServer interface {
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
+	UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error)
 	ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
@@ -172,6 +183,9 @@ func (UnimplementedGatewayServer) CreateUser(context.Context, *CreateUserRequest
 }
 func (UnimplementedGatewayServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedGatewayServer) UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserKol not implemented")
 }
 func (UnimplementedGatewayServer) ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetUser not implemented")
@@ -260,6 +274,24 @@ func _Gateway_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateUser(ctx, req.(*UpdateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateUserKol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserKolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateUserKol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/UpdateUserKol",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateUserKol(ctx, req.(*UpdateUserKolRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -426,6 +458,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUser",
 			Handler:    _Gateway_UpdateUser_Handler,
+		},
+		{
+			MethodName: "UpdateUserKol",
+			Handler:    _Gateway_UpdateUserKol_Handler,
 		},
 		{
 			MethodName: "ResetUser",
