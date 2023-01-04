@@ -66,6 +66,8 @@ message UserReq {
 
     // RoleUser
     repeated string RoleIDs            = 270;
+
+    optional bool   Kol                = 280;
 }
 
 message User {
@@ -156,8 +158,11 @@ message User {
     bool            LoginVerified               = 390;
 
     // @inject_tag: sql:"kyc_state"
-    string          KycStateStr            = 400;
-    appuser.manager.kyc.v2.KycState   State = 410;
+    string          KycStateStr           = 400;
+    appuser.manager.kyc.v2.KycState State = 410;
+
+    // @inject_tag: sql:"kol"
+    bool            Kol                   = 420;
 }
 
 message CreateUserRequest {
