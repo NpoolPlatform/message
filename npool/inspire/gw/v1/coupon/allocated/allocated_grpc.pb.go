@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/inspire/gw/v1/coupon/allocated/allocated.proto
 
-package coupon
+package allocated
 
 import (
 	context "context"
@@ -37,7 +37,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateCoupon(ctx context.Context, in *CreateCouponRequest, opts ...grpc.CallOption) (*CreateCouponResponse, error) {
 	out := new(CreateCouponResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.v1.Gateway/CreateCoupon", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.allocated.v1.Gateway/CreateCoupon", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) CreateCoupon(ctx context.Context, in *CreateCouponReques
 
 func (c *gatewayClient) GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error) {
 	out := new(GetCouponsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.v1.Gateway/GetCoupons", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.allocated.v1.Gateway/GetCoupons", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *gatewayClient) GetCoupons(ctx context.Context, in *GetCouponsRequest, o
 
 func (c *gatewayClient) GetAppCoupons(ctx context.Context, in *GetAppCouponsRequest, opts ...grpc.CallOption) (*GetAppCouponsResponse, error) {
 	out := new(GetAppCouponsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.v1.Gateway/GetAppCoupons", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.coupon.allocated.v1.Gateway/GetAppCoupons", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _Gateway_CreateCoupon_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.coupon.v1.Gateway/CreateCoupon",
+		FullMethod: "/inspire.gateway.coupon.allocated.v1.Gateway/CreateCoupon",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateCoupon(ctx, req.(*CreateCouponRequest))
@@ -126,7 +126,7 @@ func _Gateway_GetCoupons_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.coupon.v1.Gateway/GetCoupons",
+		FullMethod: "/inspire.gateway.coupon.allocated.v1.Gateway/GetCoupons",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetCoupons(ctx, req.(*GetCouponsRequest))
@@ -144,7 +144,7 @@ func _Gateway_GetAppCoupons_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.coupon.v1.Gateway/GetAppCoupons",
+		FullMethod: "/inspire.gateway.coupon.allocated.v1.Gateway/GetAppCoupons",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppCoupons(ctx, req.(*GetAppCouponsRequest))
@@ -156,7 +156,7 @@ func _Gateway_GetAppCoupons_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.gateway.coupon.v1.Gateway",
+	ServiceName: "inspire.gateway.coupon.allocated.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

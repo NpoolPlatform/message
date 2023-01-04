@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package inspire.gateway.coupon.v1;
+package inspire.gateway.coupon.allocated.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/inspire/coupon";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/allocated";
 
 import "google/api/annotations.proto";
 import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
