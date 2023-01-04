@@ -139,8 +139,7 @@
           "type": "string"
         },
         "Allocated": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -185,8 +184,7 @@
           "type": "string"
         },
         "Allocated": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     },

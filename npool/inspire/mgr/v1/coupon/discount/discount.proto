@@ -30,7 +30,7 @@ message DiscountReq {
     optional uint32 DurationDays    = 70;
     optional string Message         = 80;
     optional string Name            = 90;
-    optional uint32 Allocated       = 100;
+    optional string Allocated       = 100;
 }
 
 message Discount {
@@ -43,7 +43,7 @@ message Discount {
     uint32 DurationDays    = 70;
     string Message         = 80;
     string Name            = 90;
-    uint32 Allocated       = 100;
+    string Allocated       = 100;
     uint32 CreatedAt       = 110;
     uint32 UpdatedAt       = 120;
 }
