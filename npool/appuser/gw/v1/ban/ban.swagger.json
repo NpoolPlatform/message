@@ -683,6 +683,10 @@
         },
         "State": {
           "$ref": "#/definitions/v2KycState"
+        },
+        "Kol": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol\""
         }
       }
     },
