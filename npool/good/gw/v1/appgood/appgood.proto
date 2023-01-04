@@ -218,6 +218,7 @@ message UpdateAppGoodRequest {
     optional uint32 ServiceStartAt      = 120;
     optional uint32 TechnicalFeeRatio   = 130;
     optional uint32 ElectricityFeeRatio = 140;
+    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
 }
 
 message UpdateAppGoodResponse {
