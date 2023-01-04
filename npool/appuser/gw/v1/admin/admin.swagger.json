@@ -366,6 +366,13 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "CreateInvitationCodeWhenStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"creawte_invitation_code_when\""
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
         }
       }
     },
@@ -835,6 +842,16 @@
           "$ref": "#/definitions/v2KycState"
         }
       }
+    },
+    "v2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "v2KycState": {
       "type": "string",

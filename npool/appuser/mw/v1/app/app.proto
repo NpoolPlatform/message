@@ -5,6 +5,7 @@ package appuser.middleware.app.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
 import "npool/appuser/mgr/v2/app/app.proto";
+import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
@@ -38,6 +39,7 @@ message AppReq {
     optional bool            KycEnable          = 110;
     optional bool            SigninVerifyEnable = 120;
     optional bool            InvitationCodeMust = 130;
+    optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
 }
 
 message App {
@@ -84,6 +86,10 @@ message App {
 
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt              = 200;
+
+    // @inject_tag: sql:"creawte_invitation_code_when"
+    string          CreateInvitationCodeWhenStr = 210;
+    appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
 }
 
 message CreateAppRequest {
