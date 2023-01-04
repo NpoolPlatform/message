@@ -88,7 +88,7 @@ message App {
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt              = 200;
 
-    // @inject_tag: sql:"creawte_invitation_code_when"
+    // @inject_tag: sql:"create_invitation_code_when"
     string          CreateInvitationCodeWhenStr = 210;
     appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
 
