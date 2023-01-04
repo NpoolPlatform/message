@@ -284,6 +284,10 @@
         },
         "CreateInvitationCodeWhen": {
           "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+        },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -444,6 +448,10 @@
         },
         "CreateInvitationCodeWhen": {
           "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+        },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
