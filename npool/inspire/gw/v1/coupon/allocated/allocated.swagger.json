@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/inspiregatewaycouponv1CreateCouponResponse"
+              "$ref": "#/definitions/inspiregatewaycouponallocatedv1CreateCouponResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/inspiregatewaycouponv1CreateCouponRequest"
+              "$ref": "#/definitions/inspiregatewaycouponallocatedv1CreateCouponRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/inspiregatewaycouponv1GetCouponsResponse"
+              "$ref": "#/definitions/inspiregatewaycouponallocatedv1GetCouponsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/inspiregatewaycouponv1GetCouponsRequest"
+              "$ref": "#/definitions/inspiregatewaycouponallocatedv1GetCouponsRequest"
             }
           }
         ],
@@ -188,7 +188,7 @@
         }
       }
     },
-    "inspiregatewaycouponv1CreateCouponRequest": {
+    "inspiregatewaycouponallocatedv1CreateCouponRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -205,7 +205,7 @@
         }
       }
     },
-    "inspiregatewaycouponv1CreateCouponResponse": {
+    "inspiregatewaycouponallocatedv1CreateCouponResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -213,7 +213,7 @@
         }
       }
     },
-    "inspiregatewaycouponv1GetCouponsRequest": {
+    "inspiregatewaycouponallocatedv1GetCouponsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -232,7 +232,7 @@
         }
       }
     },
-    "inspiregatewaycouponv1GetCouponsResponse": {
+    "inspiregatewaycouponallocatedv1GetCouponsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
