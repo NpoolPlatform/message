@@ -119,8 +119,7 @@
           "type": "string"
         },
         "Circulation": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ReleasedByUserID": {
           "type": "string"
@@ -166,8 +165,7 @@
           "type": "string"
         },
         "Circulation": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ReleasedByUserID": {
           "type": "string"
