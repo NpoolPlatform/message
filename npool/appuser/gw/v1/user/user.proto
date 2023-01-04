@@ -32,6 +32,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateUserKol (UpdateUserKolRequest) returns (UpdateUserKolResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/userkol"
+            body: "*"
+        };
+    }
+
     rpc ResetUser (ResetUserRequest) returns (ResetUserResponse) {
         option (google.api.http) = {
             post: "/v1/reset/user"
@@ -173,6 +180,17 @@ message UpdateUserRequest {
 }
 
 message UpdateUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message UpdateUserKolRequest {
+    string AppID        = 10;
+    string UserID       = 20;
+    string TargetUserID = 30;
+    bool   Kol          = 40;
+}
+
+message UpdateUserKolResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 

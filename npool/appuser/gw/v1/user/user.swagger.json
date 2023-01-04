@@ -367,6 +367,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/userkol": {
+      "post": {
+        "operationId": "Gateway_UpdateUserKol",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserKolResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserKolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -816,6 +848,31 @@
       }
     },
     "v1SignupResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1UpdateUserKolRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateUserKolResponse": {
       "type": "object",
       "properties": {
         "Info": {
