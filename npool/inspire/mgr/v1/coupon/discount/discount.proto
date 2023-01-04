@@ -24,26 +24,26 @@ message DiscountReq {
     optional string ID              = 10;
     optional string AppID           = 20;
     optional string Discount        = 30;
-    optional uint32 Circulation     = 40;
+    optional string Circulation     = 40;
     optional string ReleasedByUserID = 50;
     optional uint32 StartAt         = 60;
     optional uint32 DurationDays    = 70;
     optional string Message         = 80;
     optional string Name            = 90;
-    optional uint32 Allocated       = 100;
+    optional string Allocated       = 100;
 }
 
 message Discount {
     string ID              = 10;
     string AppID           = 20;
     string Discount        = 30;
-    uint32 Circulation     = 40;
+    string Circulation     = 40;
     string ReleasedByUserID = 50;
     uint32 StartAt         = 60;
     uint32 DurationDays    = 70;
     string Message         = 80;
     string Name            = 90;
-    uint32 Allocated       = 100;
+    string Allocated       = 100;
     uint32 CreatedAt       = 110;
     uint32 UpdatedAt       = 120;
 }
