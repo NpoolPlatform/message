@@ -231,8 +231,8 @@ type App struct {
 	InvitationCodeMust    bool  `protobuf:"varint,190,opt,name=InvitationCodeMust,proto3" json:"InvitationCodeMust,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,200,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
-	// @inject_tag: sql:"creawte_invitation_code_when"
-	CreateInvitationCodeWhenStr string                              `protobuf:"bytes,210,opt,name=CreateInvitationCodeWhenStr,proto3" json:"CreateInvitationCodeWhenStr,omitempty" sql:"creawte_invitation_code_when"`
+	// @inject_tag: sql:"create_invitation_code_when"
+	CreateInvitationCodeWhenStr string                              `protobuf:"bytes,210,opt,name=CreateInvitationCodeWhenStr,proto3" json:"CreateInvitationCodeWhenStr,omitempty" sql:"create_invitation_code_when"`
 	CreateInvitationCodeWhen    appcontrol.CreateInvitationCodeWhen `protobuf:"varint,220,opt,name=CreateInvitationCodeWhen,proto3,enum=appuser.manager.appcontrol.v2.CreateInvitationCodeWhen" json:"CreateInvitationCodeWhen,omitempty"`
 	// @inject_tag: sql:"max_typed_coupons_per_order"
 	MaxTypedCouponsPerOrder uint32 `protobuf:"varint,230,opt,name=MaxTypedCouponsPerOrder,proto3" json:"MaxTypedCouponsPerOrder,omitempty" sql:"max_typed_coupons_per_order"`
