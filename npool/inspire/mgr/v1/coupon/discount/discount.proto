@@ -24,7 +24,7 @@ message DiscountReq {
     optional string ID              = 10;
     optional string AppID           = 20;
     optional string Discount        = 30;
-    optional string Circulation     = 40;
+    optional uint32 Circulation     = 40;
     optional string ReleasedByUserID = 50;
     optional uint32 StartAt         = 60;
     optional uint32 DurationDays    = 70;
@@ -37,7 +37,7 @@ message Discount {
     string ID              = 10;
     string AppID           = 20;
     string Discount        = 30;
-    string Circulation     = 40;
+    uint32 Circulation     = 40;
     string ReleasedByUserID = 50;
     uint32 StartAt         = 60;
     uint32 DurationDays    = 70;
