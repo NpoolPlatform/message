@@ -237,7 +237,8 @@
         "DefaultSettleType",
         "GoodOrderPercent",
         "LimitedOrderPercent",
-        "AmountThreshold"
+        "AmountThreshold",
+        "NoCommission"
       ],
       "default": "DefaultSettleType"
     },

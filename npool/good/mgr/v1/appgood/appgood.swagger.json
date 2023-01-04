@@ -114,6 +114,9 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -175,6 +178,9 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -277,6 +283,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "LimitedOrderPercent",
+        "AmountThreshold",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType"
     },
     "v1StringSliceVal": {
       "type": "object",
