@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateCoupon(ctx context.Context, in *CreateCouponRequest, opts ...grpc.CallOption) (*CreateCouponResponse, error)
 	UpdateCoupon(ctx context.Context, in *UpdateCouponRequest, opts ...grpc.CallOption) (*UpdateCouponResponse, error)
+	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
 	GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error)
 }
 
@@ -53,6 +54,15 @@ func (c *middlewareClient) UpdateCoupon(ctx context.Context, in *UpdateCouponReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error) {
+	out := new(GetCouponResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.coupon.coupon.v1.Middleware/GetCoupon", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error) {
 	out := new(GetCouponsResponse)
 	err := c.cc.Invoke(ctx, "/inspire.middleware.coupon.coupon.v1.Middleware/GetCoupons", in, out, opts...)
@@ -68,6 +78,7 @@ func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest
 type MiddlewareServer interface {
 	CreateCoupon(context.Context, *CreateCouponRequest) (*CreateCouponResponse, error)
 	UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error)
+	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
 	GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -81,6 +92,9 @@ func (UnimplementedMiddlewareServer) CreateCoupon(context.Context, *CreateCoupon
 }
 func (UnimplementedMiddlewareServer) UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoupon not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoupon not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoupons not implemented")
@@ -134,6 +148,24 @@ func _Middleware_UpdateCoupon_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCouponRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCoupon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.coupon.coupon.v1.Middleware/GetCoupon",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCoupon(ctx, req.(*GetCouponRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCouponsRequest)
 	if err := dec(in); err != nil {
@@ -166,6 +198,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateCoupon",
 			Handler:    _Middleware_UpdateCoupon_Handler,
+		},
+		{
+			MethodName: "GetCoupon",
+			Handler:    _Middleware_GetCoupon_Handler,
 		},
 		{
 			MethodName: "GetCoupons",
