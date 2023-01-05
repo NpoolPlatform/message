@@ -62,10 +62,11 @@ message CreateCouponResponse {
 message UpdateCouponRequest {
     string ID          = 10;
     string TargetAppID = 20;
-    optional string Value        = 30;
-    optional string Circulation  = 40;
-    optional uint32 StartAt      = 50;
-    optional uint32 DurationDays = 60;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    optional string Value        = 40;
+    optional string Circulation  = 50;
+    optional uint32 StartAt      = 60;
+    optional uint32 DurationDays = 70;
     optional string Message      = 80;
     optional string Name         = 90;
     optional string TargetUserID = 100;
