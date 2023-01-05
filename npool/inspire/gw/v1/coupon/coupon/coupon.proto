@@ -80,8 +80,9 @@ message UpdateCouponResponse {
 
 message GetCouponsRequest {
     string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetCouponsResponse {
@@ -92,8 +93,9 @@ message GetCouponsResponse {
 message GetAppCouponsRequest {
     string AppID       = 10;
     string TargetAppID = 20;
-    int32  Offset      = 30;
-    int32  Limit       = 40;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    int32  Offset      = 40;
+    int32  Limit       = 50;
 }
 
 message GetAppCouponsResponse {
