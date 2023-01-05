@@ -194,7 +194,7 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "CouponType": {
@@ -293,7 +293,7 @@
     "v1GetAppCouponsRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
         "Offset": {
