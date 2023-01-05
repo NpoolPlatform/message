@@ -59,6 +59,7 @@ message GetInvitationCodesRequest {
 
 message GetInvitationCodesResponse {
     repeated InvitationCode Infos = 10;
+    uint32                  Total = 20;
 }
 
 message GetAppInvitationCodesRequest {
@@ -69,4 +70,5 @@ message GetAppInvitationCodesRequest {
 
 message GetAppInvitationCodesResponse {
     repeated InvitationCode Infos = 10;
+    uint32                  Total = 20;
 }
