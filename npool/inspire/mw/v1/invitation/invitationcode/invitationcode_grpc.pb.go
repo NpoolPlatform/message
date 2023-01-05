@@ -25,6 +25,7 @@ type MiddlewareClient interface {
 	CreateInvitationCode(ctx context.Context, in *CreateInvitationCodeRequest, opts ...grpc.CallOption) (*CreateInvitationCodeResponse, error)
 	UpdateInvitationCode(ctx context.Context, in *UpdateInvitationCodeRequest, opts ...grpc.CallOption) (*UpdateInvitationCodeResponse, error)
 	GetInvitationCode(ctx context.Context, in *GetInvitationCodeRequest, opts ...grpc.CallOption) (*GetInvitationCodeResponse, error)
+	GetInvitationCodes(ctx context.Context, in *GetInvitationCodesRequest, opts ...grpc.CallOption) (*GetInvitationCodesResponse, error)
 	GetInvitationCodeOnly(ctx context.Context, in *GetInvitationCodeOnlyRequest, opts ...grpc.CallOption) (*GetInvitationCodeOnlyResponse, error)
 }
 
@@ -63,6 +64,15 @@ func (c *middlewareClient) GetInvitationCode(ctx context.Context, in *GetInvitat
 	return out, nil
 }
 
+func (c *middlewareClient) GetInvitationCodes(ctx context.Context, in *GetInvitationCodesRequest, opts ...grpc.CallOption) (*GetInvitationCodesResponse, error) {
+	out := new(GetInvitationCodesResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.invitationcode.v1.Middleware/GetInvitationCodes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetInvitationCodeOnly(ctx context.Context, in *GetInvitationCodeOnlyRequest, opts ...grpc.CallOption) (*GetInvitationCodeOnlyResponse, error) {
 	out := new(GetInvitationCodeOnlyResponse)
 	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.invitationcode.v1.Middleware/GetInvitationCodeOnly", in, out, opts...)
@@ -79,6 +89,7 @@ type MiddlewareServer interface {
 	CreateInvitationCode(context.Context, *CreateInvitationCodeRequest) (*CreateInvitationCodeResponse, error)
 	UpdateInvitationCode(context.Context, *UpdateInvitationCodeRequest) (*UpdateInvitationCodeResponse, error)
 	GetInvitationCode(context.Context, *GetInvitationCodeRequest) (*GetInvitationCodeResponse, error)
+	GetInvitationCodes(context.Context, *GetInvitationCodesRequest) (*GetInvitationCodesResponse, error)
 	GetInvitationCodeOnly(context.Context, *GetInvitationCodeOnlyRequest) (*GetInvitationCodeOnlyResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -95,6 +106,9 @@ func (UnimplementedMiddlewareServer) UpdateInvitationCode(context.Context, *Upda
 }
 func (UnimplementedMiddlewareServer) GetInvitationCode(context.Context, *GetInvitationCodeRequest) (*GetInvitationCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationCode not implemented")
+}
+func (UnimplementedMiddlewareServer) GetInvitationCodes(context.Context, *GetInvitationCodesRequest) (*GetInvitationCodesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationCodes not implemented")
 }
 func (UnimplementedMiddlewareServer) GetInvitationCodeOnly(context.Context, *GetInvitationCodeOnlyRequest) (*GetInvitationCodeOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationCodeOnly not implemented")
@@ -166,6 +180,24 @@ func _Middleware_GetInvitationCode_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetInvitationCodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvitationCodesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetInvitationCodes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.invitationcode.v1.Middleware/GetInvitationCodes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetInvitationCodes(ctx, req.(*GetInvitationCodesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetInvitationCodeOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetInvitationCodeOnlyRequest)
 	if err := dec(in); err != nil {
@@ -202,6 +234,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetInvitationCode",
 			Handler:    _Middleware_GetInvitationCode_Handler,
+		},
+		{
+			MethodName: "GetInvitationCodes",
+			Handler:    _Middleware_GetInvitationCodes_Handler,
 		},
 		{
 			MethodName: "GetInvitationCodeOnly",

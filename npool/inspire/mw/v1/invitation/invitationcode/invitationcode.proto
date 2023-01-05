@@ -11,6 +11,7 @@ service Middleware {
     rpc CreateInvitationCode  (CreateInvitationCodeRequest)  returns (CreateInvitationCodeResponse)  {}
     rpc UpdateInvitationCode  (UpdateInvitationCodeRequest)  returns (UpdateInvitationCodeResponse)  {}
     rpc GetInvitationCode     (GetInvitationCodeRequest)     returns (GetInvitationCodeResponse)     {}
+    rpc GetInvitationCodes    (GetInvitationCodesRequest)    returns (GetInvitationCodesResponse)    {}
     rpc GetInvitationCodeOnly (GetInvitationCodeOnlyRequest) returns (GetInvitationCodeOnlyResponse) {}
 }
 
@@ -36,6 +37,17 @@ message GetInvitationCodeRequest {
 
 message GetInvitationCodeResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+}
+
+message GetInvitationCodesRequest {
+    inspire.manager.invitation.invitationcode.v1.Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetInvitationCodesResponse {
+    repeated inspire.manager.invitation.invitationcode.v1.InvitationCode Infos = 10;
+    uint32 Total = 20;
 }
 
 message GetInvitationCodeOnlyRequest {
