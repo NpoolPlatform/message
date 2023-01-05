@@ -33,6 +33,14 @@
         }
       }
     },
+    "inspiremiddlewareinvitationinvitationcodev1GetInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1InvitationCode"
+        }
+      }
+    },
     "inspiremiddlewareinvitationinvitationcodev1UpdateInvitationCodeResponse": {
       "type": "object",
       "properties": {

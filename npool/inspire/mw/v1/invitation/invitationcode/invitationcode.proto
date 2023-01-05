@@ -10,6 +10,7 @@ import "npool/inspire/mgr/v1/invitation/invitationcode/invitationcode.proto";
 service Middleware {
     rpc CreateInvitationCode  (CreateInvitationCodeRequest)  returns (CreateInvitationCodeResponse)  {}
     rpc UpdateInvitationCode  (UpdateInvitationCodeRequest)  returns (UpdateInvitationCodeResponse)  {}
+    rpc GetInvitationCode     (GetInvitationCodeRequest)     returns (GetInvitationCodeResponse)     {}
     rpc GetInvitationCodeOnly (GetInvitationCodeOnlyRequest) returns (GetInvitationCodeOnlyResponse) {}
 }
 
@@ -26,6 +27,14 @@ message UpdateInvitationCodeRequest {
 }
 
 message UpdateInvitationCodeResponse {
+    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+}
+
+message GetInvitationCodeRequest {
+    string ID = 10;
+}
+
+message GetInvitationCodeResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
 }
 
