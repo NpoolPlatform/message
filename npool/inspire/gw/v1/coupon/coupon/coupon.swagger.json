@@ -279,6 +279,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
         "Value": {
           "type": "string"
         },
