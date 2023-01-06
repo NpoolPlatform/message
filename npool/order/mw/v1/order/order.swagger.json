@@ -241,6 +241,12 @@
         "PayWithParent": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"pay_with_parent\""
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -334,6 +340,12 @@
         },
         "State": {
           "$ref": "#/definitions/v1OrderState"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
