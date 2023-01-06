@@ -184,6 +184,14 @@
         }
       }
     },
+    "v1GetCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Commission"
+        }
+      }
+    },
     "v1GetCommissionsResponse": {
       "type": "object",
       "properties": {

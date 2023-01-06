@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/commission": {
+      "post": {
+        "operationId": "Gateway_CreateCommission",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCommissionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCommissionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/commissions": {
       "post": {
         "operationId": "Gateway_GetAppCommissions",
@@ -72,6 +104,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/commission": {
+      "post": {
+        "operationId": "Gateway_UpdateCommission",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCommissionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCommissionRequest"
             }
           }
         ],
@@ -184,6 +248,38 @@
         }
       }
     },
+    "v1CreateCommissionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Commission"
+        }
+      }
+    },
     "v1GetAppCommissionsRequest": {
       "type": "object",
       "properties": {
@@ -193,6 +289,9 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",
@@ -227,6 +326,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",
@@ -283,6 +385,32 @@
         "NoCommission"
       ],
       "default": "DefaultSettleType"
+    },
+    "v1UpdateCommissionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Commission"
+        }
+      }
     }
   }
 }

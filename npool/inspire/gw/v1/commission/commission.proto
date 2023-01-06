@@ -11,6 +11,18 @@ import "npool/npool.proto";
 
 // Service Name
 service Gateway {
+    rpc CreateCommission (CreateCommissionRequest) returns (CreateCommissionResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/commission"
+            body: "*"
+        };
+    }
+    rpc UpdateCommission (UpdateCommissionRequest) returns (UpdateCommissionResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/commission"
+            body: "*"
+        };
+    }
     rpc GetCommissions (GetCommissionsRequest) returns (GetCommissionsResponse) {
         option (google.api.http) = {
             post: "/v1/get/commissionhistories"
@@ -54,11 +66,36 @@ message Commission {
     uint32 UpdatedAt     = 220;
 }
 
+message CreateCommissionRequest {
+    string          AppID        = 10;
+    string          TargetUserID = 20;
+    optional string GoodID       = 30;
+    inspire.manager.commission.v1.SettleType SettleType = 40;
+    string          Value        = 50;
+    uint32          StartAt      = 60;
+}
+
+message CreateCommissionResponse {
+    Commission Info = 10;
+}
+
+message UpdateCommissionRequest {
+    string          ID      = 10;
+    string          AppID   = 20;
+    optional string Value   = 30;
+    optional uint32 StartAt = 40;
+}
+
+message UpdateCommissionResponse {
+    Commission Info = 10;
+}
+
 message GetCommissionsRequest {
     string AppID   = 10;
     string UserID  = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 30;
+    int32  Offset  = 40;
+    int32  Limit   = 50;
 }
 
 message GetCommissionsResponse {
@@ -69,8 +106,9 @@ message GetCommissionsResponse {
 message GetAppCommissionsRequest {
     string AppID   = 10;
     optional uint32 EndAt = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 30;
+    int32  Offset  = 40;
+    int32  Limit   = 50;
 }
 
 message GetAppCommissionsResponse {

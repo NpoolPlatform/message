@@ -33,6 +33,14 @@
         }
       }
     },
+    "inspiremiddlewareinvitationregistrationv1GetRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
     "inspiremiddlewareinvitationregistrationv1GetRegistrationsResponse": {
       "type": "object",
       "properties": {

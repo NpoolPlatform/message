@@ -25,6 +25,7 @@ type MiddlewareClient interface {
 	// Method Version
 	CreateRegistration(ctx context.Context, in *CreateRegistrationRequest, opts ...grpc.CallOption) (*CreateRegistrationResponse, error)
 	UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error)
+	GetRegistration(ctx context.Context, in *GetRegistrationRequest, opts ...grpc.CallOption) (*GetRegistrationResponse, error)
 	GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error)
 	GetRegistrationOnly(ctx context.Context, in *GetRegistrationOnlyRequest, opts ...grpc.CallOption) (*GetRegistrationOnlyResponse, error)
 	GetSubordinates(ctx context.Context, in *GetSubordinatesRequest, opts ...grpc.CallOption) (*GetSubordinatesResponse, error)
@@ -51,6 +52,15 @@ func (c *middlewareClient) CreateRegistration(ctx context.Context, in *CreateReg
 func (c *middlewareClient) UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error) {
 	out := new(UpdateRegistrationResponse)
 	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetRegistration(ctx context.Context, in *GetRegistrationRequest, opts ...grpc.CallOption) (*GetRegistrationResponse, error) {
+	out := new(GetRegistrationResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistration", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -100,6 +110,7 @@ type MiddlewareServer interface {
 	// Method Version
 	CreateRegistration(context.Context, *CreateRegistrationRequest) (*CreateRegistrationResponse, error)
 	UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error)
+	GetRegistration(context.Context, *GetRegistrationRequest) (*GetRegistrationResponse, error)
 	GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error)
 	GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error)
 	GetSubordinates(context.Context, *GetSubordinatesRequest) (*GetSubordinatesResponse, error)
@@ -116,6 +127,9 @@ func (UnimplementedMiddlewareServer) CreateRegistration(context.Context, *Create
 }
 func (UnimplementedMiddlewareServer) UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRegistration not implemented")
+}
+func (UnimplementedMiddlewareServer) GetRegistration(context.Context, *GetRegistrationRequest) (*GetRegistrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRegistration not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRegistrations not implemented")
@@ -174,6 +188,24 @@ func _Middleware_UpdateRegistration_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateRegistration(ctx, req.(*UpdateRegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetRegistration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRegistrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetRegistration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetRegistration(ctx, req.(*GetRegistrationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -264,6 +296,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRegistration",
 			Handler:    _Middleware_UpdateRegistration_Handler,
+		},
+		{
+			MethodName: "GetRegistration",
+			Handler:    _Middleware_GetRegistration_Handler,
 		},
 		{
 			MethodName: "GetRegistrations",

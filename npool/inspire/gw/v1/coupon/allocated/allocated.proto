@@ -33,10 +33,10 @@ service Gateway {
 }
 
 message CreateCouponRequest {
-    string AppID     = 10;
-    string UserID    = 20;
+    string AppID        = 10;
+    string TargetUserID = 20;
     inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
-    string CouponID  = 40;
+    string CouponID     = 40;
 }
 
 message CreateCouponResponse {
@@ -56,7 +56,7 @@ message GetCouponsResponse {
 }
 
 message GetAppCouponsRequest {
-    string TargetAppID  = 10;
+    string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }

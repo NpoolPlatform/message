@@ -245,6 +245,9 @@
         "AppID": {
           "type": "string"
         },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -278,6 +281,9 @@
         },
         "TargetAppID": {
           "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
         },
         "Value": {
           "type": "string"
@@ -426,6 +432,9 @@
         },
         "TargetAppID": {
           "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
         },
         "Offset": {
           "type": "integer",

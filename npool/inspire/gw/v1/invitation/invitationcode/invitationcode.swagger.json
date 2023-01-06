@@ -184,6 +184,10 @@
           "items": {
             "$ref": "#/definitions/v1InvitationCode"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -211,6 +215,10 @@
           "items": {
             "$ref": "#/definitions/v1InvitationCode"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

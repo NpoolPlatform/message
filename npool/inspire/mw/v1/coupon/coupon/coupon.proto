@@ -11,6 +11,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {}
     rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
+    rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
 }
 
@@ -85,5 +86,14 @@ message UpdateCouponRequest {
 }
 
 message UpdateCouponResponse {
+    Coupon Info = 10;
+}
+
+message GetCouponRequest {
+    string ID  = 10;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+}
+
+message GetCouponResponse {
     Coupon Info = 10;
 }

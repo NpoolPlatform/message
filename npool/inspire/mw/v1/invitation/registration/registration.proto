@@ -14,6 +14,7 @@ service Middleware {
     // Method Version
     rpc CreateRegistration  (CreateRegistrationRequest)  returns (CreateRegistrationResponse)  {}
     rpc UpdateRegistration  (UpdateRegistrationRequest)  returns (UpdateRegistrationResponse)  {}
+    rpc GetRegistration     (GetRegistrationRequest)     returns (GetRegistrationResponse)     {}
     rpc GetRegistrations    (GetRegistrationsRequest)    returns (GetRegistrationsResponse)    {}
     rpc GetRegistrationOnly (GetRegistrationOnlyRequest) returns (GetRegistrationOnlyResponse) {}
     rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {}
@@ -33,6 +34,14 @@ message UpdateRegistrationRequest {
 }
 
 message UpdateRegistrationResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
+}
+
+message GetRegistrationRequest {
+    string ID = 10;
+}
+
+message GetRegistrationResponse {
     inspire.manager.invitation.registration.v1.Registration Info = 10;
 }
 

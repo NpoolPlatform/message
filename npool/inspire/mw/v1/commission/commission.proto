@@ -11,6 +11,7 @@ import "npool/npool.proto";
 service Middleware {
     rpc CreateCommission   (CreateCommissionRequest)   returns (CreateCommissionResponse)   {}
     rpc UpdateCommission   (UpdateCommissionRequest)   returns (UpdateCommissionResponse)   {}
+    rpc GetCommission      (GetCommissionRequest)      returns (GetCommissionResponse)      {}
     rpc GetCommissionOnly  (GetCommissionOnlyRequest)  returns (GetCommissionOnlyResponse)  {}
     rpc GetCommissions     (GetCommissionsRequest)     returns (GetCommissionsResponse)     {}
 }
@@ -79,6 +80,14 @@ message UpdateCommissionRequest {
 }
 
 message UpdateCommissionResponse {
+    Commission Info = 10;
+}
+
+message GetCommissionRequest {
+    string ID = 10;
+}
+
+message GetCommissionResponse {
     Commission Info = 10;
 }
 
