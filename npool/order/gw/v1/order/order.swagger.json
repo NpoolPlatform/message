@@ -658,6 +658,12 @@
         "End": {
           "type": "integer",
           "format": "int64"
+        },
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
         }
       }
     },
@@ -715,6 +721,39 @@
           }
         }
       }
+    },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "CouponValue": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1CreateAppUserOrderRequest": {
       "type": "object",
