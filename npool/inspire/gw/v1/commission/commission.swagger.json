@@ -290,6 +290,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -323,6 +326,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",

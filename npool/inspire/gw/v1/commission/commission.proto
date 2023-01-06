@@ -93,8 +93,9 @@ message UpdateCommissionResponse {
 message GetCommissionsRequest {
     string AppID   = 10;
     string UserID  = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 30;
+    int32  Offset  = 40;
+    int32  Limit   = 50;
 }
 
 message GetCommissionsResponse {
@@ -105,8 +106,9 @@ message GetCommissionsResponse {
 message GetAppCommissionsRequest {
     string AppID   = 10;
     optional uint32 EndAt = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 30;
+    int32  Offset  = 40;
+    int32  Limit   = 50;
 }
 
 message GetAppCommissionsResponse {
