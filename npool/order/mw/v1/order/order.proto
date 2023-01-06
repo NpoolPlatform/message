@@ -56,6 +56,7 @@ message OrderReq {
     optional bool   Canceled                  = 240;
     optional bool   FakePayment               = 250;
     optional order.manager.order.v1.OrderState State  = 260;
+    repeated string CouponIDs               = 270;
 }
 
 message Order {
@@ -124,6 +125,7 @@ message Order {
 
     // @inject_tag: sql:"pay_with_parent"
     bool   PayWithParent          = 280;
+    repeated string  CouponIDs    = 290;
 }
 
 message Conds {
