@@ -64,7 +64,7 @@
         "UserID": {
           "type": "string"
         },
-        "DirectContributorID": {
+        "DirectContributorUserID": {
           "type": "string"
         },
         "Amount": {

@@ -14,7 +14,7 @@ service Middleware {
 message Commission {
     string AppID    = 10;
     string UserID   = 20;
-    optional string DirectContributorID = 30;
+    optional string DirectContributorUserID = 30;
     string Amount   = 40;
 }
 
