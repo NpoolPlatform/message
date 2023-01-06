@@ -62,6 +62,7 @@ message OrderReq {
     optional OrderType  Type                    = 140;
     optional OrderState State                   = 150;
     optional uint32     CreatedAt               = 160;
+    repeated string     CouponIDs               = 170;
 }
 
 message Order {
@@ -80,6 +81,7 @@ message Order {
     string     FixAmountCouponID       = 130;
     OrderType  Type                    = 140;
     OrderState State                   = 150;
+    repeated string CouponIDs          = 151;
     uint32     CreatedAt               = 160;
     uint32     UpdatedAt               = 170;
     uint32     DeletedAt               = 180;

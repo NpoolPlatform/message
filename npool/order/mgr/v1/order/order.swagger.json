@@ -213,6 +213,12 @@
         "State": {
           "$ref": "#/definitions/v1OrderState"
         },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -281,6 +287,12 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
