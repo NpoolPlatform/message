@@ -41,7 +41,7 @@ message GoodReq {
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
     optional good.manager.good.v1.BenefitState BenefitState = 240;
-    optional string        BenefitTIDs        = 250;
+    repeated string        BenefitTIDs        = 250;
 }
 
 message Good {
