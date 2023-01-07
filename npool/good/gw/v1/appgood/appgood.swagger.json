@@ -433,6 +433,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "WaitStart": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Sold": {
           "type": "integer",
           "format": "int64"

@@ -36,6 +36,7 @@ message GoodReq {
     optional uint32        Total              = 170;
     optional int32         Locked             = 180;
     optional int32         InService          = 190;
+    optional int32         WaitStart          = 191;
     optional uint32        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
@@ -133,6 +134,8 @@ message Good {
     uint32           GoodLocked         = 330;
     // @inject_tag: sql:"good_in_service"
     uint32           GoodInService      = 340;
+    // @inject_tag: sql:"good_wait_start"
+    uint32           GoodWaitStart      = 341;
     // @inject_tag: sql:"good_sold"
     uint32           GoodSold           = 350;
 

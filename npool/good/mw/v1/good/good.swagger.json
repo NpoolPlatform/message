@@ -232,6 +232,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
         "GoodSold": {
           "type": "integer",
           "format": "int64",
@@ -353,6 +358,10 @@
           "format": "int32"
         },
         "InService": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "WaitStart": {
           "type": "integer",
           "format": "int32"
         },

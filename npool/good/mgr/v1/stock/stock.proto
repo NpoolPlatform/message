@@ -28,6 +28,7 @@ message StockReq {
     optional uint32 Total     = 30;
     optional int32  Locked    = 40;
     optional int32  InService = 50;
+    optional int32  WaitStart = 51;
     optional uint32 Sold      = 60;
 }
 
@@ -37,6 +38,7 @@ message Stock {
     uint32 Total     = 30;
     int32  Locked    = 40;
     int32  InService = 50;
+    int32  WaitStart = 51;
     uint32 Sold      = 60;
     uint32 CreatedAt = 70;
     uint32 UpdatedAt = 80;
