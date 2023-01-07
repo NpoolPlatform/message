@@ -67,7 +67,7 @@ message CreateTxsRequest {
 }
 
 message CreateTxsResponse {
-    repeated Tx Info = 10;
+    repeated Tx Infos = 10;
 }
 
 message GetTxRequest {

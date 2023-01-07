@@ -28,7 +28,7 @@
     "chainmiddlewaretxv1CreateTxsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/chainmiddlewaretxv1Tx"
