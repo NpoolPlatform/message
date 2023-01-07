@@ -46,8 +46,7 @@ enum BenefitState {
 
     BenefitWait         = 10;
     BenefitTransferring = 20;
-    BenefitCalculating  = 30;
-    BenefitBookKeeping  = 40;
+    BenefitBookKeeping  = 30;
 }
 
 message GoodReq {
