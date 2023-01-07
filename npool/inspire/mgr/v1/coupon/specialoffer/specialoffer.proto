@@ -136,4 +136,3 @@ message DeleteSpecialOfferRequest {
 message DeleteSpecialOfferResponse {
     SpecialOffer Info = 10;
 }
-
