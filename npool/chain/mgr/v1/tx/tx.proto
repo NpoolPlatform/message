@@ -31,12 +31,14 @@ enum TxState {
 }
 
 enum TxType {
-    DefaultTxType    = 0;
-    TxWithdraw       = 10;
-    TxFeedGas        = 20;
-    TxPaymentCollect = 30;
-    TxBenefit        = 40;
-    TxLimitation     = 50;
+    DefaultTxType     = 0;
+    TxWithdraw        = 10;
+    TxFeedGas         = 20;
+    TxPaymentCollect  = 30;
+    TxBenefit         = 40;
+    TxLimitation      = 50;
+    TxPlatformBenefit = 60;
+    TxUserBenefit     = 70;
 }
 
 message TxReq {

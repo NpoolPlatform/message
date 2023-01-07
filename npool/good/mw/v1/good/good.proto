@@ -40,6 +40,8 @@ message GoodReq {
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
+    optional good.manager.good.v1.BenefitState BenefitState = 240;
+    optional string        BenefitTIDs        = 250;
 }
 
 message Good {
@@ -145,6 +147,15 @@ message Good {
 
     // @inject_tag: sql:"benefit_interval_hours"
     uint32           BenefitIntervalHours = 400;
+
+    // @inject_tag: sql:"benefit_state"
+    string           BenefitStateStr      = 410;
+    optional good.manager.good.v1.BenefitType BenefitState = 420;
+    // @inject_tag: sql:"last_benefit_timestamp"
+    uint32           LastBenefitTimestamp = 430;
+    // @inject_tag: sql:"benefit_tids"
+    string           BenefitTIDsStr       = 440;
+    repeated string  BenefitTIDs          = 450;
 }
 
 message CreateGoodRequest {

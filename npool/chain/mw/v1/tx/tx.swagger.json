@@ -275,7 +275,9 @@
         "TxFeedGas",
         "TxPaymentCollect",
         "TxBenefit",
-        "TxLimitation"
+        "TxLimitation",
+        "TxPlatformBenefit",
+        "TxUserBenefit"
       ],
       "default": "DefaultTxType"
     }

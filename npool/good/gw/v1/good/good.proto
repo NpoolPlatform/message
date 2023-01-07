@@ -104,6 +104,7 @@ message Good {
     uint32           DeletedAt          = 440;
 
     uint32           BenefitIntervalHours = 450;
+    uint32           LastBenefitTimestamp = 460;
 }
 
 message CreateGoodRequest {

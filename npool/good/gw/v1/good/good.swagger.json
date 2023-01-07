@@ -460,6 +460,10 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "LastBenefitTimestamp": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
