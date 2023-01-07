@@ -395,6 +395,9 @@
         "AppID": {
           "type": "string"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
         "Value": {
           "type": "string"
         },

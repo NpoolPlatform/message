@@ -82,8 +82,9 @@ message CreateCommissionResponse {
 message UpdateCommissionRequest {
     string          ID      = 10;
     string          AppID   = 20;
-    optional string Value   = 30;
-    optional uint32 StartAt = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 30;
+    optional string Value   = 40;
+    optional uint32 StartAt = 50;
 }
 
 message UpdateCommissionResponse {
