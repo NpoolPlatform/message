@@ -461,7 +461,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "LastBenefitTimestamp": {
+        "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
         }

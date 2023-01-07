@@ -152,7 +152,7 @@ message Good {
     string           BenefitStateStr      = 410;
     optional good.manager.good.v1.BenefitType BenefitState = 420;
     // @inject_tag: sql:"last_benefit_timestamp"
-    uint32           LastBenefitTimestamp = 430;
+    uint32           LastBenefitAt        = 430;
     // @inject_tag: sql:"benefit_tids"
     string           BenefitTIDsStr       = 440;
     repeated string  BenefitTIDs          = 450;

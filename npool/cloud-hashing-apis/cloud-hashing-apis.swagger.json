@@ -1816,7 +1816,7 @@
         "BenefitState": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "LastBenefitTimestamp": {
+        "LastBenefitAt": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"last_benefit_timestamp\""
