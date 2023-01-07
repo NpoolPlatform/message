@@ -31,6 +31,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
