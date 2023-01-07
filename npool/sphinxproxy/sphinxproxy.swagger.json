@@ -629,7 +629,7 @@
         "TransactionStateRetrievePrivateInfo"
       ],
       "default": "TransactionStateUnKnow",
-      "description": "- TransactionStateRetrievePrivateInfo: some coin such as aleo \nfirst use address to sign service retrieve private info",
+      "description": "- TransactionStateRetrievePrivateInfo: some coin such as aleo 30 -\u003e 1",
       "title": "state step by 10"
     },
     "v1TransactionType": {
@@ -639,9 +639,12 @@
         "WalletNew",
         "Balance",
         "RegisterCoin",
-        "GasFee"
+        "GasFee",
+        "PreBalance"
       ],
-      "default": "Invalid"
+      "default": "Invalid",
+      "description": "- PreBalance: some coin such as aleo  10 -\u003e 2",
+      "title": "state step by 10"
     },
     "v1TxIn": {
       "type": "object",
