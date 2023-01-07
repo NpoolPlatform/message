@@ -2,21 +2,17 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-<<<<<<< HEAD:npool/basal/mw/v1/mw_grpc.pb.go
 // source: npool/basal/mw/v1/mw.proto
 
 package v1
-=======
-// source: npool/inspire/mw/v1/accounting/accounting.proto
-
-package accounting
->>>>>>> 1999e04ab7fd3f4bc3cc31eef13ee1c424bcc996:npool/inspire/mw/v1/accounting/accounting_grpc.pb.go
 
 import (
 	context "context"
+	npool "github.com/NpoolPlatform/message/npool"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -28,7 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	Accounting(ctx context.Context, in *AccountingRequest, opts ...grpc.CallOption) (*AccountingResponse, error)
+	// Method Version
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
 type middlewareClient struct {
@@ -39,15 +36,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-<<<<<<< HEAD:npool/basal/mw/v1/mw_grpc.pb.go
 func (c *middlewareClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/basal.middleware.v1.Middleware/Version", in, out, opts...)
-=======
-func (c *middlewareClient) Accounting(ctx context.Context, in *AccountingRequest, opts ...grpc.CallOption) (*AccountingResponse, error) {
-	out := new(AccountingResponse)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.accounting.v1.Middleware/Accounting", in, out, opts...)
->>>>>>> 1999e04ab7fd3f4bc3cc31eef13ee1c424bcc996:npool/inspire/mw/v1/accounting/accounting_grpc.pb.go
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +49,8 @@ func (c *middlewareClient) Accounting(ctx context.Context, in *AccountingRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error)
+	// Method Version
+	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -66,8 +58,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Accounting not implemented")
+func (UnimplementedMiddlewareServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -82,24 +74,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_Accounting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AccountingRequest)
+func _Middleware_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).Accounting(ctx, in)
+		return srv.(MiddlewareServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-<<<<<<< HEAD:npool/basal/mw/v1/mw_grpc.pb.go
 		FullMethod: "/basal.middleware.v1.Middleware/Version",
-=======
-		FullMethod: "/inspire.middleware.accounting.v1.Middleware/Accounting",
->>>>>>> 1999e04ab7fd3f4bc3cc31eef13ee1c424bcc996:npool/inspire/mw/v1/accounting/accounting_grpc.pb.go
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Accounting(ctx, req.(*AccountingRequest))
+		return srv.(MiddlewareServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -108,22 +96,14 @@ func _Middleware_Accounting_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-<<<<<<< HEAD:npool/basal/mw/v1/mw_grpc.pb.go
 	ServiceName: "basal.middleware.v1.Middleware",
-=======
-	ServiceName: "inspire.middleware.accounting.v1.Middleware",
->>>>>>> 1999e04ab7fd3f4bc3cc31eef13ee1c424bcc996:npool/inspire/mw/v1/accounting/accounting_grpc.pb.go
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Accounting",
-			Handler:    _Middleware_Accounting_Handler,
+			MethodName: "Version",
+			Handler:    _Middleware_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-<<<<<<< HEAD:npool/basal/mw/v1/mw_grpc.pb.go
 	Metadata: "npool/basal/mw/v1/mw.proto",
-=======
-	Metadata: "npool/inspire/mw/v1/accounting/accounting.proto",
->>>>>>> 1999e04ab7fd3f4bc3cc31eef13ee1c424bcc996:npool/inspire/mw/v1/accounting/accounting_grpc.pb.go
 }
