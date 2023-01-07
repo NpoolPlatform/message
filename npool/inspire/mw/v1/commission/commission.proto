@@ -85,6 +85,7 @@ message UpdateCommissionResponse {
 
 message GetCommissionRequest {
     string ID = 10;
+    inspire.manager.commission.v1.SettleType SettleType = 20;
 }
 
 message GetCommissionResponse {
