@@ -272,7 +272,7 @@
         "LastBenefitAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"last_benefit_timestamp\""
+          "title": "@inject_tag: sql:\"last_benefit_at\""
         },
         "BenefitTIDsStr": {
           "type": "string",

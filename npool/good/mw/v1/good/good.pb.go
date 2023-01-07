@@ -357,8 +357,8 @@ type Good struct {
 	// @inject_tag: sql:"benefit_state"
 	BenefitStateStr string            `protobuf:"bytes,410,opt,name=BenefitStateStr,proto3" json:"BenefitStateStr,omitempty" sql:"benefit_state"`
 	BenefitState    good.BenefitState `protobuf:"varint,420,opt,name=BenefitState,proto3,enum=good.manager.good.v1.BenefitState" json:"BenefitState,omitempty"`
-	// @inject_tag: sql:"last_benefit_timestamp"
-	LastBenefitAt uint32 `protobuf:"varint,430,opt,name=LastBenefitAt,proto3" json:"LastBenefitAt,omitempty" sql:"last_benefit_timestamp"`
+	// @inject_tag: sql:"last_benefit_at"
+	LastBenefitAt uint32 `protobuf:"varint,430,opt,name=LastBenefitAt,proto3" json:"LastBenefitAt,omitempty" sql:"last_benefit_at"`
 	// @inject_tag: sql:"benefit_tids"
 	BenefitTIDsStr string   `protobuf:"bytes,440,opt,name=BenefitTIDsStr,proto3" json:"BenefitTIDsStr,omitempty" sql:"benefit_tids"`
 	BenefitTIDs    []string `protobuf:"bytes,450,rep,name=BenefitTIDs,proto3" json:"BenefitTIDs,omitempty"`

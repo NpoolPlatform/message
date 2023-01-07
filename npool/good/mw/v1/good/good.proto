@@ -151,7 +151,7 @@ message Good {
     // @inject_tag: sql:"benefit_state"
     string           BenefitStateStr      = 410;
     good.manager.good.v1.BenefitState BenefitState = 420;
-    // @inject_tag: sql:"last_benefit_timestamp"
+    // @inject_tag: sql:"last_benefit_at"
     uint32           LastBenefitAt        = 430;
     // @inject_tag: sql:"benefit_tids"
     string           BenefitTIDsStr       = 440;
