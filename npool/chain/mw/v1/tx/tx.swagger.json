@@ -191,6 +191,9 @@
         },
         "Type": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
