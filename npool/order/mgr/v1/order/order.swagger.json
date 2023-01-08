@@ -76,6 +76,9 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LastBenefitAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -219,6 +222,10 @@
             "type": "string"
           }
         },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -293,6 +300,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

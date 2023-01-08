@@ -664,6 +664,10 @@
           "items": {
             "$ref": "#/definitions/v1Coupon"
           }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
