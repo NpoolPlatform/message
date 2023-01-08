@@ -14,7 +14,8 @@ message BookKeepingRequest {
     string CoinTypeID   = 20;
     string TotalAmount  = 30;
     string UnsoldAmount = 40;
-    uint32 BenefitDate  = 50;
+    string TechniqueServiceFeeAmount = 50;
+    uint32 BenefitDate  = 60;
 }
 
 message BookKeepingResponse {
