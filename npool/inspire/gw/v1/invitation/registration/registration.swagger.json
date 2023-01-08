@@ -206,6 +206,9 @@
     "v1Registration": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
