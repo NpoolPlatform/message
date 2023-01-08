@@ -79,6 +79,12 @@
         },
         "LastBenefitAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

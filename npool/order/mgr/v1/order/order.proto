@@ -101,6 +101,8 @@ message Conds {
     optional npool.v1.StringVal UserSpecialReductionID   = 90;
     optional npool.v1.StringSliceVal IDs                 = 100;
     optional npool.v1.Uint32Val LastBenefitAt            = 110;
+    optional npool.v1.StringVal      CouponID               = 120;
+    optional npool.v1.StringSliceVal CouponIDs              = 130;
 }
 
 
