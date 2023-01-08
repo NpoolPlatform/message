@@ -438,6 +438,12 @@
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

@@ -180,6 +180,7 @@ message CreateOrderRequest {
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
     order.manager.order.v1.OrderType OrderType = 110;
+    repeated string CouponIDs            = 120;
 }
 
 message CreateOrderResponse {
