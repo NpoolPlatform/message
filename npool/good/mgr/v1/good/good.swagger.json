@@ -50,7 +50,6 @@
         "DefaultBenefitState",
         "BenefitWait",
         "BenefitTransferring",
-        "BenefitCalculating",
         "BenefitBookKeeping"
       ],
       "default": "DefaultBenefitState"
@@ -254,7 +253,7 @@
         "BenefitState": {
           "$ref": "#/definitions/v1BenefitState"
         },
-        "LastBenefitTimestamp": {
+        "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
         },

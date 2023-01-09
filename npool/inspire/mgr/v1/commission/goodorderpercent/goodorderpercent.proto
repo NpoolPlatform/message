@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package inspire.manager.commission.goodorderpercent.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commission/goodorderpercent";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateOrderPercent     (CreateOrderPercentRequest)     returns (CreateOrderPercentResponse)     {}
+    rpc CreateOrderPercents    (CreateOrderPercentsRequest)    returns (CreateOrderPercentsResponse)    {}
+    rpc UpdateOrderPercent     (UpdateOrderPercentRequest)     returns (UpdateOrderPercentResponse)     {}
+    rpc GetOrderPercent        (GetOrderPercentRequest)        returns (GetOrderPercentResponse)        {}
+    rpc GetOrderPercentOnly    (GetOrderPercentOnlyRequest)    returns (GetOrderPercentOnlyResponse)    {}
+    rpc GetOrderPercents       (GetOrderPercentsRequest)       returns (GetOrderPercentsResponse)       {}
+    rpc ExistOrderPercent      (ExistOrderPercentRequest)      returns (ExistOrderPercentResponse)      {}
+    rpc ExistOrderPercentConds (ExistOrderPercentCondsRequest) returns (ExistOrderPercentCondsResponse) {}
+    rpc CountOrderPercents     (CountOrderPercentsRequest)     returns (CountOrderPercentsResponse)     {}
+    rpc DeleteOrderPercent     (DeleteOrderPercentRequest)     returns (DeleteOrderPercentResponse)     {}
+}
+
+message OrderPercentReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string GoodID     = 40;
+    optional string Percent    = 50;
+    optional uint32 StartAt    = 60;
+    optional uint32 EndAt      = 70;
+}
+
+message OrderPercent {
+    string ID         = 10;
+    string AppID      = 20;
+    string UserID     = 30;
+    string GoodID     = 40;
+    string Percent    = 50;
+    uint32 StartAt    = 60;
+    uint32 EndAt      = 70;
+    uint32 CreatedAt  = 80;
+    uint32 UpdatedAt  = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal UserID     = 30;
+    optional npool.v1.StringVal GoodID     = 40;
+    optional npool.v1.Uint32Val EndAt      = 50;
+    optional npool.v1.StringSliceVal UserIDs = 60;
+    optional npool.v1.StringSliceVal GoodIDs = 70;
+}
+
+
+message CreateOrderPercentRequest {
+    OrderPercentReq Info = 10;
+}
+
+message CreateOrderPercentResponse {
+    OrderPercent Info = 10;
+}
+
+message CreateOrderPercentsRequest {
+    repeated OrderPercentReq Infos = 10;
+}
+
+message CreateOrderPercentsResponse {
+    repeated OrderPercent Infos = 10;
+}
+
+message UpdateOrderPercentRequest {
+    OrderPercentReq Info = 10;
+}
+
+message UpdateOrderPercentResponse {
+    OrderPercent Info = 10;
+}
+
+message GetOrderPercentRequest {
+    string ID = 10;
+}
+
+message GetOrderPercentResponse {
+    OrderPercent Info = 10;
+}
+
+message GetOrderPercentsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetOrderPercentsResponse {
+    repeated OrderPercent Infos = 10;
+    uint32                Total = 20;
+}
+
+message GetOrderPercentOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetOrderPercentOnlyResponse {
+    OrderPercent Info = 10;
+}
+
+message ExistOrderPercentRequest {
+    string ID = 10;
+}
+
+message ExistOrderPercentResponse {
+    bool Info = 10;
+}
+
+message ExistOrderPercentCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistOrderPercentCondsResponse {
+    bool Info = 10;
+}
+
+message CountOrderPercentsRequest {
+    Conds Conds = 10;
+}
+
+message CountOrderPercentsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteOrderPercentRequest {
+    string ID = 10;
+}
+
+message DeleteOrderPercentResponse {
+    OrderPercent Info = 10;
+}

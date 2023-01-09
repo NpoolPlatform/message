@@ -22,7 +22,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error)
+	CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error)
+	UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error)
+	GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error)
+	GetAppCommissions(ctx context.Context, in *GetAppCommissionsRequest, opts ...grpc.CallOption) (*GetAppCommissionsResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +36,36 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetPercents(ctx context.Context, in *GetPercentsRequest, opts ...grpc.CallOption) (*GetPercentsResponse, error) {
-	out := new(GetPercentsResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/GetPercents", in, out, opts...)
+func (c *gatewayClient) CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error) {
+	out := new(CreateCommissionResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/CreateCommission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error) {
+	out := new(UpdateCommissionResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/UpdateCommission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error) {
+	out := new(GetCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/GetCommissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetAppCommissions(ctx context.Context, in *GetAppCommissionsRequest, opts ...grpc.CallOption) (*GetAppCommissionsResponse, error) {
+	out := new(GetAppCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/GetAppCommissions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +76,10 @@ func (c *gatewayClient) GetPercents(ctx context.Context, in *GetPercentsRequest,
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error)
+	CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error)
+	UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error)
+	GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error)
+	GetAppCommissions(context.Context, *GetAppCommissionsRequest) (*GetAppCommissionsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +87,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetPercents(context.Context, *GetPercentsRequest) (*GetPercentsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPercents not implemented")
+func (UnimplementedGatewayServer) CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCommission not implemented")
+}
+func (UnimplementedGatewayServer) UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommission not implemented")
+}
+func (UnimplementedGatewayServer) GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCommissions not implemented")
+}
+func (UnimplementedGatewayServer) GetAppCommissions(context.Context, *GetAppCommissionsRequest) (*GetAppCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCommissions not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +112,74 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetPercents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPercentsRequest)
+func _Gateway_CreateCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCommissionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetPercents(ctx, in)
+		return srv.(GatewayServer).CreateCommission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.commission.v1.Gateway/GetPercents",
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/CreateCommission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetPercents(ctx, req.(*GetPercentsRequest))
+		return srv.(GatewayServer).CreateCommission(ctx, req.(*CreateCommissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCommissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateCommission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/UpdateCommission",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateCommission(ctx, req.(*UpdateCommissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/GetCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetCommissions(ctx, req.(*GetCommissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetAppCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/GetAppCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppCommissions(ctx, req.(*GetAppCommissionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +192,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetPercents",
-			Handler:    _Gateway_GetPercents_Handler,
+			MethodName: "CreateCommission",
+			Handler:    _Gateway_CreateCommission_Handler,
+		},
+		{
+			MethodName: "UpdateCommission",
+			Handler:    _Gateway_UpdateCommission_Handler,
+		},
+		{
+			MethodName: "GetCommissions",
+			Handler:    _Gateway_GetCommissions_Handler,
+		},
+		{
+			MethodName: "GetAppCommissions",
+			Handler:    _Gateway_GetAppCommissions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

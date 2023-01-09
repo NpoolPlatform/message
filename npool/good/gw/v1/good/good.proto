@@ -95,6 +95,7 @@ message Good {
     uint32           Total          = 360;
     uint32           Locked         = 370;
     uint32           InService      = 380;
+    uint32           WaitStart      = 381;
     uint32           Sold           = 390;
 
     uint32           DeliveryAt         = 400;
@@ -104,7 +105,7 @@ message Good {
     uint32           DeletedAt          = 440;
 
     uint32           BenefitIntervalHours = 450;
-    uint32           LastBenefitTimestamp = 460;
+    uint32           LastBenefitAt        = 460;
 }
 
 message CreateGoodRequest {

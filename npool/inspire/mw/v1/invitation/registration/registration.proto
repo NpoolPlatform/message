@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package inspire.middleware.invitation.registration.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/registration";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/inspire/mgr/v1/invitation/registration/registration.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    // Method Version
+    rpc CreateRegistration  (CreateRegistrationRequest)  returns (CreateRegistrationResponse)  {}
+    rpc UpdateRegistration  (UpdateRegistrationRequest)  returns (UpdateRegistrationResponse)  {}
+    rpc GetRegistration     (GetRegistrationRequest)     returns (GetRegistrationResponse)     {}
+    rpc GetRegistrations    (GetRegistrationsRequest)    returns (GetRegistrationsResponse)    {}
+    rpc GetRegistrationOnly (GetRegistrationOnlyRequest) returns (GetRegistrationOnlyResponse) {}
+    rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {}
+    rpc GetSuperiores       (GetSuperioresRequest)       returns (GetSuperioresResponse)       {}
+}
+
+message CreateRegistrationRequest {
+    inspire.manager.invitation.registration.v1.RegistrationReq Info = 10;
+}
+
+message CreateRegistrationResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
+}
+
+message UpdateRegistrationRequest {
+    inspire.manager.invitation.registration.v1.RegistrationReq Info = 10;
+}
+
+message UpdateRegistrationResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
+}
+
+message GetRegistrationRequest {
+    string ID = 10;
+}
+
+message GetRegistrationResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
+}
+
+message GetRegistrationsRequest {
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetRegistrationsResponse {
+    repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetRegistrationOnlyRequest {
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+}
+
+message GetRegistrationOnlyResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
+}
+
+message GetSubordinatesRequest {
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetSubordinatesResponse {
+    repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetSuperioresRequest {
+    inspire.manager.invitation.registration.v1.Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetSuperioresResponse {
+    repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
+    uint32 Total = 20;
+}

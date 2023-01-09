@@ -6,8 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 
 import "npool/order/mgr/v1/order/order.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
 
 // Service Name
 service Gateway {
@@ -98,6 +97,13 @@ service Gateway {
     }
 }
 
+message Coupon {
+    string CouponID = 10;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    string CouponName  = 30;
+    string CouponValue = 40;
+}
+
 message Order {
     string ID                     = 10;
 
@@ -158,6 +164,8 @@ message Order {
 
     uint32 Start                  = 390;
     uint32 End                    = 400;
+    repeated Coupon Coupons       = 500;
+    uint32 LastBenefitAt          = 510;
 }
 
 message CreateOrderRequest {
@@ -172,6 +180,7 @@ message CreateOrderRequest {
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
     order.manager.order.v1.OrderType OrderType = 110;
+    repeated string CouponIDs            = 120;
 }
 
 message CreateOrderResponse {

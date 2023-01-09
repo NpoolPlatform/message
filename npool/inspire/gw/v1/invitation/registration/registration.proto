@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package inspire.gateway.invitation.registration.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/invitation/registration";
+
+import "google/api/annotations.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Gateway {
+    rpc UpdateRegistration (UpdateRegistrationRequest) returns (UpdateRegistrationResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/registrationinvitation"
+            body: "*"
+        };
+    }
+    rpc GetRegistrations (GetRegistrationsRequest) returns (GetRegistrationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/registrationinvitations"
+            body: "*"
+        };
+    }
+    rpc GetAppRegistrations (GetAppRegistrationsRequest) returns (GetAppRegistrationsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/registrationinvitations"
+            body: "*"
+        };
+    }
+}
+
+message Registration {
+    string ID                    = 10;
+    string AppID                 = 20;
+    string InviterID             = 30;
+    string InviterEmailAddress   = 40;
+    string InviterPhoneNO        = 50;
+    string InviterUsername       = 60;
+    string InviteeID             = 70;
+    string InviteeEmailAddress   = 80;
+    string InviteePhoneNO        = 90;
+    string InviteeUsername       = 100;
+    uint32 CreatedAt             = 110;
+    uint32 UpdatedAt             = 120;
+}
+
+message UpdateRegistrationRequest {
+    string ID           = 10;
+    string AppID        = 20;
+    string InviterID    = 30;
+}
+
+message UpdateRegistrationResponse {
+    Registration Info = 10;
+}
+
+message GetRegistrationsRequest {
+    string AppID    = 10;
+    int32  Offset   = 20;
+    int32  Limit    = 30;
+}
+
+message GetRegistrationsResponse {
+    repeated Registration Infos = 10;
+    uint32                Total = 20;
+}
+
+message GetAppRegistrationsRequest {
+    string TargetAppID    = 10;
+    int32  Offset         = 20;
+    int32  Limit          = 30;
+}
+
+message GetAppRegistrationsResponse {
+    repeated Registration Infos = 10;
+    uint32                Total = 20;
+}

@@ -31,6 +31,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -301,6 +304,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
         "GoodSold": {
           "type": "integer",
           "format": "int64",
@@ -349,6 +357,13 @@
         "DailyRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"daily_reward_amount\""
+        },
+        "CommissionSettleTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"commission_settle_type\""
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -445,6 +460,9 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -469,6 +487,17 @@
       ],
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "LimitedOrderPercent",
+        "AmountThreshold",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType"
     },
     "v1StringSliceVal": {
       "type": "object",

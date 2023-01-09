@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package inspire.middleware.accounting.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/accounting";
+
+import "npool/inspire/mgr/v1/commission/commission.proto";
+
+// Service Name
+service Middleware {
+    rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
+}
+
+message Commission {
+    string AppID    = 10;
+    string UserID   = 20;
+    optional string DirectContributorUserID = 30;
+    string Amount   = 40;
+}
+
+message AccountingRequest {
+    string AppID                  = 10;
+    string UserID                 = 20;
+    string GoodID                 = 30;
+    string OrderID                = 40;
+    string PaymentID              = 50;
+    string CoinTypeID             = 60;
+    string PaymentCoinTypeID      = 70;
+    string PaymentCoinUSDCurrency = 80;
+    uint32 Units                  = 90;
+    string PaymentAmount          = 100;
+    string GoodValue              = 110;
+    inspire.manager.commission.v1.SettleType SettleType = 120;
+}
+
+message AccountingResponse {
+    repeated Commission Infos = 10;
+}
+

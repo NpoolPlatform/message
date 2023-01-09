@@ -1,0 +1,164 @@
+syntax = "proto3";
+
+package inspire.manager.coupon.allocated.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/coupon/allocated";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateAllocated     (CreateAllocatedRequest)     returns (CreateAllocatedResponse)     {}
+    rpc CreateAllocateds    (CreateAllocatedsRequest)    returns (CreateAllocatedsResponse)    {}
+    rpc UpdateAllocated     (UpdateAllocatedRequest)     returns (UpdateAllocatedResponse)     {}
+    rpc GetAllocated        (GetAllocatedRequest)        returns (GetAllocatedResponse)        {}
+    rpc GetAllocatedOnly    (GetAllocatedOnlyRequest)    returns (GetAllocatedOnlyResponse)    {}
+    rpc GetAllocateds       (GetAllocatedsRequest)       returns (GetAllocatedsResponse)       {}
+    rpc ExistAllocated      (ExistAllocatedRequest)      returns (ExistAllocatedResponse)      {}
+    rpc ExistAllocatedConds (ExistAllocatedCondsRequest) returns (ExistAllocatedCondsResponse) {}
+    rpc CountAllocateds     (CountAllocatedsRequest)     returns (CountAllocatedsResponse)     {}
+    rpc DeleteAllocated     (DeleteAllocatedRequest)     returns (DeleteAllocatedResponse)     {}
+}
+
+enum CouponType {
+    DefaultCouponType      = 0;
+
+    FixAmount              = 10;
+    Discount               = 20;
+    SpecialOffer           = 30;
+    ThresholdFixAmount     = 40;
+    ThresholdDiscount      = 50;
+    GoodFixAmount          = 60;
+    GoodDiscount           = 70;
+    GoodThresholdFixAmount = 80;
+    GoodThresholdDiscount  = 90;
+}
+
+enum CouponConstraint {
+    DefaultCouponConstraint = 0;
+
+    Normal           = 10;
+    Threshold        = 20;
+    GoodOnly         = 30;
+    GoodThreshold    = 40;
+}
+
+message AllocatedReq {
+    optional string     ID       = 10;
+    optional string     AppID    = 20;
+    optional string     UserID   = 30;
+    optional CouponType CouponType = 40;
+    optional string     CouponID = 50;
+    optional bool       Used     = 60;
+    optional string     UsedByOrderID = 70;
+}
+
+message Allocated {
+    string     ID        = 10;
+    string     AppID     = 20;
+    string     UserID    = 30;
+    CouponType CouponType = 40;
+    string     CouponID  = 50;
+    string     Value     = 60;
+    bool       Used      = 70;
+    uint32     UsedAt    = 80;
+    optional string UsedByOrderID = 90;
+    uint32     CreatedAt = 100;
+    uint32     UpdatedAt = 110;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID       = 10;
+    optional npool.v1.StringVal AppID    = 20;
+    optional npool.v1.StringVal UserID   = 30;
+    optional npool.v1.Uint32Val CouponType = 40;
+    optional npool.v1.StringVal CouponID = 50;
+    optional npool.v1.BoolVal   Used     = 60;
+    optional npool.v1.StringVal UsedByOrderID = 70;
+    optional npool.v1.StringSliceVal IDs = 80;
+    optional npool.v1.StringSliceVal UsedByOrderIDs = 90;
+}
+
+
+message CreateAllocatedRequest {
+    AllocatedReq Info = 10;
+}
+
+message CreateAllocatedResponse {
+    Allocated Info = 10;
+}
+
+message CreateAllocatedsRequest {
+    repeated AllocatedReq Infos = 10;
+}
+
+message CreateAllocatedsResponse {
+    repeated Allocated Infos = 10;
+}
+
+message UpdateAllocatedRequest {
+    AllocatedReq Info = 10;
+}
+
+message UpdateAllocatedResponse {
+    Allocated Info = 10;
+}
+
+message GetAllocatedRequest {
+    string ID = 10;
+}
+
+message GetAllocatedResponse {
+    Allocated Info = 10;
+}
+
+message GetAllocatedsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAllocatedsResponse {
+    repeated Allocated Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetAllocatedOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAllocatedOnlyResponse {
+    Allocated Info = 10;
+}
+
+message ExistAllocatedRequest {
+    string ID = 10;
+}
+
+message ExistAllocatedResponse {
+    bool Info = 10;
+}
+
+message ExistAllocatedCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAllocatedCondsResponse {
+    bool Info = 10;
+}
+
+message CountAllocatedsRequest {
+    Conds Conds = 10;
+}
+
+message CountAllocatedsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAllocatedRequest {
+    string ID = 10;
+}
+
+message DeleteAllocatedResponse {
+    Allocated Info = 10;
+}

@@ -67,6 +67,15 @@
         },
         "UserSpecialReductionID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "LastBenefitAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -241,6 +250,21 @@
         "PayWithParent": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"pay_with_parent\""
+        },
+        "CouponIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_ids\""
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_benefit_at\""
         }
       }
     },
@@ -334,6 +358,16 @@
         },
         "State": {
           "$ref": "#/definitions/v1OrderState"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

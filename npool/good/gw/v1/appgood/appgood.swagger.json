@@ -433,6 +433,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "WaitStart": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Sold": {
           "type": "integer",
           "format": "int64"
@@ -481,6 +485,9 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -586,6 +593,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -686,6 +696,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -740,6 +753,17 @@
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
     },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "LimitedOrderPercent",
+        "AmountThreshold",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType"
+    },
     "v1UpdateNAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -784,6 +808,9 @@
         "ElectricityFeeRatio": {
           "type": "integer",
           "format": "int64"
+        },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },

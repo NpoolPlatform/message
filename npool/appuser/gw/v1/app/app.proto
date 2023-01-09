@@ -9,6 +9,7 @@ import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
+import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
@@ -75,6 +76,8 @@ message CreateAppRequest {
     bool KycEnable          = 80;
     bool SigninVerifyEnable = 90;
     bool InvitationCodeMust = 100;
+    appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
+    uint32 MaxTypedCouponsPerOrder = 120;
 }
 
 message CreateAppResponse {
@@ -92,6 +95,8 @@ message UpdateAppRequest {
     optional bool KycEnable          = 80;
     optional bool SigninVerifyEnable = 90;
     optional bool InvitationCodeMust = 100;
+    optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
+    optional uint32 MaxTypedCouponsPerOrder = 120;
 }
 
 message UpdateAppResponse {

@@ -1,0 +1,286 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mgr/v1/coupon/discount/discount.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReleasedByUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "DurationDays": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CountDiscountsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateDiscountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Discount"
+        }
+      }
+    },
+    "v1CreateDiscountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Discount"
+          }
+        }
+      }
+    },
+    "v1DeleteDiscountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Discount"
+        }
+      }
+    },
+    "v1Discount": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Discount": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "ReleasedByUserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1DiscountReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Discount": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "ReleasedByUserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Allocated": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ExistDiscountCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistDiscountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetDiscountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Discount"
+        }
+      }
+    },
+    "v1GetDiscountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Discount"
+        }
+      }
+    },
+    "v1GetDiscountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Discount"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateDiscountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Discount"
+        }
+      }
+    }
+  }
+}

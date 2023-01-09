@@ -332,6 +332,18 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "CreateInvitationCodeWhenStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"create_invitation_code_when\""
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+        },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_typed_coupons_per_order\""
         }
       }
     },
@@ -676,6 +688,10 @@
         },
         "State": {
           "$ref": "#/definitions/v2KycState"
+        },
+        "Kol": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol\""
         }
       }
     },
@@ -740,6 +756,16 @@
           "type": "string"
         }
       }
+    },
+    "v2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "v2KycState": {
       "type": "string",

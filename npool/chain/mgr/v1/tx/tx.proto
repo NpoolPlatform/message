@@ -76,6 +76,7 @@ message Conds {
     optional npool.v1.StringSliceVal AccountIDs  = 40;
     optional npool.v1.Int32Val       State       = 50;
     optional npool.v1.Int32Val       Type        = 60;
+    optional npool.v1.StringSliceVal IDs         = 70;
 }
 
 

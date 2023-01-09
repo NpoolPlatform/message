@@ -25,6 +25,17 @@
         }
       }
     },
+    "chainmiddlewaretxv1CreateTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+          }
+        }
+      }
+    },
     "chainmiddlewaretxv1GetTxResponse": {
       "type": "object",
       "properties": {
@@ -180,6 +191,9 @@
         },
         "Type": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

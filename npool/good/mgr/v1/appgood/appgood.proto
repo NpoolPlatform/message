@@ -5,6 +5,7 @@ package good.manager.appgood.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/appgood";
 
 import "google/protobuf/empty.proto";
+import "npool/inspire/mgr/v1/commission/commission.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -38,6 +39,7 @@ message AppGoodReq {
     optional uint32 TechnicalFeeRatio   = 140;
     optional uint32 ElectricityFeeRatio = 150;
     optional string DailyRewardAmount   = 160;
+    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 170;
 }
 
 message AppGood {
@@ -60,6 +62,7 @@ message AppGood {
     uint32 TechnicalFeeRatio   = 170;
     uint32 ElectricityFeeRatio = 180;
     string DailyRewardAmount   = 190;
+    inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
 }
 
 message Conds {
@@ -67,6 +70,7 @@ message Conds {
     optional npool.v1.StringVal      AppID  = 20;
     optional npool.v1.StringVal      GoodID = 30;
     optional npool.v1.StringSliceVal GoodIDs = 40;
+    optional npool.v1.StringSliceVal AppIDs  = 50;
 }
 
 

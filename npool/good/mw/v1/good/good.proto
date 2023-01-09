@@ -36,12 +36,13 @@ message GoodReq {
     optional uint32        Total              = 170;
     optional int32         Locked             = 180;
     optional int32         InService          = 190;
+    optional int32         WaitStart          = 191;
     optional uint32        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
     optional good.manager.good.v1.BenefitState BenefitState = 240;
-    optional string        BenefitTIDs        = 250;
+    repeated string        BenefitTIDs        = 250;
 }
 
 message Good {
@@ -133,6 +134,8 @@ message Good {
     uint32           GoodLocked         = 330;
     // @inject_tag: sql:"good_in_service"
     uint32           GoodInService      = 340;
+    // @inject_tag: sql:"good_wait_start"
+    uint32           GoodWaitStart      = 341;
     // @inject_tag: sql:"good_sold"
     uint32           GoodSold           = 350;
 
@@ -150,9 +153,9 @@ message Good {
 
     // @inject_tag: sql:"benefit_state"
     string           BenefitStateStr      = 410;
-    optional good.manager.good.v1.BenefitType BenefitState = 420;
-    // @inject_tag: sql:"last_benefit_timestamp"
-    uint32           LastBenefitTimestamp = 430;
+    good.manager.good.v1.BenefitState BenefitState = 420;
+    // @inject_tag: sql:"last_benefit_at"
+    uint32           LastBenefitAt        = 430;
     // @inject_tag: sql:"benefit_tids"
     string           BenefitTIDsStr       = 440;
     repeated string  BenefitTIDs          = 450;

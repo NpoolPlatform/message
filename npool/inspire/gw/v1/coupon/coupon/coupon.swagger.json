@@ -1,0 +1,465 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/gw/v1/coupon/coupon/coupon.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/couponpool": {
+      "post": {
+        "operationId": "Gateway_CreateCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1CreateCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "UserID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "TargetAppID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "CouponType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DefaultCouponType",
+              "FixAmount",
+              "Discount",
+              "SpecialOffer",
+              "ThresholdFixAmount",
+              "ThresholdDiscount",
+              "GoodFixAmount",
+              "GoodDiscount",
+              "GoodThresholdFixAmount",
+              "GoodThresholdDiscount"
+            ],
+            "default": "DefaultCouponType"
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Circulation",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "StartAt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "DurationDays",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "Message",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "TargetUserID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "GoodID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Threshold",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/couponpools": {
+      "post": {
+        "operationId": "Gateway_GetAppCoupons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCouponsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCouponsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/couponpools": {
+      "post": {
+        "operationId": "Gateway_GetCoupons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1GetCouponsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1GetCouponsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/couponpool": {
+      "post": {
+        "operationId": "Gateway_UpdateCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1UpdateCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1UpdateCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "inspiregatewaycouponcouponv1CreateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "inspiregatewaycouponcouponv1GetCouponsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "inspiregatewaycouponcouponv1GetCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "inspiregatewaycouponcouponv1UpdateCouponRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
+        }
+      }
+    },
+    "inspiregatewaycouponcouponv1UpdateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "ReleasedByUserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
+        },
+        "Allocated": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1GetAppCouponsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

@@ -76,6 +76,15 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LastBenefitAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -213,6 +222,16 @@
         "State": {
           "$ref": "#/definitions/v1OrderState"
         },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -279,6 +298,16 @@
           "$ref": "#/definitions/v1OrderState"
         },
         "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
         }

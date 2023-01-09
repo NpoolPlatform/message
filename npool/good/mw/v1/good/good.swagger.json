@@ -232,6 +232,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
         "GoodSold": {
           "type": "integer",
           "format": "int64",
@@ -267,12 +272,12 @@
           "title": "@inject_tag: sql:\"benefit_state\""
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitType"
+          "$ref": "#/definitions/v1BenefitState"
         },
-        "LastBenefitTimestamp": {
+        "LastBenefitAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"last_benefit_timestamp\""
+          "title": "@inject_tag: sql:\"last_benefit_at\""
         },
         "BenefitTIDsStr": {
           "type": "string",
@@ -356,6 +361,10 @@
           "type": "integer",
           "format": "int32"
         },
+        "WaitStart": {
+          "type": "integer",
+          "format": "int32"
+        },
         "Sold": {
           "type": "integer",
           "format": "int64"
@@ -380,7 +389,10 @@
           "$ref": "#/definitions/v1BenefitState"
         },
         "BenefitTIDs": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -425,7 +437,6 @@
         "DefaultBenefitState",
         "BenefitWait",
         "BenefitTransferring",
-        "BenefitCalculating",
         "BenefitBookKeeping"
       ],
       "default": "DefaultBenefitState"

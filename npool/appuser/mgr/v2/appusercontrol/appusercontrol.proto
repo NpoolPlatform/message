@@ -26,6 +26,7 @@ message AppUserControlReq {
     optional string UserID             = 30;
     optional bool   GoogleAuthVerified = 40;
     optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
+    optional bool   Kol                = 60;
 }
 
 message AppUserControl {
@@ -34,6 +35,7 @@ message AppUserControl {
     string UserID             = 30;
     bool   GoogleAuthVerified = 40;
     appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
+    bool   Kol                = 60;
 }
 
 message Conds {
@@ -41,6 +43,7 @@ message Conds {
     npool.v1.StringVal AppID            = 20;
     npool.v1.StringVal UserID           = 30;
     npool.v1.BoolVal GoogleAuthVerified = 40;
+    npool.v1.BoolVal   Kol              = 50;
 }
 
 message CreateAppUserControlRequest {

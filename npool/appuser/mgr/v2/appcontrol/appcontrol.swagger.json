@@ -98,6 +98,13 @@
         },
         "InvitationCodeMust": {
           "type": "boolean"
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+        },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -133,6 +140,13 @@
         },
         "InvitationCodeMust": {
           "type": "boolean"
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+        },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -183,6 +197,16 @@
           }
         }
       }
+    },
+    "v2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "v2DeleteAppControlResponse": {
       "type": "object",

@@ -46,8 +46,7 @@ enum BenefitState {
 
     BenefitWait         = 10;
     BenefitTransferring = 20;
-    BenefitCalculating  = 30;
-    BenefitBookKeeping  = 40;
+    BenefitBookKeeping  = 30;
 }
 
 message GoodReq {
@@ -96,7 +95,7 @@ message Good {
     uint32          DeletedAt          = 190;
     uint32          BenefitIntervalHours = 200;
     BenefitState    BenefitState       = 210;
-    uint32          LastBenefitTimestamp = 220;
+    uint32          LastBenefitAt      = 220;
     repeated string BenefitTIDs        = 230;
 }
 
