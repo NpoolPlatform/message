@@ -17,6 +17,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc CreateUserCommission (CreateUserCommissionRequest) returns (CreateUserCommissionResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/user/commission"
+            body: "*"
+        };
+    }
     rpc UpdateCommission (UpdateCommissionRequest) returns (UpdateCommissionResponse) {
         option (google.api.http) = {
             post: "/v1/update/commission"
@@ -68,6 +74,20 @@ message Commission {
 
 message CreateCommissionRequest {
     string          AppID        = 10;
+    string          UserID       = 20;
+    string          TargetUserID = 30;
+    optional string GoodID       = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
+    string          Value        = 60;
+    uint32          StartAt      = 70;
+}
+
+message CreateCommissionResponse {
+    Commission Info = 10;
+}
+
+message CreateUserCommissionRequest {
+    string          AppID        = 10;
     string          TargetUserID = 20;
     optional string GoodID       = 30;
     inspire.manager.commission.v1.SettleType SettleType = 40;
@@ -75,7 +95,7 @@ message CreateCommissionRequest {
     uint32          StartAt      = 60;
 }
 
-message CreateCommissionResponse {
+message CreateUserCommissionResponse {
     Commission Info = 10;
 }
 
