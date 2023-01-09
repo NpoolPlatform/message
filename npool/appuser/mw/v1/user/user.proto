@@ -68,6 +68,7 @@ message UserReq {
     repeated string RoleIDs            = 270;
 
     optional bool   Kol                = 280;
+    optional bool   KolConfirmed       = 290;
 }
 
 message User {
@@ -163,6 +164,8 @@ message User {
 
     // @inject_tag: sql:"kol"
     bool            Kol                   = 420;
+    // @inject_tag: sql:"kol_confirmed"
+    bool            KolConfirmed          = 430;
 }
 
 message CreateUserRequest {

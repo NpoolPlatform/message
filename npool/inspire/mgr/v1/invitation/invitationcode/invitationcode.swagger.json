@@ -70,9 +70,6 @@
         "InvitationCode": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Confirmed": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
         "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
         }
@@ -176,9 +173,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "Confirmed": {
-          "type": "boolean"
-        },
         "Disabled": {
           "type": "boolean"
         },
@@ -206,9 +200,6 @@
         },
         "InvitationCode": {
           "type": "string"
-        },
-        "Confirmed": {
-          "type": "boolean"
         },
         "Disabled": {
           "type": "boolean"
