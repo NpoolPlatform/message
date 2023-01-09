@@ -174,10 +174,7 @@ message UpdateUserRequest {
     optional string PasswordHash       = 200;
     optional string OldPasswordHash    = 210;
 
-
-    optional bool   InvitationCodeConfirmed     = 220;
-    optional string InvitationCodeID            = 230;
-    optional bool   KolConfirmed                = 240;
+    optional bool   KolConfirmed       = 220;
 }
 
 message UpdateUserResponse {
