@@ -119,6 +119,9 @@
         },
         "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -167,6 +170,20 @@
         },
         "Disabled": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
