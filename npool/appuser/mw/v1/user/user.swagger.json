@@ -266,12 +266,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "InvitationCodeConfirmed": {
-          "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
-        },
         "LoginVerified": {
           "type": "boolean"
         },
