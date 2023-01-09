@@ -35,6 +35,7 @@ message CoinReq {
     optional string DailyRewardAmount        = 130;
     optional bool   Display                  = 140;
     optional uint32 DisplayIndex             = 150;
+    optional string MaxAmountPerWithdraw     = 160;
 }
 
 message Coin {
@@ -124,6 +125,8 @@ message Coin {
     bool   Display                      = 350;
     // @inject_tag: sql:"display_index"
     uint32 DisplayIndex                 = 360;
+    // @inject_tag: sql:"max_amount_per_withdraw"
+    string MaxAmountPerWithdraw         = 370;
 }
 
 message Conds {
