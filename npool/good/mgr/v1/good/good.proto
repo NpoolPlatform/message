@@ -72,6 +72,7 @@ message GoodReq {
     optional BenefitState  BenefitState       = 180;
     repeated string        BenefitTIDs        = 190;
     optional string        NextBenefitStartAmount = 240;
+    optional string        LastBenefitAmount  = 250;
 }
 
 message Good {
@@ -99,6 +100,7 @@ message Good {
     uint32          LastBenefitAt      = 220;
     repeated string BenefitTIDs        = 230;
     string          NextBenefitStartAmount = 240;
+    string          LastBenefitAmount  = 250;
 }
 
 message Conds {

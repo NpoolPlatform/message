@@ -292,6 +292,10 @@
         "NextBenefitStartAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"next_benefit_start_amount\""
+        },
+        "LastBenefitAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_benefit_amount\""
         }
       }
     },
@@ -399,6 +403,9 @@
           }
         },
         "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
           "type": "string"
         }
       }

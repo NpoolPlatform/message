@@ -106,6 +106,8 @@ message Good {
 
     uint32           BenefitIntervalHours = 450;
     uint32           LastBenefitAt        = 460;
+    string           NextBenefitStartAmount = 470;
+    string           LastBenefitAmount    = 480;
 }
 
 message CreateGoodRequest {

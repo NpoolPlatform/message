@@ -265,6 +265,9 @@
         },
         "NextBenefitStartAmount": {
           "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },
@@ -342,6 +345,9 @@
           }
         },
         "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
           "type": "string"
         }
       }

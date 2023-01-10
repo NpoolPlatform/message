@@ -468,6 +468,12 @@
         "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },
