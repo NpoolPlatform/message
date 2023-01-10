@@ -208,6 +208,12 @@
     "v1Commission": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },

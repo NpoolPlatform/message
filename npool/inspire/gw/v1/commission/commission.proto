@@ -44,6 +44,8 @@ service Gateway {
 }
 
 message Commission {
+    string ID            = 8;
+    string AppID         = 9;
     string UserID        = 10;
     string Username      = 20;
     string EmailAddress  = 30;
