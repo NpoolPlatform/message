@@ -48,6 +48,7 @@ message GoodArchivement {
 }
 
 message UserArchivement {
+    string InviterID       = 9;
     string UserID          = 10;
     string Username        = 20;
     string EmailAddress    = 30;

@@ -236,6 +236,9 @@
     "v1UserArchivement": {
       "type": "object",
       "properties": {
+        "InviterID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
