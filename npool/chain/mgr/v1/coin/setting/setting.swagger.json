@@ -175,6 +175,9 @@
         "PaymentAccountCollectAmount": {
           "type": "string"
         },
+        "LeastTransferAmount": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -216,6 +219,9 @@
           "type": "string"
         },
         "PaymentAccountCollectAmount": {
+          "type": "string"
+        },
+        "LeastTransferAmount": {
           "type": "string"
         }
       }

@@ -127,6 +127,8 @@ message Coin {
     uint32 DisplayIndex                 = 360;
     // @inject_tag: sql:"max_amount_per_withdraw"
     string MaxAmountPerWithdraw         = 370;
+    // @inject_tag: sql:"least_transfer_amount"
+    string LeastTransferAmount          = 380;
 }
 
 message Conds {

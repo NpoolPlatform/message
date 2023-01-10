@@ -44,7 +44,6 @@ message GoodReq {
     optional good.manager.good.v1.BenefitState BenefitState = 240;
     repeated string        BenefitTIDs        = 250;
     optional string        NextBenefitStartAmount = 260;
-    optional string        BenefitTransferAmount  = 270;
 }
 
 message Good {
@@ -163,8 +162,6 @@ message Good {
     repeated string  BenefitTIDs          = 450;
     // @inject_tag: sql:"next_benefit_start_amount"
     string           NextBenefitStartAmount = 460;
-    // @inject_tag: sql:"benefit_transfer_amount"
-    string           BenefitTransferAmount  = 470;
 }
 
 message CreateGoodRequest {

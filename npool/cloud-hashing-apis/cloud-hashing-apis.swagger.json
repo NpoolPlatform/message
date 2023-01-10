@@ -1839,10 +1839,6 @@
         "NextBenefitStartAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"next_benefit_start_amount\""
-        },
-        "BenefitTransferAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"benefit_transfer_amount\""
         }
       }
     },

@@ -539,6 +539,10 @@
         "MaxAmountPerWithdraw": {
           "type": "string",
           "title": "@inject_tag: sql:\"max_amount_per_withdraw\""
+        },
+        "LeastTransferAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"least_transfer_amount\""
         }
       }
     },

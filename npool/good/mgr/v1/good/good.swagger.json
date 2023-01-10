@@ -265,9 +265,6 @@
         },
         "NextBenefitStartAmount": {
           "type": "string"
-        },
-        "BenefitTransferAmount": {
-          "type": "string"
         }
       }
     },
@@ -345,9 +342,6 @@
           }
         },
         "NextBenefitStartAmount": {
-          "type": "string"
-        },
-        "BenefitTransferAmount": {
           "type": "string"
         }
       }
