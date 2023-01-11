@@ -56,9 +56,6 @@
         "LangID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "UsedFor": {
           "$ref": "#/definitions/v1Uint32Val"
         }
@@ -172,16 +169,19 @@
         "LangID": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string"
-        },
-        "UserFor": {
+        "UsedFor": {
           "$ref": "#/definitions/v1EventType"
         },
         "Title": {
           "type": "string"
         },
         "Content": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "string"
+        },
+        "UpdateAt": {
           "type": "string"
         }
       }
@@ -195,35 +195,17 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string"
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        },
         "LangID": {
           "type": "string"
         },
-        "EventType": {
+        "UsedFor": {
           "$ref": "#/definitions/v1EventType"
-        },
-        "UseTemplate": {
-          "type": "boolean"
         },
         "Title": {
           "type": "string"
         },
         "Content": {
           "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Email_send": {
-          "type": "boolean"
         }
       }
     },

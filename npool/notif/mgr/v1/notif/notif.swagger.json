@@ -82,7 +82,7 @@
         "Channels": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "Email_send": {
+        "EmailSend": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -216,7 +216,7 @@
         "Channels": {
           "type": "string"
         },
-        "Email_send": {
+        "EmailSend": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -265,7 +265,7 @@
             "type": "string"
           }
         },
-        "Email_send": {
+        "EmailSend": {
           "type": "boolean"
         }
       }
