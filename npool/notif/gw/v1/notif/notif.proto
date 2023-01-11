@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package notif.gateway.notif.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
+
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateNotif (CreateNotifRequest) returns (CreateNotifResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/notif"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNotif (UpdateNotifRequest) returns (UpdateNotifResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/notif"
+            body: "*"
+        };
+    }
+
+    rpc DeleteNotif (DeleteNotifRequest) returns (DeleteNotifResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/notif"
+            body: "*"
+        };
+    }
+
+    rpc GetNotifs (GetNotifsRequest) returns (GetNotifsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notifs"
+            body: "*"
+        };
+    }
+}
+
+message Notify {
+    string           ID           = 10;
+    string           AppID        = 20;
+    string           AppName      = 30;
+    string           UserID       = 40;
+    string           EmailAddress = 50;
+    string           PhoneNO      = 60;
+    string           Username     = 70;
+    string           EventType    = 80;
+    string           UseTemplate  = 90;
+    string           Title        = 100;
+    string           Content      = 110;
+    repeated string  Channels     = 120;
+}
+
+message CreateNotifRequest {
+    string          AppID       = 10;
+    string          UserID      = 20;
+    string          EventType   = 30;
+    bool            UseTemplate = 40;
+    string          Title       = 50;
+    string          Content     = 60;
+    repeated string Channels    = 70;
+}
+
+message CreateNotifResponse {
+    Notify Info = 10;
+}
+
+message UpdateNotifRequest {
+    string          ID          = 10;
+    bool            UseTemplate = 40;
+    string          Title       = 50;
+    string          Content     = 60;
+    repeated string Channels    = 70;
+}
+
+message UpdateNotifResponse {
+    Notify Info = 10;
+}
+
+message DeleteNotifRequest {
+    string ID = 10;
+}
+
+message DeleteNotifResponse {
+    Notify Info = 10;
+}
+
+message GetNotifsRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    uint32 Offset = 30;
+    uint32 Limit  = 40;
+}
+
+message GetNotifsResponse {
+    repeated Notify Infos = 10;
+    uint32          Total = 20;
+}

@@ -1,0 +1,268 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mw/v1/notif/notif.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "middlewarenotif1v1CreateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarenotif1v1Notif"
+        }
+      }
+    },
+    "middlewarenotif1v1GetNotifOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarenotif1v1Notif"
+        }
+      }
+    },
+    "middlewarenotif1v1GetNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarenotif1v1Notif"
+        }
+      }
+    },
+    "middlewarenotif1v1GetNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif1v1Notif"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewarenotif1v1Notif": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "EventType": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "string"
+        },
+        "Email_send": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AlreadyRead": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UseTemplate": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Email_send": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1EventType": {
+      "type": "string",
+      "enum": [
+        "DefaultEventType",
+        "KycReviewApproved",
+        "KycReviewRejected",
+        "WithdrawReviewApproved",
+        "WithdrawReviewRejected",
+        "WithdrawAddressReviewApproved",
+        "WithdrawAddressReviewRejected"
+      ],
+      "default": "DefaultEventType"
+    },
+    "v1NotifReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Email_send": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

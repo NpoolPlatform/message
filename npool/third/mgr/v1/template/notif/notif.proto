@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package third.manager.template.notif1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/mgr/v1/template/notif";
+
+import "npool/npool.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
+
+// Service Name
+service Manager {
+    rpc CreateNotifTemplate     (CreateNotifTemplateRequest)     returns (CreateNotifTemplateResponse)     {}
+    rpc CreateNotifTemplates    (CreateNotifTemplatesRequest)    returns (CreateNotifTemplatesResponse)    {}
+    rpc UpdateNotifTemplate     (UpdateNotifTemplateRequest)     returns (UpdateNotifTemplateResponse)     {}
+    rpc GetNotifTemplate        (GetNotifTemplateRequest)        returns (GetNotifTemplateResponse)        {}
+    rpc GetNotifTemplateOnly    (GetNotifTemplateOnlyRequest)    returns (GetNotifTemplateOnlyResponse)    {}
+    rpc GetNotifTemplates       (GetNotifTemplatesRequest)       returns (GetNotifTemplatesResponse)       {}
+    rpc ExistNotifTemplate      (ExistNotifTemplateRequest)      returns (ExistNotifTemplateResponse)      {}
+    rpc ExistNotifTemplateConds (ExistNotifTemplateCondsRequest) returns (ExistNotifTemplateCondsResponse) {}
+    rpc CountNotifTemplates     (CountNotifTemplatesRequest)     returns (CountNotifTemplatesResponse)     {}
+    rpc DeleteNotifTemplate     (DeleteNotifTemplateRequest)     returns (DeleteNotifTemplateResponse)     {}
+}
+
+message NotifTemplateReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string UserID      = 30;
+    optional bool   AlreadyRead = 40;
+    optional string LangID      = 50;
+    optional notif.manager.notif.v1.EventType EventType   = 60;
+    optional bool   UseTemplate = 70;
+    optional string Title       = 80;
+    optional string Content     = 90;
+    repeated string Channels    = 100;
+    optional bool   Email_send  = 110;
+}
+
+message NotifTemplate {
+    string ID      = 10;
+    string AppID   = 20;
+    string LangID  = 30;
+    string UserID  = 40;
+    notif.manager.notif.v1.EventType UserFor = 50;
+    string Title   = 60;
+    string Content = 70;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal LangID  = 30;
+    optional npool.v1.StringVal UserID  = 40;
+    optional npool.v1.Uint32Val UsedFor = 50;
+}
+
+message CreateNotifTemplateRequest {
+    NotifTemplateReq Info = 10;
+}
+
+message CreateNotifTemplateResponse {
+    NotifTemplate Info = 10;
+}
+
+message CreateNotifTemplatesRequest {
+    repeated NotifTemplateReq Infos = 10;
+}
+
+message CreateNotifTemplatesResponse {
+    repeated NotifTemplate Infos = 10;
+}
+
+message UpdateNotifTemplateRequest {
+    NotifTemplateReq Info = 10;
+}
+
+message UpdateNotifTemplateResponse {
+    NotifTemplate Info = 10;
+}
+
+message GetNotifTemplateRequest {
+    string ID = 10;
+}
+
+message GetNotifTemplateResponse {
+    NotifTemplate Info = 10;
+}
+
+message GetNotifTemplatesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetNotifTemplatesResponse {
+    repeated NotifTemplate Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetNotifTemplateOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetNotifTemplateOnlyResponse {
+    NotifTemplate Info = 10;
+}
+
+message ExistNotifTemplateRequest {
+    string ID = 10;
+}
+
+message ExistNotifTemplateResponse {
+    bool Info = 10;
+}
+
+message ExistNotifTemplateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistNotifTemplateCondsResponse {
+    bool Info = 10;
+}
+
+message CountNotifTemplatesRequest {
+    Conds Conds = 10;
+}
+
+message CountNotifTemplatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteNotifTemplateRequest {
+    string ID = 10;
+}
+
+message DeleteNotifTemplateResponse {
+    NotifTemplate Info = 10;
+}

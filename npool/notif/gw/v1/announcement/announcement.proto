@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package notif.gateway.announcement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement";
+
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAnnouncement (CreateAnnouncementRequest) returns (CreateAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/announcement"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAnnouncement (UpdateAnnouncementRequest) returns (UpdateAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/announcement"
+            body: "*"
+        };
+    }
+
+    rpc DeleteAnnouncement (DeleteAnnouncementRequest) returns (DeleteAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/announcement"
+            body: "*"
+        };
+    }
+
+    rpc GetAnnouncements (GetAnnouncementsRequest) returns (GetAnnouncementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/announcement"
+            body: "*"
+        };
+    }
+}
+
+message Announcementy {
+    string           ID           = 10;
+    string           AppID        = 20;
+    string           AppName      = 30;
+    string           Title        = 40;
+    string           Content      = 50;
+    repeated string  Channels     = 60;
+}
+
+message CreateAnnouncementRequest {
+    string          AppID       = 10;
+    string          Title       = 50;
+    string          Content     = 60;
+    repeated string Channels    = 70;
+}
+
+message CreateAnnouncementResponse {
+    Announcementy Info = 10;
+}
+
+message UpdateAnnouncementRequest {
+    string          ID          = 10;
+    string          Title       = 20;
+    string          Content     = 30;
+    repeated string Channels    = 40;
+}
+
+message UpdateAnnouncementResponse {
+    Announcementy Info = 10;
+}
+
+message DeleteAnnouncementRequest {
+    string ID = 10;
+}
+
+message DeleteAnnouncementResponse {
+    Announcementy Info = 10;
+}
+
+message GetAnnouncementsRequest {
+    string AppID  = 10;
+    string UserID = 20;
+    uint32 Offset = 30;
+    uint32 Limit  = 40;
+}
+
+message GetAnnouncementsResponse {
+    repeated Announcementy Infos = 10;
+    uint32                 Total = 20;
+}

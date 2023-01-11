@@ -1,0 +1,262 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/third/mgr/v1/template/notif/notif.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "templatenotif1v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CountNotifTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateNotifTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifTemplate"
+        }
+      }
+    },
+    "v1CreateNotifTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifTemplate"
+          }
+        }
+      }
+    },
+    "v1DeleteNotifTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifTemplate"
+        }
+      }
+    },
+    "v1EventType": {
+      "type": "string",
+      "enum": [
+        "DefaultEventType",
+        "KycReviewApproved",
+        "KycReviewRejected",
+        "WithdrawReviewApproved",
+        "WithdrawReviewRejected",
+        "WithdrawAddressReviewApproved",
+        "WithdrawAddressReviewRejected"
+      ],
+      "default": "DefaultEventType"
+    },
+    "v1ExistNotifTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistNotifTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetNotifTemplateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifTemplate"
+        }
+      }
+    },
+    "v1GetNotifTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifTemplate"
+        }
+      }
+    },
+    "v1GetNotifTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1NotifTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UserFor": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
+    "v1NotifTemplateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Email_send": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNotifTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifTemplate"
+        }
+      }
+    }
+  }
+}
