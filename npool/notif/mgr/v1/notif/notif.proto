@@ -41,7 +41,7 @@ message NotifReq {
     optional string    Title       = 80;
     optional string    Content     = 90;
     repeated string    Channels    = 100;
-    optional bool      Email_send  = 110;
+    optional bool      EmailSend   = 110;
 }
 
 message Notif {
@@ -55,7 +55,7 @@ message Notif {
     string    Title       = 80;
     string    Content     = 90;
     string    Channels    = 100;
-    bool      Email_send  = 110;
+    bool      EmailSend   = 110;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
 }
@@ -69,7 +69,7 @@ message Conds {
     optional npool.v1.Uint32Val      EventType   = 60;
     optional npool.v1.BoolVal        UseTemplate = 70;
     optional npool.v1.StringSliceVal Channels    = 80;
-    optional npool.v1.BoolVal        Email_send  = 90;
+    optional npool.v1.BoolVal        EmailSend   = 90;
 }
 
 

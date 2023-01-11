@@ -24,32 +24,27 @@ service Manager {
 message NotifTemplateReq {
     optional string ID          = 10;
     optional string AppID       = 20;
-    optional string UserID      = 30;
-    optional bool   AlreadyRead = 40;
-    optional string LangID      = 50;
-    optional notif.manager.notif.v1.EventType EventType   = 60;
-    optional bool   UseTemplate = 70;
-    optional string Title       = 80;
-    optional string Content     = 90;
-    repeated string Channels    = 100;
-    optional bool   Email_send  = 110;
+    optional string LangID      = 30;
+    optional notif.manager.notif.v1.EventType UsedFor   = 40;
+    optional string Title       = 50;
+    optional string Content     = 60;
 }
 
 message NotifTemplate {
-    string ID      = 10;
-    string AppID   = 20;
-    string LangID  = 30;
-    string UserID  = 40;
-    notif.manager.notif.v1.EventType UserFor = 50;
-    string Title   = 60;
-    string Content = 70;
+    string ID          = 10;
+    string AppID       = 20;
+    string LangID      = 30;
+    notif.manager.notif.v1.EventType UsedFor   = 40;
+    string Title       = 50;
+    string Content     = 60;
+    string CreatedAt   = 70;
+    string UpdateAt    = 80;
 }
 
 message Conds {
     optional npool.v1.StringVal ID      = 10;
     optional npool.v1.StringVal AppID   = 20;
     optional npool.v1.StringVal LangID  = 30;
-    optional npool.v1.StringVal UserID  = 40;
     optional npool.v1.Uint32Val UsedFor = 50;
 }
 
@@ -93,7 +88,7 @@ message GetNotifTemplatesRequest {
 
 message GetNotifTemplatesResponse {
     repeated NotifTemplate Infos = 10;
-    uint32        Total = 20;
+    uint32                 Total = 20;
 }
 
 message GetNotifTemplateOnlyRequest {
