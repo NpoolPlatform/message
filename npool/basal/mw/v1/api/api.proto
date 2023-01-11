@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package basal.middleware.api.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/api";
+
+import "npool/npool.proto";
+import "npool/basal/mgr/v1/api/api.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateAPI     (CreateAPIRequest)     returns (CreateAPIResponse)     {}
+    rpc CreateAPIs    (CreateAPIsRequest)    returns (CreateAPIsResponse)    {}
+    rpc UpdateAPI     (UpdateAPIRequest)     returns (UpdateAPIResponse)     {}
+    rpc GetAPIs       (GetAPIsRequest)       returns (GetAPIsResponse)       {}
+}
+
+message CreateAPIRequest {
+    basal.manager.api.v1.APIReq Info = 10;
+}
+
+message CreateAPIResponse {
+    basal.manager.api.v1.API Info = 10;
+}
+
+message CreateAPIsRequest {
+    repeated basal.manager.api.v1.APIReq Infos = 10;
+}
+
+message CreateAPIsResponse {
+    repeated basal.manager.api.v1.API Infos = 10;
+}
+
+message UpdateAPIRequest {
+    basal.manager.api.v1.APIReq Info = 10;
+}
+
+message UpdateAPIResponse {
+    basal.manager.api.v1.API Info = 10;
+}
+
+message GetAPIsRequest {
+    basal.manager.api.v1.Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAPIsResponse {
+    repeated basal.manager.api.v1.API Infos = 10;
+    uint32       Total = 20;
+}
+

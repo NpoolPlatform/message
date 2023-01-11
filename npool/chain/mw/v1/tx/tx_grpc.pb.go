@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateTx(ctx context.Context, in *CreateTxRequest, opts ...grpc.CallOption) (*CreateTxResponse, error)
+	CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error)
 	GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
 	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
@@ -39,6 +40,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateTx(ctx context.Context, in *CreateTxRequest, opts ...grpc.CallOption) (*CreateTxResponse, error) {
 	out := new(CreateTxResponse)
 	err := c.cc.Invoke(ctx, "/chain.middleware.tx.v1.Middleware/CreateTx", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error) {
+	out := new(CreateTxsResponse)
+	err := c.cc.Invoke(ctx, "/chain.middleware.tx.v1.Middleware/CreateTxs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *middlewareClient) UpdateTx(ctx context.Context, in *UpdateTxRequest, op
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateTx(context.Context, *CreateTxRequest) (*CreateTxResponse, error)
+	CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error)
 	GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
 	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateTx(context.Context, *CreateTxRequest) (*CreateTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTx not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTxs not implemented")
 }
 func (UnimplementedMiddlewareServer) GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTx not implemented")
@@ -126,6 +140,24 @@ func _Middleware_CreateTx_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateTx(ctx, req.(*CreateTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateTxs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTxsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateTxs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chain.middleware.tx.v1.Middleware/CreateTxs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateTxs(ctx, req.(*CreateTxsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateTx",
 			Handler:    _Middleware_CreateTx_Handler,
+		},
+		{
+			MethodName: "CreateTxs",
+			Handler:    _Middleware_CreateTxs_Handler,
 		},
 		{
 			MethodName: "GetTx",

@@ -31,6 +31,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -300,6 +303,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
+        },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
         },
         "GoodSold": {
           "type": "integer",

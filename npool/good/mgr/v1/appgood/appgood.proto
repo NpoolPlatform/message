@@ -70,6 +70,7 @@ message Conds {
     optional npool.v1.StringVal      AppID  = 20;
     optional npool.v1.StringVal      GoodID = 30;
     optional npool.v1.StringSliceVal GoodIDs = 40;
+    optional npool.v1.StringSliceVal AppIDs  = 50;
 }
 
 

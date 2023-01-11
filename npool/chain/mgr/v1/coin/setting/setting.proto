@@ -32,6 +32,7 @@ message SettingReq {
     optional string    LowFeeAmount                = 80;
     optional string    HotWalletAccountAmount      = 90;
     optional string    PaymentAccountCollectAmount = 100;
+    optional string    LeastTransferAmount         = 110;
 }
 
 message Setting {
@@ -46,6 +47,7 @@ message Setting {
     string LowFeeAmount                = 80;
     string HotWalletAccountAmount      = 90;
     string PaymentAccountCollectAmount = 100;
+    string LeastTransferAmount         = 101;
     uint32 CreatedAt                   = 110;
     uint32 UpdatedAt                   = 120;
 }

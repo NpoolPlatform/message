@@ -336,6 +336,38 @@
         ]
       }
     },
+    "/v1/update/app/userkol": {
+      "post": {
+        "operationId": "Gateway_UpdateAppUserKol",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserKolResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserKolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/user": {
       "post": {
         "operationId": "Gateway_UpdateUser",
@@ -580,11 +612,8 @@
         "OldPasswordHash": {
           "type": "string"
         },
-        "InvitationCodeConfirmed": {
+        "KolConfirmed": {
           "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
         }
       }
     },
@@ -855,6 +884,28 @@
         }
       }
     },
+    "v1UpdateAppUserKolRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppUserKolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1UpdateUserKolRequest": {
       "type": "object",
       "properties": {
@@ -1045,12 +1096,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "InvitationCodeConfirmed": {
-          "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
-        },
         "LoginVerified": {
           "type": "boolean"
         },
@@ -1064,6 +1109,10 @@
         "Kol": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kol\""
+        },
+        "KolConfirmed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol_confirmed\""
         }
       }
     },

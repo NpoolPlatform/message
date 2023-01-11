@@ -39,6 +39,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateAppUserKol (UpdateAppUserKolRequest) returns (UpdateAppUserKolResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/userkol"
+            body: "*"
+        };
+    }
+
     rpc ResetUser (ResetUserRequest) returns (ResetUserResponse) {
         option (google.api.http) = {
             post: "/v1/reset/user"
@@ -172,11 +179,9 @@ message UpdateUserRequest {
     // Secret
     // Need verification code
     optional string PasswordHash       = 200;
-    optional string OldPasswordHash    = 201;
+    optional string OldPasswordHash    = 210;
 
-
-    optional bool   InvitationCodeConfirmed     = 381;
-    optional string InvitationCodeID            = 382;
+    optional bool   KolConfirmed       = 220;
 }
 
 message UpdateUserResponse {
@@ -191,6 +196,16 @@ message UpdateUserKolRequest {
 }
 
 message UpdateUserKolResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message UpdateAppUserKolRequest {
+    string AppID        = 10;
+    string TargetUserID = 20;
+    bool   Kol          = 30;
+}
+
+message UpdateAppUserKolResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 

@@ -44,6 +44,14 @@
         }
       }
     },
+    "g11nmiddlewareapplangv1GetLangOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/g11nmiddlewareapplangv1Lang"
+        }
+      }
+    },
     "g11nmiddlewareapplangv1GetLangsResponse": {
       "type": "object",
       "properties": {

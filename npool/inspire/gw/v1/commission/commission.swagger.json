@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/create/user/commission": {
+      "post": {
+        "operationId": "Gateway_CreateUserCommission",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserCommissionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserCommissionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/commissions": {
       "post": {
         "operationId": "Gateway_GetAppCommissions",
@@ -176,6 +208,12 @@
     "v1Commission": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "UserID": {
           "type": "string"
         },
@@ -254,6 +292,9 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "TargetUserID": {
           "type": "string"
         },
@@ -273,6 +314,38 @@
       }
     },
     "v1CreateCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Commission"
+        }
+      }
+    },
+    "v1CreateUserCommissionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateUserCommissionResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -394,6 +467,9 @@
         },
         "AppID": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         },
         "Value": {
           "type": "string"

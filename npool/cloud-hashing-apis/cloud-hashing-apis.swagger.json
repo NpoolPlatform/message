@@ -1779,6 +1779,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
         "GoodSold": {
           "type": "integer",
           "format": "int64",
@@ -1808,6 +1813,36 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "BenefitStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_state\""
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_benefit_at\""
+        },
+        "BenefitTIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_tids\""
+        },
+        "BenefitTIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NextBenefitStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_benefit_start_amount\""
+        },
+        "LastBenefitAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_benefit_amount\""
         }
       }
     },
@@ -1944,11 +1979,20 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"pay_with_parent\""
         },
+        "CouponIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_ids\""
+        },
         "CouponIDs": {
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_benefit_at\""
         }
       }
     },
@@ -2135,6 +2179,16 @@
           "type": "string"
         }
       }
+    },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping"
+      ],
+      "default": "DefaultBenefitState"
     },
     "v1BenefitType": {
       "type": "string",
@@ -3353,12 +3407,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "InvitationCodeConfirmed": {
-          "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
-        },
         "LoginVerified": {
           "type": "boolean"
         },
@@ -3372,6 +3420,10 @@
         "Kol": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kol\""
+        },
+        "KolConfirmed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol_confirmed\""
         }
       }
     },

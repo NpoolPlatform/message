@@ -91,6 +91,7 @@ message UpdateCoinRequest {
     optional bool   Disabled                 = 130;
     optional bool   Display                  = 140;
     optional uint32 DisplayIndex             = 150;
+    optional string MaxAmountPerWithdraw     = 160;
 }
 
 message UpdateCoinResponse {

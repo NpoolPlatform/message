@@ -165,6 +165,7 @@ message Order {
     uint32 Start                  = 390;
     uint32 End                    = 400;
     repeated Coupon Coupons       = 500;
+    uint32 LastBenefitAt          = 510;
 }
 
 message CreateOrderRequest {
@@ -179,6 +180,7 @@ message CreateOrderRequest {
     optional string DiscountID           = 90;
     optional string SpecialOfferID       = 100;
     order.manager.order.v1.OrderType OrderType = 110;
+    repeated string CouponIDs            = 120;
 }
 
 message CreateOrderResponse {

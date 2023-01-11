@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error)
+	CreateUserCommission(ctx context.Context, in *CreateUserCommissionRequest, opts ...grpc.CallOption) (*CreateUserCommissionResponse, error)
 	UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error)
 	GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error)
 	GetAppCommissions(ctx context.Context, in *GetAppCommissionsRequest, opts ...grpc.CallOption) (*GetAppCommissionsResponse, error)
@@ -39,6 +40,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error) {
 	out := new(CreateCommissionResponse)
 	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/CreateCommission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateUserCommission(ctx context.Context, in *CreateUserCommissionRequest, opts ...grpc.CallOption) (*CreateUserCommissionResponse, error) {
+	out := new(CreateUserCommissionResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/CreateUserCommission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *gatewayClient) GetAppCommissions(ctx context.Context, in *GetAppCommiss
 // for forward compatibility
 type GatewayServer interface {
 	CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error)
+	CreateUserCommission(context.Context, *CreateUserCommissionRequest) (*CreateUserCommissionResponse, error)
 	UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error)
 	GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error)
 	GetAppCommissions(context.Context, *GetAppCommissionsRequest) (*GetAppCommissionsResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCommission not implemented")
+}
+func (UnimplementedGatewayServer) CreateUserCommission(context.Context, *CreateUserCommissionRequest) (*CreateUserCommissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserCommission not implemented")
 }
 func (UnimplementedGatewayServer) UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommission not implemented")
@@ -126,6 +140,24 @@ func _Gateway_CreateCommission_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateCommission(ctx, req.(*CreateCommissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateUserCommission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserCommissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateUserCommission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/CreateUserCommission",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateUserCommission(ctx, req.(*CreateUserCommissionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCommission",
 			Handler:    _Gateway_CreateCommission_Handler,
+		},
+		{
+			MethodName: "CreateUserCommission",
+			Handler:    _Gateway_CreateUserCommission_Handler,
 		},
 		{
 			MethodName: "UpdateCommission",

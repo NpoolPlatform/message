@@ -232,6 +232,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
+        "GoodWaitStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
         "GoodSold": {
           "type": "integer",
           "format": "int64",
@@ -261,6 +266,36 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "BenefitStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_state\""
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_benefit_at\""
+        },
+        "BenefitTIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_tids\""
+        },
+        "BenefitTIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NextBenefitStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_benefit_start_amount\""
+        },
+        "LastBenefitAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_benefit_amount\""
         }
       }
     },
@@ -334,6 +369,10 @@
           "type": "integer",
           "format": "int32"
         },
+        "WaitStart": {
+          "type": "integer",
+          "format": "int32"
+        },
         "Sold": {
           "type": "integer",
           "format": "int64"
@@ -353,6 +392,21 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "BenefitTIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },
@@ -391,6 +445,16 @@
         }
       }
     },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -424,6 +488,9 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },

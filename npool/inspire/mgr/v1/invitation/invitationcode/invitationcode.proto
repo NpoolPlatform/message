@@ -25,8 +25,7 @@ message InvitationCodeReq {
     optional string AppID          = 20;
     optional string UserID         = 30;
     optional string InvitationCode = 40;
-    optional bool   Confirmed      = 50;
-    optional bool   Disabled       = 60;
+    optional bool   Disabled       = 50;
 }
 
 message InvitationCode {
@@ -34,8 +33,7 @@ message InvitationCode {
     string AppID          = 20;
     string UserID         = 30;
     string InvitationCode = 40;
-    bool   Confirmed      = 50;
-    bool   Disabled       = 51;
+    bool   Disabled       = 50;
     uint32 CreatedAt      = 60;
     uint32 UpdatedAt      = 70;
 }
@@ -45,8 +43,8 @@ message Conds {
     optional npool.v1.StringVal AppID          = 20;
     optional npool.v1.StringVal UserID         = 30;
     optional npool.v1.StringVal InvitationCode = 40;
-    optional npool.v1.BoolVal   Confirmed      = 50;
-    optional npool.v1.BoolVal   Disabled       = 60;
+    optional npool.v1.BoolVal   Disabled       = 50;
+    optional npool.v1.StringSliceVal UserIDs   = 60;
 }
 
 

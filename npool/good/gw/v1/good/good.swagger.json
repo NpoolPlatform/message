@@ -433,6 +433,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "WaitStart": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Sold": {
           "type": "integer",
           "format": "int64"
@@ -460,6 +464,16 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },

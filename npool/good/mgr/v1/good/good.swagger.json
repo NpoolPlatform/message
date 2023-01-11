@@ -44,6 +44,16 @@
         }
       }
     },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -77,6 +87,9 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
@@ -236,6 +249,25 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "BenefitTIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },
@@ -302,6 +334,21 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "BenefitTIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NextBenefitStartAmount": {
+          "type": "string"
+        },
+        "LastBenefitAmount": {
+          "type": "string"
         }
       }
     },

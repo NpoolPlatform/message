@@ -11,6 +11,7 @@ import "npool/chain/mgr/v1/tx/tx.proto";
 // Service Name
 service Middleware {
     rpc CreateTx     (CreateTxRequest)   returns (CreateTxResponse)    {}
+    rpc CreateTxs    (CreateTxsRequest)  returns (CreateTxsResponse)   {}
     rpc GetTx        (GetTxRequest)      returns (GetTxResponse)       {}
     rpc GetTxs       (GetTxsRequest)     returns (GetTxsResponse)      {}
     rpc UpdateTx     (UpdateTxRequest)   returns (UpdateTxResponse)    {}
@@ -59,6 +60,14 @@ message CreateTxRequest {
 
 message CreateTxResponse {
     Tx Info = 10;
+}
+
+message CreateTxsRequest {
+   repeated  chain.manager.tx.v1.TxReq Infos = 10;
+}
+
+message CreateTxsResponse {
+    repeated Tx Infos = 10;
 }
 
 message GetTxRequest {

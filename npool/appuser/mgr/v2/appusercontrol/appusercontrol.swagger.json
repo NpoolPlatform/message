@@ -86,6 +86,9 @@
         },
         "Kol": {
           "type": "boolean"
+        },
+        "KolConfirmed": {
+          "type": "boolean"
         }
       }
     },
@@ -109,6 +112,9 @@
         },
         "Kol": {
           "type": "boolean"
+        },
+        "KolConfirmed": {
+          "type": "boolean"
         }
       }
     },
@@ -128,6 +134,9 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "Kol": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "KolConfirmed": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }

@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateCountry(ctx context.Context, in *CreateCountryRequest, opts ...grpc.CallOption) (*CreateCountryResponse, error)
 	CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error)
+	GetCountryOnly(ctx context.Context, in *GetCountryOnlyRequest, opts ...grpc.CallOption) (*GetCountryOnlyResponse, error)
 	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
 	DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error)
 }
@@ -54,6 +55,15 @@ func (c *middlewareClient) CreateCountries(ctx context.Context, in *CreateCountr
 	return out, nil
 }
 
+func (c *middlewareClient) GetCountryOnly(ctx context.Context, in *GetCountryOnlyRequest, opts ...grpc.CallOption) (*GetCountryOnlyResponse, error) {
+	out := new(GetCountryOnlyResponse)
+	err := c.cc.Invoke(ctx, "/g11n.middleware.appcountry.v1.Middleware/GetCountryOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error) {
 	out := new(GetCountriesResponse)
 	err := c.cc.Invoke(ctx, "/g11n.middleware.appcountry.v1.Middleware/GetCountries", in, out, opts...)
@@ -78,6 +88,7 @@ func (c *middlewareClient) DeleteCountry(ctx context.Context, in *DeleteCountryR
 type MiddlewareServer interface {
 	CreateCountry(context.Context, *CreateCountryRequest) (*CreateCountryResponse, error)
 	CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error)
+	GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error)
 	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
 	DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -92,6 +103,9 @@ func (UnimplementedMiddlewareServer) CreateCountry(context.Context, *CreateCount
 }
 func (UnimplementedMiddlewareServer) CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCountries not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCountryOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
@@ -148,6 +162,24 @@ func _Middleware_CreateCountries_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetCountryOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCountryOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCountryOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g11n.middleware.appcountry.v1.Middleware/GetCountryOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCountryOnly(ctx, req.(*GetCountryOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCountriesRequest)
 	if err := dec(in); err != nil {
@@ -198,6 +230,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCountries",
 			Handler:    _Middleware_CreateCountries_Handler,
+		},
+		{
+			MethodName: "GetCountryOnly",
+			Handler:    _Middleware_GetCountryOnly_Handler,
 		},
 		{
 			MethodName: "GetCountries",

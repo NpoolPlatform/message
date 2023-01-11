@@ -30,17 +30,18 @@ service Gateway {
 }
 
 message Registration {
-    string AppID                 = 10;
-    string InviterID             = 20;
-    string InviterEmailAddress   = 30;
-    string InviterPhoneNO        = 40;
-    string InviterUsername       = 50;
-    string InviteeID             = 60;
-    string InviteeEmailAddress   = 70;
-    string InviteePhoneNO        = 80;
-    string InviteeUsername       = 90;
-    uint32 CreatedAt             = 100;
-    uint32 UpdatedAt             = 110;
+    string ID                    = 10;
+    string AppID                 = 20;
+    string InviterID             = 30;
+    string InviterEmailAddress   = 40;
+    string InviterPhoneNO        = 50;
+    string InviterUsername       = 60;
+    string InviteeID             = 70;
+    string InviteeEmailAddress   = 80;
+    string InviteePhoneNO        = 90;
+    string InviteeUsername       = 100;
+    uint32 CreatedAt             = 110;
+    uint32 UpdatedAt             = 120;
 }
 
 message UpdateRegistrationRequest {

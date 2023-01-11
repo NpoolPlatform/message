@@ -64,6 +64,9 @@
         },
         "Type": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -285,7 +288,9 @@
         "TxFeedGas",
         "TxPaymentCollect",
         "TxBenefit",
-        "TxLimitation"
+        "TxLimitation",
+        "TxPlatformBenefit",
+        "TxUserBenefit"
       ],
       "default": "DefaultTxType"
     },

@@ -41,6 +41,14 @@ enum GoodType {
     GoodTypeElectricityFee  = 40;
 }
 
+enum BenefitState {
+    DefaultBenefitState    = 0;
+
+    BenefitWait         = 10;
+    BenefitTransferring = 20;
+    BenefitBookKeeping  = 30;
+}
+
 message GoodReq {
     optional string        ID                 = 10;
     optional string        DeviceInfoID       = 20;
@@ -61,6 +69,10 @@ message GoodReq {
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
     optional uint32        BenefitIntervalHours = 170;
+    optional BenefitState  BenefitState       = 180;
+    repeated string        BenefitTIDs        = 190;
+    optional string        NextBenefitStartAmount = 240;
+    optional string        LastBenefitAmount  = 250;
 }
 
 message Good {
@@ -84,6 +96,11 @@ message Good {
     uint32          UpdatedAt          = 180;
     uint32          DeletedAt          = 190;
     uint32          BenefitIntervalHours = 200;
+    BenefitState    BenefitState       = 210;
+    uint32          LastBenefitAt      = 220;
+    repeated string BenefitTIDs        = 230;
+    string          NextBenefitStartAmount = 240;
+    string          LastBenefitAmount  = 250;
 }
 
 message Conds {
@@ -94,6 +111,7 @@ message Conds {
     optional npool.v1.Int32Val       BenefitType      = 50;
     optional npool.v1.Int32Val       GoodType         = 60;
     optional npool.v1.StringSliceVal IDs              = 70;
+    optional npool.v1.Int32Val       BenefitState     = 80;
 }
 
 

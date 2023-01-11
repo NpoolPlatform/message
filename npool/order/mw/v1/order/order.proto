@@ -56,7 +56,8 @@ message OrderReq {
     optional bool   Canceled                  = 240;
     optional bool   FakePayment               = 250;
     optional order.manager.order.v1.OrderState State  = 260;
-    repeated string CouponIDs               = 270;
+    repeated string CouponIDs                = 270;
+    optional uint32 LastBenefitAt            = 280;
 }
 
 message Order {
@@ -125,7 +126,11 @@ message Order {
 
     // @inject_tag: sql:"pay_with_parent"
     bool   PayWithParent          = 280;
-    repeated string  CouponIDs    = 290;
+    // @inject_tag: sql:"coupon_ids"
+    string CouponIDsStr           = 290;
+    repeated string  CouponIDs    = 300;
+    // @inject_tag: sql:"last_benefit_at"
+    uint32 LastBenefitAt          = 310;
 }
 
 message Conds {
@@ -142,9 +147,12 @@ message Conds {
     optional npool.v1.StringVal      GoodID             = 110;
     optional npool.v1.Uint32Val      Type               = 120;
     optional npool.v1.Uint32Val      State              = 130;
-    optional npool.v1.StringVal      FixAmountCouponID        = 140;
-    optional npool.v1.StringVal      DiscountCouponID         = 150;
-    optional npool.v1.StringVal      UserSpecialReductionID   = 160;
+    optional npool.v1.StringVal      FixAmountCouponID      = 140;
+    optional npool.v1.StringVal      DiscountCouponID       = 150;
+    optional npool.v1.StringVal      UserSpecialReductionID = 160;
+    optional npool.v1.Uint32Val      LastBenefitAt          = 170;
+    optional npool.v1.StringVal      CouponID               = 180;
+    optional npool.v1.StringSliceVal CouponIDs              = 190;
 }
 
 message CreateOrderRequest {

@@ -26,6 +26,7 @@ type GatewayClient interface {
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error)
+	UpdateAppUserKol(ctx context.Context, in *UpdateAppUserKolRequest, opts ...grpc.CallOption) (*UpdateAppUserKolResponse, error)
 	ResetUser(ctx context.Context, in *ResetUserRequest, opts ...grpc.CallOption) (*ResetUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
@@ -74,6 +75,15 @@ func (c *gatewayClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, o
 func (c *gatewayClient) UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error) {
 	out := new(UpdateUserKolResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/UpdateUserKol", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateAppUserKol(ctx context.Context, in *UpdateAppUserKolRequest, opts ...grpc.CallOption) (*UpdateAppUserKolResponse, error) {
+	out := new(UpdateAppUserKolResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -160,6 +170,7 @@ type GatewayServer interface {
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error)
+	UpdateAppUserKol(context.Context, *UpdateAppUserKolRequest) (*UpdateAppUserKolResponse, error)
 	ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
@@ -186,6 +197,9 @@ func (UnimplementedGatewayServer) UpdateUser(context.Context, *UpdateUserRequest
 }
 func (UnimplementedGatewayServer) UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserKol not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppUserKol(context.Context, *UpdateAppUserKolRequest) (*UpdateAppUserKolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUserKol not implemented")
 }
 func (UnimplementedGatewayServer) ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetUser not implemented")
@@ -292,6 +306,24 @@ func _Gateway_UpdateUserKol_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateUserKol(ctx, req.(*UpdateUserKolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateAppUserKol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppUserKolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppUserKol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppUserKol(ctx, req.(*UpdateAppUserKolRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -462,6 +494,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUserKol",
 			Handler:    _Gateway_UpdateUserKol_Handler,
+		},
+		{
+			MethodName: "UpdateAppUserKol",
+			Handler:    _Gateway_UpdateAppUserKol_Handler,
 		},
 		{
 			MethodName: "ResetUser",

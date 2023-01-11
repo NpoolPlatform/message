@@ -68,6 +68,7 @@ message UserReq {
     repeated string RoleIDs            = 270;
 
     optional bool   Kol                = 280;
+    optional bool   KolConfirmed       = 290;
 }
 
 message User {
@@ -153,8 +154,6 @@ message User {
     uint32          CreatedAt                   = 370;
 
     optional string InvitationCode              = 380;
-    bool            InvitationCodeConfirmed     = 381;
-    optional string InvitationCodeID            = 382;
     bool            LoginVerified               = 390;
 
     // @inject_tag: sql:"kyc_state"
@@ -163,6 +162,8 @@ message User {
 
     // @inject_tag: sql:"kol"
     bool            Kol                   = 420;
+    // @inject_tag: sql:"kol_confirmed"
+    bool            KolConfirmed          = 430;
 }
 
 message CreateUserRequest {

@@ -70,11 +70,11 @@
         "InvitationCode": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Confirmed": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
         "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -176,9 +176,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "Confirmed": {
-          "type": "boolean"
-        },
         "Disabled": {
           "type": "boolean"
         },
@@ -207,11 +204,22 @@
         "InvitationCode": {
           "type": "string"
         },
-        "Confirmed": {
-          "type": "boolean"
-        },
         "Disabled": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

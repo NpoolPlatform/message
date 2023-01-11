@@ -266,12 +266,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "InvitationCodeConfirmed": {
-          "type": "boolean"
-        },
-        "InvitationCodeID": {
-          "type": "string"
-        },
         "LoginVerified": {
           "type": "boolean"
         },
@@ -285,6 +279,10 @@
         "Kol": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kol\""
+        },
+        "KolConfirmed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol_confirmed\""
         }
       }
     },
@@ -389,6 +387,9 @@
           "title": "RoleUser"
         },
         "Kol": {
+          "type": "boolean"
+        },
+        "KolConfirmed": {
           "type": "boolean"
         }
       }

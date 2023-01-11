@@ -243,9 +243,6 @@
         "InvitationCode": {
           "type": "string"
         },
-        "Confirmed": {
-          "type": "boolean"
-        },
         "Disabled": {
           "type": "boolean"
         },
