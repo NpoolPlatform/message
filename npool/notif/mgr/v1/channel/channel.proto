@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package notif.manager.channel.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/channel";
+
+enum NotifChannel {
+    DefaultChannel    = 0;
+
+    ChannelEmail      = 10;
+    ChannelSMS        = 20;
+}
+

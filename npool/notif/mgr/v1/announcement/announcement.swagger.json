@@ -96,7 +96,7 @@
             "type": "string"
           }
         },
-        "Email_send": {
+        "EmailSend": {
           "type": "boolean"
         }
       }

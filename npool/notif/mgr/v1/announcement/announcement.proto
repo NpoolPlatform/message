@@ -26,7 +26,7 @@ message AnnouncementReq {
     optional string Title      = 30;
     optional string Content    = 40;
     repeated string Channels   = 50;
-    optional bool   Email_send = 60;
+    optional bool   EmailSend  = 60;
 }
 
 message Announcement {

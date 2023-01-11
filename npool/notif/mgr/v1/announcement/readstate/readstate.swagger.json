@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/notif/mgr/v1/announcement/readannouncement/readannouncement.proto",
+    "title": "npool/notif/mgr/v1/announcement/readstate/readstate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -61,7 +61,7 @@
         }
       }
     },
-    "v1CountReadAnnouncementsResponse": {
+    "v1CountReadStatesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -70,42 +70,34 @@
         }
       }
     },
-    "v1CreateReadAnnouncementResponse": {
+    "v1CreateReadStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadAnnouncement"
+          "$ref": "#/definitions/v1ReadState"
         }
       }
     },
-    "v1CreateReadAnnouncementsResponse": {
+    "v1CreateReadStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ReadAnnouncement"
+            "$ref": "#/definitions/v1ReadState"
           }
         }
       }
     },
-    "v1DeleteReadAnnouncementResponse": {
+    "v1DeleteReadStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadAnnouncement"
+          "$ref": "#/definitions/v1ReadState"
         }
       }
     },
-    "v1ExistReadAnnouncementCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistReadAnnouncementResponse": {
+    "v1ExistReadStateCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -113,29 +105,37 @@
         }
       }
     },
-    "v1GetReadAnnouncementOnlyResponse": {
+    "v1ExistReadStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadAnnouncement"
+          "type": "boolean"
         }
       }
     },
-    "v1GetReadAnnouncementResponse": {
+    "v1GetReadStateOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadAnnouncement"
+          "$ref": "#/definitions/v1ReadState"
         }
       }
     },
-    "v1GetReadAnnouncementsResponse": {
+    "v1GetReadStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReadState"
+        }
+      }
+    },
+    "v1GetReadStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ReadAnnouncement"
+            "$ref": "#/definitions/v1ReadState"
           }
         },
         "Total": {
@@ -144,7 +144,7 @@
         }
       }
     },
-    "v1ReadAnnouncement": {
+    "v1ReadState": {
       "type": "object",
       "properties": {
         "ID": {
@@ -169,7 +169,7 @@
         }
       }
     },
-    "v1ReadAnnouncementReq": {
+    "v1ReadStateReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -197,11 +197,11 @@
         }
       }
     },
-    "v1UpdateReadAnnouncementResponse": {
+    "v1UpdateReadStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadAnnouncement"
+          "$ref": "#/definitions/v1ReadState"
         }
       }
     }
