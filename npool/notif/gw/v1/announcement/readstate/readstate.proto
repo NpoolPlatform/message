@@ -22,6 +22,20 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetAppReadStates (GetReadStatesRequest) returns (GetReadStatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/readstate"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppReadStates (GetReadStatesRequest) returns (GetReadStatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/readstate"
+            body: "*"
+        };
+    }
 }
 
 message ReadState {
@@ -46,6 +60,28 @@ message CreateReadStateRequest {
 
 message CreateReadStateResponse {
     ReadState Info = 10;
+}
+
+message GetAppReadStatesRequest {
+    string AppID  = 10;
+    uint32 Offset = 30;
+    uint32 Limit  = 40;
+}
+
+message GetAppReadStatesResponse {
+    repeated ReadState Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetNAppReadStatesRequest {
+    string TargetAppID  = 10;
+    uint32 Offset       = 20;
+    uint32 Limit        = 30;
+}
+
+message GetNAppReadStatesResponse {
+    repeated ReadState Infos = 10;
+    uint32             Total = 20;
 }
 
 message GetReadStatesRequest {

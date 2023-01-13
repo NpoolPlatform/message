@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	CreateReadState(ctx context.Context, in *CreateReadStateRequest, opts ...grpc.CallOption) (*CreateReadStateResponse, error)
 	GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
+	GetAppReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
+	GetNAppReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
 }
 
 type gatewayClient struct {
@@ -52,12 +54,32 @@ func (c *gatewayClient) GetReadStates(ctx context.Context, in *GetReadStatesRequ
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error) {
+	out := new(GetReadStatesResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAppReadStates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetNAppReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error) {
+	out := new(GetReadStatesResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	CreateReadState(context.Context, *CreateReadStateRequest) (*CreateReadStateResponse, error)
 	GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
+	GetAppReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
+	GetNAppReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -70,6 +92,12 @@ func (UnimplementedGatewayServer) CreateReadState(context.Context, *CreateReadSt
 }
 func (UnimplementedGatewayServer) GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReadStates not implemented")
+}
+func (UnimplementedGatewayServer) GetAppReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppReadStates not implemented")
+}
+func (UnimplementedGatewayServer) GetNAppReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppReadStates not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -120,6 +148,42 @@ func _Gateway_GetReadStates_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppReadStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReadStatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppReadStates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetAppReadStates",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppReadStates(ctx, req.(*GetReadStatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetNAppReadStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReadStatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNAppReadStates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNAppReadStates(ctx, req.(*GetReadStatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -134,6 +198,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetReadStates",
 			Handler:    _Gateway_GetReadStates_Handler,
+		},
+		{
+			MethodName: "GetAppReadStates",
+			Handler:    _Gateway_GetAppReadStates_Handler,
+		},
+		{
+			MethodName: "GetNAppReadStates",
+			Handler:    _Gateway_GetNAppReadStates_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

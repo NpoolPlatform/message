@@ -259,6 +259,242 @@ func (x *CreateReadStateResponse) GetInfo() *ReadState {
 	return nil
 }
 
+type GetAppReadStatesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	Offset uint32 `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  uint32 `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
+}
+
+func (x *GetAppReadStatesRequest) Reset() {
+	*x = GetAppReadStatesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppReadStatesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppReadStatesRequest) ProtoMessage() {}
+
+func (x *GetAppReadStatesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppReadStatesRequest.ProtoReflect.Descriptor instead.
+func (*GetAppReadStatesRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetAppReadStatesRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *GetAppReadStatesRequest) GetOffset() uint32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *GetAppReadStatesRequest) GetLimit() uint32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetAppReadStatesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*ReadState `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+}
+
+func (x *GetAppReadStatesResponse) Reset() {
+	*x = GetAppReadStatesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAppReadStatesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAppReadStatesResponse) ProtoMessage() {}
+
+func (x *GetAppReadStatesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAppReadStatesResponse.ProtoReflect.Descriptor instead.
+func (*GetAppReadStatesResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetAppReadStatesResponse) GetInfos() []*ReadState {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *GetAppReadStatesResponse) GetTotal() uint32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type GetNAppReadStatesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	Offset      uint32 `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit       uint32 `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
+}
+
+func (x *GetNAppReadStatesRequest) Reset() {
+	*x = GetNAppReadStatesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNAppReadStatesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNAppReadStatesRequest) ProtoMessage() {}
+
+func (x *GetNAppReadStatesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNAppReadStatesRequest.ProtoReflect.Descriptor instead.
+func (*GetNAppReadStatesRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetNAppReadStatesRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *GetNAppReadStatesRequest) GetOffset() uint32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *GetNAppReadStatesRequest) GetLimit() uint32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetNAppReadStatesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*ReadState `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+}
+
+func (x *GetNAppReadStatesResponse) Reset() {
+	*x = GetNAppReadStatesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNAppReadStatesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNAppReadStatesResponse) ProtoMessage() {}
+
+func (x *GetNAppReadStatesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNAppReadStatesResponse.ProtoReflect.Descriptor instead.
+func (*GetNAppReadStatesResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetNAppReadStatesResponse) GetInfos() []*ReadState {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *GetNAppReadStatesResponse) GetTotal() uint32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
 type GetReadStatesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -273,7 +509,7 @@ type GetReadStatesRequest struct {
 func (x *GetReadStatesRequest) Reset() {
 	*x = GetReadStatesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[3]
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -286,7 +522,7 @@ func (x *GetReadStatesRequest) String() string {
 func (*GetReadStatesRequest) ProtoMessage() {}
 
 func (x *GetReadStatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[3]
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -299,7 +535,7 @@ func (x *GetReadStatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReadStatesRequest.ProtoReflect.Descriptor instead.
 func (*GetReadStatesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{3}
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetReadStatesRequest) GetAppID() string {
@@ -342,7 +578,7 @@ type GetReadStatesResponse struct {
 func (x *GetReadStatesResponse) Reset() {
 	*x = GetReadStatesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[4]
+		mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -355,7 +591,7 @@ func (x *GetReadStatesResponse) String() string {
 func (*GetReadStatesResponse) ProtoMessage() {}
 
 func (x *GetReadStatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[4]
+	mi := &file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -368,7 +604,7 @@ func (x *GetReadStatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReadStatesResponse.ProtoReflect.Descriptor instead.
 func (*GetReadStatesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{4}
+	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetReadStatesResponse) GetInfos() []*ReadState {
@@ -432,6 +668,33 @@ var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 	0x32, 0x28, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
 	0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
 	0x2e, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x5d, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28,
+	0x0d, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d,
+	0x69, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22,
+	0x70, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x05, 0x49,
+	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75,
+	0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x53,
+	0x74, 0x61, 0x74, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54,
+	0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61,
+	0x6c, 0x22, 0x6a, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a,
+	0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52,
+	0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74,
+	0x18, 0x1e, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x71, 0x0a,
+	0x19, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74,
+	0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x05, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
+	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f,
+	0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c,
 	0x22, 0x72, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49,
 	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16,
@@ -446,7 +709,7 @@ var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61,
 	0x64, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a,
 	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f,
-	0x74, 0x61, 0x6c, 0x32, 0xc8, 0x02, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12,
+	0x74, 0x61, 0x6c, 0x32, 0x8f, 0x05, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12,
 	0xa1, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74,
 	0x61, 0x74, 0x65, 0x12, 0x35, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
@@ -466,12 +729,32 @@ var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 	0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65,
 	0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x11, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
-	0x74, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x41,
-	0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x67,
-	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x9f,
+	0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x73, 0x12, 0x33, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65,
+	0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65,
+	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x61, 0x64,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
+	0x61, 0x70, 0x70, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a,
+	0x12, 0xa2, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x52, 0x65, 0x61, 0x64,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x73, 0x12, 0x33, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67,
+	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x6e, 0x6e, 0x6f,
+	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52,
+	0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f, 0x76, 0x31, 0x2f, 0x67,
+	0x65, 0x74, 0x2f, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61,
+	0x74, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x41, 0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
+	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e, 0x6f,
+	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -486,28 +769,38 @@ func file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescGZIP()
 	return file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDescData
 }
 
-var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_goTypes = []interface{}{
-	(*ReadState)(nil),               // 0: notif.gateway.announcement.v1.ReadState
-	(*CreateReadStateRequest)(nil),  // 1: notif.gateway.announcement.v1.CreateReadStateRequest
-	(*CreateReadStateResponse)(nil), // 2: notif.gateway.announcement.v1.CreateReadStateResponse
-	(*GetReadStatesRequest)(nil),    // 3: notif.gateway.announcement.v1.GetReadStatesRequest
-	(*GetReadStatesResponse)(nil),   // 4: notif.gateway.announcement.v1.GetReadStatesResponse
-	(channel.NotifChannel)(0),       // 5: notif.manager.channel.v1.NotifChannel
+	(*ReadState)(nil),                 // 0: notif.gateway.announcement.v1.ReadState
+	(*CreateReadStateRequest)(nil),    // 1: notif.gateway.announcement.v1.CreateReadStateRequest
+	(*CreateReadStateResponse)(nil),   // 2: notif.gateway.announcement.v1.CreateReadStateResponse
+	(*GetAppReadStatesRequest)(nil),   // 3: notif.gateway.announcement.v1.GetAppReadStatesRequest
+	(*GetAppReadStatesResponse)(nil),  // 4: notif.gateway.announcement.v1.GetAppReadStatesResponse
+	(*GetNAppReadStatesRequest)(nil),  // 5: notif.gateway.announcement.v1.GetNAppReadStatesRequest
+	(*GetNAppReadStatesResponse)(nil), // 6: notif.gateway.announcement.v1.GetNAppReadStatesResponse
+	(*GetReadStatesRequest)(nil),      // 7: notif.gateway.announcement.v1.GetReadStatesRequest
+	(*GetReadStatesResponse)(nil),     // 8: notif.gateway.announcement.v1.GetReadStatesResponse
+	(channel.NotifChannel)(0),         // 9: notif.manager.channel.v1.NotifChannel
 }
 var file_npool_notif_gw_v1_announcement_readstate_readstate_proto_depIdxs = []int32{
-	5, // 0: notif.gateway.announcement.v1.ReadState.Channels:type_name -> notif.manager.channel.v1.NotifChannel
+	9, // 0: notif.gateway.announcement.v1.ReadState.Channels:type_name -> notif.manager.channel.v1.NotifChannel
 	0, // 1: notif.gateway.announcement.v1.CreateReadStateResponse.Info:type_name -> notif.gateway.announcement.v1.ReadState
-	0, // 2: notif.gateway.announcement.v1.GetReadStatesResponse.Infos:type_name -> notif.gateway.announcement.v1.ReadState
-	1, // 3: notif.gateway.announcement.v1.Gateway.CreateReadState:input_type -> notif.gateway.announcement.v1.CreateReadStateRequest
-	3, // 4: notif.gateway.announcement.v1.Gateway.GetReadStates:input_type -> notif.gateway.announcement.v1.GetReadStatesRequest
-	2, // 5: notif.gateway.announcement.v1.Gateway.CreateReadState:output_type -> notif.gateway.announcement.v1.CreateReadStateResponse
-	4, // 6: notif.gateway.announcement.v1.Gateway.GetReadStates:output_type -> notif.gateway.announcement.v1.GetReadStatesResponse
-	5, // [5:7] is the sub-list for method output_type
-	3, // [3:5] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0, // 2: notif.gateway.announcement.v1.GetAppReadStatesResponse.Infos:type_name -> notif.gateway.announcement.v1.ReadState
+	0, // 3: notif.gateway.announcement.v1.GetNAppReadStatesResponse.Infos:type_name -> notif.gateway.announcement.v1.ReadState
+	0, // 4: notif.gateway.announcement.v1.GetReadStatesResponse.Infos:type_name -> notif.gateway.announcement.v1.ReadState
+	1, // 5: notif.gateway.announcement.v1.Gateway.CreateReadState:input_type -> notif.gateway.announcement.v1.CreateReadStateRequest
+	7, // 6: notif.gateway.announcement.v1.Gateway.GetReadStates:input_type -> notif.gateway.announcement.v1.GetReadStatesRequest
+	7, // 7: notif.gateway.announcement.v1.Gateway.GetAppReadStates:input_type -> notif.gateway.announcement.v1.GetReadStatesRequest
+	7, // 8: notif.gateway.announcement.v1.Gateway.GetNAppReadStates:input_type -> notif.gateway.announcement.v1.GetReadStatesRequest
+	2, // 9: notif.gateway.announcement.v1.Gateway.CreateReadState:output_type -> notif.gateway.announcement.v1.CreateReadStateResponse
+	8, // 10: notif.gateway.announcement.v1.Gateway.GetReadStates:output_type -> notif.gateway.announcement.v1.GetReadStatesResponse
+	8, // 11: notif.gateway.announcement.v1.Gateway.GetAppReadStates:output_type -> notif.gateway.announcement.v1.GetReadStatesResponse
+	8, // 12: notif.gateway.announcement.v1.Gateway.GetNAppReadStates:output_type -> notif.gateway.announcement.v1.GetReadStatesResponse
+	9, // [9:13] is the sub-list for method output_type
+	5, // [5:9] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_gw_v1_announcement_readstate_readstate_proto_init() }
@@ -553,7 +846,7 @@ func file_npool_notif_gw_v1_announcement_readstate_readstate_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetReadStatesRequest); i {
+			switch v := v.(*GetAppReadStatesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -565,6 +858,54 @@ func file_npool_notif_gw_v1_announcement_readstate_readstate_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAppReadStatesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetNAppReadStatesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetNAppReadStatesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetReadStatesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_gw_v1_announcement_readstate_readstate_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReadStatesResponse); i {
 			case 0:
 				return &v.state
@@ -583,7 +924,7 @@ func file_npool_notif_gw_v1_announcement_readstate_readstate_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notif_gw_v1_announcement_readstate_readstate_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
