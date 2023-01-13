@@ -194,11 +194,8 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
-        },
-        "AlreadyRead": {
-          "type": "boolean"
         }
       }
     },
@@ -217,7 +214,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         }
       }
@@ -252,9 +249,6 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int64"
@@ -280,6 +274,15 @@
         }
       }
     },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
+    },
     "v1UpdateAnnouncementRequest": {
       "type": "object",
       "properties": {
@@ -295,7 +298,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         }
       }

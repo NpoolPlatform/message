@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package notif.manager.notif.v1;
+package notif.manager.notif1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif";
 
+import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -40,7 +41,7 @@ message NotifReq {
     optional bool      UseTemplate = 70;
     optional string    Title       = 80;
     optional string    Content     = 90;
-    repeated string    Channels    = 100;
+    repeated notif.manager.channel.v1.NotifChannel    Channels    = 100;
     optional bool      EmailSend   = 110;
 }
 
@@ -54,7 +55,7 @@ message Notif {
     bool      UseTemplate = 70;
     string    Title       = 80;
     string    Content     = 90;
-    string    Channels    = 100;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
     bool      EmailSend   = 110;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;

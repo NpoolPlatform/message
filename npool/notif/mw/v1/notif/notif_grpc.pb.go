@@ -38,7 +38,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error) {
 	out := new(CreateNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.notif1.v1.Middleware/CreateNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/CreateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *middlewareClient) CreateNotif(ctx context.Context, in *CreateNotifReque
 
 func (c *middlewareClient) GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error) {
 	out := new(GetNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.notif1.v1.Middleware/GetNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/GetNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *middlewareClient) GetNotif(ctx context.Context, in *GetNotifRequest, op
 
 func (c *middlewareClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error) {
 	out := new(GetNotifsResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.notif1.v1.Middleware/GetNotifs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/GetNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *middlewareClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, 
 
 func (c *middlewareClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyRequest, opts ...grpc.CallOption) (*GetNotifOnlyResponse, error) {
 	out := new(GetNotifOnlyResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.notif1.v1.Middleware/GetNotifOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/GetNotifOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,7 +122,7 @@ func _Middleware_CreateNotif_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.notif1.v1.Middleware/CreateNotif",
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/CreateNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateNotif(ctx, req.(*CreateNotifRequest))
@@ -140,7 +140,7 @@ func _Middleware_GetNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.notif1.v1.Middleware/GetNotif",
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/GetNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetNotif(ctx, req.(*GetNotifRequest))
@@ -158,7 +158,7 @@ func _Middleware_GetNotifs_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.notif1.v1.Middleware/GetNotifs",
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/GetNotifs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetNotifs(ctx, req.(*GetNotifsRequest))
@@ -176,7 +176,7 @@ func _Middleware_GetNotifOnly_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.notif1.v1.Middleware/GetNotifOnly",
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/GetNotifOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetNotifOnly(ctx, req.(*GetNotifOnlyRequest))
@@ -188,7 +188,7 @@ func _Middleware_GetNotifOnly_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.notif1.v1.Middleware",
+	ServiceName: "notif.middleware.notif2.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

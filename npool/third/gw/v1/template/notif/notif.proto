@@ -1,0 +1,140 @@
+syntax = "proto3";
+
+package third.gateway.template.notif3.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template/notif";
+
+import "google/api/annotations.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
+import "npool/third/mgr/v1/template/notif/notif.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+
+
+service Gateway {
+    rpc CreateNotifTemplate (CreateNotifTemplateRequest) returns (CreateNotifTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/notiftemplate"
+            body: "*"
+        };
+    }
+
+    rpc CreateAppNotifTemplate (CreateAppNotifTemplateRequest) returns (CreateAppNotifTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/notiftemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetNotifTemplate (GetNotifTemplateRequest) returns (GetNotifTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notiftemplate"
+            body: "*"
+        };
+    }
+
+    rpc GetNotifTemplates (GetNotifTemplatesRequest) returns (GetNotifTemplatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notiftemplates"
+            body: "*"
+        };
+    }
+
+    rpc GetAppNotifTemplates (GetAppNotifTemplatesRequest) returns (GetAppNotifTemplatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/notiftemplates"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNotifTemplate (UpdateNotifTemplateRequest) returns (UpdateNotifTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/notiftemplate"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppNotifTemplate (UpdateAppNotifTemplateRequest) returns (UpdateAppNotifTemplateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/notiftemplate"
+            body: "*"
+        };
+    }
+}
+
+message CreateNotifTemplateRequest {
+    string AppID         = 10;
+    string TargetLangID  = 20;
+    notif.manager.notif1.v1.EventType UsedFor = 30;
+    string Title         = 40;
+    string Content       = 50;
+}
+
+message CreateNotifTemplateResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
+}
+
+message CreateAppNotifTemplateRequest {
+    string TargetAppID    = 10;
+    string TargetLangID   = 20;
+    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    string Title          = 40;
+    string Content        = 50;
+}
+
+message CreateAppNotifTemplateResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
+}
+
+message GetNotifTemplateRequest {
+    string ID = 10;
+}
+
+message GetNotifTemplateResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
+}
+
+message GetNotifTemplatesRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetNotifTemplatesResponse {
+    repeated third.manager.template.notif1.v1.NotifTemplate Infos = 10;
+    uint32                                                  Total = 20;
+}
+
+message GetAppNotifTemplatesRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppNotifTemplatesResponse {
+    repeated third.manager.template.notif1.v1.NotifTemplate Infos = 10;
+    uint32                                                  Total = 20;
+}
+
+message UpdateNotifTemplateRequest {
+    string ID           = 10;
+    string AppID        = 20;
+    string Title        = 30;
+    string Content      = 40;
+    string TargetLangID = 50;
+}
+
+message UpdateNotifTemplateResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
+}
+
+message UpdateAppNotifTemplateRequest {
+    string ID           = 10;
+    string TargetAppID  = 20;
+    string TargetLangID = 30;
+    string Title        = 40;
+    string Content      = 50;
+}
+
+message UpdateAppNotifTemplateResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
+}

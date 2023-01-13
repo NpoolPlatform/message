@@ -4,6 +4,7 @@ package notif.manager.announcement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/announcement";
 
+import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -25,7 +26,7 @@ message AnnouncementReq {
     optional string AppID      = 20;
     optional string Title      = 30;
     optional string Content    = 40;
-    repeated string Channels   = 50;
+    repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
     optional bool   EmailSend  = 60;
 }
 
@@ -34,7 +35,7 @@ message Announcement {
     string AppID      = 20;
     string Title      = 30;
     string Content    = 40;
-    string Channels   = 50;
+    repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
     bool   EmailSend  = 60;
     uint32 CreatedAt  = 70;
     uint32 UpdatedAt  = 80;

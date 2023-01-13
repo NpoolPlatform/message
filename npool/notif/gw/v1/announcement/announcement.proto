@@ -5,6 +5,7 @@ package notif.gateway.announcement.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement";
 
 import "google/api/annotations.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
 
 // Service Name
 service Gateway {
@@ -43,15 +44,14 @@ message Announcement {
     string           AppName      = 30;
     string           Title        = 40;
     string           Content      = 50;
-    repeated string  Channels     = 60;
-    bool             AlreadyRead  = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
 }
 
 message CreateAnnouncementRequest {
     string          AppID       = 10;
     string          Title       = 50;
     string          Content     = 60;
-    repeated string Channels    = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
 }
 
 message CreateAnnouncementResponse {
@@ -62,7 +62,7 @@ message UpdateAnnouncementRequest {
     string          ID          = 10;
     string          Title       = 20;
     string          Content     = 30;
-    repeated string Channels    = 40;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 40;
 }
 
 message UpdateAnnouncementResponse {
@@ -79,7 +79,6 @@ message DeleteAnnouncementResponse {
 
 message GetAnnouncementsRequest {
     string AppID  = 10;
-    string UserID = 20;
     uint32 Offset = 30;
     uint32 Limit  = 40;
 }

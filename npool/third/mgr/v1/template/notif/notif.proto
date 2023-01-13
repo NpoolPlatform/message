@@ -25,7 +25,7 @@ message NotifTemplateReq {
     optional string ID          = 10;
     optional string AppID       = 20;
     optional string LangID      = 30;
-    optional notif.manager.notif.v1.EventType UsedFor = 40;
+    optional notif.manager.notif1.v1.EventType UsedFor = 40;
     optional string Title       = 50;
     optional string Content     = 60;
 }
@@ -34,7 +34,7 @@ message NotifTemplate {
     string ID          = 10;
     string AppID       = 20;
     string LangID      = 30;
-    notif.manager.notif.v1.EventType UsedFor   = 40;
+    notif.manager.notif1.v1.EventType UsedFor   = 40;
     string Title       = 50;
     string Content     = 60;
     string CreatedAt   = 70;

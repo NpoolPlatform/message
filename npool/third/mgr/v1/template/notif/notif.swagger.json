@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "managertemplatenotif1v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,23 +58,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "templatenotif1v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

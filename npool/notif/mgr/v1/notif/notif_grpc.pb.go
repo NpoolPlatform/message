@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error) {
 	out := new(CreateNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/CreateNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/CreateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateNotif(ctx context.Context, in *CreateNotifRequest,
 
 func (c *managerClient) CreateNotifs(ctx context.Context, in *CreateNotifsRequest, opts ...grpc.CallOption) (*CreateNotifsResponse, error) {
 	out := new(CreateNotifsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/CreateNotifs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/CreateNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateNotifs(ctx context.Context, in *CreateNotifsReques
 
 func (c *managerClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error) {
 	out := new(UpdateNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/UpdateNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/UpdateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest,
 
 func (c *managerClient) GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error) {
 	out := new(GetNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/GetNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/GetNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetNotif(ctx context.Context, in *GetNotifRequest, opts 
 
 func (c *managerClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyRequest, opts ...grpc.CallOption) (*GetNotifOnlyResponse, error) {
 	out := new(GetNotifOnlyResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/GetNotifOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/GetNotifOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyReques
 
 func (c *managerClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error) {
 	out := new(GetNotifsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/GetNotifs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/GetNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, opt
 
 func (c *managerClient) ExistNotif(ctx context.Context, in *ExistNotifRequest, opts ...grpc.CallOption) (*ExistNotifResponse, error) {
 	out := new(ExistNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/ExistNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/ExistNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistNotif(ctx context.Context, in *ExistNotifRequest, o
 
 func (c *managerClient) ExistNotifConds(ctx context.Context, in *ExistNotifCondsRequest, opts ...grpc.CallOption) (*ExistNotifCondsResponse, error) {
 	out := new(ExistNotifCondsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/ExistNotifConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/ExistNotifConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistNotifConds(ctx context.Context, in *ExistNotifConds
 
 func (c *managerClient) CountNotifs(ctx context.Context, in *CountNotifsRequest, opts ...grpc.CallOption) (*CountNotifsResponse, error) {
 	out := new(CountNotifsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/CountNotifs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/CountNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountNotifs(ctx context.Context, in *CountNotifsRequest,
 
 func (c *managerClient) DeleteNotif(ctx context.Context, in *DeleteNotifRequest, opts ...grpc.CallOption) (*DeleteNotifResponse, error) {
 	out := new(DeleteNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.v1.Manager/DeleteNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.v1.Manager/DeleteNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/CreateNotif",
+		FullMethod: "/notif.manager.notif1.v1.Manager/CreateNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateNotif(ctx, req.(*CreateNotifRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateNotifs_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/CreateNotifs",
+		FullMethod: "/notif.manager.notif1.v1.Manager/CreateNotifs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateNotifs(ctx, req.(*CreateNotifsRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/UpdateNotif",
+		FullMethod: "/notif.manager.notif1.v1.Manager/UpdateNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateNotif(ctx, req.(*UpdateNotifRequest))
@@ -260,7 +260,7 @@ func _Manager_GetNotif_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/GetNotif",
+		FullMethod: "/notif.manager.notif1.v1.Manager/GetNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetNotif(ctx, req.(*GetNotifRequest))
@@ -278,7 +278,7 @@ func _Manager_GetNotifOnly_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/GetNotifOnly",
+		FullMethod: "/notif.manager.notif1.v1.Manager/GetNotifOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetNotifOnly(ctx, req.(*GetNotifOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetNotifs_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/GetNotifs",
+		FullMethod: "/notif.manager.notif1.v1.Manager/GetNotifs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetNotifs(ctx, req.(*GetNotifsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistNotif_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/ExistNotif",
+		FullMethod: "/notif.manager.notif1.v1.Manager/ExistNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistNotif(ctx, req.(*ExistNotifRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistNotifConds_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/ExistNotifConds",
+		FullMethod: "/notif.manager.notif1.v1.Manager/ExistNotifConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistNotifConds(ctx, req.(*ExistNotifCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountNotifs_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/CountNotifs",
+		FullMethod: "/notif.manager.notif1.v1.Manager/CountNotifs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountNotifs(ctx, req.(*CountNotifsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.v1.Manager/DeleteNotif",
+		FullMethod: "/notif.manager.notif1.v1.Manager/DeleteNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteNotif(ctx, req.(*DeleteNotifRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteNotif_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.manager.notif.v1.Manager",
+	ServiceName: "notif.manager.notif1.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

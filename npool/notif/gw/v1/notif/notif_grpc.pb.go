@@ -38,7 +38,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error) {
 	out := new(CreateNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.notif.v1.Gateway/CreateNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/CreateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *gatewayClient) CreateNotif(ctx context.Context, in *CreateNotifRequest,
 
 func (c *gatewayClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error) {
 	out := new(UpdateNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.notif.v1.Gateway/UpdateNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/UpdateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,7 @@ func (c *gatewayClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest,
 
 func (c *gatewayClient) DeleteNotif(ctx context.Context, in *DeleteNotifRequest, opts ...grpc.CallOption) (*DeleteNotifResponse, error) {
 	out := new(DeleteNotifResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.notif.v1.Gateway/DeleteNotif", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/DeleteNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (c *gatewayClient) DeleteNotif(ctx context.Context, in *DeleteNotifRequest,
 
 func (c *gatewayClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error) {
 	out := new(GetNotifsResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.notif.v1.Gateway/GetNotifs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/GetNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,7 +122,7 @@ func _Gateway_CreateNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.notif.v1.Gateway/CreateNotif",
+		FullMethod: "/notif.gateway.notif3.v1.Gateway/CreateNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateNotif(ctx, req.(*CreateNotifRequest))
@@ -140,7 +140,7 @@ func _Gateway_UpdateNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.notif.v1.Gateway/UpdateNotif",
+		FullMethod: "/notif.gateway.notif3.v1.Gateway/UpdateNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateNotif(ctx, req.(*UpdateNotifRequest))
@@ -158,7 +158,7 @@ func _Gateway_DeleteNotif_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.notif.v1.Gateway/DeleteNotif",
+		FullMethod: "/notif.gateway.notif3.v1.Gateway/DeleteNotif",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteNotif(ctx, req.(*DeleteNotifRequest))
@@ -176,7 +176,7 @@ func _Gateway_GetNotifs_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.notif.v1.Gateway/GetNotifs",
+		FullMethod: "/notif.gateway.notif3.v1.Gateway/GetNotifs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetNotifs(ctx, req.(*GetNotifsRequest))
@@ -188,7 +188,7 @@ func _Gateway_GetNotifs_Handler(srv interface{}, ctx context.Context, dec func(i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.gateway.notif.v1.Gateway",
+	ServiceName: "notif.gateway.notif3.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

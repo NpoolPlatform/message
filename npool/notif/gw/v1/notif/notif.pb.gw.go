@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/CreateNotif", runtime.WithHTTPPathPattern("/v1/create/notif"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/CreateNotif", runtime.WithHTTPPathPattern("/v1/create/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/UpdateNotif", runtime.WithHTTPPathPattern("/v1/update/notif"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/UpdateNotif", runtime.WithHTTPPathPattern("/v1/update/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/DeleteNotif", runtime.WithHTTPPathPattern("/v1/delete/notif"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/DeleteNotif", runtime.WithHTTPPathPattern("/v1/delete/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/GetNotifs", runtime.WithHTTPPathPattern("/v1/get/notifs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/GetNotifs", runtime.WithHTTPPathPattern("/v1/get/notifs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/CreateNotif", runtime.WithHTTPPathPattern("/v1/create/notif"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/CreateNotif", runtime.WithHTTPPathPattern("/v1/create/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/UpdateNotif", runtime.WithHTTPPathPattern("/v1/update/notif"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/UpdateNotif", runtime.WithHTTPPathPattern("/v1/update/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/DeleteNotif", runtime.WithHTTPPathPattern("/v1/delete/notif"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/DeleteNotif", runtime.WithHTTPPathPattern("/v1/delete/notif"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif.v1.Gateway/GetNotifs", runtime.WithHTTPPathPattern("/v1/get/notifs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.notif3.v1.Gateway/GetNotifs", runtime.WithHTTPPathPattern("/v1/get/notifs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

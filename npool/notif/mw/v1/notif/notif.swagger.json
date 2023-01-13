@@ -17,37 +17,37 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewarenotif1v1CreateNotifResponse": {
+    "middlewarenotif2v1CreateNotifResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewarenotif1v1Notif"
+          "$ref": "#/definitions/middlewarenotif2v1Notif"
         }
       }
     },
-    "middlewarenotif1v1GetNotifOnlyResponse": {
+    "middlewarenotif2v1GetNotifOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewarenotif1v1Notif"
+          "$ref": "#/definitions/middlewarenotif2v1Notif"
         }
       }
     },
-    "middlewarenotif1v1GetNotifResponse": {
+    "middlewarenotif2v1GetNotifResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewarenotif1v1Notif"
+          "$ref": "#/definitions/middlewarenotif2v1Notif"
         }
       }
     },
-    "middlewarenotif1v1GetNotifsResponse": {
+    "middlewarenotif2v1GetNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewarenotif1v1Notif"
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         },
         "Total": {
@@ -56,7 +56,7 @@
         }
       }
     },
-    "middlewarenotif1v1Notif": {
+    "middlewarenotif2v1Notif": {
       "type": "object",
       "properties": {
         "ID": {
@@ -186,6 +186,15 @@
       ],
       "default": "DefaultEventType"
     },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
+    },
     "v1NotifReq": {
       "type": "object",
       "properties": {
@@ -219,7 +228,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         },
         "EmailSend": {

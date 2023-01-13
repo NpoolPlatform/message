@@ -214,7 +214,10 @@
           "type": "string"
         },
         "Channels": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
         },
         "EmailSend": {
           "type": "boolean"
@@ -228,6 +231,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
     },
     "v1NotifReq": {
       "type": "object",
@@ -262,7 +274,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         },
         "EmailSend": {

@@ -1,10 +1,11 @@
 syntax = "proto3";
 
-package notif.gateway.notif.v1;
+package notif.gateway.notif3.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
 
 // Service Name
 service Gateway {
@@ -49,7 +50,7 @@ message Notify {
     string           UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
-    repeated string  Channels     = 120;
+    repeated notif.manager.channel.v1.NotifChannel  Channels = 120;
 }
 
 message CreateNotifRequest {
@@ -59,7 +60,7 @@ message CreateNotifRequest {
     bool            UseTemplate = 40;
     string          Title       = 50;
     string          Content     = 60;
-    repeated string Channels    = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
 }
 
 message CreateNotifResponse {
@@ -71,7 +72,7 @@ message UpdateNotifRequest {
     bool            UseTemplate = 40;
     string          Title       = 50;
     string          Content     = 60;
-    repeated string Channels    = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
 }
 
 message UpdateNotifResponse {

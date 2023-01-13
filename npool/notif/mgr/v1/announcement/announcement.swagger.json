@@ -60,7 +60,10 @@
           "type": "string"
         },
         "Channels": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
         },
         "EmailSend": {
           "type": "boolean"
@@ -93,7 +96,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         },
         "EmailSend": {
@@ -211,6 +214,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringSliceVal": {
       "type": "object",

@@ -197,7 +197,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         }
       }
@@ -260,6 +260,15 @@
         }
       }
     },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
+    },
     "v1Notify": {
       "type": "object",
       "properties": {
@@ -299,7 +308,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         }
       }
@@ -322,7 +331,7 @@
         "Channels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1NotifChannel"
           }
         }
       }
