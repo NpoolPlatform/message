@@ -173,7 +173,7 @@
         }
       }
     },
-    "v1Announcementy": {
+    "v1Announcement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -196,6 +196,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "AlreadyRead": {
+          "type": "boolean"
         }
       }
     },
@@ -223,7 +226,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcementy"
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     },
@@ -239,7 +242,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcementy"
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     },
@@ -268,7 +271,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcementy"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
@@ -301,7 +304,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcementy"
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     }

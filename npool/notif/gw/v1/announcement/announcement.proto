@@ -37,13 +37,14 @@ service Gateway {
     }
 }
 
-message Announcementy {
+message Announcement {
     string           ID           = 10;
     string           AppID        = 20;
     string           AppName      = 30;
     string           Title        = 40;
     string           Content      = 50;
     repeated string  Channels     = 60;
+    bool             AlreadyRead  = 70;
 }
 
 message CreateAnnouncementRequest {
@@ -54,7 +55,7 @@ message CreateAnnouncementRequest {
 }
 
 message CreateAnnouncementResponse {
-    Announcementy Info = 10;
+    Announcement Info = 10;
 }
 
 message UpdateAnnouncementRequest {
@@ -65,7 +66,7 @@ message UpdateAnnouncementRequest {
 }
 
 message UpdateAnnouncementResponse {
-    Announcementy Info = 10;
+    Announcement Info = 10;
 }
 
 message DeleteAnnouncementRequest {
@@ -73,7 +74,7 @@ message DeleteAnnouncementRequest {
 }
 
 message DeleteAnnouncementResponse {
-    Announcementy Info = 10;
+    Announcement Info = 10;
 }
 
 message GetAnnouncementsRequest {
@@ -84,6 +85,6 @@ message GetAnnouncementsRequest {
 }
 
 message GetAnnouncementsResponse {
-    repeated Announcementy Infos = 10;
-    uint32                 Total = 20;
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
 }

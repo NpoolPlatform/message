@@ -12,6 +12,18 @@ service Middleware {
     rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
 }
 
+message Announcement {
+    string ID          = 10;
+    string AppID       = 20;
+    string Title       = 30;
+    string Content     = 40;
+    string Channels    = 50;
+    bool   EmailSend   = 60;
+    bool   AlreadyRead = 70;
+    uint32 CreatedAt   = 80;
+    uint32 UpdatedAt   = 90;
+}
+
 message GetAnnouncementRequest {
     string ID = 10;
 }
@@ -28,6 +40,6 @@ message GetAnnouncementsRequest {
 }
 
 message GetAnnouncementsResponse {
-    repeated notif.manager.announcement.v1.Announcement Infos = 10;
-    uint32                                              Total = 20;
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
 }

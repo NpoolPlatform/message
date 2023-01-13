@@ -17,11 +17,76 @@
   ],
   "paths": {},
   "definitions": {
+    "notifmanagerannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "string"
+        },
+        "EmailSend": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifmiddlewareannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "string"
+        },
+        "EmailSend": {
+          "type": "boolean"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "notifmiddlewareannouncementv1GetAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/notifmanagerannouncementv1Announcement"
         }
       }
     },
@@ -31,7 +96,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/notifmiddlewareannouncementv1Announcement"
           }
         },
         "Total": {
@@ -64,37 +129,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Announcement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "string"
-        },
-        "EmailSend": {
-          "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }
