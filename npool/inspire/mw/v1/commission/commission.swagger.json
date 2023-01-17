@@ -176,9 +176,6 @@
         }
       }
     },
-    "v1CreateCommissionsResponse": {
-      "type": "object"
-    },
     "v1GetCommissionOnlyResponse": {
       "type": "object",
       "properties": {

@@ -502,91 +502,6 @@ func (x *CreateCommissionResponse) GetInfo() *Commission {
 	return nil
 }
 
-type CreateCommissionsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Infos []*CommissionReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-}
-
-func (x *CreateCommissionsRequest) Reset() {
-	*x = CreateCommissionsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateCommissionsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateCommissionsRequest) ProtoMessage() {}
-
-func (x *CreateCommissionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateCommissionsRequest.ProtoReflect.Descriptor instead.
-func (*CreateCommissionsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *CreateCommissionsRequest) GetInfos() []*CommissionReq {
-	if x != nil {
-		return x.Infos
-	}
-	return nil
-}
-
-type CreateCommissionsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *CreateCommissionsResponse) Reset() {
-	*x = CreateCommissionsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateCommissionsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateCommissionsResponse) ProtoMessage() {}
-
-func (x *CreateCommissionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateCommissionsResponse.ProtoReflect.Descriptor instead.
-func (*CreateCommissionsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{6}
-}
-
 type UpdateCommissionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -598,7 +513,7 @@ type UpdateCommissionRequest struct {
 func (x *UpdateCommissionRequest) Reset() {
 	*x = UpdateCommissionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -611,7 +526,7 @@ func (x *UpdateCommissionRequest) String() string {
 func (*UpdateCommissionRequest) ProtoMessage() {}
 
 func (x *UpdateCommissionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -624,7 +539,7 @@ func (x *UpdateCommissionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCommissionRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCommissionRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{7}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateCommissionRequest) GetInfo() *CommissionReq {
@@ -645,7 +560,7 @@ type UpdateCommissionResponse struct {
 func (x *UpdateCommissionResponse) Reset() {
 	*x = UpdateCommissionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -658,7 +573,7 @@ func (x *UpdateCommissionResponse) String() string {
 func (*UpdateCommissionResponse) ProtoMessage() {}
 
 func (x *UpdateCommissionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -671,7 +586,7 @@ func (x *UpdateCommissionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCommissionResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCommissionResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{8}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateCommissionResponse) GetInfo() *Commission {
@@ -693,7 +608,7 @@ type GetCommissionRequest struct {
 func (x *GetCommissionRequest) Reset() {
 	*x = GetCommissionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -706,7 +621,7 @@ func (x *GetCommissionRequest) String() string {
 func (*GetCommissionRequest) ProtoMessage() {}
 
 func (x *GetCommissionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -719,7 +634,7 @@ func (x *GetCommissionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionRequest.ProtoReflect.Descriptor instead.
 func (*GetCommissionRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{9}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCommissionRequest) GetID() string {
@@ -747,7 +662,7 @@ type GetCommissionResponse struct {
 func (x *GetCommissionResponse) Reset() {
 	*x = GetCommissionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -760,7 +675,7 @@ func (x *GetCommissionResponse) String() string {
 func (*GetCommissionResponse) ProtoMessage() {}
 
 func (x *GetCommissionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -773,7 +688,7 @@ func (x *GetCommissionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionResponse.ProtoReflect.Descriptor instead.
 func (*GetCommissionResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{10}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetCommissionResponse) GetInfo() *Commission {
@@ -794,7 +709,7 @@ type GetCommissionOnlyRequest struct {
 func (x *GetCommissionOnlyRequest) Reset() {
 	*x = GetCommissionOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -807,7 +722,7 @@ func (x *GetCommissionOnlyRequest) String() string {
 func (*GetCommissionOnlyRequest) ProtoMessage() {}
 
 func (x *GetCommissionOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -820,7 +735,7 @@ func (x *GetCommissionOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetCommissionOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{11}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetCommissionOnlyRequest) GetConds() *Conds {
@@ -841,7 +756,7 @@ type GetCommissionOnlyResponse struct {
 func (x *GetCommissionOnlyResponse) Reset() {
 	*x = GetCommissionOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -854,7 +769,7 @@ func (x *GetCommissionOnlyResponse) String() string {
 func (*GetCommissionOnlyResponse) ProtoMessage() {}
 
 func (x *GetCommissionOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -867,7 +782,7 @@ func (x *GetCommissionOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetCommissionOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{12}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetCommissionOnlyResponse) GetInfo() *Commission {
@@ -890,7 +805,7 @@ type GetCommissionsRequest struct {
 func (x *GetCommissionsRequest) Reset() {
 	*x = GetCommissionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[13]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -903,7 +818,7 @@ func (x *GetCommissionsRequest) String() string {
 func (*GetCommissionsRequest) ProtoMessage() {}
 
 func (x *GetCommissionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[13]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -916,7 +831,7 @@ func (x *GetCommissionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionsRequest.ProtoReflect.Descriptor instead.
 func (*GetCommissionsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{13}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetCommissionsRequest) GetConds() *Conds {
@@ -952,7 +867,7 @@ type GetCommissionsResponse struct {
 func (x *GetCommissionsResponse) Reset() {
 	*x = GetCommissionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[14]
+		mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -965,7 +880,7 @@ func (x *GetCommissionsResponse) String() string {
 func (*GetCommissionsResponse) ProtoMessage() {}
 
 func (x *GetCommissionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[14]
+	mi := &file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -978,7 +893,7 @@ func (x *GetCommissionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommissionsResponse.ProtoReflect.Descriptor instead.
 func (*GetCommissionsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{14}
+	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetCommissionsResponse) GetInfos() []*Commission {
@@ -1128,15 +1043,7 @@ var file_npool_inspire_mw_v1_commission_commission_proto_rawDesc = []byte{
 	0x32, 0x2c, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
 	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
 	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x61, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x45, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32,
-	0x2f, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
-	0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x1b, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5e, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5e, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f,
 	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x43, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e,
 	0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
@@ -1188,7 +1095,7 @@ var file_npool_inspire_mw_v1_commission_commission_proto_rawDesc = []byte{
 	0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f,
 	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12,
 	0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05,
-	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xd7, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xc6, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x12, 0x8b, 0x01, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43,
 	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x2e, 0x69, 0x6e, 0x73, 0x70,
 	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
@@ -1198,55 +1105,46 @@ var file_npool_inspire_mw_v1_commission_commission_proto_rawDesc = []byte{
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73,
 	0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f,
 	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x8e, 0x01, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x3a, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
-	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73,
-	0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
-	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x82, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x12, 0x36, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73,
-	0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x37, 0x2e, 0x69, 0x6e,
-	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8e, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x43, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x3a, 0x2e, 0x69,
-	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c,
-	0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
-	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43,
-	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x85, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43,
-	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x37, 0x2e, 0x69, 0x6e, 0x73,
+	0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d,
+	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
+	0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d,
+	0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x82, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69,
+	0x6f, 0x6e, 0x12, 0x36, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x37, 0x2e, 0x69, 0x6e, 0x73,
 	0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73,
-	0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x41, 0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
-	0x65, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69,
-	0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8e, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d,
+	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x3a, 0x2e, 0x69, 0x6e,
+	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c, 0x79,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
+	0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f,
+	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x85, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43, 0x6f,
+	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x37, 0x2e, 0x69, 0x6e, 0x73, 0x70,
+	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x38, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
+	0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x41,
+	0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
+	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
+	0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f,
+	0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1261,74 +1159,69 @@ func file_npool_inspire_mw_v1_commission_commission_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_mw_v1_commission_commission_proto_rawDescData
 }
 
-var file_npool_inspire_mw_v1_commission_commission_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_npool_inspire_mw_v1_commission_commission_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_npool_inspire_mw_v1_commission_commission_proto_goTypes = []interface{}{
 	(*CommissionReq)(nil),             // 0: inspire.middleware.commission.v1.CommissionReq
 	(*Commission)(nil),                // 1: inspire.middleware.commission.v1.Commission
 	(*Conds)(nil),                     // 2: inspire.middleware.commission.v1.Conds
 	(*CreateCommissionRequest)(nil),   // 3: inspire.middleware.commission.v1.CreateCommissionRequest
 	(*CreateCommissionResponse)(nil),  // 4: inspire.middleware.commission.v1.CreateCommissionResponse
-	(*CreateCommissionsRequest)(nil),  // 5: inspire.middleware.commission.v1.CreateCommissionsRequest
-	(*CreateCommissionsResponse)(nil), // 6: inspire.middleware.commission.v1.CreateCommissionsResponse
-	(*UpdateCommissionRequest)(nil),   // 7: inspire.middleware.commission.v1.UpdateCommissionRequest
-	(*UpdateCommissionResponse)(nil),  // 8: inspire.middleware.commission.v1.UpdateCommissionResponse
-	(*GetCommissionRequest)(nil),      // 9: inspire.middleware.commission.v1.GetCommissionRequest
-	(*GetCommissionResponse)(nil),     // 10: inspire.middleware.commission.v1.GetCommissionResponse
-	(*GetCommissionOnlyRequest)(nil),  // 11: inspire.middleware.commission.v1.GetCommissionOnlyRequest
-	(*GetCommissionOnlyResponse)(nil), // 12: inspire.middleware.commission.v1.GetCommissionOnlyResponse
-	(*GetCommissionsRequest)(nil),     // 13: inspire.middleware.commission.v1.GetCommissionsRequest
-	(*GetCommissionsResponse)(nil),    // 14: inspire.middleware.commission.v1.GetCommissionsResponse
-	(commission.SettleType)(0),        // 15: inspire.manager.commission.v1.SettleType
-	(commission.SettleMode)(0),        // 16: inspire.manager.commission.v1.SettleMode
-	(commission.SettleInterval)(0),    // 17: inspire.manager.commission.v1.SettleInterval
-	(*npool.StringVal)(nil),           // 18: npool.v1.StringVal
-	(*npool.Int32Val)(nil),            // 19: npool.v1.Int32Val
-	(*npool.Uint32Val)(nil),           // 20: npool.v1.Uint32Val
-	(*npool.StringSliceVal)(nil),      // 21: npool.v1.StringSliceVal
+	(*UpdateCommissionRequest)(nil),   // 5: inspire.middleware.commission.v1.UpdateCommissionRequest
+	(*UpdateCommissionResponse)(nil),  // 6: inspire.middleware.commission.v1.UpdateCommissionResponse
+	(*GetCommissionRequest)(nil),      // 7: inspire.middleware.commission.v1.GetCommissionRequest
+	(*GetCommissionResponse)(nil),     // 8: inspire.middleware.commission.v1.GetCommissionResponse
+	(*GetCommissionOnlyRequest)(nil),  // 9: inspire.middleware.commission.v1.GetCommissionOnlyRequest
+	(*GetCommissionOnlyResponse)(nil), // 10: inspire.middleware.commission.v1.GetCommissionOnlyResponse
+	(*GetCommissionsRequest)(nil),     // 11: inspire.middleware.commission.v1.GetCommissionsRequest
+	(*GetCommissionsResponse)(nil),    // 12: inspire.middleware.commission.v1.GetCommissionsResponse
+	(commission.SettleType)(0),        // 13: inspire.manager.commission.v1.SettleType
+	(commission.SettleMode)(0),        // 14: inspire.manager.commission.v1.SettleMode
+	(commission.SettleInterval)(0),    // 15: inspire.manager.commission.v1.SettleInterval
+	(*npool.StringVal)(nil),           // 16: npool.v1.StringVal
+	(*npool.Int32Val)(nil),            // 17: npool.v1.Int32Val
+	(*npool.Uint32Val)(nil),           // 18: npool.v1.Uint32Val
+	(*npool.StringSliceVal)(nil),      // 19: npool.v1.StringSliceVal
 }
 var file_npool_inspire_mw_v1_commission_commission_proto_depIdxs = []int32{
-	15, // 0: inspire.middleware.commission.v1.CommissionReq.SettleType:type_name -> inspire.manager.commission.v1.SettleType
-	16, // 1: inspire.middleware.commission.v1.CommissionReq.SettleMode:type_name -> inspire.manager.commission.v1.SettleMode
-	17, // 2: inspire.middleware.commission.v1.CommissionReq.SettleInterval:type_name -> inspire.manager.commission.v1.SettleInterval
-	15, // 3: inspire.middleware.commission.v1.Commission.SettleType:type_name -> inspire.manager.commission.v1.SettleType
-	16, // 4: inspire.middleware.commission.v1.Commission.SettleMode:type_name -> inspire.manager.commission.v1.SettleMode
-	17, // 5: inspire.middleware.commission.v1.Commission.SettleInterval:type_name -> inspire.manager.commission.v1.SettleInterval
-	18, // 6: inspire.middleware.commission.v1.Conds.ID:type_name -> npool.v1.StringVal
-	18, // 7: inspire.middleware.commission.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	18, // 8: inspire.middleware.commission.v1.Conds.UserID:type_name -> npool.v1.StringVal
-	18, // 9: inspire.middleware.commission.v1.Conds.GoodID:type_name -> npool.v1.StringVal
-	19, // 10: inspire.middleware.commission.v1.Conds.SettleType:type_name -> npool.v1.Int32Val
-	20, // 11: inspire.middleware.commission.v1.Conds.EndAt:type_name -> npool.v1.Uint32Val
-	21, // 12: inspire.middleware.commission.v1.Conds.UserIDs:type_name -> npool.v1.StringSliceVal
-	21, // 13: inspire.middleware.commission.v1.Conds.GoodIDs:type_name -> npool.v1.StringSliceVal
+	13, // 0: inspire.middleware.commission.v1.CommissionReq.SettleType:type_name -> inspire.manager.commission.v1.SettleType
+	14, // 1: inspire.middleware.commission.v1.CommissionReq.SettleMode:type_name -> inspire.manager.commission.v1.SettleMode
+	15, // 2: inspire.middleware.commission.v1.CommissionReq.SettleInterval:type_name -> inspire.manager.commission.v1.SettleInterval
+	13, // 3: inspire.middleware.commission.v1.Commission.SettleType:type_name -> inspire.manager.commission.v1.SettleType
+	14, // 4: inspire.middleware.commission.v1.Commission.SettleMode:type_name -> inspire.manager.commission.v1.SettleMode
+	15, // 5: inspire.middleware.commission.v1.Commission.SettleInterval:type_name -> inspire.manager.commission.v1.SettleInterval
+	16, // 6: inspire.middleware.commission.v1.Conds.ID:type_name -> npool.v1.StringVal
+	16, // 7: inspire.middleware.commission.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	16, // 8: inspire.middleware.commission.v1.Conds.UserID:type_name -> npool.v1.StringVal
+	16, // 9: inspire.middleware.commission.v1.Conds.GoodID:type_name -> npool.v1.StringVal
+	17, // 10: inspire.middleware.commission.v1.Conds.SettleType:type_name -> npool.v1.Int32Val
+	18, // 11: inspire.middleware.commission.v1.Conds.EndAt:type_name -> npool.v1.Uint32Val
+	19, // 12: inspire.middleware.commission.v1.Conds.UserIDs:type_name -> npool.v1.StringSliceVal
+	19, // 13: inspire.middleware.commission.v1.Conds.GoodIDs:type_name -> npool.v1.StringSliceVal
 	0,  // 14: inspire.middleware.commission.v1.CreateCommissionRequest.Info:type_name -> inspire.middleware.commission.v1.CommissionReq
 	1,  // 15: inspire.middleware.commission.v1.CreateCommissionResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
-	0,  // 16: inspire.middleware.commission.v1.CreateCommissionsRequest.Infos:type_name -> inspire.middleware.commission.v1.CommissionReq
-	0,  // 17: inspire.middleware.commission.v1.UpdateCommissionRequest.Info:type_name -> inspire.middleware.commission.v1.CommissionReq
-	1,  // 18: inspire.middleware.commission.v1.UpdateCommissionResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
-	15, // 19: inspire.middleware.commission.v1.GetCommissionRequest.SettleType:type_name -> inspire.manager.commission.v1.SettleType
-	1,  // 20: inspire.middleware.commission.v1.GetCommissionResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
-	2,  // 21: inspire.middleware.commission.v1.GetCommissionOnlyRequest.Conds:type_name -> inspire.middleware.commission.v1.Conds
-	1,  // 22: inspire.middleware.commission.v1.GetCommissionOnlyResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
-	2,  // 23: inspire.middleware.commission.v1.GetCommissionsRequest.Conds:type_name -> inspire.middleware.commission.v1.Conds
-	1,  // 24: inspire.middleware.commission.v1.GetCommissionsResponse.Infos:type_name -> inspire.middleware.commission.v1.Commission
-	3,  // 25: inspire.middleware.commission.v1.Middleware.CreateCommission:input_type -> inspire.middleware.commission.v1.CreateCommissionRequest
-	5,  // 26: inspire.middleware.commission.v1.Middleware.CreateCommissions:input_type -> inspire.middleware.commission.v1.CreateCommissionsRequest
-	7,  // 27: inspire.middleware.commission.v1.Middleware.UpdateCommission:input_type -> inspire.middleware.commission.v1.UpdateCommissionRequest
-	9,  // 28: inspire.middleware.commission.v1.Middleware.GetCommission:input_type -> inspire.middleware.commission.v1.GetCommissionRequest
-	11, // 29: inspire.middleware.commission.v1.Middleware.GetCommissionOnly:input_type -> inspire.middleware.commission.v1.GetCommissionOnlyRequest
-	13, // 30: inspire.middleware.commission.v1.Middleware.GetCommissions:input_type -> inspire.middleware.commission.v1.GetCommissionsRequest
-	4,  // 31: inspire.middleware.commission.v1.Middleware.CreateCommission:output_type -> inspire.middleware.commission.v1.CreateCommissionResponse
-	6,  // 32: inspire.middleware.commission.v1.Middleware.CreateCommissions:output_type -> inspire.middleware.commission.v1.CreateCommissionsResponse
-	8,  // 33: inspire.middleware.commission.v1.Middleware.UpdateCommission:output_type -> inspire.middleware.commission.v1.UpdateCommissionResponse
-	10, // 34: inspire.middleware.commission.v1.Middleware.GetCommission:output_type -> inspire.middleware.commission.v1.GetCommissionResponse
-	12, // 35: inspire.middleware.commission.v1.Middleware.GetCommissionOnly:output_type -> inspire.middleware.commission.v1.GetCommissionOnlyResponse
-	14, // 36: inspire.middleware.commission.v1.Middleware.GetCommissions:output_type -> inspire.middleware.commission.v1.GetCommissionsResponse
-	31, // [31:37] is the sub-list for method output_type
-	25, // [25:31] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	0,  // 16: inspire.middleware.commission.v1.UpdateCommissionRequest.Info:type_name -> inspire.middleware.commission.v1.CommissionReq
+	1,  // 17: inspire.middleware.commission.v1.UpdateCommissionResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
+	13, // 18: inspire.middleware.commission.v1.GetCommissionRequest.SettleType:type_name -> inspire.manager.commission.v1.SettleType
+	1,  // 19: inspire.middleware.commission.v1.GetCommissionResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
+	2,  // 20: inspire.middleware.commission.v1.GetCommissionOnlyRequest.Conds:type_name -> inspire.middleware.commission.v1.Conds
+	1,  // 21: inspire.middleware.commission.v1.GetCommissionOnlyResponse.Info:type_name -> inspire.middleware.commission.v1.Commission
+	2,  // 22: inspire.middleware.commission.v1.GetCommissionsRequest.Conds:type_name -> inspire.middleware.commission.v1.Conds
+	1,  // 23: inspire.middleware.commission.v1.GetCommissionsResponse.Infos:type_name -> inspire.middleware.commission.v1.Commission
+	3,  // 24: inspire.middleware.commission.v1.Middleware.CreateCommission:input_type -> inspire.middleware.commission.v1.CreateCommissionRequest
+	5,  // 25: inspire.middleware.commission.v1.Middleware.UpdateCommission:input_type -> inspire.middleware.commission.v1.UpdateCommissionRequest
+	7,  // 26: inspire.middleware.commission.v1.Middleware.GetCommission:input_type -> inspire.middleware.commission.v1.GetCommissionRequest
+	9,  // 27: inspire.middleware.commission.v1.Middleware.GetCommissionOnly:input_type -> inspire.middleware.commission.v1.GetCommissionOnlyRequest
+	11, // 28: inspire.middleware.commission.v1.Middleware.GetCommissions:input_type -> inspire.middleware.commission.v1.GetCommissionsRequest
+	4,  // 29: inspire.middleware.commission.v1.Middleware.CreateCommission:output_type -> inspire.middleware.commission.v1.CreateCommissionResponse
+	6,  // 30: inspire.middleware.commission.v1.Middleware.UpdateCommission:output_type -> inspire.middleware.commission.v1.UpdateCommissionResponse
+	8,  // 31: inspire.middleware.commission.v1.Middleware.GetCommission:output_type -> inspire.middleware.commission.v1.GetCommissionResponse
+	10, // 32: inspire.middleware.commission.v1.Middleware.GetCommissionOnly:output_type -> inspire.middleware.commission.v1.GetCommissionOnlyResponse
+	12, // 33: inspire.middleware.commission.v1.Middleware.GetCommissions:output_type -> inspire.middleware.commission.v1.GetCommissionsResponse
+	29, // [29:34] is the sub-list for method output_type
+	24, // [24:29] is the sub-list for method input_type
+	24, // [24:24] is the sub-list for extension type_name
+	24, // [24:24] is the sub-list for extension extendee
+	0,  // [0:24] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mw_v1_commission_commission_proto_init() }
@@ -1398,30 +1291,6 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 			}
 		}
 		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateCommissionsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateCommissionsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCommissionRequest); i {
 			case 0:
 				return &v.state
@@ -1433,7 +1302,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCommissionResponse); i {
 			case 0:
 				return &v.state
@@ -1445,7 +1314,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionRequest); i {
 			case 0:
 				return &v.state
@@ -1457,7 +1326,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionResponse); i {
 			case 0:
 				return &v.state
@@ -1469,7 +1338,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionOnlyRequest); i {
 			case 0:
 				return &v.state
@@ -1481,7 +1350,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionOnlyResponse); i {
 			case 0:
 				return &v.state
@@ -1493,7 +1362,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionsRequest); i {
 			case 0:
 				return &v.state
@@ -1505,7 +1374,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_commission_commission_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommissionsResponse); i {
 			case 0:
 				return &v.state
@@ -1527,7 +1396,7 @@ func file_npool_inspire_mw_v1_commission_commission_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_commission_commission_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
