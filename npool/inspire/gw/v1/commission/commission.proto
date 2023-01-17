@@ -158,8 +158,6 @@ message CloneCommissionsRequest {
 }
 
 message CloneCommissionsResponse {
-    repeated Commission Infos = 10;
-    uint32              Total = 20;
 }
 
 message CloneAppCommissionsRequest {
@@ -169,6 +167,4 @@ message CloneAppCommissionsRequest {
 }
 
 message CloneAppCommissionsResponse {
-    repeated Commission Infos = 10;
-    uint32              Total = 20;
 }

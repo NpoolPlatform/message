@@ -284,19 +284,7 @@
       }
     },
     "v1CloneAppCommissionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Commission"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+      "type": "object"
     },
     "v1CloneCommissionsRequest": {
       "type": "object",
@@ -313,19 +301,7 @@
       }
     },
     "v1CloneCommissionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Commission"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+      "type": "object"
     },
     "v1Commission": {
       "type": "object",
