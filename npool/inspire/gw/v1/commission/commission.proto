@@ -41,6 +41,18 @@ service Gateway {
             body: "*"
         };
     }
+    rpc CloneCommissions (CloneCommissionsRequest) returns (CloneCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/clone/commissions"
+            body: "*"
+        };
+    }
+    rpc CloneAppCommissions (CloneAppCommissionsRequest) returns (CloneAppCommissionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/clone/app/commissions"
+            body: "*"
+        };
+    }
 }
 
 message Commission {
@@ -137,4 +149,22 @@ message GetAppCommissionsRequest {
 message GetAppCommissionsResponse {
     repeated Commission Infos = 10;
     uint32              Total = 20;
+}
+
+message CloneCommissionsRequest {
+    string AppID      = 10;
+    string FromGoodID = 20;
+    string ToGoodID   = 30;
+}
+
+message CloneCommissionsResponse {
+}
+
+message CloneAppCommissionsRequest {
+    string TargetAppID = 10;
+    string FromGoodID  = 20;
+    string ToGoodID    = 30;
+}
+
+message CloneAppCommissionsResponse {
 }

@@ -16,6 +16,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/clone/app/commissions": {
+      "post": {
+        "operationId": "Gateway_CloneAppCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CloneAppCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CloneAppCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/clone/commissions": {
+      "post": {
+        "operationId": "Gateway_CloneCommissions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CloneCommissionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CloneCommissionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/commission": {
       "post": {
         "operationId": "Gateway_CreateCommission",
@@ -204,6 +268,40 @@
           }
         }
       }
+    },
+    "v1CloneAppCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "FromGoodID": {
+          "type": "string"
+        },
+        "ToGoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CloneAppCommissionsResponse": {
+      "type": "object"
+    },
+    "v1CloneCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "FromGoodID": {
+          "type": "string"
+        },
+        "ToGoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CloneCommissionsResponse": {
+      "type": "object"
     },
     "v1Commission": {
       "type": "object",
