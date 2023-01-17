@@ -145,8 +145,8 @@ type Good struct {
 	// @inject_tag: sql:"commission_settle_type"
 	CommissionSettleTypeStr string                `protobuf:"bytes,490,opt,name=CommissionSettleTypeStr,proto3" json:"CommissionSettleTypeStr,omitempty" sql:"commission_settle_type"`
 	CommissionSettleType    commission.SettleType `protobuf:"varint,500,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType" json:"CommissionSettleType,omitempty"`
-	// @inject_tag: sql:"commission_settle_type"
-	DescriptionsStr string   `protobuf:"bytes,510,opt,name=DescriptionsStr,proto3" json:"DescriptionsStr,omitempty" sql:"commission_settle_type"`
+	// @inject_tag: sql:"descriptions"
+	DescriptionsStr string   `protobuf:"bytes,510,opt,name=DescriptionsStr,proto3" json:"DescriptionsStr,omitempty" sql:"descriptions"`
 	Descriptions    []string `protobuf:"bytes,520,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
 }
 

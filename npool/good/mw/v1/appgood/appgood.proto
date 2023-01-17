@@ -148,7 +148,7 @@ message Good {
     string           CommissionSettleTypeStr = 490;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 500;
 
-    // @inject_tag: sql:"commission_settle_type"
+    // @inject_tag: sql:"descriptions"
     string           DescriptionsStr     = 510;
     repeated string  Descriptions        = 520;
 }

@@ -367,7 +367,7 @@
         },
         "DescriptionsStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"commission_settle_type\""
+          "title": "@inject_tag: sql:\"descriptions\""
         },
         "Descriptions": {
           "type": "array",
