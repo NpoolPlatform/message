@@ -27,6 +27,8 @@ type GatewayClient interface {
 	UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error)
 	GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error)
 	GetAppCommissions(ctx context.Context, in *GetAppCommissionsRequest, opts ...grpc.CallOption) (*GetAppCommissionsResponse, error)
+	CloneCommissions(ctx context.Context, in *CloneCommissionsRequest, opts ...grpc.CallOption) (*CloneCommissionsResponse, error)
+	CloneAppCommissions(ctx context.Context, in *CloneAppCommissionsRequest, opts ...grpc.CallOption) (*CloneAppCommissionsResponse, error)
 }
 
 type gatewayClient struct {
@@ -82,6 +84,24 @@ func (c *gatewayClient) GetAppCommissions(ctx context.Context, in *GetAppCommiss
 	return out, nil
 }
 
+func (c *gatewayClient) CloneCommissions(ctx context.Context, in *CloneCommissionsRequest, opts ...grpc.CallOption) (*CloneCommissionsResponse, error) {
+	out := new(CloneCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/CloneCommissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CloneAppCommissions(ctx context.Context, in *CloneAppCommissionsRequest, opts ...grpc.CallOption) (*CloneAppCommissionsResponse, error) {
+	out := new(CloneAppCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.commission.v1.Gateway/CloneAppCommissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -91,6 +111,8 @@ type GatewayServer interface {
 	UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error)
 	GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error)
 	GetAppCommissions(context.Context, *GetAppCommissionsRequest) (*GetAppCommissionsResponse, error)
+	CloneCommissions(context.Context, *CloneCommissionsRequest) (*CloneCommissionsResponse, error)
+	CloneAppCommissions(context.Context, *CloneAppCommissionsRequest) (*CloneAppCommissionsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -112,6 +134,12 @@ func (UnimplementedGatewayServer) GetCommissions(context.Context, *GetCommission
 }
 func (UnimplementedGatewayServer) GetAppCommissions(context.Context, *GetAppCommissionsRequest) (*GetAppCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppCommissions not implemented")
+}
+func (UnimplementedGatewayServer) CloneCommissions(context.Context, *CloneCommissionsRequest) (*CloneCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CloneCommissions not implemented")
+}
+func (UnimplementedGatewayServer) CloneAppCommissions(context.Context, *CloneAppCommissionsRequest) (*CloneAppCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CloneAppCommissions not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -216,6 +244,42 @@ func _Gateway_GetAppCommissions_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_CloneCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CloneCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CloneCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/CloneCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CloneCommissions(ctx, req.(*CloneCommissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CloneAppCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CloneAppCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CloneAppCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.gateway.commission.v1.Gateway/CloneAppCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CloneAppCommissions(ctx, req.(*CloneAppCommissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +306,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppCommissions",
 			Handler:    _Gateway_GetAppCommissions_Handler,
+		},
+		{
+			MethodName: "CloneCommissions",
+			Handler:    _Gateway_CloneCommissions_Handler,
+		},
+		{
+			MethodName: "CloneAppCommissions",
+			Handler:    _Gateway_CloneAppCommissions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
