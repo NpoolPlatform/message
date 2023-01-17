@@ -40,6 +40,7 @@ message AppGoodReq {
     optional uint32 ElectricityFeeRatio = 150;
     optional string DailyRewardAmount   = 160;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 170;
+    repeated string Descriptions        = 180;
 }
 
 message AppGood {
@@ -63,6 +64,7 @@ message AppGood {
     uint32 ElectricityFeeRatio = 180;
     string DailyRewardAmount   = 190;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
+    repeated string Descriptions = 210;
 }
 
 message Conds {

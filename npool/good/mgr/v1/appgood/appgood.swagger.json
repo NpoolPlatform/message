@@ -117,6 +117,12 @@
         },
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -181,6 +187,12 @@
         },
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
