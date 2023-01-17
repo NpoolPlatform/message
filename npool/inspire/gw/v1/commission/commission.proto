@@ -152,9 +152,9 @@ message GetAppCommissionsResponse {
 }
 
 message CloneCommissionsRequest {
-    string AppID     = 10;
-    string OldGoodID = 20;
-    string NewGoodID = 30;
+    string AppID      = 10;
+    string FromGoodID = 20;
+    string ToGoodID   = 30;
 }
 
 message CloneCommissionsResponse {
@@ -162,8 +162,8 @@ message CloneCommissionsResponse {
 
 message CloneAppCommissionsRequest {
     string TargetAppID = 10;
-    string OldGoodID   = 20;
-    string NewGoodID   = 30;
+    string FromGoodID  = 20;
+    string ToGoodID    = 30;
 }
 
 message CloneAppCommissionsResponse {
