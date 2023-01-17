@@ -222,6 +222,8 @@ message UpdateAppGoodRequest {
     optional uint32 TechnicalFeeRatio   = 130;
     optional uint32 ElectricityFeeRatio = 140;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
+    repeated string Descriptions        = 160;
+    optional string GoodBanner          = 170;
 }
 
 message UpdateAppGoodResponse {
@@ -242,6 +244,8 @@ message UpdateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio   = 110;
     optional uint32 ElectricityFeeRatio = 120;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 130;
+    repeated string Descriptions        = 160;
+    optional string GoodBanner          = 170;
 }
 
 message UpdateNAppGoodResponse {
