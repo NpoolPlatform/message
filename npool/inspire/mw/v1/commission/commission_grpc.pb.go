@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error)
+	CreateCommissions(ctx context.Context, in *CreateCommissionsRequest, opts ...grpc.CallOption) (*CreateCommissionsResponse, error)
 	UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error)
 	GetCommission(ctx context.Context, in *GetCommissionRequest, opts ...grpc.CallOption) (*GetCommissionResponse, error)
 	GetCommissionOnly(ctx context.Context, in *GetCommissionOnlyRequest, opts ...grpc.CallOption) (*GetCommissionOnlyResponse, error)
@@ -40,6 +41,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error) {
 	out := new(CreateCommissionResponse)
 	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.Middleware/CreateCommission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateCommissions(ctx context.Context, in *CreateCommissionsRequest, opts ...grpc.CallOption) (*CreateCommissionsResponse, error) {
+	out := new(CreateCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.Middleware/CreateCommissions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +97,7 @@ func (c *middlewareClient) GetCommissions(ctx context.Context, in *GetCommission
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error)
+	CreateCommissions(context.Context, *CreateCommissionsRequest) (*CreateCommissionsResponse, error)
 	UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error)
 	GetCommission(context.Context, *GetCommissionRequest) (*GetCommissionResponse, error)
 	GetCommissionOnly(context.Context, *GetCommissionOnlyRequest) (*GetCommissionOnlyResponse, error)
@@ -100,6 +111,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCommission not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateCommissions(context.Context, *CreateCommissionsRequest) (*CreateCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCommissions not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommission not implemented")
@@ -140,6 +154,24 @@ func _Middleware_CreateCommission_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCommission(ctx, req.(*CreateCommissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.commission.v1.Middleware/CreateCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateCommissions(ctx, req.(*CreateCommissionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,6 +258,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCommission",
 			Handler:    _Middleware_CreateCommission_Handler,
+		},
+		{
+			MethodName: "CreateCommissions",
+			Handler:    _Middleware_CreateCommissions_Handler,
 		},
 		{
 			MethodName: "UpdateCommission",
