@@ -14,6 +14,7 @@ service Middleware {
     rpc GetCommission      (GetCommissionRequest)      returns (GetCommissionResponse)      {}
     rpc GetCommissionOnly  (GetCommissionOnlyRequest)  returns (GetCommissionOnlyResponse)  {}
     rpc GetCommissions     (GetCommissionsRequest)     returns (GetCommissionsResponse)     {}
+    rpc CloneCommissions   (CloneCommissionsRequest)   returns (CloneCommissionsResponse)   {}
 }
 
 message CommissionReq {
@@ -111,3 +112,11 @@ message GetCommissionsResponse {
     uint32              Total = 20;
 }
 
+message CloneCommissionsRequest {
+    string AppID      = 10;
+    string FromGoodID = 20;
+    string ToGoodID   = 30;
+}
+
+message CloneCommissionsResponse {
+}
