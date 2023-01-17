@@ -81,7 +81,6 @@ message CreateCommissionsRequest {
 }
 
 message CreateCommissionsResponse {
-    repeated Commission Infos = 10;
 }
 
 message UpdateCommissionRequest {
