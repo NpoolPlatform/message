@@ -494,6 +494,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "GoodBanner": {
+          "type": "string"
         }
       }
     },

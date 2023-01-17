@@ -151,6 +151,9 @@ message Good {
     // @inject_tag: sql:"descriptions"
     string           DescriptionsStr     = 510;
     repeated string  Descriptions        = 520;
+
+    // @inject_tag: sql:"good_banner"
+    string           GoodBanner          = 530;
 }
 
 message CreateGoodRequest {

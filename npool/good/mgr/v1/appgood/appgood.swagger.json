@@ -123,6 +123,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "GoodBanner": {
+          "type": "string"
         }
       }
     },
@@ -193,6 +196,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "GoodBanner": {
+          "type": "string"
         }
       }
     },

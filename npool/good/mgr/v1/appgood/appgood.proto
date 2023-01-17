@@ -41,6 +41,7 @@ message AppGoodReq {
     optional string DailyRewardAmount   = 160;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 170;
     repeated string Descriptions        = 180;
+    optional string GoodBanner          = 190;
 }
 
 message AppGood {
@@ -65,6 +66,7 @@ message AppGood {
     string DailyRewardAmount   = 190;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
     repeated string Descriptions = 210;
+    string GoodBanner          = 220;
 }
 
 message Conds {
