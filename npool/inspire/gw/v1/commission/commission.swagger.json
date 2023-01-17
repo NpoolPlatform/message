@@ -280,9 +280,6 @@
         },
         "ToGoodID": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -300,9 +297,6 @@
         },
         "ToGoodID": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
