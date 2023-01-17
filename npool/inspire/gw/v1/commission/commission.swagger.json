@@ -275,10 +275,10 @@
         "TargetAppID": {
           "type": "string"
         },
-        "OldGoodID": {
+        "FromGoodID": {
           "type": "string"
         },
-        "NewGoodID": {
+        "ToGoodID": {
           "type": "string"
         }
       }
@@ -292,10 +292,10 @@
         "AppID": {
           "type": "string"
         },
-        "OldGoodID": {
+        "FromGoodID": {
           "type": "string"
         },
-        "NewGoodID": {
+        "ToGoodID": {
           "type": "string"
         }
       }
