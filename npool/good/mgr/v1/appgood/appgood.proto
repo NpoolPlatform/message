@@ -42,6 +42,7 @@ message AppGoodReq {
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 170;
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
+    repeated string DisplayNames        = 200;
 }
 
 message AppGood {
@@ -67,6 +68,7 @@ message AppGood {
     inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
     repeated string Descriptions = 210;
     string GoodBanner          = 220;
+    repeated string DisplayNames = 230;
 }
 
 message Conds {

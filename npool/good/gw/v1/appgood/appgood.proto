@@ -151,6 +151,7 @@ message Good {
     inspire.manager.commission.v1.SettleType CommissionSettleType = 630;
     repeated string  Descriptions        = 640;
     string           GoodBanner          = 650;
+    repeated string  DisplayNames        = 660;
 }
 
 message CreateNAppGoodRequest {
@@ -224,6 +225,7 @@ message UpdateAppGoodRequest {
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
+    repeated string DisplayNames        = 180;
 }
 
 message UpdateAppGoodResponse {
@@ -246,6 +248,7 @@ message UpdateNAppGoodRequest {
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 130;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
+    repeated string DisplayNames        = 180;
 }
 
 message UpdateNAppGoodResponse {
