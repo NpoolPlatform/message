@@ -45,7 +45,7 @@
       "properties": {
         "AnnouncementID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"id\""
+          "title": "@inject_tag: sql:\"announcement_id\""
         },
         "AppID": {
           "type": "string",

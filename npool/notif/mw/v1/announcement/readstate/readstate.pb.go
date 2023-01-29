@@ -27,8 +27,8 @@ type ReadState struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: sql:"id"
-	AnnouncementID string `protobuf:"bytes,10,opt,name=AnnouncementID,proto3" json:"AnnouncementID,omitempty" sql:"id"`
+	// @inject_tag: sql:"announcement_id"
+	AnnouncementID string `protobuf:"bytes,10,opt,name=AnnouncementID,proto3" json:"AnnouncementID,omitempty" sql:"announcement_id"`
 	// @inject_tag: sql:"app_id"
 	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
 	// @inject_tag: sql:"user_id"

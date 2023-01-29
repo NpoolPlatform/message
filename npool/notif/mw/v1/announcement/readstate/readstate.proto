@@ -14,7 +14,7 @@ service Middleware {
 }
 
 message ReadState {
-    // @inject_tag: sql:"id"
+    // @inject_tag: sql:"announcement_id"
     string AnnouncementID = 10;
     // @inject_tag: sql:"app_id"
     string AppID          = 20;
