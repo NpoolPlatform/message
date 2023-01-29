@@ -63,12 +63,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"content\""
         },
+        "ChannelsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channels\""
+        },
         "Channels": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1NotifChannel"
-          },
-          "title": "@inject_tag: sql:\"channels\""
+          }
         },
         "EmailSend": {
           "type": "boolean",
