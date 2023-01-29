@@ -50,7 +50,8 @@ message Notify {
     string           UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
-    repeated notif.manager.channel.v1.NotifChannel  Channels = 120;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 120;
+    bool             AlreadyRead = 130;
 }
 
 message CreateNotifRequest {
@@ -69,10 +70,11 @@ message CreateNotifResponse {
 
 message UpdateNotifRequest {
     string          ID          = 10;
-    bool            UseTemplate = 40;
-    string          Title       = 50;
-    string          Content     = 60;
+    optional bool   UseTemplate = 40;
+    optional string Title       = 50;
+    optional string Content     = 60;
     repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    optional bool   AlreadyRead = 80;
 }
 
 message UpdateNotifResponse {

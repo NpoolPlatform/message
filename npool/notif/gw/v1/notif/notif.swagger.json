@@ -310,6 +310,9 @@
           "items": {
             "$ref": "#/definitions/v1NotifChannel"
           }
+        },
+        "AlreadyRead": {
+          "type": "boolean"
         }
       }
     },
@@ -333,6 +336,9 @@
           "items": {
             "$ref": "#/definitions/v1NotifChannel"
           }
+        },
+        "AlreadyRead": {
+          "type": "boolean"
         }
       }
     },

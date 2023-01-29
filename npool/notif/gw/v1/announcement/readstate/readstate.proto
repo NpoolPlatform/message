@@ -23,14 +23,14 @@ service Gateway {
         };
     }
 
-    rpc GetAppReadStates (GetReadStatesRequest) returns (GetReadStatesResponse) {
+    rpc GetAppReadStates (GetAppReadStatesRequest) returns (GetAppReadStatesResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/readstate"
             body: "*"
         };
     }
 
-    rpc GetNAppReadStates (GetReadStatesRequest) returns (GetReadStatesResponse) {
+    rpc GetNAppReadStates (GetNAppReadStatesRequest) returns (GetNAppReadStatesResponse) {
         option (google.api.http) = {
             post: "/v1/get/n/app/readstate"
             body: "*"
