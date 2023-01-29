@@ -5,6 +5,7 @@ package notif.middleware.announcement.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
 
 // Service Name
 service Middleware {
@@ -34,6 +35,7 @@ message ReadState {
 
 message GetReadStateRequest {
     string AnnouncementID = 10;
+    string UserID         = 20;
 }
 
 message GetReadStateResponse {
@@ -41,10 +43,9 @@ message GetReadStateResponse {
 }
 
 message GetReadStatesRequest {
-    string AppID  = 10;
-    string UserID = 20;
-    int32  Offset = 30;
-    int32  Limit  = 40;
+    notif.manager.notif1.v1.Conds Conds = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetReadStatesResponse {

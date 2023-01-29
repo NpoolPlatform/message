@@ -44,6 +44,49 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AlreadyRead": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UseTemplate": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "EmailSend": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
     "v1GetReadStateResponse": {
       "type": "object",
       "properties": {
@@ -118,6 +161,43 @@
           "format": "int64"
         },
         "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
           "type": "integer",
           "format": "int64"
         }
