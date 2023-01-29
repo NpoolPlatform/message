@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announce
 
 import "npool/notif/mgr/v1/announcement/readstate/readstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
-import "npool/notif/mgr/v1/notif/notif.proto";
 
 // Service Name
 service Middleware {

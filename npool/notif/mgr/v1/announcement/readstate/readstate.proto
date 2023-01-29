@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package notif.manager.readstate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/readstate";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/announcement/readstate";
 
 import "npool/npool.proto";
 
