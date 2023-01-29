@@ -25,7 +25,8 @@ message ReadState {
     // @inject_tag: sql:"content"
     string Content        = 50;
     // @inject_tag: sql:"channels"
-    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
+    repeated uint32 ChannelsUintSlice = 60;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 61;
     // @inject_tag: sql:"email_send"
     bool   EmailSend   = 70;
     bool   AlreadyRead = 80;
