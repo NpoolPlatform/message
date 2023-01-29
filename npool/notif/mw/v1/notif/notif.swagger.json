@@ -75,8 +75,7 @@
           "type": "string"
         },
         "EventType": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1EventType"
         },
         "UseTemplate": {
           "type": "boolean"
@@ -88,7 +87,10 @@
           "type": "string"
         },
         "Channels": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
         },
         "Email_send": {
           "type": "boolean"
