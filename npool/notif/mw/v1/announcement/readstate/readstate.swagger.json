@@ -17,45 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Conds": {
+    "managerreadstatev1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -67,41 +29,26 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AlreadyRead": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "LangID": {
+        "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "UseTemplate": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "EmailSend": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "v1GetReadStateResponse": {
+    "middlewareannouncementv1GetReadStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadState"
+          "$ref": "#/definitions/middlewareannouncementv1ReadState"
         }
       }
     },
-    "v1GetReadStatesResponse": {
+    "middlewareannouncementv1GetReadStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ReadState"
+            "$ref": "#/definitions/middlewareannouncementv1ReadState"
           }
         },
         "Total": {
@@ -110,16 +57,7 @@
         }
       }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS"
-      ],
-      "default": "DefaultChannel"
-    },
-    "v1ReadState": {
+    "middlewareannouncementv1ReadState": {
       "type": "object",
       "properties": {
         "AnnouncementID": {
@@ -166,19 +104,41 @@
         }
       }
     },
-    "v1StringSliceVal": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "Op": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
           "type": "string"
         },
-        "Value": {
+        "details": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/protobufAny"
           }
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringVal": {
       "type": "object",
@@ -188,18 +148,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

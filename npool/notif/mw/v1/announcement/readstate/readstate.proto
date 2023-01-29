@@ -4,6 +4,7 @@ package notif.middleware.announcement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
 
+import "npool/notif/mgr/v1/announcement/readstate/readstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
 
@@ -43,7 +44,7 @@ message GetReadStateResponse {
 }
 
 message GetReadStatesRequest {
-    notif.manager.notif1.v1.Conds Conds = 10;
+    notif.manager.readstate.v1.Conds Conds = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
