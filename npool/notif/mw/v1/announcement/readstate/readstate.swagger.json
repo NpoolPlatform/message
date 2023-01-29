@@ -79,7 +79,7 @@
     "v1ReadState": {
       "type": "object",
       "properties": {
-        "ID": {
+        "AnnouncementID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
