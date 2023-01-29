@@ -32,6 +32,13 @@ service Gateway {
 
     rpc GetAnnouncements (GetAnnouncementsRequest) returns (GetAnnouncementsResponse) {
         option (google.api.http) = {
+            post: "/v1/get/announcements"
+            body: "*"
+        };
+    }
+
+    rpc GetAnnouncement (GetAnnouncementRequest) returns (GetAnnouncementResponse) {
+        option (google.api.http) = {
             post: "/v1/get/announcement"
             body: "*"
         };
@@ -60,8 +67,8 @@ message CreateAnnouncementResponse {
 
 message UpdateAnnouncementRequest {
     string          ID          = 10;
-    string          Title       = 20;
-    string          Content     = 30;
+    optional string Title       = 20;
+    optional string Content     = 30;
     repeated notif.manager.channel.v1.NotifChannel Channels = 40;
 }
 
@@ -86,4 +93,12 @@ message GetAnnouncementsRequest {
 message GetAnnouncementsResponse {
     repeated Announcement Infos = 10;
     uint32                Total = 20;
+}
+
+message GetAnnouncementRequest {
+    string ID = 10;
+}
+
+message GetAnnouncementResponse {
+    Announcement Info = 10;
 }
