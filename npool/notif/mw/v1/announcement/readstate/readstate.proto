@@ -30,7 +30,9 @@ message ReadState {
     // @inject_tag: sql:"email_send"
     bool   EmailSend   = 70;
     bool   AlreadyRead = 80;
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt   = 90;
+    // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt   = 100;
 }
 

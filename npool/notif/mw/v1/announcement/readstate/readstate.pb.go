@@ -41,10 +41,12 @@ type ReadState struct {
 	ChannelsStr string                 `protobuf:"bytes,60,opt,name=ChannelsStr,proto3" json:"ChannelsStr,omitempty" sql:"channels"`
 	Channels    []channel.NotifChannel `protobuf:"varint,61,rep,packed,name=Channels,proto3,enum=notif.manager.channel.v1.NotifChannel" json:"Channels,omitempty"`
 	// @inject_tag: sql:"email_send"
-	EmailSend   bool   `protobuf:"varint,70,opt,name=EmailSend,proto3" json:"EmailSend,omitempty" sql:"email_send"`
-	AlreadyRead bool   `protobuf:"varint,80,opt,name=AlreadyRead,proto3" json:"AlreadyRead,omitempty"`
-	CreatedAt   uint32 `protobuf:"varint,90,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt   uint32 `protobuf:"varint,100,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	EmailSend   bool `protobuf:"varint,70,opt,name=EmailSend,proto3" json:"EmailSend,omitempty" sql:"email_send"`
+	AlreadyRead bool `protobuf:"varint,80,opt,name=AlreadyRead,proto3" json:"AlreadyRead,omitempty"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,90,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,100,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *ReadState) Reset() {
