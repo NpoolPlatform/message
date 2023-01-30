@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/notif": {
-      "post": {
-        "operationId": "Gateway_CreateNotif",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1CreateNotifResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1CreateNotifRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/delete/notif": {
-      "post": {
-        "operationId": "Gateway_DeleteNotif",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1DeleteNotifResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1DeleteNotifRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/app/user/notifs": {
       "post": {
         "operationId": "Gateway_GetAppUserNotifs",
@@ -175,97 +111,9 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/notif": {
-      "post": {
-        "operationId": "Gateway_UpdateNotif",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
-    "gatewaynotif3v1CreateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1EventType"
-        },
-        "UseTemplate": {
-          "type": "boolean"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        }
-      }
-    },
-    "gatewaynotif3v1CreateNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
-        }
-      }
-    },
-    "gatewaynotif3v1DeleteNotifRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewaynotif3v1DeleteNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
-        }
-      }
-    },
     "gatewaynotif3v1GetNotifRequest": {
       "type": "object",
       "properties": {
@@ -363,40 +211,6 @@
         }
       }
     },
-    "gatewaynotif3v1UpdateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "UseTemplate": {
-          "type": "boolean"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        }
-      }
-    },
-    "gatewaynotif3v1UpdateNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -428,12 +242,11 @@
       "type": "string",
       "enum": [
         "DefaultEventType",
-        "KycReviewApproved",
-        "KycReviewRejected",
-        "WithdrawReviewApproved",
-        "WithdrawReviewRejected",
-        "WithdrawAddressReviewApproved",
-        "WithdrawAddressReviewRejected"
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected"
       ],
       "default": "DefaultEventType"
     },

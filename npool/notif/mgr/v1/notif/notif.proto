@@ -22,13 +22,12 @@ service Manager {
 }
 
 enum EventType {
-    DefaultEventType              = 0;
-    KycReviewApproved             = 10;
-    KycReviewRejected             = 20;
-    WithdrawReviewApproved        = 30;
-    WithdrawReviewRejected        = 40;
-    WithdrawAddressReviewApproved = 50;
-    WithdrawAddressReviewRejected = 60;
+    DefaultEventType    = 0;
+    WithdrawalRequest   = 10;
+    WithdrawalCompleted = 20;
+    DepositReceived     = 30;
+    KYCApproved         = 40;
+    KYCRejected         = 50;
 }
 
 message NotifReq {

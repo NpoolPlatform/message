@@ -10,27 +10,6 @@ import "npool/notif/mgr/v1/notif/notif.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateNotif (CreateNotifRequest) returns (CreateNotifResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/notif"
-            body: "*"
-        };
-    }
-
-    rpc UpdateNotif (UpdateNotifRequest) returns (UpdateNotifResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/notif"
-            body: "*"
-        };
-    }
-
-    rpc DeleteNotif (DeleteNotifRequest) returns (DeleteNotifResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/notif"
-            body: "*"
-        };
-    }
-
     rpc GetNotif (GetNotifRequest) returns (GetNotifResponse) {
         option (google.api.http) = {
             post: "/v1/get/notif"
@@ -67,42 +46,6 @@ message Notif {
     string           Content      = 110;
     repeated notif.manager.channel.v1.NotifChannel Channels = 120;
     bool             AlreadyRead = 130;
-}
-
-message CreateNotifRequest {
-    string          AppID       = 10;
-    string          UserID      = 20;
-    string          LangID      = 30;
-    notif.manager.notif1.v1.EventType EventType = 40;
-    bool            UseTemplate = 50;
-    string          Title       = 60;
-    string          Content     = 70;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 80;
-}
-
-message CreateNotifResponse {
-    Notif Info = 10;
-}
-
-message UpdateNotifRequest {
-    string          ID          = 10;
-    optional bool   UseTemplate = 20;
-    optional string Title       = 30;
-    optional string Content     = 40;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 50;
-    optional bool   AlreadyRead = 60;
-}
-
-message UpdateNotifResponse {
-    Notif Info = 10;
-}
-
-message DeleteNotifRequest {
-    string ID = 10;
-}
-
-message DeleteNotifResponse {
-    Notif Info = 10;
 }
 
 message GetNotifRequest {
