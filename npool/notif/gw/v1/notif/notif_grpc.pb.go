@@ -25,6 +25,7 @@ type GatewayClient interface {
 	CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error)
 	UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error)
 	DeleteNotif(ctx context.Context, in *DeleteNotifRequest, opts ...grpc.CallOption) (*DeleteNotifResponse, error)
+	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GetAppUserNotifs(ctx context.Context, in *GetAppUserNotifsRequest, opts ...grpc.CallOption) (*GetAppUserNotifsResponse, error)
 }
@@ -64,6 +65,15 @@ func (c *gatewayClient) DeleteNotif(ctx context.Context, in *DeleteNotifRequest,
 	return out, nil
 }
 
+func (c *gatewayClient) GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error) {
+	out := new(GetNotifResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/GetNotif", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error) {
 	out := new(GetNotifsResponse)
 	err := c.cc.Invoke(ctx, "/notif.gateway.notif3.v1.Gateway/GetNotifs", in, out, opts...)
@@ -89,6 +99,7 @@ type GatewayServer interface {
 	CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error)
 	UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error)
 	DeleteNotif(context.Context, *DeleteNotifRequest) (*DeleteNotifResponse, error)
+	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GetAppUserNotifs(context.Context, *GetAppUserNotifsRequest) (*GetAppUserNotifsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -106,6 +117,9 @@ func (UnimplementedGatewayServer) UpdateNotif(context.Context, *UpdateNotifReque
 }
 func (UnimplementedGatewayServer) DeleteNotif(context.Context, *DeleteNotifRequest) (*DeleteNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotif not implemented")
+}
+func (UnimplementedGatewayServer) GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotif not implemented")
 }
 func (UnimplementedGatewayServer) GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifs not implemented")
@@ -180,6 +194,24 @@ func _Gateway_DeleteNotif_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetNotif_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotifRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNotif(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.notif3.v1.Gateway/GetNotif",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNotif(ctx, req.(*GetNotifRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNotifsRequest)
 	if err := dec(in); err != nil {
@@ -234,6 +266,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteNotif",
 			Handler:    _Gateway_DeleteNotif_Handler,
+		},
+		{
+			MethodName: "GetNotif",
+			Handler:    _Gateway_GetNotif_Handler,
 		},
 		{
 			MethodName: "GetNotifs",

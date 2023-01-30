@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/get/notif": {
+      "post": {
+        "operationId": "Gateway_GetNotif",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/notifs": {
       "post": {
         "operationId": "Gateway_GetNotifs",
@@ -211,7 +243,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Notify"
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
         }
       }
     },
@@ -227,7 +259,23 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Notify"
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
+        }
+      }
+    },
+    "gatewaynotif3v1GetNotifRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewaynotif3v1GetNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
         }
       }
     },
@@ -256,12 +304,59 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Notify"
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewaynotif3v1Notif": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "AlreadyRead": {
+          "type": "boolean"
         }
       }
     },
@@ -295,7 +390,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Notify"
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
         }
       }
     },
@@ -364,7 +459,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Notify"
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         },
         "Total": {
@@ -381,53 +476,6 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
-    },
-    "v1Notify": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1EventType"
-        },
-        "UseTemplate": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        }
-      }
     }
   }
 }
