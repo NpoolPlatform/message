@@ -101,12 +101,11 @@
       "type": "string",
       "enum": [
         "DefaultEventType",
-        "KycReviewApproved",
-        "KycReviewRejected",
-        "WithdrawReviewApproved",
-        "WithdrawReviewRejected",
-        "WithdrawAddressReviewApproved",
-        "WithdrawAddressReviewRejected"
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected"
       ],
       "default": "DefaultEventType"
     },
