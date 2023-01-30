@@ -407,7 +407,7 @@
           "type": "string"
         },
         "EventType": {
-          "type": "string"
+          "$ref": "#/definitions/v1EventType"
         },
         "UseTemplate": {
           "type": "string"
