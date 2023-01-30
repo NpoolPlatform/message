@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
 
 // Service Name
 service Gateway {
@@ -53,7 +54,7 @@ message Notify {
     string           EmailAddress = 50;
     string           PhoneNO      = 60;
     string           Username     = 70;
-    string           EventType    = 80;
+    notif.manager.notif1.v1.EventType EventType = 80;
     string           UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
@@ -64,7 +65,7 @@ message Notify {
 message CreateNotifRequest {
     string          AppID       = 10;
     string          UserID      = 20;
-    string          EventType   = 30;
+    notif.manager.notif1.v1.EventType EventType = 30;
     bool            UseTemplate = 40;
     string          Title       = 50;
     string          Content     = 60;

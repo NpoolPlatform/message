@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifResponse"
+              "$ref": "#/definitions/gatewaynotif3v1CreateNotifResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifRequest"
+              "$ref": "#/definitions/gatewaynotif3v1CreateNotifRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteNotifResponse"
+              "$ref": "#/definitions/gatewaynotif3v1DeleteNotifResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteNotifRequest"
+              "$ref": "#/definitions/gatewaynotif3v1DeleteNotifRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNotifsResponse"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNotifsRequest"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifsRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateNotifResponse"
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateNotifRequest"
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifRequest"
             }
           }
         ],
@@ -178,6 +178,127 @@
     }
   },
   "definitions": {
+    "gatewaynotif3v1CreateNotifRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        }
+      }
+    },
+    "gatewaynotif3v1CreateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Notify"
+        }
+      }
+    },
+    "gatewaynotif3v1DeleteNotifRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewaynotif3v1DeleteNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Notify"
+        }
+      }
+    },
+    "gatewaynotif3v1GetNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "gatewaynotif3v1GetNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Notify"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "gatewaynotif3v1UpdateNotifRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gatewaynotif3v1UpdateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Notify"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -205,58 +326,18 @@
         }
       }
     },
-    "v1CreateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "EventType": {
-          "type": "string"
-        },
-        "UseTemplate": {
-          "type": "boolean"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        }
-      }
-    },
-    "v1CreateNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Notify"
-        }
-      }
-    },
-    "v1DeleteNotifRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Notify"
-        }
-      }
+    "v1EventType": {
+      "type": "string",
+      "enum": [
+        "DefaultEventType",
+        "KycReviewApproved",
+        "KycReviewRejected",
+        "WithdrawReviewApproved",
+        "WithdrawReviewRejected",
+        "WithdrawAddressReviewApproved",
+        "WithdrawAddressReviewRejected"
+      ],
+      "default": "DefaultEventType"
     },
     "v1GetAppUserNotifsRequest": {
       "type": "object",
@@ -278,40 +359,6 @@
       }
     },
     "v1GetAppUserNotifsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Notify"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNotifsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -379,40 +426,6 @@
         },
         "AlreadyRead": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "UseTemplate": {
-          "type": "boolean"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Notify"
         }
       }
     }
