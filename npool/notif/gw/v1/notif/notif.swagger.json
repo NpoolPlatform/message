@@ -219,6 +219,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "EventType": {
           "$ref": "#/definitions/v1EventType"
         },

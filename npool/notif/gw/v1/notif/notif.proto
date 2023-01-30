@@ -72,11 +72,12 @@ message Notif {
 message CreateNotifRequest {
     string          AppID       = 10;
     string          UserID      = 20;
-    notif.manager.notif1.v1.EventType EventType = 30;
-    bool            UseTemplate = 40;
-    string          Title       = 50;
-    string          Content     = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    string          LangID      = 30;
+    notif.manager.notif1.v1.EventType EventType = 40;
+    bool            UseTemplate = 50;
+    string          Title       = 60;
+    string          Content     = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 80;
 }
 
 message CreateNotifResponse {
