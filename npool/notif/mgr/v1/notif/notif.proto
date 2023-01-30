@@ -1,0 +1,158 @@
+syntax = "proto3";
+
+package notif.manager.notif1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif";
+
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateNotif     (CreateNotifRequest)     returns (CreateNotifResponse)     {}
+    rpc CreateNotifs    (CreateNotifsRequest)    returns (CreateNotifsResponse)    {}
+    rpc UpdateNotif     (UpdateNotifRequest)     returns (UpdateNotifResponse)     {}
+    rpc GetNotif        (GetNotifRequest)        returns (GetNotifResponse)        {}
+    rpc GetNotifOnly    (GetNotifOnlyRequest)    returns (GetNotifOnlyResponse)    {}
+    rpc GetNotifs       (GetNotifsRequest)       returns (GetNotifsResponse)       {}
+    rpc ExistNotif      (ExistNotifRequest)      returns (ExistNotifResponse)      {}
+    rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
+    rpc CountNotifs     (CountNotifsRequest)     returns (CountNotifsResponse)     {}
+    rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {}
+}
+
+enum EventType {
+    DefaultEventType              = 0;
+    KycReviewApproved             = 10;
+    KycReviewRejected             = 20;
+    WithdrawReviewApproved        = 30;
+    WithdrawReviewRejected        = 40;
+    WithdrawAddressReviewApproved = 50;
+    WithdrawAddressReviewRejected = 60;
+}
+
+message NotifReq {
+    optional string    ID          = 10;
+    optional string    AppID       = 20;
+    optional string    UserID      = 30;
+    optional bool      AlreadyRead = 40;
+    optional string    LangID      = 50;
+    optional EventType EventType   = 60;
+    optional bool      UseTemplate = 70;
+    optional string    Title       = 80;
+    optional string    Content     = 90;
+    repeated notif.manager.channel.v1.NotifChannel    Channels    = 100;
+    optional bool      EmailSend   = 110;
+}
+
+message Notif {
+    string    ID          = 10;
+    string    AppID       = 20;
+    string    UserID      = 30;
+    bool      AlreadyRead = 40;
+    string    LangID      = 50;
+    EventType EventType   = 60;
+    bool      UseTemplate = 70;
+    string    Title       = 80;
+    string    Content     = 90;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
+    bool      EmailSend   = 110;
+    uint32    CreatedAt   = 120;
+    uint32    UpdatedAt   = 130;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID          = 10;
+    optional npool.v1.StringVal      AppID       = 20;
+    optional npool.v1.StringVal      UserID      = 30;
+    optional npool.v1.BoolVal        AlreadyRead = 40;
+    optional npool.v1.StringVal      LangID      = 50;
+    optional npool.v1.Uint32Val      EventType   = 60;
+    optional npool.v1.BoolVal        UseTemplate = 70;
+    optional npool.v1.StringSliceVal Channels    = 80;
+    optional npool.v1.BoolVal        EmailSend   = 90;
+}
+
+
+message CreateNotifRequest {
+    NotifReq Info = 10;
+}
+
+message CreateNotifResponse {
+    Notif Info = 10;
+}
+
+message CreateNotifsRequest {
+    repeated NotifReq Infos = 10;
+}
+
+message CreateNotifsResponse {
+    repeated Notif Infos = 10;
+}
+
+message UpdateNotifRequest {
+    NotifReq Info = 10;
+}
+
+message UpdateNotifResponse {
+    Notif Info = 10;
+}
+
+message GetNotifRequest {
+    string ID = 10;
+}
+
+message GetNotifResponse {
+    Notif Info = 10;
+}
+
+message GetNotifsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetNotifsResponse {
+    repeated Notif Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetNotifOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetNotifOnlyResponse {
+    Notif Info = 10;
+}
+
+message ExistNotifRequest {
+    string ID = 10;
+}
+
+message ExistNotifResponse {
+    bool Info = 10;
+}
+
+message ExistNotifCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistNotifCondsResponse {
+    bool Info = 10;
+}
+
+message CountNotifsRequest {
+    Conds Conds = 10;
+}
+
+message CountNotifsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteNotifRequest {
+    string ID = 10;
+}
+
+message DeleteNotifResponse {
+    Notif Info = 10;
+}

@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+package notif.manager.announcement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/announcement";
+
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateAnnouncement     (CreateAnnouncementRequest)     returns (CreateAnnouncementResponse)     {}
+    rpc CreateAnnouncements    (CreateAnnouncementsRequest)    returns (CreateAnnouncementsResponse)    {}
+    rpc UpdateAnnouncement     (UpdateAnnouncementRequest)     returns (UpdateAnnouncementResponse)     {}
+    rpc GetAnnouncement        (GetAnnouncementRequest)        returns (GetAnnouncementResponse)        {}
+    rpc GetAnnouncementOnly    (GetAnnouncementOnlyRequest)    returns (GetAnnouncementOnlyResponse)    {}
+    rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
+    rpc ExistAnnouncement      (ExistAnnouncementRequest)      returns (ExistAnnouncementResponse)      {}
+    rpc ExistAnnouncementConds (ExistAnnouncementCondsRequest) returns (ExistAnnouncementCondsResponse) {}
+    rpc CountAnnouncements     (CountAnnouncementsRequest)     returns (CountAnnouncementsResponse)     {}
+    rpc DeleteAnnouncement     (DeleteAnnouncementRequest)     returns (DeleteAnnouncementResponse)     {}
+}
+
+message AnnouncementReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string Title      = 30;
+    optional string Content    = 40;
+    repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
+    optional bool   EmailSend  = 60;
+}
+
+message Announcement {
+    string ID         = 10;
+    string AppID      = 20;
+    string Title      = 30;
+    string Content    = 40;
+    repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
+    bool   EmailSend  = 60;
+    uint32 CreatedAt  = 70;
+    uint32 UpdatedAt  = 80;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID        = 10;
+    optional npool.v1.StringVal      AppID     = 20;
+    optional npool.v1.StringSliceVal Channels  = 30;
+    optional npool.v1.BoolVal        EmailSend = 40;
+}
+
+
+message CreateAnnouncementRequest {
+    AnnouncementReq Info = 10;
+}
+
+message CreateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message CreateAnnouncementsRequest {
+    repeated AnnouncementReq Infos = 10;
+}
+
+message CreateAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+}
+
+message UpdateAnnouncementRequest {
+    AnnouncementReq Info = 10;
+}
+
+message UpdateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message GetAnnouncementRequest {
+    string ID = 10;
+}
+
+message GetAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message GetAnnouncementsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetAnnouncementOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAnnouncementOnlyResponse {
+    Announcement Info = 10;
+}
+
+message ExistAnnouncementRequest {
+    string ID = 10;
+}
+
+message ExistAnnouncementResponse {
+    bool Info = 10;
+}
+
+message ExistAnnouncementCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAnnouncementCondsResponse {
+    bool Info = 10;
+}
+
+message CountAnnouncementsRequest {
+    Conds Conds = 10;
+}
+
+message CountAnnouncementsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAnnouncementRequest {
+    string ID = 10;
+}
+
+message DeleteAnnouncementResponse {
+    Announcement Info = 10;
+}

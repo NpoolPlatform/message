@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package notif.middleware.notif2.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
+
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
+    rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
+    rpc GetNotifs    (GetNotifsRequest)    returns (GetNotifsResponse)    {}
+    rpc GetNotifOnly (GetNotifOnlyRequest) returns (GetNotifOnlyResponse) {}
+}
+
+message Notif {
+    string ID          = 10;
+    string AppID       = 20;
+    string UserID      = 30;
+    bool   AlreadyRead = 40;
+    string LangID      = 50;
+    notif.manager.notif1.v1.EventType EventType = 60;
+    bool   UseTemplate = 70;
+    string Title       = 80;
+    string Content     = 90;
+    repeated notif.manager.channel.v1.NotifChannel Channels    = 100;
+    bool   Email_send  = 110;
+    uint32 CreatedAt   = 120;
+    uint32 UpdatedAt   = 130;
+}
+
+message CreateNotifRequest {
+    notif.manager.notif1.v1.NotifReq Info = 10;
+}
+
+message CreateNotifResponse {
+    Notif Info = 10;
+}
+
+message GetNotifRequest {
+    string ID = 10;
+}
+
+message GetNotifResponse {
+    Notif Info = 10;
+}
+
+message GetNotifsRequest {
+    notif.manager.notif1.v1.Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetNotifsResponse {
+    repeated Notif Infos = 10;
+    uint32         Total = 20;
+}
+
+message GetNotifOnlyRequest {
+    notif.manager.notif1.v1.Conds Conds = 10;
+}
+
+message GetNotifOnlyResponse {
+    Notif Info = 10;
+}

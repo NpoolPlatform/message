@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package notif.gateway.announcement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement";
+
+import "google/api/annotations.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAnnouncement (CreateAnnouncementRequest) returns (CreateAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/announcement"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAnnouncement (UpdateAnnouncementRequest) returns (UpdateAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/announcement"
+            body: "*"
+        };
+    }
+
+    rpc DeleteAnnouncement (DeleteAnnouncementRequest) returns (DeleteAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/announcement"
+            body: "*"
+        };
+    }
+
+    rpc GetAnnouncements (GetAnnouncementsRequest) returns (GetAnnouncementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/announcements"
+            body: "*"
+        };
+    }
+
+    rpc GetAnnouncement (GetAnnouncementRequest) returns (GetAnnouncementResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/announcement"
+            body: "*"
+        };
+    }
+}
+
+message Announcement {
+    string           ID           = 10;
+    string           AppID        = 20;
+    string           AppName      = 30;
+    string           Title        = 40;
+    string           Content      = 50;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
+}
+
+message CreateAnnouncementRequest {
+    string          AppID       = 10;
+    string          Title       = 50;
+    string          Content     = 60;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+}
+
+message CreateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message UpdateAnnouncementRequest {
+    string          ID          = 10;
+    optional string Title       = 20;
+    optional string Content     = 30;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 40;
+}
+
+message UpdateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message DeleteAnnouncementRequest {
+    string ID = 10;
+}
+
+message DeleteAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message GetAnnouncementsRequest {
+    string AppID  = 10;
+    uint32 Offset = 30;
+    uint32 Limit  = 40;
+}
+
+message GetAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
+}
+
+message GetAnnouncementRequest {
+    string ID = 10;
+}
+
+message GetAnnouncementResponse {
+    Announcement Info = 10;
+}
