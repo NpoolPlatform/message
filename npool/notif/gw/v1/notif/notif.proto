@@ -86,11 +86,11 @@ message CreateNotifResponse {
 
 message UpdateNotifRequest {
     string          ID          = 10;
-    optional bool   UseTemplate = 40;
-    optional string Title       = 50;
-    optional string Content     = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
-    optional bool   AlreadyRead = 80;
+    optional bool   UseTemplate = 20;
+    optional string Title       = 30;
+    optional string Content     = 40;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 50;
+    optional bool   AlreadyRead = 60;
 }
 
 message UpdateNotifResponse {
