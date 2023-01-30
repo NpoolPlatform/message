@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/app/readstate": {
+    "/v1/get/app/readstates": {
       "post": {
         "operationId": "Gateway_GetAppReadStates",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/n/app/readstate": {
+    "/v1/get/n/app/readstates": {
       "post": {
         "operationId": "Gateway_GetNAppReadStates",
         "responses": {
@@ -113,6 +113,38 @@
       }
     },
     "/v1/get/readstate": {
+      "post": {
+        "operationId": "Gateway_GetReadState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetReadStateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetReadStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/readstates": {
       "post": {
         "operationId": "Gateway_GetReadStates",
         "responses": {
@@ -254,6 +286,36 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetReadStateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetReadStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ReadState"
         }
       }
     },

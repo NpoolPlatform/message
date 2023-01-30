@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateReadState(ctx context.Context, in *CreateReadStateRequest, opts ...grpc.CallOption) (*CreateReadStateResponse, error)
+	GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error)
 	GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
 	GetAppReadStates(ctx context.Context, in *GetAppReadStatesRequest, opts ...grpc.CallOption) (*GetAppReadStatesResponse, error)
 	GetNAppReadStates(ctx context.Context, in *GetNAppReadStatesRequest, opts ...grpc.CallOption) (*GetNAppReadStatesResponse, error)
@@ -39,6 +40,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateReadState(ctx context.Context, in *CreateReadStateRequest, opts ...grpc.CallOption) (*CreateReadStateResponse, error) {
 	out := new(CreateReadStateResponse)
 	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/CreateReadState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error) {
+	out := new(GetReadStateResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetReadState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *gatewayClient) GetNAppReadStates(ctx context.Context, in *GetNAppReadSt
 // for forward compatibility
 type GatewayServer interface {
 	CreateReadState(context.Context, *CreateReadStateRequest) (*CreateReadStateResponse, error)
+	GetReadState(context.Context, *GetReadStateRequest) (*GetReadStateResponse, error)
 	GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
 	GetAppReadStates(context.Context, *GetAppReadStatesRequest) (*GetAppReadStatesResponse, error)
 	GetNAppReadStates(context.Context, *GetNAppReadStatesRequest) (*GetNAppReadStatesResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateReadState(context.Context, *CreateReadStateRequest) (*CreateReadStateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateReadState not implemented")
+}
+func (UnimplementedGatewayServer) GetReadState(context.Context, *GetReadStateRequest) (*GetReadStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReadState not implemented")
 }
 func (UnimplementedGatewayServer) GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReadStates not implemented")
@@ -126,6 +140,24 @@ func _Gateway_CreateReadState_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateReadState(ctx, req.(*CreateReadStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetReadState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReadStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetReadState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetReadState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetReadState(ctx, req.(*GetReadStateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateReadState",
 			Handler:    _Gateway_CreateReadState_Handler,
+		},
+		{
+			MethodName: "GetReadState",
+			Handler:    _Gateway_GetReadState_Handler,
 		},
 		{
 			MethodName: "GetReadStates",
