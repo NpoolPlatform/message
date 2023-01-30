@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/notif/gw/v1/announcement/readstate/readstate.proto
 
-package announcement
+package readstate
 
 import (
 	context "context"
@@ -40,7 +40,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateReadState(ctx context.Context, in *CreateReadStateRequest, opts ...grpc.CallOption) (*CreateReadStateResponse, error) {
 	out := new(CreateReadStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/CreateReadState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/CreateReadState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -49,7 +49,7 @@ func (c *gatewayClient) CreateReadState(ctx context.Context, in *CreateReadState
 
 func (c *gatewayClient) GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error) {
 	out := new(GetReadStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetReadState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func (c *gatewayClient) GetReadState(ctx context.Context, in *GetReadStateReques
 
 func (c *gatewayClient) GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error) {
 	out := new(GetReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetReadStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,7 +67,7 @@ func (c *gatewayClient) GetReadStates(ctx context.Context, in *GetReadStatesRequ
 
 func (c *gatewayClient) GetAppUserReadStates(ctx context.Context, in *GetAppUserReadStatesRequest, opts ...grpc.CallOption) (*GetAppUserReadStatesResponse, error) {
 	out := new(GetAppUserReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAppUserReadStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppUserReadStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +76,7 @@ func (c *gatewayClient) GetAppUserReadStates(ctx context.Context, in *GetAppUser
 
 func (c *gatewayClient) GetAppReadStates(ctx context.Context, in *GetAppReadStatesRequest, opts ...grpc.CallOption) (*GetAppReadStatesResponse, error) {
 	out := new(GetAppReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAppReadStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppReadStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func (c *gatewayClient) GetAppReadStates(ctx context.Context, in *GetAppReadStat
 
 func (c *gatewayClient) GetNAppReadStates(ctx context.Context, in *GetNAppReadStatesRequest, opts ...grpc.CallOption) (*GetNAppReadStatesResponse, error) {
 	out := new(GetNAppReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.readstate.v1.Gateway/GetNAppReadStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,7 +150,7 @@ func _Gateway_CreateReadState_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/CreateReadState",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/CreateReadState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateReadState(ctx, req.(*CreateReadStateRequest))
@@ -168,7 +168,7 @@ func _Gateway_GetReadState_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetReadState",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/GetReadState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetReadState(ctx, req.(*GetReadStateRequest))
@@ -186,7 +186,7 @@ func _Gateway_GetReadStates_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetReadStates",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/GetReadStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetReadStates(ctx, req.(*GetReadStatesRequest))
@@ -204,7 +204,7 @@ func _Gateway_GetAppUserReadStates_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetAppUserReadStates",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/GetAppUserReadStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppUserReadStates(ctx, req.(*GetAppUserReadStatesRequest))
@@ -222,7 +222,7 @@ func _Gateway_GetAppReadStates_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetAppReadStates",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/GetAppReadStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppReadStates(ctx, req.(*GetAppReadStatesRequest))
@@ -240,7 +240,7 @@ func _Gateway_GetNAppReadStates_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates",
+		FullMethod: "/notif.gateway.announcement.readstate.v1.Gateway/GetNAppReadStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetNAppReadStates(ctx, req.(*GetNAppReadStatesRequest))
@@ -252,7 +252,7 @@ func _Gateway_GetNAppReadStates_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.gateway.announcement.v1.Gateway",
+	ServiceName: "notif.gateway.announcement.readstate.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

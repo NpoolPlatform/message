@@ -2,11 +2,11 @@
 // source: npool/notif/gw/v1/announcement/readstate/readstate.proto
 
 /*
-Package announcement is a reverse proxy.
+Package readstate is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package announcement
+package readstate
 
 import (
 	"context"
@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/CreateReadState", runtime.WithHTTPPathPattern("/v1/create/readstate"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/CreateReadState", runtime.WithHTTPPathPattern("/v1/create/readstate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetReadState", runtime.WithHTTPPathPattern("/v1/get/readstate"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadState", runtime.WithHTTPPathPattern("/v1/get/readstate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetReadStates", runtime.WithHTTPPathPattern("/v1/get/readstates"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadStates", runtime.WithHTTPPathPattern("/v1/get/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetAppUserReadStates", runtime.WithHTTPPathPattern("/v1/get/app/user/readstates"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppUserReadStates", runtime.WithHTTPPathPattern("/v1/get/app/user/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetAppReadStates", runtime.WithHTTPPathPattern("/v1/get/app/readstates"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppReadStates", runtime.WithHTTPPathPattern("/v1/get/app/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates", runtime.WithHTTPPathPattern("/v1/get/n/app/readstates"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetNAppReadStates", runtime.WithHTTPPathPattern("/v1/get/n/app/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/CreateReadState", runtime.WithHTTPPathPattern("/v1/create/readstate"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/CreateReadState", runtime.WithHTTPPathPattern("/v1/create/readstate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetReadState", runtime.WithHTTPPathPattern("/v1/get/readstate"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadState", runtime.WithHTTPPathPattern("/v1/get/readstate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetReadStates", runtime.WithHTTPPathPattern("/v1/get/readstates"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetReadStates", runtime.WithHTTPPathPattern("/v1/get/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetAppUserReadStates", runtime.WithHTTPPathPattern("/v1/get/app/user/readstates"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppUserReadStates", runtime.WithHTTPPathPattern("/v1/get/app/user/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetAppReadStates", runtime.WithHTTPPathPattern("/v1/get/app/readstates"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetAppReadStates", runtime.WithHTTPPathPattern("/v1/get/app/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.v1.Gateway/GetNAppReadStates", runtime.WithHTTPPathPattern("/v1/get/n/app/readstates"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.readstate.v1.Gateway/GetNAppReadStates", runtime.WithHTTPPathPattern("/v1/get/n/app/readstates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

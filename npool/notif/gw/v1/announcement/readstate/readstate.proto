@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package notif.gateway.announcement.v1;
+package notif.gateway.announcement.readstate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/readstate";
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
