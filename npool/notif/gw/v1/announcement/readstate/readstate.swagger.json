@@ -300,14 +300,6 @@
         },
         "AnnouncementID": {
           "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -365,7 +357,7 @@
     "v1ReadState": {
       "type": "object",
       "properties": {
-        "ID": {
+        "AnnouncementID": {
           "type": "string"
         },
         "AppID": {
