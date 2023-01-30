@@ -46,7 +46,7 @@ service Gateway {
     }
 }
 
-message Notify {
+message Notif {
     string           ID           = 10;
     string           AppID        = 20;
     string           AppName      = 30;
@@ -73,7 +73,7 @@ message CreateNotifRequest {
 }
 
 message CreateNotifResponse {
-    Notify Info = 10;
+    Notif Info = 10;
 }
 
 message UpdateNotifRequest {
@@ -86,7 +86,7 @@ message UpdateNotifRequest {
 }
 
 message UpdateNotifResponse {
-    Notify Info = 10;
+    Notif Info = 10;
 }
 
 message DeleteNotifRequest {
@@ -94,7 +94,7 @@ message DeleteNotifRequest {
 }
 
 message DeleteNotifResponse {
-    Notify Info = 10;
+    Notif Info = 10;
 }
 
 message GetNotifsRequest {
@@ -105,7 +105,7 @@ message GetNotifsRequest {
 }
 
 message GetNotifsResponse {
-    repeated Notify Infos = 10;
+    repeated Notif Infos = 10;
     uint32          Total = 20;
 }
 
@@ -117,6 +117,6 @@ message GetAppUserNotifsRequest {
 }
 
 message GetAppUserNotifsResponse {
-    repeated Notify Infos = 10;
+    repeated Notif Infos = 10;
     uint32          Total = 20;
 }
