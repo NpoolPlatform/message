@@ -134,7 +134,7 @@ func local_request_Gateway_GetReadStates_0(ctx context.Context, marshaler runtim
 }
 
 func request_Gateway_GetAppUserReadStates_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetReadStatesRequest
+	var protoReq GetAppUserReadStatesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -151,7 +151,7 @@ func request_Gateway_GetAppUserReadStates_0(ctx context.Context, marshaler runti
 }
 
 func local_request_Gateway_GetAppUserReadStates_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetReadStatesRequest
+	var protoReq GetAppUserReadStatesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

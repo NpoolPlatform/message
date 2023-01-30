@@ -30,7 +30,7 @@ service Gateway {
         };
     }
 
-    rpc GetAppUserReadStates (GetReadStatesRequest) returns (GetReadStatesResponse) {
+    rpc GetAppUserReadStates (GetAppUserReadStatesRequest) returns (GetAppUserReadStatesResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/user/readstates"
             body: "*"

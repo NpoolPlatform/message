@@ -37,9 +37,9 @@ service Gateway {
         };
     }
 
-    rpc GetAppUserNotifs (GetNotifsRequest) returns (GetNotifsResponse) {
+    rpc GetAppUserNotifs (GetAppUserNotifsRequest) returns (GetAppUserNotifsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/notifs"
+            post: "/v1/get/app/user/notifs"
             body: "*"
         };
     }
