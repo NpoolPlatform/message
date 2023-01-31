@@ -26,6 +26,6 @@ message GetNotifTemplatesRequest {
 }
 
 message GetNotifTemplatesResponse {
-    third.manager.template.notif1.v1.NotifTemplate Infos = 10;
-    uint32                                         Total = 20;
+    repeated third.manager.template.notif1.v1.NotifTemplate Infos = 10;
+    uint32                                                  Total = 20;
 }
