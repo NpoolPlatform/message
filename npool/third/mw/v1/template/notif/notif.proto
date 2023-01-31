@@ -7,8 +7,9 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notif";
 import "npool/third/mgr/v1/template/notif/notif.proto";
 
 service Middleware {
-    rpc GetNotifTemplate (GetNotifTemplateRequest) returns (GetNotifTemplateResponse) {}
-    rpc GetNotifTemplates (GetNotifTemplateRequest) returns (GetNotifTemplateResponse) {}
+    rpc GetNotifTemplate     (GetNotifTemplateRequest)     returns (GetNotifTemplateResponse)     {}
+    rpc GetNotifTemplates    (GetNotifTemplatesRequest)    returns (GetNotifTemplatesResponse)    {}
+    rpc GetNotifTemplateOnly (GetNotifTemplateOnlyRequest) returns (GetNotifTemplateOnlyResponse) {}
 }
 
 message GetNotifTemplateRequest {
@@ -28,4 +29,12 @@ message GetNotifTemplatesRequest {
 message GetNotifTemplatesResponse {
     repeated third.manager.template.notif1.v1.NotifTemplate Infos = 10;
     uint32                                                  Total = 20;
+}
+
+message GetNotifTemplateOnlyRequest {
+    third.manager.template.notif1.v1.Conds Conds = 10;
+}
+
+message GetNotifTemplateOnlyResponse {
+    third.manager.template.notif1.v1.NotifTemplate Info = 10;
 }
