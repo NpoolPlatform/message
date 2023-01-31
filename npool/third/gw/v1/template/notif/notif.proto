@@ -76,7 +76,7 @@ message CreateNotifTemplateResponse {
 message CreateAppNotifTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    notif.manager.notif1.v1.EventType UsedFor = 30;
     string Title          = 40;
     string Content        = 50;
 }
