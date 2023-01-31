@@ -467,7 +467,7 @@
         "CreatedAt": {
           "type": "string"
         },
-        "UpdateAt": {
+        "UpdatedAt": {
           "type": "string"
         }
       }
