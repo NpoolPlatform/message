@@ -179,6 +179,9 @@
         "AppID": {
           "type": "string"
         },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
         "Offset": {
           "type": "integer",
           "format": "int64"
@@ -213,6 +216,9 @@
         "TargetUserID": {
           "type": "string"
         },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
         "Offset": {
           "type": "integer",
           "format": "int64"
@@ -243,6 +249,9 @@
       "properties": {
         "TargetAppID": {
           "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "Offset": {
           "type": "integer",
@@ -277,6 +286,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "Offset": {
           "type": "integer",
@@ -342,11 +354,8 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "AlreadySend": {
           "type": "boolean"
