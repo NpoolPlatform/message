@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/notif/mw/v1/announcement/readstate/readstate.proto",
+    "title": "npool/notif/mw/v1/announcement/sendstate/sendstate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,21 +17,13 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareannouncementreadstatev1GetReadStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareannouncementreadstatev1ReadState"
-        }
-      }
-    },
-    "middlewareannouncementreadstatev1GetReadStatesResponse": {
+    "middlewareannouncementsendstatev1GetSendStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/middlewareannouncementreadstatev1ReadState"
+            "$ref": "#/definitions/middlewareannouncementsendstatev1SendState"
           }
         },
         "Total": {
@@ -40,7 +32,7 @@
         }
       }
     },
-    "middlewareannouncementreadstatev1ReadState": {
+    "middlewareannouncementsendstatev1SendState": {
       "type": "object",
       "properties": {
         "AnnouncementID": {
@@ -63,18 +55,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"content\""
         },
-        "ChannelsStr": {
+        "ChannelStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"channels\""
+          "title": "@inject_tag: sql:\"channel\""
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
-        "AlreadyRead": {
-          "type": "boolean"
+        "AlreadySend": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"email_send\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -129,6 +119,9 @@
         },
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -149,6 +142,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

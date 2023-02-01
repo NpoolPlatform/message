@@ -28,6 +28,7 @@ message AnnouncementReq {
     optional string Content    = 40;
     repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
     optional bool   EmailSend  = 60;
+    optional uint32 EndAt      = 70;
 }
 
 message Announcement {
@@ -37,8 +38,8 @@ message Announcement {
     string Content    = 40;
     repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
     bool   EmailSend  = 60;
-    uint32 CreatedAt  = 70;
-    uint32 UpdatedAt  = 80;
+    uint32 CreatedAt  = 80;
+    uint32 UpdatedAt  = 90;
 }
 
 message Conds {

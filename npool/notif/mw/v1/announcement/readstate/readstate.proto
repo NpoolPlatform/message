@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package notif.middleware.announcement.v1;
+package notif.middleware.announcement.readstate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/readstate";
 
 import "npool/notif/mgr/v1/announcement/readstate/readstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
@@ -27,8 +27,6 @@ message ReadState {
     // @inject_tag: sql:"channels"
     string ChannelsStr = 60;
     repeated notif.manager.channel.v1.NotifChannel Channels = 61;
-    // @inject_tag: sql:"email_send"
-    bool   EmailSend   = 70;
     bool   AlreadyRead = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt   = 90;
