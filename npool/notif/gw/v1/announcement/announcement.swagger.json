@@ -222,6 +222,10 @@
         },
         "Content": {
           "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -346,6 +350,10 @@
           "items": {
             "$ref": "#/definitions/v1NotifChannel"
           }
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

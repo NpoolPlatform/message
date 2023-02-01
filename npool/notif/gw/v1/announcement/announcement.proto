@@ -71,6 +71,7 @@ message UpdateAnnouncementRequest {
     optional string Title       = 20;
     optional string Content     = 30;
     repeated notif.manager.channel.v1.NotifChannel Channels = 40;
+    uint32          EndAt       = 50;
 }
 
 message UpdateAnnouncementResponse {

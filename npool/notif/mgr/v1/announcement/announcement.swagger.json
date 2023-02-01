@@ -65,8 +65,9 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "EmailSend": {
-          "type": "boolean"
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -99,23 +100,9 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "EmailSend": {
-          "type": "boolean"
-        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -131,8 +118,8 @@
         "Channels": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "EmailSend": {
-          "$ref": "#/definitions/v1BoolVal"
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -250,6 +237,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
