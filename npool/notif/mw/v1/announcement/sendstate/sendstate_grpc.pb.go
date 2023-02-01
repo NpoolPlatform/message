@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateSendState(ctx context.Context, in *CreateSendStateRequest, opts ...grpc.CallOption) (*CreateSendStateResponse, error)
 	GetSendStates(ctx context.Context, in *GetSendStatesRequest, opts ...grpc.CallOption) (*GetSendStatesResponse, error)
 }
 
@@ -31,6 +32,15 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateSendState(ctx context.Context, in *CreateSendStateRequest, opts ...grpc.CallOption) (*CreateSendStateResponse, error) {
+	out := new(CreateSendStateResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetSendStates(ctx context.Context, in *GetSendStatesRequest, opts ...grpc.CallOption) (*GetSendStatesResponse, error) {
@@ -46,6 +56,7 @@ func (c *middlewareClient) GetSendStates(ctx context.Context, in *GetSendStatesR
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateSendState(context.Context, *CreateSendStateRequest) (*CreateSendStateResponse, error)
 	GetSendStates(context.Context, *GetSendStatesRequest) (*GetSendStatesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -54,6 +65,9 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateSendState(context.Context, *CreateSendStateRequest) (*CreateSendStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSendState not implemented")
+}
 func (UnimplementedMiddlewareServer) GetSendStates(context.Context, *GetSendStatesRequest) (*GetSendStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSendStates not implemented")
 }
@@ -68,6 +82,24 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateSendState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSendStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateSendState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateSendState(ctx, req.(*CreateSendStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetSendStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -95,6 +127,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "notif.middleware.announcement.sendstate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateSendState",
+			Handler:    _Middleware_CreateSendState_Handler,
+		},
 		{
 			MethodName: "GetSendStates",
 			Handler:    _Middleware_GetSendStates_Handler,

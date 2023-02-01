@@ -9,7 +9,8 @@ import "npool/notif/mgr/v1/channel/channel.proto";
 
 // Service Name
 service Middleware {
-    rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)       {}
+    rpc CreateSendState  (CreateSendStateRequest) returns (CreateSendStateResponse)  {}
+    rpc GetSendStates    (GetSendStatesRequest)   returns (GetSendStatesResponse)    {}
 }
 
 message SendState {
@@ -32,6 +33,16 @@ message SendState {
     uint32 CreatedAt   = 90;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt   = 100;
+}
+
+message CreateSendStateRequest {
+    string AppID          = 20;
+    string UserID         = 30;
+    string AnnouncementID = 40;
+    notif.manager.channel.v1.NotifChannel Channel = 50;
+}
+
+message CreateSendStateResponse {
 }
 
 message GetSendStatesRequest {

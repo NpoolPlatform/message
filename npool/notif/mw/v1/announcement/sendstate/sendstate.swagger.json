@@ -17,6 +17,9 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareannouncementsendstatev1CreateSendStateResponse": {
+      "type": "object"
+    },
     "middlewareannouncementsendstatev1GetSendStatesResponse": {
       "type": "object",
       "properties": {
