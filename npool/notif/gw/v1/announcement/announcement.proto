@@ -51,6 +51,7 @@ message Announcement {
     string           AppName      = 30;
     string           Title        = 40;
     string           Content      = 50;
+    uint32           EndAt        = 60;
 }
 
 message CreateAnnouncementRequest {
