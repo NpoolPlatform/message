@@ -34,7 +34,7 @@ message SendState {
     string AppID          = 20;
     string UserID         = 30;
     string AnnouncementID = 40;
-    string Channel        = 50;
+    notif.manager.channel.v1.NotifChannel Channel = 50;
     uint32 CreatedAt      = 60;
     uint32 UpdatedAt      = 70;
 }

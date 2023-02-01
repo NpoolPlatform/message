@@ -172,7 +172,7 @@
           "type": "string"
         },
         "Channel": {
-          "type": "string"
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "CreatedAt": {
           "type": "integer",
