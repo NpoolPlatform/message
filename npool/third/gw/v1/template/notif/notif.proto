@@ -76,7 +76,7 @@ message CreateNotifTemplateResponse {
 message CreateAppNotifTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    notif.manager.notif1.v1.EventType UsedFor = 30;
     string Title          = 40;
     string Content        = 50;
 }
@@ -116,11 +116,11 @@ message GetAppNotifTemplatesResponse {
 }
 
 message UpdateNotifTemplateRequest {
-    string ID           = 10;
-    string AppID        = 20;
-    string Title        = 30;
-    string Content      = 40;
-    string TargetLangID = 50;
+    string ID                    = 10;
+    string AppID                 = 20;
+    optional string Title        = 30;
+    optional string Content      = 40;
+    optional string TargetLangID = 50;
 }
 
 message UpdateNotifTemplateResponse {
@@ -128,11 +128,11 @@ message UpdateNotifTemplateResponse {
 }
 
 message UpdateAppNotifTemplateRequest {
-    string ID           = 10;
-    string TargetAppID  = 20;
-    string TargetLangID = 30;
-    string Title        = 40;
-    string Content      = 50;
+    string ID                    = 10;
+    string TargetAppID           = 20;
+    optional string TargetLangID = 30;
+    optional string Title        = 40;
+    optional string Content      = 50;
 }
 
 message UpdateAppNotifTemplateResponse {

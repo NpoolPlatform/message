@@ -382,7 +382,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
+          "$ref": "#/definitions/v1EventType"
         },
         "Title": {
           "type": "string"
@@ -467,7 +467,7 @@
         "CreatedAt": {
           "type": "string"
         },
-        "UpdateAt": {
+        "UpdatedAt": {
           "type": "string"
         }
       }
@@ -499,23 +499,6 @@
           "$ref": "#/definitions/v1NotifTemplate"
         }
       }
-    },
-    "v1UsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultUsedFor",
-        "Signup",
-        "Signin",
-        "Update",
-        "Contact",
-        "SetWithdrawAddress",
-        "Withdraw",
-        "CreateInvitationCode",
-        "SetCommission",
-        "SetTransferTargetUser",
-        "Transfer"
-      ],
-      "default": "DefaultUsedFor"
     }
   }
 }

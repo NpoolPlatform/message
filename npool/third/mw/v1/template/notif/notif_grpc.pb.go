@@ -23,7 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetNotifTemplate(ctx context.Context, in *GetNotifTemplateRequest, opts ...grpc.CallOption) (*GetNotifTemplateResponse, error)
-	GetNotifTemplates(ctx context.Context, in *GetNotifTemplateRequest, opts ...grpc.CallOption) (*GetNotifTemplateResponse, error)
+	GetNotifTemplates(ctx context.Context, in *GetNotifTemplatesRequest, opts ...grpc.CallOption) (*GetNotifTemplatesResponse, error)
+	GetNotifTemplateOnly(ctx context.Context, in *GetNotifTemplateOnlyRequest, opts ...grpc.CallOption) (*GetNotifTemplateOnlyResponse, error)
 }
 
 type middlewareClient struct {
@@ -43,9 +44,18 @@ func (c *middlewareClient) GetNotifTemplate(ctx context.Context, in *GetNotifTem
 	return out, nil
 }
 
-func (c *middlewareClient) GetNotifTemplates(ctx context.Context, in *GetNotifTemplateRequest, opts ...grpc.CallOption) (*GetNotifTemplateResponse, error) {
-	out := new(GetNotifTemplateResponse)
+func (c *middlewareClient) GetNotifTemplates(ctx context.Context, in *GetNotifTemplatesRequest, opts ...grpc.CallOption) (*GetNotifTemplatesResponse, error) {
+	out := new(GetNotifTemplatesResponse)
 	err := c.cc.Invoke(ctx, "/third.middleware.notif2.v1.Middleware/GetNotifTemplates", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetNotifTemplateOnly(ctx context.Context, in *GetNotifTemplateOnlyRequest, opts ...grpc.CallOption) (*GetNotifTemplateOnlyResponse, error) {
+	out := new(GetNotifTemplateOnlyResponse)
+	err := c.cc.Invoke(ctx, "/third.middleware.notif2.v1.Middleware/GetNotifTemplateOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +67,8 @@ func (c *middlewareClient) GetNotifTemplates(ctx context.Context, in *GetNotifTe
 // for forward compatibility
 type MiddlewareServer interface {
 	GetNotifTemplate(context.Context, *GetNotifTemplateRequest) (*GetNotifTemplateResponse, error)
-	GetNotifTemplates(context.Context, *GetNotifTemplateRequest) (*GetNotifTemplateResponse, error)
+	GetNotifTemplates(context.Context, *GetNotifTemplatesRequest) (*GetNotifTemplatesResponse, error)
+	GetNotifTemplateOnly(context.Context, *GetNotifTemplateOnlyRequest) (*GetNotifTemplateOnlyResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -68,8 +79,11 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetNotifTemplate(context.Context, *GetNotifTemplateRequest) (*GetNotifTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifTemplate not implemented")
 }
-func (UnimplementedMiddlewareServer) GetNotifTemplates(context.Context, *GetNotifTemplateRequest) (*GetNotifTemplateResponse, error) {
+func (UnimplementedMiddlewareServer) GetNotifTemplates(context.Context, *GetNotifTemplatesRequest) (*GetNotifTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifTemplates not implemented")
+}
+func (UnimplementedMiddlewareServer) GetNotifTemplateOnly(context.Context, *GetNotifTemplateOnlyRequest) (*GetNotifTemplateOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotifTemplateOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -103,7 +117,7 @@ func _Middleware_GetNotifTemplate_Handler(srv interface{}, ctx context.Context, 
 }
 
 func _Middleware_GetNotifTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNotifTemplateRequest)
+	in := new(GetNotifTemplatesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -115,7 +129,25 @@ func _Middleware_GetNotifTemplates_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/third.middleware.notif2.v1.Middleware/GetNotifTemplates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetNotifTemplates(ctx, req.(*GetNotifTemplateRequest))
+		return srv.(MiddlewareServer).GetNotifTemplates(ctx, req.(*GetNotifTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetNotifTemplateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotifTemplateOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetNotifTemplateOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/third.middleware.notif2.v1.Middleware/GetNotifTemplateOnly",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetNotifTemplateOnly(ctx, req.(*GetNotifTemplateOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -134,6 +166,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNotifTemplates",
 			Handler:    _Middleware_GetNotifTemplates_Handler,
+		},
+		{
+			MethodName: "GetNotifTemplateOnly",
+			Handler:    _Middleware_GetNotifTemplateOnly_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
