@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/notif/mw/v1/announcement/readstate/readstate.proto
 
-package announcement
+package readstate
 
 import (
 	context "context"
@@ -36,7 +36,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error) {
 	out := new(GetReadStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.v1.Middleware/GetReadState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.readstate.v1.Middleware/GetReadState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *middlewareClient) GetReadState(ctx context.Context, in *GetReadStateReq
 
 func (c *middlewareClient) GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error) {
 	out := new(GetReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.v1.Middleware/GetReadStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _Middleware_GetReadState_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.announcement.v1.Middleware/GetReadState",
+		FullMethod: "/notif.middleware.announcement.readstate.v1.Middleware/GetReadState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetReadState(ctx, req.(*GetReadStateRequest))
@@ -112,7 +112,7 @@ func _Middleware_GetReadStates_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.middleware.announcement.v1.Middleware/GetReadStates",
+		FullMethod: "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetReadStates(ctx, req.(*GetReadStatesRequest))
@@ -124,7 +124,7 @@ func _Middleware_GetReadStates_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.announcement.v1.Middleware",
+	ServiceName: "notif.middleware.announcement.readstate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

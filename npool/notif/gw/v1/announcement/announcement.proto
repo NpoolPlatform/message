@@ -51,14 +51,15 @@ message Announcement {
     string           AppName      = 30;
     string           Title        = 40;
     string           Content      = 50;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
+    uint32           EndAt        = 60;
 }
 
 message CreateAnnouncementRequest {
     string          AppID       = 10;
-    string          Title       = 50;
-    string          Content     = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    string          Title       = 20;
+    string          Content     = 30;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 40;
+    uint32          EndAt       = 50;
 }
 
 message CreateAnnouncementResponse {
@@ -70,6 +71,7 @@ message UpdateAnnouncementRequest {
     optional string Title       = 20;
     optional string Content     = 30;
     repeated notif.manager.channel.v1.NotifChannel Channels = 40;
+    uint32          EndAt       = 50;
 }
 
 message UpdateAnnouncementResponse {

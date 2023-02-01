@@ -27,7 +27,7 @@ message AnnouncementReq {
     optional string Title      = 30;
     optional string Content    = 40;
     repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
-    optional bool   EmailSend  = 60;
+    optional uint32 EndAt      = 70;
 }
 
 message Announcement {
@@ -36,16 +36,16 @@ message Announcement {
     string Title      = 30;
     string Content    = 40;
     repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
-    bool   EmailSend  = 60;
-    uint32 CreatedAt  = 70;
-    uint32 UpdatedAt  = 80;
+    uint32 EndAt      = 60;
+    uint32 CreatedAt  = 80;
+    uint32 UpdatedAt  = 90;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID        = 10;
     optional npool.v1.StringVal      AppID     = 20;
     optional npool.v1.StringSliceVal Channels  = 30;
-    optional npool.v1.BoolVal        EmailSend = 40;
+    optional npool.v1.Uint32Val      EndAt = 40;
 }
 
 

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/notif/mgr/v1/announcement/announcement.proto",
+    "title": "npool/notif/mgr/v1/announcement/sendstate/sendstate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,68 +44,6 @@
         }
       }
     },
-    "v1Announcement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1AnnouncementReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -115,15 +53,18 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "EndAt": {
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountAnnouncementsResponse": {
+    "v1CountSendStatesResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -132,42 +73,34 @@
         }
       }
     },
-    "v1CreateAnnouncementResponse": {
+    "v1CreateSendStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/v1SendState"
         }
       }
     },
-    "v1CreateAnnouncementsResponse": {
+    "v1CreateSendStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/v1SendState"
           }
         }
       }
     },
-    "v1DeleteAnnouncementResponse": {
+    "v1DeleteSendStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/v1SendState"
         }
       }
     },
-    "v1ExistAnnouncementCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAnnouncementResponse": {
+    "v1ExistSendStateCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -175,29 +108,37 @@
         }
       }
     },
-    "v1GetAnnouncementOnlyResponse": {
+    "v1ExistSendStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "type": "boolean"
         }
       }
     },
-    "v1GetAnnouncementResponse": {
+    "v1GetSendStateOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/v1SendState"
         }
       }
     },
-    "v1GetAnnouncementsResponse": {
+    "v1GetSendStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SendState"
+        }
+      }
+    },
+    "v1GetSendStatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/v1SendState"
           }
         },
         "Total": {
@@ -215,17 +156,51 @@
       ],
       "default": "DefaultChannel"
     },
-    "v1StringSliceVal": {
+    "v1SendState": {
       "type": "object",
       "properties": {
-        "Op": {
+        "ID": {
           "type": "string"
         },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "Channel": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SendStateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         }
       }
     },
@@ -252,11 +227,11 @@
         }
       }
     },
-    "v1UpdateAnnouncementResponse": {
+    "v1UpdateSendStateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/v1SendState"
         }
       }
     }
