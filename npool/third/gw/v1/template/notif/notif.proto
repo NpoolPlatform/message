@@ -121,6 +121,7 @@ message UpdateNotifTemplateRequest {
     optional string Title        = 30;
     optional string Content      = 40;
     optional string TargetLangID = 50;
+    optional notif.manager.notif1.v1.EventType UsedFor = 60;
 }
 
 message UpdateNotifTemplateResponse {

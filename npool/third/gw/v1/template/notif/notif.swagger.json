@@ -361,6 +361,9 @@
         },
         "TargetLangID": {
           "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1EventType"
         }
       }
     },
