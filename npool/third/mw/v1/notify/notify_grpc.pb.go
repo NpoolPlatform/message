@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error)
+	NotifEmail(ctx context.Context, in *NotifEmailRequest, opts ...grpc.CallOption) (*NotifEmailResponse, error)
 }
 
 type middlewareClient struct {
@@ -33,9 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error) {
-	out := new(NotifyEmailResponse)
-	err := c.cc.Invoke(ctx, "/third.middleware.notify.v1.Middleware/NotifyEmail", in, out, opts...)
+func (c *middlewareClient) NotifEmail(ctx context.Context, in *NotifEmailRequest, opts ...grpc.CallOption) (*NotifEmailResponse, error) {
+	out := new(NotifEmailResponse)
+	err := c.cc.Invoke(ctx, "/third.middleware.notify.v1.Middleware/NotifEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) NotifyEmail(ctx context.Context, in *NotifyEmailReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error)
+	NotifEmail(context.Context, *NotifEmailRequest) (*NotifEmailResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -54,8 +54,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NotifyEmail not implemented")
+func (UnimplementedMiddlewareServer) NotifEmail(context.Context, *NotifEmailRequest) (*NotifEmailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NotifEmail not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -70,20 +70,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_NotifyEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NotifyEmailRequest)
+func _Middleware_NotifEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NotifEmailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).NotifyEmail(ctx, in)
+		return srv.(MiddlewareServer).NotifEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.middleware.notify.v1.Middleware/NotifyEmail",
+		FullMethod: "/third.middleware.notify.v1.Middleware/NotifEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).NotifyEmail(ctx, req.(*NotifyEmailRequest))
+		return srv.(MiddlewareServer).NotifEmail(ctx, req.(*NotifEmailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +96,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "NotifyEmail",
-			Handler:    _Middleware_NotifyEmail_Handler,
+			MethodName: "NotifEmail",
+			Handler:    _Middleware_NotifEmail_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

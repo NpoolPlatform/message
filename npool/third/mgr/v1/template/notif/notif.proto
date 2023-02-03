@@ -28,6 +28,7 @@ message NotifTemplateReq {
     optional notif.manager.notif1.v1.EventType UsedFor = 40;
     optional string Title       = 50;
     optional string Content     = 60;
+    optional string Sender      = 70;
 }
 
 message NotifTemplate {
@@ -37,8 +38,9 @@ message NotifTemplate {
     notif.manager.notif1.v1.EventType UsedFor   = 40;
     string Title       = 50;
     string Content     = 60;
-    string CreatedAt   = 70;
-    string UpdatedAt    = 80;
+    string Sender      = 70;
+    string CreatedAt   = 80;
+    string UpdatedAt   = 90;
 }
 
 message Conds {

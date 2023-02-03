@@ -44,25 +44,20 @@
         }
       }
     },
-    "v1NotifyEmailResponse": {
-      "type": "object"
-    },
-    "v1UsedFor": {
+    "v1EventType": {
       "type": "string",
       "enum": [
-        "DefaultUsedFor",
-        "Signup",
-        "Signin",
-        "Update",
-        "Contact",
-        "SetWithdrawAddress",
-        "Withdraw",
-        "CreateInvitationCode",
-        "SetCommission",
-        "SetTransferTargetUser",
-        "Transfer"
+        "DefaultEventType",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected"
       ],
-      "default": "DefaultUsedFor"
+      "default": "DefaultEventType"
+    },
+    "v1NotifEmailResponse": {
+      "type": "object"
     }
   }
 }

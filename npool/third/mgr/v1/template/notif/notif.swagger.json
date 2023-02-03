@@ -177,6 +177,9 @@
         "Content": {
           "type": "string"
         },
+        "Sender": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "string"
         },
@@ -204,6 +207,9 @@
           "type": "string"
         },
         "Content": {
+          "type": "string"
+        },
+        "Sender": {
           "type": "string"
         }
       }

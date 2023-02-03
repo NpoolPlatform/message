@@ -2,23 +2,25 @@ syntax = "proto3";
 
 package third.middleware.notify.v1;
 
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/notif/mgr/v1/notif/notif.proto";
 
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notify";
 
 service Middleware {
-    rpc NotifyEmail (NotifyEmailRequest) returns (NotifyEmailResponse) {}
+    rpc NotifEmail (NotifEmailRequest) returns (NotifEmailResponse) {}
 }
 
-message NotifyEmailRequest {
+message NotifEmailRequest {
     string AppID           = 10;
     string FromAccount     = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    notif.manager.notif1.v1.EventType UsedFor = 30;
     string ReceiverAccount = 40;
     string LangID          = 50;
     string SenderName      = 60;
     string ReceiverName    = 70;
+    string Message         = 80;
+    bool   UseTemplate     = 90;
 }
 
-message NotifyEmailResponse {
+message NotifEmailResponse {
 }

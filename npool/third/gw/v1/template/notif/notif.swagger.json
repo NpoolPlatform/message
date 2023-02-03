@@ -286,6 +286,9 @@
         },
         "Content": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },
@@ -364,6 +367,9 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1EventType"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },
@@ -391,6 +397,9 @@
           "type": "string"
         },
         "Content": {
+          "type": "string"
+        },
+        "Sender": {
           "type": "string"
         }
       }
@@ -467,6 +476,9 @@
         "Content": {
           "type": "string"
         },
+        "Sender": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "string"
         },
@@ -491,6 +503,9 @@
           "type": "string"
         },
         "Content": {
+          "type": "string"
+        },
+        "Sender": {
           "type": "string"
         }
       }

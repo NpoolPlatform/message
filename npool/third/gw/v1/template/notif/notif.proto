@@ -7,8 +7,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
 import "npool/third/mgr/v1/template/notif/notif.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
-
 
 service Gateway {
     rpc CreateNotifTemplate (CreateNotifTemplateRequest) returns (CreateNotifTemplateResponse) {
@@ -67,6 +65,7 @@ message CreateNotifTemplateRequest {
     notif.manager.notif1.v1.EventType UsedFor = 30;
     string Title         = 40;
     string Content       = 50;
+    string Sender        = 60;
 }
 
 message CreateNotifTemplateResponse {
@@ -79,6 +78,7 @@ message CreateAppNotifTemplateRequest {
     notif.manager.notif1.v1.EventType UsedFor = 30;
     string Title          = 40;
     string Content        = 50;
+    string Sender         = 60;
 }
 
 message CreateAppNotifTemplateResponse {
@@ -122,6 +122,7 @@ message UpdateNotifTemplateRequest {
     optional string Content      = 40;
     optional string TargetLangID = 50;
     optional notif.manager.notif1.v1.EventType UsedFor = 60;
+    optional string Sender       = 70;
 }
 
 message UpdateNotifTemplateResponse {
@@ -129,11 +130,12 @@ message UpdateNotifTemplateResponse {
 }
 
 message UpdateAppNotifTemplateRequest {
-    string ID                    = 10;
-    string TargetAppID           = 20;
+    string          ID           = 10;
+    string          TargetAppID  = 20;
     optional string TargetLangID = 30;
     optional string Title        = 40;
     optional string Content      = 50;
+    optional string Sender       = 70;
 }
 
 message UpdateAppNotifTemplateResponse {
