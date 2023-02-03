@@ -47,7 +47,10 @@ message Conds {
     optional npool.v1.StringVal ID      = 10;
     optional npool.v1.StringVal AppID   = 20;
     optional npool.v1.StringVal LangID  = 30;
-    optional npool.v1.Uint32Val UsedFor = 50;
+    optional npool.v1.Uint32Val UsedFor = 40;
+    optional npool.v1.StringSliceVal AppIDs   = 50;
+    optional npool.v1.StringSliceVal LangIDs  = 60;
+    optional npool.v1.StringSliceVal UsedFors = 70;
 }
 
 message CreateNotifTemplateRequest {

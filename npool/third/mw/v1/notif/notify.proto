@@ -7,11 +7,12 @@ import "npool/notif/mgr/v1/notif/notif.proto";
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notif";
 
 service Middleware {
-    rpc NotifEmail (NotifEmailRequest) returns (NotifEmailResponse) {}
+    rpc SendNotifEmail (SendNotifEmailRequest) returns (SendNotifEmailResponse) {}
+    rpc SendAnnouncementEmail (SendNotifEmailRequest) returns (SendNotifEmailResponse) {}
 }
 
 // if UseTemplate = true Title and Content Valid
-message NotifEmailRequest {
+message SendNotifEmailRequest {
     string                            AppID           = 10;
     optional string                   FromAccount     = 20;
     notif.manager.notif1.v1.EventType UsedFor         = 30;
@@ -25,5 +26,14 @@ message NotifEmailRequest {
     string                            Content         = 110;
 }
 
-message NotifEmailResponse {
+message SendNotifEmailResponse {
+}
+
+message SendAnnouncementRequest {
+    repeated string ReceiverAccount = 10;
+    string title   = 20;
+    string content = 30;
+}
+
+message SendAnnouncementResponse {
 }

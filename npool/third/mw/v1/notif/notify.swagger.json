@@ -56,7 +56,7 @@
       ],
       "default": "DefaultEventType"
     },
-    "v1NotifEmailResponse": {
+    "v1SendNotifEmailResponse": {
       "type": "object"
     }
   }

@@ -31,6 +31,15 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -135,6 +144,20 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

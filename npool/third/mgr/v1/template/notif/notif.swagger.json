@@ -31,6 +31,15 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -213,6 +222,20 @@
         },
         "Sender": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
