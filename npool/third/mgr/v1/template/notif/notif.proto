@@ -39,8 +39,8 @@ message NotifTemplate {
     string Title       = 50;
     string Content     = 60;
     string Sender      = 70;
-    string CreatedAt   = 80;
-    string UpdatedAt   = 90;
+    uint32 CreatedAt   = 80;
+    uint32 UpdatedAt   = 90;
 }
 
 message Conds {
