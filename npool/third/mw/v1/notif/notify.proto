@@ -10,18 +10,19 @@ service Middleware {
     rpc NotifEmail (NotifEmailRequest) returns (NotifEmailResponse) {}
 }
 
+// if UseTemplate = true Title and Content Valid
 message NotifEmailRequest {
-    string AppID           = 10;
-    string FromAccount     = 20;
-    notif.manager.notif1.v1.EventType UsedFor = 30;
-    string ReceiverAccount = 40;
-    string LangID          = 50;
-    string SenderName      = 60;
-    string ReceiverName    = 70;
-    string Message         = 80;
-    bool   UseTemplate     = 90;
-    string Title           = 100;
-    string Content         = 110;
+    string                            AppID           = 10;
+    optional string                   FromAccount     = 20;
+    notif.manager.notif1.v1.EventType UsedFor         = 30;
+    string                            ReceiverAccount = 40;
+    string                            LangID          = 50;
+    optional string                   SenderName      = 60;
+    optional string                   ReceiverName    = 70;
+    optional string                   Message         = 80;
+    bool                              UseTemplate     = 90;
+    string                            Title           = 100;
+    string                            Content         = 110;
 }
 
 message NotifEmailResponse {
