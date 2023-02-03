@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mw/v1/notify/notify.proto",
+    "title": "npool/third/mw/v1/notif/notify.proto",
     "version": "version not set"
   },
   "tags": [

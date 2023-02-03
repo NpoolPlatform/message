@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/mw/v1/notify/notify.proto
+// source: npool/third/mw/v1/notif/notify.proto
 
 package notif
 
@@ -101,5 +101,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/mw/v1/notify/notify.proto",
+	Metadata: "npool/third/mw/v1/notif/notify.proto",
 }

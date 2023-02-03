@@ -20,6 +20,8 @@ message NotifEmailRequest {
     string ReceiverName    = 70;
     string Message         = 80;
     bool   UseTemplate     = 90;
+    string Title           = 100;
+    string Content         = 110;
 }
 
 message NotifEmailResponse {
