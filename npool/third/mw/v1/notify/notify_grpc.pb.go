@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/third/mw/v1/notify/notify.proto
 
-package notify
+package notif
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) NotifEmail(ctx context.Context, in *NotifEmailRequest, opts ...grpc.CallOption) (*NotifEmailResponse, error) {
 	out := new(NotifEmailResponse)
-	err := c.cc.Invoke(ctx, "/third.middleware.notify.v1.Middleware/NotifEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/third.middleware.notif1.v1.Middleware/NotifEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _Middleware_NotifEmail_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.middleware.notify.v1.Middleware/NotifEmail",
+		FullMethod: "/third.middleware.notif1.v1.Middleware/NotifEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).NotifEmail(ctx, req.(*NotifEmailRequest))
@@ -92,7 +92,7 @@ func _Middleware_NotifEmail_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "third.middleware.notify.v1.Middleware",
+	ServiceName: "third.middleware.notif1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

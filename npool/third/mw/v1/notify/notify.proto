@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package third.middleware.notify.v1;
+package third.middleware.notif1.v1;
 
 import "npool/notif/mgr/v1/notif/notif.proto";
 
-option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notify";
+option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notif";
 
 service Middleware {
     rpc NotifEmail (NotifEmailRequest) returns (NotifEmailResponse) {}
