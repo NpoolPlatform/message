@@ -4,10 +4,9 @@ package appuser.middleware.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
-import "npool/npool.proto";
 import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
-import "npool/review/mgr/v2/mgr.proto";
 import "npool/appuser/mgr/v2/kyc/kyc.proto";
+import "npool/appuser/mgr/v2/appuser/appuser.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -183,7 +182,7 @@ message UpdateUserResponse {
 }
 
 message GetUsersRequest {
-    string AppID  = 10;
+    appuser.manager.appuser.v2.Conds Conds = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }

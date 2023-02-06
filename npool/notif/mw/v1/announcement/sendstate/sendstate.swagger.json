@@ -17,6 +17,35 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareannouncementsendstatev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AlreadySend": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "middlewareannouncementsendstatev1CreateSendStateResponse": {
       "type": "object"
     },
@@ -81,26 +110,6 @@
         }
       }
     },
-    "notifmanagersendstatev1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -136,6 +145,20 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
