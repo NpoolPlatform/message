@@ -135,6 +135,7 @@ message UpdateAppNotifTemplateRequest {
     optional string TargetLangID = 30;
     optional string Title        = 40;
     optional string Content      = 50;
+    optional notif.manager.notif1.v1.EventType UsedFor = 60;
     optional string Sender       = 70;
 }
 
