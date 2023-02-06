@@ -411,15 +411,6 @@
         }
       }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS"
-      ],
-      "default": "DefaultChannel"
-    },
     "v1ReadState": {
       "type": "object",
       "properties": {
@@ -449,12 +440,6 @@
         },
         "Content": {
           "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
         },
         "AlreadyRead": {
           "type": "boolean"
