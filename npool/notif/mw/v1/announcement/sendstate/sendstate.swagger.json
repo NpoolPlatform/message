@@ -81,6 +81,26 @@
         }
       }
     },
+    "notifmanagersendstatev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -105,26 +125,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
