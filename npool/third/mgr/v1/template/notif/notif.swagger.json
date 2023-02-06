@@ -114,7 +114,8 @@
         "WithdrawalCompleted",
         "DepositReceived",
         "KYCApproved",
-        "KYCRejected"
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultEventType"
     },

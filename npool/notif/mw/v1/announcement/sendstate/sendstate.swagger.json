@@ -39,7 +39,7 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "AlreadySend": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1BoolVal"
         },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -134,6 +134,17 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },

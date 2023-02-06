@@ -28,6 +28,7 @@ enum EventType {
     DepositReceived     = 30;
     KYCApproved         = 40;
     KYCRejected         = 50;
+    Announcement        = 60;
 }
 
 message NotifReq {

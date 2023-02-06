@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mw/v1/template/notif/notif.proto",
+    "title": "npool/notif/mw/v1/announcement/announcement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,55 +17,13 @@
   ],
   "paths": {},
   "definitions": {
-    "managertemplatenotif1v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "AppIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "LangIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "UsedFors": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "middlewarenotif2v1GetNotifTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
-        }
-      }
-    },
-    "middlewarenotif2v1GetNotifTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
-        }
-      }
-    },
-    "middlewarenotif2v1GetNotifTemplatesResponse": {
+    "middlewareannouncementannouncementv1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1NotifTemplate"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
@@ -101,20 +59,7 @@
         }
       }
     },
-    "v1EventType": {
-      "type": "string",
-      "enum": [
-        "DefaultEventType",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultEventType"
-    },
-    "v1NotifTemplate": {
+    "v1Announcement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -123,20 +68,21 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
-        },
         "Title": {
           "type": "string"
         },
         "Content": {
           "type": "string"
         },
-        "Sender": {
-          "type": "string"
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -147,6 +93,32 @@
           "format": "int64"
         }
       }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringSliceVal": {
       "type": "object",
