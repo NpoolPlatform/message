@@ -58,8 +58,7 @@ message Conds {
 
 }
 message GetSendStatesRequest {
-    uint32 EndAt  = 10;
-    notif.manager.sendstate.v1.Conds Conds = 20;
+    Conds  Conds  = 10;
     int32  Offset = 30;
     int32  Limit  = 40;
 }
