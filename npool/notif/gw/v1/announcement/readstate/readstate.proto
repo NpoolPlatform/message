@@ -62,7 +62,6 @@ message ReadState {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
     bool             AlreadyRead    = 110;
 }
 

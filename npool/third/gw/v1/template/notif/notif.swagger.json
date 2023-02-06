@@ -508,6 +508,9 @@
         "Content": {
           "type": "string"
         },
+        "UsedFor": {
+          "$ref": "#/definitions/v1EventType"
+        },
         "Sender": {
           "type": "string"
         }
