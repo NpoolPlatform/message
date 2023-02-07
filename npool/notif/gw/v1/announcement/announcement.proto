@@ -37,7 +37,7 @@ service Gateway {
         };
     }
 
-    rpc GetAppAnnouncements (GetAnnouncementsRequest) returns (GetAnnouncementsResponse) {
+    rpc GetAppAnnouncements (GetAppAnnouncementsRequest) returns (GetAppAnnouncementsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/announcements"
             body: "*"

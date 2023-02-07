@@ -26,7 +26,7 @@ type GatewayClient interface {
 	UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error)
 	DeleteAnnouncement(ctx context.Context, in *DeleteAnnouncementRequest, opts ...grpc.CallOption) (*DeleteAnnouncementResponse, error)
 	GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
-	GetAppAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
+	GetAppAnnouncements(ctx context.Context, in *GetAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetAppAnnouncementsResponse, error)
 	GetNAppAnnouncements(ctx context.Context, in *GetNAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementsResponse, error)
 	GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error)
 }
@@ -75,8 +75,8 @@ func (c *gatewayClient) GetAnnouncements(ctx context.Context, in *GetAnnouncemen
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error) {
-	out := new(GetAnnouncementsResponse)
+func (c *gatewayClient) GetAppAnnouncements(ctx context.Context, in *GetAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetAppAnnouncementsResponse, error) {
+	out := new(GetAppAnnouncementsResponse)
 	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAppAnnouncements", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -110,7 +110,7 @@ type GatewayServer interface {
 	UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error)
 	DeleteAnnouncement(context.Context, *DeleteAnnouncementRequest) (*DeleteAnnouncementResponse, error)
 	GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
-	GetAppAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
+	GetAppAnnouncements(context.Context, *GetAppAnnouncementsRequest) (*GetAppAnnouncementsResponse, error)
 	GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error)
 	GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -132,7 +132,7 @@ func (UnimplementedGatewayServer) DeleteAnnouncement(context.Context, *DeleteAnn
 func (UnimplementedGatewayServer) GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncements not implemented")
 }
-func (UnimplementedGatewayServer) GetAppAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error) {
+func (UnimplementedGatewayServer) GetAppAnnouncements(context.Context, *GetAppAnnouncementsRequest) (*GetAppAnnouncementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAnnouncements not implemented")
 }
 func (UnimplementedGatewayServer) GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error) {
@@ -227,7 +227,7 @@ func _Gateway_GetAnnouncements_Handler(srv interface{}, ctx context.Context, dec
 }
 
 func _Gateway_GetAppAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAnnouncementsRequest)
+	in := new(GetAppAnnouncementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -239,7 +239,7 @@ func _Gateway_GetAppAnnouncements_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetAppAnnouncements",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppAnnouncements(ctx, req.(*GetAnnouncementsRequest))
+		return srv.(GatewayServer).GetAppAnnouncements(ctx, req.(*GetAppAnnouncementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
