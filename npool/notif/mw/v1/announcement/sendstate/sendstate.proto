@@ -48,7 +48,7 @@ message CreateSendStateResponse {
 }
 
 message CreateSendStatesRequest {
-    notif.manager.sendstate.v1.SendStateReq Infos = 10;
+    repeated notif.manager.sendstate.v1.SendStateReq Infos = 10;
 }
 
 message CreateSendStatesResponse {
