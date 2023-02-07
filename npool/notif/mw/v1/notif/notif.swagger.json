@@ -283,7 +283,7 @@
         }
       }
     },
-    "v1UpdatesNotifResponse": {
+    "v1UpdateNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
