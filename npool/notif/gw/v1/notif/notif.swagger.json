@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/update/notif": {
+    "/v1/update/notifs": {
       "post": {
-        "operationId": "Gateway_UpdateNotif",
+        "operationId": "Gateway_UpdateNotifs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifResponse"
+              "$ref": "#/definitions/v1UpdateNotifsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifRequest"
+              "$ref": "#/definitions/v1UpdateNotifsRequest"
             }
           }
         ],
@@ -247,34 +247,6 @@
         }
       }
     },
-    "gatewaynotif3v1UpdateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "IDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        }
-      }
-    },
-    "gatewaynotif3v1UpdateNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -357,6 +329,37 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1UpdateNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "IDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
+          }
+        }
+      }
     }
   }
 }

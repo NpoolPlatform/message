@@ -72,7 +72,7 @@ message UpdateNotifsRequest {
 }
 
 message UpdateNotifsResponse {
-    Notif Info = 10;
+    repeated Notif Infos = 10;
 }
 
 message GetNotifsRequest {
