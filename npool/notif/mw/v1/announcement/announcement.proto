@@ -47,6 +47,8 @@ message Announcement {
     // @inject_tag: sql:"read_user_id"
     string ReadUserID     = 110;
     bool   AlreadyRead    = 120;
+    // @inject_tag: sql:"end_at"
+    uint32 EndAt          = 130;
 }
 
 message GetAnnouncementsRequest {
