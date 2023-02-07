@@ -16,6 +16,13 @@ service Gateway {
             body: "*"
         };
     }
+    
+    rpc UpdateNotif (UpdateNotifRequest) returns (UpdateNotifResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/notif"
+            body: "*"
+        };
+    }
 
     rpc GetNotifs (GetNotifsRequest) returns (GetNotifsResponse) {
         option (google.api.http) = {
@@ -54,6 +61,15 @@ message GetNotifRequest {
 }
 
 message GetNotifResponse {
+    Notif Info = 10;
+}
+
+message UpdateNotifRequest {
+    string ID          = 10;
+    bool   AlreadyRead = 20;
+}
+
+message UpdateNotifResponse {
     Notif Info = 10;
 }
 
