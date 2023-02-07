@@ -250,7 +250,16 @@
     "gatewaynotif3v1UpdateNotifRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "IDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "AlreadyRead": {

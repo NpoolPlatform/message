@@ -65,10 +65,10 @@ message GetNotifResponse {
 }
 
 message UpdateNotifRequest {
-    string ID          = 10;
-    string AppID       = 20;
-    string UserID      = 30;
-    bool   AlreadyRead = 40;
+    repeated string IDs         = 10;
+    string          AppID       = 20;
+    string          UserID      = 30;
+    bool            AlreadyRead = 40;
 }
 
 message UpdateNotifResponse {

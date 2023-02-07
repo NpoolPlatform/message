@@ -312,6 +312,10 @@
         "SendChannel": {
           "$ref": "#/definitions/v1NotifChannel",
           "title": "if AlreadySend = true SendChannel valid"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

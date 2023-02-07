@@ -69,11 +69,12 @@ message Announcement {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    bool             AlreadyRead    = 110;
-    bool             AlreadySend    = 120;
-    uint32           CreatedAt      = 130;
+    bool             AlreadyRead    = 100;
+    bool             AlreadySend    = 110;
+    uint32           CreatedAt      = 120;
     //if AlreadySend = true SendChannel valid
-    notif.manager.channel.v1.NotifChannel SendChannel = 100;
+    notif.manager.channel.v1.NotifChannel SendChannel = 130;
+    uint32           EndAt          = 140;
 }
 
 message CreateAnnouncementRequest {
