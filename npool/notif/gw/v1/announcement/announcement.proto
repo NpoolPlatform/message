@@ -52,6 +52,7 @@ message Announcement {
     string           Title        = 40;
     string           Content      = 50;
     uint32           EndAt        = 60;
+    uint32           CreatedAt    = 70;
 }
 
 message CreateAnnouncementRequest {

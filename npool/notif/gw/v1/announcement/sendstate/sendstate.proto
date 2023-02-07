@@ -50,6 +50,7 @@ message SendState {
     string           Content        = 90;
     notif.manager.channel.v1.NotifChannel Channel = 100;
     bool             AlreadySend    = 110;
+    uint32           CreateAt       = 120;
 }
 
 message GetSendStatesRequest {

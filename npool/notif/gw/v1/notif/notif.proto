@@ -46,6 +46,7 @@ message Notif {
     string           Content      = 110;
     repeated notif.manager.channel.v1.NotifChannel Channels = 120;
     bool             AlreadyRead = 130;
+    uint32           CreatedAt   = 140;
 }
 
 message GetNotifRequest {
