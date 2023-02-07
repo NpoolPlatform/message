@@ -105,6 +105,14 @@
         }
       }
     },
+    "middlewarenotif2v1UpdateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarenotif2v1Notif"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {

@@ -132,6 +132,21 @@
         }
       }
     },
+    "v1GetAnnouncementReadStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareannouncementreadstatev1ReadState"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1NotifChannel": {
       "type": "string",
       "enum": [

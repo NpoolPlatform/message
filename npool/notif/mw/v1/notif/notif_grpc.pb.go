@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error)
+	UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error)
 	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GetNotifOnly(ctx context.Context, in *GetNotifOnlyRequest, opts ...grpc.CallOption) (*GetNotifOnlyResponse, error)
@@ -39,6 +40,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error) {
 	out := new(CreateNotifResponse)
 	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/CreateNotif", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error) {
+	out := new(UpdateNotifResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/UpdateNotif", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *middlewareClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyReq
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error)
+	UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error)
 	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GetNotifOnly(context.Context, *GetNotifOnlyRequest) (*GetNotifOnlyResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotif not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotif not implemented")
 }
 func (UnimplementedMiddlewareServer) GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotif not implemented")
@@ -126,6 +140,24 @@ func _Middleware_CreateNotif_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateNotif(ctx, req.(*CreateNotifRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateNotif_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNotifRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateNotif(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/UpdateNotif",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateNotif(ctx, req.(*UpdateNotifRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateNotif",
 			Handler:    _Middleware_CreateNotif_Handler,
+		},
+		{
+			MethodName: "UpdateNotif",
+			Handler:    _Middleware_UpdateNotif_Handler,
 		},
 		{
 			MethodName: "GetNotif",

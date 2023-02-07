@@ -49,6 +49,9 @@
     "middlewareannouncementsendstatev1CreateSendStateResponse": {
       "type": "object"
     },
+    "middlewareannouncementsendstatev1CreateSendStatesResponse": {
+      "type": "object"
+    },
     "middlewareannouncementsendstatev1GetSendStatesResponse": {
       "type": "object",
       "properties": {
@@ -156,6 +159,26 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1SendStateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",

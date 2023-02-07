@@ -10,8 +10,9 @@ import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateSendState  (CreateSendStateRequest) returns (CreateSendStateResponse)  {}
-    rpc GetSendStates    (GetSendStatesRequest)   returns (GetSendStatesResponse)    {}
+    rpc CreateSendState  (CreateSendStateRequest)  returns (CreateSendStateResponse)  {}
+    rpc CreateSendStates (CreateSendStatesRequest) returns (CreateSendStatesResponse) {}
+    rpc GetSendStates    (GetSendStatesRequest)    returns (GetSendStatesResponse)    {}
 }
 
 message SendState {
@@ -44,6 +45,13 @@ message CreateSendStateRequest {
 }
 
 message CreateSendStateResponse {
+}
+
+message CreateSendStatesRequest {
+    notif.manager.sendstate.v1.SendStateReq Infos = 10;
+}
+
+message CreateSendStatesResponse {
 }
 
 message Conds {

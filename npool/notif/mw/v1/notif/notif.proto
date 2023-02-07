@@ -10,6 +10,7 @@ import "npool/notif/mgr/v1/notif/notif.proto";
 // Service Name
 service Middleware {
     rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
+    rpc UpdateNotif  (UpdateNotifRequest)  returns (UpdateNotifResponse)  {}
     rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
     rpc GetNotifs    (GetNotifsRequest)    returns (GetNotifsResponse)    {}
     rpc GetNotifOnly (GetNotifOnlyRequest) returns (GetNotifOnlyResponse) {}
@@ -36,6 +37,14 @@ message CreateNotifRequest {
 }
 
 message CreateNotifResponse {
+    Notif Info = 10;
+}
+
+message UpdateNotifRequest {
+    notif.manager.notif1.v1.NotifReq Info = 10;
+}
+
+message UpdateNotifResponse {
     Notif Info = 10;
 }
 
