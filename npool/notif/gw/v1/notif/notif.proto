@@ -17,9 +17,9 @@ service Gateway {
         };
     }
     
-    rpc UpdateNotif (UpdateNotifRequest) returns (UpdateNotifResponse) {
+    rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {
         option (google.api.http) = {
-            post: "/v1/update/notif"
+            post: "/v1/update/notifs"
             body: "*"
         };
     }
@@ -64,14 +64,14 @@ message GetNotifResponse {
     Notif Info = 10;
 }
 
-message UpdateNotifRequest {
+message UpdateNotifsRequest {
     repeated string IDs         = 10;
     string          AppID       = 20;
     string          UserID      = 30;
     bool            AlreadyRead = 40;
 }
 
-message UpdateNotifResponse {
+message UpdateNotifsResponse {
     Notif Info = 10;
 }
 
