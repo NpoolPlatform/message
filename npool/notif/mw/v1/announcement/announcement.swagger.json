@@ -17,13 +17,97 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareannouncementannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "AnnouncementID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"announcement_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "AlreadySend": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "ReadUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_user_id\""
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        }
+      }
+    },
+    "middlewareannouncementannouncementv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AlreadySend": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AlreadyRead": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
     "middlewareannouncementannouncementv1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
           }
         },
         "Total": {
@@ -59,55 +143,14 @@
         }
       }
     },
-    "v1Announcement": {
+    "v1BoolVal": {
       "type": "object",
       "properties": {
-        "ID": {
+        "Op": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "Value": {
+          "type": "boolean"
         }
       }
     },

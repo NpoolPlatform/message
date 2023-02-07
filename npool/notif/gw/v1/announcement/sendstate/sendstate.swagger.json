@@ -359,6 +359,10 @@
         },
         "AlreadySend": {
           "type": "boolean"
+        },
+        "CreateAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

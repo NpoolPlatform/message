@@ -63,7 +63,6 @@ message Conds {
     optional npool.v1.Uint32Val      EndAt          = 60;
     optional npool.v1.BoolVal        AlreadySend    = 70;
     optional npool.v1.StringSliceVal UserIDs        = 80;
-
 }
 message GetSendStatesRequest {
     Conds  Conds  = 10;

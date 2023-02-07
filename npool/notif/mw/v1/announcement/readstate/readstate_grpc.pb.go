@@ -24,7 +24,6 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error)
 	GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
-	GetAnnouncementReadStates(ctx context.Context, in *GetAnnouncementReadStatesRequest, opts ...grpc.CallOption) (*GetAnnouncementReadStatesResponse, error)
 }
 
 type middlewareClient struct {
@@ -53,22 +52,12 @@ func (c *middlewareClient) GetReadStates(ctx context.Context, in *GetReadStatesR
 	return out, nil
 }
 
-func (c *middlewareClient) GetAnnouncementReadStates(ctx context.Context, in *GetAnnouncementReadStatesRequest, opts ...grpc.CallOption) (*GetAnnouncementReadStatesResponse, error) {
-	out := new(GetAnnouncementReadStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.readstate.v1.Middleware/GetAnnouncementReadStates", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	GetReadState(context.Context, *GetReadStateRequest) (*GetReadStateResponse, error)
 	GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
-	GetAnnouncementReadStates(context.Context, *GetAnnouncementReadStatesRequest) (*GetAnnouncementReadStatesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -81,9 +70,6 @@ func (UnimplementedMiddlewareServer) GetReadState(context.Context, *GetReadState
 }
 func (UnimplementedMiddlewareServer) GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReadStates not implemented")
-}
-func (UnimplementedMiddlewareServer) GetAnnouncementReadStates(context.Context, *GetAnnouncementReadStatesRequest) (*GetAnnouncementReadStatesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementReadStates not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -134,24 +120,6 @@ func _Middleware_GetReadStates_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAnnouncementReadStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAnnouncementReadStatesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAnnouncementReadStates(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/notif.middleware.announcement.readstate.v1.Middleware/GetAnnouncementReadStates",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAnnouncementReadStates(ctx, req.(*GetAnnouncementReadStatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -166,10 +134,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetReadStates",
 			Handler:    _Middleware_GetReadStates_Handler,
-		},
-		{
-			MethodName: "GetAnnouncementReadStates",
-			Handler:    _Middleware_GetAnnouncementReadStates_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
