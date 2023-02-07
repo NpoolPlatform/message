@@ -51,8 +51,8 @@ message UpdateNotifResponse {
 
 message UpdateNotifsRequest {
     repeated string IDs         = 10;
-    repeated bool   EmailSend   = 20;
-    repeated bool   AlreadyRead = 30;
+    optional bool   EmailSend   = 20;
+    optional bool   AlreadyRead = 30;
 }
 
 message UpdateNotifsResponse {

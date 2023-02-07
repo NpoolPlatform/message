@@ -92,7 +92,7 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "Email_send": {
+        "EmailSend": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -156,6 +156,9 @@
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
