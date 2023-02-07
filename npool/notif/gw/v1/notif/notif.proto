@@ -66,7 +66,9 @@ message GetNotifResponse {
 
 message UpdateNotifRequest {
     string ID          = 10;
-    bool   AlreadyRead = 20;
+    string AppID       = 20;
+    string UserID      = 30;
+    bool   AlreadyRead = 40;
 }
 
 message UpdateNotifResponse {

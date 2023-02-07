@@ -111,6 +111,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/notif": {
+      "post": {
+        "operationId": "Gateway_UpdateNotif",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -212,6 +244,25 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "gatewaynotif3v1UpdateNotifRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gatewaynotif3v1UpdateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
         }
       }
     },
