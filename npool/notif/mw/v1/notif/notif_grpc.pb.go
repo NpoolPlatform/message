@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error)
 	UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error)
+	UpdateNotifs(ctx context.Context, in *UpdatesNotifRequest, opts ...grpc.CallOption) (*UpdatesNotifResponse, error)
 	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GetNotifOnly(ctx context.Context, in *GetNotifOnlyRequest, opts ...grpc.CallOption) (*GetNotifOnlyResponse, error)
@@ -49,6 +50,15 @@ func (c *middlewareClient) CreateNotif(ctx context.Context, in *CreateNotifReque
 func (c *middlewareClient) UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error) {
 	out := new(UpdateNotifResponse)
 	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/UpdateNotif", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateNotifs(ctx context.Context, in *UpdatesNotifRequest, opts ...grpc.CallOption) (*UpdatesNotifResponse, error) {
+	out := new(UpdatesNotifResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/UpdateNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,6 +98,7 @@ func (c *middlewareClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyReq
 type MiddlewareServer interface {
 	CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error)
 	UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error)
+	UpdateNotifs(context.Context, *UpdatesNotifRequest) (*UpdatesNotifResponse, error)
 	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GetNotifOnly(context.Context, *GetNotifOnlyRequest) (*GetNotifOnlyResponse, error)
@@ -103,6 +114,9 @@ func (UnimplementedMiddlewareServer) CreateNotif(context.Context, *CreateNotifRe
 }
 func (UnimplementedMiddlewareServer) UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotif not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateNotifs(context.Context, *UpdatesNotifRequest) (*UpdatesNotifResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotifs not implemented")
 }
 func (UnimplementedMiddlewareServer) GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotif not implemented")
@@ -158,6 +172,24 @@ func _Middleware_UpdateNotif_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateNotif(ctx, req.(*UpdateNotifRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatesNotifRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateNotifs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/UpdateNotifs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateNotifs(ctx, req.(*UpdatesNotifRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -230,6 +262,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateNotif",
 			Handler:    _Middleware_UpdateNotif_Handler,
+		},
+		{
+			MethodName: "UpdateNotifs",
+			Handler:    _Middleware_UpdateNotifs_Handler,
 		},
 		{
 			MethodName: "GetNotif",

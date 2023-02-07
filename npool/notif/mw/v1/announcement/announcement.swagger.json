@@ -66,6 +66,11 @@
         },
         "AlreadyRead": {
           "type": "boolean"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
         }
       }
     },
