@@ -282,6 +282,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdatesNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
+          }
+        }
+      }
     }
   }
 }
