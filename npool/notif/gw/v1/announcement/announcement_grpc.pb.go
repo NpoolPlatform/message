@@ -26,6 +26,8 @@ type GatewayClient interface {
 	UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error)
 	DeleteAnnouncement(ctx context.Context, in *DeleteAnnouncementRequest, opts ...grpc.CallOption) (*DeleteAnnouncementResponse, error)
 	GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
+	GetAppAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
+	GetNAppAnnouncements(ctx context.Context, in *GetNAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementsResponse, error)
 	GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error)
 }
 
@@ -73,6 +75,24 @@ func (c *gatewayClient) GetAnnouncements(ctx context.Context, in *GetAnnouncemen
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error) {
+	out := new(GetAnnouncementsResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAppAnnouncements", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetNAppAnnouncements(ctx context.Context, in *GetNAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementsResponse, error) {
+	out := new(GetNAppAnnouncementsResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetNAppAnnouncements", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error) {
 	out := new(GetAnnouncementResponse)
 	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.v1.Gateway/GetAnnouncement", in, out, opts...)
@@ -90,6 +110,8 @@ type GatewayServer interface {
 	UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error)
 	DeleteAnnouncement(context.Context, *DeleteAnnouncementRequest) (*DeleteAnnouncementResponse, error)
 	GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
+	GetAppAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
+	GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error)
 	GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -109,6 +131,12 @@ func (UnimplementedGatewayServer) DeleteAnnouncement(context.Context, *DeleteAnn
 }
 func (UnimplementedGatewayServer) GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncements not implemented")
+}
+func (UnimplementedGatewayServer) GetAppAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppAnnouncements not implemented")
+}
+func (UnimplementedGatewayServer) GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppAnnouncements not implemented")
 }
 func (UnimplementedGatewayServer) GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncement not implemented")
@@ -198,6 +226,42 @@ func _Gateway_GetAnnouncements_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnnouncementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppAnnouncements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetAppAnnouncements",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppAnnouncements(ctx, req.(*GetAnnouncementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetNAppAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNAppAnnouncementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetNAppAnnouncements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.v1.Gateway/GetNAppAnnouncements",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetNAppAnnouncements(ctx, req.(*GetNAppAnnouncementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetAnnouncement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAnnouncementRequest)
 	if err := dec(in); err != nil {
@@ -238,6 +302,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAnnouncements",
 			Handler:    _Gateway_GetAnnouncements_Handler,
+		},
+		{
+			MethodName: "GetAppAnnouncements",
+			Handler:    _Gateway_GetAppAnnouncements_Handler,
+		},
+		{
+			MethodName: "GetNAppAnnouncements",
+			Handler:    _Gateway_GetNAppAnnouncements_Handler,
 		},
 		{
 			MethodName: "GetAnnouncement",

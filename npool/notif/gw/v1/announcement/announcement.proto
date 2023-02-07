@@ -37,6 +37,20 @@ service Gateway {
         };
     }
 
+    rpc GetAppAnnouncements (GetAnnouncementsRequest) returns (GetAnnouncementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/announcements"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppAnnouncements (GetNAppAnnouncementsRequest) returns (GetNAppAnnouncementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/announcements"
+            body: "*"
+        };
+    }
+
     rpc GetAnnouncement (GetAnnouncementRequest) returns (GetAnnouncementResponse) {
         option (google.api.http) = {
             post: "/v1/get/announcement"
@@ -46,13 +60,20 @@ service Gateway {
 }
 
 message Announcement {
-    string           ID           = 10;
-    string           AppID        = 20;
-    string           AppName      = 30;
-    string           Title        = 40;
-    string           Content      = 50;
-    uint32           EndAt        = 60;
-    uint32           CreatedAt    = 70;
+    string           ID             = 10;
+    string           AppID          = 20;
+    string           AppName        = 30;
+    string           UserID         = 40;
+    string           EmailAddress   = 50;
+    string           PhoneNO        = 60;
+    string           Username       = 70;
+    string           Title          = 80;
+    string           Content        = 90;
+    bool             AlreadyRead    = 110;
+    bool             AlreadySend    = 120;
+    uint32           CreatedAt      = 130;
+    //if AlreadySend = true SendChannel valid
+    notif.manager.channel.v1.NotifChannel SendChannel = 100;
 }
 
 message CreateAnnouncementRequest {
@@ -89,11 +110,34 @@ message DeleteAnnouncementResponse {
 
 message GetAnnouncementsRequest {
     string AppID  = 10;
+    string UserID = 20;
     uint32 Offset = 30;
     uint32 Limit  = 40;
 }
 
 message GetAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
+}
+
+message GetAppAnnouncementsRequest {
+    string AppID  = 10;
+    uint32 Offset = 30;
+    uint32 Limit  = 40;
+}
+
+message GetAppAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
+}
+
+message GetNAppAnnouncementsRequest {
+    string TargetAppID  = 10;
+    uint32 Offset       = 30;
+    uint32 Limit        = 40;
+}
+
+message GetNAppAnnouncementsResponse {
     repeated Announcement Infos = 10;
     uint32                Total = 20;
 }

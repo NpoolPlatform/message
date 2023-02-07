@@ -357,9 +357,6 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
-        "AlreadySend": {
-          "type": "boolean"
-        },
         "CreateAt": {
           "type": "integer",
           "format": "int64"

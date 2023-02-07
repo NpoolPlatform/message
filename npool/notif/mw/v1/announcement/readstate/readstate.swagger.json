@@ -73,9 +73,6 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "AlreadyRead": {
-          "type": "boolean"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -129,21 +126,6 @@
         },
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1GetAnnouncementReadStatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/middlewareannouncementreadstatev1ReadState"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

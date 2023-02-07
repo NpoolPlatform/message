@@ -38,9 +38,6 @@
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "AlreadySend": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -97,10 +94,6 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
-        "AlreadySend": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"email_send\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -137,17 +130,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },

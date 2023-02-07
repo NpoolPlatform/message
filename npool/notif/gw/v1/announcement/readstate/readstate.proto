@@ -62,7 +62,6 @@ message ReadState {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    bool             AlreadyRead    = 110;
     uint32           CreatedAt      = 120;
 }
 

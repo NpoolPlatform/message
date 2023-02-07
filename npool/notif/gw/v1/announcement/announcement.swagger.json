@@ -144,6 +144,70 @@
         ]
       }
     },
+    "/v1/get/app/announcements": {
+      "post": {
+        "operationId": "Gateway_GetAppAnnouncements",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAnnouncementsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAnnouncementsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/announcements": {
+      "post": {
+        "operationId": "Gateway_GetNAppAnnouncements",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppAnnouncementsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppAnnouncementsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/announcement": {
       "post": {
         "operationId": "Gateway_UpdateAnnouncement",
@@ -217,19 +281,37 @@
         "AppName": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
         "Title": {
           "type": "string"
         },
         "Content": {
           "type": "string"
         },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "AlreadySend": {
+          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SendChannel": {
+          "$ref": "#/definitions/v1NotifChannel",
+          "title": "if AlreadySend = true SendChannel valid"
         }
       }
     },
@@ -303,6 +385,9 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int64"
@@ -314,6 +399,37 @@
       }
     },
     "v1GetAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppAnnouncementsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

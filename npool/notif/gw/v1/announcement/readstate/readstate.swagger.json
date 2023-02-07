@@ -441,9 +441,6 @@
         "Content": {
           "type": "string"
         },
-        "AlreadyRead": {
-          "type": "boolean"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

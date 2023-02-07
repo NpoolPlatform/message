@@ -27,7 +27,6 @@ message ReadState {
     // @inject_tag: sql:"channels"
     string ChannelsStr = 60;
     repeated notif.manager.channel.v1.NotifChannel Channels = 61;
-    bool   AlreadyRead = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt   = 90;
     // @inject_tag: sql:"updated_at"
