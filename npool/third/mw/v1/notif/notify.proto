@@ -2,38 +2,18 @@ syntax = "proto3";
 
 package third.middleware.notif1.v1;
 
-import "npool/notif/mgr/v1/notif/notif.proto";
-
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/notif";
 
 service Middleware {
     rpc SendNotifEmail (SendNotifEmailRequest) returns (SendNotifEmailResponse) {}
-    rpc SendAnnouncementEmail (SendNotifEmailRequest) returns (SendNotifEmailResponse) {}
 }
 
-// if UseTemplate = true Title and Content Valid
 message SendNotifEmailRequest {
-    string                            AppID           = 10;
-    optional string                   FromAccount     = 20;
-    notif.manager.notif1.v1.EventType UsedFor         = 30;
-    string                            ReceiverAccount = 40;
-    string                            LangID          = 50;
-    optional string                   SenderName      = 60;
-    optional string                   ReceiverName    = 70;
-    optional string                   Message         = 80;
-    bool                              UseTemplate     = 90;
-    string                            Title           = 100;
-    string                            Content         = 110;
+    string Subject = 10;
+    string Content = 20;
+    string From    = 30;
+    string To      = 40;
 }
 
 message SendNotifEmailResponse {
-}
-
-message SendAnnouncementRequest {
-    repeated string ReceiverAccount = 10;
-    string title   = 20;
-    string content = 30;
-}
-
-message SendAnnouncementResponse {
 }
