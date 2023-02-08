@@ -72,6 +72,7 @@ message Announcement {
     bool             AlreadyRead    = 100;
     bool             AlreadySend    = 110;
     uint32           CreatedAt      = 120;
+    uint32           UpdatedAt      = 121;
     //if AlreadySend = true SendChannel valid
     notif.manager.channel.v1.NotifChannel SendChannel = 130;
     uint32           EndAt          = 140;

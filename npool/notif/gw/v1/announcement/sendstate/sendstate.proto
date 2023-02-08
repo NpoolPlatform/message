@@ -49,7 +49,8 @@ message SendState {
     string           Title          = 80;
     string           Content        = 90;
     notif.manager.channel.v1.NotifChannel Channel = 100;
-    uint32           CreateAt       = 120;
+    uint32           CreatedAt      = 120;
+    uint32           UpdatedAt      = 150;
 }
 
 message GetSendStatesRequest {

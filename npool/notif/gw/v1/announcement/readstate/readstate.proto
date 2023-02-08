@@ -63,6 +63,7 @@ message ReadState {
     string           Title          = 80;
     string           Content        = 90;
     uint32           CreatedAt      = 120;
+    uint32           UpdatedAt      = 130;
 }
 
 message CreateReadStateRequest {
