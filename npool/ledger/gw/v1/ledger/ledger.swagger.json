@@ -507,6 +507,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -738,6 +741,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "CoinTypeID": {
