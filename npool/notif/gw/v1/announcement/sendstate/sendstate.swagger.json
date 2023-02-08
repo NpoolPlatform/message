@@ -357,7 +357,11 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
-        "CreateAt": {
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }

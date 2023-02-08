@@ -309,6 +309,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "SendChannel": {
           "$ref": "#/definitions/v1NotifChannel",
           "title": "if AlreadySend = true SendChannel valid"
