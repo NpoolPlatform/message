@@ -294,6 +294,7 @@ message Withdraw {
 message CreateWithdrawRequest {
     string AppID             = 10;
     string UserID            = 20;
+    string LangID            = 21;
     string CoinTypeID        = 30;
     string AccountID         = 40;
     string Amount            = 50;
