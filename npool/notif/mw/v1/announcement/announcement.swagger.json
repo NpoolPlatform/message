@@ -77,9 +77,6 @@
     "middlewareannouncementannouncementv1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -121,6 +118,23 @@
         }
       }
     },
+    "notifmanagerannouncementv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -156,6 +170,21 @@
         },
         "Value": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GetAnnouncementStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

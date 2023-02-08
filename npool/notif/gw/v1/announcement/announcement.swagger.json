@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementsResponse"
+              "$ref": "#/definitions/v1GetAppAnnouncementsResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementsRequest"
+              "$ref": "#/definitions/v1GetAppAnnouncementsRequest"
             }
           }
         ],
@@ -316,6 +316,12 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
         }
       }
     },
@@ -403,6 +409,37 @@
       }
     },
     "v1GetAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppAnnouncementsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

@@ -75,6 +75,7 @@ message Announcement {
     //if AlreadySend = true SendChannel valid
     notif.manager.channel.v1.NotifChannel SendChannel = 130;
     uint32           EndAt          = 140;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 150;
 }
 
 message CreateAnnouncementRequest {
