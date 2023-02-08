@@ -226,6 +226,7 @@ message UpdateAppGoodRequest {
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
+    optional string DailyRewardAmount   = 190;
 }
 
 message UpdateAppGoodResponse {
