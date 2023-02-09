@@ -50,10 +50,6 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
-        "ReadUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"read_user_id\""
-        },
         "AlreadyRead": {
           "type": "boolean"
         },
@@ -62,8 +58,16 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
         },
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"announcement_type\""
+        },
         "AnnouncementType": {
           "$ref": "#/definitions/v1AnnouncementType"
+        },
+        "ReadUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_user_id\""
         }
       }
     },

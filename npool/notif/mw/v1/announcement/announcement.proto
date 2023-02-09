@@ -37,12 +37,14 @@ message Announcement {
     uint32 CreatedAt      = 90;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 100;
-    // @inject_tag: sql:"read_user_id"
-    string ReadUserID     = 110;
     bool   AlreadyRead    = 120;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 130;
-    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 140;
+    // @inject_tag: sql:"announcement_type"
+    string AnnouncementTypeStr = 140;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
+    // @inject_tag: sql:"read_user_id"
+    string ReadUserID     = 160;
 }
 
 message GetAnnouncementStatesRequest {
