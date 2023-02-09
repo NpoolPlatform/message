@@ -59,7 +59,7 @@ message Conds {
     optional npool.v1.StringVal      AnnouncementID = 40;
     optional npool.v1.Uint32Val      Channel        = 50;
     optional npool.v1.Uint32Val      EndAt          = 60;
-    optional npool.v1.StringSliceVal UserIDs        = 80;
+    optional npool.v1.StringSliceVal UserIDs        = 70;
 }
 message GetSendStatesRequest {
     Conds  Conds  = 10;
