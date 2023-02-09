@@ -26,11 +26,14 @@ message ReadState {
     string Content        = 50;
     // @inject_tag: sql:"channels"
     string ChannelsStr = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 61;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 80;
+    notif.manager.channel.v1.NotifChannel AnnouncementType = 90;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 90;
+    uint32 CreatedAt   = 100;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 100;
+    uint32 UpdatedAt   = 110;
 }
 
 message GetReadStateRequest {

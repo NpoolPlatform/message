@@ -131,8 +131,8 @@ type Announcement struct {
 	AlreadyRead bool   `protobuf:"varint,120,opt,name=AlreadyRead,proto3" json:"AlreadyRead,omitempty"`
 	// @inject_tag: sql:"end_at"
 	EndAt uint32 `protobuf:"varint,130,opt,name=EndAt,proto3" json:"EndAt,omitempty" sql:"end_at"`
-	// @inject_tag: sql:"announcement_type"
-	AnnouncementTypeStr string                        `protobuf:"bytes,140,opt,name=AnnouncementTypeStr,proto3" json:"AnnouncementTypeStr,omitempty" sql:"announcement_type"`
+	// @inject_tag: sql:"type"
+	AnnouncementTypeStr string                        `protobuf:"bytes,140,opt,name=AnnouncementTypeStr,proto3" json:"AnnouncementTypeStr,omitempty" sql:"type"`
 	AnnouncementType    announcement.AnnouncementType `protobuf:"varint,150,opt,name=AnnouncementType,proto3,enum=notif.manager.announcement.v1.AnnouncementType" json:"AnnouncementType,omitempty"`
 	// @inject_tag: sql:"read_user_id"
 	ReadUserID string `protobuf:"bytes,160,opt,name=ReadUserID,proto3" json:"ReadUserID,omitempty" sql:"read_user_id"`

@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "manageruserv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "middlewareannouncementuserv1GetUsersResponse": {
       "type": "object",
       "properties": {
@@ -69,6 +86,13 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -108,22 +132,14 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1NotifChannel": {
       "type": "string",

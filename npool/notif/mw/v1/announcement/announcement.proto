@@ -40,7 +40,7 @@ message Announcement {
     bool   AlreadyRead    = 120;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 130;
-    // @inject_tag: sql:"announcement_type"
+    // @inject_tag: sql:"type"
     string AnnouncementTypeStr = 140;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
     // @inject_tag: sql:"read_user_id"

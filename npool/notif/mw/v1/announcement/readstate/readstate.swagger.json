@@ -73,6 +73,13 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",

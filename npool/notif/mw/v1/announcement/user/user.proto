@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announce
 
 import "npool/notif/mgr/v1/announcement/user/user.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mgr/v1/announcement/announcement.proto";
 
 // Service Name
 service Middleware {
@@ -27,11 +28,14 @@ message User {
     string Content        = 60;
     // @inject_tag: sql:"channels"
     string ChannelsStr    = 70;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 61;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 80;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 90;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 100;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 90;
+    uint32 CreatedAt   = 110;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 100;
+    uint32 UpdatedAt   = 120;
 }
 
 message GetUsersRequest {
