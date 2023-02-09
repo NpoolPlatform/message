@@ -71,7 +71,8 @@ message CreateAnnouncementUsersResponse {
 
 
 message DeleteAnnouncementUserRequest {
-    string ID = 10;
+    string ID    = 10;
+    string AppID = 20;
 }
 
 message DeleteAnnouncementUserResponse {

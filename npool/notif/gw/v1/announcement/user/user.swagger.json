@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/announcementusers": {
+      "post": {
+        "operationId": "Gateway_DeleteAnnouncementUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAnnouncementUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAnnouncementUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/announcementusers": {
       "post": {
         "operationId": "Gateway_GetAnnouncementUsers",
@@ -246,15 +278,18 @@
       }
     },
     "v1CreateAnnouncementUsersResponse": {
+      "type": "object"
+    },
+    "v1DeleteAnnouncementUserRequest": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AnnouncementUser"
-          }
+        "ID": {
+          "type": "string"
         }
       }
+    },
+    "v1DeleteAnnouncementUserResponse": {
+      "type": "object"
     },
     "v1GetAnnouncementUsersRequest": {
       "type": "object",
