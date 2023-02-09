@@ -99,7 +99,7 @@
           "title": "@inject_tag: sql:\"type\""
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1NotifChannel"
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -139,6 +139,15 @@
           }
         }
       }
+    },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1NotifChannel": {
       "type": "string",
