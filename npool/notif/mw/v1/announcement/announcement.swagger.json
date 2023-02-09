@@ -71,6 +71,29 @@
         }
       }
     },
+    "middlewareannouncementannouncementv1Conds": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AlreadyRead": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "middlewareannouncementannouncementv1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
@@ -138,6 +161,17 @@
         "AppointUsers"
       ],
       "default": "DefaultAnnouncementType"
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
     },
     "v1GetAnnouncementStatesResponse": {
       "type": "object",
