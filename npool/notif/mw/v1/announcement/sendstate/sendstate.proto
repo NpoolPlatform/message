@@ -4,6 +4,7 @@ package notif.middleware.announcement.sendstate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/sendstate";
 
+import "npool/notif/mgr/v1/announcement/announcement.proto";
 import "npool/notif/mgr/v1/announcement/sendstate/sendstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
@@ -31,7 +32,7 @@ message SendState {
     notif.manager.channel.v1.NotifChannel Channel = 70;
     // @inject_tag: sql:"type"
     string AnnouncementTypeStr = 80;
-    notif.manager.channel.v1.NotifChannel AnnouncementType = 90;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt   = 100;
     // @inject_tag: sql:"updated_at"
