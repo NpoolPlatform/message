@@ -16,10 +16,11 @@ service Middleware {
 message Conds {
     optional npool.v1.StringVal      AppID            = 10;
     optional npool.v1.StringVal      UserID           = 20;
-    optional npool.v1.StringVal      AnnouncementID   = 30;
-    optional npool.v1.BoolVal        AlreadyRead      = 40;
-    optional npool.v1.Uint32Val      AnnouncementType = 50;
-    optional npool.v1.StringSliceVal Channels         = 60;
+    optional npool.v1.StringVal      LangID           = 30;
+    optional npool.v1.StringVal      AnnouncementID   = 40;
+    optional npool.v1.BoolVal        AlreadyRead      = 50;
+    optional npool.v1.Uint32Val      AnnouncementType = 60;
+    optional npool.v1.StringSliceVal Channels         = 70;
 }
 
 message Announcement {
@@ -29,12 +30,14 @@ message Announcement {
     string AppID          = 20;
     // @inject_tag: sql:"user_id"
     string UserID         = 30;
+    // @inject_tag: sql:"lang_id"
+    string LangID         = 40;
     // @inject_tag: sql:"title"
-    string Title          = 40;
+    string Title          = 50;
     // @inject_tag: sql:"content"
-    string Content        = 50;
+    string Content        = 60;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 90;
+    uint32 CreatedAt      = 70;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 100;
     bool   AlreadyRead    = 120;
