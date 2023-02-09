@@ -15,6 +15,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc DeleteAnnouncementUser (DeleteAnnouncementUserRequest) returns (DeleteAnnouncementUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/announcementusers"
+            body: "*"
+        };
+    }
 
     rpc GetAnnouncementUsers (GetAnnouncementUsersRequest) returns (GetAnnouncementUsersResponse) {
         option (google.api.http) = {
@@ -61,7 +67,14 @@ message CreateAnnouncementUsersRequest {
 }
 
 message CreateAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
+}
+
+
+message DeleteAnnouncementUserRequest {
+    string ID = 10;
+}
+
+message DeleteAnnouncementUserResponse {
 }
 
 message GetAnnouncementUsersRequest {

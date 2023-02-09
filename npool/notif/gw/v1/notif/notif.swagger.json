@@ -171,6 +171,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int64"
@@ -298,6 +301,9 @@
           "type": "string"
         },
         "TargetUserID": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         },
         "Offset": {

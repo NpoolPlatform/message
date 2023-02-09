@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateAnnouncementUsers(ctx context.Context, in *CreateAnnouncementUsersRequest, opts ...grpc.CallOption) (*CreateAnnouncementUsersResponse, error)
+	DeleteAnnouncementUser(ctx context.Context, in *DeleteAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAnnouncementUserResponse, error)
 	GetAnnouncementUsers(ctx context.Context, in *GetAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetAnnouncementUsersResponse, error)
 	GetAppAnnouncementUsers(ctx context.Context, in *GetAppAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetAppAnnouncementUsersResponse, error)
 	GetNAppAnnouncementUsers(ctx context.Context, in *GetNAppAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementUsersResponse, error)
@@ -39,6 +40,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateAnnouncementUsers(ctx context.Context, in *CreateAnnouncementUsersRequest, opts ...grpc.CallOption) (*CreateAnnouncementUsersResponse, error) {
 	out := new(CreateAnnouncementUsersResponse)
 	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.announcementuser.v1.Gateway/CreateAnnouncementUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) DeleteAnnouncementUser(ctx context.Context, in *DeleteAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAnnouncementUserResponse, error) {
+	out := new(DeleteAnnouncementUserResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *gatewayClient) GetNAppAnnouncementUsers(ctx context.Context, in *GetNAp
 // for forward compatibility
 type GatewayServer interface {
 	CreateAnnouncementUsers(context.Context, *CreateAnnouncementUsersRequest) (*CreateAnnouncementUsersResponse, error)
+	DeleteAnnouncementUser(context.Context, *DeleteAnnouncementUserRequest) (*DeleteAnnouncementUserResponse, error)
 	GetAnnouncementUsers(context.Context, *GetAnnouncementUsersRequest) (*GetAnnouncementUsersResponse, error)
 	GetAppAnnouncementUsers(context.Context, *GetAppAnnouncementUsersRequest) (*GetAppAnnouncementUsersResponse, error)
 	GetNAppAnnouncementUsers(context.Context, *GetNAppAnnouncementUsersRequest) (*GetNAppAnnouncementUsersResponse, error)
@@ -89,6 +100,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateAnnouncementUsers(context.Context, *CreateAnnouncementUsersRequest) (*CreateAnnouncementUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncementUsers not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAnnouncementUser(context.Context, *DeleteAnnouncementUserRequest) (*DeleteAnnouncementUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAnnouncementUser not implemented")
 }
 func (UnimplementedGatewayServer) GetAnnouncementUsers(context.Context, *GetAnnouncementUsersRequest) (*GetAnnouncementUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementUsers not implemented")
@@ -126,6 +140,24 @@ func _Gateway_CreateAnnouncementUsers_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateAnnouncementUsers(ctx, req.(*CreateAnnouncementUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_DeleteAnnouncementUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAnnouncementUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAnnouncementUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAnnouncementUser(ctx, req.(*DeleteAnnouncementUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAnnouncementUsers",
 			Handler:    _Gateway_CreateAnnouncementUsers_Handler,
+		},
+		{
+			MethodName: "DeleteAnnouncementUser",
+			Handler:    _Gateway_DeleteAnnouncementUser_Handler,
 		},
 		{
 			MethodName: "GetAnnouncementUsers",
