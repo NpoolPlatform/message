@@ -44,19 +44,6 @@
         }
       }
     },
-    "v1EventType": {
-      "type": "string",
-      "enum": [
-        "DefaultEventType",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultEventType"
-    },
     "v1SendNotifEmailResponse": {
       "type": "object"
     }

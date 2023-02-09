@@ -40,16 +40,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"content\""
         },
-        "ChannelStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"channel\""
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
-        },
-        "AlreadySend": {
-          "type": "boolean"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -71,6 +61,9 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         }
       }
     },
@@ -86,20 +79,14 @@
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "AlreadySend": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "UserIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
         "AlreadyRead": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -162,6 +149,15 @@
         }
       }
     },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
+    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -187,15 +183,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS"
-      ],
-      "default": "DefaultChannel"
     },
     "v1StringSliceVal": {
       "type": "object",

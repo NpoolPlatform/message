@@ -69,6 +69,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -103,8 +106,20 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         }
       }
+    },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1Conds": {
       "type": "object",

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/g11n/mgr/v1/applang/applang.proto",
+    "title": "npool/notif/mgr/v1/announcement/user/user.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,17 +44,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,15 +53,15 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LangID": {
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Main": {
-          "$ref": "#/definitions/v1BoolVal"
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CountLangsResponse": {
+    "v1CountUsersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -81,42 +70,34 @@
         }
       }
     },
-    "v1CreateLangResponse": {
+    "v1CreateUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Lang"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v1CreateLangsResponse": {
+    "v1CreateUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Lang"
+            "$ref": "#/definitions/v1User"
           }
         }
       }
     },
-    "v1DeleteLangResponse": {
+    "v1DeleteUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Lang"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v1ExistLangCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistLangResponse": {
+    "v1ExistUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -124,76 +105,42 @@
         }
       }
     },
-    "v1GetLangOnlyResponse": {
+    "v1ExistUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Lang"
+          "type": "boolean"
         }
       }
     },
-    "v1GetLangResponse": {
+    "v1GetUserOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Lang"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v1GetLangsResponse": {
+    "v1GetUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Lang"
+            "$ref": "#/definitions/v1User"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Lang": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "Main": {
-          "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1LangReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "Main": {
-          "type": "boolean"
         }
       }
     },
@@ -208,11 +155,53 @@
         }
       }
     },
-    "v1UpdateLangResponse": {
+    "v1UpdateUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Lang"
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
         }
       }
     }

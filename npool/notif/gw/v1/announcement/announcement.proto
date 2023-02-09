@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announce
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mgr/v1/announcement/announcement.proto";
 
 // Service Name
 service Gateway {
@@ -73,10 +74,11 @@ message Announcement {
     bool             AlreadySend    = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 121;
-    //if AlreadySend = true SendChannel valid
-    notif.manager.channel.v1.NotifChannel SendChannel = 130;
     uint32           EndAt          = 140;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 150;
+    //if AlreadySend = true SendChannel valid
+    notif.manager.channel.v1.NotifChannel          SendChannel      = 130;
+    repeated notif.manager.channel.v1.NotifChannel Channels         = 150;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 160;
 }
 
 message CreateAnnouncementRequest {
@@ -85,6 +87,7 @@ message CreateAnnouncementRequest {
     string          Content     = 30;
     repeated notif.manager.channel.v1.NotifChannel Channels = 40;
     uint32          EndAt       = 50;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 60;
 }
 
 message CreateAnnouncementResponse {
@@ -97,6 +100,7 @@ message UpdateAnnouncementRequest {
     optional string Content     = 30;
     repeated notif.manager.channel.v1.NotifChannel Channels = 40;
     optional uint32 EndAt       = 50;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 60;
 }
 
 message UpdateAnnouncementResponse {

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package notif.middleware.announcement.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/user";
+
+import "npool/notif/mgr/v1/announcement/user/user.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
+
+// Service Name
+service Middleware {
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {}
+}
+
+message User {
+    // @inject_tag: sql:"id"
+    string ID             = 10;
+    // @inject_tag: sql:"announcement_id"
+    string AnnouncementID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID          = 30;
+    // @inject_tag: sql:"user_id"
+    string UserID         = 40;
+    // @inject_tag: sql:"title"
+    string Title          = 50;
+    // @inject_tag: sql:"content"
+    string Content        = 60;
+    // @inject_tag: sql:"channels"
+    string ChannelsStr    = 70;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 61;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt   = 90;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt   = 100;
+}
+
+message GetUsersRequest {
+    notif.manager.user.v1.Conds Conds = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUsersResponse {
+    repeated User Infos = 10;
+    uint32        Total = 20;
+}

@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package notif.manager.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/announcement/user";
+
+import "npool/npool.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
+
+// Service Name
+service Manager {
+    rpc CreateUser     (CreateUserRequest)     returns (CreateUserResponse)     {}
+    rpc CreateUsers    (CreateUsersRequest)    returns (CreateUsersResponse)    {}
+    rpc UpdateUser     (UpdateUserRequest)     returns (UpdateUserResponse)     {}
+    rpc GetUser        (GetUserRequest)        returns (GetUserResponse)        {}
+    rpc GetUserOnly    (GetUserOnlyRequest)    returns (GetUserOnlyResponse)    {}
+    rpc GetUsers       (GetUsersRequest)       returns (GetUsersResponse)       {}
+    rpc ExistUser      (ExistUserRequest)      returns (ExistUserResponse)      {}
+    rpc ExistUserConds (ExistUserCondsRequest) returns (ExistUserCondsResponse) {}
+    rpc CountUsers     (CountUsersRequest)     returns (CountUsersResponse)     {}
+    rpc DeleteUser     (DeleteUserRequest)     returns (DeleteUserResponse)     {}
+}
+
+message UserReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string AnnouncementID = 40;
+}
+
+message User {
+    string ID             = 10;
+    string AppID          = 20;
+    string UserID         = 30;
+    string AnnouncementID = 40;
+    uint32 CreatedAt      = 60;
+    uint32 UpdatedAt      = 70;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID             = 10;
+    optional npool.v1.StringVal AppID          = 20;
+    optional npool.v1.StringVal UserID         = 30;
+    optional npool.v1.StringVal AnnouncementID = 40;
+}
+
+
+message CreateUserRequest {
+    UserReq Info = 10;
+}
+
+message CreateUserResponse {
+    User Info = 10;
+}
+
+message CreateUsersRequest {
+    repeated UserReq Infos = 10;
+}
+
+message CreateUsersResponse {
+    repeated User Infos = 10;
+}
+
+message UpdateUserRequest {
+    UserReq Info = 10;
+}
+
+message UpdateUserResponse {
+    User Info = 10;
+}
+
+message GetUserRequest {
+    string ID = 10;
+}
+
+message GetUserResponse {
+    User Info = 10;
+}
+
+message GetUsersRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetUsersResponse {
+    repeated User Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetUserOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetUserOnlyResponse {
+    User Info = 10;
+}
+
+message ExistUserRequest {
+    string ID = 10;
+}
+
+message ExistUserResponse {
+    bool Info = 10;
+}
+
+message ExistUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistUserCondsResponse {
+    bool Info = 10;
+}
+
+message CountUsersRequest {
+    Conds Conds = 10;
+}
+
+message CountUsersResponse {
+    uint32 Info = 10;
+}
+
+message DeleteUserRequest {
+    string ID = 10;
+}
+
+message DeleteUserResponse {
+    User Info = 10;
+}
