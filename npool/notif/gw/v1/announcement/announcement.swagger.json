@@ -257,6 +257,9 @@
         "UserID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "EmailAddress": {
           "type": "string"
         },
@@ -309,6 +312,9 @@
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "Title": {
@@ -379,6 +385,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "Offset": {

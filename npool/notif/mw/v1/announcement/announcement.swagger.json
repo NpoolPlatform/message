@@ -32,6 +32,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
         "Title": {
           "type": "string",
           "title": "@inject_tag: sql:\"title\""
@@ -78,6 +82,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AnnouncementID": {
