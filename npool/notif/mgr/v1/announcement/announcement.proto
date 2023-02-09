@@ -30,9 +30,10 @@ enum AnnouncementType {
 message AnnouncementReq {
     optional string ID         = 10;
     optional string AppID      = 20;
-    optional string Title      = 30;
-    optional string Content    = 40;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 50;
+    optional string LangID     = 30;
+    optional string Title      = 40;
+    optional string Content    = 50;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
     optional uint32 EndAt      = 70;
     optional AnnouncementType AnnouncementType = 80;
 }
@@ -40,20 +41,22 @@ message AnnouncementReq {
 message Announcement {
     string ID         = 10;
     string AppID      = 20;
-    string Title      = 30;
-    string Content    = 40;
-    repeated notif.manager.channel.v1.NotifChannel Channels   = 50;
-    uint32 EndAt      = 60;
-    AnnouncementType AnnouncementType = 70;
-    uint32 CreatedAt  = 80;
-    uint32 UpdatedAt  = 90;
+    string LangID     = 30;
+    string Title      = 40;
+    string Content    = 50;
+    repeated notif.manager.channel.v1.NotifChannel Channels   = 60;
+    uint32 EndAt      = 70;
+    AnnouncementType AnnouncementType = 80;
+    uint32 CreatedAt  = 90;
+    uint32 UpdatedAt  = 100;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID        = 10;
     optional npool.v1.StringVal      AppID     = 20;
-    optional npool.v1.StringSliceVal Channels  = 30;
-    optional npool.v1.Uint32Val      EndAt     = 40;
+    optional npool.v1.StringVal      LangID    = 30;
+    optional npool.v1.StringSliceVal Channels  = 40;
+    optional npool.v1.Uint32Val      EndAt     = 50;
 }
 
 

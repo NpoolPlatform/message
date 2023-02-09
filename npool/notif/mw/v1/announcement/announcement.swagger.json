@@ -118,6 +118,9 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Channels": {
           "$ref": "#/definitions/v1StringSliceVal"
         },

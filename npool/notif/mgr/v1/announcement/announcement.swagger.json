@@ -53,6 +53,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Title": {
           "type": "string"
         },
@@ -89,6 +92,9 @@
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "Title": {
@@ -128,6 +134,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Channels": {
