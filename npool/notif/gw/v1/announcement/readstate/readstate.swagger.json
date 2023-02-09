@@ -237,6 +237,15 @@
         }
       }
     },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
+    },
     "v1CreateReadStateRequest": {
       "type": "object",
       "properties": {
@@ -440,6 +449,9 @@
         },
         "Content": {
           "type": "string"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",

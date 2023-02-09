@@ -48,8 +48,7 @@ message Announcement {
 }
 
 message GetAnnouncementStatesRequest {
-    string AppID  = 10;
-    string UserID = 20;
+    Conds  Conds  = 10;
     int32  Offset = 30;
     int32  Limit  = 40;
 }

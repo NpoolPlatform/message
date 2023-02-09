@@ -173,6 +173,15 @@
         }
       }
     },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
+    },
     "v1GetAppSendStatesRequest": {
       "type": "object",
       "properties": {
@@ -356,6 +365,9 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",
