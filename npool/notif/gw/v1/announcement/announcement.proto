@@ -65,6 +65,7 @@ message Announcement {
     string           AppID          = 20;
     string           AppName        = 30;
     string           UserID         = 40;
+    string           LangID         = 41;
     string           EmailAddress   = 50;
     string           PhoneNO        = 60;
     string           Username       = 70;
@@ -83,11 +84,12 @@ message Announcement {
 
 message CreateAnnouncementRequest {
     string          AppID       = 10;
-    string          Title       = 20;
-    string          Content     = 30;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 40;
-    uint32          EndAt       = 50;
-    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 60;
+    string          LangID      = 20;
+    string          Title       = 30;
+    string          Content     = 40;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 50;
+    uint32          EndAt       = 60;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 70;
 }
 
 message CreateAnnouncementResponse {
@@ -118,8 +120,9 @@ message DeleteAnnouncementResponse {
 message GetAnnouncementsRequest {
     string AppID  = 10;
     string UserID = 20;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    string LangID = 30;
+    uint32 Offset = 40;
+    uint32 Limit  = 50;
 }
 
 message GetAnnouncementsResponse {
