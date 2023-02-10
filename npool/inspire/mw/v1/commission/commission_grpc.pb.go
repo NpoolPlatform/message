@@ -27,6 +27,7 @@ type MiddlewareClient interface {
 	GetCommission(ctx context.Context, in *GetCommissionRequest, opts ...grpc.CallOption) (*GetCommissionResponse, error)
 	GetCommissionOnly(ctx context.Context, in *GetCommissionOnlyRequest, opts ...grpc.CallOption) (*GetCommissionOnlyResponse, error)
 	GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error)
+	CloneCommissions(ctx context.Context, in *CloneCommissionsRequest, opts ...grpc.CallOption) (*CloneCommissionsResponse, error)
 }
 
 type middlewareClient struct {
@@ -82,6 +83,15 @@ func (c *middlewareClient) GetCommissions(ctx context.Context, in *GetCommission
 	return out, nil
 }
 
+func (c *middlewareClient) CloneCommissions(ctx context.Context, in *CloneCommissionsRequest, opts ...grpc.CallOption) (*CloneCommissionsResponse, error) {
+	out := new(CloneCommissionsResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.commission.v1.Middleware/CloneCommissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type MiddlewareServer interface {
 	GetCommission(context.Context, *GetCommissionRequest) (*GetCommissionResponse, error)
 	GetCommissionOnly(context.Context, *GetCommissionOnlyRequest) (*GetCommissionOnlyResponse, error)
 	GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error)
+	CloneCommissions(context.Context, *CloneCommissionsRequest) (*CloneCommissionsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedMiddlewareServer) GetCommissionOnly(context.Context, *GetComm
 }
 func (UnimplementedMiddlewareServer) GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCommissions not implemented")
+}
+func (UnimplementedMiddlewareServer) CloneCommissions(context.Context, *CloneCommissionsRequest) (*CloneCommissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CloneCommissions not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -216,6 +230,24 @@ func _Middleware_GetCommissions_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CloneCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CloneCommissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CloneCommissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.commission.v1.Middleware/CloneCommissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CloneCommissions(ctx, req.(*CloneCommissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCommissions",
 			Handler:    _Middleware_GetCommissions_Handler,
+		},
+		{
+			MethodName: "CloneCommissions",
+			Handler:    _Middleware_CloneCommissions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -147,6 +147,16 @@ message Good {
     // @inject_tag: sql:"commission_settle_type"
     string           CommissionSettleTypeStr = 490;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 500;
+
+    // @inject_tag: sql:"descriptions"
+    string           DescriptionsStr     = 510;
+    repeated string  Descriptions        = 520;
+
+    // @inject_tag: sql:"good_banner"
+    string           GoodBanner          = 530;
+    // @inject_tag: sql:"display_names"
+    string           DisplayNamesStr     = 540;
+    repeated string  DisplayNames        = 550;
 }
 
 message CreateGoodRequest {

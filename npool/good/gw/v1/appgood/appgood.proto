@@ -149,6 +149,9 @@ message Good {
     uint32           ElectricityFeeRatio = 610;
     string           DailyRewardAmount   = 620;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 630;
+    repeated string  Descriptions        = 640;
+    string           GoodBanner          = 650;
+    repeated string  DisplayNames        = 660;
 }
 
 message CreateNAppGoodRequest {
@@ -220,6 +223,10 @@ message UpdateAppGoodRequest {
     optional uint32 TechnicalFeeRatio   = 130;
     optional uint32 ElectricityFeeRatio = 140;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
+    repeated string Descriptions        = 160;
+    optional string GoodBanner          = 170;
+    repeated string DisplayNames        = 180;
+    optional string DailyRewardAmount   = 190;
 }
 
 message UpdateAppGoodResponse {
@@ -240,6 +247,9 @@ message UpdateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio   = 110;
     optional uint32 ElectricityFeeRatio = 120;
     optional inspire.manager.commission.v1.SettleType CommissionSettleType = 130;
+    repeated string Descriptions        = 160;
+    optional string GoodBanner          = 170;
+    repeated string DisplayNames        = 180;
 }
 
 message UpdateNAppGoodResponse {
