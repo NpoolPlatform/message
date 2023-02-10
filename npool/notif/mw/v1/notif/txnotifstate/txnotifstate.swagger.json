@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/notif/mw/v1/txnotifstate/txnotifstate.proto",
+    "title": "npool/notif/mw/v1/notif/txnotifstate/txnotifstate.proto",
     "version": "version not set"
   },
   "tags": [

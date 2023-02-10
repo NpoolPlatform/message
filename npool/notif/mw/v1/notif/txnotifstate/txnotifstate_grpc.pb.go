@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/notif/mw/v1/txnotifstate/txnotifstate.proto
+// source: npool/notif/mw/v1/notif/txnotifstate/txnotifstate.proto
 
 package txnotifstate
 
@@ -209,5 +209,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/notif/mw/v1/txnotifstate/txnotifstate.proto",
+	Metadata: "npool/notif/mw/v1/notif/txnotifstate/txnotifstate.proto",
 }

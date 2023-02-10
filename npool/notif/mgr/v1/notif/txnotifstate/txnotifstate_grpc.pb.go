@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/notif/mgr/v1/txnotifstate/txnotifstate.proto
+// source: npool/notif/mgr/v1/notif/txnotifstate/txnotifstate.proto
 
 package txnotiftstate
 
@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateTxNotifState(ctx context.Context, in *CreateTxNotifStateRequest, opts ...grpc.CallOption) (*CreateTxNotifStateResponse, error) {
 	out := new(CreateTxNotifStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/CreateTxNotifState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/CreateTxNotifState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateTxNotifState(ctx context.Context, in *CreateTxNoti
 
 func (c *managerClient) CreateTxNotifStates(ctx context.Context, in *CreateTxNotifStatesRequest, opts ...grpc.CallOption) (*CreateTxNotifStatesResponse, error) {
 	out := new(CreateTxNotifStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/CreateTxNotifStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/CreateTxNotifStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateTxNotifStates(ctx context.Context, in *CreateTxNot
 
 func (c *managerClient) UpdateTxNotifState(ctx context.Context, in *UpdateTxNotifStateRequest, opts ...grpc.CallOption) (*UpdateTxNotifStateResponse, error) {
 	out := new(UpdateTxNotifStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/UpdateTxNotifState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/UpdateTxNotifState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateTxNotifState(ctx context.Context, in *UpdateTxNoti
 
 func (c *managerClient) GetTxNotifState(ctx context.Context, in *GetTxNotifStateRequest, opts ...grpc.CallOption) (*GetTxNotifStateResponse, error) {
 	out := new(GetTxNotifStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetTxNotifState(ctx context.Context, in *GetTxNotifState
 
 func (c *managerClient) GetTxNotifStateOnly(ctx context.Context, in *GetTxNotifStateOnlyRequest, opts ...grpc.CallOption) (*GetTxNotifStateOnlyResponse, error) {
 	out := new(GetTxNotifStateOnlyResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifStateOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifStateOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetTxNotifStateOnly(ctx context.Context, in *GetTxNotifS
 
 func (c *managerClient) GetTxNotifStates(ctx context.Context, in *GetTxNotifStatesRequest, opts ...grpc.CallOption) (*GetTxNotifStatesResponse, error) {
 	out := new(GetTxNotifStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetTxNotifStates(ctx context.Context, in *GetTxNotifStat
 
 func (c *managerClient) ExistTxNotifState(ctx context.Context, in *ExistTxNotifStateRequest, opts ...grpc.CallOption) (*ExistTxNotifStateResponse, error) {
 	out := new(ExistTxNotifStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/ExistTxNotifState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/ExistTxNotifState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistTxNotifState(ctx context.Context, in *ExistTxNotifS
 
 func (c *managerClient) ExistTxNotifStateConds(ctx context.Context, in *ExistTxNotifStateCondsRequest, opts ...grpc.CallOption) (*ExistTxNotifStateCondsResponse, error) {
 	out := new(ExistTxNotifStateCondsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/ExistTxNotifStateConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/ExistTxNotifStateConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistTxNotifStateConds(ctx context.Context, in *ExistTxN
 
 func (c *managerClient) CountTxNotifStates(ctx context.Context, in *CountTxNotifStatesRequest, opts ...grpc.CallOption) (*CountTxNotifStatesResponse, error) {
 	out := new(CountTxNotifStatesResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/CountTxNotifStates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/CountTxNotifStates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountTxNotifStates(ctx context.Context, in *CountTxNotif
 
 func (c *managerClient) DeleteTxNotifState(ctx context.Context, in *DeleteTxNotifStateRequest, opts ...grpc.CallOption) (*DeleteTxNotifStateResponse, error) {
 	out := new(DeleteTxNotifStateResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.txnotiftstate.v1.Manager/DeleteTxNotifState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif.txnotiftstate.v1.Manager/DeleteTxNotifState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateTxNotifState_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/CreateTxNotifState",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/CreateTxNotifState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateTxNotifState(ctx, req.(*CreateTxNotifStateRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateTxNotifStates_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/CreateTxNotifStates",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/CreateTxNotifStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateTxNotifStates(ctx, req.(*CreateTxNotifStatesRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateTxNotifState_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/UpdateTxNotifState",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/UpdateTxNotifState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateTxNotifState(ctx, req.(*UpdateTxNotifStateRequest))
@@ -260,7 +260,7 @@ func _Manager_GetTxNotifState_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifState",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetTxNotifState(ctx, req.(*GetTxNotifStateRequest))
@@ -278,7 +278,7 @@ func _Manager_GetTxNotifStateOnly_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifStateOnly",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifStateOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetTxNotifStateOnly(ctx, req.(*GetTxNotifStateOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetTxNotifStates_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/GetTxNotifStates",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/GetTxNotifStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetTxNotifStates(ctx, req.(*GetTxNotifStatesRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistTxNotifState_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/ExistTxNotifState",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/ExistTxNotifState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistTxNotifState(ctx, req.(*ExistTxNotifStateRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistTxNotifStateConds_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/ExistTxNotifStateConds",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/ExistTxNotifStateConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistTxNotifStateConds(ctx, req.(*ExistTxNotifStateCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountTxNotifStates_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/CountTxNotifStates",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/CountTxNotifStates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountTxNotifStates(ctx, req.(*CountTxNotifStatesRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteTxNotifState_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.txnotiftstate.v1.Manager/DeleteTxNotifState",
+		FullMethod: "/notif.manager.notif.txnotiftstate.v1.Manager/DeleteTxNotifState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteTxNotifState(ctx, req.(*DeleteTxNotifStateRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteTxNotifState_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.manager.txnotiftstate.v1.Manager",
+	ServiceName: "notif.manager.notif.txnotiftstate.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -425,5 +425,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/notif/mgr/v1/txnotifstate/txnotifstate.proto",
+	Metadata: "npool/notif/mgr/v1/notif/txnotifstate/txnotifstate.proto",
 }
