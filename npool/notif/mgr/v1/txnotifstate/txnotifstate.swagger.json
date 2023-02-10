@@ -55,6 +55,9 @@
         },
         "NotifState": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -164,6 +167,9 @@
         "NotifState": {
           "$ref": "#/definitions/v1TxState"
         },
+        "NotifType": {
+          "$ref": "#/definitions/v1TxType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -184,7 +190,10 @@
           "type": "string"
         },
         "NotifState": {
-          "$ref": "#/definitions/v1TxNotifState"
+          "$ref": "#/definitions/v1TxState"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1TxType"
         }
       }
     },
@@ -197,6 +206,14 @@
         "AlreadySend"
       ],
       "default": "DefaultNotifState"
+    },
+    "v1TxType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Withdraw"
+      ],
+      "default": "DefaultType"
     },
     "v1Uint32Val": {
       "type": "object",
