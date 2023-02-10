@@ -1,0 +1,239 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mw/v1/announcement/announcement.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "middlewareannouncementannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "AnnouncementID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"announcement_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        },
+        "ReadUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_user_id\""
+        }
+      }
+    },
+    "middlewareannouncementannouncementv1Conds": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AlreadyRead": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "middlewareannouncementannouncementv1GetAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifmanagerannouncementv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channels": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAnnouncementStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

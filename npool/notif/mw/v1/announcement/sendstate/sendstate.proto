@@ -4,12 +4,16 @@ package notif.middleware.announcement.sendstate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/sendstate";
 
+import "npool/notif/mgr/v1/announcement/announcement.proto";
 import "npool/notif/mgr/v1/announcement/sendstate/sendstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/npool.proto";
 
 // Service Name
 service Middleware {
-    rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)       {}
+    rpc CreateSendState  (CreateSendStateRequest)  returns (CreateSendStateResponse)  {}
+    rpc CreateSendStates (CreateSendStatesRequest) returns (CreateSendStatesResponse) {}
+    rpc GetSendStates    (GetSendStatesRequest)    returns (GetSendStatesResponse)    {}
 }
 
 message SendState {
@@ -24,20 +28,47 @@ message SendState {
     // @inject_tag: sql:"content"
     string Content        = 50;
     // @inject_tag: sql:"channel"
-    string ChannelStr = 60;
-    notif.manager.channel.v1.NotifChannel Channel = 61;
-    // @inject_tag: sql:"email_send"
-    bool  AlreadySend   = 70;
+    string ChannelStr     = 60;
+    notif.manager.channel.v1.NotifChannel Channel = 70;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 80;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 90;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 90;
+    uint32 CreatedAt   = 100;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 100;
+    uint32 UpdatedAt   = 110;
 }
 
+message CreateSendStateRequest {
+    string AppID          = 20;
+    string UserID         = 30;
+    string AnnouncementID = 40;
+    notif.manager.channel.v1.NotifChannel Channel = 50;
+}
+
+message CreateSendStateResponse {
+}
+
+message CreateSendStatesRequest {
+    repeated notif.manager.sendstate.v1.SendStateReq Infos = 10;
+}
+
+message CreateSendStatesResponse {
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID             = 10;
+    optional npool.v1.StringVal      AppID          = 20;
+    optional npool.v1.StringVal      UserID         = 30;
+    optional npool.v1.StringVal      AnnouncementID = 40;
+    optional npool.v1.Uint32Val      Channel        = 50;
+    optional npool.v1.Uint32Val      EndAt          = 60;
+    optional npool.v1.StringSliceVal UserIDs        = 70;
+}
 message GetSendStatesRequest {
-    notif.manager.sendstate.v1.Conds Conds = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    Conds  Conds  = 10;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetSendStatesResponse {

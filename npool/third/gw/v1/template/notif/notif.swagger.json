@@ -286,6 +286,9 @@
         },
         "Content": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },
@@ -361,6 +364,12 @@
         },
         "TargetLangID": {
           "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },
@@ -389,6 +398,9 @@
         },
         "Content": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
         }
       }
     },
@@ -408,7 +420,8 @@
         "WithdrawalCompleted",
         "DepositReceived",
         "KYCApproved",
-        "KYCRejected"
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultEventType"
     },
@@ -464,11 +477,16 @@
         "Content": {
           "type": "string"
         },
-        "CreatedAt": {
+        "Sender": {
           "type": "string"
         },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "UpdatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -488,6 +506,12 @@
           "type": "string"
         },
         "Content": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1EventType"
+        },
+        "Sender": {
           "type": "string"
         }
       }

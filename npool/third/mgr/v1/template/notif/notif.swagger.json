@@ -31,6 +31,15 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -105,7 +114,8 @@
         "WithdrawalCompleted",
         "DepositReceived",
         "KYCApproved",
-        "KYCRejected"
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultEventType"
     },
@@ -177,11 +187,16 @@
         "Content": {
           "type": "string"
         },
-        "CreatedAt": {
+        "Sender": {
           "type": "string"
         },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "UpdatedAt": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -205,6 +220,23 @@
         },
         "Content": {
           "type": "string"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

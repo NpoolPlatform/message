@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package notif.middleware.announcement.announcement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
+
+import "npool/notif/mgr/v1/announcement/announcement.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc GetAnnouncementStates (GetAnnouncementStatesRequest) returns (GetAnnouncementStatesResponse) {}
+    rpc GetAnnouncements      (GetAnnouncementsRequest)      returns (GetAnnouncementsResponse)      {}
+}
+
+message Conds {
+    optional npool.v1.StringVal      AppID            = 10;
+    optional npool.v1.StringVal      UserID           = 20;
+    optional npool.v1.StringVal      LangID           = 30;
+    optional npool.v1.StringVal      AnnouncementID   = 40;
+    optional npool.v1.BoolVal        AlreadyRead      = 50;
+    optional npool.v1.Uint32Val      AnnouncementType = 60;
+    optional npool.v1.StringSliceVal Channels         = 70;
+}
+
+message Announcement {
+    // @inject_tag: sql:"announcement_id"
+    string AnnouncementID = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID          = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID         = 30;
+    // @inject_tag: sql:"lang_id"
+    string LangID         = 40;
+    // @inject_tag: sql:"title"
+    string Title          = 50;
+    // @inject_tag: sql:"content"
+    string Content        = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 70;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt      = 100;
+    bool   AlreadyRead    = 120;
+    // @inject_tag: sql:"end_at"
+    uint32 EndAt          = 130;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 140;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
+    // @inject_tag: sql:"read_user_id"
+    string ReadUserID     = 160;
+}
+
+message GetAnnouncementStatesRequest {
+    Conds  Conds  = 10;
+    int32  Offset = 30;
+    int32  Limit  = 40;
+}
+
+message GetAnnouncementStatesResponse {
+    repeated Announcement Infos = 10;
+    uint32   Total              = 20;
+}
+
+message GetAnnouncementsRequest {
+    notif.manager.announcement.v1.Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32                Total  = 20;
+}

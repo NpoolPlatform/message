@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "managerreadstatev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "middlewareannouncementreadstatev1GetReadStateResponse": {
       "type": "object",
       "properties": {
@@ -73,8 +90,12 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "AlreadyRead": {
-          "type": "boolean"
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -115,22 +136,14 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1NotifChannel": {
       "type": "string",

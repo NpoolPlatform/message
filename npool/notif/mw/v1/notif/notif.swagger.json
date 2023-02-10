@@ -25,6 +25,17 @@
         }
       }
     },
+    "middlewarenotif2v1CreateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
+          }
+        }
+      }
+    },
     "middlewarenotif2v1GetNotifOnlyResponse": {
       "type": "object",
       "properties": {
@@ -92,7 +103,7 @@
             "$ref": "#/definitions/v1NotifChannel"
           }
         },
-        "Email_send": {
+        "EmailSend": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -102,6 +113,14 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "middlewarenotif2v1UpdateNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarenotif2v1Notif"
         }
       }
     },
@@ -149,6 +168,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -183,7 +205,8 @@
         "WithdrawalCompleted",
         "DepositReceived",
         "KYCApproved",
-        "KYCRejected"
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultEventType"
     },
@@ -234,6 +257,9 @@
         },
         "EmailSend": {
           "type": "boolean"
+        },
+        "Extra": {
+          "type": "string"
         }
       }
     },
@@ -271,6 +297,17 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
+          }
         }
       }
     }

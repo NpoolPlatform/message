@@ -17,6 +17,38 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewareannouncementsendstatev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "middlewareannouncementsendstatev1CreateSendStateResponse": {
+      "type": "object"
+    },
+    "middlewareannouncementsendstatev1CreateSendStatesResponse": {
+      "type": "object"
+    },
     "middlewareannouncementsendstatev1GetSendStatesResponse": {
       "type": "object",
       "properties": {
@@ -62,9 +94,12 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
-        "AlreadySend": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"email_send\""
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -105,25 +140,14 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1NotifChannel": {
       "type": "string",
@@ -133,6 +157,40 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1SendStateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

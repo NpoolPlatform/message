@@ -111,6 +111,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/notifs": {
+      "post": {
+        "operationId": "Gateway_UpdateNotifs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNotifsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNotifsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -137,6 +169,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "LangID": {
           "type": "string"
         },
         "Offset": {
@@ -208,6 +243,14 @@
         },
         "AlreadyRead": {
           "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -246,7 +289,8 @@
         "WithdrawalCompleted",
         "DepositReceived",
         "KYCApproved",
-        "KYCRejected"
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultEventType"
     },
@@ -257,6 +301,9 @@
           "type": "string"
         },
         "TargetUserID": {
+          "type": "string"
+        },
+        "TargetLangID": {
           "type": "string"
         },
         "Offset": {
@@ -292,6 +339,37 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1UpdateNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "IDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
+          }
+        }
+      }
     }
   }
 }

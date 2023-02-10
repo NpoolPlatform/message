@@ -149,6 +149,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -160,6 +171,9 @@
         },
         "LangID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Main": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

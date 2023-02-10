@@ -28,6 +28,7 @@ message NotifTemplateReq {
     optional notif.manager.notif1.v1.EventType UsedFor = 40;
     optional string Title       = 50;
     optional string Content     = 60;
+    optional string Sender      = 70;
 }
 
 message NotifTemplate {
@@ -37,15 +38,19 @@ message NotifTemplate {
     notif.manager.notif1.v1.EventType UsedFor   = 40;
     string Title       = 50;
     string Content     = 60;
-    string CreatedAt   = 70;
-    string UpdatedAt    = 80;
+    string Sender      = 70;
+    uint32 CreatedAt   = 80;
+    uint32 UpdatedAt   = 90;
 }
 
 message Conds {
     optional npool.v1.StringVal ID      = 10;
     optional npool.v1.StringVal AppID   = 20;
     optional npool.v1.StringVal LangID  = 30;
-    optional npool.v1.Uint32Val UsedFor = 50;
+    optional npool.v1.Uint32Val UsedFor = 40;
+    optional npool.v1.StringSliceVal AppIDs   = 50;
+    optional npool.v1.StringSliceVal LangIDs  = 60;
+    optional npool.v1.StringSliceVal UsedFors = 70;
 }
 
 message CreateNotifTemplateRequest {

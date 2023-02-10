@@ -16,6 +16,13 @@ service Gateway {
             body: "*"
         };
     }
+    
+    rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/notifs"
+            body: "*"
+        };
+    }
 
     rpc GetNotifs (GetNotifsRequest) returns (GetNotifsResponse) {
         option (google.api.http) = {
@@ -46,6 +53,8 @@ message Notif {
     string           Content      = 110;
     repeated notif.manager.channel.v1.NotifChannel Channels = 120;
     bool             AlreadyRead = 130;
+    uint32           CreatedAt   = 140;
+    uint32           UpdatedAt   = 150;
 }
 
 message GetNotifRequest {
@@ -56,11 +65,23 @@ message GetNotifResponse {
     Notif Info = 10;
 }
 
+message UpdateNotifsRequest {
+    repeated string IDs         = 10;
+    string          AppID       = 20;
+    string          UserID      = 30;
+    bool            AlreadyRead = 40;
+}
+
+message UpdateNotifsResponse {
+    repeated Notif Infos = 10;
+}
+
 message GetNotifsRequest {
     string AppID  = 10;
     string UserID = 20;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    string LangID = 30;
+    uint32 Offset = 40;
+    uint32 Limit  = 50;
 }
 
 message GetNotifsResponse {
@@ -71,8 +92,9 @@ message GetNotifsResponse {
 message GetAppUserNotifsRequest {
     string TargetAppID  = 10;
     string TargetUserID = 20;
-    uint32 Offset       = 30;
-    uint32 Limit        = 40;
+    string TargetLangID = 30;
+    uint32 Offset       = 40;
+    uint32 Limit        = 50;
 }
 
 message GetAppUserNotifsResponse {

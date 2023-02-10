@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/mw/v1/notify/notify.proto
+// source: npool/notif/mw/v1/announcement/user/user.proto
 
-package notify
+package user
 
 import (
 	context "context"
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error)
+	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 }
 
 type middlewareClient struct {
@@ -33,9 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) NotifyEmail(ctx context.Context, in *NotifyEmailRequest, opts ...grpc.CallOption) (*NotifyEmailResponse, error) {
-	out := new(NotifyEmailResponse)
-	err := c.cc.Invoke(ctx, "/third.middleware.notify.v1.Middleware/NotifyEmail", in, out, opts...)
+func (c *middlewareClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
+	out := new(GetUsersResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.announcement.user.v1.Middleware/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) NotifyEmail(ctx context.Context, in *NotifyEmailReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error)
+	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -54,8 +54,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) NotifyEmail(context.Context, *NotifyEmailRequest) (*NotifyEmailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NotifyEmail not implemented")
+func (UnimplementedMiddlewareServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -70,20 +70,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_NotifyEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NotifyEmailRequest)
+func _Middleware_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).NotifyEmail(ctx, in)
+		return srv.(MiddlewareServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.middleware.notify.v1.Middleware/NotifyEmail",
+		FullMethod: "/notif.middleware.announcement.user.v1.Middleware/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).NotifyEmail(ctx, req.(*NotifyEmailRequest))
+		return srv.(MiddlewareServer).GetUsers(ctx, req.(*GetUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,14 +92,14 @@ func _Middleware_NotifyEmail_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "third.middleware.notify.v1.Middleware",
+	ServiceName: "notif.middleware.announcement.user.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "NotifyEmail",
-			Handler:    _Middleware_NotifyEmail_Handler,
+			MethodName: "GetUsers",
+			Handler:    _Middleware_GetUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/mw/v1/notify/notify.proto",
+	Metadata: "npool/notif/mw/v1/announcement/user/user.proto",
 }

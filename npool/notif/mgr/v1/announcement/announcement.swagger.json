@@ -53,6 +53,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Title": {
           "type": "string"
         },
@@ -68,6 +71,9 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -88,6 +94,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Title": {
           "type": "string"
         },
@@ -103,8 +112,20 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         }
       }
+    },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
     "v1Conds": {
       "type": "object",
@@ -113,6 +134,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Channels": {

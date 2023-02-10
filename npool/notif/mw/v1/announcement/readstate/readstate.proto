@@ -4,13 +4,14 @@ package notif.middleware.announcement.readstate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/readstate";
 
+import "npool/notif/mgr/v1/announcement/announcement.proto";
 import "npool/notif/mgr/v1/announcement/readstate/readstate.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
 
 // Service Name
 service Middleware {
-    rpc GetReadState        (GetReadStateRequest)        returns (GetReadStateResponse)        {}
-    rpc GetReadStates       (GetReadStatesRequest)       returns (GetReadStatesResponse)       {}
+    rpc GetReadState              (GetReadStateRequest)              returns (GetReadStateResponse)              {}
+    rpc GetReadStates             (GetReadStatesRequest)             returns (GetReadStatesResponse)             {}
 }
 
 message ReadState {
@@ -26,12 +27,14 @@ message ReadState {
     string Content        = 50;
     // @inject_tag: sql:"channels"
     string ChannelsStr = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 61;
-    bool   AlreadyRead = 80;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 80;
+    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 90;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 90;
+    uint32 CreatedAt   = 100;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 100;
+    uint32 UpdatedAt   = 110;
 }
 
 message GetReadStateRequest {

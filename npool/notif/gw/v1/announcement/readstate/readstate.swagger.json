@@ -237,6 +237,15 @@
         }
       }
     },
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
+    },
     "v1CreateReadStateRequest": {
       "type": "object",
       "properties": {
@@ -411,15 +420,6 @@
         }
       }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS"
-      ],
-      "default": "DefaultChannel"
-    },
     "v1ReadState": {
       "type": "object",
       "properties": {
@@ -450,14 +450,16 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
         },
-        "AlreadyRead": {
-          "type": "boolean"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

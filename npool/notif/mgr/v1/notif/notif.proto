@@ -28,6 +28,7 @@ enum EventType {
     DepositReceived     = 30;
     KYCApproved         = 40;
     KYCRejected         = 50;
+    Announcement        = 60;
 }
 
 message NotifReq {
@@ -42,6 +43,7 @@ message NotifReq {
     optional string    Content     = 90;
     repeated notif.manager.channel.v1.NotifChannel    Channels    = 100;
     optional bool      EmailSend   = 110;
+    optional string    Extra       = 120;
 }
 
 message Notif {
@@ -56,12 +58,14 @@ message Notif {
     string    Content     = 90;
     repeated notif.manager.channel.v1.NotifChannel Channels = 100;
     bool      EmailSend   = 110;
+    string    Extra       = 111;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID          = 10;
+    optional npool.v1.StringSliceVal IDs         = 11;
     optional npool.v1.StringVal      AppID       = 20;
     optional npool.v1.StringVal      UserID      = 30;
     optional npool.v1.BoolVal        AlreadyRead = 40;

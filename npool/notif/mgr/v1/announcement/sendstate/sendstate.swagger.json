@@ -61,6 +61,12 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -201,6 +207,20 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

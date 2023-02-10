@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAnnouncementResponse"
+              "$ref": "#/definitions/notifgatewayannouncementv1CreateAnnouncementResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAnnouncementRequest"
+              "$ref": "#/definitions/notifgatewayannouncementv1CreateAnnouncementRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteAnnouncementResponse"
+              "$ref": "#/definitions/notifgatewayannouncementv1DeleteAnnouncementResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteAnnouncementRequest"
+              "$ref": "#/definitions/notifgatewayannouncementv1DeleteAnnouncementRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementResponse"
+              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementRequest"
+              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementsResponse"
+              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementsResponse"
             }
           },
           "default": {
@@ -135,7 +135,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAnnouncementsRequest"
+              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/announcements": {
+      "post": {
+        "operationId": "Gateway_GetAppAnnouncements",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAnnouncementsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppAnnouncementsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/announcements": {
+      "post": {
+        "operationId": "Gateway_GetNAppAnnouncements",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppAnnouncementsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppAnnouncementsRequest"
             }
           }
         ],
@@ -151,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAnnouncementResponse"
+              "$ref": "#/definitions/notifgatewayannouncementv1UpdateAnnouncementResponse"
             }
           },
           "default": {
@@ -167,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAnnouncementRequest"
+              "$ref": "#/definitions/notifgatewayannouncementv1UpdateAnnouncementRequest"
             }
           }
         ],
@@ -178,6 +242,214 @@
     }
   },
   "definitions": {
+    "notifgatewayannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "AlreadyRead": {
+          "type": "boolean"
+        },
+        "AlreadySend": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SendChannel": {
+          "$ref": "#/definitions/v1NotifChannel",
+          "title": "if AlreadySend = true SendChannel valid"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        }
+      }
+    },
+    "notifgatewayannouncementv1CreateAnnouncementRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        }
+      }
+    },
+    "notifgatewayannouncementv1CreateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+        }
+      }
+    },
+    "notifgatewayannouncementv1DeleteAnnouncementRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewayannouncementv1DeleteAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+        }
+      }
+    },
+    "notifgatewayannouncementv1GetAnnouncementRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewayannouncementv1GetAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+        }
+      }
+    },
+    "notifgatewayannouncementv1GetAnnouncementsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifgatewayannouncementv1GetAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifgatewayannouncementv1UpdateAnnouncementRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1NotifChannel"
+          }
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        }
+      }
+    },
+    "notifgatewayannouncementv1UpdateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -205,95 +477,16 @@
         }
       }
     },
-    "v1Announcement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1AnnouncementType": {
+      "type": "string",
+      "enum": [
+        "DefaultAnnouncementType",
+        "AllUsers",
+        "AppointUsers"
+      ],
+      "default": "DefaultAnnouncementType"
     },
-    "v1CreateAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Announcement"
-        }
-      }
-    },
-    "v1DeleteAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Announcement"
-        }
-      }
-    },
-    "v1GetAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Announcement"
-        }
-      }
-    },
-    "v1GetAnnouncementsRequest": {
+    "v1GetAppAnnouncementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -309,13 +502,44 @@
         }
       }
     },
-    "v1GetAnnouncementsResponse": {
+    "v1GetAppAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppAnnouncementsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
         "Total": {
@@ -332,38 +556,6 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
-    },
-    "v1UpdateAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Announcement"
-        }
-      }
     }
   }
 }

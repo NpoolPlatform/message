@@ -10,6 +10,9 @@ import "npool/notif/mgr/v1/notif/notif.proto";
 // Service Name
 service Middleware {
     rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
+    rpc CreateNotifs (CreateNotifsRequest)  returns (CreateNotifsResponse)  {}
+    rpc UpdateNotif  (UpdateNotifRequest)  returns (UpdateNotifResponse)  {}
+    rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {}
     rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
     rpc GetNotifs    (GetNotifsRequest)    returns (GetNotifsResponse)    {}
     rpc GetNotifOnly (GetNotifOnlyRequest) returns (GetNotifOnlyResponse) {}
@@ -26,7 +29,7 @@ message Notif {
     string Title       = 80;
     string Content     = 90;
     repeated notif.manager.channel.v1.NotifChannel Channels    = 100;
-    bool   Email_send  = 110;
+    bool   EmailSend  = 110;
     uint32 CreatedAt   = 120;
     uint32 UpdatedAt   = 130;
 }
@@ -37,6 +40,33 @@ message CreateNotifRequest {
 
 message CreateNotifResponse {
     Notif Info = 10;
+}
+
+
+message CreateNotifsRequest {
+    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
+}
+
+message CreateNotifsResponse {
+    repeated Notif Infos = 10;
+}
+
+message UpdateNotifRequest {
+    notif.manager.notif1.v1.NotifReq Info = 10;
+}
+
+message UpdateNotifResponse {
+    Notif Info = 10;
+}
+
+message UpdateNotifsRequest {
+    repeated string IDs         = 10;
+    optional bool   EmailSend   = 20;
+    optional bool   AlreadyRead = 30;
+}
+
+message UpdateNotifsResponse {
+    repeated Notif Infos = 10;
 }
 
 message GetNotifRequest {
