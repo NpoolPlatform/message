@@ -44,7 +44,7 @@ message CreateNotifResponse {
 
 
 message CreateNotifsRequest {
-    repeated notif.manager.notif1.v1.NotifReq Info = 10;
+    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
 }
 
 message CreateNotifsResponse {
