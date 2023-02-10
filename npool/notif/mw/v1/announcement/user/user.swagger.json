@@ -23,6 +23,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -149,6 +152,20 @@
         "ChannelSMS"
       ],
       "default": "DefaultChannel"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

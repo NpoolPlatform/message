@@ -25,6 +25,17 @@
         }
       }
     },
+    "middlewarenotif2v1CreateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
+          }
+        }
+      }
+    },
     "middlewarenotif2v1GetNotifOnlyResponse": {
       "type": "object",
       "properties": {

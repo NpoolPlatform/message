@@ -50,6 +50,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -141,6 +144,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

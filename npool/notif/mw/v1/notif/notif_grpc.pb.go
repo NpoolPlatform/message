@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error)
+	CreateNotifs(ctx context.Context, in *CreateNotifsRequest, opts ...grpc.CallOption) (*CreateNotifsResponse, error)
 	UpdateNotif(ctx context.Context, in *UpdateNotifRequest, opts ...grpc.CallOption) (*UpdateNotifResponse, error)
 	UpdateNotifs(ctx context.Context, in *UpdateNotifsRequest, opts ...grpc.CallOption) (*UpdateNotifsResponse, error)
 	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
@@ -41,6 +42,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateNotif(ctx context.Context, in *CreateNotifRequest, opts ...grpc.CallOption) (*CreateNotifResponse, error) {
 	out := new(CreateNotifResponse)
 	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/CreateNotif", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateNotifs(ctx context.Context, in *CreateNotifsRequest, opts ...grpc.CallOption) (*CreateNotifsResponse, error) {
+	out := new(CreateNotifsResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/CreateNotifs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,6 +107,7 @@ func (c *middlewareClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyReq
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error)
+	CreateNotifs(context.Context, *CreateNotifsRequest) (*CreateNotifsResponse, error)
 	UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error)
 	UpdateNotifs(context.Context, *UpdateNotifsRequest) (*UpdateNotifsResponse, error)
 	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
@@ -111,6 +122,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateNotif(context.Context, *CreateNotifRequest) (*CreateNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotif not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateNotifs(context.Context, *CreateNotifsRequest) (*CreateNotifsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifs not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateNotif(context.Context, *UpdateNotifRequest) (*UpdateNotifResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotif not implemented")
@@ -154,6 +168,24 @@ func _Middleware_CreateNotif_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateNotif(ctx, req.(*CreateNotifRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateNotifs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/CreateNotifs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateNotifs(ctx, req.(*CreateNotifsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -258,6 +290,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateNotif",
 			Handler:    _Middleware_CreateNotif_Handler,
+		},
+		{
+			MethodName: "CreateNotifs",
+			Handler:    _Middleware_CreateNotifs_Handler,
 		},
 		{
 			MethodName: "UpdateNotif",
