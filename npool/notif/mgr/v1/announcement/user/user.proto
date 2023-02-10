@@ -38,10 +38,11 @@ message User {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID             = 10;
-    optional npool.v1.StringVal AppID          = 20;
-    optional npool.v1.StringVal UserID         = 30;
-    optional npool.v1.StringVal AnnouncementID = 40;
+    optional npool.v1.StringVal      ID             = 10;
+    optional npool.v1.StringSliceVal IDs            = 20;
+    optional npool.v1.StringVal      AppID          = 30;
+    optional npool.v1.StringVal      UserID         = 40;
+    optional npool.v1.StringVal      AnnouncementID = 50;
 }
 
 
