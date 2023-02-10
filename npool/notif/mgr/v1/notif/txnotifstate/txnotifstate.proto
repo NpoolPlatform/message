@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package notif.manager.notif.txnotiftstate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/txnotiftstate";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/txnotifstate";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";

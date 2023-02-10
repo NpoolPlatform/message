@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/notif/mgr/v1/notif/txnotifstate/txnotifstate.proto
 
-package txnotiftstate
+package txnotifstate
 
 import (
 	context "context"

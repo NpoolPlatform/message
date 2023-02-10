@@ -7,7 +7,7 @@
 package txnotifstate
 
 import (
-	txnotiftstate "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/txnotiftstate"
+	txnotifstate "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/txnotifstate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,7 +26,7 @@ type CreateTxNotifStateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *txnotiftstate.TxNotifStateReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *txnotifstate.TxNotifStateReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateTxNotifStateRequest) Reset() {
@@ -61,7 +61,7 @@ func (*CreateTxNotifStateRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateTxNotifStateRequest) GetInfo() *txnotiftstate.TxNotifStateReq {
+func (x *CreateTxNotifStateRequest) GetInfo() *txnotifstate.TxNotifStateReq {
 	if x != nil {
 		return x.Info
 	}
@@ -73,7 +73,7 @@ type CreateTxNotifStateResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *txnotiftstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *txnotifstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateTxNotifStateResponse) Reset() {
@@ -108,7 +108,7 @@ func (*CreateTxNotifStateResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateTxNotifStateResponse) GetInfo() *txnotiftstate.TxNotifState {
+func (x *CreateTxNotifStateResponse) GetInfo() *txnotifstate.TxNotifState {
 	if x != nil {
 		return x.Info
 	}
@@ -120,7 +120,7 @@ type UpdateTxNotifStateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *txnotiftstate.TxNotifStateReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *txnotifstate.TxNotifStateReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *UpdateTxNotifStateRequest) Reset() {
@@ -155,7 +155,7 @@ func (*UpdateTxNotifStateRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *UpdateTxNotifStateRequest) GetInfo() *txnotiftstate.TxNotifStateReq {
+func (x *UpdateTxNotifStateRequest) GetInfo() *txnotifstate.TxNotifStateReq {
 	if x != nil {
 		return x.Info
 	}
@@ -167,7 +167,7 @@ type UpdateTxNotifStateResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *txnotiftstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *txnotifstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *UpdateTxNotifStateResponse) Reset() {
@@ -202,7 +202,7 @@ func (*UpdateTxNotifStateResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *UpdateTxNotifStateResponse) GetInfo() *txnotiftstate.TxNotifState {
+func (x *UpdateTxNotifStateResponse) GetInfo() *txnotifstate.TxNotifState {
 	if x != nil {
 		return x.Info
 	}
@@ -214,9 +214,9 @@ type GetTxNotifStatesRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Conds  *txnotiftstate.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-	Offset int32                `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
-	Limit  int32                `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
+	Conds  *txnotifstate.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+	Offset int32               `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  int32               `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
 func (x *GetTxNotifStatesRequest) Reset() {
@@ -251,7 +251,7 @@ func (*GetTxNotifStatesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *GetTxNotifStatesRequest) GetConds() *txnotiftstate.Conds {
+func (x *GetTxNotifStatesRequest) GetConds() *txnotifstate.Conds {
 	if x != nil {
 		return x.Conds
 	}
@@ -277,8 +277,8 @@ type GetTxNotifStatesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*txnotiftstate.TxNotifState `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32                        `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*txnotifstate.TxNotifState `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32                       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetTxNotifStatesResponse) Reset() {
@@ -313,7 +313,7 @@ func (*GetTxNotifStatesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetTxNotifStatesResponse) GetInfos() []*txnotiftstate.TxNotifState {
+func (x *GetTxNotifStatesResponse) GetInfos() []*txnotifstate.TxNotifState {
 	if x != nil {
 		return x.Infos
 	}
@@ -332,7 +332,7 @@ type GetTxNotifStateOnlyRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Conds *txnotiftstate.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+	Conds *txnotifstate.Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
 func (x *GetTxNotifStateOnlyRequest) Reset() {
@@ -367,7 +367,7 @@ func (*GetTxNotifStateOnlyRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetTxNotifStateOnlyRequest) GetConds() *txnotiftstate.Conds {
+func (x *GetTxNotifStateOnlyRequest) GetConds() *txnotifstate.Conds {
 	if x != nil {
 		return x.Conds
 	}
@@ -379,7 +379,7 @@ type GetTxNotifStateOnlyResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *txnotiftstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *txnotifstate.TxNotifState `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *GetTxNotifStateOnlyResponse) Reset() {
@@ -414,7 +414,7 @@ func (*GetTxNotifStateOnlyResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetTxNotifStateOnlyResponse) GetInfo() *txnotiftstate.TxNotifState {
+func (x *GetTxNotifStateOnlyResponse) GetInfo() *txnotifstate.TxNotifState {
 	if x != nil {
 		return x.Info
 	}
@@ -547,17 +547,17 @@ func file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_rawDescGZIP() 
 
 var file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_goTypes = []interface{}{
-	(*CreateTxNotifStateRequest)(nil),     // 0: notif.middleware.txnotifstate.v1.CreateTxNotifStateRequest
-	(*CreateTxNotifStateResponse)(nil),    // 1: notif.middleware.txnotifstate.v1.CreateTxNotifStateResponse
-	(*UpdateTxNotifStateRequest)(nil),     // 2: notif.middleware.txnotifstate.v1.UpdateTxNotifStateRequest
-	(*UpdateTxNotifStateResponse)(nil),    // 3: notif.middleware.txnotifstate.v1.UpdateTxNotifStateResponse
-	(*GetTxNotifStatesRequest)(nil),       // 4: notif.middleware.txnotifstate.v1.GetTxNotifStatesRequest
-	(*GetTxNotifStatesResponse)(nil),      // 5: notif.middleware.txnotifstate.v1.GetTxNotifStatesResponse
-	(*GetTxNotifStateOnlyRequest)(nil),    // 6: notif.middleware.txnotifstate.v1.GetTxNotifStateOnlyRequest
-	(*GetTxNotifStateOnlyResponse)(nil),   // 7: notif.middleware.txnotifstate.v1.GetTxNotifStateOnlyResponse
-	(*txnotiftstate.TxNotifStateReq)(nil), // 8: notif.manager.notif.txnotiftstate.v1.TxNotifStateReq
-	(*txnotiftstate.TxNotifState)(nil),    // 9: notif.manager.notif.txnotiftstate.v1.TxNotifState
-	(*txnotiftstate.Conds)(nil),           // 10: notif.manager.notif.txnotiftstate.v1.Conds
+	(*CreateTxNotifStateRequest)(nil),    // 0: notif.middleware.txnotifstate.v1.CreateTxNotifStateRequest
+	(*CreateTxNotifStateResponse)(nil),   // 1: notif.middleware.txnotifstate.v1.CreateTxNotifStateResponse
+	(*UpdateTxNotifStateRequest)(nil),    // 2: notif.middleware.txnotifstate.v1.UpdateTxNotifStateRequest
+	(*UpdateTxNotifStateResponse)(nil),   // 3: notif.middleware.txnotifstate.v1.UpdateTxNotifStateResponse
+	(*GetTxNotifStatesRequest)(nil),      // 4: notif.middleware.txnotifstate.v1.GetTxNotifStatesRequest
+	(*GetTxNotifStatesResponse)(nil),     // 5: notif.middleware.txnotifstate.v1.GetTxNotifStatesResponse
+	(*GetTxNotifStateOnlyRequest)(nil),   // 6: notif.middleware.txnotifstate.v1.GetTxNotifStateOnlyRequest
+	(*GetTxNotifStateOnlyResponse)(nil),  // 7: notif.middleware.txnotifstate.v1.GetTxNotifStateOnlyResponse
+	(*txnotifstate.TxNotifStateReq)(nil), // 8: notif.manager.notif.txnotiftstate.v1.TxNotifStateReq
+	(*txnotifstate.TxNotifState)(nil),    // 9: notif.manager.notif.txnotiftstate.v1.TxNotifState
+	(*txnotifstate.Conds)(nil),           // 10: notif.manager.notif.txnotiftstate.v1.Conds
 }
 var file_npool_notif_mw_v1_notif_txnotifstate_txnotifstate_proto_depIdxs = []int32{
 	8,  // 0: notif.middleware.txnotifstate.v1.CreateTxNotifStateRequest.Info:type_name -> notif.manager.notif.txnotiftstate.v1.TxNotifStateReq
