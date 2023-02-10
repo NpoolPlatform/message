@@ -83,12 +83,12 @@ message Announcement {
 }
 
 message CreateAnnouncementRequest {
-    string          AppID       = 10;
-    string          LangID      = 20;
-    string          Title       = 30;
-    string          Content     = 40;
+    string          AppID        = 10;
+    string          TargetLangID = 20;
+    string          Title        = 30;
+    string          Content      = 40;
     repeated notif.manager.channel.v1.NotifChannel Channels = 50;
-    uint32          EndAt       = 60;
+    uint32          EndAt        = 60;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 70;
 }
 

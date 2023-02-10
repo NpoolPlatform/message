@@ -314,7 +314,7 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "TargetLangID": {
           "type": "string"
         },
         "Title": {
