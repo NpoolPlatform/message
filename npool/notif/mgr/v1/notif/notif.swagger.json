@@ -225,6 +225,9 @@
         "EmailSend": {
           "type": "boolean"
         },
+        "Extra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -282,6 +285,9 @@
         },
         "EmailSend": {
           "type": "boolean"
+        },
+        "Extra": {
+          "type": "string"
         }
       }
     },

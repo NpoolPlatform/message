@@ -1,0 +1,222 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mgr/v1/txnotifstate/txnotifstate.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TxID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "NotifState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CountTxNotifStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateTxNotifStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    },
+    "v1CreateTxNotifStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxNotifState"
+          }
+        }
+      }
+    },
+    "v1DeleteTxNotifStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    },
+    "v1ExistTxNotifStateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistTxNotifStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTxNotifStateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    },
+    "v1GetTxNotifStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    },
+    "v1GetTxNotifStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TxNotifState"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TxNotifState": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TxID": {
+          "type": "string"
+        },
+        "NotifState": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TxNotifStateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TxID": {
+          "type": "string"
+        },
+        "NotifState": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    },
+    "v1TxState": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifState",
+        "WaitTxSuccess",
+        "WaitSend",
+        "AlreadySend"
+      ],
+      "default": "DefaultNotifState"
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateTxNotifStateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TxNotifState"
+        }
+      }
+    }
+  }
+}

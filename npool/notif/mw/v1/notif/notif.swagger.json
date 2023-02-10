@@ -257,6 +257,9 @@
         },
         "EmailSend": {
           "type": "boolean"
+        },
+        "Extra": {
+          "type": "string"
         }
       }
     },

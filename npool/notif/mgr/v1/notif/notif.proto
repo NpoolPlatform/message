@@ -43,6 +43,7 @@ message NotifReq {
     optional string    Content     = 90;
     repeated notif.manager.channel.v1.NotifChannel    Channels    = 100;
     optional bool      EmailSend   = 110;
+    optional string    Extra       = 120;
 }
 
 message Notif {
@@ -57,6 +58,7 @@ message Notif {
     string    Content     = 90;
     repeated notif.manager.channel.v1.NotifChannel Channels = 100;
     bool      EmailSend   = 110;
+    string    Extra       = 111;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
 }

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package notif.middleware.txnotifstate.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/txnotifstate";
+
+import "npool/notif/mgr/v1/txnotifstate/txnotifstate.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateTxNotifState  (CreateTxNotifStateRequest)  returns (CreateTxNotifStateResponse)  {}
+    rpc UpdateTxNotifState  (UpdateTxNotifStateRequest)  returns (UpdateTxNotifStateResponse)  {}
+    rpc GetTxNotifStates    (GetTxNotifStatesRequest)    returns (GetTxNotifStatesResponse)    {}
+    rpc GetTxNotifStateOnly (GetTxNotifStateOnlyRequest) returns (GetTxNotifStateOnlyResponse) {}
+}
+
+message CreateTxNotifStateRequest {
+    notif.manager.txnotiftstate.v1.TxNotifStateReq Info = 10;
+}
+
+message CreateTxNotifStateResponse {
+    notif.manager.txnotiftstate.v1.TxNotifState Info = 10;
+}
+
+message UpdateTxNotifStateRequest {
+    notif.manager.txnotiftstate.v1.TxNotifStateReq Info = 10;
+}
+
+message UpdateTxNotifStateResponse {
+    notif.manager.txnotiftstate.v1.TxNotifState Info = 10;
+}
+
+message GetTxNotifStatesRequest {
+    notif.manager.txnotiftstate.v1.Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetTxNotifStatesResponse {
+    repeated notif.manager.txnotiftstate.v1.TxNotifState Infos = 10;
+    uint32                                               Total = 20;
+}
+
+message GetTxNotifStateOnlyRequest {
+    notif.manager.txnotiftstate.v1.Conds Conds   = 10;
+}
+
+message GetTxNotifStateOnlyResponse {
+    notif.manager.txnotiftstate.v1.TxNotifState Info = 10;
+}
