@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package third.middleware.sms1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/sms";
+
+import "npool/third/mgr/v1/template/sms/sms.proto";
+
+service Middleware {
+    rpc GetSMSTemplate     (GetSMSTemplateRequest)     returns (GetSMSTemplateResponse)     {}
+    rpc GetSMSTemplates    (GetSMSTemplatesRequest)    returns (GetSMSTemplatesResponse)    {}
+    rpc GetSMSTemplateOnly (GetSMSTemplateOnlyRequest) returns (GetSMSTemplateOnlyResponse) {}
+}
+
+message GetSMSTemplateRequest {
+    string ID = 10;
+}
+
+message GetSMSTemplateResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message GetSMSTemplatesRequest {
+    third.manager.template.sms.v1.Conds Conds = 10;
+    uint32 Offset = 20;
+    uint32 Limit  = 30;
+}
+
+message GetSMSTemplatesResponse {
+    repeated third.manager.template.sms.v1.SMSTemplate Infos = 10;
+    uint32                                             Total = 20;
+}
+
+message GetSMSTemplateOnlyRequest {
+    third.manager.template.sms.v1.Conds Conds = 10;
+}
+
+message GetSMSTemplateOnlyResponse {
+    third.manager.template.sms.v1.SMSTemplate Info = 10;
+}

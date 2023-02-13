@@ -9,5 +9,6 @@ enum NotifChannel {
 
     ChannelEmail      = 10;
     ChannelSMS        = 20;
+    ChannelFrontend   = 30;
 }
 

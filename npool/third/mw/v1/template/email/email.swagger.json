@@ -1,0 +1,186 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/third/mw/v1/template/email/email.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "middlewareemail1v1GetEmailTemplateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "middlewareemail1v1GetEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "middlewareemail1v1GetEmailTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Sender": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1EmailTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
+    }
+  }
+}

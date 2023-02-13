@@ -86,7 +86,7 @@
           "type": "string"
         },
         "EventType": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "UseTemplate": {
           "type": "boolean"
@@ -194,28 +194,19 @@
         },
         "EmailSend": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "SMSSend": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
-    },
-    "v1EventType": {
-      "type": "string",
-      "enum": [
-        "DefaultEventType",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultEventType"
     },
     "v1NotifChannel": {
       "type": "string",
       "enum": [
         "DefaultChannel",
         "ChannelEmail",
-        "ChannelSMS"
+        "ChannelSMS",
+        "ChannelFrontend"
       ],
       "default": "DefaultChannel"
     },
@@ -238,7 +229,7 @@
           "type": "string"
         },
         "EventType": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "UseTemplate": {
           "type": "boolean"
@@ -256,6 +247,9 @@
           }
         },
         "EmailSend": {
+          "type": "boolean"
+        },
+        "SMSSend": {
           "type": "boolean"
         },
         "Extra": {
@@ -310,6 +304,29 @@
           }
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }
