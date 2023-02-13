@@ -42,14 +42,14 @@ message NotifChannel {
     string AppID     = 10;
     string AppName   = 20;
     third.manager.usedfor.v1.UsedFor      EventType = 30;
-    notif.manager.channel.v1.NotifChannel Channels  = 40;
+    notif.manager.channel.v1.NotifChannel Channel   = 40;
     uint32 CreatedAt = 50;
 }
 
 message CreateNotifChannelRequest {
     string AppID = 10;
-    third.manager.usedfor.v1.UsedFor      EventType = 20;
-    notif.manager.channel.v1.NotifChannel Channels  = 30;
+    third.manager.usedfor.v1.UsedFor EventType              = 20;
+    repeated notif.manager.channel.v1.NotifChannel Channels = 30;
 }
 
 message CreateNotifChannelResponse {

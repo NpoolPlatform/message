@@ -168,7 +168,7 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Channels": {
+        "Channel": {
           "$ref": "#/definitions/managerchannelv1NotifChannel"
         },
         "CreatedAt": {
@@ -214,7 +214,10 @@
           "$ref": "#/definitions/v1UsedFor"
         },
         "Channels": {
-          "$ref": "#/definitions/managerchannelv1NotifChannel"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/managerchannelv1NotifChannel"
+          }
         }
       }
     },

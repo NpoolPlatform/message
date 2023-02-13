@@ -39,7 +39,7 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "NotifChannel": {
+        "Channel": {
           "$ref": "#/definitions/managerchannelv1NotifChannel"
         },
         "CreatedAt": {
@@ -91,7 +91,7 @@
         "EventType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "NotifChannel": {
+        "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
@@ -191,7 +191,7 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "NotifChannel": {
+        "Channel": {
           "$ref": "#/definitions/managerchannelv1NotifChannel"
         }
       }
