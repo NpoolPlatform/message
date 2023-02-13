@@ -39,11 +39,12 @@ service Gateway {
 }
 
 message NotifChannel {
-    string AppID     = 10;
-    string AppName   = 20;
-    third.manager.usedfor.v1.UsedFor      EventType = 30;
-    notif.manager.channel.v1.NotifChannel Channel   = 40;
-    uint32 CreatedAt = 50;
+    string ID        = 10;
+    string AppID     = 20;
+    string AppName   = 30;
+    third.manager.usedfor.v1.UsedFor      EventType = 40;
+    notif.manager.channel.v1.NotifChannel Channel   = 50;
+    uint32 CreatedAt = 60;
 }
 
 message CreateNotifChannelRequest {
