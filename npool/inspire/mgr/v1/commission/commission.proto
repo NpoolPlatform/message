@@ -11,6 +11,8 @@ enum SettleType {
     LimitedOrderPercent = 20;
     AmountThreshold     = 30;
 
+    TechniqueFeePercent = 40;
+
     NoCommission        = 1000;
 }
 

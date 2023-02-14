@@ -43,6 +43,8 @@ message Conds {
     optional npool.v1.StringVal AppID     = 20;
     optional npool.v1.Uint32Val EventType = 30;
     optional npool.v1.Uint32Val Channel   = 40;
+    optional npool.v1.Uint32SliceVal EventTypes = 50;
+    optional npool.v1.Uint32SliceVal Channels   = 60;
 }
 
 
