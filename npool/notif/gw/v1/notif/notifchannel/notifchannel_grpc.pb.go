@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateNotifChannel(ctx context.Context, in *CreateNotifChannelRequest, opts ...grpc.CallOption) (*CreateNotifChannelResponse, error)
+	CreateNotifChannels(ctx context.Context, in *CreateNotifChannelsRequest, opts ...grpc.CallOption) (*CreateNotifChannelsResponse, error)
 	DeleteNotifChannel(ctx context.Context, in *DeleteNotifChannelRequest, opts ...grpc.CallOption) (*DeleteNotifChannelResponse, error)
 	GetAppNotifChannels(ctx context.Context, in *GetAppNotifChannelsRequest, opts ...grpc.CallOption) (*GetAppNotifChannelsResponse, error)
 	GetNAppNotifChannels(ctx context.Context, in *GetNAppNotifChannelsRequest, opts ...grpc.CallOption) (*GetNAppNotifChannelsResponse, error)
@@ -36,9 +36,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateNotifChannel(ctx context.Context, in *CreateNotifChannelRequest, opts ...grpc.CallOption) (*CreateNotifChannelResponse, error) {
-	out := new(CreateNotifChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.gateway.notif2.notifchannel.v1.Gateway/CreateNotifChannel", in, out, opts...)
+func (c *gatewayClient) CreateNotifChannels(ctx context.Context, in *CreateNotifChannelsRequest, opts ...grpc.CallOption) (*CreateNotifChannelsResponse, error) {
+	out := new(CreateNotifChannelsResponse)
+	err := c.cc.Invoke(ctx, "/notif.gateway.notif2.notifchannel.v1.Gateway/CreateNotifChannels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +76,7 @@ func (c *gatewayClient) GetNAppNotifChannels(ctx context.Context, in *GetNAppNot
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateNotifChannel(context.Context, *CreateNotifChannelRequest) (*CreateNotifChannelResponse, error)
+	CreateNotifChannels(context.Context, *CreateNotifChannelsRequest) (*CreateNotifChannelsResponse, error)
 	DeleteNotifChannel(context.Context, *DeleteNotifChannelRequest) (*DeleteNotifChannelResponse, error)
 	GetAppNotifChannels(context.Context, *GetAppNotifChannelsRequest) (*GetAppNotifChannelsResponse, error)
 	GetNAppNotifChannels(context.Context, *GetNAppNotifChannelsRequest) (*GetNAppNotifChannelsResponse, error)
@@ -87,8 +87,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateNotifChannel(context.Context, *CreateNotifChannelRequest) (*CreateNotifChannelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifChannel not implemented")
+func (UnimplementedGatewayServer) CreateNotifChannels(context.Context, *CreateNotifChannelsRequest) (*CreateNotifChannelsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifChannels not implemented")
 }
 func (UnimplementedGatewayServer) DeleteNotifChannel(context.Context, *DeleteNotifChannelRequest) (*DeleteNotifChannelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotifChannel not implemented")
@@ -112,20 +112,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateNotifChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNotifChannelRequest)
+func _Gateway_CreateNotifChannels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifChannelsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateNotifChannel(ctx, in)
+		return srv.(GatewayServer).CreateNotifChannels(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.gateway.notif2.notifchannel.v1.Gateway/CreateNotifChannel",
+		FullMethod: "/notif.gateway.notif2.notifchannel.v1.Gateway/CreateNotifChannels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateNotifChannel(ctx, req.(*CreateNotifChannelRequest))
+		return srv.(GatewayServer).CreateNotifChannels(ctx, req.(*CreateNotifChannelsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -192,8 +192,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateNotifChannel",
-			Handler:    _Gateway_CreateNotifChannel_Handler,
+			MethodName: "CreateNotifChannels",
+			Handler:    _Gateway_CreateNotifChannels_Handler,
 		},
 		{
 			MethodName: "DeleteNotifChannel",

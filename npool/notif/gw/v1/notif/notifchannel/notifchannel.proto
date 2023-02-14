@@ -10,9 +10,9 @@ import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateNotifChannel (CreateNotifChannelRequest) returns (CreateNotifChannelResponse) {
+    rpc CreateNotifChannels (CreateNotifChannelsRequest) returns (CreateNotifChannelsResponse) {
         option (google.api.http) = {
-            post: "/v1/create/notifchannel"
+            post: "/v1/create/notifchannels"
             body: "*"
         };
     }
@@ -47,13 +47,13 @@ message NotifChannel {
     uint32 CreatedAt = 60;
 }
 
-message CreateNotifChannelRequest {
+message CreateNotifChannelsRequest {
     string AppID = 10;
-    third.manager.usedfor.v1.UsedFor EventType              = 20;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 30;
+    repeated third.manager.usedfor.v1.UsedFor EventTypes = 20;
+    notif.manager.channel.v1.NotifChannel     Channel   = 30;
 }
 
-message CreateNotifChannelResponse {
+message CreateNotifChannelsResponse {
     repeated NotifChannel Infos = 10;
 }
 
@@ -66,21 +66,10 @@ message DeleteNotifChannelResponse {
     NotifChannel Info = 10;
 }
 
-message GetNotifChannelsRequest {
+message GetAppNotifChannelsRequest {
     string AppID          = 10;
     uint32 Offset         = 30;
     uint32 Limit          = 40;
-}
-
-message GetNotifChannelsResponse {
-    repeated NotifChannel Infos = 10;
-    uint32                Total = 20;
-}
-
-message GetAppNotifChannelsRequest {
-    string AppID  = 10;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
 }
 
 message GetAppNotifChannelsResponse {

@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/notifchannel": {
+    "/v1/create/notifchannels": {
       "post": {
-        "operationId": "Gateway_CreateNotifChannel",
+        "operationId": "Gateway_CreateNotifChannels",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifChannelResponse"
+              "$ref": "#/definitions/v1CreateNotifChannelsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifChannelRequest"
+              "$ref": "#/definitions/v1CreateNotifChannelsRequest"
             }
           }
         ],
@@ -159,6 +159,9 @@
     "notif2notifchannelv1NotifChannel": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
@@ -204,24 +207,24 @@
         }
       }
     },
-    "v1CreateNotifChannelRequest": {
+    "v1CreateNotifChannelsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Channels": {
+        "EventTypes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/managerchannelv1NotifChannel"
+            "$ref": "#/definitions/v1UsedFor"
           }
+        },
+        "Channel": {
+          "$ref": "#/definitions/managerchannelv1NotifChannel"
         }
       }
     },
-    "v1CreateNotifChannelResponse": {
+    "v1CreateNotifChannelsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
