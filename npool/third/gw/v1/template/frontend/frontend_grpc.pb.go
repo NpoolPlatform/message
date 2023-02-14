@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/gw/v1/template/frontent/frontent.proto
+// source: npool/third/gw/v1/template/frontend/frontend.proto
 
 package frontend
 
@@ -317,5 +317,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/gw/v1/template/frontent/frontent.proto",
+	Metadata: "npool/third/gw/v1/template/frontend/frontend.proto",
 }

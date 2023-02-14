@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/gw/v1/template/frontent/frontent.proto",
+    "title": "npool/third/gw/v1/template/frontend/frontend.proto",
     "version": "version not set"
   },
   "tags": [

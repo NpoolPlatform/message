@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.18.1
-// source: npool/third/gw/v1/template/frontent/frontent.proto
+// source: npool/third/gw/v1/template/frontend/frontend.proto
 
 package frontend
 
@@ -39,7 +39,7 @@ type CreateFrontendTemplateRequest struct {
 func (x *CreateFrontendTemplateRequest) Reset() {
 	*x = CreateFrontendTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[0]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -52,7 +52,7 @@ func (x *CreateFrontendTemplateRequest) String() string {
 func (*CreateFrontendTemplateRequest) ProtoMessage() {}
 
 func (x *CreateFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[0]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,7 +65,7 @@ func (x *CreateFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFrontendTemplateRequest.ProtoReflect.Descriptor instead.
 func (*CreateFrontendTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{0}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateFrontendTemplateRequest) GetAppID() string {
@@ -121,7 +121,7 @@ type CreateFrontendTemplateResponse struct {
 func (x *CreateFrontendTemplateResponse) Reset() {
 	*x = CreateFrontendTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[1]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -134,7 +134,7 @@ func (x *CreateFrontendTemplateResponse) String() string {
 func (*CreateFrontendTemplateResponse) ProtoMessage() {}
 
 func (x *CreateFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[1]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -147,7 +147,7 @@ func (x *CreateFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFrontendTemplateResponse.ProtoReflect.Descriptor instead.
 func (*CreateFrontendTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{1}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate {
@@ -173,7 +173,7 @@ type CreateAppFrontendTemplateRequest struct {
 func (x *CreateAppFrontendTemplateRequest) Reset() {
 	*x = CreateAppFrontendTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[2]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -186,7 +186,7 @@ func (x *CreateAppFrontendTemplateRequest) String() string {
 func (*CreateAppFrontendTemplateRequest) ProtoMessage() {}
 
 func (x *CreateAppFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[2]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -199,7 +199,7 @@ func (x *CreateAppFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppFrontendTemplateRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppFrontendTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{2}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateAppFrontendTemplateRequest) GetTargetAppID() string {
@@ -255,7 +255,7 @@ type CreateAppFrontendTemplateResponse struct {
 func (x *CreateAppFrontendTemplateResponse) Reset() {
 	*x = CreateAppFrontendTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[3]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -268,7 +268,7 @@ func (x *CreateAppFrontendTemplateResponse) String() string {
 func (*CreateAppFrontendTemplateResponse) ProtoMessage() {}
 
 func (x *CreateAppFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[3]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -281,7 +281,7 @@ func (x *CreateAppFrontendTemplateResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CreateAppFrontendTemplateResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppFrontendTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{3}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAppFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate {
@@ -302,7 +302,7 @@ type GetFrontendTemplateRequest struct {
 func (x *GetFrontendTemplateRequest) Reset() {
 	*x = GetFrontendTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[4]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -315,7 +315,7 @@ func (x *GetFrontendTemplateRequest) String() string {
 func (*GetFrontendTemplateRequest) ProtoMessage() {}
 
 func (x *GetFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[4]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -328,7 +328,7 @@ func (x *GetFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFrontendTemplateRequest.ProtoReflect.Descriptor instead.
 func (*GetFrontendTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{4}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetFrontendTemplateRequest) GetID() string {
@@ -349,7 +349,7 @@ type GetFrontendTemplateResponse struct {
 func (x *GetFrontendTemplateResponse) Reset() {
 	*x = GetFrontendTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[5]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -362,7 +362,7 @@ func (x *GetFrontendTemplateResponse) String() string {
 func (*GetFrontendTemplateResponse) ProtoMessage() {}
 
 func (x *GetFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[5]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,7 +375,7 @@ func (x *GetFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFrontendTemplateResponse.ProtoReflect.Descriptor instead.
 func (*GetFrontendTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{5}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate {
@@ -398,7 +398,7 @@ type GetFrontendTemplatesRequest struct {
 func (x *GetFrontendTemplatesRequest) Reset() {
 	*x = GetFrontendTemplatesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[6]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -411,7 +411,7 @@ func (x *GetFrontendTemplatesRequest) String() string {
 func (*GetFrontendTemplatesRequest) ProtoMessage() {}
 
 func (x *GetFrontendTemplatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[6]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -424,7 +424,7 @@ func (x *GetFrontendTemplatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFrontendTemplatesRequest.ProtoReflect.Descriptor instead.
 func (*GetFrontendTemplatesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{6}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetFrontendTemplatesRequest) GetAppID() string {
@@ -460,7 +460,7 @@ type GetFrontendTemplatesResponse struct {
 func (x *GetFrontendTemplatesResponse) Reset() {
 	*x = GetFrontendTemplatesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[7]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -473,7 +473,7 @@ func (x *GetFrontendTemplatesResponse) String() string {
 func (*GetFrontendTemplatesResponse) ProtoMessage() {}
 
 func (x *GetFrontendTemplatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[7]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -486,7 +486,7 @@ func (x *GetFrontendTemplatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFrontendTemplatesResponse.ProtoReflect.Descriptor instead.
 func (*GetFrontendTemplatesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{7}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetFrontendTemplatesResponse) GetInfos() []*frontend.FrontendTemplate {
@@ -516,7 +516,7 @@ type GetAppFrontendTemplatesRequest struct {
 func (x *GetAppFrontendTemplatesRequest) Reset() {
 	*x = GetAppFrontendTemplatesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[8]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *GetAppFrontendTemplatesRequest) String() string {
 func (*GetAppFrontendTemplatesRequest) ProtoMessage() {}
 
 func (x *GetAppFrontendTemplatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[8]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,7 +542,7 @@ func (x *GetAppFrontendTemplatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppFrontendTemplatesRequest.ProtoReflect.Descriptor instead.
 func (*GetAppFrontendTemplatesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{8}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetAppFrontendTemplatesRequest) GetTargetAppID() string {
@@ -578,7 +578,7 @@ type GetAppFrontendTemplatesResponse struct {
 func (x *GetAppFrontendTemplatesResponse) Reset() {
 	*x = GetAppFrontendTemplatesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[9]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +591,7 @@ func (x *GetAppFrontendTemplatesResponse) String() string {
 func (*GetAppFrontendTemplatesResponse) ProtoMessage() {}
 
 func (x *GetAppFrontendTemplatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[9]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +604,7 @@ func (x *GetAppFrontendTemplatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAppFrontendTemplatesResponse.ProtoReflect.Descriptor instead.
 func (*GetAppFrontendTemplatesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{9}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAppFrontendTemplatesResponse) GetInfos() []*frontend.FrontendTemplate {
@@ -638,7 +638,7 @@ type UpdateFrontendTemplateRequest struct {
 func (x *UpdateFrontendTemplateRequest) Reset() {
 	*x = UpdateFrontendTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[10]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +651,7 @@ func (x *UpdateFrontendTemplateRequest) String() string {
 func (*UpdateFrontendTemplateRequest) ProtoMessage() {}
 
 func (x *UpdateFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[10]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +664,7 @@ func (x *UpdateFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFrontendTemplateRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFrontendTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{10}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateFrontendTemplateRequest) GetID() string {
@@ -727,7 +727,7 @@ type UpdateFrontendTemplateResponse struct {
 func (x *UpdateFrontendTemplateResponse) Reset() {
 	*x = UpdateFrontendTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[11]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -740,7 +740,7 @@ func (x *UpdateFrontendTemplateResponse) String() string {
 func (*UpdateFrontendTemplateResponse) ProtoMessage() {}
 
 func (x *UpdateFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[11]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -753,7 +753,7 @@ func (x *UpdateFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFrontendTemplateResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFrontendTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{11}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdateFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate {
@@ -780,7 +780,7 @@ type UpdateAppFrontendTemplateRequest struct {
 func (x *UpdateAppFrontendTemplateRequest) Reset() {
 	*x = UpdateAppFrontendTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[12]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -793,7 +793,7 @@ func (x *UpdateAppFrontendTemplateRequest) String() string {
 func (*UpdateAppFrontendTemplateRequest) ProtoMessage() {}
 
 func (x *UpdateAppFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[12]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -806,7 +806,7 @@ func (x *UpdateAppFrontendTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppFrontendTemplateRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAppFrontendTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{12}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UpdateAppFrontendTemplateRequest) GetID() string {
@@ -869,7 +869,7 @@ type UpdateAppFrontendTemplateResponse struct {
 func (x *UpdateAppFrontendTemplateResponse) Reset() {
 	*x = UpdateAppFrontendTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[13]
+		mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -882,7 +882,7 @@ func (x *UpdateAppFrontendTemplateResponse) String() string {
 func (*UpdateAppFrontendTemplateResponse) ProtoMessage() {}
 
 func (x *UpdateAppFrontendTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[13]
+	mi := &file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -895,7 +895,7 @@ func (x *UpdateAppFrontendTemplateResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpdateAppFrontendTemplateResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAppFrontendTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP(), []int{13}
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateAppFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate {
@@ -905,12 +905,12 @@ func (x *UpdateAppFrontendTemplateResponse) GetInfo() *frontend.FrontendTemplate
 	return nil
 }
 
-var File_npool_third_gw_v1_template_frontent_frontent_proto protoreflect.FileDescriptor
+var File_npool_third_gw_v1_template_frontend_frontend_proto protoreflect.FileDescriptor
 
-var file_npool_third_gw_v1_template_frontent_frontent_proto_rawDesc = []byte{
+var file_npool_third_gw_v1_template_frontend_frontend_proto_rawDesc = []byte{
 	0x0a, 0x32, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2f, 0x67, 0x77,
 	0x2f, 0x76, 0x31, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2f, 0x66, 0x72, 0x6f,
-	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x2f, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x2e, 0x70,
+	0x6e, 0x74, 0x65, 0x6e, 0x64, 0x2f, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x23, 0x74, 0x68, 0x69, 0x72, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x2e, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2e, 0x66, 0x72, 0x6f,
 	0x6e, 0x74, 0x65, 0x6e, 0x64, 0x33, 0x2e, 0x76, 0x31, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
@@ -1159,19 +1159,19 @@ var file_npool_third_gw_v1_template_frontent_frontent_proto_rawDesc = []byte{
 }
 
 var (
-	file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescOnce sync.Once
-	file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescData = file_npool_third_gw_v1_template_frontent_frontent_proto_rawDesc
+	file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescOnce sync.Once
+	file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescData = file_npool_third_gw_v1_template_frontend_frontend_proto_rawDesc
 )
 
-func file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescGZIP() []byte {
-	file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescOnce.Do(func() {
-		file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescData)
+func file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescGZIP() []byte {
+	file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescOnce.Do(func() {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescData)
 	})
-	return file_npool_third_gw_v1_template_frontent_frontent_proto_rawDescData
+	return file_npool_third_gw_v1_template_frontend_frontend_proto_rawDescData
 }
 
-var file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
-var file_npool_third_gw_v1_template_frontent_frontent_proto_goTypes = []interface{}{
+var file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_npool_third_gw_v1_template_frontend_frontend_proto_goTypes = []interface{}{
 	(*CreateFrontendTemplateRequest)(nil),     // 0: third.gateway.template.frontend3.v1.CreateFrontendTemplateRequest
 	(*CreateFrontendTemplateResponse)(nil),    // 1: third.gateway.template.frontend3.v1.CreateFrontendTemplateResponse
 	(*CreateAppFrontendTemplateRequest)(nil),  // 2: third.gateway.template.frontend3.v1.CreateAppFrontendTemplateRequest
@@ -1189,7 +1189,7 @@ var file_npool_third_gw_v1_template_frontent_frontent_proto_goTypes = []interfac
 	(usedfor.UsedFor)(0),                      // 14: third.manager.usedfor.v1.UsedFor
 	(*frontend.FrontendTemplate)(nil),         // 15: third.manager.template.frontend1.v1.FrontendTemplate
 }
-var file_npool_third_gw_v1_template_frontent_frontent_proto_depIdxs = []int32{
+var file_npool_third_gw_v1_template_frontend_frontend_proto_depIdxs = []int32{
 	14, // 0: third.gateway.template.frontend3.v1.CreateFrontendTemplateRequest.UsedFor:type_name -> third.manager.usedfor.v1.UsedFor
 	15, // 1: third.gateway.template.frontend3.v1.CreateFrontendTemplateResponse.Info:type_name -> third.manager.template.frontend1.v1.FrontendTemplate
 	14, // 2: third.gateway.template.frontend3.v1.CreateAppFrontendTemplateRequest.UsedFor:type_name -> third.manager.usedfor.v1.UsedFor
@@ -1222,13 +1222,13 @@ var file_npool_third_gw_v1_template_frontent_frontent_proto_depIdxs = []int32{
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_npool_third_gw_v1_template_frontent_frontent_proto_init() }
-func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
-	if File_npool_third_gw_v1_template_frontent_frontent_proto != nil {
+func init() { file_npool_third_gw_v1_template_frontend_frontend_proto_init() }
+func file_npool_third_gw_v1_template_frontend_frontend_proto_init() {
+	if File_npool_third_gw_v1_template_frontend_frontend_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFrontendTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1240,7 +1240,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFrontendTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1252,7 +1252,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAppFrontendTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1264,7 +1264,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAppFrontendTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1276,7 +1276,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFrontendTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1288,7 +1288,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFrontendTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1300,7 +1300,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFrontendTemplatesRequest); i {
 			case 0:
 				return &v.state
@@ -1312,7 +1312,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFrontendTemplatesResponse); i {
 			case 0:
 				return &v.state
@@ -1324,7 +1324,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAppFrontendTemplatesRequest); i {
 			case 0:
 				return &v.state
@@ -1336,7 +1336,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAppFrontendTemplatesResponse); i {
 			case 0:
 				return &v.state
@@ -1348,7 +1348,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFrontendTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1360,7 +1360,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFrontendTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1372,7 +1372,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAppFrontendTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1384,7 +1384,7 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 				return nil
 			}
 		}
-		file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAppFrontendTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1397,24 +1397,24 @@ func file_npool_third_gw_v1_template_frontent_frontent_proto_init() {
 			}
 		}
 	}
-	file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes[12].OneofWrappers = []interface{}{}
+	file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes[12].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_npool_third_gw_v1_template_frontent_frontent_proto_rawDesc,
+			RawDescriptor: file_npool_third_gw_v1_template_frontend_frontend_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_npool_third_gw_v1_template_frontent_frontent_proto_goTypes,
-		DependencyIndexes: file_npool_third_gw_v1_template_frontent_frontent_proto_depIdxs,
-		MessageInfos:      file_npool_third_gw_v1_template_frontent_frontent_proto_msgTypes,
+		GoTypes:           file_npool_third_gw_v1_template_frontend_frontend_proto_goTypes,
+		DependencyIndexes: file_npool_third_gw_v1_template_frontend_frontend_proto_depIdxs,
+		MessageInfos:      file_npool_third_gw_v1_template_frontend_frontend_proto_msgTypes,
 	}.Build()
-	File_npool_third_gw_v1_template_frontent_frontent_proto = out.File
-	file_npool_third_gw_v1_template_frontent_frontent_proto_rawDesc = nil
-	file_npool_third_gw_v1_template_frontent_frontent_proto_goTypes = nil
-	file_npool_third_gw_v1_template_frontent_frontent_proto_depIdxs = nil
+	File_npool_third_gw_v1_template_frontend_frontend_proto = out.File
+	file_npool_third_gw_v1_template_frontend_frontend_proto_rawDesc = nil
+	file_npool_third_gw_v1_template_frontend_frontend_proto_goTypes = nil
+	file_npool_third_gw_v1_template_frontend_frontend_proto_depIdxs = nil
 }
