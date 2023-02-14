@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package third.middleware.sms1.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/sms";
+option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/template/sms";
 
 import "npool/third/mgr/v1/template/sms/sms.proto";
 
