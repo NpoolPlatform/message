@@ -1,0 +1,169 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mw/v1/notif/notifchannel/notifchannel.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "managerchannelv1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
+    "notifmiddlewarenotifchannel1v1GetNotifChannelOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/notifnotifchannel1v1NotifChannel"
+        }
+      }
+    },
+    "notifmiddlewarenotifchannel1v1GetNotifChannelsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/notifnotifchannel1v1NotifChannel"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifnotifchannel1v1NotifChannel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Channel": {
+          "$ref": "#/definitions/managerchannelv1NotifChannel"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
+    }
+  }
+}
