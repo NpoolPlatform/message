@@ -26,32 +26,28 @@ message NotifReq {
     optional string    ID          = 10;
     optional string    AppID       = 20;
     optional string    UserID      = 30;
-    optional bool      AlreadyRead = 40;
+    optional bool      Notified    = 40;
     optional string    LangID      = 50;
     optional third.manager.usedfor.v1.UsedFor EventType = 60;
     optional bool      UseTemplate = 70;
     optional string    Title       = 80;
     optional string    Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
-    optional bool      EmailSend   = 110;
-    optional bool      SMSSend     = 111;
-    optional string    Extra       = 120;
+    optional notif.manager.channel.v1.NotifChannel Channel = 100;
+    optional string    Extra       = 110;
 }
 
 message Notif {
     string    ID          = 10;
     string    AppID       = 20;
     string    UserID      = 30;
-    bool      AlreadyRead = 40;
+    bool      Notified    = 40;
     string    LangID      = 50;
     third.manager.usedfor.v1.UsedFor EventType = 60;
     bool      UseTemplate = 70;
     string    Title       = 80;
     string    Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
-    bool      EmailSend   = 110;
-    bool      SmsSend     = 112;
-    string    Extra       = 111;
+    notif.manager.channel.v1.NotifChannel Channel = 100;
+    string    Extra       = 110;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
 }
@@ -61,13 +57,13 @@ message Conds {
     optional npool.v1.StringSliceVal IDs         = 11;
     optional npool.v1.StringVal      AppID       = 20;
     optional npool.v1.StringVal      UserID      = 30;
-    optional npool.v1.BoolVal        AlreadyRead = 40;
+    optional npool.v1.BoolVal        Notified    = 40;
     optional npool.v1.StringVal      LangID      = 50;
     optional npool.v1.Uint32Val      EventType   = 60;
     optional npool.v1.BoolVal        UseTemplate = 70;
-    optional npool.v1.StringSliceVal Channels    = 80;
-    optional npool.v1.BoolVal        EmailSend   = 90;
-    optional npool.v1.BoolVal        SMSSend     = 100;
+    optional npool.v1.Uint32SliceVal Channels    = 80;
+    optional npool.v1.Uint32Val      Channel     = 90;
+    optional npool.v1.Uint32SliceVal EventTypes  = 100;
 }
 
 

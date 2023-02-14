@@ -79,7 +79,7 @@
         "UserID": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Notified": {
           "type": "boolean"
         },
         "LangID": {
@@ -97,14 +97,8 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EmailSend": {
-          "type": "boolean"
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "CreatedAt": {
           "type": "integer",
@@ -177,7 +171,7 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AlreadyRead": {
+        "Notified": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "LangID": {
@@ -190,13 +184,13 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
-        "EmailSend": {
-          "$ref": "#/definitions/v1BoolVal"
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "SMSSend": {
-          "$ref": "#/definitions/v1BoolVal"
+        "EventTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
@@ -222,7 +216,7 @@
         "UserID": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Notified": {
           "type": "boolean"
         },
         "LangID": {
@@ -240,17 +234,8 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "EmailSend": {
-          "type": "boolean"
-        },
-        "SMSSend": {
-          "type": "boolean"
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "Extra": {
           "type": "string"
@@ -279,6 +264,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

@@ -299,13 +299,10 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
-        "AlreadyRead": {
+        "Notified": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -343,7 +340,7 @@
         "UserID": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Notified": {
           "type": "boolean"
         }
       }

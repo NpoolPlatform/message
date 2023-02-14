@@ -23,16 +23,15 @@ message Notif {
     string ID          = 10;
     string AppID       = 20;
     string UserID      = 30;
-    bool   AlreadyRead = 40;
+    bool   Notified    = 40;
     string LangID      = 50;
     third.manager.usedfor.v1.UsedFor EventType = 60;
     bool   UseTemplate = 70;
     string Title       = 80;
     string Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels    = 100;
-    bool   EmailSend  = 110;
-    uint32 CreatedAt   = 120;
-    uint32 UpdatedAt   = 130;
+    notif.manager.channel.v1.NotifChannel Channel = 100;
+    uint32 CreatedAt   = 110;
+    uint32 UpdatedAt   = 120;
 }
 
 message CreateNotifRequest {
