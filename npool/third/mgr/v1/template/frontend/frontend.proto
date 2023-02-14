@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package third.manager.template.frontend1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/third/mgr/v1/template/frontend";
+
+import "npool/npool.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+
+// Service Name
+service Manager {
+    rpc CreateFrontendTemplate     (CreateFrontendTemplateRequest)     returns (CreateFrontendTemplateResponse)     {}
+    rpc CreateFrontendTemplates    (CreateFrontendTemplatesRequest)    returns (CreateFrontendTemplatesResponse)    {}
+    rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}
+    rpc GetFrontendTemplate        (GetFrontendTemplateRequest)        returns (GetFrontendTemplateResponse)        {}
+    rpc GetFrontendTemplateOnly    (GetFrontendTemplateOnlyRequest)    returns (GetFrontendTemplateOnlyResponse)    {}
+    rpc GetFrontendTemplates       (GetFrontendTemplatesRequest)       returns (GetFrontendTemplatesResponse)       {}
+    rpc ExistFrontendTemplate      (ExistFrontendTemplateRequest)      returns (ExistFrontendTemplateResponse)      {}
+    rpc ExistFrontendTemplateConds (ExistFrontendTemplateCondsRequest) returns (ExistFrontendTemplateCondsResponse) {}
+    rpc CountFrontendTemplates     (CountFrontendTemplatesRequest)     returns (CountFrontendTemplatesResponse)     {}
+    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {}
+}
+
+message FrontendTemplateReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string LangID      = 30;
+    optional usedfor.v1.UsedFor UsedFor = 40;
+    optional string Title       = 50;
+    optional string Content     = 60;
+    optional string Sender      = 70;
+}
+
+message FrontendTemplate {
+    string ID          = 10;
+    string AppID       = 20;
+    string LangID      = 30;
+    usedfor.v1.UsedFor UsedFor = 40;
+    string Title       = 50;
+    string Content     = 60;
+    string Sender      = 70;
+    uint32 CreatedAt   = 80;
+    uint32 UpdatedAt   = 90;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal LangID  = 30;
+    optional npool.v1.Uint32Val UsedFor = 40;
+    optional npool.v1.StringSliceVal AppIDs   = 50;
+    optional npool.v1.StringSliceVal LangIDs  = 60;
+    optional npool.v1.StringSliceVal UsedFors = 70;
+}
+
+message CreateFrontendTemplateRequest {
+    FrontendTemplateReq Info = 10;
+}
+
+message CreateFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}
+
+message CreateFrontendTemplatesRequest {
+    repeated FrontendTemplateReq Infos = 10;
+}
+
+message CreateFrontendTemplatesResponse {
+    repeated FrontendTemplate Infos = 10;
+}
+
+message UpdateFrontendTemplateRequest {
+    FrontendTemplateReq Info = 10;
+}
+
+message UpdateFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}
+
+message GetFrontendTemplateRequest {
+    string ID = 10;
+}
+
+message GetFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}
+
+message GetFrontendTemplatesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetFrontendTemplatesResponse {
+    repeated FrontendTemplate Infos = 10;
+    uint32                 Total = 20;
+}
+
+message GetFrontendTemplateOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetFrontendTemplateOnlyResponse {
+    FrontendTemplate Info = 10;
+}
+
+message ExistFrontendTemplateRequest {
+    string ID = 10;
+}
+
+message ExistFrontendTemplateResponse {
+    bool Info = 10;
+}
+
+message ExistFrontendTemplateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistFrontendTemplateCondsResponse {
+    bool Info = 10;
+}
+
+message CountFrontendTemplatesRequest {
+    Conds Conds = 10;
+}
+
+message CountFrontendTemplatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteFrontendTemplateRequest {
+    string ID = 10;
+}
+
+message DeleteFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}

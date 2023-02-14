@@ -60,7 +60,13 @@
         "CreateInvitationCode",
         "SetCommission",
         "SetTransferTargetUser",
-        "Transfer"
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultUsedFor"
     },

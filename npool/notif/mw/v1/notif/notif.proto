@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 // Service Name
 service Middleware {
@@ -22,16 +23,15 @@ message Notif {
     string ID          = 10;
     string AppID       = 20;
     string UserID      = 30;
-    bool   AlreadyRead = 40;
+    bool   Notified    = 40;
     string LangID      = 50;
-    notif.manager.notif1.v1.EventType EventType = 60;
+    third.manager.usedfor.v1.UsedFor EventType = 60;
     bool   UseTemplate = 70;
     string Title       = 80;
     string Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels    = 100;
-    bool   EmailSend  = 110;
-    uint32 CreatedAt   = 120;
-    uint32 UpdatedAt   = 130;
+    notif.manager.channel.v1.NotifChannel Channel = 100;
+    uint32 CreatedAt   = 110;
+    uint32 UpdatedAt   = 120;
 }
 
 message CreateNotifRequest {
@@ -60,9 +60,8 @@ message UpdateNotifResponse {
 }
 
 message UpdateNotifsRequest {
-    repeated string IDs         = 10;
-    optional bool   EmailSend   = 20;
-    optional bool   AlreadyRead = 30;
+    repeated string IDs      = 10;
+    optional bool   Notified = 20;
 }
 
 message UpdateNotifsResponse {

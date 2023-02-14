@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package notif.middleware.notifchannel1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/notifchannel";
+
+import "npool/notif/mgr/v1/notif/notifchannel/notifchannel.proto";
+
+// Service Name
+service Middleware {
+    rpc GetNotifChannels    (GetNotifChannelsRequest)    returns (GetNotifChannelsResponse)    {}
+    rpc GetNotifChannelOnly (GetNotifChannelOnlyRequest) returns (GetNotifChannelOnlyResponse) {}
+}
+
+message GetNotifChannelsRequest {
+    notif.manager.notif.notifchannel1.v1.Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetNotifChannelsResponse {
+    repeated notif.manager.notif.notifchannel1.v1.NotifChannel Infos = 10;
+    uint32                                                    Total = 20;
+}
+
+message GetNotifChannelOnlyRequest {
+    notif.manager.notif.notifchannel1.v1.Conds Conds   = 10;
+}
+
+message GetNotifChannelOnlyResponse {
+    notif.manager.notif.notifchannel1.v1.NotifChannel Info = 10;
+}

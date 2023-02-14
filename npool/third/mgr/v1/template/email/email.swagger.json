@@ -61,6 +61,15 @@
         },
         "Sender": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -232,6 +241,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -264,7 +287,13 @@
         "CreateInvitationCode",
         "SetCommission",
         "SetTransferTargetUser",
-        "Transfer"
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
       ],
       "default": "DefaultUsedFor"
     }

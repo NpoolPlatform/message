@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
-import "npool/notif/mgr/v1/notif/notif.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 // Service Name
 service Gateway {
@@ -16,7 +16,7 @@ service Gateway {
             body: "*"
         };
     }
-    
+
     rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {
         option (google.api.http) = {
             post: "/v1/update/notifs"
@@ -47,14 +47,14 @@ message Notif {
     string           EmailAddress = 50;
     string           PhoneNO      = 60;
     string           Username     = 70;
-    notif.manager.notif1.v1.EventType EventType = 80;
+    third.manager.usedfor.v1.UsedFor EventType = 80;
     bool             UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 120;
-    bool             AlreadyRead = 130;
-    uint32           CreatedAt   = 140;
-    uint32           UpdatedAt   = 150;
+    notif.manager.channel.v1.NotifChannel Channel = 120;
+    bool             Notified     = 130;
+    uint32           CreatedAt    = 140;
+    uint32           UpdatedAt    = 150;
 }
 
 message GetNotifRequest {
@@ -69,7 +69,7 @@ message UpdateNotifsRequest {
     repeated string IDs         = 10;
     string          AppID       = 20;
     string          UserID      = 30;
-    bool            AlreadyRead = 40;
+    bool            Notified    = 40;
 }
 
 message UpdateNotifsResponse {

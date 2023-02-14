@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifResponse"
+              "$ref": "#/definitions/v1GetNotifResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifRequest"
+              "$ref": "#/definitions/v1GetNotifRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifsResponse"
+              "$ref": "#/definitions/v1GetNotifsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifsRequest"
+              "$ref": "#/definitions/v1GetNotifsRequest"
             }
           }
         ],
@@ -146,114 +146,6 @@
     }
   },
   "definitions": {
-    "gatewaynotif3v1GetNotifRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewaynotif3v1GetNotifResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
-        }
-      }
-    },
-    "gatewaynotif3v1GetNotifsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "gatewaynotif3v1GetNotifsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "gatewaynotif3v1Notif": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1EventType"
-        },
-        "UseTemplate": {
-          "type": "boolean"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
-        "AlreadyRead": {
-          "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -280,19 +172,6 @@
           }
         }
       }
-    },
-    "v1EventType": {
-      "type": "string",
-      "enum": [
-        "DefaultEventType",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultEventType"
     },
     "v1GetAppUserNotifsRequest": {
       "type": "object",
@@ -322,10 +201,115 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
+            "$ref": "#/definitions/v1Notif"
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNotifRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Notif"
+        }
+      }
+    },
+    "v1GetNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Notif"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Notif": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "UseTemplate": {
+          "type": "boolean"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "Notified": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }
@@ -336,7 +320,8 @@
       "enum": [
         "DefaultChannel",
         "ChannelEmail",
-        "ChannelSMS"
+        "ChannelSMS",
+        "ChannelFrontend"
       ],
       "default": "DefaultChannel"
     },
@@ -355,7 +340,7 @@
         "UserID": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Notified": {
           "type": "boolean"
         }
       }
@@ -366,10 +351,33 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
+            "$ref": "#/definitions/v1Notif"
           }
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

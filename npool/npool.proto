@@ -54,3 +54,8 @@ message StringSliceVal {
     string          Op    = 10;
     repeated string Value = 20;
 }
+
+message Uint32SliceVal {
+    string          Op    = 10;
+    repeated uint32 Value = 20;
+}

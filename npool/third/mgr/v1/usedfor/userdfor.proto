@@ -16,4 +16,10 @@ enum UsedFor {
     SetCommission         = 80;
     SetTransferTargetUser = 90;
     Transfer              = 100;
+    WithdrawalRequest     = 110;
+    WithdrawalCompleted   = 120;
+    DepositReceived       = 130;
+    KYCApproved           = 140;
+    KYCRejected           = 150;
+    Announcement          = 160;
 }

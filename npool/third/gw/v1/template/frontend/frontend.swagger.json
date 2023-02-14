@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/gw/v1/template/notif/notif.proto",
+    "title": "npool/third/gw/v1/template/frontend/frontend.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/notiftemplate": {
+    "/v1/create/app/frontendtemplate": {
       "post": {
-        "operationId": "Gateway_CreateAppNotifTemplate",
+        "operationId": "Gateway_CreateAppFrontendTemplate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppNotifTemplateResponse"
+              "$ref": "#/definitions/v1CreateAppFrontendTemplateResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppNotifTemplateRequest"
+              "$ref": "#/definitions/v1CreateAppFrontendTemplateRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/create/notiftemplate": {
+    "/v1/create/frontendtemplate": {
       "post": {
-        "operationId": "Gateway_CreateNotifTemplate",
+        "operationId": "Gateway_CreateFrontendTemplate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1CreateNotifTemplateResponse"
+              "$ref": "#/definitions/templatefrontend3v1CreateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1CreateNotifTemplateRequest"
+              "$ref": "#/definitions/templatefrontend3v1CreateFrontendTemplateRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/app/notiftemplates": {
+    "/v1/get/app/frontendtemplates": {
       "post": {
-        "operationId": "Gateway_GetAppNotifTemplates",
+        "operationId": "Gateway_GetAppFrontendTemplates",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppNotifTemplatesResponse"
+              "$ref": "#/definitions/v1GetAppFrontendTemplatesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppNotifTemplatesRequest"
+              "$ref": "#/definitions/v1GetAppFrontendTemplatesRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/notiftemplate": {
+    "/v1/get/frontendtemplate": {
       "post": {
-        "operationId": "Gateway_GetNotifTemplate",
+        "operationId": "Gateway_GetFrontendTemplate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1GetNotifTemplateResponse"
+              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplateResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1GetNotifTemplateRequest"
+              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplateRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/get/notiftemplates": {
+    "/v1/get/frontendtemplates": {
       "post": {
-        "operationId": "Gateway_GetNotifTemplates",
+        "operationId": "Gateway_GetFrontendTemplates",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1GetNotifTemplatesResponse"
+              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplatesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1GetNotifTemplatesRequest"
+              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplatesRequest"
             }
           }
         ],
@@ -176,14 +176,14 @@
         ]
       }
     },
-    "/v1/update/app/notiftemplate": {
+    "/v1/update/app/frontendtemplate": {
       "post": {
-        "operationId": "Gateway_UpdateAppNotifTemplate",
+        "operationId": "Gateway_UpdateAppFrontendTemplate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppNotifTemplateResponse"
+              "$ref": "#/definitions/v1UpdateAppFrontendTemplateResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppNotifTemplateRequest"
+              "$ref": "#/definitions/v1UpdateAppFrontendTemplateRequest"
             }
           }
         ],
@@ -208,14 +208,14 @@
         ]
       }
     },
-    "/v1/update/notiftemplate": {
+    "/v1/update/frontendtemplate": {
       "post": {
-        "operationId": "Gateway_UpdateNotifTemplate",
+        "operationId": "Gateway_UpdateFrontendTemplate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1UpdateNotifTemplateResponse"
+              "$ref": "#/definitions/templatefrontend3v1UpdateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatenotif3v1UpdateNotifTemplateRequest"
+              "$ref": "#/definitions/templatefrontend3v1UpdateFrontendTemplateRequest"
             }
           }
         ],
@@ -269,7 +269,7 @@
         }
       }
     },
-    "templatenotif3v1CreateNotifTemplateRequest": {
+    "templatefrontend3v1CreateFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -279,7 +279,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Title": {
           "type": "string"
@@ -292,15 +292,15 @@
         }
       }
     },
-    "templatenotif3v1CreateNotifTemplateResponse": {
+    "templatefrontend3v1CreateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
+          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },
-    "templatenotif3v1GetNotifTemplateRequest": {
+    "templatefrontend3v1GetFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -308,15 +308,15 @@
         }
       }
     },
-    "templatenotif3v1GetNotifTemplateResponse": {
+    "templatefrontend3v1GetFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
+          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },
-    "templatenotif3v1GetNotifTemplatesRequest": {
+    "templatefrontend3v1GetFrontendTemplatesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -332,13 +332,13 @@
         }
       }
     },
-    "templatenotif3v1GetNotifTemplatesResponse": {
+    "templatefrontend3v1GetFrontendTemplatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1NotifTemplate"
+            "$ref": "#/definitions/v1FrontendTemplate"
           }
         },
         "Total": {
@@ -347,7 +347,7 @@
         }
       }
     },
-    "templatenotif3v1UpdateNotifTemplateRequest": {
+    "templatefrontend3v1UpdateFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -366,22 +366,22 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string"
         }
       }
     },
-    "templatenotif3v1UpdateNotifTemplateResponse": {
+    "templatefrontend3v1UpdateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
+          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },
-    "v1CreateAppNotifTemplateRequest": {
+    "v1CreateAppFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -391,7 +391,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Title": {
           "type": "string"
@@ -404,59 +404,15 @@
         }
       }
     },
-    "v1CreateAppNotifTemplateResponse": {
+    "v1CreateAppFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
+          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },
-    "v1EventType": {
-      "type": "string",
-      "enum": [
-        "DefaultEventType",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultEventType"
-    },
-    "v1GetAppNotifTemplatesRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppNotifTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1NotifTemplate": {
+    "v1FrontendTemplate": {
       "type": "object",
       "properties": {
         "ID": {
@@ -469,7 +425,7 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Title": {
           "type": "string"
@@ -490,7 +446,38 @@
         }
       }
     },
-    "v1UpdateAppNotifTemplateRequest": {
+    "v1GetAppFrontendTemplatesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -509,20 +496,43 @@
           "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1EventType"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string"
         }
       }
     },
-    "v1UpdateAppNotifTemplateResponse": {
+    "v1UpdateAppFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NotifTemplate"
+          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

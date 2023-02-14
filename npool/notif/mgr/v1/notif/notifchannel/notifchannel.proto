@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package notif.manager.notif.notifchannel1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/notifchannel";
+
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateNotifChannel     (CreateNotifChannelRequest)     returns (CreateNotifChannelResponse)     {}
+    rpc CreateNotifChannels    (CreateNotifChannelsRequest)    returns (CreateNotifChannelsResponse)    {}
+    rpc UpdateNotifChannel     (UpdateNotifChannelRequest)     returns (UpdateNotifChannelResponse)     {}
+    rpc GetNotifChannel        (GetNotifChannelRequest)        returns (GetNotifChannelResponse)        {}
+    rpc GetNotifChannelOnly    (GetNotifChannelOnlyRequest)    returns (GetNotifChannelOnlyResponse)    {}
+    rpc GetNotifChannels       (GetNotifChannelsRequest)       returns (GetNotifChannelsResponse)       {}
+    rpc ExistNotifChannel      (ExistNotifChannelRequest)      returns (ExistNotifChannelResponse)      {}
+    rpc ExistNotifChannelConds (ExistNotifChannelCondsRequest) returns (ExistNotifChannelCondsResponse) {}
+    rpc CountNotifChannels     (CountNotifChannelsRequest)     returns (CountNotifChannelsResponse)     {}
+    rpc DeleteNotifChannel     (DeleteNotifChannelRequest)     returns (DeleteNotifChannelResponse)     {}
+}
+
+message NotifChannelReq {
+    optional string ID    = 10;
+    optional string AppID = 20;
+    optional third.manager.usedfor.v1.UsedFor EventType = 40;
+    optional channel.v1.NotifChannel          Channel   = 50;
+}
+
+message NotifChannel {
+    string ID         = 10;
+    string AppID      = 20;
+    third.manager.usedfor.v1.UsedFor EventType = 30;
+    channel.v1.NotifChannel          Channel   = 40;
+    uint32 CreatedAt  = 50;
+    uint32 UpdatedAt  = 60;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID        = 10;
+    optional npool.v1.StringVal AppID     = 20;
+    optional npool.v1.Uint32Val EventType = 30;
+    optional npool.v1.Uint32Val Channel   = 40;
+    optional npool.v1.Uint32SliceVal EventTypes = 50;
+    optional npool.v1.Uint32SliceVal Channels   = 60;
+}
+
+
+message CreateNotifChannelRequest {
+    NotifChannelReq Info = 10;
+}
+
+message CreateNotifChannelResponse {
+    NotifChannel Info = 10;
+}
+
+message CreateNotifChannelsRequest {
+    repeated NotifChannelReq Infos = 10;
+}
+
+message CreateNotifChannelsResponse {
+    repeated NotifChannel Infos = 10;
+}
+
+message UpdateNotifChannelRequest {
+    NotifChannelReq Info = 10;
+}
+
+message UpdateNotifChannelResponse {
+    NotifChannel Info = 10;
+}
+
+message GetNotifChannelRequest {
+    string ID = 10;
+}
+
+message GetNotifChannelResponse {
+    NotifChannel Info = 10;
+}
+
+message GetNotifChannelsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetNotifChannelsResponse {
+    repeated NotifChannel Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetNotifChannelOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetNotifChannelOnlyResponse {
+    NotifChannel Info = 10;
+}
+
+message ExistNotifChannelRequest {
+    string ID = 10;
+}
+
+message ExistNotifChannelResponse {
+    bool Info = 10;
+}
+
+message ExistNotifChannelCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistNotifChannelCondsResponse {
+    bool Info = 10;
+}
+
+message CountNotifChannelsRequest {
+    Conds Conds = 10;
+}
+
+message CountNotifChannelsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteNotifChannelRequest {
+    string ID = 10;
+}
+
+message DeleteNotifChannelResponse {
+    NotifChannel Info = 10;
+}

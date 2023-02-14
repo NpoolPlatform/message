@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
+import "npool/third/mgr/v1/usedfor/userdfor.proto";
 
 // Service Name
 service Manager {
@@ -21,44 +22,32 @@ service Manager {
     rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {}
 }
 
-enum EventType {
-    DefaultEventType    = 0;
-    WithdrawalRequest   = 10;
-    WithdrawalCompleted = 20;
-    DepositReceived     = 30;
-    KYCApproved         = 40;
-    KYCRejected         = 50;
-    Announcement        = 60;
-}
-
 message NotifReq {
     optional string    ID          = 10;
     optional string    AppID       = 20;
     optional string    UserID      = 30;
-    optional bool      AlreadyRead = 40;
+    optional bool      Notified    = 40;
     optional string    LangID      = 50;
-    optional EventType EventType   = 60;
+    optional third.manager.usedfor.v1.UsedFor EventType = 60;
     optional bool      UseTemplate = 70;
     optional string    Title       = 80;
     optional string    Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel    Channels    = 100;
-    optional bool      EmailSend   = 110;
-    optional string    Extra       = 120;
+    optional notif.manager.channel.v1.NotifChannel Channel = 100;
+    optional string    Extra       = 110;
 }
 
 message Notif {
     string    ID          = 10;
     string    AppID       = 20;
     string    UserID      = 30;
-    bool      AlreadyRead = 40;
+    bool      Notified    = 40;
     string    LangID      = 50;
-    EventType EventType   = 60;
+    third.manager.usedfor.v1.UsedFor EventType = 60;
     bool      UseTemplate = 70;
     string    Title       = 80;
     string    Content     = 90;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 100;
-    bool      EmailSend   = 110;
-    string    Extra       = 111;
+    notif.manager.channel.v1.NotifChannel Channel = 100;
+    string    Extra       = 110;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
 }
@@ -68,12 +57,13 @@ message Conds {
     optional npool.v1.StringSliceVal IDs         = 11;
     optional npool.v1.StringVal      AppID       = 20;
     optional npool.v1.StringVal      UserID      = 30;
-    optional npool.v1.BoolVal        AlreadyRead = 40;
+    optional npool.v1.BoolVal        Notified    = 40;
     optional npool.v1.StringVal      LangID      = 50;
     optional npool.v1.Uint32Val      EventType   = 60;
     optional npool.v1.BoolVal        UseTemplate = 70;
-    optional npool.v1.StringSliceVal Channels    = 80;
-    optional npool.v1.BoolVal        EmailSend   = 90;
+    optional npool.v1.Uint32SliceVal Channels    = 80;
+    optional npool.v1.Uint32Val      Channel     = 90;
+    optional npool.v1.Uint32SliceVal EventTypes  = 100;
 }
 
 

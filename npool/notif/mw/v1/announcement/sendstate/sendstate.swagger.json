@@ -154,7 +154,8 @@
       "enum": [
         "DefaultChannel",
         "ChannelEmail",
-        "ChannelSMS"
+        "ChannelSMS",
+        "ChannelFrontend"
       ],
       "default": "DefaultChannel"
     },

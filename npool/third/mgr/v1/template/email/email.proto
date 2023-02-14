@@ -46,11 +46,14 @@ message EmailTemplate {
 }
 
 message Conds {
-    npool.v1.StringVal ID              = 10;
-    npool.v1.StringVal AppID           = 30;
-    npool.v1.StringVal LangID          = 40;
-    npool.v1.Int32Val  UsedFor         = 50;
-    npool.v1.StringVal Sender          = 60;
+    npool.v1.StringVal      ID       = 10;
+    npool.v1.StringVal      AppID    = 30;
+    npool.v1.StringVal      LangID   = 40;
+    npool.v1.Int32Val       UsedFor  = 50;
+    npool.v1.StringVal      Sender   = 60;
+    npool.v1.StringSliceVal AppIDs   = 70;
+    npool.v1.StringSliceVal LangIDs  = 80;
+    npool.v1.StringSliceVal UsedFors = 90;
 }
 
 

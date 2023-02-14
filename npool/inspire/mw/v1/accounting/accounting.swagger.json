@@ -79,6 +79,7 @@
         "GoodOrderPercent",
         "LimitedOrderPercent",
         "AmountThreshold",
+        "TechniqueFeePercent",
         "NoCommission"
       ],
       "default": "DefaultSettleType"
