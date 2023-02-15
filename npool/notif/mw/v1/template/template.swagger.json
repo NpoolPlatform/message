@@ -4,6 +4,11 @@
     "title": "npool/notif/mw/v1/template/template.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -38,6 +43,47 @@
           }
         }
       }
+    },
+    "v1GenerateTextResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Announcement"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }
