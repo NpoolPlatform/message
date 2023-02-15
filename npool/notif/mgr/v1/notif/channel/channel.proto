@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package notif.manager.notif.channel.v1;
+package notif.manager.notif1.channel.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/channel";
 
@@ -26,14 +26,14 @@ message ChannelReq {
     optional string               ID        = 10;
     optional string               AppID     = 20;
     optional basetypes.v1.UsedFor EventType = 30;
-    optional channel.v1.Channel   Channel   = 40;
+    optional notif.manager.channel.v1.NotifChannel Channel = 40;
 }
 
 message Channel {
     string               ID        = 10;
     string               AppID     = 20;
     basetypes.v1.UsedFor EventType = 30;
-    channel.v1.Channel   Channel   = 40;
+    notif.manager.channel.v1.NotifChannel Channel = 40;
     uint32               CreatedAt = 50;
     uint32               UpdatedAt = 60;
 }

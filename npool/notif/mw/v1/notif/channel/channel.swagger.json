@@ -80,7 +80,7 @@
           "$ref": "#/definitions/v1UsedFor"
         },
         "Channel": {
-          "$ref": "#/definitions/v1Channel"
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "CreatedAt": {
           "type": "integer",
@@ -114,6 +114,16 @@
           "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringVal": {
       "type": "object",

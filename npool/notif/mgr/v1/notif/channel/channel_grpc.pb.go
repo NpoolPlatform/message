@@ -44,7 +44,7 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 
 func (c *managerClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
 	out := new(CreateChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/CreateChannel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/CreateChannel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (c *managerClient) CreateChannel(ctx context.Context, in *CreateChannelRequ
 
 func (c *managerClient) CreateChannels(ctx context.Context, in *CreateChannelsRequest, opts ...grpc.CallOption) (*CreateChannelsResponse, error) {
 	out := new(CreateChannelsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/CreateChannels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/CreateChannels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *managerClient) CreateChannels(ctx context.Context, in *CreateChannelsRe
 
 func (c *managerClient) UpdateChannel(ctx context.Context, in *UpdateChannelRequest, opts ...grpc.CallOption) (*UpdateChannelResponse, error) {
 	out := new(UpdateChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/UpdateChannel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/UpdateChannel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +71,7 @@ func (c *managerClient) UpdateChannel(ctx context.Context, in *UpdateChannelRequ
 
 func (c *managerClient) GetChannel(ctx context.Context, in *GetChannelRequest, opts ...grpc.CallOption) (*GetChannelResponse, error) {
 	out := new(GetChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/GetChannel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/GetChannel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *managerClient) GetChannel(ctx context.Context, in *GetChannelRequest, o
 
 func (c *managerClient) GetChannelOnly(ctx context.Context, in *GetChannelOnlyRequest, opts ...grpc.CallOption) (*GetChannelOnlyResponse, error) {
 	out := new(GetChannelOnlyResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/GetChannelOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/GetChannelOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *managerClient) GetChannelOnly(ctx context.Context, in *GetChannelOnlyRe
 
 func (c *managerClient) GetChannels(ctx context.Context, in *GetChannelsRequest, opts ...grpc.CallOption) (*GetChannelsResponse, error) {
 	out := new(GetChannelsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/GetChannels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/GetChannels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func (c *managerClient) GetChannels(ctx context.Context, in *GetChannelsRequest,
 
 func (c *managerClient) ExistChannel(ctx context.Context, in *ExistChannelRequest, opts ...grpc.CallOption) (*ExistChannelResponse, error) {
 	out := new(ExistChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/ExistChannel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/ExistChannel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func (c *managerClient) ExistChannel(ctx context.Context, in *ExistChannelReques
 
 func (c *managerClient) ExistChannelConds(ctx context.Context, in *ExistChannelCondsRequest, opts ...grpc.CallOption) (*ExistChannelCondsResponse, error) {
 	out := new(ExistChannelCondsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/ExistChannelConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/ExistChannelConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *managerClient) ExistChannelConds(ctx context.Context, in *ExistChannelC
 
 func (c *managerClient) CountChannels(ctx context.Context, in *CountChannelsRequest, opts ...grpc.CallOption) (*CountChannelsResponse, error) {
 	out := new(CountChannelsResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/CountChannels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/CountChannels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *managerClient) CountChannels(ctx context.Context, in *CountChannelsRequ
 
 func (c *managerClient) DeleteChannel(ctx context.Context, in *DeleteChannelRequest, opts ...grpc.CallOption) (*DeleteChannelResponse, error) {
 	out := new(DeleteChannelResponse)
-	err := c.cc.Invoke(ctx, "/notif.manager.notif.channel.v1.Manager/DeleteChannel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.manager.notif1.channel.v1.Manager/DeleteChannel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -206,7 +206,7 @@ func _Manager_CreateChannel_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/CreateChannel",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/CreateChannel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateChannel(ctx, req.(*CreateChannelRequest))
@@ -224,7 +224,7 @@ func _Manager_CreateChannels_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/CreateChannels",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/CreateChannels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateChannels(ctx, req.(*CreateChannelsRequest))
@@ -242,7 +242,7 @@ func _Manager_UpdateChannel_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/UpdateChannel",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/UpdateChannel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).UpdateChannel(ctx, req.(*UpdateChannelRequest))
@@ -260,7 +260,7 @@ func _Manager_GetChannel_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/GetChannel",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/GetChannel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetChannel(ctx, req.(*GetChannelRequest))
@@ -278,7 +278,7 @@ func _Manager_GetChannelOnly_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/GetChannelOnly",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/GetChannelOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetChannelOnly(ctx, req.(*GetChannelOnlyRequest))
@@ -296,7 +296,7 @@ func _Manager_GetChannels_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/GetChannels",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/GetChannels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).GetChannels(ctx, req.(*GetChannelsRequest))
@@ -314,7 +314,7 @@ func _Manager_ExistChannel_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/ExistChannel",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/ExistChannel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistChannel(ctx, req.(*ExistChannelRequest))
@@ -332,7 +332,7 @@ func _Manager_ExistChannelConds_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/ExistChannelConds",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/ExistChannelConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).ExistChannelConds(ctx, req.(*ExistChannelCondsRequest))
@@ -350,7 +350,7 @@ func _Manager_CountChannels_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/CountChannels",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/CountChannels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CountChannels(ctx, req.(*CountChannelsRequest))
@@ -368,7 +368,7 @@ func _Manager_DeleteChannel_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/notif.manager.notif.channel.v1.Manager/DeleteChannel",
+		FullMethod: "/notif.manager.notif1.channel.v1.Manager/DeleteChannel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).DeleteChannel(ctx, req.(*DeleteChannelRequest))
@@ -380,7 +380,7 @@ func _Manager_DeleteChannel_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.manager.notif.channel.v1.Manager",
+	ServiceName: "notif.manager.notif1.channel.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
