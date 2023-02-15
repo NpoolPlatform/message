@@ -143,11 +143,11 @@
     "v1AnnouncementType": {
       "type": "string",
       "enum": [
-        "DefaultAnnouncementType",
-        "AllUsers",
-        "AppointUsers"
+        "DefaultType",
+        "Broadcast",
+        "Multicast"
       ],
-      "default": "DefaultAnnouncementType"
+      "default": "DefaultType"
     },
     "v1NotifChannel": {
       "type": "string",
