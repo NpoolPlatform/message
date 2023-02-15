@@ -47,6 +47,5 @@ message VerifyUserCodeRequest {
 }
 
 message VerifyUserCodeResponse {
-    UserCode Info = 10;
 }
 

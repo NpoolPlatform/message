@@ -123,12 +123,7 @@
       }
     },
     "v1VerifyUserCodeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserCode"
-        }
-      }
+      "type": "object"
     }
   }
 }
