@@ -29,6 +29,7 @@ type MiddlewareClient interface {
 	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GetNotifOnly(ctx context.Context, in *GetNotifOnlyRequest, opts ...grpc.CallOption) (*GetNotifOnlyResponse, error)
+	GenerateNotifs(ctx context.Context, in *GenerateNotifsRequest, opts ...grpc.CallOption) (*GenerateNotifsResponse, error)
 }
 
 type middlewareClient struct {
@@ -102,6 +103,15 @@ func (c *middlewareClient) GetNotifOnly(ctx context.Context, in *GetNotifOnlyReq
 	return out, nil
 }
 
+func (c *middlewareClient) GenerateNotifs(ctx context.Context, in *GenerateNotifsRequest, opts ...grpc.CallOption) (*GenerateNotifsResponse, error) {
+	out := new(GenerateNotifsResponse)
+	err := c.cc.Invoke(ctx, "/notif.middleware.notif2.v1.Middleware/GenerateNotifs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -113,6 +123,7 @@ type MiddlewareServer interface {
 	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GetNotifOnly(context.Context, *GetNotifOnlyRequest) (*GetNotifOnlyResponse, error)
+	GenerateNotifs(context.Context, *GenerateNotifsRequest) (*GenerateNotifsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -140,6 +151,9 @@ func (UnimplementedMiddlewareServer) GetNotifs(context.Context, *GetNotifsReques
 }
 func (UnimplementedMiddlewareServer) GetNotifOnly(context.Context, *GetNotifOnlyRequest) (*GetNotifOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GenerateNotifs(context.Context, *GenerateNotifsRequest) (*GenerateNotifsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateNotifs not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -280,6 +294,24 @@ func _Middleware_GetNotifOnly_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GenerateNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateNotifsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GenerateNotifs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/notif.middleware.notif2.v1.Middleware/GenerateNotifs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GenerateNotifs(ctx, req.(*GenerateNotifsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -314,6 +346,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNotifOnly",
 			Handler:    _Middleware_GetNotifOnly_Handler,
+		},
+		{
+			MethodName: "GenerateNotifs",
+			Handler:    _Middleware_GenerateNotifs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
