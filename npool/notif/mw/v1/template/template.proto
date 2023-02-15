@@ -25,9 +25,8 @@ message TextInfo {
     string          Subject  = 10;
     string          Content  = 20;
     string          From     = 30;
-    string          To       = 40;
-    repeated string ToCCs    = 50;
-    repeated string ReplyTos = 60;
+    repeated string ToCCs    = 40;
+    repeated string ReplyTos = 50;
 }
 
 message GenerateTextRequest {

@@ -101,9 +101,6 @@
         "From": {
           "type": "string"
         },
-        "To": {
-          "type": "string"
-        },
         "ToCCs": {
           "type": "array",
           "items": {
