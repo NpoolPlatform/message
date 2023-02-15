@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/mw/v1/notif/notify.proto",
+    "title": "npool/third/mw/v1/send/send.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,8 +44,24 @@
         }
       }
     },
-    "v1SendNotifEmailResponse": {
+    "v1SendMessageResponse": {
       "type": "object"
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
     }
   }
 }

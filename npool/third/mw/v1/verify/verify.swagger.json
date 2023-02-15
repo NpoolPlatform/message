@@ -44,51 +44,6 @@
         }
       }
     },
-    "v1SendCodeResponse": {
-      "type": "object"
-    },
-    "v1SignMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethod",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethod"
-    },
-    "v1UsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultUsedFor",
-        "Signup",
-        "Signin",
-        "Update",
-        "Contact",
-        "SetWithdrawAddress",
-        "Withdraw",
-        "CreateInvitationCode",
-        "SetCommission",
-        "SetTransferTargetUser",
-        "Transfer",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Announcement"
-      ],
-      "default": "DefaultUsedFor"
-    },
-    "v1VerifyCodeResponse": {
-      "type": "object"
-    },
     "v1VerifyGoogleRecaptchaV3Response": {
       "type": "object"
     }
