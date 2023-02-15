@@ -5,6 +5,7 @@ package notif.middleware.announcement.announcement.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
 
 import "npool/notif/mgr/v1/announcement/announcement.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -40,7 +41,7 @@ message Announcement {
     uint32 CreatedAt      = 70;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 100;
-    bool   AlreadyRead    = 120;
+    bool   Read           = 120;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 130;
     // @inject_tag: sql:"type"
@@ -48,6 +49,9 @@ message Announcement {
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
     // @inject_tag: sql:"read_user_id"
     string ReadUserID     = 160;
+    // @inject_tag: sql:"channel"
+    string ChannelStr     = 170;
+    notif.manager.channel.v1.NotifChannel Channel = 180;
 }
 
 message GetAnnouncementStatesRequest {

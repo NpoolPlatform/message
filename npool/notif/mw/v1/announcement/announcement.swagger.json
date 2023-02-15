@@ -54,7 +54,7 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
-        "AlreadyRead": {
+        "Read": {
           "type": "boolean"
         },
         "EndAt": {
@@ -72,6 +72,13 @@
         "ReadUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"read_user_id\""
+        },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         }
       }
     },
@@ -200,6 +207,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringSliceVal": {
       "type": "object",

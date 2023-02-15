@@ -80,15 +80,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"content\""
         },
-        "ChannelsStr": {
+        "ChannelStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"channels\""
+          "title": "@inject_tag: sql:\"channel\""
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "AnnouncementTypeStr": {
           "type": "string",
