@@ -267,6 +267,30 @@
         }
       }
     },
+    "v1TemplateVars": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Timestamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
     "v1Uint32SliceVal": {
       "type": "object",
       "properties": {
