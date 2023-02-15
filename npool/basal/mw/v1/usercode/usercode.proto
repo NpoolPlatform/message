@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package basal.middleware.usercode.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/usercode";
+
+import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/usedfor.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateUserCode (CreateUserCodeRequest) returns (CreateUserCodeResponse) {}
+    rpc GetUserCode    (GetUserCodeRequest)    returns (GetUserCodeResponse)    {}
+}
+
+message UserCode {
+    string                  AppID       = 10;
+    string                  Account     = 20;
+    basetypes.v1.SignMethod AccountType = 30;
+    basetypes.v1.UsedFor    UsedFor     = 40;
+    uint32                  NextAt      = 50;
+    uint32                  ExpireAt    = 60;
+}
+
+message CreateUserCodeRequest {
+    string                  Prefix      = 10;
+    string                  AppID       = 20;
+    string                  Account     = 30;
+    basetypes.v1.SignMethod AccountType = 40;
+    basetypes.v1.UsedFor    UsedFor     = 50;
+}
+
+message CreateUserCodeResponse {
+    UserCode Info = 10;
+}
+
+message GetUserCodeRequest {
+    string                  Prefix      = 10;
+    string                  AppID       = 20;
+    string                  Account     = 30;
+    basetypes.v1.SignMethod AccountType = 40;
+    basetypes.v1.UsedFor    UsedFor     = 50;
+}
+
+message GetUserCodeResponse {
+    UserCode Info = 10;
+}
+
