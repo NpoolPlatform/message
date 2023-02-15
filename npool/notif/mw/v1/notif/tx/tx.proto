@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package notif.middleware.tx.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/tx";
+
+import "npool/notif/mgr/v1/notif/tx/tx.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateTx  (CreateTxRequest)  returns (CreateTxResponse)  {}
+    rpc UpdateTx  (UpdateTxRequest)  returns (UpdateTxResponse)  {}
+    rpc GetTxs    (GetTxsRequest)    returns (GetTxsResponse)    {}
+    rpc GetTxOnly (GetTxOnlyRequest) returns (GetTxOnlyResponse) {}
+}
+
+message CreateTxRequest {
+    notif.manager.notif.tx.v1.TxReq Info = 10;
+}
+
+message CreateTxResponse {
+    notif.manager.notif.tx.v1.Tx Info = 10;
+}
+
+message UpdateTxRequest {
+    notif.manager.notif.tx.v1.TxReq Info = 10;
+}
+
+message UpdateTxResponse {
+    notif.manager.notif.tx.v1.Tx Info = 10;
+}
+
+message GetTxsRequest {
+    notif.manager.notif.tx.v1.Conds Conds = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetTxsResponse {
+    repeated notif.manager.notif.tx.v1.Tx Infos = 10;
+    uint32                                Total = 20;
+}
+
+message GetTxOnlyRequest {
+    notif.manager.notif.tx.v1.Conds Conds = 10;
+}
+
+message GetTxOnlyResponse {
+    notif.manager.notif.tx.v1.Tx Info = 10;
+}

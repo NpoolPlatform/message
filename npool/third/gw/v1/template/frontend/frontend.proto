@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template
 
 import "google/api/annotations.proto";
 import "npool/third/mgr/v1/template/frontend/frontend.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 service Gateway {
     rpc CreateFrontendTemplate (CreateFrontendTemplateRequest) returns (CreateFrontendTemplateResponse) {
@@ -62,7 +62,7 @@ service Gateway {
 message CreateFrontendTemplateRequest {
     string AppID         = 10;
     string TargetLangID  = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Title         = 40;
     string Content       = 50;
     string Sender        = 60;
@@ -75,7 +75,7 @@ message CreateFrontendTemplateResponse {
 message CreateAppFrontendTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Title          = 40;
     string Content        = 50;
     string Sender         = 60;
@@ -121,7 +121,7 @@ message UpdateFrontendTemplateRequest {
     optional string Title        = 30;
     optional string Content      = 40;
     optional string TargetLangID = 50;
-    optional third.manager.usedfor.v1.UsedFor UsedFor = 60;
+    optional basetypes.v1.UsedFor UsedFor = 60;
     optional string Sender       = 70;
 }
 
@@ -135,7 +135,7 @@ message UpdateAppFrontendTemplateRequest {
     optional string TargetLangID = 30;
     optional string Title        = 40;
     optional string Content      = 50;
-    optional third.manager.usedfor.v1.UsedFor UsedFor = 60;
+    optional basetypes.v1.UsedFor UsedFor = 60;
     optional string Sender       = 70;
 }
 

@@ -5,8 +5,8 @@ package third.gateway.verify.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/verify";
 
 import "google/api/annotations.proto";
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 service Gateway {
     rpc SendCode (SendCodeRequest) returns (SendCodeResponse) {
@@ -18,13 +18,13 @@ service Gateway {
 }
 
 message SendCodeRequest {
-    string          AppID   = 10;
-    string          LangID  = 20;
-    optional string UserID  = 30;
-    optional string Account = 40;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 50;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 60;
-    optional string                              ToUsername  = 70;
+    string                  AppID       = 10;
+    string                  LangID      = 20;
+    optional string         UserID      = 30;
+    optional string         Account     = 40;
+    basetypes.v1.SignMethod AccountType = 50;
+    basetypes.v1.UsedFor    UsedFor     = 60;
+    optional string         ToUsername  = 70;
 }
 
 message SendCodeResponse {

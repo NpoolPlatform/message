@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package notif.manager.notif.channel.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/channel";
+
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/usedfor.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateChannel     (CreateChannelRequest)     returns (CreateChannelResponse)     {}
+    rpc CreateChannels    (CreateChannelsRequest)    returns (CreateChannelsResponse)    {}
+    rpc UpdateChannel     (UpdateChannelRequest)     returns (UpdateChannelResponse)     {}
+    rpc GetChannel        (GetChannelRequest)        returns (GetChannelResponse)        {}
+    rpc GetChannelOnly    (GetChannelOnlyRequest)    returns (GetChannelOnlyResponse)    {}
+    rpc GetChannels       (GetChannelsRequest)       returns (GetChannelsResponse)       {}
+    rpc ExistChannel      (ExistChannelRequest)      returns (ExistChannelResponse)      {}
+    rpc ExistChannelConds (ExistChannelCondsRequest) returns (ExistChannelCondsResponse) {}
+    rpc CountChannels     (CountChannelsRequest)     returns (CountChannelsResponse)     {}
+    rpc DeleteChannel     (DeleteChannelRequest)     returns (DeleteChannelResponse)     {}
+}
+
+message ChannelReq {
+    optional string               ID        = 10;
+    optional string               AppID     = 20;
+    optional basetypes.v1.UsedFor EventType = 30;
+    optional channel.v1.Channel   Channel   = 40;
+}
+
+message Channel {
+    string               ID        = 10;
+    string               AppID     = 20;
+    basetypes.v1.UsedFor EventType = 30;
+    channel.v1.Channel   Channel   = 40;
+    uint32               CreatedAt = 50;
+    uint32               UpdatedAt = 60;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID         = 10;
+    optional npool.v1.StringVal      AppID      = 20;
+    optional npool.v1.Uint32Val      EventType  = 30;
+    optional npool.v1.Uint32Val      Channel    = 40;
+    optional npool.v1.Uint32SliceVal EventTypes = 50;
+    optional npool.v1.Uint32SliceVal Channels   = 60;
+}
+
+
+message CreateChannelRequest {
+    ChannelReq Info = 10;
+}
+
+message CreateChannelResponse {
+    Channel Info = 10;
+}
+
+message CreateChannelsRequest {
+    repeated ChannelReq Infos = 10;
+}
+
+message CreateChannelsResponse {
+    repeated Channel Infos = 10;
+}
+
+message UpdateChannelRequest {
+    ChannelReq Info = 10;
+}
+
+message UpdateChannelResponse {
+    Channel Info = 10;
+}
+
+message GetChannelRequest {
+    string ID = 10;
+}
+
+message GetChannelResponse {
+    Channel Info = 10;
+}
+
+message GetChannelsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetChannelsResponse {
+    repeated Channel Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetChannelOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetChannelOnlyResponse {
+    Channel Info = 10;
+}
+
+message ExistChannelRequest {
+    string ID = 10;
+}
+
+message ExistChannelResponse {
+    bool Info = 10;
+}
+
+message ExistChannelCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistChannelCondsResponse {
+    bool Info = 10;
+}
+
+message CountChannelsRequest {
+    Conds Conds = 10;
+}
+
+message CountChannelsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteChannelRequest {
+    string ID = 10;
+}
+
+message DeleteChannelResponse {
+    Channel Info = 10;
+}

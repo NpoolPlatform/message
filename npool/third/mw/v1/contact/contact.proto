@@ -2,21 +2,21 @@ syntax = "proto3";
 
 package third.middleware.contact.v1;
 
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/contact";
 
 service Middleware {
-    rpc ContactViaEmail  (ContactViaEmailRequest) returns (ContactViaEmailResponse) {}
+    rpc ContactViaEmail (ContactViaEmailRequest) returns (ContactViaEmailResponse) {}
 }
 
 message ContactViaEmailRequest {
-    string AppID      = 10;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
-    string Sender     = 40;
-    string Subject    = 50;
-    string Body       = 60;
-    string SenderName = 70;
+    string               AppID      = 10;
+    basetypes.v1.UsedFor UsedFor    = 30;
+    string               Sender     = 40;
+    string               Subject    = 50;
+    string               Body       = 60;
+    string               SenderName = 70;
 }
 
 message ContactViaEmailResponse {
