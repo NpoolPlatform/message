@@ -11,7 +11,7 @@ import "npool/npool.proto";
 // Service Name
 service Middleware {
     rpc CreateUserCode (CreateUserCodeRequest) returns (CreateUserCodeResponse) {}
-    rpc GetUserCode    (GetUserCodeRequest)    returns (GetUserCodeResponse)    {}
+    rpc VerifyUserCode (VerifyUserCodeRequest) returns (VerifyUserCodeResponse) {}
 }
 
 message UserCode {
@@ -36,15 +36,16 @@ message CreateUserCodeResponse {
     UserCode Info = 10;
 }
 
-message GetUserCodeRequest {
+message VerifyUserCodeRequest {
     string                  Prefix      = 10;
     string                  AppID       = 20;
     string                  Account     = 30;
     basetypes.v1.SignMethod AccountType = 40;
     basetypes.v1.UsedFor    UsedFor     = 50;
+    string                  Code        = 60;
 }
 
-message GetUserCodeResponse {
+message VerifyUserCodeResponse {
     UserCode Info = 10;
 }
 

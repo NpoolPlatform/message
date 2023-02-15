@@ -52,14 +52,6 @@
         }
       }
     },
-    "v1GetUserCodeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserCode"
-        }
-      }
-    },
     "v1SignMethod": {
       "type": "string",
       "enum": [
@@ -124,6 +116,14 @@
         "ExpireAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1VerifyUserCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserCode"
         }
       }
     }
