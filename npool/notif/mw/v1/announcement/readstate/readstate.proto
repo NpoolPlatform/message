@@ -25,9 +25,9 @@ message ReadState {
     string Title          = 40;
     // @inject_tag: sql:"content"
     string Content        = 50;
-    // @inject_tag: sql:"channels"
-    string ChannelsStr = 60;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 70;
+    // @inject_tag: sql:"channel"
+    string ChannelStr = 60;
+    notif.manager.channel.v1.NotifChannel Channel = 70;
     // @inject_tag: sql:"type"
     string AnnouncementTypeStr = 80;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 90;

@@ -76,9 +76,7 @@ message Announcement {
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 121;
     uint32           EndAt          = 140;
-    //if AlreadySend = true SendChannel valid
-    notif.manager.channel.v1.NotifChannel          SendChannel      = 130;
-    repeated notif.manager.channel.v1.NotifChannel Channels         = 150;
+    notif.manager.channel.v1.NotifChannel          Channel          = 130;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 160;
 }
 
@@ -87,7 +85,7 @@ message CreateAnnouncementRequest {
     string          TargetLangID = 20;
     string          Title        = 30;
     string          Content      = 40;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 50;
+    notif.manager.channel.v1.NotifChannel Channel = 50;
     uint32          EndAt        = 60;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 70;
 }
@@ -100,7 +98,6 @@ message UpdateAnnouncementRequest {
     string          ID          = 10;
     optional string Title       = 20;
     optional string Content     = 30;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 40;
     optional uint32 EndAt       = 50;
     optional notif.manager.announcement.v1.AnnouncementType AnnouncementType = 60;
 }
