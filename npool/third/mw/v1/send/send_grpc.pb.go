@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/mw/v1/notif/notify.proto
+// source: npool/third/mw/v1/send/send.proto
 
-package notif
+package send
 
 import (
 	context "context"
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	SendNotifEmail(ctx context.Context, in *SendNotifEmailRequest, opts ...grpc.CallOption) (*SendNotifEmailResponse, error)
+	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
 }
 
 type middlewareClient struct {
@@ -33,9 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) SendNotifEmail(ctx context.Context, in *SendNotifEmailRequest, opts ...grpc.CallOption) (*SendNotifEmailResponse, error) {
-	out := new(SendNotifEmailResponse)
-	err := c.cc.Invoke(ctx, "/third.middleware.notif1.v1.Middleware/SendNotifEmail", in, out, opts...)
+func (c *middlewareClient) SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error) {
+	out := new(SendMessageResponse)
+	err := c.cc.Invoke(ctx, "/third.middleware.send.v1.Middleware/SendMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *middlewareClient) SendNotifEmail(ctx context.Context, in *SendNotifEmai
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	SendNotifEmail(context.Context, *SendNotifEmailRequest) (*SendNotifEmailResponse, error)
+	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -54,8 +54,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) SendNotifEmail(context.Context, *SendNotifEmailRequest) (*SendNotifEmailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendNotifEmail not implemented")
+func (UnimplementedMiddlewareServer) SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendMessage not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -70,20 +70,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_SendNotifEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendNotifEmailRequest)
+func _Middleware_SendMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).SendNotifEmail(ctx, in)
+		return srv.(MiddlewareServer).SendMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.middleware.notif1.v1.Middleware/SendNotifEmail",
+		FullMethod: "/third.middleware.send.v1.Middleware/SendMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SendNotifEmail(ctx, req.(*SendNotifEmailRequest))
+		return srv.(MiddlewareServer).SendMessage(ctx, req.(*SendMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,14 +92,14 @@ func _Middleware_SendNotifEmail_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "third.middleware.notif1.v1.Middleware",
+	ServiceName: "third.middleware.send.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "SendNotifEmail",
-			Handler:    _Middleware_SendNotifEmail_Handler,
+			MethodName: "SendMessage",
+			Handler:    _Middleware_SendMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/mw/v1/notif/notify.proto",
+	Metadata: "npool/third/mw/v1/send/send.proto",
 }
