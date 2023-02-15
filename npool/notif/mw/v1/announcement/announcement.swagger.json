@@ -129,9 +129,12 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
@@ -166,11 +169,11 @@
     "v1AnnouncementType": {
       "type": "string",
       "enum": [
-        "DefaultAnnouncementType",
-        "AllUsers",
-        "AppointUsers"
+        "DefaultType",
+        "Broadcast",
+        "Multicast"
       ],
-      "default": "DefaultAnnouncementType"
+      "default": "DefaultType"
     },
     "v1BoolVal": {
       "type": "object",
@@ -220,6 +223,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },
