@@ -25,21 +25,21 @@ service Manager {
 message StockReq {
     optional string ID        = 10;
     optional string GoodID    = 20;
-    optional uint32 Total     = 30;
-    optional int32  Locked    = 40;
-    optional int32  InService = 50;
-    optional int32  WaitStart = 51;
-    optional uint32 Sold      = 60;
+    optional string Total     = 30;
+    optional string Locked    = 40;
+    optional string InService = 50;
+    optional string WaitStart = 51;
+    optional string Sold      = 60;
 }
 
 message Stock {
     string ID        = 10;
     string GoodID    = 20;
-    uint32 Total     = 30;
-    int32  Locked    = 40;
-    int32  InService = 50;
-    int32  WaitStart = 51;
-    uint32 Sold      = 60;
+    string Total     = 30;
+    string Locked    = 40;
+    string InService = 50;
+    string WaitStart = 51;
+    string Sold      = 60;
     uint32 CreatedAt = 70;
     uint32 UpdatedAt = 80;
     uint32 DeletedAt = 90;
