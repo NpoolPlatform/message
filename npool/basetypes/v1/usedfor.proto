@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+enum UsedFor {
+    DefaultUsedFor        = 0;
+
+    Signup                = 10;
+    Signin                = 20;
+    Update                = 30;
+    Contact               = 40;
+    SetWithdrawAddress    = 50;
+    Withdraw              = 60;
+    CreateInvitationCode  = 70;
+    SetCommission         = 80;
+    SetTransferTargetUser = 90;
+    Transfer              = 100;
+    WithdrawalRequest     = 110;
+    WithdrawalCompleted   = 120;
+    DepositReceived       = 130;
+    KYCApproved           = 140;
+    KYCRejected           = 150;
+
+    Announcement          = 100000;
+}

@@ -74,7 +74,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
@@ -97,7 +97,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
@@ -193,6 +193,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -234,22 +250,6 @@
         "Announcement"
       ],
       "default": "DefaultUsedFor"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

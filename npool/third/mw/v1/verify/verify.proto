@@ -4,8 +4,8 @@ package third.middleware.verify.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/verify";
 
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 service Middleware {
     rpc VerifyCode              (VerifyCodeRequest)              returns (VerifyCodeResponse)              {}
@@ -14,24 +14,24 @@ service Middleware {
 }
 
 message VerifyCodeRequest {
-    string          AppID   = 10;
+    string                  AppID       = 10;
     //if AccountType is Google then Account is GoogleSecret
-    string          Account = 20;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
-    string          Code    = 50;
+    string                  Account     = 20;
+    basetypes.v1.SignMethod AccountType = 30;
+    basetypes.v1.UsedFor    UsedFor     = 40;
+    string                  Code        = 50;
 }
 
 message VerifyCodeResponse {
 }
 
 message SendCodeRequest {
-    string AppID   = 10;
-    string LangID  = 20;
-    string Account = 30;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 50;
-    optional string ToUsername = 60;
+    string                  AppID       = 10;
+    string                  LangID      = 20;
+    string                  Account     = 30;
+    basetypes.v1.SignMethod AccountType = 40;
+    basetypes.v1.UsedFor    UsedFor     = 50;
+    optional string         ToUsername  = 60;
 }
 
 message SendCodeResponse {

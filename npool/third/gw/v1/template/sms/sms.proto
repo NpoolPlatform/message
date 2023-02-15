@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/template
 
 import "google/api/annotations.proto";
 import "npool/third/mgr/v1/template/sms/sms.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 
 service Gateway {
@@ -63,7 +63,7 @@ service Gateway {
 message CreateSMSTemplateRequest {
     string AppID         = 10;
     string TargetLangID  = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Subject       = 40;
     string Message       = 50;
 }
@@ -75,7 +75,7 @@ message CreateSMSTemplateResponse {
 message CreateAppSMSTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Subject        = 40;
     string Message        = 50;
 }

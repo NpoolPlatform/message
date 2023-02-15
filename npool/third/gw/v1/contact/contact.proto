@@ -5,9 +5,9 @@ package third.gateway.contact.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/contact";
 
 import "google/api/annotations.proto";
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/third/mgr/v1/contact/contact.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 
 service Gateway {
@@ -70,9 +70,9 @@ service Gateway {
 
 message CreateContactRequest {
     string AppID       = 10;
-    third.manager.usedfor.v1.UsedFor UsedFor = 20;
+    basetypes.v1.UsedFor UsedFor = 20;
     string Account     = 30;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    basetypes.v1.SignMethod AccountType = 40;
     string Sender      = 50;
 }
 
@@ -82,9 +82,9 @@ message CreateContactResponse {
 
 message CreateAppContactRequest {
     string TargetAppID = 10;
-    third.manager.usedfor.v1.UsedFor UsedFor = 20;
+    basetypes.v1.UsedFor UsedFor = 20;
     string Account     = 30;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    basetypes.v1.SignMethod AccountType = 40;
     string Sender      = 50;
 }
 
@@ -127,7 +127,7 @@ message UpdateContactRequest {
     string          ID          = 10;
     string          AppID       = 20;
     optional string Account     = 30;
-    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    optional basetypes.v1.SignMethod AccountType = 40;
     optional string Sender      = 50;
 }
 
@@ -138,7 +138,7 @@ message UpdateAppContactRequest {
     string          ID          = 10;
     string          TargetAppID = 20;
     optional string Account     = 30;
-    optional appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
+    optional basetypes.v1.SignMethod AccountType = 40;
     optional string Sender      = 50;
 }
 
@@ -150,7 +150,7 @@ message UpdateAppContactResponse {
 message ContactViaEmailRequest {
     string AppID      = 10;
     string UserID     = 20;
-    third.manager.usedfor.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Sender     = 50;
     string Subject    = 60;
     string Body       = 70;

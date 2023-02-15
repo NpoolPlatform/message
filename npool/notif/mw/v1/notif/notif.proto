@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
@@ -25,7 +25,7 @@ message Notif {
     string UserID      = 30;
     bool   Notified    = 40;
     string LangID      = 50;
-    third.manager.usedfor.v1.UsedFor EventType = 60;
+    basetypes.v1.UsedFor EventType = 60;
     bool   UseTemplate = 70;
     string Title       = 80;
     string Content     = 90;
