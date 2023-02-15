@@ -4,6 +4,13 @@ package notif.middleware.template.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template";
 
+import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/usedfor.proto";
+
+service Middleware {
+    rpc GenerateText (GenerateTextRequest) returns (GenerateTextResponse) {}
+}
+
 message TemplateVars {
     optional string Username  = 10;
     optional string Message   = 20;
@@ -11,4 +18,15 @@ message TemplateVars {
     optional string CoinUnit  = 40;
     optional uint32 Timestamp = 50;
     optional string Address   = 60;
+    optional string Code      = 70;
+}
+
+message GenerateTextRequest {
+    string                                AppID     = 10;
+    notif.manager.channel.v1.NotifChannel Channel   = 20;
+    basetypes.v1.UsedFor                  EventType = 30;
+}
+
+message GenerateTextResponse {
+    string Info = 10;
 }
