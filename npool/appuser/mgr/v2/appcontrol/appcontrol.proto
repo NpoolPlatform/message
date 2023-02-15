@@ -5,7 +5,7 @@ package appuser.manager.appcontrol.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appcontrol";
 
 import "npool/npool.proto";
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/basetypes/v1/signmethod.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 
 service Manager {
@@ -32,9 +32,9 @@ enum CreateInvitationCodeWhen {
 message AppControlReq {
     optional string ID                  = 10;
     optional string AppID               = 20;
-    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 30;
-    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 40;
-    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 50;
+    repeated basetypes.v1.SignMethod SignupMethods    = 30;
+    repeated basetypes.v1.SignMethod ExtSigninMethods = 40;
+    optional appuser.manager.recaptcha.v2.RecaptchaType RecaptchaMethod  = 50;
     optional bool KycEnable             = 60;
     optional bool SigninVerifyEnable    = 70;
     optional bool InvitationCodeMust    = 80;
@@ -45,9 +45,9 @@ message AppControlReq {
 message AppControl {
     string ID                           = 10;
     string AppID                        = 20;
-    repeated appuser.manager.signmethod.v2.SignMethodType SignupMethods    = 30;
-    repeated appuser.manager.signmethod.v2.SignMethodType ExtSigninMethods = 40;
-    appuser.manager.recaptcha.v2.RecaptchaType            RecaptchaMethod  = 50;
+    repeated basetypes.v1.SignMethod SignupMethods    = 30;
+    repeated basetypes.v1.SignMethod ExtSigninMethods = 40;
+    appuser.manager.recaptcha.v2.RecaptchaType RecaptchaMethod  = 50;
     bool KycEnable                      = 60;
     bool SigninVerifyEnable             = 70;
     bool InvitationCodeMust             = 80;
@@ -56,11 +56,11 @@ message AppControl {
 }
 
 message Conds {
-    npool.v1.StringVal ID               = 10;
-    npool.v1.StringVal AppID            = 20;
-    npool.v1.BoolVal KycEnable          = 30;
-    npool.v1.BoolVal SigninVerifyEnable = 40;
-    npool.v1.BoolVal InvitationCodeMust = 50;
+    npool.v1.StringVal ID                 = 10;
+    npool.v1.StringVal AppID              = 20;
+    npool.v1.BoolVal   KycEnable          = 30;
+    npool.v1.BoolVal   SigninVerifyEnable = 40;
+    npool.v1.BoolVal   InvitationCodeMust = 50;
 }
 
 message CreateAppControlRequest {
