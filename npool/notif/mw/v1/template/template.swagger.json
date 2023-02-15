@@ -48,7 +48,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "type": "string"
+          "$ref": "#/definitions/v1TextInfo"
         }
       }
     },
@@ -61,6 +61,62 @@
         "ChannelFrontend"
       ],
       "default": "DefaultChannel"
+    },
+    "v1TemplateVars": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Timestamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TextInfo": {
+      "type": "object",
+      "properties": {
+        "Subject": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "ToCCs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1UsedFor": {
       "type": "string",

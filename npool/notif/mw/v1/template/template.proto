@@ -21,12 +21,22 @@ message TemplateVars {
     optional string Code      = 70;
 }
 
+message TextInfo {
+    string          Subject  = 10;
+    string          Content  = 20;
+    string          From     = 30;
+    string          To       = 40;
+    repeated string ToCCs    = 50;
+    repeated string ReplyTos = 60;
+}
+
 message GenerateTextRequest {
     string                                AppID     = 10;
     notif.manager.channel.v1.NotifChannel Channel   = 20;
     basetypes.v1.UsedFor                  EventType = 30;
+    optional TemplateVars                 Vars      = 40;
 }
 
 message GenerateTextResponse {
-    string Info = 10;
+    TextInfo Info = 10;
 }
