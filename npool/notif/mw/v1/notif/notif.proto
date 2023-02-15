@@ -99,8 +99,9 @@ message GetNotifOnlyResponse {
 
 message GenerateNotifsRequest {
     string                                             AppID     = 10;
-    basetypes.v1.UsedFor                               EventType = 20;
-    optional notif.middleware.template.v1.TemplateVars Vars      = 30;
+    string                                             UserID    = 20;
+    basetypes.v1.UsedFor                               EventType = 30;
+    optional notif.middleware.template.v1.TemplateVars Vars      = 40;
 }
 
 message GenerateNotifsResponse {
