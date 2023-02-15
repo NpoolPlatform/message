@@ -200,7 +200,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1NotifReq"
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         }
       }
