@@ -222,8 +222,7 @@
           "type": "boolean"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Posters": {
           "type": "array",
@@ -422,24 +421,19 @@
           "type": "string"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Locked": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "InService": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "WaitStart": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Sold": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "DeliveryAt": {
           "type": "integer",
@@ -530,8 +524,7 @@
           "type": "boolean"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Posters": {
           "type": "array",

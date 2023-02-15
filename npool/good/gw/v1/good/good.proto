@@ -92,11 +92,11 @@ message Good {
     repeated CoinInfo SupportCoins      = 340;
 
     string           StockID        = 350;
-    uint32           Total          = 360;
-    uint32           Locked         = 370;
-    uint32           InService      = 380;
-    uint32           WaitStart      = 381;
-    uint32           Sold           = 390;
+    string           Total          = 360;
+    string           Locked         = 370;
+    string           InService      = 380;
+    string           WaitStart      = 381;
+    string           Sold           = 390;
 
     uint32           DeliveryAt         = 400;
     uint32           StartAt            = 410;
@@ -126,7 +126,7 @@ message CreateGoodRequest {
     uint32          DeliveryAt         = 140;
     uint32          StartAt            = 150;
     bool            TestOnly           = 160;
-    uint32          Total              = 170;
+    string          Total              = 170;
     repeated string Posters            = 210;
     repeated string Labels             = 220;
     optional uint32 BenefitIntervalHours = 230;
@@ -169,7 +169,7 @@ message UpdateGoodRequest {
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
-    optional uint32        Total              = 170;
+    optional string        Total              = 170;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
