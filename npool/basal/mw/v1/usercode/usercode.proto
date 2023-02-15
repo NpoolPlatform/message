@@ -15,12 +15,13 @@ service Middleware {
 }
 
 message UserCode {
-    string                  AppID       = 10;
-    string                  Account     = 20;
-    basetypes.v1.SignMethod AccountType = 30;
-    basetypes.v1.UsedFor    UsedFor     = 40;
-    uint32                  NextAt      = 50;
-    uint32                  ExpireAt    = 60;
+    string                  Prefix      = 10;
+    string                  AppID       = 20;
+    string                  Account     = 30;
+    basetypes.v1.SignMethod AccountType = 40;
+    basetypes.v1.UsedFor    UsedFor     = 50;
+    uint32                  NextAt      = 60;
+    uint32                  ExpireAt    = 70;
 }
 
 message CreateUserCodeRequest {

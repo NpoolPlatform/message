@@ -102,6 +102,9 @@
     "v1UserCode": {
       "type": "object",
       "properties": {
+        "Prefix": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
