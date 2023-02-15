@@ -11,13 +11,14 @@ import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
-    rpc CreateNotifs (CreateNotifsRequest) returns (CreateNotifsResponse)  {}
-    rpc UpdateNotif  (UpdateNotifRequest)  returns (UpdateNotifResponse)  {}
-    rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {}
-    rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
-    rpc GetNotifs    (GetNotifsRequest)    returns (GetNotifsResponse)    {}
-    rpc GetNotifOnly (GetNotifOnlyRequest) returns (GetNotifOnlyResponse) {}
+    rpc CreateNotif    (CreateNotifRequest)    returns (CreateNotifResponse)    {}
+    rpc CreateNotifs   (CreateNotifsRequest)   returns (CreateNotifsResponse)   {}
+    rpc UpdateNotif    (UpdateNotifRequest)    returns (UpdateNotifResponse)    {}
+    rpc UpdateNotifs   (UpdateNotifsRequest)   returns (UpdateNotifsResponse)   {}
+    rpc GetNotif       (GetNotifRequest)       returns (GetNotifResponse)       {}
+    rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
+    rpc GetNotifOnly   (GetNotifOnlyRequest)   returns (GetNotifOnlyResponse)   {}
+    rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
 }
 
 message Notif {
@@ -36,8 +37,7 @@ message Notif {
 }
 
 message CreateNotifRequest {
-    notif.manager.notif1.v1.NotifReq                   Info = 10;
-    optional notif.middleware.template.v1.TemplateVars Vars = 20;
+    notif.manager.notif1.v1.NotifReq Info = 10;
 }
 
 message CreateNotifResponse {
@@ -46,8 +46,7 @@ message CreateNotifResponse {
 
 
 message CreateNotifsRequest {
-    repeated notif.manager.notif1.v1.NotifReq          Infos = 10;
-    optional notif.middleware.template.v1.TemplateVars Vars  = 20;
+    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
 }
 
 message CreateNotifsResponse {
@@ -96,4 +95,14 @@ message GetNotifOnlyRequest {
 
 message GetNotifOnlyResponse {
     Notif Info = 10;
+}
+
+message GenerateNotifsRequest {
+    string                                             AppID     = 10;
+    basetypes.v1.UsedFor                               EventType = 20;
+    optional notif.middleware.template.v1.TemplateVars Vars      = 30;
+}
+
+message GenerateNotifsResponse {
+    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
 }
