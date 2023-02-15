@@ -116,6 +116,9 @@
         "ExpireAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Code": {
+          "type": "string"
         }
       }
     },
