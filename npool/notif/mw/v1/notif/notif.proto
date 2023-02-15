@@ -6,12 +6,13 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
+import "npool/notif/mw/v1/template/template.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
     rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
-    rpc CreateNotifs (CreateNotifsRequest)  returns (CreateNotifsResponse)  {}
+    rpc CreateNotifs (CreateNotifsRequest) returns (CreateNotifsResponse)  {}
     rpc UpdateNotif  (UpdateNotifRequest)  returns (UpdateNotifResponse)  {}
     rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {}
     rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
@@ -35,7 +36,8 @@ message Notif {
 }
 
 message CreateNotifRequest {
-    notif.manager.notif1.v1.NotifReq Info = 10;
+    notif.manager.notif1.v1.NotifReq                   Info = 10;
+    optional notif.middleware.template.v1.TemplateVars Vars = 20;
 }
 
 message CreateNotifResponse {
@@ -44,7 +46,8 @@ message CreateNotifResponse {
 
 
 message CreateNotifsRequest {
-    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
+    repeated notif.manager.notif1.v1.NotifReq          Infos = 10;
+    optional notif.middleware.template.v1.TemplateVars Vars  = 20;
 }
 
 message CreateNotifsResponse {
