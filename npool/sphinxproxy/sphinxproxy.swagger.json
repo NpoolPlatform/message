@@ -297,6 +297,7 @@
         "CoinTypetron",
         "CoinTypebinanceusd",
         "CoinTypeusdcerc20",
+        "CoinTypealeo",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
@@ -307,7 +308,8 @@
         "CoinTypetbinancecoin",
         "CoinTypettron",
         "CoinTypetbinanceusd",
-        "CoinTypetusdcerc20"
+        "CoinTypetusdcerc20",
+        "CoinTypetaleo"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
@@ -550,6 +552,15 @@
         }
       }
     },
+    "v1RPCExitCode": {
+      "type": "string",
+      "enum": [
+        "RPCExitCodeUnKnow",
+        "RPCExitCodeNotSupportCoin"
+      ],
+      "default": "RPCExitCodeUnKnow",
+      "title": "- RPCExitCodeNotSupportCoin: proxy communicate with plugin and sign grpc error code\ncommon error code start from 1"
+    },
     "v1Signature": {
       "type": "object",
       "properties": {
@@ -611,12 +622,15 @@
         "TransactionStateUnKnow",
         "TransactionStateWait",
         "TransactionStateSign",
-        "TransactionStateBroadcast",
         "TransactionStateSync",
         "TransactionStateDone",
-        "TransactionStateFail"
+        "TransactionStateFail",
+        "TransactionStateBroadcast",
+        "TransactionStateRetrievePrivateInfo"
       ],
-      "default": "TransactionStateUnKnow"
+      "default": "TransactionStateUnKnow",
+      "description": "- TransactionStateRetrievePrivateInfo: some coin such as aleo 30 -\u003e 1",
+      "title": "state step by 10"
     },
     "v1TransactionType": {
       "type": "string",
@@ -625,9 +639,12 @@
         "WalletNew",
         "Balance",
         "RegisterCoin",
-        "GasFee"
+        "GasFee",
+        "PreBalance"
       ],
-      "default": "Invalid"
+      "default": "Invalid",
+      "description": "- PreBalance: some coin such as aleo  10 -\u003e 2",
+      "title": "state step by 10"
     },
     "v1TxIn": {
       "type": "object",
