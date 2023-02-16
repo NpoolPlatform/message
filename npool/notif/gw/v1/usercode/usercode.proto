@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package third.gateway.verify.v1;
+package notif.gateway.usercode.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/third/gw/v1/verify";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/usercode";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/signmethod.proto";
@@ -11,7 +11,7 @@ import "npool/basetypes/v1/usedfor.proto";
 service Gateway {
     rpc SendCode (SendCodeRequest) returns (SendCodeResponse) {
         option (google.api.http) = {
-            post: "/v1/send/code"
+            post: "/v1/send/usercode"
             body: "*"
         };
     }
