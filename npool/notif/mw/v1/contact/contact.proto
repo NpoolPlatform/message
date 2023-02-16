@@ -16,6 +16,7 @@ message TextInfo {
     string          From     = 30;
     string          To       = 40;
     repeated string ToCCs    = 50;
+    repeated string ReplyTos = 60;
 }
 
 message GenerateContactRequest {
