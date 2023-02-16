@@ -44,8 +44,36 @@
         }
       }
     },
-    "v1ContactViaEmailResponse": {
-      "type": "object"
+    "v1GenerateContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TextInfo"
+        }
+      }
+    },
+    "v1TextInfo": {
+      "type": "object",
+      "properties": {
+        "Subject": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "ToCCs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1UsedFor": {
       "type": "string",
