@@ -275,10 +275,10 @@
         "Content": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Read": {
           "type": "boolean"
         },
-        "AlreadySend": {
+        "Notified": {
           "type": "boolean"
         },
         "CreatedAt": {

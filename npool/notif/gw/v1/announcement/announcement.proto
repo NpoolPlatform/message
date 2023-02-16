@@ -71,8 +71,8 @@ message Announcement {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    bool             AlreadyRead    = 100;
-    bool             AlreadySend    = 110;
+    bool             Read           = 100;
+    bool             Notified       = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 121;
     uint32           EndAt          = 140;
