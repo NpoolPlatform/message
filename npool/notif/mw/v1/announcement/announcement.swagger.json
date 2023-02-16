@@ -79,6 +79,9 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
+        },
+        "Notified": {
+          "type": "boolean"
         }
       }
     },
@@ -97,7 +100,7 @@
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AlreadyRead": {
+        "Read": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "AnnouncementType": {
@@ -105,6 +108,9 @@
         },
         "Channels": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Notified": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

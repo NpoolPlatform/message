@@ -19,9 +19,10 @@ message Conds {
     optional npool.v1.StringVal      UserID           = 20;
     optional npool.v1.StringVal      LangID           = 30;
     optional npool.v1.StringVal      AnnouncementID   = 40;
-    optional npool.v1.BoolVal        AlreadyRead      = 50;
+    optional npool.v1.BoolVal        Read             = 50;
     optional npool.v1.Uint32Val      AnnouncementType = 60;
     optional npool.v1.StringSliceVal Channels         = 70;
+    optional npool.v1.BoolVal        Notified         = 80;
 }
 
 message Announcement {
@@ -52,6 +53,7 @@ message Announcement {
     // @inject_tag: sql:"channel"
     string ChannelStr     = 170;
     notif.manager.channel.v1.NotifChannel Channel = 180;
+    bool   Notified       = 190;
 }
 
 message GetAnnouncementStatesRequest {
