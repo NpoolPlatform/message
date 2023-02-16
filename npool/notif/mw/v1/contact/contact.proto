@@ -7,10 +7,18 @@ import "npool/basetypes/v1/usedfor.proto";
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/contact";
 
 service Middleware {
-    rpc ContactViaEmail (ContactViaEmailRequest) returns (ContactViaEmailResponse) {}
+    rpc GenerateContact (GenerateContactRequest) returns (GenerateContactResponse) {}
 }
 
-message ContactViaEmailRequest {
+message TextInfo {
+    string          Subject  = 10;
+    string          Content  = 20;
+    string          From     = 30;
+    string          To       = 40;
+    repeated string ToCCs    = 50;
+}
+
+message GenerateContactRequest {
     string               AppID      = 10;
     basetypes.v1.UsedFor UsedFor    = 30;
     string               Sender     = 40;
@@ -19,5 +27,6 @@ message ContactViaEmailRequest {
     string               SenderName = 70;
 }
 
-message ContactViaEmailResponse {
+message GenerateContactResponse {
+    TextInfo Info = 10;
 }
