@@ -11,6 +11,7 @@ import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
+import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/basetypes/v1/signmethod.proto";
 
 service Gateway {
@@ -140,7 +141,7 @@ message GetSignMethodsRequest {
 
 message GetSignMethodsResponse {
     // In future this may be put to database then admin can change it
-    repeated basetypes.v1.SignMethod Infos = 10;
+    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
 }
 
 message GetRecaptchasRequest {
