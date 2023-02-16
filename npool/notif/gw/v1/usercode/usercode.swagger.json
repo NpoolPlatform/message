@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/third/gw/v1/verify/verify.proto",
+    "title": "npool/notif/gw/v1/usercode/usercode.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/send/code": {
+    "/v1/send/usercode": {
       "post": {
         "operationId": "Gateway_SendCode",
         "responses": {

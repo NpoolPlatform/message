@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/third/gw/v1/verify/verify.proto
+// source: npool/notif/gw/v1/usercode/usercode.proto
 
-package verify
+package usercode
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) SendCode(ctx context.Context, in *SendCodeRequest, opts ...grpc.CallOption) (*SendCodeResponse, error) {
 	out := new(SendCodeResponse)
-	err := c.cc.Invoke(ctx, "/third.gateway.verify.v1.Gateway/SendCode", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/notif.gateway.usercode.v1.Gateway/SendCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/third.gateway.verify.v1.Gateway/SendCode",
+		FullMethod: "/notif.gateway.usercode.v1.Gateway/SendCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).SendCode(ctx, req.(*SendCodeRequest))
@@ -92,7 +92,7 @@ func _Gateway_SendCode_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "third.gateway.verify.v1.Gateway",
+	ServiceName: "notif.gateway.usercode.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -101,5 +101,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/third/gw/v1/verify/verify.proto",
+	Metadata: "npool/notif/gw/v1/usercode/usercode.proto",
 }
