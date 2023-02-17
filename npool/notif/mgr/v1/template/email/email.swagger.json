@@ -69,7 +69,7 @@
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "UsedFors": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
@@ -263,6 +263,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

@@ -53,7 +53,7 @@ message Conds {
     npool.v1.StringVal      Sender   = 60;
     npool.v1.StringSliceVal AppIDs   = 70;
     npool.v1.StringSliceVal LangIDs  = 80;
-    npool.v1.StringSliceVal UsedFors = 90;
+    npool.v1.Uint32SliceVal UsedFors = 90;
 }
 
 

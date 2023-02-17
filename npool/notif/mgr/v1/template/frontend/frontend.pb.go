@@ -223,7 +223,7 @@ type Conds struct {
 	UsedFor  *npool.Uint32Val      `protobuf:"bytes,40,opt,name=UsedFor,proto3,oneof" json:"UsedFor,omitempty"`
 	AppIDs   *npool.StringSliceVal `protobuf:"bytes,50,opt,name=AppIDs,proto3,oneof" json:"AppIDs,omitempty"`
 	LangIDs  *npool.StringSliceVal `protobuf:"bytes,60,opt,name=LangIDs,proto3,oneof" json:"LangIDs,omitempty"`
-	UsedFors *npool.StringSliceVal `protobuf:"bytes,70,opt,name=UsedFors,proto3,oneof" json:"UsedFors,omitempty"`
+	UsedFors *npool.Uint32SliceVal `protobuf:"bytes,70,opt,name=UsedFors,proto3,oneof" json:"UsedFors,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -300,7 +300,7 @@ func (x *Conds) GetLangIDs() *npool.StringSliceVal {
 	return nil
 }
 
-func (x *Conds) GetUsedFors() *npool.StringSliceVal {
+func (x *Conds) GetUsedFors() *npool.Uint32SliceVal {
 	if x != nil {
 		return x.UsedFors
 	}
@@ -1336,7 +1336,7 @@ var file_npool_notif_mgr_v1_template_frontend_frontend_proto_rawDesc = []byte{
 	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x48, 0x05,
 	0x52, 0x07, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x73, 0x88, 0x01, 0x01, 0x12, 0x39, 0x0a, 0x08,
 	0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x73, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18,
-	0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32,
 	0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x48, 0x06, 0x52, 0x08, 0x55, 0x73, 0x65, 0x64,
 	0x46, 0x6f, 0x72, 0x73, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x08,
 	0x0a, 0x06, 0x5f, 0x41, 0x70, 0x70, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4c, 0x61, 0x6e,
@@ -1614,6 +1614,7 @@ var file_npool_notif_mgr_v1_template_frontend_frontend_proto_goTypes = []interfa
 	(*npool.StringVal)(nil),                    // 24: npool.v1.StringVal
 	(*npool.Uint32Val)(nil),                    // 25: npool.v1.Uint32Val
 	(*npool.StringSliceVal)(nil),               // 26: npool.v1.StringSliceVal
+	(*npool.Uint32SliceVal)(nil),               // 27: npool.v1.Uint32SliceVal
 }
 var file_npool_notif_mgr_v1_template_frontend_frontend_proto_depIdxs = []int32{
 	23, // 0: notif.manager.template.frontend1.v1.FrontendTemplateReq.UsedFor:type_name -> basetypes.v1.UsedFor
@@ -1624,7 +1625,7 @@ var file_npool_notif_mgr_v1_template_frontend_frontend_proto_depIdxs = []int32{
 	25, // 5: notif.manager.template.frontend1.v1.Conds.UsedFor:type_name -> npool.v1.Uint32Val
 	26, // 6: notif.manager.template.frontend1.v1.Conds.AppIDs:type_name -> npool.v1.StringSliceVal
 	26, // 7: notif.manager.template.frontend1.v1.Conds.LangIDs:type_name -> npool.v1.StringSliceVal
-	26, // 8: notif.manager.template.frontend1.v1.Conds.UsedFors:type_name -> npool.v1.StringSliceVal
+	27, // 8: notif.manager.template.frontend1.v1.Conds.UsedFors:type_name -> npool.v1.Uint32SliceVal
 	0,  // 9: notif.manager.template.frontend1.v1.CreateFrontendTemplateRequest.Info:type_name -> notif.manager.template.frontend1.v1.FrontendTemplateReq
 	1,  // 10: notif.manager.template.frontend1.v1.CreateFrontendTemplateResponse.Info:type_name -> notif.manager.template.frontend1.v1.FrontendTemplate
 	0,  // 11: notif.manager.template.frontend1.v1.CreateFrontendTemplatesRequest.Infos:type_name -> notif.manager.template.frontend1.v1.FrontendTemplateReq

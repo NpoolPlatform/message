@@ -272,7 +272,7 @@ type Conds struct {
 	Sender   *npool.StringVal      `protobuf:"bytes,60,opt,name=Sender,proto3" json:"Sender,omitempty"`
 	AppIDs   *npool.StringSliceVal `protobuf:"bytes,70,opt,name=AppIDs,proto3" json:"AppIDs,omitempty"`
 	LangIDs  *npool.StringSliceVal `protobuf:"bytes,80,opt,name=LangIDs,proto3" json:"LangIDs,omitempty"`
-	UsedFors *npool.StringSliceVal `protobuf:"bytes,90,opt,name=UsedFors,proto3" json:"UsedFors,omitempty"`
+	UsedFors *npool.Uint32SliceVal `protobuf:"bytes,90,opt,name=UsedFors,proto3" json:"UsedFors,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -356,7 +356,7 @@ func (x *Conds) GetLangIDs() *npool.StringSliceVal {
 	return nil
 }
 
-func (x *Conds) GetUsedFors() *npool.StringSliceVal {
+func (x *Conds) GetUsedFors() *npool.Uint32SliceVal {
 	if x != nil {
 		return x.UsedFors
 	}
@@ -1312,7 +1312,7 @@ var file_npool_notif_mgr_v1_template_email_email_proto_rawDesc = []byte{
 	0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x07, 0x4c, 0x61, 0x6e,
 	0x67, 0x49, 0x44, 0x73, 0x12, 0x34, 0x0a, 0x08, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x73,
 	0x18, 0x5a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76,
-	0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c,
+	0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c,
 	0x52, 0x08, 0x55, 0x73, 0x65, 0x64, 0x46, 0x6f, 0x72, 0x73, 0x22, 0x63, 0x0a, 0x1a, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x45, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
@@ -1544,6 +1544,7 @@ var file_npool_notif_mgr_v1_template_email_email_proto_goTypes = []interface{}{
 	(*npool.StringVal)(nil),                 // 22: npool.v1.StringVal
 	(*npool.Int32Val)(nil),                  // 23: npool.v1.Int32Val
 	(*npool.StringSliceVal)(nil),            // 24: npool.v1.StringSliceVal
+	(*npool.Uint32SliceVal)(nil),            // 25: npool.v1.Uint32SliceVal
 }
 var file_npool_notif_mgr_v1_template_email_email_proto_depIdxs = []int32{
 	21, // 0: notif.manager.template.email.v1.EmailTemplateReq.UsedFor:type_name -> basetypes.v1.UsedFor
@@ -1555,7 +1556,7 @@ var file_npool_notif_mgr_v1_template_email_email_proto_depIdxs = []int32{
 	22, // 6: notif.manager.template.email.v1.Conds.Sender:type_name -> npool.v1.StringVal
 	24, // 7: notif.manager.template.email.v1.Conds.AppIDs:type_name -> npool.v1.StringSliceVal
 	24, // 8: notif.manager.template.email.v1.Conds.LangIDs:type_name -> npool.v1.StringSliceVal
-	24, // 9: notif.manager.template.email.v1.Conds.UsedFors:type_name -> npool.v1.StringSliceVal
+	25, // 9: notif.manager.template.email.v1.Conds.UsedFors:type_name -> npool.v1.Uint32SliceVal
 	0,  // 10: notif.manager.template.email.v1.CreateEmailTemplateRequest.Info:type_name -> notif.manager.template.email.v1.EmailTemplateReq
 	1,  // 11: notif.manager.template.email.v1.CreateEmailTemplateResponse.Info:type_name -> notif.manager.template.email.v1.EmailTemplate
 	0,  // 12: notif.manager.template.email.v1.CreateEmailTemplatesRequest.Infos:type_name -> notif.manager.template.email.v1.EmailTemplateReq
