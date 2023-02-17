@@ -5,6 +5,7 @@ package notif.middleware.announcement.announcement.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
 
 import "npool/notif/mgr/v1/announcement/announcement.proto";
+import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -14,13 +15,17 @@ service Middleware {
 }
 
 message Conds {
+    optional npool.v1.StringVal      ID               = 9;
     optional npool.v1.StringVal      AppID            = 10;
     optional npool.v1.StringVal      UserID           = 20;
     optional npool.v1.StringVal      LangID           = 30;
     optional npool.v1.StringVal      AnnouncementID   = 40;
-    optional npool.v1.BoolVal        AlreadyRead      = 50;
+    optional npool.v1.BoolVal        Read             = 50;
     optional npool.v1.Uint32Val      AnnouncementType = 60;
-    optional npool.v1.StringSliceVal Channels         = 70;
+    optional npool.v1.Uint32SliceVal Channels         = 70;
+    optional npool.v1.BoolVal        Notified         = 80;
+    optional npool.v1.Uint32Val      EndAt            = 90;
+    optional npool.v1.Uint32Val      Channel          = 100;
 }
 
 message Announcement {
@@ -40,7 +45,7 @@ message Announcement {
     uint32 CreatedAt      = 70;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 100;
-    bool   AlreadyRead    = 120;
+    bool   Read           = 120;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 130;
     // @inject_tag: sql:"type"
@@ -48,6 +53,10 @@ message Announcement {
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
     // @inject_tag: sql:"read_user_id"
     string ReadUserID     = 160;
+    // @inject_tag: sql:"channel"
+    string ChannelStr     = 170;
+    notif.manager.channel.v1.NotifChannel Channel = 180;
+    bool   Notified       = 190;
 }
 
 message GetAnnouncementStatesRequest {
@@ -62,7 +71,7 @@ message GetAnnouncementStatesResponse {
 }
 
 message GetAnnouncementsRequest {
-    notif.manager.announcement.v1.Conds Conds = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }

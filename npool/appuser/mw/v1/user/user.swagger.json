@@ -116,6 +116,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -241,7 +257,7 @@
           "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
         },
         "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "SigninVerifyByGoogleAuthInt": {
           "type": "integer",
@@ -295,7 +311,7 @@
           "type": "string"
         },
         "LoginAccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "LoginToken": {
           "type": "string"
@@ -394,7 +410,7 @@
           "type": "string"
         },
         "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType",
+          "$ref": "#/definitions/v1SignMethod",
           "title": "Control"
         },
         "GoogleAuthVerified": {
@@ -467,22 +483,6 @@
         "Rejected"
       ],
       "default": "DefaultState"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

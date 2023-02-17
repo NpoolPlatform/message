@@ -55,6 +55,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -78,13 +94,13 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethod": {
@@ -120,13 +136,13 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethod": {
@@ -270,22 +286,6 @@
         "GoogleRecaptchaV3"
       ],
       "default": "DefaultRecaptchaType"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     },
     "v2UpdateAppControlResponse": {
       "type": "object",

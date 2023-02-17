@@ -520,7 +520,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "Account": {
           "type": "string"
@@ -781,7 +781,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -1308,6 +1308,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1Transfer": {
       "type": "object",
       "properties": {
@@ -1367,22 +1383,6 @@
         "Successful"
       ],
       "default": "DefaultWithdrawState"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

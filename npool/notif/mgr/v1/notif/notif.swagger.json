@@ -90,6 +90,9 @@
         },
         "EventTypes": {
           "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

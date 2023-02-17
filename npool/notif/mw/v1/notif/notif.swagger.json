@@ -100,6 +100,9 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
+        "Extra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -191,6 +194,20 @@
         },
         "EventTypes": {
           "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1GenerateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/middlewarenotif2v1Notif"
+          }
         }
       }
     },
@@ -263,6 +280,33 @@
           "type": "string"
         },
         "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TemplateVars": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Timestamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Code": {
           "type": "string"
         }
       }
