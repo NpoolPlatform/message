@@ -135,29 +135,6 @@
         }
       }
     },
-    "notifmanagerannouncementv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -252,21 +229,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
         }
       }
     },
