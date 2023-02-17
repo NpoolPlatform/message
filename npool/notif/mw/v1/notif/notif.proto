@@ -32,6 +32,7 @@ message Notif {
     string Title       = 80;
     string Content     = 90;
     notif.manager.channel.v1.NotifChannel Channel = 100;
+    string Extra       = 101;
     uint32 CreatedAt   = 110;
     uint32 UpdatedAt   = 120;
 }
@@ -102,6 +103,7 @@ message GenerateNotifsRequest {
     string                                             UserID    = 20;
     basetypes.v1.UsedFor                               EventType = 30;
     optional notif.middleware.template.v1.TemplateVars Vars      = 40;
+    optional string                                    Extra     = 50;
 }
 
 message GenerateNotifsResponse {
