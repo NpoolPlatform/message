@@ -107,7 +107,7 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "Notified": {
           "$ref": "#/definitions/v1BoolVal"
@@ -207,20 +207,6 @@
       ],
       "default": "DefaultChannel"
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -229,6 +215,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

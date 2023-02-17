@@ -34,7 +34,7 @@ type Conds struct {
 	AnnouncementID   *npool.StringVal      `protobuf:"bytes,40,opt,name=AnnouncementID,proto3,oneof" json:"AnnouncementID,omitempty"`
 	Read             *npool.BoolVal        `protobuf:"bytes,50,opt,name=Read,proto3,oneof" json:"Read,omitempty"`
 	AnnouncementType *npool.Uint32Val      `protobuf:"bytes,60,opt,name=AnnouncementType,proto3,oneof" json:"AnnouncementType,omitempty"`
-	Channels         *npool.StringSliceVal `protobuf:"bytes,70,opt,name=Channels,proto3,oneof" json:"Channels,omitempty"`
+	Channels         *npool.Uint32SliceVal `protobuf:"bytes,70,opt,name=Channels,proto3,oneof" json:"Channels,omitempty"`
 	Notified         *npool.BoolVal        `protobuf:"bytes,80,opt,name=Notified,proto3,oneof" json:"Notified,omitempty"`
 	EndAt            *npool.Uint32Val      `protobuf:"bytes,90,opt,name=EndAt,proto3,oneof" json:"EndAt,omitempty"`
 	Channel          *npool.Uint32Val      `protobuf:"bytes,100,opt,name=Channel,proto3,oneof" json:"Channel,omitempty"`
@@ -114,7 +114,7 @@ func (x *Conds) GetAnnouncementType() *npool.Uint32Val {
 	return nil
 }
 
-func (x *Conds) GetChannels() *npool.StringSliceVal {
+func (x *Conds) GetChannels() *npool.Uint32SliceVal {
 	if x != nil {
 		return x.Channels
 	}
@@ -596,7 +596,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x52, 0x10, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79,
 	0x70, 0x65, 0x88, 0x01, 0x01, 0x12, 0x39, 0x0a, 0x08, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c,
 	0x73, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e,
-	0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61,
+	0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61,
 	0x6c, 0x48, 0x06, 0x52, 0x08, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x73, 0x88, 0x01, 0x01,
 	0x12, 0x32, 0x0a, 0x08, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65, 0x64, 0x18, 0x50, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x6f,
@@ -741,7 +741,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_goTypes = []interface
 	(*npool.StringVal)(nil),               // 6: npool.v1.StringVal
 	(*npool.BoolVal)(nil),                 // 7: npool.v1.BoolVal
 	(*npool.Uint32Val)(nil),               // 8: npool.v1.Uint32Val
-	(*npool.StringSliceVal)(nil),          // 9: npool.v1.StringSliceVal
+	(*npool.Uint32SliceVal)(nil),          // 9: npool.v1.Uint32SliceVal
 	(announcement.AnnouncementType)(0),    // 10: notif.manager.announcement.v1.AnnouncementType
 	(channel.NotifChannel)(0),             // 11: notif.manager.channel.v1.NotifChannel
 }
@@ -752,7 +752,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 	6,  // 3: notif.middleware.announcement.announcement.v1.Conds.AnnouncementID:type_name -> npool.v1.StringVal
 	7,  // 4: notif.middleware.announcement.announcement.v1.Conds.Read:type_name -> npool.v1.BoolVal
 	8,  // 5: notif.middleware.announcement.announcement.v1.Conds.AnnouncementType:type_name -> npool.v1.Uint32Val
-	9,  // 6: notif.middleware.announcement.announcement.v1.Conds.Channels:type_name -> npool.v1.StringSliceVal
+	9,  // 6: notif.middleware.announcement.announcement.v1.Conds.Channels:type_name -> npool.v1.Uint32SliceVal
 	7,  // 7: notif.middleware.announcement.announcement.v1.Conds.Notified:type_name -> npool.v1.BoolVal
 	8,  // 8: notif.middleware.announcement.announcement.v1.Conds.EndAt:type_name -> npool.v1.Uint32Val
 	8,  // 9: notif.middleware.announcement.announcement.v1.Conds.Channel:type_name -> npool.v1.Uint32Val
