@@ -111,6 +111,12 @@
         },
         "Notified": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
