@@ -6,17 +6,19 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
 import "npool/notif/mgr/v1/notif/notif.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
+import "npool/notif/mw/v1/template/template.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateNotif  (CreateNotifRequest)  returns (CreateNotifResponse)  {}
-    rpc CreateNotifs (CreateNotifsRequest)  returns (CreateNotifsResponse)  {}
-    rpc UpdateNotif  (UpdateNotifRequest)  returns (UpdateNotifResponse)  {}
-    rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {}
-    rpc GetNotif     (GetNotifRequest)     returns (GetNotifResponse)     {}
-    rpc GetNotifs    (GetNotifsRequest)    returns (GetNotifsResponse)    {}
-    rpc GetNotifOnly (GetNotifOnlyRequest) returns (GetNotifOnlyResponse) {}
+    rpc CreateNotif    (CreateNotifRequest)    returns (CreateNotifResponse)    {}
+    rpc CreateNotifs   (CreateNotifsRequest)   returns (CreateNotifsResponse)   {}
+    rpc UpdateNotif    (UpdateNotifRequest)    returns (UpdateNotifResponse)    {}
+    rpc UpdateNotifs   (UpdateNotifsRequest)   returns (UpdateNotifsResponse)   {}
+    rpc GetNotif       (GetNotifRequest)       returns (GetNotifResponse)       {}
+    rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
+    rpc GetNotifOnly   (GetNotifOnlyRequest)   returns (GetNotifOnlyResponse)   {}
+    rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
 }
 
 message Notif {
@@ -25,11 +27,12 @@ message Notif {
     string UserID      = 30;
     bool   Notified    = 40;
     string LangID      = 50;
-    third.manager.usedfor.v1.UsedFor EventType = 60;
+    basetypes.v1.UsedFor EventType = 60;
     bool   UseTemplate = 70;
     string Title       = 80;
     string Content     = 90;
     notif.manager.channel.v1.NotifChannel Channel = 100;
+    string Extra       = 101;
     uint32 CreatedAt   = 110;
     uint32 UpdatedAt   = 120;
 }
@@ -93,4 +96,16 @@ message GetNotifOnlyRequest {
 
 message GetNotifOnlyResponse {
     Notif Info = 10;
+}
+
+message GenerateNotifsRequest {
+    string                                             AppID     = 10;
+    string                                             UserID    = 20;
+    basetypes.v1.UsedFor                               EventType = 30;
+    optional notif.middleware.template.v1.TemplateVars Vars      = 40;
+    optional string                                    Extra     = 50;
+}
+
+message GenerateNotifsResponse {
+    repeated Notif Infos = 10;
 }

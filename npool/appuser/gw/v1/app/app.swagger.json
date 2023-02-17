@@ -261,13 +261,13 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "RecaptchaMethod": {
@@ -369,7 +369,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethod"
+            "$ref": "#/definitions/signmethodv2SignMethod"
           },
           "title": "In future this may be put to database then admin can change it"
         }
@@ -425,13 +425,13 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "RecaptchaMethod": {
@@ -504,7 +504,7 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "ExtSigninMethodsStr": {
@@ -514,7 +514,7 @@
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/basetypesv1SignMethod"
           }
         },
         "RecaptchaMethodStr": {
@@ -567,6 +567,22 @@
         }
       }
     },
+    "basetypesv1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -591,6 +607,23 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "signmethodv2SignMethod": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Method": {
+          "$ref": "#/definitions/basetypesv1SignMethod"
+        },
+        "Icon": {
+          "type": "string"
+        },
+        "External": {
+          "type": "boolean"
         }
       }
     },
@@ -625,39 +658,6 @@
         "GoogleRecaptchaV3"
       ],
       "default": "DefaultRecaptchaType"
-    },
-    "v2SignMethod": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        },
-        "Icon": {
-          "type": "string"
-        },
-        "External": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

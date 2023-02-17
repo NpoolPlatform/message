@@ -275,10 +275,10 @@
         "Content": {
           "type": "string"
         },
-        "AlreadyRead": {
+        "Read": {
           "type": "boolean"
         },
-        "AlreadySend": {
+        "Notified": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -293,15 +293,8 @@
           "type": "integer",
           "format": "int64"
         },
-        "SendChannel": {
-          "$ref": "#/definitions/v1NotifChannel",
-          "title": "if AlreadySend = true SendChannel valid"
-        },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "AnnouncementType": {
           "$ref": "#/definitions/v1AnnouncementType"
@@ -323,11 +316,8 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "EndAt": {
           "type": "integer",
@@ -427,12 +417,6 @@
         "Content": {
           "type": "string"
         },
-        "Channels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1NotifChannel"
-          }
-        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
@@ -480,11 +464,11 @@
     "v1AnnouncementType": {
       "type": "string",
       "enum": [
-        "DefaultAnnouncementType",
-        "AllUsers",
-        "AppointUsers"
+        "DefaultType",
+        "Broadcast",
+        "Multicast"
       ],
-      "default": "DefaultAnnouncementType"
+      "default": "DefaultType"
     },
     "v1GetAppAnnouncementsRequest": {
       "type": "object",

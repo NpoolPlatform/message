@@ -4,37 +4,8 @@ package third.middleware.verify.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/verify";
 
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
-import "npool/third/mgr/v1/usedfor/userdfor.proto";
-
 service Middleware {
-    rpc VerifyCode              (VerifyCodeRequest)              returns (VerifyCodeResponse)              {}
     rpc VerifyGoogleRecaptchaV3 (VerifyGoogleRecaptchaV3Request) returns (VerifyGoogleRecaptchaV3Response) {}
-    rpc SendCode                (SendCodeRequest)                returns (SendCodeResponse)                {}
-}
-
-message VerifyCodeRequest {
-    string          AppID   = 10;
-    //if AccountType is Google then Account is GoogleSecret
-    string          Account = 20;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 30;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 40;
-    string          Code    = 50;
-}
-
-message VerifyCodeResponse {
-}
-
-message SendCodeRequest {
-    string AppID   = 10;
-    string LangID  = 20;
-    string Account = 30;
-    appuser.manager.signmethod.v2.SignMethodType AccountType = 40;
-    third.manager.usedfor.v1.UsedFor             UsedFor     = 50;
-    optional string ToUsername = 60;
-}
-
-message SendCodeResponse {
 }
 
 message VerifyGoogleRecaptchaV3Request {

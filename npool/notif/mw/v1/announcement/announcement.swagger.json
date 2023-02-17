@@ -54,7 +54,7 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
-        "AlreadyRead": {
+        "Read": {
           "type": "boolean"
         },
         "EndAt": {
@@ -72,12 +72,25 @@
         "ReadUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"read_user_id\""
+        },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "Notified": {
+          "type": "boolean"
         }
       }
     },
     "middlewareannouncementannouncementv1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -90,14 +103,23 @@
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AlreadyRead": {
+        "Read": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "AnnouncementType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "Notified": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -113,26 +135,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "notifmanagerannouncementv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -166,11 +168,11 @@
     "v1AnnouncementType": {
       "type": "string",
       "enum": [
-        "DefaultAnnouncementType",
-        "AllUsers",
-        "AppointUsers"
+        "DefaultType",
+        "Broadcast",
+        "Multicast"
       ],
-      "default": "DefaultAnnouncementType"
+      "default": "DefaultType"
     },
     "v1BoolVal": {
       "type": "object",
@@ -198,19 +200,15 @@
         }
       }
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
     },
     "v1StringVal": {
       "type": "object",
@@ -220,6 +218,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

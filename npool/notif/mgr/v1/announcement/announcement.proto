@@ -22,9 +22,9 @@ service Manager {
 }
 
 enum AnnouncementType {
-    DefaultAnnouncementType = 0;
-    AllUsers                = 10;
-    AppointUsers            = 20;
+    DefaultType   = 0;
+    Broadcast     = 10;
+    Multicast     = 20;
 }
 
 message AnnouncementReq {
@@ -33,7 +33,7 @@ message AnnouncementReq {
     optional string LangID     = 30;
     optional string Title      = 40;
     optional string Content    = 50;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 60;
+    optional notif.manager.channel.v1.NotifChannel Channel = 60;
     optional uint32 EndAt      = 70;
     optional AnnouncementType AnnouncementType = 80;
 }
@@ -44,7 +44,7 @@ message Announcement {
     string LangID     = 30;
     string Title      = 40;
     string Content    = 50;
-    repeated notif.manager.channel.v1.NotifChannel Channels   = 60;
+    notif.manager.channel.v1.NotifChannel Channel = 60;
     uint32 EndAt      = 70;
     AnnouncementType AnnouncementType = 80;
     uint32 CreatedAt  = 90;
@@ -55,8 +55,9 @@ message Conds {
     optional npool.v1.StringVal      ID        = 10;
     optional npool.v1.StringVal      AppID     = 20;
     optional npool.v1.StringVal      LangID    = 30;
-    optional npool.v1.StringSliceVal Channels  = 40;
+    optional npool.v1.Uint32SliceVal Channels  = 40;
     optional npool.v1.Uint32Val      EndAt     = 50;
+    optional npool.v1.Uint32Val      Channel   = 60;
 }
 
 

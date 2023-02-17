@@ -547,7 +547,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -556,7 +556,7 @@
           "type": "string"
         },
         "NewAccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "NewAccount": {
           "type": "string",
@@ -602,7 +602,7 @@
           "type": "string"
         },
         "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType",
+          "$ref": "#/definitions/v1SignMethod",
           "title": "Control"
         },
         "PasswordHash": {
@@ -730,7 +730,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "ManMachineSpec": {
           "type": "string"
@@ -764,7 +764,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -836,7 +836,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -852,6 +852,22 @@
     "v1ResetUserResponse": {
       "type": "object"
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1SignupRequest": {
       "type": "object",
       "properties": {
@@ -866,7 +882,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -1023,7 +1039,7 @@
           "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
         },
         "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "SigninVerifyByGoogleAuthInt": {
           "type": "integer",
@@ -1077,7 +1093,7 @@
           "type": "string"
         },
         "LoginAccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "LoginToken": {
           "type": "string"
@@ -1152,22 +1168,6 @@
         "Rejected"
       ],
       "default": "DefaultState"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

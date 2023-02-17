@@ -5,7 +5,7 @@ package appuser.manager.appusercontrol.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mgr/v2/appusercontrol";
 
 import "npool/npool.proto";
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
+import "npool/basetypes/v1/signmethod.proto";
 
 service Manager {
     rpc CreateAppUserControl     (CreateAppUserControlRequest)     returns (CreateAppUserControlResponse)     {}
@@ -25,7 +25,7 @@ message AppUserControlReq {
     optional string AppID              = 20;
     optional string UserID             = 30;
     optional bool   GoogleAuthVerified = 40;
-    optional appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
+    optional basetypes.v1.SignMethod SigninVerifyType = 50;
     optional bool   Kol                = 60;
     optional bool   KolConfirmed       = 70;
 }
@@ -35,7 +35,7 @@ message AppUserControl {
     string AppID              = 20;
     string UserID             = 30;
     bool   GoogleAuthVerified = 40;
-    appuser.manager.signmethod.v2.SignMethodType SigninVerifyType = 50;
+    basetypes.v1.SignMethod SigninVerifyType = 50;
     bool   Kol                = 60;
     bool   KolConfirmed       = 70;
 }

@@ -26,9 +26,9 @@ message User {
     string Title          = 50;
     // @inject_tag: sql:"content"
     string Content        = 60;
-    // @inject_tag: sql:"channels"
-    string ChannelsStr    = 70;
-    repeated notif.manager.channel.v1.NotifChannel Channels = 80;
+    // @inject_tag: sql:"channel"
+    string ChannelStr     = 70;
+    notif.manager.channel.v1.NotifChannel Channel = 80;
     // @inject_tag: sql:"type"
     string AnnouncementTypeStr = 90;
     notif.manager.announcement.v1.AnnouncementType AnnouncementType = 100;

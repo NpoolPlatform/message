@@ -218,7 +218,7 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"
@@ -227,7 +227,7 @@
           "type": "string"
         },
         "TargetAccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         }
       }
     },
@@ -357,6 +357,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1Transfer": {
       "type": "object",
       "properties": {
@@ -392,22 +408,6 @@
           "type": "string"
         }
       }
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }

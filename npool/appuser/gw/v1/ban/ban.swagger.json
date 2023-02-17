@@ -284,7 +284,7 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethodsStr": {
@@ -294,7 +294,7 @@
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2SignMethodType"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethodStr": {
@@ -491,6 +491,22 @@
         }
       }
     },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
     "v1UpdateBanUserRequest": {
       "type": "object",
       "properties": {
@@ -600,7 +616,7 @@
           "title": "Control flag\n@inject_tag: sql:\"signin_verify_type\""
         },
         "SigninVerifyType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "SigninVerifyByGoogleAuthInt": {
           "type": "integer",
@@ -654,7 +670,7 @@
           "type": "string"
         },
         "LoginAccountType": {
-          "$ref": "#/definitions/v2SignMethodType"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "LoginToken": {
           "type": "string"
@@ -782,22 +798,6 @@
         "GoogleRecaptchaV3"
       ],
       "default": "DefaultRecaptchaType"
-    },
-    "v2SignMethodType": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethodType",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethodType"
     }
   }
 }
