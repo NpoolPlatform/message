@@ -88,6 +88,9 @@
     "middlewareannouncementannouncementv1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },

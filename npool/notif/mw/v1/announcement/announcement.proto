@@ -15,6 +15,7 @@ service Middleware {
 }
 
 message Conds {
+    optional npool.v1.StringVal      ID               = 9;
     optional npool.v1.StringVal      AppID            = 10;
     optional npool.v1.StringVal      UserID           = 20;
     optional npool.v1.StringVal      LangID           = 30;
