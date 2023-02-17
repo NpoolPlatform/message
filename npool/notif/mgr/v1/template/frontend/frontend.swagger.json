@@ -143,9 +143,6 @@
         "Content": {
           "type": "string"
         },
-        "Sender": {
-          "type": "string"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -175,9 +172,6 @@
           "type": "string"
         },
         "Content": {
-          "type": "string"
-        },
-        "Sender": {
           "type": "string"
         }
       }

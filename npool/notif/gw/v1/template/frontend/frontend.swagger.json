@@ -286,9 +286,6 @@
         },
         "Content": {
           "type": "string"
-        },
-        "Sender": {
-          "type": "string"
         }
       }
     },
@@ -367,9 +364,6 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "Sender": {
-          "type": "string"
         }
       }
     },
@@ -397,9 +391,6 @@
           "type": "string"
         },
         "Content": {
-          "type": "string"
-        },
-        "Sender": {
           "type": "string"
         }
       }
@@ -431,9 +422,6 @@
           "type": "string"
         },
         "Content": {
-          "type": "string"
-        },
-        "Sender": {
           "type": "string"
         },
         "CreatedAt": {
@@ -497,9 +485,6 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "Sender": {
-          "type": "string"
         }
       }
     },

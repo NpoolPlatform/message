@@ -65,7 +65,6 @@ message CreateFrontendTemplateRequest {
     basetypes.v1.UsedFor UsedFor = 30;
     string Title         = 40;
     string Content       = 50;
-    string Sender        = 60;
 }
 
 message CreateFrontendTemplateResponse {
@@ -78,7 +77,6 @@ message CreateAppFrontendTemplateRequest {
     basetypes.v1.UsedFor UsedFor = 30;
     string Title          = 40;
     string Content        = 50;
-    string Sender         = 60;
 }
 
 message CreateAppFrontendTemplateResponse {
@@ -122,7 +120,6 @@ message UpdateFrontendTemplateRequest {
     optional string Content      = 40;
     optional string TargetLangID = 50;
     optional basetypes.v1.UsedFor UsedFor = 60;
-    optional string Sender       = 70;
 }
 
 message UpdateFrontendTemplateResponse {
@@ -136,7 +133,6 @@ message UpdateAppFrontendTemplateRequest {
     optional string Title        = 40;
     optional string Content      = 50;
     optional basetypes.v1.UsedFor UsedFor = 60;
-    optional string Sender       = 70;
 }
 
 message UpdateAppFrontendTemplateResponse {

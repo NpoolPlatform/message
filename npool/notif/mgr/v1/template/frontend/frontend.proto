@@ -28,7 +28,6 @@ message FrontendTemplateReq {
     optional basetypes.v1.UsedFor UsedFor = 40;
     optional string Title       = 50;
     optional string Content     = 60;
-    optional string Sender      = 70;
 }
 
 message FrontendTemplate {
@@ -38,7 +37,6 @@ message FrontendTemplate {
     basetypes.v1.UsedFor UsedFor = 40;
     string Title       = 50;
     string Content     = 60;
-    string Sender      = 70;
     uint32 CreatedAt   = 80;
     uint32 UpdatedAt   = 90;
 }
