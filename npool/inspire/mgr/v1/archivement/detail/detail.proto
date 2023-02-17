@@ -31,7 +31,7 @@ message DetailReq {
     optional string CoinTypeID              = 80;
     optional string PaymentCoinTypeID       = 90;
     optional string PaymentCoinUSDCurrency  = 100;
-    optional uint32 Units                   = 110;
+    optional string Units                   = 110;
     optional string Amount                  = 120;
     optional string USDAmount               = 130;
     optional string Commission              = 140;
@@ -50,7 +50,7 @@ message Detail {
     string CoinTypeID               = 80;
     string PaymentCoinTypeID        = 90;
     string PaymentCoinUSDCurrency   = 100;
-    uint32 Units                    = 110;
+    string Units                    = 110;
     string Amount                   = 120;
     string USDAmount                = 130;
     string Commission               = 140;
@@ -69,7 +69,7 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID              = 80;
     optional npool.v1.StringVal PaymentCoinTypeID       = 90;
     optional npool.v1.StringVal PaymentCoinUSDCurrency  = 100;
-    optional npool.v1.Uint32Val Units                   = 110;
+    optional npool.v1.StringVal Units                   = 110;
     optional npool.v1.StringVal Amount                  = 120;
     optional npool.v1.StringVal USDAmount               = 130;
     optional npool.v1.StringVal Commission              = 140;

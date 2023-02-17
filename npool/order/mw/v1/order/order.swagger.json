@@ -138,8 +138,7 @@
           "title": "@inject_tag: sql:\"good_id\""
         },
         "Units": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"units\""
         },
         "OrderTypeStr": {
@@ -281,8 +280,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
