@@ -8,6 +8,7 @@ enum SettleType {
     DefaultSettleType   = 0;
 
     GoodOrderPercent    = 10;
+    GoodValuePercent    = 11;
     LimitedOrderPercent = 20;
     AmountThreshold     = 30;
 

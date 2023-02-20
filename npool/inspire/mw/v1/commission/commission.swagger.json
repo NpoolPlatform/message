@@ -247,6 +247,7 @@
       "enum": [
         "DefaultSettleType",
         "GoodOrderPercent",
+        "GoodValuePercent",
         "LimitedOrderPercent",
         "AmountThreshold",
         "TechniqueFeePercent",
