@@ -797,7 +797,8 @@
         "TechniqueFeePercent",
         "NoCommission"
       ],
-      "default": "DefaultSettleType"
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
     },
     "v1UpdateNAppGoodRequest": {
       "type": "object",

@@ -23,8 +23,10 @@ const (
 type SettleType int32
 
 const (
-	SettleType_DefaultSettleType     SettleType = 0
-	SettleType_GoodOrderPercent      SettleType = 10
+	SettleType_DefaultSettleType SettleType = 0
+	// Divide commission according to order payment amount
+	SettleType_GoodOrderPercent SettleType = 10
+	// Divide commission according to order good value
 	SettleType_GoodOrderValuePercent SettleType = 11
 	SettleType_LimitedOrderPercent   SettleType = 20
 	SettleType_AmountThreshold       SettleType = 30
