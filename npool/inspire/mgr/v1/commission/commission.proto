@@ -7,7 +7,9 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/commi
 enum SettleType {
     DefaultSettleType     = 0;
 
+    // Divide commission according to order payment amount
     GoodOrderPercent      = 10;
+    // Divide commission according to order good value
     GoodOrderValuePercent = 11;
     LimitedOrderPercent   = 20;
     AmountThreshold       = 30;
