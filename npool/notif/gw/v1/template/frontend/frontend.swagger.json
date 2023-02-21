@@ -361,9 +361,6 @@
         },
         "TargetLangID": {
           "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
         }
       }
     },
@@ -482,9 +479,6 @@
         },
         "Content": {
           "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
         }
       }
     },
