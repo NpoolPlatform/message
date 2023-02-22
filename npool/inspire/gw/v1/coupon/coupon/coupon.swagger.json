@@ -35,97 +35,12 @@
         },
         "parameters": [
           {
-            "name": "AppID",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "UserID",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "TargetAppID",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "CouponType",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DefaultCouponType",
-              "FixAmount",
-              "Discount",
-              "SpecialOffer",
-              "ThresholdFixAmount",
-              "ThresholdDiscount",
-              "GoodFixAmount",
-              "GoodDiscount",
-              "GoodThresholdFixAmount",
-              "GoodThresholdDiscount"
-            ],
-            "default": "DefaultCouponType"
-          },
-          {
-            "name": "Value",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Circulation",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "StartAt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "DurationDays",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "Message",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "TargetUserID",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "GoodID",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "Threshold",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponcouponv1CreateCouponRequest"
+            }
           }
         ],
         "tags": [
@@ -231,6 +146,52 @@
     }
   },
   "definitions": {
+    "inspiregatewaycouponcouponv1CreateCouponRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
+        }
+      }
+    },
     "inspiregatewaycouponcouponv1CreateCouponResponse": {
       "type": "object",
       "properties": {
