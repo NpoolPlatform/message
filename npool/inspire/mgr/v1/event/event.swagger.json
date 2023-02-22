@@ -97,6 +97,9 @@
     "v1Event": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
