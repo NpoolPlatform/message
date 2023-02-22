@@ -23,7 +23,7 @@ message EmailTemplateReq {
     optional string ID                = 10;
     optional string AppID             = 20;
     optional string LangID            = 30;
-    optional basetypes.v1.UsedFor UsedFor = 40;
+    optional npool.basetypes.v1.UsedFor UsedFor = 40;
     optional string Sender            = 50;
     repeated string ReplyTos          = 60;
     repeated string CCTos             = 70;
@@ -36,7 +36,7 @@ message EmailTemplate {
     string ID                = 10;
     string AppID             = 20;
     string LangID            = 30;
-    basetypes.v1.UsedFor UsedFor = 40;
+    npool.basetypes.v1.UsedFor UsedFor = 40;
     string Sender            = 50;
     repeated string ReplyTos = 60;
     repeated string CCTos    = 70;

@@ -298,7 +298,7 @@ message CreateWithdrawRequest {
     string CoinTypeID        = 30;
     string AccountID         = 40;
     string Amount            = 50;
-    basetypes.v1.SignMethod AccountType = 60;
+    npool.basetypes.v1.SignMethod AccountType = 60;
     string Account           = 70;
     string VerificationCode  = 80;
 }
@@ -376,7 +376,7 @@ message CreateTransferRequest {
     string AppID            = 10;
     string UserID           = 20;
     string Account          = 30;
-    basetypes.v1.SignMethod AccountType = 40;
+    npool.basetypes.v1.SignMethod AccountType = 40;
     string VerificationCode = 50;
     string TargetUserID     = 60;
     string Amount           = 70;

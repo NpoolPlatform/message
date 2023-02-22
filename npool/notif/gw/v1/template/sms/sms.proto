@@ -63,7 +63,7 @@ service Gateway {
 message CreateSMSTemplateRequest {
     string AppID         = 10;
     string TargetLangID  = 20;
-    basetypes.v1.UsedFor UsedFor = 30;
+    npool.basetypes.v1.UsedFor UsedFor = 30;
     string Subject       = 40;
     string Message       = 50;
 }
@@ -75,7 +75,7 @@ message CreateSMSTemplateResponse {
 message CreateAppSMSTemplateRequest {
     string TargetAppID    = 10;
     string TargetLangID   = 20;
-    basetypes.v1.UsedFor UsedFor = 30;
+    npool.basetypes.v1.UsedFor UsedFor = 30;
     string Subject        = 40;
     string Message        = 50;
 }

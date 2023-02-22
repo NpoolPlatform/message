@@ -66,10 +66,10 @@ message CreateTransferRequest {
     string AppID             = 10;
     string UserID            = 20;
     string Account           = 30;
-    basetypes.v1.SignMethod AccountType       = 40;
+    npool.basetypes.v1.SignMethod AccountType       = 40;
     string VerificationCode  = 50;
     string TargetAccount     = 60;
-    basetypes.v1.SignMethod TargetAccountType = 70;
+    npool.basetypes.v1.SignMethod TargetAccountType = 70;
 
 }
 

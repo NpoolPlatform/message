@@ -108,7 +108,7 @@ message SignupRequest {
     string          AppID            = 10;
     string          Account          = 20;
     string          PasswordHash     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
+    npool.basetypes.v1.SignMethod AccountType = 40;
     string          VerificationCode = 50;
     optional string InvitationCode   = 60;
 }
@@ -151,11 +151,11 @@ message UpdateUserRequest {
     string          UserID             = 20;
 
     optional string Account            = 30;
-    optional basetypes.v1.SignMethod AccountType    = 40;
+    optional npool.basetypes.v1.SignMethod AccountType    = 40;
     optional string VerificationCode   = 50;
 
     optional string NewVerificationCode = 51;
-    optional basetypes.v1.SignMethod NewAccountType = 52;
+    optional npool.basetypes.v1.SignMethod NewAccountType = 52;
 
     // Need verification code
     optional string NewAccount          = 60;
@@ -174,7 +174,7 @@ message UpdateUserRequest {
     optional string IDNumber           = 180;
 
     // Control
-    optional basetypes.v1.SignMethod SigninVerifyType = 190;
+    optional npool.basetypes.v1.SignMethod SigninVerifyType = 190;
 
     // Secret
     // Need verification code
@@ -214,7 +214,7 @@ message ResetUserRequest {
     optional string UserID             = 20;
 
     string          Account            = 30;
-    basetypes.v1.SignMethod AccountType    = 40;
+    npool.basetypes.v1.SignMethod AccountType    = 40;
     string          VerificationCode   = 50;
 
     optional string PasswordHash       = 60;
@@ -250,7 +250,7 @@ message LoginRequest {
     string AppID           = 10;
     string Account         = 20;
     string PasswordHash    = 30;
-    basetypes.v1.SignMethod AccountType = 40;
+    npool.basetypes.v1.SignMethod AccountType = 40;
     string ManMachineSpec  = 50;
     string EnvironmentSpec = 60;
 }
@@ -264,7 +264,7 @@ message LoginVerifyRequest {
     string UserID           = 20;
     string Token            = 30;
     string Account          = 40;
-    basetypes.v1.SignMethod AccountType = 50;
+    npool.basetypes.v1.SignMethod AccountType = 50;
     string VerificationCode = 60;
 }
 

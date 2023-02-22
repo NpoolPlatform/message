@@ -17,7 +17,7 @@ message SendMessageRequest {
     string                  To          = 40;
     repeated string         ToCCs       = 50;
     repeated string         ReplyTos    = 60;
-    basetypes.v1.SignMethod AccountType = 70;
+    npool.basetypes.v1.SignMethod AccountType = 70;
 }
 
 message SendMessageResponse {

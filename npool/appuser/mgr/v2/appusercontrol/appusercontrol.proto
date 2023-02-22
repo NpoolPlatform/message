@@ -25,7 +25,7 @@ message AppUserControlReq {
     optional string AppID              = 20;
     optional string UserID             = 30;
     optional bool   GoogleAuthVerified = 40;
-    optional basetypes.v1.SignMethod SigninVerifyType = 50;
+    optional npool.basetypes.v1.SignMethod SigninVerifyType = 50;
     optional bool   Kol                = 60;
     optional bool   KolConfirmed       = 70;
 }
@@ -35,7 +35,7 @@ message AppUserControl {
     string AppID              = 20;
     string UserID             = 30;
     bool   GoogleAuthVerified = 40;
-    basetypes.v1.SignMethod SigninVerifyType = 50;
+    npool.basetypes.v1.SignMethod SigninVerifyType = 50;
     bool   Kol                = 60;
     bool   KolConfirmed       = 70;
 }
