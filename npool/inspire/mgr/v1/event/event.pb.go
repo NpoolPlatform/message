@@ -27,7 +27,7 @@ type EventReq struct {
 	unknownFields protoimpl.UnknownFields
 
 	AppID         *string     `protobuf:"bytes,10,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
-	EventType     *v1.UsedFor `protobuf:"varint,20,opt,name=EventType,proto3,enum=npool.basetypes.v1.UsedFor,oneof" json:"EventType,omitempty"`
+	EventType     *v1.UsedFor `protobuf:"varint,20,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor,oneof" json:"EventType,omitempty"`
 	CouponIDs     []string    `protobuf:"bytes,30,rep,name=CouponIDs,proto3" json:"CouponIDs,omitempty"`
 	Credits       *string     `protobuf:"bytes,40,opt,name=Credits,proto3,oneof" json:"Credits,omitempty"`
 	CreditsPerUSD *string     `protobuf:"bytes,50,opt,name=CreditsPerUSD,proto3,oneof" json:"CreditsPerUSD,omitempty"`
@@ -106,7 +106,7 @@ type Event struct {
 	unknownFields protoimpl.UnknownFields
 
 	AppID         string     `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	EventType     v1.UsedFor `protobuf:"varint,20,opt,name=EventType,proto3,enum=npool.basetypes.v1.UsedFor" json:"EventType,omitempty"`
+	EventType     v1.UsedFor `protobuf:"varint,20,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor" json:"EventType,omitempty"`
 	CouponIDs     []string   `protobuf:"bytes,30,rep,name=CouponIDs,proto3" json:"CouponIDs,omitempty"`
 	Credits       string     `protobuf:"bytes,40,opt,name=Credits,proto3" json:"Credits,omitempty"`
 	CreditsPerUSD string     `protobuf:"bytes,50,opt,name=CreditsPerUSD,proto3" json:"CreditsPerUSD,omitempty"`
@@ -1477,15 +1477,15 @@ var file_npool_inspire_mgr_v1_event_event_proto_goTypes = []interface{}{
 	(*CountEventsResponse)(nil),     // 20: inspire.manager.event.v1.CountEventsResponse
 	(*DeleteEventRequest)(nil),      // 21: inspire.manager.event.v1.DeleteEventRequest
 	(*DeleteEventResponse)(nil),     // 22: inspire.manager.event.v1.DeleteEventResponse
-	(v1.UsedFor)(0),                 // 23: npool.basetypes.v1.UsedFor
-	(*v1.StringVal)(nil),            // 24: npool.basetypes.v1.StringVal
-	(*v1.Uint32Val)(nil),            // 25: npool.basetypes.v1.Uint32Val
+	(v1.UsedFor)(0),                 // 23: basetypes.v1.UsedFor
+	(*v1.StringVal)(nil),            // 24: basetypes.v1.StringVal
+	(*v1.Uint32Val)(nil),            // 25: basetypes.v1.Uint32Val
 }
 var file_npool_inspire_mgr_v1_event_event_proto_depIdxs = []int32{
-	23, // 0: inspire.manager.event.v1.EventReq.EventType:type_name -> npool.basetypes.v1.UsedFor
-	23, // 1: inspire.manager.event.v1.Event.EventType:type_name -> npool.basetypes.v1.UsedFor
-	24, // 2: inspire.manager.event.v1.Conds.AppID:type_name -> npool.basetypes.v1.StringVal
-	25, // 3: inspire.manager.event.v1.Conds.EventType:type_name -> npool.basetypes.v1.Uint32Val
+	23, // 0: inspire.manager.event.v1.EventReq.EventType:type_name -> basetypes.v1.UsedFor
+	23, // 1: inspire.manager.event.v1.Event.EventType:type_name -> basetypes.v1.UsedFor
+	24, // 2: inspire.manager.event.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	25, // 3: inspire.manager.event.v1.Conds.EventType:type_name -> basetypes.v1.Uint32Val
 	0,  // 4: inspire.manager.event.v1.CreateEventRequest.Info:type_name -> inspire.manager.event.v1.EventReq
 	1,  // 5: inspire.manager.event.v1.CreateEventResponse.Info:type_name -> inspire.manager.event.v1.Event
 	0,  // 6: inspire.manager.event.v1.CreateEventsRequest.Infos:type_name -> inspire.manager.event.v1.EventReq

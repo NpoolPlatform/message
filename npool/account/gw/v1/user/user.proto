@@ -116,7 +116,7 @@ message CreateAccountRequest {
     account.manager.account1.v1.AccountUsedFor UsedFor = 50;
     repeated string Labels      = 60;
     string          Account     = 70;
-    npool.basetypes.v1.SignMethod AccountType       = 80;
+    basetypes.v1.SignMethod AccountType       = 80;
     string VerificationCode     = 90;
 }
 

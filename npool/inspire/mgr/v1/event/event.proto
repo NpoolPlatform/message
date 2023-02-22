@@ -23,7 +23,7 @@ service Manager {
 
 message EventReq {
     optional string               AppID         = 10;
-    optional npool.basetypes.v1.UsedFor EventType     = 20;
+    optional basetypes.v1.UsedFor EventType     = 20;
     repeated string               CouponIDs     = 30;
     optional string               Credits       = 40;
     optional string               CreditsPerUSD = 50;
@@ -31,7 +31,7 @@ message EventReq {
 
 message Event {
     string               AppID         = 10;
-    npool.basetypes.v1.UsedFor EventType = 20;
+    basetypes.v1.UsedFor EventType = 20;
     repeated string      CouponIDs     = 30;
     string               Credits       = 40;
     string               CreditsPerUSD = 50;
@@ -41,8 +41,8 @@ message Event {
 }
 
 message Conds {
-    optional npool.basetypes.v1.StringVal AppID     = 10;
-    optional npool.basetypes.v1.Uint32Val EventType = 20;
+    optional basetypes.v1.StringVal AppID     = 10;
+    optional basetypes.v1.Uint32Val EventType = 20;
 }
 
 message CreateEventRequest {

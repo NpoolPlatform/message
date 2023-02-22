@@ -50,7 +50,7 @@ type Tx struct {
 	ChainTxID     string                 `protobuf:"bytes,170,opt,name=ChainTxID,proto3" json:"ChainTxID,omitempty"`
 	State         tx.TxState             `protobuf:"varint,180,opt,name=State,proto3,enum=chain.manager.tx.v1.TxState" json:"State,omitempty"`
 	Extra         string                 `protobuf:"bytes,190,opt,name=Extra,proto3" json:"Extra,omitempty"`
-	Type          v1.TxType              `protobuf:"varint,200,opt,name=Type,proto3,enum=npool.basetypes.v1.TxType" json:"Type,omitempty"`
+	Type          v1.TxType              `protobuf:"varint,200,opt,name=Type,proto3,enum=basetypes.v1.TxType" json:"Type,omitempty"`
 	CreatedAt     uint32                 `protobuf:"varint,210,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt     uint32                 `protobuf:"varint,220,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
 }
@@ -460,13 +460,13 @@ var file_npool_chain_gw_v1_tx_tx_proto_goTypes = []interface{}{
 	(*GetTxsResponse)(nil),      // 2: chain.gateway.tx.v1.GetTxsResponse
 	(account.AccountUsedFor)(0), // 3: account.manager.account1.v1.AccountUsedFor
 	(tx.TxState)(0),             // 4: chain.manager.tx.v1.TxState
-	(v1.TxType)(0),              // 5: npool.basetypes.v1.TxType
+	(v1.TxType)(0),              // 5: basetypes.v1.TxType
 }
 var file_npool_chain_gw_v1_tx_tx_proto_depIdxs = []int32{
 	3, // 0: chain.gateway.tx.v1.Tx.FromUsedFor:type_name -> account.manager.account1.v1.AccountUsedFor
 	3, // 1: chain.gateway.tx.v1.Tx.ToUsedFor:type_name -> account.manager.account1.v1.AccountUsedFor
 	4, // 2: chain.gateway.tx.v1.Tx.State:type_name -> chain.manager.tx.v1.TxState
-	5, // 3: chain.gateway.tx.v1.Tx.Type:type_name -> npool.basetypes.v1.TxType
+	5, // 3: chain.gateway.tx.v1.Tx.Type:type_name -> basetypes.v1.TxType
 	0, // 4: chain.gateway.tx.v1.GetTxsResponse.Infos:type_name -> chain.gateway.tx.v1.Tx
 	1, // 5: chain.gateway.tx.v1.Gateway.GetTxs:input_type -> chain.gateway.tx.v1.GetTxsRequest
 	2, // 6: chain.gateway.tx.v1.Gateway.GetTxs:output_type -> chain.gateway.tx.v1.GetTxsResponse

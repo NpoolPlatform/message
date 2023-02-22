@@ -24,8 +24,8 @@ message ContactReq {
     optional string                  ID          = 10;
     optional string                  AppID       = 20;
     optional string                  Account     = 30;
-    optional npool.basetypes.v1.SignMethod AccountType = 40;
-    optional npool.basetypes.v1.UsedFor    UsedFor     = 50;
+    optional basetypes.v1.SignMethod AccountType = 40;
+    optional basetypes.v1.UsedFor    UsedFor     = 50;
     optional string                  Sender      = 60;
 }
 
@@ -33,8 +33,8 @@ message Contact {
     string                  ID          = 10;
     string                  AppID       = 20;
     string                  Account     = 30;
-    npool.basetypes.v1.SignMethod AccountType = 40;
-    npool.basetypes.v1.UsedFor    UsedFor     = 50;
+    basetypes.v1.SignMethod AccountType = 40;
+    basetypes.v1.UsedFor    UsedFor     = 50;
     string                  Sender      = 60;
 }
 

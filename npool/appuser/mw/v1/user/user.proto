@@ -46,7 +46,7 @@ message UserReq {
     optional string IDNumber           = 160;
 
     // Control
-    optional npool.basetypes.v1.SignMethod SigninVerifyType = 170;
+    optional basetypes.v1.SignMethod SigninVerifyType = 170;
     optional bool GoogleAuthVerified   = 180;
 
     // Secret
@@ -119,7 +119,7 @@ message User {
     // Control flag
     // @inject_tag: sql:"signin_verify_type"
     string          SigninVerifyTypeStr         = 210;
-    npool.basetypes.v1.SignMethod SigninVerifyType = 220;
+    basetypes.v1.SignMethod SigninVerifyType = 220;
     // @inject_tag: sql:"signin_verify_by_google_authentication"
     int32           SigninVerifyByGoogleAuthInt = 221;
     bool            SigninVerifyByGoogleAuth    = 222;
@@ -144,7 +144,7 @@ message User {
     // Login info
     bool            Logined                     = 310;
     string          LoginAccount                = 320;
-    npool.basetypes.v1.SignMethod LoginAccountType = 330;
+    basetypes.v1.SignMethod LoginAccountType = 330;
     string          LoginToken                  = 340;
     string          LoginClientIP               = 350;
     string          LoginClientUserAgent        = 360;
@@ -204,7 +204,7 @@ message GetUserResponse {
 message VerifyAccountRequest {
     string AppID        = 10;
     string Account      = 20;
-    npool.basetypes.v1.SignMethod AccountType = 30;
+    basetypes.v1.SignMethod AccountType = 30;
     string PasswordHash = 40;
 }
 

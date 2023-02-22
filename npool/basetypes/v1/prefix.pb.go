@@ -96,7 +96,7 @@ func file_npool_basetypes_v1_prefix_proto_rawDescGZIP() []byte {
 
 var file_npool_basetypes_v1_prefix_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_npool_basetypes_v1_prefix_proto_goTypes = []interface{}{
-	(Prefix)(0), // 0: npool.basetypes.v1.Prefix
+	(Prefix)(0), // 0: basetypes.v1.Prefix
 }
 var file_npool_basetypes_v1_prefix_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

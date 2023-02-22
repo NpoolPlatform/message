@@ -83,7 +83,7 @@ type TxReq struct {
 	ID         *string    `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	TxID       *string    `protobuf:"bytes,20,opt,name=TxID,proto3,oneof" json:"TxID,omitempty"`
 	NotifState *TxState   `protobuf:"varint,30,opt,name=NotifState,proto3,enum=notif.manager.notif.tx.v1.TxState,oneof" json:"NotifState,omitempty"`
-	TxType     *v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=npool.basetypes.v1.TxType,oneof" json:"TxType,omitempty"`
+	TxType     *v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=basetypes.v1.TxType,oneof" json:"TxType,omitempty"`
 }
 
 func (x *TxReq) Reset() {
@@ -154,7 +154,7 @@ type Tx struct {
 	ID         string    `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 	TxID       string    `protobuf:"bytes,20,opt,name=TxID,proto3" json:"TxID,omitempty"`
 	NotifState TxState   `protobuf:"varint,30,opt,name=NotifState,proto3,enum=notif.manager.notif.tx.v1.TxState" json:"NotifState,omitempty"`
-	TxType     v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=npool.basetypes.v1.TxType" json:"TxType,omitempty"`
+	TxType     v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=basetypes.v1.TxType" json:"TxType,omitempty"`
 	CreatedAt  uint32    `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt  uint32    `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
 }
@@ -1523,15 +1523,15 @@ var file_npool_notif_mgr_v1_notif_tx_tx_proto_goTypes = []interface{}{
 	(*CountTxsResponse)(nil),     // 21: notif.manager.notif.tx.v1.CountTxsResponse
 	(*DeleteTxRequest)(nil),      // 22: notif.manager.notif.tx.v1.DeleteTxRequest
 	(*DeleteTxResponse)(nil),     // 23: notif.manager.notif.tx.v1.DeleteTxResponse
-	(v1.TxType)(0),               // 24: npool.basetypes.v1.TxType
+	(v1.TxType)(0),               // 24: basetypes.v1.TxType
 	(*npool.StringVal)(nil),      // 25: npool.v1.StringVal
 	(*npool.Uint32Val)(nil),      // 26: npool.v1.Uint32Val
 }
 var file_npool_notif_mgr_v1_notif_tx_tx_proto_depIdxs = []int32{
 	0,  // 0: notif.manager.notif.tx.v1.TxReq.NotifState:type_name -> notif.manager.notif.tx.v1.TxState
-	24, // 1: notif.manager.notif.tx.v1.TxReq.TxType:type_name -> npool.basetypes.v1.TxType
+	24, // 1: notif.manager.notif.tx.v1.TxReq.TxType:type_name -> basetypes.v1.TxType
 	0,  // 2: notif.manager.notif.tx.v1.Tx.NotifState:type_name -> notif.manager.notif.tx.v1.TxState
-	24, // 3: notif.manager.notif.tx.v1.Tx.TxType:type_name -> npool.basetypes.v1.TxType
+	24, // 3: notif.manager.notif.tx.v1.Tx.TxType:type_name -> basetypes.v1.TxType
 	25, // 4: notif.manager.notif.tx.v1.Conds.ID:type_name -> npool.v1.StringVal
 	25, // 5: notif.manager.notif.tx.v1.Conds.TxID:type_name -> npool.v1.StringVal
 	26, // 6: notif.manager.notif.tx.v1.Conds.NotifState:type_name -> npool.v1.Uint32Val

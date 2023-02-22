@@ -31,7 +31,7 @@ type Channel struct {
 	ID        string               `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 	AppID     string               `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	AppName   string               `protobuf:"bytes,30,opt,name=AppName,proto3" json:"AppName,omitempty"`
-	EventType v1.UsedFor           `protobuf:"varint,40,opt,name=EventType,proto3,enum=npool.basetypes.v1.UsedFor" json:"EventType,omitempty"`
+	EventType v1.UsedFor           `protobuf:"varint,40,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor" json:"EventType,omitempty"`
 	Channel   channel.NotifChannel `protobuf:"varint,50,opt,name=Channel,proto3,enum=notif.manager.channel.v1.NotifChannel" json:"Channel,omitempty"`
 	CreatedAt uint32               `protobuf:"varint,60,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 }
@@ -116,7 +116,7 @@ type CreateChannelsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	AppID      string               `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	EventTypes []v1.UsedFor         `protobuf:"varint,20,rep,packed,name=EventTypes,proto3,enum=npool.basetypes.v1.UsedFor" json:"EventTypes,omitempty"`
+	EventTypes []v1.UsedFor         `protobuf:"varint,20,rep,packed,name=EventTypes,proto3,enum=basetypes.v1.UsedFor" json:"EventTypes,omitempty"`
 	Channel    channel.NotifChannel `protobuf:"varint,30,opt,name=Channel,proto3,enum=notif.manager.channel.v1.NotifChannel" json:"Channel,omitempty"`
 }
 
@@ -713,13 +713,13 @@ var file_npool_notif_gw_v1_notif_channel_channel_proto_goTypes = []interface{}{
 	(*GetAppChannelsResponse)(nil),  // 6: notif.gateway.notif2.channel.v1.GetAppChannelsResponse
 	(*GetNAppChannelsRequest)(nil),  // 7: notif.gateway.notif2.channel.v1.GetNAppChannelsRequest
 	(*GetNAppChannelsResponse)(nil), // 8: notif.gateway.notif2.channel.v1.GetNAppChannelsResponse
-	(v1.UsedFor)(0),                 // 9: npool.basetypes.v1.UsedFor
+	(v1.UsedFor)(0),                 // 9: basetypes.v1.UsedFor
 	(channel.NotifChannel)(0),       // 10: notif.manager.channel.v1.NotifChannel
 }
 var file_npool_notif_gw_v1_notif_channel_channel_proto_depIdxs = []int32{
-	9,  // 0: notif.gateway.notif2.channel.v1.Channel.EventType:type_name -> npool.basetypes.v1.UsedFor
+	9,  // 0: notif.gateway.notif2.channel.v1.Channel.EventType:type_name -> basetypes.v1.UsedFor
 	10, // 1: notif.gateway.notif2.channel.v1.Channel.Channel:type_name -> notif.manager.channel.v1.NotifChannel
-	9,  // 2: notif.gateway.notif2.channel.v1.CreateChannelsRequest.EventTypes:type_name -> npool.basetypes.v1.UsedFor
+	9,  // 2: notif.gateway.notif2.channel.v1.CreateChannelsRequest.EventTypes:type_name -> basetypes.v1.UsedFor
 	10, // 3: notif.gateway.notif2.channel.v1.CreateChannelsRequest.Channel:type_name -> notif.manager.channel.v1.NotifChannel
 	0,  // 4: notif.gateway.notif2.channel.v1.CreateChannelsResponse.Infos:type_name -> notif.gateway.notif2.channel.v1.Channel
 	0,  // 5: notif.gateway.notif2.channel.v1.DeleteChannelResponse.Info:type_name -> notif.gateway.notif2.channel.v1.Channel

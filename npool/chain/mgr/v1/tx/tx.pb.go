@@ -95,7 +95,7 @@ type TxReq struct {
 	ChainTxID     *string    `protobuf:"bytes,70,opt,name=ChainTxID,proto3,oneof" json:"ChainTxID,omitempty"`
 	State         *TxState   `protobuf:"varint,80,opt,name=State,proto3,enum=chain.manager.tx.v1.TxState,oneof" json:"State,omitempty"`
 	Extra         *string    `protobuf:"bytes,90,opt,name=Extra,proto3,oneof" json:"Extra,omitempty"`
-	Type          *v1.TxType `protobuf:"varint,100,opt,name=Type,proto3,enum=npool.basetypes.v1.TxType,oneof" json:"Type,omitempty"`
+	Type          *v1.TxType `protobuf:"varint,100,opt,name=Type,proto3,enum=basetypes.v1.TxType,oneof" json:"Type,omitempty"`
 }
 
 func (x *TxReq) Reset() {
@@ -214,7 +214,7 @@ type Tx struct {
 	ChainTxID     string    `protobuf:"bytes,70,opt,name=ChainTxID,proto3" json:"ChainTxID,omitempty"`
 	State         TxState   `protobuf:"varint,80,opt,name=State,proto3,enum=chain.manager.tx.v1.TxState" json:"State,omitempty"`
 	Extra         string    `protobuf:"bytes,90,opt,name=Extra,proto3" json:"Extra,omitempty"`
-	Type          v1.TxType `protobuf:"varint,100,opt,name=Type,proto3,enum=npool.basetypes.v1.TxType" json:"Type,omitempty"`
+	Type          v1.TxType `protobuf:"varint,100,opt,name=Type,proto3,enum=basetypes.v1.TxType" json:"Type,omitempty"`
 	CreatedAt     uint32    `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt     uint32    `protobuf:"varint,120,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
 }
@@ -1678,16 +1678,16 @@ var file_npool_chain_mgr_v1_tx_tx_proto_goTypes = []interface{}{
 	(*CountTxsResponse)(nil),     // 21: chain.manager.tx.v1.CountTxsResponse
 	(*DeleteTxRequest)(nil),      // 22: chain.manager.tx.v1.DeleteTxRequest
 	(*DeleteTxResponse)(nil),     // 23: chain.manager.tx.v1.DeleteTxResponse
-	(v1.TxType)(0),               // 24: npool.basetypes.v1.TxType
+	(v1.TxType)(0),               // 24: basetypes.v1.TxType
 	(*npool.StringVal)(nil),      // 25: npool.v1.StringVal
 	(*npool.StringSliceVal)(nil), // 26: npool.v1.StringSliceVal
 	(*npool.Int32Val)(nil),       // 27: npool.v1.Int32Val
 }
 var file_npool_chain_mgr_v1_tx_tx_proto_depIdxs = []int32{
 	0,  // 0: chain.manager.tx.v1.TxReq.State:type_name -> chain.manager.tx.v1.TxState
-	24, // 1: chain.manager.tx.v1.TxReq.Type:type_name -> npool.basetypes.v1.TxType
+	24, // 1: chain.manager.tx.v1.TxReq.Type:type_name -> basetypes.v1.TxType
 	0,  // 2: chain.manager.tx.v1.Tx.State:type_name -> chain.manager.tx.v1.TxState
-	24, // 3: chain.manager.tx.v1.Tx.Type:type_name -> npool.basetypes.v1.TxType
+	24, // 3: chain.manager.tx.v1.Tx.Type:type_name -> basetypes.v1.TxType
 	25, // 4: chain.manager.tx.v1.Conds.ID:type_name -> npool.v1.StringVal
 	25, // 5: chain.manager.tx.v1.Conds.CoinTypeID:type_name -> npool.v1.StringVal
 	25, // 6: chain.manager.tx.v1.Conds.AccountID:type_name -> npool.v1.StringVal

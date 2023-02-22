@@ -56,7 +56,7 @@ type Tx struct {
 	StateStr string `protobuf:"bytes,130,opt,name=StateStr,proto3" json:"StateStr,omitempty" sql:"state"`
 	// @inject_tag: sql:"extra"
 	Extra string    `protobuf:"bytes,140,opt,name=Extra,proto3" json:"Extra,omitempty" sql:"extra"`
-	Type  v1.TxType `protobuf:"varint,150,opt,name=Type,proto3,enum=npool.basetypes.v1.TxType" json:"Type,omitempty"`
+	Type  v1.TxType `protobuf:"varint,150,opt,name=Type,proto3,enum=basetypes.v1.TxType" json:"Type,omitempty"`
 	// @inject_tag: sql:"type"
 	TypeStr string `protobuf:"bytes,160,opt,name=TypeStr,proto3" json:"TypeStr,omitempty" sql:"type"`
 	// @inject_tag: sql:"created_at"
@@ -873,13 +873,13 @@ var file_npool_chain_mw_v1_tx_tx_proto_goTypes = []interface{}{
 	(*UpdateTxRequest)(nil),   // 9: chain.middleware.tx.v1.UpdateTxRequest
 	(*UpdateTxResponse)(nil),  // 10: chain.middleware.tx.v1.UpdateTxResponse
 	(tx.TxState)(0),           // 11: chain.manager.tx.v1.TxState
-	(v1.TxType)(0),            // 12: npool.basetypes.v1.TxType
+	(v1.TxType)(0),            // 12: basetypes.v1.TxType
 	(*tx.TxReq)(nil),          // 13: chain.manager.tx.v1.TxReq
 	(*tx.Conds)(nil),          // 14: chain.manager.tx.v1.Conds
 }
 var file_npool_chain_mw_v1_tx_tx_proto_depIdxs = []int32{
 	11, // 0: chain.middleware.tx.v1.Tx.State:type_name -> chain.manager.tx.v1.TxState
-	12, // 1: chain.middleware.tx.v1.Tx.Type:type_name -> npool.basetypes.v1.TxType
+	12, // 1: chain.middleware.tx.v1.Tx.Type:type_name -> basetypes.v1.TxType
 	13, // 2: chain.middleware.tx.v1.CreateTxRequest.Info:type_name -> chain.manager.tx.v1.TxReq
 	0,  // 3: chain.middleware.tx.v1.CreateTxResponse.Info:type_name -> chain.middleware.tx.v1.Tx
 	13, // 4: chain.middleware.tx.v1.CreateTxsRequest.Infos:type_name -> chain.manager.tx.v1.TxReq

@@ -96,7 +96,7 @@ func file_npool_basetypes_v1_version_proto_rawDescGZIP() []byte {
 
 var file_npool_basetypes_v1_version_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_npool_basetypes_v1_version_proto_goTypes = []interface{}{
-	(*VersionResponse)(nil), // 0: npool.basetypes.v1.VersionResponse
+	(*VersionResponse)(nil), // 0: basetypes.v1.VersionResponse
 }
 var file_npool_basetypes_v1_version_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
