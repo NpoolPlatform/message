@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mgr/v1/credit/credit.proto",
+    "title": "npool/basetypes/v1/errno.proto",
     "version": "version not set"
   },
   "consumes": [

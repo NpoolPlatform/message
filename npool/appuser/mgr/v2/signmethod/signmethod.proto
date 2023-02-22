@@ -8,7 +8,7 @@ import "npool/basetypes/v1/signmethod.proto";
 
 message SignMethod {
     string ID       = 10;
-    basetypes.v1.SignMethod Method   = 20;
+    npool.basetypes.v1.SignMethod Method   = 20;
     string Icon     = 30;
     bool   External = 40;
 }

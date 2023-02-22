@@ -28,7 +28,7 @@ message NotifReq {
     optional string    UserID      = 30;
     optional bool      Notified    = 40;
     optional string    LangID      = 50;
-    optional basetypes.v1.UsedFor EventType = 60;
+    optional npool.basetypes.v1.UsedFor EventType = 60;
     optional bool      UseTemplate = 70;
     optional string    Title       = 80;
     optional string    Content     = 90;
@@ -42,7 +42,7 @@ message Notif {
     string    UserID      = 30;
     bool      Notified    = 40;
     string    LangID      = 50;
-    basetypes.v1.UsedFor EventType = 60;
+    npool.basetypes.v1.UsedFor EventType = 60;
     bool      UseTemplate = 70;
     string    Title       = 80;
     string    Content     = 90;

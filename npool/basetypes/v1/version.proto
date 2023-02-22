@@ -4,8 +4,7 @@ package npool.basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-enum Prefix {
-    DefaultPrefix    = 0;
-
-    PrefixUserCode   = 10;
+message VersionResponse {
+    string Info = 10;
 }
+

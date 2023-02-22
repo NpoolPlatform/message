@@ -32,8 +32,8 @@ enum CreateInvitationCodeWhen {
 message AppControlReq {
     optional string ID                  = 10;
     optional string AppID               = 20;
-    repeated basetypes.v1.SignMethod SignupMethods    = 30;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 40;
+    repeated npool.basetypes.v1.SignMethod SignupMethods    = 30;
+    repeated npool.basetypes.v1.SignMethod ExtSigninMethods = 40;
     optional appuser.manager.recaptcha.v2.RecaptchaType RecaptchaMethod  = 50;
     optional bool KycEnable             = 60;
     optional bool SigninVerifyEnable    = 70;
@@ -45,8 +45,8 @@ message AppControlReq {
 message AppControl {
     string ID                           = 10;
     string AppID                        = 20;
-    repeated basetypes.v1.SignMethod SignupMethods    = 30;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 40;
+    repeated npool.basetypes.v1.SignMethod SignupMethods    = 30;
+    repeated npool.basetypes.v1.SignMethod ExtSigninMethods = 40;
     appuser.manager.recaptcha.v2.RecaptchaType RecaptchaMethod  = 50;
     bool KycEnable                      = 60;
     bool SigninVerifyEnable             = 70;
