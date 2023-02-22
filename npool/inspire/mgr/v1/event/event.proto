@@ -22,16 +22,17 @@ service Manager {
 }
 
 message EventReq {
-    optional string               AppID         = 10;
-    optional basetypes.v1.UsedFor EventType     = 20;
-    repeated string               CouponIDs     = 30;
-    optional string               Credits       = 40;
-    optional string               CreditsPerUSD = 50;
+    optional string               ID            = 10;
+    optional string               AppID         = 20;
+    optional basetypes.v1.UsedFor EventType     = 30;
+    repeated string               CouponIDs     = 40;
+    optional string               Credits       = 50;
+    optional string               CreditsPerUSD = 60;
 }
 
 message Event {
     string               AppID         = 10;
-    basetypes.v1.UsedFor EventType = 20;
+    basetypes.v1.UsedFor EventType     = 20;
     repeated string      CouponIDs     = 30;
     string               Credits       = 40;
     string               CreditsPerUSD = 50;

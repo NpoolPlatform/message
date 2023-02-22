@@ -132,6 +132,9 @@
     "v1EventReq": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
