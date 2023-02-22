@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package inspire.middleware.event.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event";
+
+import "npool/inspire/mgr/v1/event/event.proto";
+
+// Service Name
+service Middleware {
+    rpc GetEventOnly (GetEventOnlyRequest) returns (GetEventOnlyResponse) {}
+}
+
+message GetEventOnlyRequest {
+    inspire.manager.event.v1.Conds Conds = 10;
+}
+
+message GetEventOnlyResponse {
+    inspire.manager.event.v1.Event Info = 10;
+}
+
