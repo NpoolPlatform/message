@@ -5,8 +5,8 @@ package notif.gateway.usercode.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/usercode";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/v1/signmethod.proto";
-import "npool/basetypes/v1/usedfor.proto";
+import "basetypes/v1/signmethod.proto";
+import "basetypes/v1/usedfor.proto";
 
 service Gateway {
     rpc SendCode (SendCodeRequest) returns (SendCodeResponse) {
@@ -22,8 +22,8 @@ message SendCodeRequest {
     string                  LangID      = 20;
     optional string         UserID      = 30;
     optional string         Account     = 40;
-    npool.basetypes.v1.SignMethod AccountType = 50;
-    npool.basetypes.v1.UsedFor    UsedFor     = 60;
+    basetypes.v1.SignMethod AccountType = 50;
+    basetypes.v1.UsedFor    UsedFor     = 60;
     optional string         ToUsername  = 70;
 }
 

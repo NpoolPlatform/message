@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/template
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/template/email/email.proto";
-import "npool/basetypes/v1/usedfor.proto";
+import "basetypes/v1/usedfor.proto";
 
 
 service Gateway {
@@ -63,7 +63,7 @@ service Gateway {
 message CreateEmailTemplateRequest {
     string AppID             = 10;
     string TargetLangID      = 20;
-    npool.basetypes.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Sender            = 40;
     repeated string ReplyTos = 50;
     repeated string CCTos    = 60;
@@ -79,7 +79,7 @@ message CreateEmailTemplateResponse {
 message CreateAppEmailTemplateRequest {
     string TargetAppID       = 10;
     string TargetLangID      = 20;
-    npool.basetypes.v1.UsedFor UsedFor = 30;
+    basetypes.v1.UsedFor UsedFor = 30;
     string Sender            = 40;
     repeated string ReplyTos = 50;
     repeated string CCTos    = 60;
