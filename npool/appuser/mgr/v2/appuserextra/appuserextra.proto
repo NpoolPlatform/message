@@ -34,6 +34,7 @@ message AppUserExtraReq {
     optional string Organization  = 120;
     optional string IDNumber      = 130;
     repeated string AddressFields = 140;
+    optional string ActionCredits = 150;
 }
 
 message AppUserExtra {
@@ -51,22 +52,24 @@ message AppUserExtra {
     string Organization           = 120;
     string IDNumber               = 130;
     repeated string AddressFields = 140;
+    string ActionCredits          = 150;
 }
 
 message Conds {
-    npool.v1.StringVal ID           = 10;
-    npool.v1.StringVal AppID        = 20;
-    npool.v1.StringVal UserID       = 30;
-    npool.v1.StringVal FirstName    = 40;
-    npool.v1.Uint32Val Birthday     = 50;
-    npool.v1.StringVal LastName     = 60;
-    npool.v1.StringVal Gender       = 70;
-    npool.v1.StringVal Avatar       = 80;
-    npool.v1.StringVal Username     = 90;
-    npool.v1.StringVal PostalCode   = 100;
-    npool.v1.Uint32Val Age          = 110;
-    npool.v1.StringVal Organization = 120;
-    npool.v1.StringVal IDNumber     = 130;
+    npool.v1.StringVal ID            = 10;
+    npool.v1.StringVal AppID         = 20;
+    npool.v1.StringVal UserID        = 30;
+    npool.v1.StringVal FirstName     = 40;
+    npool.v1.Uint32Val Birthday      = 50;
+    npool.v1.StringVal LastName      = 60;
+    npool.v1.StringVal Gender        = 70;
+    npool.v1.StringVal Avatar        = 80;
+    npool.v1.StringVal Username      = 90;
+    npool.v1.StringVal PostalCode    = 100;
+    npool.v1.Uint32Val Age           = 110;
+    npool.v1.StringVal Organization  = 120;
+    npool.v1.StringVal IDNumber      = 130;
+    npool.v1.StringVal ActionCredits = 140;
 }
 
 message CreateAppUserExtraRequest {

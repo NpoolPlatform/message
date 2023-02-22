@@ -116,6 +116,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "ActionCredits": {
+          "type": "string"
         }
       }
     },
@@ -168,6 +171,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "ActionCredits": {
+          "type": "string"
         }
       }
     },
@@ -211,6 +217,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "IDNumber": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ActionCredits": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
