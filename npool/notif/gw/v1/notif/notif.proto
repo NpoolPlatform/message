@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
 import "npool/notif/mgr/v1/channel/channel.proto";
-import "basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Gateway {
@@ -47,7 +47,7 @@ message Notif {
     string           EmailAddress = 50;
     string           PhoneNO      = 60;
     string           Username     = 70;
-    basetypes.v1.UsedFor EventType = 80;
+    npool.basetypes.v1.UsedFor EventType = 80;
     bool             UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;

@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
-import "basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/signmethod.proto";
 
 service Middleware {
     rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
@@ -31,8 +31,8 @@ message AppReq {
     optional string          BanMessage         = 70;
 
     // Sign methods
-    repeated basetypes.v1.SignMethod SignupMethods    = 80;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 90;
+    repeated npool.basetypes.v1.SignMethod SignupMethods    = 80;
+    repeated npool.basetypes.v1.SignMethod ExtSigninMethods = 90;
 
     // Control flag
     optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 100;
@@ -66,10 +66,10 @@ message App {
     // Sign methods
     // @inject_tag: sql:"signup_methods"
     string SignupMethodsStr                = 90;
-    repeated basetypes.v1.SignMethod SignupMethods    = 100;
+    repeated npool.basetypes.v1.SignMethod SignupMethods    = 100;
     // @inject_tag: sql:"extern_signin_methods"
     string ExtSigninMethodsStr             = 110;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 120;
+    repeated npool.basetypes.v1.SignMethod ExtSigninMethods = 120;
 
     // Control flag
     // @inject_tag: sql:"recaptcha_method"
@@ -152,7 +152,7 @@ message GetSignMethodsRequest {
 
 message GetSignMethodsResponse {
     // In future this may be put to database then admin can change it
-    repeated basetypes.v1.SignMethod Infos = 10;
+    repeated npool.basetypes.v1.SignMethod Infos = 10;
 }
 
 message GetRecaptchasRequest {

@@ -4,7 +4,7 @@ package appuser.middleware.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
-import "basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/signmethod.proto";
 import "npool/appuser/mgr/v2/kyc/kyc.proto";
 import "npool/appuser/mgr/v2/appuser/appuser.proto";
 
@@ -46,7 +46,7 @@ message UserReq {
     optional string IDNumber           = 160;
 
     // Control
-    optional basetypes.v1.SignMethod SigninVerifyType = 170;
+    optional npool.basetypes.v1.SignMethod SigninVerifyType = 170;
     optional bool GoogleAuthVerified   = 180;
 
     // Secret
@@ -119,7 +119,7 @@ message User {
     // Control flag
     // @inject_tag: sql:"signin_verify_type"
     string          SigninVerifyTypeStr         = 210;
-    basetypes.v1.SignMethod SigninVerifyType = 220;
+    npool.basetypes.v1.SignMethod SigninVerifyType = 220;
     // @inject_tag: sql:"signin_verify_by_google_authentication"
     int32           SigninVerifyByGoogleAuthInt = 221;
     bool            SigninVerifyByGoogleAuth    = 222;
@@ -144,7 +144,7 @@ message User {
     // Login info
     bool            Logined                     = 310;
     string          LoginAccount                = 320;
-    basetypes.v1.SignMethod LoginAccountType = 330;
+    npool.basetypes.v1.SignMethod LoginAccountType = 330;
     string          LoginToken                  = 340;
     string          LoginClientIP               = 350;
     string          LoginClientUserAgent        = 360;
@@ -204,7 +204,7 @@ message GetUserResponse {
 message VerifyAccountRequest {
     string AppID        = 10;
     string Account      = 20;
-    basetypes.v1.SignMethod AccountType = 30;
+    npool.basetypes.v1.SignMethod AccountType = 30;
     string PasswordHash = 40;
 }
 
