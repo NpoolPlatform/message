@@ -4,7 +4,7 @@ package account.gateway.transfer.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/transfer";
 
-import "basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/signmethod.proto";
 import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -66,10 +66,10 @@ message CreateTransferRequest {
     string AppID             = 10;
     string UserID            = 20;
     string Account           = 30;
-    basetypes.v1.SignMethod AccountType       = 40;
+    npool.basetypes.v1.SignMethod AccountType       = 40;
     string VerificationCode  = 50;
     string TargetAccount     = 60;
-    basetypes.v1.SignMethod TargetAccountType = 70;
+    npool.basetypes.v1.SignMethod TargetAccountType = 70;
 
 }
 

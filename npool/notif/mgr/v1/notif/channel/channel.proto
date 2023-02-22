@@ -5,7 +5,7 @@ package notif.manager.notif1.channel.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/notif/channel";
 
 import "npool/notif/mgr/v1/channel/channel.proto";
-import "basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/usedfor.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -25,14 +25,14 @@ service Manager {
 message ChannelReq {
     optional string               ID        = 10;
     optional string               AppID     = 20;
-    optional basetypes.v1.UsedFor EventType = 30;
+    optional npool.basetypes.v1.UsedFor EventType = 30;
     optional notif.manager.channel.v1.NotifChannel Channel = 40;
 }
 
 message Channel {
     string               ID        = 10;
     string               AppID     = 20;
-    basetypes.v1.UsedFor EventType = 30;
+    npool.basetypes.v1.UsedFor EventType = 30;
     notif.manager.channel.v1.NotifChannel Channel = 40;
     uint32               CreatedAt = 50;
     uint32               UpdatedAt = 60;
