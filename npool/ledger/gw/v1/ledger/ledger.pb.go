@@ -1728,7 +1728,7 @@ type CreateWithdrawRequest struct {
 	CoinTypeID       string        `protobuf:"bytes,30,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
 	AccountID        string        `protobuf:"bytes,40,opt,name=AccountID,proto3" json:"AccountID,omitempty"`
 	Amount           string        `protobuf:"bytes,50,opt,name=Amount,proto3" json:"Amount,omitempty"`
-	AccountType      v1.SignMethod `protobuf:"varint,60,opt,name=AccountType,proto3,enum=npool.basetypes.v1.SignMethod" json:"AccountType,omitempty"`
+	AccountType      v1.SignMethod `protobuf:"varint,60,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod" json:"AccountType,omitempty"`
 	Account          string        `protobuf:"bytes,70,opt,name=Account,proto3" json:"Account,omitempty"`
 	VerificationCode string        `protobuf:"bytes,80,opt,name=VerificationCode,proto3" json:"VerificationCode,omitempty"`
 }
@@ -2530,7 +2530,7 @@ type CreateTransferRequest struct {
 	AppID            string        `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	UserID           string        `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	Account          string        `protobuf:"bytes,30,opt,name=Account,proto3" json:"Account,omitempty"`
-	AccountType      v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=npool.basetypes.v1.SignMethod" json:"AccountType,omitempty"`
+	AccountType      v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod" json:"AccountType,omitempty"`
 	VerificationCode string        `protobuf:"bytes,50,opt,name=VerificationCode,proto3" json:"VerificationCode,omitempty"`
 	TargetUserID     string        `protobuf:"bytes,60,opt,name=TargetUserID,proto3" json:"TargetUserID,omitempty"`
 	Amount           string        `protobuf:"bytes,70,opt,name=Amount,proto3" json:"Amount,omitempty"`
@@ -3595,7 +3595,7 @@ var file_npool_ledger_gw_v1_ledger_ledger_proto_goTypes = []interface{}{
 	(detail.IOType)(0),                   // 36: ledger.manager.ledger.detail.v1.IOType
 	(detail.IOSubType)(0),                // 37: ledger.manager.ledger.detail.v1.IOSubType
 	(withdraw.WithdrawState)(0),          // 38: ledger.manager.ledger.withdraw.v1.WithdrawState
-	(v1.SignMethod)(0),                   // 39: npool.basetypes.v1.SignMethod
+	(v1.SignMethod)(0),                   // 39: basetypes.v1.SignMethod
 }
 var file_npool_ledger_gw_v1_ledger_ledger_proto_depIdxs = []int32{
 	0,  // 0: ledger.gateway.ledger1.v1.GetGeneralsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.General
@@ -3609,13 +3609,13 @@ var file_npool_ledger_gw_v1_ledger_ledger_proto_depIdxs = []int32{
 	12, // 8: ledger.gateway.ledger1.v1.GetIntervalProfitsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.Profit
 	17, // 9: ledger.gateway.ledger1.v1.GetGoodProfitsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.GoodProfit
 	38, // 10: ledger.gateway.ledger1.v1.Withdraw.State:type_name -> ledger.manager.ledger.withdraw.v1.WithdrawState
-	39, // 11: ledger.gateway.ledger1.v1.CreateWithdrawRequest.AccountType:type_name -> npool.basetypes.v1.SignMethod
+	39, // 11: ledger.gateway.ledger1.v1.CreateWithdrawRequest.AccountType:type_name -> basetypes.v1.SignMethod
 	20, // 12: ledger.gateway.ledger1.v1.CreateWithdrawResponse.Info:type_name -> ledger.gateway.ledger1.v1.Withdraw
 	20, // 13: ledger.gateway.ledger1.v1.GetWithdrawsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.Withdraw
 	20, // 14: ledger.gateway.ledger1.v1.GetIntervalWithdrawsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.Withdraw
 	20, // 15: ledger.gateway.ledger1.v1.GetAppWithdrawsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.Withdraw
 	20, // 16: ledger.gateway.ledger1.v1.GetNAppWithdrawsResponse.Infos:type_name -> ledger.gateway.ledger1.v1.Withdraw
-	39, // 17: ledger.gateway.ledger1.v1.CreateTransferRequest.AccountType:type_name -> npool.basetypes.v1.SignMethod
+	39, // 17: ledger.gateway.ledger1.v1.CreateTransferRequest.AccountType:type_name -> basetypes.v1.SignMethod
 	31, // 18: ledger.gateway.ledger1.v1.CreateTransferResponse.Info:type_name -> ledger.gateway.ledger1.v1.Transfer
 	7,  // 19: ledger.gateway.ledger1.v1.CreateAppUserDepositResponse.Info:type_name -> ledger.gateway.ledger1.v1.Detail
 	1,  // 20: ledger.gateway.ledger1.v1.Gateway.GetGenerals:input_type -> ledger.gateway.ledger1.v1.GetGeneralsRequest

@@ -27,7 +27,7 @@ message Notif {
     string UserID      = 30;
     bool   Notified    = 40;
     string LangID      = 50;
-    npool.basetypes.v1.UsedFor EventType = 60;
+    basetypes.v1.UsedFor EventType = 60;
     bool   UseTemplate = 70;
     string Title       = 80;
     string Content     = 90;
@@ -101,7 +101,7 @@ message GetNotifOnlyResponse {
 message GenerateNotifsRequest {
     string                                             AppID     = 10;
     string                                             UserID    = 20;
-    npool.basetypes.v1.UsedFor                               EventType = 30;
+    basetypes.v1.UsedFor                               EventType = 30;
     optional notif.middleware.template.v1.TemplateVars Vars      = 40;
     optional string                                    Extra     = 50;
 }

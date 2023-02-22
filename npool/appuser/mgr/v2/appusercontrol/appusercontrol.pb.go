@@ -31,7 +31,7 @@ type AppUserControlReq struct {
 	AppID              *string        `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID             *string        `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
 	GoogleAuthVerified *bool          `protobuf:"varint,40,opt,name=GoogleAuthVerified,proto3,oneof" json:"GoogleAuthVerified,omitempty"`
-	SigninVerifyType   *v1.SignMethod `protobuf:"varint,50,opt,name=SigninVerifyType,proto3,enum=npool.basetypes.v1.SignMethod,oneof" json:"SigninVerifyType,omitempty"`
+	SigninVerifyType   *v1.SignMethod `protobuf:"varint,50,opt,name=SigninVerifyType,proto3,enum=basetypes.v1.SignMethod,oneof" json:"SigninVerifyType,omitempty"`
 	Kol                *bool          `protobuf:"varint,60,opt,name=Kol,proto3,oneof" json:"Kol,omitempty"`
 	KolConfirmed       *bool          `protobuf:"varint,70,opt,name=KolConfirmed,proto3,oneof" json:"KolConfirmed,omitempty"`
 }
@@ -126,7 +126,7 @@ type AppUserControl struct {
 	AppID              string        `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	UserID             string        `protobuf:"bytes,30,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	GoogleAuthVerified bool          `protobuf:"varint,40,opt,name=GoogleAuthVerified,proto3" json:"GoogleAuthVerified,omitempty"`
-	SigninVerifyType   v1.SignMethod `protobuf:"varint,50,opt,name=SigninVerifyType,proto3,enum=npool.basetypes.v1.SignMethod" json:"SigninVerifyType,omitempty"`
+	SigninVerifyType   v1.SignMethod `protobuf:"varint,50,opt,name=SigninVerifyType,proto3,enum=basetypes.v1.SignMethod" json:"SigninVerifyType,omitempty"`
 	Kol                bool          `protobuf:"varint,60,opt,name=Kol,proto3" json:"Kol,omitempty"`
 	KolConfirmed       bool          `protobuf:"varint,70,opt,name=KolConfirmed,proto3" json:"KolConfirmed,omitempty"`
 }
@@ -1589,13 +1589,13 @@ var file_npool_appuser_mgr_v2_appusercontrol_appusercontrol_proto_goTypes = []in
 	(*CountAppUserControlsResponse)(nil),     // 20: appuser.manager.appusercontrol.v2.CountAppUserControlsResponse
 	(*DeleteAppUserControlRequest)(nil),      // 21: appuser.manager.appusercontrol.v2.DeleteAppUserControlRequest
 	(*DeleteAppUserControlResponse)(nil),     // 22: appuser.manager.appusercontrol.v2.DeleteAppUserControlResponse
-	(v1.SignMethod)(0),                       // 23: npool.basetypes.v1.SignMethod
+	(v1.SignMethod)(0),                       // 23: basetypes.v1.SignMethod
 	(*npool.StringVal)(nil),                  // 24: npool.v1.StringVal
 	(*npool.BoolVal)(nil),                    // 25: npool.v1.BoolVal
 }
 var file_npool_appuser_mgr_v2_appusercontrol_appusercontrol_proto_depIdxs = []int32{
-	23, // 0: appuser.manager.appusercontrol.v2.AppUserControlReq.SigninVerifyType:type_name -> npool.basetypes.v1.SignMethod
-	23, // 1: appuser.manager.appusercontrol.v2.AppUserControl.SigninVerifyType:type_name -> npool.basetypes.v1.SignMethod
+	23, // 0: appuser.manager.appusercontrol.v2.AppUserControlReq.SigninVerifyType:type_name -> basetypes.v1.SignMethod
+	23, // 1: appuser.manager.appusercontrol.v2.AppUserControl.SigninVerifyType:type_name -> basetypes.v1.SignMethod
 	24, // 2: appuser.manager.appusercontrol.v2.Conds.ID:type_name -> npool.v1.StringVal
 	24, // 3: appuser.manager.appusercontrol.v2.Conds.AppID:type_name -> npool.v1.StringVal
 	24, // 4: appuser.manager.appusercontrol.v2.Conds.UserID:type_name -> npool.v1.StringVal

@@ -152,10 +152,10 @@ type CreateTransferRequest struct {
 	AppID             string        `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	UserID            string        `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	Account           string        `protobuf:"bytes,30,opt,name=Account,proto3" json:"Account,omitempty"`
-	AccountType       v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=npool.basetypes.v1.SignMethod" json:"AccountType,omitempty"`
+	AccountType       v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod" json:"AccountType,omitempty"`
 	VerificationCode  string        `protobuf:"bytes,50,opt,name=VerificationCode,proto3" json:"VerificationCode,omitempty"`
 	TargetAccount     string        `protobuf:"bytes,60,opt,name=TargetAccount,proto3" json:"TargetAccount,omitempty"`
-	TargetAccountType v1.SignMethod `protobuf:"varint,70,opt,name=TargetAccountType,proto3,enum=npool.basetypes.v1.SignMethod" json:"TargetAccountType,omitempty"`
+	TargetAccountType v1.SignMethod `protobuf:"varint,70,opt,name=TargetAccountType,proto3,enum=basetypes.v1.SignMethod" json:"TargetAccountType,omitempty"`
 }
 
 func (x *CreateTransferRequest) Reset() {
@@ -957,11 +957,11 @@ var file_npool_account_gw_v1_transfer_transfer_proto_goTypes = []interface{}{
 	(*GetAppTransfersResponse)(nil),  // 8: account.gateway.transfer.v1.GetAppTransfersResponse
 	(*GetNAppTransfersRequest)(nil),  // 9: account.gateway.transfer.v1.GetNAppTransfersRequest
 	(*GetNAppTransfersResponse)(nil), // 10: account.gateway.transfer.v1.GetNAppTransfersResponse
-	(v1.SignMethod)(0),               // 11: npool.basetypes.v1.SignMethod
+	(v1.SignMethod)(0),               // 11: basetypes.v1.SignMethod
 }
 var file_npool_account_gw_v1_transfer_transfer_proto_depIdxs = []int32{
-	11, // 0: account.gateway.transfer.v1.CreateTransferRequest.AccountType:type_name -> npool.basetypes.v1.SignMethod
-	11, // 1: account.gateway.transfer.v1.CreateTransferRequest.TargetAccountType:type_name -> npool.basetypes.v1.SignMethod
+	11, // 0: account.gateway.transfer.v1.CreateTransferRequest.AccountType:type_name -> basetypes.v1.SignMethod
+	11, // 1: account.gateway.transfer.v1.CreateTransferRequest.TargetAccountType:type_name -> basetypes.v1.SignMethod
 	0,  // 2: account.gateway.transfer.v1.CreateTransferResponse.Info:type_name -> account.gateway.transfer.v1.Transfer
 	0,  // 3: account.gateway.transfer.v1.DeleteTransferResponse.Info:type_name -> account.gateway.transfer.v1.Transfer
 	0,  // 4: account.gateway.transfer.v1.GetTransfersResponse.Infos:type_name -> account.gateway.transfer.v1.Transfer

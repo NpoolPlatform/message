@@ -30,7 +30,7 @@ type ChannelReq struct {
 
 	ID        *string               `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	AppID     *string               `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
-	EventType *v1.UsedFor           `protobuf:"varint,30,opt,name=EventType,proto3,enum=npool.basetypes.v1.UsedFor,oneof" json:"EventType,omitempty"`
+	EventType *v1.UsedFor           `protobuf:"varint,30,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor,oneof" json:"EventType,omitempty"`
 	Channel   *channel.NotifChannel `protobuf:"varint,40,opt,name=Channel,proto3,enum=notif.manager.channel.v1.NotifChannel,oneof" json:"Channel,omitempty"`
 }
 
@@ -101,7 +101,7 @@ type Channel struct {
 
 	ID        string               `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 	AppID     string               `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	EventType v1.UsedFor           `protobuf:"varint,30,opt,name=EventType,proto3,enum=npool.basetypes.v1.UsedFor" json:"EventType,omitempty"`
+	EventType v1.UsedFor           `protobuf:"varint,30,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor" json:"EventType,omitempty"`
 	Channel   channel.NotifChannel `protobuf:"varint,40,opt,name=Channel,proto3,enum=notif.manager.channel.v1.NotifChannel" json:"Channel,omitempty"`
 	CreatedAt uint32               `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt uint32               `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
@@ -1524,16 +1524,16 @@ var file_npool_notif_mgr_v1_notif_channel_channel_proto_goTypes = []interface{}{
 	(*CountChannelsResponse)(nil),     // 20: notif.manager.notif1.channel.v1.CountChannelsResponse
 	(*DeleteChannelRequest)(nil),      // 21: notif.manager.notif1.channel.v1.DeleteChannelRequest
 	(*DeleteChannelResponse)(nil),     // 22: notif.manager.notif1.channel.v1.DeleteChannelResponse
-	(v1.UsedFor)(0),                   // 23: npool.basetypes.v1.UsedFor
+	(v1.UsedFor)(0),                   // 23: basetypes.v1.UsedFor
 	(channel.NotifChannel)(0),         // 24: notif.manager.channel.v1.NotifChannel
 	(*npool.StringVal)(nil),           // 25: npool.v1.StringVal
 	(*npool.Uint32Val)(nil),           // 26: npool.v1.Uint32Val
 	(*npool.Uint32SliceVal)(nil),      // 27: npool.v1.Uint32SliceVal
 }
 var file_npool_notif_mgr_v1_notif_channel_channel_proto_depIdxs = []int32{
-	23, // 0: notif.manager.notif1.channel.v1.ChannelReq.EventType:type_name -> npool.basetypes.v1.UsedFor
+	23, // 0: notif.manager.notif1.channel.v1.ChannelReq.EventType:type_name -> basetypes.v1.UsedFor
 	24, // 1: notif.manager.notif1.channel.v1.ChannelReq.Channel:type_name -> notif.manager.channel.v1.NotifChannel
-	23, // 2: notif.manager.notif1.channel.v1.Channel.EventType:type_name -> npool.basetypes.v1.UsedFor
+	23, // 2: notif.manager.notif1.channel.v1.Channel.EventType:type_name -> basetypes.v1.UsedFor
 	24, // 3: notif.manager.notif1.channel.v1.Channel.Channel:type_name -> notif.manager.channel.v1.NotifChannel
 	25, // 4: notif.manager.notif1.channel.v1.Conds.ID:type_name -> npool.v1.StringVal
 	25, // 5: notif.manager.notif1.channel.v1.Conds.AppID:type_name -> npool.v1.StringVal

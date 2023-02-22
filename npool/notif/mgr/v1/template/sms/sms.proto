@@ -23,7 +23,7 @@ message SMSTemplateReq {
     optional string ID      = 10;
     optional string AppID   = 20;
     optional string LangID  = 30;
-    optional npool.basetypes.v1.UsedFor UsedFor = 40;
+    optional basetypes.v1.UsedFor UsedFor = 40;
     optional string Subject = 50;
     optional string Message = 60;
 }
@@ -32,7 +32,7 @@ message SMSTemplate {
     string ID      = 10;
     string AppID   = 20;
     string LangID  = 30;
-    npool.basetypes.v1.UsedFor UsedFor = 40;
+    basetypes.v1.UsedFor UsedFor = 40;
     string Subject = 50;
     string Message = 60;
 }
