@@ -5,7 +5,7 @@ package chain.manager.tx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mgr/v1/tx";
 
 import "google/protobuf/empty.proto";
-import "npool/basetypes/v1/txtype.proto";
+import "basetypes/v1/txtype.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -41,7 +41,7 @@ message TxReq {
     optional string    ChainTxID      = 70;
     optional TxState   State          = 80;
     optional string    Extra          = 90;
-    optional npool.basetypes.v1.TxType Type = 100;
+    optional basetypes.v1.TxType Type = 100;
 }
 
 message Tx {
@@ -54,7 +54,7 @@ message Tx {
     string  ChainTxID      = 70;
     TxState State          = 80;
     string  Extra          = 90;
-    npool.basetypes.v1.TxType Type = 100;
+    basetypes.v1.TxType Type = 100;
     uint32  CreatedAt      = 110;
     uint32  UpdatedAt      = 120;
 }

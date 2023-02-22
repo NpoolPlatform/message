@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package npool.basetypes.v1;
+package basetypes.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+option go_package = "github.com/NpoolPlatform/message/basetypes/v1";
 
 enum ERR {
     OK = 0;
