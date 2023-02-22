@@ -113,15 +113,15 @@ message Good {
     uint32           BenefitIntervalHours = 361;
 
     // @inject_tag: sql:"good_total"
-    uint32           GoodTotal          = 370;
+    string           GoodTotal          = 370;
     // @inject_tag: sql:"good_locked"
-    uint32           GoodLocked         = 380;
+    string           GoodLocked         = 380;
     // @inject_tag: sql:"good_in_service"
-    uint32           GoodInService      = 390;
+    string           GoodInService      = 390;
     // @inject_tag: sql:"good_wait_start"
-    uint32           GoodWaitStart      = 391;
+    string           GoodWaitStart      = 391;
     // @inject_tag: sql:"good_sold"
-    uint32           GoodSold           = 400;
+    string           GoodSold           = 400;
 
     // @inject_tag: sql:"start_at"
     uint32           StartAt            = 410;

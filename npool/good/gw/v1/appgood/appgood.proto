@@ -126,11 +126,11 @@ message Good {
     }
     repeated CoinInfo SupportCoins      = 460;
 
-    uint32           Total          = 470;
-    uint32           Locked         = 480;
-    uint32           InService      = 490;
-    uint32           WaitStart      = 491;
-    uint32           Sold           = 510;
+    string           Total          = 470;
+    string           Locked         = 480;
+    string           InService      = 490;
+    string           WaitStart      = 491;
+    string           Sold           = 510;
 
     repeated Good    SubGoods           = 520;
 

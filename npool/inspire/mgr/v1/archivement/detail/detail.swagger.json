@@ -92,7 +92,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Units": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1StringVal"
         },
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
@@ -173,8 +173,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Amount": {
           "type": "string"
@@ -228,8 +227,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Amount": {
           "type": "string"

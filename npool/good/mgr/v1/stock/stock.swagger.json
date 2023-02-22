@@ -156,24 +156,19 @@
           "type": "string"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Locked": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "InService": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "WaitStart": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "Sold": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -199,24 +194,19 @@
           "type": "string"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Locked": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "InService": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "WaitStart": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "Sold": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     },

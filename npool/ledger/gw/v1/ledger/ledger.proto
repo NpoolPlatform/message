@@ -254,7 +254,7 @@ message GoodProfit {
     string GoodName   = 20;
     string GoodUnit   = 30;
     uint32 GoodServicePeriodDays = 31;
-    uint32 Units      = 40;
+    string Units      = 40;
     string CoinTypeID = 50;
     string CoinName   = 60;
     repeated string DisplayNames = 61;

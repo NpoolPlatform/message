@@ -422,24 +422,19 @@
           }
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Locked": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "InService": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "WaitStart": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Sold": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "SubGoods": {
           "type": "array",

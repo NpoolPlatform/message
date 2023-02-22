@@ -77,10 +77,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "TotalUnits": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1StringVal"
         },
         "SelfUnits": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1StringVal"
         },
         "TotalCommission": {
           "$ref": "#/definitions/v1StringVal"
@@ -172,12 +172,10 @@
           "type": "string"
         },
         "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "TotalCommission": {
           "type": "string",
@@ -213,12 +211,10 @@
           "type": "string"
         },
         "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "TotalCommission": {
           "type": "string"
@@ -281,18 +277,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

@@ -84,8 +84,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Amount": {
           "type": "string"
