@@ -29,6 +29,7 @@ message EventReq {
     optional string               Credits       = 50;
     optional string               CreditsPerUSD = 60;
     optional uint32               MaxConsecutive = 70;
+    optional string               GoodID        = 80;
 }
 
 message Event {
@@ -39,6 +40,7 @@ message Event {
     string               Credits       = 50;
     string               CreditsPerUSD = 60;
     uint32               MaxConsecutive = 70;
+    string               GoodID        = 80;
     uint32               CreatedAt     = 200;
     uint32               UpdatedAt     = 210;
     uint32               DeletedAt     = 220;
@@ -48,6 +50,7 @@ message Conds {
     optional basetypes.v1.StringVal ID        = 10;
     optional basetypes.v1.StringVal AppID     = 20;
     optional basetypes.v1.Uint32Val EventType = 30;
+    optional basetypes.v1.StringVal GoodID    = 40;
 }
 
 message CreateEventRequest {

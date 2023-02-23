@@ -37,6 +37,8 @@ message Event {
     string               Credits       = 50;
     string               CreditsPerUSD = 60;
     uint32               MaxConsecutive = 70;
+    string               GoodID        = 80;
+    string               GoodName      = 90;
     uint32               CreatedAt     = 200;
     uint32               UpdatedAt     = 210;
     uint32               DeletedAt     = 220;
@@ -49,6 +51,7 @@ message CreateEventRequest {
     optional string      Credits       = 40;
     optional string      CreditsPerUSD = 50;
     optional uint32      MaxConsecutive = 60;
+    optional string      GoodID        = 70;
 }
 
 message CreateEventResponse {

@@ -55,6 +55,9 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -122,6 +125,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "GoodID": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -163,6 +169,9 @@
         "MaxConsecutive": {
           "type": "integer",
           "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },
@@ -263,6 +272,7 @@
         "DepositReceived",
         "KYCApproved",
         "KYCRejected",
+        "Purchase",
         "Announcement"
       ],
       "default": "DefaultUsedFor"
