@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetEventOnly(ctx context.Context, in *GetEventOnlyRequest, opts ...grpc.CallOption) (*GetEventOnlyResponse, error)
+	RewardEvent(ctx context.Context, in *RewardEventRequest, opts ...grpc.CallOption) (*RewardEventResponse, error)
 }
 
 type middlewareClient struct {
@@ -42,11 +43,21 @@ func (c *middlewareClient) GetEventOnly(ctx context.Context, in *GetEventOnlyReq
 	return out, nil
 }
 
+func (c *middlewareClient) RewardEvent(ctx context.Context, in *RewardEventRequest, opts ...grpc.CallOption) (*RewardEventResponse, error) {
+	out := new(RewardEventResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.event.v1.Middleware/RewardEvent", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	GetEventOnly(context.Context, *GetEventOnlyRequest) (*GetEventOnlyResponse, error)
+	RewardEvent(context.Context, *RewardEventRequest) (*RewardEventResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -56,6 +67,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) GetEventOnly(context.Context, *GetEventOnlyRequest) (*GetEventOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEventOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) RewardEvent(context.Context, *RewardEventRequest) (*RewardEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RewardEvent not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -88,6 +102,24 @@ func _Middleware_GetEventOnly_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_RewardEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RewardEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).RewardEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.event.v1.Middleware/RewardEvent",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).RewardEvent(ctx, req.(*RewardEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +130,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEventOnly",
 			Handler:    _Middleware_GetEventOnly_Handler,
+		},
+		{
+			MethodName: "RewardEvent",
+			Handler:    _Middleware_RewardEvent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
