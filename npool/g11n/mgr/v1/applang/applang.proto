@@ -42,6 +42,7 @@ message Conds {
     optional npool.v1.StringVal AppID   = 20;
     optional npool.v1.StringVal LangID  = 30;
     optional npool.v1.BoolVal   Main    = 40;
+    optional npool.v1.StringSliceVal LangIDs = 50;
 }
 
 
