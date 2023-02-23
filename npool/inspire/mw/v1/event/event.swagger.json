@@ -17,11 +17,51 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "basetypesv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "inspiremiddlewareeventv1GetEventOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "managereventv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/basetypesv1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
         }
       }
     },
@@ -52,22 +92,32 @@
         }
       }
     },
-    "v1Conds": {
+    "v1Coupon": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
         }
       }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1Event": {
       "type": "object",
@@ -81,10 +131,10 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "CouponIDs": {
+        "Coupons": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1Coupon"
           }
         },
         "Credits": {
@@ -119,29 +169,6 @@
       "properties": {
         "Info": {
           "type": "string"
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
