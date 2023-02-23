@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateEventResponse"
+              "$ref": "#/definitions/inspiregatewayeventv1CreateEventResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateEventRequest"
+              "$ref": "#/definitions/inspiregatewayeventv1CreateEventRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetEventsResponse"
+              "$ref": "#/definitions/inspiregatewayeventv1GetEventsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetEventsRequest"
+              "$ref": "#/definitions/inspiregatewayeventv1GetEventsRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateEventResponse"
+              "$ref": "#/definitions/inspiregatewayeventv1UpdateEventResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateEventRequest"
+              "$ref": "#/definitions/inspiregatewayeventv1UpdateEventRequest"
             }
           }
         ],
@@ -114,34 +114,24 @@
     }
   },
   "definitions": {
-    "protobufAny": {
+    "inspiregatewayeventv1Coupon": {
       "type": "object",
       "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
+        "ID": {
           "type": "string"
         },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
         }
       }
     },
-    "v1CreateEventRequest": {
+    "inspiregatewayeventv1CreateEventRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -150,10 +140,10 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "CouponIDs": {
+        "Coupons": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/inspiremanagereventv1Coupon"
           }
         },
         "Credits": {
@@ -171,15 +161,15 @@
         }
       }
     },
-    "v1CreateEventResponse": {
+    "inspiregatewayeventv1CreateEventResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Event"
+          "$ref": "#/definitions/inspiregatewayeventv1Event"
         }
       }
     },
-    "v1Event": {
+    "inspiregatewayeventv1Event": {
       "type": "object",
       "properties": {
         "ID": {
@@ -193,6 +183,12 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
+        },
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inspiregatewayeventv1Coupon"
+          }
         },
         "Credits": {
           "type": "string"
@@ -224,7 +220,7 @@
         }
       }
     },
-    "v1GetEventsRequest": {
+    "inspiregatewayeventv1GetEventsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -240,13 +236,13 @@
         }
       }
     },
-    "v1GetEventsResponse": {
+    "inspiregatewayeventv1GetEventsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Event"
+            "$ref": "#/definitions/inspiregatewayeventv1Event"
           }
         },
         "Total": {
@@ -255,7 +251,7 @@
         }
       }
     },
-    "v1UpdateEventRequest": {
+    "inspiregatewayeventv1UpdateEventRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -264,10 +260,10 @@
         "AppID": {
           "type": "string"
         },
-        "CouponIDs": {
+        "Coupons": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/inspiremanagereventv1Coupon"
           }
         },
         "Credits": {
@@ -282,13 +278,67 @@
         }
       }
     },
-    "v1UpdateEventResponse": {
+    "inspiregatewayeventv1UpdateEventResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Event"
+          "$ref": "#/definitions/inspiregatewayeventv1Event"
         }
       }
+    },
+    "inspiremanagereventv1Coupon": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1UsedFor": {
       "type": "string",

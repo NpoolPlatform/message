@@ -5,6 +5,7 @@ package inspire.manager.event.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mgr/v1/event";
 
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -21,11 +22,16 @@ service Manager {
     rpc DeleteEvent     (DeleteEventRequest)     returns (DeleteEventResponse)     {}
 }
 
+message Coupon {
+    string                                         ID         = 10;
+    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+}
+
 message EventReq {
     optional string               ID            = 10;
     optional string               AppID         = 20;
     optional basetypes.v1.UsedFor EventType     = 30;
-    repeated string               CouponIDs     = 40;
+    repeated Coupon               Coupons       = 40;
     optional string               Credits       = 50;
     optional string               CreditsPerUSD = 60;
     optional uint32               MaxConsecutive = 70;
@@ -36,7 +42,7 @@ message Event {
     string               ID            = 10;
     string               AppID         = 20;
     basetypes.v1.UsedFor EventType     = 30;
-    repeated string      CouponIDs     = 40;
+    repeated Coupon      Coupons       = 40;
     string               Credits       = 50;
     string               CreditsPerUSD = 60;
     uint32               MaxConsecutive = 70;
