@@ -117,7 +117,7 @@
     "v1RewardEventResponse": {
       "type": "object",
       "properties": {
-        "Credits": {
+        "Info": {
           "type": "string"
         }
       }

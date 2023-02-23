@@ -31,5 +31,5 @@ message RewardEventRequest {
 }
 
 message RewardEventResponse {
-    string Credits = 10;
+    string Info = 10;
 }
