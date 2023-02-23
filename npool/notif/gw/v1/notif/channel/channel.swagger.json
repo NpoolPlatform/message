@@ -335,6 +335,7 @@
         "DepositReceived",
         "KYCApproved",
         "KYCRejected",
+        "Purchase",
         "Announcement"
       ],
       "default": "DefaultUsedFor"
