@@ -306,6 +306,12 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
         }
       }
     },
