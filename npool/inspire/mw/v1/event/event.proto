@@ -5,10 +5,12 @@ package inspire.middleware.event.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event";
 
 import "npool/inspire/mgr/v1/event/event.proto";
+import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
     rpc GetEventOnly (GetEventOnlyRequest) returns (GetEventOnlyResponse) {}
+    rpc RewardEvent  (RewardEventRequest)  returns (RewardEventResponse)  {}
 }
 
 message GetEventOnlyRequest {
@@ -19,3 +21,15 @@ message GetEventOnlyResponse {
     inspire.manager.event.v1.Event Info = 10;
 }
 
+message RewardEventRequest {
+    string               AppID      = 10;
+    string               UserID     = 20;
+    basetypes.v1.UsedFor EventType  = 30;
+    optional string      GoodID     = 40;
+    uint32               Consective = 50;
+    string               Amount     = 60;
+}
+
+message RewardEventResponse {
+    string Credits = 10;
+}

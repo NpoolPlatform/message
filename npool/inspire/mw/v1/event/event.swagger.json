@@ -114,6 +114,14 @@
         }
       }
     },
+    "v1RewardEventResponse": {
+      "type": "object",
+      "properties": {
+        "Credits": {
+          "type": "string"
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
