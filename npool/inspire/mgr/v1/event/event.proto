@@ -28,6 +28,7 @@ message EventReq {
     repeated string               CouponIDs     = 40;
     optional string               Credits       = 50;
     optional string               CreditsPerUSD = 60;
+    optional uint32               MaxConsecutive = 70;
 }
 
 message Event {
@@ -37,9 +38,10 @@ message Event {
     repeated string      CouponIDs     = 40;
     string               Credits       = 50;
     string               CreditsPerUSD = 60;
-    uint32               CreatedAt     = 70;
-    uint32               UpdatedAt     = 80;
-    uint32               DeletedAt     = 90;
+    uint32               MaxConsecutive = 70;
+    uint32               CreatedAt     = 200;
+    uint32               UpdatedAt     = 210;
+    uint32               DeletedAt     = 220;
 }
 
 message Conds {

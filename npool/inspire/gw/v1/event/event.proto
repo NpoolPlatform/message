@@ -36,9 +36,10 @@ message Event {
     basetypes.v1.UsedFor EventType     = 40;
     string               Credits       = 50;
     string               CreditsPerUSD = 60;
-    uint32               CreatedAt     = 70;
-    uint32               UpdatedAt     = 80;
-    uint32               DeletedAt     = 90;
+    uint32               MaxConsecutive = 70;
+    uint32               CreatedAt     = 200;
+    uint32               UpdatedAt     = 210;
+    uint32               DeletedAt     = 220;
 }
 
 message CreateEventRequest {
@@ -47,6 +48,7 @@ message CreateEventRequest {
     repeated string      CouponIDs     = 30;
     optional string      Credits       = 40;
     optional string      CreditsPerUSD = 50;
+    optional uint32      MaxConsecutive = 60;
 }
 
 message CreateEventResponse {
@@ -71,6 +73,7 @@ message UpdateEventRequest {
     repeated string CouponIDs     = 30;
     optional string Credits       = 40;
     optional string CreditsPerUSD = 50;
+    optional uint32 MaxConsecutive = 60;
 }
 
 message UpdateEventResponse {
