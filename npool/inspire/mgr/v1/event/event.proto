@@ -36,6 +36,7 @@ message EventReq {
     optional string               CreditsPerUSD = 60;
     optional uint32               MaxConsecutive = 70;
     optional string               GoodID        = 80;
+    optional string               InviterLayers = 90;
 }
 
 message Event {
@@ -47,6 +48,7 @@ message Event {
     string               CreditsPerUSD = 60;
     uint32               MaxConsecutive = 70;
     string               GoodID        = 80;
+    uint32               InviterLayers = 90;
     uint32               CreatedAt     = 200;
     uint32               UpdatedAt     = 210;
     uint32               DeletedAt     = 220;
