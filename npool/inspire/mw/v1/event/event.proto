@@ -21,6 +21,12 @@ message GetEventOnlyResponse {
     inspire.manager.event.v1.Event Info = 10;
 }
 
+message Credit {
+    string AppID   = 10;
+    string UserID  = 20;
+    string Credits = 30;
+}
+
 message RewardEventRequest {
     string               AppID       = 10;
     string               UserID      = 20;
@@ -31,5 +37,5 @@ message RewardEventRequest {
 }
 
 message RewardEventResponse {
-    string Info = 10;
+    repeated Credit Infos = 10;
 }

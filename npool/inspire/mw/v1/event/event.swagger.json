@@ -119,6 +119,20 @@
       ],
       "default": "DefaultCouponType"
     },
+    "v1Credit": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Credits": {
+          "type": "string"
+        }
+      }
+    },
     "v1Event": {
       "type": "object",
       "properties": {
@@ -171,8 +185,11 @@
     "v1RewardEventResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "type": "string"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Credit"
+          }
         }
       }
     },
