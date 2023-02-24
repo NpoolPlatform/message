@@ -142,6 +142,7 @@
         "KYCApproved",
         "KYCRejected",
         "Purchase",
+        "AffiliatePurchase",
         "Announcement"
       ],
       "default": "DefaultUsedFor"
