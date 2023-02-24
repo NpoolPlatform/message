@@ -31,6 +31,7 @@ message AccountingRequest {
     string PaymentAmount          = 100;
     string GoodValue              = 110;
     inspire.manager.commission.v1.SettleType SettleType = 120;
+    bool   HasCommission          = 130;
 }
 
 message AccountingResponse {
