@@ -96,13 +96,14 @@ message Conds {
     optional npool.v1.StringVal UserID  = 40;
     optional npool.v1.Uint32Val Type    = 50;
     optional npool.v1.Uint32Val State   = 60;
-    optional npool.v1.StringVal FixAmountCouponID        = 70;
-    optional npool.v1.StringVal DiscountCouponID         = 80;
-    optional npool.v1.StringVal UserSpecialReductionID   = 90;
-    optional npool.v1.StringSliceVal IDs                 = 100;
-    optional npool.v1.Uint32Val LastBenefitAt            = 110;
-    optional npool.v1.StringVal      CouponID               = 120;
-    optional npool.v1.StringSliceVal CouponIDs              = 130;
+    optional npool.v1.StringVal FixAmountCouponID      = 70;
+    optional npool.v1.StringVal DiscountCouponID       = 80;
+    optional npool.v1.StringVal UserSpecialReductionID = 90;
+    optional npool.v1.StringSliceVal IDs       = 100;
+    optional npool.v1.Uint32Val LastBenefitAt  = 110;
+    optional npool.v1.StringVal      CouponID  = 120;
+    optional npool.v1.StringSliceVal CouponIDs = 130;
+    optional npool.v1.Uint32SliceVal States    = 140;
 }
 
 

@@ -76,6 +76,9 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "States": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
@@ -472,6 +475,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },
