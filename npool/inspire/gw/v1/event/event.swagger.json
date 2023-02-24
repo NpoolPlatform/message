@@ -158,6 +158,10 @@
         },
         "GoodID": {
           "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -205,6 +209,10 @@
         },
         "GoodName": {
           "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -273,6 +281,10 @@
           "type": "string"
         },
         "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InviterLayers": {
           "type": "integer",
           "format": "int64"
         }

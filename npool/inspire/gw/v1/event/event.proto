@@ -49,6 +49,7 @@ message Event {
     uint32               MaxConsecutive = 80;
     string               GoodID        = 90;
     string               GoodName      = 100;
+    uint32               InviterLayers = 110;
     uint32               CreatedAt     = 200;
     uint32               UpdatedAt     = 210;
     uint32               DeletedAt     = 220;
@@ -62,6 +63,7 @@ message CreateEventRequest {
     optional string      CreditsPerUSD = 50;
     optional uint32      MaxConsecutive = 60;
     optional string      GoodID        = 70;
+    optional uint32      InviterLayers = 80;
 }
 
 message CreateEventResponse {
@@ -87,6 +89,7 @@ message UpdateEventRequest {
     optional string Credits       = 40;
     optional string CreditsPerUSD = 50;
     optional uint32 MaxConsecutive = 60;
+    optional uint32 InviterLayers = 80;
 }
 
 message UpdateEventResponse {
