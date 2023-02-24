@@ -79,6 +79,15 @@
         }
       }
     },
+    "middlewareorder1v1CountOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "middlewareorder1v1CreateOrderResponse": {
       "type": "object",
       "properties": {

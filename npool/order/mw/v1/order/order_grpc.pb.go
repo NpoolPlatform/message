@@ -28,6 +28,7 @@ type MiddlewareClient interface {
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	GetOrderOnly(ctx context.Context, in *GetOrderOnlyRequest, opts ...grpc.CallOption) (*GetOrderOnlyResponse, error)
+	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -92,6 +93,15 @@ func (c *middlewareClient) GetOrderOnly(ctx context.Context, in *GetOrderOnlyReq
 	return out, nil
 }
 
+func (c *middlewareClient) CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error) {
+	out := new(CountOrdersResponse)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/CountOrders", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type MiddlewareServer interface {
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error)
+	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersReques
 }
 func (UnimplementedMiddlewareServer) GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -248,6 +262,24 @@ func _Middleware_GetOrderOnly_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CountOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CountOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.middleware.order1.v1.Middleware/CountOrders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CountOrders(ctx, req.(*CountOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrderOnly",
 			Handler:    _Middleware_GetOrderOnly_Handler,
+		},
+		{
+			MethodName: "CountOrders",
+			Handler:    _Middleware_CountOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
