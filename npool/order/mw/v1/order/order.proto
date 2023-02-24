@@ -154,6 +154,7 @@ message Conds {
     optional npool.v1.Uint32Val      LastBenefitAt          = 170;
     optional npool.v1.StringVal      CouponID               = 180;
     optional npool.v1.StringSliceVal CouponIDs              = 190;
+    optional npool.v1.Uint32SliceVal States                 = 200;
 }
 
 message CreateOrderRequest {
