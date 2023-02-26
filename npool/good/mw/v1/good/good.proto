@@ -33,11 +33,11 @@ message GoodReq {
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
-    optional uint32        Total              = 170;
-    optional int32         Locked             = 180;
-    optional int32         InService          = 190;
-    optional int32         WaitStart          = 191;
-    optional uint32        Sold               = 200;
+    optional string        Total              = 170;
+    optional string        Locked             = 180;
+    optional string        InService          = 190;
+    optional string        WaitStart          = 191;
+    optional string        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
@@ -131,15 +131,15 @@ message Good {
     // @inject_tag: sql:"good_stock_id"
     string           GoodStockID        = 310;
     // @inject_tag: sql:"good_total"
-    uint32           GoodTotal          = 320;
+    string           GoodTotal          = 320;
     // @inject_tag: sql:"good_locked"
-    uint32           GoodLocked         = 330;
+    string           GoodLocked         = 330;
     // @inject_tag: sql:"good_in_service"
-    uint32           GoodInService      = 340;
+    string           GoodInService      = 340;
     // @inject_tag: sql:"good_wait_start"
-    uint32           GoodWaitStart      = 341;
+    string           GoodWaitStart      = 341;
     // @inject_tag: sql:"good_sold"
-    uint32           GoodSold           = 350;
+    string           GoodSold           = 350;
 
     // @inject_tag: sql:"delivery_at"
     uint32           DeliveryAt         = 360;

@@ -193,8 +193,7 @@
           "type": "boolean"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PromotionID": {
           "type": "string"
@@ -268,8 +267,7 @@
           "type": "boolean"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PromotionID": {
           "type": "string"

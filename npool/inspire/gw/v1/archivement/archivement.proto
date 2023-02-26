@@ -36,8 +36,8 @@ message GoodArchivement {
     string CoinLogo           = 70;
     string CoinUnit           = 80;
 
-    uint32 TotalUnits         = 90;
-    uint32 SelfUnits          = 100;
+    string TotalUnits         = 90;
+    string SelfUnits          = 100;
     // In USD
     string TotalAmount        = 110;
     string SelfAmount         = 120;

@@ -208,12 +208,10 @@
           "type": "string"
         },
         "TotalUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "SelfUnits": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "TotalAmount": {
           "type": "string",

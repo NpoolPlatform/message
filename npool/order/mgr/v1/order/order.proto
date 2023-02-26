@@ -52,7 +52,7 @@ message OrderReq {
     optional string     UserID                  = 40;
     optional string     ParentOrderID           = 50;
     optional bool       PayWithParent           = 60;
-    optional uint32     Units                   = 70;
+    optional string     Units                   = 70;
     optional string     PromotionID             = 80;
     optional string     DiscountCouponID        = 90;
     optional string     UserSpecialReductionID  = 100;
@@ -73,7 +73,7 @@ message Order {
     string     UserID                  = 40;
     string     ParentOrderID           = 50;
     bool       PayWithParent           = 60;
-    uint32     Units                   = 70;
+    string     Units                   = 70;
     string     PromotionID             = 80;
     string     DiscountCouponID        = 90;
     string     UserSpecialReductionID  = 100;

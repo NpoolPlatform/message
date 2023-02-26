@@ -415,8 +415,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PaymentCoinID": {
           "type": "string"
@@ -573,8 +572,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PaymentID": {
           "type": "string"
@@ -778,8 +776,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PaymentCoinID": {
           "type": "string"
@@ -813,8 +810,7 @@
           "type": "string"
         },
         "Units": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "PaymentCoinID": {
           "type": "string"

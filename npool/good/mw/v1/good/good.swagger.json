@@ -218,28 +218,23 @@
           "title": "@inject_tag: sql:\"good_stock_id\""
         },
         "GoodTotal": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"good_total\""
         },
         "GoodLocked": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"good_locked\""
         },
         "GoodInService": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"good_in_service\""
         },
         "GoodWaitStart": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"good_wait_start\""
         },
         "GoodSold": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"good_sold\""
         },
         "DeliveryAt": {
@@ -358,24 +353,19 @@
           "type": "boolean"
         },
         "Total": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Locked": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "InService": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "WaitStart": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "Sold": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Posters": {
           "type": "array",

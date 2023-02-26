@@ -28,8 +28,8 @@ message GeneralReq {
     optional string CoinTypeID         = 50;
     optional string TotalAmount        = 60;
     optional string SelfAmount         = 70;
-    optional uint32 TotalUnits         = 80;
-    optional uint32 SelfUnits          = 90;
+    optional string TotalUnits         = 80;
+    optional string SelfUnits          = 90;
     optional string TotalCommission    = 100;
     optional string SelfCommission     = 110;
 }
@@ -44,8 +44,8 @@ message General {
     // Payment amount in USD
     string TotalAmount        = 60;
     string SelfAmount         = 70;
-    uint32 TotalUnits         = 80;
-    uint32 SelfUnits          = 90;
+    string TotalUnits         = 80;
+    string SelfUnits          = 90;
     // Commission amount in USD
     string TotalCommission    = 100;
     string SelfCommission     = 110;
@@ -59,8 +59,8 @@ message Conds {
     optional npool.v1.StringVal CoinTypeID         = 50;
     optional npool.v1.StringVal TotalAmount        = 60;
     optional npool.v1.StringVal SelfAmount         = 70;
-    optional npool.v1.Uint32Val TotalUnits         = 80;
-    optional npool.v1.Uint32Val SelfUnits          = 90;
+    optional npool.v1.StringVal TotalUnits         = 80;
+    optional npool.v1.StringVal SelfUnits          = 90;
     optional npool.v1.StringVal TotalCommission    = 100;
     optional npool.v1.StringVal SelfCommission     = 110;
     optional npool.v1.StringSliceVal UserIDs       = 120;
