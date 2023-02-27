@@ -499,7 +499,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -508,7 +508,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }
@@ -637,7 +637,7 @@
         "DailyRewardAmount": {
           "type": "string"
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -646,7 +646,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }
@@ -752,7 +752,7 @@
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -761,7 +761,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }
@@ -892,7 +892,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -901,7 +901,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }

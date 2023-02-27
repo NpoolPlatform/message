@@ -159,13 +159,13 @@ message Good {
     repeated string  DisplayNames        = 550;
 
     // @inject_tag: sql:"open_buy"
-    bool             OpenBuy         = 560;
+    bool             OpenPurchase      = 560;
     // @inject_tag: sql:"into_product_page"
-    bool             IntoProductPage = 570;
+    bool             IntoProductPage   = 570;
     // @inject_tag: sql:"can_cancel"
-    bool             CanCancel       = 580;
-    // @inject_tag: sql:"limit_units"
-    string           LimitUnits      = 590;
+    bool             CanCancel         = 580;
+    // @inject_tag: sql:"user_purchase_limit"
+    string           UserPurchaseLimit = 590;
 }
 
 message CreateGoodRequest {

@@ -133,7 +133,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -142,7 +142,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }
@@ -224,7 +224,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -233,7 +233,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }

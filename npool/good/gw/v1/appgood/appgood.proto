@@ -153,10 +153,10 @@ message Good {
     string           GoodBanner          = 650;
     repeated string  DisplayNames        = 660;
 
-    bool             OpenBuy         = 670;
-    bool             IntoProductPage = 680;
-    bool             CanCancel       = 690;
-    string           LimitUnits      = 700;
+    bool             OpenPurchase      = 670;
+    bool             IntoProductPage   = 680;
+    bool             CanCancel         = 690;
+    string           UserPurchaseLimit = 700;
 }
 
 message CreateNAppGoodRequest {
@@ -175,10 +175,10 @@ message CreateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
-    bool   OpenBuy         = 160;
-    bool   IntoProductPage = 170;
-    bool   CanCancel       = 180;
-    string LimitUnits      = 190;
+    bool   OpenPurchase      = 160;
+    bool   IntoProductPage   = 170;
+    bool   CanCancel         = 180;
+    string UserPurchaseLimit = 190;
 }
 
 message CreateNAppGoodResponse {
@@ -236,10 +236,10 @@ message UpdateAppGoodRequest {
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
-    optional bool   OpenBuy             = 200;
+    optional bool   OpenPurchase         = 200;
     optional bool   IntoProductPage     = 210;
     optional bool   CanCancel           = 220;
-    optional string LimitUnits          = 230;
+    optional string UserPurchaseLimit   = 230;
 }
 
 message UpdateAppGoodResponse {
@@ -263,10 +263,10 @@ message UpdateNAppGoodRequest {
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
-    optional bool   OpenBuy             = 190;
+    optional bool   OpenPurchase        = 190;
     optional bool   IntoProductPage     = 200;
     optional bool   CanCancel           = 210;
-    optional string LimitUnits          = 220;
+    optional string UserPurchaseLimit   = 220;
 }
 
 message UpdateNAppGoodResponse {

@@ -43,10 +43,10 @@ message AppGoodReq {
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
-    optional bool   OpenBuy             = 210;
+    optional bool   OpenPurchase        = 210;
     optional bool   IntoProductPage     = 220;
     optional bool   CanCancel           = 230;
-    optional string LimitUnits          = 240;
+    optional string UserPurchaseLimit   = 240;
 }
 
 message AppGood {
@@ -73,10 +73,10 @@ message AppGood {
     repeated string Descriptions = 210;
     string          GoodBanner   = 220;
     repeated string DisplayNames = 230;
-    bool            OpenBuy         = 240;
-    bool            IntoProductPage = 250;
-    bool            CanCancel       = 260;
-    string          LimitUnits      = 270;
+    bool            OpenPurchase      = 240;
+    bool            IntoProductPage   = 250;
+    bool            CanCancel         = 260;
+    string          UserPurchaseLimit = 270;
 }
 
 message Conds {
