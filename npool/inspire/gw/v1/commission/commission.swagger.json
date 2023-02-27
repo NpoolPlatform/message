@@ -297,6 +297,9 @@
         },
         "ToGoodID": {
           "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
