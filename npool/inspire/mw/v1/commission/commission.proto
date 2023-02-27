@@ -116,6 +116,7 @@ message CloneCommissionsRequest {
     string AppID      = 10;
     string FromGoodID = 20;
     string ToGoodID   = 30;
+    string Value      = 40;
 }
 
 message CloneCommissionsResponse {
