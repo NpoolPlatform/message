@@ -386,7 +386,7 @@
         },
         "OpenPurchase": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"open_buy\""
+          "title": "@inject_tag: sql:\"open_purchase\""
         },
         "IntoProductPage": {
           "type": "boolean",

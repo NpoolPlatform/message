@@ -158,7 +158,7 @@ message Good {
     string           DisplayNamesStr     = 540;
     repeated string  DisplayNames        = 550;
 
-    // @inject_tag: sql:"open_buy"
+    // @inject_tag: sql:"open_purchase"
     bool             OpenPurchase      = 560;
     // @inject_tag: sql:"into_product_page"
     bool             IntoProductPage   = 570;
