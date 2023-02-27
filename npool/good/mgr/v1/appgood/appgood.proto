@@ -45,7 +45,7 @@ message AppGoodReq {
     repeated string DisplayNames        = 200;
     optional bool   OpenPurchase        = 210;
     optional bool   IntoProductPage     = 220;
-    optional bool   CanCancel           = 230;
+    optional uint32 CancelableBefore    = 230;
     optional string UserPurchaseLimit   = 240;
 }
 
@@ -75,7 +75,7 @@ message AppGood {
     repeated string DisplayNames = 230;
     bool            OpenPurchase      = 240;
     bool            IntoProductPage   = 250;
-    bool            CanCancel         = 260;
+    uint32          CancelableBefore  = 260;
     string          UserPurchaseLimit = 270;
 }
 

@@ -155,7 +155,7 @@ message Good {
 
     bool             OpenPurchase      = 670;
     bool             IntoProductPage   = 680;
-    bool             CanCancel         = 690;
+    uint32           CancelableBefore  = 690;
     string           UserPurchaseLimit = 700;
 }
 
@@ -177,7 +177,7 @@ message CreateNAppGoodRequest {
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
     bool   OpenPurchase      = 160;
     bool   IntoProductPage   = 170;
-    bool   CanCancel         = 180;
+    uint32 CancelableBefore  = 180;
     string UserPurchaseLimit = 190;
 }
 
@@ -236,9 +236,9 @@ message UpdateAppGoodRequest {
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
-    optional bool   OpenPurchase         = 200;
+    optional bool   OpenPurchase        = 200;
     optional bool   IntoProductPage     = 210;
-    optional bool   CanCancel           = 220;
+    optional uint32 CancelableBefore    = 220;
     optional string UserPurchaseLimit   = 230;
 }
 
@@ -265,7 +265,7 @@ message UpdateNAppGoodRequest {
     repeated string DisplayNames        = 180;
     optional bool   OpenPurchase        = 190;
     optional bool   IntoProductPage     = 200;
-    optional bool   CanCancel           = 210;
+    optional uint32 CancelableBefore    = 210;
     optional string UserPurchaseLimit   = 220;
 }
 

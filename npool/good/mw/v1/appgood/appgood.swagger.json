@@ -392,9 +392,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"into_product_page\""
         },
-        "CanCancel": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"can_cancel\""
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cancelable_before\""
         },
         "UserPurchaseLimit": {
           "type": "string",
@@ -520,8 +521,9 @@
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CanCancel": {
-          "type": "boolean"
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserPurchaseLimit": {
           "type": "string"

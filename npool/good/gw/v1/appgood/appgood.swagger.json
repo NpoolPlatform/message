@@ -505,8 +505,9 @@
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CanCancel": {
-          "type": "boolean"
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -643,8 +644,9 @@
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CanCancel": {
-          "type": "boolean"
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -758,8 +760,9 @@
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CanCancel": {
-          "type": "boolean"
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -898,8 +901,9 @@
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CanCancel": {
-          "type": "boolean"
+        "CancelableBefore": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserPurchaseLimit": {
           "type": "string"
