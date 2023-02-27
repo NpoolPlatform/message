@@ -384,7 +384,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"open_buy\""
         },
@@ -396,9 +396,9 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"can_cancel\""
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"limit_units\""
+          "title": "@inject_tag: sql:\"user_purchase_limit\""
         }
       }
     },
@@ -514,7 +514,7 @@
             "type": "string"
           }
         },
-        "OpenBuy": {
+        "OpenPurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
@@ -523,7 +523,7 @@
         "CanCancel": {
           "type": "boolean"
         },
-        "LimitUnits": {
+        "UserPurchaseLimit": {
           "type": "string"
         }
       }
