@@ -153,8 +153,8 @@ type Good struct {
 	// @inject_tag: sql:"display_names"
 	DisplayNamesStr string   `protobuf:"bytes,540,opt,name=DisplayNamesStr,proto3" json:"DisplayNamesStr,omitempty" sql:"display_names"`
 	DisplayNames    []string `protobuf:"bytes,550,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
-	// @inject_tag: sql:"open_buy"
-	OpenPurchase bool `protobuf:"varint,560,opt,name=OpenPurchase,proto3" json:"OpenPurchase,omitempty" sql:"open_buy"`
+	// @inject_tag: sql:"open_purchase"
+	OpenPurchase bool `protobuf:"varint,560,opt,name=OpenPurchase,proto3" json:"OpenPurchase,omitempty" sql:"open_purchase"`
 	// @inject_tag: sql:"into_product_page"
 	IntoProductPage bool `protobuf:"varint,570,opt,name=IntoProductPage,proto3" json:"IntoProductPage,omitempty" sql:"into_product_page"`
 	// @inject_tag: sql:"can_cancel"
