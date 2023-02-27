@@ -132,6 +132,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },
@@ -211,6 +223,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },

@@ -383,6 +383,22 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"open_buy\""
+        },
+        "IntoProductPage": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"into_product_page\""
+        },
+        "CanCancel": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"can_cancel\""
+        },
+        "LimitUnits": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"limit_units\""
         }
       }
     },
@@ -497,6 +513,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },

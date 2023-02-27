@@ -498,6 +498,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },
@@ -624,6 +636,18 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },
@@ -727,6 +751,18 @@
         },
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },
@@ -855,6 +891,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "OpenBuy": {
+          "type": "boolean"
+        },
+        "IntoProductPage": {
+          "type": "boolean"
+        },
+        "CanCancel": {
+          "type": "boolean"
+        },
+        "LimitUnits": {
+          "type": "string"
         }
       }
     },
