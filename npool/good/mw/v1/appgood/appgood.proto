@@ -163,9 +163,10 @@ message Good {
     // @inject_tag: sql:"enable_product_page"
     bool             EnableProductPage            = 570;
     // @inject_tag: sql:"cancel_mode"
-    good.manager.appgood.v1.CancelMode CancelMode = 580;
+    string           CancelModeStr                = 580;
+    good.manager.appgood.v1.CancelMode CancelMode = 590;
     // @inject_tag: sql:"user_purchase_limit"
-    string           UserPurchaseLimit            = 590;
+    string           UserPurchaseLimit            = 600;
 }
 
 message CreateGoodRequest {
