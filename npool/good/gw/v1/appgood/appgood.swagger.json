@@ -502,7 +502,7 @@
         "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
         "CancelMode": {
@@ -640,7 +640,7 @@
         "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
         "CancelMode": {
@@ -765,7 +765,7 @@
         "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
         "CancelMode": {
@@ -905,7 +905,7 @@
         "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
         "CancelMode": {

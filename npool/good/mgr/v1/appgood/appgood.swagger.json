@@ -227,7 +227,7 @@
         "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
         "CancelMode": {
