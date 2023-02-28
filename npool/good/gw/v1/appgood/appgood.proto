@@ -154,7 +154,7 @@ message Good {
     repeated string  DisplayNames        = 660;
 
     bool                               EnablePurchase    = 670;
-    bool                               IntoProductPage   = 680;
+    bool                               EnableProductPage = 680;
     good.manager.appgood.v1.CancelMode CancelMode        = 690;
     string                             UserPurchaseLimit = 700;
 }
@@ -176,7 +176,7 @@ message CreateNAppGoodRequest {
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
     bool                               EnablePurchase    = 160;
-    bool                               IntoProductPage   = 170;
+    bool                               EnableProductPage = 170;
     good.manager.appgood.v1.CancelMode CancelMode        = 180;
     string                             UserPurchaseLimit = 190;
 }
@@ -237,7 +237,7 @@ message UpdateAppGoodRequest {
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
     optional bool                               EnablePurchase    = 200;
-    optional bool                               IntoProductPage   = 210;
+    optional bool                               EnableProductPage = 210;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
     optional string                             UserPurchaseLimit = 230;
 }
@@ -264,7 +264,7 @@ message UpdateNAppGoodRequest {
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional bool                               EnablePurchase    = 190;
-    optional bool                               IntoProductPage   = 200;
+    optional bool                               EnableProductPage = 200;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 210;
     optional string                             UserPurchaseLimit = 220;
 }

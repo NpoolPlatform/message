@@ -44,7 +44,7 @@ message AppGoodReq {
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
     optional bool       EnablePurchase    = 210;
-    optional bool       IntoProductPage   = 220;
+    optional bool       EnableProductPage = 220;
     optional CancelMode CancelMode        = 230;
     optional string     UserPurchaseLimit = 240;
 }

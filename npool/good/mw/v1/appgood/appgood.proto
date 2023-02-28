@@ -160,8 +160,8 @@ message Good {
 
     // @inject_tag: sql:"enable_purchase"
     bool             EnablePurchase               = 560;
-    // @inject_tag: sql:"into_product_page"
-    bool             IntoProductPage              = 570;
+    // @inject_tag: sql:"enable_product_page"
+    bool             EnableProductPage            = 570;
     // @inject_tag: sql:"cancel_mode"
     good.manager.appgood.v1.CancelMode CancelMode = 580;
     // @inject_tag: sql:"user_purchase_limit"
