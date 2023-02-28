@@ -94,7 +94,7 @@ const (
 	IOSubType_Withdrawal IOSubType = 200
 	// I: record user id, order id in extra
 	IOSubType_OrderRevoke IOSubType = 210
-	// I: record user id, archivement details id in extra
+	// I: record user id,order id, archivement details id in extra
 	IOSubType_CommissionRevoke IOSubType = 220
 )
 
