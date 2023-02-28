@@ -499,15 +499,14 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -638,15 +637,14 @@
         "DailyRewardAmount": {
           "type": "string"
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -697,6 +695,16 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncalcellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1CreateNAppGoodRequest": {
       "type": "object",
@@ -754,15 +762,14 @@
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -895,15 +902,14 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"

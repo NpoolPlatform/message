@@ -158,14 +158,14 @@ message Good {
     string           DisplayNamesStr     = 540;
     repeated string  DisplayNames        = 550;
 
-    // @inject_tag: sql:"open_purchase"
-    bool             OpenPurchase      = 560;
+    // @inject_tag: sql:"enable_purchase"
+    bool             EnablePurchase               = 560;
     // @inject_tag: sql:"into_product_page"
-    bool             IntoProductPage   = 570;
-    // @inject_tag: sql:"cancelable_before"
-    uint32           CancelableBefore  = 580;
+    bool             IntoProductPage              = 570;
+    // @inject_tag: sql:"cancel_mode"
+    good.manager.appgood.v1.CancelMode CancelMode = 580;
     // @inject_tag: sql:"user_purchase_limit"
-    string           UserPurchaseLimit = 590;
+    string           UserPurchaseLimit            = 590;
 }
 
 message CreateGoodRequest {

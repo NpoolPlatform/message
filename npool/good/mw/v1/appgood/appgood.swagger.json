@@ -384,18 +384,17 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"open_purchase\""
+          "title": "@inject_tag: sql:\"enable_purchase\""
         },
         "IntoProductPage": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"into_product_page\""
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cancelable_before\""
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode",
+          "title": "@inject_tag: sql:\"cancel_mode\""
         },
         "UserPurchaseLimit": {
           "type": "string",
@@ -515,15 +514,14 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -539,6 +537,16 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncalcellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1GoodType": {
       "type": "string",
