@@ -82,7 +82,7 @@ enum CancelMode {
     CancelModeDefault        = 0;
     CancellableBeforeStart   = 10;
     CancellableBeforeBenefit = 20;
-    Uncalcellable            = 30;
+    Uncancellable            = 30;
 }
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
