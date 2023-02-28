@@ -46,7 +46,7 @@ enum IOSubType {
     Withdrawal                = 200;
     // I: record user id, order id in extra
     OrderRevoke               = 210;
-    // I: record user id, archivement details id in extra
+    // I: record user id,order id, archivement details id in extra
     CommissionRevoke          = 220;
 }
 
