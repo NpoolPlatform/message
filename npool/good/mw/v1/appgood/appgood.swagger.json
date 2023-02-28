@@ -547,7 +547,7 @@
         "CancelModeDefault",
         "CancellableBeforeStart",
         "CancellableBeforeBenefit",
-        "Uncalcellable"
+        "Uncancellable"
       ],
       "default": "CancelModeDefault"
     },
