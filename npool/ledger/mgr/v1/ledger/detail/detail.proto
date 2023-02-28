@@ -44,6 +44,10 @@ enum IOSubType {
     Transfer                  = 105;
     // O
     Withdrawal                = 200;
+    // I: record user id, order id in extra
+    OrderRevoke               = 210;
+    // I: record user id, archivement details id in extra
+    CommissionRevoke          = 220;
 }
 
 message DetailReq {
