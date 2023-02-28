@@ -10,6 +10,7 @@ import "npool/ledger/mgr/v1/mining/detail/detail.proto";
 service Middleware {
     rpc CreateDetail  (CreateDetailRequest)  returns (CreateDetailResponse)  {}
     rpc GetDetailOnly (GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
+    rpc GetDetails    (GetDetailsRequest)    returns (GetDetailsResponse)    {}
 }
 
 message DetailReq {
@@ -34,5 +35,17 @@ message GetDetailOnlyRequest {
 
 message GetDetailOnlyResponse {
     ledger.manager.mining.detail.v1.Detail Info = 10;
+}
+
+
+message GetDetailsRequest {
+    ledger.manager.mining.detail.v1.Conds Conds = 10;
+    uint32 Offset = 20;
+    uint32 Limit  = 30;
+}
+
+message GetDetailsResponse {
+    repeated ledger.manager.mining.detail.v1.Detail Info  = 10;
+    uint32                                          Total = 20;
 }
 

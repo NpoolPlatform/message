@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
 	GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error)
+	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
 }
 
 type middlewareClient struct {
@@ -52,12 +53,22 @@ func (c *middlewareClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyR
 	return out, nil
 }
 
+func (c *middlewareClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
+	out := new(GetDetailsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/GetDetails", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
 	GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error)
+	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -70,6 +81,9 @@ func (UnimplementedMiddlewareServer) CreateDetail(context.Context, *CreateDetail
 }
 func (UnimplementedMiddlewareServer) GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetailOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDetails not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -120,6 +134,24 @@ func _Middleware_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDetailsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetDetails(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/GetDetails",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetDetails(ctx, req.(*GetDetailsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -134,6 +166,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDetailOnly",
 			Handler:    _Middleware_GetDetailOnly_Handler,
+		},
+		{
+			MethodName: "GetDetails",
+			Handler:    _Middleware_GetDetails_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
