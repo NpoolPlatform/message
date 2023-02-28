@@ -153,10 +153,10 @@ message Good {
     string           GoodBanner          = 650;
     repeated string  DisplayNames        = 660;
 
-    bool             OpenPurchase      = 670;
-    bool             IntoProductPage   = 680;
-    uint32           CancelableBefore  = 690;
-    string           UserPurchaseLimit = 700;
+    bool                               EnablePurchase    = 670;
+    bool                               IntoProductPage   = 680;
+    good.manager.appgood.v1.CancelMode CancelMode        = 690;
+    string                             UserPurchaseLimit = 700;
 }
 
 message CreateNAppGoodRequest {
@@ -175,10 +175,10 @@ message CreateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
-    bool   OpenPurchase      = 160;
-    bool   IntoProductPage   = 170;
-    uint32 CancelableBefore  = 180;
-    string UserPurchaseLimit = 190;
+    bool                               EnablePurchase    = 160;
+    bool                               IntoProductPage   = 170;
+    good.manager.appgood.v1.CancelMode CancelMode        = 180;
+    string                             UserPurchaseLimit = 190;
 }
 
 message CreateNAppGoodResponse {
@@ -236,10 +236,10 @@ message UpdateAppGoodRequest {
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
-    optional bool   OpenPurchase        = 200;
-    optional bool   IntoProductPage     = 210;
-    optional uint32 CancelableBefore    = 220;
-    optional string UserPurchaseLimit   = 230;
+    optional bool                               EnablePurchase    = 200;
+    optional bool                               IntoProductPage   = 210;
+    optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
+    optional string                             UserPurchaseLimit = 230;
 }
 
 message UpdateAppGoodResponse {
@@ -263,10 +263,10 @@ message UpdateNAppGoodRequest {
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
-    optional bool   OpenPurchase        = 190;
-    optional bool   IntoProductPage     = 200;
-    optional uint32 CancelableBefore    = 210;
-    optional string UserPurchaseLimit   = 220;
+    optional bool                               EnablePurchase    = 190;
+    optional bool                               IntoProductPage   = 200;
+    optional good.manager.appgood.v1.CancelMode CancelMode        = 210;
+    optional string                             UserPurchaseLimit = 220;
 }
 
 message UpdateNAppGoodResponse {

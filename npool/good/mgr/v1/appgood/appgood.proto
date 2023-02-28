@@ -43,10 +43,10 @@ message AppGoodReq {
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
-    optional bool   OpenPurchase        = 210;
-    optional bool   IntoProductPage     = 220;
-    optional uint32 CancelableBefore    = 230;
-    optional string UserPurchaseLimit   = 240;
+    optional bool       EnablePurchase    = 210;
+    optional bool       IntoProductPage   = 220;
+    optional CancelMode CancelMode        = 230;
+    optional string     UserPurchaseLimit = 240;
 }
 
 message AppGood {
@@ -73,12 +73,17 @@ message AppGood {
     repeated string Descriptions = 210;
     string          GoodBanner   = 220;
     repeated string DisplayNames = 230;
-    bool            OpenPurchase      = 240;
-    bool            IntoProductPage   = 250;
-    uint32          CancelableBefore  = 260;
-    string          UserPurchaseLimit = 270;
+    bool            EnablePurchase      = 240;
+    bool            EnableProductPage   = 250;
+    CancelMode      CancelMode          = 260;
+    string          UserPurchaseLimit   = 270;
 }
-
+enum CancelMode {
+    CancelModeDefault        = 0;
+    CancellableBeforeStart   = 10;
+    CancellableBeforeBenefit = 20;
+    Uncalcellable            = 30;
+}
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
     optional npool.v1.StringVal      AppID  = 20;

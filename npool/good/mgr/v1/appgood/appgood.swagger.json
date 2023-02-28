@@ -133,15 +133,14 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
-        "IntoProductPage": {
+        "EnableProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
@@ -225,20 +224,29 @@
             "type": "string"
           }
         },
-        "OpenPurchase": {
+        "EnablePurchase": {
           "type": "boolean"
         },
         "IntoProductPage": {
           "type": "boolean"
         },
-        "CancelableBefore": {
-          "type": "integer",
-          "format": "int64"
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "UserPurchaseLimit": {
           "type": "string"
         }
       }
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncalcellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1Conds": {
       "type": "object",
