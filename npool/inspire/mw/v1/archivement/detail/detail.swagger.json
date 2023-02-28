@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/archivement/detail/detail.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "inspiremiddlewarearchivementdetailv1GetDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DirectContributorID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfOrder": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "PaymentID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentCoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Units": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "USDAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Commission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "DirectContributorID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "SelfOrder": {
+          "type": "boolean"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "USDAmount": {
+          "type": "string"
+        },
+        "Commission": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
