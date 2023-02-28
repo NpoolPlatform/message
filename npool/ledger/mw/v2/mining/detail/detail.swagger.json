@@ -57,7 +57,7 @@
     "detailv2GetDetailsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Detail"

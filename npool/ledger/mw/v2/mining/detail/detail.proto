@@ -45,7 +45,7 @@ message GetDetailsRequest {
 }
 
 message GetDetailsResponse {
-    repeated ledger.manager.mining.detail.v1.Detail Info  = 10;
+    repeated ledger.manager.mining.detail.v1.Detail Infos = 10;
     uint32                                          Total = 20;
 }
 
