@@ -177,12 +177,12 @@ message CreateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
-    bool                               EnablePurchase         = 160;
-    bool                               EnableProductPage      = 170;
-    good.manager.appgood.v1.CancelMode CancelMode             = 180;
-    string                             UserPurchaseLimit      = 190;
-    string                             DisplayColors          = 200;
-    uint32                             CancellableBeforeStart = 210;
+    optional bool                               EnablePurchase         = 160;
+    optional bool                               EnableProductPage      = 170;
+    optional good.manager.appgood.v1.CancelMode CancelMode             = 180;
+    optional string                             UserPurchaseLimit      = 190;
+    optional string                             DisplayColors          = 200;
+    optional uint32                             CancellableBeforeStart = 210;
 }
 
 message CreateNAppGoodResponse {
