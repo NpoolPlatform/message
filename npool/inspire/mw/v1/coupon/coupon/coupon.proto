@@ -60,6 +60,7 @@ message Conds {
     optional npool.v1.Int32Val   CouponType = 20;
     optional npool.v1.StringVal  AppID      = 30;
     optional npool.v1.StringVal  GoodID     = 40;
+    optional npool.v1.StringSliceVal IDs    = 50;
 }
 
 message GetCouponsRequest {

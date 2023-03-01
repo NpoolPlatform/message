@@ -46,7 +46,7 @@ message Tx {
     string                      StateStr       = 130;
     // @inject_tag: sql:"extra"
     string                      Extra          = 140;
-    basetypes.v1.TxType         Type           = 150;
+    basetypes.v1.TxType   Type           = 150;
     // @inject_tag: sql:"type"
     string                      TypeStr        = 160;
     // @inject_tag: sql:"created_at"
