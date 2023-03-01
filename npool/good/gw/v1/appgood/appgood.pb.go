@@ -89,23 +89,25 @@ type Good struct {
 	// For subgood: main good must select sub good in one order
 	Must bool `protobuf:"varint,530,opt,name=Must,proto3" json:"Must,omitempty"`
 	// For subgood: sub good will be charged commission, value defined in sub good's good
-	Commission           bool                  `protobuf:"varint,540,opt,name=Commission,proto3" json:"Commission,omitempty"`
-	StartAt              uint32                `protobuf:"varint,550,opt,name=StartAt,proto3" json:"StartAt,omitempty"`
-	CreatedAt            uint32                `protobuf:"varint,560,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	SaleStartAt          uint32                `protobuf:"varint,570,opt,name=SaleStartAt,proto3" json:"SaleStartAt,omitempty"`
-	SaleEndAt            uint32                `protobuf:"varint,580,opt,name=SaleEndAt,proto3" json:"SaleEndAt,omitempty"`
-	ServiceStartAt       uint32                `protobuf:"varint,590,opt,name=ServiceStartAt,proto3" json:"ServiceStartAt,omitempty"`
-	TechnicalFeeRatio    uint32                `protobuf:"varint,600,opt,name=TechnicalFeeRatio,proto3" json:"TechnicalFeeRatio,omitempty"`
-	ElectricityFeeRatio  uint32                `protobuf:"varint,610,opt,name=ElectricityFeeRatio,proto3" json:"ElectricityFeeRatio,omitempty"`
-	DailyRewardAmount    string                `protobuf:"bytes,620,opt,name=DailyRewardAmount,proto3" json:"DailyRewardAmount,omitempty"`
-	CommissionSettleType commission.SettleType `protobuf:"varint,630,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType" json:"CommissionSettleType,omitempty"`
-	Descriptions         []string              `protobuf:"bytes,640,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
-	GoodBanner           string                `protobuf:"bytes,650,opt,name=GoodBanner,proto3" json:"GoodBanner,omitempty"`
-	DisplayNames         []string              `protobuf:"bytes,660,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
-	EnablePurchase       bool                  `protobuf:"varint,670,opt,name=EnablePurchase,proto3" json:"EnablePurchase,omitempty"`
-	EnableProductPage    bool                  `protobuf:"varint,680,opt,name=EnableProductPage,proto3" json:"EnableProductPage,omitempty"`
-	CancelMode           appgood.CancelMode    `protobuf:"varint,690,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode" json:"CancelMode,omitempty"`
-	UserPurchaseLimit    string                `protobuf:"bytes,700,opt,name=UserPurchaseLimit,proto3" json:"UserPurchaseLimit,omitempty"`
+	Commission             bool                  `protobuf:"varint,540,opt,name=Commission,proto3" json:"Commission,omitempty"`
+	StartAt                uint32                `protobuf:"varint,550,opt,name=StartAt,proto3" json:"StartAt,omitempty"`
+	CreatedAt              uint32                `protobuf:"varint,560,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	SaleStartAt            uint32                `protobuf:"varint,570,opt,name=SaleStartAt,proto3" json:"SaleStartAt,omitempty"`
+	SaleEndAt              uint32                `protobuf:"varint,580,opt,name=SaleEndAt,proto3" json:"SaleEndAt,omitempty"`
+	ServiceStartAt         uint32                `protobuf:"varint,590,opt,name=ServiceStartAt,proto3" json:"ServiceStartAt,omitempty"`
+	TechnicalFeeRatio      uint32                `protobuf:"varint,600,opt,name=TechnicalFeeRatio,proto3" json:"TechnicalFeeRatio,omitempty"`
+	ElectricityFeeRatio    uint32                `protobuf:"varint,610,opt,name=ElectricityFeeRatio,proto3" json:"ElectricityFeeRatio,omitempty"`
+	DailyRewardAmount      string                `protobuf:"bytes,620,opt,name=DailyRewardAmount,proto3" json:"DailyRewardAmount,omitempty"`
+	CommissionSettleType   commission.SettleType `protobuf:"varint,630,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType" json:"CommissionSettleType,omitempty"`
+	Descriptions           []string              `protobuf:"bytes,640,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
+	GoodBanner             string                `protobuf:"bytes,650,opt,name=GoodBanner,proto3" json:"GoodBanner,omitempty"`
+	DisplayNames           []string              `protobuf:"bytes,660,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
+	EnablePurchase         bool                  `protobuf:"varint,670,opt,name=EnablePurchase,proto3" json:"EnablePurchase,omitempty"`
+	EnableProductPage      bool                  `protobuf:"varint,680,opt,name=EnableProductPage,proto3" json:"EnableProductPage,omitempty"`
+	CancelMode             appgood.CancelMode    `protobuf:"varint,690,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode" json:"CancelMode,omitempty"`
+	UserPurchaseLimit      string                `protobuf:"bytes,700,opt,name=UserPurchaseLimit,proto3" json:"UserPurchaseLimit,omitempty"`
+	DisplayColors          string                `protobuf:"bytes,710,opt,name=DisplayColors,proto3" json:"DisplayColors,omitempty"`
+	CancellableBeforeStart uint32                `protobuf:"varint,720,opt,name=CancellableBeforeStart,proto3" json:"CancellableBeforeStart,omitempty"`
 }
 
 func (x *Good) Reset() {
@@ -658,30 +660,46 @@ func (x *Good) GetUserPurchaseLimit() string {
 	return ""
 }
 
+func (x *Good) GetDisplayColors() string {
+	if x != nil {
+		return x.DisplayColors
+	}
+	return ""
+}
+
+func (x *Good) GetCancellableBeforeStart() uint32 {
+	if x != nil {
+		return x.CancellableBeforeStart
+	}
+	return 0
+}
+
 type CreateNAppGoodRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TargetAppID          string                `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
-	GoodID               string                `protobuf:"bytes,20,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	Online               bool                  `protobuf:"varint,30,opt,name=Online,proto3" json:"Online,omitempty"`
-	Visible              bool                  `protobuf:"varint,40,opt,name=Visible,proto3" json:"Visible,omitempty"`
-	GoodName             string                `protobuf:"bytes,50,opt,name=GoodName,proto3" json:"GoodName,omitempty"`
-	Price                string                `protobuf:"bytes,60,opt,name=Price,proto3" json:"Price,omitempty"`
-	DisplayIndex         int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3" json:"DisplayIndex,omitempty"`
-	PurchaseLimit        int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3" json:"PurchaseLimit,omitempty"`
-	CommissionPercent    int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3" json:"CommissionPercent,omitempty"`
-	SaleStartAt          *uint32               `protobuf:"varint,100,opt,name=SaleStartAt,proto3,oneof" json:"SaleStartAt,omitempty"`
-	SaleEndAt            *uint32               `protobuf:"varint,110,opt,name=SaleEndAt,proto3,oneof" json:"SaleEndAt,omitempty"`
-	ServiceStartAt       *uint32               `protobuf:"varint,120,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
-	TechnicalFeeRatio    *uint32               `protobuf:"varint,130,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
-	ElectricityFeeRatio  *uint32               `protobuf:"varint,140,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
-	CommissionSettleType commission.SettleType `protobuf:"varint,150,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType" json:"CommissionSettleType,omitempty"`
-	EnablePurchase       bool                  `protobuf:"varint,160,opt,name=EnablePurchase,proto3" json:"EnablePurchase,omitempty"`
-	EnableProductPage    bool                  `protobuf:"varint,170,opt,name=EnableProductPage,proto3" json:"EnableProductPage,omitempty"`
-	CancelMode           appgood.CancelMode    `protobuf:"varint,180,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode" json:"CancelMode,omitempty"`
-	UserPurchaseLimit    string                `protobuf:"bytes,190,opt,name=UserPurchaseLimit,proto3" json:"UserPurchaseLimit,omitempty"`
+	TargetAppID            string                `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	GoodID                 string                `protobuf:"bytes,20,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	Online                 bool                  `protobuf:"varint,30,opt,name=Online,proto3" json:"Online,omitempty"`
+	Visible                bool                  `protobuf:"varint,40,opt,name=Visible,proto3" json:"Visible,omitempty"`
+	GoodName               string                `protobuf:"bytes,50,opt,name=GoodName,proto3" json:"GoodName,omitempty"`
+	Price                  string                `protobuf:"bytes,60,opt,name=Price,proto3" json:"Price,omitempty"`
+	DisplayIndex           int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3" json:"DisplayIndex,omitempty"`
+	PurchaseLimit          int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3" json:"PurchaseLimit,omitempty"`
+	CommissionPercent      int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3" json:"CommissionPercent,omitempty"`
+	SaleStartAt            *uint32               `protobuf:"varint,100,opt,name=SaleStartAt,proto3,oneof" json:"SaleStartAt,omitempty"`
+	SaleEndAt              *uint32               `protobuf:"varint,110,opt,name=SaleEndAt,proto3,oneof" json:"SaleEndAt,omitempty"`
+	ServiceStartAt         *uint32               `protobuf:"varint,120,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
+	TechnicalFeeRatio      *uint32               `protobuf:"varint,130,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
+	ElectricityFeeRatio    *uint32               `protobuf:"varint,140,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
+	CommissionSettleType   commission.SettleType `protobuf:"varint,150,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType" json:"CommissionSettleType,omitempty"`
+	EnablePurchase         bool                  `protobuf:"varint,160,opt,name=EnablePurchase,proto3" json:"EnablePurchase,omitempty"`
+	EnableProductPage      bool                  `protobuf:"varint,170,opt,name=EnableProductPage,proto3" json:"EnableProductPage,omitempty"`
+	CancelMode             appgood.CancelMode    `protobuf:"varint,180,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode" json:"CancelMode,omitempty"`
+	UserPurchaseLimit      string                `protobuf:"bytes,190,opt,name=UserPurchaseLimit,proto3" json:"UserPurchaseLimit,omitempty"`
+	DisplayColors          string                `protobuf:"bytes,200,opt,name=DisplayColors,proto3" json:"DisplayColors,omitempty"`
+	CancellableBeforeStart uint32                `protobuf:"varint,210,opt,name=CancellableBeforeStart,proto3" json:"CancellableBeforeStart,omitempty"`
 }
 
 func (x *CreateNAppGoodRequest) Reset() {
@@ -847,6 +865,20 @@ func (x *CreateNAppGoodRequest) GetUserPurchaseLimit() string {
 		return x.UserPurchaseLimit
 	}
 	return ""
+}
+
+func (x *CreateNAppGoodRequest) GetDisplayColors() string {
+	if x != nil {
+		return x.DisplayColors
+	}
+	return ""
+}
+
+func (x *CreateNAppGoodRequest) GetCancellableBeforeStart() uint32 {
+	if x != nil {
+		return x.CancellableBeforeStart
+	}
+	return 0
 }
 
 type CreateNAppGoodResponse struct {
@@ -1239,29 +1271,31 @@ type UpdateAppGoodRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID                   string                 `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID                string                 `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	Online               *bool                  `protobuf:"varint,30,opt,name=Online,proto3,oneof" json:"Online,omitempty"`
-	Visible              *bool                  `protobuf:"varint,40,opt,name=Visible,proto3,oneof" json:"Visible,omitempty"`
-	GoodName             *string                `protobuf:"bytes,50,opt,name=GoodName,proto3,oneof" json:"GoodName,omitempty"`
-	Price                *string                `protobuf:"bytes,60,opt,name=Price,proto3,oneof" json:"Price,omitempty"`
-	DisplayIndex         *int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3,oneof" json:"DisplayIndex,omitempty"`
-	PurchaseLimit        *int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3,oneof" json:"PurchaseLimit,omitempty"`
-	CommissionPercent    *int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3,oneof" json:"CommissionPercent,omitempty"`
-	SaleStartAt          *uint32                `protobuf:"varint,100,opt,name=SaleStartAt,proto3,oneof" json:"SaleStartAt,omitempty"`
-	SaleEndAt            *uint32                `protobuf:"varint,110,opt,name=SaleEndAt,proto3,oneof" json:"SaleEndAt,omitempty"`
-	ServiceStartAt       *uint32                `protobuf:"varint,120,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
-	TechnicalFeeRatio    *uint32                `protobuf:"varint,130,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
-	ElectricityFeeRatio  *uint32                `protobuf:"varint,140,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
-	CommissionSettleType *commission.SettleType `protobuf:"varint,150,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType,oneof" json:"CommissionSettleType,omitempty"`
-	Descriptions         []string               `protobuf:"bytes,160,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
-	GoodBanner           *string                `protobuf:"bytes,170,opt,name=GoodBanner,proto3,oneof" json:"GoodBanner,omitempty"`
-	DisplayNames         []string               `protobuf:"bytes,180,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
-	DailyRewardAmount    *string                `protobuf:"bytes,190,opt,name=DailyRewardAmount,proto3,oneof" json:"DailyRewardAmount,omitempty"`
-	EnablePurchase       *bool                  `protobuf:"varint,200,opt,name=EnablePurchase,proto3,oneof" json:"EnablePurchase,omitempty"`
-	EnableProductPage    *bool                  `protobuf:"varint,210,opt,name=EnableProductPage,proto3,oneof" json:"EnableProductPage,omitempty"`
-	CancelMode           *appgood.CancelMode    `protobuf:"varint,220,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode,oneof" json:"CancelMode,omitempty"`
-	UserPurchaseLimit    *string                `protobuf:"bytes,230,opt,name=UserPurchaseLimit,proto3,oneof" json:"UserPurchaseLimit,omitempty"`
+	ID                     string                 `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	AppID                  string                 `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	Online                 *bool                  `protobuf:"varint,30,opt,name=Online,proto3,oneof" json:"Online,omitempty"`
+	Visible                *bool                  `protobuf:"varint,40,opt,name=Visible,proto3,oneof" json:"Visible,omitempty"`
+	GoodName               *string                `protobuf:"bytes,50,opt,name=GoodName,proto3,oneof" json:"GoodName,omitempty"`
+	Price                  *string                `protobuf:"bytes,60,opt,name=Price,proto3,oneof" json:"Price,omitempty"`
+	DisplayIndex           *int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3,oneof" json:"DisplayIndex,omitempty"`
+	PurchaseLimit          *int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3,oneof" json:"PurchaseLimit,omitempty"`
+	CommissionPercent      *int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3,oneof" json:"CommissionPercent,omitempty"`
+	SaleStartAt            *uint32                `protobuf:"varint,100,opt,name=SaleStartAt,proto3,oneof" json:"SaleStartAt,omitempty"`
+	SaleEndAt              *uint32                `protobuf:"varint,110,opt,name=SaleEndAt,proto3,oneof" json:"SaleEndAt,omitempty"`
+	ServiceStartAt         *uint32                `protobuf:"varint,120,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
+	TechnicalFeeRatio      *uint32                `protobuf:"varint,130,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
+	ElectricityFeeRatio    *uint32                `protobuf:"varint,140,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
+	CommissionSettleType   *commission.SettleType `protobuf:"varint,150,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType,oneof" json:"CommissionSettleType,omitempty"`
+	Descriptions           []string               `protobuf:"bytes,160,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
+	GoodBanner             *string                `protobuf:"bytes,170,opt,name=GoodBanner,proto3,oneof" json:"GoodBanner,omitempty"`
+	DisplayNames           []string               `protobuf:"bytes,180,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
+	DailyRewardAmount      *string                `protobuf:"bytes,190,opt,name=DailyRewardAmount,proto3,oneof" json:"DailyRewardAmount,omitempty"`
+	EnablePurchase         *bool                  `protobuf:"varint,200,opt,name=EnablePurchase,proto3,oneof" json:"EnablePurchase,omitempty"`
+	EnableProductPage      *bool                  `protobuf:"varint,210,opt,name=EnableProductPage,proto3,oneof" json:"EnableProductPage,omitempty"`
+	CancelMode             *appgood.CancelMode    `protobuf:"varint,220,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode,oneof" json:"CancelMode,omitempty"`
+	UserPurchaseLimit      *string                `protobuf:"bytes,230,opt,name=UserPurchaseLimit,proto3,oneof" json:"UserPurchaseLimit,omitempty"`
+	DisplayColors          string                 `protobuf:"bytes,240,opt,name=DisplayColors,proto3" json:"DisplayColors,omitempty"`
+	CancellableBeforeStart uint32                 `protobuf:"varint,250,opt,name=CancellableBeforeStart,proto3" json:"CancellableBeforeStart,omitempty"`
 }
 
 func (x *UpdateAppGoodRequest) Reset() {
@@ -1457,6 +1491,20 @@ func (x *UpdateAppGoodRequest) GetUserPurchaseLimit() string {
 	return ""
 }
 
+func (x *UpdateAppGoodRequest) GetDisplayColors() string {
+	if x != nil {
+		return x.DisplayColors
+	}
+	return ""
+}
+
+func (x *UpdateAppGoodRequest) GetCancellableBeforeStart() uint32 {
+	if x != nil {
+		return x.CancellableBeforeStart
+	}
+	return 0
+}
+
 type UpdateAppGoodResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1509,26 +1557,28 @@ type UpdateNAppGoodRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID                   string                 `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	TargetAppID          string                 `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
-	Online               *bool                  `protobuf:"varint,30,opt,name=Online,proto3,oneof" json:"Online,omitempty"`
-	Visible              *bool                  `protobuf:"varint,40,opt,name=Visible,proto3,oneof" json:"Visible,omitempty"`
-	GoodName             *string                `protobuf:"bytes,50,opt,name=GoodName,proto3,oneof" json:"GoodName,omitempty"`
-	Price                *string                `protobuf:"bytes,60,opt,name=Price,proto3,oneof" json:"Price,omitempty"`
-	DisplayIndex         *int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3,oneof" json:"DisplayIndex,omitempty"`
-	PurchaseLimit        *int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3,oneof" json:"PurchaseLimit,omitempty"`
-	CommissionPercent    *int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3,oneof" json:"CommissionPercent,omitempty"`
-	ServiceStartAt       *uint32                `protobuf:"varint,100,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
-	TechnicalFeeRatio    *uint32                `protobuf:"varint,110,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
-	ElectricityFeeRatio  *uint32                `protobuf:"varint,120,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
-	CommissionSettleType *commission.SettleType `protobuf:"varint,130,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType,oneof" json:"CommissionSettleType,omitempty"`
-	Descriptions         []string               `protobuf:"bytes,160,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
-	GoodBanner           *string                `protobuf:"bytes,170,opt,name=GoodBanner,proto3,oneof" json:"GoodBanner,omitempty"`
-	DisplayNames         []string               `protobuf:"bytes,180,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
-	EnablePurchase       *bool                  `protobuf:"varint,190,opt,name=EnablePurchase,proto3,oneof" json:"EnablePurchase,omitempty"`
-	EnableProductPage    *bool                  `protobuf:"varint,200,opt,name=EnableProductPage,proto3,oneof" json:"EnableProductPage,omitempty"`
-	CancelMode           *appgood.CancelMode    `protobuf:"varint,210,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode,oneof" json:"CancelMode,omitempty"`
-	UserPurchaseLimit    *string                `protobuf:"bytes,220,opt,name=UserPurchaseLimit,proto3,oneof" json:"UserPurchaseLimit,omitempty"`
+	ID                     string                 `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	TargetAppID            string                 `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	Online                 *bool                  `protobuf:"varint,30,opt,name=Online,proto3,oneof" json:"Online,omitempty"`
+	Visible                *bool                  `protobuf:"varint,40,opt,name=Visible,proto3,oneof" json:"Visible,omitempty"`
+	GoodName               *string                `protobuf:"bytes,50,opt,name=GoodName,proto3,oneof" json:"GoodName,omitempty"`
+	Price                  *string                `protobuf:"bytes,60,opt,name=Price,proto3,oneof" json:"Price,omitempty"`
+	DisplayIndex           *int32                 `protobuf:"varint,70,opt,name=DisplayIndex,proto3,oneof" json:"DisplayIndex,omitempty"`
+	PurchaseLimit          *int32                 `protobuf:"varint,80,opt,name=PurchaseLimit,proto3,oneof" json:"PurchaseLimit,omitempty"`
+	CommissionPercent      *int32                 `protobuf:"varint,90,opt,name=CommissionPercent,proto3,oneof" json:"CommissionPercent,omitempty"`
+	ServiceStartAt         *uint32                `protobuf:"varint,100,opt,name=ServiceStartAt,proto3,oneof" json:"ServiceStartAt,omitempty"`
+	TechnicalFeeRatio      *uint32                `protobuf:"varint,110,opt,name=TechnicalFeeRatio,proto3,oneof" json:"TechnicalFeeRatio,omitempty"`
+	ElectricityFeeRatio    *uint32                `protobuf:"varint,120,opt,name=ElectricityFeeRatio,proto3,oneof" json:"ElectricityFeeRatio,omitempty"`
+	CommissionSettleType   *commission.SettleType `protobuf:"varint,130,opt,name=CommissionSettleType,proto3,enum=inspire.manager.commission.v1.SettleType,oneof" json:"CommissionSettleType,omitempty"`
+	Descriptions           []string               `protobuf:"bytes,160,rep,name=Descriptions,proto3" json:"Descriptions,omitempty"`
+	GoodBanner             *string                `protobuf:"bytes,170,opt,name=GoodBanner,proto3,oneof" json:"GoodBanner,omitempty"`
+	DisplayNames           []string               `protobuf:"bytes,180,rep,name=DisplayNames,proto3" json:"DisplayNames,omitempty"`
+	EnablePurchase         *bool                  `protobuf:"varint,190,opt,name=EnablePurchase,proto3,oneof" json:"EnablePurchase,omitempty"`
+	EnableProductPage      *bool                  `protobuf:"varint,200,opt,name=EnableProductPage,proto3,oneof" json:"EnableProductPage,omitempty"`
+	CancelMode             *appgood.CancelMode    `protobuf:"varint,210,opt,name=CancelMode,proto3,enum=good.manager.appgood.v1.CancelMode,oneof" json:"CancelMode,omitempty"`
+	UserPurchaseLimit      *string                `protobuf:"bytes,220,opt,name=UserPurchaseLimit,proto3,oneof" json:"UserPurchaseLimit,omitempty"`
+	DisplayColors          string                 `protobuf:"bytes,230,opt,name=DisplayColors,proto3" json:"DisplayColors,omitempty"`
+	CancellableBeforeStart uint32                 `protobuf:"varint,240,opt,name=CancellableBeforeStart,proto3" json:"CancellableBeforeStart,omitempty"`
 }
 
 func (x *UpdateNAppGoodRequest) Reset() {
@@ -1703,6 +1753,20 @@ func (x *UpdateNAppGoodRequest) GetUserPurchaseLimit() string {
 	return ""
 }
 
+func (x *UpdateNAppGoodRequest) GetDisplayColors() string {
+	if x != nil {
+		return x.DisplayColors
+	}
+	return ""
+}
+
+func (x *UpdateNAppGoodRequest) GetCancellableBeforeStart() uint32 {
+	if x != nil {
+		return x.CancellableBeforeStart
+	}
+	return 0
+}
+
 type UpdateNAppGoodResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1871,7 +1935,7 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x11, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61,
 	0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x22, 0xae, 0x1b, 0x0a, 0x04, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
+	0x22, 0x8e, 0x1c, 0x0a, 0x04, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70,
 	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12,
 	0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
@@ -2056,7 +2120,13 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x65, 0x52, 0x0a, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x2d, 0x0a,
 	0x11, 0x55, 0x73, 0x65, 0x72, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d,
 	0x69, 0x74, 0x18, 0xbc, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x11, 0x55, 0x73, 0x65, 0x72, 0x50,
-	0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x1a, 0xfc, 0x01, 0x0a,
+	0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x25, 0x0a, 0x0d,
+	0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x18, 0xc6, 0x05,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c,
+	0x6f, 0x72, 0x73, 0x12, 0x37, 0x0a, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x6c, 0x61, 0x62,
+	0x6c, 0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x18, 0xd0, 0x05,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x6c, 0x61, 0x62, 0x6c,
+	0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x1a, 0xfc, 0x01, 0x0a,
 	0x08, 0x43, 0x6f, 0x69, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x1e, 0x0a, 0x0a, 0x43, 0x6f, 0x69,
 	0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x43,
 	0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x6f, 0x69,
@@ -2090,7 +2160,7 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x11,
 	0x0a, 0x0f, 0x5f, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x49, 0x6e, 0x64, 0x65,
 	0x78, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x41,
-	0x74, 0x22, 0x9c, 0x07, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70,
+	0x74, 0x22, 0xfc, 0x07, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70,
 	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a,
@@ -2142,6 +2212,12 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x64, 0x65, 0x12, 0x2d, 0x0a, 0x11, 0x55, 0x73, 0x65, 0x72, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61,
 	0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0xbe, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x11,
 	0x55, 0x73, 0x65, 0x72, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69,
+	0x74, 0x12, 0x25, 0x0a, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f,
+	0x72, 0x73, 0x18, 0xc8, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c,
+	0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x12, 0x37, 0x0a, 0x16, 0x43, 0x61, 0x6e, 0x63,
+	0x65, 0x6c, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61,
+	0x72, 0x74, 0x18, 0xd2, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65,
+	0x6c, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72,
 	0x74, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x53, 0x61, 0x6c, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x41,
 	0x74, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x53, 0x61, 0x6c, 0x65, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x42,
 	0x11, 0x0a, 0x0f, 0x5f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74,
@@ -2186,7 +2262,7 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f,
 	0x6f, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74,
 	0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22,
-	0xda, 0x0a, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
+	0xba, 0x0b, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
 	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49,
 	0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1b,
@@ -2250,7 +2326,13 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x6f, 0x64, 0x65, 0x88, 0x01, 0x01, 0x12, 0x32, 0x0a, 0x11, 0x55, 0x73, 0x65, 0x72, 0x50, 0x75,
 	0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0xe6, 0x01, 0x20, 0x01,
 	0x28, 0x09, 0x48, 0x12, 0x52, 0x11, 0x55, 0x73, 0x65, 0x72, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61,
-	0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x88, 0x01, 0x01, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4f,
+	0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x88, 0x01, 0x01, 0x12, 0x25, 0x0a, 0x0d, 0x44, 0x69,
+	0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x18, 0xf0, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72,
+	0x73, 0x12, 0x37, 0x0a, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x6c, 0x61, 0x62, 0x6c, 0x65,
+	0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x18, 0xfa, 0x01, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x42,
+	0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4f,
 	0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x56, 0x69, 0x73, 0x69, 0x62, 0x6c,
 	0x65, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x47, 0x6f, 0x6f, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x08,
 	0x0a, 0x06, 0x5f, 0x50, 0x72, 0x69, 0x63, 0x65, 0x42, 0x0f, 0x0a, 0x0d, 0x5f, 0x44, 0x69, 0x73,
@@ -2276,7 +2358,7 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77,
 	0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f,
-	0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xb3, 0x09, 0x0a, 0x15, 0x55, 0x70, 0x64,
+	0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x93, 0x0a, 0x0a, 0x15, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
 	0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49,
@@ -2334,6 +2416,12 @@ var file_npool_good_gw_v1_appgood_appgood_proto_rawDesc = []byte{
 	0x55, 0x73, 0x65, 0x72, 0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69,
 	0x74, 0x18, 0xdc, 0x01, 0x20, 0x01, 0x28, 0x09, 0x48, 0x0f, 0x52, 0x11, 0x55, 0x73, 0x65, 0x72,
 	0x50, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x88, 0x01, 0x01,
+	0x12, 0x25, 0x0a, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72,
+	0x73, 0x18, 0xe6, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61,
+	0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x12, 0x37, 0x0a, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65,
+	0x6c, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72,
+	0x74, 0x18, 0xf0, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x16, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c,
+	0x6c, 0x61, 0x62, 0x6c, 0x65, 0x42, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74,
 	0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x42, 0x0a, 0x0a, 0x08, 0x5f,
 	0x56, 0x69, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x47, 0x6f, 0x6f, 0x64,
 	0x4e, 0x61, 0x6d, 0x65, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x50, 0x72, 0x69, 0x63, 0x65, 0x42, 0x0f,

@@ -167,6 +167,10 @@ message Good {
     good.manager.appgood.v1.CancelMode CancelMode = 590;
     // @inject_tag: sql:"user_purchase_limit"
     string           UserPurchaseLimit            = 600;
+    // @inject_tag: sql:"display_colors"
+    string           DisplayColors                = 610;
+    // @inject_tag: sql:"cancellable_before_start"
+    uint32           CancellableBeforeStart       = 620;
 }
 
 message CreateGoodRequest {
