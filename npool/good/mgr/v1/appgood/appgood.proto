@@ -47,8 +47,8 @@ message AppGoodReq {
     optional bool       EnableProductPage      = 220;
     optional CancelMode CancelMode             = 230;
     optional string     UserPurchaseLimit      = 240;
-    string              DisplayColors          = 250;
-    uint32              CancellableBeforeStart = 260;
+    optional string     DisplayColors          = 250;
+    optional uint32     CancellableBeforeStart = 260;
 }
 
 message AppGood {
