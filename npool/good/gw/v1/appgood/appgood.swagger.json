@@ -510,6 +510,13 @@
         },
         "UserPurchaseLimit": {
           "type": "string"
+        },
+        "DisplayColors": {
+          "type": "string"
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -648,6 +655,13 @@
         },
         "UserPurchaseLimit": {
           "type": "string"
+        },
+        "DisplayColors": {
+          "type": "string"
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -773,6 +787,13 @@
         },
         "UserPurchaseLimit": {
           "type": "string"
+        },
+        "DisplayColors": {
+          "type": "string"
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -913,6 +934,13 @@
         },
         "UserPurchaseLimit": {
           "type": "string"
+        },
+        "DisplayColors": {
+          "type": "string"
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

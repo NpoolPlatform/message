@@ -43,10 +43,12 @@ message AppGoodReq {
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
-    optional bool       EnablePurchase    = 210;
-    optional bool       EnableProductPage = 220;
-    optional CancelMode CancelMode        = 230;
-    optional string     UserPurchaseLimit = 240;
+    optional bool       EnablePurchase         = 210;
+    optional bool       EnableProductPage      = 220;
+    optional CancelMode CancelMode             = 230;
+    optional string     UserPurchaseLimit      = 240;
+    string              DisplayColors          = 250;
+    uint32              CancellableBeforeStart = 260;
 }
 
 message AppGood {
@@ -73,10 +75,12 @@ message AppGood {
     repeated string Descriptions = 210;
     string          GoodBanner   = 220;
     repeated string DisplayNames = 230;
-    bool            EnablePurchase      = 240;
-    bool            EnableProductPage   = 250;
-    CancelMode      CancelMode          = 260;
-    string          UserPurchaseLimit   = 270;
+    bool            EnablePurchase         = 240;
+    bool            EnableProductPage      = 250;
+    CancelMode      CancelMode             = 260;
+    string          UserPurchaseLimit      = 270;
+    string          DisplayColors          = 280;
+    uint32          CancellableBeforeStart = 290;
 }
 enum CancelMode {
     CancelModeDefault        = 0;

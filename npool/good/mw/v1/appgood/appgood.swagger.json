@@ -402,6 +402,15 @@
         "UserPurchaseLimit": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_purchase_limit\""
+        },
+        "DisplayColors": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"display_colors\""
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cancellable_before_start\""
         }
       }
     },
@@ -528,6 +537,13 @@
         },
         "UserPurchaseLimit": {
           "type": "string"
+        },
+        "DisplayColors": {
+          "type": "string"
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

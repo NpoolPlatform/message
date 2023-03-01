@@ -157,6 +157,8 @@ message Good {
     bool                               EnableProductPage = 680;
     good.manager.appgood.v1.CancelMode CancelMode        = 690;
     string                             UserPurchaseLimit = 700;
+    string                             DisplayColors          = 710;
+    uint32                             CancellableBeforeStart = 720;
 }
 
 message CreateNAppGoodRequest {
@@ -175,10 +177,12 @@ message CreateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
-    bool                               EnablePurchase    = 160;
-    bool                               EnableProductPage = 170;
-    good.manager.appgood.v1.CancelMode CancelMode        = 180;
-    string                             UserPurchaseLimit = 190;
+    bool                               EnablePurchase         = 160;
+    bool                               EnableProductPage      = 170;
+    good.manager.appgood.v1.CancelMode CancelMode             = 180;
+    string                             UserPurchaseLimit      = 190;
+    string                             DisplayColors          = 200;
+    uint32                             CancellableBeforeStart = 210;
 }
 
 message CreateNAppGoodResponse {
@@ -240,6 +244,8 @@ message UpdateAppGoodRequest {
     optional bool                               EnableProductPage = 210;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
     optional string                             UserPurchaseLimit = 230;
+    string                                      DisplayColors          = 240;
+    uint32                                      CancellableBeforeStart = 250;
 }
 
 message UpdateAppGoodResponse {
@@ -267,6 +273,8 @@ message UpdateNAppGoodRequest {
     optional bool                               EnableProductPage = 200;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 210;
     optional string                             UserPurchaseLimit = 220;
+    string                                      DisplayColors          = 230;
+    uint32                                      CancellableBeforeStart = 240;
 }
 
 message UpdateNAppGoodResponse {
