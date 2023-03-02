@@ -168,9 +168,11 @@ message Good {
     // @inject_tag: sql:"user_purchase_limit"
     string           UserPurchaseLimit            = 600;
     // @inject_tag: sql:"display_colors"
-    string           DisplayColors                = 610;
+    string           DisplayColorsStr             = 610;
+    repeated string  DisplayColors                = 620;
     // @inject_tag: sql:"cancellable_before_start"
-    uint32           CancellableBeforeStart       = 620;
+    uint32           CancellableBeforeStart       = 630;
+    string           ProductPage                  = 640;
 }
 
 message CreateGoodRequest {

@@ -403,14 +403,23 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_purchase_limit\""
         },
-        "DisplayColors": {
+        "DisplayColorsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"display_colors\""
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "CancellableBeforeStart": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"cancellable_before_start\""
+        },
+        "ProductPage": {
+          "type": "string"
         }
       }
     },
@@ -539,11 +548,17 @@
           "type": "string"
         },
         "DisplayColors": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "CancellableBeforeStart": {
           "type": "integer",
           "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
         }
       }
     },

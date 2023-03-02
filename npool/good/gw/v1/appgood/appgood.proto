@@ -157,8 +157,9 @@ message Good {
     bool                               EnableProductPage = 680;
     good.manager.appgood.v1.CancelMode CancelMode        = 690;
     string                             UserPurchaseLimit = 700;
-    string                             DisplayColors          = 710;
+    repeated string                    DisplayColors          = 710;
     uint32                             CancellableBeforeStart = 720;
+    string                             ProductPage            = 730;
 }
 
 message CreateNAppGoodRequest {
@@ -181,8 +182,9 @@ message CreateNAppGoodRequest {
     optional bool                               EnableProductPage      = 170;
     optional good.manager.appgood.v1.CancelMode CancelMode             = 180;
     optional string                             UserPurchaseLimit      = 190;
-    optional string                             DisplayColors          = 200;
+    repeated string                             DisplayColors          = 200;
     optional uint32                             CancellableBeforeStart = 210;
+    optional string                             ProductPage            = 220;
 }
 
 message CreateNAppGoodResponse {
@@ -244,8 +246,9 @@ message UpdateAppGoodRequest {
     optional bool                               EnableProductPage = 210;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
     optional string                             UserPurchaseLimit = 230;
-    string                                      DisplayColors          = 240;
-    uint32                                      CancellableBeforeStart = 250;
+    repeated string                             DisplayColors          = 240;
+    optional uint32                             CancellableBeforeStart = 250;
+    optional string                             ProductPage            = 260;
 }
 
 message UpdateAppGoodResponse {
@@ -273,8 +276,9 @@ message UpdateNAppGoodRequest {
     optional bool                               EnableProductPage = 200;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 210;
     optional string                             UserPurchaseLimit = 220;
-    string                                      DisplayColors          = 230;
-    uint32                                      CancellableBeforeStart = 240;
+    repeated string                             DisplayColors          = 230;
+    optional uint32                             CancellableBeforeStart = 240;
+    optional string                             ProductPage            = 250;
 }
 
 message UpdateNAppGoodResponse {
