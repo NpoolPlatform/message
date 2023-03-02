@@ -167,7 +167,8 @@ type Good struct {
 	DisplayColors    []string `protobuf:"bytes,620,rep,name=DisplayColors,proto3" json:"DisplayColors,omitempty"`
 	// @inject_tag: sql:"cancellable_before_start"
 	CancellableBeforeStart uint32 `protobuf:"varint,630,opt,name=CancellableBeforeStart,proto3" json:"CancellableBeforeStart,omitempty" sql:"cancellable_before_start"`
-	ProductPage            string `protobuf:"bytes,640,opt,name=ProductPage,proto3" json:"ProductPage,omitempty"`
+	// @inject_tag: sql:"product_page"
+	ProductPage string `protobuf:"bytes,640,opt,name=ProductPage,proto3" json:"ProductPage,omitempty" sql:"product_page"`
 }
 
 func (x *Good) Reset() {
