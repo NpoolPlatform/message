@@ -172,6 +172,7 @@ message Good {
     repeated string  DisplayColors                = 620;
     // @inject_tag: sql:"cancellable_before_start"
     uint32           CancellableBeforeStart       = 630;
+    // @inject_tag: sql:"product_page"
     string           ProductPage                  = 640;
 }
 
