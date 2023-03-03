@@ -157,6 +157,9 @@
         },
         "ProductPage": {
           "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -261,6 +264,9 @@
         },
         "ProductPage": {
           "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },

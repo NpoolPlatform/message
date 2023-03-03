@@ -160,6 +160,7 @@ message Good {
     repeated string                    DisplayColors          = 710;
     uint32                             CancellableBeforeStart = 720;
     string                             ProductPage            = 730;
+    bool                               EnableSetCommission    = 740;
 }
 
 message CreateNAppGoodRequest {
@@ -185,6 +186,7 @@ message CreateNAppGoodRequest {
     repeated string                             DisplayColors          = 200;
     optional uint32                             CancellableBeforeStart = 210;
     optional string                             ProductPage            = 220;
+    optional bool                               EnableSetCommission    = 230;
 }
 
 message CreateNAppGoodResponse {
@@ -249,6 +251,7 @@ message UpdateAppGoodRequest {
     repeated string                             DisplayColors          = 240;
     optional uint32                             CancellableBeforeStart = 250;
     optional string                             ProductPage            = 260;
+    optional bool                               EnableSetCommission    = 270;
 }
 
 message UpdateAppGoodResponse {
@@ -279,6 +282,7 @@ message UpdateNAppGoodRequest {
     repeated string                             DisplayColors          = 230;
     optional uint32                             CancellableBeforeStart = 240;
     optional string                             ProductPage            = 250;
+    optional bool                               EnableSetCommission    = 270;
 }
 
 message UpdateNAppGoodResponse {
