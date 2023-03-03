@@ -227,6 +227,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
         },
+        "BenefitState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "BenefitStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_state\""
+        },
         "GoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
@@ -383,6 +390,48 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_purchase\""
+        },
+        "EnableProductPage": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_product_page\""
+        },
+        "CancelModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cancel_mode\""
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_purchase_limit\""
+        },
+        "DisplayColorsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"display_colors\""
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cancellable_before_start\""
+        },
+        "ProductPage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"product_page\""
+        },
+        "EnableSetCommission": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_set_commission\""
         }
       }
     },
@@ -497,8 +546,46 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
+    },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping"
+      ],
+      "default": "DefaultBenefitState"
     },
     "v1BenefitType": {
       "type": "string",
@@ -509,6 +596,16 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1GoodType": {
       "type": "string",
