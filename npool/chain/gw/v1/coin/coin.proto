@@ -10,6 +10,12 @@ import "npool/chain/mw/v1/coin/coin.proto";
 
 // Service Name
 service Gateway {
+    rpc CreateCoin (CreateCoinRequest) returns (CreateCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/coin"
+            body: "*"
+        };
+    }
     rpc GetCoins (GetCoinsRequest) returns (GetCoinsResponse) {
         option (google.api.http) = {
             post: "/v1/get/coins"
@@ -22,6 +28,16 @@ service Gateway {
             body: "*"
         };
     }
+}
+
+message CreateCoinRequest {
+    string Name   = 10;
+    string Unit   = 20;
+    string ENV    = 30;
+}
+
+message CreateCoinResponse {
+    chain.middleware.coin.v1.Coin Info = 10;
 }
 
 message GetCoinsRequest {
