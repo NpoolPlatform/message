@@ -1,0 +1,131 @@
+syntax = "proto3";
+
+package good.manager.appdefaultgood.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/appdefaultgood";
+
+import "google/protobuf/empty.proto";
+import "npool/inspire/mgr/v1/commission/commission.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateAppDefaultGood     (CreateAppDefaultGoodRequest)     returns (CreateAppDefaultGoodResponse)     {}
+    rpc CreateAppDefaultGoods    (CreateAppDefaultGoodsRequest)    returns (CreateAppDefaultGoodsResponse)    {}
+    rpc UpdateAppDefaultGood     (UpdateAppDefaultGoodRequest)     returns (UpdateAppDefaultGoodResponse)     {}
+    rpc GetAppDefaultGood        (GetAppDefaultGoodRequest)        returns (GetAppDefaultGoodResponse)        {}
+    rpc GetAppDefaultGoodOnly    (GetAppDefaultGoodOnlyRequest)    returns (GetAppDefaultGoodOnlyResponse)    {}
+    rpc GetAppDefaultGoods       (GetAppDefaultGoodsRequest)       returns (GetAppDefaultGoodsResponse)       {}
+    rpc ExistAppDefaultGood      (ExistAppDefaultGoodRequest)      returns (ExistAppDefaultGoodResponse)      {}
+    rpc ExistAppDefaultGoodConds (ExistAppDefaultGoodCondsRequest) returns (ExistAppDefaultGoodCondsResponse) {}
+    rpc CountAppDefaultGoods     (CountAppDefaultGoodsRequest)     returns (CountAppDefaultGoodsResponse)     {}
+    rpc DeleteAppDefaultGood     (DeleteAppDefaultGoodRequest)     returns (DeleteAppDefaultGoodResponse)     {}
+}
+
+message AppDefaultGoodReq {
+    optional string ID                  = 10;
+    optional string AppID               = 20;
+    optional string GoodID              = 30;
+    optional string CoinTypeID          = 40;
+}
+
+message AppDefaultGood {
+    string ID                  = 10;
+    string AppID               = 20;
+    string GoodID              = 30;
+    string CoinTypeID          = 40;
+    uint32 CreatedAt           = 50;
+    uint32 UpdatedAt           = 60;
+
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal GoodID     = 30;
+    optional npool.v1.StringVal CoinTypeID = 40;
+}
+
+
+message CreateAppDefaultGoodRequest {
+    AppDefaultGoodReq Info = 10;
+}
+
+message CreateAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message CreateAppDefaultGoodsRequest {
+    repeated AppDefaultGoodReq Infos = 10;
+}
+
+message CreateAppDefaultGoodsResponse {
+    repeated AppDefaultGood Infos = 10;
+}
+
+message UpdateAppDefaultGoodRequest {
+    AppDefaultGoodReq Info = 10;
+}
+
+message UpdateAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message GetAppDefaultGoodRequest {
+    string ID = 10;
+}
+
+message GetAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message GetAppDefaultGoodsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAppDefaultGoodsResponse {
+    repeated AppDefaultGood Infos = 10;
+    uint32                  Total = 20;
+}
+
+message GetAppDefaultGoodOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAppDefaultGoodOnlyResponse {
+    AppDefaultGood Info = 10;
+}
+
+message ExistAppDefaultGoodRequest {
+    string ID = 10;
+}
+
+message ExistAppDefaultGoodResponse {
+    bool Info = 10;
+}
+
+message ExistAppDefaultGoodCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppDefaultGoodCondsResponse {
+    bool Info = 10;
+}
+
+message CountAppDefaultGoodsRequest {
+    Conds Conds = 10;
+}
+
+message CountAppDefaultGoodsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteAppDefaultGoodRequest {
+    string ID = 10;
+}
+
+message DeleteAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
