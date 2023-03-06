@@ -400,6 +400,38 @@
         ]
       }
     },
+    "/v1/get/miningrewards": {
+      "post": {
+        "operationId": "Gateway_GetMiningRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMiningRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMiningRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/n/app/withdraws": {
       "post": {
         "operationId": "Gateway_GetNAppWithdraws",
@@ -1150,6 +1182,48 @@
         }
       }
     },
+    "v1GetMiningRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetMiningRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningReward"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetNAppWithdrawsRequest": {
       "type": "object",
       "properties": {
@@ -1282,6 +1356,51 @@
         "Outcoming"
       ],
       "default": "DefaultType"
+    },
+    "v1MiningReward": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "RewardAmount": {
+          "type": "string"
+        },
+        "RewardAmountPerUnit": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1Profit": {
       "type": "object",
