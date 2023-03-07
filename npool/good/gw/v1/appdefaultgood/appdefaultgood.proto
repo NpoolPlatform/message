@@ -59,7 +59,7 @@ message CreateAppDefaultGoodRequest {
 }
 
 message CreateAppDefaultGoodResponse {
-     good.manager.appdefaultgood.v1.AppDefaultGood AppDefaultGood = 10;
+     good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
 }
 
 message CreateNAppDefaultGoodRequest {
@@ -69,7 +69,7 @@ message CreateNAppDefaultGoodRequest {
 }
 
 message CreateNAppDefaultGoodResponse {
-     good.manager.appdefaultgood.v1.AppDefaultGood AppDefaultGood = 10;
+     good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
 }
 
 message GetAppDefaultGoodsRequest {

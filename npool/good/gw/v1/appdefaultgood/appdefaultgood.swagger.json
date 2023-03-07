@@ -227,7 +227,7 @@
     "goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
-        "AppDefaultGood": {
+        "Info": {
           "$ref": "#/definitions/v1AppDefaultGood"
         }
       }
@@ -357,7 +357,7 @@
     "v1CreateNAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
-        "AppDefaultGood": {
+        "Info": {
           "$ref": "#/definitions/v1AppDefaultGood"
         }
       }
