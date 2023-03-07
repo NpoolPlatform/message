@@ -37,16 +37,9 @@ service Gateway {
         };
     }
 
-    rpc UpdateAppDefaultGood (UpdateAppDefaultGoodRequest) returns (UpdateAppDefaultGoodResponse) {
+    rpc DeleteAppDefaultGood (DeleteAppDefaultGoodRequest) returns (DeleteAppDefaultGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/update/appgood"
-            body: "*"
-        };
-    }
-
-    rpc UpdateNAppDefaultGood (UpdateNAppDefaultGoodRequest) returns (UpdateNAppDefaultGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/n/appgdefaultood"
+            post: "/v1/delete/appdefaultgoods"
             body: "*"
         };
     }
@@ -94,24 +87,11 @@ message GetNAppDefaultGoodsResponse {
     uint32                                                 Total = 20;
 }
 
-message UpdateAppDefaultGoodRequest {
+message DeleteAppDefaultGoodRequest {
     string          ID         = 10;
     string          AppID      = 20;
-    string          GoodID     = 30;
-    string          CoinTypeID = 40;
 }
 
-message UpdateAppDefaultGoodResponse {
-    good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
-}
-
-message UpdateNAppDefaultGoodRequest {
-    string          ID          = 10;
-    string          TargetAppID = 20;
-    string          GoodID      = 30;
-    string          CoinTypeID  = 40;
-}
-
-message UpdateNAppDefaultGoodResponse {
+message DeleteAppDefaultGoodResponse {
     good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
 }

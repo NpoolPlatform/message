@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/delete/appdefaultgoods": {
+      "post": {
+        "operationId": "Gateway_DeleteAppDefaultGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1DeleteAppDefaultGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1DeleteAppDefaultGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/appdefaultgoods": {
       "post": {
         "operationId": "Gateway_GetAppDefaultGoods",
@@ -143,70 +175,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/appgood": {
-      "post": {
-        "operationId": "Gateway_UpdateAppDefaultGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/n/appgdefaultood": {
-      "post": {
-        "operationId": "Gateway_UpdateNAppDefaultGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppDefaultGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppDefaultGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -225,6 +193,25 @@
       }
     },
     "goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppDefaultGood"
+        }
+      }
+    },
+    "goodgatewayappdefaultgoodv1DeleteAppDefaultGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewayappdefaultgoodv1DeleteAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -260,31 +247,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppDefaultGood"
         }
       }
     },
@@ -390,31 +352,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateNAppDefaultGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateNAppDefaultGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppDefaultGood"
         }
       }
     }
