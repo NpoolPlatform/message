@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1CreateAppDefaultGoodResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1CreateAppDefaultGoodRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1CreateAppDefaultGoodRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1GetAppDefaultGoodsResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1GetAppDefaultGoodsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1GetAppDefaultGoodsRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1GetAppDefaultGoodsRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1UpdateAppDefaultGoodResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappgoodv1UpdateAppDefaultGoodRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest"
             }
           }
         ],
@@ -210,7 +210,7 @@
     }
   },
   "definitions": {
-    "gatewayappgoodv1CreateAppDefaultGoodRequest": {
+    "goodgatewayappdefaultgoodv1CreateAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -224,7 +224,7 @@
         }
       }
     },
-    "gatewayappgoodv1CreateAppDefaultGoodResponse": {
+    "goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "AppDefaultGood": {
@@ -232,7 +232,7 @@
         }
       }
     },
-    "gatewayappgoodv1GetAppDefaultGoodsRequest": {
+    "goodgatewayappdefaultgoodv1GetAppDefaultGoodsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -248,7 +248,7 @@
         }
       }
     },
-    "gatewayappgoodv1GetAppDefaultGoodsResponse": {
+    "goodgatewayappdefaultgoodv1GetAppDefaultGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -263,7 +263,7 @@
         }
       }
     },
-    "gatewayappgoodv1UpdateAppDefaultGoodRequest": {
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -280,7 +280,7 @@
         }
       }
     },
-    "gatewayappgoodv1UpdateAppDefaultGoodResponse": {
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {

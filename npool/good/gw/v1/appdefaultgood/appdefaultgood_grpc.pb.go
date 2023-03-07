@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/good/gw/v1/appdefaultgood/appdefaultgood.proto
 
-package appgood
+package appdefaultgood
 
 import (
 	context "context"
@@ -40,7 +40,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateAppDefaultGood(ctx context.Context, in *CreateAppDefaultGoodRequest, opts ...grpc.CallOption) (*CreateAppDefaultGoodResponse, error) {
 	out := new(CreateAppDefaultGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/CreateAppDefaultGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/CreateAppDefaultGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -49,7 +49,7 @@ func (c *gatewayClient) CreateAppDefaultGood(ctx context.Context, in *CreateAppD
 
 func (c *gatewayClient) CreateNAppDefaultGood(ctx context.Context, in *CreateNAppDefaultGoodRequest, opts ...grpc.CallOption) (*CreateNAppDefaultGoodResponse, error) {
 	out := new(CreateNAppDefaultGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/CreateNAppDefaultGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/CreateNAppDefaultGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func (c *gatewayClient) CreateNAppDefaultGood(ctx context.Context, in *CreateNAp
 
 func (c *gatewayClient) GetAppDefaultGoods(ctx context.Context, in *GetAppDefaultGoodsRequest, opts ...grpc.CallOption) (*GetAppDefaultGoodsResponse, error) {
 	out := new(GetAppDefaultGoodsResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/GetAppDefaultGoods", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/GetAppDefaultGoods", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,7 +67,7 @@ func (c *gatewayClient) GetAppDefaultGoods(ctx context.Context, in *GetAppDefaul
 
 func (c *gatewayClient) GetNAppDefaultGoods(ctx context.Context, in *GetNAppDefaultGoodsRequest, opts ...grpc.CallOption) (*GetNAppDefaultGoodsResponse, error) {
 	out := new(GetNAppDefaultGoodsResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/GetNAppDefaultGoods", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/GetNAppDefaultGoods", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +76,7 @@ func (c *gatewayClient) GetNAppDefaultGoods(ctx context.Context, in *GetNAppDefa
 
 func (c *gatewayClient) UpdateAppDefaultGood(ctx context.Context, in *UpdateAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateAppDefaultGoodResponse, error) {
 	out := new(UpdateAppDefaultGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/UpdateAppDefaultGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func (c *gatewayClient) UpdateAppDefaultGood(ctx context.Context, in *UpdateAppD
 
 func (c *gatewayClient) UpdateNAppDefaultGood(ctx context.Context, in *UpdateNAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateNAppDefaultGoodResponse, error) {
 	out := new(UpdateNAppDefaultGoodResponse)
-	err := c.cc.Invoke(ctx, "/good.gateway.appgood.v1.Gateway/UpdateNAppDefaultGood", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,7 +150,7 @@ func _Gateway_CreateAppDefaultGood_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/CreateAppDefaultGood",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/CreateAppDefaultGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateAppDefaultGood(ctx, req.(*CreateAppDefaultGoodRequest))
@@ -168,7 +168,7 @@ func _Gateway_CreateNAppDefaultGood_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/CreateNAppDefaultGood",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/CreateNAppDefaultGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateNAppDefaultGood(ctx, req.(*CreateNAppDefaultGoodRequest))
@@ -186,7 +186,7 @@ func _Gateway_GetAppDefaultGoods_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/GetAppDefaultGoods",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/GetAppDefaultGoods",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppDefaultGoods(ctx, req.(*GetAppDefaultGoodsRequest))
@@ -204,7 +204,7 @@ func _Gateway_GetNAppDefaultGoods_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/GetNAppDefaultGoods",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/GetNAppDefaultGoods",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetNAppDefaultGoods(ctx, req.(*GetNAppDefaultGoodsRequest))
@@ -222,7 +222,7 @@ func _Gateway_UpdateAppDefaultGood_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/UpdateAppDefaultGood",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateAppDefaultGood(ctx, req.(*UpdateAppDefaultGoodRequest))
@@ -240,7 +240,7 @@ func _Gateway_UpdateNAppDefaultGood_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/good.gateway.appgood.v1.Gateway/UpdateNAppDefaultGood",
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateNAppDefaultGood(ctx, req.(*UpdateNAppDefaultGoodRequest))
@@ -252,7 +252,7 @@ func _Gateway_UpdateNAppDefaultGood_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.appgood.v1.Gateway",
+	ServiceName: "good.gateway.appdefaultgood.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

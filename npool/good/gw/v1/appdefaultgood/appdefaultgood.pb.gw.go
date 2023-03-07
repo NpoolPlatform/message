@@ -2,11 +2,11 @@
 // source: npool/good/gw/v1/appdefaultgood/appdefaultgood.proto
 
 /*
-Package appgood is a reverse proxy.
+Package appdefaultgood is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package appgood
+package appdefaultgood
 
 import (
 	"context"
@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/CreateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/appdefaultgood"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/CreateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/CreateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/n/appdefaultgood"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/CreateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/n/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/GetAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/appdefaultgoods"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/GetAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/appdefaultgoods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/GetNAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/n/appdefaultgoods"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/GetNAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/n/appdefaultgoods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/UpdateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/appgood"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/appgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/UpdateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/n/appgdefaultood"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/n/appgdefaultood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/CreateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/appdefaultgood"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/CreateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/CreateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/n/appdefaultgood"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/CreateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/create/n/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/GetAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/appdefaultgoods"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/GetAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/appdefaultgoods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/GetNAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/n/appdefaultgoods"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/GetNAppDefaultGoods", runtime.WithHTTPPathPattern("/v1/get/n/appdefaultgoods"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/UpdateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/appgood"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/appgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appgood.v1.Gateway/UpdateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/n/appgdefaultood"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood", runtime.WithHTTPPathPattern("/v1/update/n/appgdefaultood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

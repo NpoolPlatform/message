@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.gateway.appgood.v1;
+package good.gateway.appdefaultgood.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/appgood";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/appdefaultgood";
 
 import "google/api/annotations.proto";
 import "npool/good/mgr/v1/appdefaultgood/appdefaultgood.proto";
