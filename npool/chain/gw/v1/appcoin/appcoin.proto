@@ -88,7 +88,7 @@ message Coin {
     uint32          DisplayIndex                 = 360;
     string          MaxAmountPerWithdraw         = 370;
     string          LeastTransferAmount          = 380;
-    string          DefaultGood                  = 400;
+    string          DefaultGoodID                = 400;
 }
 message CreateCoinRequest {
     string TargetAppID = 10;

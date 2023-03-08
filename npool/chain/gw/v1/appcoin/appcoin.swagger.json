@@ -326,7 +326,7 @@
         "LeastTransferAmount": {
           "type": "string"
         },
-        "DefaultGood": {
+        "DefaultGoodID": {
           "type": "string"
         }
       }
