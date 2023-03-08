@@ -103,6 +103,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
