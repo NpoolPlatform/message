@@ -66,6 +66,7 @@ message Conds {
     optional npool.v1.Uint32Val EndAt  = 60;
     optional npool.v1.StringSliceVal UserIDs = 70;
     optional npool.v1.StringSliceVal GoodIDs = 80;
+    optional npool.v1.Uint32Val StartAt = 90;
 }
 
 message CreateCommissionRequest {
