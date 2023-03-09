@@ -280,6 +280,9 @@
         },
         "ToGoodID": {
           "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
@@ -296,6 +299,9 @@
           "type": "string"
         },
         "ToGoodID": {
+          "type": "string"
+        },
+        "Value": {
           "type": "string"
         }
       }

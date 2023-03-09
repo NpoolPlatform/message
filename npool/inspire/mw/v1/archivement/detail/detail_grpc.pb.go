@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/ledger/mw/v2/mining/detail/detail.proto
+// source: npool/inspire/mw/v1/archivement/detail/detail.proto
 
 package detail
 
@@ -22,8 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
-	GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error)
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
 }
 
@@ -35,27 +33,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error) {
-	out := new(CreateDetailResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/CreateDetail", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error) {
-	out := new(GetDetailOnlyResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/GetDetailOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error) {
 	out := new(GetDetailsResponse)
-	err := c.cc.Invoke(ctx, "/ledger.middleware.mining.detail.v2.Middleware/GetDetails", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.archivement.detail.v1.Middleware/GetDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,8 +46,6 @@ func (c *middlewareClient) GetDetails(ctx context.Context, in *GetDetailsRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
-	GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error)
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -76,12 +54,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDetail not implemented")
-}
-func (UnimplementedMiddlewareServer) GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDetailOnly not implemented")
-}
 func (UnimplementedMiddlewareServer) GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetails not implemented")
 }
@@ -98,42 +70,6 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_CreateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDetailRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateDetail(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/CreateDetail",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateDetail(ctx, req.(*CreateDetailRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetDetailOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDetailOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetDetailOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/GetDetailOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetDetailOnly(ctx, req.(*GetDetailOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDetailsRequest)
 	if err := dec(in); err != nil {
@@ -144,7 +80,7 @@ func _Middleware_GetDetails_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ledger.middleware.mining.detail.v2.Middleware/GetDetails",
+		FullMethod: "/inspire.middleware.archivement.detail.v1.Middleware/GetDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetDetails(ctx, req.(*GetDetailsRequest))
@@ -156,22 +92,14 @@ func _Middleware_GetDetails_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.middleware.mining.detail.v2.Middleware",
+	ServiceName: "inspire.middleware.archivement.detail.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateDetail",
-			Handler:    _Middleware_CreateDetail_Handler,
-		},
-		{
-			MethodName: "GetDetailOnly",
-			Handler:    _Middleware_GetDetailOnly_Handler,
-		},
 		{
 			MethodName: "GetDetails",
 			Handler:    _Middleware_GetDetails_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mw/v2/mining/detail/detail.proto",
+	Metadata: "npool/inspire/mw/v1/archivement/detail/detail.proto",
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/mining/detail/detail.proto",
+    "title": "npool/inspire/mw/v1/archivement/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,47 +17,10 @@
   ],
   "paths": {},
   "definitions": {
-    "detailv2CreateDetailResponse": {
+    "inspiremiddlewarearchivementdetailv1GetDetailsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Detail"
-        }
-      }
-    },
-    "detailv2DetailReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "detailv2GetDetailOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Detail"
-        }
-      }
-    },
-    "detailv2GetDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
+        "infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Detail"
@@ -96,22 +59,66 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DirectContributorID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfOrder": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "PaymentID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "PaymentCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PaymentCoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Units": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "BenefitDate": {
+        "USDAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Commission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
@@ -122,18 +129,47 @@
         "ID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "DirectContributorID": {
+          "type": "string"
+        },
         "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "SelfOrder": {
+          "type": "boolean"
+        },
+        "PaymentID": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
         },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
         "Amount": {
           "type": "string"
         },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
+        "USDAmount": {
+          "type": "string"
+        },
+        "Commission": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",

@@ -66,6 +66,7 @@ message Conds {
     optional npool.v1.Uint32Val EndAt  = 60;
     optional npool.v1.StringSliceVal UserIDs = 70;
     optional npool.v1.StringSliceVal GoodIDs = 80;
+    optional npool.v1.Uint32Val StartAt = 90;
 }
 
 message CreateCommissionRequest {
@@ -116,6 +117,7 @@ message CloneCommissionsRequest {
     string AppID      = 10;
     string FromGoodID = 20;
     string ToGoodID   = 30;
+    string Value      = 40;
 }
 
 message CloneCommissionsResponse {

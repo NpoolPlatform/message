@@ -88,6 +88,10 @@ message Good {
     // @inject_tag: sql:"benefit_type"
     string           BenefitTypeStr              = 271;
 
+    good.manager.good.v1.BenefitState BenefitState = 272;
+    // @inject_tag: sql:"benefit_state"
+    string           BenefitStateStr               = 273;
+
     // @inject_tag: sql:"good_name"
     string           GoodName           = 280;
     // @inject_tag: sql:"unit"
@@ -157,6 +161,26 @@ message Good {
     // @inject_tag: sql:"display_names"
     string           DisplayNamesStr     = 540;
     repeated string  DisplayNames        = 550;
+
+    // @inject_tag: sql:"enable_purchase"
+    bool             EnablePurchase               = 560;
+    // @inject_tag: sql:"enable_product_page"
+    bool             EnableProductPage            = 570;
+    // @inject_tag: sql:"cancel_mode"
+    string           CancelModeStr                = 580;
+    good.manager.appgood.v1.CancelMode CancelMode = 590;
+    // @inject_tag: sql:"user_purchase_limit"
+    string           UserPurchaseLimit            = 600;
+    // @inject_tag: sql:"display_colors"
+    string           DisplayColorsStr             = 610;
+    repeated string  DisplayColors                = 620;
+    // @inject_tag: sql:"cancellable_before_start"
+    uint32           CancellableBeforeStart       = 630;
+    // @inject_tag: sql:"product_page"
+    string           ProductPage                  = 640;
+    // @inject_tag: sql:"enable_set_commission"
+    bool             EnableSetCommission          = 650;
+
 }
 
 message CreateGoodRequest {
