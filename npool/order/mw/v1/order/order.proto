@@ -19,6 +19,7 @@ service Middleware {
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
     rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
+    rpc SumOrders       (SumOrdersRequest)      returns (SumOrdersResponse)      {}
 }
 
 message OrderReq {
