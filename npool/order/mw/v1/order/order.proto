@@ -222,5 +222,5 @@ message SumOrderUnitsRequest {
 }
 
 message SumOrderUnitsResponse {
-    uint32 Info = 10;
+    string Info = 10;
 }
