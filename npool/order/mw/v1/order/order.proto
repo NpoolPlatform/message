@@ -215,3 +215,11 @@ message CountOrdersRequest {
 message CountOrdersResponse {
     uint32 Info = 10;
 }
+
+message SumOrdersRequest {
+    Conds Conds  = 10;
+}
+
+message SumOrdersResponse {
+    uint32 Info = 10;
+}
