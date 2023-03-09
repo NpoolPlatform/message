@@ -8,7 +8,8 @@ import "npool/inspire/mgr/v1/commission/commission.proto";
 
 // Service Name
 service Middleware {
-    rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
+    rpc Accounting   (AccountingRequest)    returns (AccountingResponse)   {}
+    rpc AccountingV2 (AccountingV2Request)  returns (AccountingV2Response) {}
 }
 
 message Commission {
@@ -35,6 +36,28 @@ message AccountingRequest {
 }
 
 message AccountingResponse {
+    repeated Commission Infos = 10;
+}
+
+
+message AccountingV2Request {
+    string AppID                  = 10;
+    string UserID                 = 20;
+    string GoodID                 = 30;
+    string OrderID                = 40;
+    uint32 OrderCreatedAt         = 50;
+    string PaymentID              = 60;
+    string CoinTypeID             = 70;
+    string PaymentCoinTypeID      = 80;
+    string PaymentCoinUSDCurrency = 90;
+    string Units                  = 100;
+    string PaymentAmount          = 110;
+    string GoodValue              = 120;
+    inspire.manager.commission.v1.SettleType SettleType = 130;
+    bool   HasCommission          = 140;
+}
+
+message AccountingV2Response {
     repeated Commission Infos = 10;
 }
 
