@@ -23,7 +23,6 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	Accounting(ctx context.Context, in *AccountingRequest, opts ...grpc.CallOption) (*AccountingResponse, error)
-	AccountingV2(ctx context.Context, in *AccountingV2Request, opts ...grpc.CallOption) (*AccountingV2Response, error)
 }
 
 type middlewareClient struct {
@@ -43,21 +42,11 @@ func (c *middlewareClient) Accounting(ctx context.Context, in *AccountingRequest
 	return out, nil
 }
 
-func (c *middlewareClient) AccountingV2(ctx context.Context, in *AccountingV2Request, opts ...grpc.CallOption) (*AccountingV2Response, error) {
-	out := new(AccountingV2Response)
-	err := c.cc.Invoke(ctx, "/inspire.middleware.accounting.v1.Middleware/AccountingV2", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error)
-	AccountingV2(context.Context, *AccountingV2Request) (*AccountingV2Response, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -67,9 +56,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Accounting not implemented")
-}
-func (UnimplementedMiddlewareServer) AccountingV2(context.Context, *AccountingV2Request) (*AccountingV2Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AccountingV2 not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -102,24 +88,6 @@ func _Middleware_Accounting_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_AccountingV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AccountingV2Request)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).AccountingV2(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/inspire.middleware.accounting.v1.Middleware/AccountingV2",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AccountingV2(ctx, req.(*AccountingV2Request))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -130,10 +98,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Accounting",
 			Handler:    _Middleware_Accounting_Handler,
-		},
-		{
-			MethodName: "AccountingV2",
-			Handler:    _Middleware_AccountingV2_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

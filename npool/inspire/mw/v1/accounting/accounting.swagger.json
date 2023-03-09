@@ -55,17 +55,6 @@
         }
       }
     },
-    "v1AccountingV2Response": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Commission"
-          }
-        }
-      }
-    },
     "v1Commission": {
       "type": "object",
       "properties": {
