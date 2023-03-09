@@ -29,7 +29,7 @@ type MiddlewareClient interface {
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	GetOrderOnly(ctx context.Context, in *GetOrderOnlyRequest, opts ...grpc.CallOption) (*GetOrderOnlyResponse, error)
 	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
-	SumOrders(ctx context.Context, in *SumOrdersRequest, opts ...grpc.CallOption) (*SumOrdersResponse, error)
+	SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error)
 }
 
 type middlewareClient struct {
@@ -103,9 +103,9 @@ func (c *middlewareClient) CountOrders(ctx context.Context, in *CountOrdersReque
 	return out, nil
 }
 
-func (c *middlewareClient) SumOrders(ctx context.Context, in *SumOrdersRequest, opts ...grpc.CallOption) (*SumOrdersResponse, error) {
-	out := new(SumOrdersResponse)
-	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/SumOrders", in, out, opts...)
+func (c *middlewareClient) SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error) {
+	out := new(SumOrderUnitsResponse)
+	err := c.cc.Invoke(ctx, "/order.middleware.order1.v1.Middleware/SumOrderUnits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -123,7 +123,7 @@ type MiddlewareServer interface {
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error)
 	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
-	SumOrders(context.Context, *SumOrdersRequest) (*SumOrdersResponse, error)
+	SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -152,8 +152,8 @@ func (UnimplementedMiddlewareServer) GetOrderOnly(context.Context, *GetOrderOnly
 func (UnimplementedMiddlewareServer) CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountOrders not implemented")
 }
-func (UnimplementedMiddlewareServer) SumOrders(context.Context, *SumOrdersRequest) (*SumOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumOrders not implemented")
+func (UnimplementedMiddlewareServer) SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumOrderUnits not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -294,20 +294,20 @@ func _Middleware_CountOrders_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SumOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumOrdersRequest)
+func _Middleware_SumOrderUnits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumOrderUnitsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).SumOrders(ctx, in)
+		return srv.(MiddlewareServer).SumOrderUnits(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.middleware.order1.v1.Middleware/SumOrders",
+		FullMethod: "/order.middleware.order1.v1.Middleware/SumOrderUnits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SumOrders(ctx, req.(*SumOrdersRequest))
+		return srv.(MiddlewareServer).SumOrderUnits(ctx, req.(*SumOrderUnitsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -348,8 +348,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CountOrders_Handler,
 		},
 		{
-			MethodName: "SumOrders",
-			Handler:    _Middleware_SumOrders_Handler,
+			MethodName: "SumOrderUnits",
+			Handler:    _Middleware_SumOrderUnits_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

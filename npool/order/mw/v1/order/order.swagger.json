@@ -476,7 +476,7 @@
         }
       }
     },
-    "v1SumOrdersResponse": {
+    "v1SumOrderUnitsResponse": {
       "type": "object",
       "properties": {
         "Info": {

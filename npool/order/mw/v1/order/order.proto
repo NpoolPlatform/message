@@ -19,7 +19,7 @@ service Middleware {
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
     rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
-    rpc SumOrders       (SumOrdersRequest)      returns (SumOrdersResponse)      {}
+    rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
 }
 
 message OrderReq {
@@ -217,10 +217,10 @@ message CountOrdersResponse {
     uint32 Info = 10;
 }
 
-message SumOrdersRequest {
+message SumOrderUnitsRequest {
     Conds Conds  = 10;
 }
 
-message SumOrdersResponse {
+message SumOrderUnitsResponse {
     uint32 Info = 10;
 }
