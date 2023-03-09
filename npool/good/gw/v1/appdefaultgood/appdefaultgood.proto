@@ -45,6 +45,16 @@ service Gateway {
     }
 }
 
+message AppDefaultGood {
+    string ID                  = 10;
+    string AppID               = 20;
+    string GoodID              = 30;
+    string CoinTypeID          = 40;
+    string CoinUnit            = 60;
+    uint32 CreatedAt           = 70;
+    uint32 UpdatedAt           = 80;
+}
+
 message CreateAppDefaultGoodRequest {
     string AppID      = 10;
     string GoodID     = 20;
@@ -52,7 +62,7 @@ message CreateAppDefaultGoodRequest {
 }
 
 message CreateAppDefaultGoodResponse {
-     good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
+    AppDefaultGood Info = 10;
 }
 
 message CreateNAppDefaultGoodRequest {
@@ -62,7 +72,7 @@ message CreateNAppDefaultGoodRequest {
 }
 
 message CreateNAppDefaultGoodResponse {
-     good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
+    AppDefaultGood Info = 10;
 }
 
 message GetAppDefaultGoodsRequest {
@@ -72,8 +82,8 @@ message GetAppDefaultGoodsRequest {
 }
 
 message GetAppDefaultGoodsResponse {
-    repeated good.manager.appdefaultgood.v1.AppDefaultGood Infos = 10;
-    uint32                                                 Total = 20;
+    repeated AppDefaultGood Infos = 10;
+    uint32                  Total = 20;
 }
 
 message GetNAppDefaultGoodsRequest {
@@ -83,8 +93,8 @@ message GetNAppDefaultGoodsRequest {
 }
 
 message GetNAppDefaultGoodsResponse {
-    repeated good.manager.appdefaultgood.v1.AppDefaultGood Infos = 10;
-    uint32                                                 Total = 20;
+    repeated AppDefaultGood Infos = 10;
+    uint32                  Total = 20;
 }
 
 message DeleteAppDefaultGoodRequest {
@@ -93,5 +103,5 @@ message DeleteAppDefaultGoodRequest {
 }
 
 message DeleteAppDefaultGoodResponse {
-    good.manager.appdefaultgood.v1.AppDefaultGood Info = 10;
+    AppDefaultGood Info = 10;
 }

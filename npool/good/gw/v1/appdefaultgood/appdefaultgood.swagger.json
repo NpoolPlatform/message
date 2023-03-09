@@ -178,6 +178,34 @@
     }
   },
   "definitions": {
+    "goodgatewayappdefaultgoodv1AppDefaultGood": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "goodgatewayappdefaultgoodv1CreateAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
@@ -196,7 +224,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppDefaultGood"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
@@ -215,7 +243,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppDefaultGood"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
@@ -241,7 +269,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppDefaultGood"
+            "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
           }
         },
         "Total": {
@@ -277,31 +305,6 @@
         }
       }
     },
-    "v1AppDefaultGood": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateNAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
@@ -320,7 +323,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1AppDefaultGood"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
@@ -346,7 +349,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppDefaultGood"
+            "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
           }
         },
         "Total": {
