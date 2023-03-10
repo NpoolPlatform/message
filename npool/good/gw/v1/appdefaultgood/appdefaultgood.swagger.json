@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/delete/appdefaultgoods": {
+    "/v1/delete/appdefaultgood": {
       "post": {
         "operationId": "Gateway_DeleteAppDefaultGood",
         "responses": {

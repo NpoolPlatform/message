@@ -39,7 +39,7 @@ service Gateway {
 
     rpc DeleteAppDefaultGood (DeleteAppDefaultGoodRequest) returns (DeleteAppDefaultGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/appdefaultgoods"
+            post: "/v1/delete/appdefaultgood"
             body: "*"
         };
     }

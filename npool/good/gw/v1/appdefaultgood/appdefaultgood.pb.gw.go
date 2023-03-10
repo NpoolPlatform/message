@@ -305,7 +305,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/DeleteAppDefaultGood", runtime.WithHTTPPathPattern("/v1/delete/appdefaultgoods"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/DeleteAppDefaultGood", runtime.WithHTTPPathPattern("/v1/delete/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -447,7 +447,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/DeleteAppDefaultGood", runtime.WithHTTPPathPattern("/v1/delete/appdefaultgoods"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.appdefaultgood.v1.Gateway/DeleteAppDefaultGood", runtime.WithHTTPPathPattern("/v1/delete/appdefaultgood"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -475,7 +475,7 @@ var (
 
 	pattern_Gateway_GetNAppDefaultGoods_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "n", "appdefaultgoods"}, ""))
 
-	pattern_Gateway_DeleteAppDefaultGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "appdefaultgoods"}, ""))
+	pattern_Gateway_DeleteAppDefaultGood_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "appdefaultgood"}, ""))
 )
 
 var (
