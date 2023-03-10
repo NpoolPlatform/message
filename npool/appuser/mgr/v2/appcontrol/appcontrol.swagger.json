@@ -121,6 +121,15 @@
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
           "format": "int64"
+        },
+        "UnderMaintenance": {
+          "type": "boolean"
+        },
+        "CommitButtons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -163,6 +172,15 @@
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
           "format": "int64"
+        },
+        "UnderMaintenance": {
+          "type": "boolean"
+        },
+        "CommitButtons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

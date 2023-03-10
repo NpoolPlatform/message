@@ -41,6 +41,8 @@ message AppReq {
     optional bool            InvitationCodeMust = 130;
     optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
     optional uint32          MaxTypedCouponsPerOrder = 150;
+    optional bool          UnderMaintenance = 150;
+    optional uint32          CommitButtons = 150;
 }
 
 message App {
