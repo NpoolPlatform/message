@@ -74,6 +74,7 @@ message Conds {
     optional npool.v1.StringVal USDAmount               = 130;
     optional npool.v1.StringVal Commission              = 140;
     optional npool.v1.Uint32Val CreatedAt               = 150;
+    optional npool.v1.StringSliceVal UserIDs            = 160;
 }
 
 
