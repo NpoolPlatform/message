@@ -10,18 +10,19 @@ import "npool/npool.proto";
 
 // Service Name
 service Gateway {
-    rpc UpdateArchivement (UpdateArchivementRequest) returns (UpdateArchivementResponse) {
+    rpc Reconcile (ReconcileRequest) returns (ReconcileResponse) {
         option (google.api.http) = {
-            post: "/v1/update/archivement"
+            post: "/v1/reconcile"
             body: "*"
         };
     }
 }
 
-message UpdateArchivementRequest {
+message ReconcileRequest {
     string AppID   = 10;
     string UserID  = 20;
+    string GoodID  = 30;
 }
 
-message UpdateArchivementResponse {
+message ReconcileResponse {
 }
