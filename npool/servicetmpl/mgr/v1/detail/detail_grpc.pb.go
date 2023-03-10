@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/servicetmpl/detail/detail.proto
+// source: npool/servicetmpl/mgr/v1/detail/detail.proto
 
 package detail
 
@@ -30,6 +30,7 @@ type ManagerClient interface {
 	ExistDetail(ctx context.Context, in *ExistDetailRequest, opts ...grpc.CallOption) (*ExistDetailResponse, error)
 	ExistDetailConds(ctx context.Context, in *ExistDetailCondsRequest, opts ...grpc.CallOption) (*ExistDetailCondsResponse, error)
 	CountDetails(ctx context.Context, in *CountDetailsRequest, opts ...grpc.CallOption) (*CountDetailsResponse, error)
+	DeleteDetail(ctx context.Context, in *DeleteDetailRequest, opts ...grpc.CallOption) (*DeleteDetailResponse, error)
 }
 
 type managerClient struct {
@@ -112,6 +113,15 @@ func (c *managerClient) CountDetails(ctx context.Context, in *CountDetailsReques
 	return out, nil
 }
 
+func (c *managerClient) DeleteDetail(ctx context.Context, in *DeleteDetailRequest, opts ...grpc.CallOption) (*DeleteDetailResponse, error) {
+	out := new(DeleteDetailResponse)
+	err := c.cc.Invoke(ctx, "/service.template.detail.v1.Manager/DeleteDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
@@ -124,6 +134,7 @@ type ManagerServer interface {
 	ExistDetail(context.Context, *ExistDetailRequest) (*ExistDetailResponse, error)
 	ExistDetailConds(context.Context, *ExistDetailCondsRequest) (*ExistDetailCondsResponse, error)
 	CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error)
+	DeleteDetail(context.Context, *DeleteDetailRequest) (*DeleteDetailResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -154,6 +165,9 @@ func (UnimplementedManagerServer) ExistDetailConds(context.Context, *ExistDetail
 }
 func (UnimplementedManagerServer) CountDetails(context.Context, *CountDetailsRequest) (*CountDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountDetails not implemented")
+}
+func (UnimplementedManagerServer) DeleteDetail(context.Context, *DeleteDetailRequest) (*DeleteDetailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDetail not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -312,6 +326,24 @@ func _Manager_CountDetails_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.template.detail.v1.Manager/DeleteDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteDetail(ctx, req.(*DeleteDetailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -351,7 +383,11 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "CountDetails",
 			Handler:    _Manager_CountDetails_Handler,
 		},
+		{
+			MethodName: "DeleteDetail",
+			Handler:    _Manager_DeleteDetail_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/servicetmpl/detail/detail.proto",
+	Metadata: "npool/servicetmpl/mgr/v1/detail/detail.proto",
 }

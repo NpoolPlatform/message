@@ -110,6 +110,14 @@
         }
       }
     },
+    "v1DeleteDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
+    },
     "v1Detail": {
       "type": "object",
       "properties": {
