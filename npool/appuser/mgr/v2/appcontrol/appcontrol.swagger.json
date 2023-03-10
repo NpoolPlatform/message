@@ -122,10 +122,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "UnderMaintenance": {
+        "Maintaining": {
           "type": "boolean"
         },
-        "CommitButtons": {
+        "CommitButtonTargets": {
           "type": "array",
           "items": {
             "type": "string"
@@ -173,10 +173,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "UnderMaintenance": {
+        "Maintaining": {
           "type": "boolean"
         },
-        "CommitButtons": {
+        "CommitButtonTargets": {
           "type": "array",
           "items": {
             "type": "string"

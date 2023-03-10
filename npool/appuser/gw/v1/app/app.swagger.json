@@ -289,10 +289,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "UnderMaintenance": {
+        "Maintaining": {
           "type": "boolean"
         },
-        "CommitButtons": {
+        "CommitButtonTargets": {
           "type": "array",
           "items": {
             "type": "string"
@@ -462,10 +462,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "UnderMaintenance": {
+        "Maintaining": {
           "type": "boolean"
         },
-        "CommitButtons": {
+        "CommitButtonTargets": {
           "type": "array",
           "items": {
             "type": "string"
@@ -583,15 +583,15 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"max_typed_coupons_per_order\""
         },
-        "UnderMaintenance": {
+        "Maintaining": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"under_maintenance\""
+          "title": "@inject_tag: sql:\"maintenance\""
         },
-        "CommitButtonsStr": {
+        "CommitButtonTargetsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"commit_buttons\""
         },
-        "CommitButtons": {
+        "CommitButtonTargets": {
           "type": "array",
           "items": {
             "type": "string"

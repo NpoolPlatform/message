@@ -79,8 +79,8 @@ message CreateAppRequest {
     bool InvitationCodeMust = 100;
     appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
     uint32          MaxTypedCouponsPerOrder = 120;
-    bool            UnderMaintenance        = 160;
-    repeated string CommitButtons           = 170;
+    bool            Maintaining        = 160;
+    repeated string CommitButtonTargets           = 170;
 }
 
 message CreateAppResponse {
@@ -100,8 +100,8 @@ message UpdateAppRequest {
     optional bool InvitationCodeMust = 100;
     optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
     optional uint32 MaxTypedCouponsPerOrder = 120;
-    optional bool   UnderMaintenance        = 160;
-    repeated string CommitButtons           = 170;
+    optional bool   Maintaining             = 160;
+    repeated string CommitButtonTargets     = 170;
 }
 
 message UpdateAppResponse {

@@ -40,8 +40,8 @@ message AppControlReq {
     optional bool                                       InvitationCodeMust       = 80;
     optional CreateInvitationCodeWhen                   CreateInvitationCodeWhen = 90;
     optional uint32                                     MaxTypedCouponsPerOrder  = 100;
-    optional bool                                       UnderMaintenance         = 110;
-    repeated string                                     CommitButtons            = 120;
+    optional bool                                       Maintaining              = 110;
+    repeated string                                     CommitButtonTargets      = 120;
 }
 
 message AppControl {
@@ -55,8 +55,8 @@ message AppControl {
     bool                                       InvitationCodeMust       = 80;
     CreateInvitationCodeWhen                   CreateInvitationCodeWhen = 90;
     uint32                                     MaxTypedCouponsPerOrder  = 100;
-    bool                                       UnderMaintenance         = 110;
-    repeated string                            CommitButtons            = 120;
+    bool                                       Maintaining              = 110;
+    repeated string                            CommitButtonTargets      = 120;
 }
 
 message Conds {

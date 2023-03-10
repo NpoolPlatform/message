@@ -41,8 +41,8 @@ message AppReq {
     optional bool            InvitationCodeMust = 130;
     optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
     optional uint32          MaxTypedCouponsPerOrder = 150;
-    optional bool            UnderMaintenance        = 160;
-    repeated string          CommitButtons           = 170;
+    optional bool            Maintaining        = 160;
+    repeated string          CommitButtonTargets           = 170;
 }
 
 message App {
@@ -96,11 +96,11 @@ message App {
 
     // @inject_tag: sql:"max_typed_coupons_per_order"
     uint32          MaxTypedCouponsPerOrder = 230;
-    // @inject_tag: sql:"under_maintenance"
-    bool            UnderMaintenance        = 240;
+    // @inject_tag: sql:"maintenance"
+    bool            Maintaining        = 240;
     // @inject_tag: sql:"commit_buttons"
-    string          CommitButtonsStr        = 250;
-    repeated string CommitButtons           = 260;
+    string          CommitButtonTargetsStr        = 250;
+    repeated string CommitButtonTargets           = 260;
 }
 
 message CreateAppRequest {
