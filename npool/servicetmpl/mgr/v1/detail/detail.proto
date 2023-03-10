@@ -4,7 +4,7 @@ package service.template.detail.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/detail";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Manager {
@@ -77,17 +77,17 @@ message Detail {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID               = 10;
-    optional npool.v1.StringVal AppID            = 20;
-    optional npool.v1.StringVal UserID           = 30;
-    optional npool.v1.StringVal CoinTypeID       = 40;
-    optional npool.v1.Int32Val  IOType           = 50;
-    optional npool.v1.Int32Val  IOSubType        = 60;
-    optional npool.v1.StringVal Amount           = 70;
-    optional npool.v1.StringVal FromCoinTypeID   = 80;
-    optional npool.v1.StringVal CoinUSDCurrency  = 90;
-    optional npool.v1.StringVal IOExtra          = 100;
-    optional npool.v1.StringVal FromOldID        = 110;
+    optional basetypes.v1.StringVal ID               = 10;
+    optional basetypes.v1.StringVal AppID            = 20;
+    optional basetypes.v1.StringVal UserID           = 30;
+    optional basetypes.v1.StringVal CoinTypeID       = 40;
+    optional basetypes.v1.Int32Val  IOType           = 50;
+    optional basetypes.v1.Int32Val  IOSubType        = 60;
+    optional basetypes.v1.StringVal Amount           = 70;
+    optional basetypes.v1.StringVal FromCoinTypeID   = 80;
+    optional basetypes.v1.StringVal CoinUSDCurrency  = 90;
+    optional basetypes.v1.StringVal IOExtra          = 100;
+    optional basetypes.v1.StringVal FromOldID        = 110;
 }
 
 
