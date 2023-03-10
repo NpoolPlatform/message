@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/detail/detail.proto",
+    "title": "npool/servicetmpl/mgr/v1/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
