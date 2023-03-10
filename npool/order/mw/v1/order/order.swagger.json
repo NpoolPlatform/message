@@ -480,8 +480,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         }
       }
     },
