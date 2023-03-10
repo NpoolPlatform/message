@@ -295,6 +295,14 @@
           "type": "string"
         }
       }
+    },
+    "v1UpdateDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
+        }
+      }
     }
   }
 }

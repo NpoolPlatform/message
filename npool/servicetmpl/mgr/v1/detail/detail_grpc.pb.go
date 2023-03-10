@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ManagerClient interface {
 	CreateDetail(ctx context.Context, in *CreateDetailRequest, opts ...grpc.CallOption) (*CreateDetailResponse, error)
 	CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error)
+	UpdateDetail(ctx context.Context, in *UpdateDetailRequest, opts ...grpc.CallOption) (*UpdateDetailResponse, error)
 	GetDetail(ctx context.Context, in *GetDetailRequest, opts ...grpc.CallOption) (*GetDetailResponse, error)
 	GetDetailOnly(ctx context.Context, in *GetDetailOnlyRequest, opts ...grpc.CallOption) (*GetDetailOnlyResponse, error)
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
@@ -53,6 +54,15 @@ func (c *managerClient) CreateDetail(ctx context.Context, in *CreateDetailReques
 func (c *managerClient) CreateDetails(ctx context.Context, in *CreateDetailsRequest, opts ...grpc.CallOption) (*CreateDetailsResponse, error) {
 	out := new(CreateDetailsResponse)
 	err := c.cc.Invoke(ctx, "/service.template.detail.v1.Manager/CreateDetails", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) UpdateDetail(ctx context.Context, in *UpdateDetailRequest, opts ...grpc.CallOption) (*UpdateDetailResponse, error) {
+	out := new(UpdateDetailResponse)
+	err := c.cc.Invoke(ctx, "/service.template.detail.v1.Manager/UpdateDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,6 +138,7 @@ func (c *managerClient) DeleteDetail(ctx context.Context, in *DeleteDetailReques
 type ManagerServer interface {
 	CreateDetail(context.Context, *CreateDetailRequest) (*CreateDetailResponse, error)
 	CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error)
+	UpdateDetail(context.Context, *UpdateDetailRequest) (*UpdateDetailResponse, error)
 	GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error)
 	GetDetailOnly(context.Context, *GetDetailOnlyRequest) (*GetDetailOnlyResponse, error)
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
@@ -147,6 +158,9 @@ func (UnimplementedManagerServer) CreateDetail(context.Context, *CreateDetailReq
 }
 func (UnimplementedManagerServer) CreateDetails(context.Context, *CreateDetailsRequest) (*CreateDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDetails not implemented")
+}
+func (UnimplementedManagerServer) UpdateDetail(context.Context, *UpdateDetailRequest) (*UpdateDetailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDetail not implemented")
 }
 func (UnimplementedManagerServer) GetDetail(context.Context, *GetDetailRequest) (*GetDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDetail not implemented")
@@ -214,6 +228,24 @@ func _Manager_CreateDetails_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ManagerServer).CreateDetails(ctx, req.(*CreateDetailsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Manager_UpdateDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).UpdateDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.template.detail.v1.Manager/UpdateDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).UpdateDetail(ctx, req.(*UpdateDetailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -358,6 +390,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateDetails",
 			Handler:    _Manager_CreateDetails_Handler,
+		},
+		{
+			MethodName: "UpdateDetail",
+			Handler:    _Manager_UpdateDetail_Handler,
 		},
 		{
 			MethodName: "GetDetail",

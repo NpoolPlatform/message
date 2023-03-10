@@ -10,6 +10,7 @@ import "npool/npool.proto";
 service Manager {
     rpc CreateDetail     (CreateDetailRequest)     returns (CreateDetailResponse)     {}
     rpc CreateDetails    (CreateDetailsRequest)    returns (CreateDetailsResponse)    {}
+    rpc UpdateDetail     (UpdateDetailRequest)     returns (UpdateDetailResponse)     {}
     rpc GetDetail        (GetDetailRequest)        returns (GetDetailResponse)        {}
     rpc GetDetailOnly    (GetDetailOnlyRequest)    returns (GetDetailOnlyResponse)    {}
     rpc GetDetails       (GetDetailsRequest)       returns (GetDetailsResponse)       {}
@@ -104,6 +105,14 @@ message CreateDetailsRequest {
 
 message CreateDetailsResponse {
     repeated Detail Infos = 10;
+}
+
+message UpdateDetailRequest {
+    DetailReq Info = 10;
+}
+
+message UpdateDetailResponse {
+    Detail Info = 10;
 }
 
 message GetDetailRequest {
