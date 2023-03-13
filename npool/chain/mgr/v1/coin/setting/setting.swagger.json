@@ -169,6 +169,9 @@
           "type": "string",
           "title": "Low than this value, we need to deposit gas"
         },
+        "HotLowFeeAmount": {
+          "type": "string"
+        },
         "HotWalletAccountAmount": {
           "type": "string"
         },
@@ -213,6 +216,9 @@
           "type": "string"
         },
         "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotLowFeeAmount": {
           "type": "string"
         },
         "HotWalletAccountAmount": {

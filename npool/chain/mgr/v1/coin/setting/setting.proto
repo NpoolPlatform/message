@@ -30,6 +30,7 @@ message SettingReq {
     optional string    CollectFeeAmount            = 60;
     optional string    HotWalletFeeAmount          = 70;
     optional string    LowFeeAmount                = 80;
+    optional string    HotLowFeeAmount             = 81;
     optional string    HotWalletAccountAmount      = 90;
     optional string    PaymentAccountCollectAmount = 100;
     optional string    LeastTransferAmount         = 110;
@@ -45,6 +46,7 @@ message Setting {
     string HotWalletFeeAmount          = 70;
     // Low than this value, we need to deposit gas
     string LowFeeAmount                = 80;
+    string HotLowFeeAmount             = 81;
     string HotWalletAccountAmount      = 90;
     string PaymentAccountCollectAmount = 100;
     string LeastTransferAmount         = 101;

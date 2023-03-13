@@ -203,6 +203,9 @@
         "LowFeeAmount": {
           "type": "string"
         },
+        "HotLowFeeAmount": {
+          "type": "string"
+        },
         "HotWalletAccountAmount": {
           "type": "string"
         },
@@ -341,6 +344,10 @@
         "LowFeeAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"low_fee_amount\""
+        },
+        "HotLowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_low_fee_amount\""
         },
         "HotWalletAccountAmount": {
           "type": "string",

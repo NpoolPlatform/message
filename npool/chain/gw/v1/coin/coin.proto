@@ -63,6 +63,7 @@ message UpdateCoinRequest {
     optional string CollectFeeAmount            = 100;
     optional string HotWalletFeeAmount          = 110;
     optional string LowFeeAmount                = 120;
+    optional string HotLowFeeAmount             = 121;
     optional string HotWalletAccountAmount      = 130;
     optional string PaymentAccountCollectAmount = 140;
     optional bool   StableUSD                   = 150;
