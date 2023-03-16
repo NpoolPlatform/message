@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/app/user/notifs": {
+    "/v1/get/app/notifs": {
       "post": {
-        "operationId": "Gateway_GetAppUserNotifs",
+        "operationId": "Gateway_GetAppNotifs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserNotifsResponse"
+              "$ref": "#/definitions/v1GetAppNotifsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppUserNotifsRequest"
+              "$ref": "#/definitions/v1GetAppNotifsRequest"
             }
           }
         ],
@@ -173,29 +173,23 @@
         }
       }
     },
-    "v1GetAppUserNotifsRequest": {
+    "v1GetAppNotifsRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "TargetLangID": {
+        "AppID": {
           "type": "string"
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
-    "v1GetAppUserNotifsResponse": {
+    "v1GetAppNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -240,11 +234,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -312,6 +306,12 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
         }
       }
     },
@@ -375,6 +375,8 @@
         "DepositReceived",
         "KYCApproved",
         "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
         "Announcement"
       ],
       "default": "DefaultUsedFor"

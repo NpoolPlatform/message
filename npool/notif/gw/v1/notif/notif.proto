@@ -31,9 +31,9 @@ service Gateway {
         };
     }
 
-    rpc GetAppUserNotifs (GetAppUserNotifsRequest) returns (GetAppUserNotifsResponse) {
+    rpc GetAppNotifs (GetAppNotifsRequest) returns (GetAppNotifsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/user/notifs"
+            post: "/v1/get/app/notifs"
             body: "*"
         };
     }
@@ -55,6 +55,8 @@ message Notif {
     bool             Notified     = 130;
     uint32           CreatedAt    = 140;
     uint32           UpdatedAt    = 150;
+    string           LangID       = 160;
+    string           Lang         = 170;
 }
 
 message GetNotifRequest {
@@ -80,8 +82,8 @@ message GetNotifsRequest {
     string AppID  = 10;
     string UserID = 20;
     string LangID = 30;
-    uint32 Offset = 40;
-    uint32 Limit  = 50;
+    int32  Offset = 40;
+    int32  Limit  = 50;
 }
 
 message GetNotifsResponse {
@@ -89,15 +91,13 @@ message GetNotifsResponse {
     uint32         Total = 20;
 }
 
-message GetAppUserNotifsRequest {
-    string TargetAppID  = 10;
-    string TargetUserID = 20;
-    string TargetLangID = 30;
-    uint32 Offset       = 40;
-    uint32 Limit        = 50;
+message GetAppNotifsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
-message GetAppUserNotifsResponse {
+message GetAppNotifsResponse {
     repeated Notif Infos = 10;
     uint32         Total = 20;
 }

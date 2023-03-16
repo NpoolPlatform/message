@@ -119,7 +119,6 @@ message UpdateFrontendTemplateRequest {
     optional string Title        = 30;
     optional string Content      = 40;
     optional string TargetLangID = 50;
-    optional basetypes.v1.UsedFor UsedFor = 60;
 }
 
 message UpdateFrontendTemplateResponse {
@@ -132,7 +131,6 @@ message UpdateAppFrontendTemplateRequest {
     optional string TargetLangID = 30;
     optional string Title        = 40;
     optional string Content      = 50;
-    optional basetypes.v1.UsedFor UsedFor = 60;
 }
 
 message UpdateAppFrontendTemplateResponse {

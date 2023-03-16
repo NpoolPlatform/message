@@ -50,6 +50,7 @@ message Conds {
     optional npool.v1.Uint32Val EndAt      = 50;
     optional npool.v1.StringSliceVal UserIDs = 60;
     optional npool.v1.StringSliceVal GoodIDs = 70;
+    optional npool.v1.Uint32Val StartAt    = 80;
 }
 
 

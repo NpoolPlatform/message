@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/general/general.proto",
+    "title": "npool/inspire/mw/v1/archivement/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -17,6 +17,21 @@
   ],
   "paths": {},
   "definitions": {
+    "inspiremiddlewarearchivementdetailv1GetDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,11 +59,14 @@
         }
       }
     },
-    "v1AddGeneralResponse": {
+    "v1BoolVal": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
@@ -64,76 +82,51 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "DirectContributorID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SelfOrder": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "PaymentID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
+        "PaymentCoinUSDCurrency": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Outcoming": {
+        "Units": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Spendable": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "USDAmount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Commission": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CountGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1CreateGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        }
-      }
-    },
-    "v1DeleteGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1ExistGeneralCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1General": {
+    "v1Detail": {
       "type": "object",
       "properties": {
         "ID": {
@@ -145,80 +138,59 @@
         "UserID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "DirectContributorID": {
           "type": "string"
         },
-        "Incoming": {
+        "GoodID": {
           "type": "string"
         },
-        "Locked": {
+        "OrderID": {
           "type": "string"
         },
-        "Outcoming": {
-          "type": "string"
+        "SelfOrder": {
+          "type": "boolean"
         },
-        "Spendable": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GeneralReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
+        "PaymentID": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "PaymentCoinTypeID": {
           "type": "string"
         },
-        "Locked": {
+        "PaymentCoinUSDCurrency": {
           "type": "string"
         },
-        "Outcoming": {
+        "Units": {
           "type": "string"
         },
-        "Spendable": {
+        "Amount": {
           "type": "string"
-        }
-      }
-    },
-    "v1GetGeneralOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1GetGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
-    "v1GetGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
         },
-        "Total": {
+        "USDAmount": {
+          "type": "string"
+        },
+        "Commission": {
+          "type": "string"
+        },
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -230,6 +202,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

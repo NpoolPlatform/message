@@ -25,11 +25,61 @@
         }
       }
     },
+    "ledger1v2GetDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "ledger1v2GetGeneralOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1General"
+        }
+      }
+    },
+    "ledgerdetailv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FromCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOExtra": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -89,6 +139,45 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -208,10 +297,12 @@
         "TechniqueFeeCommission",
         "Deposit",
         "Transfer",
-        "Withdrawal"
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
       ],
       "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O"
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
     },
     "v1IOType": {
       "type": "string",
@@ -221,6 +312,18 @@
         "Outcoming"
       ],
       "default": "DefaultType"
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",

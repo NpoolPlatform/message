@@ -33,7 +33,7 @@ message GenerateTextRequest {
     string                                AppID     = 10;
     string                                LangID    = 20;
     notif.manager.channel.v1.NotifChannel Channel   = 30;
-    basetypes.v1.UsedFor                  EventType = 40;
+    basetypes.v1.UsedFor            EventType = 40;
     optional TemplateVars                 Vars      = 50;
 }
 

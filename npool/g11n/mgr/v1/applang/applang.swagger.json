@@ -69,6 +69,9 @@
         },
         "Main": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -194,6 +197,20 @@
         },
         "Main": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

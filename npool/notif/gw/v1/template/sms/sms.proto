@@ -117,8 +117,8 @@ message GetAppSMSTemplatesResponse {
 message UpdateSMSTemplateRequest {
     string ID           = 10;
     string AppID        = 20;
-    string Subject      = 30;
-    string Message      = 40;
+    optional string Subject = 30;
+    optional string Message = 40;
     string TargetLangID = 50;
 }
 
@@ -130,8 +130,8 @@ message UpdateAppSMSTemplateRequest {
     string ID           = 10;
     string TargetAppID  = 20;
     string TargetLangID = 30;
-    string Subject      = 40;
-    string Message      = 50;
+    optional string Subject = 40;
+    optional string Message = 50;
 }
 
 message UpdateAppSMSTemplateResponse {

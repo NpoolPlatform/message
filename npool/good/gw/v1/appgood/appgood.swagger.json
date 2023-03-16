@@ -498,6 +498,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -624,6 +652,34 @@
         },
         "DailyRewardAmount": {
           "type": "string"
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -671,6 +727,16 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1CreateNAppGoodRequest": {
       "type": "object",
@@ -727,6 +793,34 @@
         },
         "CommissionSettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -857,6 +951,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },

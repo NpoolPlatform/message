@@ -66,6 +66,7 @@ message Conds {
     optional npool.v1.Uint32Val EndAt  = 60;
     optional npool.v1.StringSliceVal UserIDs = 70;
     optional npool.v1.StringSliceVal GoodIDs = 80;
+    optional npool.v1.Uint32Val StartAt = 90;
 }
 
 message CreateCommissionRequest {
@@ -116,7 +117,8 @@ message CloneCommissionsRequest {
     string AppID      = 10;
     string FromGoodID = 20;
     string ToGoodID   = 30;
-    inspire.manager.commission.v1.SettleType SettleType = 40;
+    string Value      = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
 }
 
 message CloneCommissionsResponse {

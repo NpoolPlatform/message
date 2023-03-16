@@ -132,6 +132,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -211,8 +239,46 @@
           "items": {
             "type": "string"
           }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "CancelModeDefault",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "CancelModeDefault"
     },
     "v1Conds": {
       "type": "object",

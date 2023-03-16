@@ -43,6 +43,14 @@ message AppGoodReq {
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
+    optional bool       EnablePurchase         = 210;
+    optional bool       EnableProductPage      = 220;
+    optional CancelMode CancelMode             = 230;
+    optional string     UserPurchaseLimit      = 240;
+    repeated string     DisplayColors          = 250;
+    optional uint32     CancellableBeforeStart = 260;
+    optional string     ProductPage            = 270;
+    optional bool       EnableSetCommission    = 310;
 }
 
 message AppGood {
@@ -67,10 +75,23 @@ message AppGood {
     string DailyRewardAmount   = 190;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
     repeated string Descriptions = 210;
-    string GoodBanner          = 220;
+    string          GoodBanner   = 220;
     repeated string DisplayNames = 230;
+    bool            EnablePurchase         = 240;
+    bool            EnableProductPage      = 250;
+    CancelMode      CancelMode             = 260;
+    string          UserPurchaseLimit      = 270;
+    repeated string DisplayColors          = 280;
+    uint32          CancellableBeforeStart = 290;
+    string          ProductPage            = 300;
+    bool            EnableSetCommission    = 310;
 }
-
+enum CancelMode {
+    CancelModeDefault        = 0;
+    CancellableBeforeStart   = 10;
+    CancellableBeforeBenefit = 20;
+    Uncancellable            = 30;
+}
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
     optional npool.v1.StringVal      AppID  = 20;

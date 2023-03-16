@@ -67,6 +67,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

@@ -152,6 +152,15 @@ message Good {
     repeated string  Descriptions        = 640;
     string           GoodBanner          = 650;
     repeated string  DisplayNames        = 660;
+
+    bool                               EnablePurchase    = 670;
+    bool                               EnableProductPage = 680;
+    good.manager.appgood.v1.CancelMode CancelMode        = 690;
+    string                             UserPurchaseLimit = 700;
+    repeated string                    DisplayColors          = 710;
+    uint32                             CancellableBeforeStart = 720;
+    string                             ProductPage            = 730;
+    bool                               EnableSetCommission    = 740;
 }
 
 message CreateNAppGoodRequest {
@@ -170,6 +179,14 @@ message CreateNAppGoodRequest {
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
     inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
+    optional bool                               EnablePurchase         = 160;
+    optional bool                               EnableProductPage      = 170;
+    optional good.manager.appgood.v1.CancelMode CancelMode             = 180;
+    optional string                             UserPurchaseLimit      = 190;
+    repeated string                             DisplayColors          = 200;
+    optional uint32                             CancellableBeforeStart = 210;
+    optional string                             ProductPage            = 220;
+    optional bool                               EnableSetCommission    = 230;
 }
 
 message CreateNAppGoodResponse {
@@ -227,6 +244,14 @@ message UpdateAppGoodRequest {
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
+    optional bool                               EnablePurchase    = 200;
+    optional bool                               EnableProductPage = 210;
+    optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
+    optional string                             UserPurchaseLimit = 230;
+    repeated string                             DisplayColors          = 240;
+    optional uint32                             CancellableBeforeStart = 250;
+    optional string                             ProductPage            = 260;
+    optional bool                               EnableSetCommission    = 270;
 }
 
 message UpdateAppGoodResponse {
@@ -250,6 +275,14 @@ message UpdateNAppGoodRequest {
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
+    optional bool                               EnablePurchase    = 190;
+    optional bool                               EnableProductPage = 200;
+    optional good.manager.appgood.v1.CancelMode CancelMode        = 210;
+    optional string                             UserPurchaseLimit = 220;
+    repeated string                             DisplayColors          = 230;
+    optional uint32                             CancellableBeforeStart = 240;
+    optional string                             ProductPage            = 250;
+    optional bool                               EnableSetCommission    = 270;
 }
 
 message UpdateNAppGoodResponse {

@@ -1129,6 +1129,10 @@
         "KolConfirmed": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kol_confirmed\""
+        },
+        "ActionCredits": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"action_credits\""
         }
       }
     },

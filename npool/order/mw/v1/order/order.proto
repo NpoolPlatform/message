@@ -18,6 +18,8 @@ service Middleware {
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
+    rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
+    rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
 }
 
 message OrderReq {
@@ -153,6 +155,7 @@ message Conds {
     optional npool.v1.Uint32Val      LastBenefitAt          = 170;
     optional npool.v1.StringVal      CouponID               = 180;
     optional npool.v1.StringSliceVal CouponIDs              = 190;
+    optional npool.v1.Uint32SliceVal States                 = 200;
 }
 
 message CreateOrderRequest {
@@ -204,4 +207,20 @@ message GetOrderOnlyRequest {
 
 message GetOrderOnlyResponse {
     Order Info = 10;
+}
+
+message CountOrdersRequest {
+    Conds Conds  = 10;
+}
+
+message CountOrdersResponse {
+    uint32 Info = 10;
+}
+
+message SumOrderUnitsRequest {
+    Conds Conds  = 10;
+}
+
+message SumOrderUnitsResponse {
+    string Info = 10;
 }

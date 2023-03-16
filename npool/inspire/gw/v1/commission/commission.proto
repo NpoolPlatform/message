@@ -155,7 +155,8 @@ message CloneCommissionsRequest {
     string AppID      = 10;
     string FromGoodID = 20;
     string ToGoodID   = 30;
-    inspire.manager.commission.v1.SettleType SettleType = 40;
+    string Value      = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
 }
 
 message CloneCommissionsResponse {
@@ -165,7 +166,8 @@ message CloneAppCommissionsRequest {
     string TargetAppID = 10;
     string FromGoodID  = 20;
     string ToGoodID    = 30;
-    inspire.manager.commission.v1.SettleType SettleType = 40;
+    string Value       = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
 }
 
 message CloneAppCommissionsResponse {
