@@ -175,6 +175,70 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/appdefaultgood": {
+      "post": {
+        "operationId": "Gateway_UpdateAppDefaultGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/n/appdefaultgood": {
+      "post": {
+        "operationId": "Gateway_UpdateNAppDefaultGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppDefaultGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppDefaultGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -278,6 +342,28 @@
         }
       }
     },
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -355,6 +441,28 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNAppDefaultGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateNAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     }

@@ -43,6 +43,20 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc UpdateAppDefaultGood (UpdateAppDefaultGoodRequest) returns (UpdateAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/appdefaultgood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNAppDefaultGood (UpdateNAppDefaultGoodRequest) returns (UpdateNAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/appdefaultgood"
+            body: "*"
+        };
+    }
 }
 
 message AppDefaultGood {
@@ -103,5 +117,25 @@ message DeleteAppDefaultGoodRequest {
 }
 
 message DeleteAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message UpdateAppDefaultGoodRequest {
+    string          ID         = 10;
+    string          AppID      = 20;
+    string          GoodID     = 30;
+}
+
+message UpdateAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message UpdateNAppDefaultGoodRequest {
+    string          ID          = 10;
+    string          TargetAppID = 20;
+    string          GoodID      = 30;
+}
+
+message UpdateNAppDefaultGoodResponse {
     AppDefaultGood Info = 10;
 }

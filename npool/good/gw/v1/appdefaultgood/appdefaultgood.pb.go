@@ -675,6 +675,226 @@ func (x *DeleteAppDefaultGoodResponse) GetInfo() *AppDefaultGood {
 	return nil
 }
 
+type UpdateAppDefaultGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID     string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	AppID  string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+}
+
+func (x *UpdateAppDefaultGoodRequest) Reset() {
+	*x = UpdateAppDefaultGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppDefaultGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppDefaultGoodRequest) ProtoMessage() {}
+
+func (x *UpdateAppDefaultGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppDefaultGoodRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAppDefaultGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *UpdateAppDefaultGoodRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+func (x *UpdateAppDefaultGoodRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *UpdateAppDefaultGoodRequest) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+	}
+	return ""
+}
+
+type UpdateAppDefaultGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppDefaultGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAppDefaultGoodResponse) Reset() {
+	*x = UpdateAppDefaultGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAppDefaultGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAppDefaultGoodResponse) ProtoMessage() {}
+
+func (x *UpdateAppDefaultGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAppDefaultGoodResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAppDefaultGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *UpdateAppDefaultGoodResponse) GetInfo() *AppDefaultGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateNAppDefaultGoodRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID          string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	TargetAppID string `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	GoodID      string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+}
+
+func (x *UpdateNAppDefaultGoodRequest) Reset() {
+	*x = UpdateNAppDefaultGoodRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateNAppDefaultGoodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateNAppDefaultGoodRequest) ProtoMessage() {}
+
+func (x *UpdateNAppDefaultGoodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateNAppDefaultGoodRequest.ProtoReflect.Descriptor instead.
+func (*UpdateNAppDefaultGoodRequest) Descriptor() ([]byte, []int) {
+	return file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *UpdateNAppDefaultGoodRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+func (x *UpdateNAppDefaultGoodRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *UpdateNAppDefaultGoodRequest) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+	}
+	return ""
+}
+
+type UpdateNAppDefaultGoodResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AppDefaultGood `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateNAppDefaultGoodResponse) Reset() {
+	*x = UpdateNAppDefaultGoodResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateNAppDefaultGoodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateNAppDefaultGoodResponse) ProtoMessage() {}
+
+func (x *UpdateNAppDefaultGoodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateNAppDefaultGoodResponse.ProtoReflect.Descriptor instead.
+func (*UpdateNAppDefaultGoodResponse) Descriptor() ([]byte, []int) {
+	return file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *UpdateNAppDefaultGoodResponse) GetInfo() *AppDefaultGood {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto protoreflect.FileDescriptor
 
 var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDesc = []byte{
@@ -767,7 +987,32 @@ var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDesc = []byte{
 	0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x64, 0x65,
 	0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
 	0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x32, 0xa5, 0x07, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0xb7, 0x01,
+	0x6f, 0x22, 0x5b, 0x0a, 0x1b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65,
+	0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44,
+	0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44,
+	0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x22, 0x62,
+	0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75,
+	0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42,
+	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67,
+	0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x64,
+	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70,
+	0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x22, 0x68, 0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70,
+	0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
+	0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49,
+	0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41,
+	0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x22, 0x63, 0x0a, 0x1d,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c,
+	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x64, 0x65,
+	0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
+	0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x32, 0x9e, 0x0a, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0xb7, 0x01,
 	0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75,
 	0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61,
 	0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74,
@@ -825,12 +1070,35 @@ var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDesc = []byte{
 	0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x24, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1e, 0x22, 0x19, 0x2f, 0x76, 0x31,
 	0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75,
-	0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x42, 0x42, 0x5a, 0x40, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
-	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61,
-	0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x3a, 0x01, 0x2a, 0x12, 0xb7, 0x01, 0x0a, 0x14, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f,
+	0x6f, 0x64, 0x12, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61,
+	0x79, 0x2e, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66,
+	0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x3c, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61,
+	0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31,
+	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c,
+	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x24, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x1e, 0x22, 0x19, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x2f, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64,
+	0x3a, 0x01, 0x2a, 0x12, 0xbc, 0x01, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x41,
+	0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x3c, 0x2e,
+	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70,
+	0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74,
+	0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3d, 0x2e, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x61, 0x70, 0x70, 0x64, 0x65,
+	0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x4e, 0x41, 0x70, 0x70, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x47, 0x6f,
+	0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x6e,
+	0x2f, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x3a,
+	0x01, 0x2a, 0x42, 0x42, 0x5a, 0x40, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f,
+	0x64, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x64, 0x65, 0x66, 0x61, 0x75,
+	0x6c, 0x74, 0x67, 0x6f, 0x6f, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -845,7 +1113,7 @@ func file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescGZIP() []b
 	return file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDescData
 }
 
-var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_goTypes = []interface{}{
 	(*AppDefaultGood)(nil),                // 0: good.gateway.appdefaultgood.v1.AppDefaultGood
 	(*CreateAppDefaultGoodRequest)(nil),   // 1: good.gateway.appdefaultgood.v1.CreateAppDefaultGoodRequest
@@ -858,6 +1126,10 @@ var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_goTypes = []interf
 	(*GetNAppDefaultGoodsResponse)(nil),   // 8: good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsResponse
 	(*DeleteAppDefaultGoodRequest)(nil),   // 9: good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodRequest
 	(*DeleteAppDefaultGoodResponse)(nil),  // 10: good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodResponse
+	(*UpdateAppDefaultGoodRequest)(nil),   // 11: good.gateway.appdefaultgood.v1.UpdateAppDefaultGoodRequest
+	(*UpdateAppDefaultGoodResponse)(nil),  // 12: good.gateway.appdefaultgood.v1.UpdateAppDefaultGoodResponse
+	(*UpdateNAppDefaultGoodRequest)(nil),  // 13: good.gateway.appdefaultgood.v1.UpdateNAppDefaultGoodRequest
+	(*UpdateNAppDefaultGoodResponse)(nil), // 14: good.gateway.appdefaultgood.v1.UpdateNAppDefaultGoodResponse
 }
 var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_depIdxs = []int32{
 	0,  // 0: good.gateway.appdefaultgood.v1.CreateAppDefaultGoodResponse.Info:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
@@ -865,21 +1137,27 @@ var file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_depIdxs = []int32{
 	0,  // 2: good.gateway.appdefaultgood.v1.GetAppDefaultGoodsResponse.Infos:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
 	0,  // 3: good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsResponse.Infos:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
 	0,  // 4: good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodResponse.Info:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
-	1,  // 5: good.gateway.appdefaultgood.v1.Gateway.CreateAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.CreateAppDefaultGoodRequest
-	3,  // 6: good.gateway.appdefaultgood.v1.Gateway.CreateNAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.CreateNAppDefaultGoodRequest
-	5,  // 7: good.gateway.appdefaultgood.v1.Gateway.GetAppDefaultGoods:input_type -> good.gateway.appdefaultgood.v1.GetAppDefaultGoodsRequest
-	7,  // 8: good.gateway.appdefaultgood.v1.Gateway.GetNAppDefaultGoods:input_type -> good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsRequest
-	9,  // 9: good.gateway.appdefaultgood.v1.Gateway.DeleteAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodRequest
-	2,  // 10: good.gateway.appdefaultgood.v1.Gateway.CreateAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.CreateAppDefaultGoodResponse
-	4,  // 11: good.gateway.appdefaultgood.v1.Gateway.CreateNAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.CreateNAppDefaultGoodResponse
-	6,  // 12: good.gateway.appdefaultgood.v1.Gateway.GetAppDefaultGoods:output_type -> good.gateway.appdefaultgood.v1.GetAppDefaultGoodsResponse
-	8,  // 13: good.gateway.appdefaultgood.v1.Gateway.GetNAppDefaultGoods:output_type -> good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsResponse
-	10, // 14: good.gateway.appdefaultgood.v1.Gateway.DeleteAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodResponse
-	10, // [10:15] is the sub-list for method output_type
-	5,  // [5:10] is the sub-list for method input_type
-	5,  // [5:5] is the sub-list for extension type_name
-	5,  // [5:5] is the sub-list for extension extendee
-	0,  // [0:5] is the sub-list for field type_name
+	0,  // 5: good.gateway.appdefaultgood.v1.UpdateAppDefaultGoodResponse.Info:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
+	0,  // 6: good.gateway.appdefaultgood.v1.UpdateNAppDefaultGoodResponse.Info:type_name -> good.gateway.appdefaultgood.v1.AppDefaultGood
+	1,  // 7: good.gateway.appdefaultgood.v1.Gateway.CreateAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.CreateAppDefaultGoodRequest
+	3,  // 8: good.gateway.appdefaultgood.v1.Gateway.CreateNAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.CreateNAppDefaultGoodRequest
+	5,  // 9: good.gateway.appdefaultgood.v1.Gateway.GetAppDefaultGoods:input_type -> good.gateway.appdefaultgood.v1.GetAppDefaultGoodsRequest
+	7,  // 10: good.gateway.appdefaultgood.v1.Gateway.GetNAppDefaultGoods:input_type -> good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsRequest
+	9,  // 11: good.gateway.appdefaultgood.v1.Gateway.DeleteAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodRequest
+	11, // 12: good.gateway.appdefaultgood.v1.Gateway.UpdateAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.UpdateAppDefaultGoodRequest
+	13, // 13: good.gateway.appdefaultgood.v1.Gateway.UpdateNAppDefaultGood:input_type -> good.gateway.appdefaultgood.v1.UpdateNAppDefaultGoodRequest
+	2,  // 14: good.gateway.appdefaultgood.v1.Gateway.CreateAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.CreateAppDefaultGoodResponse
+	4,  // 15: good.gateway.appdefaultgood.v1.Gateway.CreateNAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.CreateNAppDefaultGoodResponse
+	6,  // 16: good.gateway.appdefaultgood.v1.Gateway.GetAppDefaultGoods:output_type -> good.gateway.appdefaultgood.v1.GetAppDefaultGoodsResponse
+	8,  // 17: good.gateway.appdefaultgood.v1.Gateway.GetNAppDefaultGoods:output_type -> good.gateway.appdefaultgood.v1.GetNAppDefaultGoodsResponse
+	10, // 18: good.gateway.appdefaultgood.v1.Gateway.DeleteAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.DeleteAppDefaultGoodResponse
+	12, // 19: good.gateway.appdefaultgood.v1.Gateway.UpdateAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.UpdateAppDefaultGoodResponse
+	14, // 20: good.gateway.appdefaultgood.v1.Gateway.UpdateNAppDefaultGood:output_type -> good.gateway.appdefaultgood.v1.UpdateNAppDefaultGoodResponse
+	14, // [14:21] is the sub-list for method output_type
+	7,  // [7:14] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_init() }
@@ -1020,6 +1298,54 @@ func file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_init() {
 				return nil
 			}
 		}
+		file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppDefaultGoodRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppDefaultGoodResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateNAppDefaultGoodRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateNAppDefaultGoodResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1027,7 +1353,7 @@ func file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_gw_v1_appdefaultgood_appdefaultgood_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

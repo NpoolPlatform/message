@@ -27,6 +27,8 @@ type GatewayClient interface {
 	GetAppDefaultGoods(ctx context.Context, in *GetAppDefaultGoodsRequest, opts ...grpc.CallOption) (*GetAppDefaultGoodsResponse, error)
 	GetNAppDefaultGoods(ctx context.Context, in *GetNAppDefaultGoodsRequest, opts ...grpc.CallOption) (*GetNAppDefaultGoodsResponse, error)
 	DeleteAppDefaultGood(ctx context.Context, in *DeleteAppDefaultGoodRequest, opts ...grpc.CallOption) (*DeleteAppDefaultGoodResponse, error)
+	UpdateAppDefaultGood(ctx context.Context, in *UpdateAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateAppDefaultGoodResponse, error)
+	UpdateNAppDefaultGood(ctx context.Context, in *UpdateNAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateNAppDefaultGoodResponse, error)
 }
 
 type gatewayClient struct {
@@ -82,6 +84,24 @@ func (c *gatewayClient) DeleteAppDefaultGood(ctx context.Context, in *DeleteAppD
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateAppDefaultGood(ctx context.Context, in *UpdateAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateAppDefaultGoodResponse, error) {
+	out := new(UpdateAppDefaultGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateNAppDefaultGood(ctx context.Context, in *UpdateNAppDefaultGoodRequest, opts ...grpc.CallOption) (*UpdateNAppDefaultGoodResponse, error) {
+	out := new(UpdateNAppDefaultGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -91,6 +111,8 @@ type GatewayServer interface {
 	GetAppDefaultGoods(context.Context, *GetAppDefaultGoodsRequest) (*GetAppDefaultGoodsResponse, error)
 	GetNAppDefaultGoods(context.Context, *GetNAppDefaultGoodsRequest) (*GetNAppDefaultGoodsResponse, error)
 	DeleteAppDefaultGood(context.Context, *DeleteAppDefaultGoodRequest) (*DeleteAppDefaultGoodResponse, error)
+	UpdateAppDefaultGood(context.Context, *UpdateAppDefaultGoodRequest) (*UpdateAppDefaultGoodResponse, error)
+	UpdateNAppDefaultGood(context.Context, *UpdateNAppDefaultGoodRequest) (*UpdateNAppDefaultGoodResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -112,6 +134,12 @@ func (UnimplementedGatewayServer) GetNAppDefaultGoods(context.Context, *GetNAppD
 }
 func (UnimplementedGatewayServer) DeleteAppDefaultGood(context.Context, *DeleteAppDefaultGoodRequest) (*DeleteAppDefaultGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppDefaultGood not implemented")
+}
+func (UnimplementedGatewayServer) UpdateAppDefaultGood(context.Context, *UpdateAppDefaultGoodRequest) (*UpdateAppDefaultGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppDefaultGood not implemented")
+}
+func (UnimplementedGatewayServer) UpdateNAppDefaultGood(context.Context, *UpdateNAppDefaultGoodRequest) (*UpdateNAppDefaultGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNAppDefaultGood not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -216,6 +244,42 @@ func _Gateway_DeleteAppDefaultGood_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateAppDefaultGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppDefaultGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateAppDefaultGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/UpdateAppDefaultGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateAppDefaultGood(ctx, req.(*UpdateAppDefaultGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateNAppDefaultGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNAppDefaultGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateNAppDefaultGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.gateway.appdefaultgood.v1.Gateway/UpdateNAppDefaultGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateNAppDefaultGood(ctx, req.(*UpdateNAppDefaultGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +306,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAppDefaultGood",
 			Handler:    _Gateway_DeleteAppDefaultGood_Handler,
+		},
+		{
+			MethodName: "UpdateAppDefaultGood",
+			Handler:    _Gateway_UpdateAppDefaultGood_Handler,
+		},
+		{
+			MethodName: "UpdateNAppDefaultGood",
+			Handler:    _Gateway_UpdateNAppDefaultGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
