@@ -83,7 +83,7 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "GoodID": {
