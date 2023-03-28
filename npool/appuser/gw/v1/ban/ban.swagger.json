@@ -347,7 +347,7 @@
         },
         "Maintaining": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"maintenance\""
+          "title": "@inject_tag: sql:\"maintaining\""
         },
         "CommitButtonTargetsStr": {
           "type": "string",

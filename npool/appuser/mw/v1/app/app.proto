@@ -96,7 +96,7 @@ message App {
 
     // @inject_tag: sql:"max_typed_coupons_per_order"
     uint32          MaxTypedCouponsPerOrder = 230;
-    // @inject_tag: sql:"maintenance"
+    // @inject_tag: sql:"maintaining"
     bool            Maintaining        = 240;
     // @inject_tag: sql:"commit_buttons"
     string          CommitButtonTargetsStr        = 250;
