@@ -98,7 +98,7 @@ message App {
     uint32          MaxTypedCouponsPerOrder = 230;
     // @inject_tag: sql:"maintaining"
     bool            Maintaining        = 240;
-    // @inject_tag: sql:"commit_buttons"
+    // @inject_tag: sql:"commit_button_targets"
     string          CommitButtonTargetsStr        = 250;
     repeated string CommitButtonTargets           = 260;
 }

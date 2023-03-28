@@ -254,8 +254,8 @@ type App struct {
 	MaxTypedCouponsPerOrder uint32 `protobuf:"varint,230,opt,name=MaxTypedCouponsPerOrder,proto3" json:"MaxTypedCouponsPerOrder,omitempty" sql:"max_typed_coupons_per_order"`
 	// @inject_tag: sql:"maintaining"
 	Maintaining bool `protobuf:"varint,240,opt,name=Maintaining,proto3" json:"Maintaining,omitempty" sql:"maintaining"`
-	// @inject_tag: sql:"commit_buttons"
-	CommitButtonTargetsStr string   `protobuf:"bytes,250,opt,name=CommitButtonTargetsStr,proto3" json:"CommitButtonTargetsStr,omitempty" sql:"commit_buttons"`
+	// @inject_tag: sql:"commit_button_targets"
+	CommitButtonTargetsStr string   `protobuf:"bytes,250,opt,name=CommitButtonTargetsStr,proto3" json:"CommitButtonTargetsStr,omitempty" sql:"commit_button_targets"`
 	CommitButtonTargets    []string `protobuf:"bytes,260,rep,name=CommitButtonTargets,proto3" json:"CommitButtonTargets,omitempty"`
 }
 

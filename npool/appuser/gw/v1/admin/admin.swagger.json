@@ -385,7 +385,7 @@
         },
         "CommitButtonTargetsStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"commit_buttons\""
+          "title": "@inject_tag: sql:\"commit_button_targets\""
         },
         "CommitButtonTargets": {
           "type": "array",
