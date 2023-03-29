@@ -27,6 +27,7 @@ type GatewayClient interface {
 	GetAppGenerals(ctx context.Context, in *GetAppGeneralsRequest, opts ...grpc.CallOption) (*GetAppGeneralsResponse, error)
 	GetDetails(ctx context.Context, in *GetDetailsRequest, opts ...grpc.CallOption) (*GetDetailsResponse, error)
 	GetAppDetails(ctx context.Context, in *GetAppDetailsRequest, opts ...grpc.CallOption) (*GetAppDetailsResponse, error)
+	GetMiningRewards(ctx context.Context, in *GetMiningRewardsRequest, opts ...grpc.CallOption) (*GetMiningRewardsResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 	GetGoodProfits(ctx context.Context, in *GetGoodProfitsRequest, opts ...grpc.CallOption) (*GetGoodProfitsResponse, error)
@@ -86,6 +87,15 @@ func (c *gatewayClient) GetDetails(ctx context.Context, in *GetDetailsRequest, o
 func (c *gatewayClient) GetAppDetails(ctx context.Context, in *GetAppDetailsRequest, opts ...grpc.CallOption) (*GetAppDetailsResponse, error) {
 	out := new(GetAppDetailsResponse)
 	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetAppDetails", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetMiningRewards(ctx context.Context, in *GetMiningRewardsRequest, opts ...grpc.CallOption) (*GetMiningRewardsResponse, error) {
+	out := new(GetMiningRewardsResponse)
+	err := c.cc.Invoke(ctx, "/ledger.gateway.ledger1.v1.Gateway/GetMiningRewards", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -191,6 +201,7 @@ type GatewayServer interface {
 	GetAppGenerals(context.Context, *GetAppGeneralsRequest) (*GetAppGeneralsResponse, error)
 	GetDetails(context.Context, *GetDetailsRequest) (*GetDetailsResponse, error)
 	GetAppDetails(context.Context, *GetAppDetailsRequest) (*GetAppDetailsResponse, error)
+	GetMiningRewards(context.Context, *GetMiningRewardsRequest) (*GetMiningRewardsResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error)
@@ -222,6 +233,9 @@ func (UnimplementedGatewayServer) GetDetails(context.Context, *GetDetailsRequest
 }
 func (UnimplementedGatewayServer) GetAppDetails(context.Context, *GetAppDetailsRequest) (*GetAppDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppDetails not implemented")
+}
+func (UnimplementedGatewayServer) GetMiningRewards(context.Context, *GetMiningRewardsRequest) (*GetMiningRewardsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMiningRewards not implemented")
 }
 func (UnimplementedGatewayServer) GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfits not implemented")
@@ -352,6 +366,24 @@ func _Gateway_GetAppDetails_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppDetails(ctx, req.(*GetAppDetailsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetMiningRewards_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMiningRewardsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetMiningRewards(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ledger.gateway.ledger1.v1.Gateway/GetMiningRewards",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetMiningRewards(ctx, req.(*GetMiningRewardsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -562,6 +594,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppDetails",
 			Handler:    _Gateway_GetAppDetails_Handler,
+		},
+		{
+			MethodName: "GetMiningRewards",
+			Handler:    _Gateway_GetMiningRewards_Handler,
 		},
 		{
 			MethodName: "GetProfits",

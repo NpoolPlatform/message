@@ -48,6 +48,13 @@ service Gateway {
         };
     }
 
+    rpc GetMiningRewards (GetMiningRewardsRequest) returns (GetMiningRewardsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/miningrewards"
+            body: "*"
+        };
+    }
+
     rpc GetProfits (GetProfitsRequest) returns (GetProfitsResponse) {
         option (google.api.http) = {
             post: "/v1/get/profits"
@@ -212,6 +219,37 @@ message GetAppDetailsRequest {
 message GetAppDetailsResponse {
     repeated Detail Infos = 10;
     uint32          Total = 20;
+}
+
+
+message MiningReward {
+    string CoinTypeID = 10;
+    string CoinName = 20;
+    string CoinLogo = 30;
+    string CoinUnit = 40;
+    ledger.manager.ledger.detail.v1.IOType    IOType = 50;
+    ledger.manager.ledger.detail.v1.IOSubType IOSubType = 60;
+    string RewardAmount = 70;
+    string RewardAmountPerUnit = 80;
+    string Units = 90;
+    string Extra = 100;
+    string GoodID = 110;
+    string OrderID = 120;
+    uint32 CreatedAt = 130;
+}
+
+message GetMiningRewardsRequest {
+    string AppID = 10;
+    string UserID = 20;
+    uint32 StartAt = 30;
+    uint32 EndAt = 40;
+    int32  Offset = 50;
+    int32  Limit = 60;
+}
+
+message GetMiningRewardsResponse {
+    repeated MiningReward Infos = 10;
+    uint32  Total = 20;
 }
 
 message Profit {
