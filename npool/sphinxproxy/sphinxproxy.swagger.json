@@ -298,6 +298,7 @@
         "CoinTypebinanceusd",
         "CoinTypeusdcerc20",
         "CoinTypealeo",
+        "CoinTypeironfish",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
@@ -309,7 +310,8 @@
         "CoinTypettron",
         "CoinTypetbinanceusd",
         "CoinTypetusdcerc20",
-        "CoinTypetaleo"
+        "CoinTypetaleo",
+        "CoinTypetironfish"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
