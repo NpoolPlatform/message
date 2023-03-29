@@ -283,6 +283,9 @@
         },
         "Value": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -303,6 +306,9 @@
         },
         "Value": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -557,12 +563,14 @@
       "enum": [
         "DefaultSettleType",
         "GoodOrderPercent",
+        "GoodOrderValuePercent",
         "LimitedOrderPercent",
         "AmountThreshold",
         "TechniqueFeePercent",
         "NoCommission"
       ],
-      "default": "DefaultSettleType"
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
     },
     "v1UpdateCommissionRequest": {
       "type": "object",
