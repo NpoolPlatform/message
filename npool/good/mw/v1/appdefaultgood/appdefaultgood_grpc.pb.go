@@ -25,6 +25,7 @@ type MiddlewareClient interface {
 	GetAppDefaultGood(ctx context.Context, in *GetAppDefaultGoodRequest, opts ...grpc.CallOption) (*GetAppDefaultGoodResponse, error)
 	GetAppDefaultGoodOnly(ctx context.Context, in *GetAppDefaultGoodOnlyRequest, opts ...grpc.CallOption) (*GetAppDefaultGoodOnlyResponse, error)
 	GetAppDefaultGoods(ctx context.Context, in *GetAppDefaultGoodsRequest, opts ...grpc.CallOption) (*GetAppDefaultGoodsResponse, error)
+	DeleteAppDefaultGood(ctx context.Context, in *DeleteAppDefaultGoodRequest, opts ...grpc.CallOption) (*DeleteAppDefaultGoodResponse, error)
 }
 
 type middlewareClient struct {
@@ -62,6 +63,15 @@ func (c *middlewareClient) GetAppDefaultGoods(ctx context.Context, in *GetAppDef
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteAppDefaultGood(ctx context.Context, in *DeleteAppDefaultGoodRequest, opts ...grpc.CallOption) (*DeleteAppDefaultGoodResponse, error) {
+	out := new(DeleteAppDefaultGoodResponse)
+	err := c.cc.Invoke(ctx, "/good.middleware.appdefaultgood.v1.Middleware/DeleteAppDefaultGood", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type MiddlewareServer interface {
 	GetAppDefaultGood(context.Context, *GetAppDefaultGoodRequest) (*GetAppDefaultGoodResponse, error)
 	GetAppDefaultGoodOnly(context.Context, *GetAppDefaultGoodOnlyRequest) (*GetAppDefaultGoodOnlyResponse, error)
 	GetAppDefaultGoods(context.Context, *GetAppDefaultGoodsRequest) (*GetAppDefaultGoodsResponse, error)
+	DeleteAppDefaultGood(context.Context, *DeleteAppDefaultGoodRequest) (*DeleteAppDefaultGoodResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedMiddlewareServer) GetAppDefaultGoodOnly(context.Context, *Get
 }
 func (UnimplementedMiddlewareServer) GetAppDefaultGoods(context.Context, *GetAppDefaultGoodsRequest) (*GetAppDefaultGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppDefaultGoods not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteAppDefaultGood(context.Context, *DeleteAppDefaultGoodRequest) (*DeleteAppDefaultGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppDefaultGood not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -152,6 +166,24 @@ func _Middleware_GetAppDefaultGoods_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteAppDefaultGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppDefaultGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteAppDefaultGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/good.middleware.appdefaultgood.v1.Middleware/DeleteAppDefaultGood",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteAppDefaultGood(ctx, req.(*DeleteAppDefaultGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppDefaultGoods",
 			Handler:    _Middleware_GetAppDefaultGoods_Handler,
+		},
+		{
+			MethodName: "DeleteAppDefaultGood",
+			Handler:    _Middleware_DeleteAppDefaultGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
