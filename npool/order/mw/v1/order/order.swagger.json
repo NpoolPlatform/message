@@ -476,6 +476,14 @@
         }
       }
     },
+    "v1SumOrderUnitsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
     "v1Uint32SliceVal": {
       "type": "object",
       "properties": {

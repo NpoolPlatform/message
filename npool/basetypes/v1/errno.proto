@@ -4,8 +4,15 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-enum ERR {
-    OK = 0;
+enum ErrorAct {
+    None           = 0;
+    PopupErrorTip  = 10;
+    PopupYesNo     = 20;
+    PopupTarget    = 30;
+}
 
-    START = 10000;
+message Error {
+    string            Msg    = 20;
+    optional string   MsgID  = 10;
+    optional ErrorAct Action = 30;
 }

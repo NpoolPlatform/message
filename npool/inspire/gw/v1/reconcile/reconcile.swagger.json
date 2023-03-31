@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/reconciliation/reconciliation.proto",
+    "title": "npool/inspire/gw/v1/reconcile/reconcile.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/update/archivement": {
+    "/v1/reconcile": {
       "post": {
-        "operationId": "Gateway_UpdateArchivement",
+        "operationId": "Gateway_Reconcile",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateArchivementResponse"
+              "$ref": "#/definitions/v1ReconcileResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateArchivementRequest"
+              "$ref": "#/definitions/v1ReconcileRequest"
             }
           }
         ],
@@ -77,18 +77,21 @@
         }
       }
     },
-    "v1UpdateArchivementRequest": {
+    "v1ReconcileRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         }
       }
     },
-    "v1UpdateArchivementResponse": {
+    "v1ReconcileResponse": {
       "type": "object"
     }
   }

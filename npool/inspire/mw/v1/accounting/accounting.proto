@@ -8,7 +8,7 @@ import "npool/inspire/mgr/v1/commission/commission.proto";
 
 // Service Name
 service Middleware {
-    rpc Accounting (AccountingRequest)  returns (AccountingResponse) {}
+    rpc Accounting (AccountingRequest) returns (AccountingResponse) {}
 }
 
 message Commission {
@@ -32,9 +32,11 @@ message AccountingRequest {
     string GoodValue              = 110;
     inspire.manager.commission.v1.SettleType SettleType = 120;
     bool   HasCommission          = 130;
+    uint32 OrderCreatedAt         = 140;
 }
 
 message AccountingResponse {
     repeated Commission Infos = 10;
 }
+
 

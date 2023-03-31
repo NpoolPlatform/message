@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/inspire/gw/v1/reconciliation/reconciliation.proto
+// source: npool/inspire/gw/v1/reconcile/reconcile.proto
 
 package reconciliation
 
@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	UpdateArchivement(ctx context.Context, in *UpdateArchivementRequest, opts ...grpc.CallOption) (*UpdateArchivementResponse, error)
+	Reconcile(ctx context.Context, in *ReconcileRequest, opts ...grpc.CallOption) (*ReconcileResponse, error)
 }
 
 type gatewayClient struct {
@@ -33,9 +33,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) UpdateArchivement(ctx context.Context, in *UpdateArchivementRequest, opts ...grpc.CallOption) (*UpdateArchivementResponse, error) {
-	out := new(UpdateArchivementResponse)
-	err := c.cc.Invoke(ctx, "/inspire.gateway.reconciliation.v1.Gateway/UpdateArchivement", in, out, opts...)
+func (c *gatewayClient) Reconcile(ctx context.Context, in *ReconcileRequest, opts ...grpc.CallOption) (*ReconcileResponse, error) {
+	out := new(ReconcileResponse)
+	err := c.cc.Invoke(ctx, "/inspire.gateway.reconciliation.v1.Gateway/Reconcile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) UpdateArchivement(ctx context.Context, in *UpdateArchive
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	UpdateArchivement(context.Context, *UpdateArchivementRequest) (*UpdateArchivementResponse, error)
+	Reconcile(context.Context, *ReconcileRequest) (*ReconcileResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -54,8 +54,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) UpdateArchivement(context.Context, *UpdateArchivementRequest) (*UpdateArchivementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateArchivement not implemented")
+func (UnimplementedGatewayServer) Reconcile(context.Context, *ReconcileRequest) (*ReconcileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Reconcile not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_UpdateArchivement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateArchivementRequest)
+func _Gateway_Reconcile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateArchivement(ctx, in)
+		return srv.(GatewayServer).Reconcile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/inspire.gateway.reconciliation.v1.Gateway/UpdateArchivement",
+		FullMethod: "/inspire.gateway.reconciliation.v1.Gateway/Reconcile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateArchivement(ctx, req.(*UpdateArchivementRequest))
+		return srv.(GatewayServer).Reconcile(ctx, req.(*ReconcileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,10 +96,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "UpdateArchivement",
-			Handler:    _Gateway_UpdateArchivement_Handler,
+			MethodName: "Reconcile",
+			Handler:    _Gateway_Reconcile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/gw/v1/reconciliation/reconciliation.proto",
+	Metadata: "npool/inspire/gw/v1/reconcile/reconcile.proto",
 }

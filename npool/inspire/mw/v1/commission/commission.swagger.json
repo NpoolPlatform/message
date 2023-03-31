@@ -168,6 +168,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -247,12 +250,14 @@
       "enum": [
         "DefaultSettleType",
         "GoodOrderPercent",
+        "GoodOrderValuePercent",
         "LimitedOrderPercent",
         "AmountThreshold",
         "TechniqueFeePercent",
         "NoCommission"
       ],
-      "default": "DefaultSettleType"
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
     },
     "v1StringSliceVal": {
       "type": "object",

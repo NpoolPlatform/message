@@ -156,6 +156,7 @@ message CloneCommissionsRequest {
     string FromGoodID = 20;
     string ToGoodID   = 30;
     string Value      = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
 }
 
 message CloneCommissionsResponse {
@@ -166,6 +167,7 @@ message CloneAppCommissionsRequest {
     string FromGoodID  = 20;
     string ToGoodID    = 30;
     string Value       = 40;
+    inspire.manager.commission.v1.SettleType SettleType = 50;
 }
 
 message CloneAppCommissionsResponse {

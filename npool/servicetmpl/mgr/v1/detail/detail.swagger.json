@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/detail/detail.proto",
+    "title": "npool/servicetmpl/mgr/v1/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
@@ -107,6 +107,14 @@
           "items": {
             "$ref": "#/definitions/v1Detail"
           }
+        }
+      }
+    },
+    "v1DeleteDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
         }
       }
     },
@@ -285,6 +293,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateDetailResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Detail"
         }
       }
     }

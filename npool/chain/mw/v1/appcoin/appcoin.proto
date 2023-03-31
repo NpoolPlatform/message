@@ -94,6 +94,8 @@ message Coin {
     string HotWalletFeeAmount           = 210;
     // @inject_tag: sql:"low_fee_amount"
     string LowFeeAmount                 = 220;
+    // @inject_tag: sql:"hot_low_fee_amount"
+    string HotLowFeeAmount              = 221;
     // @inject_tag: sql:"hot_wallet_account_amount"
     string HotWalletAccountAmount       = 230;
     // @inject_tag: sql:"payment_account_collect_amount"

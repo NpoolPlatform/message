@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/general/general.proto",
+    "title": "npool/inspire/mgr/v1/commission/goodordervaluepercent/goodordervaluepercent.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,14 +44,6 @@
         }
       }
     },
-    "v1AddGeneralResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1General"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,24 +56,21 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinTypeID": {
+        "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
-          "$ref": "#/definitions/v1StringVal"
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "Locked": {
-          "$ref": "#/definitions/v1StringVal"
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CountGeneralsResponse": {
+    "v1CountOrderValuePercentsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -90,42 +79,34 @@
         }
       }
     },
-    "v1CreateGeneralResponse": {
+    "v1CreateOrderValuePercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "$ref": "#/definitions/v1OrderValuePercent"
         }
       }
     },
-    "v1CreateGeneralsResponse": {
+    "v1CreateOrderValuePercentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1OrderValuePercent"
           }
         }
       }
     },
-    "v1DeleteGeneralResponse": {
+    "v1DeleteOrderValuePercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "$ref": "#/definitions/v1OrderValuePercent"
         }
       }
     },
-    "v1ExistGeneralCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistGeneralResponse": {
+    "v1ExistOrderValuePercentCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -133,92 +114,120 @@
         }
       }
     },
-    "v1General": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Incoming": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GeneralReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Incoming": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGeneralOnlyResponse": {
+    "v1ExistOrderValuePercentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "type": "boolean"
         }
       }
     },
-    "v1GetGeneralResponse": {
+    "v1GetOrderValuePercentOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1General"
+          "$ref": "#/definitions/v1OrderValuePercent"
         }
       }
     },
-    "v1GetGeneralsResponse": {
+    "v1GetOrderValuePercentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderValuePercent"
+        }
+      }
+    },
+    "v1GetOrderValuePercentsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1OrderValuePercent"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1OrderValuePercent": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OrderValuePercentReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -230,6 +239,26 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateOrderValuePercentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderValuePercent"
         }
       }
     }

@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/create/coin": {
+      "post": {
+        "operationId": "Gateway_CreateCoin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1CreateCoinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewaycoinv1CreateCoinRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/coins": {
       "post": {
         "operationId": "Gateway_GetCoins",
@@ -82,6 +114,28 @@
     }
   },
   "definitions": {
+    "chaingatewaycoinv1CreateCoinRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "ENV": {
+          "type": "string"
+        }
+      }
+    },
+    "chaingatewaycoinv1CreateCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
     "chaingatewaycoinv1GetCoinsRequest": {
       "type": "object",
       "properties": {
@@ -147,6 +201,9 @@
           "type": "string"
         },
         "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotLowFeeAmount": {
           "type": "string"
         },
         "HotWalletAccountAmount": {
@@ -287,6 +344,10 @@
         "LowFeeAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"low_fee_amount\""
+        },
+        "HotLowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_low_fee_amount\""
         },
         "HotWalletAccountAmount": {
           "type": "string",
