@@ -78,7 +78,9 @@ message CreateAppRequest {
     bool SigninVerifyEnable = 90;
     bool InvitationCodeMust = 100;
     appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
-    uint32 MaxTypedCouponsPerOrder = 120;
+    uint32          MaxTypedCouponsPerOrder = 120;
+    bool            Maintaining        = 160;
+    repeated string CommitButtonTargets           = 170;
 }
 
 message CreateAppResponse {
@@ -98,6 +100,8 @@ message UpdateAppRequest {
     optional bool InvitationCodeMust = 100;
     optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
     optional uint32 MaxTypedCouponsPerOrder = 120;
+    optional bool   Maintaining             = 160;
+    repeated string CommitButtonTargets     = 170;
 }
 
 message UpdateAppResponse {

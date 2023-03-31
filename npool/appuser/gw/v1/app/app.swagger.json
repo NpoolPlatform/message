@@ -288,6 +288,15 @@
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
           "format": "int64"
+        },
+        "Maintaining": {
+          "type": "boolean"
+        },
+        "CommitButtonTargets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -452,6 +461,15 @@
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
           "format": "int64"
+        },
+        "Maintaining": {
+          "type": "boolean"
+        },
+        "CommitButtonTargets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -564,6 +582,20 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"max_typed_coupons_per_order\""
+        },
+        "Maintaining": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"maintaining\""
+        },
+        "CommitButtonTargetsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"commit_button_targets\""
+        },
+        "CommitButtonTargets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

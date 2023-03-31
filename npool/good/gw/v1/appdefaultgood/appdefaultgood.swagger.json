@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/appcoin/appcoin.proto",
+    "title": "npool/good/gw/v1/appdefaultgood/appdefaultgood.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/appcoin": {
+    "/v1/create/appdefaultgood": {
       "post": {
-        "operationId": "Gateway_CreateCoin",
+        "operationId": "Gateway_CreateAppDefaultGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1CreateAppDefaultGoodRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/appcoin": {
+    "/v1/create/n/appdefaultgood": {
       "post": {
-        "operationId": "Gateway_DeleteCoin",
+        "operationId": "Gateway_CreateNAppDefaultGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinResponse"
+              "$ref": "#/definitions/v1CreateNAppDefaultGoodResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinRequest"
+              "$ref": "#/definitions/v1CreateNAppDefaultGoodRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/appcoins": {
+    "/v1/delete/appdefaultgood": {
       "post": {
-        "operationId": "Gateway_GetCoins",
+        "operationId": "Gateway_DeleteAppDefaultGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1DeleteAppDefaultGoodResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1DeleteAppDefaultGoodRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/n/appcoins": {
+    "/v1/get/appdefaultgoods": {
       "post": {
-        "operationId": "Gateway_GetAppCoins",
+        "operationId": "Gateway_GetAppDefaultGoods",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinsResponse"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1GetAppDefaultGoodsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppCoinsRequest"
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1GetAppDefaultGoodsRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/update/appcoin": {
+    "/v1/get/n/appdefaultgoods": {
       "post": {
-        "operationId": "Gateway_UpdateCoin",
+        "operationId": "Gateway_GetNAppDefaultGoods",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinResponse"
+              "$ref": "#/definitions/v1GetNAppDefaultGoodsResponse"
             }
           },
           "default": {
@@ -167,7 +167,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinRequest"
+              "$ref": "#/definitions/v1GetNAppDefaultGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/appdefaultgood": {
+      "post": {
+        "operationId": "Gateway_UpdateAppDefaultGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/n/appdefaultgood": {
+      "post": {
+        "operationId": "Gateway_UpdateNAppDefaultGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppDefaultGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppDefaultGoodRequest"
             }
           }
         ],
@@ -178,7 +242,7 @@
     }
   },
   "definitions": {
-    "chaingatewayappcoinv1Coin": {
+    "goodgatewayappdefaultgoodv1AppDefaultGood": {
       "type": "object",
       "properties": {
         "ID": {
@@ -187,120 +251,14 @@
         "AppID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
-        "Name": {
+        "CoinUnit": {
           "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "Presale": {
-          "type": "boolean"
-        },
-        "ReservedAmount": {
-          "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "ProductPage": {
-          "type": "string"
-        },
-        "CoinForPay": {
-          "type": "boolean"
-        },
-        "ENV": {
-          "type": "string"
-        },
-        "HomePage": {
-          "type": "string"
-        },
-        "Specs": {
-          "type": "string"
-        },
-        "StableUSD": {
-          "type": "boolean"
-        },
-        "FeeCoinTypeID": {
-          "type": "string"
-        },
-        "FeeCoinName": {
-          "type": "string"
-        },
-        "FeeCoinLogo": {
-          "type": "string"
-        },
-        "FeeCoinUnit": {
-          "type": "string"
-        },
-        "FeeCoinENV": {
-          "type": "string"
-        },
-        "WithdrawFeeByStableUSD": {
-          "type": "boolean"
-        },
-        "WithdrawFeeAmount": {
-          "type": "string"
-        },
-        "CollectFeeAmount": {
-          "type": "string"
-        },
-        "HotWalletFeeAmount": {
-          "type": "string"
-        },
-        "LowFeeAmount": {
-          "type": "string"
-        },
-        "HotWalletAccountAmount": {
-          "type": "string"
-        },
-        "PaymentAccountCollectAmount": {
-          "type": "string"
-        },
-        "WithdrawAutoReviewAmount": {
-          "type": "string"
-        },
-        "MarketValue": {
-          "type": "string"
-        },
-        "SettleValue": {
-          "type": "string"
-        },
-        "SettlePercent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SettleTipsStr": {
-          "type": "string"
-        },
-        "SettleTips": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Setter": {
-          "type": "string"
-        },
-        "Disabled": {
-          "type": "boolean"
-        },
-        "CoinDisabled": {
-          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
@@ -309,32 +267,16 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "DailyRewardAmount": {
-          "type": "string"
-        },
-        "Display": {
-          "type": "boolean"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxAmountPerWithdraw": {
-          "type": "string"
-        },
-        "LeastTransferAmount": {
-          "type": "string"
-        },
-        "DefaultGoodID": {
-          "type": "string"
         }
       }
     },
-    "chaingatewayappcoinv1CreateCoinRequest": {
+    "goodgatewayappdefaultgoodv1CreateAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -342,34 +284,34 @@
         }
       }
     },
-    "chaingatewayappcoinv1CreateCoinResponse": {
+    "goodgatewayappdefaultgoodv1CreateAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
-    "chaingatewayappcoinv1DeleteCoinRequest": {
+    "goodgatewayappdefaultgoodv1DeleteAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         }
       }
     },
-    "chaingatewayappcoinv1DeleteCoinResponse": {
+    "goodgatewayappdefaultgoodv1DeleteAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
-    "chaingatewayappcoinv1GetCoinsRequest": {
+    "goodgatewayappdefaultgoodv1GetAppDefaultGoodsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -385,13 +327,13 @@
         }
       }
     },
-    "chaingatewayappcoinv1GetCoinsResponse": {
+    "goodgatewayappdefaultgoodv1GetAppDefaultGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+            "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
           }
         },
         "Total": {
@@ -400,7 +342,7 @@
         }
       }
     },
-    "chaingatewayappcoinv1UpdateCoinRequest": {
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -409,69 +351,16 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "ForPay": {
-          "type": "boolean"
-        },
-        "WithdrawAutoReviewAmount": {
-          "type": "string"
-        },
-        "MarketValue": {
-          "type": "string"
-        },
-        "SettlePercent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SettleTips": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "DailyRewardAmount": {
-          "type": "string"
-        },
-        "ProductPage": {
-          "type": "string"
-        },
-        "Disabled": {
-          "type": "boolean"
-        },
-        "Display": {
-          "type": "boolean"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxAmountPerWithdraw": {
+        "GoodID": {
           "type": "string"
         }
       }
     },
-    "chaingatewayappcoinv1UpdateCoinResponse": {
+    "goodgatewayappdefaultgoodv1UpdateAppDefaultGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     },
@@ -502,7 +391,29 @@
         }
       }
     },
-    "v1GetAppCoinsRequest": {
+    "v1CreateNAppDefaultGoodRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateNAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
+        }
+      }
+    },
+    "v1GetNAppDefaultGoodsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -518,18 +429,40 @@
         }
       }
     },
-    "v1GetAppCoinsResponse": {
+    "v1GetNAppDefaultGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+            "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNAppDefaultGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateNAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/goodgatewayappdefaultgoodv1AppDefaultGood"
         }
       }
     }

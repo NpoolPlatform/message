@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package good.gateway.appdefaultgood.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/appdefaultgood";
+
+import "google/api/annotations.proto";
+import "npool/good/mgr/v1/appdefaultgood/appdefaultgood.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAppDefaultGood (CreateAppDefaultGoodRequest) returns (CreateAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/appdefaultgood"
+            body: "*"
+        };
+    }
+
+    rpc CreateNAppDefaultGood (CreateNAppDefaultGoodRequest) returns (CreateNAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/n/appdefaultgood"
+            body: "*"
+        };
+    }
+
+    rpc GetAppDefaultGoods (GetAppDefaultGoodsRequest) returns (GetAppDefaultGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/appdefaultgoods"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppDefaultGoods (GetNAppDefaultGoodsRequest) returns (GetNAppDefaultGoodsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/appdefaultgoods"
+            body: "*"
+        };
+    }
+
+    rpc DeleteAppDefaultGood (DeleteAppDefaultGoodRequest) returns (DeleteAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/appdefaultgood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppDefaultGood (UpdateAppDefaultGoodRequest) returns (UpdateAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/appdefaultgood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNAppDefaultGood (UpdateNAppDefaultGoodRequest) returns (UpdateNAppDefaultGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/appdefaultgood"
+            body: "*"
+        };
+    }
+}
+
+message AppDefaultGood {
+    string ID                  = 10;
+    string AppID               = 20;
+    string GoodID              = 30;
+    string CoinTypeID          = 40;
+    string CoinUnit            = 60;
+    uint32 CreatedAt           = 70;
+    uint32 UpdatedAt           = 80;
+}
+
+message CreateAppDefaultGoodRequest {
+    string AppID      = 10;
+    string GoodID     = 20;
+    string CoinTypeID = 30;
+}
+
+message CreateAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message CreateNAppDefaultGoodRequest {
+    string TargetAppID = 10;
+    string GoodID      = 20;
+    string CoinTypeID  = 30;
+}
+
+message CreateNAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message GetAppDefaultGoodsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetAppDefaultGoodsResponse {
+    repeated AppDefaultGood Infos = 10;
+    uint32                  Total = 20;
+}
+
+message GetNAppDefaultGoodsRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetNAppDefaultGoodsResponse {
+    repeated AppDefaultGood Infos = 10;
+    uint32                  Total = 20;
+}
+
+message DeleteAppDefaultGoodRequest {
+    string          ID         = 10;
+    string          AppID      = 20;
+}
+
+message DeleteAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message UpdateAppDefaultGoodRequest {
+    string          ID         = 10;
+    string          AppID      = 20;
+    string          GoodID     = 30;
+}
+
+message UpdateAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
+
+message UpdateNAppDefaultGoodRequest {
+    string          ID          = 10;
+    string          TargetAppID = 20;
+    string          GoodID      = 30;
+}
+
+message UpdateNAppDefaultGoodResponse {
+    AppDefaultGood Info = 10;
+}
