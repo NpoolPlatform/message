@@ -5,7 +5,7 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/pubsub/v1";
 
 enum MessageID {
-  DefaultMessageID         = 0;
-  SignupInvitation         = 10;
-  SignupInvitationRollback = 20;
+  DefaultMessageID    = 0;
+  SignupInvitationReq = 10;
+  SignupInvitationRes = 20;
 }
