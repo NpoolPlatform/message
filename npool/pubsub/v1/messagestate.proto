@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/pubsub/v1";
+
+enum MessageState {
+  DefaultMessageState = 0;
+  InProcess           = 10;
+  Success             = 20;
+  Field               = 30;
+}
