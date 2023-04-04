@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/pubsub/v1/messagestate.proto",
+    "title": "npool/basetypes/v1/pubsub.proto",
     "version": "version not set"
   },
   "consumes": [
