@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	Signup(ctx context.Context, in *SignupRequest, opts ...grpc.CallOption) (*SignupResponse, error)
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error)
 	UpdateAppUserKol(ctx context.Context, in *UpdateAppUserKolRequest, opts ...grpc.CallOption) (*UpdateAppUserKolResponse, error)
@@ -57,6 +58,15 @@ func (c *gatewayClient) Signup(ctx context.Context, in *SignupRequest, opts ...g
 func (c *gatewayClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
 	out := new(CreateUserResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateAppUser(ctx context.Context, in *CreateAppUserRequest, opts ...grpc.CallOption) (*CreateAppUserResponse, error) {
+	out := new(CreateAppUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/CreateAppUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -168,6 +178,7 @@ func (c *gatewayClient) GetLoginHistories(ctx context.Context, in *GetLoginHisto
 type GatewayServer interface {
 	Signup(context.Context, *SignupRequest) (*SignupResponse, error)
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error)
 	UpdateAppUserKol(context.Context, *UpdateAppUserKolRequest) (*UpdateAppUserKolResponse, error)
@@ -191,6 +202,9 @@ func (UnimplementedGatewayServer) Signup(context.Context, *SignupRequest) (*Sign
 }
 func (UnimplementedGatewayServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (UnimplementedGatewayServer) CreateAppUser(context.Context, *CreateAppUserRequest) (*CreateAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppUser not implemented")
 }
 func (UnimplementedGatewayServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
@@ -270,6 +284,24 @@ func _Gateway_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateUser(ctx, req.(*CreateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/CreateAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateAppUser(ctx, req.(*CreateAppUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -486,6 +518,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateUser",
 			Handler:    _Gateway_CreateUser_Handler,
+		},
+		{
+			MethodName: "CreateAppUser",
+			Handler:    _Gateway_CreateAppUser_Handler,
 		},
 		{
 			MethodName: "UpdateUser",

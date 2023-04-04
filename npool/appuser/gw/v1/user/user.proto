@@ -25,6 +25,13 @@ service Gateway {
         };
     }
 
+    rpc CreateAppUser (CreateAppUserRequest) returns (CreateAppUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user"
+            body: "*"
+        };
+    }
+
     rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse) {
         option (google.api.http) = {
             post: "/v1/update/user"
@@ -143,6 +150,17 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message CreateAppUserRequest {
+    string          TargetAppID  = 10;
+    optional string EmailAddress = 20;
+    optional string PhoneNO      = 30;
+    string          PasswordHash = 40;
+}
+
+message CreateAppUserResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 

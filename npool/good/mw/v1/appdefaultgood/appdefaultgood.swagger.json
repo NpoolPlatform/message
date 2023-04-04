@@ -17,6 +17,14 @@
   ],
   "paths": {},
   "definitions": {
+    "goodmiddlewareappdefaultgoodv1DeleteAppDefaultGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppDefaultGood"
+        }
+      }
+    },
     "goodmiddlewareappdefaultgoodv1GetAppDefaultGoodOnlyResponse": {
       "type": "object",
       "properties": {
