@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+enum MessageID {
+    DefaultMessageID         = 0;
+    // For binding invitations during registration
+    SignupInvitationRequest  = 10;
+    SignupInvitationResponse = 20;
+}
+
+enum MessageState {
+    DefaultMessageState = 0;
+    InProcess           = 10;
+    Success             = 20;
+    Fail                = 30;
+}
+
