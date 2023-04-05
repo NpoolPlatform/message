@@ -5,12 +5,15 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum MsgID {
-    DefaultMsgID                         = 0;
+    DefaultMsgID                             = 0;
 
     // For binding invitations during registration
-    CreateRegistrationInvitationTry      = 10010;
-    CreateRegistrationInvitationConfirm  = 10020;
-    CreateRegistrationInvitationCancel   = 10030;
+    CreateRegistrationInvitationTry          = 10010;
+    CreateRegistrationInvitationTryResp      = 10020;
+    CreateRegistrationInvitationConfirm      = 10030;
+    CreateRegistrationInvitationConfirmResp  = 10040;
+    CreateRegistrationInvitationCancel       = 10050;
+    CreateRegistrationInvitationCancelResp   = 10060;
 }
 
 enum MsgState {
