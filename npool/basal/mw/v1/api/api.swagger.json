@@ -207,6 +207,17 @@
         }
       }
     },
+    "v1GetDomainsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1Int32Val": {
       "type": "object",
       "properties": {
