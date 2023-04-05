@@ -4,19 +4,19 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-enum MessageID {
-    DefaultMessageID                  = 0;
+enum MsgID {
+    DefaultMsgID                         = 0;
 
     // For binding invitations during registration
-    CreateRegistrationInvitationReq   = 10010;
-    CreateRegistrationInvitationResp  = 10020;
+    CreateRegistrationInvitationTry      = 10010;
+    CreateRegistrationInvitationConfirm  = 10020;
+    CreateRegistrationInvitationCancel   = 10030;
 }
 
-enum MessageState {
+enum MsgState {
     DefaultMessageState = 0;
 
-    Processing          = 10;
-    Success             = 20;
-    Fail                = 30;
+    StateSuccess        = 10;
+    StateFail           = 20;
 }
 
