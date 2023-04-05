@@ -14,9 +14,9 @@ enum MsgID {
 }
 
 enum MsgState {
-    DefaultMessageState = 0;
+    DefaultMsgState = 0;
 
-    StateSuccess        = 10;
-    StateFail           = 20;
+    StateSuccess    = 10;
+    StateFail       = 20;
 }
 
