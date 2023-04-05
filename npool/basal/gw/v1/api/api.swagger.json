@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/get/domains": {
+      "post": {
+        "operationId": "Gateway_GetDomains",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetDomainsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetDomainsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/api": {
       "post": {
         "operationId": "Gateway_UpdateAPI",
@@ -85,6 +117,9 @@
     "basalgatewayapiv1GetAPIsRequest": {
       "type": "object",
       "properties": {
+        "Domain": {
+          "type": "string"
+        },
         "Exported": {
           "type": "boolean"
         },
@@ -205,6 +240,20 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetDomainsRequest": {
+      "type": "object"
+    },
+    "v1GetDomainsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

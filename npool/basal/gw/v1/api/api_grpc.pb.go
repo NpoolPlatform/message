@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	UpdateAPI(ctx context.Context, in *UpdateAPIRequest, opts ...grpc.CallOption) (*UpdateAPIResponse, error)
 	GetAPIs(ctx context.Context, in *GetAPIsRequest, opts ...grpc.CallOption) (*GetAPIsResponse, error)
+	GetDomains(ctx context.Context, in *GetDomainsRequest, opts ...grpc.CallOption) (*GetDomainsResponse, error)
 }
 
 type gatewayClient struct {
@@ -52,12 +53,22 @@ func (c *gatewayClient) GetAPIs(ctx context.Context, in *GetAPIsRequest, opts ..
 	return out, nil
 }
 
+func (c *gatewayClient) GetDomains(ctx context.Context, in *GetDomainsRequest, opts ...grpc.CallOption) (*GetDomainsResponse, error) {
+	out := new(GetDomainsResponse)
+	err := c.cc.Invoke(ctx, "/basal.gateway.api.v1.Gateway/GetDomains", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	UpdateAPI(context.Context, *UpdateAPIRequest) (*UpdateAPIResponse, error)
 	GetAPIs(context.Context, *GetAPIsRequest) (*GetAPIsResponse, error)
+	GetDomains(context.Context, *GetDomainsRequest) (*GetDomainsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -70,6 +81,9 @@ func (UnimplementedGatewayServer) UpdateAPI(context.Context, *UpdateAPIRequest) 
 }
 func (UnimplementedGatewayServer) GetAPIs(context.Context, *GetAPIsRequest) (*GetAPIsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAPIs not implemented")
+}
+func (UnimplementedGatewayServer) GetDomains(context.Context, *GetDomainsRequest) (*GetDomainsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDomains not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -120,6 +134,24 @@ func _Gateway_GetAPIs_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetDomains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDomainsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetDomains(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/basal.gateway.api.v1.Gateway/GetDomains",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetDomains(ctx, req.(*GetDomainsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -134,6 +166,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAPIs",
 			Handler:    _Gateway_GetAPIs_Handler,
+		},
+		{
+			MethodName: "GetDomains",
+			Handler:    _Gateway_GetDomains_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

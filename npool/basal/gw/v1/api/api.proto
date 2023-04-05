@@ -23,6 +23,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetDomains (GetDomainsRequest) returns (GetDomainsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/domains"
+            body: "*"
+        };
+    }
 }
 
 message UpdateAPIRequest {
@@ -35,10 +42,11 @@ message UpdateAPIResponse {
 }
 
 message GetAPIsRequest {
-    optional bool Exported   = 10;
-    optional bool Depracated = 20;
-    int32         Offset     = 30;
-    int32         Limit      = 40;
+    optional string Domain     = 9;
+    optional bool   Exported   = 10;
+    optional bool   Depracated = 20;
+    int32           Offset     = 30;
+    int32           Limit      = 40;
 }
 
 message GetAPIsResponse {
@@ -46,3 +54,9 @@ message GetAPIsResponse {
     uint32                            Total = 20;
 }
 
+message GetDomainsRequest {
+}
+
+message GetDomainsResponse {
+    repeated string Infos = 10;
+}
