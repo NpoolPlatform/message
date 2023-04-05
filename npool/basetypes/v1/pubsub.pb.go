@@ -21,6 +21,7 @@ const (
 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type MsgID int32
 
 const (
@@ -47,35 +48,47 @@ func (x MsgID) Enum() *MsgID {
 	p := new(MsgID)
 =======
 type MessageID int32
+=======
+type MsgID int32
+>>>>>>> Remove processing state
 
 const (
-	MessageID_DefaultMessageID MessageID = 0
+	MsgID_DefaultMsgID MsgID = 0
 	// For binding invitations during registration
-	MessageID_CreateRegistrationInvitationReq  MessageID = 10010
-	MessageID_CreateRegistrationInvitationResp MessageID = 10020
+	MsgID_CreateRegistrationInvitationTry     MsgID = 10010
+	MsgID_CreateRegistrationInvitationConfirm MsgID = 10020
+	MsgID_CreateRegistrationInvitationCancel  MsgID = 10030
 )
 
-// Enum value maps for MessageID.
+// Enum value maps for MsgID.
 var (
-	MessageID_name = map[int32]string{
-		0:     "DefaultMessageID",
-		10010: "CreateRegistrationInvitationReq",
-		10020: "CreateRegistrationInvitationResp",
+	MsgID_name = map[int32]string{
+		0:     "DefaultMsgID",
+		10010: "CreateRegistrationInvitationTry",
+		10020: "CreateRegistrationInvitationConfirm",
+		10030: "CreateRegistrationInvitationCancel",
 	}
-	MessageID_value = map[string]int32{
-		"DefaultMessageID":                 0,
-		"CreateRegistrationInvitationReq":  10010,
-		"CreateRegistrationInvitationResp": 10020,
+	MsgID_value = map[string]int32{
+		"DefaultMsgID":                        0,
+		"CreateRegistrationInvitationTry":     10010,
+		"CreateRegistrationInvitationConfirm": 10020,
+		"CreateRegistrationInvitationCancel":  10030,
 	}
 )
 
+<<<<<<< HEAD
 func (x MessageID) Enum() *MessageID {
 	p := new(MessageID)
 >>>>>>>  update pubsub
+=======
+func (x MsgID) Enum() *MsgID {
+	p := new(MsgID)
+>>>>>>> Remove processing state
 	*p = x
 	return p
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func (x MsgID) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
@@ -124,58 +137,64 @@ func (x MsgState) Enum() *MsgState {
 	p := new(MsgState)
 =======
 func (x MessageID) String() string {
+=======
+func (x MsgID) String() string {
+>>>>>>> Remove processing state
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (MessageID) Descriptor() protoreflect.EnumDescriptor {
+func (MsgID) Descriptor() protoreflect.EnumDescriptor {
 	return file_npool_basetypes_v1_pubsub_proto_enumTypes[0].Descriptor()
 }
 
-func (MessageID) Type() protoreflect.EnumType {
+func (MsgID) Type() protoreflect.EnumType {
 	return &file_npool_basetypes_v1_pubsub_proto_enumTypes[0]
 }
 
-func (x MessageID) Number() protoreflect.EnumNumber {
+func (x MsgID) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use MessageID.Descriptor instead.
-func (MessageID) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use MsgID.Descriptor instead.
+func (MsgID) EnumDescriptor() ([]byte, []int) {
 	return file_npool_basetypes_v1_pubsub_proto_rawDescGZIP(), []int{0}
 }
 
-type MessageState int32
+type MsgState int32
 
 const (
-	MessageState_DefaultMessageState MessageState = 0
-	MessageState_Processing          MessageState = 10
-	MessageState_Success             MessageState = 20
-	MessageState_Fail                MessageState = 30
+	MsgState_DefaultMessageState MsgState = 0
+	MsgState_StateSuccess        MsgState = 10
+	MsgState_StateFail           MsgState = 20
 )
 
-// Enum value maps for MessageState.
+// Enum value maps for MsgState.
 var (
-	MessageState_name = map[int32]string{
+	MsgState_name = map[int32]string{
 		0:  "DefaultMessageState",
-		10: "Processing",
-		20: "Success",
-		30: "Fail",
+		10: "StateSuccess",
+		20: "StateFail",
 	}
-	MessageState_value = map[string]int32{
+	MsgState_value = map[string]int32{
 		"DefaultMessageState": 0,
-		"Processing":          10,
-		"Success":             20,
-		"Fail":                30,
+		"StateSuccess":        10,
+		"StateFail":           20,
 	}
 )
 
+<<<<<<< HEAD
 func (x MessageState) Enum() *MessageState {
 	p := new(MessageState)
 >>>>>>>  update pubsub
+=======
+func (x MsgState) Enum() *MsgState {
+	p := new(MsgState)
+>>>>>>> Remove processing state
 	*p = x
 	return p
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func (x MsgState) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
@@ -197,24 +216,32 @@ func (x MsgState) Number() protoreflect.EnumNumber {
 func (MsgState) EnumDescriptor() ([]byte, []int) {
 =======
 func (x MessageState) String() string {
+=======
+func (x MsgState) String() string {
+>>>>>>> Remove processing state
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (MessageState) Descriptor() protoreflect.EnumDescriptor {
+func (MsgState) Descriptor() protoreflect.EnumDescriptor {
 	return file_npool_basetypes_v1_pubsub_proto_enumTypes[1].Descriptor()
 }
 
-func (MessageState) Type() protoreflect.EnumType {
+func (MsgState) Type() protoreflect.EnumType {
 	return &file_npool_basetypes_v1_pubsub_proto_enumTypes[1]
 }
 
-func (x MessageState) Number() protoreflect.EnumNumber {
+func (x MsgState) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use MessageState.Descriptor instead.
 func (MessageState) EnumDescriptor() ([]byte, []int) {
 >>>>>>>  update pubsub
+=======
+// Deprecated: Use MsgState.Descriptor instead.
+func (MsgState) EnumDescriptor() ([]byte, []int) {
+>>>>>>> Remove processing state
 	return file_npool_basetypes_v1_pubsub_proto_rawDescGZIP(), []int{1}
 }
 
@@ -224,6 +251,7 @@ var file_npool_basetypes_v1_pubsub_proto_rawDesc = []byte{
 	0x0a, 0x1f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x2f, 0x76, 0x31, 0x2f, 0x70, 0x75, 0x62, 0x73, 0x75, 0x62, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x0c, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2a,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	0x42, 0x0a, 0x05, 0x4d, 0x73, 0x67, 0x49, 0x44, 0x12, 0x10, 0x0a, 0x0c, 0x44, 0x65, 0x66, 0x61,
@@ -274,6 +302,26 @@ var file_npool_basetypes_v1_pubsub_proto_rawDesc = []byte{
 	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79,
 	0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> Refactor message definitions
+=======
+	0x92, 0x01, 0x0a, 0x05, 0x4d, 0x73, 0x67, 0x49, 0x44, 0x12, 0x10, 0x0a, 0x0c, 0x44, 0x65, 0x66,
+	0x61, 0x75, 0x6c, 0x74, 0x4d, 0x73, 0x67, 0x49, 0x44, 0x10, 0x00, 0x12, 0x24, 0x0a, 0x1f, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x72, 0x79, 0x10, 0x9a,
+	0x4e, 0x12, 0x28, 0x0a, 0x23, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x10, 0xa4, 0x4e, 0x12, 0x27, 0x0a, 0x22, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6e, 0x63, 0x65,
+	0x6c, 0x10, 0xae, 0x4e, 0x2a, 0x44, 0x0a, 0x08, 0x4d, 0x73, 0x67, 0x53, 0x74, 0x61, 0x74, 0x65,
+	0x12, 0x17, 0x0a, 0x13, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x10, 0x00, 0x12, 0x10, 0x0a, 0x0c, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x10, 0x0a, 0x12, 0x0d, 0x0a, 0x09, 0x53,
+	0x74, 0x61, 0x74, 0x65, 0x46, 0x61, 0x69, 0x6c, 0x10, 0x14, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76,
+	0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> Remove processing state
 }
 
 var (
@@ -291,12 +339,17 @@ func file_npool_basetypes_v1_pubsub_proto_rawDescGZIP() []byte {
 var file_npool_basetypes_v1_pubsub_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_npool_basetypes_v1_pubsub_proto_goTypes = []interface{}{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(MsgID)(0),    // 0: basetypes.v1.MsgID
 	(MsgState)(0), // 1: basetypes.v1.MsgState
 =======
 	(MessageID)(0),    // 0: basetypes.v1.MessageID
 	(MessageState)(0), // 1: basetypes.v1.MessageState
 >>>>>>>  update pubsub
+=======
+	(MsgID)(0),    // 0: basetypes.v1.MsgID
+	(MsgState)(0), // 1: basetypes.v1.MsgState
+>>>>>>> Remove processing state
 }
 var file_npool_basetypes_v1_pubsub_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
