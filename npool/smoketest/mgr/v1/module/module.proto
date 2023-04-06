@@ -24,6 +24,7 @@ message ModuleReq {
     optional string ID                  = 10;
     optional string Name                = 20;
     optional string Description         = 30;
+    optional uint32 CreatedAt           = 40;
 }
 
 message Module {
