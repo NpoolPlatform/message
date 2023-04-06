@@ -70,7 +70,7 @@
         "TestcaseType": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Depracated": {
+        "Deprecated": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -196,7 +196,7 @@
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -240,7 +240,7 @@
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean"
         }
       }

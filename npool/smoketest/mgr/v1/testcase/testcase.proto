@@ -29,7 +29,7 @@ message TestCaseReq {
     optional string Arguments                                  = 60;
     optional string ExpectationResult                          = 70;
     optional TestCaseType    TestCaseType                      = 80;
-    optional bool            Depracated                        = 90;
+    optional bool            Deprecated                        = 90;
 }
 
 message TestCase {
@@ -41,7 +41,7 @@ message TestCase {
     string          Arguments                         = 60;
     string          ExpectationResult                   = 70;
     TestCaseType    TestCaseType                      = 80;
-    bool            Depracated                        = 90;
+    bool            Deprecated                        = 90;
     uint32          CreatedAt                         = 100;
     uint32          UpdatedAt                         = 110;
     uint32          DeletedAt                         = 120;
@@ -59,7 +59,7 @@ message Conds {
     optional npool.v1.StringVal      ModuleID  = 20;
     optional npool.v1.StringVal      ApiID = 30;
     optional npool.v1.StringVal      TestcaseType = 40;
-    optional npool.v1.BoolVal        Depracated  = 50;
+    optional npool.v1.BoolVal        Deprecated  = 50;
 }
 
 
