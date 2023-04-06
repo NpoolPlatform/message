@@ -167,6 +167,10 @@
         },
         "Description": {
           "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
