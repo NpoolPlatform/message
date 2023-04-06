@@ -47,11 +47,11 @@
     "v1CondType": {
       "type": "string",
       "enum": [
-        "CondTypeDefault",
+        "DefaultCondType",
         "PreCondition",
         "Cleaner"
       ],
-      "default": "CondTypeDefault"
+      "default": "DefaultCondType"
     },
     "v1Conds": {
       "type": "object",
