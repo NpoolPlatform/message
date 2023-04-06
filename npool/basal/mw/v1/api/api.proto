@@ -66,4 +66,3 @@ message GetAPIOnlyRequest {
 message GetAPIOnlyResponse {
     basal.manager.api.v1.API Info = 10;
 }
-
