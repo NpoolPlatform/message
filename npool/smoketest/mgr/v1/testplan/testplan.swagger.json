@@ -181,7 +181,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "SkipedTestCasesCount": {
+        "SkippedTestCasesCount": {
           "type": "integer",
           "format": "int64"
         },
@@ -236,7 +236,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "SkipedTestCasesCount": {
+        "SkippedTestCasesCount": {
           "type": "integer",
           "format": "int64"
         },

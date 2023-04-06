@@ -28,7 +28,7 @@ message TestPlanReq {
     optional string        ResponsibleUserID                 = 50;
     optional uint32        FailedTestCasesCount              = 60;
     optional uint32        PassedTestCasesCount              = 70;
-    optional uint32        SkipedTestCasesCount              = 80;
+    optional uint32        SkippedTestCasesCount              = 80;
     optional uint32        RunDuration                       = 90;
     optional string        TestResult                        = 100;
     optional uint32        Deadline                          = 110;
@@ -42,7 +42,7 @@ message TestPlan {
     string          ResponsibleUserID                 = 50;
     uint32          FailedTestCasesCount              = 60;
     uint32          PassedTestCasesCount              = 70;
-    uint32          SkipedTestCasesCount              = 80;
+    uint32          SkippedTestCasesCount              = 80;
     uint32          RunDuration                       = 90;
     string          TestResult                        = 100;
     uint32          Deadline                          = 110;
