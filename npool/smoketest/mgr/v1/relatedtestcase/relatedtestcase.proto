@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package smoketest.manager.relatedtestcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/relatedtestcase";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateRelatedTestCase     (CreateRelatedTestCaseRequest)     returns (CreateRelatedTestCaseResponse)     {}
+    rpc CreateRelatedTestCases    (CreateRelatedTestCasesRequest)    returns (CreateRelatedTestCasesResponse)    {}
+    rpc UpdateRelatedTestCase     (UpdateRelatedTestCaseRequest)     returns (UpdateRelatedTestCaseResponse)     {}
+    rpc GetRelatedTestCase        (GetRelatedTestCaseRequest)        returns (GetRelatedTestCaseResponse)        {}
+    rpc GetRelatedTestCaseOnly    (GetRelatedTestCaseOnlyRequest)    returns (GetRelatedTestCaseOnlyResponse)    {}
+    rpc GetRelatedTestCases       (GetRelatedTestCasesRequest)       returns (GetRelatedTestCasesResponse)       {}
+    rpc ExistRelatedTestCase      (ExistRelatedTestCaseRequest)      returns (ExistRelatedTestCaseResponse)      {}
+    rpc ExistRelatedTestCaseConds (ExistRelatedTestCaseCondsRequest) returns (ExistRelatedTestCaseCondsResponse) {}
+    rpc CountRelatedTestCases     (CountRelatedTestCasesRequest)     returns (CountRelatedTestCasesResponse)     {}
+    rpc DeleteRelatedTestCase     (DeleteRelatedTestCaseRequest)     returns (DeleteRelatedTestCaseResponse)     {}
+}
+
+message RelatedTestCaseReq {
+    optional string   ID                                         = 10;
+    optional CondType CondType                                   = 20;
+    optional string   TestCaseID                                 = 30;
+    optional string   RelatedTestCaseID                          = 40;
+    optional string   ArgumentsTransfer                          = 50;
+    optional uint32   Index                                      = 60;
+}
+
+message RelatedTestCase {
+    string          ID                                = 10;
+    CondType        CondType                          = 20; //条件类型:前置条件|后置条件
+    string          TestCaseID                        = 30;
+    string          RelatedTestCaseID                 = 40;
+    string          ArgumentsTransfer                 = 50;
+    uint32          index                             = 60;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID                = 10;
+    optional npool.v1.StringVal      CondType          = 20;
+    optional npool.v1.StringVal      TestCaseID        = 30;
+    optional npool.v1.StringVal      RelatedTestCaseID = 40;
+    optional npool.v1.Int32Val       Index             = 50;
+}
+
+enum CondType {
+  CondTypeDefault          = 0;
+  PreCondition             = 10;
+  Cleaner                  = 20;
+}
+
+message CreateRelatedTestCaseRequest {
+    RelatedTestCaseReq Info = 10;
+}
+
+message CreateRelatedTestCaseResponse {
+    RelatedTestCase Info = 10;
+}
+
+message CreateRelatedTestCasesRequest {
+    repeated RelatedTestCaseReq Infos = 10;
+}
+
+message CreateRelatedTestCasesResponse {
+    repeated RelatedTestCase Infos = 10;
+}
+
+message UpdateRelatedTestCaseRequest {
+    RelatedTestCaseReq Info = 10;
+}
+
+message UpdateRelatedTestCaseResponse {
+    RelatedTestCase Info = 10;
+}
+
+message GetRelatedTestCaseRequest {
+    string ID = 10;
+}
+
+message GetRelatedTestCaseResponse {
+    RelatedTestCase Info = 10;
+}
+
+message GetRelatedTestCasesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetRelatedTestCasesResponse {
+    repeated RelatedTestCase Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetRelatedTestCaseOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetRelatedTestCaseOnlyResponse {
+    RelatedTestCase Info = 10;
+}
+
+message ExistRelatedTestCaseRequest {
+    string ID = 10;
+}
+
+message ExistRelatedTestCaseResponse {
+    bool Info = 10;
+}
+
+message ExistRelatedTestCaseCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRelatedTestCaseCondsResponse {
+    bool Info = 10;
+}
+
+message CountRelatedTestCasesRequest {
+    Conds Conds = 10;
+}
+
+message CountRelatedTestCasesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteRelatedTestCaseRequest {
+    string ID = 10;
+}
+
+message DeleteRelatedTestCaseResponse {
+    RelatedTestCase Info = 10;
+}
