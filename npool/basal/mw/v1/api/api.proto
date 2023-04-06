@@ -75,3 +75,4 @@ message ExistAPIRequest {
 message ExistAPIResponse {
     bool Info = 10;
 }
+
