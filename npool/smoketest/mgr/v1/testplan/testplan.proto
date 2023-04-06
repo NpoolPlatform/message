@@ -30,7 +30,7 @@ message TestPlanReq {
     optional uint32        PassedTestCasesCount              = 70;
     optional uint32        SkippedTestCasesCount              = 80;
     optional uint32        RunDuration                       = 90;
-    optional string        TestResult                        = 100;
+    optional TestResultState TestResult                        = 100;
     optional uint32        Deadline                          = 110;
 }
 
@@ -44,11 +44,17 @@ message TestPlan {
     uint32          PassedTestCasesCount              = 70;
     uint32          SkippedTestCasesCount              = 80;
     uint32          RunDuration                       = 90;
-    string          TestResult                        = 100;
+    TestResultState TestResult                        = 100;
     uint32          Deadline                          = 110;
     uint32          CreatedAt                         = 120;
     uint32          UpdatedAt                         = 130;
     uint32          DeletedAt                         = 140;
+}
+
+enum TestResultState {
+    DefaultTestTestState      = 0;
+    Passed                 = 10;
+    Failed                 = 20;
 }
 
 enum TestPlanState {

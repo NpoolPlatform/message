@@ -190,7 +190,7 @@
           "format": "int64"
         },
         "TestResult": {
-          "type": "string"
+          "$ref": "#/definitions/v1TestResultState"
         },
         "Deadline": {
           "type": "integer",
@@ -245,7 +245,7 @@
           "format": "int64"
         },
         "TestResult": {
-          "type": "string"
+          "$ref": "#/definitions/v1TestResultState"
         },
         "Deadline": {
           "type": "integer",
@@ -263,6 +263,15 @@
         "Overdue"
       ],
       "default": "DefaultTestPlanState"
+    },
+    "v1TestResultState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestTestState",
+        "Passed",
+        "Failed"
+      ],
+      "default": "DefaultTestTestState"
     },
     "v1UpdateTestPlanResponse": {
       "type": "object",
