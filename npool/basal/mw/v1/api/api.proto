@@ -14,6 +14,7 @@ service Middleware {
     rpc UpdateAPI     (UpdateAPIRequest)     returns (UpdateAPIResponse)     {}
     rpc GetAPIs       (GetAPIsRequest)       returns (GetAPIsResponse)       {}
     rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
+    rpc GetAPIOnly    (GetAPIOnlyRequest)    returns (GetAPIOnlyResponse)    {}
 }
 
 message CreateAPIRequest {
@@ -57,3 +58,12 @@ message GetDomainsRequest {
 message GetDomainsResponse {
     repeated string Infos = 10;
 }
+
+message GetAPIOnlyRequest {
+    basal.manager.api.v1.Conds Conds  = 10;
+}
+
+message GetAPIOnlyResponse {
+    basal.manager.api.v1.API Info = 10;
+}
+

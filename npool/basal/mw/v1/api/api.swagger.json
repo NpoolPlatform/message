@@ -36,6 +36,14 @@
         }
       }
     },
+    "basalmiddlewareapiv1GetAPIOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
     "basalmiddlewareapiv1GetAPIsResponse": {
       "type": "object",
       "properties": {
