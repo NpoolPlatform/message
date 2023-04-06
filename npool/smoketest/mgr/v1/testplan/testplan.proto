@@ -1,0 +1,151 @@
+syntax = "proto3";
+
+package smoketest.manager.testplan.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/testplan";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateTestPlan     (CreateTestPlanRequest)     returns (CreateTestPlanResponse)     {}
+    rpc CreateTestPlans    (CreateTestPlansRequest)    returns (CreateTestPlansResponse)    {}
+    rpc UpdateTestPlan     (UpdateTestPlanRequest)     returns (UpdateTestPlanResponse)     {}
+    rpc GetTestPlan        (GetTestPlanRequest)        returns (GetTestPlanResponse)        {}
+    rpc GetTestPlanOnly    (GetTestPlanOnlyRequest)    returns (GetTestPlanOnlyResponse)    {}
+    rpc GetTestPlans       (GetTestPlansRequest)       returns (GetTestPlansResponse)       {}
+    rpc ExistTestPlan      (ExistTestPlanRequest)      returns (ExistTestPlanResponse)      {}
+    rpc ExistTestPlanConds (ExistTestPlanCondsRequest) returns (ExistTestPlanCondsResponse) {}
+    rpc CountTestPlans     (CountTestPlansRequest)     returns (CountTestPlansResponse)     {}
+    rpc DeleteTestPlan     (DeleteTestPlanRequest)     returns (DeleteTestPlanResponse)     {}
+}
+
+message TestPlanReq {
+    optional string        ID                                = 10;
+    optional string        Name                              = 20;
+    optional TestPlanState State                             = 30; 
+    optional string        OwnerID                           = 40;
+    optional string        ResponsibleUserID                 = 50;
+    optional uint32        FailedTestCasesCount              = 60;
+    optional uint32        PassedTestCasesCount              = 70;
+    optional uint32        SkipedTestCasesCount              = 80;
+    optional uint32        RunDuration                       = 90;
+    optional string        TestResult                        = 100;
+    optional uint32        Deadline                          = 110;
+}
+
+message TestPlan {
+    string          ID                                = 10;
+    string          Name                              = 20;
+    TestPlanState   State                             = 30; //未开始|正在进行|已完成|已逾期
+    string          OwnerID                           = 40;
+    string          ResponsibleUserID                 = 50;
+    uint32          FailedTestCasesCount              = 60;
+    uint32          PassedTestCasesCount              = 70;
+    uint32          SkipedTestCasesCount              = 80;
+    uint32          RunDuration                       = 90;
+    string          TestResult                        = 100;
+    uint32          Deadline                          = 110;
+    uint32          CreatedAt                         = 120;
+    uint32          UpdatedAt                         = 130;
+    uint32          DeletedAt                         = 140;
+}
+
+enum TestPlanState {
+    DefaultTestPlanState      = 0;
+    WaitStart                 = 10;
+    Completed                 = 20;
+    Finished                  = 30;
+    Overdue                   = 40;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      State  = 20;
+    optional npool.v1.StringVal      OwnerID = 30;
+    optional npool.v1.StringVal      ResponsibleUserID = 40;
+}
+
+
+message CreateTestPlanRequest {
+    TestPlanReq Info = 10;
+}
+
+message CreateTestPlanResponse {
+    TestPlan Info = 10;
+}
+
+message CreateTestPlansRequest {
+    repeated TestPlanReq Infos = 10;
+}
+
+message CreateTestPlansResponse {
+    repeated TestPlan Infos = 10;
+}
+
+message UpdateTestPlanRequest {
+    TestPlanReq Info = 10;
+}
+
+message UpdateTestPlanResponse {
+    TestPlan Info = 10;
+}
+
+message GetTestPlanRequest {
+    string ID = 10;
+}
+
+message GetTestPlanResponse {
+    TestPlan Info = 10;
+}
+
+message GetTestPlansRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetTestPlansResponse {
+    repeated TestPlan Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetTestPlanOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetTestPlanOnlyResponse {
+    TestPlan Info = 10;
+}
+
+message ExistTestPlanRequest {
+    string ID = 10;
+}
+
+message ExistTestPlanResponse {
+    bool Info = 10;
+}
+
+message ExistTestPlanCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistTestPlanCondsResponse {
+    bool Info = 10;
+}
+
+message CountTestPlansRequest {
+    Conds Conds = 10;
+}
+
+message CountTestPlansResponse {
+    uint32 Info = 10;
+}
+
+message DeleteTestPlanRequest {
+    string ID = 10;
+}
+
+message DeleteTestPlanResponse {
+    TestPlan Info = 10;
+}

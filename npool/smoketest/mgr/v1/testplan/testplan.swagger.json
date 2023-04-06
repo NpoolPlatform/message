@@ -1,0 +1,276 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/smoketest/mgr/v1/testplan/testplan.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OwnerID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ResponsibleUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestPlan"
+        }
+      }
+    },
+    "v1CreateTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TestPlan"
+          }
+        }
+      }
+    },
+    "v1DeleteTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestPlan"
+        }
+      }
+    },
+    "v1ExistTestPlanCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTestPlanOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestPlan"
+        }
+      }
+    },
+    "v1GetTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestPlan"
+        }
+      }
+    },
+    "v1GetTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TestPlan"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TestPlan": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
+        },
+        "OwnerID": {
+          "type": "string"
+        },
+        "ResponsibleUserID": {
+          "type": "string"
+        },
+        "FailedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PassedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SkipedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestResult": {
+          "type": "string"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TestPlanReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
+        },
+        "OwnerID": {
+          "type": "string"
+        },
+        "ResponsibleUserID": {
+          "type": "string"
+        },
+        "FailedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PassedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SkipedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestResult": {
+          "type": "string"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TestPlanState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestPlanState",
+        "WaitStart",
+        "Completed",
+        "Finished",
+        "Overdue"
+      ],
+      "default": "DefaultTestPlanState"
+    },
+    "v1UpdateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestPlan"
+        }
+      }
+    }
+  }
+}
