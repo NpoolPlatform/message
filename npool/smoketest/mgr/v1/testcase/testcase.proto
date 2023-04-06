@@ -49,7 +49,7 @@ message TestCase {
 
 
 enum TestCaseType {
-    TestCaseTypeDefault      = 0;
+    DefaultTestCaseType      = 0;
     Manual                   = 10;
     Automatic                = 20;
 }

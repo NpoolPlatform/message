@@ -248,11 +248,11 @@
     "v1TestCaseType": {
       "type": "string",
       "enum": [
-        "TestCaseTypeDefault",
+        "DefaultTestCaseType",
         "Manual",
         "Automatic"
       ],
-      "default": "TestCaseTypeDefault"
+      "default": "DefaultTestCaseType"
     },
     "v1UpdateTestCaseResponse": {
       "type": "object",
