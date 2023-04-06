@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+package smoketest.manager.testcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/testcase";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateTestCase     (CreateTestCaseRequest)     returns (CreateTestCaseResponse)     {}
+    rpc CreateTestCases    (CreateTestCasesRequest)    returns (CreateTestCasesResponse)    {}
+    rpc UpdateTestCase     (UpdateTestCaseRequest)     returns (UpdateTestCaseResponse)     {}
+    rpc GetTestCase        (GetTestCaseRequest)        returns (GetTestCaseResponse)        {}
+    rpc GetTestCaseOnly    (GetTestCaseOnlyRequest)    returns (GetTestCaseOnlyResponse)    {}
+    rpc GetTestCases       (GetTestCasesRequest)       returns (GetTestCasesResponse)       {}
+    rpc ExistTestCase      (ExistTestCaseRequest)      returns (ExistTestCaseResponse)      {}
+    rpc ExistTestCaseConds (ExistTestCaseCondsRequest) returns (ExistTestCaseCondsResponse) {}
+    rpc CountTestCases     (CountTestCasesRequest)     returns (CountTestCasesResponse)     {}
+    rpc DeleteTestCase     (DeleteTestCaseRequest)     returns (DeleteTestCaseResponse)     {}
+}
+
+message TestCaseReq {
+    optional string ID                                         = 10;
+    optional string Name                                       = 20;
+    optional string Description                                = 30;
+    optional string ModuleID                                   = 40;
+    optional string ApiID                                      = 50;
+    optional string Arguments                                  = 60;
+    optional string ExpectionResult                            = 70;
+    optional TestcaseType    TestcaseType                      = 80;
+    optional bool            Depracated                        = 90;
+}
+
+message TestCase {
+    string          ID                                = 10;
+    string          Name                              = 20;
+    string          Description                       = 30;
+    string          ModuleID                          = 40;
+    string          ApiID                             = 50;
+    string          Arguments                         = 60;
+    string          ExpectionResult                   = 70;
+    TestcaseType    TestcaseType                      = 80;
+    bool            Depracated                        = 90;
+    uint32          CreatedAt                         = 100;
+    uint32          UpdatedAt                         = 110;
+    uint32          DeletedAt                         = 120;
+}
+
+enum TestcaseType {
+    TestcaseTypeDefault      = 0;
+    Manual                   = 10;
+    Automatic                = 20;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      ModuleID  = 20;
+    optional npool.v1.StringVal      ApiID = 30;
+    optional npool.v1.StringVal      TestcaseType = 40;
+    optional npool.v1.BoolVal        Depracated  = 50;
+}
+
+
+message CreateTestCaseRequest {
+    TestCaseReq Info = 10;
+}
+
+message CreateTestCaseResponse {
+    TestCase Info = 10;
+}
+
+message CreateTestCasesRequest {
+    repeated TestCaseReq Infos = 10;
+}
+
+message CreateTestCasesResponse {
+    repeated TestCase Infos = 10;
+}
+
+message UpdateTestCaseRequest {
+    TestCaseReq Info = 10;
+}
+
+message UpdateTestCaseResponse {
+    TestCase Info = 10;
+}
+
+message GetTestCaseRequest {
+    string ID = 10;
+}
+
+message GetTestCaseResponse {
+    TestCase Info = 10;
+}
+
+message GetTestCasesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetTestCasesResponse {
+    repeated TestCase Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetTestCaseOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetTestCaseOnlyResponse {
+    TestCase Info = 10;
+}
+
+message ExistTestCaseRequest {
+    string ID = 10;
+}
+
+message ExistTestCaseResponse {
+    bool Info = 10;
+}
+
+message ExistTestCaseCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistTestCaseCondsResponse {
+    bool Info = 10;
+}
+
+message CountTestCasesRequest {
+    Conds Conds = 10;
+}
+
+message CountTestCasesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteTestCaseRequest {
+    string ID = 10;
+}
+
+message DeleteTestCaseResponse {
+    TestCase Info = 10;
+}
