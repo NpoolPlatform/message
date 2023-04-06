@@ -47,9 +47,9 @@ message Conds {
 }
 
 enum CondType {
-  CondTypeDefault          = 0;
-  PreCondition             = 10;
-  Cleaner                  = 20;
+    DefaultCondType         = 0;
+    PreCondition             = 10;
+    Cleaner                  = 20;
 }
 
 message CreateRelatedTestCaseRequest {
