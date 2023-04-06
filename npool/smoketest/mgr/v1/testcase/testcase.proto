@@ -28,7 +28,7 @@ message TestCaseReq {
     optional string ApiID                                      = 50;
     optional string Arguments                                  = 60;
     optional string ExpectionResult                            = 70;
-    optional TestcaseType    TestcaseType                      = 80;
+    optional TestCaseType    TestCaseType                      = 80;
     optional bool            Depracated                        = 90;
 }
 
@@ -40,15 +40,16 @@ message TestCase {
     string          ApiID                             = 50;
     string          Arguments                         = 60;
     string          ExpectionResult                   = 70;
-    TestcaseType    TestcaseType                      = 80;
+    TestCaseType    TestCaseType                      = 80;
     bool            Depracated                        = 90;
     uint32          CreatedAt                         = 100;
     uint32          UpdatedAt                         = 110;
     uint32          DeletedAt                         = 120;
 }
 
-enum TestcaseType {
-    TestcaseTypeDefault      = 0;
+
+enum TestCaseType {
+    TestCaseTypeDefault      = 0;
     Manual                   = 10;
     Automatic                = 20;
 }

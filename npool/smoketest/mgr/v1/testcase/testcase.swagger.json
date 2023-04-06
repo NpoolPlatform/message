@@ -193,8 +193,8 @@
         "ExpectionResult": {
           "type": "string"
         },
-        "TestcaseType": {
-          "$ref": "#/definitions/v1TestcaseType"
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
         },
         "Depracated": {
           "type": "boolean"
@@ -237,22 +237,22 @@
         "ExpectionResult": {
           "type": "string"
         },
-        "TestcaseType": {
-          "$ref": "#/definitions/v1TestcaseType"
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
         },
         "Depracated": {
           "type": "boolean"
         }
       }
     },
-    "v1TestcaseType": {
+    "v1TestCaseType": {
       "type": "string",
       "enum": [
-        "TestcaseTypeDefault",
+        "TestCaseTypeDefault",
         "Manual",
         "Automatic"
       ],
-      "default": "TestcaseTypeDefault"
+      "default": "TestCaseTypeDefault"
     },
     "v1UpdateTestCaseResponse": {
       "type": "object",
