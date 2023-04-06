@@ -190,7 +190,7 @@
         "Arguments": {
           "type": "string"
         },
-        "ExpectionResult": {
+        "ExpectationResult": {
           "type": "string"
         },
         "TestCaseType": {
@@ -234,7 +234,7 @@
         "Arguments": {
           "type": "string"
         },
-        "ExpectionResult": {
+        "ExpectationResult": {
           "type": "string"
         },
         "TestCaseType": {
