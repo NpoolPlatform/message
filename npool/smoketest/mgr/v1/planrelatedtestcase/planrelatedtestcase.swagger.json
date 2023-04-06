@@ -53,7 +53,7 @@
         "TestPlanID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UserID": {
+        "TestUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "TestCaseResult": {
@@ -166,7 +166,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "UserID": {
+        "TestUserID": {
           "type": "string"
         },
         "TestCaseResult": {
@@ -200,7 +200,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "UserID": {
+        "TestUserID": {
           "type": "string"
         },
         "TestCaseResult": {

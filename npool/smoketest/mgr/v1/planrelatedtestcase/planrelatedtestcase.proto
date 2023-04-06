@@ -27,7 +27,7 @@ message PlanRelatedTestCaseReq {
     optional string          TestCaseOutput                          = 50;
     optional string          Description                             = 60;
     optional uint32          RunDuration                             = 70;
-    optional string          UserID                                  = 80;
+    optional string          TestUserID                              = 80;
     optional TestCaseResult  TestCaseResult                          = 90; 
 }
 
@@ -38,7 +38,7 @@ message PlanRelatedTestCase {
     string          TestCaseOutput                          = 50;
     string          Description                             = 60;
     uint32          RunDuration                             = 70;
-    string          UserID                                  = 80;
+    string          TestUserID                              = 80;
     TestCaseResult  TestCaseResult                          = 90; 
     uint32          CreatedAt                               = 100;
 }
@@ -53,7 +53,7 @@ enum TestCaseResult {
 message Conds {
     optional npool.v1.StringVal      ID             = 10;
     optional npool.v1.StringVal      TestPlanID     = 20;
-    optional npool.v1.StringVal      UserID         = 40;
+    optional npool.v1.StringVal      TestUserID     = 40;
     optional npool.v1.StringVal      TestCaseResult = 50;
 }
 
