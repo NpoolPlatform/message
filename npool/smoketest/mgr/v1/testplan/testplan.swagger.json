@@ -250,6 +250,10 @@
         "Deadline": {
           "type": "integer",
           "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

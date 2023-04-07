@@ -28,10 +28,11 @@ message TestPlanReq {
     optional string        ResponsibleUserID                 = 50;
     optional uint32        FailedTestCasesCount              = 60;
     optional uint32        PassedTestCasesCount              = 70;
-    optional uint32        SkippedTestCasesCount              = 80;
+    optional uint32        SkippedTestCasesCount             = 80;
     optional uint32        RunDuration                       = 90;
-    optional TestResultState TestResult                        = 100;
+    optional TestResultState TestResult                      = 100;
     optional uint32        Deadline                          = 110;
+    optional uint32        CreatedAt                         = 120;
 }
 
 message TestPlan {
