@@ -281,8 +281,28 @@
         "ApiPath": {
           "type": "string"
         },
+        "ApiPathPrefix": {
+          "type": "string"
+        },
         "ApiServiceName": {
           "type": "string"
+        },
+        "ApiProtocol": {
+          "type": "string"
+        },
+        "ApiMethod": {
+          "type": "string"
+        },
+        "ApiDeprecated": {
+          "type": "string"
+        },
+        "ApiCreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ApiUpdatedAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "Arguments": {
           "type": "string"
