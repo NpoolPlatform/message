@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package smoketest.gateway.testcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testcase";
+
+import "npool/smoketest/mgr/v1/testcase/testcase.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetTestCases (GetTestCasesRequest) returns (GetTestCasesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/testcases"
+            body: "*"
+        };
+    }
+
+    rpc CreateTestCase (CreateTestCaseRequest) returns (CreateTestCaseResponse) {
+      option (google.api.http) = {
+          post: "/v1/create/testcase"
+          body: "*"
+      };
+  }
+
+    rpc UpdateTestCase (UpdateTestCaseRequest) returns (UpdateTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/testcase"
+            body: "*"
+        };
+    }
+
+    rpc DeleteTestCase (DeleteTestCaseRequest) returns (DeleteTestCaseResponse) {
+      option (google.api.http) = {
+          post: "/v1/delete/testcase"
+          body: "*"
+      };
+  }
+}
+
+message TestCase {
+  string          ID                                                = 10;
+  string          Name                                              = 20;
+  string          Description                                       = 30;
+  string          ModuleID                                          = 40;
+  string          ModuleName                                        = 50;
+  string          ApiID                                             = 60;
+  string          ApiPath                                           = 70;
+  string          ApiServiceName                                    = 80;
+  string          Arguments                                         = 90;
+  string          ExpectationResult                                 = 100;
+  smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 110;
+  bool            Deprecated                                        = 120;
+  uint32          CreatedAt                                         = 130;
+  uint32          UpdatedAt                                         = 140;
+  uint32          DeletedAt                                         = 150;
+}
+
+message CreateTestCaseRequest {
+  string          Name                                                       = 20;
+  string          Description                                                = 30;
+  string          ModuleID                                                   = 40;
+  optional string ModuleName                                                 = 50;
+  string          ApiID                                                      = 60;
+  string          Arguments                                                  = 70;
+  string          ExpectationResult                                          = 80;
+  optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
+  bool            Deprecated                                                 = 100;
+}
+
+message CreateTestCaseResponse {
+  TestCase Info = 10;
+}
+
+message DeleteTestCaseRequest {
+    string ID        = 10;
+}
+
+message DeleteTestCaseResponse {
+    TestCase Info = 10;
+}
+
+message GetTestCasesRequest {
+    int32  Offset = 10;
+    int32  Limit  = 20;
+}
+
+message GetTestCasesResponse {
+    repeated TestCase Infos = 10;
+    uint32        Total   = 20;
+}
+
+message UpdateTestCaseRequest {
+    string                                              ID                  = 10;
+    string                                              Name                = 20;
+    string                                              Description         = 30;
+    string                                              ExpectationResult   = 40;
+    string                                              Arguments           = 50;
+    smoketest.manager.testcase.v1.TestCaseType          TestCaseType        = 60;
+    bool                                                Deprecated          = 70;
+}
+
+message UpdateTestCaseResponse {
+    TestCase Info = 10;
+}
+
