@@ -189,6 +189,10 @@
         "index": {
           "type": "integer",
           "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -211,6 +215,10 @@
           "type": "string"
         },
         "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         }
