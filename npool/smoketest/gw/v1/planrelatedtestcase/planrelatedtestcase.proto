@@ -9,30 +9,9 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetPlanRelatedTestCases (GetPlanRelatedTestCasesRequest) returns (GetPlanRelatedTestCasesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/planrelatedtestcases"
-            body: "*"
-        };
-    }
-
     rpc CreatePlanRelatedTestCase (CreatePlanRelatedTestCaseRequest) returns (CreatePlanRelatedTestCaseResponse) {
         option (google.api.http) = {
             post: "/v1/create/planrelatedtestcase"
-            body: "*"
-        };
-    }
-
-    rpc UpdatePlanRelatedTestCase (UpdatePlanRelatedTestCaseRequest) returns (UpdatePlanRelatedTestCaseResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/planrelatedtestcase"
-            body: "*"
-        };
-    }
-
-    rpc DeletePlanRelatedTestCase (DeletePlanRelatedTestCaseRequest) returns (DeletePlanRelatedTestCaseResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/planrelatedtestcase"
             body: "*"
         };
     }
@@ -71,32 +50,3 @@ message CreatePlanRelatedTestCaseResponse {
 message DeletePlanRelatedTestCaseRequest {
     string ID        = 10;
 }
-
-message DeletePlanRelatedTestCaseResponse {
-    PlanRelatedTestCase Info = 10;
-}
-
-message GetPlanRelatedTestCasesRequest {
-    int32  Offset = 10;
-    int32  Limit  = 20;
-}
-
-message GetPlanRelatedTestCasesResponse {
-    repeated PlanRelatedTestCase Infos = 10;
-    uint32        Total   = 20;
-}
-
-message UpdatePlanRelatedTestCaseRequest {
-    string          ID                                                      = 10;
-    string          TestPlanID                                              = 20;
-    string          TestCaseID                                              = 30;
-    string          TestCaseOutput                                          = 40;
-    string          Description                                             = 50;
-    string          TestUserID                                              = 60;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 70; 
-}
-
-message UpdatePlanRelatedTestCaseResponse {
-    PlanRelatedTestCase Info = 10;
-}
-
