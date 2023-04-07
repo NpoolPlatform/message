@@ -106,14 +106,6 @@
         }
       }
     },
-    "v1DeleteInvitationCodeByIDResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1InvitationCode"
-        }
-      }
-    },
     "v1DeleteInvitationCodeResponse": {
       "type": "object",
       "properties": {

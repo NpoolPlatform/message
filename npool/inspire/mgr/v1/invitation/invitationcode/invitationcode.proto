@@ -18,7 +18,6 @@ service Manager {
     rpc ExistInvitationCodeConds (ExistInvitationCodeCondsRequest) returns (ExistInvitationCodeCondsResponse) {}
     rpc CountInvitationCodes     (CountInvitationCodesRequest)     returns (CountInvitationCodesResponse)     {}
     rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
-    rpc DeleteInvitationCodeByID (DeleteInvitationCodeByIDRequest) returns (DeleteInvitationCodeByIDResponse) {}
 }
 
 message InvitationCodeReq {
