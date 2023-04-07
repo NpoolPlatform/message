@@ -32,6 +32,7 @@ type ManagerClient interface {
 	ExistInvitationCodeConds(ctx context.Context, in *ExistInvitationCodeCondsRequest, opts ...grpc.CallOption) (*ExistInvitationCodeCondsResponse, error)
 	CountInvitationCodes(ctx context.Context, in *CountInvitationCodesRequest, opts ...grpc.CallOption) (*CountInvitationCodesResponse, error)
 	DeleteInvitationCode(ctx context.Context, in *DeleteInvitationCodeRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeResponse, error)
+	DeleteInvitationCodeByID(ctx context.Context, in *DeleteInvitationCodeByIDRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeByIDResponse, error)
 }
 
 type managerClient struct {
@@ -132,6 +133,15 @@ func (c *managerClient) DeleteInvitationCode(ctx context.Context, in *DeleteInvi
 	return out, nil
 }
 
+func (c *managerClient) DeleteInvitationCodeByID(ctx context.Context, in *DeleteInvitationCodeByIDRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeByIDResponse, error) {
+	out := new(DeleteInvitationCodeByIDResponse)
+	err := c.cc.Invoke(ctx, "/inspire.manager.invitation.invitationcode.v1.Manager/DeleteInvitationCodeByID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
@@ -146,6 +156,7 @@ type ManagerServer interface {
 	ExistInvitationCodeConds(context.Context, *ExistInvitationCodeCondsRequest) (*ExistInvitationCodeCondsResponse, error)
 	CountInvitationCodes(context.Context, *CountInvitationCodesRequest) (*CountInvitationCodesResponse, error)
 	DeleteInvitationCode(context.Context, *DeleteInvitationCodeRequest) (*DeleteInvitationCodeResponse, error)
+	DeleteInvitationCodeByID(context.Context, *DeleteInvitationCodeByIDRequest) (*DeleteInvitationCodeByIDResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -182,6 +193,9 @@ func (UnimplementedManagerServer) CountInvitationCodes(context.Context, *CountIn
 }
 func (UnimplementedManagerServer) DeleteInvitationCode(context.Context, *DeleteInvitationCodeRequest) (*DeleteInvitationCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteInvitationCode not implemented")
+}
+func (UnimplementedManagerServer) DeleteInvitationCodeByID(context.Context, *DeleteInvitationCodeByIDRequest) (*DeleteInvitationCodeByIDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteInvitationCodeByID not implemented")
 }
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
@@ -376,6 +390,24 @@ func _Manager_DeleteInvitationCode_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Manager_DeleteInvitationCodeByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteInvitationCodeByIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ManagerServer).DeleteInvitationCodeByID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.manager.invitation.invitationcode.v1.Manager/DeleteInvitationCodeByID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ManagerServer).DeleteInvitationCodeByID(ctx, req.(*DeleteInvitationCodeByIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -422,6 +454,10 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteInvitationCode",
 			Handler:    _Manager_DeleteInvitationCode_Handler,
+		},
+		{
+			MethodName: "DeleteInvitationCodeByID",
+			Handler:    _Manager_DeleteInvitationCodeByID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

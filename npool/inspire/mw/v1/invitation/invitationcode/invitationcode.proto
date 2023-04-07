@@ -14,6 +14,7 @@ service Middleware {
     rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
     rpc GetInvitationCodeOnly    (GetInvitationCodeOnlyRequest)    returns (GetInvitationCodeOnlyResponse)    {}
     rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
+    rpc DeleteInvitationCodeByID (DeleteInvitationCodeByIDRequest) returns (DeleteInvitationCodeByIDResponse) {}
 }
 
 message CreateInvitationCodeRequest {
@@ -67,3 +68,10 @@ message DeleteInvitationCodeResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
 }
 
+message DeleteInvitationCodeByIDRequest {
+    string ID = 10;
+}
+
+message DeleteInvitationCodeByIDResponse {
+    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+}

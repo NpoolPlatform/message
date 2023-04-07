@@ -25,6 +25,17 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "inspiremiddlewareinvitationinvitationcodev1DeleteInvitationCodeByIDResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1InvitationCode"
+        }
+      }
+    },
+>>>>>>> Add delete invitation code api
     "inspiremiddlewareinvitationinvitationcodev1DeleteInvitationCodeResponse": {
       "type": "object",
       "properties": {
