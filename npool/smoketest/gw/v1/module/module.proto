@@ -16,11 +16,11 @@ service Gateway {
     }
 
     rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse) {
-      option (google.api.http) = {
-          post: "/v1/create/module"
-          body: "*"
-      };
-  }
+        option (google.api.http) = {
+            post: "/v1/create/module"
+            body: "*"
+        };
+    }
 
     rpc UpdateModule (UpdateModuleRequest) returns (UpdateModuleResponse) {
         option (google.api.http) = {
@@ -30,11 +30,11 @@ service Gateway {
     }
 
     rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse) {
-      option (google.api.http) = {
-          post: "/v1/delete/module"
-          body: "*"
-      };
-  }
+        option (google.api.http) = {
+            post: "/v1/delete/module"
+            body: "*"
+        };
+    }
 }
 
 message Module {
