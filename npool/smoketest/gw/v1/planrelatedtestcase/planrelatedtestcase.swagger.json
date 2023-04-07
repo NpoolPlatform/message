@@ -47,102 +47,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/delete/planrelatedtestcase": {
-      "post": {
-        "operationId": "Gateway_DeletePlanRelatedTestCase",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1DeletePlanRelatedTestCaseResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1DeletePlanRelatedTestCaseRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/planrelatedtestcases": {
-      "post": {
-        "operationId": "Gateway_GetPlanRelatedTestCases",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1GetPlanRelatedTestCasesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1GetPlanRelatedTestCasesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/planrelatedtestcase": {
-      "post": {
-        "operationId": "Gateway_UpdatePlanRelatedTestCase",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1UpdatePlanRelatedTestCaseResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1UpdatePlanRelatedTestCaseRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -208,50 +112,6 @@
         }
       }
     },
-    "smoketestgatewayplanrelatedtestcasev1DeletePlanRelatedTestCaseRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "smoketestgatewayplanrelatedtestcasev1DeletePlanRelatedTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1PlanRelatedTestCase"
-        }
-      }
-    },
-    "smoketestgatewayplanrelatedtestcasev1GetPlanRelatedTestCasesRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "smoketestgatewayplanrelatedtestcasev1GetPlanRelatedTestCasesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1PlanRelatedTestCase"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "smoketestgatewayplanrelatedtestcasev1PlanRelatedTestCase": {
       "type": "object",
       "properties": {
@@ -295,40 +155,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "smoketestgatewayplanrelatedtestcasev1UpdatePlanRelatedTestCaseRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "TestPlanID": {
-          "type": "string"
-        },
-        "TestCaseID": {
-          "type": "string"
-        },
-        "TestCaseOutput": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "TestUserID": {
-          "type": "string"
-        },
-        "TestCaseResult": {
-          "$ref": "#/definitions/v1TestCaseResult"
-        }
-      }
-    },
-    "smoketestgatewayplanrelatedtestcasev1UpdatePlanRelatedTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestgatewayplanrelatedtestcasev1PlanRelatedTestCase"
         }
       }
     },
