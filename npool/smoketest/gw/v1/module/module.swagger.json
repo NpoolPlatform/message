@@ -211,9 +211,6 @@
     "v1GetModulesRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -261,9 +258,6 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "Name": {

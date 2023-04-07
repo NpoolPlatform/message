@@ -83,12 +83,12 @@ message GetRelatedTestCasesResponse {
 }
 
 message UpdateRelatedTestCaseRequest {
-  string          ID                                         = 10;
-  smoketest.manager.relatedtestcase.v1.CondType CondType     = 20; 
-  string          TestCaseID                                 = 30;
-  string          RelatedTestCaseID                          = 40;
-  string          ArgumentsTransfer                          = 50;
-  uint32          index                                      = 60;
+    string          ID                                         = 10;
+    smoketest.manager.relatedtestcase.v1.CondType CondType     = 20; 
+    string          TestCaseID                                 = 30;
+    string          RelatedTestCaseID                          = 40;
+    string          ArgumentsTransfer                          = 50;
+    uint32          index                                      = 60;
 }
 
 message UpdateRelatedTestCaseResponse {
