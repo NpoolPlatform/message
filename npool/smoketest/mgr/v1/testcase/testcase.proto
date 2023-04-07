@@ -30,6 +30,7 @@ message TestCaseReq {
     optional string ExpectationResult                          = 70;
     optional TestCaseType    TestCaseType                      = 80;
     optional bool            Deprecated                        = 90;
+    optional uint32          CreatedAt                         = 100;
 }
 
 message TestCase {
