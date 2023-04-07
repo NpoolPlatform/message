@@ -47,15 +47,21 @@ message TestCase {
     string          ModuleName                                        = 50;
     string          ApiID                                             = 60;
     string          ApiPath                                           = 70;
-    string          ApiServiceName                                    = 80;
-    string          Arguments                                         = 90;
-    string          ExpectationResult                                 = 100;
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 110;
-    bool            Deprecated                                        = 120;
-    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 130;
-    uint32          CreatedAt                                         = 140;
-    uint32          UpdatedAt                                         = 150;
-    uint32          DeletedAt                                         = 160;
+    string          ApiPathPrefix                                     = 80;
+    string          ApiServiceName                                    = 90;
+    string          ApiProtocol                                       = 100;
+    string          ApiMethod                                         = 110;
+    string          ApiDeprecated                                     = 120;
+    uint32          ApiCreatedAt                                      = 130;
+    uint32          ApiUpdatedAt                                      = 140;
+    string          Arguments                                         = 150;
+    string          ExpectationResult                                 = 160;
+    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 170;
+    bool            Deprecated                                        = 180;
+    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 190;
+    uint32          CreatedAt                                         = 200;
+    uint32          UpdatedAt                                         = 210;
+    uint32          DeletedAt                                         = 220;
 }
 
 message CreateTestCaseRequest {
