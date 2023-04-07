@@ -296,6 +296,12 @@
         "Deprecated": {
           "type": "boolean"
         },
+        "RelatedTestCases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RelatedTestCase"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -341,6 +347,43 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+        }
+      }
+    },
+    "v1CondType": {
+      "type": "string",
+      "enum": [
+        "DefaultCondType",
+        "PreCondition",
+        "Cleaner"
+      ],
+      "default": "DefaultCondType"
+    },
+    "v1RelatedTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "RelatedTestCaseID": {
+          "type": "string"
+        },
+        "ArgumentsTransfer": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
