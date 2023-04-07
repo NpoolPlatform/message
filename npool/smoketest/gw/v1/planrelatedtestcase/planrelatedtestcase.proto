@@ -17,6 +17,20 @@ service Gateway {
             body: "*"
         };
     }
+    
+    rpc DeletePlanRelatedTestCase (DeletePlanRelatedTestCaseRequest) returns (DeletePlanRelatedTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/planrelatedtestcase"
+            body: "*"
+        };
+    }
+
+    rpc DeletePlanRelatedTestCases (DeletePlanRelatedTestCasesRequest) returns (DeletePlanRelatedTestCasesResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/planrelatedtestcases"
+            body: "*"
+        };
+    }
 }
 
 message PlanRelatedTestCase {       
@@ -53,4 +67,16 @@ message CreatePlanRelatedTestCaseResponse {
 
 message DeletePlanRelatedTestCaseRequest {
     string ID        = 10;
+}
+
+message DeletePlanRelatedTestCaseResponse {
+    PlanRelatedTestCase Info = 10;
+}
+
+message DeletePlanRelatedTestCasesRequest {
+    string TestPlanID = 20;
+}
+
+message DeletePlanRelatedTestCasesResponse {
+    repeated PlanRelatedTestCase Info = 10;
 }
