@@ -29,6 +29,7 @@ message PlanRelatedTestCaseReq {
     optional uint32          RunDuration                             = 70;
     optional string          TestUserID                              = 80;
     optional TestCaseResult  TestCaseResult                          = 90; 
+    optional uint32          CreatedAt                               = 100;
 }
 
 message PlanRelatedTestCase {

@@ -205,6 +205,10 @@
         },
         "TestCaseResult": {
           "$ref": "#/definitions/v1TestCaseResult"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
