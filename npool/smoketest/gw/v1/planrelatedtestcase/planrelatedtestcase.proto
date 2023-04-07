@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package smoketest.gateway.planrelatedtestcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/planrelatedtestcase";
+
+import "npool/smoketest/mgr/v1/planrelatedtestcase/planrelatedtestcase.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetPlanRelatedTestCases (GetPlanRelatedTestCasesRequest) returns (GetPlanRelatedTestCasesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/planrelatedtestcases"
+            body: "*"
+        };
+    }
+
+    rpc CreatePlanRelatedTestCase (CreatePlanRelatedTestCaseRequest) returns (CreatePlanRelatedTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/planrelatedtestcase"
+            body: "*"
+        };
+    }
+
+    rpc UpdatePlanRelatedTestCase (UpdatePlanRelatedTestCaseRequest) returns (UpdatePlanRelatedTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/planrelatedtestcase"
+            body: "*"
+        };
+    }
+
+    rpc DeletePlanRelatedTestCase (DeletePlanRelatedTestCaseRequest) returns (DeletePlanRelatedTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/planrelatedtestcase"
+            body: "*"
+        };
+    }
+}
+
+message PlanRelatedTestCase {       
+    string          ID                                                      = 10;
+    string          TestPlanID                                              = 20;
+    string          TestPlanName                                            = 30;
+    string          TestCaseID                                              = 40;
+    string          TestCasePath                                            = 50;
+    string          TestCaseExpectionResult                                 = 60;
+    string          TestCaseOutput                                          = 70;
+    string          Description                                             = 80;
+    uint32          RunDuration                                             = 90;
+    string          TestUserID                                              = 100;
+    string          TestUsername                                            = 110;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 120; 
+    uint32          CreatedAt                                               = 130;
+}
+
+message CreatePlanRelatedTestCaseRequest {
+    string          TestPlanID                                              = 20;
+    string          TestCaseID                                              = 40;
+    string          TestCaseOutput                                          = 70;
+    string          Description                                             = 80;
+    uint32          RunDuration                                             = 90;
+    string          TestUserID                                              = 100;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 120; 
+}
+
+message CreatePlanRelatedTestCaseResponse {
+    PlanRelatedTestCase Info = 10;
+}
+
+message DeletePlanRelatedTestCaseRequest {
+    string ID        = 10;
+}
+
+message DeletePlanRelatedTestCaseResponse {
+    PlanRelatedTestCase Info = 10;
+}
+
+message GetPlanRelatedTestCasesRequest {
+    int32  Offset = 10;
+    int32  Limit  = 20;
+}
+
+message GetPlanRelatedTestCasesResponse {
+    repeated PlanRelatedTestCase Infos = 10;
+    uint32        Total   = 20;
+}
+
+message UpdatePlanRelatedTestCaseRequest {
+    string          ID                                                      = 10;
+    string          TestPlanID                                              = 20;
+    string          TestCaseID                                              = 30;
+    string          TestCaseOutput                                          = 40;
+    string          Description                                             = 50;
+    string          TestUserID                                              = 60;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 70; 
+}
+
+message UpdatePlanRelatedTestCaseResponse {
+    PlanRelatedTestCase Info = 10;
+}
+
