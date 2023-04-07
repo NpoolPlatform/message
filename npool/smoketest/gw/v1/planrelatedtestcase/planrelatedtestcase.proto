@@ -5,6 +5,8 @@ package smoketest.gateway.planrelatedtestcase.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/planrelatedtestcase";
 
 import "npool/smoketest/mgr/v1/planrelatedtestcase/planrelatedtestcase.proto";
+import "npool/smoketest/mgr/v1/testcase/testcase.proto";
+import "npool/smoketest/mgr/v1/relatedtestcase/relatedtestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -23,14 +25,16 @@ message PlanRelatedTestCase {
     string          TestPlanName                                            = 30;
     string          TestCaseID                                              = 40;
     string          TestCasePath                                            = 50;
-    string          TestCaseExpectionResult                                 = 60;
-    string          TestCaseOutput                                          = 70;
-    string          Description                                             = 80;
-    uint32          RunDuration                                             = 90;
-    string          TestUserID                                              = 100;
-    string          TestUsername                                            = 110;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 120; 
-    uint32          CreatedAt                                               = 130;
+    smoketest.manager.testcase.v1.TestCaseType                    TestCaseType       = 60;
+    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases   = 70;
+    string          TestCaseExpectionResult                                 = 80;
+    string          TestCaseOutput                                          = 90;
+    string          Description                                             = 100;
+    uint32          RunDuration                                             = 110;
+    string          TestUserID                                              = 120;
+    string          TestUsername                                            = 130;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 140; 
+    uint32          CreatedAt                                               = 150;
 }
 
 message CreatePlanRelatedTestCaseRequest {
