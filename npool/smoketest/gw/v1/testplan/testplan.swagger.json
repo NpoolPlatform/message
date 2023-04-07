@@ -191,6 +191,15 @@
         "TestCasePath": {
           "type": "string"
         },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "RelatedTestCases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RelatedTestCase"
+          }
+        },
         "TestCaseExpectionResult": {
           "type": "string"
         },
@@ -378,6 +387,43 @@
         }
       }
     },
+    "v1CondType": {
+      "type": "string",
+      "enum": [
+        "DefaultCondType",
+        "PreCondition",
+        "Cleaner"
+      ],
+      "default": "DefaultCondType"
+    },
+    "v1RelatedTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "RelatedTestCaseID": {
+          "type": "string"
+        },
+        "ArgumentsTransfer": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1TestCaseResult": {
       "type": "string",
       "enum": [
@@ -387,6 +433,15 @@
         "Failed"
       ],
       "default": "DefaultTestCaseResult"
+    },
+    "v1TestCaseType": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseType",
+        "Manual",
+        "Automatic"
+      ],
+      "default": "DefaultTestCaseType"
     },
     "v1TestPlanState": {
       "type": "string",
