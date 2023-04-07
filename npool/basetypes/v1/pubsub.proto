@@ -5,14 +5,12 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum MsgID {
-    DefaultMsgID    = 0;
-
-    CreateCouponReq = 10;
+    DefaultMsgID             = 0;
+    CreateAllocatedCouponReq = 10;
 }
 
 enum MsgState {
     DefaultMsgState = 0;
-
     StateSuccess    = 10;
     StateFail       = 20;
 }
