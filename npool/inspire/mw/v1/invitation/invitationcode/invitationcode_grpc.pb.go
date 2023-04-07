@@ -29,9 +29,12 @@ type MiddlewareClient interface {
 	GetInvitationCodeOnly(ctx context.Context, in *GetInvitationCodeOnlyRequest, opts ...grpc.CallOption) (*GetInvitationCodeOnlyResponse, error)
 	DeleteInvitationCode(ctx context.Context, in *DeleteInvitationCodeRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	DeleteInvitationCodeByID(ctx context.Context, in *DeleteInvitationCodeByIDRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeByIDResponse, error)
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 }
 
 type middlewareClient struct {
@@ -97,6 +100,7 @@ func (c *middlewareClient) DeleteInvitationCode(ctx context.Context, in *DeleteI
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (c *middlewareClient) DeleteInvitationCodeByID(ctx context.Context, in *DeleteInvitationCodeByIDRequest, opts ...grpc.CallOption) (*DeleteInvitationCodeByIDResponse, error) {
 	out := new(DeleteInvitationCodeByIDResponse)
@@ -108,6 +112,8 @@ func (c *middlewareClient) DeleteInvitationCodeByID(ctx context.Context, in *Del
 }
 
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -119,9 +125,12 @@ type MiddlewareServer interface {
 	GetInvitationCodeOnly(context.Context, *GetInvitationCodeOnlyRequest) (*GetInvitationCodeOnlyResponse, error)
 	DeleteInvitationCode(context.Context, *DeleteInvitationCodeRequest) (*DeleteInvitationCodeResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	DeleteInvitationCodeByID(context.Context, *DeleteInvitationCodeByIDRequest) (*DeleteInvitationCodeByIDResponse, error)
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -148,11 +157,14 @@ func (UnimplementedMiddlewareServer) DeleteInvitationCode(context.Context, *Dele
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteInvitationCode not implemented")
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (UnimplementedMiddlewareServer) DeleteInvitationCodeByID(context.Context, *DeleteInvitationCodeByIDRequest) (*DeleteInvitationCodeByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteInvitationCodeByID not implemented")
 }
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
 // UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
@@ -275,6 +287,7 @@ func _Middleware_DeleteInvitationCode_Handler(srv interface{}, ctx context.Conte
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func _Middleware_DeleteInvitationCodeByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteInvitationCodeByIDRequest)
@@ -295,6 +308,8 @@ func _Middleware_DeleteInvitationCodeByID_Handler(srv interface{}, ctx context.C
 }
 
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -327,12 +342,15 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_DeleteInvitationCode_Handler,
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		{
 			MethodName: "DeleteInvitationCodeByID",
 			Handler:    _Middleware_DeleteInvitationCodeByID_Handler,
 		},
 >>>>>>> Add delete invitation code api
+=======
+>>>>>>> Remove delete by id
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/inspire/mw/v1/invitation/invitationcode/invitationcode.proto",
