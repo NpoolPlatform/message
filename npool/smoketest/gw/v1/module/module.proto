@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package smoketest.gateway.module.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/module";
+
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetModules (GetModulesRequest) returns (GetModulesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/modules"
+            body: "*"
+        };
+    }
+
+    rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse) {
+      option (google.api.http) = {
+          post: "/v1/create/module"
+          body: "*"
+      };
+  }
+
+    rpc UpdateModule (UpdateModuleRequest) returns (UpdateModuleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/module"
+            body: "*"
+        };
+    }
+
+    rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse) {
+      option (google.api.http) = {
+          post: "/v1/delete/module"
+          body: "*"
+      };
+  }
+}
+
+message Module {
+    string           ID                          = 10;
+    string           Name                        = 20;
+    string           Description                 = 30;
+    uint32           CreatedAt                   = 40;
+}
+
+message DeleteModuleRequest {
+    string ID        = 10;
+}
+
+message DeleteModuleResponse {
+    Module Info = 10;
+}
+
+message GetModulesRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetModulesResponse {
+    repeated Module Infos = 10;
+    uint32        Total   = 20;
+}
+
+message UpdateModuleRequest {
+    string          ID                  = 10;
+    string          AppID               = 20;
+    string          Name                = 30;
+    string          Description         = 40;
+}
+
+message UpdateModuleResponse {
+    Module Info = 10;
+}
+
+message CreateModuleRequest {
+    string          Name                = 30;
+    string          Description         = 40;
+}
+
+message CreateModuleResponse {
+    Module Info = 10;
+}
