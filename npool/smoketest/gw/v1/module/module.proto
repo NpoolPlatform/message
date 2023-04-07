@@ -53,7 +53,6 @@ message DeleteModuleResponse {
 }
 
 message GetModulesRequest {
-    string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
@@ -65,7 +64,6 @@ message GetModulesResponse {
 
 message UpdateModuleRequest {
     string          ID                  = 10;
-    string          AppID               = 20;
     string          Name                = 30;
     string          Description         = 40;
 }
