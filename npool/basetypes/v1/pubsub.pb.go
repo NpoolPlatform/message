@@ -31,6 +31,7 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MsgID_DefaultMsgID    MsgID = 0
 	MsgID_RewardEventReq  MsgID = 10
 	MsgID_RewardEventResp MsgID = 20
@@ -99,17 +100,24 @@ const (
 	MsgID_DefaultMsgID             MsgID = 0
 	MsgID_CreateAllocatedCouponReq MsgID = 10
 >>>>>>> Add create allocated coupon message
+=======
+	MsgID_DefaultMsgID    MsgID = 0
+	MsgID_RewardEventReq  MsgID = 10
+	MsgID_RewardEventResp MsgID = 20
+>>>>>>> Support reward event
 )
 
 // Enum value maps for MsgID.
 var (
 	MsgID_name = map[int32]string{
 		0:  "DefaultMsgID",
-		10: "CreateAllocatedCouponReq",
+		10: "RewardEventReq",
+		20: "RewardEventResp",
 	}
 	MsgID_value = map[string]int32{
-		"DefaultMsgID":             0,
-		"CreateAllocatedCouponReq": 10,
+		"DefaultMsgID":    0,
+		"RewardEventReq":  10,
+		"RewardEventResp": 20,
 	}
 )
 
@@ -466,6 +474,9 @@ var file_npool_basetypes_v1_pubsub_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Support reward event
 	0x42, 0x0a, 0x05, 0x4d, 0x73, 0x67, 0x49, 0x44, 0x12, 0x10, 0x0a, 0x0c, 0x44, 0x65, 0x66, 0x61,
 	0x75, 0x6c, 0x74, 0x4d, 0x73, 0x67, 0x49, 0x44, 0x10, 0x00, 0x12, 0x12, 0x0a, 0x0e, 0x52, 0x65,
 	0x77, 0x61, 0x72, 0x64, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x10, 0x0a, 0x12, 0x13,
@@ -479,6 +490,7 @@ var file_npool_basetypes_v1_pubsub_proto_rawDesc = []byte{
 	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
 	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>>  update pubsub
@@ -706,6 +718,8 @@ var file_npool_basetypes_v1_pubsub_proto_rawDesc = []byte{
 >>>>>>> Support create coupon
 =======
 >>>>>>> Add create allocated coupon message
+=======
+>>>>>>> Support reward event
 }
 
 var (
