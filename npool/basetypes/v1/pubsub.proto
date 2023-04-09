@@ -5,9 +5,9 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum MsgID {
-    DefaultMsgID    = 0;
-    RewardEventReq  = 10;
-    RewardEventResp = 20;
+    DefaultMsgID                 = 0;
+    RewardEventReq               = 10;
+    IncreaseUserActionCreditsReq = 20;
 }
 
 enum MsgState {
