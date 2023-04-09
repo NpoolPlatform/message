@@ -19,6 +19,7 @@ service Middleware {
     rpc GetRegistrationOnly (GetRegistrationOnlyRequest) returns (GetRegistrationOnlyResponse) {}
     rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {}
     rpc GetSuperiores       (GetSuperioresRequest)       returns (GetSuperioresResponse)       {}
+    rpc DeleteRegistration  (DeleteRegistrationRequest)  returns (DeleteRegistrationResponse)  {}
 }
 
 message CreateRegistrationRequest {
@@ -84,4 +85,12 @@ message GetSuperioresRequest {
 message GetSuperioresResponse {
     repeated inspire.manager.invitation.registration.v1.Registration Infos = 10;
     uint32 Total = 20;
+}
+
+message DeleteRegistrationRequest {
+    inspire.manager.invitation.registration.v1.RegistrationReq Info = 10;
+}
+
+message DeleteRegistrationResponse {
+    inspire.manager.invitation.registration.v1.Registration Info = 10;
 }
