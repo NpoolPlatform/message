@@ -23,7 +23,9 @@ enum UsedFor {
     KYCApproved           = 140;
     KYCRejected           = 150;
     Purchase              = 160;
+
     AffiliatePurchase     = 170;
+    AffiliateSignup       = 180;
 
     Announcement          = 100000;
 }

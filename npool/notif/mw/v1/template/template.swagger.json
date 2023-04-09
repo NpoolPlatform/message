@@ -136,6 +136,7 @@
         "KYCRejected",
         "Purchase",
         "AffiliatePurchase",
+        "AffiliateSignup",
         "Announcement"
       ],
       "default": "DefaultUsedFor"
