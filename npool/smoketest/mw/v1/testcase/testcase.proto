@@ -30,7 +30,6 @@ message TestCase {
     string          ExpectationResult                                 = 70;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 80;
     bool            Deprecated                                        = 90;
-    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 100;
     uint32          CreatedAt                                         = 110;
     uint32          UpdatedAt                                         = 120;
 }
