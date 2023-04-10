@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package smoketest.middleware.testcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {}
+
+message Conds {
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      ModuleID  = 20;
+    optional npool.v1.StringVal      ApiID = 30;
+    optional npool.v1.StringVal      TestcaseType = 40;
+    optional npool.v1.BoolVal        Deprecated  = 50;
+}
+
