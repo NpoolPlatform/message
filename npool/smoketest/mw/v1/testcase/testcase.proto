@@ -34,6 +34,7 @@ message TestCase {
 }
 
 message CreateTestCaseReq {
+    string          ID                                                         = 10;
     string          Name                                                       = 20;
     optional string Description                                                = 30;
     optional string ModuleID                                                   = 40;
@@ -43,8 +44,6 @@ message CreateTestCaseReq {
     string          ExpectationResult                                          = 80;
     optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
     bool            Deprecated                                                 = 100;
-
-    string          ID                                                         = 110;
 }
 message CreateTestCaseRequest {
     CreateTestCaseReq info = 10;
