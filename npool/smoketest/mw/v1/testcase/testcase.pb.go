@@ -106,17 +106,27 @@ type TestCase struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID                string                `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	Name              string                `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty"`
-	Description       string                `protobuf:"bytes,30,opt,name=Description,proto3" json:"Description,omitempty"`
-	ModuleID          string                `protobuf:"bytes,40,opt,name=ModuleID,proto3" json:"ModuleID,omitempty"`
-	ModuleName        string                `protobuf:"bytes,50,opt,name=ModuleName,proto3" json:"ModuleName,omitempty"`
-	ApiID             string                `protobuf:"bytes,60,opt,name=ApiID,proto3" json:"ApiID,omitempty"`
-	ExpectationResult string                `protobuf:"bytes,70,opt,name=ExpectationResult,proto3" json:"ExpectationResult,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"name"
+	Name string `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`
+	// @inject_tag: sql:"description"
+	Description string `protobuf:"bytes,30,opt,name=Description,proto3" json:"Description,omitempty" sql:"description"`
+	// @inject_tag: sql:"module_id"
+	ModuleID string `protobuf:"bytes,40,opt,name=ModuleID,proto3" json:"ModuleID,omitempty" sql:"module_id"`
+	// @inject_tag: sql:"module_name"
+	ModuleName string `protobuf:"bytes,50,opt,name=ModuleName,proto3" json:"ModuleName,omitempty" sql:"module_name"`
+	// @inject_tag: sql:"api_id"
+	ApiID string `protobuf:"bytes,60,opt,name=ApiID,proto3" json:"ApiID,omitempty" sql:"api_id"`
+	// @inject_tag: sql:"expectation_result"
+	ExpectationResult string                `protobuf:"bytes,70,opt,name=ExpectationResult,proto3" json:"ExpectationResult,omitempty" sql:"expectation_result"`
 	TestCaseType      testcase.TestCaseType `protobuf:"varint,80,opt,name=TestCaseType,proto3,enum=smoketest.manager.testcase.v1.TestCaseType" json:"TestCaseType,omitempty"`
-	Deprecated        bool                  `protobuf:"varint,90,opt,name=Deprecated,proto3" json:"Deprecated,omitempty"`
-	CreatedAt         uint32                `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt         uint32                `protobuf:"varint,120,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	// @inject_tag: sql:"deprecated"
+	Deprecated bool `protobuf:"varint,90,opt,name=Deprecated,proto3" json:"Deprecated,omitempty" sql:"deprecated"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,120,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *TestCase) Reset() {
