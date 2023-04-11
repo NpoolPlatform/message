@@ -25,6 +25,7 @@ type MiddlewareClient interface {
 	CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error)
 	UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error)
 	GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error)
+	GetTestCase(ctx context.Context, in *GetTestCaseRequest, opts ...grpc.CallOption) (*GetTestCaseResponse, error)
 	DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error)
 }
 
@@ -63,6 +64,15 @@ func (c *middlewareClient) GetTestCases(ctx context.Context, in *GetTestCasesReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetTestCase(ctx context.Context, in *GetTestCaseRequest, opts ...grpc.CallOption) (*GetTestCaseResponse, error) {
+	out := new(GetTestCaseResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.v1.Middleware/GetTestCase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error) {
 	out := new(DeleteTestCaseResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.v1.Middleware/DeleteTestCase", in, out, opts...)
@@ -79,6 +89,7 @@ type MiddlewareServer interface {
 	CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error)
 	UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error)
 	GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error)
+	GetTestCase(context.Context, *GetTestCaseRequest) (*GetTestCaseResponse, error)
 	DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -95,6 +106,9 @@ func (UnimplementedMiddlewareServer) UpdateTestCase(context.Context, *UpdateTest
 }
 func (UnimplementedMiddlewareServer) GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestCases not implemented")
+}
+func (UnimplementedMiddlewareServer) GetTestCase(context.Context, *GetTestCaseRequest) (*GetTestCaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTestCase not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTestCase not implemented")
@@ -166,6 +180,24 @@ func _Middleware_GetTestCases_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTestCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetTestCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.middleware.testcase.v1.Middleware/GetTestCase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetTestCase(ctx, req.(*GetTestCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTestCaseRequest)
 	if err := dec(in); err != nil {
@@ -202,6 +234,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTestCases",
 			Handler:    _Middleware_GetTestCases_Handler,
+		},
+		{
+			MethodName: "GetTestCase",
+			Handler:    _Middleware_GetTestCase_Handler,
 		},
 		{
 			MethodName: "DeleteTestCase",

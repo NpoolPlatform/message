@@ -60,6 +60,14 @@
         }
       }
     },
+    "smoketestmiddlewaretestcasev1GetTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
     "smoketestmiddlewaretestcasev1GetTestCasesResponse": {
       "type": "object",
       "properties": {
