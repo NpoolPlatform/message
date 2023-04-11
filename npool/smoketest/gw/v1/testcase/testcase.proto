@@ -5,7 +5,7 @@ package smoketest.gateway.testcase.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testcase";
 
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
-import "npool/smoketest/mgr/v1/relatedtestcase/relatedtestcase.proto";
+import "npool/smoketest/gw/v1/relatedtestcase/relatedtestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -58,7 +58,7 @@ message TestCase {
     string          ExpectationResult                                 = 160;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 170;
     bool            Deprecated                                        = 180;
-    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 190;
+    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 190;
     uint32          CreatedAt                                         = 200;
     uint32          UpdatedAt                                         = 210;
     uint32          DeletedAt                                         = 220;
