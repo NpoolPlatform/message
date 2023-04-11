@@ -8,7 +8,7 @@ import "npool/npool.proto";
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
 
 // Service Name
-service Manager {}
+service Middleware {}
 
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
