@@ -173,6 +173,46 @@
         }
       }
     },
+    "smoketestgatewayrelatedtestcasev1RelatedTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "TestCasePath": {
+          "type": "string"
+        },
+        "TestCaseArguments": {
+          "type": "string"
+        },
+        "RelatedTestCaseID": {
+          "type": "string"
+        },
+        "RelatedTestCasePath": {
+          "type": "string"
+        },
+        "RelatedTestCaseArguments": {
+          "type": "string"
+        },
+        "ArgumentsTransfer": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "smoketestgatewaytestcasev1CreateTestCaseRequest": {
       "type": "object",
       "properties": {
@@ -319,7 +359,7 @@
         "RelatedTestCases": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1RelatedTestCase"
+            "$ref": "#/definitions/smoketestgatewayrelatedtestcasev1RelatedTestCase"
           }
         },
         "CreatedAt": {
@@ -378,34 +418,6 @@
         "Cleaner"
       ],
       "default": "DefaultCondType"
-    },
-    "v1RelatedTestCase": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CondType": {
-          "$ref": "#/definitions/v1CondType"
-        },
-        "TestCaseID": {
-          "type": "string"
-        },
-        "RelatedTestCaseID": {
-          "type": "string"
-        },
-        "ArgumentsTransfer": {
-          "type": "string"
-        },
-        "index": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "v1TestCaseType": {
       "type": "string",
