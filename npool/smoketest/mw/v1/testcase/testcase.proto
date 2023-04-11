@@ -33,7 +33,7 @@ message TestCase {
     uint32          UpdatedAt                                         = 120;
 }
 
-message CreateTestCaseRequest {
+message CreateTestCaseReq {
     string          Name                                                       = 20;
     string          Description                                                = 30;
     string          ModuleID                                                   = 40;
@@ -43,6 +43,11 @@ message CreateTestCaseRequest {
     string          ExpectationResult                                          = 80;
     optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
     bool            Deprecated                                                 = 100;
+
+    string          ID                                                         = 110;
+}
+message CreateTestCaseRequest {
+    CreateTestCaseReq info = 10;
 }
 
 message CreateTestCaseResponse {
@@ -69,13 +74,7 @@ message GetTestCasesResponse {
 }
 
 message UpdateTestCaseRequest {
-    string                                              ID                  = 10;
-    string                                              Name                = 20;
-    string                                              Description         = 30;
-    string                                              ExpectationResult   = 40;
-    string                                              Arguments           = 50;
-    smoketest.manager.testcase.v1.TestCaseType          TestCaseType        = 60;
-    bool                                                Deprecated          = 70;
+    CreateTestCaseReq info = 10;
 }
 
 message UpdateTestCaseResponse {
