@@ -65,6 +65,7 @@ message CreateTestCaseReq {
     optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
     bool            Deprecated                                                 = 100;
 }
+
 message CreateTestCaseRequest {
     CreateTestCaseReq Info = 10;
 }
@@ -83,8 +84,9 @@ message DeleteTestCaseResponse {
 }
 
 message GetTestCasesRequest {
-    int32  Offset = 10;
-    int32  Limit  = 20;
+    smoketest.manager.testcase.v1.Conds Conds = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetTestCasesResponse {
