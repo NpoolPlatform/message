@@ -44,6 +44,26 @@
         }
       }
     },
+    "smoketestmanagertestcasev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ModuleID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ApiID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TestcaseType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Deprecated": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
     "smoketestmiddlewaretestcasev1CreateTestCaseResponse": {
       "type": "object",
       "properties": {
@@ -145,6 +165,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1CreateTestCaseReq": {
       "type": "object",
       "properties": {
@@ -177,6 +208,17 @@
         },
         "Deprecated": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
