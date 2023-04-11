@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/test
 
 import "npool/npool.proto";
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
-import "npool/smoketest/mgr/v1/relatedtestcase/relatedtestcase.proto";
 
 // Service Name
 service Manager {}
@@ -32,4 +31,53 @@ message TestCase {
     bool            Deprecated                                        = 90;
     uint32          CreatedAt                                         = 110;
     uint32          UpdatedAt                                         = 120;
+}
+
+message CreateTestCaseRequest {
+    string          Name                                                       = 20;
+    string          Description                                                = 30;
+    string          ModuleID                                                   = 40;
+    optional string ModuleName                                                 = 50;
+    string          ApiID                                                      = 60;
+    string          Arguments                                                  = 70;
+    string          ExpectationResult                                          = 80;
+    optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
+    bool            Deprecated                                                 = 100;
+}
+
+message CreateTestCaseResponse {
+    TestCase Info = 10;
+}
+
+
+message DeleteTestCaseRequest {
+    string ID        = 10;
+}
+
+message DeleteTestCaseResponse {
+    TestCase Info = 10;
+}
+
+message GetTestCasesRequest {
+    int32  Offset = 10;
+    int32  Limit  = 20;
+}
+
+message GetTestCasesResponse {
+    repeated TestCase Infos = 10;
+    uint32        Total   = 20;
+}
+
+message UpdateTestCaseRequest {
+    string                                              ID                  = 10;
+    string                                              Name                = 20;
+    string                                              Description         = 30;
+    string                                              ExpectationResult   = 40;
+    string                                              Arguments           = 50;
+    smoketest.manager.testcase.v1.TestCaseType          TestCaseType        = 60;
+    bool                                                Deprecated          = 70;
+}
+
+message UpdateTestCaseResponse {
+    TestCase Info = 10;
 }
