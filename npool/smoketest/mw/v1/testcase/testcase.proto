@@ -8,7 +8,14 @@ import "npool/npool.proto";
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
 
 // Service Name
-service Middleware {}
+service Middleware {
+    rpc CreateTestCase        (CreateTestCaseRequest)       returns (CreateTestCaseResponse)       {}
+    rpc UpdateTestCase        (UpdateTestCaseRequest)       returns (UpdateTestCaseResponse)       {}
+
+    rpc GetTestCases          (GetTestCasesRequest)         returns (GetTestCasesResponse)         {}
+
+    rpc DeleteTestCase        (DeleteTestCaseRequest)       returns (DeleteTestCaseResponse)       {}
+}
 
 message Conds {
     optional npool.v1.StringVal      ID           = 10;
