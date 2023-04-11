@@ -53,7 +53,7 @@ message CreateTestCaseReq {
     bool            Deprecated                                                 = 100;
 }
 message CreateTestCaseRequest {
-    CreateTestCaseReq info = 10;
+    CreateTestCaseReq Info = 10;
 }
 
 message CreateTestCaseResponse {
