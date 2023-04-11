@@ -28,6 +28,7 @@ type MiddlewareClient interface {
 	GetAPIs(ctx context.Context, in *GetAPIsRequest, opts ...grpc.CallOption) (*GetAPIsResponse, error)
 	GetDomains(ctx context.Context, in *GetDomainsRequest, opts ...grpc.CallOption) (*GetDomainsResponse, error)
 	GetAPIOnly(ctx context.Context, in *GetAPIOnlyRequest, opts ...grpc.CallOption) (*GetAPIOnlyResponse, error)
+	ExistAPI(ctx context.Context, in *ExistAPIRequest, opts ...grpc.CallOption) (*ExistAPIResponse, error)
 }
 
 type middlewareClient struct {
@@ -92,6 +93,15 @@ func (c *middlewareClient) GetAPIOnly(ctx context.Context, in *GetAPIOnlyRequest
 	return out, nil
 }
 
+func (c *middlewareClient) ExistAPI(ctx context.Context, in *ExistAPIRequest, opts ...grpc.CallOption) (*ExistAPIResponse, error) {
+	out := new(ExistAPIResponse)
+	err := c.cc.Invoke(ctx, "/basal.middleware.api.v1.Middleware/ExistAPI", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type MiddlewareServer interface {
 	GetAPIs(context.Context, *GetAPIsRequest) (*GetAPIsResponse, error)
 	GetDomains(context.Context, *GetDomainsRequest) (*GetDomainsResponse, error)
 	GetAPIOnly(context.Context, *GetAPIOnlyRequest) (*GetAPIOnlyResponse, error)
+	ExistAPI(context.Context, *ExistAPIRequest) (*ExistAPIResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedMiddlewareServer) GetDomains(context.Context, *GetDomainsRequ
 }
 func (UnimplementedMiddlewareServer) GetAPIOnly(context.Context, *GetAPIOnlyRequest) (*GetAPIOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAPIOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistAPI(context.Context, *ExistAPIRequest) (*ExistAPIResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAPI not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -248,6 +262,24 @@ func _Middleware_GetAPIOnly_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistAPI_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAPIRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistAPI(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/basal.middleware.api.v1.Middleware/ExistAPI",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistAPI(ctx, req.(*ExistAPIRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAPIOnly",
 			Handler:    _Middleware_GetAPIOnly_Handler,
+		},
+		{
+			MethodName: "ExistAPI",
+			Handler:    _Middleware_ExistAPI_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

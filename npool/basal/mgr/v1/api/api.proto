@@ -71,6 +71,7 @@ message Conds {
     optional npool.v1.StringVal      Path        = 50;
     optional npool.v1.BoolVal        Exported    = 60;
     optional npool.v1.BoolVal        Depracated  = 70;
+    optional npool.v1.StringSliceVal IDs         = 80;
 }
 
 

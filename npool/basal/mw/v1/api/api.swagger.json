@@ -36,6 +36,14 @@
         }
       }
     },
+    "basalmiddlewareapiv1ExistAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "basalmiddlewareapiv1GetAPIOnlyResponse": {
       "type": "object",
       "properties": {
@@ -212,6 +220,9 @@
         },
         "Depracated": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -256,6 +267,20 @@
         "HTTP"
       ],
       "default": "DefaultProtocol"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
