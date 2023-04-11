@@ -11,11 +11,11 @@ import "npool/smoketest/mgr/v1/testcase/testcase.proto";
 service Middleware {}
 
 message Conds {
-    optional npool.v1.StringVal      ID     = 10;
-    optional npool.v1.StringVal      ModuleID  = 20;
-    optional npool.v1.StringVal      ApiID = 30;
+    optional npool.v1.StringVal      ID           = 10;
+    optional npool.v1.StringVal      ModuleID     = 20;
+    optional npool.v1.StringVal      ApiID        = 30;
     optional npool.v1.StringVal      TestcaseType = 40;
-    optional npool.v1.BoolVal        Deprecated  = 50;
+    optional npool.v1.BoolVal        Deprecated   = 50;
 }
 
 
@@ -35,8 +35,8 @@ message TestCase {
 
 message CreateTestCaseReq {
     string          Name                                                       = 20;
-    string          Description                                                = 30;
-    string          ModuleID                                                   = 40;
+    optional string Description                                                = 30;
+    optional string ModuleID                                                   = 40;
     optional string ModuleName                                                 = 50;
     string          ApiID                                                      = 60;
     string          Arguments                                                  = 70;
