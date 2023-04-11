@@ -27,16 +27,26 @@ message Conds {
 
 
 message TestCase {
+    // @inject_tag: sql:"id"
     string          ID                                                = 10;
+    // @inject_tag: sql:"name"
     string          Name                                              = 20;
+    // @inject_tag: sql:"description"
     string          Description                                       = 30;
+    // @inject_tag: sql:"module_id"
     string          ModuleID                                          = 40;
+    // @inject_tag: sql:"module_name"
     string          ModuleName                                        = 50;
+    // @inject_tag: sql:"api_id"
     string          ApiID                                             = 60;
+    // @inject_tag: sql:"expectation_result"
     string          ExpectationResult                                 = 70;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 80;
+    // @inject_tag: sql:"deprecated"
     bool            Deprecated                                        = 90;
+    // @inject_tag: sql:"created_at"
     uint32          CreatedAt                                         = 110;
+    // @inject_tag: sql:"updated_at"
     uint32          UpdatedAt                                         = 120;
 }
 
