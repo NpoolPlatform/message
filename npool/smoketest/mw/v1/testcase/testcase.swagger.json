@@ -4,6 +4,11 @@
     "title": "npool/smoketest/mw/v1/testcase/testcase.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -38,6 +43,129 @@
           }
         }
       }
+    },
+    "smoketestmiddlewaretestcasev1CreateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "smoketestmiddlewaretestcasev1DeleteTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "smoketestmiddlewaretestcasev1GetTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestcasev1TestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ModuleID": {
+          "type": "string"
+        },
+        "ModuleName": {
+          "type": "string"
+        },
+        "ApiID": {
+          "type": "string"
+        },
+        "ExpectationResult": {
+          "type": "string"
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "Deprecated": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestcasev1UpdateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "v1CreateTestCaseReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ModuleID": {
+          "type": "string"
+        },
+        "ModuleName": {
+          "type": "string"
+        },
+        "ApiID": {
+          "type": "string"
+        },
+        "Arguments": {
+          "type": "string"
+        },
+        "ExpectationResult": {
+          "type": "string"
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "Deprecated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1TestCaseType": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseType",
+        "Manual",
+        "Automatic"
+      ],
+      "default": "DefaultTestCaseType"
     }
   }
 }
