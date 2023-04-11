@@ -41,6 +41,8 @@ message TestCase {
     string          ApiID                                             = 60;
     // @inject_tag: sql:"expectation_result"
     string          ExpectationResult                                 = 70;
+    // @inject_tag: sql:"arguments"
+    string          Arguments                                         = 130;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 80;
     // @inject_tag: sql:"deprecated"
     bool            Deprecated                                        = 90;
