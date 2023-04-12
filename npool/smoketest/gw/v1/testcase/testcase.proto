@@ -64,12 +64,12 @@ message TestCase {
 }
 
 message CreateTestCaseRequest {
-    string          Name                                                       = 20;
-    string          Description                                                = 30;
-    optional string ModuleName                                                 = 50;
-    string          ApiID                                                      = 60;
-    string          Arguments                                                  = 70;
-    string          ExpectationResult                                          = 80;
+    string          Name                                                       = 10;
+    string          Description                                                = 20;
+    string          ModuleName                                                 = 30;
+    string          ApiID                                                      = 40;
+    string          Arguments                                                  = 50;
+    string          ExpectationResult                                          = 60;
 }
 
 message CreateTestCaseResponse {
