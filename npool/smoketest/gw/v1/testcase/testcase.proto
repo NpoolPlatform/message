@@ -51,7 +51,7 @@ message TestCase {
     string          ApiServiceName                                    = 90;
     string          ApiProtocol                                       = 100;
     string          ApiMethod                                         = 110;
-    string          ApiDeprecated                                     = 120;
+    bool            ApiDeprecated                                     = 120;
     uint32          ApiCreatedAt                                      = 130;
     uint32          ApiUpdatedAt                                      = 140;
     string          Arguments                                         = 150;
@@ -61,7 +61,6 @@ message TestCase {
     repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 190;
     uint32          CreatedAt                                         = 200;
     uint32          UpdatedAt                                         = 210;
-    uint32          DeletedAt                                         = 220;
 }
 
 message CreateTestCaseRequest {

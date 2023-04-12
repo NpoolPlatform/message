@@ -325,7 +325,7 @@
           "type": "string"
         },
         "ApiDeprecated": {
-          "type": "string"
+          "type": "boolean"
         },
         "ApiCreatedAt": {
           "type": "integer",
@@ -358,10 +358,6 @@
           "format": "int64"
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
           "type": "integer",
           "format": "int64"
         }
