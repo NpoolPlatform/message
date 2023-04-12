@@ -231,7 +231,7 @@
         "Arguments": {
           "type": "string"
         },
-        "ExpectationResult": {
+        "Expectation": {
           "type": "string"
         }
       }
@@ -327,18 +327,10 @@
         "ApiDeprecated": {
           "type": "boolean"
         },
-        "ApiCreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ApiUpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Arguments": {
           "type": "string"
         },
-        "ExpectationResult": {
+        "Expectation": {
           "type": "string"
         },
         "TestCaseType": {

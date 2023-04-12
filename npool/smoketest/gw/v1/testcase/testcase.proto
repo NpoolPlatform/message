@@ -52,15 +52,13 @@ message TestCase {
     string          ApiProtocol                                       = 100;
     string          ApiMethod                                         = 110;
     bool            ApiDeprecated                                     = 120;
-    uint32          ApiCreatedAt                                      = 130;
-    uint32          ApiUpdatedAt                                      = 140;
-    string          Arguments                                         = 150;
-    string          ExpectationResult                                 = 160;
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 170;
-    bool            Deprecated                                        = 180;
-    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 190;
-    uint32          CreatedAt                                         = 200;
-    uint32          UpdatedAt                                         = 210;
+    string          Arguments                                         = 130;
+    string          Expectation                                       = 140;
+    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 150;
+    bool            Deprecated                                        = 160;
+    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 170;
+    uint32          CreatedAt                                         = 180;
+    uint32          UpdatedAt                                         = 190;
 }
 
 message CreateTestCaseRequest {
@@ -69,7 +67,7 @@ message CreateTestCaseRequest {
     string          ModuleName                                                 = 30;
     string          ApiID                                                      = 40;
     string          Arguments                                                  = 50;
-    string          ExpectationResult                                          = 60;
+    string          Expectation                                                = 60;
 }
 
 message CreateTestCaseResponse {
