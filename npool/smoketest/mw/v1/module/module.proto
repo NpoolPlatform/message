@@ -38,6 +38,14 @@ message CreateModuleResponse {
     Module  Info  = 10;
 }
 
+message ExistModuleRequest {
+    string              Name                                           = 10;
+}
+
+message ExistModuleResponse {
+    Module  Info  = 10;
+}
+
 message DeleteModuleRequest {
     string ID        = 10;
 }
