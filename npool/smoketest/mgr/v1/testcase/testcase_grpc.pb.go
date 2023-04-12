@@ -7,10 +7,7 @@
 package testcase
 
 import (
-	context "context"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -22,16 +19,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
-	CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error)
-	CreateTestCases(ctx context.Context, in *CreateTestCasesRequest, opts ...grpc.CallOption) (*CreateTestCasesResponse, error)
-	UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error)
-	GetTestCase(ctx context.Context, in *GetTestCaseRequest, opts ...grpc.CallOption) (*GetTestCaseResponse, error)
-	GetTestCaseOnly(ctx context.Context, in *GetTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetTestCaseOnlyResponse, error)
-	GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error)
-	ExistTestCase(ctx context.Context, in *ExistTestCaseRequest, opts ...grpc.CallOption) (*ExistTestCaseResponse, error)
-	ExistTestCaseConds(ctx context.Context, in *ExistTestCaseCondsRequest, opts ...grpc.CallOption) (*ExistTestCaseCondsResponse, error)
-	CountTestCases(ctx context.Context, in *CountTestCasesRequest, opts ...grpc.CallOption) (*CountTestCasesResponse, error)
-	DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error)
 }
 
 type managerClient struct {
@@ -42,110 +29,10 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
-func (c *managerClient) CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error) {
-	out := new(CreateTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/CreateTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) CreateTestCases(ctx context.Context, in *CreateTestCasesRequest, opts ...grpc.CallOption) (*CreateTestCasesResponse, error) {
-	out := new(CreateTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/CreateTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error) {
-	out := new(UpdateTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/UpdateTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetTestCase(ctx context.Context, in *GetTestCaseRequest, opts ...grpc.CallOption) (*GetTestCaseResponse, error) {
-	out := new(GetTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/GetTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetTestCaseOnly(ctx context.Context, in *GetTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetTestCaseOnlyResponse, error) {
-	out := new(GetTestCaseOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/GetTestCaseOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error) {
-	out := new(GetTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/GetTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) ExistTestCase(ctx context.Context, in *ExistTestCaseRequest, opts ...grpc.CallOption) (*ExistTestCaseResponse, error) {
-	out := new(ExistTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/ExistTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) ExistTestCaseConds(ctx context.Context, in *ExistTestCaseCondsRequest, opts ...grpc.CallOption) (*ExistTestCaseCondsResponse, error) {
-	out := new(ExistTestCaseCondsResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/ExistTestCaseConds", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) CountTestCases(ctx context.Context, in *CountTestCasesRequest, opts ...grpc.CallOption) (*CountTestCasesResponse, error) {
-	out := new(CountTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/CountTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error) {
-	out := new(DeleteTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.testcase.v1.Manager/DeleteTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
-	CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error)
-	CreateTestCases(context.Context, *CreateTestCasesRequest) (*CreateTestCasesResponse, error)
-	UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error)
-	GetTestCase(context.Context, *GetTestCaseRequest) (*GetTestCaseResponse, error)
-	GetTestCaseOnly(context.Context, *GetTestCaseOnlyRequest) (*GetTestCaseOnlyResponse, error)
-	GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error)
-	ExistTestCase(context.Context, *ExistTestCaseRequest) (*ExistTestCaseResponse, error)
-	ExistTestCaseConds(context.Context, *ExistTestCaseCondsRequest) (*ExistTestCaseCondsResponse, error)
-	CountTestCases(context.Context, *CountTestCasesRequest) (*CountTestCasesResponse, error)
-	DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -153,36 +40,6 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedManagerServer) CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateTestCase not implemented")
-}
-func (UnimplementedManagerServer) CreateTestCases(context.Context, *CreateTestCasesRequest) (*CreateTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateTestCases not implemented")
-}
-func (UnimplementedManagerServer) UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateTestCase not implemented")
-}
-func (UnimplementedManagerServer) GetTestCase(context.Context, *GetTestCaseRequest) (*GetTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTestCase not implemented")
-}
-func (UnimplementedManagerServer) GetTestCaseOnly(context.Context, *GetTestCaseOnlyRequest) (*GetTestCaseOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTestCaseOnly not implemented")
-}
-func (UnimplementedManagerServer) GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTestCases not implemented")
-}
-func (UnimplementedManagerServer) ExistTestCase(context.Context, *ExistTestCaseRequest) (*ExistTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistTestCase not implemented")
-}
-func (UnimplementedManagerServer) ExistTestCaseConds(context.Context, *ExistTestCaseCondsRequest) (*ExistTestCaseCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistTestCaseConds not implemented")
-}
-func (UnimplementedManagerServer) CountTestCases(context.Context, *CountTestCasesRequest) (*CountTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountTestCases not implemented")
-}
-func (UnimplementedManagerServer) DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteTestCase not implemented")
-}
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
 // UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
@@ -196,234 +53,13 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Manager_CreateTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CreateTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/CreateTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateTestCase(ctx, req.(*CreateTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_CreateTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CreateTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/CreateTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateTestCases(ctx, req.(*CreateTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_UpdateTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).UpdateTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/UpdateTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateTestCase(ctx, req.(*UpdateTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/GetTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestCase(ctx, req.(*GetTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetTestCaseOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTestCaseOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetTestCaseOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/GetTestCaseOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestCaseOnly(ctx, req.(*GetTestCaseOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/GetTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestCases(ctx, req.(*GetTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_ExistTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).ExistTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/ExistTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistTestCase(ctx, req.(*ExistTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_ExistTestCaseConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistTestCaseCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).ExistTestCaseConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/ExistTestCaseConds",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistTestCaseConds(ctx, req.(*ExistTestCaseCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_CountTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CountTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/CountTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountTestCases(ctx, req.(*CountTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_DeleteTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).DeleteTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.testcase.v1.Manager/DeleteTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteTestCase(ctx, req.(*DeleteTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "smoketest.manager.testcase.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateTestCase",
-			Handler:    _Manager_CreateTestCase_Handler,
-		},
-		{
-			MethodName: "CreateTestCases",
-			Handler:    _Manager_CreateTestCases_Handler,
-		},
-		{
-			MethodName: "UpdateTestCase",
-			Handler:    _Manager_UpdateTestCase_Handler,
-		},
-		{
-			MethodName: "GetTestCase",
-			Handler:    _Manager_GetTestCase_Handler,
-		},
-		{
-			MethodName: "GetTestCaseOnly",
-			Handler:    _Manager_GetTestCaseOnly_Handler,
-		},
-		{
-			MethodName: "GetTestCases",
-			Handler:    _Manager_GetTestCases_Handler,
-		},
-		{
-			MethodName: "ExistTestCase",
-			Handler:    _Manager_ExistTestCase_Handler,
-		},
-		{
-			MethodName: "ExistTestCaseConds",
-			Handler:    _Manager_ExistTestCaseConds_Handler,
-		},
-		{
-			MethodName: "CountTestCases",
-			Handler:    _Manager_CountTestCases_Handler,
-		},
-		{
-			MethodName: "DeleteTestCase",
-			Handler:    _Manager_DeleteTestCase_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/smoketest/mgr/v1/testcase/testcase.proto",
+	Methods:     []grpc.MethodDesc{},
+	Streams:     []grpc.StreamDesc{},
+	Metadata:    "npool/smoketest/mgr/v1/testcase/testcase.proto",
 }

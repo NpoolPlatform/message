@@ -7,18 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/tes
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
-    rpc CreateTestCase     (CreateTestCaseRequest)     returns (CreateTestCaseResponse)     {}
-    rpc CreateTestCases    (CreateTestCasesRequest)    returns (CreateTestCasesResponse)    {}
-    rpc UpdateTestCase     (UpdateTestCaseRequest)     returns (UpdateTestCaseResponse)     {}
-    rpc GetTestCase        (GetTestCaseRequest)        returns (GetTestCaseResponse)        {}
-    rpc GetTestCaseOnly    (GetTestCaseOnlyRequest)    returns (GetTestCaseOnlyResponse)    {}
-    rpc GetTestCases       (GetTestCasesRequest)       returns (GetTestCasesResponse)       {}
-    rpc ExistTestCase      (ExistTestCaseRequest)      returns (ExistTestCaseResponse)      {}
-    rpc ExistTestCaseConds (ExistTestCaseCondsRequest) returns (ExistTestCaseCondsResponse) {}
-    rpc CountTestCases     (CountTestCasesRequest)     returns (CountTestCasesResponse)     {}
-    rpc DeleteTestCase     (DeleteTestCaseRequest)     returns (DeleteTestCaseResponse)     {}
-}
+service Manager {}
 
 message TestCaseReq {
     optional string ID                                         = 10;
