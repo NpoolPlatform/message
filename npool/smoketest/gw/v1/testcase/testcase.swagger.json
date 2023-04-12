@@ -233,12 +233,6 @@
         },
         "ExpectationResult": {
           "type": "string"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
-        },
-        "Deprecated": {
-          "type": "boolean"
         }
       }
     },
