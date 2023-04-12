@@ -222,9 +222,6 @@
         "Description": {
           "type": "string"
         },
-        "ModuleID": {
-          "type": "string"
-        },
         "ModuleName": {
           "type": "string"
         },

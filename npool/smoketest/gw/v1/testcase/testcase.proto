@@ -67,13 +67,12 @@ message TestCase {
 message CreateTestCaseRequest {
     string          Name                                                       = 20;
     string          Description                                                = 30;
-    string          ModuleID                                                   = 40;
     optional string ModuleName                                                 = 50;
     string          ApiID                                                      = 60;
     string          Arguments                                                  = 70;
     string          ExpectationResult                                          = 80;
     optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 90;
-    bool            Deprecated                                                 = 100;
+    optional bool            Deprecated                                                 = 100;
 }
 
 message CreateTestCaseResponse {
