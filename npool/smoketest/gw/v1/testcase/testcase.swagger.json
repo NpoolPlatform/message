@@ -263,6 +263,9 @@
     "smoketestgatewaytestcasev1GetTestCasesRequest": {
       "type": "object",
       "properties": {
+        "ModuleID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"

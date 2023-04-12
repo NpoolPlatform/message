@@ -83,8 +83,9 @@ message DeleteTestCaseResponse {
 }
 
 message GetTestCasesRequest {
-    int32  Offset = 10;
-    int32  Limit  = 20;
+    string ModuleID = 10;
+    optional int32  Offset =  20;
+    optional int32  Limit  =  30;
 }
 
 message GetTestCasesResponse {
@@ -94,12 +95,12 @@ message GetTestCasesResponse {
 
 message UpdateTestCaseRequest {
     string                                              ID                  = 10;
-    string                                              Name                = 20;
-    string                                              Description         = 30;
-    string                                              ExpectationResult   = 40;
-    string                                              Arguments           = 50;
-    smoketest.manager.testcase.v1.TestCaseType          TestCaseType        = 60;
-    bool                                                Deprecated          = 70;
+    optional string                                     Name                = 20;
+    optional string                                     Description         = 30;
+    optional string                                     ExpectationResult   = 40;
+    optional string                                     Arguments           = 50;
+    optional smoketest.manager.testcase.v1.TestCaseType TestCaseType        = 60;
+    optional bool                                       Deprecated          = 70;
 }
 
 message UpdateTestCaseResponse {
