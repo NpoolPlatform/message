@@ -42,6 +42,7 @@ message PlanRelatedTestCase {
     string          TestUserID                              = 80;
     TestCaseResult  TestCaseResult                          = 90; 
     uint32          CreatedAt                               = 100;
+    uint32          Index                                   = 110;
 }
 
 enum TestCaseResult {

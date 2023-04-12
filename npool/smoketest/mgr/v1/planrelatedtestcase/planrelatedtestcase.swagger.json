@@ -175,6 +175,10 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

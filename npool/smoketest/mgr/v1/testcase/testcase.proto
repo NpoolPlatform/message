@@ -29,12 +29,13 @@ message TestCase {
     string          ModuleID                          = 40;
     string          ApiID                             = 50;
     string          Arguments                         = 60;
-    string          ExpectationResult                   = 70;
-    TestCaseType    TestCaseType                      = 80;
-    bool            Deprecated                        = 90;
-    uint32          CreatedAt                         = 100;
-    uint32          UpdatedAt                         = 110;
-    uint32          DeletedAt                         = 120;
+    string          ArgumentsDescription              = 70;
+    string          ExpectationResult                 = 80;
+    TestCaseType    TestCaseType                      = 90;
+    bool            Deprecated                        = 100;
+    uint32          CreatedAt                         = 110;
+    uint32          UpdatedAt                         = 120;
+    uint32          DeletedAt                         = 130;
 }
 
 
