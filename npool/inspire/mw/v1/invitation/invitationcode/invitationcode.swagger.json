@@ -25,6 +25,14 @@
         }
       }
     },
+    "inspiremiddlewareinvitationinvitationcodev1DeleteInvitationCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1InvitationCode"
+        }
+      }
+    },
     "inspiremiddlewareinvitationinvitationcodev1GetInvitationCodeOnlyResponse": {
       "type": "object",
       "properties": {

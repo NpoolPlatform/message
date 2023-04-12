@@ -124,10 +124,10 @@ message CountInvitationCodesResponse {
 }
 
 message DeleteInvitationCodeRequest {
-    InvitationCode Info = 10;
+    string ID = 10;
 }
-
 
 message DeleteInvitationCodeResponse {
     InvitationCode Info = 10;
 }
+

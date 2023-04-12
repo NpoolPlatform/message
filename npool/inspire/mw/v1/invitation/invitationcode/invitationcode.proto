@@ -8,11 +8,12 @@ import "npool/inspire/mgr/v1/invitation/invitationcode/invitationcode.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateInvitationCode  (CreateInvitationCodeRequest)  returns (CreateInvitationCodeResponse)  {}
-    rpc UpdateInvitationCode  (UpdateInvitationCodeRequest)  returns (UpdateInvitationCodeResponse)  {}
-    rpc GetInvitationCode     (GetInvitationCodeRequest)     returns (GetInvitationCodeResponse)     {}
-    rpc GetInvitationCodes    (GetInvitationCodesRequest)    returns (GetInvitationCodesResponse)    {}
-    rpc GetInvitationCodeOnly (GetInvitationCodeOnlyRequest) returns (GetInvitationCodeOnlyResponse) {}
+    rpc CreateInvitationCode     (CreateInvitationCodeRequest)     returns (CreateInvitationCodeResponse)     {}
+    rpc UpdateInvitationCode     (UpdateInvitationCodeRequest)     returns (UpdateInvitationCodeResponse)     {}
+    rpc GetInvitationCode        (GetInvitationCodeRequest)        returns (GetInvitationCodeResponse)        {}
+    rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
+    rpc GetInvitationCodeOnly    (GetInvitationCodeOnlyRequest)    returns (GetInvitationCodeOnlyResponse)    {}
+    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
 }
 
 message CreateInvitationCodeRequest {
@@ -57,3 +58,12 @@ message GetInvitationCodeOnlyRequest {
 message GetInvitationCodeOnlyResponse {
     inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
 }
+
+message DeleteInvitationCodeRequest {
+    inspire.manager.invitation.invitationcode.v1.InvitationCodeReq Info = 10;
+}
+
+message DeleteInvitationCodeResponse {
+    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+}
+

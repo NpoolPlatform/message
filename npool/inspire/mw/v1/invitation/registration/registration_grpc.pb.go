@@ -30,6 +30,7 @@ type MiddlewareClient interface {
 	GetRegistrationOnly(ctx context.Context, in *GetRegistrationOnlyRequest, opts ...grpc.CallOption) (*GetRegistrationOnlyResponse, error)
 	GetSubordinates(ctx context.Context, in *GetSubordinatesRequest, opts ...grpc.CallOption) (*GetSubordinatesResponse, error)
 	GetSuperiores(ctx context.Context, in *GetSuperioresRequest, opts ...grpc.CallOption) (*GetSuperioresResponse, error)
+	DeleteRegistration(ctx context.Context, in *DeleteRegistrationRequest, opts ...grpc.CallOption) (*DeleteRegistrationResponse, error)
 }
 
 type middlewareClient struct {
@@ -103,6 +104,15 @@ func (c *middlewareClient) GetSuperiores(ctx context.Context, in *GetSuperioresR
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteRegistration(ctx context.Context, in *DeleteRegistrationRequest, opts ...grpc.CallOption) (*DeleteRegistrationResponse, error) {
+	out := new(DeleteRegistrationResponse)
+	err := c.cc.Invoke(ctx, "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -115,6 +125,7 @@ type MiddlewareServer interface {
 	GetRegistrationOnly(context.Context, *GetRegistrationOnlyRequest) (*GetRegistrationOnlyResponse, error)
 	GetSubordinates(context.Context, *GetSubordinatesRequest) (*GetSubordinatesResponse, error)
 	GetSuperiores(context.Context, *GetSuperioresRequest) (*GetSuperioresResponse, error)
+	DeleteRegistration(context.Context, *DeleteRegistrationRequest) (*DeleteRegistrationResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -142,6 +153,9 @@ func (UnimplementedMiddlewareServer) GetSubordinates(context.Context, *GetSubord
 }
 func (UnimplementedMiddlewareServer) GetSuperiores(context.Context, *GetSuperioresRequest) (*GetSuperioresResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSuperiores not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteRegistration(context.Context, *DeleteRegistrationRequest) (*DeleteRegistrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRegistration not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -282,6 +296,24 @@ func _Middleware_GetSuperiores_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteRegistration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRegistrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteRegistration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteRegistration(ctx, req.(*DeleteRegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,6 +348,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSuperiores",
 			Handler:    _Middleware_GetSuperiores_Handler,
+		},
+		{
+			MethodName: "DeleteRegistration",
+			Handler:    _Middleware_DeleteRegistration_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

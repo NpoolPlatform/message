@@ -128,7 +128,7 @@ message CountRegistrationsResponse {
 }
 
 message DeleteRegistrationRequest {
-    Registration Info = 10;
+    string ID = 10;
 }
 
 

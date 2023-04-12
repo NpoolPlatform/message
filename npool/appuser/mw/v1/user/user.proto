@@ -237,8 +237,9 @@ message GetManyUsersResponse {
 }
 
 message DeleteUserRequest {
-    string ID = 10;
+    UserReq Info = 10;
 }
 
 message DeleteUserResponse {
+    User Info = 10;
 }

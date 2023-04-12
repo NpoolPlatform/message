@@ -25,6 +25,14 @@
         }
       }
     },
+    "inspiremiddlewareinvitationregistrationv1DeleteRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
     "inspiremiddlewareinvitationregistrationv1GetRegistrationOnlyResponse": {
       "type": "object",
       "properties": {

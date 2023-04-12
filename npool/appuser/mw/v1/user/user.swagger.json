@@ -76,7 +76,12 @@
       }
     },
     "v1DeleteUserResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
     },
     "v1GetManyUsersResponse": {
       "type": "object",
