@@ -10,16 +10,16 @@ import "npool/npool.proto";
 service Manager {}
 
 message TestCaseReq {
-    optional string ID                                         = 10;
-    optional string Name                                       = 20;
-    optional string Description                                = 30;
-    optional string ModuleID                                   = 40;
-    optional string ApiID                                      = 50;
-    optional string Arguments                                  = 60;
-    optional string ExpectationResult                          = 70;
-    optional TestCaseType    TestCaseType                      = 80;
-    optional bool            Deprecated                        = 90;
-    optional uint32          CreatedAt                         = 100;
+    optional string          ID                                         = 10;
+    optional string          Name                                       = 20;
+    optional string          Description                                = 30;
+    optional string          ModuleID                                   = 40;
+    optional string          ApiID                                      = 50;
+    optional string          Arguments                                  = 60;
+    optional string          ExpectationResult                          = 70;
+    optional TestCaseType    TestCaseType                               = 80;
+    optional bool            Deprecated                                 = 90;
+    optional uint32          CreatedAt                                  = 100;
 }
 
 message TestCase {
