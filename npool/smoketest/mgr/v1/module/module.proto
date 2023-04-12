@@ -7,18 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/mod
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
-    rpc CreateModule     (CreateModuleRequest)     returns (CreateModuleResponse)     {}
-    rpc CreateModules    (CreateModulesRequest)    returns (CreateModulesResponse)    {}
-    rpc UpdateModule     (UpdateModuleRequest)     returns (UpdateModuleResponse)     {}
-    rpc GetModule        (GetModuleRequest)        returns (GetModuleResponse)        {}
-    rpc GetModuleOnly    (GetModuleOnlyRequest)    returns (GetModuleOnlyResponse)    {}
-    rpc GetModules       (GetModulesRequest)       returns (GetModulesResponse)       {}
-    rpc ExistModule      (ExistModuleRequest)      returns (ExistModuleResponse)      {}
-    rpc ExistModuleConds (ExistModuleCondsRequest) returns (ExistModuleCondsResponse) {}
-    rpc CountModules     (CountModulesRequest)     returns (CountModulesResponse)     {}
-    rpc DeleteModule     (DeleteModuleRequest)     returns (DeleteModuleResponse)     {}
-}
+service Manager {}
 
 message ModuleReq {
     optional string ID                  = 10;
@@ -28,15 +17,16 @@ message ModuleReq {
 }
 
 message Module {
-    string ID                 = 10;
-    string Name               = 20;
-    string Description        = 30;
-    uint32 CreatedAt          = 110;
+    string ID                 =           10;
+    string Name               =           20;
+    string Description        =           30;
+    uint32 CreatedAt          =           110;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
     optional npool.v1.StringVal      Name   = 20;
+    optional npool.v1.StringSliceVal IDs    = 30;
 }
 
 
