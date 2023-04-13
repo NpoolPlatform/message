@@ -97,7 +97,7 @@ message UpdateTestCaseRequest {
     string                                              ID                  = 10;
     optional string                                     Name                = 20;
     optional string                                     Description         = 30;
-    optional string                                     ExpectationResult   = 40;
+    optional string                                     Expectation         = 40;
     optional string                                     Arguments           = 50;
     optional smoketest.manager.testcase.v1.TestCaseType TestCaseType        = 60;
     optional bool                                       Deprecated          = 70;

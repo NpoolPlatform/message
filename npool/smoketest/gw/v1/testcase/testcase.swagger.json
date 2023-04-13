@@ -370,7 +370,7 @@
         "Description": {
           "type": "string"
         },
-        "ExpectationResult": {
+        "Expectation": {
           "type": "string"
         },
         "Arguments": {
