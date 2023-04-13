@@ -90,8 +90,8 @@ message UpdateTestPlanResponse {
 message CreateTestPlanRequest {
     string          Name                = 10;
     string          OwnerID             = 20;
-    string          ResponsibleUserID   = 30;
-    uint32          Deadline            = 40;
+    optional string          ResponsibleUserID   = 30;
+    optional uint32          Deadline            = 40;
 }
 
 message CreateTestPlanResponse {
