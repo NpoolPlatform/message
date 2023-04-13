@@ -200,6 +200,9 @@
         "Arguments": {
           "type": "string"
         },
+        "ArgTypeDescription": {
+          "type": "string"
+        },
         "ExpectationResult": {
           "type": "string"
         },

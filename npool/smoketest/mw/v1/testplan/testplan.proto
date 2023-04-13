@@ -36,7 +36,7 @@ message TestPlan {
     // @inject_tag: sql:"passed_test_cases_count"
     uint32          PassedTestCasesCount              = 70;
     // @inject_tag: sql:"skipped_test_cases_count"
-    uint32          SkippedTestCasesCount              = 80;
+    uint32          SkippedTestCasesCount             = 80;
     // @inject_tag: sql:"run_duration"
     uint32          RunDuration                       = 90;
     // @inject_tag: sql:"test_result"

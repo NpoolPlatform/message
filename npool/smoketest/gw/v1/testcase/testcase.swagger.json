@@ -231,6 +231,9 @@
         "Arguments": {
           "type": "string"
         },
+        "ArgTypeDescripiton": {
+          "type": "string"
+        },
         "Expectation": {
           "type": "string"
         }
@@ -333,6 +336,9 @@
         "Arguments": {
           "type": "string"
         },
+        "ArgTypeDescription": {
+          "type": "string"
+        },
         "Expectation": {
           "type": "string"
         },
@@ -374,6 +380,9 @@
           "type": "string"
         },
         "Arguments": {
+          "type": "string"
+        },
+        "ArgTypeDescripiton": {
           "type": "string"
         },
         "TestCaseType": {

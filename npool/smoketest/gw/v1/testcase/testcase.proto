@@ -53,12 +53,13 @@ message TestCase {
     string          ApiMethod                                         = 110;
     bool            ApiDeprecated                                     = 120;
     string          Arguments                                         = 130;
-    string          Expectation                                       = 140;
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 150;
-    bool            Deprecated                                        = 160;
-    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 170;
-    uint32          CreatedAt                                         = 180;
-    uint32          UpdatedAt                                         = 190;
+    string          ArgTypeDescription                                = 140;
+    string          Expectation                                       = 150;
+    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 160;
+    bool            Deprecated                                        = 170;
+    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 180;
+    uint32          CreatedAt                                         = 190;
+    uint32          UpdatedAt                                         = 200;
 }
 
 message CreateTestCaseRequest {
@@ -67,7 +68,8 @@ message CreateTestCaseRequest {
     string          ModuleName                                                 = 30;
     string          ApiID                                                      = 40;
     string          Arguments                                                  = 50;
-    string          Expectation                                                = 60;
+    string          ArgTypeDescripiton                                         = 60;
+    string          Expectation                                                = 70;
 }
 
 message CreateTestCaseResponse {
@@ -99,8 +101,9 @@ message UpdateTestCaseRequest {
     optional string                                     Description         = 30;
     optional string                                     Expectation         = 40;
     optional string                                     Arguments           = 50;
-    optional smoketest.manager.testcase.v1.TestCaseType TestCaseType        = 60;
-    optional bool                                       Deprecated          = 70;
+    optional string                                     ArgTypeDescripiton  = 60;
+    optional smoketest.manager.testcase.v1.TestCaseType TestCaseType        = 70;
+    optional bool                                       Deprecated          = 80;
 }
 
 message UpdateTestCaseResponse {

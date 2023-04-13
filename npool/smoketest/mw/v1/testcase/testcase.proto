@@ -61,9 +61,10 @@ message CreateTestCaseReq {
     optional string          ModuleName                                                 = 50;
     optional string          ApiID                                                      = 60;
     optional string          Arguments                                                  = 70;
-    optional string          ExpectationResult                                          = 80;
-    optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType                 = 90;
-    optional bool            Deprecated                                                 = 100;
+    optional string          ArgTypeDescription                                         = 80;
+    optional string          ExpectationResult                                          = 90;
+    optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType                 = 100;
+    optional bool            Deprecated                                                 = 110;
 }
 
 message CreateTestCaseRequest {
