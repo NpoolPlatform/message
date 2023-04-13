@@ -21,14 +21,23 @@ service Middleware {
 }
 
 message PlanRelatedTestCaseReq {
+    // @inject_tag: sql:"id"
     optional string          ID                                      = 10;
+    // @inject_tag: sql:"test_plan_id"
     optional string          TestPlanID                              = 20;
+    // @inject_tag: sql:"test_case_id"
     optional string          TestCaseID                              = 30;
+    // @inject_tag: sql:"test_case_output"
     optional string          TestCaseOutput                          = 40;
+    // @inject_tag: sql:"description"
     optional string          Description                             = 50;
+    // @inject_tag: sql:"run_duration"
     optional uint32          RunDuration                             = 60;
+    // @inject_tag: sql:"test_user_id"
     optional string          TestUserID                              = 70;
+    // @inject_tag: sql:"test_case_result"
     optional TestCaseResult  TestCaseResult                          = 80; 
+    // @inject_tag: sql:"index"
     optional uint32          Index                                   = 100;
 }
 

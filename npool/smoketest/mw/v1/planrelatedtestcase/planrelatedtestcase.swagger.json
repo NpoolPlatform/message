@@ -186,33 +186,42 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "TestPlanID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_plan_id\""
         },
         "TestCaseID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
         },
         "TestCaseOutput": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_output\""
         },
         "Description": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
         },
         "RunDuration": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"run_duration\""
         },
         "TestUserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_user_id\""
         },
         "TestCaseResult": {
-          "$ref": "#/definitions/v1TestCaseResult"
+          "$ref": "#/definitions/v1TestCaseResult",
+          "title": "@inject_tag: sql:\"test_case_result\""
         },
         "Index": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
         }
       }
     },

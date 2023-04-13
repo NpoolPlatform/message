@@ -130,20 +130,34 @@ type TestPlan struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID                    string          `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	Name                  string          `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty"`
-	State                 TestPlanState   `protobuf:"varint,30,opt,name=State,proto3,enum=smoketest.middleware.testplan.v1.TestPlanState" json:"State,omitempty"` //未开始|正在进行|已完成|已逾期
-	OwnerID               string          `protobuf:"bytes,40,opt,name=OwnerID,proto3" json:"OwnerID,omitempty"`
-	ResponsibleUserID     string          `protobuf:"bytes,50,opt,name=ResponsibleUserID,proto3" json:"ResponsibleUserID,omitempty"`
-	FailedTestCasesCount  uint32          `protobuf:"varint,60,opt,name=FailedTestCasesCount,proto3" json:"FailedTestCasesCount,omitempty"`
-	PassedTestCasesCount  uint32          `protobuf:"varint,70,opt,name=PassedTestCasesCount,proto3" json:"PassedTestCasesCount,omitempty"`
-	SkippedTestCasesCount uint32          `protobuf:"varint,80,opt,name=SkippedTestCasesCount,proto3" json:"SkippedTestCasesCount,omitempty"`
-	RunDuration           uint32          `protobuf:"varint,90,opt,name=RunDuration,proto3" json:"RunDuration,omitempty"`
-	TestResult            TestResultState `protobuf:"varint,100,opt,name=TestResult,proto3,enum=smoketest.middleware.testplan.v1.TestResultState" json:"TestResult,omitempty"`
-	Deadline              uint32          `protobuf:"varint,110,opt,name=Deadline,proto3" json:"Deadline,omitempty"`
-	CreatedAt             uint32          `protobuf:"varint,120,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt             uint32          `protobuf:"varint,130,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
-	DeletedAt             uint32          `protobuf:"varint,140,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"name"
+	Name string `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`
+	// @inject_tag: sql:"state"
+	State TestPlanState `protobuf:"varint,30,opt,name=State,proto3,enum=smoketest.middleware.testplan.v1.TestPlanState" json:"State,omitempty" sql:"state"` //未开始|正在进行|已完成|已逾期
+	// @inject_tag: sql:"owner_id"
+	OwnerID string `protobuf:"bytes,40,opt,name=OwnerID,proto3" json:"OwnerID,omitempty" sql:"owner_id"`
+	// @inject_tag: sql:"responsible_user_id"
+	ResponsibleUserID string `protobuf:"bytes,50,opt,name=ResponsibleUserID,proto3" json:"ResponsibleUserID,omitempty" sql:"responsible_user_id"`
+	// @inject_tag: sql:"failed_test_cases_count"
+	FailedTestCasesCount uint32 `protobuf:"varint,60,opt,name=FailedTestCasesCount,proto3" json:"FailedTestCasesCount,omitempty" sql:"failed_test_cases_count"`
+	// @inject_tag: sql:"passed_test_cases_count"
+	PassedTestCasesCount uint32 `protobuf:"varint,70,opt,name=PassedTestCasesCount,proto3" json:"PassedTestCasesCount,omitempty" sql:"passed_test_cases_count"`
+	// @inject_tag: sql:"skipped_test_cases_count"
+	SkippedTestCasesCount uint32 `protobuf:"varint,80,opt,name=SkippedTestCasesCount,proto3" json:"SkippedTestCasesCount,omitempty" sql:"skipped_test_cases_count"`
+	// @inject_tag: sql:"run_duration"
+	RunDuration uint32 `protobuf:"varint,90,opt,name=RunDuration,proto3" json:"RunDuration,omitempty" sql:"run_duration"`
+	// @inject_tag: sql:"test_result"
+	TestResult TestResultState `protobuf:"varint,100,opt,name=TestResult,proto3,enum=smoketest.middleware.testplan.v1.TestResultState" json:"TestResult,omitempty" sql:"test_result"`
+	// @inject_tag: sql:"deadline"
+	Deadline uint32 `protobuf:"varint,110,opt,name=Deadline,proto3" json:"Deadline,omitempty" sql:"deadline"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,120,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,130,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
+	// @inject_tag: sql:"deleted_at"
+	DeletedAt uint32 `protobuf:"varint,140,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty" sql:"deleted_at"`
 }
 
 func (x *TestPlan) Reset() {

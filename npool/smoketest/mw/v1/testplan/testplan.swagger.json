@@ -131,54 +131,68 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
         "State": {
-          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlanState"
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlanState",
+          "title": "@inject_tag: sql:\"state\""
         },
         "OwnerID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"owner_id\""
         },
         "ResponsibleUserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"responsible_user_id\""
         },
         "FailedTestCasesCount": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"failed_test_cases_count\""
         },
         "PassedTestCasesCount": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"passed_test_cases_count\""
         },
         "SkippedTestCasesCount": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"skipped_test_cases_count\""
         },
         "RunDuration": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"run_duration\""
         },
         "TestResult": {
-          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestResultState"
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestResultState",
+          "title": "@inject_tag: sql:\"test_result\""
         },
         "Deadline": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deadline\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         },
         "DeletedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
     },
