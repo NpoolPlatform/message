@@ -231,7 +231,7 @@
         "Arguments": {
           "type": "string"
         },
-        "ArgTypeDescripiton": {
+        "ArgTypeDescription": {
           "type": "string"
         },
         "Expectation": {
@@ -382,7 +382,7 @@
         "Arguments": {
           "type": "string"
         },
-        "ArgTypeDescripiton": {
+        "ArgTypeDescription": {
           "type": "string"
         },
         "TestCaseType": {
