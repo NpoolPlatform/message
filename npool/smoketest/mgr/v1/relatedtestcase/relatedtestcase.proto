@@ -25,7 +25,6 @@ message RelatedTestCaseReq {
     optional CondType CondType                                   = 20;
     optional string   TestCaseID                                 = 30;
     optional string   RelatedTestCaseID                          = 40;
-    optional string   ArgumentsTransfer                          = 50;
     optional uint32   Index                                      = 60;
     optional uint32   CreatedAt                                  = 70;
 }
@@ -35,8 +34,7 @@ message RelatedTestCase {
     CondType        CondType                          = 20; //条件类型:前置条件|后置条件
     string          TestCaseID                        = 30;
     string          RelatedTestCaseID                 = 40;
-    string          ArgumentsTransfer                 = 50;
-    uint32          index                             = 60;
+    uint32          Index                             = 60;
     uint32          CreatedAt                         = 70;
 }
 

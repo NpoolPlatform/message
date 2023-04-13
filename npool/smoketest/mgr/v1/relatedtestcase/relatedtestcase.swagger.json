@@ -183,10 +183,7 @@
         "RelatedTestCaseID": {
           "type": "string"
         },
-        "ArgumentsTransfer": {
-          "type": "string"
-        },
-        "index": {
+        "Index": {
           "type": "integer",
           "format": "int64"
         },
@@ -209,9 +206,6 @@
           "type": "string"
         },
         "RelatedTestCaseID": {
-          "type": "string"
-        },
-        "ArgumentsTransfer": {
           "type": "string"
         },
         "Index": {
