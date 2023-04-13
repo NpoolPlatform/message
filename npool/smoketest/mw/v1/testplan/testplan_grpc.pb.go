@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ManagerClient is the client API for Manager service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type MiddlewareClient interface {
 	CreateTestPlan(ctx context.Context, in *CreateTestPlanRequest, opts ...grpc.CallOption) (*CreateTestPlanResponse, error)
 	CreateTestPlans(ctx context.Context, in *CreateTestPlansRequest, opts ...grpc.CallOption) (*CreateTestPlansResponse, error)
 	UpdateTestPlan(ctx context.Context, in *UpdateTestPlanRequest, opts ...grpc.CallOption) (*UpdateTestPlanResponse, error)
@@ -34,108 +34,108 @@ type ManagerClient interface {
 	DeleteTestPlan(ctx context.Context, in *DeleteTestPlanRequest, opts ...grpc.CallOption) (*DeleteTestPlanResponse, error)
 }
 
-type managerClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *managerClient) CreateTestPlan(ctx context.Context, in *CreateTestPlanRequest, opts ...grpc.CallOption) (*CreateTestPlanResponse, error) {
+func (c *middlewareClient) CreateTestPlan(ctx context.Context, in *CreateTestPlanRequest, opts ...grpc.CallOption) (*CreateTestPlanResponse, error) {
 	out := new(CreateTestPlanResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/CreateTestPlan", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/CreateTestPlan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CreateTestPlans(ctx context.Context, in *CreateTestPlansRequest, opts ...grpc.CallOption) (*CreateTestPlansResponse, error) {
+func (c *middlewareClient) CreateTestPlans(ctx context.Context, in *CreateTestPlansRequest, opts ...grpc.CallOption) (*CreateTestPlansResponse, error) {
 	out := new(CreateTestPlansResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/CreateTestPlans", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/CreateTestPlans", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateTestPlan(ctx context.Context, in *UpdateTestPlanRequest, opts ...grpc.CallOption) (*UpdateTestPlanResponse, error) {
+func (c *middlewareClient) UpdateTestPlan(ctx context.Context, in *UpdateTestPlanRequest, opts ...grpc.CallOption) (*UpdateTestPlanResponse, error) {
 	out := new(UpdateTestPlanResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/UpdateTestPlan", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/UpdateTestPlan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetTestPlan(ctx context.Context, in *GetTestPlanRequest, opts ...grpc.CallOption) (*GetTestPlanResponse, error) {
+func (c *middlewareClient) GetTestPlan(ctx context.Context, in *GetTestPlanRequest, opts ...grpc.CallOption) (*GetTestPlanResponse, error) {
 	out := new(GetTestPlanResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/GetTestPlan", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/GetTestPlan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetTestPlanOnly(ctx context.Context, in *GetTestPlanOnlyRequest, opts ...grpc.CallOption) (*GetTestPlanOnlyResponse, error) {
+func (c *middlewareClient) GetTestPlanOnly(ctx context.Context, in *GetTestPlanOnlyRequest, opts ...grpc.CallOption) (*GetTestPlanOnlyResponse, error) {
 	out := new(GetTestPlanOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/GetTestPlanOnly", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/GetTestPlanOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetTestPlans(ctx context.Context, in *GetTestPlansRequest, opts ...grpc.CallOption) (*GetTestPlansResponse, error) {
+func (c *middlewareClient) GetTestPlans(ctx context.Context, in *GetTestPlansRequest, opts ...grpc.CallOption) (*GetTestPlansResponse, error) {
 	out := new(GetTestPlansResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/GetTestPlans", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/GetTestPlans", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistTestPlan(ctx context.Context, in *ExistTestPlanRequest, opts ...grpc.CallOption) (*ExistTestPlanResponse, error) {
+func (c *middlewareClient) ExistTestPlan(ctx context.Context, in *ExistTestPlanRequest, opts ...grpc.CallOption) (*ExistTestPlanResponse, error) {
 	out := new(ExistTestPlanResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/ExistTestPlan", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/ExistTestPlan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) ExistTestPlanConds(ctx context.Context, in *ExistTestPlanCondsRequest, opts ...grpc.CallOption) (*ExistTestPlanCondsResponse, error) {
+func (c *middlewareClient) ExistTestPlanConds(ctx context.Context, in *ExistTestPlanCondsRequest, opts ...grpc.CallOption) (*ExistTestPlanCondsResponse, error) {
 	out := new(ExistTestPlanCondsResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/ExistTestPlanConds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/ExistTestPlanConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) CountTestPlans(ctx context.Context, in *CountTestPlansRequest, opts ...grpc.CallOption) (*CountTestPlansResponse, error) {
+func (c *middlewareClient) CountTestPlans(ctx context.Context, in *CountTestPlansRequest, opts ...grpc.CallOption) (*CountTestPlansResponse, error) {
 	out := new(CountTestPlansResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/CountTestPlans", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/CountTestPlans", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteTestPlan(ctx context.Context, in *DeleteTestPlanRequest, opts ...grpc.CallOption) (*DeleteTestPlanResponse, error) {
+func (c *middlewareClient) DeleteTestPlan(ctx context.Context, in *DeleteTestPlanRequest, opts ...grpc.CallOption) (*DeleteTestPlanResponse, error) {
 	out := new(DeleteTestPlanResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Manager/DeleteTestPlan", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/DeleteTestPlan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ManagerServer interface {
+type MiddlewareServer interface {
 	CreateTestPlan(context.Context, *CreateTestPlanRequest) (*CreateTestPlanResponse, error)
 	CreateTestPlans(context.Context, *CreateTestPlansRequest) (*CreateTestPlansResponse, error)
 	UpdateTestPlan(context.Context, *UpdateTestPlanRequest) (*UpdateTestPlanResponse, error)
@@ -146,282 +146,282 @@ type ManagerServer interface {
 	ExistTestPlanConds(context.Context, *ExistTestPlanCondsRequest) (*ExistTestPlanCondsResponse, error)
 	CountTestPlans(context.Context, *CountTestPlansRequest) (*CountTestPlansResponse, error)
 	DeleteTestPlan(context.Context, *DeleteTestPlanRequest) (*DeleteTestPlanResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedManagerServer) CreateTestPlan(context.Context, *CreateTestPlanRequest) (*CreateTestPlanResponse, error) {
+func (UnimplementedMiddlewareServer) CreateTestPlan(context.Context, *CreateTestPlanRequest) (*CreateTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTestPlan not implemented")
 }
-func (UnimplementedManagerServer) CreateTestPlans(context.Context, *CreateTestPlansRequest) (*CreateTestPlansResponse, error) {
+func (UnimplementedMiddlewareServer) CreateTestPlans(context.Context, *CreateTestPlansRequest) (*CreateTestPlansResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTestPlans not implemented")
 }
-func (UnimplementedManagerServer) UpdateTestPlan(context.Context, *UpdateTestPlanRequest) (*UpdateTestPlanResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateTestPlan(context.Context, *UpdateTestPlanRequest) (*UpdateTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTestPlan not implemented")
 }
-func (UnimplementedManagerServer) GetTestPlan(context.Context, *GetTestPlanRequest) (*GetTestPlanResponse, error) {
+func (UnimplementedMiddlewareServer) GetTestPlan(context.Context, *GetTestPlanRequest) (*GetTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlan not implemented")
 }
-func (UnimplementedManagerServer) GetTestPlanOnly(context.Context, *GetTestPlanOnlyRequest) (*GetTestPlanOnlyResponse, error) {
+func (UnimplementedMiddlewareServer) GetTestPlanOnly(context.Context, *GetTestPlanOnlyRequest) (*GetTestPlanOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlanOnly not implemented")
 }
-func (UnimplementedManagerServer) GetTestPlans(context.Context, *GetTestPlansRequest) (*GetTestPlansResponse, error) {
+func (UnimplementedMiddlewareServer) GetTestPlans(context.Context, *GetTestPlansRequest) (*GetTestPlansResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlans not implemented")
 }
-func (UnimplementedManagerServer) ExistTestPlan(context.Context, *ExistTestPlanRequest) (*ExistTestPlanResponse, error) {
+func (UnimplementedMiddlewareServer) ExistTestPlan(context.Context, *ExistTestPlanRequest) (*ExistTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistTestPlan not implemented")
 }
-func (UnimplementedManagerServer) ExistTestPlanConds(context.Context, *ExistTestPlanCondsRequest) (*ExistTestPlanCondsResponse, error) {
+func (UnimplementedMiddlewareServer) ExistTestPlanConds(context.Context, *ExistTestPlanCondsRequest) (*ExistTestPlanCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistTestPlanConds not implemented")
 }
-func (UnimplementedManagerServer) CountTestPlans(context.Context, *CountTestPlansRequest) (*CountTestPlansResponse, error) {
+func (UnimplementedMiddlewareServer) CountTestPlans(context.Context, *CountTestPlansRequest) (*CountTestPlansResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountTestPlans not implemented")
 }
-func (UnimplementedManagerServer) DeleteTestPlan(context.Context, *DeleteTestPlanRequest) (*DeleteTestPlanResponse, error) {
+func (UnimplementedMiddlewareServer) DeleteTestPlan(context.Context, *DeleteTestPlanRequest) (*DeleteTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTestPlan not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Manager_CreateTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateTestPlanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateTestPlan(ctx, in)
+		return srv.(MiddlewareServer).CreateTestPlan(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/CreateTestPlan",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/CreateTestPlan",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateTestPlan(ctx, req.(*CreateTestPlanRequest))
+		return srv.(MiddlewareServer).CreateTestPlan(ctx, req.(*CreateTestPlanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CreateTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateTestPlansRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateTestPlans(ctx, in)
+		return srv.(MiddlewareServer).CreateTestPlans(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/CreateTestPlans",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/CreateTestPlans",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateTestPlans(ctx, req.(*CreateTestPlansRequest))
+		return srv.(MiddlewareServer).CreateTestPlans(ctx, req.(*CreateTestPlansRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateTestPlanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateTestPlan(ctx, in)
+		return srv.(MiddlewareServer).UpdateTestPlan(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/UpdateTestPlan",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/UpdateTestPlan",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateTestPlan(ctx, req.(*UpdateTestPlanRequest))
+		return srv.(MiddlewareServer).UpdateTestPlan(ctx, req.(*UpdateTestPlanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTestPlanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetTestPlan(ctx, in)
+		return srv.(MiddlewareServer).GetTestPlan(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/GetTestPlan",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/GetTestPlan",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestPlan(ctx, req.(*GetTestPlanRequest))
+		return srv.(MiddlewareServer).GetTestPlan(ctx, req.(*GetTestPlanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetTestPlanOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetTestPlanOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTestPlanOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetTestPlanOnly(ctx, in)
+		return srv.(MiddlewareServer).GetTestPlanOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/GetTestPlanOnly",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/GetTestPlanOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestPlanOnly(ctx, req.(*GetTestPlanOnlyRequest))
+		return srv.(MiddlewareServer).GetTestPlanOnly(ctx, req.(*GetTestPlanOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTestPlansRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetTestPlans(ctx, in)
+		return srv.(MiddlewareServer).GetTestPlans(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/GetTestPlans",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/GetTestPlans",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetTestPlans(ctx, req.(*GetTestPlansRequest))
+		return srv.(MiddlewareServer).GetTestPlans(ctx, req.(*GetTestPlansRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_ExistTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistTestPlanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistTestPlan(ctx, in)
+		return srv.(MiddlewareServer).ExistTestPlan(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/ExistTestPlan",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/ExistTestPlan",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistTestPlan(ctx, req.(*ExistTestPlanRequest))
+		return srv.(MiddlewareServer).ExistTestPlan(ctx, req.(*ExistTestPlanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_ExistTestPlanConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_ExistTestPlanConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistTestPlanCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).ExistTestPlanConds(ctx, in)
+		return srv.(MiddlewareServer).ExistTestPlanConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/ExistTestPlanConds",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/ExistTestPlanConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistTestPlanConds(ctx, req.(*ExistTestPlanCondsRequest))
+		return srv.(MiddlewareServer).ExistTestPlanConds(ctx, req.(*ExistTestPlanCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_CountTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CountTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountTestPlansRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CountTestPlans(ctx, in)
+		return srv.(MiddlewareServer).CountTestPlans(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/CountTestPlans",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/CountTestPlans",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountTestPlans(ctx, req.(*CountTestPlansRequest))
+		return srv.(MiddlewareServer).CountTestPlans(ctx, req.(*CountTestPlansRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_DeleteTestPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTestPlanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteTestPlan(ctx, in)
+		return srv.(MiddlewareServer).DeleteTestPlan(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Manager/DeleteTestPlan",
+		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/DeleteTestPlan",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteTestPlan(ctx, req.(*DeleteTestPlanRequest))
+		return srv.(MiddlewareServer).DeleteTestPlan(ctx, req.(*DeleteTestPlanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "smoketest.middleware.testplan.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "smoketest.middleware.testplan.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateTestPlan",
-			Handler:    _Manager_CreateTestPlan_Handler,
+			Handler:    _Middleware_CreateTestPlan_Handler,
 		},
 		{
 			MethodName: "CreateTestPlans",
-			Handler:    _Manager_CreateTestPlans_Handler,
+			Handler:    _Middleware_CreateTestPlans_Handler,
 		},
 		{
 			MethodName: "UpdateTestPlan",
-			Handler:    _Manager_UpdateTestPlan_Handler,
+			Handler:    _Middleware_UpdateTestPlan_Handler,
 		},
 		{
 			MethodName: "GetTestPlan",
-			Handler:    _Manager_GetTestPlan_Handler,
+			Handler:    _Middleware_GetTestPlan_Handler,
 		},
 		{
 			MethodName: "GetTestPlanOnly",
-			Handler:    _Manager_GetTestPlanOnly_Handler,
+			Handler:    _Middleware_GetTestPlanOnly_Handler,
 		},
 		{
 			MethodName: "GetTestPlans",
-			Handler:    _Manager_GetTestPlans_Handler,
+			Handler:    _Middleware_GetTestPlans_Handler,
 		},
 		{
 			MethodName: "ExistTestPlan",
-			Handler:    _Manager_ExistTestPlan_Handler,
+			Handler:    _Middleware_ExistTestPlan_Handler,
 		},
 		{
 			MethodName: "ExistTestPlanConds",
-			Handler:    _Manager_ExistTestPlanConds_Handler,
+			Handler:    _Middleware_ExistTestPlanConds_Handler,
 		},
 		{
 			MethodName: "CountTestPlans",
-			Handler:    _Manager_CountTestPlans_Handler,
+			Handler:    _Middleware_CountTestPlans_Handler,
 		},
 		{
 			MethodName: "DeleteTestPlan",
-			Handler:    _Manager_DeleteTestPlan_Handler,
+			Handler:    _Middleware_DeleteTestPlan_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/test
 import "npool/smoketest/mgr/v1/testplan/testplan.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateTestPlan     (CreateTestPlanRequest)     returns (CreateTestPlanResponse)     {}
     rpc CreateTestPlans    (CreateTestPlansRequest)    returns (CreateTestPlansResponse)    {}
     rpc UpdateTestPlan     (UpdateTestPlanRequest)     returns (UpdateTestPlanResponse)     {}
