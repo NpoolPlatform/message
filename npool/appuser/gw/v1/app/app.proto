@@ -64,6 +64,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc DeleteApp (DeleteAppRequest) returns (DeleteAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app"
+            body: "*"
+        };
+    }
 }
 
 message CreateAppRequest {
@@ -154,4 +161,12 @@ message GetRecaptchasRequest {
 message GetRecaptchasResponse {
     // In future this may be put to database then admin can change it
     repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
+}
+
+message DeleteAppRequest {
+    string ID = 10;
+}
+
+message DeleteAppResponse {
+    appuser.middleware.app.v1.App Info = 10;
 }

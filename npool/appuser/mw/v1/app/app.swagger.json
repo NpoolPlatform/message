@@ -213,6 +213,14 @@
         }
       }
     },
+    "appv1DeleteAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
     "appv1GetAppResponse": {
       "type": "object",
       "properties": {

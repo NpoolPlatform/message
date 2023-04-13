@@ -28,6 +28,7 @@ type MiddlewareClient interface {
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
 	GetManyApps(ctx context.Context, in *GetManyAppsRequest, opts ...grpc.CallOption) (*GetManyAppsResponse, error)
+	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
 type middlewareClient struct {
@@ -92,6 +93,15 @@ func (c *middlewareClient) GetManyApps(ctx context.Context, in *GetManyAppsReque
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
+	out := new(DeleteAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/DeleteApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type MiddlewareServer interface {
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
 	GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error)
+	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedMiddlewareServer) GetUserApps(context.Context, *GetUserAppsRe
 }
 func (UnimplementedMiddlewareServer) GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManyApps not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -248,6 +262,24 @@ func _Middleware_GetManyApps_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.app.v1.Middleware/DeleteApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteApp(ctx, req.(*DeleteAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetManyApps",
 			Handler:    _Middleware_GetManyApps_Handler,
+		},
+		{
+			MethodName: "DeleteApp",
+			Handler:    _Middleware_DeleteApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

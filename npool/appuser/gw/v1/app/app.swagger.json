@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/app": {
+      "post": {
+        "operationId": "Gateway_DeleteApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1DeleteAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayappv1DeleteAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app": {
       "post": {
         "operationId": "Gateway_GetApp",
@@ -301,6 +333,22 @@
       }
     },
     "appusergatewayappv1CreateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/appv1App"
+        }
+      }
+    },
+    "appusergatewayappv1DeleteAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayappv1DeleteAppResponse": {
       "type": "object",
       "properties": {
         "Info": {

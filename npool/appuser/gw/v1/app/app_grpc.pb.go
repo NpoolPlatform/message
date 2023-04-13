@@ -30,6 +30,7 @@ type GatewayClient interface {
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
 	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
 	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
+	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
 type gatewayClient struct {
@@ -103,6 +104,15 @@ func (c *gatewayClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasRequ
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
+	out := new(DeleteAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -115,6 +125,7 @@ type GatewayServer interface {
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
 	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
 	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
+	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -142,6 +153,9 @@ func (UnimplementedGatewayServer) GetSignMethods(context.Context, *GetSignMethod
 }
 func (UnimplementedGatewayServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
+}
+func (UnimplementedGatewayServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -282,6 +296,24 @@ func _Gateway_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.Gateway/DeleteApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteApp(ctx, req.(*DeleteAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,6 +348,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRecaptchas",
 			Handler:    _Gateway_GetRecaptchas_Handler,
+		},
+		{
+			MethodName: "DeleteApp",
+			Handler:    _Gateway_DeleteApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
