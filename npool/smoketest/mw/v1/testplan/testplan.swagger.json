@@ -1,0 +1,289 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/smoketest/mw/v1/testplan/testplan.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Manager"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1CountTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1CreateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1CreateTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+          }
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1DeleteTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1ExistTestPlanCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1ExistTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1GetTestPlanOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1GetTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1GetTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1TestPlan": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlanState"
+        },
+        "OwnerID": {
+          "type": "string"
+        },
+        "ResponsibleUserID": {
+          "type": "string"
+        },
+        "FailedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PassedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SkippedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestResult": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestResultState"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1TestPlanReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlanState"
+        },
+        "OwnerID": {
+          "type": "string"
+        },
+        "ResponsibleUserID": {
+          "type": "string"
+        },
+        "FailedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PassedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SkippedTestCasesCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestResult": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestResultState"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestmiddlewaretestplanv1TestPlanState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestPlanState",
+        "WaitStart",
+        "Completed",
+        "Finished",
+        "Overdue"
+      ],
+      "default": "DefaultTestPlanState"
+    },
+    "smoketestmiddlewaretestplanv1TestResultState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestTestState",
+        "Passed",
+        "Failed"
+      ],
+      "default": "DefaultTestTestState"
+    },
+    "smoketestmiddlewaretestplanv1UpdateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestplanv1TestPlan"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OwnerID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ResponsibleUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
