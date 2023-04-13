@@ -138,8 +138,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"arguments\""
         },
+        "ArgTypeDescription": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"arg_type_description\""
+        },
         "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
+          "$ref": "#/definitions/v1TestCaseType",
+          "title": "@inject_tag: sql:\"test_case_type\""
         },
         "Deprecated": {
           "type": "boolean",

@@ -43,14 +43,17 @@ message TestCase {
     // @inject_tag: sql:"expectation_result"
     string          ExpectationResult                                 = 70;
     // @inject_tag: sql:"arguments"
-    string          Arguments                                         = 130;
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 80;
+    string          Arguments                                         = 80;
+    // @inject_tag: sql:"arg_type_description"
+    string          ArgTypeDescription                                = 90;
+    // @inject_tag: sql:"test_case_type"
+    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 100;
     // @inject_tag: sql:"deprecated"
-    bool            Deprecated                                        = 90;
+    bool            Deprecated                                        = 110;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                                         = 110;
+    uint32          CreatedAt                                         = 120;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                                         = 120;
+    uint32          UpdatedAt                                         = 130;
 }
 
 message CreateTestCaseReq {
