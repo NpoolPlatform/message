@@ -7,10 +7,7 @@
 package planrelatedtestcase
 
 import (
-	context "context"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -22,16 +19,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ManagerClient interface {
-	CreatePlanRelatedTestCase(ctx context.Context, in *CreatePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanRelatedTestCaseResponse, error)
-	CreatePlanRelatedTestCases(ctx context.Context, in *CreatePlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*CreatePlanRelatedTestCasesResponse, error)
-	UpdatePlanRelatedTestCase(ctx context.Context, in *UpdatePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanRelatedTestCaseResponse, error)
-	GetPlanRelatedTestCase(ctx context.Context, in *GetPlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCaseResponse, error)
-	GetPlanRelatedTestCaseOnly(ctx context.Context, in *GetPlanRelatedTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCaseOnlyResponse, error)
-	GetPlanRelatedTestCases(ctx context.Context, in *GetPlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCasesResponse, error)
-	ExistPlanRelatedTestCase(ctx context.Context, in *ExistPlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*ExistPlanRelatedTestCaseResponse, error)
-	ExistPlanRelatedTestCaseConds(ctx context.Context, in *ExistPlanRelatedTestCaseCondsRequest, opts ...grpc.CallOption) (*ExistPlanRelatedTestCaseCondsResponse, error)
-	CountPlanRelatedTestCases(ctx context.Context, in *CountPlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*CountPlanRelatedTestCasesResponse, error)
-	DeletePlanRelatedTestCase(ctx context.Context, in *DeletePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanRelatedTestCaseResponse, error)
 }
 
 type managerClient struct {
@@ -42,110 +29,10 @@ func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
 	return &managerClient{cc}
 }
 
-func (c *managerClient) CreatePlanRelatedTestCase(ctx context.Context, in *CreatePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanRelatedTestCaseResponse, error) {
-	out := new(CreatePlanRelatedTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/CreatePlanRelatedTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) CreatePlanRelatedTestCases(ctx context.Context, in *CreatePlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*CreatePlanRelatedTestCasesResponse, error) {
-	out := new(CreatePlanRelatedTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/CreatePlanRelatedTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) UpdatePlanRelatedTestCase(ctx context.Context, in *UpdatePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanRelatedTestCaseResponse, error) {
-	out := new(UpdatePlanRelatedTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/UpdatePlanRelatedTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetPlanRelatedTestCase(ctx context.Context, in *GetPlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCaseResponse, error) {
-	out := new(GetPlanRelatedTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetPlanRelatedTestCaseOnly(ctx context.Context, in *GetPlanRelatedTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCaseOnlyResponse, error) {
-	out := new(GetPlanRelatedTestCaseOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCaseOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) GetPlanRelatedTestCases(ctx context.Context, in *GetPlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*GetPlanRelatedTestCasesResponse, error) {
-	out := new(GetPlanRelatedTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) ExistPlanRelatedTestCase(ctx context.Context, in *ExistPlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*ExistPlanRelatedTestCaseResponse, error) {
-	out := new(ExistPlanRelatedTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/ExistPlanRelatedTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) ExistPlanRelatedTestCaseConds(ctx context.Context, in *ExistPlanRelatedTestCaseCondsRequest, opts ...grpc.CallOption) (*ExistPlanRelatedTestCaseCondsResponse, error) {
-	out := new(ExistPlanRelatedTestCaseCondsResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/ExistPlanRelatedTestCaseConds", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) CountPlanRelatedTestCases(ctx context.Context, in *CountPlanRelatedTestCasesRequest, opts ...grpc.CallOption) (*CountPlanRelatedTestCasesResponse, error) {
-	out := new(CountPlanRelatedTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/CountPlanRelatedTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *managerClient) DeletePlanRelatedTestCase(ctx context.Context, in *DeletePlanRelatedTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanRelatedTestCaseResponse, error) {
-	out := new(DeletePlanRelatedTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.manager.planrelatedtestcase.v1.Manager/DeletePlanRelatedTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // ManagerServer is the server API for Manager service.
 // All implementations must embed UnimplementedManagerServer
 // for forward compatibility
 type ManagerServer interface {
-	CreatePlanRelatedTestCase(context.Context, *CreatePlanRelatedTestCaseRequest) (*CreatePlanRelatedTestCaseResponse, error)
-	CreatePlanRelatedTestCases(context.Context, *CreatePlanRelatedTestCasesRequest) (*CreatePlanRelatedTestCasesResponse, error)
-	UpdatePlanRelatedTestCase(context.Context, *UpdatePlanRelatedTestCaseRequest) (*UpdatePlanRelatedTestCaseResponse, error)
-	GetPlanRelatedTestCase(context.Context, *GetPlanRelatedTestCaseRequest) (*GetPlanRelatedTestCaseResponse, error)
-	GetPlanRelatedTestCaseOnly(context.Context, *GetPlanRelatedTestCaseOnlyRequest) (*GetPlanRelatedTestCaseOnlyResponse, error)
-	GetPlanRelatedTestCases(context.Context, *GetPlanRelatedTestCasesRequest) (*GetPlanRelatedTestCasesResponse, error)
-	ExistPlanRelatedTestCase(context.Context, *ExistPlanRelatedTestCaseRequest) (*ExistPlanRelatedTestCaseResponse, error)
-	ExistPlanRelatedTestCaseConds(context.Context, *ExistPlanRelatedTestCaseCondsRequest) (*ExistPlanRelatedTestCaseCondsResponse, error)
-	CountPlanRelatedTestCases(context.Context, *CountPlanRelatedTestCasesRequest) (*CountPlanRelatedTestCasesResponse, error)
-	DeletePlanRelatedTestCase(context.Context, *DeletePlanRelatedTestCaseRequest) (*DeletePlanRelatedTestCaseResponse, error)
 	mustEmbedUnimplementedManagerServer()
 }
 
@@ -153,36 +40,6 @@ type ManagerServer interface {
 type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedManagerServer) CreatePlanRelatedTestCase(context.Context, *CreatePlanRelatedTestCaseRequest) (*CreatePlanRelatedTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreatePlanRelatedTestCase not implemented")
-}
-func (UnimplementedManagerServer) CreatePlanRelatedTestCases(context.Context, *CreatePlanRelatedTestCasesRequest) (*CreatePlanRelatedTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreatePlanRelatedTestCases not implemented")
-}
-func (UnimplementedManagerServer) UpdatePlanRelatedTestCase(context.Context, *UpdatePlanRelatedTestCaseRequest) (*UpdatePlanRelatedTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePlanRelatedTestCase not implemented")
-}
-func (UnimplementedManagerServer) GetPlanRelatedTestCase(context.Context, *GetPlanRelatedTestCaseRequest) (*GetPlanRelatedTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPlanRelatedTestCase not implemented")
-}
-func (UnimplementedManagerServer) GetPlanRelatedTestCaseOnly(context.Context, *GetPlanRelatedTestCaseOnlyRequest) (*GetPlanRelatedTestCaseOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPlanRelatedTestCaseOnly not implemented")
-}
-func (UnimplementedManagerServer) GetPlanRelatedTestCases(context.Context, *GetPlanRelatedTestCasesRequest) (*GetPlanRelatedTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPlanRelatedTestCases not implemented")
-}
-func (UnimplementedManagerServer) ExistPlanRelatedTestCase(context.Context, *ExistPlanRelatedTestCaseRequest) (*ExistPlanRelatedTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistPlanRelatedTestCase not implemented")
-}
-func (UnimplementedManagerServer) ExistPlanRelatedTestCaseConds(context.Context, *ExistPlanRelatedTestCaseCondsRequest) (*ExistPlanRelatedTestCaseCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistPlanRelatedTestCaseConds not implemented")
-}
-func (UnimplementedManagerServer) CountPlanRelatedTestCases(context.Context, *CountPlanRelatedTestCasesRequest) (*CountPlanRelatedTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountPlanRelatedTestCases not implemented")
-}
-func (UnimplementedManagerServer) DeletePlanRelatedTestCase(context.Context, *DeletePlanRelatedTestCaseRequest) (*DeletePlanRelatedTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeletePlanRelatedTestCase not implemented")
-}
 func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
 // UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
@@ -196,234 +53,13 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Manager_CreatePlanRelatedTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreatePlanRelatedTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CreatePlanRelatedTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/CreatePlanRelatedTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreatePlanRelatedTestCase(ctx, req.(*CreatePlanRelatedTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_CreatePlanRelatedTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreatePlanRelatedTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CreatePlanRelatedTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/CreatePlanRelatedTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreatePlanRelatedTestCases(ctx, req.(*CreatePlanRelatedTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_UpdatePlanRelatedTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePlanRelatedTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).UpdatePlanRelatedTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/UpdatePlanRelatedTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdatePlanRelatedTestCase(ctx, req.(*UpdatePlanRelatedTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetPlanRelatedTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPlanRelatedTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetPlanRelatedTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetPlanRelatedTestCase(ctx, req.(*GetPlanRelatedTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetPlanRelatedTestCaseOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPlanRelatedTestCaseOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetPlanRelatedTestCaseOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCaseOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetPlanRelatedTestCaseOnly(ctx, req.(*GetPlanRelatedTestCaseOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_GetPlanRelatedTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPlanRelatedTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).GetPlanRelatedTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/GetPlanRelatedTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetPlanRelatedTestCases(ctx, req.(*GetPlanRelatedTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_ExistPlanRelatedTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistPlanRelatedTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).ExistPlanRelatedTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/ExistPlanRelatedTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistPlanRelatedTestCase(ctx, req.(*ExistPlanRelatedTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_ExistPlanRelatedTestCaseConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistPlanRelatedTestCaseCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).ExistPlanRelatedTestCaseConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/ExistPlanRelatedTestCaseConds",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).ExistPlanRelatedTestCaseConds(ctx, req.(*ExistPlanRelatedTestCaseCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_CountPlanRelatedTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountPlanRelatedTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).CountPlanRelatedTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/CountPlanRelatedTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountPlanRelatedTestCases(ctx, req.(*CountPlanRelatedTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_DeletePlanRelatedTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeletePlanRelatedTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).DeletePlanRelatedTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.manager.planrelatedtestcase.v1.Manager/DeletePlanRelatedTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeletePlanRelatedTestCase(ctx, req.(*DeletePlanRelatedTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "smoketest.manager.planrelatedtestcase.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreatePlanRelatedTestCase",
-			Handler:    _Manager_CreatePlanRelatedTestCase_Handler,
-		},
-		{
-			MethodName: "CreatePlanRelatedTestCases",
-			Handler:    _Manager_CreatePlanRelatedTestCases_Handler,
-		},
-		{
-			MethodName: "UpdatePlanRelatedTestCase",
-			Handler:    _Manager_UpdatePlanRelatedTestCase_Handler,
-		},
-		{
-			MethodName: "GetPlanRelatedTestCase",
-			Handler:    _Manager_GetPlanRelatedTestCase_Handler,
-		},
-		{
-			MethodName: "GetPlanRelatedTestCaseOnly",
-			Handler:    _Manager_GetPlanRelatedTestCaseOnly_Handler,
-		},
-		{
-			MethodName: "GetPlanRelatedTestCases",
-			Handler:    _Manager_GetPlanRelatedTestCases_Handler,
-		},
-		{
-			MethodName: "ExistPlanRelatedTestCase",
-			Handler:    _Manager_ExistPlanRelatedTestCase_Handler,
-		},
-		{
-			MethodName: "ExistPlanRelatedTestCaseConds",
-			Handler:    _Manager_ExistPlanRelatedTestCaseConds_Handler,
-		},
-		{
-			MethodName: "CountPlanRelatedTestCases",
-			Handler:    _Manager_CountPlanRelatedTestCases_Handler,
-		},
-		{
-			MethodName: "DeletePlanRelatedTestCase",
-			Handler:    _Manager_DeletePlanRelatedTestCase_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/smoketest/mgr/v1/planrelatedtestcase/planrelatedtestcase.proto",
+	Methods:     []grpc.MethodDesc{},
+	Streams:     []grpc.StreamDesc{},
+	Metadata:    "npool/smoketest/mgr/v1/planrelatedtestcase/planrelatedtestcase.proto",
 }

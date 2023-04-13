@@ -7,29 +7,18 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/pla
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
-    rpc CreatePlanRelatedTestCase     (CreatePlanRelatedTestCaseRequest)     returns (CreatePlanRelatedTestCaseResponse)     {}
-    rpc CreatePlanRelatedTestCases    (CreatePlanRelatedTestCasesRequest)    returns (CreatePlanRelatedTestCasesResponse)    {}
-    rpc UpdatePlanRelatedTestCase     (UpdatePlanRelatedTestCaseRequest)     returns (UpdatePlanRelatedTestCaseResponse)     {}
-    rpc GetPlanRelatedTestCase        (GetPlanRelatedTestCaseRequest)        returns (GetPlanRelatedTestCaseResponse)        {}
-    rpc GetPlanRelatedTestCaseOnly    (GetPlanRelatedTestCaseOnlyRequest)    returns (GetPlanRelatedTestCaseOnlyResponse)    {}
-    rpc GetPlanRelatedTestCases       (GetPlanRelatedTestCasesRequest)       returns (GetPlanRelatedTestCasesResponse)       {}
-    rpc ExistPlanRelatedTestCase      (ExistPlanRelatedTestCaseRequest)      returns (ExistPlanRelatedTestCaseResponse)      {}
-    rpc ExistPlanRelatedTestCaseConds (ExistPlanRelatedTestCaseCondsRequest) returns (ExistPlanRelatedTestCaseCondsResponse) {}
-    rpc CountPlanRelatedTestCases     (CountPlanRelatedTestCasesRequest)     returns (CountPlanRelatedTestCasesResponse)     {}
-    rpc DeletePlanRelatedTestCase     (DeletePlanRelatedTestCaseRequest)     returns (DeletePlanRelatedTestCaseResponse)     {}
-}
+service Manager {}
 
 message PlanRelatedTestCaseReq {
     optional string          ID                                      = 10;
     optional string          TestPlanID                              = 20;
-    optional string          TestCaseID                              = 40;
-    optional string          TestCaseOutput                          = 50;
-    optional string          Description                             = 60;
-    optional uint32          RunDuration                             = 70;
-    optional string          TestUserID                              = 80;
-    optional TestCaseResult  TestCaseResult                          = 90; 
-    optional uint32          CreatedAt                               = 100;
+    optional string          TestCaseID                              = 30;
+    optional string          TestCaseOutput                          = 40;
+    optional string          Description                             = 50;
+    optional uint32          RunDuration                             = 60;
+    optional string          TestUserID                              = 70;
+    optional TestCaseResult  TestCaseResult                          = 80; 
+    optional uint32          Index                                   = 100;
 }
 
 message PlanRelatedTestCase {
