@@ -7,18 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/tes
 import "npool/npool.proto";
 
 // Service Name
-service Manager {
-    rpc CreateTestPlan     (CreateTestPlanRequest)     returns (CreateTestPlanResponse)     {}
-    rpc CreateTestPlans    (CreateTestPlansRequest)    returns (CreateTestPlansResponse)    {}
-    rpc UpdateTestPlan     (UpdateTestPlanRequest)     returns (UpdateTestPlanResponse)     {}
-    rpc GetTestPlan        (GetTestPlanRequest)        returns (GetTestPlanResponse)        {}
-    rpc GetTestPlanOnly    (GetTestPlanOnlyRequest)    returns (GetTestPlanOnlyResponse)    {}
-    rpc GetTestPlans       (GetTestPlansRequest)       returns (GetTestPlansResponse)       {}
-    rpc ExistTestPlan      (ExistTestPlanRequest)      returns (ExistTestPlanResponse)      {}
-    rpc ExistTestPlanConds (ExistTestPlanCondsRequest) returns (ExistTestPlanCondsResponse) {}
-    rpc CountTestPlans     (CountTestPlansRequest)     returns (CountTestPlansResponse)     {}
-    rpc DeleteTestPlan     (DeleteTestPlanRequest)     returns (DeleteTestPlanResponse)     {}
-}
+service Manager {}
 
 message TestPlanReq {
     optional string        ID                                = 10;
