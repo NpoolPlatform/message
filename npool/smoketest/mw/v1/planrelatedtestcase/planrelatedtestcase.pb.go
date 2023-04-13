@@ -78,24 +78,15 @@ type PlanRelatedTestCaseReq struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: sql:"id"
-	ID *string `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty" sql:"id"`
-	// @inject_tag: sql:"test_plan_id"
-	TestPlanID *string `protobuf:"bytes,20,opt,name=TestPlanID,proto3,oneof" json:"TestPlanID,omitempty" sql:"test_plan_id"`
-	// @inject_tag: sql:"test_case_id"
-	TestCaseID *string `protobuf:"bytes,30,opt,name=TestCaseID,proto3,oneof" json:"TestCaseID,omitempty" sql:"test_case_id"`
-	// @inject_tag: sql:"test_case_output"
-	TestCaseOutput *string `protobuf:"bytes,40,opt,name=TestCaseOutput,proto3,oneof" json:"TestCaseOutput,omitempty" sql:"test_case_output"`
-	// @inject_tag: sql:"description"
-	Description *string `protobuf:"bytes,50,opt,name=Description,proto3,oneof" json:"Description,omitempty" sql:"description"`
-	// @inject_tag: sql:"run_duration"
-	RunDuration *uint32 `protobuf:"varint,60,opt,name=RunDuration,proto3,oneof" json:"RunDuration,omitempty" sql:"run_duration"`
-	// @inject_tag: sql:"test_user_id"
-	TestUserID *string `protobuf:"bytes,70,opt,name=TestUserID,proto3,oneof" json:"TestUserID,omitempty" sql:"test_user_id"`
-	// @inject_tag: sql:"test_case_result"
-	TestCaseResult *TestCaseResult `protobuf:"varint,80,opt,name=TestCaseResult,proto3,enum=smoketest.middleware.planrelatedtestcase.v1.TestCaseResult,oneof" json:"TestCaseResult,omitempty" sql:"test_case_result"`
-	// @inject_tag: sql:"index"
-	Index *uint32 `protobuf:"varint,100,opt,name=Index,proto3,oneof" json:"Index,omitempty" sql:"index"`
+	ID             *string         `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
+	TestPlanID     *string         `protobuf:"bytes,20,opt,name=TestPlanID,proto3,oneof" json:"TestPlanID,omitempty"`
+	TestCaseID     *string         `protobuf:"bytes,30,opt,name=TestCaseID,proto3,oneof" json:"TestCaseID,omitempty"`
+	TestCaseOutput *string         `protobuf:"bytes,40,opt,name=TestCaseOutput,proto3,oneof" json:"TestCaseOutput,omitempty"`
+	Description    *string         `protobuf:"bytes,50,opt,name=Description,proto3,oneof" json:"Description,omitempty"`
+	RunDuration    *uint32         `protobuf:"varint,60,opt,name=RunDuration,proto3,oneof" json:"RunDuration,omitempty"`
+	TestUserID     *string         `protobuf:"bytes,70,opt,name=TestUserID,proto3,oneof" json:"TestUserID,omitempty"`
+	TestCaseResult *TestCaseResult `protobuf:"varint,80,opt,name=TestCaseResult,proto3,enum=smoketest.middleware.planrelatedtestcase.v1.TestCaseResult,oneof" json:"TestCaseResult,omitempty"`
+	Index          *uint32         `protobuf:"varint,100,opt,name=Index,proto3,oneof" json:"Index,omitempty"`
 }
 
 func (x *PlanRelatedTestCaseReq) Reset() {
@@ -198,16 +189,26 @@ type PlanRelatedTestCase struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID             string         `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	TestPlanID     string         `protobuf:"bytes,20,opt,name=TestPlanID,proto3" json:"TestPlanID,omitempty"`
-	TestCaseID     string         `protobuf:"bytes,40,opt,name=TestCaseID,proto3" json:"TestCaseID,omitempty"`
-	TestCaseOutput string         `protobuf:"bytes,50,opt,name=TestCaseOutput,proto3" json:"TestCaseOutput,omitempty"`
-	Description    string         `protobuf:"bytes,60,opt,name=Description,proto3" json:"Description,omitempty"`
-	RunDuration    uint32         `protobuf:"varint,70,opt,name=RunDuration,proto3" json:"RunDuration,omitempty"`
-	TestUserID     string         `protobuf:"bytes,80,opt,name=TestUserID,proto3" json:"TestUserID,omitempty"`
-	TestCaseResult TestCaseResult `protobuf:"varint,90,opt,name=TestCaseResult,proto3,enum=smoketest.middleware.planrelatedtestcase.v1.TestCaseResult" json:"TestCaseResult,omitempty"`
-	CreatedAt      uint32         `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	Index          uint32         `protobuf:"varint,110,opt,name=Index,proto3" json:"Index,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"test_plan_id"
+	TestPlanID string `protobuf:"bytes,20,opt,name=TestPlanID,proto3" json:"TestPlanID,omitempty" sql:"test_plan_id"`
+	// @inject_tag: sql:"test_case_id"
+	TestCaseID string `protobuf:"bytes,40,opt,name=TestCaseID,proto3" json:"TestCaseID,omitempty" sql:"test_case_id"`
+	// @inject_tag: sql:"test_case_output"
+	TestCaseOutput string `protobuf:"bytes,50,opt,name=TestCaseOutput,proto3" json:"TestCaseOutput,omitempty" sql:"test_case_output"`
+	// @inject_tag: sql:"description"
+	Description string `protobuf:"bytes,60,opt,name=Description,proto3" json:"Description,omitempty" sql:"description"`
+	// @inject_tag: sql:"run_duration"
+	RunDuration uint32 `protobuf:"varint,70,opt,name=RunDuration,proto3" json:"RunDuration,omitempty" sql:"run_duration"`
+	// @inject_tag: sql:"test_user_id"
+	TestUserID string `protobuf:"bytes,80,opt,name=TestUserID,proto3" json:"TestUserID,omitempty" sql:"test_user_id"`
+	// @inject_tag: sql:"test_case_result"
+	TestCaseResult TestCaseResult `protobuf:"varint,90,opt,name=TestCaseResult,proto3,enum=smoketest.middleware.planrelatedtestcase.v1.TestCaseResult" json:"TestCaseResult,omitempty" sql:"test_case_result"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"index"
+	Index uint32 `protobuf:"varint,110,opt,name=Index,proto3" json:"Index,omitempty" sql:"index"`
 }
 
 func (x *PlanRelatedTestCase) Reset() {

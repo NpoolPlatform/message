@@ -149,7 +149,7 @@ message ExistTestPlanCondsResponse {
 }
 
 message CountTestPlansRequest {
-  smoketest.manager.testplan.v1.Conds Conds = 10;
+    smoketest.manager.testplan.v1.Conds Conds = 10;
 }
 
 message CountTestPlansResponse {
