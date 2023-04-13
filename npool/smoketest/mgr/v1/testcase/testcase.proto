@@ -29,7 +29,7 @@ message TestCase {
     string          ModuleID                          = 40;
     string          ApiID                             = 50;
     string          Arguments                         = 60;
-    string          ArgumentsDescription              = 70;
+    string          ArgumentsTypeDescription          = 70;
     string          ExpectationResult                 = 80;
     TestCaseType    TestCaseType                      = 90;
     bool            Deprecated                        = 100;
