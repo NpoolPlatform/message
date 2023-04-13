@@ -1,0 +1,247 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/smoketest/mw/v1/relatedtestcase/relatedtestcase.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CondType": {
+      "type": "string",
+      "enum": [
+        "DefaultCondType",
+        "PreCondition",
+        "Cleaner"
+      ],
+      "default": "DefaultCondType"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TestCaseID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RelatedTestCaseID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Index": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
+    "v1CountRelatedTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateRelatedTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RelatedTestCase"
+        }
+      }
+    },
+    "v1CreateRelatedTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RelatedTestCase"
+          }
+        }
+      }
+    },
+    "v1DeleteRelatedTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RelatedTestCase"
+        }
+      }
+    },
+    "v1ExistRelatedTestCaseCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistRelatedTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetRelatedTestCaseOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RelatedTestCase"
+        }
+      }
+    },
+    "v1GetRelatedTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RelatedTestCase"
+        }
+      }
+    },
+    "v1GetRelatedTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RelatedTestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1RelatedTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType",
+          "title": "@inject_tag: sql:\"cond_type\""
+        },
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "RelatedTestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"related_test_case_id\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
+    "v1RelatedTestCaseReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "RelatedTestCaseID": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateRelatedTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RelatedTestCase"
+        }
+      }
+    }
+  }
+}
