@@ -47,11 +47,12 @@ enum TestCaseType {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID     = 10;
-    optional npool.v1.StringVal      ModuleID  = 20;
-    optional npool.v1.StringVal      ApiID = 30;
+    optional npool.v1.StringVal      ID           = 10;
+    optional npool.v1.StringVal      ModuleID     = 20;
+    optional npool.v1.StringVal      ApiID        = 30;
     optional npool.v1.StringVal      TestcaseType = 40;
-    optional npool.v1.BoolVal        Deprecated  = 50;
+    optional npool.v1.BoolVal        Deprecated   = 50;
+    optional npool.v1.StringSliceVal IDs          = 60;
 }
 
 
