@@ -66,7 +66,9 @@ message CreatePlanRelatedTestCaseResponse {
 }
 
 message GetPlanRelatedTestCasesRequest {
-    string   ModuleID        =   10;
+    string   TestPlanID        =   10;
+    optional int32 Offset     =   20;
+    optional int32 Limit      =   30;
 }
 
 message GetPlanRelatedTestCasesResponse {
