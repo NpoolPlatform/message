@@ -191,11 +191,17 @@
         "TestCasePath": {
           "type": "string"
         },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
+        "TestCasePathPrefix": {
+          "type": "string"
+        },
+        "TestCaseArguments": {
+          "type": "string"
         },
         "TestCaseExpectation": {
           "type": "string"
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
         },
         "TestCaseOutput": {
           "type": "string"
