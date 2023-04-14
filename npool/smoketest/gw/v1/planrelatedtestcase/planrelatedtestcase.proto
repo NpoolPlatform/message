@@ -74,7 +74,16 @@ message GetPlanRelatedTestCasesRequest {
 }
 
 message GetPlanRelatedTestCasesResponse {
-    repeated PlanRelatedTestCase Info = 10;
+    repeated PlanRelatedTestCase Infos = 10;
+    uint32                       Total = 20;
+}
+
+message GetPlanRelatedTestCaseRequest {
+    string   ID        =   10;
+}
+
+message GetPlanRelatedTestCaseResponse {
+    PlanRelatedTestCase Info = 10;
 }
 
 message DeletePlanRelatedTestCaseRequest {
