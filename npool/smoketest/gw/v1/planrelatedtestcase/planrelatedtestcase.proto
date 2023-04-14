@@ -39,9 +39,8 @@ message PlanRelatedTestCase {
     string          TestPlanName                                            = 30;
     string          TestCaseID                                              = 40;
     string          TestCasePath                                            = 50;
-    smoketest.manager.testcase.v1.TestCaseType                    TestCaseType       = 60;
-    repeated smoketest.manager.relatedtestcase.v1.RelatedTestCase RelatedTestCases   = 70;
-    string          TestCaseExpectionResult                                 = 80;
+    smoketest.manager.testcase.v1.TestCaseType           TestCaseType       = 60;
+    string          TestCaseExpectation                                     = 80;
     string          TestCaseOutput                                          = 90;
     string          Description                                             = 100;
     uint32          RunDuration                                             = 110;

@@ -194,13 +194,7 @@
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
-        "RelatedTestCases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RelatedTestCase"
-          }
-        },
-        "TestCaseExpectionResult": {
+        "TestCaseExpectation": {
           "type": "string"
         },
         "TestCaseOutput": {
@@ -384,40 +378,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/smoketestgatewaytestplanv1TestPlan"
-        }
-      }
-    },
-    "v1CondType": {
-      "type": "string",
-      "enum": [
-        "DefaultCondType",
-        "PreCondition",
-        "Cleaner"
-      ],
-      "default": "DefaultCondType"
-    },
-    "v1RelatedTestCase": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CondType": {
-          "$ref": "#/definitions/v1CondType"
-        },
-        "TestCaseID": {
-          "type": "string"
-        },
-        "RelatedTestCaseID": {
-          "type": "string"
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
