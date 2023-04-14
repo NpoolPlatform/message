@@ -65,6 +65,14 @@ message CreatePlanRelatedTestCaseResponse {
     PlanRelatedTestCase Info = 10;
 }
 
+message GetPlanRelatedTestCasesRequest {
+    string   ModuleID        =   10;
+}
+
+message GetPlanRelatedTestCasesResponse {
+    repeated PlanRelatedTestCase Info = 10;
+}
+
 message DeletePlanRelatedTestCaseRequest {
     string ID        = 10;
 }
