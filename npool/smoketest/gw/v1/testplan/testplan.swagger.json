@@ -188,10 +188,13 @@
         "TestCaseID": {
           "type": "string"
         },
-        "TestCasePath": {
+        "ApiID": {
           "type": "string"
         },
-        "TestCasePathPrefix": {
+        "ApiPath": {
+          "type": "string"
+        },
+        "ApiPathPrefix": {
           "type": "string"
         },
         "TestCaseArguments": {

@@ -38,18 +38,19 @@ message PlanRelatedTestCase {
     string          TestPlanID                                              = 20;
     string          TestPlanName                                            = 30;
     string          TestCaseID                                              = 40;
-    string          TestCasePath                                            = 50;
-    string          TestCasePathPrefix                                      = 60;
-    string          TestCaseArguments                                       = 70;
-    string          TestCaseExpectation                                     = 80;
-    smoketest.manager.testcase.v1.TestCaseType           TestCaseType       = 90;
-    string          TestCaseOutput                                          = 100;
-    string          Description                                             = 110;
-    uint32          RunDuration                                             = 120;
-    string          TestUserID                                              = 130;
-    string          TestUsername                                            = 140;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 150; 
-    uint32          CreatedAt                                               = 160;
+    string          ApiID                                                   = 50;
+    string          ApiPath                                                 = 60;
+    string          ApiPathPrefix                                           = 70;
+    string          TestCaseArguments                                       = 80;
+    string          TestCaseExpectation                                     = 90;
+    smoketest.manager.testcase.v1.TestCaseType           TestCaseType       = 100;
+    string          TestCaseOutput                                          = 110;
+    string          Description                                             = 120;
+    uint32          RunDuration                                             = 130;
+    string          TestUserID                                              = 140;
+    string          TestUsername                                            = 150;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 160; 
+    uint32          CreatedAt                                               = 170;
 }
 
 message CreatePlanRelatedTestCaseRequest {
