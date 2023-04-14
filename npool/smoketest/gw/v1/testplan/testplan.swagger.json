@@ -423,11 +423,11 @@
     "v1TestResultState": {
       "type": "string",
       "enum": [
-        "DefaultTestTestState",
+        "DefaultTestResultState",
         "Passed",
         "Failed"
       ],
-      "default": "DefaultTestTestState"
+      "default": "DefaultTestResultState"
     }
   }
 }
