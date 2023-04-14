@@ -257,11 +257,11 @@
     "smoketestmiddlewaretestplanv1TestResultState": {
       "type": "string",
       "enum": [
-        "DefaultTestTestState",
+        "DefaultTestResultState",
         "Passed",
         "Failed"
       ],
-      "default": "DefaultTestTestState"
+      "default": "DefaultTestResultState"
     },
     "smoketestmiddlewaretestplanv1UpdateTestPlanResponse": {
       "type": "object",

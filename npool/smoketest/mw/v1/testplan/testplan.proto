@@ -68,7 +68,7 @@ message TestPlanReq {
 
 
 enum TestResultState {
-    DefaultTestTestState      = 0;
+    DefaultTestResultState      = 0;
     Passed                 = 10;
     Failed                 = 20;
 }
