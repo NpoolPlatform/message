@@ -4,9 +4,8 @@ package smoketest.gateway.planrelatedtestcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/planrelatedtestcase";
 
-import "npool/smoketest/mgr/v1/planrelatedtestcase/planrelatedtestcase.proto";
+import "npool/smoketest/mw/v1/planrelatedtestcase/planrelatedtestcase.proto";
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
-import "npool/smoketest/mgr/v1/relatedtestcase/relatedtestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -49,7 +48,7 @@ message PlanRelatedTestCase {
     uint32          RunDuration                                             = 130;
     string          TestUserID                                              = 140;
     string          TestUsername                                            = 150;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 160; 
+    smoketest.middleware.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 160; 
     uint32          CreatedAt                                               = 170;
 }
 
@@ -60,7 +59,7 @@ message CreatePlanRelatedTestCaseRequest {
     optional string          Description                                             = 40;
     optional uint32          RunDuration                                             = 50;
     optional string          TestUserID                                              = 60;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult           = 70; 
+    smoketest.middleware.planrelatedtestcase.v1.TestCaseResult TestCaseResult           = 70; 
     optional uint32          Index                                                   = 80;
 }
 
