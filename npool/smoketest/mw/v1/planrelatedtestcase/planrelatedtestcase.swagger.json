@@ -185,6 +185,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
         "Index": {
           "type": "integer",
           "format": "int64",
