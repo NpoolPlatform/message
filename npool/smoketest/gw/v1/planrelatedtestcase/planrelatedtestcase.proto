@@ -54,13 +54,14 @@ message PlanRelatedTestCase {
 }
 
 message CreatePlanRelatedTestCaseRequest {
-    string          TestPlanID                                              = 20;
-    string          TestCaseID                                              = 40;
-    string          TestCaseOutput                                          = 70;
-    string          Description                                             = 80;
-    uint32          RunDuration                                             = 90;
-    string          TestUserID                                              = 100;
-    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult  = 120; 
+    string                   TestPlanID                                              = 10;
+    string                   TestCaseID                                              = 20;
+    optional string          TestCaseOutput                                          = 30;
+    optional string          Description                                             = 40;
+    optional uint32          RunDuration                                             = 50;
+    optional string          TestUserID                                              = 60;
+    smoketest.manager.planrelatedtestcase.v1.TestCaseResult TestCaseResult           = 70; 
+    optional uint32          Index                                                   = 80;
 }
 
 message CreatePlanRelatedTestCaseResponse {
