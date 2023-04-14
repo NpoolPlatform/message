@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package smoketest.middleware.testcase.cond.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase/cond";
+
+import "npool/smoketest/mgr/v1/testcase/cond/cond.proto";
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCond     (CreateCondRequest)     returns (CreateCondResponse)     {}
+    rpc CreateConds    (CreateCondsRequest)    returns (CreateCondsResponse)    {}
+    rpc UpdateCond     (UpdateCondRequest)     returns (UpdateCondResponse)     {}
+    rpc GetCond        (GetCondRequest)        returns (GetCondResponse)        {}
+    rpc GetCondOnly    (GetCondOnlyRequest)    returns (GetCondOnlyResponse)    {}
+    rpc GetConds       (GetCondsRequest)       returns (GetCondsResponse)       {}
+    rpc ExistCond      (ExistCondRequest)      returns (ExistCondResponse)      {}
+    rpc ExistCondConds (ExistCondCondsRequest) returns (ExistCondCondsResponse) {}
+    rpc CountConds     (CountCondsRequest)     returns (CountCondsResponse)     {}
+    rpc DeleteCond     (DeleteCondRequest)     returns (DeleteCondResponse)     {}
+}
+
+message CreateCondRequest {
+    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
+}
+
+message CreateCondResponse {
+    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+}
+
+message CreateCondsRequest {
+    repeated smoketest.manager.testcase.cond.v1.CondReq Infos = 10;
+}
+
+message CreateCondsResponse {
+    repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
+}
+
+message UpdateCondRequest {
+    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
+}
+
+message UpdateCondResponse {
+    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+}
+
+message GetCondRequest {
+    string ID = 10;
+}
+
+message GetCondResponse {
+    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+}
+
+message GetCondsRequest {
+    smoketest.manager.testcase.cond.v1.Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetCondsResponse {
+    repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetCondOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetCondOnlyResponse {
+    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+}
+
+message ExistCondRequest {
+    string ID = 10;
+}
+
+message ExistCondResponse {
+    bool Info = 10;
+}
+
+message ExistCondCondsRequest {
+    smoketest.manager.testcase.cond.v1.Conds Conds = 10;
+}
+
+message ExistCondCondsResponse {
+    bool Info = 10;
+}
+
+message CountCondsRequest {
+    smoketest.manager.testcase.cond.v1.Conds Conds = 10;
+}
+
+message CountCondsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteCondRequest {
+    string ID = 10;
+}
+
+message DeleteCondResponse {
+    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+}
