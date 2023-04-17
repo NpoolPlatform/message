@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/tes
 import "npool/npool.proto";
 
 enum CondType {
-    DefaultCondType         = 0;
+    DefaultCondType          = 0;
     PreCondition             = 10;
     Cleaner                  = 20;
 }
@@ -34,6 +34,8 @@ message Cond {
     uint32          Index                    = 50;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt                = 60;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt                = 70;
 }
 
 message Conds {
