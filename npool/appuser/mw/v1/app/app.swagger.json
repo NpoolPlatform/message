@@ -231,6 +231,9 @@
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
