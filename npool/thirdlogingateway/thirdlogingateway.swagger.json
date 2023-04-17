@@ -458,29 +458,17 @@
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
         },
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
+        "KycEnable": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"kyc_enable\""
         },
-        "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnableInt": {
-          "type": "integer",
-          "format": "int32",
+        "SigninVerifyEnable": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"signin_verify_enable\""
         },
-        "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMustInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"invitation_code_must\""
-        },
         "InvitationCodeMust": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
         },
         "CreatedAt": {
           "type": "integer",

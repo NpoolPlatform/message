@@ -367,12 +367,15 @@
 <<<<<<< HEAD
 =======
         },
+<<<<<<< HEAD
         "KycEnableInt": {
           "type": "integer",
           "format": "int32",
           "title": "@inject_tag: sql:\"kyc_enable\""
 >>>>>>> Use basetype
         },
+=======
+>>>>>>> Remove bool int
         "KycEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kyc_enable\""
