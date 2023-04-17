@@ -379,7 +379,7 @@
       "enum": [
         "DefaultTestPlanState",
         "WaitStart",
-        "Completed",
+        "InProgress",
         "Finished",
         "Overdue"
       ],

@@ -18,7 +18,7 @@ enum TestResultState {
 enum TestPlanState {
     DefaultTestPlanState      = 0;
     WaitStart                 = 10;
-    Completed                 = 20;
+    InProgress                = 20;
     Finished                  = 30;
     Overdue                   = 40;
 }
