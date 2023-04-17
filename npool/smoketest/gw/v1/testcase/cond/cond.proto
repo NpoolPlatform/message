@@ -9,16 +9,16 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetConds (GetCondsRequest) returns (GetCondsResponse) {
+    rpc CreateCond (CreateCondRequest) returns (CreateCondResponse) {
         option (google.api.http) = {
-            post: "/v1/get/testcaseconds"
+            post: "/v1/create/testcasecond"
             body: "*"
         };
     }
 
-    rpc CreateCond (CreateCondRequest) returns (CreateCondResponse) {
+    rpc DeleteCond (DeleteCondRequest) returns (DeleteCondResponse) {
         option (google.api.http) = {
-            post: "/v1/create/testcasecond"
+            post: "/v1/delete/testcasecond"
             body: "*"
         };
     }
@@ -30,9 +30,9 @@ service Gateway {
         };
     }
 
-    rpc DeleteCond (DeleteCondRequest) returns (DeleteCondResponse) {
+    rpc GetConds (GetCondsRequest) returns (GetCondsResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/testcasecond"
+            post: "/v1/get/testcaseconds"
             body: "*"
         };
     }
