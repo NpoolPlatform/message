@@ -269,6 +269,9 @@
         "UserID": {
 >>>>>>> Add conds to appuser middleware
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
