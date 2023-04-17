@@ -163,7 +163,7 @@
         "TestUserID": {
           "type": "string"
         },
-        "TestCaseResult": {
+        "Result": {
           "$ref": "#/definitions/v1TestCaseResult"
         },
         "Index": {
