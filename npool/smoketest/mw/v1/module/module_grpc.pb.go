@@ -27,6 +27,8 @@ type MiddlewareClient interface {
 	GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error)
 	GetModule(ctx context.Context, in *GetModuleRequest, opts ...grpc.CallOption) (*GetModuleResponse, error)
 	DeleteModule(ctx context.Context, in *DeleteModuleRequest, opts ...grpc.CallOption) (*DeleteModuleResponse, error)
+	ExistModule(ctx context.Context, in *ExistModuleRequest, opts ...grpc.CallOption) (*ExistModuleResponse, error)
+	ExistModuleConds(ctx context.Context, in *ExistModuleCondsRequest, opts ...grpc.CallOption) (*ExistModuleCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -82,6 +84,24 @@ func (c *middlewareClient) DeleteModule(ctx context.Context, in *DeleteModuleReq
 	return out, nil
 }
 
+func (c *middlewareClient) ExistModule(ctx context.Context, in *ExistModuleRequest, opts ...grpc.CallOption) (*ExistModuleResponse, error) {
+	out := new(ExistModuleResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.module.v1.Middleware/ExistModule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistModuleConds(ctx context.Context, in *ExistModuleCondsRequest, opts ...grpc.CallOption) (*ExistModuleCondsResponse, error) {
+	out := new(ExistModuleCondsResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.module.v1.Middleware/ExistModuleConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -91,6 +111,8 @@ type MiddlewareServer interface {
 	GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error)
 	GetModule(context.Context, *GetModuleRequest) (*GetModuleResponse, error)
 	DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error)
+	ExistModule(context.Context, *ExistModuleRequest) (*ExistModuleResponse, error)
+	ExistModuleConds(context.Context, *ExistModuleCondsRequest) (*ExistModuleCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -112,6 +134,12 @@ func (UnimplementedMiddlewareServer) GetModule(context.Context, *GetModuleReques
 }
 func (UnimplementedMiddlewareServer) DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteModule not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistModule(context.Context, *ExistModuleRequest) (*ExistModuleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistModule not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistModuleConds(context.Context, *ExistModuleCondsRequest) (*ExistModuleCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistModuleConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -216,6 +244,42 @@ func _Middleware_DeleteModule_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistModuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistModule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.middleware.module.v1.Middleware/ExistModule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistModule(ctx, req.(*ExistModuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistModuleConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistModuleCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistModuleConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.middleware.module.v1.Middleware/ExistModuleConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistModuleConds(ctx, req.(*ExistModuleCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +306,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteModule",
 			Handler:    _Middleware_DeleteModule_Handler,
+		},
+		{
+			MethodName: "ExistModule",
+			Handler:    _Middleware_ExistModule_Handler,
+		},
+		{
+			MethodName: "ExistModuleConds",
+			Handler:    _Middleware_ExistModuleConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
