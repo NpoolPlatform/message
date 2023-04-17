@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/smoketest/mgr/v1/testplan/testcase/planrelatedtestcase.proto",
+    "title": "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto",
     "version": "version not set"
   },
   "consumes": [

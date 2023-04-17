@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package smoketest.manager.testplan.testcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/testplan/testcase";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {}
+
+enum TestCaseResult {
+    DefaultTestCaseResult     = 0;
+    Skipped                   = 10;
+    Passed                    = 20;
+    Failed                    = 30;
+}
+
+message TestCase {
+    // @inject_tag: sql:"id"
+    string          ID                                      = 10;
+    // @inject_tag: sql:"test_plan_id"
+    string          TestPlanID                              = 20;
+    // @inject_tag: sql:"test_case_id"
+    string          TestCaseID                              = 40;
+    // @inject_tag: sql:"test_case_output"
+    string          TestCaseOutput                          = 50;
+    // @inject_tag: sql:"description"
+    string          Description                             = 60;
+    // @inject_tag: sql:"run_duration"
+    uint32          RunDuration                             = 70;
+    // @inject_tag: sql:"test_user_id"
+    string          TestUserID                              = 80;
+    // @inject_tag: sql:"result"
+    TestCaseResult  Result                                  = 90; 
+    // @inject_tag: sql:"index"
+    uint32          Index                                   = 100;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt                               = 110;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt                               = 120;
+    // @inject_tag: sql:"deleted_at"
+    uint32          DeletedAt                               = 130;
+}
+
+message TestCaseReq {
+    optional string          ID                                      = 10;
+    optional string          TestPlanID                              = 20;
+    optional string          TestCaseID                              = 30;
+    optional string          TestCaseOutput                          = 40;
+    optional string          Description                             = 50;
+    optional uint32          RunDuration                             = 60;
+    optional string          TestUserID                              = 70;
+    optional TestCaseResult  Result                                  = 80; 
+    optional uint32          Index                                   = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID             = 10;
+    optional npool.v1.StringVal      TestPlanID     = 20;
+    optional npool.v1.StringVal      TestUserID     = 30;
+    optional npool.v1.StringVal      Result         = 40;
+}
