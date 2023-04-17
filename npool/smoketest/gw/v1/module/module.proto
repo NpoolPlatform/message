@@ -38,20 +38,13 @@ service Gateway {
     }
 }
 
-message Module {
-    string           ID                          = 10;
-    string           Name                        = 20;
-    string           Description                 = 30;
-    uint32           CreatedAt                   = 40;
-}
-
 message CreateModuleRequest {
     string          Name                = 30;
     string          Description         = 40;
 }
 
 message CreateModuleResponse {
-    Module Info = 10;
+    smoketest.manager.module.v1.Module Info = 10;
 }
 
 message DeleteModuleRequest {
@@ -69,7 +62,7 @@ message UpdateModuleRequest {
 }
 
 message UpdateModuleResponse {
-    Module Info = 10;
+    smoketest.manager.module.v1.Module Info = 10;
 }
 
 message GetModulesRequest {
@@ -78,7 +71,7 @@ message GetModulesRequest {
 }
 
 message GetModulesResponse {
-    repeated Module Infos  = 10;
+    repeated smoketest.manager.module.v1.Module Infos  = 10;
     uint32          Total  = 20;
 }
 
