@@ -17,7 +17,34 @@
   ],
   "paths": {},
   "definitions": {
-    "managertestplantestcasev1Conds": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -34,7 +61,131 @@
         }
       }
     },
-    "managertestplantestcasev1TestCaseReq": {
+    "v1CreateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlanTestCase"
+        }
+      }
+    },
+    "v1DeleteTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlanTestCase"
+        }
+      }
+    },
+    "v1ExistTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTestCaseOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlanTestCase"
+        }
+      }
+    },
+    "v1GetTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlanTestCase"
+        }
+      }
+    },
+    "v1GetTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PlanTestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1PlanTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "TestPlanID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_plan_id\""
+        },
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "TestCaseOutput": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_output\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"run_duration\""
+        },
+        "TestUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_user_id\""
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestCaseResult",
+          "title": "@inject_tag: sql:\"result\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TestCaseReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -68,166 +219,6 @@
         }
       }
     },
-    "middlewareTestCasev1CreateTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "middlewareTestCasev1DeleteTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "middlewareTestCasev1GetTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "middlewareTestCasev1GetTestCasesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewareTestCasev1UpdateTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "smoketestmiddlewaretestcasev1TestCase": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Description": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"description\""
-        },
-        "ModuleID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"module_id\""
-        },
-        "ModuleName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"module_name\""
-        },
-        "ApiID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"api_id\""
-        },
-        "Expectation": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"expectation\""
-        },
-        "Input": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"input\""
-        },
-        "InputDesc": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"input_desc\""
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType",
-          "title": "@inject_tag: sql:\"test_case_type\""
-        },
-        "Deprecated": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"deprecated\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1ExistTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetTestCaseOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
     "v1TestCaseResult": {
       "type": "string",
       "enum": [
@@ -238,14 +229,13 @@
       ],
       "default": "DefaultTestCaseResult"
     },
-    "v1TestCaseType": {
-      "type": "string",
-      "enum": [
-        "DefaultTestCaseType",
-        "Manual",
-        "Automatic"
-      ],
-      "default": "DefaultTestCaseType"
+    "v1UpdateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PlanTestCase"
+        }
+      }
     }
   }
 }
