@@ -43,15 +43,15 @@ message TestPlan {
     string          ID                                                  = 10;
     string          Name                                                = 20;
     smoketest.manager.testplan.v1.TestPlanState   State                 = 30; 
-    string          OwnerID                                             = 40;
-    string          OwnerName                                           = 50;
-    string          ResponsibleUserID                                   = 60;
-    string          ResponsibleUsername                                 = 70;
-    uint32          FailedTestCasesCount                                = 80;
-    uint32          PassedTestCasesCount                                = 90;
-    uint32          SkippedTestCasesCount                               = 100;
+    string          CreatedBy                                           = 40;
+    string          Username                                            = 50;
+    string          Executor                                            = 60;
+    string          ExecutorUsername                                    = 70;
+    uint32          Fails                                               = 80;
+    uint32          Passes                                              = 90;
+    uint32          Skips                                               = 100;
     uint32          RunDuration                                         = 110;
-    smoketest.manager.testplan.v1.TestResultState TestResult            = 120;
+    smoketest.manager.testplan.v1.TestResultState Result                = 120;
     uint32          Deadline                                            = 130;
     uint32          CreatedAt                                           = 140;
     uint32          UpdatedAt                                           = 150;
@@ -79,7 +79,7 @@ message GetTestPlansResponse {
 message UpdateTestPlanRequest {
     string                   ID                  = 10;
     optional string          Name                = 20;
-    optional string          ResponsibleUserID   = 30;
+    optional string          CreatedBy           = 30;
     optional uint32          Deadline            = 40;
 }
 
@@ -89,8 +89,8 @@ message UpdateTestPlanResponse {
 
 message CreateTestPlanRequest {
     string                   Name                = 10;
-    string                   OwnerID             = 20;
-    optional string          ResponsibleUserID   = 30;
+    string                   CreatedBy           = 20;
+    optional string          Executor            = 30;
     optional uint32          Deadline            = 40;
 }
 

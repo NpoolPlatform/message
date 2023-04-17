@@ -185,27 +185,27 @@
         "State": {
           "$ref": "#/definitions/v1TestPlanState"
         },
-        "OwnerID": {
+        "CreatedBy": {
           "type": "string"
         },
-        "OwnerName": {
+        "Username": {
           "type": "string"
         },
-        "ResponsibleUserID": {
+        "Executor": {
           "type": "string"
         },
-        "ResponsibleUsername": {
+        "ExecutorUsername": {
           "type": "string"
         },
-        "FailedTestCasesCount": {
+        "Fails": {
           "type": "integer",
           "format": "int64"
         },
-        "PassedTestCasesCount": {
+        "Passes": {
           "type": "integer",
           "format": "int64"
         },
-        "SkippedTestCasesCount": {
+        "Skips": {
           "type": "integer",
           "format": "int64"
         },
@@ -213,7 +213,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "TestResult": {
+        "Result": {
           "$ref": "#/definitions/v1TestResultState"
         },
         "Deadline": {
@@ -242,10 +242,10 @@
         "Name": {
           "type": "string"
         },
-        "OwnerID": {
+        "CreatedBy": {
           "type": "string"
         },
-        "ResponsibleUserID": {
+        "Executor": {
           "type": "string"
         },
         "Deadline": {
@@ -403,7 +403,7 @@
         "Name": {
           "type": "string"
         },
-        "ResponsibleUserID": {
+        "CreatedBy": {
           "type": "string"
         },
         "Deadline": {
