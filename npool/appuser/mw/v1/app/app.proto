@@ -152,6 +152,7 @@ message GetAppsResponse {
     uint32       Total = 20;
 }
 
+<<<<<<< HEAD
 message ExistAppRequest {
     string ID = 10;
 }
@@ -162,6 +163,31 @@ message ExistAppResponse {
 
 message ExistAppCondsRequest {
     Conds Conds = 10;
+=======
+message GetUserAppsRequest {
+    // Permissioned by path
+    string UserID = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetUserAppsResponse {
+    repeated App Infos = 10;
+    uint32       Total = 20;
+}
+
+message GetSignMethodsRequest {
+    // Permissioned by path
+}
+
+message GetSignMethodsResponse {
+    // In future this may be put to database then admin can change it
+    repeated basetypes.v1.SignMethod Infos = 10;
+}
+
+message GetManyAppsRequest {
+    repeated string IDs = 10;
+>>>>>>> Use basetype
 }
 
 message ExistAppCondsResponse {

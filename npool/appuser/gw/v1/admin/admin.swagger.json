@@ -364,6 +364,14 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
+<<<<<<< HEAD
+=======
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+>>>>>>> Use basetype
         },
         "KycEnable": {
           "type": "boolean",
@@ -387,7 +395,11 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -410,6 +422,46 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+>>>>>>> Use basetype
     "v1Auth": {
       "type": "object",
       "properties": {
@@ -623,6 +675,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -633,6 +686,8 @@
       ],
       "default": "DefaultState"
     },
+=======
+>>>>>>> Use basetype
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -891,6 +946,19 @@
           "title": "@inject_tag: sql:\"action_credits\""
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "v2KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+>>>>>>> Use basetype
     }
   }
 }

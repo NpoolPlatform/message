@@ -444,11 +444,56 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
         "AppID": {
           "type": "string"
         },
         "ThirdPartyID": {
           "type": "string"
+=======
+        "RecaptchaMethodStr": {
+          "type": "string",
+          "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
+        },
+        "RecaptchaMethod": {
+          "$ref": "#/definitions/v1RecaptchaMethod"
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+        },
+        "KycEnable": {
+          "type": "boolean"
+        },
+        "SigninVerifyEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
+        },
+        "SigninVerifyEnable": {
+          "type": "boolean"
+        },
+        "InvitationCodeMustInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
+        },
+        "InvitationCodeMust": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "CreateInvitationCodeWhenStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"create_invitation_code_when\""
+        },
+        "CreateInvitationCodeWhen": {
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+>>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
         },
         "AppKey": {
           "type": "string"
@@ -524,7 +569,21 @@
         }
       }
     },
+<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
     "v1CreateAuthsRequest": {
+=======
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "protobufAny": {
+>>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
       "type": "object",
       "properties": {
         "AppID": {
@@ -678,6 +737,14 @@
           "$ref": "#/definitions/v1User"
         }
       }
+    },
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaMethod"
     },
     "v1SignMethod": {
       "type": "string",
@@ -924,6 +991,19 @@
           "type": "string"
         }
       }
+<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
+=======
+    },
+    "v2KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+>>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
     }
   }
 }

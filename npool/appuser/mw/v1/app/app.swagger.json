@@ -104,6 +104,14 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
+<<<<<<< HEAD
+=======
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+>>>>>>> Use basetype
         },
         "KycEnable": {
           "type": "boolean",
@@ -127,7 +135,11 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -203,7 +215,11 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -274,7 +290,21 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1ExistAppCondsResponse": {
+=======
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "protobufAny": {
+>>>>>>> Use basetype
       "type": "object",
       "properties": {
         "Info": {
@@ -336,6 +366,7 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+<<<<<<< HEAD
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -369,6 +400,8 @@
           "$ref": "#/definitions/v1App"
         }
       }
+=======
+>>>>>>> Use basetype
     }
   }
 }

@@ -87,7 +87,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1DeleteAppResponse"
+=======
+              "$ref": "#/definitions/v1GetRecaptchasResponse"
+>>>>>>> Use basetype
             }
           },
           "default": {
@@ -103,7 +107,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1DeleteAppRequest"
+=======
+              "$ref": "#/definitions/v1GetRecaptchasRequest"
+>>>>>>> Use basetype
             }
           }
         ],
@@ -211,6 +219,16 @@
     }
   },
   "definitions": {
+    "appcontrolv2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
     "appusergatewayappv1CreateAppRequest": {
       "type": "object",
       "properties": {
@@ -251,7 +269,11 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -313,6 +335,57 @@
       "properties": {
         "Offset": {
           "type": "integer",
+<<<<<<< HEAD
+=======
+          "format": "int32",
+          "title": "Permissioned by path"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayappv1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/appv1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayappv1GetSignMethodsRequest": {
+      "type": "object"
+    },
+    "appusergatewayappv1GetSignMethodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/signmethodv2SignMethod"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "appusergatewayappv1GetUserAppsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Offset": {
+          "type": "integer",
+>>>>>>> Use basetype
           "format": "int32"
         },
         "Limit": {
@@ -376,7 +449,11 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -488,6 +565,14 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
+<<<<<<< HEAD
+=======
+        },
+        "KycEnableInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"kyc_enable\""
+>>>>>>> Use basetype
         },
         "KycEnable": {
           "type": "boolean",
@@ -511,7 +596,11 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+=======
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+>>>>>>> Use basetype
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -534,7 +623,37 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1BanAppRequest": {
+=======
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "basetypesv1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
+    "protobufAny": {
+>>>>>>> Use basetype
       "type": "object",
       "properties": {
         "ID": {
@@ -556,15 +675,32 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1CreateInvitationCodeWhen": {
+=======
+    "v1GetRecaptchasRequest": {
+      "type": "object"
+    },
+    "v1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "v1RecaptchaMethod": {
+>>>>>>> Use basetype
       "type": "string",
       "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3"
       ],
-      "default": "DefaultWhen"
+      "default": "DefaultRecaptchaMethod"
     },
     "v1RecaptchaMethod": {
       "type": "string",
