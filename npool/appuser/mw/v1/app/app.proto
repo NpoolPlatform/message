@@ -8,6 +8,8 @@ import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
 import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/createinvitationcodewhen.proto";
+import "npool/basetypes/v1/recaptcha.proto";
 
 service Middleware {
     rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
@@ -36,11 +38,11 @@ message AppReq {
     repeated basetypes.v1.SignMethod ExtSigninMethods = 90;
 
     // Control flag
-    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 100;
+    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 100;
     optional bool            KycEnable          = 110;
     optional bool            SigninVerifyEnable = 120;
     optional bool            InvitationCodeMust = 130;
-    optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
+    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
@@ -77,7 +79,7 @@ message App {
     // Control flag
     // @inject_tag: sql:"recaptcha_method"
     string          RecaptchaMethodStr     = 130;
-    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 131;
+    basetypes.v1.RecaptchaMethod RecaptchaMethod  = 131;
     // @inject_tag: sql:"kyc_enable"
     int32           KycEnableInt           = 140;
     bool            KycEnable              = 150;
@@ -93,7 +95,7 @@ message App {
 
     // @inject_tag: sql:"create_invitation_code_when"
     string          CreateInvitationCodeWhenStr = 210;
-    appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
+    basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
 
     // @inject_tag: sql:"max_typed_coupons_per_order"
     uint32          MaxTypedCouponsPerOrder = 230;
@@ -161,15 +163,6 @@ message GetSignMethodsRequest {
 message GetSignMethodsResponse {
     // In future this may be put to database then admin can change it
     repeated basetypes.v1.SignMethod Infos = 10;
-}
-
-message GetRecaptchasRequest {
-    // Permissioned by path
-}
-
-message GetRecaptchasResponse {
-    // In future this may be put to database then admin can change it
-    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
 }
 
 message GetManyAppsRequest {
