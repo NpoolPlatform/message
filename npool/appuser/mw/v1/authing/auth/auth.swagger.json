@@ -167,14 +167,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateAuthResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-        }
-      }
     }
   }
 }
