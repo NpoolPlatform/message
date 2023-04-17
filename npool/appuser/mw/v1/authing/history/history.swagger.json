@@ -1,7 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD
     "title": "npool/appuser/mw/v1/authing/history/history.proto",
+=======
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+    "title": "npool/g11n/mgr/v1/applang/applang.proto",
+=======
+    "title": "npool/appuser/mw/v1/authing/history/history.proto",
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
     "version": "version not set"
   },
   "tags": [
@@ -64,6 +72,7 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -78,6 +87,90 @@
         }
       }
     },
+=======
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Main": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+    "v1CountLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1CreateLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Lang"
+          }
+        }
+      }
+    },
+    "v1DeleteLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1ExistLangCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetLangOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1GetLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "v1GetLangsResponse": {
+=======
+>>>>>>> Refactor authing
     "v1CreateHistoryResponse": {
       "type": "object",
       "properties": {
@@ -87,12 +180,24 @@
       }
     },
     "v1GetHistoriesResponse": {
+<<<<<<< HEAD
+=======
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
+<<<<<<< HEAD
             "$ref": "#/definitions/v1History"
+=======
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+            "$ref": "#/definitions/v1Lang"
+=======
+            "$ref": "#/definitions/v1History"
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
           }
         },
         "Total": {
@@ -101,7 +206,15 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1History": {
+=======
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+    "v1Lang": {
+=======
+    "v1History": {
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
       "type": "object",
       "properties": {
         "AppID": {
@@ -116,6 +229,28 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_logo\""
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+        "LangID": {
+          "type": "string"
+        },
+        "Main": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1LangReq": {
+=======
+>>>>>>> Refactor authing
         "UserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
@@ -148,6 +283,10 @@
       }
     },
     "v1HistoryReq": {
+<<<<<<< HEAD
+=======
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
       "type": "object",
       "properties": {
         "ID": {
@@ -156,6 +295,7 @@
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "UserID": {
           "type": "string"
         },
@@ -170,6 +310,29 @@
         }
       }
     },
+=======
+        "LangID": {
+          "type": "string"
+        },
+        "Main": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -178,6 +341,29 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+<<<<<<< HEAD:npool/g11n/mgr/v1/applang/applang.swagger.json
+    "v1UpdateLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+=======
+>>>>>>> Refactor authing
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+<<<<<<< HEAD
+=======
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/history/history.swagger.json
+>>>>>>> Refactor authing
         }
       }
     }

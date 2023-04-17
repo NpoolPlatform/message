@@ -99,6 +99,7 @@
       }
     },
     "v1AuthReq": {
+<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
       "type": "object",
       "properties": {
         "ID": {
@@ -145,6 +146,30 @@
       }
     },
     "v1CreateAuthResponse": {
+=======
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Resource": {
+          "type": "string"
+        },
+        "Method": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAuthResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -152,6 +177,16 @@
         }
       }
     },
+    "v1DeleteAuthResponse": {
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
+        }
+      }
+    },
+<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1CreateAuthsResponse": {
       "type": "object",
       "properties": {
@@ -195,6 +230,24 @@
         }
       }
     },
+=======
+    "v1ExistAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
+        }
+      }
+    },
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
     "v1GetAuthsResponse": {
       "type": "object",
       "properties": {
@@ -210,6 +263,7 @@
         }
       }
     },
+<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -218,6 +272,13 @@
         },
         "Value": {
           "type": "string"
+=======
+    "v1UpdateAuthResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Auth"
+>>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
         }
       }
     }
