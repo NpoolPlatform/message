@@ -81,13 +81,10 @@ message App {
     string          RecaptchaMethodStr     = 130;
     basetypes.v1.RecaptchaMethod RecaptchaMethod  = 131;
     // @inject_tag: sql:"kyc_enable"
-    int32           KycEnableInt           = 140;
     bool            KycEnable              = 150;
     // @inject_tag: sql:"signin_verify_enable"
-    int32           SigninVerifyEnableInt  = 160;
     bool            SigninVerifyEnable     = 170;
     // @inject_tag: sql:"invitation_code_must"
-    int32           InvitationCodeMustInt  = 180;
     bool            InvitationCodeMust     = 190;
 
     // @inject_tag: sql:"created_at"
