@@ -9,18 +9,10 @@ import "npool/npool.proto";
 // Service Name
 service Manager {}
 
-message TestCaseReq {
-    optional string          ID                                         = 10;
-    optional string          Name                                       = 20;
-    optional string          Description                                = 30;
-    optional string          ModuleID                                   = 40;
-    optional string          ApiID                                      = 50;
-    optional string          Arguments                                  = 60;
-    optional string          ArgTypeDescription                         = 70;
-    optional string          ExpectationResult                          = 80;
-    optional TestCaseType    TestCaseType                               = 90;
-    optional bool            Deprecated                                 = 100;
-    optional uint32          CreatedAt                                  = 110;
+enum TestCaseType {
+    DefaultTestCaseType      = 0;
+    Manual                   = 10;
+    Automatic                = 20;
 }
 
 message TestCase {
@@ -29,9 +21,9 @@ message TestCase {
     string          Description                       = 30;
     string          ModuleID                          = 40;
     string          ApiID                             = 50;
-    string          Arguments                         = 60;
-    string          ArgTypeDescription                = 70;
-    string          ExpectationResult                 = 80;
+    string          Input                             = 60;
+    string          InputDesc                         = 70;
+    string          Expectation                       = 80;
     TestCaseType    TestCaseType                      = 90;
     bool            Deprecated                        = 100;
     uint32          CreatedAt                         = 110;
@@ -39,20 +31,26 @@ message TestCase {
     uint32          DeletedAt                         = 130;
 }
 
-
-enum TestCaseType {
-    DefaultTestCaseType      = 0;
-    Manual                   = 10;
-    Automatic                = 20;
+message TestCaseReq {
+    optional string          ID                        = 10;
+    optional string          Name                      = 20;
+    optional string          Description               = 30;
+    optional string          ModuleID                  = 40;
+    optional string          ApiID                     = 50;
+    optional string          Input                     = 60;
+    optional string          InputDesc                 = 70;
+    optional string          Expectation               = 80;
+    optional TestCaseType    TestCaseType              = 90;
+    optional bool            Deprecated                = 100;
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID           = 10;
-    optional npool.v1.StringVal      ModuleID     = 20;
-    optional npool.v1.StringVal      ApiID        = 30;
-    optional npool.v1.StringVal      TestcaseType = 40;
-    optional npool.v1.BoolVal        Deprecated   = 50;
-    optional npool.v1.StringSliceVal IDs          = 60;
+    optional npool.v1.StringVal      ID                 = 10;
+    optional npool.v1.StringVal      ModuleID           = 20;
+    optional npool.v1.StringVal      ApiID              = 30;
+    optional npool.v1.StringVal      TestCaseType       = 40;
+    optional npool.v1.BoolVal        Deprecated         = 50;
+    optional npool.v1.StringSliceVal IDs                = 60;
 }
 
 
