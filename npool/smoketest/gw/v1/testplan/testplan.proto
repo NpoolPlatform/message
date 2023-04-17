@@ -55,7 +55,7 @@ message TestPlan {
     uint32          Deadline                                            = 130;
     uint32          CreatedAt                                           = 140;
     uint32          UpdatedAt                                           = 150;
-    repeated smoketest.manager.testplan.testcase.v1.TestCase TestCases  = 160;
+    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase PlanTestCases  = 160;
 }
 
 message DeleteTestPlanRequest {

@@ -228,10 +228,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "TestCases": {
+        "PlanTestCases": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TestCase"
+            "$ref": "#/definitions/v1PlanTestCase"
           }
         }
       }
@@ -306,7 +306,7 @@
         }
       }
     },
-    "v1TestCase": {
+    "v1PlanTestCase": {
       "type": "object",
       "properties": {
         "ID": {

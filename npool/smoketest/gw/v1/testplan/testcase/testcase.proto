@@ -9,29 +9,29 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateTestPlanTestCase (CreateTestPlanTestCaseRequest) returns (CreateTestPlanTestCaseResponse) {
+    rpc CreatePlanTestCase (CreatePlanTestCaseRequest) returns (CreatePlanTestCaseResponse) {
         option (google.api.http) = {
             post: "/v1/create/testplantestcase"
             body: "*"
         };
     }
     
-    rpc DeleteTestPlanTestCase (DeleteTestPlanTestCaseRequest) returns (DeleteTestPlanTestCaseResponse) {
+    rpc DeletePlanTestCase (DeletePlanTestCaseRequest) returns (DeletePlanTestCaseResponse) {
         option (google.api.http) = {
             post: "/v1/delete/testplantestcase"
             body: "*"
         };
     }
 
-    rpc DeleteTestPlanTestCases (DeleteTestPlanTestCasesRequest) returns (DeleteTestPlanTestCasesResponse) {
+    rpc DeletePlanTestCases (DeletePlanTestCasesRequest) returns (DeletePlanTestCasesResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/TestPlanTestCases"
+            post: "/v1/delete/PlanTestCases"
             body: "*"
         };
     }
 }
 
-message CreateTestPlanTestCaseRequest {
+message CreatePlanTestCaseRequest {
     string                   TestPlanID                                              = 10;
     string                   TestCaseID                                              = 20;
     optional string          TestCaseOutput                                          = 30;
@@ -42,41 +42,41 @@ message CreateTestPlanTestCaseRequest {
     optional uint32          Index                                                   = 80;
 }
 
-message CreateTestPlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+message CreatePlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
 }
 
-message GetTestPlanTestCasesRequest {
+message GetPlanTestCasesRequest {
     string         TestPlanID  =   10;
     optional int32 Offset      =   20;
     optional int32 Limit       =   30;
 }
 
-message GetTestPlanTestCasesResponse {
-    repeated smoketest.manager.testplan.testcase.v1.TestCase Infos = 10;
+message GetPlanTestCasesResponse {
+    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase Infos = 10;
     uint32                                                   Total = 20;
 }
 
-message GetTestPlanTestCaseRequest {
+message GetPlanTestCaseRequest {
     string   ID        =   10;
 }
 
-message GetTestPlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+message GetPlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
 }
 
-message DeleteTestPlanTestCaseRequest {
+message DeletePlanTestCaseRequest {
     string ID        = 10;
 }
 
-message DeleteTestPlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+message DeletePlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
 }
 
-message DeleteTestPlanTestCasesRequest {
+message DeletePlanTestCasesRequest {
     string TestPlanID = 20;
 }
 
-message DeleteTestPlanTestCasesResponse {
-    repeated smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+message DeletePlanTestCasesResponse {
+    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
 }

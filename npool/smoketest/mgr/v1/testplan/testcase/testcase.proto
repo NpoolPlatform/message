@@ -16,7 +16,7 @@ enum TestCaseResult {
     Failed                    = 30;
 }
 
-message TestCase {
+message PlanTestCase {
     // @inject_tag: sql:"id"
     string          ID                                      = 10;
     // @inject_tag: sql:"test_plan_id"

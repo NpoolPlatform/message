@@ -18,12 +18,12 @@
   "paths": {
     "/v1/create/testplantestcase": {
       "post": {
-        "operationId": "Gateway_CreateTestPlanTestCase",
+        "operationId": "Gateway_CreatePlanTestCase",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateTestPlanTestCaseResponse"
+              "$ref": "#/definitions/v1CreatePlanTestCaseResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTestPlanTestCaseRequest"
+              "$ref": "#/definitions/v1CreatePlanTestCaseRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/TestPlanTestCases": {
+    "/v1/delete/PlanTestCases": {
       "post": {
-        "operationId": "Gateway_DeleteTestPlanTestCases",
+        "operationId": "Gateway_DeletePlanTestCases",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestPlanTestCasesResponse"
+              "$ref": "#/definitions/v1DeletePlanTestCasesResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestPlanTestCasesRequest"
+              "$ref": "#/definitions/v1DeletePlanTestCasesRequest"
             }
           }
         ],
@@ -82,12 +82,12 @@
     },
     "/v1/delete/testplantestcase": {
       "post": {
-        "operationId": "Gateway_DeleteTestPlanTestCase",
+        "operationId": "Gateway_DeletePlanTestCase",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestPlanTestCaseResponse"
+              "$ref": "#/definitions/v1DeletePlanTestCaseResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestPlanTestCaseRequest"
+              "$ref": "#/definitions/v1DeletePlanTestCaseRequest"
             }
           }
         ],
@@ -141,7 +141,7 @@
         }
       }
     },
-    "v1CreateTestPlanTestCaseRequest": {
+    "v1CreatePlanTestCaseRequest": {
       "type": "object",
       "properties": {
         "TestPlanID": {
@@ -172,15 +172,15 @@
         }
       }
     },
-    "v1CreateTestPlanTestCaseResponse": {
+    "v1CreatePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TestCase"
+          "$ref": "#/definitions/v1PlanTestCase"
         }
       }
     },
-    "v1DeleteTestPlanTestCaseRequest": {
+    "v1DeletePlanTestCaseRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -188,15 +188,15 @@
         }
       }
     },
-    "v1DeleteTestPlanTestCaseResponse": {
+    "v1DeletePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TestCase"
+          "$ref": "#/definitions/v1PlanTestCase"
         }
       }
     },
-    "v1DeleteTestPlanTestCasesRequest": {
+    "v1DeletePlanTestCasesRequest": {
       "type": "object",
       "properties": {
         "TestPlanID": {
@@ -204,18 +204,18 @@
         }
       }
     },
-    "v1DeleteTestPlanTestCasesResponse": {
+    "v1DeletePlanTestCasesResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TestCase"
+            "$ref": "#/definitions/v1PlanTestCase"
           }
         }
       }
     },
-    "v1TestCase": {
+    "v1PlanTestCase": {
       "type": "object",
       "properties": {
         "ID": {
