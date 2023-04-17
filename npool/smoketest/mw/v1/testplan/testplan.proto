@@ -69,7 +69,7 @@ message ExistTestPlanResponse {
 }
 
 message DeleteTestPlanRequest {
-    string ID = 10;
+    smoketest.manager.testplan.v1.Conds Conds = 10;
 }
 
 message DeleteTestPlanResponse {

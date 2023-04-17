@@ -71,7 +71,7 @@ message ExistTestCaseResponse {
 }
 
 message DeleteTestCaseRequest {
-    string ID = 10;
+    smoketest.manager.testplan.testcase.v1.Conds Conds = 10;
 }
 
 message DeleteTestCaseResponse {

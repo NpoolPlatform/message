@@ -54,7 +54,7 @@ message CreateTestCaseResponse {
 
 
 message DeleteTestCaseRequest {
-    string ID     = 10;
+    smoketest.manager.testcase.v1.Conds Conds    = 10;
 }
 
 message DeleteTestCaseResponse {

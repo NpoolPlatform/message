@@ -65,7 +65,7 @@ message ExistCondResponse {
 }
 
 message DeleteCondRequest {
-    string ID = 10;
+    smoketest.manager.testcase.cond.v1.Conds Conds = 10;
 }
 
 message DeleteCondResponse {
