@@ -243,7 +243,88 @@
     }
   },
   "definitions": {
-    "appv1App": {
+    "banv1CreateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "banv1CreateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "banv1DeleteBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "banv1DeleteBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanApp"
+        }
+      }
+    },
+    "banv1UpdateBanAppRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2BanAppReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "banv1UpdateBanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -326,7 +407,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -345,97 +426,6 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
-        }
-      }
-    },
-    "banv1CreateBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "banv1CreateBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "banv1DeleteBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "banv1DeleteBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanApp"
-        }
-      }
-    },
-    "banv1UpdateBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "banv1UpdateBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "basetypesv1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
           }
         }
       }
@@ -485,6 +475,16 @@
           "$ref": "#/definitions/v1User"
         }
       }
+    },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "v1DeleteBanUserRequest": {
       "type": "object",

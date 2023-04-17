@@ -28,8 +28,6 @@ type GatewayClient interface {
 	// Super admin api
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
 	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
-	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
@@ -86,24 +84,6 @@ func (c *gatewayClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest,
 	return out, nil
 }
 
-func (c *gatewayClient) GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error) {
-	out := new(GetSignMethodsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetSignMethods", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error) {
-	out := new(GetRecaptchasResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetRecaptchas", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
@@ -123,8 +103,6 @@ type GatewayServer interface {
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
 	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
-	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -147,12 +125,6 @@ func (UnimplementedGatewayServer) GetApps(context.Context, *GetAppsRequest) (*Ge
 }
 func (UnimplementedGatewayServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
-}
-func (UnimplementedGatewayServer) GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSignMethods not implemented")
-}
-func (UnimplementedGatewayServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
 }
 func (UnimplementedGatewayServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
@@ -260,42 +232,6 @@ func _Gateway_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSignMethodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetSignMethods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetSignMethods",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetSignMethods(ctx, req.(*GetSignMethodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRecaptchasRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetRecaptchas(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetRecaptchas",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetRecaptchas(ctx, req.(*GetRecaptchasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -340,14 +276,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserApps",
 			Handler:    _Gateway_GetUserApps_Handler,
-		},
-		{
-			MethodName: "GetSignMethods",
-			Handler:    _Gateway_GetSignMethods_Handler,
-		},
-		{
-			MethodName: "GetRecaptchas",
-			Handler:    _Gateway_GetRecaptchas_Handler,
 		},
 		{
 			MethodName: "DeleteApp",
