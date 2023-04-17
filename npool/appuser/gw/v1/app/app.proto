@@ -43,7 +43,7 @@ service Gateway {
 
     rpc GetUserApps (GetUserAppsRequest) returns (GetUserAppsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/apps"
+            post: "/v1/get/userapps"
             body: "*"
         };
     }
@@ -99,7 +99,6 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    // Permissioned by app
     string AppID = 10;
 }
 
@@ -108,7 +107,6 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-    // Permissioned by path
     int32  Offset = 10;
     int32  Limit  = 20;
 }
@@ -119,7 +117,6 @@ message GetAppsResponse {
 }
 
 message GetUserAppsRequest {
-    // Permissioned by path
     string TargetUserID = 10;
     int32  Offset       = 20;
     int32  Limit        = 30;

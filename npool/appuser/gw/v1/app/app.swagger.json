@@ -145,14 +145,14 @@
         ]
       }
     },
-    "/v1/get/user/apps": {
+    "/v1/get/userapps": {
       "post": {
         "operationId": "Gateway_GetUserApps",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetUserAppsResponse"
+              "$ref": "#/definitions/v1GetUserAppsResponse"
             }
           },
           "default": {
@@ -168,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetUserAppsRequest"
+              "$ref": "#/definitions/v1GetUserAppsRequest"
             }
           }
         ],
@@ -296,8 +296,7 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by app"
+          "type": "string"
         }
       }
     },
@@ -314,8 +313,7 @@
       "properties": {
         "Offset": {
           "type": "integer",
-          "format": "int32",
-          "title": "Permissioned by path"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
@@ -324,38 +322,6 @@
       }
     },
     "appusergatewayappv1GetAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1GetUserAppsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appusergatewayappv1GetUserAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -577,6 +543,37 @@
         "HasPaidOrder"
       ],
       "default": "DefaultWhen"
+    },
+    "v1GetUserAppsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1RecaptchaMethod": {
       "type": "string",

@@ -26,8 +26,6 @@ type MiddlewareClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	GetManyApps(ctx context.Context, in *GetManyAppsRequest, opts ...grpc.CallOption) (*GetManyAppsResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
@@ -75,24 +73,6 @@ func (c *middlewareClient) GetApps(ctx context.Context, in *GetAppsRequest, opts
 	return out, nil
 }
 
-func (c *middlewareClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
-	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetUserApps", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetManyApps(ctx context.Context, in *GetManyAppsRequest, opts ...grpc.CallOption) (*GetManyAppsResponse, error) {
-	out := new(GetManyAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetManyApps", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/DeleteApp", in, out, opts...)
@@ -110,8 +90,6 @@ type MiddlewareServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -131,12 +109,6 @@ func (UnimplementedMiddlewareServer) GetApp(context.Context, *GetAppRequest) (*G
 }
 func (UnimplementedMiddlewareServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
-}
-func (UnimplementedMiddlewareServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
-}
-func (UnimplementedMiddlewareServer) GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetManyApps not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
@@ -226,42 +198,6 @@ func _Middleware_GetApps_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetUserApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.Middleware/GetUserApps",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetManyApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetManyAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetManyApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.Middleware/GetManyApps",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetManyApps(ctx, req.(*GetManyAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -302,14 +238,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetApps",
 			Handler:    _Middleware_GetApps_Handler,
-		},
-		{
-			MethodName: "GetUserApps",
-			Handler:    _Middleware_GetUserApps_Handler,
-		},
-		{
-			MethodName: "GetManyApps",
-			Handler:    _Middleware_GetManyApps_Handler,
 		},
 		{
 			MethodName: "DeleteApp",
