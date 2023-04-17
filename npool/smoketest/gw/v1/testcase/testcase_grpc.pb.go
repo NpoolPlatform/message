@@ -22,10 +22,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error)
 	CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error)
-	UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error)
 	DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error)
+	UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error)
+	GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error)
 }
 
 type gatewayClient struct {
@@ -36,27 +36,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error) {
-	out := new(GetTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testcase.v1.Gateway/GetTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error) {
 	out := new(CreateTestCaseResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.gateway.testcase.v1.Gateway/CreateTestCase", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error) {
-	out := new(UpdateTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testcase.v1.Gateway/UpdateTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,14 +54,32 @@ func (c *gatewayClient) DeleteTestCase(ctx context.Context, in *DeleteTestCaseRe
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error) {
+	out := new(UpdateTestCaseResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testcase.v1.Gateway/UpdateTestCase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error) {
+	out := new(GetTestCasesResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testcase.v1.Gateway/GetTestCases", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error)
 	CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error)
-	UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error)
 	DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error)
+	UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error)
+	GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -87,17 +87,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTestCases not implemented")
-}
 func (UnimplementedGatewayServer) CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTestCase not implemented")
+}
+func (UnimplementedGatewayServer) DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTestCase not implemented")
 }
 func (UnimplementedGatewayServer) UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTestCase not implemented")
 }
-func (UnimplementedGatewayServer) DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteTestCase not implemented")
+func (UnimplementedGatewayServer) GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTestCases not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -110,24 +110,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTestCasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetTestCases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.gateway.testcase.v1.Gateway/GetTestCases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetTestCases(ctx, req.(*GetTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_CreateTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -144,24 +126,6 @@ func _Gateway_CreateTestCase_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateTestCase(ctx, req.(*CreateTestCaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.gateway.testcase.v1.Gateway/UpdateTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateTestCase(ctx, req.(*UpdateTestCaseRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -184,6 +148,42 @@ func _Gateway_DeleteTestCase_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTestCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateTestCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.gateway.testcase.v1.Gateway/UpdateTestCase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateTestCase(ctx, req.(*UpdateTestCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTestCasesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetTestCases(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.gateway.testcase.v1.Gateway/GetTestCases",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetTestCases(ctx, req.(*GetTestCasesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -192,20 +192,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetTestCases",
-			Handler:    _Gateway_GetTestCases_Handler,
-		},
-		{
 			MethodName: "CreateTestCase",
 			Handler:    _Gateway_CreateTestCase_Handler,
+		},
+		{
+			MethodName: "DeleteTestCase",
+			Handler:    _Gateway_DeleteTestCase_Handler,
 		},
 		{
 			MethodName: "UpdateTestCase",
 			Handler:    _Gateway_UpdateTestCase_Handler,
 		},
 		{
-			MethodName: "DeleteTestCase",
-			Handler:    _Gateway_DeleteTestCase_Handler,
+			MethodName: "GetTestCases",
+			Handler:    _Gateway_GetTestCases_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

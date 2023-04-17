@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/smoketest/gw/v1/testcase/testcase.proto",
+    "title": "npool/smoketest/gw/v1/testcase/cond/cond.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/testcase": {
+    "/v1/create/testcasecond": {
       "post": {
-        "operationId": "Gateway_CreateTestCase",
+        "operationId": "Gateway_CreateCond",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateTestCaseResponse"
+              "$ref": "#/definitions/v1CreateCondResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTestCaseRequest"
+              "$ref": "#/definitions/v1CreateCondRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/testcase": {
+    "/v1/delete/testcasecond": {
       "post": {
-        "operationId": "Gateway_DeleteTestCase",
+        "operationId": "Gateway_DeleteCond",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestCaseResponse"
+              "$ref": "#/definitions/v1DeleteCondResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestCaseRequest"
+              "$ref": "#/definitions/v1DeleteCondRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/testcases": {
+    "/v1/get/testcaseconds": {
       "post": {
-        "operationId": "Gateway_GetTestCases",
+        "operationId": "Gateway_GetConds",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetTestCasesResponse"
+              "$ref": "#/definitions/v1GetCondsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetTestCasesRequest"
+              "$ref": "#/definitions/v1GetCondsRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/update/testcase": {
+    "/v1/update/testcasecond": {
       "post": {
-        "operationId": "Gateway_UpdateTestCase",
+        "operationId": "Gateway_UpdateCond",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateTestCaseResponse"
+              "$ref": "#/definitions/v1UpdateCondResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateTestCaseRequest"
+              "$ref": "#/definitions/v1UpdateCondRequest"
             }
           }
         ],
@@ -173,105 +173,90 @@
         }
       }
     },
-    "smoketestgatewaytestcasev1TestCase": {
+    "v1Cond": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
-        "Name": {
-          "type": "string"
+        "CondType": {
+          "$ref": "#/definitions/v1CondType",
+          "title": "@inject_tag: sql:\"cond_type\""
         },
-        "Description": {
-          "type": "string"
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
         },
-        "ModuleID": {
-          "type": "string"
+        "CondTestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cond_test_case_id\""
         },
-        "ModuleName": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
         },
-        "ApiID": {
-          "type": "string"
-        },
-        "ApiPath": {
-          "type": "string"
-        },
-        "ApiPathPrefix": {
-          "type": "string"
-        },
-        "ApiServiceName": {
-          "type": "string"
-        },
-        "ApiProtocol": {
-          "type": "string"
-        },
-        "ApiMethod": {
-          "type": "string"
-        },
-        "ApiDeprecated": {
-          "type": "boolean"
-        },
-        "Arguments": {
-          "type": "string"
-        },
-        "ArgTypeDescription": {
-          "type": "string"
-        },
-        "Expectation": {
-          "type": "string"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
-        },
-        "Deprecated": {
-          "type": "boolean"
+        "ArgumentMap": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"argument_map\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
     },
-    "v1CreateTestCaseRequest": {
+    "v1CondType": {
+      "type": "string",
+      "enum": [
+        "DefaultCondType",
+        "PreCondition",
+        "Cleaner"
+      ],
+      "default": "DefaultCondType"
+    },
+    "v1CreateCondRequest": {
       "type": "object",
       "properties": {
-        "Name": {
+        "TestCaseID": {
           "type": "string"
         },
-        "Description": {
+        "CondTestCaseID": {
           "type": "string"
         },
-        "ModuleName": {
+        "ArgumentMap": {
           "type": "string"
         },
-        "ApiID": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Input": {
-          "type": "string"
-        },
-        "InputDesc": {
-          "type": "string"
-        },
-        "Expectation": {
-          "type": "string"
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
         }
       }
     },
-    "v1CreateTestCaseResponse": {
+    "v1CreateCondResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+          "$ref": "#/definitions/v1Cond"
         }
       }
     },
-    "v1DeleteTestCaseRequest": {
+    "v1DeleteCondRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -279,20 +264,17 @@
         }
       }
     },
-    "v1DeleteTestCaseResponse": {
+    "v1DeleteCondResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+          "$ref": "#/definitions/v1Cond"
         }
       }
     },
-    "v1GetTestCasesRequest": {
+    "v1GetCondsRequest": {
       "type": "object",
       "properties": {
-        "ModuleID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -303,13 +285,13 @@
         }
       }
     },
-    "v1GetTestCasesResponse": {
+    "v1GetCondsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+            "$ref": "#/definitions/v1Cond"
           }
         },
         "Total": {
@@ -318,49 +300,26 @@
         }
       }
     },
-    "v1TestCaseType": {
-      "type": "string",
-      "enum": [
-        "DefaultTestCaseType",
-        "Manual",
-        "Automatic"
-      ],
-      "default": "DefaultTestCaseType"
-    },
-    "v1UpdateTestCaseRequest": {
+    "v1UpdateCondRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "Name": {
+        "ArgumentMap": {
           "type": "string"
         },
-        "Description": {
-          "type": "string"
-        },
-        "Expectation": {
-          "type": "string"
-        },
-        "Input": {
-          "type": "string"
-        },
-        "InputDesc": {
-          "type": "string"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
-        },
-        "Deprecated": {
-          "type": "boolean"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
-    "v1UpdateTestCaseResponse": {
+    "v1UpdateCondResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+          "$ref": "#/definitions/v1Cond"
         }
       }
     }

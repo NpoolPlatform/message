@@ -5,21 +5,20 @@ package smoketest.gateway.testcase.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testcase";
 
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
-import "npool/smoketest/gw/v1/relatedtestcase/relatedtestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetTestCases (GetTestCasesRequest) returns (GetTestCasesResponse) {
+    rpc CreateTestCase (CreateTestCaseRequest) returns (CreateTestCaseResponse) {
         option (google.api.http) = {
-            post: "/v1/get/testcases"
+            post: "/v1/create/testcase"
             body: "*"
         };
     }
 
-    rpc CreateTestCase (CreateTestCaseRequest) returns (CreateTestCaseResponse) {
+    rpc DeleteTestCase (DeleteTestCaseRequest) returns (DeleteTestCaseResponse) {
         option (google.api.http) = {
-            post: "/v1/create/testcase"
+            post: "/v1/delete/testcase"
             body: "*"
         };
     }
@@ -31,9 +30,9 @@ service Gateway {
         };
     }
 
-    rpc DeleteTestCase (DeleteTestCaseRequest) returns (DeleteTestCaseResponse) {
+    rpc GetTestCases (GetTestCasesRequest) returns (GetTestCasesResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/testcase"
+            post: "/v1/get/testcases"
             body: "*"
         };
     }
@@ -57,19 +56,18 @@ message TestCase {
     string          Expectation                                       = 150;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 160;
     bool            Deprecated                                        = 170;
-    repeated smoketest.gateway.relatedtestcase.v1.RelatedTestCase RelatedTestCases = 180;
     uint32          CreatedAt                                         = 190;
     uint32          UpdatedAt                                         = 200;
 }
 
 message CreateTestCaseRequest {
-    string          Name                                                       = 10;
-    string          Description                                                = 20;
-    string          ModuleName                                                 = 30;
-    string          ApiID                                                      = 40;
-    string          Arguments                                                  = 50;
-    string          ArgTypeDescription                                         = 60;
-    string          Expectation                                                = 70;
+    string           Name                                             = 10;
+    optional string  Description                                      = 20;
+    string           ModuleName                                       = 30;
+    string           ApiID                                            = 40;
+    optional string  Input                                            = 50;
+    optional string  InputDesc                                        = 60;
+    optional string  Expectation                                      = 70;
 }
 
 message CreateTestCaseResponse {
@@ -100,8 +98,8 @@ message UpdateTestCaseRequest {
     optional string                                     Name                = 20;
     optional string                                     Description         = 30;
     optional string                                     Expectation         = 40;
-    optional string                                     Arguments           = 50;
-    optional string                                     ArgTypeDescription  = 60;
+    optional string                                     Input               = 50;
+    optional string                                     InputDesc           = 60;
     optional smoketest.manager.testcase.v1.TestCaseType TestCaseType        = 70;
     optional bool                                       Deprecated          = 80;
 }
