@@ -229,7 +229,7 @@
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "UserID": {
+        "CreatedBy": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
