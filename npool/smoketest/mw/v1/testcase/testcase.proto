@@ -4,28 +4,16 @@ package smoketest.middleware.testcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase";
 
-import "npool/npool.proto";
 import "npool/smoketest/mgr/v1/testcase/testcase.proto";
 
 // Service Name
 service Middleware {
     rpc CreateTestCase        (CreateTestCaseRequest)       returns (CreateTestCaseResponse)       {}
     rpc UpdateTestCase        (UpdateTestCaseRequest)       returns (UpdateTestCaseResponse)       {}
-
     rpc GetTestCases          (GetTestCasesRequest)         returns (GetTestCasesResponse)         {}
-    rpc GetTestCase           (GetTestCaseRequest)         returns (GetTestCaseResponse)         {}
-
+    rpc GetTestCase           (GetTestCaseRequest)          returns (GetTestCaseResponse)          {}
     rpc DeleteTestCase        (DeleteTestCaseRequest)       returns (DeleteTestCaseResponse)       {}
 }
-
-message Conds {
-    optional npool.v1.StringVal      ID           = 10;
-    optional npool.v1.StringVal      ModuleID     = 20;
-    optional npool.v1.StringVal      ApiID        = 30;
-    optional npool.v1.StringVal      TestcaseType = 40;
-    optional npool.v1.BoolVal        Deprecated   = 50;
-}
-
 
 message TestCase {
     // @inject_tag: sql:"id"
@@ -40,12 +28,12 @@ message TestCase {
     string          ModuleName                                        = 50;
     // @inject_tag: sql:"api_id"
     string          ApiID                                             = 60;
-    // @inject_tag: sql:"expectation_result"
-    string          ExpectationResult                                 = 70;
-    // @inject_tag: sql:"arguments"
-    string          Arguments                                         = 80;
-    // @inject_tag: sql:"arg_type_description"
-    string          ArgTypeDescription                                = 90;
+    // @inject_tag: sql:"expectation"
+    string          Expectation                                       = 70;
+    // @inject_tag: sql:"input"
+    string          Input                                             = 80;
+    // @inject_tag: sql:"input_desc"
+    string          InputDesc                                         = 90;
     // @inject_tag: sql:"test_case_type"
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 100;
     // @inject_tag: sql:"deprecated"
@@ -56,22 +44,8 @@ message TestCase {
     uint32          UpdatedAt                                         = 130;
 }
 
-message CreateTestCaseReq {
-    optional string          ID                                                         = 10;
-    optional string          Name                                                       = 20;
-    optional string          Description                                                = 30;
-    optional string          ModuleID                                                   = 40;
-    optional string          ModuleName                                                 = 50;
-    optional string          ApiID                                                      = 60;
-    optional string          Arguments                                                  = 70;
-    optional string          ArgTypeDescription                                         = 80;
-    optional string          ExpectationResult                                          = 90;
-    optional smoketest.manager.testcase.v1.TestCaseType    TestCaseType                 = 100;
-    optional bool            Deprecated                                                 = 110;
-}
-
 message CreateTestCaseRequest {
-    CreateTestCaseReq Info = 10;
+    smoketest.manager.testcase.v1.TestCaseReq Info = 10;
 }
 
 message CreateTestCaseResponse {
@@ -80,7 +54,7 @@ message CreateTestCaseResponse {
 
 
 message DeleteTestCaseRequest {
-    string ID        = 10;
+    string ID     = 10;
 }
 
 message DeleteTestCaseResponse {
@@ -89,17 +63,17 @@ message DeleteTestCaseResponse {
 
 message GetTestCasesRequest {
     smoketest.manager.testcase.v1.Conds Conds = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    int32  Offset                             = 20;
+    int32  Limit                              = 30;
 }
 
 message GetTestCasesResponse {
-    repeated TestCase Infos = 10;
-    uint32        Total   = 20;
+    repeated TestCase Infos  = 10;
+    uint32            Total   = 20;
 }
 
 message GetTestCaseRequest {
-    string ID = 10;
+    string ID   = 10;
 }
 
 message GetTestCaseResponse {
@@ -107,7 +81,7 @@ message GetTestCaseResponse {
 }
 
 message UpdateTestCaseRequest {
-    CreateTestCaseReq info = 10;
+    smoketest.manager.testcase.v1.TestCaseReq info = 10;
 }
 
 message UpdateTestCaseResponse {
