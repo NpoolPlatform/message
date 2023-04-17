@@ -220,6 +220,20 @@
         }
       }
     },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "v1CreateAppResponse": {
       "type": "object",
       "properties": {
@@ -269,36 +283,6 @@
         }
       }
     },
-    "v1GetManyAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetUserAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -322,6 +306,31 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
     },
     "v1UpdateAppResponse": {
       "type": "object",
