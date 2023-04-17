@@ -17,7 +17,34 @@
   ],
   "paths": {},
   "definitions": {
-    "appv1App": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -100,7 +127,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -123,7 +150,7 @@
         }
       }
     },
-    "appv1AppReq": {
+    "v1AppReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -176,7 +203,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -193,54 +220,15 @@
         }
       }
     },
-    "appv1CreateAppResponse": {
+    "v1CreateAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
-    "appv1DeleteAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appv1GetAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appv1GetAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appv1UpdateAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "basetypesv1CreateInvitationCodeWhen": {
+    "v1CreateInvitationCodeWhen": {
       "type": "string",
       "enum": [
         "DefaultWhen",
@@ -250,30 +238,34 @@
       ],
       "default": "DefaultWhen"
     },
-    "protobufAny": {
+    "v1DeleteAppResponse": {
       "type": "object",
       "properties": {
-        "@type": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1App"
         }
-      },
-      "additionalProperties": {}
+      }
     },
-    "rpcStatus": {
+    "v1GetAppResponse": {
       "type": "object",
       "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/protobufAny"
+            "$ref": "#/definitions/v1App"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -283,7 +275,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -298,7 +290,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -330,6 +322,14 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+    },
+    "v1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
     }
   }
 }
