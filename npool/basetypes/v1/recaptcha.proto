@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package basetypes.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1/recaptcha";
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-enum RecaptchaType {
-    DefaultRecaptchaType = 0;
-    GoogleRecaptchaV3    = 10;
+enum RecaptchaMethod {
+    DefaultRecaptchaMethod = 0;
+    GoogleRecaptchaV3      = 10;
 }
