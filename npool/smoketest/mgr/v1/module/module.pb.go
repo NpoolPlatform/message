@@ -21,92 +21,29 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ModuleReq struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID          *string `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
-	Name        *string `protobuf:"bytes,20,opt,name=Name,proto3,oneof" json:"Name,omitempty"`
-	Description *string `protobuf:"bytes,30,opt,name=Description,proto3,oneof" json:"Description,omitempty"`
-	CreatedAt   *uint32 `protobuf:"varint,40,opt,name=CreatedAt,proto3,oneof" json:"CreatedAt,omitempty"`
-}
-
-func (x *ModuleReq) Reset() {
-	*x = ModuleReq{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ModuleReq) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ModuleReq) ProtoMessage() {}
-
-func (x *ModuleReq) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ModuleReq.ProtoReflect.Descriptor instead.
-func (*ModuleReq) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *ModuleReq) GetID() string {
-	if x != nil && x.ID != nil {
-		return *x.ID
-	}
-	return ""
-}
-
-func (x *ModuleReq) GetName() string {
-	if x != nil && x.Name != nil {
-		return *x.Name
-	}
-	return ""
-}
-
-func (x *ModuleReq) GetDescription() string {
-	if x != nil && x.Description != nil {
-		return *x.Description
-	}
-	return ""
-}
-
-func (x *ModuleReq) GetCreatedAt() uint32 {
-	if x != nil && x.CreatedAt != nil {
-		return *x.CreatedAt
-	}
-	return 0
-}
-
 type Module struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID          string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	Name        string `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty"`
-	Description string `protobuf:"bytes,30,opt,name=Description,proto3" json:"Description,omitempty"`
-	CreatedAt   uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"name"
+	Name string `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`
+	// @inject_tag: sql:"description"
+	Description string `protobuf:"bytes,30,opt,name=Description,proto3" json:"Description,omitempty" sql:"description"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,40,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,50,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
+	// @inject_tag: sql:"deleted_at"
+	DeletedAt uint32 `protobuf:"varint,60,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty" sql:"deleted_at"`
 }
 
 func (x *Module) Reset() {
 	*x = Module{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1]
+		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -119,7 +56,7 @@ func (x *Module) String() string {
 func (*Module) ProtoMessage() {}
 
 func (x *Module) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1]
+	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -132,7 +69,7 @@ func (x *Module) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Module.ProtoReflect.Descriptor instead.
 func (*Module) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{1}
+	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Module) GetID() string {
@@ -161,6 +98,83 @@ func (x *Module) GetCreatedAt() uint32 {
 		return x.CreatedAt
 	}
 	return 0
+}
+
+func (x *Module) GetUpdatedAt() uint32 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+func (x *Module) GetDeletedAt() uint32 {
+	if x != nil {
+		return x.DeletedAt
+	}
+	return 0
+}
+
+type ModuleReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID          *string `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
+	Name        *string `protobuf:"bytes,20,opt,name=Name,proto3,oneof" json:"Name,omitempty"`
+	Description *string `protobuf:"bytes,30,opt,name=Description,proto3,oneof" json:"Description,omitempty"`
+}
+
+func (x *ModuleReq) Reset() {
+	*x = ModuleReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ModuleReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ModuleReq) ProtoMessage() {}
+
+func (x *ModuleReq) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ModuleReq.ProtoReflect.Descriptor instead.
+func (*ModuleReq) Descriptor() ([]byte, []int) {
+	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ModuleReq) GetID() string {
+	if x != nil && x.ID != nil {
+		return *x.ID
+	}
+	return ""
+}
+
+func (x *ModuleReq) GetName() string {
+	if x != nil && x.Name != nil {
+		return *x.Name
+	}
+	return ""
+}
+
+func (x *ModuleReq) GetDescription() string {
+	if x != nil && x.Description != nil {
+		return *x.Description
+	}
+	return ""
 }
 
 type Conds struct {
@@ -226,970 +240,6 @@ func (x *Conds) GetIDs() *npool.StringSliceVal {
 	return nil
 }
 
-type CreateModuleRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *ModuleReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateModuleRequest) Reset() {
-	*x = CreateModuleRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateModuleRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateModuleRequest) ProtoMessage() {}
-
-func (x *CreateModuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateModuleRequest.ProtoReflect.Descriptor instead.
-func (*CreateModuleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *CreateModuleRequest) GetInfo() *ModuleReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type CreateModuleResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Module `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateModuleResponse) Reset() {
-	*x = CreateModuleResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateModuleResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateModuleResponse) ProtoMessage() {}
-
-func (x *CreateModuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateModuleResponse.ProtoReflect.Descriptor instead.
-func (*CreateModuleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *CreateModuleResponse) GetInfo() *Module {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type CreateModulesRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Infos []*ModuleReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-}
-
-func (x *CreateModulesRequest) Reset() {
-	*x = CreateModulesRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateModulesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateModulesRequest) ProtoMessage() {}
-
-func (x *CreateModulesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateModulesRequest.ProtoReflect.Descriptor instead.
-func (*CreateModulesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *CreateModulesRequest) GetInfos() []*ModuleReq {
-	if x != nil {
-		return x.Infos
-	}
-	return nil
-}
-
-type CreateModulesResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Infos []*Module `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-}
-
-func (x *CreateModulesResponse) Reset() {
-	*x = CreateModulesResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateModulesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateModulesResponse) ProtoMessage() {}
-
-func (x *CreateModulesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateModulesResponse.ProtoReflect.Descriptor instead.
-func (*CreateModulesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *CreateModulesResponse) GetInfos() []*Module {
-	if x != nil {
-		return x.Infos
-	}
-	return nil
-}
-
-type UpdateModuleRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *ModuleReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateModuleRequest) Reset() {
-	*x = UpdateModuleRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateModuleRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateModuleRequest) ProtoMessage() {}
-
-func (x *UpdateModuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateModuleRequest.ProtoReflect.Descriptor instead.
-func (*UpdateModuleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *UpdateModuleRequest) GetInfo() *ModuleReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateModuleResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Module `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateModuleResponse) Reset() {
-	*x = UpdateModuleResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateModuleResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateModuleResponse) ProtoMessage() {}
-
-func (x *UpdateModuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateModuleResponse.ProtoReflect.Descriptor instead.
-func (*UpdateModuleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *UpdateModuleResponse) GetInfo() *Module {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type GetModuleRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *GetModuleRequest) Reset() {
-	*x = GetModuleRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModuleRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModuleRequest) ProtoMessage() {}
-
-func (x *GetModuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModuleRequest.ProtoReflect.Descriptor instead.
-func (*GetModuleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *GetModuleRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type GetModuleResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Module `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetModuleResponse) Reset() {
-	*x = GetModuleResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModuleResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModuleResponse) ProtoMessage() {}
-
-func (x *GetModuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModuleResponse.ProtoReflect.Descriptor instead.
-func (*GetModuleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *GetModuleResponse) GetInfo() *Module {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type GetModulesRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds  *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-	Offset int32  `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
-	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
-}
-
-func (x *GetModulesRequest) Reset() {
-	*x = GetModulesRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModulesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModulesRequest) ProtoMessage() {}
-
-func (x *GetModulesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModulesRequest.ProtoReflect.Descriptor instead.
-func (*GetModulesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *GetModulesRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-func (x *GetModulesRequest) GetOffset() int32 {
-	if x != nil {
-		return x.Offset
-	}
-	return 0
-}
-
-func (x *GetModulesRequest) GetLimit() int32 {
-	if x != nil {
-		return x.Limit
-	}
-	return 0
-}
-
-type GetModulesResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Infos []*Module `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32    `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
-}
-
-func (x *GetModulesResponse) Reset() {
-	*x = GetModulesResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModulesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModulesResponse) ProtoMessage() {}
-
-func (x *GetModulesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModulesResponse.ProtoReflect.Descriptor instead.
-func (*GetModulesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *GetModulesResponse) GetInfos() []*Module {
-	if x != nil {
-		return x.Infos
-	}
-	return nil
-}
-
-func (x *GetModulesResponse) GetTotal() uint32 {
-	if x != nil {
-		return x.Total
-	}
-	return 0
-}
-
-type GetModuleOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetModuleOnlyRequest) Reset() {
-	*x = GetModuleOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModuleOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModuleOnlyRequest) ProtoMessage() {}
-
-func (x *GetModuleOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModuleOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetModuleOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *GetModuleOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetModuleOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Module `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetModuleOnlyResponse) Reset() {
-	*x = GetModuleOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetModuleOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetModuleOnlyResponse) ProtoMessage() {}
-
-func (x *GetModuleOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetModuleOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetModuleOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *GetModuleOnlyResponse) GetInfo() *Module {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type ExistModuleRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *ExistModuleRequest) Reset() {
-	*x = ExistModuleRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistModuleRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistModuleRequest) ProtoMessage() {}
-
-func (x *ExistModuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistModuleRequest.ProtoReflect.Descriptor instead.
-func (*ExistModuleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *ExistModuleRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type ExistModuleResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistModuleResponse) Reset() {
-	*x = ExistModuleResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistModuleResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistModuleResponse) ProtoMessage() {}
-
-func (x *ExistModuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistModuleResponse.ProtoReflect.Descriptor instead.
-func (*ExistModuleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *ExistModuleResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type ExistModuleCondsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *ExistModuleCondsRequest) Reset() {
-	*x = ExistModuleCondsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistModuleCondsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistModuleCondsRequest) ProtoMessage() {}
-
-func (x *ExistModuleCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistModuleCondsRequest.ProtoReflect.Descriptor instead.
-func (*ExistModuleCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *ExistModuleCondsRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type ExistModuleCondsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistModuleCondsResponse) Reset() {
-	*x = ExistModuleCondsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistModuleCondsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistModuleCondsResponse) ProtoMessage() {}
-
-func (x *ExistModuleCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistModuleCondsResponse.ProtoReflect.Descriptor instead.
-func (*ExistModuleCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{18}
-}
-
-func (x *ExistModuleCondsResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type CountModulesRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *CountModulesRequest) Reset() {
-	*x = CountModulesRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountModulesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountModulesRequest) ProtoMessage() {}
-
-func (x *CountModulesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountModulesRequest.ProtoReflect.Descriptor instead.
-func (*CountModulesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{19}
-}
-
-func (x *CountModulesRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type CountModulesResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info uint32 `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CountModulesResponse) Reset() {
-	*x = CountModulesResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountModulesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountModulesResponse) ProtoMessage() {}
-
-func (x *CountModulesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountModulesResponse.ProtoReflect.Descriptor instead.
-func (*CountModulesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *CountModulesResponse) GetInfo() uint32 {
-	if x != nil {
-		return x.Info
-	}
-	return 0
-}
-
-type DeleteModuleRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *DeleteModuleRequest) Reset() {
-	*x = DeleteModuleRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteModuleRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteModuleRequest) ProtoMessage() {}
-
-func (x *DeleteModuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteModuleRequest.ProtoReflect.Descriptor instead.
-func (*DeleteModuleRequest) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{21}
-}
-
-func (x *DeleteModuleRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type DeleteModuleResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Module `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *DeleteModuleResponse) Reset() {
-	*x = DeleteModuleResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[22]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteModuleResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteModuleResponse) ProtoMessage() {}
-
-func (x *DeleteModuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[22]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteModuleResponse.ProtoReflect.Descriptor instead.
-func (*DeleteModuleResponse) Descriptor() ([]byte, []int) {
-	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP(), []int{22}
-}
-
-func (x *DeleteModuleResponse) GetInfo() *Module {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 var File_npool_smoketest_mgr_v1_module_module_proto protoreflect.FileDescriptor
 
 var file_npool_smoketest_mgr_v1_module_module_proto_rawDesc = []byte{
@@ -1198,133 +248,42 @@ var file_npool_smoketest_mgr_v1_module_module_proto_rawDesc = []byte{
 	0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1b, 0x73, 0x6d,
 	0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
 	0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x11, 0x6e, 0x70, 0x6f, 0x6f, 0x6c,
-	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xb1, 0x01, 0x0a,
-	0x09, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x12, 0x13, 0x0a, 0x02, 0x49, 0x44,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12,
-	0x17, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x48, 0x01, 0x52,
-	0x04, 0x4e, 0x61, 0x6d, 0x65, 0x88, 0x01, 0x01, 0x12, 0x25, 0x0a, 0x0b, 0x44, 0x65, 0x73, 0x63,
-	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x48, 0x02, 0x52,
-	0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x88, 0x01, 0x01, 0x12,
-	0x21, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x28, 0x20, 0x01,
-	0x28, 0x0d, 0x48, 0x03, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x88,
-	0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x4e, 0x61,
-	0x6d, 0x65, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74,
-	0x22, 0x6c, 0x0a, 0x06, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61,
-	0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20,
-	0x0a, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x1e, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0x12, 0x1c, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x6e, 0x20,
-	0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xa8,
-	0x01, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x28, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e,
-	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88,
-	0x01, 0x01, 0x12, 0x2c, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b,
+	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa8, 0x01, 0x0a,
+	0x06, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18,
+	0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x44,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1c, 0x0a,
+	0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0d,
+	0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x32, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0x80, 0x01, 0x0a, 0x09, 0x4d, 0x6f, 0x64, 0x75,
+	0x6c, 0x65, 0x52, 0x65, 0x71, 0x12, 0x13, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x17, 0x0a, 0x04, 0x4e, 0x61,
+	0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x48, 0x01, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65,
+	0x88, 0x01, 0x01, 0x12, 0x25, 0x0a, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x48, 0x02, 0x52, 0x0b, 0x44, 0x65, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49,
+	0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x44,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xa8, 0x01, 0x0a, 0x05, 0x43,
+	0x6f, 0x6e, 0x64, 0x73, 0x12, 0x28, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69,
-	0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x01, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x88, 0x01, 0x01,
-	0x12, 0x2f, 0x0a, 0x03, 0x49, 0x44, 0x73, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e,
-	0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53,
-	0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x03, 0x49, 0x44, 0x73, 0x88, 0x01,
-	0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x4e, 0x61, 0x6d,
-	0x65, 0x42, 0x06, 0x0a, 0x04, 0x5f, 0x49, 0x44, 0x73, 0x22, 0x51, 0x0a, 0x13, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26,
-	0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
-	0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64,
-	0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x14,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a,
-	0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a,
-	0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74,
-	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e,
-	0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x22, 0x52, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64,
-	0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x05,
-	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x6d,
-	0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e,
-	0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65,
-	0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x51, 0x0a, 0x13, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3a,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x73,
-	0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
-	0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c,
-	0x65, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x14, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x23, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d,
-	0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x22, 0x0a, 0x10, 0x47,
-	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22,
-	0x4c, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7b, 0x0a,
-	0x11, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x22, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x16, 0x0a, 0x06,
-	0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66,
-	0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x65, 0x0a, 0x12, 0x47, 0x65,
-	0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x39, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32,
-	0x23, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f,
-	0x64, 0x75, 0x6c, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54,
-	0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61,
-	0x6c, 0x22, 0x50, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x4f, 0x6e,
-	0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65,
-	0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64,
-	0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x22, 0x50, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65,
-	0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x6d, 0x6f,
-	0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d,
-	0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x6f,
-	0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49,
-	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x29, 0x0a, 0x13, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x53, 0x0a, 0x17, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d,
-	0x6f, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x22, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61, 0x6e,
-	0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2e, 0x0a, 0x18, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x13, 0x43,
-	0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x22, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2a, 0x0a, 0x14,
-	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x25, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22,
-	0x4f, 0x0a, 0x14, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73,
-	0x74, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x32, 0x09, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x42, 0x40, 0x5a, 0x3e, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50,
-	0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f,
-	0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x73, 0x6d, 0x6f, 0x6b, 0x65, 0x74, 0x65, 0x73, 0x74, 0x2f,
-	0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x2c,
+	0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61,
+	0x6c, 0x48, 0x01, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x88, 0x01, 0x01, 0x12, 0x2f, 0x0a, 0x03,
+	0x49, 0x44, 0x73, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65,
+	0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x03, 0x49, 0x44, 0x73, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a,
+	0x03, 0x5f, 0x49, 0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x06, 0x0a,
+	0x04, 0x5f, 0x49, 0x44, 0x73, 0x32, 0x09, 0x0a, 0x07, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72,
+	0x42, 0x40, 0x5a, 0x3e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x73, 0x6d, 0x6f, 0x6b, 0x65,
+	0x74, 0x65, 0x73, 0x74, 0x2f, 0x6d, 0x67, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x75,
+	0x6c, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1339,57 +298,23 @@ func file_npool_smoketest_mgr_v1_module_module_proto_rawDescGZIP() []byte {
 	return file_npool_smoketest_mgr_v1_module_module_proto_rawDescData
 }
 
-var file_npool_smoketest_mgr_v1_module_module_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_npool_smoketest_mgr_v1_module_module_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_npool_smoketest_mgr_v1_module_module_proto_goTypes = []interface{}{
-	(*ModuleReq)(nil),                // 0: smoketest.manager.module.v1.ModuleReq
-	(*Module)(nil),                   // 1: smoketest.manager.module.v1.Module
-	(*Conds)(nil),                    // 2: smoketest.manager.module.v1.Conds
-	(*CreateModuleRequest)(nil),      // 3: smoketest.manager.module.v1.CreateModuleRequest
-	(*CreateModuleResponse)(nil),     // 4: smoketest.manager.module.v1.CreateModuleResponse
-	(*CreateModulesRequest)(nil),     // 5: smoketest.manager.module.v1.CreateModulesRequest
-	(*CreateModulesResponse)(nil),    // 6: smoketest.manager.module.v1.CreateModulesResponse
-	(*UpdateModuleRequest)(nil),      // 7: smoketest.manager.module.v1.UpdateModuleRequest
-	(*UpdateModuleResponse)(nil),     // 8: smoketest.manager.module.v1.UpdateModuleResponse
-	(*GetModuleRequest)(nil),         // 9: smoketest.manager.module.v1.GetModuleRequest
-	(*GetModuleResponse)(nil),        // 10: smoketest.manager.module.v1.GetModuleResponse
-	(*GetModulesRequest)(nil),        // 11: smoketest.manager.module.v1.GetModulesRequest
-	(*GetModulesResponse)(nil),       // 12: smoketest.manager.module.v1.GetModulesResponse
-	(*GetModuleOnlyRequest)(nil),     // 13: smoketest.manager.module.v1.GetModuleOnlyRequest
-	(*GetModuleOnlyResponse)(nil),    // 14: smoketest.manager.module.v1.GetModuleOnlyResponse
-	(*ExistModuleRequest)(nil),       // 15: smoketest.manager.module.v1.ExistModuleRequest
-	(*ExistModuleResponse)(nil),      // 16: smoketest.manager.module.v1.ExistModuleResponse
-	(*ExistModuleCondsRequest)(nil),  // 17: smoketest.manager.module.v1.ExistModuleCondsRequest
-	(*ExistModuleCondsResponse)(nil), // 18: smoketest.manager.module.v1.ExistModuleCondsResponse
-	(*CountModulesRequest)(nil),      // 19: smoketest.manager.module.v1.CountModulesRequest
-	(*CountModulesResponse)(nil),     // 20: smoketest.manager.module.v1.CountModulesResponse
-	(*DeleteModuleRequest)(nil),      // 21: smoketest.manager.module.v1.DeleteModuleRequest
-	(*DeleteModuleResponse)(nil),     // 22: smoketest.manager.module.v1.DeleteModuleResponse
-	(*npool.StringVal)(nil),          // 23: npool.v1.StringVal
-	(*npool.StringSliceVal)(nil),     // 24: npool.v1.StringSliceVal
+	(*Module)(nil),               // 0: smoketest.manager.module.v1.Module
+	(*ModuleReq)(nil),            // 1: smoketest.manager.module.v1.ModuleReq
+	(*Conds)(nil),                // 2: smoketest.manager.module.v1.Conds
+	(*npool.StringVal)(nil),      // 3: npool.v1.StringVal
+	(*npool.StringSliceVal)(nil), // 4: npool.v1.StringSliceVal
 }
 var file_npool_smoketest_mgr_v1_module_module_proto_depIdxs = []int32{
-	23, // 0: smoketest.manager.module.v1.Conds.ID:type_name -> npool.v1.StringVal
-	23, // 1: smoketest.manager.module.v1.Conds.Name:type_name -> npool.v1.StringVal
-	24, // 2: smoketest.manager.module.v1.Conds.IDs:type_name -> npool.v1.StringSliceVal
-	0,  // 3: smoketest.manager.module.v1.CreateModuleRequest.Info:type_name -> smoketest.manager.module.v1.ModuleReq
-	1,  // 4: smoketest.manager.module.v1.CreateModuleResponse.Info:type_name -> smoketest.manager.module.v1.Module
-	0,  // 5: smoketest.manager.module.v1.CreateModulesRequest.Infos:type_name -> smoketest.manager.module.v1.ModuleReq
-	1,  // 6: smoketest.manager.module.v1.CreateModulesResponse.Infos:type_name -> smoketest.manager.module.v1.Module
-	0,  // 7: smoketest.manager.module.v1.UpdateModuleRequest.Info:type_name -> smoketest.manager.module.v1.ModuleReq
-	1,  // 8: smoketest.manager.module.v1.UpdateModuleResponse.Info:type_name -> smoketest.manager.module.v1.Module
-	1,  // 9: smoketest.manager.module.v1.GetModuleResponse.Info:type_name -> smoketest.manager.module.v1.Module
-	2,  // 10: smoketest.manager.module.v1.GetModulesRequest.Conds:type_name -> smoketest.manager.module.v1.Conds
-	1,  // 11: smoketest.manager.module.v1.GetModulesResponse.Infos:type_name -> smoketest.manager.module.v1.Module
-	2,  // 12: smoketest.manager.module.v1.GetModuleOnlyRequest.Conds:type_name -> smoketest.manager.module.v1.Conds
-	1,  // 13: smoketest.manager.module.v1.GetModuleOnlyResponse.Info:type_name -> smoketest.manager.module.v1.Module
-	2,  // 14: smoketest.manager.module.v1.ExistModuleCondsRequest.Conds:type_name -> smoketest.manager.module.v1.Conds
-	2,  // 15: smoketest.manager.module.v1.CountModulesRequest.Conds:type_name -> smoketest.manager.module.v1.Conds
-	1,  // 16: smoketest.manager.module.v1.DeleteModuleResponse.Info:type_name -> smoketest.manager.module.v1.Module
-	17, // [17:17] is the sub-list for method output_type
-	17, // [17:17] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	3, // 0: smoketest.manager.module.v1.Conds.ID:type_name -> npool.v1.StringVal
+	3, // 1: smoketest.manager.module.v1.Conds.Name:type_name -> npool.v1.StringVal
+	4, // 2: smoketest.manager.module.v1.Conds.IDs:type_name -> npool.v1.StringSliceVal
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_npool_smoketest_mgr_v1_module_module_proto_init() }
@@ -1399,7 +324,7 @@ func file_npool_smoketest_mgr_v1_module_module_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModuleReq); i {
+			switch v := v.(*Module); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1411,7 +336,7 @@ func file_npool_smoketest_mgr_v1_module_module_proto_init() {
 			}
 		}
 		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Module); i {
+			switch v := v.(*ModuleReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1434,248 +359,8 @@ func file_npool_smoketest_mgr_v1_module_module_proto_init() {
 				return nil
 			}
 		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModuleRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModuleResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModulesRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModulesResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateModuleRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateModuleResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModuleRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModuleResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModulesRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModulesResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModuleOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModuleOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistModuleRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistModuleResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistModuleCondsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistModuleCondsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountModulesRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountModulesResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteModuleRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteModuleResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
-	file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[1].OneofWrappers = []interface{}{}
 	file_npool_smoketest_mgr_v1_module_module_proto_msgTypes[2].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1683,7 +368,7 @@ func file_npool_smoketest_mgr_v1_module_module_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_smoketest_mgr_v1_module_module_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   23,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
