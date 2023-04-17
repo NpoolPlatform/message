@@ -30,16 +30,16 @@ message TestPlan {
     string          Name                              = 20;
     // @inject_tag: sql:"state"
     TestPlanState   State                             = 30; 
-    // @inject_tag: sql:"owner_id"
-    string          OwnerID                           = 40;
-    // @inject_tag: sql:"responsible_user_id"
-    string          ResponsibleUserID                 = 50;
-    // @inject_tag: sql:"failed_test_cases_count"
-    uint32          FailedTestCasesCount              = 60;
-    // @inject_tag: sql:"passed_test_cases_count"
-    uint32          PassedTestCasesCount              = 70;
-    // @inject_tag: sql:"skipped_test_cases_count"
-    uint32          SkippedTestCasesCount             = 80;
+    // @inject_tag: sql:"created_by"
+    string          CreatedBy                         = 40;
+    // @inject_tag: sql:"executor"
+    string          Executor                          = 50;
+    // @inject_tag: sql:"fails"
+    uint32          Fails                             = 60;
+    // @inject_tag: sql:"passes"
+    uint32          Passes                            = 70;
+    // @inject_tag: sql:"skips"
+    uint32          Skips                             = 80;
     // @inject_tag: sql:"run_duration"
     uint32          RunDuration                       = 90;
     // @inject_tag: sql:"result"
@@ -58,11 +58,11 @@ message TestPlanReq {
     optional string          ID                                = 10;
     optional string          Name                              = 20;
     optional TestPlanState   State                             = 30; 
-    optional string          OwnerID                           = 40;
-    optional string          ResponsibleUserID                 = 50;
-    optional uint32          FailedTestCasesCount              = 60;
-    optional uint32          PassedTestCasesCount              = 70;
-    optional uint32          SkippedTestCasesCount             = 80;
+    optional string          CreatedBy                         = 40;
+    optional string          Executor                          = 50;
+    optional uint32          Fails                             = 60;
+    optional uint32          Passes                            = 70;
+    optional uint32          Skips                             = 80;
     optional uint32          RunDuration                       = 90;
     optional TestResultState Result                            = 100;
     optional uint32          Deadline                          = 110;
@@ -71,7 +71,7 @@ message TestPlanReq {
 message Conds {
     optional npool.v1.StringVal      ID                         = 10;
     optional npool.v1.StringVal      State                      = 20;
-    optional npool.v1.StringVal      OwnerID                    = 30;
-    optional npool.v1.StringVal      ResponsibleUserID          = 40;
+    optional npool.v1.StringVal      CreatedBy                  = 30;
+    optional npool.v1.StringVal      Executor                   = 40;
 }
 

@@ -53,10 +53,10 @@
         "State": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OwnerID": {
+        "CreatedBy": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ResponsibleUserID": {
+        "Executor": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
@@ -142,28 +142,28 @@
           "$ref": "#/definitions/v1TestPlanState",
           "title": "@inject_tag: sql:\"state\""
         },
-        "OwnerID": {
+        "CreatedBy": {
           "type": "string",
-          "title": "@inject_tag: sql:\"owner_id\""
+          "title": "@inject_tag: sql:\"created_by\""
         },
-        "ResponsibleUserID": {
+        "Executor": {
           "type": "string",
-          "title": "@inject_tag: sql:\"responsible_user_id\""
+          "title": "@inject_tag: sql:\"executor\""
         },
-        "FailedTestCasesCount": {
+        "Fails": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"failed_test_cases_count\""
+          "title": "@inject_tag: sql:\"fails\""
         },
-        "PassedTestCasesCount": {
+        "Passes": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"passed_test_cases_count\""
+          "title": "@inject_tag: sql:\"passes\""
         },
-        "SkippedTestCasesCount": {
+        "Skips": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"skipped_test_cases_count\""
+          "title": "@inject_tag: sql:\"skips\""
         },
         "RunDuration": {
           "type": "integer",
@@ -208,21 +208,21 @@
         "State": {
           "$ref": "#/definitions/v1TestPlanState"
         },
-        "OwnerID": {
+        "CreatedBy": {
           "type": "string"
         },
-        "ResponsibleUserID": {
+        "Executor": {
           "type": "string"
         },
-        "FailedTestCasesCount": {
+        "Fails": {
           "type": "integer",
           "format": "int64"
         },
-        "PassedTestCasesCount": {
+        "Passes": {
           "type": "integer",
           "format": "int64"
         },
-        "SkippedTestCasesCount": {
+        "Skips": {
           "type": "integer",
           "format": "int64"
         },
