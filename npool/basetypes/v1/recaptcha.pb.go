@@ -5,10 +5,14 @@
 // source: npool/basetypes/v1/recaptcha.proto
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 package v1
 =======
 package recaptcha
 >>>>>>> Move some basetype to basetypes
+=======
+package v1
+>>>>>>> Use right path
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -24,6 +28,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type RecaptchaMethod int32
 
@@ -48,31 +53,40 @@ func (x RecaptchaMethod) Enum() *RecaptchaMethod {
 	p := new(RecaptchaMethod)
 =======
 type RecaptchaType int32
+=======
+type RecaptchaMethod int32
+>>>>>>> Use right path
 
 const (
-	RecaptchaType_DefaultRecaptchaType RecaptchaType = 0
-	RecaptchaType_GoogleRecaptchaV3    RecaptchaType = 10
+	RecaptchaMethod_DefaultRecaptchaMethod RecaptchaMethod = 0
+	RecaptchaMethod_GoogleRecaptchaV3      RecaptchaMethod = 10
 )
 
-// Enum value maps for RecaptchaType.
+// Enum value maps for RecaptchaMethod.
 var (
-	RecaptchaType_name = map[int32]string{
-		0:  "DefaultRecaptchaType",
+	RecaptchaMethod_name = map[int32]string{
+		0:  "DefaultRecaptchaMethod",
 		10: "GoogleRecaptchaV3",
 	}
-	RecaptchaType_value = map[string]int32{
-		"DefaultRecaptchaType": 0,
-		"GoogleRecaptchaV3":    10,
+	RecaptchaMethod_value = map[string]int32{
+		"DefaultRecaptchaMethod": 0,
+		"GoogleRecaptchaV3":      10,
 	}
 )
 
+<<<<<<< HEAD
 func (x RecaptchaType) Enum() *RecaptchaType {
 	p := new(RecaptchaType)
 >>>>>>> Move some basetype to basetypes
+=======
+func (x RecaptchaMethod) Enum() *RecaptchaMethod {
+	p := new(RecaptchaMethod)
+>>>>>>> Use right path
 	*p = x
 	return p
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func (x RecaptchaMethod) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
@@ -94,24 +108,32 @@ func (x RecaptchaMethod) Number() protoreflect.EnumNumber {
 func (RecaptchaMethod) EnumDescriptor() ([]byte, []int) {
 =======
 func (x RecaptchaType) String() string {
+=======
+func (x RecaptchaMethod) String() string {
+>>>>>>> Use right path
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (RecaptchaType) Descriptor() protoreflect.EnumDescriptor {
+func (RecaptchaMethod) Descriptor() protoreflect.EnumDescriptor {
 	return file_npool_basetypes_v1_recaptcha_proto_enumTypes[0].Descriptor()
 }
 
-func (RecaptchaType) Type() protoreflect.EnumType {
+func (RecaptchaMethod) Type() protoreflect.EnumType {
 	return &file_npool_basetypes_v1_recaptcha_proto_enumTypes[0]
 }
 
-func (x RecaptchaType) Number() protoreflect.EnumNumber {
+func (x RecaptchaMethod) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use RecaptchaType.Descriptor instead.
 func (RecaptchaType) EnumDescriptor() ([]byte, []int) {
 >>>>>>> Move some basetype to basetypes
+=======
+// Deprecated: Use RecaptchaMethod.Descriptor instead.
+func (RecaptchaMethod) EnumDescriptor() ([]byte, []int) {
+>>>>>>> Use right path
 	return file_npool_basetypes_v1_recaptcha_proto_rawDescGZIP(), []int{0}
 }
 
@@ -122,6 +144,9 @@ var file_npool_basetypes_v1_recaptcha_proto_rawDesc = []byte{
 	0x73, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x65, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Use right path
 	0x76, 0x31, 0x2a, 0x44, 0x0a, 0x0f, 0x52, 0x65, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x4d,
 	0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x1a, 0x0a, 0x16, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74,
 	0x52, 0x65, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x10,
@@ -131,6 +156,7 @@ var file_npool_basetypes_v1_recaptcha_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
 	0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x76, 0x31, 0x2a, 0x40, 0x0a, 0x0d, 0x52, 0x65, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x54,
 	0x79, 0x70, 0x65, 0x12, 0x18, 0x0a, 0x14, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x52, 0x65,
@@ -142,6 +168,8 @@ var file_npool_basetypes_v1_recaptcha_proto_rawDesc = []byte{
 	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x65, 0x63, 0x61,
 	0x70, 0x74, 0x63, 0x68, 0x61, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> Move some basetype to basetypes
+=======
+>>>>>>> Use right path
 }
 
 var (
@@ -159,10 +187,14 @@ func file_npool_basetypes_v1_recaptcha_proto_rawDescGZIP() []byte {
 var file_npool_basetypes_v1_recaptcha_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_npool_basetypes_v1_recaptcha_proto_goTypes = []interface{}{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(RecaptchaMethod)(0), // 0: basetypes.v1.RecaptchaMethod
 =======
 	(RecaptchaType)(0), // 0: basetypes.v1.RecaptchaType
 >>>>>>> Move some basetype to basetypes
+=======
+	(RecaptchaMethod)(0), // 0: basetypes.v1.RecaptchaMethod
+>>>>>>> Use right path
 }
 var file_npool_basetypes_v1_recaptcha_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
