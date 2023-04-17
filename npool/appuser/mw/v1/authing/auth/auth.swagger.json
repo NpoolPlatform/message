@@ -262,6 +262,7 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
     },
 <<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1StringVal": {
@@ -281,6 +282,8 @@
 >>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
         }
       }
+=======
+>>>>>>> Remove update api
     }
   }
 }

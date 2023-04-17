@@ -49,7 +49,6 @@ type MiddlewareClient interface {
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
 =======
 	CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error)
-	UpdateAuth(ctx context.Context, in *UpdateAuthRequest, opts ...grpc.CallOption) (*UpdateAuthResponse, error)
 	ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error)
 	GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
@@ -84,6 +83,7 @@ func (c *middlewareClient) CreateAuth(ctx context.Context, in *CreateAuthRequest
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (c *middlewareClient) CreateAuths(ctx context.Context, in *CreateAuthsRequest, opts ...grpc.CallOption) (*CreateAuthsResponse, error) {
 	out := new(CreateAuthsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/CreateAuths", in, out, opts...)
@@ -98,6 +98,8 @@ func (c *middlewareClient) UpdateAuth(ctx context.Context, in *UpdateAuthRequest
 	return out, nil
 }
 
+=======
+>>>>>>> Remove update api
 func (c *middlewareClient) ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error) {
 	out := new(ExistAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/ExistAuth", in, out, opts...)
@@ -190,7 +192,6 @@ type MiddlewareServer interface {
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
 =======
 	CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error)
-	UpdateAuth(context.Context, *UpdateAuthRequest) (*UpdateAuthResponse, error)
 	ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error)
 	GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
@@ -208,9 +209,12 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuth not implemented")
 }
+<<<<<<< HEAD
 func (UnimplementedMiddlewareServer) CreateAuths(context.Context, *CreateAuthsRequest) (*CreateAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuths not implemented")
 }
+=======
+>>>>>>> Remove update api
 func (UnimplementedMiddlewareServer) ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAuth not implemented")
 }
@@ -283,6 +287,7 @@ func _Middleware_CreateAuth_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 func _Middleware_CreateAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAuthsRequest)
 =======
@@ -316,6 +321,8 @@ func _Middleware_UpdateAuth_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+=======
+>>>>>>> Remove update api
 func _Middleware_ExistAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAuthRequest)
 	if err := dec(in); err != nil {
@@ -477,6 +484,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			MethodName: "CreateAuths",
 			Handler:    _Middleware_CreateAuths_Handler,
 =======
@@ -485,6 +493,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 >>>>>>> Refactor authing
 		},
 		{
+=======
+>>>>>>> Remove update api
 			MethodName: "ExistAuth",
 			Handler:    _Middleware_ExistAuth_Handler,
 		},
