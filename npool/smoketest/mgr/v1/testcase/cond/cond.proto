@@ -36,6 +36,8 @@ message Cond {
     uint32          CreatedAt                = 60;
     // @inject_tag: sql:"updated_at"
     uint32          UpdatedAt                = 70;
+    // @inject_tag: sql:"deleted_at"
+    uint32          DeletedAt                = 80;
 }
 
 message Conds {
