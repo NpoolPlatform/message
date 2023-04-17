@@ -7,15 +7,14 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
-    rpc UpdateApp              (UpdateAppRequest)             returns (UpdateAppResponse)             {}
-    rpc GetApp                 (GetAppRequest)                returns (GetAppResponse)                {}
-    rpc GetApps                (GetAppsRequest)               returns (GetAppsResponse)               {}
-    rpc GetUserApps            (GetUserAppsRequest)           returns (GetUserAppsResponse)           {}
-    rpc GetManyApps            (GetManyAppsRequest)           returns (GetManyAppsResponse)           {}
-    rpc DeleteApp              (DeleteAppRequest)             returns (DeleteAppResponse)             {}
+    rpc CreateApp  (CreateAppRequest)  returns (CreateAppResponse)  {}
+    rpc UpdateApp  (UpdateAppRequest)  returns (UpdateAppResponse)  {}
+    rpc GetApp     (GetAppRequest)     returns (GetAppResponse)     {}
+    rpc GetApps    (GetAppsRequest)    returns (GetAppsResponse)    {}
+    rpc DeleteApp  (DeleteAppRequest)  returns (DeleteAppResponse)  {}
 }
 
 message AppReq {
@@ -100,8 +99,13 @@ message App {
     repeated string CommitButtonTargets           = 260;
 }
 
+message Conds {
+    optional basetypes.v1.StringVal      ID     = 10;
+    optional basetypes.v1.StringSliceVal IDs    = 20;
+    optional basetypes.v1.StringVal      UserID = 30;
+}
+
 message CreateAppRequest {
-    // Permissioned by path
     AppReq Info = 10;
 }
 
@@ -110,7 +114,6 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-    // Permissioned by path
     AppReq Info = 10;
 }
 
@@ -119,7 +122,6 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    // Permissioned by path
     string ID = 10;
 }
 
@@ -128,42 +130,12 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-    // Permissioned by path
+    Conds Conds  = 9;
     int32 Offset = 10;
     int32 Limit  = 20;
 }
 
 message GetAppsResponse {
-    repeated App Infos = 10;
-    uint32       Total = 20;
-}
-
-message GetUserAppsRequest {
-    // Permissioned by path
-    string UserID = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
-}
-
-message GetUserAppsResponse {
-    repeated App Infos = 10;
-    uint32       Total = 20;
-}
-
-message GetSignMethodsRequest {
-    // Permissioned by path
-}
-
-message GetSignMethodsResponse {
-    // In future this may be put to database then admin can change it
-    repeated basetypes.v1.SignMethod Infos = 10;
-}
-
-message GetManyAppsRequest {
-    repeated string IDs = 10;
-}
-
-message GetManyAppsResponse {
     repeated App Infos = 10;
     uint32       Total = 20;
 }
