@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package smoketest.gateway.testplan.testcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan/testcase";
+
+import "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateTestPlanTestCase (CreateTestPlanTestCaseRequest) returns (CreateTestPlanTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/testplantestcase"
+            body: "*"
+        };
+    }
+    
+    rpc DeleteTestPlanTestCase (DeleteTestPlanTestCaseRequest) returns (DeleteTestPlanTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/testplantestcase"
+            body: "*"
+        };
+    }
+
+    rpc DeleteTestPlanTestCases (DeleteTestPlanTestCasesRequest) returns (DeleteTestPlanTestCasesResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/TestPlanTestCases"
+            body: "*"
+        };
+    }
+}
+
+message CreateTestPlanTestCaseRequest {
+    string                   TestPlanID                                              = 10;
+    string                   TestCaseID                                              = 20;
+    optional string          TestCaseOutput                                          = 30;
+    optional string          Description                                             = 40;
+    optional uint32          RunDuration                                             = 50;
+    optional string          TestUserID                                              = 60;
+    smoketest.manager.testplan.testcase.v1.TestCaseResult TestCaseResult             = 70; 
+    optional uint32          Index                                                   = 80;
+}
+
+message CreateTestPlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+}
+
+message GetTestPlanTestCasesRequest {
+    string         TestPlanID  =   10;
+    optional int32 Offset      =   20;
+    optional int32 Limit       =   30;
+}
+
+message GetTestPlanTestCasesResponse {
+    repeated smoketest.manager.testplan.testcase.v1.TestCase Infos = 10;
+    uint32                                                   Total = 20;
+}
+
+message GetTestPlanTestCaseRequest {
+    string   ID        =   10;
+}
+
+message GetTestPlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+}
+
+message DeleteTestPlanTestCaseRequest {
+    string ID        = 10;
+}
+
+message DeleteTestPlanTestCaseResponse {
+    smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+}
+
+message DeleteTestPlanTestCasesRequest {
+    string TestPlanID = 20;
+}
+
+message DeleteTestPlanTestCasesResponse {
+    repeated smoketest.manager.testplan.testcase.v1.TestCase Info = 10;
+}
