@@ -261,6 +261,7 @@
           "$ref": "#/definitions/v1StringSliceVal"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CreatedBy": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -268,6 +269,9 @@
 =======
         "UserID": {
 >>>>>>> Add conds to appuser middleware
+=======
+        "CreatedBy": {
+>>>>>>> Support created by
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
