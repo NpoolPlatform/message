@@ -9,100 +9,28 @@ import "npool/smoketest/mgr/v1/testplan/testplan.proto";
 // Service Name
 service Middleware {
     rpc CreateTestPlan     (CreateTestPlanRequest)     returns (CreateTestPlanResponse)     {}
-    rpc CreateTestPlans    (CreateTestPlansRequest)    returns (CreateTestPlansResponse)    {}
     rpc UpdateTestPlan     (UpdateTestPlanRequest)     returns (UpdateTestPlanResponse)     {}
     rpc GetTestPlan        (GetTestPlanRequest)        returns (GetTestPlanResponse)        {}
     rpc GetTestPlanOnly    (GetTestPlanOnlyRequest)    returns (GetTestPlanOnlyResponse)    {}
     rpc GetTestPlans       (GetTestPlansRequest)       returns (GetTestPlansResponse)       {}
     rpc ExistTestPlan      (ExistTestPlanRequest)      returns (ExistTestPlanResponse)      {}
-    rpc ExistTestPlanConds (ExistTestPlanCondsRequest) returns (ExistTestPlanCondsResponse) {}
-    rpc CountTestPlans     (CountTestPlansRequest)     returns (CountTestPlansResponse)     {}
     rpc DeleteTestPlan     (DeleteTestPlanRequest)     returns (DeleteTestPlanResponse)     {}
 }
 
-message TestPlan {
-    // @inject_tag: sql:"id"
-    string          ID                                = 10;
-    // @inject_tag: sql:"name"
-    string          Name                              = 20;
-    // @inject_tag: sql:"state"
-    TestPlanState   State                             = 30; //未开始|正在进行|已完成|已逾期
-    // @inject_tag: sql:"owner_id"
-    string          OwnerID                           = 40;
-    // @inject_tag: sql:"responsible_user_id"
-    string          ResponsibleUserID                 = 50;
-    // @inject_tag: sql:"failed_test_cases_count"
-    uint32          FailedTestCasesCount              = 60;
-    // @inject_tag: sql:"passed_test_cases_count"
-    uint32          PassedTestCasesCount              = 70;
-    // @inject_tag: sql:"skipped_test_cases_count"
-    uint32          SkippedTestCasesCount             = 80;
-    // @inject_tag: sql:"run_duration"
-    uint32          RunDuration                       = 90;
-    // @inject_tag: sql:"test_result"
-    TestResultState TestResult                        = 100;
-    // @inject_tag: sql:"deadline"
-    uint32          Deadline                          = 110;
-    // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                         = 120;
-    // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                         = 130;
-    // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt                         = 140;
-}
-
-message TestPlanReq {
-    optional string          ID                                = 10;
-    optional string          Name                              = 20;
-    optional TestPlanState   State                             = 30; 
-    optional string          OwnerID                           = 40;
-    optional string          ResponsibleUserID                 = 50;
-    optional uint32          FailedTestCasesCount              = 60;
-    optional uint32          PassedTestCasesCount              = 70;
-    optional uint32          SkippedTestCasesCount             = 80;
-    optional uint32          RunDuration                       = 90;
-    optional TestResultState TestResult                        = 100;
-    optional uint32          Deadline                          = 110;
-    optional uint32          CreatedAt                         = 120;
-}
-
-
-enum TestResultState {
-    DefaultTestResultState      = 0;
-    Passed                 = 10;
-    Failed                 = 20;
-}
-
-enum TestPlanState {
-    DefaultTestPlanState      = 0;
-    WaitStart                 = 10;
-    Completed                 = 20;
-    Finished                  = 30;
-    Overdue                   = 40;
-}
-
 message CreateTestPlanRequest {
-    TestPlanReq Info = 10;
+    smoketest.manager.testplan.v1.TestPlanReq Info = 10;
 }
 
 message CreateTestPlanResponse {
-    TestPlan Info = 10;
-}
-
-message CreateTestPlansRequest {
-    repeated TestPlanReq Infos = 10;
-}
-
-message CreateTestPlansResponse {
-    repeated TestPlan Infos = 10;
+    smoketest.manager.testplan.v1.TestPlan Info = 10;
 }
 
 message UpdateTestPlanRequest {
-    TestPlanReq Info = 10;
+    smoketest.manager.testplan.v1.TestPlanReq Info = 10;
 }
 
 message UpdateTestPlanResponse {
-    TestPlan Info = 10;
+    smoketest.manager.testplan.v1.TestPlan Info = 10;
 }
 
 message GetTestPlanRequest {
@@ -110,7 +38,7 @@ message GetTestPlanRequest {
 }
 
 message GetTestPlanResponse {
-    TestPlan Info = 10;
+    smoketest.manager.testplan.v1.TestPlan Info = 10;
 }
 
 message GetTestPlansRequest {
@@ -120,8 +48,8 @@ message GetTestPlansRequest {
 }
 
 message GetTestPlansResponse {
-    repeated TestPlan Infos = 10;
-    uint32            Total = 20;
+    repeated smoketest.manager.testplan.v1.TestPlan Infos = 10;
+    uint32                                          Total = 20;
 }
 
 message GetTestPlanOnlyRequest {
@@ -129,7 +57,7 @@ message GetTestPlanOnlyRequest {
 }
 
 message GetTestPlanOnlyResponse {
-    TestPlan Info = 10;
+    smoketest.manager.testplan.v1.TestPlan Info = 10;
 }
 
 message ExistTestPlanRequest {
@@ -140,26 +68,10 @@ message ExistTestPlanResponse {
     bool Info = 10;
 }
 
-message ExistTestPlanCondsRequest {
-    smoketest.manager.testplan.v1.Conds Conds = 10;
-}
-
-message ExistTestPlanCondsResponse {
-    bool Info = 10;
-}
-
-message CountTestPlansRequest {
-    smoketest.manager.testplan.v1.Conds Conds = 10;
-}
-
-message CountTestPlansResponse {
-    uint32 Info = 10;
-}
-
 message DeleteTestPlanRequest {
     string ID = 10;
 }
 
 message DeleteTestPlanResponse {
-    TestPlan Info = 10;
+    smoketest.manager.testplan.v1.TestPlan Info = 10;
 }
