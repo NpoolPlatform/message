@@ -59,8 +59,8 @@ message DeleteCondResponse {
 }
 
 message GetCondsRequest {
-    int32  Offset = 10;
-    int32  Limit  = 20;
+    optional int32  Offset = 10;
+    optional int32  Limit  = 20;
 }
 
 message GetCondsResponse {
