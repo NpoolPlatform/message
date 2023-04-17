@@ -152,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
+              "$ref": "#/definitions/v1GetRecaptchasResponse"
             }
           },
           "default": {
@@ -168,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
+              "$ref": "#/definitions/v1GetRecaptchasRequest"
             }
           }
         ],
@@ -275,6 +275,16 @@
     }
   },
   "definitions": {
+    "appcontrolv2CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
     "appusergatewayappv1CreateAppRequest": {
       "type": "object",
       "properties": {
@@ -315,7 +325,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -399,21 +409,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -504,7 +499,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -588,7 +583,7 @@
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnableInt": {
           "type": "integer",
@@ -624,7 +619,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -646,6 +641,16 @@
           }
         }
       }
+    },
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "basetypesv1SignMethod": {
       "type": "string",
@@ -707,15 +712,28 @@
         }
       }
     },
-    "v2CreateInvitationCodeWhen": {
+    "v1GetRecaptchasRequest": {
+      "type": "object"
+    },
+    "v1GetRecaptchasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Recaptcha"
+          },
+          "title": "In future this may be put to database then admin can change it"
+        }
+      }
+    },
+    "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3"
       ],
-      "default": "DefaultWhen"
+      "default": "DefaultRecaptchaMethod"
     },
     "v2Recaptcha": {
       "type": "object",

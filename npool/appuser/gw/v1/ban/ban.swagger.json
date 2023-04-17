@@ -302,7 +302,7 @@
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnableInt": {
           "type": "integer",
@@ -338,7 +338,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -414,6 +414,16 @@
           "$ref": "#/definitions/appv1App"
         }
       }
+    },
+    "basetypesv1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
     },
     "protobufAny": {
       "type": "object",
@@ -504,6 +514,14 @@
           "$ref": "#/definitions/v2BanAppUser"
         }
       }
+    },
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaMethod"
     },
     "v1SignMethod": {
       "type": "string",
@@ -789,16 +807,6 @@
         }
       }
     },
-    "v2CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
     "v2KycState": {
       "type": "string",
       "enum": [
@@ -808,14 +816,6 @@
         "Rejected"
       ],
       "default": "DefaultState"
-    },
-    "v2RecaptchaType": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaType",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaType"
     }
   }
 }
