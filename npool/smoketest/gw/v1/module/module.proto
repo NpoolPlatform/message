@@ -39,8 +39,8 @@ service Gateway {
 }
 
 message CreateModuleRequest {
-    string          Name                = 30;
-    string          Description         = 40;
+    string                    Name                = 10;
+    optional  string          Description         = 20;
 }
 
 message CreateModuleResponse {
