@@ -4,10 +4,11 @@ package appuser.gateway.authing.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/authing";
 
-import "npool/appuser/mw/v1/authing/auth.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
+import "npool/appuser/mw/v1/authing/auth/auth.proto";
+import "npool/appuser/mw/v1/authing/history/history.proto";
 
 service Gateway {
     rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {
@@ -67,7 +68,7 @@ message CreateAppAuthRequest {
 }
 
 message CreateAppAuthResponse {
-   appuser.middleware.authing.v1.Auth Info = 10;
+   appuser.middleware.authing.auth.v1.Auth Info = 10;
 }
 
 message DeleteAppAuthRequest {
@@ -76,7 +77,7 @@ message DeleteAppAuthRequest {
 }
 
 message DeleteAppAuthResponse {
-   appuser.middleware.authing.v1.Auth Info = 10;
+   appuser.middleware.authing.auth.v1.Auth Info = 10;
 }
 
 message GetAppAuthsRequest {
@@ -86,8 +87,8 @@ message GetAppAuthsRequest {
 }
 
 message GetAppAuthsResponse {
-   repeated appuser.middleware.authing.v1.Auth Infos = 10;
-   uint32   Total                                    = 20;
+   repeated appuser.middleware.authing.auth.v1.Auth Infos = 10;
+   uint32   Total                                         = 20;
 }
 
 message GetAppHistoriesRequest {
@@ -97,6 +98,6 @@ message GetAppHistoriesRequest {
 }
 
 message GetAppHistoriesResponse {
-   repeated appuser.middleware.authing.v1.History Infos = 10;
-   uint32   Total                                       = 20;
+   repeated appuser.middleware.authing.history.v1.History Infos = 10;
+   uint32   Total                                               = 20;
 }
