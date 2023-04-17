@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/testplantestcase": {
+    "/v1/create/plantestcase": {
       "post": {
         "operationId": "Gateway_CreatePlanTestCase",
         "responses": {
@@ -48,39 +48,7 @@
         ]
       }
     },
-    "/v1/delete/PlanTestCases": {
-      "post": {
-        "operationId": "Gateway_DeletePlanTestCases",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCasesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCasesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/delete/testplantestcase": {
+    "/v1/delete/plantestcase": {
       "post": {
         "operationId": "Gateway_DeletePlanTestCase",
         "responses": {
@@ -104,6 +72,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeletePlanTestCaseRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/plantestcases": {
+      "post": {
+        "operationId": "Gateway_DeletePlanTestCases",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeletePlanTestCasesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeletePlanTestCasesRequest"
             }
           }
         ],

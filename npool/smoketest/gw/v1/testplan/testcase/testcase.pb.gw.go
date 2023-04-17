@@ -145,7 +145,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase", runtime.WithHTTPPathPattern("/v1/create/testplantestcase"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase", runtime.WithHTTPPathPattern("/v1/create/plantestcase"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -168,7 +168,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase", runtime.WithHTTPPathPattern("/v1/delete/testplantestcase"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase", runtime.WithHTTPPathPattern("/v1/delete/plantestcase"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -191,7 +191,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/PlanTestCases"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/plantestcases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -253,7 +253,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase", runtime.WithHTTPPathPattern("/v1/create/testplantestcase"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase", runtime.WithHTTPPathPattern("/v1/create/plantestcase"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -273,7 +273,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase", runtime.WithHTTPPathPattern("/v1/delete/testplantestcase"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase", runtime.WithHTTPPathPattern("/v1/delete/plantestcase"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/PlanTestCases"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/plantestcases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -313,11 +313,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_CreatePlanTestCase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "testplantestcase"}, ""))
+	pattern_Gateway_CreatePlanTestCase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "plantestcase"}, ""))
 
-	pattern_Gateway_DeletePlanTestCase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "testplantestcase"}, ""))
+	pattern_Gateway_DeletePlanTestCase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "plantestcase"}, ""))
 
-	pattern_Gateway_DeletePlanTestCases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "PlanTestCases"}, ""))
+	pattern_Gateway_DeletePlanTestCases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "plantestcases"}, ""))
 )
 
 var (

@@ -11,21 +11,21 @@ import "google/api/annotations.proto";
 service Gateway {
     rpc CreatePlanTestCase (CreatePlanTestCaseRequest) returns (CreatePlanTestCaseResponse) {
         option (google.api.http) = {
-            post: "/v1/create/testplantestcase"
+            post: "/v1/create/plantestcase"
             body: "*"
         };
     }
     
     rpc DeletePlanTestCase (DeletePlanTestCaseRequest) returns (DeletePlanTestCaseResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/testplantestcase"
+            post: "/v1/delete/plantestcase"
             body: "*"
         };
     }
 
     rpc DeletePlanTestCases (DeletePlanTestCasesRequest) returns (DeletePlanTestCasesResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/PlanTestCases"
+            post: "/v1/delete/plantestcases"
             body: "*"
         };
     }
