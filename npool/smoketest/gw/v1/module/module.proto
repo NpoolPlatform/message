@@ -5,19 +5,20 @@ package smoketest.gateway.module.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/module";
 
 import "google/api/annotations.proto";
+import "npool/smoketest/mgr/v1/module/module.proto";
 
 // Service Name
 service Gateway {
-    rpc GetModules (GetModulesRequest) returns (GetModulesResponse) {
+    rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse) {
         option (google.api.http) = {
-            post: "/v1/get/modules"
+            post: "/v1/create/module"
             body: "*"
         };
     }
 
-    rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse) {
+    rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse) {
         option (google.api.http) = {
-            post: "/v1/create/module"
+            post: "/v1/delete/module"
             body: "*"
         };
     }
@@ -29,9 +30,9 @@ service Gateway {
         };
     }
 
-    rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse) {
+    rpc GetModules (GetModulesRequest) returns (GetModulesResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/module"
+            post: "/v1/get/modules"
             body: "*"
         };
     }
@@ -44,34 +45,6 @@ message Module {
     uint32           CreatedAt                   = 40;
 }
 
-message DeleteModuleRequest {
-    string ID        = 10;
-}
-
-message DeleteModuleResponse {
-    Module Info = 10;
-}
-
-message GetModulesRequest {
-    int32  Offset = 20;
-    int32  Limit  = 30;
-}
-
-message GetModulesResponse {
-    repeated Module Infos = 10;
-    uint32        Total   = 20;
-}
-
-message UpdateModuleRequest {
-    string          ID                  = 10;
-    string          Name                = 30;
-    string          Description         = 40;
-}
-
-message UpdateModuleResponse {
-    Module Info = 10;
-}
-
 message CreateModuleRequest {
     string          Name                = 30;
     string          Description         = 40;
@@ -80,3 +53,34 @@ message CreateModuleRequest {
 message CreateModuleResponse {
     Module Info = 10;
 }
+
+message DeleteModuleRequest {
+    string ID        = 10;
+}
+
+message DeleteModuleResponse {
+    smoketest.manager.module.v1.Module Info = 10;
+}
+
+message UpdateModuleRequest {
+    string          ID                  = 10;
+    optional string Name                = 20;
+    optional string Description         = 30;
+}
+
+message UpdateModuleResponse {
+    Module Info = 10;
+}
+
+message GetModulesRequest {
+    optional int32  Offset = 10;
+    optional int32  Limit  = 20;
+}
+
+message GetModulesResponse {
+    repeated Module Infos  = 10;
+    uint32          Total  = 20;
+}
+
+
+

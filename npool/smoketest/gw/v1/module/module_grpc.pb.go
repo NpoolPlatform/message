@@ -22,10 +22,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error)
 	CreateModule(ctx context.Context, in *CreateModuleRequest, opts ...grpc.CallOption) (*CreateModuleResponse, error)
-	UpdateModule(ctx context.Context, in *UpdateModuleRequest, opts ...grpc.CallOption) (*UpdateModuleResponse, error)
 	DeleteModule(ctx context.Context, in *DeleteModuleRequest, opts ...grpc.CallOption) (*DeleteModuleResponse, error)
+	UpdateModule(ctx context.Context, in *UpdateModuleRequest, opts ...grpc.CallOption) (*UpdateModuleResponse, error)
+	GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error)
 }
 
 type gatewayClient struct {
@@ -36,27 +36,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error) {
-	out := new(GetModulesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.module.v1.Gateway/GetModules", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) CreateModule(ctx context.Context, in *CreateModuleRequest, opts ...grpc.CallOption) (*CreateModuleResponse, error) {
 	out := new(CreateModuleResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.gateway.module.v1.Gateway/CreateModule", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateModule(ctx context.Context, in *UpdateModuleRequest, opts ...grpc.CallOption) (*UpdateModuleResponse, error) {
-	out := new(UpdateModuleResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.module.v1.Gateway/UpdateModule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,14 +54,32 @@ func (c *gatewayClient) DeleteModule(ctx context.Context, in *DeleteModuleReques
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateModule(ctx context.Context, in *UpdateModuleRequest, opts ...grpc.CallOption) (*UpdateModuleResponse, error) {
+	out := new(UpdateModuleResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.module.v1.Gateway/UpdateModule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error) {
+	out := new(GetModulesResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.module.v1.Gateway/GetModules", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error)
 	CreateModule(context.Context, *CreateModuleRequest) (*CreateModuleResponse, error)
-	UpdateModule(context.Context, *UpdateModuleRequest) (*UpdateModuleResponse, error)
 	DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error)
+	UpdateModule(context.Context, *UpdateModuleRequest) (*UpdateModuleResponse, error)
+	GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -87,17 +87,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetModules not implemented")
-}
 func (UnimplementedGatewayServer) CreateModule(context.Context, *CreateModuleRequest) (*CreateModuleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateModule not implemented")
+}
+func (UnimplementedGatewayServer) DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteModule not implemented")
 }
 func (UnimplementedGatewayServer) UpdateModule(context.Context, *UpdateModuleRequest) (*UpdateModuleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateModule not implemented")
 }
-func (UnimplementedGatewayServer) DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteModule not implemented")
+func (UnimplementedGatewayServer) GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetModules not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -110,24 +110,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetModules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetModulesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetModules(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.gateway.module.v1.Gateway/GetModules",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetModules(ctx, req.(*GetModulesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_CreateModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -144,24 +126,6 @@ func _Gateway_CreateModule_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateModule(ctx, req.(*CreateModuleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateModuleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateModule(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.gateway.module.v1.Gateway/UpdateModule",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateModule(ctx, req.(*UpdateModuleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -184,6 +148,42 @@ func _Gateway_DeleteModule_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateModuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateModule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.gateway.module.v1.Gateway/UpdateModule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateModule(ctx, req.(*UpdateModuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetModules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetModulesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetModules(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.gateway.module.v1.Gateway/GetModules",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetModules(ctx, req.(*GetModulesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -192,20 +192,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetModules",
-			Handler:    _Gateway_GetModules_Handler,
-		},
-		{
 			MethodName: "CreateModule",
 			Handler:    _Gateway_CreateModule_Handler,
+		},
+		{
+			MethodName: "DeleteModule",
+			Handler:    _Gateway_DeleteModule_Handler,
 		},
 		{
 			MethodName: "UpdateModule",
 			Handler:    _Gateway_UpdateModule_Handler,
 		},
 		{
-			MethodName: "DeleteModule",
-			Handler:    _Gateway_DeleteModule_Handler,
+			MethodName: "GetModules",
+			Handler:    _Gateway_GetModules_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
