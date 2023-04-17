@@ -153,10 +153,14 @@
         ]
       }
     },
+<<<<<<< HEAD
     "/v1/get/apps": {
 =======
     "/v1/get/user/apps": {
 >>>>>>> Remove old protobuf
+=======
+    "/v1/get/userapps": {
+>>>>>>> Add conds to appuser middleware
       "post": {
         "summary": "Super admin api",
         "operationId": "Gateway_GetApps",
@@ -164,7 +168,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1GetAppsResponse"
+=======
+              "$ref": "#/definitions/v1GetUserAppsResponse"
+>>>>>>> Add conds to appuser middleware
             }
           },
           "default": {
@@ -180,7 +188,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1GetAppsRequest"
+=======
+              "$ref": "#/definitions/v1GetUserAppsRequest"
+>>>>>>> Add conds to appuser middleware
             }
           }
         ],
@@ -334,6 +346,7 @@
         "Offset": {
           "type": "integer",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "format": "int32",
           "title": "Permissioned by path"
@@ -369,6 +382,8 @@
         "Offset": {
           "type": "integer",
 >>>>>>> Use basetype
+=======
+>>>>>>> Add conds to appuser middleware
           "format": "int32"
         },
         "Limit": {
@@ -633,6 +648,37 @@
         "HasPaidOrder"
       ],
       "default": "DefaultWhen"
+    },
+    "v1GetUserAppsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1RecaptchaMethod": {
       "type": "string",

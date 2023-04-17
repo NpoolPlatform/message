@@ -248,6 +248,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add conds to appuser middleware
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -257,16 +260,23 @@
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
+<<<<<<< HEAD
         "CreatedBy": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
+=======
+        "UserID": {
+>>>>>>> Add conds to appuser middleware
           "$ref": "#/definitions/v1StringVal"
         }
       }
     },
+<<<<<<< HEAD
     "v1CreateAppResponse": {
 =======
+=======
+>>>>>>> Add conds to appuser middleware
     "v1CreateAppResponse": {
       "type": "object",
       "properties": {
@@ -317,6 +327,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "v1CreateInvitationCodeWhen": {
       "type": "string",
@@ -403,6 +414,8 @@
         }
       }
     },
+=======
+>>>>>>> Add conds to appuser middleware
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -455,6 +468,31 @@
       }
 =======
 >>>>>>> Remove old protobuf
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
     },
     "v1UpdateAppResponse": {
       "type": "object",
