@@ -4,9 +4,6 @@ package appuser.middleware.app.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
-import "npool/appuser/mgr/v2/app/app.proto";
-import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
-import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";

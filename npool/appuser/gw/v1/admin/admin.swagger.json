@@ -277,7 +277,34 @@
     }
   },
   "definitions": {
-    "appv1App": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -360,7 +387,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -379,43 +406,6 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
-        }
-      }
-    },
-    "basetypesv1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
           }
         }
       }
@@ -501,7 +491,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         }
       }
@@ -542,6 +532,16 @@
         }
       }
     },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
     "v1GetAdminAppsRequest": {
       "type": "object"
     },
@@ -551,7 +551,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         }
       }
