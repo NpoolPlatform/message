@@ -83,7 +83,7 @@ message DeleteTestCaseResponse {
 }
 
 message GetTestCasesRequest {
-    string ModuleID = 10;
+    optional string ModuleID = 10;
     optional int32  Offset =  20;
     optional int32  Limit  =  30;
 }
