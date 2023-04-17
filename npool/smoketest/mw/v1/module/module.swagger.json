@@ -44,37 +44,67 @@
         }
       }
     },
-    "smoketestmiddlewaremodulev1CreateModuleResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaremodulev1Module"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "smoketestmiddlewaremodulev1DeleteModuleResponse": {
+    "v1CreateModuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaremodulev1Module"
+          "$ref": "#/definitions/v1Module"
         }
       }
     },
-    "smoketestmiddlewaremodulev1GetModuleResponse": {
+    "v1DeleteModuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaremodulev1Module"
+          "$ref": "#/definitions/v1Module"
         }
       }
     },
-    "smoketestmiddlewaremodulev1GetModulesResponse": {
+    "v1ExistModuleCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistModuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetModuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Module"
+        }
+      }
+    },
+    "v1GetModulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/smoketestmiddlewaremodulev1Module"
+            "$ref": "#/definitions/v1Module"
           }
         },
         "Total": {
@@ -83,7 +113,7 @@
         }
       }
     },
-    "smoketestmiddlewaremodulev1Module": {
+    "v1Module": {
       "type": "object",
       "properties": {
         "ID": {
@@ -107,28 +137,25 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
     },
-    "smoketestmiddlewaremodulev1UpdateModuleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaremodulev1Module"
-        }
-      }
-    },
-    "v1Conds": {
+    "v1ModuleReq": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
         "Name": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "Description": {
+          "type": "string"
         }
       }
     },
@@ -154,6 +181,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateModuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Module"
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/smoketest/mw/v1/testcase/testcase.proto",
+    "title": "npool/smoketest/mw/v1/testplan/testcase/testcase.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,6 +17,104 @@
   ],
   "paths": {},
   "definitions": {
+    "managertestplantestcasev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TestPlanID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TestUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Result": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "managertestplantestcasev1TestCaseReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TestPlanID": {
+          "type": "string"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "TestCaseOutput": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestUserID": {
+          "type": "string"
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestCaseResult"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewareTestCasev1CreateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "middlewareTestCasev1DeleteTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "middlewareTestCasev1GetTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
+    "middlewareTestCasev1GetTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewareTestCasev1UpdateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -103,90 +201,19 @@
         }
       }
     },
-    "v1BoolVal": {
+    "v1ExistTestCaseResponse": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
+        "Info": {
           "type": "boolean"
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ModuleID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ApiID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Deprecated": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateTestCaseResponse": {
+    "v1GetTestCaseOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1DeleteTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1GetTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1GetTestCasesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
@@ -201,40 +228,15 @@
         }
       }
     },
-    "v1TestCaseReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "ModuleID": {
-          "type": "string"
-        },
-        "ApiID": {
-          "type": "string"
-        },
-        "Input": {
-          "type": "string"
-        },
-        "InputDesc": {
-          "type": "string"
-        },
-        "Expectation": {
-          "type": "string"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType"
-        },
-        "Deprecated": {
-          "type": "boolean"
-        }
-      }
+    "v1TestCaseResult": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseResult",
+        "Skipped",
+        "Passed",
+        "Failed"
+      ],
+      "default": "DefaultTestCaseResult"
     },
     "v1TestCaseType": {
       "type": "string",
@@ -244,14 +246,6 @@
         "Automatic"
       ],
       "default": "DefaultTestCaseType"
-    },
-    "v1UpdateTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
     }
   }
 }
