@@ -80,6 +80,7 @@
         ]
       }
     },
+<<<<<<< HEAD
     "/v1/delete/app": {
       "post": {
         "operationId": "Gateway_DeleteApp",
@@ -153,6 +154,9 @@
       }
     },
     "/v1/get/apps": {
+=======
+    "/v1/get/user/apps": {
+>>>>>>> Remove old protobuf
       "post": {
         "summary": "Super admin api",
         "operationId": "Gateway_GetApps",
@@ -219,16 +223,6 @@
     }
   },
   "definitions": {
-    "appcontrolv2CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
     "appusergatewayappv1CreateAppRequest": {
       "type": "object",
       "properties": {
@@ -270,10 +264,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -352,27 +350,12 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1GetSignMethodsRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/signmethodv2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
         }
       }
     },
@@ -450,10 +433,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -600,10 +587,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -627,9 +618,13 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1BanAppRequest": {
 =======
     "basetypesv1CreateInvitationCodeWhen": {
+=======
+    "v1CreateInvitationCodeWhen": {
+>>>>>>> Remove old protobuf
       "type": "string",
       "enum": [
         "DefaultWhen",
@@ -639,7 +634,15 @@
       ],
       "default": "DefaultWhen"
     },
-    "basetypesv1SignMethod": {
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3"
+      ],
+      "default": "DefaultRecaptchaMethod"
+    },
+    "v1SignMethod": {
       "type": "string",
       "enum": [
         "DefaultSignMethod",
@@ -654,6 +657,7 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+<<<<<<< HEAD
     },
     "protobufAny": {
 >>>>>>> Use basetype
@@ -728,6 +732,8 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+=======
+>>>>>>> Remove old protobuf
     }
   }
 }

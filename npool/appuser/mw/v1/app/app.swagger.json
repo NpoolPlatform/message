@@ -139,10 +139,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -219,10 +223,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -239,6 +247,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -257,6 +266,8 @@
       }
     },
     "v1CreateAppResponse": {
+=======
+    "v1CreateAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -264,7 +275,38 @@
         }
       }
     },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "v1DeleteAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1GetAppResponse": {
+>>>>>>> Remove old protobuf
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+<<<<<<< HEAD
     "v1CreateAppsResponse": {
+=======
+    "v1GetAppsResponse": {
+>>>>>>> Remove old protobuf
       "type": "object",
       "properties": {
         "Infos": {
@@ -275,6 +317,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1CreateInvitationCodeWhen": {
       "type": "string",
       "enum": [
@@ -328,6 +371,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1App"
+=======
+    "v1GetManyAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Remove old protobuf
         }
       }
     },
@@ -370,6 +427,7 @@
       ],
       "default": "DefaultSignMethod"
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -395,6 +453,8 @@
           "type": "string"
         }
       }
+=======
+>>>>>>> Remove old protobuf
     },
     "v1UpdateAppResponse": {
       "type": "object",
@@ -403,8 +463,11 @@
           "$ref": "#/definitions/v1App"
         }
       }
+<<<<<<< HEAD
 =======
 >>>>>>> Use basetype
+=======
+>>>>>>> Remove old protobuf
     }
   }
 }

@@ -399,10 +399,14 @@
         },
         "CreateInvitationCodeWhen": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
 =======
           "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
 >>>>>>> Use basetype
+=======
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
+>>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -425,6 +429,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     "basetypesv1CreateInvitationCodeWhen": {
@@ -465,6 +470,8 @@
       }
     },
 >>>>>>> Use basetype
+=======
+>>>>>>> Remove old protobuf
     "v1Auth": {
       "type": "object",
       "properties": {
