@@ -5,21 +5,21 @@ package smoketest.gateway.testplan.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan";
 
 import "npool/smoketest/mgr/v1/testplan/testplan.proto";
-import "npool/smoketest/gw/v1/planrelatedtestcase/planrelatedtestcase.proto";
+import "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetTestPlans (GetTestPlansRequest) returns (GetTestPlansResponse) {
+    rpc CreateTestPlan (CreateTestPlanRequest) returns (CreateTestPlanResponse) {
         option (google.api.http) = {
-            post: "/v1/get/testplans"
+            post: "/v1/create/testplan"
             body: "*"
         };
     }
 
-    rpc CreateTestPlan (CreateTestPlanRequest) returns (CreateTestPlanResponse) {
+    rpc DeleteTestPlan (DeleteTestPlanRequest) returns (DeleteTestPlanResponse) {
         option (google.api.http) = {
-            post: "/v1/create/testplan"
+            post: "/v1/delete/testplan"
             body: "*"
         };
     }
@@ -31,31 +31,31 @@ service Gateway {
         };
     }
 
-    rpc DeleteTestPlan (DeleteTestPlanRequest) returns (DeleteTestPlanResponse) {
+    rpc GetTestPlans (GetTestPlansRequest) returns (GetTestPlansResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/testplan"
+            post: "/v1/get/testplans"
             body: "*"
         };
     }
 }
 
 message TestPlan {
-    string          ID                                         = 10;
-    string          Name                                       = 20;
-    smoketest.manager.testplan.v1.TestPlanState   State        = 30; 
-    string          OwnerID                                    = 40;
-    string          OwnerName                                  = 50;
-    string          ResponsibleUserID                          = 60;
-    string          ResponsibleUsername                        = 70;
-    uint32          FailedTestCasesCount                       = 80;
-    uint32          PassedTestCasesCount                       = 90;
-    uint32          SkippedTestCasesCount                      = 100;
-    uint32          RunDuration                                = 110;
-    smoketest.manager.testplan.v1.TestResultState TestResult   = 120;
-    uint32          Deadline                                   = 130;
-    uint32          CreatedAt                                  = 140;
-    uint32          UpdatedAt                                  = 150;
-    repeated smoketest.gateway.planrelatedtestcase.v1.PlanRelatedTestCase PlanRelatedTestCases  = 160;
+    string          ID                                                  = 10;
+    string          Name                                                = 20;
+    smoketest.manager.testplan.v1.TestPlanState   State                 = 30; 
+    string          OwnerID                                             = 40;
+    string          OwnerName                                           = 50;
+    string          ResponsibleUserID                                   = 60;
+    string          ResponsibleUsername                                 = 70;
+    uint32          FailedTestCasesCount                                = 80;
+    uint32          PassedTestCasesCount                                = 90;
+    uint32          SkippedTestCasesCount                               = 100;
+    uint32          RunDuration                                         = 110;
+    smoketest.manager.testplan.v1.TestResultState TestResult            = 120;
+    uint32          Deadline                                            = 130;
+    uint32          CreatedAt                                           = 140;
+    uint32          UpdatedAt                                           = 150;
+    repeated smoketest.manager.testplan.testcase.v1.TestCase TestCases  = 160;
 }
 
 message DeleteTestPlanRequest {
@@ -67,8 +67,8 @@ message DeleteTestPlanResponse {
 }
 
 message GetTestPlansRequest {
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    optional int32  Offset = 20;
+    optional int32  Limit  = 30;
 }
 
 message GetTestPlansResponse {
@@ -77,10 +77,10 @@ message GetTestPlansResponse {
 }
 
 message UpdateTestPlanRequest {
-    string          ID                  = 10;
-    string          Name                = 20;
-    string          ResponsibleUserID   = 30;
-    uint32          Deadline            = 40;
+    string                   ID                  = 10;
+    optional string          Name                = 20;
+    optional string          ResponsibleUserID   = 30;
+    optional uint32          Deadline            = 40;
 }
 
 message UpdateTestPlanResponse {
