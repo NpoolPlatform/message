@@ -24,7 +24,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1CreateAppRoleResponse"
+              "$ref": "#/definitions/v1CreateAppRoleResponse"
             }
           },
           "default": {
@@ -40,7 +40,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1CreateAppRoleRequest"
+              "$ref": "#/definitions/v1CreateAppRoleRequest"
             }
           }
         ],
@@ -56,7 +56,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1CreateAppRoleUserResponse"
+              "$ref": "#/definitions/v1CreateAppRoleUserResponse"
             }
           },
           "default": {
@@ -72,7 +72,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1CreateAppRoleUserRequest"
+              "$ref": "#/definitions/v1CreateAppRoleUserRequest"
             }
           }
         ],
@@ -89,7 +89,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleResponse"
+              "$ref": "#/definitions/appusergatewayrolev1CreateRoleResponse"
             }
           },
           "default": {
@@ -105,7 +105,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRoleRequest"
+              "$ref": "#/definitions/appusergatewayrolev1CreateRoleRequest"
             }
           }
         ],
@@ -153,7 +153,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1DeleteAppRoleUserResponse"
+              "$ref": "#/definitions/v1DeleteAppRoleUserResponse"
             }
           },
           "default": {
@@ -169,7 +169,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1DeleteAppRoleUserRequest"
+              "$ref": "#/definitions/v1DeleteAppRoleUserRequest"
             }
           }
         ],
@@ -217,7 +217,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRolesResponse"
+              "$ref": "#/definitions/v1GetAppRolesResponse"
             }
           },
           "default": {
@@ -233,7 +233,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRolesRequest"
+              "$ref": "#/definitions/v1GetAppRolesRequest"
             }
           }
         ],
@@ -249,7 +249,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRoleUsersResponse"
+              "$ref": "#/definitions/v1GetAppRoleUsersResponse"
             }
           },
           "default": {
@@ -265,7 +265,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/rolev1GetAppRoleUsersRequest"
+              "$ref": "#/definitions/v1GetAppRoleUsersRequest"
             }
           }
         ],
@@ -313,7 +313,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewayrolev1GetRoleUsersResponse"
+              "$ref": "#/definitions/v1GetRoleUsersResponse"
             }
           },
           "default": {
@@ -329,7 +329,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewayrolev1GetRoleUsersRequest"
+              "$ref": "#/definitions/v1GetRoleUsersRequest"
             }
           }
         ],
@@ -346,7 +346,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleResponse"
+              "$ref": "#/definitions/appusergatewayrolev1UpdateRoleResponse"
             }
           },
           "default": {
@@ -362,7 +362,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRoleRequest"
+              "$ref": "#/definitions/appusergatewayrolev1UpdateRoleRequest"
             }
           }
         ],
@@ -373,38 +373,32 @@
     }
   },
   "definitions": {
-    "appusergatewayrolev1GetRoleUsersRequest": {
+    "appusergatewayrolev1CreateRoleRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string",
-          "title": "Permissioned by path"
+          "title": "Permissioned by path (UserID is for CreatedBy)"
         },
-        "RoleID": {
+        "UserID": {
           "type": "string"
         },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "RoleName": {
+          "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
+        "Default": {
+          "type": "boolean"
+        },
+        "Description": {
+          "type": "string"
         }
       }
     },
-    "appusergatewayrolev1GetRoleUsersResponse": {
+    "appusergatewayrolev1CreateRoleResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RoleUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+        "Info": {
+          "$ref": "#/definitions/v1Role"
         }
       }
     },
@@ -440,6 +434,23 @@
         }
       }
     },
+    "appusergatewayrolev1UpdateRoleRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "appusergatewayrolev1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -448,145 +459,6 @@
         }
       },
       "additionalProperties": {}
-    },
-    "rolev1CreateAppRoleRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "Description": {
-          "type": "string"
-        }
-      }
-    },
-    "rolev1CreateAppRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "rolev1CreateAppRoleUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        }
-      }
-    },
-    "rolev1CreateAppRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RoleUser"
-        }
-      }
-    },
-    "rolev1DeleteAppRoleUserRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "RoleUserID": {
-          "type": "string"
-        }
-      }
-    },
-    "rolev1DeleteAppRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleUser"
-        }
-      }
-    },
-    "rolev1GetAppRoleUsersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "rolev1GetAppRoleUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RoleUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "rolev1GetAppRolesRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "rolev1GetAppRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Role"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "rpcStatus": {
       "type": "object",
@@ -606,12 +478,12 @@
         }
       }
     },
-    "v1CreateRoleRequest": {
+    "v1CreateAppRoleRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string",
-          "title": "Permissioned by path (UserID is for CreatedBy)"
+          "title": "Permissioned by path"
         },
         "UserID": {
           "type": "string"
@@ -627,11 +499,34 @@
         }
       }
     },
-    "v1CreateRoleResponse": {
+    "v1CreateAppRoleResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "v1CreateAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
         }
       }
     },
@@ -654,7 +549,27 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1RoleUser"
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1DeleteAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
         }
       }
     },
@@ -674,7 +589,109 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2AppRoleUser"
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetAppRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppRolesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetRoleUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1User"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -732,7 +749,33 @@
         }
       }
     },
-    "v1RoleUser": {
+    "v1RoleReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        },
+        "Genesis": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1User": {
       "type": "object",
       "properties": {
         "ID": {
@@ -795,66 +838,6 @@
         },
         "Genesis": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateRoleRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2AppRoleReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "v1UpdateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "v2AppRoleReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CreatedBy": {
-          "type": "string"
-        },
-        "Role": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "Genesis": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2AppRoleUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
         }
       }
     }

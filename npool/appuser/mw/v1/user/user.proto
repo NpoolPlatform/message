@@ -5,8 +5,8 @@ package appuser.middleware.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "npool/basetypes/v1/signmethod.proto";
-import "npool/appuser/mgr/v2/kyc/kyc.proto";
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/kycstate.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -159,7 +159,7 @@ message User {
 
     // @inject_tag: sql:"kyc_state"
     string          KycStateStr           = 400;
-    appuser.manager.kyc.v2.KycState State = 410;
+    basetypes.v1.KycState State           = 410;
 
     // @inject_tag: sql:"kol"
     bool            Kol                   = 420;
@@ -196,9 +196,9 @@ message UpdateUserResponse {
 }
 
 message GetUsersRequest {
-    Conds Conds = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetUsersResponse {
