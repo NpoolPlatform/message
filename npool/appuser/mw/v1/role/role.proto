@@ -85,8 +85,7 @@ message GetRoleResponse {
 }
 
 message GetRolesRequest {
-    // Permissioned by path
-    string AppID  = 10;
+    Conds  Conds  = 9;
     int32  Offset = 20;
     int32  Limit  = 30;
 }

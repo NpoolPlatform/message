@@ -44,6 +44,43 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Role": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Default": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Roles": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Genesis": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
     "v1CreateRoleResponse": {
       "type": "object",
       "properties": {
@@ -160,6 +197,31 @@
         },
         "Genesis": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },
