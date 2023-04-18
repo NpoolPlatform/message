@@ -17,6 +17,34 @@
   ],
   "paths": {},
   "definitions": {
+<<<<<<< HEAD
+=======
+    "basetypesv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+>>>>>>> Add user conds
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,6 +72,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,6 +93,28 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+    "userv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "PhoneNO": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "EmailAddress": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "ImportFromApp": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
+>>>>>>> Add user conds
         }
       }
     },
@@ -147,31 +198,6 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
     },
     "v1UpdateUserResponse": {
       "type": "object",
