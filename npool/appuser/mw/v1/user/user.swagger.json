@@ -83,21 +83,6 @@
         }
       }
     },
-    "v1GetManyUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetUserResponse": {
       "type": "object",
       "properties": {
