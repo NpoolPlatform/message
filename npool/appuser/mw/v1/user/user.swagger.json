@@ -17,26 +17,28 @@
   ],
   "paths": {},
   "definitions": {
-    "managerappuserv2Conds": {
+    "basetypesv1StringSliceVal": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Op": {
+          "type": "string"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
         },
-        "PhoneNO": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EmailAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ImportFromApp": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "Value": {
+          "type": "string"
         }
       }
     },
@@ -64,6 +66,29 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "userv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "PhoneNO": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "EmailAddress": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "ImportFromApp": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
         }
       }
     },
@@ -136,31 +161,6 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
     },
     "v1UpdateUserResponse": {
       "type": "object",
