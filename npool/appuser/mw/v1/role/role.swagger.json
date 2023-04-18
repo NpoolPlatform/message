@@ -45,6 +45,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Query with conditions
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -79,9 +82,12 @@
         },
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
+<<<<<<< HEAD
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+>>>>>>> Query with conditions
         }
       }
     },
@@ -242,6 +248,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Query with conditions
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -267,8 +276,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Query with conditions
     "v1UpdateRoleResponse": {
       "type": "object",
       "properties": {
