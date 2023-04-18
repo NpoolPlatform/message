@@ -79,8 +79,9 @@ message GetTestPlansResponse {
 message UpdateTestPlanRequest {
     string                   ID                  = 10;
     optional string          Name                = 20;
-    optional string          Executor            = 30;
-    optional uint32          Deadline            = 40;
+    optional smoketest.manager.testplan.v1.TestPlanState  State                = 30;
+    optional string          Executor            = 40;
+    optional uint32          Deadline            = 50;
 }
 
 message UpdateTestPlanResponse {
