@@ -145,6 +145,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1ExistUserCondsResponse": {
       "type": "object",
       "properties": {
@@ -161,6 +162,8 @@
         }
       }
     },
+=======
+>>>>>>> Remove get many api
     "v1GetUserResponse": {
       "type": "object",
       "properties": {
