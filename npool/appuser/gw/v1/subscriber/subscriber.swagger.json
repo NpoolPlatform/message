@@ -129,7 +129,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
+          "$ref": "#/definitions/v1Subscriber"
         }
       }
     },
@@ -148,7 +148,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
+          "$ref": "#/definitions/v1Subscriber"
         }
       }
     },
@@ -174,7 +174,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/subscriberv1Subscriber"
+            "$ref": "#/definitions/v1Subscriber"
           }
         },
         "Total": {
@@ -210,7 +210,7 @@
         }
       }
     },
-    "subscriberv1Subscriber": {
+    "v1Subscriber": {
       "type": "object",
       "properties": {
         "ID": {

@@ -44,37 +44,65 @@
         }
       }
     },
-    "subscriberv1CreateSubscriberResponse": {
+    "v1BoolVal": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
-    "subscriberv1DeleteSubscriberResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EmailAddress": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Registered": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
-    "subscriberv1GetSubscriberResponse": {
+    "v1CreateSubscriberResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
+          "$ref": "#/definitions/v1Subscriber"
         }
       }
     },
-    "subscriberv1GetSubscriberesResponse": {
+    "v1DeleteSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscriber"
+        }
+      }
+    },
+    "v1GetSubscriberResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscriber"
+        }
+      }
+    },
+    "v1GetSubscriberesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/subscriberv1Subscriber"
+            "$ref": "#/definitions/v1Subscriber"
           }
         },
         "Total": {
@@ -83,7 +111,18 @@
         }
       }
     },
-    "subscriberv1Subscriber": {
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Subscriber": {
       "type": "object",
       "properties": {
         "ID": {
@@ -118,67 +157,28 @@
         }
       }
     },
-    "subscriberv1UpdateSubscriberResponse": {
+    "v1SubscriberReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "Registered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateSubscriberResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/subscriberv1Subscriber"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EmailAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Registered": {
-          "$ref": "#/definitions/v1BoolVal"
-        }
-      }
-    },
-    "v2SubscriberReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "Registered": {
-          "type": "boolean"
+          "$ref": "#/definitions/v1Subscriber"
         }
       }
     }
