@@ -5,7 +5,6 @@ package appuser.gateway.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/user";
 
 import "google/api/annotations.proto";
-import "npool/appuser/mgr/v2/appuser/appuser.proto";
 import "npool/appuser/mgr/v2/login/history/history.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 import "npool/basetypes/v1/signmethod.proto";

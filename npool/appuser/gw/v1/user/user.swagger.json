@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/userv1CreateAppUserResponse"
+              "$ref": "#/definitions/v1CreateAppUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/userv1CreateAppUserRequest"
+              "$ref": "#/definitions/v1CreateAppUserRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/userv1GetAppUsersResponse"
+              "$ref": "#/definitions/v1GetAppUsersResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/userv1GetAppUsersRequest"
+              "$ref": "#/definitions/v1GetAppUsersRequest"
             }
           }
         ],
@@ -684,7 +684,7 @@
         }
       }
     },
-    "userv1CreateAppUserRequest": {
+    "v1CreateAppUserRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -701,7 +701,7 @@
         }
       }
     },
-    "userv1CreateAppUserResponse": {
+    "v1CreateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -709,7 +709,7 @@
         }
       }
     },
-    "userv1GetAppUsersRequest": {
+    "v1GetAppUsersRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -725,7 +725,7 @@
         }
       }
     },
-    "userv1GetAppUsersResponse": {
+    "v1GetAppUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -773,6 +773,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
     },
     "v1LoginRequest": {
       "type": "object",
@@ -1177,7 +1187,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -1219,16 +1229,6 @@
           "format": "int64"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     }
   }
 }
