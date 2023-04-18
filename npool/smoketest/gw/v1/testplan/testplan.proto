@@ -79,7 +79,7 @@ message GetTestPlansResponse {
 message UpdateTestPlanRequest {
     string                   ID                  = 10;
     optional string          Name                = 20;
-    optional string          CreatedBy           = 30;
+    optional string          Executor            = 30;
     optional uint32          Deadline            = 40;
 }
 
