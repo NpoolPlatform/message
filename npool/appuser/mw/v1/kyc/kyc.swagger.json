@@ -63,6 +63,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "DocumentType": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EntityType": {
@@ -70,6 +71,12 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
+=======
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> Remove kyc from appuser manager
         }
       }
     },
@@ -78,6 +85,12 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Kyc"
+<<<<<<< HEAD
+        }
+      }
+    },
+    "v1DeleteKycResponse": {
+=======
         }
       }
     },
@@ -90,6 +103,7 @@
       }
     },
     "v1GetKycResponse": {
+>>>>>>> Remove kyc from appuser manager
       "type": "object",
       "properties": {
         "Info": {
@@ -97,6 +111,17 @@
         }
       }
     },
+<<<<<<< HEAD
+    "v1GetKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
+        }
+      }
+    },
+=======
+>>>>>>> Remove kyc from appuser manager
     "v1GetKycsResponse": {
       "type": "object",
       "properties": {
@@ -238,6 +263,7 @@
         },
         "FrontImg": {
           "type": "string"
+<<<<<<< HEAD
         },
         "BackImg": {
           "type": "string"
@@ -278,6 +304,37 @@
       }
     },
     "v1Uint32Val": {
+=======
+        },
+        "BackImg": {
+          "type": "string"
+        },
+        "SelfieImg": {
+          "type": "string"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1KycEntityType"
+        },
+        "ReviewID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1KycState"
+        }
+      }
+    },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
+    "v1StringVal": {
+>>>>>>> Remove kyc from appuser manager
       "type": "object",
       "properties": {
         "Op": {
