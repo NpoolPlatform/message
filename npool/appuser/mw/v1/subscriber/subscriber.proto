@@ -4,7 +4,7 @@ package appuser.middleware.subscriber.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/subscriber";
 
-import "npool/appuser/mgr/v2/subscriber/subscriber.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateSubscriber (CreateSubscriberRequest) returns (CreateSubscriberResponse) {}
@@ -12,6 +12,13 @@ service Middleware {
     rpc GetSubscriber    (GetSubscriberRequest)    returns (GetSubscriberResponse)    {}
     rpc GetSubscriberes  (GetSubscriberesRequest)  returns (GetSubscriberesResponse)  {}
     rpc DeleteSubscriber (DeleteSubscriberRequest) returns (DeleteSubscriberResponse) {}
+}
+
+message SubscriberReq {
+    optional string ID            = 10;
+    optional string AppID         = 20;
+    optional string EmailAddress  = 30;
+    optional bool   Registered    = 40;
 }
 
 message Subscriber {
@@ -32,8 +39,15 @@ message Subscriber {
     uint32  UpdatedAt    = 70;
 }
 
+message Conds {
+    basetypes.v1.StringVal ID            = 10;
+    basetypes.v1.StringVal AppID         = 20;
+    basetypes.v1.StringVal EmailAddress  = 30;
+    basetypes.v1.BoolVal   Registered    = 40;
+}
+
 message CreateSubscriberRequest {
-    appuser.manager.subscriber.v2.SubscriberReq Info = 10;
+    SubscriberReq Info = 10;
 }
 
 message CreateSubscriberResponse {
@@ -41,7 +55,7 @@ message CreateSubscriberResponse {
 }
 
 message UpdateSubscriberRequest {
-    appuser.manager.subscriber.v2.SubscriberReq Info = 10;
+    SubscriberReq Info = 10;
 }
 
 message UpdateSubscriberResponse {
@@ -57,10 +71,9 @@ message GetSubscriberResponse {
 }
 
 message GetSubscriberesRequest {
-    // Permissioned by path
-    appuser.manager.subscriber.v2.Conds Conds = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetSubscriberesResponse {
@@ -69,7 +82,7 @@ message GetSubscriberesResponse {
 }
 
 message DeleteSubscriberRequest {
-    string ID = 10;
+    SubscriberReq Info = 10;
 }
 
 message DeleteSubscriberResponse {
