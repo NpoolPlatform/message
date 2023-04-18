@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/appuser/mgr/v2/kyc/kyc.proto";
-import "npool/appuser/mgr/v2/appuser/appuser.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -170,6 +170,15 @@ message User {
     string          ActionCredits         = 440;
 }
 
+message Conds {
+    basetypes.v1.StringVal      ID            = 10;
+    basetypes.v1.StringVal      AppID         = 20;
+    basetypes.v1.StringVal      PhoneNO       = 30;
+    basetypes.v1.StringVal      EmailAddress  = 40;
+    basetypes.v1.StringVal      ImportFromApp = 50;
+    basetypes.v1.StringSliceVal IDs           = 60;
+}
+
 message CreateUserRequest {
     UserReq Info = 10;
 }
@@ -187,7 +196,7 @@ message UpdateUserResponse {
 }
 
 message GetUsersRequest {
-    appuser.manager.appuser.v2.Conds Conds = 10;
+    Conds Conds = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
