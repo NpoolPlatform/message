@@ -28,7 +28,6 @@ type MiddlewareClient interface {
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	VerifyAccount(ctx context.Context, in *VerifyAccountRequest, opts ...grpc.CallOption) (*VerifyAccountResponse, error)
 	VerifyUser(ctx context.Context, in *VerifyUserRequest, opts ...grpc.CallOption) (*VerifyUserResponse, error)
-	GetManyUsers(ctx context.Context, in *GetManyUsersRequest, opts ...grpc.CallOption) (*GetManyUsersResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
@@ -94,15 +93,6 @@ func (c *middlewareClient) VerifyUser(ctx context.Context, in *VerifyUserRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetManyUsers(ctx context.Context, in *GetManyUsersRequest, opts ...grpc.CallOption) (*GetManyUsersResponse, error) {
-	out := new(GetManyUsersResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.Middleware/GetManyUsers", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	out := new(DeleteUserResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.Middleware/DeleteUser", in, out, opts...)
@@ -122,7 +112,6 @@ type MiddlewareServer interface {
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	VerifyAccount(context.Context, *VerifyAccountRequest) (*VerifyAccountResponse, error)
 	VerifyUser(context.Context, *VerifyUserRequest) (*VerifyUserResponse, error)
-	GetManyUsers(context.Context, *GetManyUsersRequest) (*GetManyUsersResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -148,9 +137,6 @@ func (UnimplementedMiddlewareServer) VerifyAccount(context.Context, *VerifyAccou
 }
 func (UnimplementedMiddlewareServer) VerifyUser(context.Context, *VerifyUserRequest) (*VerifyUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyUser not implemented")
-}
-func (UnimplementedMiddlewareServer) GetManyUsers(context.Context, *GetManyUsersRequest) (*GetManyUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetManyUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
@@ -276,24 +262,6 @@ func _Middleware_VerifyUser_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetManyUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetManyUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetManyUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.user.v1.Middleware/GetManyUsers",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetManyUsers(ctx, req.(*GetManyUsersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteUserRequest)
 	if err := dec(in); err != nil {
@@ -342,10 +310,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "VerifyUser",
 			Handler:    _Middleware_VerifyUser_Handler,
-		},
-		{
-			MethodName: "GetManyUsers",
-			Handler:    _Middleware_GetManyUsers_Handler,
 		},
 		{
 			MethodName: "DeleteUser",

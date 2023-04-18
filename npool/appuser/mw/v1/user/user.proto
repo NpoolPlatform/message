@@ -16,7 +16,6 @@ service Middleware {
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
-    rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
 
     rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
 
@@ -234,15 +233,6 @@ message VerifyUserRequest {
 
 message VerifyUserResponse {
     User Info = 10;
-}
-
-message GetManyUsersRequest {
-    repeated string IDs = 10;
-}
-
-message GetManyUsersResponse {
-    repeated User Infos = 10;
-    uint32 Total  = 40;
 }
 
 message DeleteUserRequest {
