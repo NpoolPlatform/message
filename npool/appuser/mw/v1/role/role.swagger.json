@@ -139,13 +139,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
         },
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
         "Default": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"default\""
         },
         "AppID": {
           "type": "string",
@@ -164,13 +160,9 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
         "Genesis": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"genesis\""
         }
       }
     },
