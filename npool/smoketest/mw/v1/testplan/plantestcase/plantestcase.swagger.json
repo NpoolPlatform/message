@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/smoketest/mw/v1/testplan/testcase/testcase.proto",
+    "title": "npool/smoketest/mw/v1/testplan/plantestcase/plantestcase.proto",
     "version": "version not set"
   },
   "tags": [
@@ -61,7 +61,7 @@
         }
       }
     },
-    "v1CreateTestCaseResponse": {
+    "v1CreatePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -69,7 +69,7 @@
         }
       }
     },
-    "v1DeleteTestCaseResponse": {
+    "v1DeletePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -77,7 +77,7 @@
         }
       }
     },
-    "v1ExistTestCaseResponse": {
+    "v1ExistPlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -85,7 +85,7 @@
         }
       }
     },
-    "v1GetTestCaseOnlyResponse": {
+    "v1GetPlanTestCaseOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -93,7 +93,7 @@
         }
       }
     },
-    "v1GetTestCaseResponse": {
+    "v1GetPlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "v1GetTestCasesResponse": {
+    "v1GetPlanTestCasesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -174,18 +174,7 @@
         }
       }
     },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1TestCaseReq": {
+    "v1PlanTestCaseReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -219,6 +208,17 @@
         }
       }
     },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
     "v1TestCaseResult": {
       "type": "string",
       "enum": [
@@ -229,7 +229,7 @@
       ],
       "default": "DefaultTestCaseResult"
     },
-    "v1UpdateTestCaseResponse": {
+    "v1UpdatePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {

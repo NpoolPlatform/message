@@ -4,7 +4,7 @@
 // - protoc             v3.20.1
 // source: npool/smoketest/gw/v1/testplan/plantestcase/plantestcase.proto
 
-package testcase
+package plantestcase
 
 import (
 	context "context"
@@ -37,7 +37,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreatePlanTestCase(ctx context.Context, in *CreatePlanTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanTestCaseResponse, error) {
 	out := new(CreatePlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/CreatePlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gatewayClient) CreatePlanTestCase(ctx context.Context, in *CreatePlanTe
 
 func (c *gatewayClient) DeletePlanTestCase(ctx context.Context, in *DeletePlanTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanTestCaseResponse, error) {
 	out := new(DeletePlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *gatewayClient) DeletePlanTestCase(ctx context.Context, in *DeletePlanTe
 
 func (c *gatewayClient) DeletePlanTestCases(ctx context.Context, in *DeletePlanTestCasesRequest, opts ...grpc.CallOption) (*DeletePlanTestCasesResponse, error) {
 	out := new(DeletePlanTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _Gateway_CreatePlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.gateway.testplan.testcase.v1.Gateway/CreatePlanTestCase",
+		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/CreatePlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreatePlanTestCase(ctx, req.(*CreatePlanTestCaseRequest))
@@ -126,7 +126,7 @@ func _Gateway_DeletePlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCase",
+		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeletePlanTestCase(ctx, req.(*DeletePlanTestCaseRequest))
@@ -144,7 +144,7 @@ func _Gateway_DeletePlanTestCases_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.gateway.testplan.testcase.v1.Gateway/DeletePlanTestCases",
+		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeletePlanTestCases(ctx, req.(*DeletePlanTestCasesRequest))
@@ -156,7 +156,7 @@ func _Gateway_DeletePlanTestCases_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "smoketest.gateway.testplan.testcase.v1.Gateway",
+	ServiceName: "smoketest.gateway.testplan.plantestcase.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

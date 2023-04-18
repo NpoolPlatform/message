@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.20.1
-// source: npool/smoketest/mgr/v1/testplan/testcase/testcase.proto
+// source: npool/smoketest/mgr/v1/testplan/plantestcase/plantestcase.proto
 
-package testcase
+package plantestcase
 
 import (
 	grpc "google.golang.org/grpc"
@@ -57,9 +57,9 @@ func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "smoketest.manager.testplan.testcase.v1.Manager",
+	ServiceName: "smoketest.manager.testplan.plantestcase.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams:     []grpc.StreamDesc{},
-	Metadata:    "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto",
+	Metadata:    "npool/smoketest/mgr/v1/testplan/plantestcase/plantestcase.proto",
 }

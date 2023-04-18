@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package smoketest.manager.testplan.testcase.v1;
+package smoketest.manager.testplan.plantestcase.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/testplan/testcase";
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mgr/v1/testplan/plantestcase";
 
 import "npool/npool.proto";
 
@@ -43,7 +43,7 @@ message PlanTestCase {
     uint32          DeletedAt                               = 130;
 }
 
-message TestCaseReq {
+message PlanTestCaseReq {
     optional string          ID                                      = 10;
     optional string          TestPlanID                              = 20;
     optional string          TestCaseID                              = 30;

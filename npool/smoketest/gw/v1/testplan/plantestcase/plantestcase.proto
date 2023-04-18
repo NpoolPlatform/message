@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package smoketest.gateway.testplan.testcase.v1;
+package smoketest.gateway.testplan.plantestcase.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan/testcase";
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan/plantestcase";
 
-import "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto";
+import "npool/smoketest/mgr/v1/testplan/plantestcase/plantestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -38,12 +38,12 @@ message CreatePlanTestCaseRequest {
     optional string          Description                                             = 40;
     optional uint32          RunDuration                                             = 50;
     optional string          TestUserID                                              = 60;
-    smoketest.manager.testplan.testcase.v1.TestCaseResult Result                     = 70; 
+    smoketest.manager.testplan.plantestcase.v1.TestCaseResult Result                     = 70; 
     optional uint32          Index                                                   = 80;
 }
 
 message CreatePlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
+    smoketest.manager.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }
 
 message GetPlanTestCasesRequest {
@@ -53,7 +53,7 @@ message GetPlanTestCasesRequest {
 }
 
 message GetPlanTestCasesResponse {
-    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase Infos = 10;
+    repeated smoketest.manager.testplan.plantestcase.v1.PlanTestCase Infos = 10;
     uint32                                                   Total = 20;
 }
 
@@ -62,7 +62,7 @@ message GetPlanTestCaseRequest {
 }
 
 message GetPlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
+    smoketest.manager.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }
 
 message DeletePlanTestCaseRequest {
@@ -70,7 +70,7 @@ message DeletePlanTestCaseRequest {
 }
 
 message DeletePlanTestCaseResponse {
-    smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
+    smoketest.manager.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }
 
 message DeletePlanTestCasesRequest {
@@ -78,5 +78,5 @@ message DeletePlanTestCasesRequest {
 }
 
 message DeletePlanTestCasesResponse {
-    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase Info = 10;
+    repeated smoketest.manager.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }

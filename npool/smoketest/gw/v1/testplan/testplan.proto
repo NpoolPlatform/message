@@ -5,7 +5,7 @@ package smoketest.gateway.testplan.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan";
 
 import "npool/smoketest/mgr/v1/testplan/testplan.proto";
-import "npool/smoketest/mgr/v1/testplan/testcase/testcase.proto";
+import "npool/smoketest/mgr/v1/testplan/plantestcase/plantestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -55,7 +55,7 @@ message TestPlan {
     uint32          Deadline                                            = 130;
     uint32          CreatedAt                                           = 140;
     uint32          UpdatedAt                                           = 150;
-    repeated smoketest.manager.testplan.testcase.v1.PlanTestCase PlanTestCases  = 160;
+    repeated smoketest.manager.testplan.plantestcase.v1.PlanTestCase PlanTestCases  = 160;
 }
 
 message DeleteTestPlanRequest {
