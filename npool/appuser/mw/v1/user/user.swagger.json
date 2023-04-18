@@ -17,31 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesv1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -69,26 +44,26 @@
         }
       }
     },
-    "userv1Conds": {
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "PhoneNO": {
-          "$ref": "#/definitions/basetypesv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "EmailAddress": {
-          "$ref": "#/definitions/basetypesv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "ImportFromApp": {
-          "$ref": "#/definitions/basetypesv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "IDs": {
-          "$ref": "#/definitions/basetypesv1StringSliceVal"
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -146,6 +121,16 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v1SignMethod": {
       "type": "string",
       "enum": [
@@ -161,6 +146,31 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
     },
     "v1UpdateUserResponse": {
       "type": "object",
@@ -343,7 +353,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -485,16 +495,6 @@
           "$ref": "#/definitions/v1User"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     }
   }
 }

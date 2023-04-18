@@ -110,6 +110,16 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v1SetupGoogleAuthRequest": {
       "type": "object",
       "properties": {
@@ -319,7 +329,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -357,16 +367,6 @@
           "$ref": "#/definitions/v1User"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/mw/v1/role/role.proto",
+    "title": "npool/appuser/mw/v1/role/user/user.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,37 +44,60 @@
         }
       }
     },
-    "v1CreateRoleResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RoleID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RoleIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1DeleteRoleResponse": {
+    "v1CreateUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Role"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v1GetRoleResponse": {
+    "v1DeleteUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Role"
+          "$ref": "#/definitions/v1User"
         }
       }
     },
-    "v1GetRolesResponse": {
+    "v1GetUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Role"
+            "$ref": "#/definitions/v1User"
           }
         },
         "Total": {
@@ -83,12 +106,45 @@
         }
       }
     },
-    "v1Role": {
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1User": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
-          "title": "Base info\n@inject_tag: sql:\"id\""
+          "title": "@inject_tag: sql:\"id\""
         },
         "CreatedBy": {
           "type": "string",
@@ -127,6 +183,18 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"email_address\""
+        },
+        "PhoneNO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"phone_no\""
+        },
         "GenesisInt": {
           "type": "integer",
           "format": "int32",
@@ -137,7 +205,7 @@
         }
       }
     },
-    "v1RoleReq": {
+    "v1UserReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -146,28 +214,11 @@
         "AppID": {
           "type": "string"
         },
-        "CreatedBy": {
+        "RoleID": {
           "type": "string"
         },
-        "Role": {
+        "UserID": {
           "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "Genesis": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
         }
       }
     }
