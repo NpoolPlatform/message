@@ -403,7 +403,10 @@
         "Name": {
           "type": "string"
         },
-        "CreatedBy": {
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
+        },
+        "Executor": {
           "type": "string"
         },
         "Deadline": {
