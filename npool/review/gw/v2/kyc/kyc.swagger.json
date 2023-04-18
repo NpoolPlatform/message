@@ -173,6 +173,35 @@
         }
       }
     },
+    "v1KycDocumentType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycDocumentType",
+        "IDCard",
+        "DriverLicense",
+        "Passport"
+      ],
+      "default": "DefaultKycDocumentType"
+    },
+    "v1KycEntityType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycEntityType",
+        "Individual",
+        "Organization"
+      ],
+      "default": "DefaultKycEntityType"
+    },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v2GetAppKycReviewsRequest": {
       "type": "object",
       "properties": {
@@ -235,25 +264,6 @@
         }
       }
     },
-    "v2KycDocumentType": {
-      "type": "string",
-      "enum": [
-        "DefaultKycDocumentType",
-        "IDCard",
-        "DriverLicense",
-        "Passport"
-      ],
-      "default": "DefaultKycDocumentType"
-    },
-    "v2KycEntityType": {
-      "type": "string",
-      "enum": [
-        "DefaultKycEntityType",
-        "Individual",
-        "Organization"
-      ],
-      "default": "DefaultKycEntityType"
-    },
     "v2KycReview": {
       "type": "object",
       "properties": {
@@ -281,7 +291,7 @@
           "title": "kyc"
         },
         "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
+          "$ref": "#/definitions/v1KycDocumentType"
         },
         "IDNumber": {
           "type": "string"
@@ -296,7 +306,7 @@
           "type": "string"
         },
         "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
+          "$ref": "#/definitions/v1KycEntityType"
         },
         "ReviewID": {
           "type": "string",
@@ -315,7 +325,7 @@
           "$ref": "#/definitions/v2ReviewState"
         },
         "KycState": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Message": {
           "type": "string"
@@ -329,16 +339,6 @@
           "format": "int64"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     },
     "v2ReviewObjectType": {
       "type": "string",
