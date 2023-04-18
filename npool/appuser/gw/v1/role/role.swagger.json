@@ -865,9 +865,14 @@
         },
         "Default": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "type": "boolean",
 =======
           "type": "boolean"
+=======
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"default\""
+>>>>>>> Remove int for bool
         },
         "AppID": {
           "type": "string",
@@ -886,13 +891,9 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
         "Genesis": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"genesis\""
         }
       }
     },
@@ -941,10 +942,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
         },
+<<<<<<< HEAD
         "DefaultInt": {
           "type": "integer",
           "format": "int32",
 >>>>>>> Move role to middleware
+=======
+        "Default": {
+          "type": "boolean",
+>>>>>>> Remove int for bool
           "title": "@inject_tag: sql:\"default\""
         },
         "AppID": {
@@ -983,6 +989,7 @@
         "RoleName": {
           "type": "string"
         },
+<<<<<<< HEAD
         "Default": {
           "type": "boolean"
         },
@@ -999,6 +1006,11 @@
 =======
           "type": "boolean"
 >>>>>>> Move role to middleware
+=======
+        "Genesis": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"genesis\""
+>>>>>>> Remove int for bool
         }
       }
     }

@@ -294,6 +294,7 @@
           "title": "@inject_tag: sql:\"description\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Default": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"default\""
@@ -304,8 +305,11 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"default\""
         },
+=======
+>>>>>>> Remove int for bool
         "Default": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"default\""
         },
 >>>>>>> Move role to middleware
         "AppID": {
@@ -338,6 +342,7 @@
           "title": "@inject_tag: sql:\"phone_no\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Genesis": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"genesis\""
@@ -353,8 +358,11 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"genesis\""
         },
+=======
+>>>>>>> Remove int for bool
         "Genesis": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"genesis\""
         }
       }
     },
