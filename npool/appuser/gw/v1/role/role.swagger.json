@@ -40,6 +40,41 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppRoleRequest"
+<<<<<<< HEAD
+=======
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/app/roleuser": {
+      "post": {
+        "operationId": "Gateway_CreateAppRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppRoleUserRequest"
+>>>>>>> Move role to middleware
             }
           }
         ],
@@ -56,6 +91,41 @@
             "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/appusergatewayrolev1CreateRoleResponse"
+<<<<<<< HEAD
+=======
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayrolev1CreateRoleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/roleuser": {
+      "post": {
+        "operationId": "Gateway_CreateRoleUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRoleUserResponse"
+>>>>>>> Move role to middleware
             }
           },
           "default": {
@@ -87,7 +157,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1DeleteAppRoleResponse"
+=======
+              "$ref": "#/definitions/v1DeleteAppRoleUserResponse"
+>>>>>>> Move role to middleware
             }
           },
           "default": {
@@ -103,7 +177,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1DeleteAppRoleRequest"
+=======
+              "$ref": "#/definitions/v1DeleteAppRoleUserRequest"
+>>>>>>> Move role to middleware
             }
           }
         ],
@@ -168,6 +246,41 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppRolesRequest"
+<<<<<<< HEAD
+=======
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/roleusers": {
+      "post": {
+        "operationId": "Gateway_GetAppRoleUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppRoleUsersRequest"
+>>>>>>> Move role to middleware
             }
           }
         ],
@@ -215,7 +328,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1UpdateAppRoleResponse"
+=======
+              "$ref": "#/definitions/v1GetRoleUsersResponse"
+>>>>>>> Move role to middleware
             }
           },
           "default": {
@@ -231,7 +348,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1UpdateAppRoleRequest"
+=======
+              "$ref": "#/definitions/v1GetRoleUsersRequest"
+>>>>>>> Move role to middleware
             }
           }
         ],
@@ -275,10 +396,17 @@
   },
   "definitions": {
     "appusergatewayrolev1CreateRoleRequest": {
+<<<<<<< HEAD
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
+=======
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path (UserID is for CreatedBy)"
         },
         "UserID": {
           "type": "string"
@@ -302,30 +430,12 @@
         }
       }
     },
-    "appusergatewayrolev1DeleteRoleRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "appusergatewayrolev1DeleteRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
     "appusergatewayrolev1GetRolesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "Permissioned by path"
         },
         "Offset": {
           "type": "integer",
@@ -355,6 +465,225 @@
     "appusergatewayrolev1UpdateRoleRequest": {
       "type": "object",
       "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RoleReq",
+          "title": "Permissioned by path"
+        }
+      }
+    },
+    "appusergatewayrolev1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateAppRoleRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+>>>>>>> Move role to middleware
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+<<<<<<< HEAD
+    "appusergatewayrolev1CreateRoleResponse": {
+=======
+    "v1CreateAppRoleResponse": {
+>>>>>>> Move role to middleware
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+<<<<<<< HEAD
+    "appusergatewayrolev1DeleteRoleRequest": {
+=======
+    "v1CreateAppRoleUserRequest": {
+>>>>>>> Move role to middleware
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+<<<<<<< HEAD
+=======
+        }
+      }
+    },
+    "v1CreateAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1CreateRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1DeleteAppRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+>>>>>>> Move role to middleware
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+<<<<<<< HEAD
+    "appusergatewayrolev1DeleteRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "appusergatewayrolev1GetRolesRequest": {
+=======
+    "v1DeleteAppRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1DeleteRoleUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteRoleUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetAppRoleUsersRequest": {
+>>>>>>> Move role to middleware
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+<<<<<<< HEAD
+    "appusergatewayrolev1GetRolesResponse": {
+=======
+    "v1GetAppRoleUsersResponse": {
+>>>>>>> Move role to middleware
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+<<<<<<< HEAD
+            "$ref": "#/definitions/v1Role"
+=======
+            "$ref": "#/definitions/v1User"
+>>>>>>> Move role to middleware
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+<<<<<<< HEAD
+    "appusergatewayrolev1UpdateRoleRequest": {
+=======
+    "v1GetAppRolesRequest": {
+>>>>>>> Move role to middleware
+      "type": "object",
+      "properties": {
         "ID": {
           "type": "string"
         },
@@ -372,7 +701,11 @@
         }
       }
     },
+<<<<<<< HEAD
     "appusergatewayrolev1UpdateRoleResponse": {
+=======
+    "v1GetAppRolesResponse": {
+>>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -380,6 +713,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -465,18 +799,43 @@
           "format": "int32"
         },
         "Limit": {
+=======
+    "v1GetRoleUsersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string",
+          "title": "Permissioned by path"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Offset": {
+>>>>>>> Move role to middleware
           "type": "integer",
           "format": "int32"
         }
       }
     },
+<<<<<<< HEAD
     "v1GetAppRolesResponse": {
+=======
+    "v1GetRoleUsersResponse": {
+>>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Role"
+=======
+            "$ref": "#/definitions/v1User"
+>>>>>>> Move role to middleware
           }
         },
         "Total": {
@@ -505,7 +864,87 @@
           "title": "@inject_tag: sql:\"description\""
         },
         "Default": {
+<<<<<<< HEAD
           "type": "boolean",
+=======
+          "type": "boolean"
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "AppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_name\""
+        },
+        "AppLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_logo\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "GenesisInt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"genesis\""
+        },
+        "Genesis": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1RoleReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
+        },
+        "Genesis": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "CreatedBy": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
+        },
+        "Role": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"role\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "DefaultInt": {
+          "type": "integer",
+          "format": "int32",
+>>>>>>> Move role to middleware
           "title": "@inject_tag: sql:\"default\""
         },
         "AppID": {
@@ -526,6 +965,7 @@
           "title": "@inject_tag: sql:\"created_at\""
         },
         "Genesis": {
+<<<<<<< HEAD
           "type": "boolean",
           "title": "@inject_tag: sql:\"genesis\""
         }
@@ -556,6 +996,9 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Role"
+=======
+          "type": "boolean"
+>>>>>>> Move role to middleware
         }
       }
     }

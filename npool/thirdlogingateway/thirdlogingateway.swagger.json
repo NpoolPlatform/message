@@ -811,7 +811,10 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
+=======
+>>>>>>> Move role to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -1110,6 +1113,7 @@
           "type": "string"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
 =======
     },
@@ -1123,6 +1127,8 @@
       ],
       "default": "DefaultState"
 >>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
+=======
+>>>>>>> Move role to middleware
     }
   }
 }

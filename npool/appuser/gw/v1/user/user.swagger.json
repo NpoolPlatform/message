@@ -748,6 +748,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1BanAppUserRequest": {
       "type": "object",
       "properties": {
@@ -798,6 +799,8 @@
         }
       }
     },
+=======
+>>>>>>> Move role to middleware
     "v1CreateAppUserRequest": {
       "type": "object",
       "properties": {
@@ -888,6 +891,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1History": {
       "type": "object",
       "properties": {
@@ -945,6 +949,8 @@
         }
       }
     },
+=======
+>>>>>>> Move role to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -1381,6 +1387,36 @@
           "title": "@inject_tag: sql:\"action_credits\""
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "v2History": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ClientIP": {
+          "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+>>>>>>> Move role to middleware
     }
   }
 }

@@ -680,6 +680,16 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -717,6 +727,45 @@
         },
         "BanMessage": {
           "type": "string"
+<<<<<<< HEAD:npool/appuser/gw/v1/app/app.swagger.json
+=======
+        },
+        "LoginClientIP": {
+          "type": "string"
+        },
+        "LoginClientUserAgent": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "InvitationCode": {
+          "type": "string"
+        },
+        "LoginVerified": {
+          "type": "boolean"
+        },
+        "KycStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"kyc_state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1KycState"
+        },
+        "Kol": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol\""
+        },
+        "KolConfirmed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kol_confirmed\""
+        },
+        "ActionCredits": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"action_credits\""
+>>>>>>> Move role to middleware:npool/appuser/gw/v1/ban/ban.swagger.json
         }
       }
     },
@@ -746,6 +795,7 @@
         }
       }
     },
+<<<<<<< HEAD:npool/appuser/gw/v1/app/app.swagger.json
     "v1RecaptchaMethod": {
 >>>>>>> Use basetype
       "type": "string",
@@ -780,6 +830,24 @@
       "default": "DefaultSignMethod"
 =======
 >>>>>>> Remove old protobuf
+=======
+    "v2BanAppUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+>>>>>>> Move role to middleware:npool/appuser/gw/v1/ban/ban.swagger.json
     }
   }
 }

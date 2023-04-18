@@ -686,6 +686,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Move role to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -696,8 +699,11 @@
       ],
       "default": "DefaultState"
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Use basetype
+=======
+>>>>>>> Move role to middleware
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -957,6 +963,7 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     },
     "v2KycState": {
@@ -969,6 +976,8 @@
       ],
       "default": "DefaultState"
 >>>>>>> Use basetype
+=======
+>>>>>>> Move role to middleware
     }
   }
 }

@@ -258,7 +258,10 @@ type Conds struct {
 	Default   *v1.BoolVal        `protobuf:"bytes,50,opt,name=Default,proto3" json:"Default,omitempty"`
 	Roles     *v1.StringSliceVal `protobuf:"bytes,60,opt,name=Roles,proto3" json:"Roles,omitempty"`
 	Genesis   *v1.BoolVal        `protobuf:"bytes,70,opt,name=Genesis,proto3" json:"Genesis,omitempty"`
+<<<<<<< HEAD
 	IDs       *v1.StringSliceVal `protobuf:"bytes,80,opt,name=IDs,proto3" json:"IDs,omitempty"`
+=======
+>>>>>>> Move role to middleware
 }
 
 func (x *Conds) Reset() {
@@ -305,6 +308,7 @@ func (x *Conds) GetAppID() *v1.StringVal {
 		return x.AppID
 	}
 	return nil
+<<<<<<< HEAD
 }
 
 func (x *Conds) GetCreatedBy() *v1.StringVal {
@@ -363,9 +367,18 @@ func (x *CreateRoleRequest) Reset() {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
-	}
+=======
 }
 
+func (x *Conds) GetCreatedBy() *v1.StringVal {
+	if x != nil {
+		return x.CreatedBy
+>>>>>>> Move role to middleware
+	}
+	return nil
+}
+
+<<<<<<< HEAD
 func (x *CreateRoleRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -380,32 +393,67 @@ func (x *CreateRoleRequest) ProtoReflect() protoreflect.Message {
 			ms.StoreMessageInfo(mi)
 		}
 		return ms
+=======
+func (x *Conds) GetRole() *v1.StringVal {
+	if x != nil {
+		return x.Role
 	}
-	return mi.MessageOf(x)
+	return nil
 }
 
+func (x *Conds) GetDefault() *v1.BoolVal {
+	if x != nil {
+		return x.Default
+>>>>>>> Move role to middleware
+	}
+	return nil
+}
+
+<<<<<<< HEAD
 // Deprecated: Use CreateRoleRequest.ProtoReflect.Descriptor instead.
 func (*CreateRoleRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateRoleRequest) GetInfo() *RoleReq {
+=======
+func (x *Conds) GetRoles() *v1.StringSliceVal {
 	if x != nil {
-		return x.Info
+		return x.Roles
 	}
 	return nil
 }
 
+func (x *Conds) GetGenesis() *v1.BoolVal {
+>>>>>>> Move role to middleware
+	if x != nil {
+		return x.Genesis
+	}
+	return nil
+}
+
+<<<<<<< HEAD
 type CreateRoleResponse struct {
+=======
+type CreateRoleRequest struct {
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Info *Role `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateRoleResponse) Reset() {
 	*x = CreateRoleResponse{}
+=======
+	Info *RoleReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateRoleRequest) Reset() {
+	*x = CreateRoleRequest{}
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -413,6 +461,7 @@ func (x *CreateRoleResponse) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *CreateRoleResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -421,6 +470,16 @@ func (*CreateRoleResponse) ProtoMessage() {}
 
 func (x *CreateRoleResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[4]
+=======
+func (x *CreateRoleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRoleRequest) ProtoMessage() {}
+
+func (x *CreateRoleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[3]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -431,6 +490,7 @@ func (x *CreateRoleResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use CreateRoleResponse.ProtoReflect.Descriptor instead.
 func (*CreateRoleResponse) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{4}
@@ -486,20 +546,42 @@ func (*CreateRolesRequest) Descriptor() ([]byte, []int) {
 func (x *CreateRolesRequest) GetInfos() []*RoleReq {
 	if x != nil {
 		return x.Infos
+=======
+// Deprecated: Use CreateRoleRequest.ProtoReflect.Descriptor instead.
+func (*CreateRoleRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CreateRoleRequest) GetInfo() *RoleReq {
+	if x != nil {
+		return x.Info
+>>>>>>> Move role to middleware
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 type CreateRolesResponse struct {
+=======
+type CreateRoleResponse struct {
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Infos []*Role `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
 func (x *CreateRolesResponse) Reset() {
 	*x = CreateRolesResponse{}
+=======
+	Info *Role `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *CreateRoleResponse) Reset() {
+	*x = CreateRoleResponse{}
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -507,6 +589,7 @@ func (x *CreateRolesResponse) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *CreateRolesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -515,6 +598,16 @@ func (*CreateRolesResponse) ProtoMessage() {}
 
 func (x *CreateRolesResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[6]
+=======
+func (x *CreateRoleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRoleResponse) ProtoMessage() {}
+
+func (x *CreateRoleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[4]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -525,14 +618,23 @@ func (x *CreateRolesResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use CreateRolesResponse.ProtoReflect.Descriptor instead.
 func (*CreateRolesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CreateRolesResponse) GetInfos() []*Role {
+=======
+// Deprecated: Use CreateRoleResponse.ProtoReflect.Descriptor instead.
+func (*CreateRoleResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *CreateRoleResponse) GetInfo() *Role {
+>>>>>>> Move role to middleware
 	if x != nil {
-		return x.Infos
+		return x.Info
 	}
 	return nil
 }
@@ -561,7 +663,11 @@ func (x *UpdateRoleRequest) String() string {
 func (*UpdateRoleRequest) ProtoMessage() {}
 
 func (x *UpdateRoleRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[7]
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[5]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -574,7 +680,11 @@ func (x *UpdateRoleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRoleRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRoleRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{7}
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{5}
+>>>>>>> Move role to middleware
 }
 
 func (x *UpdateRoleRequest) GetInfo() *RoleReq {
@@ -608,7 +718,11 @@ func (x *UpdateRoleResponse) String() string {
 func (*UpdateRoleResponse) ProtoMessage() {}
 
 func (x *UpdateRoleResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[8]
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[6]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -621,7 +735,11 @@ func (x *UpdateRoleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRoleResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRoleResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{8}
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{6}
+>>>>>>> Move role to middleware
 }
 
 func (x *UpdateRoleResponse) GetInfo() *Role {
@@ -632,6 +750,7 @@ func (x *UpdateRoleResponse) GetInfo() *Role {
 }
 
 type GetRoleRequest struct {
+<<<<<<< HEAD
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -679,10 +798,13 @@ func (x *GetRoleRequest) GetID() string {
 }
 
 type GetRoleResponse struct {
+=======
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Info *Role `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
@@ -737,6 +859,13 @@ type GetRolesRequest struct {
 
 func (x *GetRolesRequest) Reset() {
 	*x = GetRolesRequest{}
+=======
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *GetRoleRequest) Reset() {
+	*x = GetRoleRequest{}
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -744,6 +873,7 @@ func (x *GetRolesRequest) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *GetRolesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -752,6 +882,16 @@ func (*GetRolesRequest) ProtoMessage() {}
 
 func (x *GetRolesRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
+=======
+func (x *GetRoleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRoleRequest) ProtoMessage() {}
+
+func (x *GetRoleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[7]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -762,6 +902,7 @@ func (x *GetRolesRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use GetRolesRequest.ProtoReflect.Descriptor instead.
 func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{11}
@@ -844,15 +985,35 @@ func (x *GetRolesResponse) GetTotal() uint32 {
 }
 
 type ExistRoleRequest struct {
+=======
+// Deprecated: Use GetRoleRequest.ProtoReflect.Descriptor instead.
+func (*GetRoleRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetRoleRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type GetRoleResponse struct {
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	Info *Role `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 func (x *ExistRoleRequest) Reset() {
 	*x = ExistRoleRequest{}
+=======
+func (x *GetRoleResponse) Reset() {
+	*x = GetRoleResponse{}
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -860,6 +1021,7 @@ func (x *ExistRoleRequest) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *ExistRoleRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -868,6 +1030,16 @@ func (*ExistRoleRequest) ProtoMessage() {}
 
 func (x *ExistRoleRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[13]
+=======
+func (x *GetRoleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRoleResponse) ProtoMessage() {}
+
+func (x *GetRoleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[8]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -878,6 +1050,7 @@ func (x *ExistRoleRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use ExistRoleRequest.ProtoReflect.Descriptor instead.
 func (*ExistRoleRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{13}
@@ -931,17 +1104,30 @@ func (*ExistRoleResponse) Descriptor() ([]byte, []int) {
 }
 
 func (x *ExistRoleResponse) GetInfo() bool {
+=======
+// Deprecated: Use GetRoleResponse.ProtoReflect.Descriptor instead.
+func (*GetRoleResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetRoleResponse) GetInfo() *Role {
+>>>>>>> Move role to middleware
 	if x != nil {
 		return x.Info
 	}
 	return false
 }
 
+<<<<<<< HEAD
 type ExistRoleCondsRequest struct {
+=======
+type GetRolesRequest struct {
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
 }
 
@@ -949,11 +1135,24 @@ func (x *ExistRoleCondsRequest) Reset() {
 	*x = ExistRoleCondsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
+=======
+	// Permissioned by path
+	AppID  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	Offset int32  `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
+}
+
+func (x *GetRolesRequest) Reset() {
+	*x = GetRolesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[9]
+>>>>>>> Move role to middleware
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
+<<<<<<< HEAD
 func (x *ExistRoleCondsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -962,6 +1161,16 @@ func (*ExistRoleCondsRequest) ProtoMessage() {}
 
 func (x *ExistRoleCondsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
+=======
+func (x *GetRolesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRolesRequest) ProtoMessage() {}
+
+func (x *GetRolesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[9]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -972,23 +1181,51 @@ func (x *ExistRoleCondsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use ExistRoleCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistRoleCondsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistRoleCondsRequest) GetConds() *Conds {
+=======
+// Deprecated: Use GetRolesRequest.ProtoReflect.Descriptor instead.
+func (*GetRolesRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetRolesRequest) GetAppID() string {
+	if x != nil {
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *GetRolesRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *GetRolesRequest) GetLimit() int32 {
+>>>>>>> Move role to middleware
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 type ExistRoleCondsResponse struct {
+=======
+type GetRolesResponse struct {
+>>>>>>> Move role to middleware
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
@@ -996,11 +1233,22 @@ func (x *ExistRoleCondsResponse) Reset() {
 	*x = ExistRoleCondsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
+=======
+	Infos []*Role `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32  `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+}
+
+func (x *GetRolesResponse) Reset() {
+	*x = GetRolesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[10]
+>>>>>>> Move role to middleware
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
+<<<<<<< HEAD
 func (x *ExistRoleCondsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1009,6 +1257,16 @@ func (*ExistRoleCondsResponse) ProtoMessage() {}
 
 func (x *ExistRoleCondsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
+=======
+func (x *GetRolesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRolesResponse) ProtoMessage() {}
+
+func (x *GetRolesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[10]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1019,12 +1277,28 @@ func (x *ExistRoleCondsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use ExistRoleCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistRoleCondsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistRoleCondsResponse) GetInfo() bool {
+=======
+// Deprecated: Use GetRolesResponse.ProtoReflect.Descriptor instead.
+func (*GetRolesResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *GetRolesResponse) GetInfos() []*Role {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *GetRolesResponse) GetTotal() uint32 {
+>>>>>>> Move role to middleware
 	if x != nil {
 		return x.Info
 	}
@@ -1042,7 +1316,11 @@ type DeleteRoleRequest struct {
 func (x *DeleteRoleRequest) Reset() {
 	*x = DeleteRoleRequest{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
+=======
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
+>>>>>>> Move role to middleware
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1055,7 +1333,11 @@ func (x *DeleteRoleRequest) String() string {
 func (*DeleteRoleRequest) ProtoMessage() {}
 
 func (x *DeleteRoleRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1068,7 +1350,11 @@ func (x *DeleteRoleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRoleRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRoleRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{17}
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{11}
+>>>>>>> Move role to middleware
 }
 
 func (x *DeleteRoleRequest) GetInfo() *RoleReq {
@@ -1089,7 +1375,11 @@ type DeleteRoleResponse struct {
 func (x *DeleteRoleResponse) Reset() {
 	*x = DeleteRoleResponse{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
+=======
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[12]
+>>>>>>> Move role to middleware
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1102,7 +1392,11 @@ func (x *DeleteRoleResponse) String() string {
 func (*DeleteRoleResponse) ProtoMessage() {}
 
 func (x *DeleteRoleResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[12]
+>>>>>>> Move role to middleware
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1115,7 +1409,11 @@ func (x *DeleteRoleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRoleResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRoleResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{18}
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{12}
+>>>>>>> Move role to middleware
 }
 
 func (x *DeleteRoleResponse) GetInfo() *Role {
@@ -1152,14 +1450,24 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x0c, 0x0a, 0x0a, 0x5f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x42, 0x79, 0x42, 0x07, 0x0a,
 	0x05, 0x5f, 0x52, 0x6f, 0x6c, 0x65, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x44, 0x65, 0x73, 0x63, 0x72,
 	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x44, 0x65, 0x66, 0x61, 0x75,
+<<<<<<< HEAD
 	0x6c, 0x74, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0x86,
+=======
+	0x6c, 0x74, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0xc6,
+>>>>>>> Move role to middleware
 	0x02, 0x0a, 0x04, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x64, 0x42, 0x79, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x64, 0x42, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x52, 0x6f, 0x6c, 0x65, 0x18, 0x1e, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x04, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x44, 0x65, 0x73,
 	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+<<<<<<< HEAD
 	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x44,
+=======
+	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1e, 0x0a, 0x0a, 0x44,
+	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x49, 0x6e, 0x74, 0x18, 0x32, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x0a, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x49, 0x6e, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x44,
+>>>>>>> Move role to middleware
 	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x44, 0x65,
 	0x66, 0x61, 0x75, 0x6c, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x46,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x41,
@@ -1167,9 +1475,17 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x70, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x41, 0x70, 0x70, 0x4c, 0x6f, 0x67, 0x6f,
 	0x18, 0x5a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x41, 0x70, 0x70, 0x4c, 0x6f, 0x67, 0x6f, 0x12,
 	0x1c, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x64, 0x20, 0x01,
+<<<<<<< HEAD
 	0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x18, 0x0a,
 	0x07, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x18, 0x78, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07,
 	0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0x89, 0x03, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64,
+=======
+	0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1e, 0x0a,
+	0x0a, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x49, 0x6e, 0x74, 0x18, 0x6e, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x0a, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x49, 0x6e, 0x74, 0x12, 0x18, 0x0a,
+	0x07, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x18, 0x78, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07,
+	0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0xd9, 0x02, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64,
+>>>>>>> Move role to middleware
 	0x73, 0x12, 0x27, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e,
 	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72,
 	0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x52, 0x02, 0x49, 0x44, 0x12, 0x2d, 0x0a, 0x05, 0x41, 0x70,
@@ -1191,10 +1507,14 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x65, 0x73, 0x12, 0x2f, 0x0a, 0x07, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x18, 0x46, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
 	0x76, 0x31, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x52, 0x07, 0x47, 0x65, 0x6e, 0x65,
+<<<<<<< HEAD
 	0x73, 0x69, 0x73, 0x12, 0x2e, 0x0a, 0x03, 0x49, 0x44, 0x73, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1c, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e,
 	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x03,
 	0x49, 0x44, 0x73, 0x22, 0x4c, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c,
+=======
+	0x73, 0x69, 0x73, 0x22, 0x4c, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c,
+>>>>>>> Move role to middleware
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72,
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65,
@@ -1203,6 +1523,7 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e,
+<<<<<<< HEAD
 	0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a,
 	0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03,
@@ -1214,6 +1535,9 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76,
 	0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4c, 0x0a,
+=======
+	0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4c, 0x0a,
+>>>>>>> Move role to middleware
 	0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
@@ -1221,6 +1545,7 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x6c, 0x65, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4a, 0x0a, 0x12, 0x55,
 	0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
+<<<<<<< HEAD
 	0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c,
 	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x20, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x52, 0x6f,
@@ -1327,6 +1652,78 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
 	0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76,
 	0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+=======
+	0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c,
+	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x20, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x52, 0x6f,
+	0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x47, 0x0a, 0x0f, 0x47, 0x65, 0x74,
+	0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70,
+	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x22, 0x55, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4f,
+	0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x60, 0x0a, 0x10, 0x47, 0x65, 0x74,
+	0x52, 0x6f, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a,
+	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61,
+	0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x05,
+	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x4c, 0x0a, 0x11, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23,
+	0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65,
+	0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4a, 0x0a, 0x12, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
+	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa8, 0x04, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x12, 0x6d, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f,
+	0x6c, 0x65, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c,
+	0x65, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x64, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x2a, 0x2e,
+	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x6f,
+	0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72,
+	0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x52,
+	0x6f, 0x6c, 0x65, 0x73, 0x12, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2c, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x6d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x12,
+	0x2d, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e,
+	0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73,
+	0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> Move role to middleware
 }
 
 var (
@@ -1341,6 +1738,7 @@ func file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP() []byte {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescData
 }
 
+<<<<<<< HEAD
 var file_npool_appuser_mw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_npool_appuser_mw_v1_role_role_proto_goTypes = []interface{}{
 	(*RoleReq)(nil),                // 0: appuser.middleware.role.v1.RoleReq
@@ -1408,6 +1806,58 @@ var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
 	20, // [20:20] is the sub-list for extension type_name
 	20, // [20:20] is the sub-list for extension extendee
 	0,  // [0:20] is the sub-list for field type_name
+=======
+var file_npool_appuser_mw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_appuser_mw_v1_role_role_proto_goTypes = []interface{}{
+	(*RoleReq)(nil),            // 0: appuser.middleware.role.v1.RoleReq
+	(*Role)(nil),               // 1: appuser.middleware.role.v1.Role
+	(*Conds)(nil),              // 2: appuser.middleware.role.v1.Conds
+	(*CreateRoleRequest)(nil),  // 3: appuser.middleware.role.v1.CreateRoleRequest
+	(*CreateRoleResponse)(nil), // 4: appuser.middleware.role.v1.CreateRoleResponse
+	(*UpdateRoleRequest)(nil),  // 5: appuser.middleware.role.v1.UpdateRoleRequest
+	(*UpdateRoleResponse)(nil), // 6: appuser.middleware.role.v1.UpdateRoleResponse
+	(*GetRoleRequest)(nil),     // 7: appuser.middleware.role.v1.GetRoleRequest
+	(*GetRoleResponse)(nil),    // 8: appuser.middleware.role.v1.GetRoleResponse
+	(*GetRolesRequest)(nil),    // 9: appuser.middleware.role.v1.GetRolesRequest
+	(*GetRolesResponse)(nil),   // 10: appuser.middleware.role.v1.GetRolesResponse
+	(*DeleteRoleRequest)(nil),  // 11: appuser.middleware.role.v1.DeleteRoleRequest
+	(*DeleteRoleResponse)(nil), // 12: appuser.middleware.role.v1.DeleteRoleResponse
+	(*v1.StringVal)(nil),       // 13: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),         // 14: basetypes.v1.BoolVal
+	(*v1.StringSliceVal)(nil),  // 15: basetypes.v1.StringSliceVal
+}
+var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
+	13, // 0: appuser.middleware.role.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	13, // 1: appuser.middleware.role.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	13, // 2: appuser.middleware.role.v1.Conds.CreatedBy:type_name -> basetypes.v1.StringVal
+	13, // 3: appuser.middleware.role.v1.Conds.Role:type_name -> basetypes.v1.StringVal
+	14, // 4: appuser.middleware.role.v1.Conds.Default:type_name -> basetypes.v1.BoolVal
+	15, // 5: appuser.middleware.role.v1.Conds.Roles:type_name -> basetypes.v1.StringSliceVal
+	14, // 6: appuser.middleware.role.v1.Conds.Genesis:type_name -> basetypes.v1.BoolVal
+	0,  // 7: appuser.middleware.role.v1.CreateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 8: appuser.middleware.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	0,  // 9: appuser.middleware.role.v1.UpdateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 10: appuser.middleware.role.v1.UpdateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	1,  // 11: appuser.middleware.role.v1.GetRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	1,  // 12: appuser.middleware.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
+	0,  // 13: appuser.middleware.role.v1.DeleteRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 14: appuser.middleware.role.v1.DeleteRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	3,  // 15: appuser.middleware.role.v1.Middleware.CreateRole:input_type -> appuser.middleware.role.v1.CreateRoleRequest
+	5,  // 16: appuser.middleware.role.v1.Middleware.UpdateRole:input_type -> appuser.middleware.role.v1.UpdateRoleRequest
+	7,  // 17: appuser.middleware.role.v1.Middleware.GetRole:input_type -> appuser.middleware.role.v1.GetRoleRequest
+	9,  // 18: appuser.middleware.role.v1.Middleware.GetRoles:input_type -> appuser.middleware.role.v1.GetRolesRequest
+	11, // 19: appuser.middleware.role.v1.Middleware.DeleteRole:input_type -> appuser.middleware.role.v1.DeleteRoleRequest
+	4,  // 20: appuser.middleware.role.v1.Middleware.CreateRole:output_type -> appuser.middleware.role.v1.CreateRoleResponse
+	6,  // 21: appuser.middleware.role.v1.Middleware.UpdateRole:output_type -> appuser.middleware.role.v1.UpdateRoleResponse
+	8,  // 22: appuser.middleware.role.v1.Middleware.GetRole:output_type -> appuser.middleware.role.v1.GetRoleResponse
+	10, // 23: appuser.middleware.role.v1.Middleware.GetRoles:output_type -> appuser.middleware.role.v1.GetRolesResponse
+	12, // 24: appuser.middleware.role.v1.Middleware.DeleteRole:output_type -> appuser.middleware.role.v1.DeleteRoleResponse
+	20, // [20:25] is the sub-list for method output_type
+	15, // [15:20] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
+>>>>>>> Move role to middleware
 }
 
 func init() { file_npool_appuser_mw_v1_role_role_proto_init() }
@@ -1477,7 +1927,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateRolesRequest); i {
+=======
+			switch v := v.(*UpdateRoleRequest); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1489,7 +1943,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*CreateRolesResponse); i {
+=======
+			switch v := v.(*UpdateRoleResponse); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1501,7 +1959,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*UpdateRoleRequest); i {
+=======
+			switch v := v.(*GetRoleRequest); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1513,7 +1975,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*UpdateRoleResponse); i {
+=======
+			switch v := v.(*GetRoleResponse); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1525,7 +1991,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetRoleRequest); i {
+=======
+			switch v := v.(*GetRolesRequest); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1537,7 +2007,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetRoleResponse); i {
+=======
+			switch v := v.(*GetRolesResponse); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1549,7 +2023,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetRolesRequest); i {
+=======
+			switch v := v.(*DeleteRoleRequest); i {
+>>>>>>> Move role to middleware
 			case 0:
 				return &v.state
 			case 1:
@@ -1561,6 +2039,7 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*GetRolesResponse); i {
 			case 0:
 				return &v.state
@@ -1633,6 +2112,8 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+=======
+>>>>>>> Move role to middleware
 			switch v := v.(*DeleteRoleResponse); i {
 			case 0:
 				return &v.state
@@ -1652,7 +2133,11 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_appuser_mw_v1_role_role_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 			NumMessages:   19,
+=======
+			NumMessages:   13,
+>>>>>>> Move role to middleware
 			NumExtensions: 0,
 			NumServices:   1,
 		},

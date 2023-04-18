@@ -44,6 +44,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -104,6 +105,9 @@
       }
     },
     "v1DeleteRoleResponse": {
+=======
+    "v1CreateRoleResponse": {
+>>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -111,6 +115,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1ExistRoleCondsResponse": {
       "type": "object",
       "properties": {
@@ -131,6 +136,20 @@
       "type": "object",
       "properties": {
         "Info": {
+=======
+    "v1DeleteRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "v1GetRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+>>>>>>> Move role to middleware
           "$ref": "#/definitions/v1Role"
         }
       }
@@ -222,6 +241,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -247,6 +267,8 @@
         }
       }
     },
+=======
+>>>>>>> Move role to middleware
     "v1UpdateRoleResponse": {
       "type": "object",
       "properties": {
