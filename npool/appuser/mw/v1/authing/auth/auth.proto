@@ -124,5 +124,3 @@ message DeleteAuthRequest {
 message DeleteAuthResponse {
     Auth Info = 10;
 }
-
-
