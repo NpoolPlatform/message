@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authin
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateAuth    (CreateAuthRequest)   returns (CreateAuthResponse)   {}
@@ -53,12 +53,12 @@ message Auth {
 }
 
 message Conds {
-    npool.v1.StringVal ID        = 10;
-    npool.v1.StringVal AppID     = 20;
-    npool.v1.StringVal RoleID    = 30;
-    npool.v1.StringVal UserID    = 40;
-    npool.v1.StringVal Resource  = 50;
-    npool.v1.StringVal Method    = 60;
+    basetypes.v1.StringVal ID        = 10;
+    basetypes.v1.StringVal AppID     = 20;
+    basetypes.v1.StringVal RoleID    = 30;
+    basetypes.v1.StringVal UserID    = 40;
+    basetypes.v1.StringVal Resource  = 50;
+    basetypes.v1.StringVal Method    = 60;
 }
 
 message CreateAuthRequest {
