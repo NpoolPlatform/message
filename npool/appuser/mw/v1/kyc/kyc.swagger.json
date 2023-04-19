@@ -64,6 +64,7 @@
         },
         "DocumentType": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EntityType": {
@@ -77,6 +78,15 @@
         "EntityType": {
           "$ref": "#/definitions/v1StringVal"
 >>>>>>> Remove kyc from appuser manager
+=======
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> Add state to conds
         }
       }
     },
@@ -304,6 +314,7 @@
       }
     },
     "v1Uint32Val": {
+<<<<<<< HEAD
 =======
         },
         "BackImg": {
@@ -335,6 +346,8 @@
     },
     "v1StringVal": {
 >>>>>>> Remove kyc from appuser manager
+=======
+>>>>>>> Add state to conds
       "type": "object",
       "properties": {
         "Op": {
