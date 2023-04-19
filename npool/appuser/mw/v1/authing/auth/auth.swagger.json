@@ -264,6 +264,7 @@
       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
 <<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1StringVal": {
@@ -293,6 +294,8 @@
         }
       }
 >>>>>>> Support update auth
+=======
+>>>>>>> Remove update
     }
   }
 }
