@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error)
+	UpdateAuth(ctx context.Context, in *UpdateAuthRequest, opts ...grpc.CallOption) (*UpdateAuthResponse, error)
 	ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error)
 	GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
@@ -40,6 +41,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error) {
 	out := new(CreateAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/CreateAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateAuth(ctx context.Context, in *UpdateAuthRequest, opts ...grpc.CallOption) (*UpdateAuthResponse, error) {
+	out := new(UpdateAuthResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/UpdateAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +97,7 @@ func (c *middlewareClient) DeleteAuth(ctx context.Context, in *DeleteAuthRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error)
+	UpdateAuth(context.Context, *UpdateAuthRequest) (*UpdateAuthResponse, error)
 	ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error)
 	GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
@@ -100,6 +111,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuth not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateAuth(context.Context, *UpdateAuthRequest) (*UpdateAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAuth not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAuth not implemented")
@@ -140,6 +154,24 @@ func _Middleware_CreateAuth_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateAuth(ctx, req.(*CreateAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/UpdateAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateAuth(ctx, req.(*UpdateAuthRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,6 +258,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAuth",
 			Handler:    _Middleware_CreateAuth_Handler,
+		},
+		{
+			MethodName: "UpdateAuth",
+			Handler:    _Middleware_UpdateAuth_Handler,
 		},
 		{
 			MethodName: "ExistAuth",
