@@ -121,6 +121,29 @@
         }
       }
     },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RoleID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Resource": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "v1CreateAuthResponse": {
       "type": "object",
       "properties": {
@@ -165,6 +188,17 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     }
