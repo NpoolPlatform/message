@@ -36,12 +36,13 @@ message TestCaseReq {
     optional string          Name                      = 20;
     optional string          Description               = 30;
     optional string          ModuleID                  = 40;
-    optional string          ApiID                     = 50;
-    optional string          Input                     = 60;
-    optional string          InputDesc                 = 70;
-    optional string          Expectation               = 80;
-    optional TestCaseType    TestCaseType              = 90;
-    optional bool            Deprecated                = 100;
+    optional string          ModuleName                = 50;
+    optional string          ApiID                     = 60;
+    optional string          Input                     = 70;
+    optional string          InputDesc                 = 80;
+    optional string          Expectation               = 90;
+    optional TestCaseType    TestCaseType              = 100;
+    optional bool            Deprecated                = 110;
 }
 
 message Conds {
