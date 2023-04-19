@@ -76,7 +76,7 @@ message ExistCondResponse {
 }
 
 message DeleteCondRequest {
-    smoketest.manager.testcase.cond.v1.Conds Conds = 10;
+    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
 }
 
 message DeleteCondResponse {

@@ -70,7 +70,7 @@ message ExistPlanTestCaseResponse {
 }
 
 message DeletePlanTestCaseRequest {
-    smoketest.manager.testplan.plantestcase.v1.Conds Conds = 10;
+    smoketest.manager.testplan.plantestcase.v1.PlanTestCaseReq Info = 10;
 }
 
 message DeletePlanTestCaseResponse {

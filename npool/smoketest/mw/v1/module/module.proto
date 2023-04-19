@@ -42,7 +42,7 @@ message ExistModuleCondsResponse {
 }
 
 message DeleteModuleRequest {
-    smoketest.manager.module.v1.Conds Conds = 10;
+    smoketest.manager.module.v1.ModuleReq Info = 10;
 }
 
 message DeleteModuleResponse {
