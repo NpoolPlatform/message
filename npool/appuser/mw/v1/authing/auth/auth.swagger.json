@@ -263,6 +263,7 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
 <<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1StringVal": {
@@ -274,16 +275,24 @@
         "Value": {
           "type": "string"
 =======
+=======
+    },
+>>>>>>> Support update auth
     "v1UpdateAuthResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Auth"
+<<<<<<< HEAD
 >>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
         }
       }
 =======
 >>>>>>> Remove update api
+=======
+        }
+      }
+>>>>>>> Support update auth
     }
   }
 }
