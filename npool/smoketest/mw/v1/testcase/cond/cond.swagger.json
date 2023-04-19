@@ -183,6 +183,21 @@
         }
       }
     },
+    "v1GetCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Cond"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {

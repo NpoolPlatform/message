@@ -51,8 +51,8 @@ message DeleteModuleResponse {
 
 message GetModulesRequest {
     smoketest.manager.module.v1.Conds Conds          = 10;
-    optional int32  Offset                           = 20;
-    optional int32  Limit                            = 30;
+    int32  Offset                                    = 20;
+    int32  Limit                                     = 30;
 }
 
 message GetModulesResponse {
