@@ -63,10 +63,13 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "DocumentType": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EntityType": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -271,6 +274,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
