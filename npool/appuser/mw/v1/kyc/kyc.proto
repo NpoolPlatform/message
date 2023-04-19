@@ -77,8 +77,9 @@ message Conds {
     basetypes.v1.StringVal UserID       = 30;
     basetypes.v1.StringVal ReviewID     = 40;
     basetypes.v1.StringVal IDNumber     = 50;
-    basetypes.v1.StringVal DocumentType = 60;
-    basetypes.v1.StringVal EntityType   = 70;
+    basetypes.v1.Uint32Val DocumentType = 60;
+    basetypes.v1.Uint32Val EntityType   = 70;
+    basetypes.v1.Uint32Val State        = 80;
 }
 
 message CreateKycRequest {
