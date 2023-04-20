@@ -146,6 +146,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist api for user
     "v1ExistUserCondsResponse": {
       "type": "object",
       "properties": {
@@ -162,8 +165,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Remove get many api
+=======
+>>>>>>> Add exist api for user
     "v1GetUserResponse": {
       "type": "object",
       "properties": {
