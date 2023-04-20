@@ -33,14 +33,15 @@ message PlanTestCase {
     string          TestUserID                              = 80;
     // @inject_tag: sql:"result"
     TestCaseResult  Result                                  = 90; 
+    string          ResultStr                               = 100; 
     // @inject_tag: sql:"index"
-    uint32          Index                                   = 100;
+    uint32          Index                                   = 110;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                               = 110;
+    uint32          CreatedAt                               = 120;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                               = 120;
+    uint32          UpdatedAt                               = 130;
     // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt                               = 130;
+    uint32          DeletedAt                               = 140;
 }
 
 message PlanTestCaseReq {

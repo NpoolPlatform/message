@@ -152,6 +152,9 @@
           "$ref": "#/definitions/v1TestCaseResult",
           "title": "@inject_tag: sql:\"result\""
         },
+        "ResultStr": {
+          "type": "string"
+        },
         "Index": {
           "type": "integer",
           "format": "int64",

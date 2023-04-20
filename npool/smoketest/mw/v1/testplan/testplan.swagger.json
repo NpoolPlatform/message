@@ -142,6 +142,9 @@
           "$ref": "#/definitions/v1TestPlanState",
           "title": "@inject_tag: sql:\"state\""
         },
+        "StateStr": {
+          "type": "string"
+        },
         "CreatedBy": {
           "type": "string",
           "title": "@inject_tag: sql:\"created_by\""
@@ -173,6 +176,9 @@
         "Result": {
           "$ref": "#/definitions/v1TestResultState",
           "title": "@inject_tag: sql:\"result\""
+        },
+        "ResultStr": {
+          "type": "string"
         },
         "Deadline": {
           "type": "integer",

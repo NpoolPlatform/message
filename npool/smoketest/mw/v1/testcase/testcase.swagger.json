@@ -87,6 +87,9 @@
           "$ref": "#/definitions/v1TestCaseType",
           "title": "@inject_tag: sql:\"test_case_type\""
         },
+        "TestCaseTypeStr": {
+          "type": "string"
+        },
         "Deprecated": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"deprecated\""

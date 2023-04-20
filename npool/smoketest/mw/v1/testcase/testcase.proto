@@ -36,12 +36,13 @@ message TestCase {
     string          InputDesc                                         = 90;
     // @inject_tag: sql:"test_case_type"
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 100;
+    string          TestCaseTypeStr                                   = 110;
     // @inject_tag: sql:"deprecated"
-    bool            Deprecated                                        = 110;
+    bool            Deprecated                                        = 120;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                                         = 120;
+    uint32          CreatedAt                                         = 130;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                                         = 130;
+    uint32          UpdatedAt                                         = 140;
 }
 
 message CreateTestCaseRequest {
