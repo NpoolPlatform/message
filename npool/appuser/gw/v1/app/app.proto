@@ -5,7 +5,6 @@ package appuser.gateway.app.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/app";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 import "npool/appuser/mw/v1/app/app.proto";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
@@ -51,6 +50,13 @@ service Gateway {
     rpc DeleteApp (DeleteAppRequest) returns (DeleteAppResponse) {
         option (google.api.http) = {
             post: "/v1/delete/app"
+            body: "*"
+        };
+    }
+
+    rpc BanApp (BanAppRequest) returns (BanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/ban/app"
             body: "*"
         };
     }
@@ -132,5 +138,15 @@ message DeleteAppRequest {
 }
 
 message DeleteAppResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+
+message BanAppRequest {
+    string ID         = 10;
+    bool   Banned     = 20;
+    string BanMessage = 30;
+}
+
+message BanAppResponse {
     appuser.middleware.app.v1.App Info = 10;
 }
