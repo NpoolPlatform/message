@@ -1,7 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD
     "title": "npool/appuser/mw/v1/user/login/history/history.proto",
+=======
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+    "title": "npool/good/mgr/v1/comment/comment.proto",
+=======
+    "title": "npool/appuser/mw/v1/user/login/history/history.proto",
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+>>>>>>> Move login history to middleware
     "version": "version not set"
   },
   "tags": [
@@ -44,6 +52,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -63,11 +72,107 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Location": {
+=======
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+    "v1Comment": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "ReplyToID": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CommentReq": {
+=======
+    "v1Conds": {
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "ReplyToID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+>>>>>>> Move login history to middleware
           "$ref": "#/definitions/v1StringVal"
         }
       }
     },
+<<<<<<< HEAD
     "v1CreateHistoryResponse": {
+=======
+    "v1CountCommentsResponse": {
+=======
+        "LoginType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateHistoryResponse": {
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+>>>>>>> Move login history to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -75,6 +180,78 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+    "v1CreateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1CreateCommentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Comment"
+          }
+        }
+      }
+    },
+    "v1DeleteCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1ExistCommentCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetCommentOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1GetCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1GetCommentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Comment"
+          }
+=======
+>>>>>>> Move login history to middleware
     "v1GetHistoriesResponse": {
       "type": "object",
       "properties": {
@@ -109,6 +286,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
+<<<<<<< HEAD
         "AppName": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_name\""
@@ -117,10 +295,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_logo\""
         },
+=======
+>>>>>>> Move login history to middleware
         "UserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
+<<<<<<< HEAD
         "EmailAddress": {
           "type": "string",
           "title": "@inject_tag: sql:\"email_address\""
@@ -129,6 +310,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
         },
+=======
+>>>>>>> Move login history to middleware
         "ClientIP": {
           "type": "string",
           "title": "@inject_tag: sql:\"client_ip\""
@@ -140,8 +323,14 @@
         "Location": {
           "type": "string",
           "title": "@inject_tag: sql:\"location\""
+<<<<<<< HEAD
         },
         "CreatedAt": {
+=======
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+        },
+        "Total": {
+>>>>>>> Move login history to middleware
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
@@ -155,6 +344,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1HistoryReq": {
       "type": "object",
       "properties": {
@@ -174,6 +364,19 @@
           "type": "string"
         },
         "Location": {
+=======
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+    "v1StringVal": {
+=======
+    "v1HistoryReq": {
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+>>>>>>> Move login history to middleware
           "type": "string"
         },
         "LoginType": {
@@ -181,6 +384,16 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/good/mgr/v1/comment/comment.swagger.json
+    "v1UpdateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+=======
+>>>>>>> Move login history to middleware
     "v1LoginType": {
       "type": "string",
       "enum": [
@@ -210,6 +423,10 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+<<<<<<< HEAD
+=======
+>>>>>>> Move login history to middleware:npool/appuser/mw/v1/user/login/history/history.swagger.json
+>>>>>>> Move login history to middleware
         }
       }
     }

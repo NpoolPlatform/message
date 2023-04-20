@@ -749,6 +749,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Move login history to middleware
     "v1BanAppUserRequest": {
       "type": "object",
       "properties": {
@@ -799,8 +802,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Move login history to middleware
     "v1CreateAppUserRequest": {
       "type": "object",
       "properties": {
@@ -892,6 +898,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Move login history to middleware
     "v1History": {
       "type": "object",
       "properties": {
@@ -903,6 +912,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
+<<<<<<< HEAD
         "AppName": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_name\""
@@ -911,10 +921,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_logo\""
         },
+=======
+>>>>>>> Move login history to middleware
         "UserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
+<<<<<<< HEAD
         "EmailAddress": {
           "type": "string",
           "title": "@inject_tag: sql:\"email_address\""
@@ -923,6 +936,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
         },
+=======
+>>>>>>> Move login history to middleware
         "ClientIP": {
           "type": "string",
           "title": "@inject_tag: sql:\"client_ip\""
@@ -949,8 +964,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Move login history to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -1388,6 +1406,7 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     },
     "v2History": {
@@ -1417,6 +1436,8 @@
         }
       }
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Move login history to middleware
     }
   }
 }

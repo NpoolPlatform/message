@@ -17,6 +17,41 @@
   ],
   "paths": {
     "/v1/ban/app": {
+<<<<<<< HEAD
+=======
+      "post": {
+        "operationId": "Gateway_BanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/app": {
+>>>>>>> Move login history to middleware
       "post": {
         "operationId": "Gateway_BanApp",
         "responses": {
@@ -634,10 +669,35 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1BanAppRequest": {
 =======
     "basetypesv1CreateInvitationCodeWhen": {
 =======
+=======
+    "v1BanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+>>>>>>> Move login history to middleware
     "v1CreateInvitationCodeWhen": {
 >>>>>>> Remove old protobuf
       "type": "string",

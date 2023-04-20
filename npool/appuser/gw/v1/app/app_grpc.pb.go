@@ -109,6 +109,15 @@ func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opt
 	return out, nil
 }
 
+func (c *gatewayClient) BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error) {
+	out := new(BanAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/BanApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -281,6 +290,24 @@ func _Gateway_BanApp_Handler(srv interface{}, ctx context.Context, dec func(inte
 func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 >>>>>>> Remove old protobuf
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).BanApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.Gateway/BanApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).BanApp(ctx, req.(*BanAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_BanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BanAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
