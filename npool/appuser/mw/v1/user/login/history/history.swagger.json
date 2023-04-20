@@ -167,6 +167,12 @@
 =======
         "LoginType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ClientIP": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Location": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
