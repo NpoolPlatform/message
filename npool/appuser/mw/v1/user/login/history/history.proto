@@ -56,6 +56,8 @@ message Conds {
     basetypes.v1.StringVal AppID     = 20;
     basetypes.v1.StringVal UserID    = 30;
     basetypes.v1.Uint32Val LoginType = 40;
+    basetypes.v1.StringVal ClientIP  = 50;
+    basetypes.v1.StringVal Location  = 60;
 }
 
 message CreateHistoryRequest {
