@@ -17,6 +17,9 @@ service Middleware {
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
 
+    rpc ExistUser         (ExistUserRequest)        returns (ExistUserResponse)        {}
+    rpc ExistUserConds    (ExistUserCondsRequest)   returns (ExistUserCondsResponse)   {}
+
     rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
 
 }
@@ -233,6 +236,23 @@ message VerifyUserRequest {
 
 message VerifyUserResponse {
     User Info = 10;
+}
+
+message ExistUserRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+}
+
+message ExistUserResponse {
+    bool Info = 10;
+}
+
+message ExistUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistUserCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteUserRequest {

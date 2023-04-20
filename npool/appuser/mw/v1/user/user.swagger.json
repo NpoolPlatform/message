@@ -83,6 +83,22 @@
         }
       }
     },
+    "v1ExistUserCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetUserResponse": {
       "type": "object",
       "properties": {
