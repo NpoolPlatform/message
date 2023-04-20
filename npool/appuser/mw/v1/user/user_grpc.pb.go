@@ -28,6 +28,8 @@ type MiddlewareClient interface {
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	VerifyAccount(ctx context.Context, in *VerifyAccountRequest, opts ...grpc.CallOption) (*VerifyAccountResponse, error)
 	VerifyUser(ctx context.Context, in *VerifyUserRequest, opts ...grpc.CallOption) (*VerifyUserResponse, error)
+	ExistUser(ctx context.Context, in *ExistUserRequest, opts ...grpc.CallOption) (*ExistUserResponse, error)
+	ExistUserConds(ctx context.Context, in *ExistUserCondsRequest, opts ...grpc.CallOption) (*ExistUserCondsResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
@@ -93,6 +95,24 @@ func (c *middlewareClient) VerifyUser(ctx context.Context, in *VerifyUserRequest
 	return out, nil
 }
 
+func (c *middlewareClient) ExistUser(ctx context.Context, in *ExistUserRequest, opts ...grpc.CallOption) (*ExistUserResponse, error) {
+	out := new(ExistUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.Middleware/ExistUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistUserConds(ctx context.Context, in *ExistUserCondsRequest, opts ...grpc.CallOption) (*ExistUserCondsResponse, error) {
+	out := new(ExistUserCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.Middleware/ExistUserConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	out := new(DeleteUserResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.v1.Middleware/DeleteUser", in, out, opts...)
@@ -112,6 +132,8 @@ type MiddlewareServer interface {
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	VerifyAccount(context.Context, *VerifyAccountRequest) (*VerifyAccountResponse, error)
 	VerifyUser(context.Context, *VerifyUserRequest) (*VerifyUserResponse, error)
+	ExistUser(context.Context, *ExistUserRequest) (*ExistUserResponse, error)
+	ExistUserConds(context.Context, *ExistUserCondsRequest) (*ExistUserCondsResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -137,6 +159,12 @@ func (UnimplementedMiddlewareServer) VerifyAccount(context.Context, *VerifyAccou
 }
 func (UnimplementedMiddlewareServer) VerifyUser(context.Context, *VerifyUserRequest) (*VerifyUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyUser not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistUser(context.Context, *ExistUserRequest) (*ExistUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistUser not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistUserConds(context.Context, *ExistUserCondsRequest) (*ExistUserCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistUserConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
@@ -262,6 +290,42 @@ func _Middleware_VerifyUser_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.user.v1.Middleware/ExistUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistUser(ctx, req.(*ExistUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistUserCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistUserConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.user.v1.Middleware/ExistUserConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistUserConds(ctx, req.(*ExistUserCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteUserRequest)
 	if err := dec(in); err != nil {
@@ -310,6 +374,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "VerifyUser",
 			Handler:    _Middleware_VerifyUser_Handler,
+		},
+		{
+			MethodName: "ExistUser",
+			Handler:    _Middleware_ExistUser_Handler,
+		},
+		{
+			MethodName: "ExistUserConds",
+			Handler:    _Middleware_ExistUserConds_Handler,
 		},
 		{
 			MethodName: "DeleteUser",
