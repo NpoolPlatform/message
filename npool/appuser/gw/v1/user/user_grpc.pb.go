@@ -36,6 +36,8 @@ type GatewayClient interface {
 	Logined(ctx context.Context, in *LoginedRequest, opts ...grpc.CallOption) (*LoginedResponse, error)
 	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
+	BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error)
+	BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -172,6 +174,24 @@ func (c *gatewayClient) GetLoginHistories(ctx context.Context, in *GetLoginHisto
 	return out, nil
 }
 
+func (c *gatewayClient) BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error) {
+	out := new(BanUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/BanUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error) {
+	out := new(BanAppUserResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.user.v1.Gateway/BanAppUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -190,6 +210,8 @@ type GatewayServer interface {
 	Logined(context.Context, *LoginedRequest) (*LoginedResponse, error)
 	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
 	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
+	BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error)
+	BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -238,6 +260,12 @@ func (UnimplementedGatewayServer) Logout(context.Context, *LogoutRequest) (*Logo
 }
 func (UnimplementedGatewayServer) GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLoginHistories not implemented")
+}
+func (UnimplementedGatewayServer) BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BanUser not implemented")
+}
+func (UnimplementedGatewayServer) BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BanAppUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -504,6 +532,42 @@ func _Gateway_GetLoginHistories_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_BanUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BanUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).BanUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/BanUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).BanUser(ctx, req.(*BanUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_BanAppUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BanAppUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).BanAppUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.user.v1.Gateway/BanAppUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).BanAppUser(ctx, req.(*BanAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -566,6 +630,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLoginHistories",
 			Handler:    _Gateway_GetLoginHistories_Handler,
+		},
+		{
+			MethodName: "BanUser",
+			Handler:    _Gateway_BanUser_Handler,
+		},
+		{
+			MethodName: "BanAppUser",
+			Handler:    _Gateway_BanAppUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -124,8 +124,7 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
+          "type": "string"
         },
         "UserID": {
           "type": "string"
@@ -349,8 +348,7 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
+          "type": "string"
         },
         "UserID": {
           "type": "string"

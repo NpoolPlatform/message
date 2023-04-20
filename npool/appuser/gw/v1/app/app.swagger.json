@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/ban/app": {
+      "post": {
+        "operationId": "Gateway_BanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/app": {
       "post": {
         "operationId": "Gateway_CreateApp",
@@ -531,6 +563,28 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "v1BanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
         }
       }
     },
