@@ -55,7 +55,8 @@ message Account {
 }
 
 message CreateAccountRequest {
-    string GoodID        = 10;
+    string          GoodID    = 10;
+    optional string AccountID = 20;
 }
 
 message CreateAccountResponse {

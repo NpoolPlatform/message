@@ -180,6 +180,9 @@
       "properties": {
         "GoodID": {
           "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
         }
       }
     },
