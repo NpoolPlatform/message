@@ -8,7 +8,7 @@ enum MsgID {
     DefaultMsgID                 = 0;
     RewardEventReq               = 10;
     IncreaseUserActionCreditsReq = 20;
-    UserLogin                    = 30;
+    CreateLoginHistory           = 30;
 }
 
 enum MsgState {
