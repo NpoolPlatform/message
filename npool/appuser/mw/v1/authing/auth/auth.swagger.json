@@ -200,6 +200,17 @@
         }
       }
     },
+    "v1CreateAuthsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Auth"
+          }
+        }
+      }
+    },
     "v1DeleteAuthResponse": {
 >>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
       "type": "object",
