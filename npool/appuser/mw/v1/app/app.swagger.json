@@ -292,6 +292,17 @@
         }
       }
     },
+    "v1CreateAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
+          }
+        }
+      }
+    },
     "v1CreateInvitationCodeWhen": {
       "type": "string",
       "enum": [
