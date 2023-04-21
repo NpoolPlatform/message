@@ -177,38 +177,6 @@
         ]
       }
     },
-    "/v1/get/userapps": {
-      "post": {
-        "operationId": "Gateway_GetUserApps",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserAppsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserAppsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/app": {
       "post": {
         "operationId": "Gateway_UpdateApp",
@@ -597,37 +565,6 @@
         "HasPaidOrder"
       ],
       "default": "DefaultWhen"
-    },
-    "v1GetUserAppsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "v1RecaptchaMethod": {
       "type": "string",

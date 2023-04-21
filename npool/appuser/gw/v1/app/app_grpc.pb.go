@@ -27,7 +27,6 @@ type GatewayClient interface {
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 	BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error)
 }
@@ -76,15 +75,6 @@ func (c *gatewayClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ..
 	return out, nil
 }
 
-func (c *gatewayClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
-	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetUserApps", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
@@ -112,7 +102,6 @@ type GatewayServer interface {
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -133,9 +122,6 @@ func (UnimplementedGatewayServer) GetApp(context.Context, *GetAppRequest) (*GetA
 }
 func (UnimplementedGatewayServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
-}
-func (UnimplementedGatewayServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
 }
 func (UnimplementedGatewayServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
@@ -228,24 +214,6 @@ func _Gateway_GetApps_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetUserApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetUserApps",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -304,10 +272,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetApps",
 			Handler:    _Gateway_GetApps_Handler,
-		},
-		{
-			MethodName: "GetUserApps",
-			Handler:    _Gateway_GetUserApps_Handler,
 		},
 		{
 			MethodName: "DeleteApp",
