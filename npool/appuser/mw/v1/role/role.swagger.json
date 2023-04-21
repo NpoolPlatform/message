@@ -92,6 +92,17 @@
         }
       }
     },
+    "v1CreateRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        }
+      }
+    },
     "v1DeleteRoleResponse": {
       "type": "object",
       "properties": {
