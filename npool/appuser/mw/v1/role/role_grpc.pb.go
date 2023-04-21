@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error)
+	CreateRoles(ctx context.Context, in *CreateRolesRequest, opts ...grpc.CallOption) (*CreateRolesResponse, error)
 	UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error)
 	GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error)
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
@@ -40,6 +41,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateRole(ctx context.Context, in *CreateRoleRequest, opts ...grpc.CallOption) (*CreateRoleResponse, error) {
 	out := new(CreateRoleResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/CreateRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateRoles(ctx context.Context, in *CreateRolesRequest, opts ...grpc.CallOption) (*CreateRolesResponse, error) {
+	out := new(CreateRolesResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/CreateRoles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +97,7 @@ func (c *middlewareClient) DeleteRole(ctx context.Context, in *DeleteRoleRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateRole(context.Context, *CreateRoleRequest) (*CreateRoleResponse, error)
+	CreateRoles(context.Context, *CreateRolesRequest) (*CreateRolesResponse, error)
 	UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error)
 	GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error)
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
@@ -100,6 +111,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateRole(context.Context, *CreateRoleRequest) (*CreateRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRole not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateRoles(context.Context, *CreateRolesRequest) (*CreateRolesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRoles not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRole not implemented")
@@ -140,6 +154,24 @@ func _Middleware_CreateRole_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateRole(ctx, req.(*CreateRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRolesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateRoles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.role.v1.Middleware/CreateRoles",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateRoles(ctx, req.(*CreateRolesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,6 +258,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateRole",
 			Handler:    _Middleware_CreateRole_Handler,
+		},
+		{
+			MethodName: "CreateRoles",
+			Handler:    _Middleware_CreateRoles_Handler,
 		},
 		{
 			MethodName: "UpdateRole",
