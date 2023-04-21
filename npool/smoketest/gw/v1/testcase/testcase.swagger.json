@@ -212,10 +212,10 @@
         "ApiDeprecated": {
           "type": "boolean"
         },
-        "Arguments": {
+        "Input": {
           "type": "string"
         },
-        "ArgTypeDescription": {
+        "InputDesc": {
           "type": "string"
         },
         "Expectation": {

@@ -51,8 +51,8 @@ message TestCase {
     string          ApiProtocol                                       = 100;
     string          ApiMethod                                         = 110;
     bool            ApiDeprecated                                     = 120;
-    string          Arguments                                         = 130;
-    string          ArgTypeDescription                                = 140;
+    string          Input                                             = 130;
+    string          InputDesc                                         = 140;
     string          Expectation                                       = 150;
     smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 160;
     bool            Deprecated                                        = 170;
