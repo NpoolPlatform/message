@@ -263,6 +263,22 @@
         }
       }
     },
+    "v1ExistAppCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetAppResponse": {
       "type": "object",
       "properties": {
