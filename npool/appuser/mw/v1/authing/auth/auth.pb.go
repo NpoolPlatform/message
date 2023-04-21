@@ -438,6 +438,100 @@ func (x *CreateAuthResponse) GetInfo() *Auth {
 	return nil
 }
 
+type CreateAuthsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*AuthReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *CreateAuthsRequest) Reset() {
+	*x = CreateAuthsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAuthsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAuthsRequest) ProtoMessage() {}
+
+func (x *CreateAuthsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAuthsRequest.ProtoReflect.Descriptor instead.
+func (*CreateAuthsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *CreateAuthsRequest) GetInfos() []*AuthReq {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type CreateAuthsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*Auth `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *CreateAuthsResponse) Reset() {
+	*x = CreateAuthsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAuthsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAuthsResponse) ProtoMessage() {}
+
+func (x *CreateAuthsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAuthsResponse.ProtoReflect.Descriptor instead.
+func (*CreateAuthsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CreateAuthsResponse) GetInfos() []*Auth {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
 type ExistAuthRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -452,7 +546,7 @@ type ExistAuthRequest struct {
 func (x *ExistAuthRequest) Reset() {
 	*x = ExistAuthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -465,7 +559,7 @@ func (x *ExistAuthRequest) String() string {
 func (*ExistAuthRequest) ProtoMessage() {}
 
 func (x *ExistAuthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -478,7 +572,7 @@ func (x *ExistAuthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAuthRequest.ProtoReflect.Descriptor instead.
 func (*ExistAuthRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{5}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ExistAuthRequest) GetAppID() string {
@@ -520,7 +614,7 @@ type ExistAuthResponse struct {
 func (x *ExistAuthResponse) Reset() {
 	*x = ExistAuthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[6]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -533,7 +627,7 @@ func (x *ExistAuthResponse) String() string {
 func (*ExistAuthResponse) ProtoMessage() {}
 
 func (x *ExistAuthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[6]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -546,7 +640,7 @@ func (x *ExistAuthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAuthResponse.ProtoReflect.Descriptor instead.
 func (*ExistAuthResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{6}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ExistAuthResponse) GetInfo() bool {
@@ -567,7 +661,7 @@ type GetAuthRequest struct {
 func (x *GetAuthRequest) Reset() {
 	*x = GetAuthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -580,7 +674,7 @@ func (x *GetAuthRequest) String() string {
 func (*GetAuthRequest) ProtoMessage() {}
 
 func (x *GetAuthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -593,7 +687,7 @@ func (x *GetAuthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuthRequest.ProtoReflect.Descriptor instead.
 func (*GetAuthRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{7}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAuthRequest) GetID() string {
@@ -614,7 +708,7 @@ type GetAuthResponse struct {
 func (x *GetAuthResponse) Reset() {
 	*x = GetAuthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[8]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -627,7 +721,7 @@ func (x *GetAuthResponse) String() string {
 func (*GetAuthResponse) ProtoMessage() {}
 
 func (x *GetAuthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[8]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -640,7 +734,7 @@ func (x *GetAuthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuthResponse.ProtoReflect.Descriptor instead.
 func (*GetAuthResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{8}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAuthResponse) GetInfo() *Auth {
@@ -663,7 +757,7 @@ type GetAuthsRequest struct {
 func (x *GetAuthsRequest) Reset() {
 	*x = GetAuthsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[9]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -676,7 +770,7 @@ func (x *GetAuthsRequest) String() string {
 func (*GetAuthsRequest) ProtoMessage() {}
 
 func (x *GetAuthsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[9]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -689,7 +783,7 @@ func (x *GetAuthsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuthsRequest.ProtoReflect.Descriptor instead.
 func (*GetAuthsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{9}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetAuthsRequest) GetConds() *Conds {
@@ -725,7 +819,7 @@ type GetAuthsResponse struct {
 func (x *GetAuthsResponse) Reset() {
 	*x = GetAuthsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[10]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -738,7 +832,7 @@ func (x *GetAuthsResponse) String() string {
 func (*GetAuthsResponse) ProtoMessage() {}
 
 func (x *GetAuthsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[10]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -751,7 +845,7 @@ func (x *GetAuthsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuthsResponse.ProtoReflect.Descriptor instead.
 func (*GetAuthsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{10}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetAuthsResponse) GetInfos() []*Auth {
@@ -779,7 +873,7 @@ type DeleteAuthRequest struct {
 func (x *DeleteAuthRequest) Reset() {
 	*x = DeleteAuthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[11]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -792,7 +886,7 @@ func (x *DeleteAuthRequest) String() string {
 func (*DeleteAuthRequest) ProtoMessage() {}
 
 func (x *DeleteAuthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[11]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -805,7 +899,7 @@ func (x *DeleteAuthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAuthRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAuthRequest) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{11}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DeleteAuthRequest) GetInfo() *AuthReq {
@@ -826,7 +920,7 @@ type DeleteAuthResponse struct {
 func (x *DeleteAuthResponse) Reset() {
 	*x = DeleteAuthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[12]
+		mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -839,7 +933,7 @@ func (x *DeleteAuthResponse) String() string {
 func (*DeleteAuthResponse) ProtoMessage() {}
 
 func (x *DeleteAuthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[12]
+	mi := &file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -852,7 +946,7 @@ func (x *DeleteAuthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAuthResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAuthResponse) Descriptor() ([]byte, []int) {
-	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{12}
+	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DeleteAuthResponse) GetInfo() *Auth {
@@ -940,7 +1034,18 @@ var file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDesc = []byte{
 	0x28, 0x0b, 0x32, 0x28, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e,
 	0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x22, 0x84, 0x01, 0x0a, 0x10, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68,
+	0x66, 0x6f, 0x22, 0x57, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68,
+	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f,
+	0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74,
+	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x75, 0x74,
+	0x68, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x55, 0x0a, 0x13, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x3e, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x28, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
+	0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x05, 0x49, 0x6e, 0x66,
+	0x6f, 0x73, 0x22, 0x84, 0x01, 0x0a, 0x10, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1b, 0x0a,
 	0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52,
@@ -983,7 +1088,7 @@ var file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDesc = []byte{
 	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x61,
 	0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76,
-	0x31, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xf5, 0x04, 0x0a,
+	0x31, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xf8, 0x05, 0x0a,
 	0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x7d, 0x0a, 0x0a, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x12, 0x35, 0x2e, 0x61, 0x70, 0x70, 0x75,
 	0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
@@ -992,43 +1097,51 @@ var file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDesc = []byte{
 	0x1a, 0x36, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
 	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75,
 	0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7a, 0x0a, 0x09, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x12, 0x34, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74,
-	0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69,
-	0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e,
-	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e,
-	0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x74, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74,
-	0x68, 0x12, 0x32, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61,
-	0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69,
-	0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x75,
-	0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x77, 0x0a, 0x08,
-	0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x12, 0x33, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
-	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75,
-	0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e,
-	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41,
-	0x75, 0x74, 0x68, 0x12, 0x35, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67,
-	0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41,
-	0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x61, 0x70, 0x70,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x80, 0x01, 0x0a, 0x0b, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x73, 0x12, 0x36, 0x2e, 0x61, 0x70, 0x70,
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
 	0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e,
-	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x42, 0x43, 0x5a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
-	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61,
-	0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x75, 0x74,
-	0x68, 0x69, 0x6e, 0x67, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x37, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e,
+	0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x75,
+	0x74, 0x68, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7a, 0x0a,
+	0x09, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x12, 0x34, 0x2e, 0x61, 0x70, 0x70,
+	0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e,
+	0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x35, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75,
+	0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x75, 0x74, 0x68, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x74, 0x0a, 0x07, 0x47, 0x65, 0x74,
+	0x41, 0x75, 0x74, 0x68, 0x12, 0x32, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e,
+	0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74,
+	0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75,
+	0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x77, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x12, 0x33, 0x2e, 0x61, 0x70,
+	0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x34, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75,
+	0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x75, 0x74, 0x68, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x12, 0x35, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72,
+	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68,
+	0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e,
+	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e,
+	0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x43, 0x5a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x61, 0x75, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1043,52 +1156,58 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescGZIP() []byte {
 	return file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDescData
 }
 
-var file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_appuser_mw_v1_authing_auth_auth_proto_goTypes = []interface{}{
-	(*AuthReq)(nil),            // 0: appuser.middleware.authing.auth.v1.AuthReq
-	(*Auth)(nil),               // 1: appuser.middleware.authing.auth.v1.Auth
-	(*Conds)(nil),              // 2: appuser.middleware.authing.auth.v1.Conds
-	(*CreateAuthRequest)(nil),  // 3: appuser.middleware.authing.auth.v1.CreateAuthRequest
-	(*CreateAuthResponse)(nil), // 4: appuser.middleware.authing.auth.v1.CreateAuthResponse
-	(*ExistAuthRequest)(nil),   // 5: appuser.middleware.authing.auth.v1.ExistAuthRequest
-	(*ExistAuthResponse)(nil),  // 6: appuser.middleware.authing.auth.v1.ExistAuthResponse
-	(*GetAuthRequest)(nil),     // 7: appuser.middleware.authing.auth.v1.GetAuthRequest
-	(*GetAuthResponse)(nil),    // 8: appuser.middleware.authing.auth.v1.GetAuthResponse
-	(*GetAuthsRequest)(nil),    // 9: appuser.middleware.authing.auth.v1.GetAuthsRequest
-	(*GetAuthsResponse)(nil),   // 10: appuser.middleware.authing.auth.v1.GetAuthsResponse
-	(*DeleteAuthRequest)(nil),  // 11: appuser.middleware.authing.auth.v1.DeleteAuthRequest
-	(*DeleteAuthResponse)(nil), // 12: appuser.middleware.authing.auth.v1.DeleteAuthResponse
-	(*v1.StringVal)(nil),       // 13: basetypes.v1.StringVal
+	(*AuthReq)(nil),             // 0: appuser.middleware.authing.auth.v1.AuthReq
+	(*Auth)(nil),                // 1: appuser.middleware.authing.auth.v1.Auth
+	(*Conds)(nil),               // 2: appuser.middleware.authing.auth.v1.Conds
+	(*CreateAuthRequest)(nil),   // 3: appuser.middleware.authing.auth.v1.CreateAuthRequest
+	(*CreateAuthResponse)(nil),  // 4: appuser.middleware.authing.auth.v1.CreateAuthResponse
+	(*CreateAuthsRequest)(nil),  // 5: appuser.middleware.authing.auth.v1.CreateAuthsRequest
+	(*CreateAuthsResponse)(nil), // 6: appuser.middleware.authing.auth.v1.CreateAuthsResponse
+	(*ExistAuthRequest)(nil),    // 7: appuser.middleware.authing.auth.v1.ExistAuthRequest
+	(*ExistAuthResponse)(nil),   // 8: appuser.middleware.authing.auth.v1.ExistAuthResponse
+	(*GetAuthRequest)(nil),      // 9: appuser.middleware.authing.auth.v1.GetAuthRequest
+	(*GetAuthResponse)(nil),     // 10: appuser.middleware.authing.auth.v1.GetAuthResponse
+	(*GetAuthsRequest)(nil),     // 11: appuser.middleware.authing.auth.v1.GetAuthsRequest
+	(*GetAuthsResponse)(nil),    // 12: appuser.middleware.authing.auth.v1.GetAuthsResponse
+	(*DeleteAuthRequest)(nil),   // 13: appuser.middleware.authing.auth.v1.DeleteAuthRequest
+	(*DeleteAuthResponse)(nil),  // 14: appuser.middleware.authing.auth.v1.DeleteAuthResponse
+	(*v1.StringVal)(nil),        // 15: basetypes.v1.StringVal
 }
 var file_npool_appuser_mw_v1_authing_auth_auth_proto_depIdxs = []int32{
-	13, // 0: appuser.middleware.authing.auth.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	13, // 1: appuser.middleware.authing.auth.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	13, // 2: appuser.middleware.authing.auth.v1.Conds.RoleID:type_name -> basetypes.v1.StringVal
-	13, // 3: appuser.middleware.authing.auth.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	13, // 4: appuser.middleware.authing.auth.v1.Conds.Resource:type_name -> basetypes.v1.StringVal
-	13, // 5: appuser.middleware.authing.auth.v1.Conds.Method:type_name -> basetypes.v1.StringVal
+	15, // 0: appuser.middleware.authing.auth.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	15, // 1: appuser.middleware.authing.auth.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	15, // 2: appuser.middleware.authing.auth.v1.Conds.RoleID:type_name -> basetypes.v1.StringVal
+	15, // 3: appuser.middleware.authing.auth.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	15, // 4: appuser.middleware.authing.auth.v1.Conds.Resource:type_name -> basetypes.v1.StringVal
+	15, // 5: appuser.middleware.authing.auth.v1.Conds.Method:type_name -> basetypes.v1.StringVal
 	0,  // 6: appuser.middleware.authing.auth.v1.CreateAuthRequest.Info:type_name -> appuser.middleware.authing.auth.v1.AuthReq
 	1,  // 7: appuser.middleware.authing.auth.v1.CreateAuthResponse.Info:type_name -> appuser.middleware.authing.auth.v1.Auth
-	1,  // 8: appuser.middleware.authing.auth.v1.GetAuthResponse.Info:type_name -> appuser.middleware.authing.auth.v1.Auth
-	2,  // 9: appuser.middleware.authing.auth.v1.GetAuthsRequest.Conds:type_name -> appuser.middleware.authing.auth.v1.Conds
-	1,  // 10: appuser.middleware.authing.auth.v1.GetAuthsResponse.Infos:type_name -> appuser.middleware.authing.auth.v1.Auth
-	0,  // 11: appuser.middleware.authing.auth.v1.DeleteAuthRequest.Info:type_name -> appuser.middleware.authing.auth.v1.AuthReq
-	1,  // 12: appuser.middleware.authing.auth.v1.DeleteAuthResponse.Info:type_name -> appuser.middleware.authing.auth.v1.Auth
-	3,  // 13: appuser.middleware.authing.auth.v1.Middleware.CreateAuth:input_type -> appuser.middleware.authing.auth.v1.CreateAuthRequest
-	5,  // 14: appuser.middleware.authing.auth.v1.Middleware.ExistAuth:input_type -> appuser.middleware.authing.auth.v1.ExistAuthRequest
-	7,  // 15: appuser.middleware.authing.auth.v1.Middleware.GetAuth:input_type -> appuser.middleware.authing.auth.v1.GetAuthRequest
-	9,  // 16: appuser.middleware.authing.auth.v1.Middleware.GetAuths:input_type -> appuser.middleware.authing.auth.v1.GetAuthsRequest
-	11, // 17: appuser.middleware.authing.auth.v1.Middleware.DeleteAuth:input_type -> appuser.middleware.authing.auth.v1.DeleteAuthRequest
-	4,  // 18: appuser.middleware.authing.auth.v1.Middleware.CreateAuth:output_type -> appuser.middleware.authing.auth.v1.CreateAuthResponse
-	6,  // 19: appuser.middleware.authing.auth.v1.Middleware.ExistAuth:output_type -> appuser.middleware.authing.auth.v1.ExistAuthResponse
-	8,  // 20: appuser.middleware.authing.auth.v1.Middleware.GetAuth:output_type -> appuser.middleware.authing.auth.v1.GetAuthResponse
-	10, // 21: appuser.middleware.authing.auth.v1.Middleware.GetAuths:output_type -> appuser.middleware.authing.auth.v1.GetAuthsResponse
-	12, // 22: appuser.middleware.authing.auth.v1.Middleware.DeleteAuth:output_type -> appuser.middleware.authing.auth.v1.DeleteAuthResponse
-	18, // [18:23] is the sub-list for method output_type
-	13, // [13:18] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	0,  // 8: appuser.middleware.authing.auth.v1.CreateAuthsRequest.Infos:type_name -> appuser.middleware.authing.auth.v1.AuthReq
+	1,  // 9: appuser.middleware.authing.auth.v1.CreateAuthsResponse.Infos:type_name -> appuser.middleware.authing.auth.v1.Auth
+	1,  // 10: appuser.middleware.authing.auth.v1.GetAuthResponse.Info:type_name -> appuser.middleware.authing.auth.v1.Auth
+	2,  // 11: appuser.middleware.authing.auth.v1.GetAuthsRequest.Conds:type_name -> appuser.middleware.authing.auth.v1.Conds
+	1,  // 12: appuser.middleware.authing.auth.v1.GetAuthsResponse.Infos:type_name -> appuser.middleware.authing.auth.v1.Auth
+	0,  // 13: appuser.middleware.authing.auth.v1.DeleteAuthRequest.Info:type_name -> appuser.middleware.authing.auth.v1.AuthReq
+	1,  // 14: appuser.middleware.authing.auth.v1.DeleteAuthResponse.Info:type_name -> appuser.middleware.authing.auth.v1.Auth
+	3,  // 15: appuser.middleware.authing.auth.v1.Middleware.CreateAuth:input_type -> appuser.middleware.authing.auth.v1.CreateAuthRequest
+	5,  // 16: appuser.middleware.authing.auth.v1.Middleware.CreateAuths:input_type -> appuser.middleware.authing.auth.v1.CreateAuthsRequest
+	7,  // 17: appuser.middleware.authing.auth.v1.Middleware.ExistAuth:input_type -> appuser.middleware.authing.auth.v1.ExistAuthRequest
+	9,  // 18: appuser.middleware.authing.auth.v1.Middleware.GetAuth:input_type -> appuser.middleware.authing.auth.v1.GetAuthRequest
+	11, // 19: appuser.middleware.authing.auth.v1.Middleware.GetAuths:input_type -> appuser.middleware.authing.auth.v1.GetAuthsRequest
+	13, // 20: appuser.middleware.authing.auth.v1.Middleware.DeleteAuth:input_type -> appuser.middleware.authing.auth.v1.DeleteAuthRequest
+	4,  // 21: appuser.middleware.authing.auth.v1.Middleware.CreateAuth:output_type -> appuser.middleware.authing.auth.v1.CreateAuthResponse
+	6,  // 22: appuser.middleware.authing.auth.v1.Middleware.CreateAuths:output_type -> appuser.middleware.authing.auth.v1.CreateAuthsResponse
+	8,  // 23: appuser.middleware.authing.auth.v1.Middleware.ExistAuth:output_type -> appuser.middleware.authing.auth.v1.ExistAuthResponse
+	10, // 24: appuser.middleware.authing.auth.v1.Middleware.GetAuth:output_type -> appuser.middleware.authing.auth.v1.GetAuthResponse
+	12, // 25: appuser.middleware.authing.auth.v1.Middleware.GetAuths:output_type -> appuser.middleware.authing.auth.v1.GetAuthsResponse
+	14, // 26: appuser.middleware.authing.auth.v1.Middleware.DeleteAuth:output_type -> appuser.middleware.authing.auth.v1.DeleteAuthResponse
+	21, // [21:27] is the sub-list for method output_type
+	15, // [15:21] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_npool_appuser_mw_v1_authing_auth_auth_proto_init() }
@@ -1158,7 +1277,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAuthRequest); i {
+			switch v := v.(*CreateAuthsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1170,7 +1289,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistAuthResponse); i {
+			switch v := v.(*CreateAuthsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1182,7 +1301,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAuthRequest); i {
+			switch v := v.(*ExistAuthRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1194,7 +1313,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAuthResponse); i {
+			switch v := v.(*ExistAuthResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1206,7 +1325,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAuthsRequest); i {
+			switch v := v.(*GetAuthRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1218,7 +1337,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAuthsResponse); i {
+			switch v := v.(*GetAuthResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1230,7 +1349,7 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteAuthRequest); i {
+			switch v := v.(*GetAuthsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1242,6 +1361,30 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAuthsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAuthRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAuthResponse); i {
 			case 0:
 				return &v.state
@@ -1255,14 +1398,14 @@ func file_npool_appuser_mw_v1_authing_auth_auth_proto_init() {
 		}
 	}
 	file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_npool_appuser_mw_v1_authing_auth_auth_proto_msgTypes[7].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_appuser_mw_v1_authing_auth_auth_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
