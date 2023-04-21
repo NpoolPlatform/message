@@ -11,6 +11,7 @@ import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateApp       (CreateAppRequest)       returns (CreateAppResponse)       {}
+    rpc CreateApps      (CreateAppsRequest)      returns (CreateAppsResponse)      {}
     rpc UpdateApp       (UpdateAppRequest)       returns (UpdateAppResponse)       {}
     rpc GetApp          (GetAppRequest)          returns (GetAppResponse)          {}
     rpc GetApps         (GetAppsRequest)         returns (GetAppsResponse)         {}
@@ -114,6 +115,14 @@ message CreateAppRequest {
 
 message CreateAppResponse {
     App Info = 10;
+}
+
+message CreateAppsRequest {
+    repeated AppReq Infos = 10;
+}
+
+message CreateAppsResponse {
+    repeated App Infos = 10;
 }
 
 message UpdateAppRequest {

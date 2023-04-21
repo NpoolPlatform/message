@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
+	CreateApps(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
@@ -42,6 +43,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/CreateApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateApps(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error) {
+	out := new(CreateAppsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/CreateApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,6 +117,7 @@ func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, 
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
+	CreateApps(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
@@ -122,6 +133,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateApps(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApps not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
@@ -168,6 +182,24 @@ func _Middleware_CreateApp_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateApp(ctx, req.(*CreateAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.app.v1.Middleware/CreateApps",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateApps(ctx, req.(*CreateAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -290,6 +322,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateApp",
 			Handler:    _Middleware_CreateApp_Handler,
+		},
+		{
+			MethodName: "CreateApps",
+			Handler:    _Middleware_CreateApps_Handler,
 		},
 		{
 			MethodName: "UpdateApp",
