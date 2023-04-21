@@ -4,7 +4,6 @@ package basal.middleware.api.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/api";
 
-import "npool/npool.proto";
 import "npool/basal/mgr/v1/api/api.proto";
 
 // Service Name
@@ -16,7 +15,7 @@ service Middleware {
     rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
     rpc GetAPIOnly    (GetAPIOnlyRequest)    returns (GetAPIOnlyResponse)    {}
     rpc ExistAPI      (ExistAPIRequest)      returns (ExistAPIResponse)      {}
-    rpc DeleteAPI      (DeleteAPIRequest)    returns (DeleteAPIResponse)     {}
+    rpc DeleteAPI     (DeleteAPIRequest)     returns (DeleteAPIResponse)     {}
 }
 
 message CreateAPIRequest {
