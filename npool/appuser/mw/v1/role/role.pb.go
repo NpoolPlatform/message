@@ -258,6 +258,7 @@ type Conds struct {
 	Default   *v1.BoolVal        `protobuf:"bytes,50,opt,name=Default,proto3" json:"Default,omitempty"`
 	Roles     *v1.StringSliceVal `protobuf:"bytes,60,opt,name=Roles,proto3" json:"Roles,omitempty"`
 	Genesis   *v1.BoolVal        `protobuf:"bytes,70,opt,name=Genesis,proto3" json:"Genesis,omitempty"`
+	IDs       *v1.StringSliceVal `protobuf:"bytes,80,opt,name=IDs,proto3" json:"IDs,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -337,6 +338,13 @@ func (x *Conds) GetRoles() *v1.StringSliceVal {
 func (x *Conds) GetGenesis() *v1.BoolVal {
 	if x != nil {
 		return x.Genesis
+	}
+	return nil
+}
+
+func (x *Conds) GetIDs() *v1.StringSliceVal {
+	if x != nil {
+		return x.IDs
 	}
 	return nil
 }
@@ -879,7 +887,7 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x1c, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x64, 0x20, 0x01,
 	0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x18, 0x0a,
 	0x07, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x18, 0x78, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07,
-	0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0xd9, 0x02, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64,
+	0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x22, 0x89, 0x03, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64,
 	0x73, 0x12, 0x27, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e,
 	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72,
 	0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x52, 0x02, 0x49, 0x44, 0x12, 0x2d, 0x0a, 0x05, 0x41, 0x70,
@@ -901,7 +909,10 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x65, 0x73, 0x12, 0x2f, 0x0a, 0x07, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x18, 0x46, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
 	0x76, 0x31, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x52, 0x07, 0x47, 0x65, 0x6e, 0x65,
-	0x73, 0x69, 0x73, 0x22, 0x4c, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c,
+	0x73, 0x69, 0x73, 0x12, 0x2e, 0x0a, 0x03, 0x49, 0x44, 0x73, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1c, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e,
+	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x03,
+	0x49, 0x44, 0x73, 0x22, 0x4c, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6c,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72,
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65,
@@ -1031,30 +1042,31 @@ var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
 	14, // 4: appuser.middleware.role.v1.Conds.Default:type_name -> basetypes.v1.BoolVal
 	15, // 5: appuser.middleware.role.v1.Conds.Roles:type_name -> basetypes.v1.StringSliceVal
 	14, // 6: appuser.middleware.role.v1.Conds.Genesis:type_name -> basetypes.v1.BoolVal
-	0,  // 7: appuser.middleware.role.v1.CreateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
-	1,  // 8: appuser.middleware.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	0,  // 9: appuser.middleware.role.v1.UpdateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
-	1,  // 10: appuser.middleware.role.v1.UpdateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	1,  // 11: appuser.middleware.role.v1.GetRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	2,  // 12: appuser.middleware.role.v1.GetRolesRequest.Conds:type_name -> appuser.middleware.role.v1.Conds
-	1,  // 13: appuser.middleware.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
-	0,  // 14: appuser.middleware.role.v1.DeleteRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
-	1,  // 15: appuser.middleware.role.v1.DeleteRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
-	3,  // 16: appuser.middleware.role.v1.Middleware.CreateRole:input_type -> appuser.middleware.role.v1.CreateRoleRequest
-	5,  // 17: appuser.middleware.role.v1.Middleware.UpdateRole:input_type -> appuser.middleware.role.v1.UpdateRoleRequest
-	7,  // 18: appuser.middleware.role.v1.Middleware.GetRole:input_type -> appuser.middleware.role.v1.GetRoleRequest
-	9,  // 19: appuser.middleware.role.v1.Middleware.GetRoles:input_type -> appuser.middleware.role.v1.GetRolesRequest
-	11, // 20: appuser.middleware.role.v1.Middleware.DeleteRole:input_type -> appuser.middleware.role.v1.DeleteRoleRequest
-	4,  // 21: appuser.middleware.role.v1.Middleware.CreateRole:output_type -> appuser.middleware.role.v1.CreateRoleResponse
-	6,  // 22: appuser.middleware.role.v1.Middleware.UpdateRole:output_type -> appuser.middleware.role.v1.UpdateRoleResponse
-	8,  // 23: appuser.middleware.role.v1.Middleware.GetRole:output_type -> appuser.middleware.role.v1.GetRoleResponse
-	10, // 24: appuser.middleware.role.v1.Middleware.GetRoles:output_type -> appuser.middleware.role.v1.GetRolesResponse
-	12, // 25: appuser.middleware.role.v1.Middleware.DeleteRole:output_type -> appuser.middleware.role.v1.DeleteRoleResponse
-	21, // [21:26] is the sub-list for method output_type
-	16, // [16:21] is the sub-list for method input_type
-	16, // [16:16] is the sub-list for extension type_name
-	16, // [16:16] is the sub-list for extension extendee
-	0,  // [0:16] is the sub-list for field type_name
+	15, // 7: appuser.middleware.role.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+	0,  // 8: appuser.middleware.role.v1.CreateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 9: appuser.middleware.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	0,  // 10: appuser.middleware.role.v1.UpdateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 11: appuser.middleware.role.v1.UpdateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	1,  // 12: appuser.middleware.role.v1.GetRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	2,  // 13: appuser.middleware.role.v1.GetRolesRequest.Conds:type_name -> appuser.middleware.role.v1.Conds
+	1,  // 14: appuser.middleware.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
+	0,  // 15: appuser.middleware.role.v1.DeleteRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 16: appuser.middleware.role.v1.DeleteRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	3,  // 17: appuser.middleware.role.v1.Middleware.CreateRole:input_type -> appuser.middleware.role.v1.CreateRoleRequest
+	5,  // 18: appuser.middleware.role.v1.Middleware.UpdateRole:input_type -> appuser.middleware.role.v1.UpdateRoleRequest
+	7,  // 19: appuser.middleware.role.v1.Middleware.GetRole:input_type -> appuser.middleware.role.v1.GetRoleRequest
+	9,  // 20: appuser.middleware.role.v1.Middleware.GetRoles:input_type -> appuser.middleware.role.v1.GetRolesRequest
+	11, // 21: appuser.middleware.role.v1.Middleware.DeleteRole:input_type -> appuser.middleware.role.v1.DeleteRoleRequest
+	4,  // 22: appuser.middleware.role.v1.Middleware.CreateRole:output_type -> appuser.middleware.role.v1.CreateRoleResponse
+	6,  // 23: appuser.middleware.role.v1.Middleware.UpdateRole:output_type -> appuser.middleware.role.v1.UpdateRoleResponse
+	8,  // 24: appuser.middleware.role.v1.Middleware.GetRole:output_type -> appuser.middleware.role.v1.GetRoleResponse
+	10, // 25: appuser.middleware.role.v1.Middleware.GetRoles:output_type -> appuser.middleware.role.v1.GetRolesResponse
+	12, // 26: appuser.middleware.role.v1.Middleware.DeleteRole:output_type -> appuser.middleware.role.v1.DeleteRoleResponse
+	22, // [22:27] is the sub-list for method output_type
+	17, // [17:22] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_npool_appuser_mw_v1_role_role_proto_init() }
