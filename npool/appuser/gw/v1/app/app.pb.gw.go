@@ -168,6 +168,7 @@ func local_request_Gateway_GetApps_0(ctx context.Context, marshaler runtime.Mars
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 func request_Gateway_DeleteApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteAppRequest
 =======
@@ -223,6 +224,8 @@ func local_request_Gateway_GetUserApps_0(ctx context.Context, marshaler runtime.
 func request_Gateway_BanApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq BanAppRequest
 =======
+=======
+>>>>>>> Remove get user app
 func request_Gateway_DeleteApp_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteAppRequest
 >>>>>>> Remove old protobuf
@@ -391,6 +394,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 	})
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mux.Handle("POST", pattern_Gateway_DeleteApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 =======
 	mux.Handle("POST", pattern_Gateway_GetUserApps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -436,6 +440,8 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
+=======
+>>>>>>> Remove get user app
 	mux.Handle("POST", pattern_Gateway_DeleteApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 >>>>>>> Remove old protobuf
 		ctx, cancel := context.WithCancel(req.Context())
@@ -605,6 +611,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 	})
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mux.Handle("POST", pattern_Gateway_DeleteApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -647,6 +654,8 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
+=======
+>>>>>>> Remove get user app
 	mux.Handle("POST", pattern_Gateway_DeleteApp_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 >>>>>>> Remove old protobuf
 		ctx, cancel := context.WithCancel(req.Context())
@@ -702,6 +711,7 @@ var (
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	pattern_Gateway_GetUserApps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "apps"}, ""))
 =======
@@ -709,6 +719,8 @@ var (
 >>>>>>> Add conds to appuser middleware
 
 >>>>>>> Remove old protobuf
+=======
+>>>>>>> Remove get user app
 	pattern_Gateway_DeleteApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "app"}, ""))
 
 	pattern_Gateway_BanApp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "ban", "app"}, ""))
@@ -724,10 +736,13 @@ var (
 	forward_Gateway_GetApps_0 = runtime.ForwardResponseMessage
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	forward_Gateway_GetUserApps_0 = runtime.ForwardResponseMessage
 
 >>>>>>> Remove old protobuf
+=======
+>>>>>>> Remove get user app
 	forward_Gateway_DeleteApp_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_BanApp_0 = runtime.ForwardResponseMessage
