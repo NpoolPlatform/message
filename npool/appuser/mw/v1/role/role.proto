@@ -69,11 +69,11 @@ message CreateRoleResponse {
 }
 
 message CreateRolesRequest {
-    repeated RoleReq Info = 10;
+    repeated RoleReq Infos = 10;
 }
 
 message CreateRolesResponse {
-    repeated Role Info = 10;
+    repeated Role Infos = 10;
 }
 
 message UpdateRoleRequest {
