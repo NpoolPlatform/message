@@ -128,6 +128,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1ExistRoleCondsResponse": {
       "type": "object",
       "properties": {
@@ -149,6 +150,19 @@
       "properties": {
         "Info": {
 =======
+=======
+    "v1CreateRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Role"
+          }
+        }
+      }
+    },
+>>>>>>> Add generate roles api
     "v1DeleteRoleResponse": {
       "type": "object",
       "properties": {
