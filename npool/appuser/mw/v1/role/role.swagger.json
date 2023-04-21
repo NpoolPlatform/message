@@ -83,11 +83,17 @@
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
 =======
 >>>>>>> Query with conditions
+=======
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+>>>>>>> Add ids support
         }
       }
     },
