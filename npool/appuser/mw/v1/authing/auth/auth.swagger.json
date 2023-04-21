@@ -152,6 +152,17 @@
         }
       }
     },
+    "v1CreateAuthsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Auth"
+          }
+        }
+      }
+    },
     "v1DeleteAuthResponse": {
       "type": "object",
       "properties": {

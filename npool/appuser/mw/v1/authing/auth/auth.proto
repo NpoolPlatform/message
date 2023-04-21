@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateAuth    (CreateAuthRequest)   returns (CreateAuthResponse)   {}
+    rpc CreateAuths   (CreateAuthsRequest)  returns (CreateAuthsResponse)  {}
     rpc ExistAuth     (ExistAuthRequest)    returns (ExistAuthResponse)    {}
     rpc GetAuth       (GetAuthRequest)      returns (GetAuthResponse)      {}
     rpc GetAuths      (GetAuthsRequest)     returns (GetAuthsResponse)     {}
@@ -67,6 +68,14 @@ message CreateAuthRequest {
 
 message CreateAuthResponse {
     Auth Info = 10;
+}
+
+message CreateAuthsRequest {
+    repeated AuthReq Infos = 10;
+}
+
+message CreateAuthsResponse {
+    repeated Auth Infos = 10;
 }
 
 message ExistAuthRequest {
