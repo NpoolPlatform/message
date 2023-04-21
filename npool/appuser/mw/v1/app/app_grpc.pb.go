@@ -26,6 +26,8 @@ type MiddlewareClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
+	ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error)
+	ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
@@ -73,6 +75,24 @@ func (c *middlewareClient) GetApps(ctx context.Context, in *GetAppsRequest, opts
 	return out, nil
 }
 
+func (c *middlewareClient) ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error) {
+	out := new(ExistAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/ExistApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error) {
+	out := new(ExistAppCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/ExistAppConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/DeleteApp", in, out, opts...)
@@ -90,6 +110,8 @@ type MiddlewareServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
+	ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error)
+	ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -109,6 +131,12 @@ func (UnimplementedMiddlewareServer) GetApp(context.Context, *GetAppRequest) (*G
 }
 func (UnimplementedMiddlewareServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistApp not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAppConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
@@ -198,6 +226,42 @@ func _Middleware_GetApps_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.app.v1.Middleware/ExistApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistApp(ctx, req.(*ExistAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistAppConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAppCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistAppConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.app.v1.Middleware/ExistAppConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistAppConds(ctx, req.(*ExistAppCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -238,6 +302,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetApps",
 			Handler:    _Middleware_GetApps_Handler,
+		},
+		{
+			MethodName: "ExistApp",
+			Handler:    _Middleware_ExistApp_Handler,
+		},
+		{
+			MethodName: "ExistAppConds",
+			Handler:    _Middleware_ExistAppConds_Handler,
 		},
 		{
 			MethodName: "DeleteApp",
