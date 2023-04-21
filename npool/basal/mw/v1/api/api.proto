@@ -16,6 +16,7 @@ service Middleware {
     rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
     rpc GetAPIOnly    (GetAPIOnlyRequest)    returns (GetAPIOnlyResponse)    {}
     rpc ExistAPI      (ExistAPIRequest)      returns (ExistAPIResponse)      {}
+    rpc DeleteAPI      (DeleteAPIRequest)    returns (DeleteAPIResponse)     {}
 }
 
 message CreateAPIRequest {
@@ -74,4 +75,12 @@ message ExistAPIRequest {
 
 message ExistAPIResponse {
     bool Info = 10;
+}
+
+message DeleteAPIRequest {
+    string ID = 10;
+}
+
+message DeleteAPIResponse {
+    basal.manager.api.v1.API Info = 10;
 }

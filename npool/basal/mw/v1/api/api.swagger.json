@@ -36,6 +36,14 @@
         }
       }
     },
+    "basalmiddlewareapiv1DeleteAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
     "basalmiddlewareapiv1ExistAPIResponse": {
       "type": "object",
       "properties": {
