@@ -40,13 +40,6 @@ service Gateway {
         };
     }
 
-    rpc GetUserApps (GetUserAppsRequest) returns (GetUserAppsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/userapps"
-            body: "*"
-        };
-    }
-
     rpc DeleteApp (DeleteAppRequest) returns (DeleteAppResponse) {
         option (google.api.http) = {
             post: "/v1/delete/app"
@@ -118,17 +111,6 @@ message GetAppsRequest {
 }
 
 message GetAppsResponse {
-    repeated appuser.middleware.app.v1.App Infos = 10;
-    uint32                                 Total = 20;
-}
-
-message GetUserAppsRequest {
-    string TargetUserID = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
-}
-
-message GetUserAppsResponse {
     repeated appuser.middleware.app.v1.App Infos = 10;
     uint32                                 Total = 20;
 }
