@@ -78,6 +78,9 @@
         },
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
