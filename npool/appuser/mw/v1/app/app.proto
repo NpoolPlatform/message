@@ -10,11 +10,13 @@ import "npool/basetypes/v1/recaptcha.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateApp  (CreateAppRequest)  returns (CreateAppResponse)  {}
-    rpc UpdateApp  (UpdateAppRequest)  returns (UpdateAppResponse)  {}
-    rpc GetApp     (GetAppRequest)     returns (GetAppResponse)     {}
-    rpc GetApps    (GetAppsRequest)    returns (GetAppsResponse)    {}
-    rpc DeleteApp  (DeleteAppRequest)  returns (DeleteAppResponse)  {}
+    rpc CreateApp       (CreateAppRequest)       returns (CreateAppResponse)       {}
+    rpc UpdateApp       (UpdateAppRequest)       returns (UpdateAppResponse)       {}
+    rpc GetApp          (GetAppRequest)          returns (GetAppResponse)          {}
+    rpc GetApps         (GetAppsRequest)         returns (GetAppsResponse)         {}
+    rpc ExistApp        (ExistAppRequest)        returns (ExistAppResponse)        {}
+    rpc ExistAppConds   (ExistAppCondsRequest)   returns (ExistAppCondsResponse)   {}
+    rpc DeleteApp       (DeleteAppRequest)       returns (DeleteAppResponse)       {}
 }
 
 message AppReq {
@@ -139,6 +141,22 @@ message GetAppsRequest {
 message GetAppsResponse {
     repeated App Infos = 10;
     uint32       Total = 20;
+}
+
+message ExistAppRequest {
+    string ID = 10;
+}
+
+message ExistAppResponse {
+    bool Info = 10;
+}
+
+message ExistAppCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteAppRequest {
