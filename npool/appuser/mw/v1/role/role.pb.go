@@ -1567,6 +1567,100 @@ func (x *ExistRoleResponse) GetInfo() bool {
 	return false
 }
 
+type ExistRoleCondsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *ExistRoleCondsRequest) Reset() {
+	*x = ExistRoleCondsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistRoleCondsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistRoleCondsRequest) ProtoMessage() {}
+
+func (x *ExistRoleCondsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistRoleCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistRoleCondsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ExistRoleCondsRequest) GetConds() *Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
+type ExistRoleCondsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *ExistRoleCondsResponse) Reset() {
+	*x = ExistRoleCondsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistRoleCondsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistRoleCondsResponse) ProtoMessage() {}
+
+func (x *ExistRoleCondsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistRoleCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistRoleCondsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ExistRoleCondsResponse) GetInfo() bool {
+	if x != nil {
+		return x.Info
+	}
+	return false
+}
+
 type DeleteRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1581,6 +1675,7 @@ func (x *DeleteRoleRequest) Reset() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
 =======
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
@@ -1591,6 +1686,9 @@ func (x *DeleteRoleRequest) Reset() {
 =======
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
 >>>>>>> Add exist role
+=======
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
+>>>>>>> Add exist conds
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1606,6 +1704,7 @@ func (x *DeleteRoleRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
 =======
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[11]
@@ -1616,6 +1715,9 @@ func (x *DeleteRoleRequest) ProtoReflect() protoreflect.Message {
 =======
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[15]
 >>>>>>> Add exist role
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[17]
+>>>>>>> Add exist conds
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1631,6 +1733,7 @@ func (*DeleteRoleRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{17}
 =======
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{11}
@@ -1641,6 +1744,9 @@ func (*DeleteRoleRequest) Descriptor() ([]byte, []int) {
 =======
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{15}
 >>>>>>> Add exist role
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{17}
+>>>>>>> Add exist conds
 }
 
 func (x *DeleteRoleRequest) GetInfo() *RoleReq {
@@ -1664,6 +1770,7 @@ func (x *DeleteRoleResponse) Reset() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
 =======
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[12]
@@ -1674,6 +1781,9 @@ func (x *DeleteRoleResponse) Reset() {
 =======
 		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
 >>>>>>> Add exist role
+=======
+		mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
+>>>>>>> Add exist conds
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1689,6 +1799,7 @@ func (x *DeleteRoleResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
 =======
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[12]
@@ -1699,6 +1810,9 @@ func (x *DeleteRoleResponse) ProtoReflect() protoreflect.Message {
 =======
 	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[16]
 >>>>>>> Add exist role
+=======
+	mi := &file_npool_appuser_mw_v1_role_role_proto_msgTypes[18]
+>>>>>>> Add exist conds
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1714,6 +1828,7 @@ func (*DeleteRoleResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{18}
 =======
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{12}
@@ -1724,6 +1839,9 @@ func (*DeleteRoleResponse) Descriptor() ([]byte, []int) {
 =======
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{16}
 >>>>>>> Add exist role
+=======
+	return file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP(), []int{18}
+>>>>>>> Add exist conds
 }
 
 func (x *DeleteRoleResponse) GetInfo() *Role {
@@ -2181,6 +2299,14 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
 	0x49, 0x44, 0x22, 0x27, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x50, 0x0a, 0x15, 0x45,
+	0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69,
+	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2c, 0x0a,
+	0x16, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4c, 0x0a, 0x11, 0x44,
 	0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23,
@@ -2192,7 +2318,7 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x34, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
 	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
 	0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x86, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x81, 0x07, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x12, 0x6d, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f,
 	0x6c, 0x65, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e,
@@ -2243,6 +2369,7 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 	0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
 	0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+<<<<<<< HEAD
 	0x6d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x2d, 0x2e,
 	0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
 	0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
@@ -2256,6 +2383,27 @@ var file_npool_appuser_mw_v1_role_role_proto_rawDesc = []byte{
 	0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 >>>>>>> Add exist role
+=======
+	0x79, 0x0a, 0x0e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64,
+	0x73, 0x12, 0x31, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45,
+	0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c, 0x65, 0x2e, 0x76,
+	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0a, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x2d, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73,
+	0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f,
+	0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65,
+	0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x72, 0x6f, 0x6c,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
+	0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76,
+	0x31, 0x2f, 0x72, 0x6f, 0x6c, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> Add exist conds
 }
 
 var (
@@ -2270,6 +2418,7 @@ func file_npool_appuser_mw_v1_role_role_proto_rawDescGZIP() []byte {
 	return file_npool_appuser_mw_v1_role_role_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2348,29 +2497,35 @@ var file_npool_appuser_mw_v1_role_role_proto_msgTypes = make([]protoimpl.Message
 =======
 var file_npool_appuser_mw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 >>>>>>> Add exist role
+=======
+var file_npool_appuser_mw_v1_role_role_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+>>>>>>> Add exist conds
 var file_npool_appuser_mw_v1_role_role_proto_goTypes = []interface{}{
-	(*RoleReq)(nil),             // 0: appuser.middleware.role.v1.RoleReq
-	(*Role)(nil),                // 1: appuser.middleware.role.v1.Role
-	(*Conds)(nil),               // 2: appuser.middleware.role.v1.Conds
-	(*CreateRoleRequest)(nil),   // 3: appuser.middleware.role.v1.CreateRoleRequest
-	(*CreateRoleResponse)(nil),  // 4: appuser.middleware.role.v1.CreateRoleResponse
-	(*CreateRolesRequest)(nil),  // 5: appuser.middleware.role.v1.CreateRolesRequest
-	(*CreateRolesResponse)(nil), // 6: appuser.middleware.role.v1.CreateRolesResponse
-	(*UpdateRoleRequest)(nil),   // 7: appuser.middleware.role.v1.UpdateRoleRequest
-	(*UpdateRoleResponse)(nil),  // 8: appuser.middleware.role.v1.UpdateRoleResponse
-	(*GetRoleRequest)(nil),      // 9: appuser.middleware.role.v1.GetRoleRequest
-	(*GetRoleResponse)(nil),     // 10: appuser.middleware.role.v1.GetRoleResponse
-	(*GetRolesRequest)(nil),     // 11: appuser.middleware.role.v1.GetRolesRequest
-	(*GetRolesResponse)(nil),    // 12: appuser.middleware.role.v1.GetRolesResponse
-	(*ExistRoleRequest)(nil),    // 13: appuser.middleware.role.v1.ExistRoleRequest
-	(*ExistRoleResponse)(nil),   // 14: appuser.middleware.role.v1.ExistRoleResponse
-	(*DeleteRoleRequest)(nil),   // 15: appuser.middleware.role.v1.DeleteRoleRequest
-	(*DeleteRoleResponse)(nil),  // 16: appuser.middleware.role.v1.DeleteRoleResponse
-	(*v1.StringVal)(nil),        // 17: basetypes.v1.StringVal
-	(*v1.BoolVal)(nil),          // 18: basetypes.v1.BoolVal
-	(*v1.StringSliceVal)(nil),   // 19: basetypes.v1.StringSliceVal
+	(*RoleReq)(nil),                // 0: appuser.middleware.role.v1.RoleReq
+	(*Role)(nil),                   // 1: appuser.middleware.role.v1.Role
+	(*Conds)(nil),                  // 2: appuser.middleware.role.v1.Conds
+	(*CreateRoleRequest)(nil),      // 3: appuser.middleware.role.v1.CreateRoleRequest
+	(*CreateRoleResponse)(nil),     // 4: appuser.middleware.role.v1.CreateRoleResponse
+	(*CreateRolesRequest)(nil),     // 5: appuser.middleware.role.v1.CreateRolesRequest
+	(*CreateRolesResponse)(nil),    // 6: appuser.middleware.role.v1.CreateRolesResponse
+	(*UpdateRoleRequest)(nil),      // 7: appuser.middleware.role.v1.UpdateRoleRequest
+	(*UpdateRoleResponse)(nil),     // 8: appuser.middleware.role.v1.UpdateRoleResponse
+	(*GetRoleRequest)(nil),         // 9: appuser.middleware.role.v1.GetRoleRequest
+	(*GetRoleResponse)(nil),        // 10: appuser.middleware.role.v1.GetRoleResponse
+	(*GetRolesRequest)(nil),        // 11: appuser.middleware.role.v1.GetRolesRequest
+	(*GetRolesResponse)(nil),       // 12: appuser.middleware.role.v1.GetRolesResponse
+	(*ExistRoleRequest)(nil),       // 13: appuser.middleware.role.v1.ExistRoleRequest
+	(*ExistRoleResponse)(nil),      // 14: appuser.middleware.role.v1.ExistRoleResponse
+	(*ExistRoleCondsRequest)(nil),  // 15: appuser.middleware.role.v1.ExistRoleCondsRequest
+	(*ExistRoleCondsResponse)(nil), // 16: appuser.middleware.role.v1.ExistRoleCondsResponse
+	(*DeleteRoleRequest)(nil),      // 17: appuser.middleware.role.v1.DeleteRoleRequest
+	(*DeleteRoleResponse)(nil),     // 18: appuser.middleware.role.v1.DeleteRoleResponse
+	(*v1.StringVal)(nil),           // 19: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),             // 20: basetypes.v1.BoolVal
+	(*v1.StringSliceVal)(nil),      // 21: basetypes.v1.StringSliceVal
 }
 var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	13, // 0: appuser.middleware.role.v1.Conds.ID:type_name -> basetypes.v1.StringVal
@@ -2473,6 +2628,16 @@ var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
 	18, // 6: appuser.middleware.role.v1.Conds.Genesis:type_name -> basetypes.v1.BoolVal
 	19, // 7: appuser.middleware.role.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
 >>>>>>> Add exist role
+=======
+	19, // 0: appuser.middleware.role.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	19, // 1: appuser.middleware.role.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	19, // 2: appuser.middleware.role.v1.Conds.CreatedBy:type_name -> basetypes.v1.StringVal
+	19, // 3: appuser.middleware.role.v1.Conds.Role:type_name -> basetypes.v1.StringVal
+	20, // 4: appuser.middleware.role.v1.Conds.Default:type_name -> basetypes.v1.BoolVal
+	21, // 5: appuser.middleware.role.v1.Conds.Roles:type_name -> basetypes.v1.StringSliceVal
+	20, // 6: appuser.middleware.role.v1.Conds.Genesis:type_name -> basetypes.v1.BoolVal
+	21, // 7: appuser.middleware.role.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+>>>>>>> Add exist conds
 	0,  // 8: appuser.middleware.role.v1.CreateRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
 	1,  // 9: appuser.middleware.role.v1.CreateRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
 	0,  // 10: appuser.middleware.role.v1.CreateRolesRequest.Infos:type_name -> appuser.middleware.role.v1.RoleReq
@@ -2482,6 +2647,7 @@ var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
 	1,  // 14: appuser.middleware.role.v1.GetRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
 	2,  // 15: appuser.middleware.role.v1.GetRolesRequest.Conds:type_name -> appuser.middleware.role.v1.Conds
 	1,  // 16: appuser.middleware.role.v1.GetRolesResponse.Infos:type_name -> appuser.middleware.role.v1.Role
+<<<<<<< HEAD
 	0,  // 17: appuser.middleware.role.v1.DeleteRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
 	1,  // 18: appuser.middleware.role.v1.DeleteRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
 	3,  // 19: appuser.middleware.role.v1.Middleware.CreateRole:input_type -> appuser.middleware.role.v1.CreateRoleRequest
@@ -2504,6 +2670,32 @@ var file_npool_appuser_mw_v1_role_role_proto_depIdxs = []int32{
 	19, // [19:19] is the sub-list for extension extendee
 	0,  // [0:19] is the sub-list for field type_name
 >>>>>>> Add generate roles api
+=======
+	2,  // 17: appuser.middleware.role.v1.ExistRoleCondsRequest.Conds:type_name -> appuser.middleware.role.v1.Conds
+	0,  // 18: appuser.middleware.role.v1.DeleteRoleRequest.Info:type_name -> appuser.middleware.role.v1.RoleReq
+	1,  // 19: appuser.middleware.role.v1.DeleteRoleResponse.Info:type_name -> appuser.middleware.role.v1.Role
+	3,  // 20: appuser.middleware.role.v1.Middleware.CreateRole:input_type -> appuser.middleware.role.v1.CreateRoleRequest
+	5,  // 21: appuser.middleware.role.v1.Middleware.CreateRoles:input_type -> appuser.middleware.role.v1.CreateRolesRequest
+	7,  // 22: appuser.middleware.role.v1.Middleware.UpdateRole:input_type -> appuser.middleware.role.v1.UpdateRoleRequest
+	9,  // 23: appuser.middleware.role.v1.Middleware.GetRole:input_type -> appuser.middleware.role.v1.GetRoleRequest
+	11, // 24: appuser.middleware.role.v1.Middleware.GetRoles:input_type -> appuser.middleware.role.v1.GetRolesRequest
+	13, // 25: appuser.middleware.role.v1.Middleware.ExistRole:input_type -> appuser.middleware.role.v1.ExistRoleRequest
+	15, // 26: appuser.middleware.role.v1.Middleware.ExistRoleConds:input_type -> appuser.middleware.role.v1.ExistRoleCondsRequest
+	17, // 27: appuser.middleware.role.v1.Middleware.DeleteRole:input_type -> appuser.middleware.role.v1.DeleteRoleRequest
+	4,  // 28: appuser.middleware.role.v1.Middleware.CreateRole:output_type -> appuser.middleware.role.v1.CreateRoleResponse
+	6,  // 29: appuser.middleware.role.v1.Middleware.CreateRoles:output_type -> appuser.middleware.role.v1.CreateRolesResponse
+	8,  // 30: appuser.middleware.role.v1.Middleware.UpdateRole:output_type -> appuser.middleware.role.v1.UpdateRoleResponse
+	10, // 31: appuser.middleware.role.v1.Middleware.GetRole:output_type -> appuser.middleware.role.v1.GetRoleResponse
+	12, // 32: appuser.middleware.role.v1.Middleware.GetRoles:output_type -> appuser.middleware.role.v1.GetRolesResponse
+	14, // 33: appuser.middleware.role.v1.Middleware.ExistRole:output_type -> appuser.middleware.role.v1.ExistRoleResponse
+	16, // 34: appuser.middleware.role.v1.Middleware.ExistRoleConds:output_type -> appuser.middleware.role.v1.ExistRoleCondsResponse
+	18, // 35: appuser.middleware.role.v1.Middleware.DeleteRole:output_type -> appuser.middleware.role.v1.DeleteRoleResponse
+	28, // [28:36] is the sub-list for method output_type
+	20, // [20:28] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
+>>>>>>> Add exist conds
 }
 
 func init() { file_npool_appuser_mw_v1_role_role_proto_init() }
@@ -2816,7 +3008,7 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteRoleRequest); i {
+			switch v := v.(*ExistRoleCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2828,7 +3020,34 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 			}
 		}
 		file_npool_appuser_mw_v1_role_role_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 >>>>>>> Add exist role
+=======
+			switch v := v.(*ExistRoleCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_role_role_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteRoleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_appuser_mw_v1_role_role_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Add exist conds
 			switch v := v.(*DeleteRoleResponse); i {
 			case 0:
 				return &v.state
@@ -2851,6 +3070,7 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   19,
 =======
 			NumMessages:   13,
@@ -2861,6 +3081,9 @@ func file_npool_appuser_mw_v1_role_role_proto_init() {
 =======
 			NumMessages:   17,
 >>>>>>> Add exist role
+=======
+			NumMessages:   19,
+>>>>>>> Add exist conds
 			NumExtensions: 0,
 			NumServices:   1,
 		},
