@@ -564,6 +564,100 @@ func (x *GetObjectReviewsResponse) GetInfos() []*v2.Review {
 	return nil
 }
 
+type DeleteReviewRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *v2.ReviewReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteReviewRequest) Reset() {
+	*x = DeleteReviewRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_review_mw_v2_mw_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteReviewRequest) ProtoMessage() {}
+
+func (x *DeleteReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_review_mw_v2_mw_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteReviewRequest.ProtoReflect.Descriptor instead.
+func (*DeleteReviewRequest) Descriptor() ([]byte, []int) {
+	return file_npool_review_mw_v2_mw_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *DeleteReviewRequest) GetInfo() *v2.ReviewReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type DeleteReviewResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *v2.Review `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteReviewResponse) Reset() {
+	*x = DeleteReviewResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_review_mw_v2_mw_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteReviewResponse) ProtoMessage() {}
+
+func (x *DeleteReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_review_mw_v2_mw_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteReviewResponse.ProtoReflect.Descriptor instead.
+func (*DeleteReviewResponse) Descriptor() ([]byte, []int) {
+	return file_npool_review_mw_v2_mw_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DeleteReviewResponse) GetInfo() *v2.Review {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_review_mw_v2_mw_proto protoreflect.FileDescriptor
 
 var file_npool_review_mw_v2_mw_proto_rawDesc = []byte{
@@ -635,7 +729,16 @@ var file_npool_review_mw_v2_mw_proto_rawDesc = []byte{
 	0x73, 0x65, 0x12, 0x2f, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67,
 	0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x05, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x32, 0xa8, 0x04, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x66, 0x6f, 0x73, 0x22, 0x47, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x30, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65,
+	0x77, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x52, 0x65, 0x76,
+	0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x45, 0x0a, 0x14,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x6d, 0x61, 0x6e, 0x61,
+	0x67, 0x65, 0x72, 0x2e, 0x76, 0x32, 0x2e, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x32, 0x91, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
 	0x72, 0x65, 0x12, 0x67, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69,
 	0x65, 0x77, 0x12, 0x29, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76, 0x32, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
@@ -669,11 +772,18 @@ var file_npool_review_mw_v2_mw_proto_rawDesc = []byte{
 	0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x28, 0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76, 0x32, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x76,
-	0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x35,
-	0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2f,
-	0x6d, 0x77, 0x2f, 0x76, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x65, 0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67,
+	0x0a, 0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x29,
+	0x2e, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x76, 0x32, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x72, 0x65, 0x76, 0x69,
+	0x65, 0x77, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76, 0x32,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x32, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -688,7 +798,7 @@ func file_npool_review_mw_v2_mw_proto_rawDescGZIP() []byte {
 	return file_npool_review_mw_v2_mw_proto_rawDescData
 }
 
-var file_npool_review_mw_v2_mw_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_npool_review_mw_v2_mw_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_npool_review_mw_v2_mw_proto_goTypes = []interface{}{
 	(*CreateReviewRequest)(nil),      // 0: review.middleware.v2.CreateReviewRequest
 	(*CreateReviewResponse)(nil),     // 1: review.middleware.v2.CreateReviewResponse
@@ -700,37 +810,43 @@ var file_npool_review_mw_v2_mw_proto_goTypes = []interface{}{
 	(*GetObjectReviewResponse)(nil),  // 7: review.middleware.v2.GetObjectReviewResponse
 	(*GetObjectReviewsRequest)(nil),  // 8: review.middleware.v2.GetObjectReviewsRequest
 	(*GetObjectReviewsResponse)(nil), // 9: review.middleware.v2.GetObjectReviewsResponse
-	(*v2.ReviewReq)(nil),             // 10: review.manager.v2.ReviewReq
-	(*v2.Review)(nil),                // 11: review.manager.v2.Review
-	(*v2.Conds)(nil),                 // 12: review.manager.v2.Conds
-	(v2.ReviewObjectType)(0),         // 13: review.manager.v2.ReviewObjectType
+	(*DeleteReviewRequest)(nil),      // 10: review.middleware.v2.DeleteReviewRequest
+	(*DeleteReviewResponse)(nil),     // 11: review.middleware.v2.DeleteReviewResponse
+	(*v2.ReviewReq)(nil),             // 12: review.manager.v2.ReviewReq
+	(*v2.Review)(nil),                // 13: review.manager.v2.Review
+	(*v2.Conds)(nil),                 // 14: review.manager.v2.Conds
+	(v2.ReviewObjectType)(0),         // 15: review.manager.v2.ReviewObjectType
 }
 var file_npool_review_mw_v2_mw_proto_depIdxs = []int32{
-	10, // 0: review.middleware.v2.CreateReviewRequest.Info:type_name -> review.manager.v2.ReviewReq
-	11, // 1: review.middleware.v2.CreateReviewResponse.Info:type_name -> review.manager.v2.Review
-	10, // 2: review.middleware.v2.UpdateReviewRequest.Info:type_name -> review.manager.v2.ReviewReq
-	11, // 3: review.middleware.v2.UpdateReviewResponse.Info:type_name -> review.manager.v2.Review
-	12, // 4: review.middleware.v2.GetReviewsRequest.Conds:type_name -> review.manager.v2.Conds
-	11, // 5: review.middleware.v2.GetReviewsResponse.Infos:type_name -> review.manager.v2.Review
-	13, // 6: review.middleware.v2.GetObjectReviewRequest.ObjectType:type_name -> review.manager.v2.ReviewObjectType
-	11, // 7: review.middleware.v2.GetObjectReviewResponse.Info:type_name -> review.manager.v2.Review
-	13, // 8: review.middleware.v2.GetObjectReviewsRequest.ObjectType:type_name -> review.manager.v2.ReviewObjectType
-	11, // 9: review.middleware.v2.GetObjectReviewsResponse.Infos:type_name -> review.manager.v2.Review
-	0,  // 10: review.middleware.v2.Middleware.CreateReview:input_type -> review.middleware.v2.CreateReviewRequest
-	2,  // 11: review.middleware.v2.Middleware.UpdateReview:input_type -> review.middleware.v2.UpdateReviewRequest
-	6,  // 12: review.middleware.v2.Middleware.GetObjectReview:input_type -> review.middleware.v2.GetObjectReviewRequest
-	8,  // 13: review.middleware.v2.Middleware.GetObjectReviews:input_type -> review.middleware.v2.GetObjectReviewsRequest
-	4,  // 14: review.middleware.v2.Middleware.GetReviews:input_type -> review.middleware.v2.GetReviewsRequest
-	1,  // 15: review.middleware.v2.Middleware.CreateReview:output_type -> review.middleware.v2.CreateReviewResponse
-	3,  // 16: review.middleware.v2.Middleware.UpdateReview:output_type -> review.middleware.v2.UpdateReviewResponse
-	7,  // 17: review.middleware.v2.Middleware.GetObjectReview:output_type -> review.middleware.v2.GetObjectReviewResponse
-	9,  // 18: review.middleware.v2.Middleware.GetObjectReviews:output_type -> review.middleware.v2.GetObjectReviewsResponse
-	5,  // 19: review.middleware.v2.Middleware.GetReviews:output_type -> review.middleware.v2.GetReviewsResponse
-	15, // [15:20] is the sub-list for method output_type
-	10, // [10:15] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	12, // 0: review.middleware.v2.CreateReviewRequest.Info:type_name -> review.manager.v2.ReviewReq
+	13, // 1: review.middleware.v2.CreateReviewResponse.Info:type_name -> review.manager.v2.Review
+	12, // 2: review.middleware.v2.UpdateReviewRequest.Info:type_name -> review.manager.v2.ReviewReq
+	13, // 3: review.middleware.v2.UpdateReviewResponse.Info:type_name -> review.manager.v2.Review
+	14, // 4: review.middleware.v2.GetReviewsRequest.Conds:type_name -> review.manager.v2.Conds
+	13, // 5: review.middleware.v2.GetReviewsResponse.Infos:type_name -> review.manager.v2.Review
+	15, // 6: review.middleware.v2.GetObjectReviewRequest.ObjectType:type_name -> review.manager.v2.ReviewObjectType
+	13, // 7: review.middleware.v2.GetObjectReviewResponse.Info:type_name -> review.manager.v2.Review
+	15, // 8: review.middleware.v2.GetObjectReviewsRequest.ObjectType:type_name -> review.manager.v2.ReviewObjectType
+	13, // 9: review.middleware.v2.GetObjectReviewsResponse.Infos:type_name -> review.manager.v2.Review
+	12, // 10: review.middleware.v2.DeleteReviewRequest.Info:type_name -> review.manager.v2.ReviewReq
+	13, // 11: review.middleware.v2.DeleteReviewResponse.Info:type_name -> review.manager.v2.Review
+	0,  // 12: review.middleware.v2.Middleware.CreateReview:input_type -> review.middleware.v2.CreateReviewRequest
+	2,  // 13: review.middleware.v2.Middleware.UpdateReview:input_type -> review.middleware.v2.UpdateReviewRequest
+	6,  // 14: review.middleware.v2.Middleware.GetObjectReview:input_type -> review.middleware.v2.GetObjectReviewRequest
+	8,  // 15: review.middleware.v2.Middleware.GetObjectReviews:input_type -> review.middleware.v2.GetObjectReviewsRequest
+	4,  // 16: review.middleware.v2.Middleware.GetReviews:input_type -> review.middleware.v2.GetReviewsRequest
+	10, // 17: review.middleware.v2.Middleware.DeleteReview:input_type -> review.middleware.v2.DeleteReviewRequest
+	1,  // 18: review.middleware.v2.Middleware.CreateReview:output_type -> review.middleware.v2.CreateReviewResponse
+	3,  // 19: review.middleware.v2.Middleware.UpdateReview:output_type -> review.middleware.v2.UpdateReviewResponse
+	7,  // 20: review.middleware.v2.Middleware.GetObjectReview:output_type -> review.middleware.v2.GetObjectReviewResponse
+	9,  // 21: review.middleware.v2.Middleware.GetObjectReviews:output_type -> review.middleware.v2.GetObjectReviewsResponse
+	5,  // 22: review.middleware.v2.Middleware.GetReviews:output_type -> review.middleware.v2.GetReviewsResponse
+	11, // 23: review.middleware.v2.Middleware.DeleteReview:output_type -> review.middleware.v2.DeleteReviewResponse
+	18, // [18:24] is the sub-list for method output_type
+	12, // [12:18] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_npool_review_mw_v2_mw_proto_init() }
@@ -859,6 +975,30 @@ func file_npool_review_mw_v2_mw_proto_init() {
 				return nil
 			}
 		}
+		file_npool_review_mw_v2_mw_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteReviewRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_review_mw_v2_mw_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteReviewResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -866,7 +1006,7 @@ func file_npool_review_mw_v2_mw_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_review_mw_v2_mw_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
