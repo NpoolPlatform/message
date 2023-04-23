@@ -34,6 +34,14 @@
         }
       }
     },
+    "reviewmiddlewarev2DeleteReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
     "reviewmiddlewarev2GetReviewsResponse": {
       "type": "object",
       "properties": {
