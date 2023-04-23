@@ -288,12 +288,18 @@
           "title": "@inject_tag: sql:\"created_by\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Return role id in role user
         "RoleID": {
           "type": "string",
           "title": "@inject_tag: sql:\"role_id\""
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Return role id in role user
         "Role": {
           "type": "string",
           "title": "@inject_tag: sql:\"role\""
