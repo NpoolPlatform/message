@@ -9,12 +9,13 @@ import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateAuth    (CreateAuthRequest)   returns (CreateAuthResponse)   {}
-    rpc CreateAuths   (CreateAuthsRequest)  returns (CreateAuthsResponse)  {}
-    rpc ExistAuth     (ExistAuthRequest)    returns (ExistAuthResponse)    {}
-    rpc GetAuth       (GetAuthRequest)      returns (GetAuthResponse)      {}
-    rpc GetAuths      (GetAuthsRequest)     returns (GetAuthsResponse)     {}
-    rpc DeleteAuth    (DeleteAuthRequest)   returns (DeleteAuthResponse)   {}
+    rpc CreateAuth     (CreateAuthRequest)     returns (CreateAuthResponse)     {}
+    rpc CreateAuths    (CreateAuthsRequest)    returns (CreateAuthsResponse)    {}
+    rpc ExistAuth      (ExistAuthRequest)      returns (ExistAuthResponse)      {}
+    rpc GetAuth        (GetAuthRequest)        returns (GetAuthResponse)        {}
+    rpc GetAuths       (GetAuthsRequest)       returns (GetAuthsResponse)       {}
+    rpc ExistAuthConds (ExistAuthCondsRequest) returns (ExistAuthCondsResponse) {}
+    rpc DeleteAuth     (DeleteAuthRequest)     returns (DeleteAuthResponse)     {}
 }
 
 message AuthReq {
@@ -106,6 +107,14 @@ message GetAuthsRequest {
 message GetAuthsResponse {
     repeated Auth Infos = 10;
     uint32        Total = 20;
+}
+
+message ExistAuthCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAuthCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteAuthRequest {
