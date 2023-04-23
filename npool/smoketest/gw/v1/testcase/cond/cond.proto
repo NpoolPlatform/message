@@ -41,9 +41,9 @@ service Gateway {
 message CreateCondRequest {
     string          TestCaseID         = 10;
     string          CondTestCaseID     = 20;
-    string          ArgumentMap        = 30;
+    optional string ArgumentMap        = 30;
     uint32          Index              = 40;
-    optional smoketest.manager.testcase.cond.v1.CondType CondType = 50;
+    smoketest.manager.testcase.cond.v1.CondType CondType = 50;
 }
 
 message CreateCondResponse {
