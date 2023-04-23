@@ -334,6 +334,9 @@
         },
         "To": {
           "type": "string"
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },
@@ -592,6 +595,9 @@
           "type": "string"
         },
         "To": {
+          "type": "string"
+        },
+        "Memo": {
           "type": "string"
         },
         "TransactionState": {
