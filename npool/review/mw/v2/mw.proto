@@ -14,6 +14,7 @@ service Middleware {
     rpc GetObjectReview  (GetObjectReviewRequest)  returns (GetObjectReviewResponse)  {}
     rpc GetObjectReviews (GetObjectReviewsRequest) returns (GetObjectReviewsResponse) {}
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
+    rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
 }
 
 message CreateReviewRequest {
@@ -63,5 +64,13 @@ message GetObjectReviewsRequest {
 
 message GetObjectReviewsResponse {
     repeated review.manager.v2.Review Infos = 10;
+}
+
+message DeleteReviewRequest {
+    review.manager.v2.ReviewReq Info = 10;
+}
+
+message DeleteReviewResponse {
+    review.manager.v2.Review Info = 10;
 }
 
