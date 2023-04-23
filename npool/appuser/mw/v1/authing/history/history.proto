@@ -4,7 +4,7 @@ package appuser.middleware.authing.history.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing/history";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc CreateHistory     (CreateHistoryRequest)     returns (CreateHistoryResponse)     {}
@@ -44,12 +44,12 @@ message History {
 }
 
 message Conds {
-    npool.v1.StringVal ID        = 10;
-    npool.v1.StringVal AppID     = 20;
-    npool.v1.StringVal UserID    = 30;
-    npool.v1.StringVal Resource  = 40;
-    npool.v1.StringVal Method    = 50;
-    npool.v1.BoolVal   Allowed   = 60;
+    basetypes.v1.StringVal ID        = 10;
+    basetypes.v1.StringVal AppID     = 20;
+    basetypes.v1.StringVal UserID    = 30;
+    basetypes.v1.StringVal Resource  = 40;
+    basetypes.v1.StringVal Method    = 50;
+    basetypes.v1.BoolVal   Allowed   = 60;
 }
 
 message CreateHistoryRequest {
