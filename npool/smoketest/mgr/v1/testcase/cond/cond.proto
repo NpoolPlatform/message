@@ -26,8 +26,8 @@ message Cond {
     // @inject_tag: sql:"id"
     string          ID                       = 10;
     // @inject_tag: sql:"cond_type"
-    CondType        CondType                 = 20;
-    string          CondTypeStr              = 30;
+    string          CondTypeStr              = 20;
+    CondType        CondType                 = 30;
     // @inject_tag: sql:"test_case_id"
     string          TestCaseID               = 40;
     // @inject_tag: sql:"cond_test_case_id"

@@ -29,8 +29,8 @@ message TestPlan {
     // @inject_tag: sql:"name"
     string          Name                              = 20;
     // @inject_tag: sql:"state"
-    TestPlanState   State                             = 30; 
-    string          StateStr                          = 40; 
+    string          StateStr                          = 30; 
+    TestPlanState   State                             = 40; 
     // @inject_tag: sql:"created_by"
     string          CreatedBy                         = 50;
     // @inject_tag: sql:"executor"
@@ -44,8 +44,8 @@ message TestPlan {
     // @inject_tag: sql:"run_duration"
     uint32          RunDuration                       = 100;
     // @inject_tag: sql:"result"
-    TestResultState Result                            = 110;
-    string          ResultStr                         = 120;
+    string          ResultStr                         = 110;
+    TestResultState Result                            = 120;
     // @inject_tag: sql:"deadline"
     uint32          Deadline                          = 130;
     // @inject_tag: sql:"created_at"

@@ -35,8 +35,8 @@ message TestCase {
     // @inject_tag: sql:"input_desc"
     string          InputDesc                                         = 90;
     // @inject_tag: sql:"test_case_type"
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 100;
-    string          TestCaseTypeStr                                   = 110;
+    string          TestCaseTypeStr                                   = 100;
+    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 110;
     // @inject_tag: sql:"deprecated"
     bool            Deprecated                                        = 120;
     // @inject_tag: sql:"created_at"

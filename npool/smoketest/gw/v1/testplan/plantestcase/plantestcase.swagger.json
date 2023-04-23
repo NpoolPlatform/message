@@ -247,12 +247,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"test_user_id\""
         },
-        "Result": {
-          "$ref": "#/definitions/v1TestCaseResult",
+        "ResultStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"result\""
         },
-        "ResultStr": {
-          "type": "string"
+        "Result": {
+          "$ref": "#/definitions/v1TestCaseResult"
         },
         "Index": {
           "type": "integer",

@@ -51,12 +51,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "CondType": {
-          "$ref": "#/definitions/v1CondType",
+        "CondTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"cond_type\""
         },
-        "CondTypeStr": {
-          "type": "string"
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
         },
         "TestCaseID": {
           "type": "string",

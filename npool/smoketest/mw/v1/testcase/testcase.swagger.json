@@ -83,12 +83,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"input_desc\""
         },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1TestCaseType",
+        "TestCaseTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"test_case_type\""
         },
-        "TestCaseTypeStr": {
-          "type": "string"
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
         },
         "Deprecated": {
           "type": "boolean",

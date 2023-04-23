@@ -138,12 +138,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "State": {
-          "$ref": "#/definitions/v1TestPlanState",
+        "StateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"state\""
         },
-        "StateStr": {
-          "type": "string"
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
         },
         "CreatedBy": {
           "type": "string",
@@ -173,12 +173,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"run_duration\""
         },
-        "Result": {
-          "$ref": "#/definitions/v1TestResultState",
+        "ResultStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"result\""
         },
-        "ResultStr": {
-          "type": "string"
+        "Result": {
+          "$ref": "#/definitions/v1TestResultState"
         },
         "Deadline": {
           "type": "integer",

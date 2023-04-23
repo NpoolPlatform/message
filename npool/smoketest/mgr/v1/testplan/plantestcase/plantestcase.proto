@@ -32,8 +32,8 @@ message PlanTestCase {
     // @inject_tag: sql:"test_user_id"
     string          TestUserID                              = 80;
     // @inject_tag: sql:"result"
-    TestCaseResult  Result                                  = 90; 
-    string          ResultStr                               = 100; 
+    string          ResultStr                               = 90; 
+    TestCaseResult  Result                                  = 100; 
     // @inject_tag: sql:"index"
     uint32          Index                                   = 110;
     // @inject_tag: sql:"created_at"
