@@ -38,7 +38,7 @@ message CreatePlanTestCaseRequest {
     optional string          Description                                             = 40;
     optional uint32          RunDuration                                             = 50;
     optional string          TestUserID                                              = 60;
-    smoketest.manager.testplan.plantestcase.v1.TestCaseResult Result                     = 70; 
+    smoketest.manager.testplan.plantestcase.v1.TestCaseResult Result                 = 70; 
     optional uint32          Index                                                   = 80;
 }
 
