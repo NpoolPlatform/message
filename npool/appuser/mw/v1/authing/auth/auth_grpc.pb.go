@@ -166,6 +166,9 @@ func (c *middlewareClient) GetAuths(ctx context.Context, in *GetAuthsRequest, op
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist auth conds
 func (c *middlewareClient) ExistAuthConds(ctx context.Context, in *ExistAuthCondsRequest, opts ...grpc.CallOption) (*ExistAuthCondsResponse, error) {
 	out := new(ExistAuthCondsResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/ExistAuthConds", in, out, opts...)
@@ -175,6 +178,7 @@ func (c *middlewareClient) ExistAuthConds(ctx context.Context, in *ExistAuthCond
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *middlewareClient) DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error) {
 	out := new(DeleteAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/DeleteAuth", in, out, opts...)
@@ -184,6 +188,8 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 	out := new(GetHistoriesResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/GetHistories", in, out, opts...)
 =======
+=======
+>>>>>>> Add exist auth conds
 func (c *middlewareClient) DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error) {
 	out := new(DeleteAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/DeleteAuth", in, out, opts...)
@@ -263,6 +269,7 @@ func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetAuthsRequest)
 }
 func (UnimplementedMiddlewareServer) ExistAuthConds(context.Context, *ExistAuthCondsRequest) (*ExistAuthCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAuthConds not implemented")
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func (UnimplementedMiddlewareServer) CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error) {
@@ -281,6 +288,8 @@ func (UnimplementedMiddlewareServer) ExistAuth(context.Context, *ExistAuthReques
 func (UnimplementedMiddlewareServer) GetHistory(context.Context, *GetHistoryRequest) (*GetHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistory not implemented")
 >>>>>>> Refactor authing
+=======
+>>>>>>> Add exist auth conds
 }
 func (UnimplementedMiddlewareServer) DeleteAuth(context.Context, *DeleteAuthRequest) (*DeleteAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAuth not implemented")
@@ -484,6 +493,7 @@ func _Middleware_ExistAuthConds_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).ExistAuthConds(ctx, req.(*ExistAuthCondsRequest))
+<<<<<<< HEAD
 =======
 		return srv.(MiddlewareServer).GetHistory(ctx, in)
 	}
@@ -498,6 +508,8 @@ func _Middleware_ExistAuthConds_Handler(srv interface{}, ctx context.Context, de
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistory(ctx, req.(*GetHistoryRequest))
 >>>>>>> Refactor authing
+=======
+>>>>>>> Add exist auth conds
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -595,6 +607,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAuthConds",
 			Handler:    _Middleware_ExistAuthConds_Handler,
+<<<<<<< HEAD
 =======
 >>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
 		},
@@ -602,6 +615,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetHistory",
 			Handler:    _Middleware_GetHistory_Handler,
 >>>>>>> Refactor authing
+=======
+>>>>>>> Add exist auth conds
 		},
 		{
 			MethodName: "DeleteAuth",
