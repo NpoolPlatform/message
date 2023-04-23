@@ -26,6 +26,8 @@ message User {
     string  ID           = 10;
     // @inject_tag: sql:"created_by"
     string  CreatedBy    = 20;
+    // @inject_tag: sql:"role_id"
+    string  RoleID       = 29;
     // @inject_tag: sql:"role"
     string  Role         = 30;
     // @inject_tag: sql:"description"
