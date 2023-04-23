@@ -9,6 +9,7 @@ enum MsgID {
     RewardEventReq               = 10;
     IncreaseUserActionCreditsReq = 20;
     CreateLoginHistoryReq        = 30;
+    CreateAuthHistoryReq         = 40;
 }
 
 enum MsgState {
