@@ -171,6 +171,14 @@
         }
       }
     },
+    "v1ExistAuthCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1ExistAuthResponse": {
       "type": "object",
       "properties": {
