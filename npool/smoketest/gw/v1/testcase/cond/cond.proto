@@ -43,7 +43,7 @@ message CreateCondRequest {
     string          CondTestCaseID     = 20;
     string          ArgumentMap        = 30;
     uint32          Index              = 40;
-    smoketest.manager.testcase.cond.v1.CondType CondType = 50;
+    optional smoketest.manager.testcase.cond.v1.CondType CondType = 50;
 }
 
 message CreateCondResponse {
@@ -71,7 +71,8 @@ message GetCondsResponse {
 message UpdateCondRequest {
     string          ID           = 10;
     optional string ArgumentMap  = 20;
-    optional uint32 Index        = 30;
+    optional smoketest.manager.testcase.cond.v1.CondType CondType  = 30;
+    optional uint32 Index        = 40;
 }
 
 message UpdateCondResponse {

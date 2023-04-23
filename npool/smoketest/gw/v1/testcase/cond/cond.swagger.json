@@ -312,6 +312,9 @@
         "ArgumentMap": {
           "type": "string"
         },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
         "Index": {
           "type": "integer",
           "format": "int64"
