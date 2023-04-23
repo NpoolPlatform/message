@@ -18,3 +18,4 @@ enum MsgState {
     StateSuccess    = 10;
     StateFail       = 20;
 }
+
