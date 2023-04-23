@@ -111,6 +111,14 @@
         }
       }
     },
+    "v1ExistRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetRoleResponse": {
       "type": "object",
       "properties": {
