@@ -58,6 +58,7 @@ message Conds {
     basetypes.v1.StringVal      UserID  = 40;
     basetypes.v1.StringSliceVal AppIDs  = 50;
     basetypes.v1.StringSliceVal RoleIDs = 60;
+    basetypes.v1.BoolVal        Genesis = 70;
 }
 
 message CreateUserRequest {
