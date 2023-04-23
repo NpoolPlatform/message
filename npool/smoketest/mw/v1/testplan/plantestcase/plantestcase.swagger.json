@@ -77,22 +77,6 @@
         }
       }
     },
-    "v1ExistPlanTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetPlanTestCaseOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1PlanTestCase"
-        }
-      }
-    },
     "v1GetPlanTestCaseResponse": {
       "type": "object",
       "properties": {

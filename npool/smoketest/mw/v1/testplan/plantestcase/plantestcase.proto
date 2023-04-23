@@ -11,9 +11,7 @@ service Middleware {
     rpc CreatePlanTestCase     (CreatePlanTestCaseRequest)     returns (CreatePlanTestCaseResponse)     {}
     rpc UpdatePlanTestCase     (UpdatePlanTestCaseRequest)     returns (UpdatePlanTestCaseResponse)     {}
     rpc GetPlanTestCase        (GetPlanTestCaseRequest)        returns (GetPlanTestCaseResponse)        {}
-    rpc GetPlanTestCaseOnly    (GetPlanTestCaseOnlyRequest)    returns (GetPlanTestCaseOnlyResponse)    {}
     rpc GetPlanTestCases       (GetPlanTestCasesRequest)       returns (GetPlanTestCasesResponse)       {}
-    rpc ExistPlanTestCase      (ExistPlanTestCaseRequest)      returns (ExistPlanTestCaseResponse)      {}
     rpc DeletePlanTestCase     (DeletePlanTestCaseRequest)     returns (DeletePlanTestCaseResponse)     {}
 }
 

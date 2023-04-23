@@ -25,9 +25,7 @@ type MiddlewareClient interface {
 	CreatePlanTestCase(ctx context.Context, in *CreatePlanTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanTestCaseResponse, error)
 	UpdatePlanTestCase(ctx context.Context, in *UpdatePlanTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanTestCaseResponse, error)
 	GetPlanTestCase(ctx context.Context, in *GetPlanTestCaseRequest, opts ...grpc.CallOption) (*GetPlanTestCaseResponse, error)
-	GetPlanTestCaseOnly(ctx context.Context, in *GetPlanTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetPlanTestCaseOnlyResponse, error)
 	GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error)
-	ExistPlanTestCase(ctx context.Context, in *ExistPlanTestCaseRequest, opts ...grpc.CallOption) (*ExistPlanTestCaseResponse, error)
 	DeletePlanTestCase(ctx context.Context, in *DeletePlanTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanTestCaseResponse, error)
 }
 
@@ -66,27 +64,9 @@ func (c *middlewareClient) GetPlanTestCase(ctx context.Context, in *GetPlanTestC
 	return out, nil
 }
 
-func (c *middlewareClient) GetPlanTestCaseOnly(ctx context.Context, in *GetPlanTestCaseOnlyRequest, opts ...grpc.CallOption) (*GetPlanTestCaseOnlyResponse, error) {
-	out := new(GetPlanTestCaseOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCaseOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error) {
 	out := new(GetPlanTestCasesResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistPlanTestCase(ctx context.Context, in *ExistPlanTestCaseRequest, opts ...grpc.CallOption) (*ExistPlanTestCaseResponse, error) {
-	out := new(ExistPlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/ExistPlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,9 +89,7 @@ type MiddlewareServer interface {
 	CreatePlanTestCase(context.Context, *CreatePlanTestCaseRequest) (*CreatePlanTestCaseResponse, error)
 	UpdatePlanTestCase(context.Context, *UpdatePlanTestCaseRequest) (*UpdatePlanTestCaseResponse, error)
 	GetPlanTestCase(context.Context, *GetPlanTestCaseRequest) (*GetPlanTestCaseResponse, error)
-	GetPlanTestCaseOnly(context.Context, *GetPlanTestCaseOnlyRequest) (*GetPlanTestCaseOnlyResponse, error)
 	GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error)
-	ExistPlanTestCase(context.Context, *ExistPlanTestCaseRequest) (*ExistPlanTestCaseResponse, error)
 	DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -129,14 +107,8 @@ func (UnimplementedMiddlewareServer) UpdatePlanTestCase(context.Context, *Update
 func (UnimplementedMiddlewareServer) GetPlanTestCase(context.Context, *GetPlanTestCaseRequest) (*GetPlanTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPlanTestCase not implemented")
 }
-func (UnimplementedMiddlewareServer) GetPlanTestCaseOnly(context.Context, *GetPlanTestCaseOnlyRequest) (*GetPlanTestCaseOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPlanTestCaseOnly not implemented")
-}
 func (UnimplementedMiddlewareServer) GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPlanTestCases not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistPlanTestCase(context.Context, *ExistPlanTestCaseRequest) (*ExistPlanTestCaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistPlanTestCase not implemented")
 }
 func (UnimplementedMiddlewareServer) DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePlanTestCase not implemented")
@@ -208,24 +180,6 @@ func _Middleware_GetPlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetPlanTestCaseOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPlanTestCaseOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetPlanTestCaseOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCaseOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetPlanTestCaseOnly(ctx, req.(*GetPlanTestCaseOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetPlanTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPlanTestCasesRequest)
 	if err := dec(in); err != nil {
@@ -240,24 +194,6 @@ func _Middleware_GetPlanTestCases_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetPlanTestCases(ctx, req.(*GetPlanTestCasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistPlanTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistPlanTestCaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistPlanTestCase(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/ExistPlanTestCase",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistPlanTestCase(ctx, req.(*ExistPlanTestCaseRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,16 +236,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetPlanTestCase_Handler,
 		},
 		{
-			MethodName: "GetPlanTestCaseOnly",
-			Handler:    _Middleware_GetPlanTestCaseOnly_Handler,
-		},
-		{
 			MethodName: "GetPlanTestCases",
 			Handler:    _Middleware_GetPlanTestCases_Handler,
-		},
-		{
-			MethodName: "ExistPlanTestCase",
-			Handler:    _Middleware_ExistPlanTestCase_Handler,
 		},
 		{
 			MethodName: "DeletePlanTestCase",
