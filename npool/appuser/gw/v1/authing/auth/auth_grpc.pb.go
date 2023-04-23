@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/authing/auth.proto
+// source: npool/appuser/gw/v1/authing/auth/auth.proto
 
-package authing
+package auth
 
 import (
 	context "context"
@@ -26,7 +26,6 @@ type GatewayClient interface {
 	CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error)
 	DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error)
 	GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error)
-	GetAppHistories(ctx context.Context, in *GetAppHistoriesRequest, opts ...grpc.CallOption) (*GetAppHistoriesResponse, error)
 }
 
 type gatewayClient struct {
@@ -39,7 +38,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error) {
 	out := new(AuthenticateResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/Authenticate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.auth.v1.Gateway/Authenticate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +47,7 @@ func (c *gatewayClient) Authenticate(ctx context.Context, in *AuthenticateReques
 
 func (c *gatewayClient) CreateAppAuth(ctx context.Context, in *CreateAppAuthRequest, opts ...grpc.CallOption) (*CreateAppAuthResponse, error) {
 	out := new(CreateAppAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/CreateAppAuth", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.auth.v1.Gateway/CreateAppAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +56,7 @@ func (c *gatewayClient) CreateAppAuth(ctx context.Context, in *CreateAppAuthRequ
 
 func (c *gatewayClient) DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequest, opts ...grpc.CallOption) (*DeleteAppAuthResponse, error) {
 	out := new(DeleteAppAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/DeleteAppAuth", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.auth.v1.Gateway/DeleteAppAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,16 +65,7 @@ func (c *gatewayClient) DeleteAppAuth(ctx context.Context, in *DeleteAppAuthRequ
 
 func (c *gatewayClient) GetAppAuths(ctx context.Context, in *GetAppAuthsRequest, opts ...grpc.CallOption) (*GetAppAuthsResponse, error) {
 	out := new(GetAppAuthsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/GetAppAuths", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetAppHistories(ctx context.Context, in *GetAppHistoriesRequest, opts ...grpc.CallOption) (*GetAppHistoriesResponse, error) {
-	out := new(GetAppHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.v1.Gateway/GetAppHistories", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.authing.auth.v1.Gateway/GetAppAuths", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +80,6 @@ type GatewayServer interface {
 	CreateAppAuth(context.Context, *CreateAppAuthRequest) (*CreateAppAuthResponse, error)
 	DeleteAppAuth(context.Context, *DeleteAppAuthRequest) (*DeleteAppAuthResponse, error)
 	GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error)
-	GetAppHistories(context.Context, *GetAppHistoriesRequest) (*GetAppHistoriesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -109,9 +98,6 @@ func (UnimplementedGatewayServer) DeleteAppAuth(context.Context, *DeleteAppAuthR
 }
 func (UnimplementedGatewayServer) GetAppAuths(context.Context, *GetAppAuthsRequest) (*GetAppAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAuths not implemented")
-}
-func (UnimplementedGatewayServer) GetAppHistories(context.Context, *GetAppHistoriesRequest) (*GetAppHistoriesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppHistories not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -136,7 +122,7 @@ func _Gateway_Authenticate_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.authing.v1.Gateway/Authenticate",
+		FullMethod: "/appuser.gateway.authing.auth.v1.Gateway/Authenticate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).Authenticate(ctx, req.(*AuthenticateRequest))
@@ -154,7 +140,7 @@ func _Gateway_CreateAppAuth_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.authing.v1.Gateway/CreateAppAuth",
+		FullMethod: "/appuser.gateway.authing.auth.v1.Gateway/CreateAppAuth",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateAppAuth(ctx, req.(*CreateAppAuthRequest))
@@ -172,7 +158,7 @@ func _Gateway_DeleteAppAuth_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.authing.v1.Gateway/DeleteAppAuth",
+		FullMethod: "/appuser.gateway.authing.auth.v1.Gateway/DeleteAppAuth",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteAppAuth(ctx, req.(*DeleteAppAuthRequest))
@@ -190,28 +176,10 @@ func _Gateway_GetAppAuths_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.authing.v1.Gateway/GetAppAuths",
+		FullMethod: "/appuser.gateway.authing.auth.v1.Gateway/GetAppAuths",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppAuths(ctx, req.(*GetAppAuthsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetAppHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppHistoriesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppHistories(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.authing.v1.Gateway/GetAppHistories",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppHistories(ctx, req.(*GetAppHistoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -220,7 +188,7 @@ func _Gateway_GetAppHistories_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.authing.v1.Gateway",
+	ServiceName: "appuser.gateway.authing.auth.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -239,11 +207,7 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetAppAuths",
 			Handler:    _Gateway_GetAppAuths_Handler,
 		},
-		{
-			MethodName: "GetAppHistories",
-			Handler:    _Gateway_GetAppHistories_Handler,
-		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/authing/auth.proto",
+	Metadata: "npool/appuser/gw/v1/authing/auth/auth.proto",
 }
