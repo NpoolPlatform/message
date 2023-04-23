@@ -12,6 +12,7 @@ service Middleware {
     rpc UpdateRole    (UpdateRoleRequest)   returns (UpdateRoleResponse)   {}
     rpc GetRole       (GetRoleRequest)      returns (GetRoleResponse)      {}
     rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
+    rpc ExistRole     (ExistRoleRequest)    returns (ExistRoleResponse)    {}
     rpc DeleteRole    (DeleteRoleRequest)   returns (DeleteRoleResponse)   {}
 }
 
@@ -101,6 +102,14 @@ message GetRolesRequest {
 message GetRolesResponse {
     repeated Role Infos = 10;
     uint32        Total = 20;
+}
+
+message ExistRoleRequest {
+    string ID = 10;
+}
+
+message ExistRoleResponse {
+    bool Info = 10;
 }
 
 message DeleteRoleRequest {
