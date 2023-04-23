@@ -120,7 +120,6 @@ message ExistRoleCondsResponse {
     bool Info = 10;
 }
 
-
 message DeleteRoleRequest {
     RoleReq Info = 10;
 }
