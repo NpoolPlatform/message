@@ -27,6 +27,7 @@ type MiddlewareClient interface {
 	ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error)
 	GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error)
 	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
+	ExistAuthConds(ctx context.Context, in *ExistAuthCondsRequest, opts ...grpc.CallOption) (*ExistAuthCondsResponse, error)
 	DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error)
 }
 
@@ -83,6 +84,15 @@ func (c *middlewareClient) GetAuths(ctx context.Context, in *GetAuthsRequest, op
 	return out, nil
 }
 
+func (c *middlewareClient) ExistAuthConds(ctx context.Context, in *ExistAuthCondsRequest, opts ...grpc.CallOption) (*ExistAuthCondsResponse, error) {
+	out := new(ExistAuthCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/ExistAuthConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error) {
 	out := new(DeleteAuthResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/DeleteAuth", in, out, opts...)
@@ -101,6 +111,7 @@ type MiddlewareServer interface {
 	ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error)
 	GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error)
 	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
+	ExistAuthConds(context.Context, *ExistAuthCondsRequest) (*ExistAuthCondsResponse, error)
 	DeleteAuth(context.Context, *DeleteAuthRequest) (*DeleteAuthResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -123,6 +134,9 @@ func (UnimplementedMiddlewareServer) GetAuth(context.Context, *GetAuthRequest) (
 }
 func (UnimplementedMiddlewareServer) GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuths not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistAuthConds(context.Context, *ExistAuthCondsRequest) (*ExistAuthCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAuthConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteAuth(context.Context, *DeleteAuthRequest) (*DeleteAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAuth not implemented")
@@ -230,6 +244,24 @@ func _Middleware_GetAuths_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistAuthConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAuthCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistAuthConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/ExistAuthConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistAuthConds(ctx, req.(*ExistAuthCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAuthRequest)
 	if err := dec(in); err != nil {
@@ -274,6 +306,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAuths",
 			Handler:    _Middleware_GetAuths_Handler,
+		},
+		{
+			MethodName: "ExistAuthConds",
+			Handler:    _Middleware_ExistAuthConds_Handler,
 		},
 		{
 			MethodName: "DeleteAuth",
