@@ -11,7 +11,7 @@ service Middleware {
     rpc CreateCond     (CreateCondRequest)     returns (CreateCondResponse)     {}
     rpc UpdateCond     (UpdateCondRequest)     returns (UpdateCondResponse)     {}
     rpc GetCond        (GetCondRequest)        returns (GetCondResponse)        {}
-    rpc GetConds        (GetCondsRequest)        returns (GetCondsResponse)        {}
+    rpc GetConds       (GetCondsRequest)       returns (GetCondsResponse)       {}
     rpc GetCondOnly    (GetCondOnlyRequest)    returns (GetCondOnlyResponse)    {}
     rpc ExistCond      (ExistCondRequest)      returns (ExistCondResponse)      {}
     rpc DeleteCond     (DeleteCondRequest)     returns (DeleteCondResponse)     {}
