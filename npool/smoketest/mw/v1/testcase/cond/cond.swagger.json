@@ -189,7 +189,7 @@
     "v1GetCondsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Cond"
