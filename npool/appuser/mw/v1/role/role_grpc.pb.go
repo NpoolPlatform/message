@@ -28,6 +28,7 @@ type MiddlewareClient interface {
 	GetRole(ctx context.Context, in *GetRoleRequest, opts ...grpc.CallOption) (*GetRoleResponse, error)
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	ExistRole(ctx context.Context, in *ExistRoleRequest, opts ...grpc.CallOption) (*ExistRoleResponse, error)
+	ExistRoleConds(ctx context.Context, in *ExistRoleCondsRequest, opts ...grpc.CallOption) (*ExistRoleCondsResponse, error)
 	DeleteRole(ctx context.Context, in *DeleteRoleRequest, opts ...grpc.CallOption) (*DeleteRoleResponse, error)
 }
 
@@ -93,6 +94,15 @@ func (c *middlewareClient) ExistRole(ctx context.Context, in *ExistRoleRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) ExistRoleConds(ctx context.Context, in *ExistRoleCondsRequest, opts ...grpc.CallOption) (*ExistRoleCondsResponse, error) {
+	out := new(ExistRoleCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/ExistRoleConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteRole(ctx context.Context, in *DeleteRoleRequest, opts ...grpc.CallOption) (*DeleteRoleResponse, error) {
 	out := new(DeleteRoleResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.role.v1.Middleware/DeleteRole", in, out, opts...)
@@ -112,6 +122,7 @@ type MiddlewareServer interface {
 	GetRole(context.Context, *GetRoleRequest) (*GetRoleResponse, error)
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	ExistRole(context.Context, *ExistRoleRequest) (*ExistRoleResponse, error)
+	ExistRoleConds(context.Context, *ExistRoleCondsRequest) (*ExistRoleCondsResponse, error)
 	DeleteRole(context.Context, *DeleteRoleRequest) (*DeleteRoleResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -137,6 +148,9 @@ func (UnimplementedMiddlewareServer) GetRoles(context.Context, *GetRolesRequest)
 }
 func (UnimplementedMiddlewareServer) ExistRole(context.Context, *ExistRoleRequest) (*ExistRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistRole not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistRoleConds(context.Context, *ExistRoleCondsRequest) (*ExistRoleCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistRoleConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteRole(context.Context, *DeleteRoleRequest) (*DeleteRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRole not implemented")
@@ -262,6 +276,24 @@ func _Middleware_ExistRole_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistRoleConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistRoleCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistRoleConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.role.v1.Middleware/ExistRoleConds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistRoleConds(ctx, req.(*ExistRoleCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteRoleRequest)
 	if err := dec(in); err != nil {
@@ -310,6 +342,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistRole",
 			Handler:    _Middleware_ExistRole_Handler,
+		},
+		{
+			MethodName: "ExistRoleConds",
+			Handler:    _Middleware_ExistRoleConds_Handler,
 		},
 		{
 			MethodName: "DeleteRole",

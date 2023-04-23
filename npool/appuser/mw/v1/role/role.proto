@@ -7,13 +7,14 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/role";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateRole    (CreateRoleRequest)   returns (CreateRoleResponse)   {}
-    rpc CreateRoles   (CreateRolesRequest)  returns (CreateRolesResponse)  {}
-    rpc UpdateRole    (UpdateRoleRequest)   returns (UpdateRoleResponse)   {}
-    rpc GetRole       (GetRoleRequest)      returns (GetRoleResponse)      {}
-    rpc GetRoles      (GetRolesRequest)     returns (GetRolesResponse)     {}
-    rpc ExistRole     (ExistRoleRequest)    returns (ExistRoleResponse)    {}
-    rpc DeleteRole    (DeleteRoleRequest)   returns (DeleteRoleResponse)   {}
+    rpc CreateRole     (CreateRoleRequest)     returns (CreateRoleResponse)     {}
+    rpc CreateRoles    (CreateRolesRequest)    returns (CreateRolesResponse)    {}
+    rpc UpdateRole     (UpdateRoleRequest)     returns (UpdateRoleResponse)     {}
+    rpc GetRole        (GetRoleRequest)        returns (GetRoleResponse)        {}
+    rpc GetRoles       (GetRolesRequest)       returns (GetRolesResponse)       {}
+    rpc ExistRole      (ExistRoleRequest)      returns (ExistRoleResponse)      {}
+    rpc ExistRoleConds (ExistRoleCondsRequest) returns (ExistRoleCondsResponse) {}
+    rpc DeleteRole     (DeleteRoleRequest)     returns (DeleteRoleResponse)     {}
 }
 
 message RoleReq {
@@ -111,6 +112,15 @@ message ExistRoleRequest {
 message ExistRoleResponse {
     bool Info = 10;
 }
+
+message ExistRoleCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRoleCondsResponse {
+    bool Info = 10;
+}
+
 
 message DeleteRoleRequest {
     RoleReq Info = 10;
