@@ -103,6 +103,7 @@ message Account {
     string EmailAddress    = 150;
     bool   Active          = 160;
     bool   Blocked         = 170;
+    string Memo            = 180;
 }
 
 message CreateAccountRequest {
@@ -118,6 +119,7 @@ message CreateAccountRequest {
     string          Account     = 70;
     basetypes.v1.SignMethod AccountType       = 80;
     string VerificationCode     = 90;
+    optional string Memo        = 100;
 }
 
 message GetDepositAccountRequest {
@@ -161,6 +163,7 @@ message UpdateAccountRequest {
     string          AppID  = 20;
     string          UserID = 30;
     repeated string Labels = 40;
+    optional string Memo   = 50;
 }
 
 message UpdateAccountResponse {

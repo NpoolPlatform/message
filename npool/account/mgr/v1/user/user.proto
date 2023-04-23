@@ -32,6 +32,7 @@ message AccountReq {
     optional account.manager.account1.v1.AccountUsedFor UsedFor = 60;
     repeated string Labels     = 70;
     optional uint32 DeletedAt  = 80;
+    optional string Memo       = 90;
 }
 
 message Account {
@@ -43,6 +44,7 @@ message Account {
     account.manager.account1.v1.AccountUsedFor UsedFor = 60;
     repeated string Labels = 70;
     uint32 CreatedAt  = 80;
+    string Memo       = 90;
 }
 
 message Conds {

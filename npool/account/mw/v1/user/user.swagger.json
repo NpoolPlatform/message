@@ -83,6 +83,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
+        },
+        "Memo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"memo\""
         }
       }
     },
@@ -125,6 +129,9 @@
         },
         "Locked": {
           "type": "boolean"
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },

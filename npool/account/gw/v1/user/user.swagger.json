@@ -402,6 +402,9 @@
         },
         "Blocked": {
           "type": "boolean"
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },
@@ -437,6 +440,9 @@
           "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
+          "type": "string"
+        },
+        "Memo": {
           "type": "string"
         }
       }
@@ -525,6 +531,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },

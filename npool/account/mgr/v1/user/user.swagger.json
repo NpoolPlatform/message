@@ -47,6 +47,9 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },
@@ -81,6 +84,9 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Memo": {
+          "type": "string"
         }
       }
     },

@@ -32,6 +32,7 @@ message AccountReq {
     optional bool   Active     = 90;
     optional bool   Blocked    = 100;
     optional bool   Locked     = 110;
+    optional string Memo       = 120;
 }
 
 message Account {
@@ -63,6 +64,8 @@ message Account {
     uint32 UpdatedAt  = 120;
     // @inject_tag: sql:"deleted_at"
     uint32 DeletedAt  = 130;
+    // @inject_tag: sql:"memo"
+    string Memo       = 140;
 }
 
 message Conds {
