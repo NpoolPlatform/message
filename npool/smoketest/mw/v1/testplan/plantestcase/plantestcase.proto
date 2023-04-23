@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package smoketest.middleware.PlanTestCase.v1;
+package smoketest.middleware.plantestcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/testcase";
 
