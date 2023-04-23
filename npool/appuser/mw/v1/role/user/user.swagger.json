@@ -53,6 +53,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Support query genesis user
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -64,8 +67,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Move role to middleware
+=======
+>>>>>>> Support query genesis user
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -97,6 +103,7 @@
         },
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
+<<<<<<< HEAD
         }
       }
     },
@@ -104,6 +111,8 @@
 =======
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
+=======
+>>>>>>> Support query genesis user
         }
       }
     },
