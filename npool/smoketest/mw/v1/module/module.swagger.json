@@ -87,6 +87,14 @@
         }
       }
     },
+    "v1ExistModuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetModuleResponse": {
       "type": "object",
       "properties": {
