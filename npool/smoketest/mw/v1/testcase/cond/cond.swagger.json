@@ -162,22 +162,6 @@
         }
       }
     },
-    "v1ExistCondResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetCondOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Cond"
-        }
-      }
-    },
     "v1GetCondResponse": {
       "type": "object",
       "properties": {

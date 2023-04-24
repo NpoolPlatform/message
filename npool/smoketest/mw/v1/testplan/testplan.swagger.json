@@ -85,14 +85,6 @@
         }
       }
     },
-    "v1GetTestPlanOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1TestPlan"
-        }
-      }
-    },
     "v1GetTestPlanResponse": {
       "type": "object",
       "properties": {

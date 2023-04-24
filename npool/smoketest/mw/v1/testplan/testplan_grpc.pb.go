@@ -25,7 +25,6 @@ type MiddlewareClient interface {
 	CreateTestPlan(ctx context.Context, in *CreateTestPlanRequest, opts ...grpc.CallOption) (*CreateTestPlanResponse, error)
 	UpdateTestPlan(ctx context.Context, in *UpdateTestPlanRequest, opts ...grpc.CallOption) (*UpdateTestPlanResponse, error)
 	GetTestPlan(ctx context.Context, in *GetTestPlanRequest, opts ...grpc.CallOption) (*GetTestPlanResponse, error)
-	GetTestPlanOnly(ctx context.Context, in *GetTestPlanOnlyRequest, opts ...grpc.CallOption) (*GetTestPlanOnlyResponse, error)
 	GetTestPlans(ctx context.Context, in *GetTestPlansRequest, opts ...grpc.CallOption) (*GetTestPlansResponse, error)
 	ExistTestPlan(ctx context.Context, in *ExistTestPlanRequest, opts ...grpc.CallOption) (*ExistTestPlanResponse, error)
 	DeleteTestPlan(ctx context.Context, in *DeleteTestPlanRequest, opts ...grpc.CallOption) (*DeleteTestPlanResponse, error)
@@ -66,15 +65,6 @@ func (c *middlewareClient) GetTestPlan(ctx context.Context, in *GetTestPlanReque
 	return out, nil
 }
 
-func (c *middlewareClient) GetTestPlanOnly(ctx context.Context, in *GetTestPlanOnlyRequest, opts ...grpc.CallOption) (*GetTestPlanOnlyResponse, error) {
-	out := new(GetTestPlanOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/GetTestPlanOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetTestPlans(ctx context.Context, in *GetTestPlansRequest, opts ...grpc.CallOption) (*GetTestPlansResponse, error) {
 	out := new(GetTestPlansResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.v1.Middleware/GetTestPlans", in, out, opts...)
@@ -109,7 +99,6 @@ type MiddlewareServer interface {
 	CreateTestPlan(context.Context, *CreateTestPlanRequest) (*CreateTestPlanResponse, error)
 	UpdateTestPlan(context.Context, *UpdateTestPlanRequest) (*UpdateTestPlanResponse, error)
 	GetTestPlan(context.Context, *GetTestPlanRequest) (*GetTestPlanResponse, error)
-	GetTestPlanOnly(context.Context, *GetTestPlanOnlyRequest) (*GetTestPlanOnlyResponse, error)
 	GetTestPlans(context.Context, *GetTestPlansRequest) (*GetTestPlansResponse, error)
 	ExistTestPlan(context.Context, *ExistTestPlanRequest) (*ExistTestPlanResponse, error)
 	DeleteTestPlan(context.Context, *DeleteTestPlanRequest) (*DeleteTestPlanResponse, error)
@@ -128,9 +117,6 @@ func (UnimplementedMiddlewareServer) UpdateTestPlan(context.Context, *UpdateTest
 }
 func (UnimplementedMiddlewareServer) GetTestPlan(context.Context, *GetTestPlanRequest) (*GetTestPlanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlan not implemented")
-}
-func (UnimplementedMiddlewareServer) GetTestPlanOnly(context.Context, *GetTestPlanOnlyRequest) (*GetTestPlanOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlanOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetTestPlans(context.Context, *GetTestPlansRequest) (*GetTestPlansResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestPlans not implemented")
@@ -208,24 +194,6 @@ func _Middleware_GetTestPlan_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetTestPlanOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTestPlanOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetTestPlanOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.middleware.testplan.v1.Middleware/GetTestPlanOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetTestPlanOnly(ctx, req.(*GetTestPlanOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetTestPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTestPlansRequest)
 	if err := dec(in); err != nil {
@@ -298,10 +266,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTestPlan",
 			Handler:    _Middleware_GetTestPlan_Handler,
-		},
-		{
-			MethodName: "GetTestPlanOnly",
-			Handler:    _Middleware_GetTestPlanOnly_Handler,
 		},
 		{
 			MethodName: "GetTestPlans",

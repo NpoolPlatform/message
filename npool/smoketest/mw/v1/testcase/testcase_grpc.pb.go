@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type MiddlewareClient interface {
 	CreateTestCase(ctx context.Context, in *CreateTestCaseRequest, opts ...grpc.CallOption) (*CreateTestCaseResponse, error)
 	UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error)
+	ExistTestCase(ctx context.Context, in *ExistTestCaseRequest, opts ...grpc.CallOption) (*ExistTestCaseResponse, error)
 	GetTestCases(ctx context.Context, in *GetTestCasesRequest, opts ...grpc.CallOption) (*GetTestCasesResponse, error)
 	GetTestCase(ctx context.Context, in *GetTestCaseRequest, opts ...grpc.CallOption) (*GetTestCaseResponse, error)
 	DeleteTestCase(ctx context.Context, in *DeleteTestCaseRequest, opts ...grpc.CallOption) (*DeleteTestCaseResponse, error)
@@ -49,6 +50,15 @@ func (c *middlewareClient) CreateTestCase(ctx context.Context, in *CreateTestCas
 func (c *middlewareClient) UpdateTestCase(ctx context.Context, in *UpdateTestCaseRequest, opts ...grpc.CallOption) (*UpdateTestCaseResponse, error) {
 	out := new(UpdateTestCaseResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.v1.Middleware/UpdateTestCase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistTestCase(ctx context.Context, in *ExistTestCaseRequest, opts ...grpc.CallOption) (*ExistTestCaseResponse, error) {
+	out := new(ExistTestCaseResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.v1.Middleware/ExistTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,6 +98,7 @@ func (c *middlewareClient) DeleteTestCase(ctx context.Context, in *DeleteTestCas
 type MiddlewareServer interface {
 	CreateTestCase(context.Context, *CreateTestCaseRequest) (*CreateTestCaseResponse, error)
 	UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error)
+	ExistTestCase(context.Context, *ExistTestCaseRequest) (*ExistTestCaseResponse, error)
 	GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error)
 	GetTestCase(context.Context, *GetTestCaseRequest) (*GetTestCaseResponse, error)
 	DeleteTestCase(context.Context, *DeleteTestCaseRequest) (*DeleteTestCaseResponse, error)
@@ -103,6 +114,9 @@ func (UnimplementedMiddlewareServer) CreateTestCase(context.Context, *CreateTest
 }
 func (UnimplementedMiddlewareServer) UpdateTestCase(context.Context, *UpdateTestCaseRequest) (*UpdateTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTestCase not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTestCase(context.Context, *ExistTestCaseRequest) (*ExistTestCaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTestCase not implemented")
 }
 func (UnimplementedMiddlewareServer) GetTestCases(context.Context, *GetTestCasesRequest) (*GetTestCasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTestCases not implemented")
@@ -158,6 +172,24 @@ func _Middleware_UpdateTestCase_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateTestCase(ctx, req.(*UpdateTestCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTestCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTestCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.middleware.testcase.v1.Middleware/ExistTestCase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTestCase(ctx, req.(*ExistTestCaseRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -230,6 +262,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateTestCase",
 			Handler:    _Middleware_UpdateTestCase_Handler,
+		},
+		{
+			MethodName: "ExistTestCase",
+			Handler:    _Middleware_ExistTestCase_Handler,
 		},
 		{
 			MethodName: "GetTestCases",

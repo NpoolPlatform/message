@@ -10,6 +10,7 @@ import "npool/smoketest/mgr/v1/testcase/testcase.proto";
 service Middleware {
     rpc CreateTestCase        (CreateTestCaseRequest)       returns (CreateTestCaseResponse)       {}
     rpc UpdateTestCase        (UpdateTestCaseRequest)       returns (UpdateTestCaseResponse)       {}
+    rpc ExistTestCase         (ExistTestCaseRequest)        returns (ExistTestCaseResponse)       {}
     rpc GetTestCases          (GetTestCasesRequest)         returns (GetTestCasesResponse)         {}
     rpc GetTestCase           (GetTestCaseRequest)          returns (GetTestCaseResponse)          {}
     rpc DeleteTestCase        (DeleteTestCaseRequest)       returns (DeleteTestCaseResponse)       {}
@@ -53,6 +54,13 @@ message CreateTestCaseResponse {
     TestCase Info = 10;
 }
 
+message ExistTestCaseRequest {
+    string ID   = 10;
+}
+
+message ExistTestCaseResponse {
+    bool Info = 10;
+}
 
 message DeleteTestCaseRequest {
     smoketest.manager.testcase.v1.TestCaseReq Info = 10;

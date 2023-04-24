@@ -156,6 +156,14 @@
         }
       }
     },
+    "v1ExistTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTestCaseResponse": {
       "type": "object",
       "properties": {

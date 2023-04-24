@@ -13,7 +13,7 @@ service Middleware {
     rpc GetModules          (GetModulesRequest)         returns (GetModulesResponse)         {}
     rpc GetModule           (GetModuleRequest)          returns (GetModuleResponse)          {}
     rpc DeleteModule        (DeleteModuleRequest)       returns (DeleteModuleResponse)       {}
-    rpc ExistModule         (ExistModuleRequest)        returns (ExistModuleResponse)        {}
+    rpc ExistModuleByName   (ExistModuleByNameRequest)  returns (ExistModuleByNameResponse)  {}
     rpc ExistModuleConds    (ExistModuleCondsRequest)   returns (ExistModuleCondsResponse)   {}
 }
 
@@ -25,11 +25,11 @@ message CreateModuleResponse {
     smoketest.manager.module.v1.Module  Info   = 10;
 }
 
-message ExistModuleRequest {
+message ExistModuleByNameRequest {
     string     Name                   = 10;
 }
 
-message ExistModuleResponse {
+message ExistModuleByNameResponse {
     bool  Info  = 10;
 }
 

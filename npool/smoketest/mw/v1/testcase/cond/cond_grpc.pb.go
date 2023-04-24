@@ -26,8 +26,6 @@ type MiddlewareClient interface {
 	UpdateCond(ctx context.Context, in *UpdateCondRequest, opts ...grpc.CallOption) (*UpdateCondResponse, error)
 	GetCond(ctx context.Context, in *GetCondRequest, opts ...grpc.CallOption) (*GetCondResponse, error)
 	GetConds(ctx context.Context, in *GetCondsRequest, opts ...grpc.CallOption) (*GetCondsResponse, error)
-	GetCondOnly(ctx context.Context, in *GetCondOnlyRequest, opts ...grpc.CallOption) (*GetCondOnlyResponse, error)
-	ExistCond(ctx context.Context, in *ExistCondRequest, opts ...grpc.CallOption) (*ExistCondResponse, error)
 	DeleteCond(ctx context.Context, in *DeleteCondRequest, opts ...grpc.CallOption) (*DeleteCondResponse, error)
 }
 
@@ -75,24 +73,6 @@ func (c *middlewareClient) GetConds(ctx context.Context, in *GetCondsRequest, op
 	return out, nil
 }
 
-func (c *middlewareClient) GetCondOnly(ctx context.Context, in *GetCondOnlyRequest, opts ...grpc.CallOption) (*GetCondOnlyResponse, error) {
-	out := new(GetCondOnlyResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.cond.v1.Middleware/GetCondOnly", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistCond(ctx context.Context, in *ExistCondRequest, opts ...grpc.CallOption) (*ExistCondResponse, error) {
-	out := new(ExistCondResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.cond.v1.Middleware/ExistCond", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteCond(ctx context.Context, in *DeleteCondRequest, opts ...grpc.CallOption) (*DeleteCondResponse, error) {
 	out := new(DeleteCondResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.middleware.testcase.cond.v1.Middleware/DeleteCond", in, out, opts...)
@@ -110,8 +90,6 @@ type MiddlewareServer interface {
 	UpdateCond(context.Context, *UpdateCondRequest) (*UpdateCondResponse, error)
 	GetCond(context.Context, *GetCondRequest) (*GetCondResponse, error)
 	GetConds(context.Context, *GetCondsRequest) (*GetCondsResponse, error)
-	GetCondOnly(context.Context, *GetCondOnlyRequest) (*GetCondOnlyResponse, error)
-	ExistCond(context.Context, *ExistCondRequest) (*ExistCondResponse, error)
 	DeleteCond(context.Context, *DeleteCondRequest) (*DeleteCondResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -131,12 +109,6 @@ func (UnimplementedMiddlewareServer) GetCond(context.Context, *GetCondRequest) (
 }
 func (UnimplementedMiddlewareServer) GetConds(context.Context, *GetCondsRequest) (*GetCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConds not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCondOnly(context.Context, *GetCondOnlyRequest) (*GetCondOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCondOnly not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistCond(context.Context, *ExistCondRequest) (*ExistCondResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCond not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteCond(context.Context, *DeleteCondRequest) (*DeleteCondResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCond not implemented")
@@ -226,42 +198,6 @@ func _Middleware_GetConds_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCondOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCondOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCondOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.middleware.testcase.cond.v1.Middleware/GetCondOnly",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCondOnly(ctx, req.(*GetCondOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistCond_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistCondRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistCond(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smoketest.middleware.testcase.cond.v1.Middleware/ExistCond",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistCond(ctx, req.(*ExistCondRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteCond_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteCondRequest)
 	if err := dec(in); err != nil {
@@ -302,14 +238,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetConds",
 			Handler:    _Middleware_GetConds_Handler,
-		},
-		{
-			MethodName: "GetCondOnly",
-			Handler:    _Middleware_GetCondOnly_Handler,
-		},
-		{
-			MethodName: "ExistCond",
-			Handler:    _Middleware_ExistCond_Handler,
 		},
 		{
 			MethodName: "DeleteCond",

@@ -12,8 +12,6 @@ service Middleware {
     rpc UpdateCond     (UpdateCondRequest)     returns (UpdateCondResponse)     {}
     rpc GetCond        (GetCondRequest)        returns (GetCondResponse)        {}
     rpc GetConds       (GetCondsRequest)      returns (GetCondsResponse)       {}
-    rpc GetCondOnly    (GetCondOnlyRequest)    returns (GetCondOnlyResponse)    {}
-    rpc ExistCond      (ExistCondRequest)      returns (ExistCondResponse)      {}
     rpc DeleteCond     (DeleteCondRequest)     returns (DeleteCondResponse)     {}
 }
 
@@ -48,8 +46,9 @@ message GetCondRequest {
 message GetCondResponse {
     smoketest.manager.testcase.cond.v1.Cond Info = 10;
 }
+
 message GetCondsRequest {
-    smoketest.manager.testcase.cond.v1.Conds Conds  = 10;
+    smoketest.manager.testcase.cond.v1.Conds Conds   = 10;
     int32  Offset                                    = 20;
     int32  Limit                                     = 30;
 }
@@ -57,22 +56,6 @@ message GetCondsRequest {
 message GetCondsResponse {
     repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
     uint32                                           Total = 20;
-}
-
-message GetCondOnlyRequest {
-    smoketest.manager.testcase.cond.v1.Conds Conds = 10;
-}
-
-message GetCondOnlyResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
-}
-
-message ExistCondRequest {
-    string ID = 10;
-}
-
-message ExistCondResponse {
-    bool Info = 10;
 }
 
 message DeleteCondRequest {

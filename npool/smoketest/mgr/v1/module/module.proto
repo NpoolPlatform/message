@@ -33,5 +33,4 @@ message ModuleReq {
 message Conds {
     optional npool.v1.StringVal      ID     = 10;
     optional npool.v1.StringVal      Name   = 20;
-    optional npool.v1.StringSliceVal IDs    = 30;
 }

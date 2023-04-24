@@ -52,9 +52,6 @@
         },
         "Name": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -74,7 +71,7 @@
         }
       }
     },
-    "v1ExistModuleCondsResponse": {
+    "v1ExistModuleByNameResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -82,7 +79,7 @@
         }
       }
     },
-    "v1ExistModuleResponse": {
+    "v1ExistModuleCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -156,20 +153,6 @@
         },
         "Description": {
           "type": "string"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
