@@ -9,7 +9,6 @@ import "npool/appuser/mw/v1/role/role.proto";
 import "npool/appuser/mw/v1/role/user/user.proto";
 
 service Gateway {
-    // Create role should ignore genesis roles
     rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
         option (google.api.http) = {
             post: "/v1/create/role"
@@ -24,7 +23,6 @@ service Gateway {
         };
     }
 
-    // Update role should ignore genesis roles
     rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse) {
         option (google.api.http) = {
             post: "/v1/update/role"
@@ -32,10 +30,23 @@ service Gateway {
         };
     }
 
-    // Admin apis
+    rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/role"
+            body: "*"
+        };
+    }
+
     rpc CreateAppRole (CreateAppRoleRequest) returns (CreateAppRoleResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/role"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppRole (UpdateAppRoleRequest) returns (UpdateAppRoleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/role"
             body: "*"
         };
     }
@@ -47,51 +58,15 @@ service Gateway {
         };
     }
 
-    rpc CreateRoleUser (CreateRoleUserRequest) returns (CreateRoleUserResponse) {
+    rpc DeleteAppRole (DeleteAppRoleRequest) returns (DeleteAppRoleResponse) {
         option (google.api.http) = {
-            post: "/v1/create/roleuser"
-            body: "*"
-        };
-    }
-
-    rpc GetRoleUsers (GetRoleUsersRequest) returns (GetRoleUsersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/roleusers"
-            body: "*"
-        };
-    }
-
-    rpc DeleteRoleUser (DeleteRoleUserRequest) returns (DeleteRoleUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/roleuser"
-            body: "*"
-        };
-    }
-
-    rpc DeleteAppRoleUser (DeleteAppRoleUserRequest) returns (DeleteAppRoleUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/app/roleuser"
-            body: "*"
-        };
-    }
-
-    rpc CreateAppRoleUser(CreateAppRoleUserRequest) returns (CreateAppRoleUserResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/roleuser"
-            body: "*"
-        };
-    }
-
-    rpc GetAppRoleUsers (GetAppRoleUsersRequest) returns (GetAppRoleUsersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/roleusers"
+            post: "/v1/delete/app/role"
             body: "*"
         };
     }
 }
 
 message CreateRoleRequest {
-    // Permissioned by path (UserID is for CreatedBy)
     string AppID        = 10;
     string UserID       = 20;
     string RoleName     = 30;
@@ -104,7 +79,6 @@ message CreateRoleResponse {
 }
 
 message GetRolesRequest {
-    // Permissioned by path
     string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
@@ -116,16 +90,27 @@ message GetRolesResponse {
 }
 
 message UpdateRoleRequest {
-    // Permissioned by path
-    appuser.middleware.role.v1.RoleReq Info = 10;
+    string          ID           = 10;
+    string          AppID        = 20;
+    optional string RoleName     = 30;
+    optional bool   Default      = 40;
+    optional string Description  = 50;
 }
 
 message UpdateRoleResponse {
     appuser.middleware.role.v1.Role Info = 10;
 }
 
+message DeleteRoleRequest {
+    string ID    = 10;
+    string AppID = 20;
+}
+
+message DeleteRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
+}
+
 message CreateAppRoleRequest {
-    // Permissioned by path
     string TargetAppID  = 10;
     string UserID       = 20;
     string RoleName     = 30;
@@ -137,8 +122,19 @@ message CreateAppRoleResponse {
     appuser.middleware.role.v1.Role Info = 10;
 }
 
+message UpdateAppRoleRequest {
+    string          ID           = 10;
+    string          TargetAppID  = 20;
+    optional string RoleName     = 30;
+    optional bool   Default      = 40;
+    optional string Description  = 50;
+}
+
+message UpdateAppRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
+}
+
 message GetAppRolesRequest {
-    // Permissioned by path
     string TargetAppID = 10;
     int32  Offset      = 20;
     int32  Limit       = 30;
@@ -149,70 +145,11 @@ message GetAppRolesResponse {
     uint32                                   Total = 20;
 }
 
-message CreateRoleUserRequest {
-    // Permissioned by path
-    string AppID        = 10;
-    string TargetUserID = 20;
-    string RoleID       = 30;
+message DeleteAppRoleRequest {
+    string          ID           = 10;
+    string          TargetAppID  = 20;
 }
 
-message CreateRoleUserResponse {
-    appuser.middleware.role.user.v1.User Info = 10;
-}
-
-message GetRoleUsersRequest {
-    // Permissioned by path
-    string AppID  = 10;
-    string RoleID = 20;
-    int32  Limit  = 30;
-    int32  Offset = 40;
-}
-
-message GetRoleUsersResponse {
-    repeated appuser.middleware.role.user.v1.User Infos = 10;
-    uint32                                        Total = 20;
-}
-
-message DeleteRoleUserRequest {
-    // Permissioned by path
-    string AppID       = 10;
-    string RoleUserID  = 20;
-}
-
-message DeleteRoleUserResponse {
-    appuser.middleware.role.user.v1.User Info = 10;
-}
-
-message DeleteAppRoleUserRequest {
-    // Permissioned by path
-    string TargetAppID = 10;
-    string RoleUserID  = 20;
-}
-
-message DeleteAppRoleUserResponse {
-    appuser.middleware.role.user.v1.User Info = 10;
-}
-
-message CreateAppRoleUserRequest {
-    // Permissioned by path
-    string TargetAppID  = 10;
-    string TargetUserID = 20;
-    string RoleID       = 30;
-}
-
-message CreateAppRoleUserResponse {
-    appuser.middleware.role.user.v1.User Info = 10;
-}
-
-message GetAppRoleUsersRequest {
-    // Permissioned by path
-    string TargetAppID = 10;
-    string RoleID      = 20;
-    int32  Limit       = 30;
-    int32  Offset      = 40;
-}
-
-message GetAppRoleUsersResponse {
-    repeated appuser.middleware.role.user.v1.User Infos = 10;
-    uint32                                       Total = 20;
+message DeleteAppRoleResponse {
+    appuser.middleware.role.v1.Role Info = 10;
 }
