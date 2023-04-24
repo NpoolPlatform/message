@@ -241,7 +241,7 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         }
       }
@@ -346,7 +346,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         }
       }
