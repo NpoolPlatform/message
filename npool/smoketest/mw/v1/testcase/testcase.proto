@@ -90,7 +90,7 @@ message GetTestCaseResponse {
 }
 
 message UpdateTestCaseRequest {
-    smoketest.manager.testcase.v1.TestCaseReq info = 10;
+    smoketest.manager.testcase.v1.TestCaseReq Info = 10;
 }
 
 message UpdateTestCaseResponse {
