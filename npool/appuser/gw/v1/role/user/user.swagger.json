@@ -241,7 +241,11 @@
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "TargetUserID": {
+=======
+        "UserID": {
+>>>>>>> Add role user apis
           "type": "string"
         }
       }
@@ -346,7 +350,11 @@
         "TargetAppID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "TargetUserID": {
+=======
+        "UserID": {
+>>>>>>> Add role user apis
           "type": "string"
         }
       }
