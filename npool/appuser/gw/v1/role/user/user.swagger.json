@@ -242,10 +242,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "TargetUserID": {
 =======
         "UserID": {
 >>>>>>> Add role user apis
+=======
+        "TargetUserID": {
+>>>>>>> Add target user id
           "type": "string"
         }
       }
@@ -351,10 +355,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "TargetUserID": {
 =======
         "UserID": {
 >>>>>>> Add role user apis
+=======
+        "TargetUserID": {
+>>>>>>> Add target user id
           "type": "string"
         }
       }
