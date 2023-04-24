@@ -95,6 +95,21 @@
         }
       }
     },
+    "v1GetModuleCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Module"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetModuleResponse": {
       "type": "object",
       "properties": {

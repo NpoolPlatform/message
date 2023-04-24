@@ -12,6 +12,7 @@ service Middleware {
     rpc UpdateModule        (UpdateModuleRequest)       returns (UpdateModuleResponse)       {}
     rpc GetModules          (GetModulesRequest)         returns (GetModulesResponse)         {}
     rpc GetModule           (GetModuleRequest)          returns (GetModuleResponse)          {}
+    rpc GetModuleConds      (GetModuleCondsRequest)     returns (GetModuleCondsResponse)     {}
     rpc DeleteModule        (DeleteModuleRequest)       returns (DeleteModuleResponse)       {}
     rpc ExistModule         (ExistModuleRequest)        returns (ExistModuleResponse)        {}
     rpc ExistModuleByName   (ExistModuleByNameRequest)  returns (ExistModuleByNameResponse)  {}
@@ -65,6 +66,15 @@ message GetModulesRequest {
 }
 
 message GetModulesResponse {
+    repeated smoketest.manager.module.v1.Module Infos = 10;
+    uint32                                      Total = 20;
+}
+
+message GetModuleCondsRequest {
+    smoketest.manager.module.v1.Conds Conds          = 10;
+}
+
+message GetModuleCondsResponse {
     repeated smoketest.manager.module.v1.Module Infos = 10;
     uint32                                      Total = 20;
 }
