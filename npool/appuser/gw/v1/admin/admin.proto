@@ -58,13 +58,6 @@ service Gateway {
         };
     }
 
-    rpc GetGenesisAuths (GetGenesisAuthsRequest) returns (GetGenesisAuthsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/genesisauths"
-            body: "*"
-        };
-    }
-
     rpc AuthorizeGenesis (AuthorizeGenesisRequest) returns (AuthorizeGenesisResponse) {
         option (google.api.http) = {
             post: "/v1/authorize/genesis"
@@ -128,15 +121,4 @@ message GetGenesisUsersRequest {
 message GetGenesisUsersResponse {
     repeated appuser.middleware.user.v1.User Infos = 10;
     uint32                                   Total = 20;
-}
-
-message GetGenesisAuthsRequest {
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
-}
-
-message GetGenesisAuthsResponse {
-    repeated appuser.middleware.authing.auth.v1.Auth Infos = 10;
-    uint32                                           Total = 20;
 }
