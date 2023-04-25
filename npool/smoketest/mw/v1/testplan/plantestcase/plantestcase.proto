@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package smoketest.middleware.testplan.plantestcase.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/testcase";
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/plantestcase";
 
 import "npool/npool.proto";
 

@@ -4,7 +4,7 @@
 // - protoc             v3.21.12
 // source: npool/smoketest/mw/v1/testplan/plantestcase/plantestcase.proto
 
-package testcase
+package plantestcase
 
 import (
 	context "context"
