@@ -188,6 +188,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "NeedMemo": {
+          "type": "boolean"
         }
       }
     },
@@ -229,6 +232,9 @@
         },
         "LeastTransferAmount": {
           "type": "string"
+        },
+        "NeedMemo": {
+          "type": "boolean"
         }
       }
     },

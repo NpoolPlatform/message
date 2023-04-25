@@ -253,6 +253,10 @@
         "LeastTransferAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"least_transfer_amount\""
+        },
+        "NeedMemo": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"need_memo\""
         }
       }
     },

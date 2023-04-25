@@ -131,6 +131,8 @@ message Coin {
     string MaxAmountPerWithdraw         = 370;
     // @inject_tag: sql:"least_transfer_amount"
     string LeastTransferAmount          = 380;
+    // @inject_tag: sql:"need_memo"
+    bool   NeedMemo                     = 390;
 }
 
 message Conds {

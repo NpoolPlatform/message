@@ -328,6 +328,9 @@
         },
         "DefaultGoodID": {
           "type": "string"
+        },
+        "NeedMemo": {
+          "type": "boolean"
         }
       }
     },

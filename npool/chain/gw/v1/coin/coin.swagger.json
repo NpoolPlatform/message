@@ -220,6 +220,9 @@
         },
         "LeastTransferAmount": {
           "type": "string"
+        },
+        "NeedMemo": {
+          "type": "boolean"
         }
       }
     },
@@ -374,6 +377,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "NeedMemo": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"need_memo\""
         }
       }
     }

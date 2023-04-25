@@ -89,7 +89,9 @@ message Coin {
     string          MaxAmountPerWithdraw         = 370;
     string          LeastTransferAmount          = 380;
     string          DefaultGoodID                = 400;
+    bool            NeedMemo                     = 410;
 }
+
 message CreateCoinRequest {
     string TargetAppID = 10;
     string CoinTypeID  = 20;

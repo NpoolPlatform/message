@@ -39,6 +39,7 @@ message CoinReq {
     optional bool   Disabled                     = 190;
     optional bool   StableUSD                    = 200;
     optional string LeastTransferAmount          = 210;
+    optional string NeedMemo                     = 220;
 }
 
 message Coin {
@@ -98,6 +99,8 @@ message Coin {
     uint32 CreatedAt                    = 240;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt                    = 250;
+    // @inject_tag: sql:"need_memo"
+    bool   NeedMemo                     = 260;
 }
 
 message Conds {

@@ -34,6 +34,7 @@ message SettingReq {
     optional string    HotWalletAccountAmount      = 90;
     optional string    PaymentAccountCollectAmount = 100;
     optional string    LeastTransferAmount         = 110;
+    optional bool      NeedMemo                    = 120;
 }
 
 message Setting {
@@ -52,6 +53,7 @@ message Setting {
     string LeastTransferAmount         = 101;
     uint32 CreatedAt                   = 110;
     uint32 UpdatedAt                   = 120;
+    bool   NeedMemo                    = 130;
 }
 
 message Conds {
