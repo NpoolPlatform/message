@@ -32,7 +32,6 @@ type GatewayClient interface {
 	GetAdminApps(ctx context.Context, in *GetAdminAppsRequest, opts ...grpc.CallOption) (*GetAdminAppsResponse, error)
 	GetGenesisRoles(ctx context.Context, in *GetGenesisRolesRequest, opts ...grpc.CallOption) (*GetGenesisRolesResponse, error)
 	GetGenesisUsers(ctx context.Context, in *GetGenesisUsersRequest, opts ...grpc.CallOption) (*GetGenesisUsersResponse, error)
-	GetGenesisAuths(ctx context.Context, in *GetGenesisAuthsRequest, opts ...grpc.CallOption) (*GetGenesisAuthsResponse, error)
 	AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error)
 }
 
@@ -98,15 +97,6 @@ func (c *gatewayClient) GetGenesisUsers(ctx context.Context, in *GetGenesisUsers
 	return out, nil
 }
 
-func (c *gatewayClient) GetGenesisAuths(ctx context.Context, in *GetGenesisAuthsRequest, opts ...grpc.CallOption) (*GetGenesisAuthsResponse, error) {
-	out := new(GetGenesisAuthsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.Gateway/GetGenesisAuths", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) AuthorizeGenesis(ctx context.Context, in *AuthorizeGenesisRequest, opts ...grpc.CallOption) (*AuthorizeGenesisResponse, error) {
 	out := new(AuthorizeGenesisResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.admin.v1.Gateway/AuthorizeGenesis", in, out, opts...)
@@ -130,7 +120,6 @@ type GatewayServer interface {
 	GetAdminApps(context.Context, *GetAdminAppsRequest) (*GetAdminAppsResponse, error)
 	GetGenesisRoles(context.Context, *GetGenesisRolesRequest) (*GetGenesisRolesResponse, error)
 	GetGenesisUsers(context.Context, *GetGenesisUsersRequest) (*GetGenesisUsersResponse, error)
-	GetGenesisAuths(context.Context, *GetGenesisAuthsRequest) (*GetGenesisAuthsResponse, error)
 	AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -156,9 +145,6 @@ func (UnimplementedGatewayServer) GetGenesisRoles(context.Context, *GetGenesisRo
 }
 func (UnimplementedGatewayServer) GetGenesisUsers(context.Context, *GetGenesisUsersRequest) (*GetGenesisUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisUsers not implemented")
-}
-func (UnimplementedGatewayServer) GetGenesisAuths(context.Context, *GetGenesisAuthsRequest) (*GetGenesisAuthsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGenesisAuths not implemented")
 }
 func (UnimplementedGatewayServer) AuthorizeGenesis(context.Context, *AuthorizeGenesisRequest) (*AuthorizeGenesisResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthorizeGenesis not implemented")
@@ -284,24 +270,6 @@ func _Gateway_GetGenesisUsers_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetGenesisAuths_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGenesisAuthsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetGenesisAuths(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.admin.v1.Gateway/GetGenesisAuths",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetGenesisAuths(ctx, req.(*GetGenesisAuthsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_AuthorizeGenesis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthorizeGenesisRequest)
 	if err := dec(in); err != nil {
@@ -350,10 +318,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGenesisUsers",
 			Handler:    _Gateway_GetGenesisUsers_Handler,
-		},
-		{
-			MethodName: "GetGenesisAuths",
-			Handler:    _Gateway_GetGenesisAuths_Handler,
 		},
 		{
 			MethodName: "AuthorizeGenesis",
