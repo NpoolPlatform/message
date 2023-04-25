@@ -8,7 +8,7 @@ package testplan
 
 import (
 	testplan "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan"
-	testcase "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/testcase"
+	plantestcase "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/plantestcase"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -28,22 +28,22 @@ type TestPlan struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID               string                   `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	Name             string                   `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty"`
-	State            testplan.TestPlanState   `protobuf:"varint,30,opt,name=State,proto3,enum=smoketest.middleware.testplan.v1.TestPlanState" json:"State,omitempty"`
-	CreatedBy        string                   `protobuf:"bytes,40,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
-	Username         string                   `protobuf:"bytes,50,opt,name=Username,proto3" json:"Username,omitempty"`
-	Executor         string                   `protobuf:"bytes,60,opt,name=Executor,proto3" json:"Executor,omitempty"`
-	ExecutorUsername string                   `protobuf:"bytes,70,opt,name=ExecutorUsername,proto3" json:"ExecutorUsername,omitempty"`
-	Fails            uint32                   `protobuf:"varint,80,opt,name=Fails,proto3" json:"Fails,omitempty"`
-	Passes           uint32                   `protobuf:"varint,90,opt,name=Passes,proto3" json:"Passes,omitempty"`
-	Skips            uint32                   `protobuf:"varint,100,opt,name=Skips,proto3" json:"Skips,omitempty"`
-	RunDuration      uint32                   `protobuf:"varint,110,opt,name=RunDuration,proto3" json:"RunDuration,omitempty"`
-	Result           testplan.TestResultState `protobuf:"varint,120,opt,name=Result,proto3,enum=smoketest.middleware.testplan.v1.TestResultState" json:"Result,omitempty"`
-	Deadline         uint32                   `protobuf:"varint,130,opt,name=Deadline,proto3" json:"Deadline,omitempty"`
-	CreatedAt        uint32                   `protobuf:"varint,140,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt        uint32                   `protobuf:"varint,150,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
-	PlanTestCases    []*testcase.PlanTestCase `protobuf:"bytes,160,rep,name=PlanTestCases,proto3" json:"PlanTestCases,omitempty"`
+	ID               string                       `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	Name             string                       `protobuf:"bytes,20,opt,name=Name,proto3" json:"Name,omitempty"`
+	State            testplan.TestPlanState       `protobuf:"varint,30,opt,name=State,proto3,enum=smoketest.middleware.testplan.v1.TestPlanState" json:"State,omitempty"`
+	CreatedBy        string                       `protobuf:"bytes,40,opt,name=CreatedBy,proto3" json:"CreatedBy,omitempty"`
+	Username         string                       `protobuf:"bytes,50,opt,name=Username,proto3" json:"Username,omitempty"`
+	Executor         string                       `protobuf:"bytes,60,opt,name=Executor,proto3" json:"Executor,omitempty"`
+	ExecutorUsername string                       `protobuf:"bytes,70,opt,name=ExecutorUsername,proto3" json:"ExecutorUsername,omitempty"`
+	Fails            uint32                       `protobuf:"varint,80,opt,name=Fails,proto3" json:"Fails,omitempty"`
+	Passes           uint32                       `protobuf:"varint,90,opt,name=Passes,proto3" json:"Passes,omitempty"`
+	Skips            uint32                       `protobuf:"varint,100,opt,name=Skips,proto3" json:"Skips,omitempty"`
+	RunDuration      uint32                       `protobuf:"varint,110,opt,name=RunDuration,proto3" json:"RunDuration,omitempty"`
+	Result           testplan.TestResultState     `protobuf:"varint,120,opt,name=Result,proto3,enum=smoketest.middleware.testplan.v1.TestResultState" json:"Result,omitempty"`
+	Deadline         uint32                       `protobuf:"varint,130,opt,name=Deadline,proto3" json:"Deadline,omitempty"`
+	CreatedAt        uint32                       `protobuf:"varint,140,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
+	UpdatedAt        uint32                       `protobuf:"varint,150,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	PlanTestCases    []*plantestcase.PlanTestCase `protobuf:"bytes,160,rep,name=PlanTestCases,proto3" json:"PlanTestCases,omitempty"`
 }
 
 func (x *TestPlan) Reset() {
@@ -183,7 +183,7 @@ func (x *TestPlan) GetUpdatedAt() uint32 {
 	return 0
 }
 
-func (x *TestPlan) GetPlanTestCases() []*testcase.PlanTestCase {
+func (x *TestPlan) GetPlanTestCases() []*plantestcase.PlanTestCase {
 	if x != nil {
 		return x.PlanTestCases
 	}
@@ -813,18 +813,18 @@ func file_npool_smoketest_gw_v1_testplan_testplan_proto_rawDescGZIP() []byte {
 
 var file_npool_smoketest_gw_v1_testplan_testplan_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_npool_smoketest_gw_v1_testplan_testplan_proto_goTypes = []interface{}{
-	(*TestPlan)(nil),               // 0: smoketest.gateway.testplan.v1.TestPlan
-	(*DeleteTestPlanRequest)(nil),  // 1: smoketest.gateway.testplan.v1.DeleteTestPlanRequest
-	(*DeleteTestPlanResponse)(nil), // 2: smoketest.gateway.testplan.v1.DeleteTestPlanResponse
-	(*GetTestPlansRequest)(nil),    // 3: smoketest.gateway.testplan.v1.GetTestPlansRequest
-	(*GetTestPlansResponse)(nil),   // 4: smoketest.gateway.testplan.v1.GetTestPlansResponse
-	(*UpdateTestPlanRequest)(nil),  // 5: smoketest.gateway.testplan.v1.UpdateTestPlanRequest
-	(*UpdateTestPlanResponse)(nil), // 6: smoketest.gateway.testplan.v1.UpdateTestPlanResponse
-	(*CreateTestPlanRequest)(nil),  // 7: smoketest.gateway.testplan.v1.CreateTestPlanRequest
-	(*CreateTestPlanResponse)(nil), // 8: smoketest.gateway.testplan.v1.CreateTestPlanResponse
-	(testplan.TestPlanState)(0),    // 9: smoketest.middleware.testplan.v1.TestPlanState
-	(testplan.TestResultState)(0),  // 10: smoketest.middleware.testplan.v1.TestResultState
-	(*testcase.PlanTestCase)(nil),  // 11: smoketest.middleware.testplan.plantestcase.v1.PlanTestCase
+	(*TestPlan)(nil),                  // 0: smoketest.gateway.testplan.v1.TestPlan
+	(*DeleteTestPlanRequest)(nil),     // 1: smoketest.gateway.testplan.v1.DeleteTestPlanRequest
+	(*DeleteTestPlanResponse)(nil),    // 2: smoketest.gateway.testplan.v1.DeleteTestPlanResponse
+	(*GetTestPlansRequest)(nil),       // 3: smoketest.gateway.testplan.v1.GetTestPlansRequest
+	(*GetTestPlansResponse)(nil),      // 4: smoketest.gateway.testplan.v1.GetTestPlansResponse
+	(*UpdateTestPlanRequest)(nil),     // 5: smoketest.gateway.testplan.v1.UpdateTestPlanRequest
+	(*UpdateTestPlanResponse)(nil),    // 6: smoketest.gateway.testplan.v1.UpdateTestPlanResponse
+	(*CreateTestPlanRequest)(nil),     // 7: smoketest.gateway.testplan.v1.CreateTestPlanRequest
+	(*CreateTestPlanResponse)(nil),    // 8: smoketest.gateway.testplan.v1.CreateTestPlanResponse
+	(testplan.TestPlanState)(0),       // 9: smoketest.middleware.testplan.v1.TestPlanState
+	(testplan.TestResultState)(0),     // 10: smoketest.middleware.testplan.v1.TestResultState
+	(*plantestcase.PlanTestCase)(nil), // 11: smoketest.middleware.testplan.plantestcase.v1.PlanTestCase
 }
 var file_npool_smoketest_gw_v1_testplan_testplan_proto_depIdxs = []int32{
 	9,  // 0: smoketest.gateway.testplan.v1.TestPlan.State:type_name -> smoketest.middleware.testplan.v1.TestPlanState

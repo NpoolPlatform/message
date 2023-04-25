@@ -7,7 +7,7 @@
 package plantestcase
 
 import (
-	testcase "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/testcase"
+	plantestcase "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/plantestcase"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -27,15 +27,15 @@ type CreatePlanTestCaseRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TestPlanID     string                  `protobuf:"bytes,10,opt,name=TestPlanID,proto3" json:"TestPlanID,omitempty"`
-	TestCaseID     string                  `protobuf:"bytes,20,opt,name=TestCaseID,proto3" json:"TestCaseID,omitempty"`
-	TestCaseOutput *string                 `protobuf:"bytes,30,opt,name=TestCaseOutput,proto3,oneof" json:"TestCaseOutput,omitempty"`
-	Description    *string                 `protobuf:"bytes,40,opt,name=Description,proto3,oneof" json:"Description,omitempty"`
-	RunDuration    *uint32                 `protobuf:"varint,50,opt,name=RunDuration,proto3,oneof" json:"RunDuration,omitempty"`
-	TestUserID     *string                 `protobuf:"bytes,60,opt,name=TestUserID,proto3,oneof" json:"TestUserID,omitempty"`
-	AppID          *string                 `protobuf:"bytes,70,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
-	Result         testcase.TestCaseResult `protobuf:"varint,80,opt,name=Result,proto3,enum=smoketest.middleware.testplan.plantestcase.v1.TestCaseResult" json:"Result,omitempty"`
-	Index          *uint32                 `protobuf:"varint,90,opt,name=Index,proto3,oneof" json:"Index,omitempty"`
+	TestPlanID     string                      `protobuf:"bytes,10,opt,name=TestPlanID,proto3" json:"TestPlanID,omitempty"`
+	TestCaseID     string                      `protobuf:"bytes,20,opt,name=TestCaseID,proto3" json:"TestCaseID,omitempty"`
+	TestCaseOutput *string                     `protobuf:"bytes,30,opt,name=TestCaseOutput,proto3,oneof" json:"TestCaseOutput,omitempty"`
+	Description    *string                     `protobuf:"bytes,40,opt,name=Description,proto3,oneof" json:"Description,omitempty"`
+	RunDuration    *uint32                     `protobuf:"varint,50,opt,name=RunDuration,proto3,oneof" json:"RunDuration,omitempty"`
+	TestUserID     *string                     `protobuf:"bytes,60,opt,name=TestUserID,proto3,oneof" json:"TestUserID,omitempty"`
+	AppID          *string                     `protobuf:"bytes,70,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
+	Result         plantestcase.TestCaseResult `protobuf:"varint,80,opt,name=Result,proto3,enum=smoketest.middleware.testplan.plantestcase.v1.TestCaseResult" json:"Result,omitempty"`
+	Index          *uint32                     `protobuf:"varint,90,opt,name=Index,proto3,oneof" json:"Index,omitempty"`
 }
 
 func (x *CreatePlanTestCaseRequest) Reset() {
@@ -119,11 +119,11 @@ func (x *CreatePlanTestCaseRequest) GetAppID() string {
 	return ""
 }
 
-func (x *CreatePlanTestCaseRequest) GetResult() testcase.TestCaseResult {
+func (x *CreatePlanTestCaseRequest) GetResult() plantestcase.TestCaseResult {
 	if x != nil {
 		return x.Result
 	}
-	return testcase.TestCaseResult(0)
+	return plantestcase.TestCaseResult(0)
 }
 
 func (x *CreatePlanTestCaseRequest) GetIndex() uint32 {
@@ -138,7 +138,7 @@ type CreatePlanTestCaseResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *testcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *plantestcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreatePlanTestCaseResponse) Reset() {
@@ -173,7 +173,7 @@ func (*CreatePlanTestCaseResponse) Descriptor() ([]byte, []int) {
 	return file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreatePlanTestCaseResponse) GetInfo() *testcase.PlanTestCase {
+func (x *CreatePlanTestCaseResponse) GetInfo() *plantestcase.PlanTestCase {
 	if x != nil {
 		return x.Info
 	}
@@ -248,8 +248,8 @@ type GetPlanTestCasesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*testcase.PlanTestCase `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32                   `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*plantestcase.PlanTestCase `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32                       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetPlanTestCasesResponse) Reset() {
@@ -284,7 +284,7 @@ func (*GetPlanTestCasesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetPlanTestCasesResponse) GetInfos() []*testcase.PlanTestCase {
+func (x *GetPlanTestCasesResponse) GetInfos() []*plantestcase.PlanTestCase {
 	if x != nil {
 		return x.Infos
 	}
@@ -350,7 +350,7 @@ type GetPlanTestCaseResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *testcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *plantestcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *GetPlanTestCaseResponse) Reset() {
@@ -385,7 +385,7 @@ func (*GetPlanTestCaseResponse) Descriptor() ([]byte, []int) {
 	return file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetPlanTestCaseResponse) GetInfo() *testcase.PlanTestCase {
+func (x *GetPlanTestCaseResponse) GetInfo() *plantestcase.PlanTestCase {
 	if x != nil {
 		return x.Info
 	}
@@ -444,7 +444,7 @@ type DeletePlanTestCaseResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *testcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *plantestcase.PlanTestCase `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *DeletePlanTestCaseResponse) Reset() {
@@ -479,7 +479,7 @@ func (*DeletePlanTestCaseResponse) Descriptor() ([]byte, []int) {
 	return file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *DeletePlanTestCaseResponse) GetInfo() *testcase.PlanTestCase {
+func (x *DeletePlanTestCaseResponse) GetInfo() *plantestcase.PlanTestCase {
 	if x != nil {
 		return x.Info
 	}
@@ -538,7 +538,7 @@ type DeletePlanTestCasesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info []*testcase.PlanTestCase `protobuf:"bytes,10,rep,name=Info,proto3" json:"Info,omitempty"`
+	Info []*plantestcase.PlanTestCase `protobuf:"bytes,10,rep,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *DeletePlanTestCasesResponse) Reset() {
@@ -573,7 +573,7 @@ func (*DeletePlanTestCasesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *DeletePlanTestCasesResponse) GetInfo() []*testcase.PlanTestCase {
+func (x *DeletePlanTestCasesResponse) GetInfo() []*plantestcase.PlanTestCase {
 	if x != nil {
 		return x.Info
 	}
@@ -750,8 +750,8 @@ var file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_goTypes 
 	(*DeletePlanTestCaseResponse)(nil),  // 7: smoketest.gateway.testplan.plantestcase.v1.DeletePlanTestCaseResponse
 	(*DeletePlanTestCasesRequest)(nil),  // 8: smoketest.gateway.testplan.plantestcase.v1.DeletePlanTestCasesRequest
 	(*DeletePlanTestCasesResponse)(nil), // 9: smoketest.gateway.testplan.plantestcase.v1.DeletePlanTestCasesResponse
-	(testcase.TestCaseResult)(0),        // 10: smoketest.middleware.testplan.plantestcase.v1.TestCaseResult
-	(*testcase.PlanTestCase)(nil),       // 11: smoketest.middleware.testplan.plantestcase.v1.PlanTestCase
+	(plantestcase.TestCaseResult)(0),    // 10: smoketest.middleware.testplan.plantestcase.v1.TestCaseResult
+	(*plantestcase.PlanTestCase)(nil),   // 11: smoketest.middleware.testplan.plantestcase.v1.PlanTestCase
 }
 var file_npool_smoketest_gw_v1_testplan_plantestcase_plantestcase_proto_depIdxs = []int32{
 	10, // 0: smoketest.gateway.testplan.plantestcase.v1.CreatePlanTestCaseRequest.Result:type_name -> smoketest.middleware.testplan.plantestcase.v1.TestCaseResult
