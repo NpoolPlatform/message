@@ -797,21 +797,13 @@
         "SigninVerifyType": {
           "$ref": "#/definitions/v1SignMethod"
         },
-        "SigninVerifyByGoogleAuthInt": {
-          "type": "integer",
-          "format": "int32",
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean"
-        },
-        "GoogleAuthVerifiedInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"google_authentication_verified\""
-        },
         "GoogleAuthVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
         "BanAppUserID": {
           "type": "string",
