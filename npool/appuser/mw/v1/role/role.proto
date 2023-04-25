@@ -60,6 +60,7 @@ message Conds {
     basetypes.v1.StringSliceVal  Roles     = 60;
     basetypes.v1.BoolVal         Genesis   = 70;
     basetypes.v1.StringSliceVal  IDs       = 80;
+    basetypes.v1.StringSliceVal  AppIDs    = 90;
 }
 
 message CreateRoleRequest {
