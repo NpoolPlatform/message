@@ -46,27 +46,10 @@ message TestCase {
     uint32          UpdatedAt                                         = 140;
 }
 
-
 enum TestCaseType {
     DefaultTestCaseType      = 0;
     Manual                   = 10;
     Automatic                = 20;
-}
-
-message TestCaseMgr {
-    string          ID                                = 10;
-    string          Name                              = 20;
-    string          Description                       = 30;
-    string          ModuleID                          = 40;
-    string          ApiID                             = 50;
-    string          Input                             = 60;
-    string          InputDesc                         = 70;
-    string          Expectation                       = 80;
-    TestCaseType    TestCaseType                      = 90;
-    bool            Deprecated                        = 100;
-    uint32          CreatedAt                         = 110;
-    uint32          UpdatedAt                         = 120;
-    uint32          DeletedAt                         = 130;
 }
 
 message TestCaseReq {
