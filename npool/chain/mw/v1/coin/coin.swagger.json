@@ -248,7 +248,7 @@
           "type": "string"
         },
         "NeedMemo": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
