@@ -87,6 +87,7 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+<<<<<<< HEAD
 =======
 >>>>>>> Query with conditions
 =======
@@ -94,6 +95,11 @@
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
 >>>>>>> Add ids support
+=======
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+>>>>>>> Add appids query for role
         }
       }
     },
