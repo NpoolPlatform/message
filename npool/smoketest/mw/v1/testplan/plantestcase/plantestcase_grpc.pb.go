@@ -39,7 +39,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 
 func (c *middlewareClient) CreatePlanTestCase(ctx context.Context, in *CreatePlanTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanTestCaseResponse, error) {
 	out := new(CreatePlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/CreatePlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.plantestcase.v1.Middleware/CreatePlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,7 @@ func (c *middlewareClient) CreatePlanTestCase(ctx context.Context, in *CreatePla
 
 func (c *middlewareClient) UpdatePlanTestCase(ctx context.Context, in *UpdatePlanTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanTestCaseResponse, error) {
 	out := new(UpdatePlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/UpdatePlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.plantestcase.v1.Middleware/UpdatePlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +57,7 @@ func (c *middlewareClient) UpdatePlanTestCase(ctx context.Context, in *UpdatePla
 
 func (c *middlewareClient) GetPlanTestCase(ctx context.Context, in *GetPlanTestCaseRequest, opts ...grpc.CallOption) (*GetPlanTestCaseResponse, error) {
 	out := new(GetPlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.plantestcase.v1.Middleware/GetPlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *middlewareClient) GetPlanTestCase(ctx context.Context, in *GetPlanTestC
 
 func (c *middlewareClient) GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error) {
 	out := new(GetPlanTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCases", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.plantestcase.v1.Middleware/GetPlanTestCases", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (c *middlewareClient) GetPlanTestCases(ctx context.Context, in *GetPlanTest
 
 func (c *middlewareClient) DeletePlanTestCase(ctx context.Context, in *DeletePlanTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanTestCaseResponse, error) {
 	out := new(DeletePlanTestCaseResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.middleware.plantestcase.v1.Middleware/DeletePlanTestCase", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smoketest.middleware.testplan.plantestcase.v1.Middleware/DeletePlanTestCase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +136,7 @@ func _Middleware_CreatePlanTestCase_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/CreatePlanTestCase",
+		FullMethod: "/smoketest.middleware.testplan.plantestcase.v1.Middleware/CreatePlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreatePlanTestCase(ctx, req.(*CreatePlanTestCaseRequest))
@@ -154,7 +154,7 @@ func _Middleware_UpdatePlanTestCase_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/UpdatePlanTestCase",
+		FullMethod: "/smoketest.middleware.testplan.plantestcase.v1.Middleware/UpdatePlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdatePlanTestCase(ctx, req.(*UpdatePlanTestCaseRequest))
@@ -172,7 +172,7 @@ func _Middleware_GetPlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCase",
+		FullMethod: "/smoketest.middleware.testplan.plantestcase.v1.Middleware/GetPlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetPlanTestCase(ctx, req.(*GetPlanTestCaseRequest))
@@ -190,7 +190,7 @@ func _Middleware_GetPlanTestCases_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/GetPlanTestCases",
+		FullMethod: "/smoketest.middleware.testplan.plantestcase.v1.Middleware/GetPlanTestCases",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetPlanTestCases(ctx, req.(*GetPlanTestCasesRequest))
@@ -208,7 +208,7 @@ func _Middleware_DeletePlanTestCase_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.middleware.plantestcase.v1.Middleware/DeletePlanTestCase",
+		FullMethod: "/smoketest.middleware.testplan.plantestcase.v1.Middleware/DeletePlanTestCase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).DeletePlanTestCase(ctx, req.(*DeletePlanTestCaseRequest))
@@ -220,7 +220,7 @@ func _Middleware_DeletePlanTestCase_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "smoketest.middleware.plantestcase.v1.Middleware",
+	ServiceName: "smoketest.middleware.testplan.plantestcase.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

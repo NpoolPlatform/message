@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateTestCaseResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1CreateTestCaseResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTestCaseRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1CreateTestCaseRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestCaseResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1DeleteTestCaseResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteTestCaseRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1DeleteTestCaseRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetTestCasesResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1GetTestCasesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetTestCasesRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1GetTestCasesRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateTestCaseResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1UpdateTestCaseResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateTestCaseRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasev1UpdateTestCaseRequest"
             }
           }
         ],
@@ -170,6 +170,87 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1CreateTestCaseRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ModuleName": {
+          "type": "string"
+        },
+        "ApiID": {
+          "type": "string"
+        },
+        "Input": {
+          "type": "string"
+        },
+        "InputDesc": {
+          "type": "string"
+        },
+        "Expectation": {
+          "type": "string"
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1CreateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1DeleteTestCaseRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1DeleteTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1GetTestCasesRequest": {
+      "type": "object",
+      "properties": {
+        "ModuleID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "smoketestgatewaytestcasev1GetTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -237,97 +318,7 @@
         }
       }
     },
-    "v1CreateTestCaseRequest": {
-      "type": "object",
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "ModuleName": {
-          "type": "string"
-        },
-        "ApiID": {
-          "type": "string"
-        },
-        "Input": {
-          "type": "string"
-        },
-        "InputDesc": {
-          "type": "string"
-        },
-        "Expectation": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
-        }
-      }
-    },
-    "v1DeleteTestCaseRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
-        }
-      }
-    },
-    "v1GetTestCasesRequest": {
-      "type": "object",
-      "properties": {
-        "ModuleID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetTestCasesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1TestCaseType": {
-      "type": "string",
-      "enum": [
-        "DefaultTestCaseType",
-        "Manual",
-        "Automatic"
-      ],
-      "default": "DefaultTestCaseType"
-    },
-    "v1UpdateTestCaseRequest": {
+    "smoketestgatewaytestcasev1UpdateTestCaseRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -356,13 +347,22 @@
         }
       }
     },
-    "v1UpdateTestCaseResponse": {
+    "smoketestgatewaytestcasev1UpdateTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
         }
       }
+    },
+    "v1TestCaseType": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseType",
+        "Manual",
+        "Automatic"
+      ],
+      "default": "DefaultTestCaseType"
     }
   }
 }

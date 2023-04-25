@@ -4,8 +4,8 @@ package smoketest.gateway.testplan.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan";
 
-import "npool/smoketest/mgr/v1/testplan/testplan.proto";
-import "npool/smoketest/mgr/v1/testplan/plantestcase/plantestcase.proto";
+import "npool/smoketest/mw/v1/testplan/testplan.proto";
+import "npool/smoketest/mw/v1/testplan/plantestcase/plantestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -42,7 +42,7 @@ service Gateway {
 message TestPlan {
     string          ID                                                  = 10;
     string          Name                                                = 20;
-    smoketest.manager.testplan.v1.TestPlanState   State                 = 30; 
+    smoketest.middleware.testplan.v1.TestPlanState   State                 = 30; 
     string          CreatedBy                                           = 40;
     string          Username                                            = 50;
     string          Executor                                            = 60;
@@ -51,11 +51,11 @@ message TestPlan {
     uint32          Passes                                              = 90;
     uint32          Skips                                               = 100;
     uint32          RunDuration                                         = 110;
-    smoketest.manager.testplan.v1.TestResultState Result                = 120;
+    smoketest.middleware.testplan.v1.TestResultState Result                = 120;
     uint32          Deadline                                            = 130;
     uint32          CreatedAt                                           = 140;
     uint32          UpdatedAt                                           = 150;
-    repeated smoketest.manager.testplan.plantestcase.v1.PlanTestCase PlanTestCases  = 160;
+    repeated smoketest.middleware.testplan.plantestcase.v1.PlanTestCase PlanTestCases  = 160;
 }
 
 message DeleteTestPlanRequest {
@@ -79,7 +79,7 @@ message GetTestPlansResponse {
 message UpdateTestPlanRequest {
     string                   ID                  = 10;
     optional string          Name                = 20;
-    optional smoketest.manager.testplan.v1.TestPlanState  State                = 30;
+    optional smoketest.middleware.testplan.v1.TestPlanState  State                = 30;
     optional string          Executor            = 40;
     optional uint32          Deadline            = 50;
 }

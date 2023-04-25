@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateCondResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1CreateCondResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateCondRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1CreateCondRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteCondResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1DeleteCondResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteCondRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1DeleteCondRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCondsResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1GetCondsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCondsRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1GetCondsRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateCondResponse"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1UpdateCondResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateCondRequest"
+              "$ref": "#/definitions/smoketestgatewaytestcasecondv1UpdateCondRequest"
             }
           }
         ],
@@ -170,6 +170,105 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1CreateCondRequest": {
+      "type": "object",
+      "properties": {
+        "TestCaseID": {
+          "type": "string"
+        },
+        "CondTestCaseID": {
+          "type": "string"
+        },
+        "ArgumentMap": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1CreateCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1DeleteCondRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1DeleteCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1GetCondsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1GetCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Cond"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1UpdateCondRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ArgumentMap": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaytestcasecondv1UpdateCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
         }
       }
     },
@@ -229,105 +328,6 @@
         "Cleaner"
       ],
       "default": "DefaultCondType"
-    },
-    "v1CreateCondRequest": {
-      "type": "object",
-      "properties": {
-        "TestCaseID": {
-          "type": "string"
-        },
-        "CondTestCaseID": {
-          "type": "string"
-        },
-        "ArgumentMap": {
-          "type": "string"
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CondType": {
-          "$ref": "#/definitions/v1CondType"
-        }
-      }
-    },
-    "v1CreateCondResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Cond"
-        }
-      }
-    },
-    "v1DeleteCondRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteCondResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Cond"
-        }
-      }
-    },
-    "v1GetCondsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Cond"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCondRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "ArgumentMap": {
-          "type": "string"
-        },
-        "CondType": {
-          "$ref": "#/definitions/v1CondType"
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCondResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Cond"
-        }
-      }
     }
   }
 }

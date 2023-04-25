@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreatePlanTestCaseResponse"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1CreatePlanTestCaseResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreatePlanTestCaseRequest"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1CreatePlanTestCaseRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCaseResponse"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1DeletePlanTestCaseResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCaseRequest"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1DeletePlanTestCaseRequest"
             }
           }
         ],
@@ -141,7 +141,7 @@
         }
       }
     },
-    "v1CreatePlanTestCaseRequest": {
+    "smoketestgatewaytestplanplantestcasev1CreatePlanTestCaseRequest": {
       "type": "object",
       "properties": {
         "TestPlanID": {
@@ -175,7 +175,7 @@
         }
       }
     },
-    "v1CreatePlanTestCaseResponse": {
+    "smoketestgatewaytestplanplantestcasev1CreatePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -183,7 +183,7 @@
         }
       }
     },
-    "v1DeletePlanTestCaseRequest": {
+    "smoketestgatewaytestplanplantestcasev1DeletePlanTestCaseRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -191,7 +191,7 @@
         }
       }
     },
-    "v1DeletePlanTestCaseResponse": {
+    "smoketestgatewaytestplanplantestcasev1DeletePlanTestCaseResponse": {
       "type": "object",
       "properties": {
         "Info": {

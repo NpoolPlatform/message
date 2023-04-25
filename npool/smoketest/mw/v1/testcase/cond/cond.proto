@@ -4,7 +4,7 @@ package smoketest.middleware.testcase.cond.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase/cond";
 
-import "npool/smoketest/mgr/v1/testcase/cond/cond.proto";
+import "npool/npool.proto";
 
 // Service Name
 service Middleware {
@@ -15,28 +15,73 @@ service Middleware {
     rpc DeleteCond     (DeleteCondRequest)     returns (DeleteCondResponse)     {}
 }
 
+enum CondType {
+    DefaultCondType          = 0;
+    PreCondition             = 10;
+    Cleaner                  = 20;
+}
+
+message CondReq {
+    optional string   ID               = 10;
+    optional CondType CondType         = 20;
+    optional string   TestCaseID       = 30;
+    optional string   CondTestCaseID   = 40;
+    optional uint32   Index            = 50;
+    optional uint32   CreatedAt        = 60;
+    optional string   ArgumentMap      = 70;
+}
+
+message Cond {
+    // @inject_tag: sql:"id"
+    string          ID                       = 10;
+    // @inject_tag: sql:"cond_type"
+    string          CondTypeStr              = 20;
+    CondType        CondType                 = 30;
+    // @inject_tag: sql:"test_case_id"
+    string          TestCaseID               = 40;
+    // @inject_tag: sql:"cond_test_case_id"
+    string          CondTestCaseID           = 50;
+    // @inject_tag: sql:"index"
+    uint32          Index                    = 60;
+    // @inject_tag: sql:"argument_map"
+    string          ArgumentMap              = 70;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt                = 80;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt                = 90;
+    // @inject_tag: sql:"deleted_at"
+    uint32          DeletedAt                = 100;
+}
+
+message Conds {
+    optional npool.v1.StringVal  ID             = 10;
+    optional npool.v1.StringVal  CondType       = 20;
+    optional npool.v1.StringVal  TestCaseID     = 30;
+    optional npool.v1.StringVal  CondTestCaseID = 40;
+}
+
 message CreateCondRequest {
-    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
+    CondReq Info = 10;
 }
 
 message CreateCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    Cond Info = 10;
 }
 
 message CreateCondsRequest {
-    repeated smoketest.manager.testcase.cond.v1.CondReq Infos = 10;
+    repeated CondReq Infos = 10;
 }
 
 message CreateCondsResponse {
-    repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
+    repeated Cond Infos = 10;
 }
 
 message UpdateCondRequest {
-    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
+    CondReq Info = 10;
 }
 
 message UpdateCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    Cond Info = 10;
 }
 
 message GetCondRequest {
@@ -44,24 +89,24 @@ message GetCondRequest {
 }
 
 message GetCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    Cond Info = 10;
 }
 
 message GetCondsRequest {
-    smoketest.manager.testcase.cond.v1.Conds Conds   = 10;
+    Conds Conds   = 10;
     int32  Offset                                    = 20;
     int32  Limit                                     = 30;
 }
 
 message GetCondsResponse {
-    repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
+    repeated Cond Infos = 10;
     uint32                                           Total = 20;
 }
 
 message DeleteCondRequest {
-    smoketest.manager.testcase.cond.v1.CondReq Info = 10;
+    CondReq Info = 10;
 }
 
 message DeleteCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    Cond Info = 10;
 }

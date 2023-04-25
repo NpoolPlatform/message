@@ -5,7 +5,7 @@ package smoketest.gateway.module.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/module";
 
 import "google/api/annotations.proto";
-import "npool/smoketest/mgr/v1/module/module.proto";
+import "npool/smoketest/mw/v1/module/module.proto";
 
 // Service Name
 service Gateway {
@@ -44,7 +44,7 @@ message CreateModuleRequest {
 }
 
 message CreateModuleResponse {
-    smoketest.manager.module.v1.Module Info = 10;
+    smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message DeleteModuleRequest {
@@ -52,7 +52,7 @@ message DeleteModuleRequest {
 }
 
 message DeleteModuleResponse {
-    smoketest.manager.module.v1.Module Info = 10;
+    smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message UpdateModuleRequest {
@@ -62,7 +62,7 @@ message UpdateModuleRequest {
 }
 
 message UpdateModuleResponse {
-    smoketest.manager.module.v1.Module Info = 10;
+    smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message GetModulesRequest {
@@ -71,7 +71,7 @@ message GetModulesRequest {
 }
 
 message GetModulesResponse {
-    repeated smoketest.manager.module.v1.Module Infos  = 10;
+    repeated smoketest.middleware.module.v1.Module Infos  = 10;
     uint32          Total  = 20;
 }
 

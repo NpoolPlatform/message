@@ -4,7 +4,7 @@ package smoketest.middleware.testcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase";
 
-import "npool/smoketest/mgr/v1/testcase/testcase.proto";
+import "npool/npool.proto";
 
 // Service Name
 service Middleware {
@@ -37,7 +37,7 @@ message TestCase {
     string          InputDesc                                         = 90;
     // @inject_tag: sql:"test_case_type"
     string          TestCaseTypeStr                                   = 100;
-    smoketest.manager.testcase.v1.TestCaseType    TestCaseType        = 110;
+    TestCaseType    TestCaseType        = 110;
     // @inject_tag: sql:"deprecated"
     bool            Deprecated                                        = 120;
     // @inject_tag: sql:"created_at"
@@ -46,8 +46,54 @@ message TestCase {
     uint32          UpdatedAt                                         = 140;
 }
 
+
+enum TestCaseType {
+    DefaultTestCaseType      = 0;
+    Manual                   = 10;
+    Automatic                = 20;
+}
+
+message TestCaseMgr {
+    string          ID                                = 10;
+    string          Name                              = 20;
+    string          Description                       = 30;
+    string          ModuleID                          = 40;
+    string          ApiID                             = 50;
+    string          Input                             = 60;
+    string          InputDesc                         = 70;
+    string          Expectation                       = 80;
+    TestCaseType    TestCaseType                      = 90;
+    bool            Deprecated                        = 100;
+    uint32          CreatedAt                         = 110;
+    uint32          UpdatedAt                         = 120;
+    uint32          DeletedAt                         = 130;
+}
+
+message TestCaseReq {
+    optional string          ID                        = 10;
+    optional string          Name                      = 20;
+    optional string          Description               = 30;
+    optional string          ModuleID                  = 40;
+    optional string          ModuleName                = 50;
+    optional string          ApiID                     = 60;
+    optional string          Input                     = 70;
+    optional string          InputDesc                 = 80;
+    optional string          Expectation               = 90;
+    optional TestCaseType    TestCaseType              = 100;
+    optional bool            Deprecated                = 110;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID                 = 10;
+    optional npool.v1.StringVal      ModuleID           = 20;
+    optional npool.v1.StringVal      ApiID              = 30;
+    optional npool.v1.StringVal      TestCaseType       = 40;
+    optional npool.v1.BoolVal        Deprecated         = 50;
+    optional npool.v1.StringSliceVal IDs                = 60;
+}
+
 message CreateTestCaseRequest {
-    smoketest.manager.testcase.v1.TestCaseReq Info = 10;
+    TestCaseReq Info = 10;
 }
 
 message CreateTestCaseResponse {
@@ -63,7 +109,7 @@ message ExistTestCaseResponse {
 }
 
 message DeleteTestCaseRequest {
-    smoketest.manager.testcase.v1.TestCaseReq Info = 10;
+    TestCaseReq Info = 10;
 }
 
 message DeleteTestCaseResponse {
@@ -71,13 +117,13 @@ message DeleteTestCaseResponse {
 }
 
 message GetTestCasesRequest {
-    smoketest.manager.testcase.v1.Conds Conds = 10;
+    Conds  Conds                              = 10;
     int32  Offset                             = 20;
     int32  Limit                              = 30;
 }
 
 message GetTestCasesResponse {
-    repeated TestCase Infos  = 10;
+    repeated TestCase Infos   = 10;
     uint32            Total   = 20;
 }
 
@@ -90,7 +136,7 @@ message GetTestCaseResponse {
 }
 
 message UpdateTestCaseRequest {
-    smoketest.manager.testcase.v1.TestCaseReq Info = 10;
+    TestCaseReq Info = 10;
 }
 
 message UpdateTestCaseResponse {

@@ -44,7 +44,113 @@
         }
       }
     },
-    "smoketestmiddlewaretestcasev1TestCase": {
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ModuleID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ApiID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Deprecated": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestCase"
+        }
+      }
+    },
+    "v1DeleteTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestCase"
+        }
+      }
+    },
+    "v1ExistTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTestCaseResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TestCase"
+        }
+      }
+    },
+    "v1GetTestCasesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TestCase"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TestCase": {
       "type": "object",
       "properties": {
         "ID": {
@@ -106,112 +212,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ModuleID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ApiID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Deprecated": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1DeleteTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1ExistTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetTestCaseResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-        }
-      }
-    },
-    "v1GetTestCasesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
     "v1TestCaseReq": {
       "type": "object",
       "properties": {
@@ -263,7 +263,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/smoketestmiddlewaretestcasev1TestCase"
+          "$ref": "#/definitions/v1TestCase"
         }
       }
     }

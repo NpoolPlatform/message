@@ -4,7 +4,7 @@ package smoketest.gateway.testcase.cond.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testcase/cond";
 
-import "npool/smoketest/mgr/v1/testcase/cond/cond.proto";
+import "npool/smoketest/mw/v1/testcase/cond/cond.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -43,11 +43,11 @@ message CreateCondRequest {
     string          CondTestCaseID     = 20;
     optional string ArgumentMap        = 30;
     uint32          Index              = 40;
-    smoketest.manager.testcase.cond.v1.CondType CondType = 50;
+    smoketest.middleware.testcase.cond.v1.CondType CondType = 50;
 }
 
 message CreateCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
 }
 
 message DeleteCondRequest {
@@ -55,7 +55,7 @@ message DeleteCondRequest {
 }
 
 message DeleteCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
 }
 
 message GetCondsRequest {
@@ -64,18 +64,18 @@ message GetCondsRequest {
 }
 
 message GetCondsResponse {
-    repeated smoketest.manager.testcase.cond.v1.Cond Infos = 10;
+    repeated smoketest.middleware.testcase.cond.v1.Cond Infos = 10;
     uint32        Total   = 20;
 }
 
 message UpdateCondRequest {
     string          ID           = 10;
     optional string ArgumentMap  = 20;
-    optional smoketest.manager.testcase.cond.v1.CondType CondType  = 30;
+    optional smoketest.middleware.testcase.cond.v1.CondType CondType  = 30;
     optional uint32 Index        = 40;
 }
 
 message UpdateCondResponse {
-    smoketest.manager.testcase.cond.v1.Cond Info = 10;
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
 }
 

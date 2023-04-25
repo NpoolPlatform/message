@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateModuleResponse"
+              "$ref": "#/definitions/smoketestgatewaymodulev1CreateModuleResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateModuleRequest"
+              "$ref": "#/definitions/smoketestgatewaymodulev1CreateModuleRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteModuleResponse"
+              "$ref": "#/definitions/smoketestgatewaymodulev1DeleteModuleResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteModuleRequest"
+              "$ref": "#/definitions/smoketestgatewaymodulev1DeleteModuleRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetModulesResponse"
+              "$ref": "#/definitions/smoketestgatewaymodulev1GetModulesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetModulesRequest"
+              "$ref": "#/definitions/smoketestgatewaymodulev1GetModulesRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateModuleResponse"
+              "$ref": "#/definitions/smoketestgatewaymodulev1UpdateModuleResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateModuleRequest"
+              "$ref": "#/definitions/smoketestgatewaymodulev1UpdateModuleRequest"
             }
           }
         ],
@@ -173,7 +173,7 @@
         }
       }
     },
-    "v1CreateModuleRequest": {
+    "smoketestgatewaymodulev1CreateModuleRequest": {
       "type": "object",
       "properties": {
         "Name": {
@@ -184,7 +184,7 @@
         }
       }
     },
-    "v1CreateModuleResponse": {
+    "smoketestgatewaymodulev1CreateModuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -192,7 +192,7 @@
         }
       }
     },
-    "v1DeleteModuleRequest": {
+    "smoketestgatewaymodulev1DeleteModuleRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -200,7 +200,7 @@
         }
       }
     },
-    "v1DeleteModuleResponse": {
+    "smoketestgatewaymodulev1DeleteModuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -208,7 +208,7 @@
         }
       }
     },
-    "v1GetModulesRequest": {
+    "smoketestgatewaymodulev1GetModulesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -221,7 +221,7 @@
         }
       }
     },
-    "v1GetModulesResponse": {
+    "smoketestgatewaymodulev1GetModulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -233,6 +233,28 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaymodulev1UpdateModuleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "smoketestgatewaymodulev1UpdateModuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Module"
         }
       }
     },
@@ -265,28 +287,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
-        }
-      }
-    },
-    "v1UpdateModuleRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateModuleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Module"
         }
       }
     }
