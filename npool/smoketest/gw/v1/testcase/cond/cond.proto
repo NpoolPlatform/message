@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package smoketest.gateway.testcase.cond.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testcase/cond";
+
+import "npool/smoketest/mw/v1/testcase/cond/cond.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateCond (CreateCondRequest) returns (CreateCondResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/testcasecond"
+            body: "*"
+        };
+    }
+
+    rpc DeleteCond (DeleteCondRequest) returns (DeleteCondResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/testcasecond"
+            body: "*"
+        };
+    }
+
+    rpc UpdateCond (UpdateCondRequest) returns (UpdateCondResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/testcasecond"
+            body: "*"
+        };
+    }
+
+    rpc GetConds (GetCondsRequest) returns (GetCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/testcaseconds"
+            body: "*"
+        };
+    }
+}
+
+message CreateCondRequest {
+    string          TestCaseID         = 10;
+    string          CondTestCaseID     = 20;
+    optional string ArgumentMap        = 30;
+    uint32          Index              = 40;
+    smoketest.middleware.testcase.cond.v1.CondType CondType = 50;
+}
+
+message CreateCondResponse {
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
+}
+
+message DeleteCondRequest {
+    string ID        = 10;
+}
+
+message DeleteCondResponse {
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
+}
+
+message GetCondsRequest {
+    optional int32  Offset = 10;
+    optional int32  Limit  = 20;
+}
+
+message GetCondsResponse {
+    repeated smoketest.middleware.testcase.cond.v1.Cond Infos = 10;
+    uint32        Total   = 20;
+}
+
+message UpdateCondRequest {
+    string          ID           = 10;
+    optional string ArgumentMap  = 20;
+    optional smoketest.middleware.testcase.cond.v1.CondType CondType  = 30;
+    optional uint32 Index        = 40;
+}
+
+message UpdateCondResponse {
+    smoketest.middleware.testcase.cond.v1.Cond Info = 10;
+}
+

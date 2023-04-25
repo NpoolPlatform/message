@@ -4,21 +4,72 @@ package good.manager.good.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/good";
 
+import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
 service Manager {
-    rpc CreateGood     (CreateGoodRequest)     returns (CreateGoodResponse)     {}
-    rpc CreateGoods    (CreateGoodsRequest)    returns (CreateGoodsResponse)    {}
-    rpc UpdateGood     (UpdateGoodRequest)     returns (UpdateGoodResponse)     {}
-    rpc GetGood        (GetGoodRequest)        returns (GetGoodResponse)        {}
-    rpc GetGoodOnly    (GetGoodOnlyRequest)    returns (GetGoodOnlyResponse)    {}
-    rpc GetGoods       (GetGoodsRequest)       returns (GetGoodsResponse)       {}
-    rpc ExistGood      (ExistGoodRequest)      returns (ExistGoodResponse)      {}
-    rpc ExistGoodConds (ExistGoodCondsRequest) returns (ExistGoodCondsResponse) {}
-    rpc CountGoods     (CountGoodsRequest)     returns (CountGoodsResponse)     {}
-    rpc DeleteGood     (DeleteGoodRequest)     returns (DeleteGoodResponse)     {}
+    rpc CreateGood     (CreateGoodRequest)     returns (CreateGoodResponse)     {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_CreateGood"
+            body: "*"
+        };
+    }
+    rpc CreateGoods    (CreateGoodsRequest)    returns (CreateGoodsResponse)    {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_CreateGoods"
+            body: "*"
+        };
+    }
+    rpc UpdateGood     (UpdateGoodRequest)     returns (UpdateGoodResponse)     {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_UpdateGood"
+            body: "*"
+        };
+    }
+    rpc GetGood        (GetGoodRequest)        returns (GetGoodResponse)        {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_GetGood"
+            body: "*"
+        };
+    }
+    rpc GetGoodOnly    (GetGoodOnlyRequest)    returns (GetGoodOnlyResponse)    {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_GetGoodOnly"
+            body: "*"
+        };
+    }
+    rpc GetGoods       (GetGoodsRequest)       returns (GetGoodsResponse)       {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_GetGoods"
+            body: "*"
+        };
+    }
+    rpc ExistGood      (ExistGoodRequest)      returns (ExistGoodResponse)      {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_ExistGood"
+            body: "*"
+        };
+    }
+    rpc ExistGoodConds (ExistGoodCondsRequest) returns (ExistGoodCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_ExistGoodConds"
+            body: "*"
+        };
+    }
+    rpc CountGoods     (CountGoodsRequest)     returns (CountGoodsResponse)     {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_CountGoods"
+            body: "*"
+        };
+    }
+    rpc DeleteGood     (DeleteGoodRequest)     returns (DeleteGoodResponse)     {
+        option (google.api.http) = {
+            post: "/v1/mgr_good_app_DeleteGood"
+            body: "*"
+        };
+    }
 }
 
 enum BenefitType {

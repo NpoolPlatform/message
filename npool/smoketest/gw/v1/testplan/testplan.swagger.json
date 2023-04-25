@@ -1,0 +1,430 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/smoketest/gw/v1/testplan/testplan.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/testplan": {
+      "post": {
+        "operationId": "Gateway_CreateTestPlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1CreateTestPlanResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1CreateTestPlanRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/testplan": {
+      "post": {
+        "operationId": "Gateway_DeleteTestPlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1DeleteTestPlanResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1DeleteTestPlanRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/testplans": {
+      "post": {
+        "operationId": "Gateway_GetTestPlans",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1GetTestPlansResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1GetTestPlansRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/testplan": {
+      "post": {
+        "operationId": "Gateway_UpdateTestPlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1UpdateTestPlanResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/smoketestgatewaytestplanv1UpdateTestPlanRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1CreateTestPlanRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Executor": {
+          "type": "string"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1CreateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestgatewaytestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1DeleteTestPlanRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1DeleteTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestgatewaytestplanv1TestPlan"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1GetTestPlansRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1GetTestPlansResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/smoketestgatewaytestplanv1TestPlan"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1TestPlan": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "Executor": {
+          "type": "string"
+        },
+        "ExecutorUsername": {
+          "type": "string"
+        },
+        "Fails": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Passes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Skips": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestResultState"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PlanTestCases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PlanTestCase"
+          }
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1UpdateTestPlanRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TestPlanState"
+        },
+        "Executor": {
+          "type": "string"
+        },
+        "Deadline": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "smoketestgatewaytestplanv1UpdateTestPlanResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/smoketestgatewaytestplanv1TestPlan"
+        }
+      }
+    },
+    "v1PlanTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "TestPlanID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_plan_id\""
+        },
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "TestCaseOutput": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_output\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"run_duration\""
+        },
+        "TestUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_user_id\""
+        },
+        "ResultStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"result\""
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestCaseResult"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
+    },
+    "v1TestCaseResult": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseResult",
+        "Skipped",
+        "Passed",
+        "Failed"
+      ],
+      "default": "DefaultTestCaseResult"
+    },
+    "v1TestPlanState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestPlanState",
+        "WaitStart",
+        "InProgress",
+        "Finished",
+        "Overdue"
+      ],
+      "default": "DefaultTestPlanState"
+    },
+    "v1TestResultState": {
+      "type": "string",
+      "enum": [
+        "DefaultTestResultState",
+        "Passed",
+        "Failed"
+      ],
+      "default": "DefaultTestResultState"
+    }
+  }
+}
