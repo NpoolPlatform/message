@@ -125,10 +125,8 @@ message User {
     string          SigninVerifyTypeStr         = 210;
     basetypes.v1.SignMethod SigninVerifyType = 220;
     // @inject_tag: sql:"signin_verify_by_google_authentication"
-    int32           SigninVerifyByGoogleAuthInt = 221;
     bool            SigninVerifyByGoogleAuth    = 222;
     // @inject_tag: sql:"google_authentication_verified"
-    int32           GoogleAuthVerifiedInt       = 230;
     bool            GoogleAuthVerified          = 240;
     // @inject_tag: sql:"ban_app_user_id"
     string          BanAppUserID                = 250;
