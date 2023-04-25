@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package smoketest.middleware.module.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/module";
+
+import "npool/npool.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateModule        (CreateModuleRequest)       returns (CreateModuleResponse)       {}
+    rpc UpdateModule        (UpdateModuleRequest)       returns (UpdateModuleResponse)       {}
+    rpc GetModules          (GetModulesRequest)         returns (GetModulesResponse)         {}
+    rpc GetModule           (GetModuleRequest)          returns (GetModuleResponse)          {}
+    rpc GetModuleConds      (GetModuleCondsRequest)     returns (GetModuleCondsResponse)     {}
+    rpc DeleteModule        (DeleteModuleRequest)       returns (DeleteModuleResponse)       {}
+    rpc ExistModule         (ExistModuleRequest)        returns (ExistModuleResponse)        {}
+    rpc ExistModuleByName   (ExistModuleByNameRequest)  returns (ExistModuleByNameResponse)  {}
+    rpc ExistModuleConds    (ExistModuleCondsRequest)   returns (ExistModuleCondsResponse)   {}
+}
+
+message Module {
+    // @inject_tag: sql:"id"
+    string          ID                                                = 10;
+    // @inject_tag: sql:"name"
+    string          Name                                              = 20;
+    // @inject_tag: sql:"description"
+    string          Description                                       = 30;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt                                         = 40;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt                                         = 50;
+    // @inject_tag: sql:"deleted_at"
+    uint32          DeletedAt                                         = 60;
+}
+
+message ModuleReq {
+    optional string ID                      = 10;
+    optional string Name                    = 20;
+    optional string Description             = 30;
+}
+
+message Conds {
+    optional npool.v1.StringVal      ID     = 10;
+    optional npool.v1.StringVal      Name   = 20;
+
+}
+
+message CreateModuleRequest {
+    ModuleReq Info = 10;
+}
+
+message CreateModuleResponse {
+    Module  Info   = 10;
+}
+
+message ExistModuleRequest {
+    string     ID                   = 10;
+}
+
+message ExistModuleResponse {
+    bool  Info  = 10;
+}
+
+message ExistModuleByNameRequest {
+    string     Name                   = 10;
+}
+
+message ExistModuleByNameResponse {
+    bool  Info  = 10;
+}
+
+message ExistModuleCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistModuleCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteModuleRequest {
+    ModuleReq Info = 10;
+}
+
+message DeleteModuleResponse {
+    Module Info = 10;
+}
+
+message GetModulesRequest {
+    Conds Conds          = 10;
+    int32  Offset                                    = 20;
+    int32  Limit                                     = 30;
+}
+
+message GetModulesResponse {
+    repeated Module Infos = 10;
+    uint32                                      Total = 20;
+}
+
+message GetModuleCondsRequest {
+    Conds Conds          = 10;
+}
+
+message GetModuleCondsResponse {
+    repeated Module Infos = 10;
+    uint32                                      Total = 20;
+}
+
+message GetModuleRequest {
+    string ID = 10;
+}
+
+message GetModuleResponse {
+    Module           Info = 10;
+}
+
+message UpdateModuleRequest {
+    ModuleReq        Info = 10;
+}
+
+message UpdateModuleResponse {
+    Module           Info = 10;
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package smoketest.gateway.testplan.plantestcase.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan/plantestcase";
+
+import "npool/smoketest/mw/v1/testplan/plantestcase/plantestcase.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreatePlanTestCase (CreatePlanTestCaseRequest) returns (CreatePlanTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/plantestcase"
+            body: "*"
+        };
+    }
+    
+    rpc DeletePlanTestCase (DeletePlanTestCaseRequest) returns (DeletePlanTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/plantestcase"
+            body: "*"
+        };
+    }
+
+    rpc DeletePlanTestCases (DeletePlanTestCasesRequest) returns (DeletePlanTestCasesResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/plantestcases"
+            body: "*"
+        };
+    }
+}
+
+message CreatePlanTestCaseRequest {
+    string                   TestPlanID                                              = 10;
+    string                   TestCaseID                                              = 20;
+    optional string          TestCaseOutput                                          = 30;
+    optional string          Description                                             = 40;
+    optional uint32          RunDuration                                             = 50;
+    optional string          TestUserID                                              = 60;
+    optional string          AppID                                                   = 70;
+    smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result                 = 80; 
+    optional uint32          Index                                                   = 90;
+}
+
+message CreatePlanTestCaseResponse {
+    smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
+}
+
+message GetPlanTestCasesRequest {
+    string         TestPlanID  =   10;
+    optional int32 Offset      =   20;
+    optional int32 Limit       =   30;
+}
+
+message GetPlanTestCasesResponse {
+    repeated smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Infos = 10;
+    uint32                                                   Total = 20;
+}
+
+message GetPlanTestCaseRequest {
+    string   ID        =   10;
+}
+
+message GetPlanTestCaseResponse {
+    smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
+}
+
+message DeletePlanTestCaseRequest {
+    string ID        = 10;
+}
+
+message DeletePlanTestCaseResponse {
+    smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
+}
+
+message DeletePlanTestCasesRequest {
+    string TestPlanID = 20;
+}
+
+message DeletePlanTestCasesResponse {
+    repeated smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
+}
