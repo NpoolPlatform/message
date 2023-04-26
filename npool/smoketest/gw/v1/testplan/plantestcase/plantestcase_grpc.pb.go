@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	CreatePlanTestCase(ctx context.Context, in *CreatePlanTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanTestCaseResponse, error)
 	DeletePlanTestCase(ctx context.Context, in *DeletePlanTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanTestCaseResponse, error)
+	UpdatePlanTestCase(ctx context.Context, in *UpdatePlanTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanTestCaseResponse, error)
 	GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error)
 }
 
@@ -53,6 +54,15 @@ func (c *gatewayClient) DeletePlanTestCase(ctx context.Context, in *DeletePlanTe
 	return out, nil
 }
 
+func (c *gatewayClient) UpdatePlanTestCase(ctx context.Context, in *UpdatePlanTestCaseRequest, opts ...grpc.CallOption) (*UpdatePlanTestCaseResponse, error) {
+	out := new(UpdatePlanTestCaseResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/UpdatePlanTestCase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error) {
 	out := new(GetPlanTestCasesResponse)
 	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/GetPlanTestCases", in, out, opts...)
@@ -68,6 +78,7 @@ func (c *gatewayClient) GetPlanTestCases(ctx context.Context, in *GetPlanTestCas
 type GatewayServer interface {
 	CreatePlanTestCase(context.Context, *CreatePlanTestCaseRequest) (*CreatePlanTestCaseResponse, error)
 	DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error)
+	UpdatePlanTestCase(context.Context, *UpdatePlanTestCaseRequest) (*UpdatePlanTestCaseResponse, error)
 	GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -81,6 +92,9 @@ func (UnimplementedGatewayServer) CreatePlanTestCase(context.Context, *CreatePla
 }
 func (UnimplementedGatewayServer) DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePlanTestCase not implemented")
+}
+func (UnimplementedGatewayServer) UpdatePlanTestCase(context.Context, *UpdatePlanTestCaseRequest) (*UpdatePlanTestCaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePlanTestCase not implemented")
 }
 func (UnimplementedGatewayServer) GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPlanTestCases not implemented")
@@ -134,6 +148,24 @@ func _Gateway_DeletePlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdatePlanTestCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePlanTestCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdatePlanTestCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/UpdatePlanTestCase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdatePlanTestCase(ctx, req.(*UpdatePlanTestCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetPlanTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPlanTestCasesRequest)
 	if err := dec(in); err != nil {
@@ -166,6 +198,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeletePlanTestCase",
 			Handler:    _Gateway_DeletePlanTestCase_Handler,
+		},
+		{
+			MethodName: "UpdatePlanTestCase",
+			Handler:    _Gateway_UpdatePlanTestCase_Handler,
 		},
 		{
 			MethodName: "GetPlanTestCases",

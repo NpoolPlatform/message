@@ -23,6 +23,13 @@ service Gateway {
         };
     }
 
+    rpc UpdatePlanTestCase (UpdatePlanTestCaseRequest) returns (UpdatePlanTestCaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/plantestcase"
+            body: "*"
+        };
+    }
+
     rpc GetPlanTestCases (GetPlanTestCasesRequest) returns (GetPlanTestCasesResponse) {
         option (google.api.http) = {
             post: "/v1/get/plantestcases"
@@ -46,6 +53,22 @@ message CreatePlanTestCaseRequest {
 message CreatePlanTestCaseResponse {
     smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }
+
+message UpdatePlanTestCaseRequest {
+    string                   ID                                                      = 10;
+    optional string          TestCaseOutput                                          = 20;
+    optional string          Description                                             = 30;
+    optional uint32          RunDuration                                             = 40;
+    optional string          TestUserID                                              = 50;
+    optional string          AppID                                                   = 60;
+    smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result              = 70; 
+    optional uint32          Index                                                   = 80;
+}
+
+message UpdatePlanTestCaseResponse {
+    smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
+}
+
 
 message GetPlanTestCasesRequest {
     string         TestPlanID  =   10;
