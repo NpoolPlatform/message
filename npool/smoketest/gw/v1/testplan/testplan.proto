@@ -5,7 +5,6 @@ package smoketest.gateway.testplan.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/gw/v1/testplan";
 
 import "npool/smoketest/mw/v1/testplan/testplan.proto";
-import "npool/smoketest/mw/v1/testplan/plantestcase/plantestcase.proto";
 import "google/api/annotations.proto";
 
 // Service Name
