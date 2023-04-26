@@ -67,8 +67,8 @@ message DeleteTestPlanResponse {
 }
 
 message GetTestPlansRequest {
-    optional int32  Offset = 20;
-    optional int32  Limit  = 30;
+    int32  Offset = 10;
+    int32  Limit  = 20;
 }
 
 message GetTestPlansResponse {
@@ -77,11 +77,16 @@ message GetTestPlansResponse {
 }
 
 message UpdateTestPlanRequest {
-    string                   ID                  = 10;
-    optional string          Name                = 20;
+    string                   ID                                                   = 10;
+    optional string          Name                                                 = 20;
     optional smoketest.middleware.testplan.v1.TestPlanState  State                = 30;
-    optional string          Executor            = 40;
-    optional uint32          Deadline            = 50;
+    optional string          Executor                                             = 40;
+    optional uint32          Deadline                                             = 50;
+    optional uint32          Fails                                                = 60;
+    optional uint32          Passes                                               = 70;
+    optional uint32          Skips                                                = 80;
+    optional uint32          RunDuration                                          = 90;
+    optional smoketest.middleware.testplan.v1.TestResultState Result              = 100;
 }
 
 message UpdateTestPlanResponse {

@@ -58,6 +58,9 @@
         },
         "Result": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "TestPlanIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -195,6 +198,20 @@
         "Index": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

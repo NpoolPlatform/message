@@ -69,6 +69,7 @@ message Conds {
     optional npool.v1.StringVal      TestPlanID     = 20;
     optional npool.v1.StringVal      TestUserID     = 30;
     optional npool.v1.StringVal      Result         = 40;
+    optional npool.v1.StringSliceVal TestPlanIDs    = 50;
 }
 
 message CreatePlanTestCaseRequest {
