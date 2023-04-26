@@ -23,9 +23,9 @@ service Gateway {
         };
     }
 
-    rpc DeletePlanTestCases (DeletePlanTestCasesRequest) returns (DeletePlanTestCasesResponse) {
+    rpc GetPlanTestCases (GetPlanTestCasesRequest) returns (GetPlanTestCasesResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/plantestcases"
+            post: "/v1/get/plantestcases"
             body: "*"
         };
     }
@@ -58,26 +58,10 @@ message GetPlanTestCasesResponse {
     uint32                                                              Total = 20;
 }
 
-message GetPlanTestCaseRequest {
-    string   ID        =   10;
-}
-
-message GetPlanTestCaseResponse {
-    smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
-}
-
 message DeletePlanTestCaseRequest {
     string ID        = 10;
 }
 
 message DeletePlanTestCaseResponse {
     smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
-}
-
-message DeletePlanTestCasesRequest {
-    string TestPlanID = 20;
-}
-
-message DeletePlanTestCasesResponse {
-    repeated smoketest.middleware.testplan.plantestcase.v1.PlanTestCase Info = 10;
 }

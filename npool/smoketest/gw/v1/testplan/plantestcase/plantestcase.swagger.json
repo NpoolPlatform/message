@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/delete/plantestcases": {
+    "/v1/get/plantestcases": {
       "post": {
-        "operationId": "Gateway_DeletePlanTestCases",
+        "operationId": "Gateway_GetPlanTestCases",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCasesResponse"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1GetPlanTestCasesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeletePlanTestCasesRequest"
+              "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1GetPlanTestCasesRequest"
             }
           }
         ],
@@ -199,22 +199,34 @@
         }
       }
     },
-    "v1DeletePlanTestCasesRequest": {
+    "smoketestgatewaytestplanplantestcasev1GetPlanTestCasesRequest": {
       "type": "object",
       "properties": {
         "TestPlanID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
-    "v1DeletePlanTestCasesResponse": {
+    "smoketestgatewaytestplanplantestcasev1GetPlanTestCasesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1PlanTestCase"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

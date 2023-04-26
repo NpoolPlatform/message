@@ -99,8 +99,8 @@ func local_request_Gateway_DeletePlanTestCase_0(ctx context.Context, marshaler r
 
 }
 
-func request_Gateway_DeletePlanTestCases_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeletePlanTestCasesRequest
+func request_Gateway_GetPlanTestCases_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPlanTestCasesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -111,13 +111,13 @@ func request_Gateway_DeletePlanTestCases_0(ctx context.Context, marshaler runtim
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeletePlanTestCases(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetPlanTestCases(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_DeletePlanTestCases_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeletePlanTestCasesRequest
+func local_request_Gateway_GetPlanTestCases_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPlanTestCasesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -128,7 +128,7 @@ func local_request_Gateway_DeletePlanTestCases_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeletePlanTestCases(ctx, &protoReq)
+	msg, err := server.GetPlanTestCases(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -185,18 +185,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_DeletePlanTestCases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetPlanTestCases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/plantestcases"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/GetPlanTestCases", runtime.WithHTTPPathPattern("/v1/get/plantestcases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_DeletePlanTestCases_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetPlanTestCases_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -204,7 +204,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_DeletePlanTestCases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetPlanTestCases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -289,23 +289,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_DeletePlanTestCases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_GetPlanTestCases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases", runtime.WithHTTPPathPattern("/v1/delete/plantestcases"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/GetPlanTestCases", runtime.WithHTTPPathPattern("/v1/get/plantestcases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_DeletePlanTestCases_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_GetPlanTestCases_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_DeletePlanTestCases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetPlanTestCases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -317,7 +317,7 @@ var (
 
 	pattern_Gateway_DeletePlanTestCase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "plantestcase"}, ""))
 
-	pattern_Gateway_DeletePlanTestCases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "plantestcases"}, ""))
+	pattern_Gateway_GetPlanTestCases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "plantestcases"}, ""))
 )
 
 var (
@@ -325,5 +325,5 @@ var (
 
 	forward_Gateway_DeletePlanTestCase_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_DeletePlanTestCases_0 = runtime.ForwardResponseMessage
+	forward_Gateway_GetPlanTestCases_0 = runtime.ForwardResponseMessage
 )

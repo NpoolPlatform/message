@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	CreatePlanTestCase(ctx context.Context, in *CreatePlanTestCaseRequest, opts ...grpc.CallOption) (*CreatePlanTestCaseResponse, error)
 	DeletePlanTestCase(ctx context.Context, in *DeletePlanTestCaseRequest, opts ...grpc.CallOption) (*DeletePlanTestCaseResponse, error)
-	DeletePlanTestCases(ctx context.Context, in *DeletePlanTestCasesRequest, opts ...grpc.CallOption) (*DeletePlanTestCasesResponse, error)
+	GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error)
 }
 
 type gatewayClient struct {
@@ -53,9 +53,9 @@ func (c *gatewayClient) DeletePlanTestCase(ctx context.Context, in *DeletePlanTe
 	return out, nil
 }
 
-func (c *gatewayClient) DeletePlanTestCases(ctx context.Context, in *DeletePlanTestCasesRequest, opts ...grpc.CallOption) (*DeletePlanTestCasesResponse, error) {
-	out := new(DeletePlanTestCasesResponse)
-	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases", in, out, opts...)
+func (c *gatewayClient) GetPlanTestCases(ctx context.Context, in *GetPlanTestCasesRequest, opts ...grpc.CallOption) (*GetPlanTestCasesResponse, error) {
+	out := new(GetPlanTestCasesResponse)
+	err := c.cc.Invoke(ctx, "/smoketest.gateway.testplan.plantestcase.v1.Gateway/GetPlanTestCases", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *gatewayClient) DeletePlanTestCases(ctx context.Context, in *DeletePlanT
 type GatewayServer interface {
 	CreatePlanTestCase(context.Context, *CreatePlanTestCaseRequest) (*CreatePlanTestCaseResponse, error)
 	DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error)
-	DeletePlanTestCases(context.Context, *DeletePlanTestCasesRequest) (*DeletePlanTestCasesResponse, error)
+	GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -82,8 +82,8 @@ func (UnimplementedGatewayServer) CreatePlanTestCase(context.Context, *CreatePla
 func (UnimplementedGatewayServer) DeletePlanTestCase(context.Context, *DeletePlanTestCaseRequest) (*DeletePlanTestCaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePlanTestCase not implemented")
 }
-func (UnimplementedGatewayServer) DeletePlanTestCases(context.Context, *DeletePlanTestCasesRequest) (*DeletePlanTestCasesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeletePlanTestCases not implemented")
+func (UnimplementedGatewayServer) GetPlanTestCases(context.Context, *GetPlanTestCasesRequest) (*GetPlanTestCasesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPlanTestCases not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -134,20 +134,20 @@ func _Gateway_DeletePlanTestCase_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeletePlanTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeletePlanTestCasesRequest)
+func _Gateway_GetPlanTestCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPlanTestCasesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeletePlanTestCases(ctx, in)
+		return srv.(GatewayServer).GetPlanTestCases(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/DeletePlanTestCases",
+		FullMethod: "/smoketest.gateway.testplan.plantestcase.v1.Gateway/GetPlanTestCases",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeletePlanTestCases(ctx, req.(*DeletePlanTestCasesRequest))
+		return srv.(GatewayServer).GetPlanTestCases(ctx, req.(*GetPlanTestCasesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,8 +168,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_DeletePlanTestCase_Handler,
 		},
 		{
-			MethodName: "DeletePlanTestCases",
-			Handler:    _Gateway_DeletePlanTestCases_Handler,
+			MethodName: "GetPlanTestCases",
+			Handler:    _Gateway_GetPlanTestCases_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
