@@ -258,13 +258,13 @@
         "CreatedBy": {
           "type": "string"
         },
-        "Username": {
+        "Email": {
           "type": "string"
         },
         "Executor": {
           "type": "string"
         },
-        "ExecutorUsername": {
+        "ExecutorEmail": {
           "type": "string"
         },
         "Fails": {
