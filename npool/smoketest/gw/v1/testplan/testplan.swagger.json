@@ -324,6 +324,25 @@
         "Deadline": {
           "type": "integer",
           "format": "int64"
+        },
+        "Fails": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Passes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Skips": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestResultState"
         }
       }
     },
