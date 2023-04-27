@@ -182,24 +182,11 @@
         "TestCaseID": {
           "type": "string"
         },
-        "TestCaseOutput": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "RunDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
         "TestUserID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
-        },
-        "Result": {
-          "$ref": "#/definitions/v1TestCaseResult"
         },
         "Index": {
           "type": "integer",

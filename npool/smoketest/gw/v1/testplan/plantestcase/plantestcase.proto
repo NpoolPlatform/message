@@ -41,13 +41,9 @@ service Gateway {
 message CreatePlanTestCaseRequest {
     string                   TestPlanID                                              = 10;
     string                   TestCaseID                                              = 20;
-    optional string          TestCaseOutput                                          = 30;
-    optional string          Description                                             = 40;
-    optional uint32          RunDuration                                             = 50;
-    optional string          TestUserID                                              = 60;
-    optional string          AppID                                                   = 70;
-    smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result              = 80; 
-    optional uint32          Index                                                   = 90;
+    optional string          TestUserID                                              = 30;
+    optional string          AppID                                                   = 40;
+    optional uint32          Index                                                   = 50;
 }
 
 message CreatePlanTestCaseResponse {
