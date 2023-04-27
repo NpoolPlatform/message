@@ -41,9 +41,7 @@ service Gateway {
 message CreatePlanTestCaseRequest {
     string                   TestPlanID                                              = 10;
     string                   TestCaseID                                              = 20;
-    optional string          TestUserID                                              = 30;
-    optional string          AppID                                                   = 40;
-    optional uint32          Index                                                   = 50;
+    optional uint32          Index                                                   = 30;
 }
 
 message CreatePlanTestCaseResponse {

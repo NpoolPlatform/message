@@ -182,12 +182,6 @@
         "TestCaseID": {
           "type": "string"
         },
-        "TestUserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
         "Index": {
           "type": "integer",
           "format": "int64"
