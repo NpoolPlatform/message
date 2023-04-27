@@ -55,7 +55,7 @@ message UpdatePlanTestCaseRequest {
     optional uint32          RunDuration                                             = 40;
     optional string          TestUserID                                              = 50;
     optional string          AppID                                                   = 60;
-    smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result              = 70; 
+    optional smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result     = 70; 
     optional uint32          Index                                                   = 80;
 }
 
