@@ -67,9 +67,6 @@
         "ApiID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "TestCaseType": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "Deprecated": {
           "$ref": "#/definitions/v1BoolVal"
         },
