@@ -54,8 +54,9 @@ message TestCase {
     string          Input                                             = 130;
     string          InputDesc                                         = 140;
     string          Expectation                                       = 150;
-    smoketest.middleware.testcase.v1.TestCaseType    TestCaseType        = 160;
-    bool            Deprecated                                        = 170;
+    string          OutputDesc                                        = 160;
+    smoketest.middleware.testcase.v1.TestCaseType    TestCaseType     = 170;
+    bool            Deprecated                                        = 180;
     uint32          CreatedAt                                         = 190;
     uint32          UpdatedAt                                         = 200;
 }
@@ -68,6 +69,7 @@ message CreateTestCaseRequest {
     optional string  Input                                            = 50;
     optional string  InputDesc                                        = 60;
     optional string  Expectation                                      = 70;
+    optional string  OutputDesc                                       = 80;
 }
 
 message CreateTestCaseResponse {
@@ -98,10 +100,11 @@ message UpdateTestCaseRequest {
     optional string                                     Name                = 20;
     optional string                                     Description         = 30;
     optional string                                     Expectation         = 40;
-    optional string                                     Input               = 50;
-    optional string                                     InputDesc           = 60;
-    optional smoketest.middleware.testcase.v1.TestCaseType TestCaseType        = 70;
-    optional bool                                       Deprecated          = 80;
+    optional string                                     OutputDesc          = 50;
+    optional string                                     Input               = 60;
+    optional string                                     InputDesc           = 70;
+    optional smoketest.middleware.testcase.v1.TestCaseType TestCaseType     = 80;
+    optional bool                                       Deprecated          = 90;
 }
 
 message UpdateTestCaseResponse {
