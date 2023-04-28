@@ -181,6 +181,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"expectation\""
         },
+        "OutputDesc": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"output_desc\""
+        },
         "Input": {
           "type": "string",
           "title": "@inject_tag: sql:\"input\""
@@ -240,6 +244,9 @@
           "type": "string"
         },
         "Expectation": {
+          "type": "string"
+        },
+        "OutputDesc": {
           "type": "string"
         },
         "TestCaseType": {
