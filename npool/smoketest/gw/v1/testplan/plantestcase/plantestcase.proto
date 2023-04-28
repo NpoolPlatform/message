@@ -42,6 +42,7 @@ message CreatePlanTestCaseRequest {
     string                   TestPlanID                                              = 10;
     string                   TestCaseID                                              = 20;
     optional uint32          Index                                                   = 30;
+    optional string          Input                                                   = 40;
 }
 
 message CreatePlanTestCaseResponse {
@@ -50,13 +51,14 @@ message CreatePlanTestCaseResponse {
 
 message UpdatePlanTestCaseRequest {
     string                   ID                                                      = 10;
-    optional string          TestCaseOutput                                          = 20;
+    optional string          Output                                                  = 20;
     optional string          Description                                             = 30;
     optional uint32          RunDuration                                             = 40;
     optional string          TestUserID                                              = 50;
     optional string          AppID                                                   = 60;
     optional smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result     = 70; 
     optional uint32          Index                                                   = 80;
+    optional string          Input                                                   = 90;
 }
 
 message UpdatePlanTestCaseResponse {
