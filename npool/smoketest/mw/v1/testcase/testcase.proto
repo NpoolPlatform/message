@@ -31,19 +31,21 @@ message TestCase {
     string          ApiID                                             = 60;
     // @inject_tag: sql:"expectation"
     string          Expectation                                       = 70;
+    // @inject_tag: sql:"output_desc"
+    string          OutputDesc                                        = 80;
     // @inject_tag: sql:"input"
-    string          Input                                             = 80;
+    string          Input                                             = 90;
     // @inject_tag: sql:"input_desc"
-    string          InputDesc                                         = 90;
+    string          InputDesc                                         = 100;
     // @inject_tag: sql:"test_case_type"
-    string          TestCaseTypeStr                                   = 100;
-    TestCaseType    TestCaseType        = 110;
+    string          TestCaseTypeStr                                   = 110;
+    TestCaseType    TestCaseType                                      = 120;
     // @inject_tag: sql:"deprecated"
-    bool            Deprecated                                        = 120;
+    bool            Deprecated                                        = 130;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                                         = 130;
+    uint32          CreatedAt                                         = 140;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                                         = 140;
+    uint32          UpdatedAt                                         = 150;
 }
 
 enum TestCaseType {
@@ -62,15 +64,15 @@ message TestCaseReq {
     optional string          Input                     = 70;
     optional string          InputDesc                 = 80;
     optional string          Expectation               = 90;
-    optional TestCaseType    TestCaseType              = 100;
-    optional bool            Deprecated                = 110;
+    optional string          OutputDesc                = 100;
+    optional TestCaseType    TestCaseType              = 110;
+    optional bool            Deprecated                = 120;
 }
 
 message Conds {
     optional npool.v1.StringVal      ID                 = 10;
     optional npool.v1.StringVal      ModuleID           = 20;
     optional npool.v1.StringVal      ApiID              = 30;
-    optional npool.v1.StringVal      TestCaseType       = 40;
     optional npool.v1.BoolVal        Deprecated         = 50;
     optional npool.v1.StringSliceVal IDs                = 60;
 }

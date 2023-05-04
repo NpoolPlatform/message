@@ -185,6 +185,9 @@
         "Index": {
           "type": "integer",
           "format": "int64"
+        },
+        "Input": {
+          "type": "string"
         }
       }
     },
@@ -249,7 +252,7 @@
         "ID": {
           "type": "string"
         },
-        "TestCaseOutput": {
+        "Output": {
           "type": "string"
         },
         "Description": {
@@ -271,6 +274,9 @@
         "Index": {
           "type": "integer",
           "format": "int64"
+        },
+        "Input": {
+          "type": "string"
         }
       }
     },
@@ -297,9 +303,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"test_case_id\""
         },
-        "TestCaseOutput": {
+        "Input": {
           "type": "string",
-          "title": "@inject_tag: sql:\"test_case_output\""
+          "title": "@inject_tag: sql:\"input\""
+        },
+        "Output": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"output\""
         },
         "Description": {
           "type": "string",

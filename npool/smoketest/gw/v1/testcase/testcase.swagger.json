@@ -196,6 +196,9 @@
         },
         "Expectation": {
           "type": "string"
+        },
+        "OutputDesc": {
+          "type": "string"
         }
       }
     },
@@ -302,6 +305,9 @@
         "Expectation": {
           "type": "string"
         },
+        "OutputDesc": {
+          "type": "string"
+        },
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
@@ -331,6 +337,9 @@
           "type": "string"
         },
         "Expectation": {
+          "type": "string"
+        },
+        "OutputDesc": {
           "type": "string"
         },
         "Input": {
