@@ -53,13 +53,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc BanApp (BanAppRequest) returns (BanAppResponse) {
-        option (google.api.http) = {
-            post: "/v1/ban/app"
-            body: "*"
-        };
-    }
 }
 
 message CreateAppRequest {
@@ -140,12 +133,3 @@ message BanAppResponse {
     appuser.middleware.app.v1.App Info = 10;
 }
 
-message BanAppRequest {
-    string ID         = 10;
-    bool   Banned     = 20;
-    string BanMessage = 30;
-}
-
-message BanAppResponse {
-    appuser.middleware.app.v1.App Info = 10;
-}

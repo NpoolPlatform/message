@@ -17,41 +17,6 @@
   ],
   "paths": {
     "/v1/ban/app": {
-<<<<<<< HEAD
-=======
-      "post": {
-        "operationId": "Gateway_BanApp",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1BanAppResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1BanAppRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/create/app": {
->>>>>>> Move login history to middleware
       "post": {
         "operationId": "Gateway_BanApp",
         "responses": {
@@ -115,7 +80,6 @@
         ]
       }
     },
-<<<<<<< HEAD
     "/v1/delete/app": {
       "post": {
         "operationId": "Gateway_DeleteApp",
@@ -123,11 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1DeleteAppResponse"
-=======
-              "$ref": "#/definitions/v1GetRecaptchasResponse"
->>>>>>> Use basetype
             }
           },
           "default": {
@@ -143,11 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1DeleteAppRequest"
-=======
-              "$ref": "#/definitions/v1GetRecaptchasRequest"
->>>>>>> Use basetype
             }
           }
         ],
@@ -188,15 +144,7 @@
         ]
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "/v1/get/apps": {
-=======
-    "/v1/get/user/apps": {
->>>>>>> Remove old protobuf
-=======
-    "/v1/get/userapps": {
->>>>>>> Add conds to appuser middleware
       "post": {
         "summary": "Super admin api",
         "operationId": "Gateway_GetApps",
@@ -204,11 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1GetAppsResponse"
-=======
-              "$ref": "#/definitions/v1GetUserAppsResponse"
->>>>>>> Add conds to appuser middleware
             }
           },
           "default": {
@@ -224,11 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-<<<<<<< HEAD
               "$ref": "#/definitions/appusergatewayappv1GetAppsRequest"
-=======
-              "$ref": "#/definitions/v1GetUserAppsRequest"
->>>>>>> Add conds to appuser middleware
             }
           }
         ],
@@ -237,8 +177,6 @@
         ]
       }
     },
-=======
->>>>>>> Remove get user app
     "/v1/update/app": {
       "post": {
         "operationId": "Gateway_UpdateApp",
@@ -313,15 +251,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -383,45 +313,6 @@
       "properties": {
         "Offset": {
           "type": "integer",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-          "format": "int32",
-          "title": "Permissioned by path"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appusergatewayappv1GetAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1GetUserAppsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Offset": {
-          "type": "integer",
->>>>>>> Use basetype
-=======
->>>>>>> Add conds to appuser middleware
           "format": "int32"
         },
         "Limit": {
@@ -485,15 +376,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/appcontrolv2CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -605,18 +488,7 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
-<<<<<<< HEAD
-=======
         },
-<<<<<<< HEAD
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
->>>>>>> Use basetype
-        },
-=======
->>>>>>> Remove bool int
         "KycEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kyc_enable\""
@@ -639,15 +511,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -670,14 +534,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "v1BanAppRequest": {
-=======
-    "basetypesv1CreateInvitationCodeWhen": {
-=======
-=======
     "v1BanAppRequest": {
       "type": "object",
       "properties": {
@@ -700,9 +556,7 @@
         }
       }
     },
->>>>>>> Move login history to middleware
     "v1CreateInvitationCodeWhen": {
->>>>>>> Remove old protobuf
       "type": "string",
       "enum": [
         "DefaultWhen",
@@ -712,48 +566,6 @@
       ],
       "default": "DefaultWhen"
     },
-<<<<<<< HEAD
-    "v1GetUserAppsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
-    },
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -777,143 +589,6 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
-<<<<<<< HEAD
-    },
-    "protobufAny": {
->>>>>>> Use basetype
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Banned": {
-          "type": "boolean"
-        },
-        "BanMessage": {
-          "type": "string"
-<<<<<<< HEAD:npool/appuser/gw/v1/app/app.swagger.json
-=======
-        },
-        "LoginClientIP": {
-          "type": "string"
-        },
-        "LoginClientUserAgent": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "InvitationCode": {
-          "type": "string"
-        },
-        "LoginVerified": {
-          "type": "boolean"
-        },
-        "KycStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"kyc_state\""
-        },
-        "State": {
-          "$ref": "#/definitions/v1KycState"
-        },
-        "Kol": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kol\""
-        },
-        "KolConfirmed": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kol_confirmed\""
-        },
-        "ActionCredits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"action_credits\""
->>>>>>> Move role to middleware:npool/appuser/gw/v1/ban/ban.swagger.json
-        }
-      }
-    },
-    "v1BanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1App"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "v1CreateInvitationCodeWhen": {
-=======
-    "v1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "v1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-<<<<<<< HEAD:npool/appuser/gw/v1/app/app.swagger.json
-    "v1RecaptchaMethod": {
->>>>>>> Use basetype
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaMethod",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaMethod"
-    },
-=======
->>>>>>> Remove get user app
-    "v1RecaptchaMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaMethod",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaMethod"
-    },
-    "v1SignMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethod",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethod"
-=======
->>>>>>> Remove old protobuf
-=======
-    "v2BanAppUserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
->>>>>>> Move role to middleware:npool/appuser/gw/v1/ban/ban.swagger.json
     }
   }
 }

@@ -17,37 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "basetypesv1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
->>>>>>> Add user conds
-=======
->>>>>>> Move role to middleware
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -75,8 +44,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -97,35 +64,6 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-=======
-    "userv1Conds": {
-=======
-    "v1Conds": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "PhoneNO": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EmailAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ImportFromApp": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-<<<<<<< HEAD
-          "$ref": "#/definitions/basetypesv1StringSliceVal"
->>>>>>> Add user conds
-=======
-          "$ref": "#/definitions/v1StringSliceVal"
->>>>>>> Move role to middleware
         }
       }
     },
@@ -145,10 +83,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist api for user
     "v1ExistUserCondsResponse": {
       "type": "object",
       "properties": {
@@ -165,11 +99,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Remove get many api
-=======
->>>>>>> Add exist api for user
     "v1GetUserResponse": {
       "type": "object",
       "properties": {

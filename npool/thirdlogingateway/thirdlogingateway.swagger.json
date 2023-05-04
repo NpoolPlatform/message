@@ -239,7 +239,6 @@
           "ThirdLoginGateway"
         ]
       }
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
     },
     "/v1/get/third/parties": {
       "post": {
@@ -257,114 +256,6 @@
               "$ref": "#/definitions/rpcStatus"
             }
           }
-=======
-    }
-  },
-  "definitions": {
-    "banv1CreateBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "banv1CreateBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1App"
-        }
-      }
-    },
-    "banv1DeleteBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "banv1DeleteBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanApp"
-        }
-      }
-    },
-    "banv1UpdateBanAppRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2BanAppReq",
-          "title": "Permissioned by path"
-        }
-      }
-    },
-    "banv1UpdateBanAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1App"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1App": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Base info\n@inject_tag: sql:\"id\""
-        },
-        "CreatedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"created_by\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Logo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"logo\""
-        },
-        "Description": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"description\""
->>>>>>> Remove old protobuf:npool/appuser/gw/v1/ban/ban.swagger.json
         },
         "parameters": [
           {
@@ -553,48 +444,11 @@
         "ID": {
           "type": "string"
         },
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
         "AppID": {
           "type": "string"
         },
         "ThirdPartyID": {
           "type": "string"
-=======
-        "RecaptchaMethodStr": {
-          "type": "string",
-          "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
-        },
-        "RecaptchaMethod": {
-          "$ref": "#/definitions/v1RecaptchaMethod"
-        },
-        "KycEnable": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kyc_enable\""
-        },
-        "SigninVerifyEnable": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"signin_verify_enable\""
-        },
-        "InvitationCodeMust": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"invitation_code_must\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "CreateInvitationCodeWhenStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"create_invitation_code_when\""
-        },
-        "CreateInvitationCodeWhen": {
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
->>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf:npool/appuser/gw/v1/ban/ban.swagger.json
         },
         "AppKey": {
           "type": "string"
@@ -610,7 +464,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
     "v1CreateAppAuthRequest": {
       "type": "object",
       "properties": {
@@ -671,21 +524,7 @@
         }
       }
     },
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
     "v1CreateAuthsRequest": {
-=======
-    "basetypesv1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "protobufAny": {
->>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
       "type": "object",
       "properties": {
         "AppID": {
@@ -711,9 +550,6 @@
       }
     },
     "v1CreateThirdPartyRequest": {
-=======
-    "v1CreateAppBanUserRequest": {
->>>>>>> Remove old protobuf:npool/appuser/gw/v1/ban/ban.swagger.json
       "type": "object",
       "properties": {
         "Info": {
@@ -811,10 +647,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
-=======
->>>>>>> Move role to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -826,19 +658,6 @@
       "default": "DefaultState"
     },
     "v1LoginRequest": {
-=======
-    "v1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "v1DeleteBanUserRequest": {
->>>>>>> Remove old protobuf:npool/appuser/gw/v1/ban/ban.swagger.json
       "type": "object",
       "properties": {
         "Code": {
@@ -859,14 +678,6 @@
           "$ref": "#/definitions/v1User"
         }
       }
-    },
-    "v1RecaptchaMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaMethod",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaMethod"
     },
     "v1SignMethod": {
       "type": "string",
@@ -1105,22 +916,6 @@
           "type": "string"
         }
       }
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/thirdlogingateway/thirdlogingateway.swagger.json
-=======
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
->>>>>>> Use basetype:npool/appuser/gw/v1/ban/ban.swagger.json
-=======
->>>>>>> Move role to middleware
     }
   }
 }

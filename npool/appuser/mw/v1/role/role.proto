@@ -101,8 +101,8 @@ message GetRolesRequest {
     int32  Limit  = 30;
 }
 
-message CreateRoleResponse {
-    Role Info = 10;
+message GetRolesResponse {
+    repeated Role Infos = 10;
 }
 
 message ExistRoleRequest {

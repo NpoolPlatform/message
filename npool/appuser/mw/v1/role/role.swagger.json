@@ -44,10 +44,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Query with conditions
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -82,24 +78,12 @@
         },
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-<<<<<<< HEAD
-=======
->>>>>>> Query with conditions
-=======
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
->>>>>>> Add ids support
-=======
         },
         "AppIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
->>>>>>> Add appids query for role
         }
       }
     },
@@ -115,7 +99,6 @@
       "type": "object",
       "properties": {
         "Infos": {
-<<<<<<< HEAD
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Role"
@@ -123,55 +106,6 @@
         }
       }
     },
-    "v1DeleteRoleResponse": {
-=======
-    "v1CreateRoleResponse": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "v1ExistRoleCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-=======
-=======
-    "v1CreateRolesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-=======
->>>>>>> Use multiplex type
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Role"
-          }
-        }
-      }
-    },
->>>>>>> Add generate roles api
     "v1DeleteRoleResponse": {
       "type": "object",
       "properties": {
@@ -200,7 +134,6 @@
       "type": "object",
       "properties": {
         "Info": {
->>>>>>> Move role to middleware
           "$ref": "#/definitions/v1Role"
         }
       }
@@ -213,10 +146,6 @@
           "items": {
             "$ref": "#/definitions/v1Role"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -292,10 +221,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Query with conditions
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -321,11 +246,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware
-=======
->>>>>>> Query with conditions
     "v1UpdateRoleResponse": {
       "type": "object",
       "properties": {

@@ -99,54 +99,6 @@
       }
     },
     "v1AuthReq": {
-<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Resource": {
-          "type": "string"
-        },
-        "Method": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RoleID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Resource": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Method": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CreateAuthResponse": {
-=======
       "type": "object",
       "properties": {
         "ID": {
@@ -200,27 +152,6 @@
         }
       }
     },
-    "v1CreateAuthsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Auth"
-          }
-        }
-      }
-    },
-    "v1DeleteAuthResponse": {
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-        }
-      }
-    },
-<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
     "v1CreateAuthsResponse": {
       "type": "object",
       "properties": {
@@ -264,24 +195,6 @@
         }
       }
     },
-=======
-    "v1ExistAuthResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetAuthResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-        }
-      }
-    },
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
     "v1GetAuthsResponse": {
       "type": "object",
       "properties": {
@@ -296,15 +209,7 @@
           "format": "int64"
         }
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     },
-<<<<<<< HEAD:npool/appuser/mw/v1/authing/auth/auth.swagger.json
-=======
-    },
->>>>>>> Support conds in auth
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -313,32 +218,8 @@
         },
         "Value": {
           "type": "string"
-<<<<<<< HEAD
-=======
-=======
-    },
->>>>>>> Support update auth
-    "v1UpdateAuthResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Auth"
-<<<<<<< HEAD
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth.swagger.json
         }
       }
-=======
->>>>>>> Remove update api
-=======
-        }
-      }
->>>>>>> Support update auth
-=======
->>>>>>> Remove update
-=======
-        }
-      }
->>>>>>> Support conds in auth
     }
   }
 }

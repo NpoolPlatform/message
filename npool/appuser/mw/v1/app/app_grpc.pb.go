@@ -27,16 +27,8 @@ type MiddlewareClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
 	ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error)
 	ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error)
-=======
->>>>>>> Add conds to appuser middleware
-=======
-	ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error)
-	ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error)
->>>>>>> Add exist app api
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
@@ -93,10 +85,6 @@ func (c *middlewareClient) GetApps(ctx context.Context, in *GetAppsRequest, opts
 	return out, nil
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist app api
 func (c *middlewareClient) ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error) {
 	out := new(ExistAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/ExistApp", in, out, opts...)
@@ -115,11 +103,6 @@ func (c *middlewareClient) ExistAppConds(ctx context.Context, in *ExistAppCondsR
 	return out, nil
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> Add conds to appuser middleware
-=======
->>>>>>> Add exist app api
 func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/DeleteApp", in, out, opts...)
@@ -138,16 +121,8 @@ type MiddlewareServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
 	ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error)
 	ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error)
-=======
->>>>>>> Add conds to appuser middleware
-=======
-	ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error)
-	ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error)
->>>>>>> Add exist app api
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -171,21 +146,12 @@ func (UnimplementedMiddlewareServer) GetApp(context.Context, *GetAppRequest) (*G
 func (UnimplementedMiddlewareServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist app api
 func (UnimplementedMiddlewareServer) ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistApp not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppConds not implemented")
 }
-<<<<<<< HEAD
-=======
->>>>>>> Add conds to appuser middleware
-=======
->>>>>>> Add exist app api
 func (UnimplementedMiddlewareServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
@@ -292,10 +258,6 @@ func _Middleware_GetApps_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist app api
 func _Middleware_ExistApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAppRequest)
 	if err := dec(in); err != nil {
@@ -332,11 +294,6 @@ func _Middleware_ExistAppConds_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> Add conds to appuser middleware
-=======
->>>>>>> Add exist app api
 func _Middleware_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -383,10 +340,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetApps_Handler,
 		},
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist app api
 			MethodName: "ExistApp",
 			Handler:    _Middleware_ExistApp_Handler,
 		},
@@ -395,11 +348,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_ExistAppConds_Handler,
 		},
 		{
-<<<<<<< HEAD
-=======
->>>>>>> Add conds to appuser middleware
-=======
->>>>>>> Add exist app api
 			MethodName: "DeleteApp",
 			Handler:    _Middleware_DeleteApp_Handler,
 		},

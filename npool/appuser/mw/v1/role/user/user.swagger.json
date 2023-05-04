@@ -1,15 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD
     "title": "npool/appuser/mw/v1/role/user/user.proto",
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "title": "npool/notif/mgr/v1/announcement/user/user.proto",
-=======
-    "title": "npool/appuser/mw/v1/role/user/user.proto",
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
     "version": "version not set"
   },
   "tags": [
@@ -52,10 +44,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Support query genesis user
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -67,34 +55,21 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware
-=======
->>>>>>> Support query genesis user
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-<<<<<<< HEAD
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "RoleID": {
-=======
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "AppID": {
->>>>>>> Move role to middleware
           "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-<<<<<<< HEAD
         "AppIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
@@ -103,25 +78,10 @@
         },
         "Genesis": {
           "$ref": "#/definitions/v1BoolVal"
-<<<<<<< HEAD
         }
       }
     },
     "v1CreateUserResponse": {
-=======
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-=======
->>>>>>> Support query genesis user
-        }
-      }
-    },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1CountUsersResponse": {
-=======
-    "v1CreateUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -129,47 +89,15 @@
         }
       }
     },
-<<<<<<< HEAD
     "v1DeleteUserResponse": {
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1CreateUserResponse": {
-=======
-    "v1DeleteUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-        }
-      }
-    },
-    "v1CreateUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-        }
-      }
-    },
-    "v1DeleteUserResponse": {
-=======
->>>>>>> Move role to middleware
         }
       }
     },
     "v1GetUserResponse": {
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -177,15 +105,7 @@
         }
       }
     },
-<<<<<<< HEAD
     "v1GetUsersResponse": {
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1ExistUserCondsResponse": {
-=======
-    "v1GetUsersResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Infos": {
@@ -200,15 +120,7 @@
         }
       }
     },
-<<<<<<< HEAD
     "v1StringSliceVal": {
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1ExistUserResponse": {
-=======
-    "v1StringSliceVal": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Op": {
@@ -222,20 +134,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1GetUserOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GetUserResponse": {
-=======
->>>>>>> Move role to middleware
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -248,10 +146,6 @@
       }
     },
     "v1UpdateUserResponse": {
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Info": {
@@ -259,47 +153,21 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1GetUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-=======
->>>>>>> Move role to middleware
     "v1User": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
         },
         "CreatedBy": {
           "type": "string",
           "title": "@inject_tag: sql:\"created_by\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Return role id in role user
         "RoleID": {
           "type": "string",
           "title": "@inject_tag: sql:\"role_id\""
         },
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware
-=======
->>>>>>> Return role id in role user
         "Role": {
           "type": "string",
           "title": "@inject_tag: sql:\"role\""
@@ -308,25 +176,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Default": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"default\""
         },
-=======
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
-=======
->>>>>>> Remove int for bool
-        "Default": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"default\""
-        },
->>>>>>> Move role to middleware
         "AppID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
@@ -356,97 +209,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"phone_no\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Genesis": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"genesis\""
-        }
-      }
-    },
-    "v1UserReq": {
-      "type": "object",
-      "properties": {
-=======
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
-=======
->>>>>>> Remove int for bool
-        "Genesis": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"genesis\""
-        }
-      }
-    },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1User": {
-      "type": "object",
-      "properties": {
-=======
-    "v1UserReq": {
-      "type": "object",
-      "properties": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-<<<<<<< HEAD
-        "RoleID": {
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-        "UserID": {
-          "type": "string"
-        },
-        "AnnouncementID": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -457,23 +222,13 @@
           "type": "string"
         },
         "AppID": {
-=======
+          "type": "string"
+        },
         "RoleID": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
           "type": "string"
         },
         "UserID": {
           "type": "string"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-        },
-        "AnnouncementID": {
-          "type": "string"
-=======
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
->>>>>>> Move role to middleware
         }
       }
     }

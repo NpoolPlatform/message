@@ -2,21 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 // source: npool/appuser/mw/v1/user/login/history/history.proto
 
 package history
-=======
-// source: npool/appuser/mw/v1/authing/auth/auth.proto
-
-package auth
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-// source: npool/appuser/mw/v1/user/login/history/history.proto
-
-package history
->>>>>>> Move login history to middleware
 
 import (
 	context "context"
@@ -34,24 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 	CreateHistory(ctx context.Context, in *CreateHistoryRequest, opts ...grpc.CallOption) (*CreateHistoryResponse, error)
 	GetHistory(ctx context.Context, in *GetHistoryRequest, opts ...grpc.CallOption) (*GetHistoryResponse, error)
 	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
-=======
-	CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error)
-	UpdateAuth(ctx context.Context, in *UpdateAuthRequest, opts ...grpc.CallOption) (*UpdateAuthResponse, error)
-	ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error)
-	GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error)
-	GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error)
-	DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-	CreateHistory(ctx context.Context, in *CreateHistoryRequest, opts ...grpc.CallOption) (*CreateHistoryResponse, error)
-	GetHistory(ctx context.Context, in *GetHistoryRequest, opts ...grpc.CallOption) (*GetHistoryResponse, error)
-	GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error)
->>>>>>> Move login history to middleware
 }
 
 type middlewareClient struct {
@@ -62,90 +35,27 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func (c *middlewareClient) CreateHistory(ctx context.Context, in *CreateHistoryRequest, opts ...grpc.CallOption) (*CreateHistoryResponse, error) {
 	out := new(CreateHistoryResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/CreateHistory", in, out, opts...)
-=======
-func (c *middlewareClient) CreateAuth(ctx context.Context, in *CreateAuthRequest, opts ...grpc.CallOption) (*CreateAuthResponse, error) {
-	out := new(CreateAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/CreateAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateAuth(ctx context.Context, in *UpdateAuthRequest, opts ...grpc.CallOption) (*UpdateAuthResponse, error) {
-	out := new(UpdateAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/UpdateAuth", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistAuth(ctx context.Context, in *ExistAuthRequest, opts ...grpc.CallOption) (*ExistAuthResponse, error) {
-	out := new(ExistAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/ExistAuth", in, out, opts...)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-func (c *middlewareClient) CreateHistory(ctx context.Context, in *CreateHistoryRequest, opts ...grpc.CallOption) (*CreateHistoryResponse, error) {
-	out := new(CreateHistoryResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/CreateHistory", in, out, opts...)
->>>>>>> Move login history to middleware
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func (c *middlewareClient) GetHistory(ctx context.Context, in *GetHistoryRequest, opts ...grpc.CallOption) (*GetHistoryResponse, error) {
 	out := new(GetHistoryResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/GetHistory", in, out, opts...)
-=======
-func (c *middlewareClient) GetAuth(ctx context.Context, in *GetAuthRequest, opts ...grpc.CallOption) (*GetAuthResponse, error) {
-	out := new(GetAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/GetAuth", in, out, opts...)
-=======
-func (c *middlewareClient) GetHistory(ctx context.Context, in *GetHistoryRequest, opts ...grpc.CallOption) (*GetHistoryResponse, error) {
-	out := new(GetHistoryResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/GetHistory", in, out, opts...)
->>>>>>> Move login history to middleware
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-<<<<<<< HEAD
-func (c *middlewareClient) GetAuths(ctx context.Context, in *GetAuthsRequest, opts ...grpc.CallOption) (*GetAuthsResponse, error) {
-	out := new(GetAuthsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/GetAuths", in, out, opts...)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
 	out := new(GetHistoriesResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/GetHistories", in, out, opts...)
-=======
-func (c *middlewareClient) DeleteAuth(ctx context.Context, in *DeleteAuthRequest, opts ...grpc.CallOption) (*DeleteAuthResponse, error) {
-	out := new(DeleteAuthResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.authing.auth.v1.Middleware/DeleteAuth", in, out, opts...)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
-	out := new(GetHistoriesResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.user.login.history.v1.Middleware/GetHistories", in, out, opts...)
->>>>>>> Move login history to middleware
 	if err != nil {
 		return nil, err
 	}
@@ -156,24 +66,9 @@ func (c *middlewareClient) GetHistories(ctx context.Context, in *GetHistoriesReq
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 	CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error)
 	GetHistory(context.Context, *GetHistoryRequest) (*GetHistoryResponse, error)
 	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
-=======
-	CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error)
-	UpdateAuth(context.Context, *UpdateAuthRequest) (*UpdateAuthResponse, error)
-	ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error)
-	GetAuth(context.Context, *GetAuthRequest) (*GetAuthResponse, error)
-	GetAuths(context.Context, *GetAuthsRequest) (*GetAuthsResponse, error)
-	DeleteAuth(context.Context, *DeleteAuthRequest) (*DeleteAuthResponse, error)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-	CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error)
-	GetHistory(context.Context, *GetHistoryRequest) (*GetHistoryResponse, error)
-	GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error)
->>>>>>> Move login history to middleware
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -181,35 +76,14 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func (UnimplementedMiddlewareServer) CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateHistory not implemented")
-=======
-func (UnimplementedMiddlewareServer) CreateAuth(context.Context, *CreateAuthRequest) (*CreateAuthResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAuth not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateAuth(context.Context, *UpdateAuthRequest) (*UpdateAuthResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAuth not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistAuth(context.Context, *ExistAuthRequest) (*ExistAuthResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistAuth not implemented")
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-func (UnimplementedMiddlewareServer) CreateHistory(context.Context, *CreateHistoryRequest) (*CreateHistoryResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateHistory not implemented")
->>>>>>> Move login history to middleware
 }
 func (UnimplementedMiddlewareServer) GetHistory(context.Context, *GetHistoryRequest) (*GetHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistory not implemented")
 }
-<<<<<<< HEAD
-func (UnimplementedMiddlewareServer) DeleteAuth(context.Context, *DeleteAuthRequest) (*DeleteAuthResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAuth not implemented")
-=======
 func (UnimplementedMiddlewareServer) GetHistories(context.Context, *GetHistoriesRequest) (*GetHistoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHistories not implemented")
->>>>>>> Move login history to middleware
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -224,72 +98,8 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 func _Middleware_CreateHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateHistoryRequest)
-=======
-func _Middleware_CreateAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAuthRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAuth(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/CreateAuth",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAuth(ctx, req.(*CreateAuthRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAuthRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateAuth(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/UpdateAuth",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateAuth(ctx, req.(*UpdateAuthRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistAuthRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistAuth(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/ExistAuth",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistAuth(ctx, req.(*ExistAuthRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAuthRequest)
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-func _Middleware_CreateHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateHistoryRequest)
->>>>>>> Move login history to middleware
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -298,15 +108,7 @@ func _Middleware_CreateHistory_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 		FullMethod: "/appuser.middleware.user.login.history.v1.Middleware/CreateHistory",
-=======
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/GetAuth",
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-		FullMethod: "/appuser.middleware.user.login.history.v1.Middleware/CreateHistory",
->>>>>>> Move login history to middleware
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateHistory(ctx, req.(*CreateHistoryRequest))
@@ -324,15 +126,7 @@ func _Middleware_GetHistory_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
 		FullMethod: "/appuser.middleware.user.login.history.v1.Middleware/GetHistory",
-=======
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/GetAuths",
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
-		FullMethod: "/appuser.middleware.user.login.history.v1.Middleware/GetHistory",
->>>>>>> Move login history to middleware
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistory(ctx, req.(*GetHistoryRequest))
@@ -340,31 +134,12 @@ func _Middleware_GetHistory_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
-func _Middleware_DeleteAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAuthRequest)
-=======
 func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetHistoriesRequest)
->>>>>>> Move login history to middleware
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-<<<<<<< HEAD
-		return srv.(MiddlewareServer).DeleteAuth(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
-		FullMethod: "/appuser.middleware.user.login.history.v1.Middleware/GetHistories",
-=======
-		FullMethod: "/appuser.middleware.authing.auth.v1.Middleware/DeleteAuth",
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteAuth(ctx, req.(*DeleteAuthRequest))
-=======
 		return srv.(MiddlewareServer).GetHistories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -373,7 +148,6 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetHistories(ctx, req.(*GetHistoriesRequest))
->>>>>>> Move login history to middleware
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -382,62 +156,22 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
-=======
->>>>>>> Move login history to middleware
 	ServiceName: "appuser.middleware.user.login.history.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateHistory",
 			Handler:    _Middleware_CreateHistory_Handler,
-<<<<<<< HEAD
-=======
-	ServiceName: "appuser.middleware.authing.auth.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateAuth",
-			Handler:    _Middleware_CreateAuth_Handler,
-		},
-		{
-			MethodName: "UpdateAuth",
-			Handler:    _Middleware_UpdateAuth_Handler,
-		},
-		{
-			MethodName: "ExistAuth",
-			Handler:    _Middleware_ExistAuth_Handler,
-		},
-		{
-			MethodName: "GetAuth",
-			Handler:    _Middleware_GetAuth_Handler,
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
->>>>>>> Move login history to middleware
 		},
 		{
 			MethodName: "GetHistory",
 			Handler:    _Middleware_GetHistory_Handler,
 		},
 		{
-<<<<<<< HEAD
-			MethodName: "DeleteAuth",
-			Handler:    _Middleware_DeleteAuth_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-<<<<<<< HEAD:npool/appuser/mw/v1/user/login/history/history_grpc.pb.go
-	Metadata: "npool/appuser/mw/v1/user/login/history/history.proto",
-=======
-	Metadata: "npool/appuser/mw/v1/authing/auth/auth.proto",
->>>>>>> Refactor authing:npool/appuser/mw/v1/authing/auth/auth_grpc.pb.go
-=======
 			MethodName: "GetHistories",
 			Handler:    _Middleware_GetHistories_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/appuser/mw/v1/user/login/history/history.proto",
->>>>>>> Move login history to middleware
 }

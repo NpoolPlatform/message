@@ -332,18 +332,7 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
-<<<<<<< HEAD
-=======
         },
-<<<<<<< HEAD
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
->>>>>>> Use basetype
-        },
-=======
->>>>>>> Remove bool int
         "KycEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kyc_enable\""
@@ -366,15 +355,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -397,49 +378,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "basetypesv1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
->>>>>>> Use basetype
-=======
->>>>>>> Remove old protobuf
     "v1Auth": {
       "type": "object",
       "properties": {
@@ -622,10 +560,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Move role to middleware
     "v1KycState": {
       "type": "string",
       "enum": [
@@ -636,11 +570,6 @@
       ],
       "default": "DefaultState"
     },
-<<<<<<< HEAD
-=======
->>>>>>> Use basetype
-=======
->>>>>>> Move role to middleware
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -891,22 +820,6 @@
           "title": "@inject_tag: sql:\"action_credits\""
         }
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
->>>>>>> Use basetype
-=======
->>>>>>> Move role to middleware
     }
   }
 }

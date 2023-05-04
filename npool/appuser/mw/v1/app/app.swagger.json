@@ -104,18 +104,7 @@
         },
         "RecaptchaMethod": {
           "$ref": "#/definitions/v1RecaptchaMethod"
-<<<<<<< HEAD
-=======
         },
-<<<<<<< HEAD
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
->>>>>>> Use basetype
-        },
-=======
->>>>>>> Remove bool int
         "KycEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"kyc_enable\""
@@ -138,15 +127,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -222,15 +203,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "$ref": "#/definitions/v1CreateInvitationCodeWhen"
-=======
-          "$ref": "#/definitions/basetypesv1CreateInvitationCodeWhen"
->>>>>>> Use basetype
-=======
-          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
->>>>>>> Remove old protobuf
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -247,10 +220,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add conds to appuser middleware
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -260,18 +229,7 @@
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "CreatedBy": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Name": {
-=======
-        "UserID": {
->>>>>>> Add conds to appuser middleware
-=======
-        "CreatedBy": {
->>>>>>> Support created by
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
@@ -279,11 +237,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "v1CreateAppResponse": {
-=======
-=======
->>>>>>> Add conds to appuser middleware
     "v1CreateAppResponse": {
       "type": "object",
       "properties": {
@@ -338,98 +291,10 @@
       }
     },
     "v1GetAppResponse": {
->>>>>>> Remove old protobuf
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1App"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "v1CreateAppsResponse": {
-=======
-    "v1GetAppsResponse": {
->>>>>>> Remove old protobuf
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "v1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "v1DeleteAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1App"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "v1ExistAppCondsResponse": {
-=======
-    "basetypesv1CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "protobufAny": {
->>>>>>> Use basetype
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1App"
-=======
-    "v1GetManyAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
->>>>>>> Remove old protobuf
         }
       }
     },
@@ -448,8 +313,6 @@
         }
       }
     },
-=======
->>>>>>> Add conds to appuser middleware
     "v1RecaptchaMethod": {
       "type": "string",
       "enum": [
@@ -473,35 +336,6 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
-<<<<<<< HEAD
-<<<<<<< HEAD
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-=======
->>>>>>> Remove old protobuf
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -535,11 +369,6 @@
           "$ref": "#/definitions/v1App"
         }
       }
-<<<<<<< HEAD
-=======
->>>>>>> Use basetype
-=======
->>>>>>> Remove old protobuf
     }
   }
 }

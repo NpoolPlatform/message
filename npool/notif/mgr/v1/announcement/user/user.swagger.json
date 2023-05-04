@@ -1,16 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
     "title": "npool/notif/mgr/v1/announcement/user/user.proto",
-=======
-    "title": "npool/appuser/mw/v1/role/user/user.proto",
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -68,28 +64,20 @@
         }
       }
     },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
     "v1CountUsersResponse": {
-=======
-    "v1CreateUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1User"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
     "v1CreateUserResponse": {
-=======
-    "v1DeleteUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
         }
       }
     },
@@ -105,12 +93,6 @@
       }
     },
     "v1DeleteUserResponse": {
-=======
-        }
-      }
-    },
-    "v1GetUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
       "type": "object",
       "properties": {
         "Info": {
@@ -118,11 +100,39 @@
         }
       }
     },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
     "v1ExistUserCondsResponse": {
-=======
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetUserOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1GetUsersResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
       "type": "object",
       "properties": {
         "Infos": {
@@ -137,133 +147,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1ExistUserResponse": {
-=======
-    "v1StringSliceVal": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1GetUserOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GetUserResponse": {
-=======
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateUserResponse": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
-    "v1GetUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-=======
-    "v1User": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
-        },
-        "CreatedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"created_by\""
-        },
-        "Role": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"role\""
-        },
-        "Description": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"description\""
-        },
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "AppName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_name\""
-        },
-        "AppLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_logo\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "EmailAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"email_address\""
-        },
-        "PhoneNO": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"phone_no\""
-        },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
-        "Genesis": {
-          "type": "boolean"
-        }
-      }
-    },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -300,18 +183,12 @@
     "v1User": {
       "type": "object",
       "properties": {
-=======
-    "v1UserReq": {
-      "type": "object",
-      "properties": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
         "ID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
         "UserID": {
           "type": "string"
         },
@@ -335,19 +212,13 @@
           "type": "string"
         },
         "AppID": {
-=======
-        "RoleID": {
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
           "type": "string"
         },
         "UserID": {
           "type": "string"
-<<<<<<< HEAD:npool/notif/mgr/v1/announcement/user/user.swagger.json
         },
         "AnnouncementID": {
           "type": "string"
-=======
->>>>>>> Move role to middleware:npool/appuser/mw/v1/role/user/user.swagger.json
         }
       }
     }

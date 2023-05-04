@@ -40,8 +40,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppRoleRequest"
-<<<<<<< HEAD
-=======
             }
           }
         ],
@@ -50,42 +48,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "/v1/create/app/roleuser": {
-      "post": {
-        "operationId": "Gateway_CreateAppRoleUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppRoleUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppRoleUserRequest"
->>>>>>> Move role to middleware
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-=======
->>>>>>> Add delete role apis
     "/v1/create/role": {
       "post": {
         "operationId": "Gateway_CreateRole",
@@ -94,8 +56,6 @@
             "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/appusergatewayrolev1CreateRoleResponse"
-<<<<<<< HEAD
-=======
             }
           },
           "default": {
@@ -127,12 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-<<<<<<< HEAD
-              "$ref": "#/definitions/v1CreateRoleUserResponse"
->>>>>>> Move role to middleware
-=======
               "$ref": "#/definitions/v1DeleteAppRoleResponse"
->>>>>>> Add delete role apis
             }
           },
           "default": {
@@ -148,62 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-<<<<<<< HEAD
-              "$ref": "#/definitions/appusergatewayrolev1CreateRoleRequest"
-=======
               "$ref": "#/definitions/v1DeleteAppRoleRequest"
->>>>>>> Add delete role apis
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-<<<<<<< HEAD
-    "/v1/delete/app/role": {
-      "post": {
-        "operationId": "Gateway_DeleteAppRole",
-=======
-    "/v1/delete/role": {
-      "post": {
-        "operationId": "Gateway_DeleteRole",
->>>>>>> Add delete role apis
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "$ref": "#/definitions/v1DeleteAppRoleResponse"
-=======
-              "$ref": "#/definitions/v1DeleteAppRoleUserResponse"
->>>>>>> Move role to middleware
-=======
-              "$ref": "#/definitions/appusergatewayrolev1DeleteRoleResponse"
->>>>>>> Add delete role apis
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "$ref": "#/definitions/v1DeleteAppRoleRequest"
-=======
-              "$ref": "#/definitions/v1DeleteAppRoleUserRequest"
->>>>>>> Move role to middleware
             }
           }
         ],
@@ -235,8 +135,6 @@
             "in": "body",
             "required": true,
             "schema": {
-=======
->>>>>>> Add delete role apis
               "$ref": "#/definitions/appusergatewayrolev1DeleteRoleRequest"
             }
           }
@@ -270,8 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppRolesRequest"
-<<<<<<< HEAD
-=======
             }
           }
         ],
@@ -280,42 +176,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "/v1/get/app/roleusers": {
-      "post": {
-        "operationId": "Gateway_GetAppRoleUsers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppRoleUsersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppRoleUsersRequest"
->>>>>>> Move role to middleware
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-=======
->>>>>>> Add delete role apis
     "/v1/get/roles": {
       "post": {
         "operationId": "Gateway_GetRoles",
@@ -355,15 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-<<<<<<< HEAD
-<<<<<<< HEAD
               "$ref": "#/definitions/v1UpdateAppRoleResponse"
-=======
-              "$ref": "#/definitions/v1GetRoleUsersResponse"
->>>>>>> Move role to middleware
-=======
-              "$ref": "#/definitions/v1UpdateAppRoleResponse"
->>>>>>> Add delete role apis
             }
           },
           "default": {
@@ -379,15 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-<<<<<<< HEAD
-<<<<<<< HEAD
               "$ref": "#/definitions/v1UpdateAppRoleRequest"
-=======
-              "$ref": "#/definitions/v1GetRoleUsersRequest"
->>>>>>> Move role to middleware
-=======
-              "$ref": "#/definitions/v1UpdateAppRoleRequest"
->>>>>>> Add delete role apis
             }
           }
         ],
@@ -431,12 +275,6 @@
   },
   "definitions": {
     "appusergatewayrolev1CreateRoleRequest": {
-<<<<<<< HEAD
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-=======
       "type": "object",
       "properties": {
         "AppID": {
@@ -573,247 +411,6 @@
       "type": "object",
       "properties": {
         "TargetAppID": {
-<<<<<<< HEAD
-          "type": "string",
-          "title": "Permissioned by path"
->>>>>>> Move role to middleware
-=======
-          "type": "string"
->>>>>>> Add delete role apis
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "Description": {
-          "type": "string"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "appusergatewayrolev1CreateRoleResponse": {
-=======
-    "v1CreateAppRoleResponse": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "appusergatewayrolev1DeleteRoleRequest": {
-=======
-    "v1CreateAppRoleUserRequest": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-<<<<<<< HEAD
-=======
-        }
-      }
-    },
-    "v1CreateAppRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1CreateRoleUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "TargetUserID": {
-=======
-    "v1DeleteAppRoleRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
->>>>>>> Add delete role apis
-          "type": "string"
-        },
-        "TargetAppID": {
-<<<<<<< HEAD
-          "type": "string",
-          "title": "Permissioned by path"
->>>>>>> Move role to middleware
-        },
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "appusergatewayrolev1DeleteRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "appusergatewayrolev1GetRolesRequest": {
-=======
-    "v1DeleteAppRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1DeleteRoleUserRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "RoleUserID": {
-=======
->>>>>>> Add delete role apis
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteAppRoleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-<<<<<<< HEAD
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GetAppRoleUsersRequest": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "appusergatewayrolev1GetRolesResponse": {
-=======
-    "v1GetAppRoleUsersResponse": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-<<<<<<< HEAD
-            "$ref": "#/definitions/v1Role"
-=======
-            "$ref": "#/definitions/v1User"
->>>>>>> Move role to middleware
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-=======
-          "$ref": "#/definitions/v1Role"
->>>>>>> Add delete role apis
-        }
-      }
-    },
-<<<<<<< HEAD
-    "appusergatewayrolev1UpdateRoleRequest": {
-=======
-    "v1GetAppRolesRequest": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-<<<<<<< HEAD
-        "ID": {
-=======
-        "TargetAppID": {
->>>>>>> Add delete role apis
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "Description": {
-          "type": "string"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "appusergatewayrolev1UpdateRoleResponse": {
-=======
-    "v1GetAppRolesResponse": {
->>>>>>> Move role to middleware
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1CreateAppRoleRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
           "type": "string"
         },
         "UserID": {
@@ -838,7 +435,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "v1DeleteAppRoleRequest": {
       "type": "object",
       "properties": {
@@ -869,43 +465,18 @@
           "format": "int32"
         },
         "Limit": {
-=======
-    "v1GetRoleUsersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Offset": {
->>>>>>> Move role to middleware
           "type": "integer",
           "format": "int32"
         }
       }
     },
-<<<<<<< HEAD
     "v1GetAppRolesResponse": {
-=======
-    "v1GetRoleUsersResponse": {
->>>>>>> Move role to middleware
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-<<<<<<< HEAD
             "$ref": "#/definitions/v1Role"
-=======
-            "$ref": "#/definitions/v1User"
->>>>>>> Move role to middleware
           }
         },
         "Total": {
@@ -914,8 +485,6 @@
         }
       }
     },
-=======
->>>>>>> Add delete role apis
     "v1Role": {
       "type": "object",
       "properties": {
@@ -936,15 +505,8 @@
           "title": "@inject_tag: sql:\"description\""
         },
         "Default": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "type": "boolean",
-=======
-          "type": "boolean"
-=======
           "type": "boolean",
           "title": "@inject_tag: sql:\"default\""
->>>>>>> Remove int for bool
         },
         "AppID": {
           "type": "string",
@@ -992,100 +554,8 @@
     "v1UpdateAppRoleResponse": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "CreatedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"created_by\""
-        },
-        "RoleID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"role_id\""
-        },
-        "Role": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"role\""
-        },
-        "Description": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"description\""
-        },
-<<<<<<< HEAD
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
->>>>>>> Move role to middleware
-=======
-        "Default": {
-          "type": "boolean",
->>>>>>> Remove int for bool
-          "title": "@inject_tag: sql:\"default\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "AppName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_name\""
-        },
-        "AppLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_logo\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "Genesis": {
-<<<<<<< HEAD
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"genesis\""
-        }
-      }
-    },
-    "v1UpdateAppRoleRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "RoleName": {
-          "type": "string"
-        },
-<<<<<<< HEAD
-        "Default": {
-          "type": "boolean"
-        },
-        "Description": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateAppRoleResponse": {
-      "type": "object",
-      "properties": {
         "Info": {
           "$ref": "#/definitions/v1Role"
-=======
-          "type": "boolean"
->>>>>>> Move role to middleware
-=======
-        "Genesis": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"genesis\""
->>>>>>> Remove int for bool
-=======
-        "Info": {
-          "$ref": "#/definitions/v1Role"
->>>>>>> Add delete role apis
         }
       }
     }

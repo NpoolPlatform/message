@@ -27,13 +27,6 @@ type GatewayClient interface {
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
->>>>>>> Remove old protobuf
-=======
->>>>>>> Remove get user app
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 	BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error)
 }
@@ -82,33 +75,9 @@ func (c *gatewayClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ..
 	return out, nil
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
-=======
-func (c *gatewayClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
-	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetUserApps", in, out, opts...)
->>>>>>> Remove old protobuf
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-<<<<<<< HEAD
-func (c *gatewayClient) BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error) {
-	out := new(BanAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/BanApp", in, out, opts...)
-=======
-=======
->>>>>>> Remove get user app
-func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
-	out := new(DeleteAppResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
->>>>>>> Remove old protobuf
 	if err != nil {
 		return nil, err
 	}
@@ -133,13 +102,6 @@ type GatewayServer interface {
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
->>>>>>> Remove old protobuf
-=======
->>>>>>> Remove get user app
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -161,15 +123,6 @@ func (UnimplementedGatewayServer) GetApp(context.Context, *GetAppRequest) (*GetA
 func (UnimplementedGatewayServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-func (UnimplementedGatewayServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
-}
->>>>>>> Remove old protobuf
-=======
->>>>>>> Remove get user app
 func (UnimplementedGatewayServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
@@ -261,19 +214,12 @@ func _Gateway_GetApps_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
-=======
-func _Gateway_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserAppsRequest)
->>>>>>> Remove old protobuf
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-<<<<<<< HEAD
 		return srv.(GatewayServer).DeleteApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -282,41 +228,6 @@ func _Gateway_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteApp(ctx, req.(*DeleteAppRequest))
-=======
-		return srv.(GatewayServer).GetUserApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetUserApps",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
->>>>>>> Remove old protobuf
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-<<<<<<< HEAD
-func _Gateway_BanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BanAppRequest)
-=======
-=======
->>>>>>> Remove get user app
-func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAppRequest)
->>>>>>> Remove old protobuf
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).BanApp(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/BanApp",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).BanApp(ctx, req.(*BanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -363,16 +274,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetApps_Handler,
 		},
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-			MethodName: "GetUserApps",
-			Handler:    _Gateway_GetUserApps_Handler,
-		},
-		{
->>>>>>> Remove old protobuf
-=======
->>>>>>> Remove get user app
 			MethodName: "DeleteApp",
 			Handler:    _Gateway_DeleteApp_Handler,
 		},
