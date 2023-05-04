@@ -103,6 +103,7 @@ message GetRolesRequest {
 
 message GetRolesResponse {
     repeated Role Infos = 10;
+    uint32        Total = 20;
 }
 
 message ExistRoleRequest {

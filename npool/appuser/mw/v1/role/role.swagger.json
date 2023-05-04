@@ -146,6 +146,10 @@
           "items": {
             "$ref": "#/definitions/v1Role"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
