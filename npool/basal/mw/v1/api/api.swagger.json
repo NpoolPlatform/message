@@ -17,72 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basalmiddlewareapiv1CreateAPIResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1API"
-        }
-      }
-    },
-    "basalmiddlewareapiv1CreateAPIsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1API"
-          }
-        }
-      }
-    },
-    "basalmiddlewareapiv1DeleteAPIResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1API"
-        }
-      }
-    },
-    "basalmiddlewareapiv1ExistAPIResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "basalmiddlewareapiv1GetAPIOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1API"
-        }
-      }
-    },
-    "basalmiddlewareapiv1GetAPIsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1API"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "basalmiddlewareapiv1UpdateAPIResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1API"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -234,6 +168,64 @@
         }
       }
     },
+    "v1CreateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "v1CreateAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        }
+      }
+    },
+    "v1DeleteAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "v1ExistAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAPIOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "v1GetAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetDomainsResponse": {
       "type": "object",
       "properties": {
@@ -298,6 +290,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
         }
       }
     }

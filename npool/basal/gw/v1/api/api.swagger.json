@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetDomainsResponse"
+              "$ref": "#/definitions/basalgatewayapiv1GetDomainsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetDomainsRequest"
+              "$ref": "#/definitions/basalgatewayapiv1GetDomainsRequest"
             }
           }
         ],
@@ -148,6 +148,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "basalgatewayapiv1GetDomainsRequest": {
+      "type": "object"
+    },
+    "basalgatewayapiv1GetDomainsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -240,20 +254,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1GetDomainsRequest": {
-      "type": "object"
-    },
-    "v1GetDomainsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
