@@ -43,7 +43,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 
 func (c *gatewayClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
 	out := new(CreateKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/CreateKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/CreateKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -52,7 +52,7 @@ func (c *gatewayClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opt
 
 func (c *gatewayClient) UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error) {
 	out := new(UpdateKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/UpdateKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/UpdateKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +61,7 @@ func (c *gatewayClient) UpdateKyc(ctx context.Context, in *UpdateKycRequest, opt
 
 func (c *gatewayClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
 	out := new(GetKycResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKyc", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetKyc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +70,7 @@ func (c *gatewayClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...g
 
 func (c *gatewayClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error) {
 	out := new(GetKycsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKycs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetKycs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,7 +79,7 @@ func (c *gatewayClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts ..
 
 func (c *gatewayClient) GetAppKycs(ctx context.Context, in *GetAppKycsRequest, opts ...grpc.CallOption) (*GetAppKycsResponse, error) {
 	out := new(GetAppKycsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetAppKycs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetAppKycs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (c *gatewayClient) GetAppKycs(ctx context.Context, in *GetAppKycsRequest, o
 
 func (c *gatewayClient) UploadKycImage(ctx context.Context, in *UploadKycImageRequest, opts ...grpc.CallOption) (*UploadKycImageResponse, error) {
 	out := new(UploadKycImageResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/UploadKycImage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/UploadKycImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +97,7 @@ func (c *gatewayClient) UploadKycImage(ctx context.Context, in *UploadKycImageRe
 
 func (c *gatewayClient) GetKycImage(ctx context.Context, in *GetKycImageRequest, opts ...grpc.CallOption) (*GetKycImageResponse, error) {
 	out := new(GetKycImageResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetKycImage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetKycImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func (c *gatewayClient) GetKycImage(ctx context.Context, in *GetKycImageRequest,
 
 func (c *gatewayClient) GetUserKycImage(ctx context.Context, in *GetUserKycImageRequest, opts ...grpc.CallOption) (*GetUserKycImageResponse, error) {
 	out := new(GetUserKycImageResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetUserKycImage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetUserKycImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func (c *gatewayClient) GetUserKycImage(ctx context.Context, in *GetUserKycImage
 
 func (c *gatewayClient) GetAppUserKycImage(ctx context.Context, in *GetAppUserKycImageRequest, opts ...grpc.CallOption) (*GetAppUserKycImageResponse, error) {
 	out := new(GetAppUserKycImageResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v2.Gateway/GetAppUserKycImage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.kyc.v1.Gateway/GetAppUserKycImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -192,7 +192,7 @@ func _Gateway_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/CreateKyc",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/CreateKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateKyc(ctx, req.(*CreateKycRequest))
@@ -210,7 +210,7 @@ func _Gateway_UpdateKyc_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/UpdateKyc",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/UpdateKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateKyc(ctx, req.(*UpdateKycRequest))
@@ -228,7 +228,7 @@ func _Gateway_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKyc",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetKyc",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetKyc(ctx, req.(*GetKycRequest))
@@ -246,7 +246,7 @@ func _Gateway_GetKycs_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKycs",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetKycs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetKycs(ctx, req.(*GetKycsRequest))
@@ -264,7 +264,7 @@ func _Gateway_GetAppKycs_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetAppKycs",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetAppKycs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppKycs(ctx, req.(*GetAppKycsRequest))
@@ -282,7 +282,7 @@ func _Gateway_UploadKycImage_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/UploadKycImage",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/UploadKycImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UploadKycImage(ctx, req.(*UploadKycImageRequest))
@@ -300,7 +300,7 @@ func _Gateway_GetKycImage_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetKycImage",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetKycImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetKycImage(ctx, req.(*GetKycImageRequest))
@@ -318,7 +318,7 @@ func _Gateway_GetUserKycImage_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetUserKycImage",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetUserKycImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetUserKycImage(ctx, req.(*GetUserKycImageRequest))
@@ -336,7 +336,7 @@ func _Gateway_GetAppUserKycImage_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.gateway.kyc.v2.Gateway/GetAppUserKycImage",
+		FullMethod: "/appuser.gateway.kyc.v1.Gateway/GetAppUserKycImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppUserKycImage(ctx, req.(*GetAppUserKycImageRequest))
@@ -348,7 +348,7 @@ func _Gateway_GetAppUserKycImage_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.kyc.v2.Gateway",
+	ServiceName: "appuser.gateway.kyc.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

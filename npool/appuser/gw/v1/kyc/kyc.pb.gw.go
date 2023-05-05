@@ -349,7 +349,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/CreateKyc", runtime.WithHTTPPathPattern("/v1/create/kyc"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/CreateKyc", runtime.WithHTTPPathPattern("/v1/create/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -372,7 +372,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/UpdateKyc", runtime.WithHTTPPathPattern("/v1/update/kyc"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/UpdateKyc", runtime.WithHTTPPathPattern("/v1/update/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -395,7 +395,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKyc", runtime.WithHTTPPathPattern("/v1/get/kyc"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKyc", runtime.WithHTTPPathPattern("/v1/get/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -418,7 +418,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKycs", runtime.WithHTTPPathPattern("/v1/get/kycs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKycs", runtime.WithHTTPPathPattern("/v1/get/kycs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -441,7 +441,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetAppKycs", runtime.WithHTTPPathPattern("/v1/get/app/kycs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetAppKycs", runtime.WithHTTPPathPattern("/v1/get/app/kycs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/UploadKycImage", runtime.WithHTTPPathPattern("/v1/upload/kycimage"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/UploadKycImage", runtime.WithHTTPPathPattern("/v1/upload/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -487,7 +487,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKycImage", runtime.WithHTTPPathPattern("/v1/get/kycimage"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKycImage", runtime.WithHTTPPathPattern("/v1/get/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -510,7 +510,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetUserKycImage", runtime.WithHTTPPathPattern("/v1/get/user/kycimage"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetUserKycImage", runtime.WithHTTPPathPattern("/v1/get/user/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -533,7 +533,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetAppUserKycImage", runtime.WithHTTPPathPattern("/v1/get/app/user/kycimage"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetAppUserKycImage", runtime.WithHTTPPathPattern("/v1/get/app/user/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -595,7 +595,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/CreateKyc", runtime.WithHTTPPathPattern("/v1/create/kyc"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/CreateKyc", runtime.WithHTTPPathPattern("/v1/create/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -615,7 +615,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/UpdateKyc", runtime.WithHTTPPathPattern("/v1/update/kyc"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/UpdateKyc", runtime.WithHTTPPathPattern("/v1/update/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -635,7 +635,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKyc", runtime.WithHTTPPathPattern("/v1/get/kyc"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKyc", runtime.WithHTTPPathPattern("/v1/get/kyc"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -655,7 +655,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKycs", runtime.WithHTTPPathPattern("/v1/get/kycs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKycs", runtime.WithHTTPPathPattern("/v1/get/kycs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -675,7 +675,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetAppKycs", runtime.WithHTTPPathPattern("/v1/get/app/kycs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetAppKycs", runtime.WithHTTPPathPattern("/v1/get/app/kycs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -695,7 +695,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/UploadKycImage", runtime.WithHTTPPathPattern("/v1/upload/kycimage"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/UploadKycImage", runtime.WithHTTPPathPattern("/v1/upload/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -715,7 +715,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetKycImage", runtime.WithHTTPPathPattern("/v1/get/kycimage"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetKycImage", runtime.WithHTTPPathPattern("/v1/get/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -735,7 +735,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetUserKycImage", runtime.WithHTTPPathPattern("/v1/get/user/kycimage"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetUserKycImage", runtime.WithHTTPPathPattern("/v1/get/user/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -755,7 +755,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v2.Gateway/GetAppUserKycImage", runtime.WithHTTPPathPattern("/v1/get/app/user/kycimage"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.kyc.v1.Gateway/GetAppUserKycImage", runtime.WithHTTPPathPattern("/v1/get/app/user/kycimage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
