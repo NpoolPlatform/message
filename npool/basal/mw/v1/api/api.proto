@@ -4,7 +4,7 @@ package basal.middleware.api.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/api";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -60,14 +60,14 @@ message API {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID          = 10;
-    optional npool.v1.Int32Val       Protocol    = 20;
-    optional npool.v1.StringVal      ServiceName = 30;
-    optional npool.v1.Int32Val       Method      = 40;
-    optional npool.v1.StringVal      Path        = 50;
-    optional npool.v1.BoolVal        Exported    = 60;
-    optional npool.v1.BoolVal        Depracated  = 70;
-    optional npool.v1.StringSliceVal IDs         = 80;
+    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.Int32Val       Protocol    = 20;
+    optional basetypes.v1.StringVal      ServiceName = 30;
+    optional basetypes.v1.Int32Val       Method      = 40;
+    optional basetypes.v1.StringVal      Path        = 50;
+    optional basetypes.v1.BoolVal        Exported    = 60;
+    optional basetypes.v1.BoolVal        Depracated  = 70;
+    optional basetypes.v1.StringSliceVal IDs         = 80;
 }
 
 message CreateAPIRequest {
