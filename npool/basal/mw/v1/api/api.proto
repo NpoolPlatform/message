@@ -129,7 +129,7 @@ message ExistAPIResponse {
 }
 
 message DeleteAPIRequest {
-    string ID = 10;
+    APIReq Info = 10;
 }
 
 message DeleteAPIResponse {
