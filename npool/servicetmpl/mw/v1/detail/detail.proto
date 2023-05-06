@@ -21,33 +21,21 @@ service Middleware {
 }
 
 message DetailReq {
-<<<<<<< HEAD
     optional string EntID     = 10;
-=======
-    optional uint32 AutoID    = 10;
->>>>>>> Refactor service template
     optional string ID        = 20;
     optional string SampleCol = 30;
     optional uint32 CreatedAt = 40;
 }
 
 message Detail {
-<<<<<<< HEAD
     string EntID     = 10;
-=======
-    uint32 AutoID    = 10;
->>>>>>> Refactor service template
     string ID        = 20;
     string SampleCol = 30;
     uint32 CreatedAt = 40;
 }
 
 message Conds {
-<<<<<<< HEAD
     optional basetypes.v1.StringVal EntID     = 10;
-=======
-    optional basetypes.v1.Uint32Val AutoID    = 10;
->>>>>>> Refactor service template
     optional basetypes.v1.StringVal ID        = 20;
     optional basetypes.v1.StringVal SampleCol = 30;
 }
@@ -78,11 +66,7 @@ message UpdateDetailResponse {
 }
 
 message GetDetailRequest {
-<<<<<<< HEAD
     string EntID = 10;
-=======
-    string ID = 10;
->>>>>>> Refactor service template
 }
 
 message GetDetailResponse {
@@ -97,11 +81,7 @@ message GetDetailsRequest {
 
 message GetDetailsResponse {
     repeated Detail Infos = 10;
-<<<<<<< HEAD
     uint32          Total = 20;
-=======
-    uint32 Total          = 20;
->>>>>>> Refactor service template
 }
 
 message GetDetailOnlyRequest {
@@ -113,11 +93,7 @@ message GetDetailOnlyResponse {
 }
 
 message ExistDetailRequest {
-<<<<<<< HEAD
     string EntID = 10;
-=======
-    string ID = 10;
->>>>>>> Refactor service template
 }
 
 message ExistDetailResponse {
@@ -141,11 +117,7 @@ message CountDetailsResponse {
 }
 
 message DeleteDetailRequest {
-<<<<<<< HEAD
     DetailReq Info = 10;
-=======
-    string ID   = 10;
->>>>>>> Refactor service template
 }
 
 message DeleteDetailResponse {
