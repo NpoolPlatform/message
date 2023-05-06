@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package service.template.v1;
+package servicetmpl.middleware.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl";
+option go_package = "github.com/NpoolPlatform/message/npool/servicetmpl/mw/v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/version.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (basetypes.v1.VersionResponse){
         option (google.api.http) = {

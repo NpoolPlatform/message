@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/servicetmpl/servicetmpl.proto",
+    "title": "npool/servicetmpl/gw/v1/gw.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -19,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "Manager_Version",
+        "operationId": "Gateway_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -45,7 +45,7 @@
           }
         ],
         "tags": [
-          "Manager"
+          "Gateway"
         ]
       }
     }
