@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+enum Result {
+    DefaultResult  = 0;
+    Pass           = 10;
+    Fail           = 20;
+}
