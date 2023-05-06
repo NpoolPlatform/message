@@ -8,6 +8,8 @@ enum MsgID {
     DefaultMsgID                 = 0;
     RewardEventReq               = 10;
     IncreaseUserActionCreditsReq = 20;
+
+    CreateSampleMsgReq           = 100000000;
 }
 
 enum MsgState {
