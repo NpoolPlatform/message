@@ -178,8 +178,14 @@
     "v1Detail": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Refactor service template
         },
         "ID": {
           "type": "string"

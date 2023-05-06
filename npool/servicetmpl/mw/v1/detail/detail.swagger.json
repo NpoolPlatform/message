@@ -1,7 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD
     "title": "npool/servicetmpl/mw/v1/detail/detail.proto",
+=======
+<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
+    "title": "npool/ledger/mgr/v1/ledger/detail/detail.proto",
+=======
+    "title": "npool/servicetmpl/mw/v1/detail/detail.proto",
+>>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+>>>>>>> Refactor service template
     "version": "version not set"
   },
   "tags": [
@@ -47,6 +55,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -55,6 +64,19 @@
         },
         "SampleCol": {
           "$ref": "#/definitions/v1StringVal"
+=======
+        "AutoID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
+=======
+        },
+        "SampleCol": {
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+>>>>>>> Refactor service template
         }
       }
     },
@@ -86,6 +108,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1DeleteDetailResponse": {
       "type": "object",
       "properties": {
@@ -99,13 +122,30 @@
       "properties": {
         "EntID": {
           "type": "string"
+=======
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "AutoID": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Refactor service template
         },
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "SampleCol": {
           "type": "string"
         },
+=======
+<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
+=======
+        "SampleCol": {
+          "type": "string"
+        },
+>>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+>>>>>>> Refactor service template
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -115,15 +155,30 @@
     "v1DetailReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Refactor service template
         },
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "SampleCol": {
           "type": "string"
         },
+=======
+<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
+=======
+        "SampleCol": {
+          "type": "string"
+        },
+>>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+>>>>>>> Refactor service template
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -177,7 +232,41 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1StringVal": {
+=======
+<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
+    "v1Int32Val": {
+=======
+    "v1StringVal": {
+>>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+>>>>>>> Refactor service template
       "type": "object",
       "properties": {
         "Op": {
@@ -188,11 +277,23 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1UpdateDetailResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Detail"
+=======
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Refactor service template
         }
       }
     }
