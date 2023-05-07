@@ -16,19 +16,20 @@ service Middleware {
 }
 
 message LogReq {
-    optional string AppID           = 10;
-    optional string UserID          = 20;
-    optional string Path            = 30;
-    optional basetypes.v1.HTTPMethod Method = 40;
-    optional string Arguments       = 50;
-    optional string HumanReadable   = 60;
-    optional basetypes.v1.Result Result = 70;
-    optional string FailReason      = 80;
+    optional uint32 AutoID          = 10;
+    optional string AppID           = 20;
+    optional string UserID          = 30;
+    optional string Path            = 40;
+    optional basetypes.v1.HTTPMethod Method = 50;
+    optional string Arguments       = 60;
+    optional string HumanReadable   = 70;
+    optional basetypes.v1.Result Result = 80;
+    optional string FailReason      = 90;
 }
 
 message Log {
-    // @inject_tag: sql:"id"
-    uint32          ID              = 10;
+    // @inject_tag: sql:"auto_id"
+    uint32          AutoID          = 10;
     // @inject_tag: sql:"app_id"
     string          AppID           = 20;
     // @inject_tag: sql:"user_id"
@@ -56,9 +57,10 @@ message Log {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal AppID  = 10;
-    optional basetypes.v1.StringVal UserID = 20;
-    optional basetypes.v1.Uint32Val Result = 30;
+    optional basetypes.v1.Uint32Val AutoID = 10;
+    optional basetypes.v1.StringVal AppID  = 20;
+    optional basetypes.v1.StringVal UserID = 30;
+    optional basetypes.v1.Uint32Val Result = 40;
 }
 
 message CreateLogRequest {
