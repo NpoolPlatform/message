@@ -419,6 +419,7 @@
 =======
 =======
         "ID": {
+<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
@@ -428,6 +429,15 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"auto_id\""
 >>>>>>> Rename to oplog
+=======
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+>>>>>>> Add ent it
         },
         "AppID": {
           "type": "string",
