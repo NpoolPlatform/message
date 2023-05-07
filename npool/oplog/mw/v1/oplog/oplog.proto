@@ -22,9 +22,10 @@ message OpLogReq {
     optional string Path            = 40;
     optional basetypes.v1.HTTPMethod Method = 50;
     optional string Arguments       = 60;
-    optional string HumanReadable   = 70;
-    optional basetypes.v1.Result Result = 80;
-    optional string FailReason      = 90;
+    optional string CurValue        = 70;
+    optional string HumanReadable   = 80;
+    optional basetypes.v1.Result Result = 90;
+    optional string FailReason      = 100;
 }
 
 message OpLog {
@@ -41,8 +42,8 @@ message OpLog {
     basetypes.v1.HTTPMethod Method  = 60;
     // @inject_tag: sql:"arguments"
     string          Arguments       = 70;
-    // @inject_tag: sql:"old_value"
-    string          OldValue        = 80;
+    // @inject_tag: sql:"cur_value"
+    string          CurValue        = 80;
     // @inject_tag: sql:"human_readable"
     string          HumanReadable   = 90;
     // @inject_tag: sql:"result"
