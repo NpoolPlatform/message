@@ -21,21 +21,21 @@ service Middleware {
 }
 
 message DetailReq {
-    optional uint32 AutoID    = 10;
+    optional string EntID     = 10;
     optional string ID        = 20;
     optional string SampleCol = 30;
     optional uint32 CreatedAt = 40;
 }
 
 message Detail {
-    uint32 AutoID    = 10;
+    string EntID     = 10;
     string ID        = 20;
     string SampleCol = 30;
     uint32 CreatedAt = 40;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val AutoID    = 10;
+    optional basetypes.v1.StringVal EntID     = 10;
     optional basetypes.v1.StringVal ID        = 20;
     optional basetypes.v1.StringVal SampleCol = 30;
 }
