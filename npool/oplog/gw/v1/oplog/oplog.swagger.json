@@ -196,7 +196,14 @@
         "Arguments": {
           "type": "string"
         },
+<<<<<<< HEAD
         "ReqHeaders": {
+=======
+        "Result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "FailReason": {
+>>>>>>> Rename to oplog
           "type": "string"
         }
       }
@@ -246,17 +253,24 @@
     "oploggatewayoplog1v1UpdateOpLogRequest": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
         },
         "NewValue": {
           "type": "string"
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Rename to oplog
         },
         "Result": {
           "$ref": "#/definitions/v1Result"
         },
         "FailReason": {
           "type": "string"
+<<<<<<< HEAD
         },
         "StatusCode": {
           "type": "integer",
@@ -271,6 +285,8 @@
         "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
+=======
+>>>>>>> Rename to oplog
         }
       }
     },
@@ -390,6 +406,7 @@
     "v1OpLog": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -398,6 +415,12 @@
         "EntID": {
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"auto_id\""
+>>>>>>> Rename to oplog
         },
         "AppID": {
           "type": "string",
@@ -422,6 +445,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"arguments\""
         },
+<<<<<<< HEAD
         "CurValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
@@ -429,6 +453,11 @@
         "NewValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"new_value\""
+=======
+        "OldValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"old_value\""
+>>>>>>> Rename to oplog
         },
         "HumanReadable": {
           "type": "string",
@@ -445,6 +474,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fail_reason\""
         },
+<<<<<<< HEAD
         "StatusCode": {
           "type": "integer",
           "format": "int32",
@@ -458,6 +488,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"resp_headers\""
         },
+=======
+>>>>>>> Rename to oplog
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -474,7 +506,11 @@
       "type": "string",
       "enum": [
         "DefaultResult",
+<<<<<<< HEAD
         "Success",
+=======
+        "Pass",
+>>>>>>> Rename to oplog
         "Fail"
       ],
       "default": "DefaultResult"

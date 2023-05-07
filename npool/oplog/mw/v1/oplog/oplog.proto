@@ -16,12 +16,17 @@ service Middleware {
 }
 
 message OpLogReq {
+<<<<<<< HEAD
     optional string EntID           = 10;
+=======
+    optional uint32 AutoID          = 10;
+>>>>>>> Rename to oplog
     optional string AppID           = 20;
     optional string UserID          = 30;
     optional string Path            = 40;
     optional basetypes.v1.HTTPMethod Method = 50;
     optional string Arguments       = 60;
+<<<<<<< HEAD
     optional string CurValue        = 70;
     optional string NewValue        = 80;
     optional string HumanReadable   = 90;
@@ -66,6 +71,36 @@ message OpLog {
     string          ReqHeaders      = 160;
     // @inject_tag: sql:"resp_headers"
     string          RespHeaders     = 170;
+=======
+    optional string HumanReadable   = 70;
+    optional basetypes.v1.Result Result = 80;
+    optional string FailReason      = 90;
+}
+
+message OpLog {
+    // @inject_tag: sql:"auto_id"
+    uint32          AutoID          = 10;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 20;
+    // @inject_tag: sql:"user_id"
+    optional string UserID          = 30;
+    // @inject_tag: sql:"path"
+    string          Path            = 40;
+    // @inject_tag: sql:"method"
+    string          MethodStr       = 50;
+    basetypes.v1.HTTPMethod Method  = 60;
+    // @inject_tag: sql:"arguments"
+    string          Arguments       = 70;
+    // @inject_tag: sql:"old_value"
+    string          OldValue        = 80;
+    // @inject_tag: sql:"human_readable"
+    string          HumanReadable   = 90;
+    // @inject_tag: sql:"result"
+    string          ResultStr       = 100;
+    basetypes.v1.Result Result      = 110;
+    // @inject_tag: sql:"fail_reason"
+    string          FailReason      = 120;
+>>>>>>> Rename to oplog
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -73,7 +108,11 @@ message OpLog {
 }
 
 message Conds {
+<<<<<<< HEAD
     optional basetypes.v1.StringVal EntID  = 10;
+=======
+    optional basetypes.v1.Uint32Val AutoID = 10;
+>>>>>>> Rename to oplog
     optional basetypes.v1.StringVal AppID  = 20;
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.Uint32Val Result = 40;

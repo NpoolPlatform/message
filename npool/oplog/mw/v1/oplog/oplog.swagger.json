@@ -47,8 +47,13 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
+=======
+        "AutoID": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> Rename to oplog
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -103,6 +108,7 @@
     "v1OpLog": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -111,6 +117,12 @@
         "EntID": {
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"auto_id\""
+>>>>>>> Rename to oplog
         },
         "AppID": {
           "type": "string",
@@ -135,6 +147,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"arguments\""
         },
+<<<<<<< HEAD
         "CurValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
@@ -142,6 +155,11 @@
         "NewValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"new_value\""
+=======
+        "OldValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"old_value\""
+>>>>>>> Rename to oplog
         },
         "HumanReadable": {
           "type": "string",
@@ -158,6 +176,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fail_reason\""
         },
+<<<<<<< HEAD
         "StatusCode": {
           "type": "integer",
           "format": "int32",
@@ -171,6 +190,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"resp_headers\""
         },
+=======
+>>>>>>> Rename to oplog
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -186,8 +207,14 @@
     "v1OpLogReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
+=======
+        "AutoID": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Rename to oplog
         },
         "AppID": {
           "type": "string"
@@ -204,12 +231,15 @@
         "Arguments": {
           "type": "string"
         },
+<<<<<<< HEAD
         "CurValue": {
           "type": "string"
         },
         "NewValue": {
           "type": "string"
         },
+=======
+>>>>>>> Rename to oplog
         "HumanReadable": {
           "type": "string"
         },
@@ -218,6 +248,7 @@
         },
         "FailReason": {
           "type": "string"
+<<<<<<< HEAD
         },
         "StatusCode": {
           "type": "integer",
@@ -232,6 +263,8 @@
         "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
+=======
+>>>>>>> Rename to oplog
         }
       }
     },
@@ -239,7 +272,11 @@
       "type": "string",
       "enum": [
         "DefaultResult",
+<<<<<<< HEAD
         "Success",
+=======
+        "Pass",
+>>>>>>> Rename to oplog
         "Fail"
       ],
       "default": "DefaultResult"
