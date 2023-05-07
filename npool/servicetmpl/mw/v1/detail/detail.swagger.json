@@ -47,8 +47,8 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
@@ -97,9 +97,8 @@
     "v1Detail": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "type": "integer",
-          "format": "int64"
+        "EntID": {
+          "type": "string"
         },
         "ID": {
           "type": "string"
@@ -116,9 +115,8 @@
     "v1DetailReq": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "type": "integer",
-          "format": "int64"
+        "EntID": {
+          "type": "string"
         },
         "ID": {
           "type": "string"
@@ -187,18 +185,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
