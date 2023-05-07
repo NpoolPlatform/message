@@ -47,8 +47,8 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -169,7 +169,7 @@
     "v1OpLogReq": {
       "type": "object",
       "properties": {
-        "AutoID": {
+        "EntID": {
           "type": "integer",
           "format": "int64"
         },

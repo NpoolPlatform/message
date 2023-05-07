@@ -16,7 +16,7 @@ service Middleware {
 }
 
 message OpLogReq {
-    optional uint32 AutoID          = 10;
+    optional uint32 EntID           = 10;
     optional string AppID           = 20;
     optional string UserID          = 30;
     optional string Path            = 40;
@@ -60,7 +60,7 @@ message OpLog {
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val AutoID = 10;
+    optional basetypes.v1.StringVal EntID  = 10;
     optional basetypes.v1.StringVal AppID  = 20;
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.Uint32Val Result = 40;
