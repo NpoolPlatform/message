@@ -58,7 +58,7 @@ message CreateLogResponse {
 }
 
 message UpdateLogRequest {
-    uint32 ID = 10;
+    uint32 AutoID = 10;
     optional basetypes.v1.Result Result = 20;
     optional string FailReason = 30;
 }
