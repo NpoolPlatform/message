@@ -30,9 +30,9 @@ message OpLogReq {
 
 message OpLog {
     // @inject_tag: sql:"id"
-    string          ID              = 10;
-    // @inject_tag: sql:"auto_id"
-    uint32          AutoID          = 20;
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
     // @inject_tag: sql:"app_id"
     string          AppID           = 30;
     // @inject_tag: sql:"user_id"

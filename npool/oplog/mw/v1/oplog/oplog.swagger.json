@@ -104,13 +104,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AutoID": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"auto_id\""
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
