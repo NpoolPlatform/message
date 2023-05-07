@@ -513,10 +513,14 @@
       "enum": [
         "DefaultResult",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Success",
 =======
         "Pass",
 >>>>>>> Rename to oplog
+=======
+        "Success",
+>>>>>>> Success but not Pass
         "Fail"
       ],
       "default": "DefaultResult"
