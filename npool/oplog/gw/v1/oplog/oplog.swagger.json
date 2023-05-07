@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/oplog/gw/v1/log/log.proto",
+    "title": "npool/oplog/gw/v1/oplog/oplog.proto",
     "version": "version not set"
   },
   "tags": [
@@ -18,12 +18,12 @@
   "paths": {
     "/v1/create/oplog": {
       "post": {
-        "operationId": "Gateway_CreateLog",
+        "operationId": "Gateway_CreateOpLog",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1CreateLogResponse"
+              "$ref": "#/definitions/oploggatewayoplog1v1CreateOpLogResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1CreateLogRequest"
+              "$ref": "#/definitions/oploggatewayoplog1v1CreateOpLogRequest"
             }
           }
         ],
@@ -50,12 +50,12 @@
     },
     "/v1/get/app/oplogs": {
       "post": {
-        "operationId": "Gateway_GetAppLogs",
+        "operationId": "Gateway_GetAppOpLogs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppLogsResponse"
+              "$ref": "#/definitions/v1GetAppOpLogsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppLogsRequest"
+              "$ref": "#/definitions/v1GetAppOpLogsRequest"
             }
           }
         ],
@@ -82,12 +82,12 @@
     },
     "/v1/get/n/app/oplogs": {
       "post": {
-        "operationId": "Gateway_GetNAppLogs",
+        "operationId": "Gateway_GetNAppOpLogs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNAppLogsResponse"
+              "$ref": "#/definitions/v1GetNAppOpLogsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNAppLogsRequest"
+              "$ref": "#/definitions/v1GetNAppOpLogsRequest"
             }
           }
         ],
@@ -114,12 +114,12 @@
     },
     "/v1/get/oplogs": {
       "post": {
-        "operationId": "Gateway_GetLogs",
+        "operationId": "Gateway_GetOpLogs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1GetLogsResponse"
+              "$ref": "#/definitions/oploggatewayoplog1v1GetOpLogsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1GetLogsRequest"
+              "$ref": "#/definitions/oploggatewayoplog1v1GetOpLogsRequest"
             }
           }
         ],
@@ -146,12 +146,12 @@
     },
     "/v1/update/oplog": {
       "post": {
-        "operationId": "Gateway_UpdateLog",
+        "operationId": "Gateway_UpdateOpLog",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1UpdateLogResponse"
+              "$ref": "#/definitions/oploggatewayoplog1v1UpdateOpLogResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/oploggatewaylogv1UpdateLogRequest"
+              "$ref": "#/definitions/oploggatewayoplog1v1UpdateOpLogRequest"
             }
           }
         ],
@@ -178,7 +178,7 @@
     }
   },
   "definitions": {
-    "oploggatewaylogv1CreateLogRequest": {
+    "oploggatewayoplog1v1CreateOpLogRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -204,15 +204,15 @@
         }
       }
     },
-    "oploggatewaylogv1CreateLogResponse": {
+    "oploggatewayoplog1v1CreateOpLogResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Log"
+          "$ref": "#/definitions/v1OpLog"
         }
       }
     },
-    "oploggatewaylogv1GetLogsRequest": {
+    "oploggatewayoplog1v1GetOpLogsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -231,13 +231,13 @@
         }
       }
     },
-    "oploggatewaylogv1GetLogsResponse": {
+    "oploggatewayoplog1v1GetOpLogsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Log"
+            "$ref": "#/definitions/v1OpLog"
           }
         },
         "Total": {
@@ -246,7 +246,7 @@
         }
       }
     },
-    "oploggatewaylogv1UpdateLogRequest": {
+    "oploggatewayoplog1v1UpdateOpLogRequest": {
       "type": "object",
       "properties": {
         "AutoID": {
@@ -261,11 +261,11 @@
         }
       }
     },
-    "oploggatewaylogv1UpdateLogResponse": {
+    "oploggatewayoplog1v1UpdateOpLogResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Log"
+          "$ref": "#/definitions/v1OpLog"
         }
       }
     },
@@ -296,7 +296,7 @@
         }
       }
     },
-    "v1GetAppLogsRequest": {
+    "v1GetAppOpLogsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -312,13 +312,13 @@
         }
       }
     },
-    "v1GetAppLogsResponse": {
+    "v1GetAppOpLogsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Log"
+            "$ref": "#/definitions/v1OpLog"
           }
         },
         "Total": {
@@ -327,7 +327,7 @@
         }
       }
     },
-    "v1GetNAppLogsRequest": {
+    "v1GetNAppOpLogsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -343,13 +343,13 @@
         }
       }
     },
-    "v1GetNAppLogsResponse": {
+    "v1GetNAppOpLogsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Log"
+            "$ref": "#/definitions/v1OpLog"
           }
         },
         "Total": {
@@ -374,7 +374,7 @@
       ],
       "default": "DefaultMethod"
     },
-    "v1Log": {
+    "v1OpLog": {
       "type": "object",
       "properties": {
         "AutoID": {
