@@ -109,6 +109,7 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -118,6 +119,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
 =======
+=======
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+>>>>>>> Also add id
         "AutoID": {
           "type": "integer",
           "format": "int64",
@@ -180,7 +187,7 @@
         },
         "FailReason": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fail_reason\""
+          "title": "@inject_tag: sql:\"fail_reason"
         },
 <<<<<<< HEAD
         "StatusCode": {
