@@ -6,6 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum Result {
     DefaultResult  = 0;
-    Pass           = 10;
+    Success        = 10;
     Fail           = 20;
 }
