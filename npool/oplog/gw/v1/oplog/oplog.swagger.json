@@ -426,7 +426,7 @@
         },
         "FailReason": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fail_reason"
+          "title": "@inject_tag: sql:\"fail_reason\""
         },
         "CreatedAt": {
           "type": "integer",

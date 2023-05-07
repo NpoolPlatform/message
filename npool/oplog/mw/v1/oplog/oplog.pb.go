@@ -168,8 +168,8 @@ type OpLog struct {
 	// @inject_tag: sql:"result"
 	ResultStr string    `protobuf:"bytes,110,opt,name=ResultStr,proto3" json:"ResultStr,omitempty" sql:"result"`
 	Result    v1.Result `protobuf:"varint,120,opt,name=Result,proto3,enum=basetypes.v1.Result" json:"Result,omitempty"`
-	// @inject_tag: sql:"fail_reason
-	FailReason string `protobuf:"bytes,130,opt,name=FailReason,proto3" json:"FailReason,omitempty"`
+	// @inject_tag: sql:"fail_reason"
+	FailReason string `protobuf:"bytes,130,opt,name=FailReason,proto3" json:"FailReason,omitempty" sql:"fail_reason"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
