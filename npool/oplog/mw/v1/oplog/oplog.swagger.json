@@ -48,12 +48,17 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
 =======
         "AutoID": {
           "$ref": "#/definitions/v1Uint32Val"
 >>>>>>> Rename to oplog
+=======
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> Add ent id
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -231,10 +236,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
 =======
         "AutoID": {
+=======
+        "EntID": {
+>>>>>>> Add ent id
           "type": "integer",
           "format": "int64"
 >>>>>>> Rename to oplog
