@@ -243,10 +243,14 @@
         "AutoID": {
 =======
         "EntID": {
+<<<<<<< HEAD
 >>>>>>> Add ent id
           "type": "integer",
           "format": "int64"
 >>>>>>> Rename to oplog
+=======
+          "type": "string"
+>>>>>>> Correct ent id type
         },
         "AppID": {
           "type": "string"

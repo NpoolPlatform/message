@@ -29,6 +29,7 @@ type OpLogReq struct {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID            *string        `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	AppID            *string        `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID           *string        `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
@@ -49,6 +50,9 @@ type OpLogReq struct {
 =======
 	EntID         *uint32        `protobuf:"varint,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 >>>>>>> Add ent id
+=======
+	EntID         *string        `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
+>>>>>>> Correct ent id type
 	AppID         *string        `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID        *string        `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
 	Path          *string        `protobuf:"bytes,40,opt,name=Path,proto3,oneof" json:"Path,omitempty"`
@@ -101,6 +105,7 @@ func (*OpLogReq) Descriptor() ([]byte, []int) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *OpLogReq) GetEntID() string {
 	if x != nil && x.EntID != nil {
 		return *x.EntID
@@ -112,12 +117,19 @@ func (x *OpLogReq) GetAutoID() uint32 {
 		return *x.AutoID
 =======
 func (x *OpLogReq) GetEntID() uint32 {
+=======
+func (x *OpLogReq) GetEntID() string {
+>>>>>>> Correct ent id type
 	if x != nil && x.EntID != nil {
 		return *x.EntID
 >>>>>>> Add ent id
 	}
+<<<<<<< HEAD
 	return 0
 >>>>>>> Rename to oplog
+=======
+	return ""
+>>>>>>> Correct ent id type
 }
 
 func (x *OpLogReq) GetAppID() string {
@@ -951,8 +963,12 @@ var file_npool_oplog_mw_v1_oplog_oplog_proto_rawDesc = []byte{
 =======
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xee, 0x03, 0x0a, 0x08, 0x4f, 0x70, 0x4c, 0x6f, 0x67, 0x52,
 	0x65, 0x71, 0x12, 0x19, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28,
+<<<<<<< HEAD
 	0x0d, 0x48, 0x00, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x19, 0x0a,
 >>>>>>> Add ent id
+=======
+	0x09, 0x48, 0x00, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x19, 0x0a,
+>>>>>>> Correct ent id type
 	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x48, 0x01, 0x52, 0x05,
 	0x41, 0x70, 0x70, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x1b, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72,
 	0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x48, 0x02, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72,
