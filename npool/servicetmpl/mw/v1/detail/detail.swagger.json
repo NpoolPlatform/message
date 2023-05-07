@@ -56,6 +56,7 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -67,6 +68,10 @@
 =======
         "AutoID": {
           "$ref": "#/definitions/v1Uint32Val"
+=======
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> Remove auto id from sample
         },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
@@ -122,6 +127,7 @@
       "properties": {
         "EntID": {
           "type": "string"
+<<<<<<< HEAD
 =======
     "v1Detail": {
       "type": "object",
@@ -130,6 +136,8 @@
           "type": "integer",
           "format": "int64"
 >>>>>>> Refactor service template
+=======
+>>>>>>> Remove auto id from sample
         },
         "ID": {
           "type": "string"
@@ -156,6 +164,7 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
 =======
@@ -163,6 +172,10 @@
           "type": "integer",
           "format": "int64"
 >>>>>>> Refactor service template
+=======
+        "EntID": {
+          "type": "string"
+>>>>>>> Remove auto id from sample
         },
         "ID": {
           "type": "string"
@@ -278,11 +291,15 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Remove auto id from sample
     "v1UpdateDetailResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Detail"
+<<<<<<< HEAD
 =======
     "v1Uint32Val": {
       "type": "object",
@@ -294,6 +311,8 @@
           "type": "integer",
           "format": "int64"
 >>>>>>> Refactor service template
+=======
+>>>>>>> Remove auto id from sample
         }
       }
     }
