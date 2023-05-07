@@ -446,6 +446,7 @@
           "title": "@inject_tag: sql:\"arguments\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CurValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
@@ -458,6 +459,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"old_value\""
 >>>>>>> Rename to oplog
+=======
+        "CurValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cur_value\""
+>>>>>>> Add current value
         },
         "HumanReadable": {
           "type": "string",
