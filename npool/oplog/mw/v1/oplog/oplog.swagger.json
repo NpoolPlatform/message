@@ -170,8 +170,7 @@
       "type": "object",
       "properties": {
         "EntID": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "AppID": {
           "type": "string"
