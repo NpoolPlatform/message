@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/oplog/mw/v1/log/log.proto",
+    "title": "npool/oplog/mw/v1/oplog/oplog.proto",
     "version": "version not set"
   },
   "tags": [
@@ -61,21 +61,21 @@
         }
       }
     },
-    "v1CreateLogResponse": {
+    "v1CreateOpLogResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Log"
+          "$ref": "#/definitions/v1OpLog"
         }
       }
     },
-    "v1GetLogsResponse": {
+    "v1GetOpLogsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Log"
+            "$ref": "#/definitions/v1OpLog"
           }
         },
         "Total": {
@@ -100,7 +100,7 @@
       ],
       "default": "DefaultMethod"
     },
-    "v1Log": {
+    "v1OpLog": {
       "type": "object",
       "properties": {
         "AutoID": {
@@ -162,7 +162,7 @@
         }
       }
     },
-    "v1LogReq": {
+    "v1OpLogReq": {
       "type": "object",
       "properties": {
         "AutoID": {
@@ -227,11 +227,11 @@
         }
       }
     },
-    "v1UpdateLogResponse": {
+    "v1UpdateOpLogResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Log"
+          "$ref": "#/definitions/v1OpLog"
         }
       }
     }
