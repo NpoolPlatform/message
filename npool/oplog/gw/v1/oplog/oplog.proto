@@ -1,41 +1,41 @@
 syntax = "proto3";
 
-package oplog.gateway.log.v1;
+package oplog.gateway.oplog1.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/oplog/gw/v1/log";
+option go_package = "github.com/NpoolPlatform/message/npool/oplog/gw/v1/oplog";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/httpmethod.proto";
 import "npool/basetypes/v1/result.proto";
 import "npool/basetypes/v1/conds.proto";
-import "npool/oplog/mw/v1/log/log.proto";
+import "npool/oplog/mw/v1/oplog/oplog.proto";
 
 service Gateway {
-    rpc CreateLog (CreateLogRequest) returns (CreateLogResponse) {
+    rpc CreateOpLog (CreateOpLogRequest) returns (CreateOpLogResponse) {
         option (google.api.http) = {
             post: "/v1/create/oplog"
             body: "*"
         };
     }
-    rpc UpdateLog (UpdateLogRequest) returns (UpdateLogResponse) {
+    rpc UpdateOpLog (UpdateOpLogRequest) returns (UpdateOpLogResponse) {
         option (google.api.http) = {
             post: "/v1/update/oplog"
             body: "*"
         };
     }
-    rpc GetLogs (GetLogsRequest) returns (GetLogsResponse) {
+    rpc GetOpLogs (GetOpLogsRequest) returns (GetOpLogsResponse) {
         option (google.api.http) = {
             post: "/v1/get/oplogs"
             body: "*"
         };
     }
-    rpc GetAppLogs (GetAppLogsRequest) returns (GetAppLogsResponse) {
+    rpc GetAppOpLogs (GetAppOpLogsRequest) returns (GetAppOpLogsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/oplogs"
             body: "*"
         };
     }
-    rpc GetNAppLogs (GetNAppLogsRequest) returns (GetNAppLogsResponse) {
+    rpc GetNAppOpLogs (GetNAppOpLogsRequest) returns (GetNAppOpLogsResponse) {
         option (google.api.http) = {
             post: "/v1/get/n/app/oplogs"
             body: "*"
@@ -43,7 +43,7 @@ service Gateway {
     }
 }
 
-message CreateLogRequest {
+message CreateOpLogRequest {
     string          AppID           = 10;
     optional string UserID          = 20;
     string          Path            = 30;
@@ -53,50 +53,50 @@ message CreateLogRequest {
     optional string FailReason      = 70;
 }
 
-message CreateLogResponse {
-    oplog.middleware.log.v1.Log Info = 10;
+message CreateOpLogResponse {
+    oplog.middleware.oplog1.v1.OpLog Info = 10;
 }
 
-message UpdateLogRequest {
+message UpdateOpLogRequest {
     uint32 AutoID = 10;
     optional basetypes.v1.Result Result = 20;
     optional string FailReason = 30;
 }
 
-message UpdateLogResponse {
-    oplog.middleware.log.v1.Log Info = 10;
+message UpdateOpLogResponse {
+    oplog.middleware.oplog1.v1.OpLog Info = 10;
 }
 
-message GetLogsRequest {
+message GetOpLogsRequest {
     string AppID  = 10;
     string UserID = 20;
     int32  Offset = 30;
     int32  Limit  = 40;
 }
 
-message GetLogsResponse {
-    repeated oplog.middleware.log.v1.Log Infos = 10;
-    uint32                               Total = 20;
+message GetOpLogsResponse {
+    repeated oplog.middleware.oplog1.v1.OpLog Infos = 10;
+    uint32                                    Total = 20;
 }
 
-message GetAppLogsRequest {
+message GetAppOpLogsRequest {
     string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
 
-message GetAppLogsResponse {
-    repeated oplog.middleware.log.v1.Log Infos = 10;
-    uint32                               Total = 20;
+message GetAppOpLogsResponse {
+    repeated oplog.middleware.oplog1.v1.OpLog Infos = 10;
+    uint32                                    Total = 20;
 }
 
-message GetNAppLogsRequest {
+message GetNAppOpLogsRequest {
     string TargetAppID  = 10;
     int32  Offset       = 20;
     int32  Limit        = 30;
 }
 
-message GetNAppLogsResponse {
-    repeated oplog.middleware.log.v1.Log Infos = 10;
-    uint32                               Total = 20;
+message GetNAppOpLogsResponse {
+    repeated oplog.middleware.oplog1.v1.OpLog Infos = 10;
+    uint32                                    Total = 20;
 }
