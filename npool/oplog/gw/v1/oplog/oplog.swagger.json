@@ -405,9 +405,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"arguments\""
         },
-        "OldValue": {
+        "CurValue": {
           "type": "string",
-          "title": "@inject_tag: sql:\"old_value\""
+          "title": "@inject_tag: sql:\"cur_value\""
         },
         "HumanReadable": {
           "type": "string",
