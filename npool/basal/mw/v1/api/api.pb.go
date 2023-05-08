@@ -267,8 +267,8 @@ type API struct {
 	// @inject_tag: sql:"domains"
 	DomainsStr string   `protobuf:"bytes,110,opt,name=DomainsStr,proto3" json:"DomainsStr,omitempty" sql:"domains"`
 	Domains    []string `protobuf:"bytes,120,rep,name=Domains,proto3" json:"Domains,omitempty"`
-	// @inject_tag: sql:"deprecated"
-	Depracated bool `protobuf:"varint,130,opt,name=Depracated,proto3" json:"Depracated,omitempty" sql:"deprecated"`
+	// @inject_tag: sql:"depracated"
+	Depracated bool `protobuf:"varint,130,opt,name=Depracated,proto3" json:"Depracated,omitempty" sql:"depracated"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,140,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
