@@ -97,7 +97,7 @@
         },
         "Depracated": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"deprecated\""
+          "title": "@inject_tag: sql:\"depracated\""
         },
         "CreatedAt": {
           "type": "integer",
