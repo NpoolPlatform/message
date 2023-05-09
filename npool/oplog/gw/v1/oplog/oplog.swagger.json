@@ -253,6 +253,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "NewValue": {
+          "type": "string"
+        },
         "Result": {
           "$ref": "#/definitions/v1Result"
         },
@@ -412,6 +415,10 @@
         "CurValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
+        },
+        "NewValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"new_value\""
         },
         "HumanReadable": {
           "type": "string",
