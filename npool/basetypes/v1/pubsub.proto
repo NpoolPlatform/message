@@ -11,6 +11,7 @@ enum MsgID {
     CreateLoginHistoryReq        = 30;
     CreateAuthHistoryReq         = 40;
     CreateReviewReq              = 50;
+    UpdateOpLogHumanReadableReq  = 60;
 
     CreateSampleMsgReq           = 100000000;
 }
