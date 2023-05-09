@@ -265,6 +265,9 @@
           "format": "int64"
 >>>>>>> Rename to oplog
         },
+        "NewValue": {
+          "type": "string"
+        },
         "Result": {
           "$ref": "#/definitions/v1Result"
         },
@@ -481,6 +484,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
 >>>>>>> Add current value
+        },
+        "NewValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"new_value\""
         },
         "HumanReadable": {
           "type": "string",
