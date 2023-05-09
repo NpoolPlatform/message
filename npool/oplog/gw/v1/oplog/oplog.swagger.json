@@ -254,6 +254,7 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "EntID": {
           "type": "string"
         },
@@ -264,6 +265,10 @@
           "type": "integer",
           "format": "int64"
 >>>>>>> Rename to oplog
+=======
+        "EntID": {
+          "type": "string"
+>>>>>>> Use ent id
         },
         "NewValue": {
           "type": "string"
