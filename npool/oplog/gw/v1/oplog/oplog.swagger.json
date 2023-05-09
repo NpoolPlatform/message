@@ -249,9 +249,8 @@
     "oploggatewayoplog1v1UpdateOpLogRequest": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "type": "integer",
-          "format": "int64"
+        "EntID": {
+          "type": "string"
         },
         "NewValue": {
           "type": "string"

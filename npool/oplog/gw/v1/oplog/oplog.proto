@@ -58,8 +58,8 @@ message CreateOpLogResponse {
 }
 
 message UpdateOpLogRequest {
-    uint32 AutoID = 10;
-    optional string NewValue   = 20;
+    string          EntID    = 10;
+    optional string NewValue = 20;
     optional basetypes.v1.Result Result = 30;
     optional string FailReason = 40;
 }
