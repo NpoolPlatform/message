@@ -139,6 +139,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
         },
+        "NewValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"new_value\""
+        },
         "HumanReadable": {
           "type": "string",
           "title": "@inject_tag: sql:\"human_readable\""
@@ -188,6 +192,9 @@
           "type": "string"
         },
         "CurValue": {
+          "type": "string"
+        },
+        "NewValue": {
           "type": "string"
         },
         "HumanReadable": {
