@@ -117,7 +117,7 @@
     "basalgatewayapiv1GetAPIsRequest": {
       "type": "object",
       "properties": {
-        "Domain": {
+        "ServiceName": {
           "type": "string"
         },
         "Exported": {
