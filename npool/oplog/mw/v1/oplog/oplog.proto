@@ -23,9 +23,10 @@ message OpLogReq {
     optional basetypes.v1.HTTPMethod Method = 50;
     optional string Arguments       = 60;
     optional string CurValue        = 70;
-    optional string HumanReadable   = 80;
-    optional basetypes.v1.Result Result = 90;
-    optional string FailReason      = 100;
+    optional string NewValue        = 80;
+    optional string HumanReadable   = 90;
+    optional basetypes.v1.Result Result = 100;
+    optional string FailReason      = 110;
 }
 
 message OpLog {
@@ -46,13 +47,15 @@ message OpLog {
     string          Arguments       = 80;
     // @inject_tag: sql:"cur_value"
     string          CurValue        = 90;
+    // @inject_tag: sql:"new_value"
+    string          NewValue        = 100;
     // @inject_tag: sql:"human_readable"
-    string          HumanReadable   = 100;
+    string          HumanReadable   = 110;
     // @inject_tag: sql:"result"
-    string          ResultStr       = 110;
-    basetypes.v1.Result Result      = 120;
+    string          ResultStr       = 120;
+    basetypes.v1.Result Result      = 130;
     // @inject_tag: sql:"fail_reason"
-    string          FailReason      = 130;
+    string          FailReason      = 140;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
