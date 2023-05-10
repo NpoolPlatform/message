@@ -209,6 +209,9 @@
           "title": "@inject_tag: sql:\"fail_reason\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add req headers and resp headers
         "StatusCode": {
           "type": "integer",
           "format": "int32",
@@ -216,6 +219,7 @@
         },
         "ReqHeaders": {
           "type": "string",
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"req_headers\""
         },
         "RespHeaders": {
@@ -224,6 +228,14 @@
         },
 =======
 >>>>>>> Rename to oplog
+=======
+          "title": "@inject_tag: sql:\"fail_reason\""
+        },
+        "RespHeaders": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fail_reason\""
+        },
+>>>>>>> Add req headers and resp headers
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -301,6 +313,9 @@
         "FailReason": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add req headers and resp headers
         },
         "StatusCode": {
           "type": "integer",
@@ -311,12 +326,15 @@
         },
         "RespHeaders": {
           "type": "string"
+<<<<<<< HEAD
         },
         "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
 =======
 >>>>>>> Rename to oplog
+=======
+>>>>>>> Add req headers and resp headers
         }
       }
     },
