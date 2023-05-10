@@ -214,10 +214,10 @@ type OpLog struct {
 	FailReason string `protobuf:"bytes,140,opt,name=FailReason,proto3" json:"FailReason,omitempty" sql:"fail_reason"`
 	// @inject_tag: sql:"status_code"
 	StatusCode int32 `protobuf:"varint,150,opt,name=StatusCode,proto3" json:"StatusCode,omitempty" sql:"status_code"`
-	// @inject_tag: sql:"fail_reason"
-	ReqHeaders string `protobuf:"bytes,160,opt,name=ReqHeaders,proto3" json:"ReqHeaders,omitempty" sql:"fail_reason"`
-	// @inject_tag: sql:"fail_reason"
-	RespHeaders string `protobuf:"bytes,170,opt,name=RespHeaders,proto3" json:"RespHeaders,omitempty" sql:"fail_reason"`
+	// @inject_tag: sql:"req_headers"
+	ReqHeaders string `protobuf:"bytes,160,opt,name=ReqHeaders,proto3" json:"ReqHeaders,omitempty" sql:"req_headers"`
+	// @inject_tag: sql:"resp_headers"
+	RespHeaders string `protobuf:"bytes,170,opt,name=RespHeaders,proto3" json:"RespHeaders,omitempty" sql:"resp_headers"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
