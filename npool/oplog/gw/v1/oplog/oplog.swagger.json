@@ -308,7 +308,7 @@
 >>>>>>> Support req headers and resp headers
 =======
         },
-        "ElapsedMilliseconds": {
+        "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
 >>>>>>> Add elapsed milliseconds
