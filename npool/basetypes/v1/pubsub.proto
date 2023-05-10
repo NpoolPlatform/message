@@ -12,7 +12,6 @@ enum MsgID {
     CreateAuthHistoryReq         = 40;
     CreateReviewReq              = 50;
     RegisterAPIsReq              = 60;
-
 }
 
 enum MsgState {
