@@ -229,7 +229,7 @@
         "RespHeaders": {
           "type": "string"
         },
-        "ElapsedMilliseconds": {
+        "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
         }
