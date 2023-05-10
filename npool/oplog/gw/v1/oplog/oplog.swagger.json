@@ -196,10 +196,7 @@
         "Arguments": {
           "type": "string"
         },
-        "Result": {
-          "$ref": "#/definitions/v1Result"
-        },
-        "FailReason": {
+        "ReqHeaders": {
           "type": "string"
         }
       }
@@ -259,6 +256,16 @@
           "$ref": "#/definitions/v1Result"
         },
         "FailReason": {
+          "type": "string"
+        },
+        "StatusCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ReqHeaders": {
+          "type": "string"
+        },
+        "RespHeaders": {
           "type": "string"
         }
       }
