@@ -6,10 +6,17 @@ option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/event";
 
 import "npool/basal/mw/v1/api/api.proto";
 
-message CreateAPIsReq {
-  
+message APIRegisterRequest {
+  basal.middleware.api.v1.Protocol   Protocol       = 10;
+  string                             ServiceName    = 20;
+  basal.middleware.api.v1.Method     Method         = 30;
+  string                             MethodName     = 40;
+  string                             Path           = 50;
+  string                             PathPrefix     = 60;
+  repeated string                    Domains        = 70;
+  optional bool                      Exported       = 80;
 }
 
-message CreateAPIsResponse {
+message APIRegisterResponse {
   repeated basal.middleware.api.v1.API Infos = 10;
 }
