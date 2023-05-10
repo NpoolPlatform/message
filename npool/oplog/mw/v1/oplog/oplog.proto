@@ -62,9 +62,9 @@ message OpLog {
     string          FailReason      = 140;
     // @inject_tag: sql:"status_code"
     int32           StatusCode      = 150;
-    // @inject_tag: sql:"fail_reason"
+    // @inject_tag: sql:"req_headers"
     string          ReqHeaders      = 160;
-    // @inject_tag: sql:"fail_reason"
+    // @inject_tag: sql:"resp_headers"
     string          RespHeaders     = 170;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;

@@ -165,11 +165,11 @@
         },
         "ReqHeaders": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fail_reason\""
+          "title": "@inject_tag: sql:\"req_headers\""
         },
         "RespHeaders": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fail_reason\""
+          "title": "@inject_tag: sql:\"resp_headers\""
         },
         "CreatedAt": {
           "type": "integer",
