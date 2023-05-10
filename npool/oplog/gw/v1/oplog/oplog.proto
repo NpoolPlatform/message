@@ -64,6 +64,7 @@ message UpdateOpLogRequest {
     optional int32  StatusCode  = 50;
     optional string ReqHeaders  = 60;
     optional string RespHeaders = 70;
+    optional uint32 ElapsedMilliseconds = 80;
 }
 
 message UpdateOpLogResponse {
