@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type APIsRegisterRequest struct {
+type RegisterAPIsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -29,8 +29,8 @@ type APIsRegisterRequest struct {
 	Info []*api.APIReq `protobuf:"bytes,10,rep,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *APIsRegisterRequest) Reset() {
-	*x = APIsRegisterRequest{}
+func (x *RegisterAPIsRequest) Reset() {
+	*x = RegisterAPIsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_basal_mw_v1_event_event_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -38,13 +38,13 @@ func (x *APIsRegisterRequest) Reset() {
 	}
 }
 
-func (x *APIsRegisterRequest) String() string {
+func (x *RegisterAPIsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*APIsRegisterRequest) ProtoMessage() {}
+func (*RegisterAPIsRequest) ProtoMessage() {}
 
-func (x *APIsRegisterRequest) ProtoReflect() protoreflect.Message {
+func (x *RegisterAPIsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_basal_mw_v1_event_event_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,19 +56,19 @@ func (x *APIsRegisterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use APIsRegisterRequest.ProtoReflect.Descriptor instead.
-func (*APIsRegisterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use RegisterAPIsRequest.ProtoReflect.Descriptor instead.
+func (*RegisterAPIsRequest) Descriptor() ([]byte, []int) {
 	return file_npool_basal_mw_v1_event_event_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *APIsRegisterRequest) GetInfo() []*api.APIReq {
+func (x *RegisterAPIsRequest) GetInfo() []*api.APIReq {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type APIsRegisterResponse struct {
+type RegisterAPIsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -76,8 +76,8 @@ type APIsRegisterResponse struct {
 	Infos []*api.API `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *APIsRegisterResponse) Reset() {
-	*x = APIsRegisterResponse{}
+func (x *RegisterAPIsResponse) Reset() {
+	*x = RegisterAPIsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_basal_mw_v1_event_event_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -85,13 +85,13 @@ func (x *APIsRegisterResponse) Reset() {
 	}
 }
 
-func (x *APIsRegisterResponse) String() string {
+func (x *RegisterAPIsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*APIsRegisterResponse) ProtoMessage() {}
+func (*RegisterAPIsResponse) ProtoMessage() {}
 
-func (x *APIsRegisterResponse) ProtoReflect() protoreflect.Message {
+func (x *RegisterAPIsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_basal_mw_v1_event_event_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -103,12 +103,12 @@ func (x *APIsRegisterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use APIsRegisterResponse.ProtoReflect.Descriptor instead.
-func (*APIsRegisterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use RegisterAPIsResponse.ProtoReflect.Descriptor instead.
+func (*RegisterAPIsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_basal_mw_v1_event_event_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *APIsRegisterResponse) GetInfos() []*api.API {
+func (x *RegisterAPIsResponse) GetInfos() []*api.API {
 	if x != nil {
 		return x.Infos
 	}
@@ -124,12 +124,12 @@ var file_npool_basal_mw_v1_event_event_proto_rawDesc = []byte{
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
 	0x1a, 0x1f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x61, 0x6c, 0x2f, 0x6d, 0x77,
 	0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x22, 0x4a, 0x0a, 0x13, 0x41, 0x50, 0x49, 0x73, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65,
-	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x6f, 0x22, 0x4a, 0x0a, 0x13, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50, 0x49,
+	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x62, 0x61, 0x73, 0x61, 0x6c, 0x2e, 0x6d,
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x76, 0x31,
 	0x2e, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4a, 0x0a,
-	0x14, 0x41, 0x50, 0x49, 0x73, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x14, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50, 0x49, 0x73, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a,
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x62, 0x61, 0x73, 0x61, 0x6c, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41,
@@ -154,14 +154,14 @@ func file_npool_basal_mw_v1_event_event_proto_rawDescGZIP() []byte {
 
 var file_npool_basal_mw_v1_event_event_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_npool_basal_mw_v1_event_event_proto_goTypes = []interface{}{
-	(*APIsRegisterRequest)(nil),  // 0: basal.middleware.event.v1.APIsRegisterRequest
-	(*APIsRegisterResponse)(nil), // 1: basal.middleware.event.v1.APIsRegisterResponse
+	(*RegisterAPIsRequest)(nil),  // 0: basal.middleware.event.v1.RegisterAPIsRequest
+	(*RegisterAPIsResponse)(nil), // 1: basal.middleware.event.v1.RegisterAPIsResponse
 	(*api.APIReq)(nil),           // 2: basal.middleware.api.v1.APIReq
 	(*api.API)(nil),              // 3: basal.middleware.api.v1.API
 }
 var file_npool_basal_mw_v1_event_event_proto_depIdxs = []int32{
-	2, // 0: basal.middleware.event.v1.APIsRegisterRequest.Info:type_name -> basal.middleware.api.v1.APIReq
-	3, // 1: basal.middleware.event.v1.APIsRegisterResponse.Infos:type_name -> basal.middleware.api.v1.API
+	2, // 0: basal.middleware.event.v1.RegisterAPIsRequest.Info:type_name -> basal.middleware.api.v1.APIReq
+	3, // 1: basal.middleware.event.v1.RegisterAPIsResponse.Infos:type_name -> basal.middleware.api.v1.API
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -176,7 +176,7 @@ func file_npool_basal_mw_v1_event_event_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_basal_mw_v1_event_event_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*APIsRegisterRequest); i {
+			switch v := v.(*RegisterAPIsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -188,7 +188,7 @@ func file_npool_basal_mw_v1_event_event_proto_init() {
 			}
 		}
 		file_npool_basal_mw_v1_event_event_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*APIsRegisterResponse); i {
+			switch v := v.(*RegisterAPIsResponse); i {
 			case 0:
 				return &v.state
 			case 1:

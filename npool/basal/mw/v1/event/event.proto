@@ -6,10 +6,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/event";
 
 import "npool/basal/mw/v1/api/api.proto";
 
-message APIsRegisterRequest {
+message RegisterAPIsRequest {
   repeated basal.middleware.api.v1.APIReq Info = 10;
 }
 
-message APIsRegisterResponse {
+message RegisterAPIsResponse {
   repeated basal.middleware.api.v1.API Infos = 10;
 }
