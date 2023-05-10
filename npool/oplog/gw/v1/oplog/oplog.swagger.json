@@ -267,6 +267,10 @@
         },
         "RespHeaders": {
           "type": "string"
+        },
+        "ElapsedMilliseconds": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
