@@ -30,6 +30,7 @@ message OpLogReq {
     optional int32  StatusCode      = 120;
     optional string ReqHeaders      = 130;
     optional string RespHeaders     = 140;
+    optional uint32 ElapsedMilliseconds = 160;
 }
 
 message OpLog {
