@@ -49,8 +49,7 @@ message CreateOpLogRequest {
     string          Path            = 30;
     basetypes.v1.HTTPMethod Method  = 40;
     string          Arguments       = 50;
-    optional basetypes.v1.Result Result = 60;
-    optional string FailReason      = 70;
+    string          ReqHeaders      = 60;
 }
 
 message CreateOpLogResponse {
@@ -61,7 +60,10 @@ message UpdateOpLogRequest {
     string          EntID    = 10;
     optional string NewValue = 20;
     optional basetypes.v1.Result Result = 30;
-    optional string FailReason = 40;
+    optional string FailReason  = 40;
+    optional int32  StatusCode  = 50;
+    optional string ReqHeaders  = 60;
+    optional string RespHeaders = 70;
 }
 
 message UpdateOpLogResponse {
