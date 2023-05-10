@@ -27,6 +27,9 @@ message OpLogReq {
     optional string HumanReadable   = 90;
     optional basetypes.v1.Result Result = 100;
     optional string FailReason      = 110;
+    optional int32  StatusCode      = 120;
+    optional string ReqHeaders      = 130;
+    optional string RespHeaders     = 140;
 }
 
 message OpLog {
@@ -56,6 +59,12 @@ message OpLog {
     basetypes.v1.Result Result      = 130;
     // @inject_tag: sql:"fail_reason"
     string          FailReason      = 140;
+    // @inject_tag: sql:"status_code"
+    int32           StatusCode      = 150;
+    // @inject_tag: sql:"fail_reason"
+    string          ReqHeaders      = 160;
+    // @inject_tag: sql:"fail_reason"
+    string          RespHeaders     = 170;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"

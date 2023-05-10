@@ -441,6 +441,19 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fail_reason\""
         },
+        "StatusCode": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"status_code\""
+        },
+        "ReqHeaders": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fail_reason\""
+        },
+        "RespHeaders": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fail_reason\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
