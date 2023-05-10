@@ -17,6 +17,10 @@ message APIRegisterRequest {
   optional bool                      Exported       = 80;
 }
 
-message APIRegisterResponse {
+message APIsRegisterRequest {
+  repeated APIRegisterRequest Infos = 10;
+}
+
+message APIsRegisterResponse {
   repeated basal.middleware.api.v1.API Infos = 10;
 }
