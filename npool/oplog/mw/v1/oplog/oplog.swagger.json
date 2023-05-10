@@ -327,6 +327,7 @@
         "RespHeaders": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "ElapsedMillisecs": {
           "type": "integer",
@@ -335,6 +336,12 @@
 >>>>>>> Rename to oplog
 =======
 >>>>>>> Add req headers and resp headers
+=======
+        },
+        "ElapsedMilliseconds": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Add elapsed milliseconds
         }
       }
     },
