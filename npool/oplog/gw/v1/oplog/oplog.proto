@@ -65,8 +65,6 @@ message UpdateOpLogRequest {
     optional string ReqHeaders  = 60;
     optional string RespHeaders = 70;
     optional uint32 ElapsedMillisecs = 80;
-    optional basetypes.v1.Result Result = 20;
-    optional string FailReason = 30;
 }
 
 message UpdateOpLogResponse {

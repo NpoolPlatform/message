@@ -197,6 +197,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ReqHeaders": {
 =======
         "Result": {
@@ -204,6 +205,9 @@
         },
         "FailReason": {
 >>>>>>> Rename to oplog
+=======
+        "ReqHeaders": {
+>>>>>>> Support req headers and resp headers
           "type": "string"
         }
       }
@@ -279,6 +283,9 @@
         "FailReason": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Support req headers and resp headers
         },
         "StatusCode": {
           "type": "integer",
@@ -289,12 +296,15 @@
         },
         "RespHeaders": {
           "type": "string"
+<<<<<<< HEAD
         },
         "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
 =======
 >>>>>>> Rename to oplog
+=======
+>>>>>>> Support req headers and resp headers
         }
       }
     },
