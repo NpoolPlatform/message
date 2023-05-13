@@ -44,22 +44,58 @@
         }
       }
     },
-    "v1GetManyRoleUsersResponse": {
+    "v1BoolVal": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RoleUser"
-          }
+        "Op": {
+          "type": "string"
         },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+        "Value": {
+          "type": "boolean"
         }
       }
     },
-    "v1GetManyRolesResponse": {
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Role": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Default": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Roles": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Genesis": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "v1CreateRolesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -67,10 +103,30 @@
           "items": {
             "$ref": "#/definitions/v1Role"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+        }
+      }
+    },
+    "v1DeleteRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
+        }
+      }
+    },
+    "v1ExistRoleCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },
@@ -79,29 +135,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Role"
-        }
-      }
-    },
-    "v1GetRoleUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RoleUser"
-        }
-      }
-    },
-    "v1GetRoleUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RoleUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -139,13 +172,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
         },
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
         "Default": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"default\""
         },
         "AppID": {
           "type": "string",
@@ -164,79 +193,68 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
+        "Genesis": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"genesis\""
+        }
+      }
+    },
+    "v1RoleReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CreatedBy": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Default": {
+          "type": "boolean"
         },
         "Genesis": {
           "type": "boolean"
         }
       }
     },
-    "v1RoleUser": {
+    "v1StringSliceVal": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
+        "Op": {
+          "type": "string"
         },
-        "CreatedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"created_by\""
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
         },
-        "Role": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"role\""
-        },
-        "Description": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"description\""
-        },
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
-        "Default": {
-          "type": "boolean"
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "AppName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_name\""
-        },
-        "AppLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_logo\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "EmailAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"email_address\""
-        },
-        "PhoneNO": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"phone_no\""
-        },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
-        "Genesis": {
-          "type": "boolean"
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateRoleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Role"
         }
       }
     }

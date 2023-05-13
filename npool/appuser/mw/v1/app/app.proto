@@ -4,19 +4,20 @@ package appuser.middleware.app.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 
-import "npool/appuser/mgr/v2/app/app.proto";
-import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
-import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
 import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/createinvitationcodewhen.proto";
+import "npool/basetypes/v1/recaptcha.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateApp              (CreateAppRequest)             returns (CreateAppResponse)             {}
-    rpc UpdateApp              (UpdateAppRequest)             returns (UpdateAppResponse)             {}
-    rpc GetApp                 (GetAppRequest)                returns (GetAppResponse)                {}
-    rpc GetApps                (GetAppsRequest)               returns (GetAppsResponse)               {}
-    rpc GetUserApps            (GetUserAppsRequest)           returns (GetUserAppsResponse)           {}
-    rpc GetManyApps            (GetManyAppsRequest)           returns (GetManyAppsResponse)           {}
-    rpc DeleteApp              (DeleteAppRequest)             returns (DeleteAppResponse)             {}
+    rpc CreateApp       (CreateAppRequest)       returns (CreateAppResponse)       {}
+    rpc CreateApps      (CreateAppsRequest)      returns (CreateAppsResponse)      {}
+    rpc UpdateApp       (UpdateAppRequest)       returns (UpdateAppResponse)       {}
+    rpc GetApp          (GetAppRequest)          returns (GetAppResponse)          {}
+    rpc GetApps         (GetAppsRequest)         returns (GetAppsResponse)         {}
+    rpc ExistApp        (ExistAppRequest)        returns (ExistAppResponse)        {}
+    rpc ExistAppConds   (ExistAppCondsRequest)   returns (ExistAppCondsResponse)   {}
+    rpc DeleteApp       (DeleteAppRequest)       returns (DeleteAppResponse)       {}
 }
 
 message AppReq {
@@ -36,11 +37,11 @@ message AppReq {
     repeated basetypes.v1.SignMethod ExtSigninMethods = 90;
 
     // Control flag
-    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 100;
+    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 100;
     optional bool            KycEnable          = 110;
     optional bool            SigninVerifyEnable = 120;
     optional bool            InvitationCodeMust = 130;
-    optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
+    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
@@ -77,15 +78,12 @@ message App {
     // Control flag
     // @inject_tag: sql:"recaptcha_method"
     string          RecaptchaMethodStr     = 130;
-    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 131;
+    basetypes.v1.RecaptchaMethod RecaptchaMethod  = 131;
     // @inject_tag: sql:"kyc_enable"
-    int32           KycEnableInt           = 140;
     bool            KycEnable              = 150;
     // @inject_tag: sql:"signin_verify_enable"
-    int32           SigninVerifyEnableInt  = 160;
     bool            SigninVerifyEnable     = 170;
     // @inject_tag: sql:"invitation_code_must"
-    int32           InvitationCodeMustInt  = 180;
     bool            InvitationCodeMust     = 190;
 
     // @inject_tag: sql:"created_at"
@@ -93,7 +91,7 @@ message App {
 
     // @inject_tag: sql:"create_invitation_code_when"
     string          CreateInvitationCodeWhenStr = 210;
-    appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
+    basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
 
     // @inject_tag: sql:"max_typed_coupons_per_order"
     uint32          MaxTypedCouponsPerOrder = 230;
@@ -104,8 +102,14 @@ message App {
     repeated string CommitButtonTargets           = 260;
 }
 
+message Conds {
+    optional basetypes.v1.StringVal      ID        = 10;
+    optional basetypes.v1.StringSliceVal IDs       = 20;
+    optional basetypes.v1.StringVal      CreatedBy = 30;
+    optional basetypes.v1.StringVal      Name      = 40;
+}
+
 message CreateAppRequest {
-    // Permissioned by path
     AppReq Info = 10;
 }
 
@@ -113,8 +117,15 @@ message CreateAppResponse {
     App Info = 10;
 }
 
+message CreateAppsRequest {
+    repeated AppReq Infos = 10;
+}
+
+message CreateAppsResponse {
+    repeated App Infos = 10;
+}
+
 message UpdateAppRequest {
-    // Permissioned by path
     AppReq Info = 10;
 }
 
@@ -123,7 +134,6 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    // Permissioned by path
     string ID = 10;
 }
 
@@ -132,7 +142,7 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-    // Permissioned by path
+    Conds Conds  = 9;
     int32 Offset = 10;
     int32 Limit  = 20;
 }
@@ -142,43 +152,20 @@ message GetAppsResponse {
     uint32       Total = 20;
 }
 
-message GetUserAppsRequest {
-    // Permissioned by path
-    string UserID = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+message ExistAppRequest {
+    string ID = 10;
 }
 
-message GetUserAppsResponse {
-    repeated App Infos = 10;
-    uint32       Total = 20;
+message ExistAppResponse {
+    bool Info = 10;
 }
 
-message GetSignMethodsRequest {
-    // Permissioned by path
+message ExistAppCondsRequest {
+    Conds Conds = 10;
 }
 
-message GetSignMethodsResponse {
-    // In future this may be put to database then admin can change it
-    repeated basetypes.v1.SignMethod Infos = 10;
-}
-
-message GetRecaptchasRequest {
-    // Permissioned by path
-}
-
-message GetRecaptchasResponse {
-    // In future this may be put to database then admin can change it
-    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
-}
-
-message GetManyAppsRequest {
-    repeated string IDs = 10;
-}
-
-message GetManyAppsResponse {
-    repeated App Infos = 10;
-    uint32       Total = 20;
+message ExistAppCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteAppRequest {

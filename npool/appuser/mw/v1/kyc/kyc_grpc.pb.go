@@ -22,8 +22,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error)
+	UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error)
 	GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error)
 	GetKycs(ctx context.Context, in *GetKycsRequest, opts ...grpc.CallOption) (*GetKycsResponse, error)
+	DeleteKyc(ctx context.Context, in *DeleteKycRequest, opts ...grpc.CallOption) (*DeleteKycResponse, error)
 }
 
 type middlewareClient struct {
@@ -32,6 +35,24 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateKyc(ctx context.Context, in *CreateKycRequest, opts ...grpc.CallOption) (*CreateKycResponse, error) {
+	out := new(CreateKycResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/CreateKyc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateKyc(ctx context.Context, in *UpdateKycRequest, opts ...grpc.CallOption) (*UpdateKycResponse, error) {
+	out := new(UpdateKycResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/UpdateKyc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetKyc(ctx context.Context, in *GetKycRequest, opts ...grpc.CallOption) (*GetKycResponse, error) {
@@ -52,12 +73,24 @@ func (c *middlewareClient) GetKycs(ctx context.Context, in *GetKycsRequest, opts
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteKyc(ctx context.Context, in *DeleteKycRequest, opts ...grpc.CallOption) (*DeleteKycResponse, error) {
+	out := new(DeleteKycResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.kyc.v1.Middleware/DeleteKyc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error)
+	UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error)
 	GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error)
 	GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error)
+	DeleteKyc(context.Context, *DeleteKycRequest) (*DeleteKycResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -65,11 +98,20 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateKyc(context.Context, *CreateKycRequest) (*CreateKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateKyc not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateKyc(context.Context, *UpdateKycRequest) (*UpdateKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateKyc not implemented")
+}
 func (UnimplementedMiddlewareServer) GetKyc(context.Context, *GetKycRequest) (*GetKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKyc not implemented")
 }
 func (UnimplementedMiddlewareServer) GetKycs(context.Context, *GetKycsRequest) (*GetKycsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKycs not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteKyc(context.Context, *DeleteKycRequest) (*DeleteKycResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteKyc not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -82,6 +124,42 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateKycRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateKyc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.kyc.v1.Middleware/CreateKyc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateKyc(ctx, req.(*CreateKycRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateKycRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateKyc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.kyc.v1.Middleware/UpdateKyc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateKyc(ctx, req.(*UpdateKycRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -120,6 +198,24 @@ func _Middleware_GetKycs_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteKycRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteKyc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.kyc.v1.Middleware/DeleteKyc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteKyc(ctx, req.(*DeleteKycRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -128,12 +224,24 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "CreateKyc",
+			Handler:    _Middleware_CreateKyc_Handler,
+		},
+		{
+			MethodName: "UpdateKyc",
+			Handler:    _Middleware_UpdateKyc_Handler,
+		},
+		{
 			MethodName: "GetKyc",
 			Handler:    _Middleware_GetKyc_Handler,
 		},
 		{
 			MethodName: "GetKycs",
 			Handler:    _Middleware_GetKycs_Handler,
+		},
+		{
+			MethodName: "DeleteKyc",
+			Handler:    _Middleware_DeleteKyc_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

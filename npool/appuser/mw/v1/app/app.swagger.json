@@ -17,7 +17,34 @@
   ],
   "paths": {},
   "definitions": {
-    "appv1App": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -76,31 +103,19 @@
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
-        },
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"signin_verify_enable\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kyc_enable\""
         },
         "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMustInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"invitation_code_must\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
         },
         "InvitationCodeMust": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -112,7 +127,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -135,7 +150,7 @@
         }
       }
     },
-    "appv1AppReq": {
+    "v1AppReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -175,7 +190,7 @@
           }
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType",
+          "$ref": "#/definitions/v1RecaptchaMethod",
           "title": "Control flag"
         },
         "KycEnable": {
@@ -188,7 +203,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -205,37 +220,91 @@
         }
       }
     },
-    "appv1CreateAppResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "appv1DeleteAppResponse": {
+    "v1CreateAppResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
-    "appv1GetAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "appv1GetAppsResponse": {
+    "v1CreateAppsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
+          }
+        }
+      }
+    },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "v1DeleteAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1ExistAppCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1GetAppsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -244,70 +313,14 @@
         }
       }
     },
-    "appv1UpdateAppResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/appv1App"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1GetManyAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetUserAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3",
+        "NoRecaptcha"
+      ],
+      "default": "DefaultRecaptchaMethod"
     },
     "v1SignMethod": {
       "type": "string",
@@ -325,23 +338,38 @@
       ],
       "default": "DefaultSignMethod"
     },
-    "v2CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
-    "v2RecaptchaType": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaType",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaType"
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
     }
   }
 }

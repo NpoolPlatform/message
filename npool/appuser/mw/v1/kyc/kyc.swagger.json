@@ -17,29 +17,93 @@
   ],
   "paths": {},
   "definitions": {
-    "kycv1Conds": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "Conds": {
-          "$ref": "#/definitions/managerkycv2Conds"
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
         }
       }
     },
-    "kycv1GetKycResponse": {
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDNumber": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DocumentType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntityType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateKycResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/kycv1Kyc"
+          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
-    "kycv1GetKycsResponse": {
+    "v1DeleteKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
+        }
+      }
+    },
+    "v1GetKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
+        }
+      }
+    },
+    "v1GetKycsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/kycv1Kyc"
+            "$ref": "#/definitions/v1Kyc"
           }
         },
         "Total": {
@@ -48,7 +112,7 @@
         }
       }
     },
-    "kycv1Kyc": {
+    "v1Kyc": {
       "type": "object",
       "properties": {
         "ID": {
@@ -84,7 +148,7 @@
           "title": "@inject_tag: sql:\"document_type\""
         },
         "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
+          "$ref": "#/definitions/v1KycDocumentType"
         },
         "IDNumber": {
           "type": "string",
@@ -107,7 +171,7 @@
           "title": "@inject_tag: sql:\"entity_type\""
         },
         "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
+          "$ref": "#/definitions/v1KycEntityType"
         },
         "ReviewID": {
           "type": "string",
@@ -118,7 +182,7 @@
           "title": "@inject_tag: sql:\"state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "ReviewMessage": {
           "type": "string"
@@ -135,58 +199,72 @@
         }
       }
     },
-    "managerkycv2Conds": {
+    "v1KycDocumentType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycDocumentType",
+        "IDCard",
+        "DriverLicense",
+        "Passport"
+      ],
+      "default": "DefaultKycDocumentType"
+    },
+    "v1KycEntityType": {
+      "type": "string",
+      "enum": [
+        "DefaultKycEntityType",
+        "Individual",
+        "Organization"
+      ],
+      "default": "DefaultKycEntityType"
+    },
+    "v1KycReq": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
         "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ReviewID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDNumber": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
         "DocumentType": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1KycDocumentType"
+        },
+        "IDNumber": {
+          "type": "string"
+        },
+        "FrontImg": {
+          "type": "string"
+        },
+        "BackImg": {
+          "type": "string"
+        },
+        "SelfieImg": {
+          "type": "string"
         },
         "EntityType": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1KycEntityType"
+        },
+        "ReviewID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1KycState"
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
     },
     "v1StringVal": {
       "type": "object",
@@ -199,34 +277,25 @@
         }
       }
     },
-    "v2KycDocumentType": {
-      "type": "string",
-      "enum": [
-        "DefaultKycDocumentType",
-        "IDCard",
-        "DriverLicense",
-        "Passport"
-      ],
-      "default": "DefaultKycDocumentType"
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
-    "v2KycEntityType": {
-      "type": "string",
-      "enum": [
-        "DefaultKycEntityType",
-        "Individual",
-        "Organization"
-      ],
-      "default": "DefaultKycEntityType"
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
+    "v1UpdateKycResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Kyc"
+        }
+      }
     }
   }
 }

@@ -5,14 +5,10 @@ package appuser.gateway.app.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/app";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
-import "npool/appuser/mgr/v2/app/app.proto";
 import "npool/appuser/mw/v1/app/app.proto";
-import "npool/appuser/mgr/v2/appcontrol/appcontrol.proto";
-import "npool/appuser/mgr/v2/recaptcha/recaptcha.proto";
-import "npool/appuser/mgr/v2/signmethod/signmethod.proto";
 import "npool/basetypes/v1/signmethod.proto";
+import "npool/basetypes/v1/createinvitationcodewhen.proto";
+import "npool/basetypes/v1/recaptcha.proto";
 
 service Gateway {
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
@@ -44,30 +40,16 @@ service Gateway {
         };
     }
 
-    rpc GetUserApps (GetUserAppsRequest) returns (GetUserAppsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/user/apps"
-            body: "*"
-        };
-    }
-
-    rpc GetSignMethods (GetSignMethodsRequest) returns (GetSignMethodsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/signmethods"
-            body: "*"
-        };
-    }
-
-    rpc GetRecaptchas (GetRecaptchasRequest) returns (GetRecaptchasResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/recaptchas"
-            body: "*"
-        };
-    }
-
     rpc DeleteApp (DeleteAppRequest) returns (DeleteAppResponse) {
         option (google.api.http) = {
             post: "/v1/delete/app"
+            body: "*"
+        };
+    }
+
+    rpc BanApp (BanAppRequest) returns (BanAppResponse) {
+        option (google.api.http) = {
+            post: "/v1/ban/app"
             body: "*"
         };
     }
@@ -80,13 +62,13 @@ message CreateAppRequest {
     string Description = 40;
     repeated basetypes.v1.SignMethod SignupMethods    = 50;
     repeated basetypes.v1.SignMethod ExtSigninMethods = 60;
-    appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 70;
-    bool KycEnable          = 80;
-    bool SigninVerifyEnable = 90;
-    bool InvitationCodeMust = 100;
-    appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
-    uint32          MaxTypedCouponsPerOrder = 120;
-    bool            Maintaining        = 160;
+    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 70;
+    optional bool KycEnable          = 80;
+    optional bool SigninVerifyEnable = 90;
+    optional bool InvitationCodeMust = 100;
+    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
+    optional uint32          MaxTypedCouponsPerOrder = 120;
+    optional bool            Maintaining        = 160;
     repeated string CommitButtonTargets           = 170;
 }
 
@@ -101,11 +83,11 @@ message UpdateAppRequest {
     optional string Description = 40;
     repeated basetypes.v1.SignMethod SignupMethods    = 50;
     repeated basetypes.v1.SignMethod ExtSigninMethods = 60;
-    optional appuser.manager.recaptcha.v2.RecaptchaType   RecaptchaMethod  = 70;
+    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 70;
     optional bool KycEnable          = 80;
     optional bool SigninVerifyEnable = 90;
     optional bool InvitationCodeMust = 100;
-    optional appuser.manager.appcontrol.v2.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
+    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
     optional uint32 MaxTypedCouponsPerOrder = 120;
     optional bool   Maintaining             = 160;
     repeated string CommitButtonTargets     = 170;
@@ -116,7 +98,6 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    // Permissioned by app
     string AppID = 10;
 }
 
@@ -125,7 +106,6 @@ message GetAppResponse {
 }
 
 message GetAppsRequest {
-    // Permissioned by path
     int32  Offset = 10;
     int32  Limit  = 20;
 }
@@ -135,34 +115,6 @@ message GetAppsResponse {
     uint32                                 Total = 20;
 }
 
-message GetUserAppsRequest {
-    // Permissioned by path
-    string TargetUserID = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
-}
-
-message GetUserAppsResponse {
-    repeated appuser.middleware.app.v1.App Infos = 10;
-    uint32                                 Total = 20;
-}
-
-message GetSignMethodsRequest {
-}
-
-message GetSignMethodsResponse {
-    // In future this may be put to database then admin can change it
-    repeated appuser.manager.signmethod.v2.SignMethod Infos = 10;
-}
-
-message GetRecaptchasRequest {
-}
-
-message GetRecaptchasResponse {
-    // In future this may be put to database then admin can change it
-    repeated appuser.manager.recaptcha.v2.Recaptcha Infos = 10;
-}
-
 message DeleteAppRequest {
     string ID = 10;
 }
@@ -170,3 +122,14 @@ message DeleteAppRequest {
 message DeleteAppResponse {
     appuser.middleware.app.v1.App Info = 10;
 }
+
+message BanAppRequest {
+    string ID         = 10;
+    bool   Banned     = 20;
+    string BanMessage = 30;
+}
+
+message BanAppResponse {
+    appuser.middleware.app.v1.App Info = 10;
+}
+

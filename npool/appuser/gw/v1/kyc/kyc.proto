@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package appuser.gateway.kyc.v2;
+package appuser.gateway.kyc.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/kyc";
 
-import "npool/appuser/mgr/v2/kyc/kyc.proto";
 import "npool/appuser/mw/v1/kyc/kyc.proto";
 import "npool/review/mgr/v2/mgr.proto";
 import "google/api/annotations.proto";
 import "npool/npool.proto";
+import "npool/basetypes/v1/kycstate.proto";
 
 service Gateway {
     rpc CreateKyc (CreateKycRequest) returns (CreateKycResponse) {
@@ -82,8 +82,8 @@ message CreateKycRequest {
     string          FrontImg  = 40;
     optional string BackImg   = 50;
     string          SelfieImg = 60;
-    appuser.manager.kyc.v2.KycDocumentType DocumentType = 70;
-    appuser.manager.kyc.v2.KycEntityType   EntityType   = 80;
+    basetypes.v1.KycDocumentType DocumentType = 70;
+    basetypes.v1.KycEntityType   EntityType   = 80;
 }
 
 message CreateKycResponse {
@@ -129,8 +129,8 @@ message UpdateKycRequest {
     optional string FrontImg  = 50;
     optional string BackImg   = 60;
     optional string SelfieImg = 70;
-    optional appuser.manager.kyc.v2.KycDocumentType DocumentType = 80;
-    optional appuser.manager.kyc.v2.KycEntityType   EntityType   = 90;
+    optional basetypes.v1.KycDocumentType DocumentType = 80;
+    optional basetypes.v1.KycEntityType   EntityType   = 90;
 }
 
 message UpdateKycResponse {
@@ -140,7 +140,7 @@ message UpdateKycResponse {
 message UploadKycImageRequest {
     string AppID       = 10;
     string UserID      = 20;
-    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+    basetypes.v1.KycImageType ImageType = 30;
     string ImageBase64 = 40;
 }
 
@@ -151,7 +151,7 @@ message UploadKycImageResponse {
 message GetKycImageRequest {
     string AppID  = 10;
     string UserID = 20;
-    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+    basetypes.v1.KycImageType ImageType = 30;
 }
 
 message GetKycImageResponse {
@@ -161,7 +161,7 @@ message GetKycImageResponse {
 message GetUserKycImageRequest {
     string AppID        = 10;
     string TargetUserID = 20;
-    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+    basetypes.v1.KycImageType ImageType = 30;
 }
 
 message GetUserKycImageResponse {
@@ -171,7 +171,7 @@ message GetUserKycImageResponse {
 message GetAppUserKycImageRequest {
     string TargetAppID  = 10;
     string TargetUserID = 20;
-    appuser.manager.kyc.v2.KycImageType ImageType = 30;
+    basetypes.v1.KycImageType ImageType = 30;
 }
 
 message GetAppUserKycImageResponse {

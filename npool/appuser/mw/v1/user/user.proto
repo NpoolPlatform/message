@@ -5,8 +5,8 @@ package appuser.middleware.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user";
 
 import "npool/basetypes/v1/signmethod.proto";
-import "npool/appuser/mgr/v2/kyc/kyc.proto";
-import "npool/appuser/mgr/v2/appuser/appuser.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/kycstate.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
@@ -16,7 +16,9 @@ service Middleware {
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
-    rpc GetManyUsers      (GetManyUsersRequest)     returns (GetManyUsersResponse)     {}
+
+    rpc ExistUser         (ExistUserRequest)        returns (ExistUserResponse)        {}
+    rpc ExistUserConds    (ExistUserCondsRequest)   returns (ExistUserCondsResponse)   {}
 
     rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
 
@@ -123,16 +125,16 @@ message User {
     string          SigninVerifyTypeStr         = 210;
     basetypes.v1.SignMethod SigninVerifyType = 220;
     // @inject_tag: sql:"signin_verify_by_google_authentication"
-    int32           SigninVerifyByGoogleAuthInt = 221;
     bool            SigninVerifyByGoogleAuth    = 222;
     // @inject_tag: sql:"google_authentication_verified"
-    int32           GoogleAuthVerifiedInt       = 230;
     bool            GoogleAuthVerified          = 240;
     // @inject_tag: sql:"ban_app_user_id"
     string          BanAppUserID                = 250;
     bool            Banned                      = 260;
     // @inject_tag: sql:"ban_message"
     string          BanMessage                  = 270;
+    // @inject_tag: sql:"ban_deleted_at"
+    uint32          BanDeletedAt                = 271;
 
     // Secret map
     // @inject_tag: sql:"google_secret"
@@ -159,7 +161,7 @@ message User {
 
     // @inject_tag: sql:"kyc_state"
     string          KycStateStr           = 400;
-    appuser.manager.kyc.v2.KycState State = 410;
+    basetypes.v1.KycState State           = 410;
 
     // @inject_tag: sql:"kol"
     bool            Kol                   = 420;
@@ -168,6 +170,15 @@ message User {
 
     // @inject_tag: sql:"action_credits"
     string          ActionCredits         = 440;
+}
+
+message Conds {
+    basetypes.v1.StringVal      ID            = 10;
+    basetypes.v1.StringVal      AppID         = 20;
+    basetypes.v1.StringVal      PhoneNO       = 30;
+    basetypes.v1.StringVal      EmailAddress  = 40;
+    basetypes.v1.StringVal      ImportFromApp = 50;
+    basetypes.v1.StringSliceVal IDs           = 60;
 }
 
 message CreateUserRequest {
@@ -187,9 +198,9 @@ message UpdateUserResponse {
 }
 
 message GetUsersRequest {
-    appuser.manager.appuser.v2.Conds Conds = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetUsersResponse {
@@ -227,13 +238,21 @@ message VerifyUserResponse {
     User Info = 10;
 }
 
-message GetManyUsersRequest {
-    repeated string IDs = 10;
+message ExistUserRequest {
+    string AppID   = 10;
+    string UserID  = 20;
 }
 
-message GetManyUsersResponse {
-    repeated User Infos = 10;
-    uint32 Total  = 40;
+message ExistUserResponse {
+    bool Info = 10;
+}
+
+message ExistUserCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistUserCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteUserRequest {

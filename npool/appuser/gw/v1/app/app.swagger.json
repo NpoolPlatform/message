@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/ban/app": {
+      "post": {
+        "operationId": "Gateway_BanApp",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BanAppResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BanAppRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/app": {
       "post": {
         "operationId": "Gateway_CreateApp",
@@ -145,102 +177,6 @@
         ]
       }
     },
-    "/v1/get/recaptchas": {
-      "post": {
-        "operationId": "Gateway_GetRecaptchas",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetRecaptchasRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/signmethods": {
-      "post": {
-        "operationId": "Gateway_GetSignMethods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetSignMethodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/user/apps": {
-      "post": {
-        "operationId": "Gateway_GetUserApps",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetUserAppsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/appusergatewayappv1GetUserAppsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/app": {
       "post": {
         "operationId": "Gateway_UpdateApp",
@@ -293,17 +229,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnable": {
           "type": "boolean"
@@ -315,7 +251,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -336,7 +272,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
@@ -352,7 +288,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
@@ -360,8 +296,7 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by app"
+          "type": "string"
         }
       }
     },
@@ -369,7 +304,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
@@ -378,8 +313,7 @@
       "properties": {
         "Offset": {
           "type": "integer",
-          "format": "int32",
-          "title": "Permissioned by path"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
@@ -393,69 +327,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "appusergatewayappv1GetRecaptchasRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetRecaptchasResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Recaptcha"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "appusergatewayappv1GetSignMethodsRequest": {
-      "type": "object"
-    },
-    "appusergatewayappv1GetSignMethodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/signmethodv2SignMethod"
-          },
-          "title": "In future this may be put to database then admin can change it"
-        }
-      }
-    },
-    "appusergatewayappv1GetUserAppsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetUserID": {
-          "type": "string",
-          "title": "Permissioned by path"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "appusergatewayappv1GetUserAppsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         },
         "Total": {
@@ -482,17 +354,17 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnable": {
           "type": "boolean"
@@ -504,7 +376,7 @@
           "type": "boolean"
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -525,11 +397,38 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/appv1App"
+          "$ref": "#/definitions/v1App"
         }
       }
     },
-    "appv1App": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -570,7 +469,7 @@
         "SignupMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "ExtSigninMethodsStr": {
@@ -580,7 +479,7 @@
         "ExtSigninMethods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/basetypesv1SignMethod"
+            "$ref": "#/definitions/v1SignMethod"
           }
         },
         "RecaptchaMethodStr": {
@@ -588,31 +487,19 @@
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
-        },
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"signin_verify_enable\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kyc_enable\""
         },
         "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMustInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"invitation_code_must\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
         },
         "InvitationCodeMust": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -624,7 +511,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -647,7 +534,48 @@
         }
       }
     },
-    "basetypesv1SignMethod": {
+    "v1BanAppRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Banned": {
+          "type": "boolean"
+        },
+        "BanMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BanAppResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1App"
+        }
+      }
+    },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3",
+        "NoRecaptcha"
+      ],
+      "default": "DefaultRecaptchaMethod"
+    },
+    "v1SignMethod": {
       "type": "string",
       "enum": [
         "DefaultSignMethod",
@@ -662,82 +590,6 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "signmethodv2SignMethod": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Method": {
-          "$ref": "#/definitions/basetypesv1SignMethod"
-        },
-        "Icon": {
-          "type": "string"
-        },
-        "External": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "v2Recaptcha": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Recaptcha": {
-          "type": "string"
-        },
-        "Dashboard": {
-          "type": "string"
-        }
-      }
-    },
-    "v2RecaptchaType": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaType",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaType"
     }
   }
 }

@@ -23,11 +23,12 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
+	CreateApps(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error)
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	GetManyApps(ctx context.Context, in *GetManyAppsRequest, opts ...grpc.CallOption) (*GetManyAppsResponse, error)
+	ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error)
+	ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 }
 
@@ -42,6 +43,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/CreateApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateApps(ctx context.Context, in *CreateAppsRequest, opts ...grpc.CallOption) (*CreateAppsResponse, error) {
+	out := new(CreateAppsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/CreateApps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,18 +85,18 @@ func (c *middlewareClient) GetApps(ctx context.Context, in *GetAppsRequest, opts
 	return out, nil
 }
 
-func (c *middlewareClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
-	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetUserApps", in, out, opts...)
+func (c *middlewareClient) ExistApp(ctx context.Context, in *ExistAppRequest, opts ...grpc.CallOption) (*ExistAppResponse, error) {
+	out := new(ExistAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/ExistApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetManyApps(ctx context.Context, in *GetManyAppsRequest, opts ...grpc.CallOption) (*GetManyAppsResponse, error) {
-	out := new(GetManyAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/GetManyApps", in, out, opts...)
+func (c *middlewareClient) ExistAppConds(ctx context.Context, in *ExistAppCondsRequest, opts ...grpc.CallOption) (*ExistAppCondsResponse, error) {
+	out := new(ExistAppCondsResponse)
+	err := c.cc.Invoke(ctx, "/appuser.middleware.app.v1.Middleware/ExistAppConds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,11 +117,12 @@ func (c *middlewareClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, 
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
+	CreateApps(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error)
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error)
+	ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error)
+	ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -123,6 +134,9 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
+func (UnimplementedMiddlewareServer) CreateApps(context.Context, *CreateAppsRequest) (*CreateAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApps not implemented")
+}
 func (UnimplementedMiddlewareServer) UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApp not implemented")
 }
@@ -132,11 +146,11 @@ func (UnimplementedMiddlewareServer) GetApp(context.Context, *GetAppRequest) (*G
 func (UnimplementedMiddlewareServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-func (UnimplementedMiddlewareServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
+func (UnimplementedMiddlewareServer) ExistApp(context.Context, *ExistAppRequest) (*ExistAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistApp not implemented")
 }
-func (UnimplementedMiddlewareServer) GetManyApps(context.Context, *GetManyAppsRequest) (*GetManyAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetManyApps not implemented")
+func (UnimplementedMiddlewareServer) ExistAppConds(context.Context, *ExistAppCondsRequest) (*ExistAppCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAppConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
@@ -168,6 +182,24 @@ func _Middleware_CreateApp_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateApp(ctx, req.(*CreateAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.middleware.app.v1.Middleware/CreateApps",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateApps(ctx, req.(*CreateAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,38 +258,38 @@ func _Middleware_GetApps_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserAppsRequest)
+func _Middleware_ExistApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetUserApps(ctx, in)
+		return srv.(MiddlewareServer).ExistApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.Middleware/GetUserApps",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/ExistApp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
+		return srv.(MiddlewareServer).ExistApp(ctx, req.(*ExistAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetManyApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetManyAppsRequest)
+func _Middleware_ExistAppConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAppCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetManyApps(ctx, in)
+		return srv.(MiddlewareServer).ExistAppConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/appuser.middleware.app.v1.Middleware/GetManyApps",
+		FullMethod: "/appuser.middleware.app.v1.Middleware/ExistAppConds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetManyApps(ctx, req.(*GetManyAppsRequest))
+		return srv.(MiddlewareServer).ExistAppConds(ctx, req.(*ExistAppCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -292,6 +324,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CreateApp_Handler,
 		},
 		{
+			MethodName: "CreateApps",
+			Handler:    _Middleware_CreateApps_Handler,
+		},
+		{
 			MethodName: "UpdateApp",
 			Handler:    _Middleware_UpdateApp_Handler,
 		},
@@ -304,12 +340,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetApps_Handler,
 		},
 		{
-			MethodName: "GetUserApps",
-			Handler:    _Middleware_GetUserApps_Handler,
+			MethodName: "ExistApp",
+			Handler:    _Middleware_ExistApp_Handler,
 		},
 		{
-			MethodName: "GetManyApps",
-			Handler:    _Middleware_GetManyApps_Handler,
+			MethodName: "ExistAppConds",
+			Handler:    _Middleware_ExistAppConds_Handler,
 		},
 		{
 			MethodName: "DeleteApp",

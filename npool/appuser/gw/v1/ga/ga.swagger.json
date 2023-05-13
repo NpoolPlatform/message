@@ -110,12 +110,21 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v1SetupGoogleAuthRequest": {
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
+          "type": "string"
         },
         "UserID": {
           "type": "string"
@@ -240,21 +249,13 @@
         "SigninVerifyType": {
           "$ref": "#/definitions/v1SignMethod"
         },
-        "SigninVerifyByGoogleAuthInt": {
-          "type": "integer",
-          "format": "int32",
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean"
-        },
-        "GoogleAuthVerifiedInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"google_authentication_verified\""
-        },
         "GoogleAuthVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
         "BanAppUserID": {
           "type": "string",
@@ -266,6 +267,11 @@
         "BanMessage": {
           "type": "string",
           "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "BanDeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"ban_deleted_at\""
         },
         "GoogleSecret": {
           "type": "string",
@@ -319,7 +325,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -339,8 +345,7 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string",
-          "title": "Permissioned by path"
+          "type": "string"
         },
         "UserID": {
           "type": "string"
@@ -357,16 +362,6 @@
           "$ref": "#/definitions/v1User"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     }
   }
 }

@@ -17,29 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "managerappuserv2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "PhoneNO": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EmailAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ImportFromApp": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -67,6 +44,29 @@
         }
       }
     },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PhoneNO": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EmailAddress": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ImportFromApp": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "v1CreateUserResponse": {
       "type": "object",
       "properties": {
@@ -83,18 +83,19 @@
         }
       }
     },
-    "v1GetManyUsersResponse": {
+    "v1ExistUserCondsResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1User"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },
@@ -120,6 +121,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
     },
     "v1SignMethod": {
       "type": "string",
@@ -264,21 +275,13 @@
         "SigninVerifyType": {
           "$ref": "#/definitions/v1SignMethod"
         },
-        "SigninVerifyByGoogleAuthInt": {
-          "type": "integer",
-          "format": "int32",
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean"
-        },
-        "GoogleAuthVerifiedInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"google_authentication_verified\""
-        },
         "GoogleAuthVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
         "BanAppUserID": {
           "type": "string",
@@ -290,6 +293,11 @@
         "BanMessage": {
           "type": "string",
           "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "BanDeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"ban_deleted_at\""
         },
         "GoogleSecret": {
           "type": "string",
@@ -343,7 +351,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -485,16 +493,6 @@
           "$ref": "#/definitions/v1User"
         }
       }
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     }
   }
 }

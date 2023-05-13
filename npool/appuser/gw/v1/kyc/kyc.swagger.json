@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2CreateKycResponse"
+              "$ref": "#/definitions/appusergatewaykycv1CreateKycResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2CreateKycRequest"
+              "$ref": "#/definitions/appusergatewaykycv1CreateKycRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v2GetAppKycsResponse"
+              "$ref": "#/definitions/v1GetAppKycsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2GetAppKycsRequest"
+              "$ref": "#/definitions/v1GetAppKycsRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v2GetAppUserKycImageResponse"
+              "$ref": "#/definitions/v1GetAppUserKycImageResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2GetAppUserKycImageRequest"
+              "$ref": "#/definitions/v1GetAppUserKycImageRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2GetKycResponse"
+              "$ref": "#/definitions/appusergatewaykycv1GetKycResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2GetKycRequest"
+              "$ref": "#/definitions/appusergatewaykycv1GetKycRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v2GetKycImageResponse"
+              "$ref": "#/definitions/v1GetKycImageResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2GetKycImageRequest"
+              "$ref": "#/definitions/v1GetKycImageRequest"
             }
           }
         ],
@@ -183,7 +183,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2GetKycsResponse"
+              "$ref": "#/definitions/appusergatewaykycv1GetKycsResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2GetKycsRequest"
+              "$ref": "#/definitions/appusergatewaykycv1GetKycsRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v2GetUserKycImageResponse"
+              "$ref": "#/definitions/v1GetUserKycImageResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2GetUserKycImageRequest"
+              "$ref": "#/definitions/v1GetUserKycImageRequest"
             }
           }
         ],
@@ -247,7 +247,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2UpdateKycResponse"
+              "$ref": "#/definitions/appusergatewaykycv1UpdateKycResponse"
             }
           },
           "default": {
@@ -263,7 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaykycv2UpdateKycRequest"
+              "$ref": "#/definitions/appusergatewaykycv1UpdateKycRequest"
             }
           }
         ],
@@ -279,7 +279,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v2UploadKycImageResponse"
+              "$ref": "#/definitions/v1UploadKycImageResponse"
             }
           },
           "default": {
@@ -295,7 +295,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2UploadKycImageRequest"
+              "$ref": "#/definitions/v1UploadKycImageRequest"
             }
           }
         ],
@@ -306,7 +306,7 @@
     }
   },
   "definitions": {
-    "appusergatewaykycv2CreateKycRequest": {
+    "appusergatewaykycv1CreateKycRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -328,22 +328,22 @@
           "type": "string"
         },
         "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
+          "$ref": "#/definitions/v1KycDocumentType"
         },
         "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
+          "$ref": "#/definitions/v1KycEntityType"
         }
       }
     },
-    "appusergatewaykycv2CreateKycResponse": {
+    "appusergatewaykycv1CreateKycResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/kycv1Kyc"
+          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
-    "appusergatewaykycv2GetKycRequest": {
+    "appusergatewaykycv1GetKycRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -354,15 +354,15 @@
         }
       }
     },
-    "appusergatewaykycv2GetKycResponse": {
+    "appusergatewaykycv1GetKycResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/kycv1Kyc"
+          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
-    "appusergatewaykycv2GetKycsRequest": {
+    "appusergatewaykycv1GetKycsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -378,13 +378,13 @@
         }
       }
     },
-    "appusergatewaykycv2GetKycsResponse": {
+    "appusergatewaykycv1GetKycsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/kycv1Kyc"
+            "$ref": "#/definitions/v1Kyc"
           }
         },
         "Total": {
@@ -393,7 +393,7 @@
         }
       }
     },
-    "appusergatewaykycv2UpdateKycRequest": {
+    "appusergatewaykycv1UpdateKycRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -418,22 +418,146 @@
           "type": "string"
         },
         "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
+          "$ref": "#/definitions/v1KycDocumentType"
         },
         "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
+          "$ref": "#/definitions/v1KycEntityType"
         }
       }
     },
-    "appusergatewaykycv2UpdateKycResponse": {
+    "appusergatewaykycv1UpdateKycResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/kycv1Kyc"
+          "$ref": "#/definitions/v1Kyc"
         }
       }
     },
-    "kycv1Kyc": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetAppKycsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppKycsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Kyc"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v1KycImageType"
+        }
+      }
+    },
+    "v1GetAppUserKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v1KycImageType"
+        }
+      }
+    },
+    "v1GetKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetUserKycImageRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ImageType": {
+          "$ref": "#/definitions/v1KycImageType"
+        }
+      }
+    },
+    "v1GetUserKycImageResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Kyc": {
       "type": "object",
       "properties": {
         "ID": {
@@ -469,7 +593,7 @@
           "title": "@inject_tag: sql:\"document_type\""
         },
         "DocumentType": {
-          "$ref": "#/definitions/v2KycDocumentType"
+          "$ref": "#/definitions/v1KycDocumentType"
         },
         "IDNumber": {
           "type": "string",
@@ -492,7 +616,7 @@
           "title": "@inject_tag: sql:\"entity_type\""
         },
         "EntityType": {
-          "$ref": "#/definitions/v2KycEntityType"
+          "$ref": "#/definitions/v1KycEntityType"
         },
         "ReviewID": {
           "type": "string",
@@ -503,7 +627,7 @@
           "title": "@inject_tag: sql:\"state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "ReviewMessage": {
           "type": "string"
@@ -520,131 +644,7 @@
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v2GetAppKycsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v2GetAppKycsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/kycv1Kyc"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v2GetAppUserKycImageRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "ImageType": {
-          "$ref": "#/definitions/v2KycImageType"
-        }
-      }
-    },
-    "v2GetAppUserKycImageResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
-    "v2GetKycImageRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ImageType": {
-          "$ref": "#/definitions/v2KycImageType"
-        }
-      }
-    },
-    "v2GetKycImageResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
-    "v2GetUserKycImageRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "ImageType": {
-          "$ref": "#/definitions/v2KycImageType"
-        }
-      }
-    },
-    "v2GetUserKycImageResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
-        }
-      }
-    },
-    "v2KycDocumentType": {
+    "v1KycDocumentType": {
       "type": "string",
       "enum": [
         "DefaultKycDocumentType",
@@ -654,7 +654,7 @@
       ],
       "default": "DefaultKycDocumentType"
     },
-    "v2KycEntityType": {
+    "v1KycEntityType": {
       "type": "string",
       "enum": [
         "DefaultKycEntityType",
@@ -663,7 +663,7 @@
       ],
       "default": "DefaultKycEntityType"
     },
-    "v2KycImageType": {
+    "v1KycImageType": {
       "type": "string",
       "enum": [
         "DefaultKycImageType",
@@ -673,7 +673,7 @@
       ],
       "default": "DefaultKycImageType"
     },
-    "v2KycState": {
+    "v1KycState": {
       "type": "string",
       "enum": [
         "DefaultState",
@@ -683,7 +683,7 @@
       ],
       "default": "DefaultState"
     },
-    "v2UploadKycImageRequest": {
+    "v1UploadKycImageRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -693,14 +693,14 @@
           "type": "string"
         },
         "ImageType": {
-          "$ref": "#/definitions/v2KycImageType"
+          "$ref": "#/definitions/v1KycImageType"
         },
         "ImageBase64": {
           "type": "string"
         }
       }
     },
-    "v2UploadKycImageResponse": {
+    "v1UploadKycImageResponse": {
       "type": "object",
       "properties": {
         "Info": {

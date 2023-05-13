@@ -27,10 +27,8 @@ type GatewayClient interface {
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(ctx context.Context, in *GetAppsRequest, opts ...grpc.CallOption) (*GetAppsResponse, error)
-	GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error)
-	GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error)
-	GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error)
 	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
+	BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error)
 }
 
 type gatewayClient struct {
@@ -77,36 +75,18 @@ func (c *gatewayClient) GetApps(ctx context.Context, in *GetAppsRequest, opts ..
 	return out, nil
 }
 
-func (c *gatewayClient) GetUserApps(ctx context.Context, in *GetUserAppsRequest, opts ...grpc.CallOption) (*GetUserAppsResponse, error) {
-	out := new(GetUserAppsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetUserApps", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetSignMethods(ctx context.Context, in *GetSignMethodsRequest, opts ...grpc.CallOption) (*GetSignMethodsResponse, error) {
-	out := new(GetSignMethodsResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetSignMethods", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetRecaptchas(ctx context.Context, in *GetRecaptchasRequest, opts ...grpc.CallOption) (*GetRecaptchasResponse, error) {
-	out := new(GetRecaptchasResponse)
-	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/GetRecaptchas", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
 	out := new(DeleteAppResponse)
 	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/DeleteApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) BanApp(ctx context.Context, in *BanAppRequest, opts ...grpc.CallOption) (*BanAppResponse, error) {
+	out := new(BanAppResponse)
+	err := c.cc.Invoke(ctx, "/appuser.gateway.app.v1.Gateway/BanApp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,10 +102,8 @@ type GatewayServer interface {
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	// Super admin api
 	GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error)
-	GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error)
-	GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error)
-	GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error)
 	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
+	BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -145,17 +123,11 @@ func (UnimplementedGatewayServer) GetApp(context.Context, *GetAppRequest) (*GetA
 func (UnimplementedGatewayServer) GetApps(context.Context, *GetAppsRequest) (*GetAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApps not implemented")
 }
-func (UnimplementedGatewayServer) GetUserApps(context.Context, *GetUserAppsRequest) (*GetUserAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserApps not implemented")
-}
-func (UnimplementedGatewayServer) GetSignMethods(context.Context, *GetSignMethodsRequest) (*GetSignMethodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSignMethods not implemented")
-}
-func (UnimplementedGatewayServer) GetRecaptchas(context.Context, *GetRecaptchasRequest) (*GetRecaptchasResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRecaptchas not implemented")
-}
 func (UnimplementedGatewayServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
+}
+func (UnimplementedGatewayServer) BanApp(context.Context, *BanAppRequest) (*BanAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BanApp not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -242,60 +214,6 @@ func _Gateway_GetApps_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetUserApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetUserApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetUserApps",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUserApps(ctx, req.(*GetUserAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetSignMethods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSignMethodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetSignMethods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetSignMethods",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetSignMethods(ctx, req.(*GetSignMethodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetRecaptchas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRecaptchasRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetRecaptchas(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/appuser.gateway.app.v1.Gateway/GetRecaptchas",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetRecaptchas(ctx, req.(*GetRecaptchasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppRequest)
 	if err := dec(in); err != nil {
@@ -310,6 +228,24 @@ func _Gateway_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteApp(ctx, req.(*DeleteAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_BanApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BanAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).BanApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/appuser.gateway.app.v1.Gateway/BanApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).BanApp(ctx, req.(*BanAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -338,20 +274,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetApps_Handler,
 		},
 		{
-			MethodName: "GetUserApps",
-			Handler:    _Gateway_GetUserApps_Handler,
-		},
-		{
-			MethodName: "GetSignMethods",
-			Handler:    _Gateway_GetSignMethods_Handler,
-		},
-		{
-			MethodName: "GetRecaptchas",
-			Handler:    _Gateway_GetRecaptchas_Handler,
-		},
-		{
 			MethodName: "DeleteApp",
 			Handler:    _Gateway_DeleteApp_Handler,
+		},
+		{
+			MethodName: "BanApp",
+			Handler:    _Gateway_BanApp_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

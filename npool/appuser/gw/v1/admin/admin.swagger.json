@@ -179,38 +179,6 @@
         ]
       }
     },
-    "/v1/get/genesisauths": {
-      "post": {
-        "operationId": "Gateway_GetGenesisAuths",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGenesisAuthsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGenesisAuthsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/genesisroles": {
       "post": {
         "operationId": "Gateway_GetGenesisRoles",
@@ -277,7 +245,34 @@
     }
   },
   "definitions": {
-    "appv1App": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1App": {
       "type": "object",
       "properties": {
         "ID": {
@@ -336,31 +331,19 @@
           "title": "Control flag\n@inject_tag: sql:\"recaptcha_method\""
         },
         "RecaptchaMethod": {
-          "$ref": "#/definitions/v2RecaptchaType"
-        },
-        "KycEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"kyc_enable\""
+          "$ref": "#/definitions/v1RecaptchaMethod"
         },
         "KycEnable": {
-          "type": "boolean"
-        },
-        "SigninVerifyEnableInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"signin_verify_enable\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"kyc_enable\""
         },
         "SigninVerifyEnable": {
-          "type": "boolean"
-        },
-        "InvitationCodeMustInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"invitation_code_must\""
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"signin_verify_enable\""
         },
         "InvitationCodeMust": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"invitation_code_must\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -372,7 +355,7 @@
           "title": "@inject_tag: sql:\"create_invitation_code_when\""
         },
         "CreateInvitationCodeWhen": {
-          "$ref": "#/definitions/v2CreateInvitationCodeWhen"
+          "$ref": "#/definitions/v1CreateInvitationCodeWhen"
         },
         "MaxTypedCouponsPerOrder": {
           "type": "integer",
@@ -391,33 +374,6 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
           }
         }
       }
@@ -503,7 +459,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
         }
       }
@@ -544,6 +500,16 @@
         }
       }
     },
+    "v1CreateInvitationCodeWhen": {
+      "type": "string",
+      "enum": [
+        "DefaultWhen",
+        "Registration",
+        "SetToKol",
+        "HasPaidOrder"
+      ],
+      "default": "DefaultWhen"
+    },
     "v1GetAdminAppsRequest": {
       "type": "object"
     },
@@ -553,39 +519,8 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/appv1App"
+            "$ref": "#/definitions/v1App"
           }
-        }
-      }
-    },
-    "v1GetGenesisAuthsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGenesisAuthsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Auth"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -625,6 +560,25 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
+    "v1RecaptchaMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultRecaptchaMethod",
+        "GoogleRecaptchaV3",
+        "NoRecaptcha"
+      ],
+      "default": "DefaultRecaptchaMethod"
+    },
     "v1Role": {
       "type": "object",
       "properties": {
@@ -644,13 +598,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
         },
-        "DefaultInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"default\""
-        },
         "Default": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"default\""
         },
         "AppID": {
           "type": "string",
@@ -669,13 +619,9 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
         },
-        "GenesisInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"genesis\""
-        },
         "Genesis": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"genesis\""
         }
       }
     },
@@ -789,21 +735,13 @@
         "SigninVerifyType": {
           "$ref": "#/definitions/v1SignMethod"
         },
-        "SigninVerifyByGoogleAuthInt": {
-          "type": "integer",
-          "format": "int32",
+        "SigninVerifyByGoogleAuth": {
+          "type": "boolean",
           "title": "@inject_tag: sql:\"signin_verify_by_google_authentication\""
         },
-        "SigninVerifyByGoogleAuth": {
-          "type": "boolean"
-        },
-        "GoogleAuthVerifiedInt": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"google_authentication_verified\""
-        },
         "GoogleAuthVerified": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"google_authentication_verified\""
         },
         "BanAppUserID": {
           "type": "string",
@@ -815,6 +753,11 @@
         "BanMessage": {
           "type": "string",
           "title": "@inject_tag: sql:\"ban_message\""
+        },
+        "BanDeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"ban_deleted_at\""
         },
         "GoogleSecret": {
           "type": "string",
@@ -868,7 +811,7 @@
           "title": "@inject_tag: sql:\"kyc_state\""
         },
         "State": {
-          "$ref": "#/definitions/v2KycState"
+          "$ref": "#/definitions/v1KycState"
         },
         "Kol": {
           "type": "boolean",
@@ -883,34 +826,6 @@
           "title": "@inject_tag: sql:\"action_credits\""
         }
       }
-    },
-    "v2CreateInvitationCodeWhen": {
-      "type": "string",
-      "enum": [
-        "DefaultWhen",
-        "Registration",
-        "SetToKol",
-        "HasPaidOrder"
-      ],
-      "default": "DefaultWhen"
-    },
-    "v2KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
-    },
-    "v2RecaptchaType": {
-      "type": "string",
-      "enum": [
-        "DefaultRecaptchaType",
-        "GoogleRecaptchaV3"
-      ],
-      "default": "DefaultRecaptchaType"
     }
   }
 }
