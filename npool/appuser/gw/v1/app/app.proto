@@ -62,13 +62,13 @@ message CreateAppRequest {
     string Description = 40;
     repeated basetypes.v1.SignMethod SignupMethods    = 50;
     repeated basetypes.v1.SignMethod ExtSigninMethods = 60;
-    basetypes.v1.RecaptchaMethod RecaptchaMethod  = 70;
-    bool KycEnable          = 80;
-    bool SigninVerifyEnable = 90;
-    bool InvitationCodeMust = 100;
-    basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
-    uint32          MaxTypedCouponsPerOrder = 120;
-    bool            Maintaining        = 160;
+    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 70;
+    optional bool KycEnable          = 80;
+    optional bool SigninVerifyEnable = 90;
+    optional bool InvitationCodeMust = 100;
+    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 110;
+    optional uint32          MaxTypedCouponsPerOrder = 120;
+    optional bool            Maintaining        = 160;
     repeated string CommitButtonTargets           = 170;
 }
 
