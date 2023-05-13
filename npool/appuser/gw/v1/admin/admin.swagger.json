@@ -574,7 +574,8 @@
       "type": "string",
       "enum": [
         "DefaultRecaptchaMethod",
-        "GoogleRecaptchaV3"
+        "GoogleRecaptchaV3",
+        "NoRecaptcha"
       ],
       "default": "DefaultRecaptchaMethod"
     },

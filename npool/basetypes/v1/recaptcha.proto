@@ -7,4 +7,5 @@ option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 enum RecaptchaMethod {
     DefaultRecaptchaMethod = 0;
     GoogleRecaptchaV3      = 10;
+    NoRecaptcha            = 1000000;
 }
