@@ -133,6 +133,8 @@ message User {
     bool            Banned                      = 260;
     // @inject_tag: sql:"ban_message"
     string          BanMessage                  = 270;
+    // @inject_tag: sql:"ban_deleted_at"
+    uint32          BanDeletedAt                = 271;
 
     // Secret map
     // @inject_tag: sql:"google_secret"
