@@ -24,6 +24,13 @@ service Gateway {
         };
     }
 
+    rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/user"
+            body: "*"
+        };
+    }
+
     rpc CreateAppUser (CreateAppUserRequest) returns (CreateAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/create/app/user"
@@ -162,6 +169,15 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
+}
+
+message DeleteUserRequest {
+    string AppID        = 10;
+    string TargetUserID = 20;
+}
+
+message DeleteUserResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 
