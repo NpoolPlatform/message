@@ -732,6 +732,7 @@
         "Balance",
         "RegisterCoin",
         "GasFee",
+        "EstimateGas",
         "PreBalance"
       ],
       "default": "Invalid",

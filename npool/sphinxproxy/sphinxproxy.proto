@@ -253,7 +253,7 @@ enum TransactionType {
   Balance = 2;
   RegisterCoin = 3;
   GasFee = 4;
-  
+  EstimateGas = 5;
   // some coin such as aleo  10 -> 2
   PreBalance = 10;
 }
