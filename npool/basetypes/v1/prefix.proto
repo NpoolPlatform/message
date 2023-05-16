@@ -8,4 +8,5 @@ enum Prefix {
     DefaultPrefix     = 0;
     PrefixUserCode    = 10;
     PrefixUserAccount = 20;
+    PrefixAPIRegister = 30;
 }
