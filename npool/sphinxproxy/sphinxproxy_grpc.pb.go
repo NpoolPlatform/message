@@ -31,6 +31,7 @@ type SphinxProxyClient interface {
 	UpdateTransaction(ctx context.Context, in *UpdateTransactionRequest, opts ...grpc.CallOption) (*UpdateTransactionResponse, error)
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
 	GetTransactions(ctx context.Context, in *GetTransactionsRequest, opts ...grpc.CallOption) (*GetTransactionsResponse, error)
+	GetEstimateGas(ctx context.Context, in *GetEstimateGasRequest, opts ...grpc.CallOption) (*GetEstimateGasResponse, error)
 	// async stream
 	ProxyPlugin(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxyPluginClient, error)
 	ProxySign(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxySignClient, error)
@@ -101,6 +102,15 @@ func (c *sphinxProxyClient) GetTransaction(ctx context.Context, in *GetTransacti
 func (c *sphinxProxyClient) GetTransactions(ctx context.Context, in *GetTransactionsRequest, opts ...grpc.CallOption) (*GetTransactionsResponse, error) {
 	out := new(GetTransactionsResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/GetTransactions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sphinxProxyClient) GetEstimateGas(ctx context.Context, in *GetEstimateGasRequest, opts ...grpc.CallOption) (*GetEstimateGasResponse, error) {
+	out := new(GetEstimateGasResponse)
+	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/GetEstimateGas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -181,6 +191,7 @@ type SphinxProxyServer interface {
 	UpdateTransaction(context.Context, *UpdateTransactionRequest) (*UpdateTransactionResponse, error)
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
 	GetTransactions(context.Context, *GetTransactionsRequest) (*GetTransactionsResponse, error)
+	GetEstimateGas(context.Context, *GetEstimateGasRequest) (*GetEstimateGasResponse, error)
 	// async stream
 	ProxyPlugin(SphinxProxy_ProxyPluginServer) error
 	ProxySign(SphinxProxy_ProxySignServer) error
@@ -211,6 +222,9 @@ func (UnimplementedSphinxProxyServer) GetTransaction(context.Context, *GetTransa
 }
 func (UnimplementedSphinxProxyServer) GetTransactions(context.Context, *GetTransactionsRequest) (*GetTransactionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransactions not implemented")
+}
+func (UnimplementedSphinxProxyServer) GetEstimateGas(context.Context, *GetEstimateGasRequest) (*GetEstimateGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEstimateGas not implemented")
 }
 func (UnimplementedSphinxProxyServer) ProxyPlugin(SphinxProxy_ProxyPluginServer) error {
 	return status.Errorf(codes.Unimplemented, "method ProxyPlugin not implemented")
@@ -357,6 +371,24 @@ func _SphinxProxy_GetTransactions_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SphinxProxy_GetEstimateGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEstimateGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxProxyServer).GetEstimateGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sphinx.proxy.v1.SphinxProxy/GetEstimateGas",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxProxyServer).GetEstimateGas(ctx, req.(*GetEstimateGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SphinxProxy_ProxyPlugin_Handler(srv interface{}, stream grpc.ServerStream) error {
 	return srv.(SphinxProxyServer).ProxyPlugin(&sphinxProxyProxyPluginServer{stream})
 }
@@ -443,6 +475,10 @@ var SphinxProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTransactions",
 			Handler:    _SphinxProxy_GetTransactions_Handler,
+		},
+		{
+			MethodName: "GetEstimateGas",
+			Handler:    _SphinxProxy_GetEstimateGas_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

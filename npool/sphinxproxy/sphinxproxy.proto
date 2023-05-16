@@ -57,7 +57,12 @@ service SphinxProxy {
       body : "*"
     };
   }
-
+  rpc GetEstimateGas(GetEstimateGasRequest) returns (GetEstimateGasResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/estimate/gas"
+      body : "*"
+    };
+  }
   // async stream
   rpc ProxyPlugin(stream ProxyPluginResponse)
       returns (stream ProxyPluginRequest) {}
@@ -84,6 +89,18 @@ message GetBalanceRequest {
 message BalanceInfo {
   double Balance = 100;
   string BalanceStr = 110;
+}
+
+message GetEstimateGasRequest{
+  string Name = 100;
+}
+
+message GetEstimateGasResponse{
+  string Fee = 100;
+  string GasLimit = 110;
+  string GasPrice = 120;
+  string TipsPrice = 130;
+  int64 BlockHeight = 140;
 }
 
 message GetBalanceResponse { BalanceInfo Info = 100; }
@@ -151,6 +168,11 @@ message GetTransactionsResponse {
 // ############################# async
 message ProxyPluginResponse {
   sphinx.plugin.v1.CoinType CoinType = 100;
+  sphinx.plugin.v1.ChainType ChainType = 101;
+  string ChainNativeUnit = 102;
+  string ChainAtomicUnit = 103;
+  int64 ChainUnitExp = 104;
+
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
   string Unit = 112;

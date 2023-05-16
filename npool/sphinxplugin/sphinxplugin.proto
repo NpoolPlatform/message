@@ -37,6 +37,19 @@ enum CoinType {
   CoinTypetironfish = 112;
 }
 
+enum ChainType{
+  UnKnow = 0;
+  // mainnet
+  Filecoin = 1;
+  Bitcoin = 2;
+  Ethereum = 3;
+
+  // testnet
+  TFilecoin = 101;
+  TBitcoin = 102;
+  TEthereum = 103;
+}
+
 // fil
 message UnsignedMessage {
   uint64 Version = 100;

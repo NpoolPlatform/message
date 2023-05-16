@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/get/estimate/gas": {
+      "post": {
+        "operationId": "SphinxProxy_GetEstimateGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEstimateGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEstimateGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
     "/v1/get/transaction": {
       "post": {
         "operationId": "SphinxProxy_GetTransaction",
@@ -282,6 +314,20 @@
         }
       }
     },
+    "v1ChainType": {
+      "type": "string",
+      "enum": [
+        "UnKnow",
+        "Filecoin",
+        "Bitcoin",
+        "Ethereum",
+        "TFilecoin",
+        "TBitcoin",
+        "TEthereum"
+      ],
+      "default": "UnKnow",
+      "title": "- Filecoin: mainnet\n - TFilecoin: testnet"
+    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -375,6 +421,35 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1BalanceInfo"
+        }
+      }
+    },
+    "v1GetEstimateGasRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetEstimateGasResponse": {
+      "type": "object",
+      "properties": {
+        "Fee": {
+          "type": "string"
+        },
+        "GasLimit": {
+          "type": "string"
+        },
+        "GasPrice": {
+          "type": "string"
+        },
+        "TipsPrice": {
+          "type": "string"
+        },
+        "BlockHeight": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
