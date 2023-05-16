@@ -43,11 +43,23 @@ enum ChainType{
   Filecoin = 1;
   Bitcoin = 2;
   Ethereum = 3;
+  Spacemesh = 4;
+  Solana = 5;
+  Binancecoin = 6;
+  Tron = 7;
+  Aleo = 8;
+  Ironfish = 9;
 
   // testnet
   TFilecoin = 101;
   TBitcoin = 102;
   TEthereum = 103;
+  TSpacemesh = 104;
+  TSolana = 105;
+  TBinancecoin = 106;
+  TTron = 107;
+  TAleo = 108;
+  TIronfish = 109;
 }
 
 // fil

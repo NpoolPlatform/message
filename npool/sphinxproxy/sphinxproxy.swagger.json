@@ -321,9 +321,21 @@
         "Filecoin",
         "Bitcoin",
         "Ethereum",
+        "Spacemesh",
+        "Solana",
+        "Binancecoin",
+        "Tron",
+        "Aleo",
+        "Ironfish",
         "TFilecoin",
         "TBitcoin",
-        "TEthereum"
+        "TEthereum",
+        "TSpacemesh",
+        "TSolana",
+        "TBinancecoin",
+        "TTron",
+        "TAleo",
+        "TIronfish"
       ],
       "default": "UnKnow",
       "title": "- Filecoin: mainnet\n - TFilecoin: testnet"
