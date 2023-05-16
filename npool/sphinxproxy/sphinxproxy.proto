@@ -100,7 +100,7 @@ message GetEstimateGasResponse{
   string GasLimit = 110;
   string GasPrice = 120;
   string TipsPrice = 130;
-  int64 BlockHeight = 140;
+  uint64 BlockNum = 140;
 }
 
 message GetBalanceResponse { BalanceInfo Info = 100; }

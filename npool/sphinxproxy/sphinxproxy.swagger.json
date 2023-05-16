@@ -449,9 +449,9 @@
         "TipsPrice": {
           "type": "string"
         },
-        "BlockHeight": {
+        "BlockNum": {
           "type": "string",
-          "format": "int64"
+          "format": "uint64"
         }
       }
     },
