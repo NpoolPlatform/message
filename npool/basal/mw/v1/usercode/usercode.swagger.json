@@ -107,10 +107,10 @@
           "type": "string"
         },
         "AccountType": {
-          "$ref": "#/definitions/v1SignMethod"
+          "type": "string"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
+          "type": "string"
         },
         "NextAt": {
           "type": "integer",
