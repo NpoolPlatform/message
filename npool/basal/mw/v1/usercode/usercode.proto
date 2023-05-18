@@ -4,9 +4,6 @@ package basal.middleware.usercode.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basal/mw/v1/usercode";
 
-import "npool/basetypes/v1/signmethod.proto";
-import "npool/basetypes/v1/usedfor.proto";
-
 // Service Name
 service Middleware {
     rpc CreateUserCode (CreateUserCodeRequest) returns (CreateUserCodeResponse) {}
