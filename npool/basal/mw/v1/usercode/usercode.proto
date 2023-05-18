@@ -28,8 +28,8 @@ message CreateUserCodeRequest {
     string                  Prefix      = 10;
     string                  AppID       = 20;
     string                  Account     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    basetypes.v1.UsedFor    UsedFor     = 50;
+    string                  AccountType = 40;
+    string                  UsedFor     = 50;
 }
 
 message CreateUserCodeResponse {
@@ -40,8 +40,8 @@ message VerifyUserCodeRequest {
     string                  Prefix      = 10;
     string                  AppID       = 20;
     string                  Account     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    basetypes.v1.UsedFor    UsedFor     = 50;
+    string                  AccountType = 40;
+    string                  UsedFor     = 50;
     string                  Code        = 60;
 }
 
