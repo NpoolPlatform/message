@@ -108,7 +108,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Currency"
+=======
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+>>>>>>> Add chain meta
           }
         },
         "Total": {
@@ -156,7 +160,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
             "$ref": "#/definitions/protobufAny"
+=======
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+>>>>>>> Add chain meta
           }
         }
       }
@@ -211,7 +219,39 @@
           "title": "@inject_tag: sql:\"feed_type\""
         },
         "FeedType": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CurrencyFeedType"
+=======
+          "$ref": "#/definitions/v1FeedType"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+>>>>>>> Add chain meta
         }
       }
     },

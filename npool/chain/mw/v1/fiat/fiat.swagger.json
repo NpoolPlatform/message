@@ -60,7 +60,32 @@
       "type": "object",
       "properties": {
         "Info": {
+<<<<<<< HEAD:npool/chain/mw/v1/fiat/fiat.swagger.json
           "$ref": "#/definitions/v1Fiat"
+=======
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateFiatCurrencyTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrencyType"
+        }
+      }
+    },
+    "v1CreateFiatCurrencyTypesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FiatCurrencyType"
+          }
+>>>>>>> Add chain meta:npool/chain/mgr/v1/fiat/currencytype/currencytype.swagger.json
         }
       }
     },
@@ -125,7 +150,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD:npool/chain/mw/v1/fiat/fiat.swagger.json
             "$ref": "#/definitions/v1Fiat"
+=======
+            "$ref": "#/definitions/v1FiatCurrencyType"
+>>>>>>> Add chain meta:npool/chain/mgr/v1/fiat/currencytype/currencytype.swagger.json
           }
         },
         "Total": {

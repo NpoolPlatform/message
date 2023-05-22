@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mw/v1/tx/tx.proto",
+    "title": "npool/chain/mgr/v1/tx/tx.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -61,13 +61,22 @@
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "State": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1Int32Val"
         },
         "Type": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1Int32Val"
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CountTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -86,12 +95,40 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
-=======
-            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
->>>>>>> Add chain meta
           }
+        }
+      }
+    },
+    "v1DeleteTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1ExistTxCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTxOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
         }
       }
     },
@@ -110,182 +147,12 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
-=======
-            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
->>>>>>> Add chain meta
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Tx": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "CoinName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_name\""
-        },
-        "CoinLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_logo\""
-        },
-        "CoinUnit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_unit\""
-        },
-        "CoinENV": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_env\""
-        },
-        "FromAccountID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"from_account_id\""
-        },
-        "ToAccountID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"to_account_id\""
-        },
-        "Amount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"amount\""
-        },
-        "FeeAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fee_amount\""
-        },
-        "ChainTxID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"chain_tx_id\""
-        },
-        "State": {
-          "$ref": "#/definitions/v1TxState"
-        },
-        "StateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"state\""
-        },
-        "Extra": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"extra\""
-        },
-        "Type": {
-          "$ref": "#/definitions/v1TxType"
-        },
-        "TypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"type\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-<<<<<<< HEAD
-=======
-    "chainmiddlewaretxv1UpdateTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "State": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -326,7 +193,49 @@
         }
       }
     },
->>>>>>> Add chain meta
+    "v1Tx": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FromAccountID": {
+          "type": "string"
+        },
+        "ToAccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "ChainTxID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1TxType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1TxReq": {
       "type": "object",
       "properties": {
@@ -366,11 +275,11 @@
       "type": "string",
       "enum": [
         "DefaultTxState",
-        "TxStateCreated",
-        "TxStateWait",
-        "TxStateTransferring",
-        "TxStateSuccessful",
-        "TxStateFail"
+        "StateCreated",
+        "StateWait",
+        "StateTransferring",
+        "StateSuccessful",
+        "StateFail"
       ],
       "default": "DefaultTxState"
     },
@@ -387,18 +296,6 @@
         "TxUserBenefit"
       ],
       "default": "DefaultTxType"
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "v1UpdateTxResponse": {
       "type": "object",

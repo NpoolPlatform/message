@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/mw/v1/fiat/currency/feed/feed.proto",
+    "title": "npool/chain/mgr/v1/fiat/currency/currency.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -17,6 +17,29 @@
   ],
   "paths": {},
   "definitions": {
+    "managerfiatcurrencyv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FiatCurrencyTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FiatCurrencyTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1Int32Val"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -45,63 +68,60 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FiatID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FiatIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Disabled": {
-          "$ref": "#/definitions/v1BoolVal"
-        }
-      }
-    },
-    "v1CreateFeedResponse": {
+    "v1CountFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Info": {
-<<<<<<< HEAD:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
-          "$ref": "#/definitions/v1Feed"
-=======
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1CreateCurrenciesResponse": {
+    "v1CreateFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Currency"
+            "$ref": "#/definitions/v1FiatCurrency"
           }
->>>>>>> Add chain meta:npool/chain/mgr/v1/coin/currency/currency.swagger.json
         }
       }
     },
-    "v1CurrencyFeedType": {
+    "v1CreateFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1DeleteFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1ExistFiatCurrencyCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FeedType": {
       "type": "string",
       "enum": [
         "DefaultFeedType",
@@ -111,93 +131,95 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1Feed": {
+    "v1FiatCurrency": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
+          "type": "string"
         },
-        "FiatID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fiat_id\""
-        },
-        "FiatName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fiat_name\""
-        },
-        "FiatLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fiat_logo\""
-        },
-        "FiatUnit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fiat_unit\""
-        },
-        "FeedTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"feed_type\""
+        "FiatCurrencyTypeID": {
+          "type": "string"
         },
         "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
+          "$ref": "#/definitions/v1FeedType"
         },
-        "FeedFiatName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"feed_fiat_name\""
+        "MarketValueHigh": {
+          "type": "string"
         },
-        "Disabled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"disabled\""
+        "MarketValueLow": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int64"
         }
       }
     },
-    "v1FeedReq": {
+    "v1FiatCurrencyReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "FiatID": {
+        "FiatCurrencyTypeID": {
           "type": "string"
         },
         "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
+          "$ref": "#/definitions/v1FeedType"
         },
-        "FeedFiatName": {
+        "MarketValueHigh": {
           "type": "string"
         },
-        "Disabled": {
-          "type": "boolean"
+        "MarketValueLow": {
+          "type": "string"
         }
       }
     },
-    "v1GetFeedsResponse": {
+    "v1GetFiatCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
-            "$ref": "#/definitions/v1Feed"
-=======
-            "$ref": "#/definitions/v1Currency"
->>>>>>> Add chain meta:npool/chain/mgr/v1/coin/currency/currency.swagger.json
+            "$ref": "#/definitions/v1FiatCurrency"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetFiatCurrencyOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1GetFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FiatCurrency"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -238,11 +260,11 @@
         }
       }
     },
-    "v1UpdateFeedResponse": {
+    "v1UpdateFiatCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Feed"
+          "$ref": "#/definitions/v1FiatCurrency"
         }
       }
     }

@@ -103,6 +103,77 @@
         }
       }
     },
+<<<<<<< HEAD:npool/chain/mw/v1/app/coin/description/description.swagger.json
+=======
+    "chainmiddlewareappcoindescriptionv1CreateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+        }
+      }
+    },
+    "chainmiddlewareappcoindescriptionv1GetCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+        }
+      }
+    },
+    "chainmiddlewareappcoindescriptionv1GetCoinDescriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "chainmiddlewareappcoindescriptionv1UpdateCoinDescriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+>>>>>>> Add chain meta:npool/chain/mw/v1/appcoin/description/description.swagger.json
     "v1CoinDescriptionReq": {
       "type": "object",
       "properties": {

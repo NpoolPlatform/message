@@ -40,7 +40,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
             "$ref": "#/definitions/protobufAny"
+=======
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+>>>>>>> Add chain meta
           }
         }
       }
@@ -112,7 +116,79 @@
           "title": "@inject_tag: sql:\"feed_type\""
         },
         "FeedType": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CurrencyFeedType"
+=======
+          "$ref": "#/definitions/v1FeedType"
+        }
+      }
+    },
+    "chainmiddlewarecoincurrencyv1GetCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+          }
+        }
+      }
+    },
+    "chainmiddlewarecoincurrencyv1GetCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CurrencyReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1FeedType"
+        },
+        "MarketValueHigh": {
+          "type": "string"
+        },
+        "MarketValueLow": {
+          "type": "string"
+>>>>>>> Add chain meta
         }
       }
     },
@@ -133,7 +209,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Currency"
+=======
+            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+>>>>>>> Add chain meta
           }
         },
         "Total": {

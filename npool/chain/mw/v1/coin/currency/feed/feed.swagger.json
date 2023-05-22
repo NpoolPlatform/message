@@ -145,6 +145,77 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+<<<<<<< HEAD:npool/chain/mw/v1/coin/currency/feed/feed.swagger.json
+=======
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+        "CoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
+        "CoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_env\""
+        }
+      }
+    },
+    "middlewarefiatv1GetFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
+          }
+        }
+      }
+    },
+    "middlewarefiatv1GetFiatCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+>>>>>>> Add chain meta:npool/chain/mw/v1/fiat/currency.swagger.json
         }
       }
     },
@@ -163,8 +234,25 @@
         "FeedCoinName": {
           "type": "string"
         },
+<<<<<<< HEAD:npool/chain/mw/v1/coin/currency/feed/feed.swagger.json
         "Disabled": {
           "type": "boolean"
+=======
+        "MarketValueLow": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinFiatCurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
+          }
+>>>>>>> Add chain meta:npool/chain/mw/v1/fiat/currency.swagger.json
         }
       }
     },
@@ -175,7 +263,11 @@
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD:npool/chain/mw/v1/coin/currency/feed/feed.swagger.json
             "$ref": "#/definitions/v1Feed"
+=======
+            "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
+>>>>>>> Add chain meta:npool/chain/mw/v1/fiat/currency.swagger.json
           }
         },
         "Total": {
