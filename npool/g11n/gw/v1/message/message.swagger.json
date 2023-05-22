@@ -379,6 +379,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1MessageReq"
           }
         }
@@ -390,6 +391,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/g11ngatewaymessage1v1Message"
           }
         }
@@ -442,6 +444,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/g11ngatewaymessage1v1Message"
           }
         },
@@ -546,6 +549,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -595,6 +599,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1MessageReq"
           }
         }
@@ -606,6 +611,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/g11ngatewaymessage1v1Message"
           }
         }
@@ -658,6 +664,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/g11ngatewaymessage1v1Message"
           }
         },

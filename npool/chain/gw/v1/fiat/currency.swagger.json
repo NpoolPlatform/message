@@ -233,6 +233,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
           }
         }
@@ -284,6 +285,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarefiatv1FiatCurrency"
           }
         },
@@ -331,6 +333,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FiatCurrencyType"
           }
         },
@@ -450,6 +453,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

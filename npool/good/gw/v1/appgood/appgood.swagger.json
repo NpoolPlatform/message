@@ -418,6 +418,7 @@
         "SupportCoins": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/GoodCoinInfo"
           }
         },
@@ -439,6 +440,7 @@
         "SubGoods": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewayappgoodv1Good"
           }
         },
@@ -570,6 +572,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewayappgoodv1Good"
           }
         },
@@ -713,6 +716,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -854,6 +858,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewayappgoodv1Good"
           }
         },

@@ -129,6 +129,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
           }
         },
@@ -160,6 +161,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -191,6 +193,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
           }
         },

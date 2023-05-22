@@ -396,6 +396,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
@@ -456,6 +457,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -492,6 +494,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
@@ -523,6 +526,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },

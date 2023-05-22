@@ -263,6 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -296,6 +297,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -333,26 +335,33 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "uuid"
         },
         "PreSale": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否为预售，false为在售商品"
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "币种名称 FIL, BTC"
         },
         "Unit": {
-          "type": "string"
+          "type": "string",
+          "title": "单位：FIL"
         },
         "Logo": {
-          "type": "string"
+          "type": "string",
+          "title": "url; can be empty"
         },
         "ENV": {
-          "type": "string"
+          "type": "string",
+          "title": "main or test"
         },
         "ReservedAmount": {
           "type": "number",
-          "format": "double"
+          "format": "double",
+          "title": "预留金额"
         },
         "CreatedAt": {
           "type": "integer",
@@ -363,7 +372,8 @@
           "format": "int64"
         },
         "ForPay": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否可用作支付货币"
         },
         "HomePage": {
           "type": "string"
@@ -402,19 +412,24 @@
       "type": "object",
       "properties": {
         "PreSale": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否为预售，false为在售商品"
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "币种名称 FIL, BTC"
         },
         "Unit": {
-          "type": "string"
+          "type": "string",
+          "title": "单位：FIL"
         },
         "Logo": {
-          "type": "string"
+          "type": "string",
+          "title": "url; can be empty"
         },
         "ENV": {
-          "type": "string"
+          "type": "string",
+          "title": "main or test"
         }
       }
     },
@@ -452,6 +467,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1CoinDescriptionInfo"
           }
         }
@@ -480,10 +496,12 @@
       "type": "object",
       "properties": {
         "PreSale": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否为预售，false为在售商品"
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "币种名称 FIL, BTC"
         },
         "Offset": {
           "type": "integer",
@@ -505,6 +523,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1CoinInfo"
           }
         }
@@ -545,10 +564,12 @@
           "type": "string"
         },
         "PreSale": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "是否为预售，false为在售商品"
         },
         "Logo": {
-          "type": "string"
+          "type": "string",
+          "title": "url; can be empty"
         },
         "ReservedAmount": {
           "type": "number",

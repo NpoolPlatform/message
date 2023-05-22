@@ -167,6 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -208,6 +209,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -235,6 +237,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1EmailSubscriber"
           }
         }
@@ -246,6 +249,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1EmailSubscriber"
           }
         }
@@ -271,9 +275,7 @@
         "Op": {
           "type": "string"
         },
-        "Val": {
-          "type": "object"
-        }
+        "Val": {}
       }
     },
     "v1GetAppEmailSubscribersRequest": {
@@ -304,6 +306,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1EmailSubscriber"
           }
         },
@@ -341,6 +344,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1EmailSubscriber"
           }
         },
