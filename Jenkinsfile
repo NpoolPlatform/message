@@ -19,6 +19,7 @@ pipeline {
       }
       steps {
         sh (returnStdout: false, script: '''
+          PATH=$PATH:/usr/go/bin:$HOME/go/bin go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.8.0
           PATH=$PATH:/usr/go/bin:$HOME/go/bin make -C tools/grpc install
           PATH=$PATH:/usr/go/bin:$HOME/go/bin make clean proto
         '''.stripIndent())
