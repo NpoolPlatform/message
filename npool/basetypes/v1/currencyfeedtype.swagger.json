@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/basetypes/v1/coincurrencyfeedtype.proto",
+    "title": "npool/basetypes/v1/currencyfeedtype.proto",
     "version": "version not set"
   },
   "consumes": [
