@@ -2,11 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.18.1
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 // source: npool/account/mgr/v1/mgr.proto
-=======
-// source: npool/servicetmpl/gw/v1/gw.proto
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 
 package v1
 
@@ -24,119 +20,90 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// GatewayClient is the client API for Gateway service.
+// ManagerClient is the client API for Manager service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type GatewayClient interface {
+type ManagerClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
 }
 
-type gatewayClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
-	return &gatewayClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 func (c *managerClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, "/account.manager.v1.Manager/Version", in, out, opts...)
-=======
-func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error) {
-	out := new(v1.VersionResponse)
-	err := c.cc.Invoke(ctx, "/servicetmpl.gateway.v1.Gateway/Version", in, out, opts...)
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// GatewayServer is the server API for Gateway service.
-// All implementations must embed UnimplementedGatewayServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type GatewayServer interface {
+type ManagerServer interface {
 	// Method Version
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
 	mustEmbedUnimplementedManagerServer()
-=======
-	Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error)
-	mustEmbedUnimplementedGatewayServer()
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 }
 
-// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
-type UnimplementedGatewayServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 func (UnimplementedManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
-=======
-func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error) {
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
-func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to GatewayServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeGatewayServer interface {
-	mustEmbedUnimplementedGatewayServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
-	s.RegisterService(&Gateway_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Gateway_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).Version(ctx, in)
+		return srv.(ManagerServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 		FullMethod: "/account.manager.v1.Manager/Version",
-=======
-		FullMethod: "/servicetmpl.gateway.v1.Gateway/Version",
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).Version(ctx, req.(*emptypb.Empty))
+		return srv.(ManagerServer).Version(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 var Manager_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "account.manager.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
-=======
-var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "servicetmpl.gateway.v1.Gateway",
-	HandlerType: (*GatewayServer)(nil),
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Version",
-			Handler:    _Gateway_Version_Handler,
+			Handler:    _Manager_Version_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-<<<<<<< HEAD:npool/account/mgr/v1/mgr_grpc.pb.go
 	Metadata: "npool/account/mgr/v1/mgr.proto",
-=======
-	Metadata: "npool/servicetmpl/gw/v1/gw.proto",
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw_grpc.pb.go
 }

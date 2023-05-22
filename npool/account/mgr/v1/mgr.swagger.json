@@ -1,16 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD:npool/account/mgr/v1/mgr.swagger.json
     "title": "npool/account/mgr/v1/mgr.proto",
-=======
-    "title": "npool/servicetmpl/gw/v1/gw.proto",
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw.swagger.json
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Gateway"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -23,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "Gateway_Version",
+        "operationId": "Manager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -49,7 +45,7 @@
           }
         ],
         "tags": [
-          "Gateway"
+          "Manager"
         ]
       }
     }

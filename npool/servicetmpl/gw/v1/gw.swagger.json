@@ -1,15 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD
     "title": "npool/servicetmpl/gw/v1/gw.proto",
-=======
-<<<<<<< HEAD:npool/account/mgr/v1/mgr.swagger.json
-    "title": "npool/account/mgr/v1/mgr.proto",
-=======
-    "title": "npool/servicetmpl/gw/v1/gw.proto",
->>>>>>> Refactor service template:npool/servicetmpl/gw/v1/gw.swagger.json
->>>>>>> Refactor service template
     "version": "version not set"
   },
   "tags": [

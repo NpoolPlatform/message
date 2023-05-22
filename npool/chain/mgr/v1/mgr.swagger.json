@@ -1,16 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD:npool/chain/mgr/v1/mgr.swagger.json
     "title": "npool/chain/mgr/v1/mgr.proto",
-=======
-    "title": "npool/servicetmpl/mw/v1/mw.proto",
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/mw.swagger.json
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -23,7 +19,7 @@
     "/v1/version": {
       "post": {
         "summary": "Method Version",
-        "operationId": "Middleware_Version",
+        "operationId": "Manager_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -49,7 +45,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Manager"
         ]
       }
     }

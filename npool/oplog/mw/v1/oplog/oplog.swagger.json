@@ -47,18 +47,8 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
-=======
-        "AutoID": {
-          "$ref": "#/definitions/v1Uint32Val"
->>>>>>> Rename to oplog
-=======
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
->>>>>>> Add ent id
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -113,8 +103,6 @@
     "v1OpLog": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -123,28 +111,6 @@
         "EntID": {
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
-=======
-=======
-        "ID": {
-<<<<<<< HEAD
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
->>>>>>> Also add id
-        "AutoID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"auto_id\""
->>>>>>> Rename to oplog
-=======
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
->>>>>>> Add ent it
         },
         "AppID": {
           "type": "string",
@@ -169,25 +135,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"arguments\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "CurValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"cur_value\""
-        },
-        "NewValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"new_value\""
-=======
-        "OldValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"old_value\""
->>>>>>> Rename to oplog
-=======
-        "CurValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"cur_value\""
->>>>>>> Add current value
         },
         "NewValue": {
           "type": "string",
@@ -208,10 +158,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fail_reason\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add req headers and resp headers
         "StatusCode": {
           "type": "integer",
           "format": "int32",
@@ -219,27 +165,12 @@
         },
         "ReqHeaders": {
           "type": "string",
-<<<<<<< HEAD
-<<<<<<< HEAD
           "title": "@inject_tag: sql:\"req_headers\""
         },
         "RespHeaders": {
           "type": "string",
           "title": "@inject_tag: sql:\"resp_headers\""
         },
-=======
->>>>>>> Rename to oplog
-=======
-          "title": "@inject_tag: sql:\"fail_reason\""
-=======
-          "title": "@inject_tag: sql:\"req_headers\""
->>>>>>> Add req headers
-        },
-        "RespHeaders": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"resp_headers\""
-        },
->>>>>>> Add req headers and resp headers
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -255,22 +186,8 @@
     "v1OpLogReq": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "EntID": {
           "type": "string"
-=======
-        "AutoID": {
-=======
-        "EntID": {
-<<<<<<< HEAD
->>>>>>> Add ent id
-          "type": "integer",
-          "format": "int64"
->>>>>>> Rename to oplog
-=======
-          "type": "string"
->>>>>>> Correct ent id type
         },
         "AppID": {
           "type": "string"
@@ -287,27 +204,12 @@
         "Arguments": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "CurValue": {
           "type": "string"
         },
         "NewValue": {
           "type": "string"
         },
-=======
->>>>>>> Rename to oplog
-=======
-        "CurValue": {
-          "type": "string"
-        },
-<<<<<<< HEAD
->>>>>>> Add current value
-=======
-        "NewValue": {
-          "type": "string"
-        },
->>>>>>> Add new value
         "HumanReadable": {
           "type": "string"
         },
@@ -316,10 +218,6 @@
         },
         "FailReason": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add req headers and resp headers
         },
         "StatusCode": {
           "type": "integer",
@@ -330,22 +228,10 @@
         },
         "RespHeaders": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "ElapsedMillisecs": {
           "type": "integer",
           "format": "int64"
-=======
->>>>>>> Rename to oplog
-=======
->>>>>>> Add req headers and resp headers
-=======
-        },
-        "ElapsedMillisecs": {
-          "type": "integer",
-          "format": "int64"
->>>>>>> Add elapsed milliseconds
         }
       }
     },
@@ -353,15 +239,7 @@
       "type": "string",
       "enum": [
         "DefaultResult",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Success",
-=======
-        "Pass",
->>>>>>> Rename to oplog
-=======
-        "Success",
->>>>>>> Success but not Pass
         "Fail"
       ],
       "default": "DefaultResult"

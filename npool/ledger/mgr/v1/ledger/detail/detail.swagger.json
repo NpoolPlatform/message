@@ -1,16 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
     "title": "npool/ledger/mgr/v1/ledger/detail/detail.proto",
-=======
-    "title": "npool/servicetmpl/mw/v1/detail/detail.proto",
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Manager"
     }
   ],
   "consumes": [
@@ -51,17 +47,35 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
         "ID": {
           "$ref": "#/definitions/v1StringVal"
-<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
-=======
         },
-        "SampleCol": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FromCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOExtra": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -96,19 +110,36 @@
     "v1Detail": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "type": "integer",
-          "format": "int64"
-        },
         "ID": {
           "type": "string"
         },
-<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
-=======
-        "SampleCol": {
+        "AppID": {
           "type": "string"
         },
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -118,19 +149,37 @@
     "v1DetailReq": {
       "type": "object",
       "properties": {
-        "AutoID": {
-          "type": "integer",
-          "format": "int64"
-        },
         "ID": {
           "type": "string"
         },
-<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
-=======
-        "SampleCol": {
+        "AppID": {
           "type": "string"
         },
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "E.g. when pay with non-USDT coin"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -184,7 +233,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/ledger/mgr/v1/ledger/detail/detail.swagger.json
     "v1IOSubType": {
       "type": "string",
       "enum": [
@@ -212,20 +260,6 @@
       "default": "DefaultType"
     },
     "v1Int32Val": {
-=======
-    "v1StringVal": {
->>>>>>> Refactor service template:npool/servicetmpl/mw/v1/detail/detail.swagger.json
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
       "type": "object",
       "properties": {
         "Op": {
@@ -233,7 +267,18 @@
         },
         "Value": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     }
