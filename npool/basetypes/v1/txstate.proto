@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+enum TxState {
+    DefaultTxState     = 0;
+    StateCreated       = 10;
+    StateWait          = 20;
+    StateTransferring  = 30;
+    StateSuccessful    = 40;
+    StateFail          = 50;
+}
+
