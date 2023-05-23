@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetHistoriesResponse"
+              "$ref": "#/definitions/v1GetHistoriesResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetHistoriesRequest"
+              "$ref": "#/definitions/v1GetHistoriesRequest"
             }
           }
         ],
@@ -102,7 +102,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+            "$ref": "#/definitions/v1Currency"
           }
         },
         "Total": {
@@ -111,47 +111,35 @@
         }
       }
     },
-    "chaingatewaycoincurrencyv1GetHistoriesRequest": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
           "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "chaingatewaycoincurrencyv1GetHistoriesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
+        "details": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+            "$ref": "#/definitions/protobufAny"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "chainmiddlewarecoincurrencyv1Currency": {
+    "v1Currency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -201,39 +189,11 @@
           "title": "@inject_tag: sql:\"feed_type\""
         },
         "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
+          "$ref": "#/definitions/v1CurrencyFeedType"
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1FeedType": {
+    "v1CurrencyFeedType": {
       "type": "string",
       "enum": [
         "DefaultFeedType",
@@ -242,6 +202,46 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
+    },
+    "v1GetHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Currency"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
