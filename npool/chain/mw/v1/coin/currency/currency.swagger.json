@@ -264,6 +264,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1GetCoinCurrencyResponse": {
       "type": "object",
       "properties": {
@@ -273,6 +274,8 @@
       }
     },
 >>>>>>> Add currency history
+=======
+>>>>>>> Remove unused api
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -316,9 +319,6 @@
           "$ref": "#/definitions/v1Currency"
         }
       }
-    },
-    "v1RefreshCurrenciesResponse": {
-      "type": "object"
     },
     "v1StringVal": {
       "type": "object",
