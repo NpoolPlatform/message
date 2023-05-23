@@ -101,6 +101,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
           }
         },
@@ -140,6 +141,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
           }
         },
@@ -225,6 +227,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

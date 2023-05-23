@@ -104,6 +104,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -134,8 +135,10 @@
         "Archivements": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1UserArchivement"
-          }
+          },
+          "title": "Each user"
         },
         "Total": {
           "type": "integer",
@@ -171,6 +174,7 @@
         "Archivements": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1UserArchivement"
           }
         },
@@ -265,6 +269,7 @@
         "Archivements": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1GoodArchivement"
           }
         },

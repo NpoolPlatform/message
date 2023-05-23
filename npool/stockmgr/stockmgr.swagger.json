@@ -423,6 +423,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -464,6 +465,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -477,9 +479,7 @@
         },
         "Fields": {
           "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
+          "additionalProperties": {}
         }
       }
     },
@@ -533,6 +533,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Stock"
           }
         }
@@ -544,6 +545,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Stock"
           }
         }
@@ -606,9 +608,7 @@
         "Op": {
           "type": "string"
         },
-        "Val": {
-          "type": "object"
-        }
+        "Val": {}
       }
     },
     "v1GetStockOnlyRequest": {
@@ -671,6 +671,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Stock"
           }
         },
@@ -715,9 +716,7 @@
         },
         "Fields": {
           "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
+          "additionalProperties": {}
         }
       }
     },

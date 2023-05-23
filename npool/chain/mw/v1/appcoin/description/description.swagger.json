@@ -97,6 +97,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
           }
         },
@@ -136,6 +137,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

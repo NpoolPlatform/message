@@ -143,6 +143,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/inspiremanagereventv1Coupon"
           }
         },
@@ -191,6 +192,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/inspiregatewayeventv1Coupon"
           }
         },
@@ -250,6 +252,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/inspiregatewayeventv1Event"
           }
         },
@@ -271,6 +274,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/inspiremanagereventv1Coupon"
           }
         },
@@ -331,6 +335,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

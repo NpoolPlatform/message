@@ -31,6 +31,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         }
@@ -58,6 +59,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         },
@@ -143,6 +145,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -206,6 +209,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         }
@@ -344,6 +348,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/middlewarenotif2v1Notif"
           }
         }

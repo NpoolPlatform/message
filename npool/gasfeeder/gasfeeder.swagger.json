@@ -551,6 +551,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -592,6 +593,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -788,9 +790,7 @@
         "Op": {
           "type": "string"
         },
-        "Val": {
-          "type": "object"
-        }
+        "Val": {}
       }
     },
     "v1GetCoinGasOnlyRequest": {
@@ -853,6 +853,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1CoinGas"
           }
         },
@@ -922,6 +923,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Deposit"
           }
         },

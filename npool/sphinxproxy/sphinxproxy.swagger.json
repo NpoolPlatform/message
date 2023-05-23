@@ -232,6 +232,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -265,6 +266,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -404,7 +406,8 @@
           "$ref": "#/definitions/v1TransactionState"
         },
         "ENV": {
-          "type": "string"
+          "type": "string",
+          "title": "main or test"
         },
         "Offset": {
           "type": "integer",
@@ -422,6 +425,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TransactionInfo"
           }
         },
@@ -441,12 +445,14 @@
         "TxIn": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TxIn"
           }
         },
         "TxOut": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TxOut"
           }
         },
@@ -547,7 +553,8 @@
       "type": "object",
       "properties": {
         "Address": {
-          "type": "string"
+          "type": "string",
+          "title": "create new account address"
         },
         "Message": {
           "$ref": "#/definitions/v1UnsignedMessage"
@@ -564,13 +571,15 @@
         "RPCExitCodeNotSupportCoin"
       ],
       "default": "RPCExitCodeUnKnow",
+      "description": "plugin error code start from 50\n sign error code start from 100",
       "title": "- RPCExitCodeNotSupportCoin: proxy communicate with plugin and sign grpc error code\ncommon error code start from 1"
     },
     "v1Signature": {
       "type": "object",
       "properties": {
         "SignType": {
-          "type": "string"
+          "type": "string",
+          "title": "secp256k1"
         },
         "Data": {
           "type": "string",
@@ -637,7 +646,7 @@
         "TransactionStateRetrievePrivateInfo"
       ],
       "default": "TransactionStateUnKnow",
-      "description": "- TransactionStateRetrievePrivateInfo: some coin such as aleo 30 -\u003e 1",
+      "description": "- TransactionStateBroadcast: TODO: caution\n - TransactionStateRetrievePrivateInfo: some coin such as aleo 30 -\u003e 1",
       "title": "state step by 10"
     },
     "v1TransactionType": {
@@ -748,6 +757,7 @@
         "Unspent": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Unspent"
           },
           "title": "btc"

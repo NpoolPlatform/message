@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -80,7 +81,8 @@
           "type": "string"
         },
         "CollectingTID": {
-          "type": "string"
+          "type": "string",
+          "title": "Used to free the address when transaction done"
         },
         "AvailableAt": {
           "type": "integer",
@@ -128,6 +130,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         }
@@ -179,6 +182,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },

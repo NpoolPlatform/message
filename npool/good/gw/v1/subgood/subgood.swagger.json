@@ -260,6 +260,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
           }
         },
@@ -356,6 +357,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -411,6 +413,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/goodgatewaysubgoodv1SubGood"
           }
         },

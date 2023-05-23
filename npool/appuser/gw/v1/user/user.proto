@@ -228,6 +228,7 @@ message UpdateUserRequest {
     optional string OldPasswordHash    = 210;
 
     optional bool   KolConfirmed       = 220;
+    optional string SelectedLangID     = 230;
 }
 
 message UpdateUserResponse {
