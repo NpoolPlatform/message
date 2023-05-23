@@ -52,9 +52,9 @@ service Gateway {
         };
     }
 
-    rpc UpdateAppUserKol (UpdateAppUserKolRequest) returns (UpdateAppUserKolResponse) {
+    rpc UpdateAppUser (UpdateAppUserRequest) returns (UpdateAppUserResponse) {
         option (google.api.http) = {
-            post: "/v1/update/app/userkol"
+            post: "/v1/update/app/user"
             body: "*"
         };
     }
@@ -246,13 +246,14 @@ message UpdateUserKolResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 
-message UpdateAppUserKolRequest {
-    string AppID        = 10;
-    string TargetUserID = 20;
-    bool   Kol          = 30;
+message UpdateAppUserRequest {
+    string          AppID        = 10;
+    string          TargetUserID = 20;
+    optional bool   Kol          = 30;
+    optional string EmailAddress = 40;
 }
 
-message UpdateAppUserKolResponse {
+message UpdateAppUserResponse {
     appuser.middleware.user.v1.User Info = 10;
 }
 

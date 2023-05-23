@@ -464,14 +464,14 @@
         ]
       }
     },
-    "/v1/update/app/userkol": {
+    "/v1/update/app/user": {
       "post": {
-        "operationId": "Gateway_UpdateAppUserKol",
+        "operationId": "Gateway_UpdateAppUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserKolResponse"
+              "$ref": "#/definitions/v1UpdateAppUserResponse"
             }
           },
           "default": {
@@ -487,7 +487,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppUserKolRequest"
+              "$ref": "#/definitions/v1UpdateAppUserRequest"
             }
           }
         ],
@@ -1205,7 +1205,7 @@
         }
       }
     },
-    "v1UpdateAppUserKolRequest": {
+    "v1UpdateAppUserRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -1216,10 +1216,13 @@
         },
         "Kol": {
           "type": "boolean"
+        },
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },
-    "v1UpdateAppUserKolResponse": {
+    "v1UpdateAppUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
