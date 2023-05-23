@@ -26,7 +26,11 @@ const (
 	Gateway_UpdateUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateUser"
 	Gateway_UpdateUserKol_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateUserKol"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Gateway_UpdateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateAppUser"
+=======
+	Gateway_UpdateAppUserKol_FullMethodName  = "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol"
+>>>>>>> Use good tx state
 =======
 	Gateway_UpdateAppUserKol_FullMethodName  = "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol"
 >>>>>>> Use good tx state
@@ -135,6 +139,9 @@ func (c *gatewayClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequ
 func (c *gatewayClient) UpdateAppUserKol(ctx context.Context, in *UpdateAppUserKolRequest, opts ...grpc.CallOption) (*UpdateAppUserKolResponse, error) {
 	out := new(UpdateAppUserKolResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateAppUserKol_FullMethodName, in, out, opts...)
+<<<<<<< HEAD
+>>>>>>> Use good tx state
+=======
 >>>>>>> Use good tx state
 	if err != nil {
 		return nil, err
@@ -443,7 +450,11 @@ func _Gateway_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec fu
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		FullMethod: Gateway_UpdateAppUser_FullMethodName,
+=======
+		FullMethod: Gateway_UpdateAppUserKol_FullMethodName,
+>>>>>>> Use good tx state
 =======
 		FullMethod: Gateway_UpdateAppUserKol_FullMethodName,
 >>>>>>> Use good tx state
