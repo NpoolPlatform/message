@@ -5,11 +5,11 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum TxState {
-    DefaultTxState     = 0;
-    StateCreated       = 10;
-    StateWait          = 20;
-    StateTransferring  = 30;
-    StateSuccessful    = 40;
-    StateFail          = 50;
+    DefaultTxState       = 0;
+    TxStateCreated       = 10;
+    TxStateWait          = 20;
+    TxStateTransferring  = 30;
+    TxStateSuccessful    = 40;
+    TxStateFail          = 50;
 }
 
