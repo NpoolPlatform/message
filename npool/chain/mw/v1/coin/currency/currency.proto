@@ -13,12 +13,10 @@ service Manager {
     rpc UpdateCurrency     (UpdateCurrencyRequest)     returns (UpdateCurrencyResponse)     {}
     rpc GetCurrency        (GetCurrencyRequest)        returns (GetCurrencyResponse)        {}
     rpc GetCurrencyOnly    (GetCurrencyOnlyRequest)    returns (GetCurrencyOnlyResponse)    {}
-    rpc GetCoinCurrency    (GetCoinCurrencyRequest)    returns (GetCoinCurrencyResponse)    {}
     rpc GetCurrencies      (GetCurrenciesRequest)      returns (GetCurrenciesResponse)      {}
     rpc ExistCurrency      (ExistCurrencyRequest)      returns (ExistCurrencyResponse)      {}
     rpc ExistCurrencyConds (ExistCurrencyCondsRequest) returns (ExistCurrencyCondsResponse) {}
     rpc CountCurrencies    (CountCurrenciesRequest)    returns (CountCurrenciesResponse)    {}
-    rpc RefreshCurrencies  (RefreshCurrenciesRequest)  returns (RefreshCurrenciesResponse)  {}
     rpc DeleteCurrency     (DeleteCurrencyRequest)     returns (DeleteCurrencyResponse)     {}
 }
 
@@ -106,14 +104,6 @@ message GetCurrencyOnlyResponse {
     Currency Info = 10;
 }
 
-message GetCoinCurrencyRequest {
-    string CoinTypeID = 10;
-}
-
-message GetCoinCurrencyResponse {
-    Currency Info = 10;
-}
-
 message ExistCurrencyRequest {
     string ID = 10;
 }
@@ -136,12 +126,6 @@ message CountCurrenciesRequest {
 
 message CountCurrenciesResponse {
     uint32 Info = 10;
-}
-
-message RefreshCurrenciesRequest {
-}
-
-message RefreshCurrenciesResponse {
 }
 
 message DeleteCurrencyRequest {
