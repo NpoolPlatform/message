@@ -19,11 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+<<<<<<< HEAD:npool/chain/mw/v1/app/coin/coin_grpc.pb.go
 	Middleware_CreateCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/CreateCoin"
 	Middleware_GetCoin_FullMethodName    = "/chain.middleware.app.coin.v1.Middleware/GetCoin"
 	Middleware_GetCoins_FullMethodName   = "/chain.middleware.app.coin.v1.Middleware/GetCoins"
 	Middleware_UpdateCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/UpdateCoin"
 	Middleware_DeleteCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/DeleteCoin"
+=======
+	Middleware_CreateCoin_FullMethodName  = "/chain.middleware.appcoin.v1.Middleware/CreateCoin"
+	Middleware_GetCoin_FullMethodName     = "/chain.middleware.appcoin.v1.Middleware/GetCoin"
+	Middleware_GetCoinOnly_FullMethodName = "/chain.middleware.appcoin.v1.Middleware/GetCoinOnly"
+	Middleware_GetCoins_FullMethodName    = "/chain.middleware.appcoin.v1.Middleware/GetCoins"
+	Middleware_UpdateCoin_FullMethodName  = "/chain.middleware.appcoin.v1.Middleware/UpdateCoin"
+	Middleware_DeleteCoin_FullMethodName  = "/chain.middleware.appcoin.v1.Middleware/DeleteCoin"
+>>>>>>> Add refresh currency to coin:npool/chain/mw/v1/appcoin/appcoin_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -57,6 +66,18 @@ func (c *middlewareClient) CreateCoin(ctx context.Context, in *CreateCoinRequest
 func (c *middlewareClient) GetCoin(ctx context.Context, in *GetCoinRequest, opts ...grpc.CallOption) (*GetCoinResponse, error) {
 	out := new(GetCoinResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetCoin_FullMethodName, in, out, opts...)
+<<<<<<< HEAD:npool/chain/mw/v1/app/coin/coin_grpc.pb.go
+=======
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetCoinOnly(ctx context.Context, in *GetCoinOnlyRequest, opts ...grpc.CallOption) (*GetCoinOnlyResponse, error) {
+	out := new(GetCoinOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetCoinOnly_FullMethodName, in, out, opts...)
+>>>>>>> Add refresh currency to coin:npool/chain/mw/v1/appcoin/appcoin_grpc.pb.go
 	if err != nil {
 		return nil, err
 	}
@@ -170,6 +191,27 @@ func _Middleware_GetCoin_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD:npool/chain/mw/v1/app/coin/coin_grpc.pb.go
+=======
+func _Middleware_GetCoinOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCoinOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetCoinOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCoinOnly(ctx, req.(*GetCoinOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+>>>>>>> Add refresh currency to coin:npool/chain/mw/v1/appcoin/appcoin_grpc.pb.go
 func _Middleware_GetCoins_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinsRequest)
 	if err := dec(in); err != nil {

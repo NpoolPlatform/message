@@ -215,7 +215,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/CreateCoin", runtime.WithHTTPPathPattern("/v1/create/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/CreateCoin", runtime.WithHTTPPathPattern("/v1/create/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -240,7 +244,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/GetCoins", runtime.WithHTTPPathPattern("/v1/get/appcoins"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/GetCoins", runtime.WithHTTPPathPattern("/v1/get/appcoins"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -265,7 +273,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/GetAppCoins", runtime.WithHTTPPathPattern("/v1/get/n/appcoins"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/GetAppCoins", runtime.WithHTTPPathPattern("/v1/get/n/appcoins"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -290,7 +302,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/UpdateCoin", runtime.WithHTTPPathPattern("/v1/update/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/UpdateCoin", runtime.WithHTTPPathPattern("/v1/update/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -315,7 +331,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/DeleteCoin", runtime.WithHTTPPathPattern("/v1/delete/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/DeleteCoin", runtime.WithHTTPPathPattern("/v1/delete/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -379,7 +399,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/CreateCoin", runtime.WithHTTPPathPattern("/v1/create/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/CreateCoin", runtime.WithHTTPPathPattern("/v1/create/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -401,7 +425,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/GetCoins", runtime.WithHTTPPathPattern("/v1/get/appcoins"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/GetCoins", runtime.WithHTTPPathPattern("/v1/get/appcoins"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -423,7 +451,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/GetAppCoins", runtime.WithHTTPPathPattern("/v1/get/n/appcoins"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/GetAppCoins", runtime.WithHTTPPathPattern("/v1/get/n/appcoins"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -445,7 +477,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/UpdateCoin", runtime.WithHTTPPathPattern("/v1/update/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/UpdateCoin", runtime.WithHTTPPathPattern("/v1/update/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,7 +503,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.v1.Gateway/DeleteCoin", runtime.WithHTTPPathPattern("/v1/delete/appcoin"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.v1.Gateway/DeleteCoin", runtime.WithHTTPPathPattern("/v1/delete/appcoin"))
+>>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
