@@ -55,7 +55,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyResponse"
+=======
+              "$ref": "#/definitions/v1GetHistoriesResponse"
+>>>>>>> Add currency history
             }
           },
           "default": {
@@ -71,7 +75,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyRequest"
+=======
+              "$ref": "#/definitions/v1GetHistoriesRequest"
+>>>>>>> Add currency history
             }
           }
         ],
@@ -109,10 +117,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Currency"
 =======
             "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
 >>>>>>> Add chain meta
+=======
+            "$ref": "#/definitions/v1Currency"
+>>>>>>> Add currency history
           }
         },
         "Total": {
@@ -121,14 +133,20 @@
         }
       }
     },
+<<<<<<< HEAD
     "chaingatewaycoincurrencyv1GetCurrencyRequest": {
+=======
+    "protobufAny": {
+>>>>>>> Add currency history
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "@type": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": {}
     },
+<<<<<<< HEAD
     "chaingatewaycoincurrencyv1GetCurrencyResponse": {
       "type": "object",
       "properties": {
@@ -149,6 +167,11 @@
     "rpcStatus": {
       "type": "object",
       "properties": {
+=======
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+>>>>>>> Add currency history
         "code": {
           "type": "integer",
           "format": "int32"
@@ -161,10 +184,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "$ref": "#/definitions/protobufAny"
 =======
             "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
 >>>>>>> Add chain meta
+=======
+            "$ref": "#/definitions/protobufAny"
+>>>>>>> Add currency history
           }
         }
       }
@@ -220,37 +247,60 @@
         },
         "FeedType": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CurrencyFeedType"
 =======
           "$ref": "#/definitions/v1FeedType"
+=======
+          "$ref": "#/definitions/v1CurrencyFeedType"
+>>>>>>> Add currency history
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
+    "v1CurrencyFeedType": {
+      "type": "string",
+      "enum": [
+        "DefaultFeedType",
+        "CoinGecko",
+        "CoinBase",
+        "StableUSDHardCode"
+      ],
+      "default": "DefaultFeedType"
     },
-    "rpcStatus": {
+    "v1GetHistoriesRequest": {
       "type": "object",
       "properties": {
-        "code": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Offset": {
           "type": "integer",
           "format": "int32"
         },
-        "message": {
-          "type": "string"
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         },
-        "details": {
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/protobufAny"
+            "$ref": "#/definitions/v1Currency"
           }
+<<<<<<< HEAD
 >>>>>>> Add chain meta
         }
       }
@@ -264,6 +314,14 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
+=======
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+>>>>>>> Add currency history
     }
   }
 }
