@@ -90,6 +90,7 @@ message Coin {
     string          LeastTransferAmount          = 380;
     string          DefaultGoodID                = 400;
     bool            NeedMemo                     = 410;
+    bool            RefreshCurrency              = 420;
 }
 
 message CreateCoinRequest {

@@ -224,6 +224,9 @@
         },
         "NeedMemo": {
           "type": "boolean"
+        },
+        "RefreshCurrency": {
+          "type": "boolean"
         }
       }
     },
@@ -383,6 +386,10 @@
         "NeedMemo": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"need_memo\""
+        },
+        "RefreshCurrency": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"refresh_currency\""
         }
       }
     }
