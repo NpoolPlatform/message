@@ -25,7 +25,11 @@ const (
 	Gateway_CreateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/CreateAppUser"
 	Gateway_UpdateUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateUser"
 	Gateway_UpdateUserKol_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateUserKol"
+<<<<<<< HEAD
 	Gateway_UpdateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateAppUser"
+=======
+	Gateway_UpdateAppUserKol_FullMethodName  = "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol"
+>>>>>>> Use good tx state
 	Gateway_ResetUser_FullMethodName         = "/appuser.gateway.user.v1.Gateway/ResetUser"
 	Gateway_GetUsers_FullMethodName          = "/appuser.gateway.user.v1.Gateway/GetUsers"
 	Gateway_GetAppUsers_FullMethodName       = "/appuser.gateway.user.v1.Gateway/GetAppUsers"
@@ -123,9 +127,15 @@ func (c *gatewayClient) UpdateUserKol(ctx context.Context, in *UpdateUserKolRequ
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *gatewayClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
 	out := new(UpdateAppUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateAppUser_FullMethodName, in, out, opts...)
+=======
+func (c *gatewayClient) UpdateAppUserKol(ctx context.Context, in *UpdateAppUserKolRequest, opts ...grpc.CallOption) (*UpdateAppUserKolResponse, error) {
+	out := new(UpdateAppUserKolResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateAppUserKol_FullMethodName, in, out, opts...)
+>>>>>>> Use good tx state
 	if err != nil {
 		return nil, err
 	}
@@ -432,7 +442,11 @@ func _Gateway_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
+<<<<<<< HEAD
 		FullMethod: Gateway_UpdateAppUser_FullMethodName,
+=======
+		FullMethod: Gateway_UpdateAppUserKol_FullMethodName,
+>>>>>>> Use good tx state
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
