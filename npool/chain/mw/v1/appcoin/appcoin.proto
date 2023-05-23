@@ -133,6 +133,8 @@ message Coin {
     string LeastTransferAmount          = 380;
     // @inject_tag: sql:"need_memo"
     bool   NeedMemo                     = 390;
+    // @inject_tag: sql:"refresh_currency"
+    bool   RefreshCurrency              = 400;
 }
 
 message Conds {

@@ -40,6 +40,7 @@ message CoinReq {
     optional bool   StableUSD                    = 200;
     optional string LeastTransferAmount          = 210;
     optional bool   NeedMemo                     = 220;
+    optional bool   RefreshCurrency              = 230;
 }
 
 message Coin {
@@ -101,6 +102,8 @@ message Coin {
     uint32 UpdatedAt                    = 250;
     // @inject_tag: sql:"need_memo"
     bool   NeedMemo                     = 260;
+    // @inject_tag: sql:"refresh_currency"
+    bool   RefreshCurrency              = 270;
 }
 
 message Conds {
