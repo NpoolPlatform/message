@@ -184,14 +184,6 @@
         }
       }
     },
-    "v1GetCoinCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -223,9 +215,6 @@
           "$ref": "#/definitions/v1Currency"
         }
       }
-    },
-    "v1RefreshCurrenciesResponse": {
-      "type": "object"
     },
     "v1StringVal": {
       "type": "object",
