@@ -331,6 +331,9 @@
         },
         "NeedMemo": {
           "type": "boolean"
+        },
+        "RefreshCurrency": {
+          "type": "boolean"
         }
       }
     },
