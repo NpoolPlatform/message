@@ -19,8 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+<<<<<<< HEAD
 	Gateway_GetCurrency_FullMethodName   = "/chain.gateway.coin.currency.v1.Gateway/GetCurrency"
 	Gateway_GetCurrencies_FullMethodName = "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies"
+=======
+	Gateway_GetCurrencies_FullMethodName = "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies"
+	Gateway_GetHistories_FullMethodName  = "/chain.gateway.coin.currency.v1.Gateway/GetHistories"
+>>>>>>> Regenerate
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -39,18 +44,30 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
+<<<<<<< HEAD
 func (c *gatewayClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
 	out := new(GetCurrencyResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetCurrency_FullMethodName, in, out, opts...)
+=======
+func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
+	out := new(GetCurrenciesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetCurrencies_FullMethodName, in, out, opts...)
+>>>>>>> Regenerate
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetCurrencies_FullMethodName, in, out, opts...)
+=======
+func (c *gatewayClient) GetHistories(ctx context.Context, in *GetHistoriesRequest, opts ...grpc.CallOption) (*GetHistoriesResponse, error) {
+	out := new(GetHistoriesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetHistories_FullMethodName, in, out, opts...)
+>>>>>>> Regenerate
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +116,11 @@ func _Gateway_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
+<<<<<<< HEAD
 		FullMethod: Gateway_GetCurrency_FullMethodName,
+=======
+		FullMethod: Gateway_GetCurrencies_FullMethodName,
+>>>>>>> Regenerate
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
@@ -117,7 +138,11 @@ func _Gateway_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
+<<<<<<< HEAD
 		FullMethod: Gateway_GetCurrencies_FullMethodName,
+=======
+		FullMethod: Gateway_GetHistories_FullMethodName,
+>>>>>>> Regenerate
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))

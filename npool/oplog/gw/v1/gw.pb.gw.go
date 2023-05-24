@@ -80,12 +80,20 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/oplog.gateway.v1.Gateway/Version", runtime.WithHTTPPathPattern("/v1/version"))
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.manager.v1.Manager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		resp, md, err := local_request_Gateway_Version_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+=======
+		resp, md, err := local_request_Manager_Version_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -93,7 +101,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		forward_Gateway_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+=======
+		forward_Manager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 
 	})
 
@@ -102,7 +114,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 // RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+=======
+func RegisterManagerHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 	conn, err := grpc.DialContext(ctx, endpoint, opts...)
 	if err != nil {
 		return err
@@ -144,19 +160,31 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/oplog.gateway.v1.Gateway/Version", runtime.WithHTTPPathPattern("/v1/version"))
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.manager.v1.Manager/Version", runtime.WithHTTPPathPattern("/v1/version"))
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		resp, md, err := request_Gateway_Version_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+=======
+		resp, md, err := request_Manager_Version_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
+<<<<<<< HEAD:npool/oplog/gw/v1/gw.pb.gw.go
 		forward_Gateway_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+=======
+		forward_Manager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+>>>>>>> Regenerate:npool/chain/mgr/v1/mgr.pb.gw.go
 
 	})
 

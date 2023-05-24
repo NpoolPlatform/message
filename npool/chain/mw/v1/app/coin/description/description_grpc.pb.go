@@ -19,10 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+<<<<<<< HEAD:npool/chain/mw/v1/app/coin/description/description_grpc.pb.go
 	Middleware_CreateCoinDescription_FullMethodName = "/chain.middleware.app.coin.description.v1.Middleware/CreateCoinDescription"
 	Middleware_GetCoinDescription_FullMethodName    = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescription"
 	Middleware_GetCoinDescriptions_FullMethodName   = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescriptions"
 	Middleware_UpdateCoinDescription_FullMethodName = "/chain.middleware.app.coin.description.v1.Middleware/UpdateCoinDescription"
+=======
+	Middleware_CreateCoinDescription_FullMethodName = "/chain.middleware.appcoin.description.v1.Middleware/CreateCoinDescription"
+	Middleware_GetCoinDescription_FullMethodName    = "/chain.middleware.appcoin.description.v1.Middleware/GetCoinDescription"
+	Middleware_GetCoinDescriptions_FullMethodName   = "/chain.middleware.appcoin.description.v1.Middleware/GetCoinDescriptions"
+	Middleware_UpdateCoinDescription_FullMethodName = "/chain.middleware.appcoin.description.v1.Middleware/UpdateCoinDescription"
+>>>>>>> Regenerate:npool/chain/mw/v1/appcoin/description/description_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.

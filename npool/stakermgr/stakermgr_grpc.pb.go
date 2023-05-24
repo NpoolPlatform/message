@@ -22,8 +22,12 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD
+<<<<<<< HEAD
 	StakerManager_Version_FullMethodName      = "/staker.manager.v1.StakerManager/Version"
 	StakerManager_Redistribute_FullMethodName = "/staker.manager.v1.StakerManager/Redistribute"
+=======
+	StakerManager_Version_FullMethodName = "/staker.manager.v1.StakerManager/Version"
+>>>>>>> Regenerate
 =======
 	StakerManager_Version_FullMethodName = "/staker.manager.v1.StakerManager/Version"
 >>>>>>> Regenerate
@@ -50,6 +54,7 @@ func (c *stakerManagerClient) Version(ctx context.Context, in *emptypb.Empty, op
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, StakerManager_Version_FullMethodName, in, out, opts...)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if err != nil {
 		return nil, err
 	}
@@ -59,6 +64,8 @@ func (c *stakerManagerClient) Version(ctx context.Context, in *emptypb.Empty, op
 func (c *stakerManagerClient) Redistribute(ctx context.Context, in *RedistributeRequest, opts ...grpc.CallOption) (*RedistributeResponse, error) {
 	out := new(RedistributeResponse)
 	err := c.cc.Invoke(ctx, StakerManager_Redistribute_FullMethodName, in, out, opts...)
+=======
+>>>>>>> Regenerate
 =======
 >>>>>>> Regenerate
 	if err != nil {
