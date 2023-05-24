@@ -19,12 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCoin_FullMethodName  = "/chain.middleware.app.coin.v1.Middleware/CreateCoin"
-	Middleware_GetCoin_FullMethodName     = "/chain.middleware.app.coin.v1.Middleware/GetCoin"
-	Middleware_GetCoinOnly_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/GetCoinOnly"
-	Middleware_GetCoins_FullMethodName    = "/chain.middleware.app.coin.v1.Middleware/GetCoins"
-	Middleware_UpdateCoin_FullMethodName  = "/chain.middleware.app.coin.v1.Middleware/UpdateCoin"
-	Middleware_DeleteCoin_FullMethodName  = "/chain.middleware.app.coin.v1.Middleware/DeleteCoin"
+	Middleware_CreateCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/CreateCoin"
+	Middleware_GetCoin_FullMethodName    = "/chain.middleware.app.coin.v1.Middleware/GetCoin"
+	Middleware_GetCoins_FullMethodName   = "/chain.middleware.app.coin.v1.Middleware/GetCoins"
+	Middleware_UpdateCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/UpdateCoin"
+	Middleware_DeleteCoin_FullMethodName = "/chain.middleware.app.coin.v1.Middleware/DeleteCoin"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,7 +32,6 @@ const (
 type MiddlewareClient interface {
 	CreateCoin(ctx context.Context, in *CreateCoinRequest, opts ...grpc.CallOption) (*CreateCoinResponse, error)
 	GetCoin(ctx context.Context, in *GetCoinRequest, opts ...grpc.CallOption) (*GetCoinResponse, error)
-	GetCoinOnly(ctx context.Context, in *GetCoinOnlyRequest, opts ...grpc.CallOption) (*GetCoinOnlyResponse, error)
 	GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error)
 	UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error)
 	DeleteCoin(ctx context.Context, in *DeleteCoinRequest, opts ...grpc.CallOption) (*DeleteCoinResponse, error)
@@ -59,15 +57,6 @@ func (c *middlewareClient) CreateCoin(ctx context.Context, in *CreateCoinRequest
 func (c *middlewareClient) GetCoin(ctx context.Context, in *GetCoinRequest, opts ...grpc.CallOption) (*GetCoinResponse, error) {
 	out := new(GetCoinResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetCoin_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetCoinOnly(ctx context.Context, in *GetCoinOnlyRequest, opts ...grpc.CallOption) (*GetCoinOnlyResponse, error) {
-	out := new(GetCoinOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetCoinOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +96,6 @@ func (c *middlewareClient) DeleteCoin(ctx context.Context, in *DeleteCoinRequest
 type MiddlewareServer interface {
 	CreateCoin(context.Context, *CreateCoinRequest) (*CreateCoinResponse, error)
 	GetCoin(context.Context, *GetCoinRequest) (*GetCoinResponse, error)
-	GetCoinOnly(context.Context, *GetCoinOnlyRequest) (*GetCoinOnlyResponse, error)
 	GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error)
 	UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error)
 	DeleteCoin(context.Context, *DeleteCoinRequest) (*DeleteCoinResponse, error)
@@ -123,9 +111,6 @@ func (UnimplementedMiddlewareServer) CreateCoin(context.Context, *CreateCoinRequ
 }
 func (UnimplementedMiddlewareServer) GetCoin(context.Context, *GetCoinRequest) (*GetCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoin not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCoinOnly(context.Context, *GetCoinOnlyRequest) (*GetCoinOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoins not implemented")
@@ -181,24 +166,6 @@ func _Middleware_GetCoin_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetCoin(ctx, req.(*GetCoinRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetCoinOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCoinOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetCoinOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCoinOnly(ctx, req.(*GetCoinOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -271,10 +238,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoin",
 			Handler:    _Middleware_GetCoin_Handler,
-		},
-		{
-			MethodName: "GetCoinOnly",
-			Handler:    _Middleware_GetCoinOnly_Handler,
 		},
 		{
 			MethodName: "GetCoins",
