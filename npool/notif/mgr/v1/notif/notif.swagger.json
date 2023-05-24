@@ -276,6 +276,9 @@
         },
         "Extra": {
           "type": "string"
+        },
+        "EventID": {
+          "type": "string"
         }
       }
     },

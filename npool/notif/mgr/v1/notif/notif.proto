@@ -34,6 +34,7 @@ message NotifReq {
     optional string    Content     = 90;
     optional notif.manager.channel.v1.NotifChannel Channel = 100;
     optional string    Extra       = 110;
+    optional string    EventID     = 120;
 }
 
 message Notif {
