@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleawre"
     }
   ],
   "consumes": [
@@ -91,6 +91,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -124,6 +125,8 @@
         }
       }
     },
+=======
+>>>>>>> Remove unused currency apis
     "v1Currency": {
       "type": "object",
       "properties": {
@@ -207,6 +210,7 @@
       ],
       "default": "DefaultFeedType"
     },
+<<<<<<< HEAD
     "v1CurrencyReq": {
       "type": "object",
       "properties": {
@@ -276,6 +280,8 @@
 >>>>>>> Add currency history
 =======
 >>>>>>> Remove unused api
+=======
+>>>>>>> Remove unused currency apis
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -340,14 +346,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
         }
       }
     }
