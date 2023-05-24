@@ -225,6 +225,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "EventID": {
+          "type": "string"
         }
       }
     },

@@ -57,6 +57,7 @@ message Notif {
     uint32           UpdatedAt    = 150;
     string           LangID       = 160;
     string           Lang         = 170;
+    string           EventID      = 180;
 }
 
 message GetNotifRequest {

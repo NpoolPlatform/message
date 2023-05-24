@@ -50,6 +50,7 @@ message Notif {
     string    Extra       = 110;
     uint32    CreatedAt   = 120;
     uint32    UpdatedAt   = 130;
+    string    EventID     = 140;
 }
 
 message Conds {
