@@ -103,6 +103,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/app/coin/description/description.swagger.json
 =======
     "chainmiddlewareappcoindescriptionv1CreateCoinDescriptionResponse": {
@@ -174,6 +175,8 @@
       }
     },
 >>>>>>> Add chain meta:npool/chain/mw/v1/appcoin/description/description.swagger.json
+=======
+>>>>>>> Add app coin exrate
     "v1CoinDescriptionReq": {
       "type": "object",
       "properties": {

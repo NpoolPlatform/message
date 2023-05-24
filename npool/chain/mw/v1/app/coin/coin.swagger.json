@@ -258,10 +258,13 @@
         "NeedMemo": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"need_memo\""
+<<<<<<< HEAD
         },
         "RefreshCurrency": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"refresh_currency\""
+=======
+>>>>>>> Add app coin exrate
         }
       }
     },
@@ -374,6 +377,17 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "v1GetCoinOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+>>>>>>> Add app coin exrate
     "v1GetCoinResponse": {
       "type": "object",
       "properties": {
