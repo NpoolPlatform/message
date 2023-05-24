@@ -11,7 +11,6 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateCoin     (CreateCoinRequest)   returns (CreateCoinResponse)    {}
     rpc GetCoin        (GetCoinRequest)      returns (GetCoinResponse)       {}
-    rpc GetCoinOnly    (GetCoinOnlyRequest)  returns (GetCoinOnlyResponse)   {}
     rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
     rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
     rpc DeleteCoin     (DeleteCoinRequest)   returns (DeleteCoinResponse)    {}
@@ -158,14 +157,6 @@ message GetCoinRequest {
 }
 
 message GetCoinResponse {
-    Coin Info = 10;
-}
-
-message GetCoinOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetCoinOnlyResponse {
     Coin Info = 10;
 }
 
