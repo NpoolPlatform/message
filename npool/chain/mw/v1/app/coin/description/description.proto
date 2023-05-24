@@ -95,4 +95,3 @@ message GetCoinDescriptionsResponse {
     repeated CoinDescription Infos = 10;
     uint32                   Total = 20;
 }
-
