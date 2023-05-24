@@ -29,11 +29,12 @@ message Feed {
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID   = 20;
     // @inject_tag: sql:"feed_type"
-    basetypes.v1.CurrencyFeedType FeedType = 30;
+    string FeedTypeStr  = 30;
+    basetypes.v1.CurrencyFeedType FeedType = 40;
     // @inject_tag: sql:"feed_coin_name"
-    string FeedCoinName = 40;
+    string FeedCoinName = 50;
     // @inject_tag: sql:"disabled"
-    bool   Disabled     = 50;
+    bool   Disabled     = 60;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 1000;
     // @inject_tag: sql:"updated_at"
