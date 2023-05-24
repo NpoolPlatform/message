@@ -1538,7 +1538,7 @@ var file_npool_chain_mw_v1_coin_currency_currency_proto_rawDesc = []byte{
 	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x65,
 	0x6e, 0x63, 0x79, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f,
 	0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c,
-	0x32, 0x93, 0x02, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x61, 0x77, 0x72, 0x65, 0x12,
+	0x32, 0x93, 0x02, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
 	0x7e, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x12, 0x35,
 	0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e,
@@ -1700,10 +1700,10 @@ var file_npool_chain_mw_v1_coin_currency_currency_proto_depIdxs = []int32{
 	1,  // 5: chain.middleware.coin.currency.v1.GetCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
 	2,  // 6: chain.middleware.coin.currency.v1.GetCurrenciesRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
 	1,  // 7: chain.middleware.coin.currency.v1.GetCurrenciesResponse.Infos:type_name -> chain.middleware.coin.currency.v1.Currency
-	3,  // 8: chain.middleware.coin.currency.v1.Middleawre.GetCurrency:input_type -> chain.middleware.coin.currency.v1.GetCurrencyRequest
-	5,  // 9: chain.middleware.coin.currency.v1.Middleawre.GetCurrencies:input_type -> chain.middleware.coin.currency.v1.GetCurrenciesRequest
-	4,  // 10: chain.middleware.coin.currency.v1.Middleawre.GetCurrency:output_type -> chain.middleware.coin.currency.v1.GetCurrencyResponse
-	6,  // 11: chain.middleware.coin.currency.v1.Middleawre.GetCurrencies:output_type -> chain.middleware.coin.currency.v1.GetCurrenciesResponse
+	3,  // 8: chain.middleware.coin.currency.v1.Middleware.GetCurrency:input_type -> chain.middleware.coin.currency.v1.GetCurrencyRequest
+	5,  // 9: chain.middleware.coin.currency.v1.Middleware.GetCurrencies:input_type -> chain.middleware.coin.currency.v1.GetCurrenciesRequest
+	4,  // 10: chain.middleware.coin.currency.v1.Middleware.GetCurrency:output_type -> chain.middleware.coin.currency.v1.GetCurrencyResponse
+	6,  // 11: chain.middleware.coin.currency.v1.Middleware.GetCurrencies:output_type -> chain.middleware.coin.currency.v1.GetCurrenciesResponse
 	10, // [10:12] is the sub-list for method output_type
 	8,  // [8:10] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
