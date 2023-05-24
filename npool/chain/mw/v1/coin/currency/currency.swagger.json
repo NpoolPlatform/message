@@ -139,14 +139,6 @@
         }
       }
     },
-    "v1GetCurrencyOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
     "v1GetCurrencyResponse": {
       "type": "object",
       "properties": {

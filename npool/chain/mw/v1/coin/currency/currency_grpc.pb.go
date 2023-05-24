@@ -19,9 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleawre_GetCurrency_FullMethodName     = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
-	Middleawre_GetCurrencyOnly_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencyOnly"
-	Middleawre_GetCurrencies_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
+	Middleawre_GetCurrency_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
+	Middleawre_GetCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
 )
 
 // MiddleawreClient is the client API for Middleawre service.
@@ -29,7 +28,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddleawreClient interface {
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
-	GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 }
 
@@ -50,15 +48,6 @@ func (c *middleawreClient) GetCurrency(ctx context.Context, in *GetCurrencyReque
 	return out, nil
 }
 
-func (c *middleawreClient) GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error) {
-	out := new(GetCurrencyOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleawre_GetCurrencyOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middleawreClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
 	err := c.cc.Invoke(ctx, Middleawre_GetCurrencies_FullMethodName, in, out, opts...)
@@ -73,7 +62,6 @@ func (c *middleawreClient) GetCurrencies(ctx context.Context, in *GetCurrenciesR
 // for forward compatibility
 type MiddleawreServer interface {
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
-	GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
 	mustEmbedUnimplementedMiddleawreServer()
 }
@@ -84,9 +72,6 @@ type UnimplementedMiddleawreServer struct {
 
 func (UnimplementedMiddleawreServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
-}
-func (UnimplementedMiddleawreServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyOnly not implemented")
 }
 func (UnimplementedMiddleawreServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
@@ -122,24 +107,6 @@ func _Middleawre_GetCurrency_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleawre_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCurrencyOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddleawreServer).GetCurrencyOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleawre_GetCurrencyOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddleawreServer).GetCurrencyOnly(ctx, req.(*GetCurrencyOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleawre_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrenciesRequest)
 	if err := dec(in); err != nil {
@@ -168,10 +135,6 @@ var Middleawre_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCurrency",
 			Handler:    _Middleawre_GetCurrency_Handler,
-		},
-		{
-			MethodName: "GetCurrencyOnly",
-			Handler:    _Middleawre_GetCurrencyOnly_Handler,
 		},
 		{
 			MethodName: "GetCurrencies",
