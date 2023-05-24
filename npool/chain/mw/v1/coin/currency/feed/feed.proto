@@ -11,7 +11,7 @@ import "npool/basetypes/v1/currencyfeedtype.proto";
 // Service Name
 service Middleware {
     rpc CreateFeed   (CreateFeedRequest)   returns (CreateFeedResponse)   {}
-    rpc UpdateFeed   (CreateFeedRequest)   returns (CreateFeedResponse)   {}
+    rpc UpdateFeed   (UpdateFeedRequest)   returns (UpdateFeedResponse)   {}
     rpc GetFeeds     (GetFeedsRequest)     returns (GetFeedsResponse)     {}
 }
 
