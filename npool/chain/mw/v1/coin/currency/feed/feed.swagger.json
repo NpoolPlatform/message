@@ -204,6 +204,14 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdateFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Feed"
+        }
+      }
     }
   }
 }
