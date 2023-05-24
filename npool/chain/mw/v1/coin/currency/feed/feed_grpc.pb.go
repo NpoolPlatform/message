@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error)
-	UpdateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error)
+	UpdateFeed(ctx context.Context, in *UpdateFeedRequest, opts ...grpc.CallOption) (*UpdateFeedResponse, error)
 	GetFeeds(ctx context.Context, in *GetFeedsRequest, opts ...grpc.CallOption) (*GetFeedsResponse, error)
 }
 
@@ -50,8 +50,8 @@ func (c *middlewareClient) CreateFeed(ctx context.Context, in *CreateFeedRequest
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error) {
-	out := new(CreateFeedResponse)
+func (c *middlewareClient) UpdateFeed(ctx context.Context, in *UpdateFeedRequest, opts ...grpc.CallOption) (*UpdateFeedResponse, error) {
+	out := new(UpdateFeedResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateFeed_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,7 +73,7 @@ func (c *middlewareClient) GetFeeds(ctx context.Context, in *GetFeedsRequest, op
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error)
-	UpdateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error)
+	UpdateFeed(context.Context, *UpdateFeedRequest) (*UpdateFeedResponse, error)
 	GetFeeds(context.Context, *GetFeedsRequest) (*GetFeedsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -85,7 +85,7 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFeed not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateFeed(context.Context, *UpdateFeedRequest) (*UpdateFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeed not implemented")
 }
 func (UnimplementedMiddlewareServer) GetFeeds(context.Context, *GetFeedsRequest) (*GetFeedsResponse, error) {
@@ -123,7 +123,7 @@ func _Middleware_CreateFeed_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 func _Middleware_UpdateFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeedRequest)
+	in := new(UpdateFeedRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -135,7 +135,7 @@ func _Middleware_UpdateFeed_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Middleware_UpdateFeed_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateFeed(ctx, req.(*CreateFeedRequest))
+		return srv.(MiddlewareServer).UpdateFeed(ctx, req.(*UpdateFeedRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
