@@ -357,6 +357,9 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add update feed request and response
     },
     "v1UpdateFeedResponse": {
       "type": "object",
@@ -365,8 +368,11 @@
           "$ref": "#/definitions/v1Feed"
         }
       }
+<<<<<<< HEAD
 =======
 >>>>>>> Add coin currency feed
+=======
+>>>>>>> Add update feed request and response
     }
   }
 }
