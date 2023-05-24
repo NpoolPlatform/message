@@ -307,6 +307,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1GetCurrencyResponse": {
 =======
     "v1GetCurrencyOnlyResponse": {
@@ -318,6 +319,8 @@
         }
       }
     },
+=======
+>>>>>>> Remove only
     "v1GetCurrencyResponse": {
       "type": "object",
       "properties": {

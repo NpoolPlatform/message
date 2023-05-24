@@ -25,6 +25,7 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Middleware_CreateCurrency_FullMethodName    = "/chain.middleware.coin.currency.v1.Middleware/CreateCurrency"
 	Middleware_CreateCurrencies_FullMethodName  = "/chain.middleware.coin.currency.v1.Middleware/CreateCurrencies"
 	Middleware_RefreshCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleware/RefreshCurrencies"
@@ -95,6 +96,10 @@ type MiddlewareClient interface {
 	Middleawre_GetCurrency_FullMethodName     = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
 	Middleawre_GetCurrencyOnly_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencyOnly"
 	Middleawre_GetCurrencies_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
+=======
+	Middleawre_GetCurrency_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
+	Middleawre_GetCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
+>>>>>>> Remove only
 )
 
 // MiddleawreClient is the client API for Middleawre service.
@@ -103,7 +108,6 @@ type MiddlewareClient interface {
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddleawreClient interface {
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
-	GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 <<<<<<< HEAD
 	ExistCurrency(ctx context.Context, in *ExistCurrencyRequest, opts ...grpc.CallOption) (*ExistCurrencyResponse, error)
@@ -197,6 +201,7 @@ func (c *middleawreClient) GetCurrency(ctx context.Context, in *GetCurrencyReque
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -389,6 +394,8 @@ func (c *managerClient) DeleteCurrency(ctx context.Context, in *DeleteCurrencyRe
 	out := new(DeleteCurrencyResponse)
 	err := c.cc.Invoke(ctx, Manager_DeleteCurrency_FullMethodName, in, out, opts...)
 =======
+=======
+>>>>>>> Remove only
 func (c *middleawreClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
 	err := c.cc.Invoke(ctx, Middleawre_GetCurrencies_FullMethodName, in, out, opts...)
@@ -424,7 +431,6 @@ type ManagerServer interface {
 =======
 type MiddleawreServer interface {
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
-	GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
 	mustEmbedUnimplementedMiddleawreServer()
 >>>>>>> Remove unused currency apis
@@ -455,9 +461,6 @@ func (UnimplementedManagerServer) GetCurrency(context.Context, *GetCurrencyReque
 func (UnimplementedMiddleawreServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 >>>>>>> Remove unused currency apis
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
-}
-func (UnimplementedMiddleawreServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyOnly not implemented")
 }
 func (UnimplementedMiddleawreServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
@@ -622,6 +625,7 @@ func _Middleawre_GetCurrency_Handler(srv interface{}, ctx context.Context, dec f
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func _Middleawre_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 =======
 func _Manager_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -724,6 +728,8 @@ func _Middleware_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec
 func _Manager_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 >>>>>>> Add currency history
 =======
+=======
+>>>>>>> Remove only
 func _Middleawre_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 >>>>>>> Remove unused currency apis
 	in := new(GetCurrenciesRequest)
@@ -914,6 +920,7 @@ var Middleawre_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleawre_GetCurrency_Handler,
 		},
 		{
+<<<<<<< HEAD
 			MethodName: "GetCurrencyOnly",
 			Handler:    _Middleawre_GetCurrencyOnly_Handler,
 		},
@@ -926,6 +933,8 @@ var Middleawre_ServiceDesc = grpc.ServiceDesc{
 >>>>>>> Add currency history
 =======
 >>>>>>> Remove unused api
+=======
+>>>>>>> Remove only
 			MethodName: "GetCurrencies",
 <<<<<<< HEAD
 			Handler:    _Manager_GetCurrencies_Handler,
