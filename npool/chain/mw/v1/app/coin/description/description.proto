@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/app/coin
 
 import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -24,7 +25,6 @@ message CoinDescriptionReq {
     optional string    Message    = 60;
     optional uint32    DeletedAt  = 70;
 }
-
 
 message CoinDescription {
     // @inject_tag: sql:"id"
@@ -54,8 +54,15 @@ message CoinDescription {
     uint32  UpdatedAt  = 130;
 }
 
+message Conds {
+    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal AppID      = 20;
+    optional basetypes.v1.StringVal CoinTypeID = 30;
+    optional basetypes.v1.Int32Val  UsedFor    = 40;
+}
+
 message CreateCoinDescriptionRequest {
-    chain.manager.appcoin.description.v1.CoinDescriptionReq Info = 10;
+    CoinDescriptionReq Info = 10;
 }
 
 message CreateCoinDescriptionResponse {
@@ -63,7 +70,7 @@ message CreateCoinDescriptionResponse {
 }
 
 message UpdateCoinDescriptionRequest {
-    chain.manager.appcoin.description.v1.CoinDescriptionReq Info = 10;
+    CoinDescriptionReq Info = 10;
 }
 
 message UpdateCoinDescriptionResponse {
@@ -79,9 +86,9 @@ message GetCoinDescriptionResponse {
 }
 
 message GetCoinDescriptionsRequest {
-    chain.manager.appcoin.description.v1.Conds Conds  = 10;
-    int32                                      Offset = 20;
-    int32                                      Limit  = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetCoinDescriptionsResponse {

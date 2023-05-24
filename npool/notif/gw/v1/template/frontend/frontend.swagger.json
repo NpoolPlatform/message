@@ -515,7 +515,8 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
-        "Announcement"
+        "Announcement",
+        "ProductPage"
       ],
       "default": "DefaultUsedFor"
     }
