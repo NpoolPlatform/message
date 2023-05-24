@@ -19,126 +19,126 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleawre_GetCurrency_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
-	Middleawre_GetCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
+	Middleware_GetCurrency_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleware/GetCurrency"
+	Middleware_GetCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleware/GetCurrencies"
 )
 
-// MiddleawreClient is the client API for Middleawre service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddleawreClient interface {
+type MiddlewareClient interface {
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 }
 
-type middleawreClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddleawreClient(cc grpc.ClientConnInterface) MiddleawreClient {
-	return &middleawreClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *middleawreClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
+func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
 	out := new(GetCurrencyResponse)
-	err := c.cc.Invoke(ctx, Middleawre_GetCurrency_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetCurrency_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middleawreClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
+func (c *middlewareClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
 	out := new(GetCurrenciesResponse)
-	err := c.cc.Invoke(ctx, Middleawre_GetCurrencies_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetCurrencies_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddleawreServer is the server API for Middleawre service.
-// All implementations must embed UnimplementedMiddleawreServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type MiddleawreServer interface {
+type MiddlewareServer interface {
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
-	mustEmbedUnimplementedMiddleawreServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedMiddleawreServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddleawreServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddleawreServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
+func (UnimplementedMiddlewareServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
 }
-func (UnimplementedMiddleawreServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
+func (UnimplementedMiddlewareServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
 }
-func (UnimplementedMiddleawreServer) mustEmbedUnimplementedMiddleawreServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeMiddleawreServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddleawreServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeMiddleawreServer interface {
-	mustEmbedUnimplementedMiddleawreServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterMiddleawreServer(s grpc.ServiceRegistrar, srv MiddleawreServer) {
-	s.RegisterService(&Middleawre_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleawre_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrencyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddleawreServer).GetCurrency(ctx, in)
+		return srv.(MiddlewareServer).GetCurrency(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleawre_GetCurrency_FullMethodName,
+		FullMethod: Middleware_GetCurrency_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddleawreServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
+		return srv.(MiddlewareServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleawre_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddleawreServer).GetCurrencies(ctx, in)
+		return srv.(MiddlewareServer).GetCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleawre_GetCurrencies_FullMethodName,
+		FullMethod: Middleware_GetCurrencies_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddleawreServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
+		return srv.(MiddlewareServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleawre_ServiceDesc is the grpc.ServiceDesc for Middleawre service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleawre_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.middleware.coin.currency.v1.Middleawre",
-	HandlerType: (*MiddleawreServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "chain.middleware.coin.currency.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetCurrency",
-			Handler:    _Middleawre_GetCurrency_Handler,
+			Handler:    _Middleware_GetCurrency_Handler,
 		},
 		{
 			MethodName: "GetCurrencies",
-			Handler:    _Middleawre_GetCurrencies_Handler,
+			Handler:    _Middleware_GetCurrencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
