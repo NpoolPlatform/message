@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleawre"
     }
   ],
   "consumes": [
@@ -56,23 +56,6 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v1CountCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
         }
       }
     },
@@ -140,50 +123,6 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1CurrencyReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
-        },
-        "MarketValueHigh": {
-          "type": "string"
-        },
-        "MarketValueLow": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-    "v1ExistCurrencyCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -236,14 +175,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
         }
       }
     }

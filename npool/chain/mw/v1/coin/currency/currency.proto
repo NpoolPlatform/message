@@ -8,16 +8,10 @@ import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/currencyfeedtype.proto";
 
 // Service Name
-service Manager {
-    rpc CreateCurrency     (CreateCurrencyRequest)     returns (CreateCurrencyResponse)     {}
-    rpc UpdateCurrency     (UpdateCurrencyRequest)     returns (UpdateCurrencyResponse)     {}
-    rpc GetCurrency        (GetCurrencyRequest)        returns (GetCurrencyResponse)        {}
-    rpc GetCurrencyOnly    (GetCurrencyOnlyRequest)    returns (GetCurrencyOnlyResponse)    {}
-    rpc GetCurrencies      (GetCurrenciesRequest)      returns (GetCurrenciesResponse)      {}
-    rpc ExistCurrency      (ExistCurrencyRequest)      returns (ExistCurrencyResponse)      {}
-    rpc ExistCurrencyConds (ExistCurrencyCondsRequest) returns (ExistCurrencyCondsResponse) {}
-    rpc CountCurrencies    (CountCurrenciesRequest)    returns (CountCurrenciesResponse)    {}
-    rpc DeleteCurrency     (DeleteCurrencyRequest)     returns (DeleteCurrencyResponse)     {}
+service Middleawre {
+    rpc GetCurrency     (GetCurrencyRequest)     returns (GetCurrencyResponse)     {}
+    rpc GetCurrencyOnly (GetCurrencyOnlyRequest) returns (GetCurrencyOnlyResponse) {}
+    rpc GetCurrencies   (GetCurrenciesRequest)   returns (GetCurrenciesResponse)   {}
 }
 
 message CurrencyReq {
@@ -61,22 +55,6 @@ message Conds {
 }
 
 
-message CreateCurrencyRequest {
-    CurrencyReq Info = 10;
-}
-
-message CreateCurrencyResponse {
-    Currency Info = 10;
-}
-
-message UpdateCurrencyRequest {
-    CurrencyReq Info = 10;
-}
-
-message UpdateCurrencyResponse {
-    Currency Info = 10;
-}
-
 message GetCurrencyRequest {
     string ID = 10;
 }
@@ -101,38 +79,6 @@ message GetCurrencyOnlyRequest {
 }
 
 message GetCurrencyOnlyResponse {
-    Currency Info = 10;
-}
-
-message ExistCurrencyRequest {
-    string ID = 10;
-}
-
-message ExistCurrencyResponse {
-    bool Info = 10;
-}
-
-message ExistCurrencyCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistCurrencyCondsResponse {
-    bool Info = 10;
-}
-
-message CountCurrenciesRequest {
-    Conds Conds = 10;
-}
-
-message CountCurrenciesResponse {
-    uint32 Info = 10;
-}
-
-message DeleteCurrencyRequest {
-    CurrencyReq Info = 10;
-}
-
-message DeleteCurrencyResponse {
     Currency Info = 10;
 }
 

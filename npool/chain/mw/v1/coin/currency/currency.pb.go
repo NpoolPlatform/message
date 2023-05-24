@@ -309,194 +309,6 @@ func (x *Conds) GetFeedType() *v1.Uint32Val {
 	return nil
 }
 
-type CreateCurrencyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *CurrencyReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateCurrencyRequest) Reset() {
-	*x = CreateCurrencyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateCurrencyRequest) ProtoMessage() {}
-
-func (x *CreateCurrencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateCurrencyRequest.ProtoReflect.Descriptor instead.
-func (*CreateCurrencyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *CreateCurrencyRequest) GetInfo() *CurrencyReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type CreateCurrencyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Currency `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateCurrencyResponse) Reset() {
-	*x = CreateCurrencyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateCurrencyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateCurrencyResponse) ProtoMessage() {}
-
-func (x *CreateCurrencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateCurrencyResponse.ProtoReflect.Descriptor instead.
-func (*CreateCurrencyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *CreateCurrencyResponse) GetInfo() *Currency {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateCurrencyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *CurrencyReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateCurrencyRequest) Reset() {
-	*x = UpdateCurrencyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateCurrencyRequest) ProtoMessage() {}
-
-func (x *UpdateCurrencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateCurrencyRequest.ProtoReflect.Descriptor instead.
-func (*UpdateCurrencyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *UpdateCurrencyRequest) GetInfo() *CurrencyReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateCurrencyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Currency `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateCurrencyResponse) Reset() {
-	*x = UpdateCurrencyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateCurrencyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateCurrencyResponse) ProtoMessage() {}
-
-func (x *UpdateCurrencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateCurrencyResponse.ProtoReflect.Descriptor instead.
-func (*UpdateCurrencyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *UpdateCurrencyResponse) GetInfo() *Currency {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type GetCurrencyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -508,7 +320,7 @@ type GetCurrencyRequest struct {
 func (x *GetCurrencyRequest) Reset() {
 	*x = GetCurrencyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -521,7 +333,7 @@ func (x *GetCurrencyRequest) String() string {
 func (*GetCurrencyRequest) ProtoMessage() {}
 
 func (x *GetCurrencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -534,7 +346,7 @@ func (x *GetCurrencyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrencyRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrencyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{7}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetCurrencyRequest) GetID() string {
@@ -555,7 +367,7 @@ type GetCurrencyResponse struct {
 func (x *GetCurrencyResponse) Reset() {
 	*x = GetCurrencyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -568,7 +380,7 @@ func (x *GetCurrencyResponse) String() string {
 func (*GetCurrencyResponse) ProtoMessage() {}
 
 func (x *GetCurrencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -581,7 +393,7 @@ func (x *GetCurrencyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrencyResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrencyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{8}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetCurrencyResponse) GetInfo() *Currency {
@@ -604,7 +416,7 @@ type GetCurrenciesRequest struct {
 func (x *GetCurrenciesRequest) Reset() {
 	*x = GetCurrenciesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[9]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -617,7 +429,7 @@ func (x *GetCurrenciesRequest) String() string {
 func (*GetCurrenciesRequest) ProtoMessage() {}
 
 func (x *GetCurrenciesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[9]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +442,7 @@ func (x *GetCurrenciesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrenciesRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrenciesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{9}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetCurrenciesRequest) GetConds() *Conds {
@@ -666,7 +478,7 @@ type GetCurrenciesResponse struct {
 func (x *GetCurrenciesResponse) Reset() {
 	*x = GetCurrenciesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[10]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -679,7 +491,7 @@ func (x *GetCurrenciesResponse) String() string {
 func (*GetCurrenciesResponse) ProtoMessage() {}
 
 func (x *GetCurrenciesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[10]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -692,7 +504,7 @@ func (x *GetCurrenciesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrenciesResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrenciesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{10}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetCurrenciesResponse) GetInfos() []*Currency {
@@ -720,7 +532,7 @@ type GetCurrencyOnlyRequest struct {
 func (x *GetCurrencyOnlyRequest) Reset() {
 	*x = GetCurrencyOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[11]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -733,7 +545,7 @@ func (x *GetCurrencyOnlyRequest) String() string {
 func (*GetCurrencyOnlyRequest) ProtoMessage() {}
 
 func (x *GetCurrencyOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[11]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -746,7 +558,7 @@ func (x *GetCurrencyOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrencyOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrencyOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{11}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCurrencyOnlyRequest) GetConds() *Conds {
@@ -767,7 +579,7 @@ type GetCurrencyOnlyResponse struct {
 func (x *GetCurrencyOnlyResponse) Reset() {
 	*x = GetCurrencyOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[12]
+		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -780,7 +592,7 @@ func (x *GetCurrencyOnlyResponse) String() string {
 func (*GetCurrencyOnlyResponse) ProtoMessage() {}
 
 func (x *GetCurrencyOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[12]
+	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -793,386 +605,10 @@ func (x *GetCurrencyOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrencyOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrencyOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{12}
+	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetCurrencyOnlyResponse) GetInfo() *Currency {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type ExistCurrencyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *ExistCurrencyRequest) Reset() {
-	*x = ExistCurrencyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistCurrencyRequest) ProtoMessage() {}
-
-func (x *ExistCurrencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistCurrencyRequest.ProtoReflect.Descriptor instead.
-func (*ExistCurrencyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *ExistCurrencyRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type ExistCurrencyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistCurrencyResponse) Reset() {
-	*x = ExistCurrencyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistCurrencyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistCurrencyResponse) ProtoMessage() {}
-
-func (x *ExistCurrencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistCurrencyResponse.ProtoReflect.Descriptor instead.
-func (*ExistCurrencyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *ExistCurrencyResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type ExistCurrencyCondsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *ExistCurrencyCondsRequest) Reset() {
-	*x = ExistCurrencyCondsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistCurrencyCondsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistCurrencyCondsRequest) ProtoMessage() {}
-
-func (x *ExistCurrencyCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistCurrencyCondsRequest.ProtoReflect.Descriptor instead.
-func (*ExistCurrencyCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *ExistCurrencyCondsRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type ExistCurrencyCondsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistCurrencyCondsResponse) Reset() {
-	*x = ExistCurrencyCondsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistCurrencyCondsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistCurrencyCondsResponse) ProtoMessage() {}
-
-func (x *ExistCurrencyCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistCurrencyCondsResponse.ProtoReflect.Descriptor instead.
-func (*ExistCurrencyCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *ExistCurrencyCondsResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type CountCurrenciesRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *CountCurrenciesRequest) Reset() {
-	*x = CountCurrenciesRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountCurrenciesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountCurrenciesRequest) ProtoMessage() {}
-
-func (x *CountCurrenciesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountCurrenciesRequest.ProtoReflect.Descriptor instead.
-func (*CountCurrenciesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *CountCurrenciesRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type CountCurrenciesResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info uint32 `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CountCurrenciesResponse) Reset() {
-	*x = CountCurrenciesResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountCurrenciesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountCurrenciesResponse) ProtoMessage() {}
-
-func (x *CountCurrenciesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountCurrenciesResponse.ProtoReflect.Descriptor instead.
-func (*CountCurrenciesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{18}
-}
-
-func (x *CountCurrenciesResponse) GetInfo() uint32 {
-	if x != nil {
-		return x.Info
-	}
-	return 0
-}
-
-type DeleteCurrencyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *CurrencyReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *DeleteCurrencyRequest) Reset() {
-	*x = DeleteCurrencyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteCurrencyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteCurrencyRequest) ProtoMessage() {}
-
-func (x *DeleteCurrencyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteCurrencyRequest.ProtoReflect.Descriptor instead.
-func (*DeleteCurrencyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{19}
-}
-
-func (x *DeleteCurrencyRequest) GetInfo() *CurrencyReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type DeleteCurrencyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Currency `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *DeleteCurrencyResponse) Reset() {
-	*x = DeleteCurrencyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteCurrencyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteCurrencyResponse) ProtoMessage() {}
-
-func (x *DeleteCurrencyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteCurrencyResponse.ProtoReflect.Descriptor instead.
-func (*DeleteCurrencyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *DeleteCurrencyResponse) GetInfo() *Currency {
 	if x != nil {
 		return x.Info
 	}
@@ -1249,30 +685,7 @@ var file_npool_chain_mw_v1_coin_currency_currency_proto_rawDesc = []byte{
 	0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x08, 0x46, 0x65, 0x65, 0x64, 0x54,
 	0x79, 0x70, 0x65, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x0d, 0x0a,
 	0x0b, 0x5f, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x42, 0x0b, 0x0a, 0x09,
-	0x5f, 0x46, 0x65, 0x65, 0x64, 0x54, 0x79, 0x70, 0x65, 0x22, 0x5b, 0x0a, 0x15, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x42, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x2e, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63,
-	0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x59, 0x0a, 0x16, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b,
-	0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x22, 0x5b, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65,
-	0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e,
-	0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x59,
-	0x0a, 0x16, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x65,
-	0x6e, 0x63, 0x79, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x47, 0x65, 0x74,
+	0x5f, 0x46, 0x65, 0x65, 0x64, 0x54, 0x79, 0x70, 0x65, 0x22, 0x24, 0x0a, 0x12, 0x47, 0x65, 0x74,
 	0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22,
 	0x56, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65,
@@ -1307,124 +720,38 @@ var file_npool_chain_mw_v1_coin_currency_currency_proto_rawDesc = []byte{
 	0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72,
 	0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a, 0x14, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
-	0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x2b,
-	0x0a, 0x15, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5b, 0x0a, 0x19, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e,
-	0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x30, 0x0a, 0x1a, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x58, 0x0a, 0x16, 0x43, 0x6f,
-	0x75, 0x6e, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72,
-	0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43,
-	0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2d, 0x0a, 0x17, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x49,
-	0x6e, 0x66, 0x6f, 0x22, 0x5b, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x59, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e,
-	0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e,
-	0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xe5, 0x09, 0x0a, 0x07,
-	0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x87, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x12, 0x38, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa0, 0x03, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x61, 0x77, 0x72, 0x65, 0x12, 0x7e, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
+	0x65, 0x6e, 0x63, 0x79, 0x12, 0x35, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x87, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72,
-	0x65, 0x6e, 0x63, 0x79, 0x12, 0x38, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
+	0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
+	0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
+	0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8a, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72,
+	0x72, 0x65, 0x6e, 0x63, 0x79, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x39, 0x2e, 0x63, 0x68, 0x61, 0x69,
+	0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
+	0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72,
-	0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39,
-	0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e,
-	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63,
-	0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7e, 0x0a, 0x0b, 0x47,
-	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x12, 0x35, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x36, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e,
-	0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63,
-	0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8a, 0x01, 0x0a, 0x0f,
-	0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x4f, 0x6e, 0x6c, 0x79, 0x12,
-	0x39, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79,
-	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x84, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74,
-	0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x12, 0x37, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72,
-	0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65,
-	0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x84, 0x01, 0x0a, 0x0d, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63,
-	0x79, 0x12, 0x37, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e,
-	0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65,
-	0x6e, 0x63, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x93, 0x01, 0x0a, 0x12, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x3c, 0x2e,
+	0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
+	0x65, 0x6e, 0x63, 0x79, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x84, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e,
+	0x63, 0x69, 0x65, 0x73, 0x12, 0x37, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72,
+	0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
+	0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e,
 	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76,
-	0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x43,
-	0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3d, 0x2e, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
-	0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e,
-	0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8a, 0x01, 0x0a,
-	0x0f, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73,
-	0x12, 0x39, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63,
-	0x79, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e,
-	0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
-	0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x87, 0x01, 0x0a, 0x0e, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x12, 0x38, 0x2e, 0x63,
-	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31,
-	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x63,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x42, 0x42, 0x5a, 0x40, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f,
-	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x63,
-	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x42, 0x5a, 0x40, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
+	0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1439,75 +766,43 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescGZIP() []byte {
 	return file_npool_chain_mw_v1_coin_currency_currency_proto_rawDescData
 }
 
-var file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_npool_chain_mw_v1_coin_currency_currency_proto_goTypes = []interface{}{
-	(*CurrencyReq)(nil),                // 0: chain.middleware.coin.currency.v1.CurrencyReq
-	(*Currency)(nil),                   // 1: chain.middleware.coin.currency.v1.Currency
-	(*Conds)(nil),                      // 2: chain.middleware.coin.currency.v1.Conds
-	(*CreateCurrencyRequest)(nil),      // 3: chain.middleware.coin.currency.v1.CreateCurrencyRequest
-	(*CreateCurrencyResponse)(nil),     // 4: chain.middleware.coin.currency.v1.CreateCurrencyResponse
-	(*UpdateCurrencyRequest)(nil),      // 5: chain.middleware.coin.currency.v1.UpdateCurrencyRequest
-	(*UpdateCurrencyResponse)(nil),     // 6: chain.middleware.coin.currency.v1.UpdateCurrencyResponse
-	(*GetCurrencyRequest)(nil),         // 7: chain.middleware.coin.currency.v1.GetCurrencyRequest
-	(*GetCurrencyResponse)(nil),        // 8: chain.middleware.coin.currency.v1.GetCurrencyResponse
-	(*GetCurrenciesRequest)(nil),       // 9: chain.middleware.coin.currency.v1.GetCurrenciesRequest
-	(*GetCurrenciesResponse)(nil),      // 10: chain.middleware.coin.currency.v1.GetCurrenciesResponse
-	(*GetCurrencyOnlyRequest)(nil),     // 11: chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest
-	(*GetCurrencyOnlyResponse)(nil),    // 12: chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse
-	(*ExistCurrencyRequest)(nil),       // 13: chain.middleware.coin.currency.v1.ExistCurrencyRequest
-	(*ExistCurrencyResponse)(nil),      // 14: chain.middleware.coin.currency.v1.ExistCurrencyResponse
-	(*ExistCurrencyCondsRequest)(nil),  // 15: chain.middleware.coin.currency.v1.ExistCurrencyCondsRequest
-	(*ExistCurrencyCondsResponse)(nil), // 16: chain.middleware.coin.currency.v1.ExistCurrencyCondsResponse
-	(*CountCurrenciesRequest)(nil),     // 17: chain.middleware.coin.currency.v1.CountCurrenciesRequest
-	(*CountCurrenciesResponse)(nil),    // 18: chain.middleware.coin.currency.v1.CountCurrenciesResponse
-	(*DeleteCurrencyRequest)(nil),      // 19: chain.middleware.coin.currency.v1.DeleteCurrencyRequest
-	(*DeleteCurrencyResponse)(nil),     // 20: chain.middleware.coin.currency.v1.DeleteCurrencyResponse
-	(v1.CurrencyFeedType)(0),           // 21: basetypes.v1.CurrencyFeedType
-	(*v1.StringVal)(nil),               // 22: basetypes.v1.StringVal
-	(*v1.Uint32Val)(nil),               // 23: basetypes.v1.Uint32Val
+	(*CurrencyReq)(nil),             // 0: chain.middleware.coin.currency.v1.CurrencyReq
+	(*Currency)(nil),                // 1: chain.middleware.coin.currency.v1.Currency
+	(*Conds)(nil),                   // 2: chain.middleware.coin.currency.v1.Conds
+	(*GetCurrencyRequest)(nil),      // 3: chain.middleware.coin.currency.v1.GetCurrencyRequest
+	(*GetCurrencyResponse)(nil),     // 4: chain.middleware.coin.currency.v1.GetCurrencyResponse
+	(*GetCurrenciesRequest)(nil),    // 5: chain.middleware.coin.currency.v1.GetCurrenciesRequest
+	(*GetCurrenciesResponse)(nil),   // 6: chain.middleware.coin.currency.v1.GetCurrenciesResponse
+	(*GetCurrencyOnlyRequest)(nil),  // 7: chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest
+	(*GetCurrencyOnlyResponse)(nil), // 8: chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse
+	(v1.CurrencyFeedType)(0),        // 9: basetypes.v1.CurrencyFeedType
+	(*v1.StringVal)(nil),            // 10: basetypes.v1.StringVal
+	(*v1.Uint32Val)(nil),            // 11: basetypes.v1.Uint32Val
 }
 var file_npool_chain_mw_v1_coin_currency_currency_proto_depIdxs = []int32{
-	21, // 0: chain.middleware.coin.currency.v1.CurrencyReq.FeedType:type_name -> basetypes.v1.CurrencyFeedType
-	21, // 1: chain.middleware.coin.currency.v1.Currency.FeedType:type_name -> basetypes.v1.CurrencyFeedType
-	22, // 2: chain.middleware.coin.currency.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	22, // 3: chain.middleware.coin.currency.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
-	23, // 4: chain.middleware.coin.currency.v1.Conds.FeedType:type_name -> basetypes.v1.Uint32Val
-	0,  // 5: chain.middleware.coin.currency.v1.CreateCurrencyRequest.Info:type_name -> chain.middleware.coin.currency.v1.CurrencyReq
-	1,  // 6: chain.middleware.coin.currency.v1.CreateCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
-	0,  // 7: chain.middleware.coin.currency.v1.UpdateCurrencyRequest.Info:type_name -> chain.middleware.coin.currency.v1.CurrencyReq
-	1,  // 8: chain.middleware.coin.currency.v1.UpdateCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
-	1,  // 9: chain.middleware.coin.currency.v1.GetCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
-	2,  // 10: chain.middleware.coin.currency.v1.GetCurrenciesRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
-	1,  // 11: chain.middleware.coin.currency.v1.GetCurrenciesResponse.Infos:type_name -> chain.middleware.coin.currency.v1.Currency
-	2,  // 12: chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
-	1,  // 13: chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
-	2,  // 14: chain.middleware.coin.currency.v1.ExistCurrencyCondsRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
-	2,  // 15: chain.middleware.coin.currency.v1.CountCurrenciesRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
-	0,  // 16: chain.middleware.coin.currency.v1.DeleteCurrencyRequest.Info:type_name -> chain.middleware.coin.currency.v1.CurrencyReq
-	1,  // 17: chain.middleware.coin.currency.v1.DeleteCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
-	3,  // 18: chain.middleware.coin.currency.v1.Manager.CreateCurrency:input_type -> chain.middleware.coin.currency.v1.CreateCurrencyRequest
-	5,  // 19: chain.middleware.coin.currency.v1.Manager.UpdateCurrency:input_type -> chain.middleware.coin.currency.v1.UpdateCurrencyRequest
-	7,  // 20: chain.middleware.coin.currency.v1.Manager.GetCurrency:input_type -> chain.middleware.coin.currency.v1.GetCurrencyRequest
-	11, // 21: chain.middleware.coin.currency.v1.Manager.GetCurrencyOnly:input_type -> chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest
-	9,  // 22: chain.middleware.coin.currency.v1.Manager.GetCurrencies:input_type -> chain.middleware.coin.currency.v1.GetCurrenciesRequest
-	13, // 23: chain.middleware.coin.currency.v1.Manager.ExistCurrency:input_type -> chain.middleware.coin.currency.v1.ExistCurrencyRequest
-	15, // 24: chain.middleware.coin.currency.v1.Manager.ExistCurrencyConds:input_type -> chain.middleware.coin.currency.v1.ExistCurrencyCondsRequest
-	17, // 25: chain.middleware.coin.currency.v1.Manager.CountCurrencies:input_type -> chain.middleware.coin.currency.v1.CountCurrenciesRequest
-	19, // 26: chain.middleware.coin.currency.v1.Manager.DeleteCurrency:input_type -> chain.middleware.coin.currency.v1.DeleteCurrencyRequest
-	4,  // 27: chain.middleware.coin.currency.v1.Manager.CreateCurrency:output_type -> chain.middleware.coin.currency.v1.CreateCurrencyResponse
-	6,  // 28: chain.middleware.coin.currency.v1.Manager.UpdateCurrency:output_type -> chain.middleware.coin.currency.v1.UpdateCurrencyResponse
-	8,  // 29: chain.middleware.coin.currency.v1.Manager.GetCurrency:output_type -> chain.middleware.coin.currency.v1.GetCurrencyResponse
-	12, // 30: chain.middleware.coin.currency.v1.Manager.GetCurrencyOnly:output_type -> chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse
-	10, // 31: chain.middleware.coin.currency.v1.Manager.GetCurrencies:output_type -> chain.middleware.coin.currency.v1.GetCurrenciesResponse
-	14, // 32: chain.middleware.coin.currency.v1.Manager.ExistCurrency:output_type -> chain.middleware.coin.currency.v1.ExistCurrencyResponse
-	16, // 33: chain.middleware.coin.currency.v1.Manager.ExistCurrencyConds:output_type -> chain.middleware.coin.currency.v1.ExistCurrencyCondsResponse
-	18, // 34: chain.middleware.coin.currency.v1.Manager.CountCurrencies:output_type -> chain.middleware.coin.currency.v1.CountCurrenciesResponse
-	20, // 35: chain.middleware.coin.currency.v1.Manager.DeleteCurrency:output_type -> chain.middleware.coin.currency.v1.DeleteCurrencyResponse
-	27, // [27:36] is the sub-list for method output_type
-	18, // [18:27] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	9,  // 0: chain.middleware.coin.currency.v1.CurrencyReq.FeedType:type_name -> basetypes.v1.CurrencyFeedType
+	9,  // 1: chain.middleware.coin.currency.v1.Currency.FeedType:type_name -> basetypes.v1.CurrencyFeedType
+	10, // 2: chain.middleware.coin.currency.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	10, // 3: chain.middleware.coin.currency.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	11, // 4: chain.middleware.coin.currency.v1.Conds.FeedType:type_name -> basetypes.v1.Uint32Val
+	1,  // 5: chain.middleware.coin.currency.v1.GetCurrencyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
+	2,  // 6: chain.middleware.coin.currency.v1.GetCurrenciesRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
+	1,  // 7: chain.middleware.coin.currency.v1.GetCurrenciesResponse.Infos:type_name -> chain.middleware.coin.currency.v1.Currency
+	2,  // 8: chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest.Conds:type_name -> chain.middleware.coin.currency.v1.Conds
+	1,  // 9: chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse.Info:type_name -> chain.middleware.coin.currency.v1.Currency
+	3,  // 10: chain.middleware.coin.currency.v1.Middleawre.GetCurrency:input_type -> chain.middleware.coin.currency.v1.GetCurrencyRequest
+	7,  // 11: chain.middleware.coin.currency.v1.Middleawre.GetCurrencyOnly:input_type -> chain.middleware.coin.currency.v1.GetCurrencyOnlyRequest
+	5,  // 12: chain.middleware.coin.currency.v1.Middleawre.GetCurrencies:input_type -> chain.middleware.coin.currency.v1.GetCurrenciesRequest
+	4,  // 13: chain.middleware.coin.currency.v1.Middleawre.GetCurrency:output_type -> chain.middleware.coin.currency.v1.GetCurrencyResponse
+	8,  // 14: chain.middleware.coin.currency.v1.Middleawre.GetCurrencyOnly:output_type -> chain.middleware.coin.currency.v1.GetCurrencyOnlyResponse
+	6,  // 15: chain.middleware.coin.currency.v1.Middleawre.GetCurrencies:output_type -> chain.middleware.coin.currency.v1.GetCurrenciesResponse
+	13, // [13:16] is the sub-list for method output_type
+	10, // [10:13] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_npool_chain_mw_v1_coin_currency_currency_proto_init() }
@@ -1553,54 +848,6 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 			}
 		}
 		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateCurrencyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateCurrencyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateCurrencyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateCurrencyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrencyRequest); i {
 			case 0:
 				return &v.state
@@ -1612,7 +859,7 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrencyResponse); i {
 			case 0:
 				return &v.state
@@ -1624,7 +871,7 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrenciesRequest); i {
 			case 0:
 				return &v.state
@@ -1636,7 +883,7 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrenciesResponse); i {
 			case 0:
 				return &v.state
@@ -1648,7 +895,7 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrencyOnlyRequest); i {
 			case 0:
 				return &v.state
@@ -1660,104 +907,8 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurrencyOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCurrencyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCurrencyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCurrencyCondsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistCurrencyCondsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountCurrenciesRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountCurrenciesResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteCurrencyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_chain_mw_v1_coin_currency_currency_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteCurrencyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1777,7 +928,7 @@ func file_npool_chain_mw_v1_coin_currency_currency_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_chain_mw_v1_coin_currency_currency_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   21,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
