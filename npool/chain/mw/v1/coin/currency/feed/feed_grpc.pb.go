@@ -29,7 +29,11 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error)
+<<<<<<< HEAD
 	UpdateFeed(ctx context.Context, in *UpdateFeedRequest, opts ...grpc.CallOption) (*UpdateFeedResponse, error)
+=======
+	UpdateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error)
+>>>>>>> Add coin currency feed
 	GetFeeds(ctx context.Context, in *GetFeedsRequest, opts ...grpc.CallOption) (*GetFeedsResponse, error)
 }
 
@@ -50,8 +54,13 @@ func (c *middlewareClient) CreateFeed(ctx context.Context, in *CreateFeedRequest
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *middlewareClient) UpdateFeed(ctx context.Context, in *UpdateFeedRequest, opts ...grpc.CallOption) (*UpdateFeedResponse, error) {
 	out := new(UpdateFeedResponse)
+=======
+func (c *middlewareClient) UpdateFeed(ctx context.Context, in *CreateFeedRequest, opts ...grpc.CallOption) (*CreateFeedResponse, error) {
+	out := new(CreateFeedResponse)
+>>>>>>> Add coin currency feed
 	err := c.cc.Invoke(ctx, Middleware_UpdateFeed_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,7 +82,11 @@ func (c *middlewareClient) GetFeeds(ctx context.Context, in *GetFeedsRequest, op
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error)
+<<<<<<< HEAD
 	UpdateFeed(context.Context, *UpdateFeedRequest) (*UpdateFeedResponse, error)
+=======
+	UpdateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error)
+>>>>>>> Add coin currency feed
 	GetFeeds(context.Context, *GetFeedsRequest) (*GetFeedsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -85,7 +98,11 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFeed not implemented")
 }
+<<<<<<< HEAD
 func (UnimplementedMiddlewareServer) UpdateFeed(context.Context, *UpdateFeedRequest) (*UpdateFeedResponse, error) {
+=======
+func (UnimplementedMiddlewareServer) UpdateFeed(context.Context, *CreateFeedRequest) (*CreateFeedResponse, error) {
+>>>>>>> Add coin currency feed
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeed not implemented")
 }
 func (UnimplementedMiddlewareServer) GetFeeds(context.Context, *GetFeedsRequest) (*GetFeedsResponse, error) {
@@ -123,7 +140,11 @@ func _Middleware_CreateFeed_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 func _Middleware_UpdateFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+<<<<<<< HEAD
 	in := new(UpdateFeedRequest)
+=======
+	in := new(CreateFeedRequest)
+>>>>>>> Add coin currency feed
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -135,7 +156,11 @@ func _Middleware_UpdateFeed_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Middleware_UpdateFeed_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+<<<<<<< HEAD
 		return srv.(MiddlewareServer).UpdateFeed(ctx, req.(*UpdateFeedRequest))
+=======
+		return srv.(MiddlewareServer).UpdateFeed(ctx, req.(*CreateFeedRequest))
+>>>>>>> Add coin currency feed
 	}
 	return interceptor(ctx, in, info, handler)
 }
