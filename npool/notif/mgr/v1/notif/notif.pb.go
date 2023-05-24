@@ -326,6 +326,7 @@ type Conds struct {
 	Channel     *npool.Uint32Val      `protobuf:"bytes,90,opt,name=Channel,proto3,oneof" json:"Channel,omitempty"`
 	EventTypes  *npool.Uint32SliceVal `protobuf:"bytes,100,opt,name=EventTypes,proto3,oneof" json:"EventTypes,omitempty"`
 	Extra       *npool.StringVal      `protobuf:"bytes,110,opt,name=Extra,proto3,oneof" json:"Extra,omitempty"`
+	EventID     *npool.StringVal      `protobuf:"bytes,120,opt,name=EventID,proto3,oneof" json:"EventID,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -440,6 +441,13 @@ func (x *Conds) GetEventTypes() *npool.Uint32SliceVal {
 func (x *Conds) GetExtra() *npool.StringVal {
 	if x != nil {
 		return x.Extra
+	}
+	return nil
+}
+
+func (x *Conds) GetEventID() *npool.StringVal {
+	if x != nil {
+		return x.EventID
 	}
 	return nil
 }
@@ -1484,7 +1492,7 @@ var file_npool_notif_mgr_v1_notif_notif_proto_rawDesc = []byte{
 	0x41, 0x74, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74,
 	0x65, 0x64, 0x41, 0x74, 0x12, 0x19, 0x0a, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18,
 	0x8c, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x22,
-	0x86, 0x06, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x28, 0x0a, 0x02, 0x49, 0x44, 0x18,
+	0xc6, 0x06, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x28, 0x0a, 0x02, 0x49, 0x44, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31,
 	0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44,
 	0x88, 0x01, 0x01, 0x12, 0x2f, 0x0a, 0x03, 0x49, 0x44, 0x73, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b,
@@ -1523,16 +1531,20 @@ var file_npool_notif_mgr_v1_notif_notif_proto_rawDesc = []byte{
 	0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x73, 0x88, 0x01, 0x01, 0x12, 0x2e, 0x0a, 0x05,
 	0x45, 0x78, 0x74, 0x72, 0x61, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6e, 0x70,
 	0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c,
-	0x48, 0x0b, 0x52, 0x05, 0x45, 0x78, 0x74, 0x72, 0x61, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03,
-	0x5f, 0x49, 0x44, 0x42, 0x06, 0x0a, 0x04, 0x5f, 0x49, 0x44, 0x73, 0x42, 0x08, 0x0a, 0x06, 0x5f,
-	0x41, 0x70, 0x70, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44,
-	0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65, 0x64, 0x42, 0x09, 0x0a,
-	0x07, 0x5f, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x45, 0x76, 0x65,
-	0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x55, 0x73, 0x65, 0x54, 0x65,
-	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x43, 0x68, 0x61, 0x6e, 0x6e,
-	0x65, 0x6c, 0x73, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x42,
-	0x0d, 0x0a, 0x0b, 0x5f, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x73, 0x42, 0x08,
-	0x0a, 0x06, 0x5f, 0x45, 0x78, 0x74, 0x72, 0x61, 0x22, 0x4b, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61,
+	0x48, 0x0b, 0x52, 0x05, 0x45, 0x78, 0x74, 0x72, 0x61, 0x88, 0x01, 0x01, 0x12, 0x32, 0x0a, 0x07,
+	0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x78, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e,
+	0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56,
+	0x61, 0x6c, 0x48, 0x0c, 0x52, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x88, 0x01, 0x01,
+	0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42, 0x06, 0x0a, 0x04, 0x5f, 0x49, 0x44, 0x73, 0x42,
+	0x08, 0x0a, 0x06, 0x5f, 0x41, 0x70, 0x70, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65,
+	0x64, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4c, 0x61, 0x6e, 0x67, 0x49, 0x44, 0x42, 0x0c, 0x0a, 0x0a,
+	0x5f, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x55,
+	0x73, 0x65, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x43,
+	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x73, 0x42, 0x0a, 0x0a, 0x08, 0x5f, 0x43, 0x68, 0x61, 0x6e,
+	0x6e, 0x65, 0x6c, 0x42, 0x0d, 0x0a, 0x0b, 0x5f, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70,
+	0x65, 0x73, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x45, 0x78, 0x74, 0x72, 0x61, 0x42, 0x0a, 0x0a, 0x08,
+	0x5f, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x22, 0x4b, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x35,
 	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x2e, 0x6e, 0x6f, 0x74,
@@ -1756,45 +1768,46 @@ var file_npool_notif_mgr_v1_notif_notif_proto_depIdxs = []int32{
 	28, // 13: notif.manager.notif1.v1.Conds.Channel:type_name -> npool.v1.Uint32Val
 	29, // 14: notif.manager.notif1.v1.Conds.EventTypes:type_name -> npool.v1.Uint32SliceVal
 	25, // 15: notif.manager.notif1.v1.Conds.Extra:type_name -> npool.v1.StringVal
-	0,  // 16: notif.manager.notif1.v1.CreateNotifRequest.Info:type_name -> notif.manager.notif1.v1.NotifReq
-	1,  // 17: notif.manager.notif1.v1.CreateNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
-	0,  // 18: notif.manager.notif1.v1.CreateNotifsRequest.Infos:type_name -> notif.manager.notif1.v1.NotifReq
-	1,  // 19: notif.manager.notif1.v1.CreateNotifsResponse.Infos:type_name -> notif.manager.notif1.v1.Notif
-	0,  // 20: notif.manager.notif1.v1.UpdateNotifRequest.Info:type_name -> notif.manager.notif1.v1.NotifReq
-	1,  // 21: notif.manager.notif1.v1.UpdateNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
-	1,  // 22: notif.manager.notif1.v1.GetNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
-	2,  // 23: notif.manager.notif1.v1.GetNotifsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
-	1,  // 24: notif.manager.notif1.v1.GetNotifsResponse.Infos:type_name -> notif.manager.notif1.v1.Notif
-	2,  // 25: notif.manager.notif1.v1.GetNotifOnlyRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
-	1,  // 26: notif.manager.notif1.v1.GetNotifOnlyResponse.Info:type_name -> notif.manager.notif1.v1.Notif
-	2,  // 27: notif.manager.notif1.v1.ExistNotifCondsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
-	2,  // 28: notif.manager.notif1.v1.CountNotifsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
-	1,  // 29: notif.manager.notif1.v1.DeleteNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
-	3,  // 30: notif.manager.notif1.v1.Manager.CreateNotif:input_type -> notif.manager.notif1.v1.CreateNotifRequest
-	5,  // 31: notif.manager.notif1.v1.Manager.CreateNotifs:input_type -> notif.manager.notif1.v1.CreateNotifsRequest
-	7,  // 32: notif.manager.notif1.v1.Manager.UpdateNotif:input_type -> notif.manager.notif1.v1.UpdateNotifRequest
-	9,  // 33: notif.manager.notif1.v1.Manager.GetNotif:input_type -> notif.manager.notif1.v1.GetNotifRequest
-	13, // 34: notif.manager.notif1.v1.Manager.GetNotifOnly:input_type -> notif.manager.notif1.v1.GetNotifOnlyRequest
-	11, // 35: notif.manager.notif1.v1.Manager.GetNotifs:input_type -> notif.manager.notif1.v1.GetNotifsRequest
-	15, // 36: notif.manager.notif1.v1.Manager.ExistNotif:input_type -> notif.manager.notif1.v1.ExistNotifRequest
-	17, // 37: notif.manager.notif1.v1.Manager.ExistNotifConds:input_type -> notif.manager.notif1.v1.ExistNotifCondsRequest
-	19, // 38: notif.manager.notif1.v1.Manager.CountNotifs:input_type -> notif.manager.notif1.v1.CountNotifsRequest
-	21, // 39: notif.manager.notif1.v1.Manager.DeleteNotif:input_type -> notif.manager.notif1.v1.DeleteNotifRequest
-	4,  // 40: notif.manager.notif1.v1.Manager.CreateNotif:output_type -> notif.manager.notif1.v1.CreateNotifResponse
-	6,  // 41: notif.manager.notif1.v1.Manager.CreateNotifs:output_type -> notif.manager.notif1.v1.CreateNotifsResponse
-	8,  // 42: notif.manager.notif1.v1.Manager.UpdateNotif:output_type -> notif.manager.notif1.v1.UpdateNotifResponse
-	10, // 43: notif.manager.notif1.v1.Manager.GetNotif:output_type -> notif.manager.notif1.v1.GetNotifResponse
-	14, // 44: notif.manager.notif1.v1.Manager.GetNotifOnly:output_type -> notif.manager.notif1.v1.GetNotifOnlyResponse
-	12, // 45: notif.manager.notif1.v1.Manager.GetNotifs:output_type -> notif.manager.notif1.v1.GetNotifsResponse
-	16, // 46: notif.manager.notif1.v1.Manager.ExistNotif:output_type -> notif.manager.notif1.v1.ExistNotifResponse
-	18, // 47: notif.manager.notif1.v1.Manager.ExistNotifConds:output_type -> notif.manager.notif1.v1.ExistNotifCondsResponse
-	20, // 48: notif.manager.notif1.v1.Manager.CountNotifs:output_type -> notif.manager.notif1.v1.CountNotifsResponse
-	22, // 49: notif.manager.notif1.v1.Manager.DeleteNotif:output_type -> notif.manager.notif1.v1.DeleteNotifResponse
-	40, // [40:50] is the sub-list for method output_type
-	30, // [30:40] is the sub-list for method input_type
-	30, // [30:30] is the sub-list for extension type_name
-	30, // [30:30] is the sub-list for extension extendee
-	0,  // [0:30] is the sub-list for field type_name
+	25, // 16: notif.manager.notif1.v1.Conds.EventID:type_name -> npool.v1.StringVal
+	0,  // 17: notif.manager.notif1.v1.CreateNotifRequest.Info:type_name -> notif.manager.notif1.v1.NotifReq
+	1,  // 18: notif.manager.notif1.v1.CreateNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
+	0,  // 19: notif.manager.notif1.v1.CreateNotifsRequest.Infos:type_name -> notif.manager.notif1.v1.NotifReq
+	1,  // 20: notif.manager.notif1.v1.CreateNotifsResponse.Infos:type_name -> notif.manager.notif1.v1.Notif
+	0,  // 21: notif.manager.notif1.v1.UpdateNotifRequest.Info:type_name -> notif.manager.notif1.v1.NotifReq
+	1,  // 22: notif.manager.notif1.v1.UpdateNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
+	1,  // 23: notif.manager.notif1.v1.GetNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
+	2,  // 24: notif.manager.notif1.v1.GetNotifsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
+	1,  // 25: notif.manager.notif1.v1.GetNotifsResponse.Infos:type_name -> notif.manager.notif1.v1.Notif
+	2,  // 26: notif.manager.notif1.v1.GetNotifOnlyRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
+	1,  // 27: notif.manager.notif1.v1.GetNotifOnlyResponse.Info:type_name -> notif.manager.notif1.v1.Notif
+	2,  // 28: notif.manager.notif1.v1.ExistNotifCondsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
+	2,  // 29: notif.manager.notif1.v1.CountNotifsRequest.Conds:type_name -> notif.manager.notif1.v1.Conds
+	1,  // 30: notif.manager.notif1.v1.DeleteNotifResponse.Info:type_name -> notif.manager.notif1.v1.Notif
+	3,  // 31: notif.manager.notif1.v1.Manager.CreateNotif:input_type -> notif.manager.notif1.v1.CreateNotifRequest
+	5,  // 32: notif.manager.notif1.v1.Manager.CreateNotifs:input_type -> notif.manager.notif1.v1.CreateNotifsRequest
+	7,  // 33: notif.manager.notif1.v1.Manager.UpdateNotif:input_type -> notif.manager.notif1.v1.UpdateNotifRequest
+	9,  // 34: notif.manager.notif1.v1.Manager.GetNotif:input_type -> notif.manager.notif1.v1.GetNotifRequest
+	13, // 35: notif.manager.notif1.v1.Manager.GetNotifOnly:input_type -> notif.manager.notif1.v1.GetNotifOnlyRequest
+	11, // 36: notif.manager.notif1.v1.Manager.GetNotifs:input_type -> notif.manager.notif1.v1.GetNotifsRequest
+	15, // 37: notif.manager.notif1.v1.Manager.ExistNotif:input_type -> notif.manager.notif1.v1.ExistNotifRequest
+	17, // 38: notif.manager.notif1.v1.Manager.ExistNotifConds:input_type -> notif.manager.notif1.v1.ExistNotifCondsRequest
+	19, // 39: notif.manager.notif1.v1.Manager.CountNotifs:input_type -> notif.manager.notif1.v1.CountNotifsRequest
+	21, // 40: notif.manager.notif1.v1.Manager.DeleteNotif:input_type -> notif.manager.notif1.v1.DeleteNotifRequest
+	4,  // 41: notif.manager.notif1.v1.Manager.CreateNotif:output_type -> notif.manager.notif1.v1.CreateNotifResponse
+	6,  // 42: notif.manager.notif1.v1.Manager.CreateNotifs:output_type -> notif.manager.notif1.v1.CreateNotifsResponse
+	8,  // 43: notif.manager.notif1.v1.Manager.UpdateNotif:output_type -> notif.manager.notif1.v1.UpdateNotifResponse
+	10, // 44: notif.manager.notif1.v1.Manager.GetNotif:output_type -> notif.manager.notif1.v1.GetNotifResponse
+	14, // 45: notif.manager.notif1.v1.Manager.GetNotifOnly:output_type -> notif.manager.notif1.v1.GetNotifOnlyResponse
+	12, // 46: notif.manager.notif1.v1.Manager.GetNotifs:output_type -> notif.manager.notif1.v1.GetNotifsResponse
+	16, // 47: notif.manager.notif1.v1.Manager.ExistNotif:output_type -> notif.manager.notif1.v1.ExistNotifResponse
+	18, // 48: notif.manager.notif1.v1.Manager.ExistNotifConds:output_type -> notif.manager.notif1.v1.ExistNotifCondsResponse
+	20, // 49: notif.manager.notif1.v1.Manager.CountNotifs:output_type -> notif.manager.notif1.v1.CountNotifsResponse
+	22, // 50: notif.manager.notif1.v1.Manager.DeleteNotif:output_type -> notif.manager.notif1.v1.DeleteNotifResponse
+	41, // [41:51] is the sub-list for method output_type
+	31, // [31:41] is the sub-list for method input_type
+	31, // [31:31] is the sub-list for extension type_name
+	31, // [31:31] is the sub-list for extension extendee
+	0,  // [0:31] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mgr_v1_notif_notif_proto_init() }

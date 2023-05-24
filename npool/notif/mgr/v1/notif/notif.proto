@@ -67,6 +67,7 @@ message Conds {
     optional npool.v1.Uint32Val      Channel     = 90;
     optional npool.v1.Uint32SliceVal EventTypes  = 100;
     optional npool.v1.StringVal      Extra       = 110;
+    optional npool.v1.StringVal      EventID     = 120;
 }
 
 

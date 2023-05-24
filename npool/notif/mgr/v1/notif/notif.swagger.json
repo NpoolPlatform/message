@@ -94,6 +94,9 @@
         },
         "Extra": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "EventID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
