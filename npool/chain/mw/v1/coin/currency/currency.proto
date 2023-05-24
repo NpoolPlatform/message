@@ -8,7 +8,7 @@ import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/currencyfeedtype.proto";
 
 // Service Name
-service Middleawre {
+service Middleware {
     rpc GetCurrency   (GetCurrencyRequest)   returns (GetCurrencyResponse)   {}
     rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
 }
