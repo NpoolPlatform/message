@@ -45,6 +45,7 @@ message Conds {
     optional basetypes.v1.StringVal      CoinTypeID  = 20;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
     optional basetypes.v1.Uint32Val      FeedType    = 40;
+    optional basetypes.v1.BoolVal        Disabled    = 50;
 }
 
 message CreateFeedRequest {
