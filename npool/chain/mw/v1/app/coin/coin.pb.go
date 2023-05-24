@@ -958,6 +958,7 @@ func (x *GetCoinResponse) GetInfo() *Coin {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 type GetCoinOnlyRequest struct {
 	state         protoimpl.MessageState
@@ -1054,6 +1055,8 @@ func (x *GetCoinOnlyResponse) GetInfo() *Coin {
 }
 
 >>>>>>> Add app coin exrate
+=======
+>>>>>>> Remove only api of appcoin
 type GetCoinsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1068,10 +1071,14 @@ func (x *GetCoinsRequest) Reset() {
 	*x = GetCoinsRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[7]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[7]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1085,10 +1092,14 @@ func (*GetCoinsRequest) ProtoMessage() {}
 
 func (x *GetCoinsRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[7]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[7]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1102,10 +1113,14 @@ func (x *GetCoinsRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCoinsRequest.ProtoReflect.Descriptor instead.
 func (*GetCoinsRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{7}
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{9}
 >>>>>>> Add app coin exrate
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{7}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *GetCoinsRequest) GetConds() *Conds {
@@ -1142,10 +1157,14 @@ func (x *GetCoinsResponse) Reset() {
 	*x = GetCoinsResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[8]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[8]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1159,10 +1178,14 @@ func (*GetCoinsResponse) ProtoMessage() {}
 
 func (x *GetCoinsResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[8]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[8]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1176,10 +1199,14 @@ func (x *GetCoinsResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCoinsResponse.ProtoReflect.Descriptor instead.
 func (*GetCoinsResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{8}
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{10}
 >>>>>>> Add app coin exrate
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{8}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *GetCoinsResponse) GetInfos() []*Coin {
@@ -1208,10 +1235,14 @@ func (x *UpdateCoinRequest) Reset() {
 	*x = UpdateCoinRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1225,10 +1256,14 @@ func (*UpdateCoinRequest) ProtoMessage() {}
 
 func (x *UpdateCoinRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1242,10 +1277,14 @@ func (x *UpdateCoinRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateCoinRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCoinRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{9}
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{11}
 >>>>>>> Add app coin exrate
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{9}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *UpdateCoinRequest) GetInfo() *CoinReq {
@@ -1267,10 +1306,14 @@ func (x *UpdateCoinResponse) Reset() {
 	*x = UpdateCoinResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1284,10 +1327,14 @@ func (*UpdateCoinResponse) ProtoMessage() {}
 
 func (x *UpdateCoinResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1301,10 +1348,14 @@ func (x *UpdateCoinResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateCoinResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCoinResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{10}
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{12}
 >>>>>>> Add app coin exrate
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{10}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *UpdateCoinResponse) GetInfo() *Coin {
@@ -1330,10 +1381,14 @@ func (x *DeleteCoinRequest) Reset() {
 	*x = DeleteCoinRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[13]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1347,10 +1402,14 @@ func (*DeleteCoinRequest) ProtoMessage() {}
 
 func (x *DeleteCoinRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[13]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1364,6 +1423,7 @@ func (x *DeleteCoinRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteCoinRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCoinRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{11}
 }
 
@@ -1374,6 +1434,9 @@ func (x *DeleteCoinRequest) GetInfo() *CoinReq {
 	return nil
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{13}
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{11}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *DeleteCoinRequest) GetID() string {
@@ -1396,10 +1459,14 @@ func (x *DeleteCoinResponse) Reset() {
 	*x = DeleteCoinResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
 =======
 		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[14]
 >>>>>>> Add app coin exrate
+=======
+		mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
+>>>>>>> Remove only api of appcoin
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1413,10 +1480,14 @@ func (*DeleteCoinResponse) ProtoMessage() {}
 
 func (x *DeleteCoinResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
 =======
 	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[14]
 >>>>>>> Add app coin exrate
+=======
+	mi := &file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12]
+>>>>>>> Remove only api of appcoin
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1430,10 +1501,14 @@ func (x *DeleteCoinResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteCoinResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCoinResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{12}
 =======
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{14}
 >>>>>>> Add app coin exrate
+=======
+	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP(), []int{12}
+>>>>>>> Remove only api of appcoin
 }
 
 func (x *DeleteCoinResponse) GetInfo() *Coin {
@@ -1666,6 +1741,7 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc = []byte{
 	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4f, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x43, 0x6f,
 	0x69, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a,
@@ -1678,6 +1754,8 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc = []byte{
 	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69,
 >>>>>>> Add app coin exrate
+=======
+>>>>>>> Remove only api of appcoin
 	0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7a, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x43, 0x6f,
 	0x69, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x05, 0x43, 0x6f,
 	0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x68, 0x61, 0x69,
@@ -1762,7 +1840,7 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc = []byte{
 	0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22,
 	0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f,
-	0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xb2, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64,
+	0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xbc, 0x04, 0x0a, 0x0a, 0x4d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x71, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x43, 0x6f, 0x69, 0x6e, 0x12, 0x2f, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69,
 	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69,
@@ -1777,9 +1855,27 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc = []byte{
 	0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e,
 	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x74, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x4f,
-	0x6e, 0x6c, 0x79, 0x12, 0x30, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x6b, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x73,
+	0x12, 0x2d, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2e, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x71, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x12,
+	0x2f, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x30, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f,
+	0x69, 0x6e, 0x12, 0x2f, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e,
+<<<<<<< HEAD
 	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69,
 	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x63, 0x6f, 0x69,
@@ -1812,6 +1908,14 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc = []byte{
 	0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> Add app coin exrate
+=======
+	0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70,
+	0x70, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> Remove only api of appcoin
 }
 
 var (
@@ -1826,6 +1930,7 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_rawDescGZIP() []byte {
 	return file_npool_chain_mw_v1_app_coin_coin_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_npool_chain_mw_v1_app_coin_coin_proto_goTypes = []interface{}{
@@ -1880,37 +1985,39 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_depIdxs = []int32{
 	0,  // [0:16] is the sub-list for field type_name
 =======
 var file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+=======
+var file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+>>>>>>> Remove only api of appcoin
 var file_npool_chain_mw_v1_app_coin_coin_proto_goTypes = []interface{}{
-	(*CoinReq)(nil),             // 0: chain.middleware.app.coin.v1.CoinReq
-	(*Coin)(nil),                // 1: chain.middleware.app.coin.v1.Coin
-	(*Conds)(nil),               // 2: chain.middleware.app.coin.v1.Conds
-	(*CreateCoinRequest)(nil),   // 3: chain.middleware.app.coin.v1.CreateCoinRequest
-	(*CreateCoinResponse)(nil),  // 4: chain.middleware.app.coin.v1.CreateCoinResponse
-	(*GetCoinRequest)(nil),      // 5: chain.middleware.app.coin.v1.GetCoinRequest
-	(*GetCoinResponse)(nil),     // 6: chain.middleware.app.coin.v1.GetCoinResponse
-	(*GetCoinOnlyRequest)(nil),  // 7: chain.middleware.app.coin.v1.GetCoinOnlyRequest
-	(*GetCoinOnlyResponse)(nil), // 8: chain.middleware.app.coin.v1.GetCoinOnlyResponse
-	(*GetCoinsRequest)(nil),     // 9: chain.middleware.app.coin.v1.GetCoinsRequest
-	(*GetCoinsResponse)(nil),    // 10: chain.middleware.app.coin.v1.GetCoinsResponse
-	(*UpdateCoinRequest)(nil),   // 11: chain.middleware.app.coin.v1.UpdateCoinRequest
-	(*UpdateCoinResponse)(nil),  // 12: chain.middleware.app.coin.v1.UpdateCoinResponse
-	(*DeleteCoinRequest)(nil),   // 13: chain.middleware.app.coin.v1.DeleteCoinRequest
-	(*DeleteCoinResponse)(nil),  // 14: chain.middleware.app.coin.v1.DeleteCoinResponse
-	(*v1.StringVal)(nil),        // 15: basetypes.v1.StringVal
-	(*v1.BoolVal)(nil),          // 16: basetypes.v1.BoolVal
-	(*v1.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
+	(*CoinReq)(nil),            // 0: chain.middleware.app.coin.v1.CoinReq
+	(*Coin)(nil),               // 1: chain.middleware.app.coin.v1.Coin
+	(*Conds)(nil),              // 2: chain.middleware.app.coin.v1.Conds
+	(*CreateCoinRequest)(nil),  // 3: chain.middleware.app.coin.v1.CreateCoinRequest
+	(*CreateCoinResponse)(nil), // 4: chain.middleware.app.coin.v1.CreateCoinResponse
+	(*GetCoinRequest)(nil),     // 5: chain.middleware.app.coin.v1.GetCoinRequest
+	(*GetCoinResponse)(nil),    // 6: chain.middleware.app.coin.v1.GetCoinResponse
+	(*GetCoinsRequest)(nil),    // 7: chain.middleware.app.coin.v1.GetCoinsRequest
+	(*GetCoinsResponse)(nil),   // 8: chain.middleware.app.coin.v1.GetCoinsResponse
+	(*UpdateCoinRequest)(nil),  // 9: chain.middleware.app.coin.v1.UpdateCoinRequest
+	(*UpdateCoinResponse)(nil), // 10: chain.middleware.app.coin.v1.UpdateCoinResponse
+	(*DeleteCoinRequest)(nil),  // 11: chain.middleware.app.coin.v1.DeleteCoinRequest
+	(*DeleteCoinResponse)(nil), // 12: chain.middleware.app.coin.v1.DeleteCoinResponse
+	(*v1.StringVal)(nil),       // 13: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),         // 14: basetypes.v1.BoolVal
+	(*v1.StringSliceVal)(nil),  // 15: basetypes.v1.StringSliceVal
 }
 var file_npool_chain_mw_v1_app_coin_coin_proto_depIdxs = []int32{
-	15, // 0: chain.middleware.app.coin.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	15, // 1: chain.middleware.app.coin.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	15, // 2: chain.middleware.app.coin.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
-	16, // 3: chain.middleware.app.coin.v1.Conds.ForPay:type_name -> basetypes.v1.BoolVal
-	16, // 4: chain.middleware.app.coin.v1.Conds.Disabled:type_name -> basetypes.v1.BoolVal
-	17, // 5: chain.middleware.app.coin.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
-	17, // 6: chain.middleware.app.coin.v1.Conds.CoinTypeIDs:type_name -> basetypes.v1.StringSliceVal
+	13, // 0: chain.middleware.app.coin.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	13, // 1: chain.middleware.app.coin.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	13, // 2: chain.middleware.app.coin.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	14, // 3: chain.middleware.app.coin.v1.Conds.ForPay:type_name -> basetypes.v1.BoolVal
+	14, // 4: chain.middleware.app.coin.v1.Conds.Disabled:type_name -> basetypes.v1.BoolVal
+	15, // 5: chain.middleware.app.coin.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+	15, // 6: chain.middleware.app.coin.v1.Conds.CoinTypeIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 7: chain.middleware.app.coin.v1.CreateCoinRequest.Info:type_name -> chain.middleware.app.coin.v1.CoinReq
 	1,  // 8: chain.middleware.app.coin.v1.CreateCoinResponse.Info:type_name -> chain.middleware.app.coin.v1.Coin
 	1,  // 9: chain.middleware.app.coin.v1.GetCoinResponse.Info:type_name -> chain.middleware.app.coin.v1.Coin
+<<<<<<< HEAD
 	2,  // 10: chain.middleware.app.coin.v1.GetCoinOnlyRequest.Conds:type_name -> chain.middleware.app.coin.v1.Conds
 	1,  // 11: chain.middleware.app.coin.v1.GetCoinOnlyResponse.Info:type_name -> chain.middleware.app.coin.v1.Coin
 	2,  // 12: chain.middleware.app.coin.v1.GetCoinsRequest.Conds:type_name -> chain.middleware.app.coin.v1.Conds
@@ -1936,6 +2043,28 @@ var file_npool_chain_mw_v1_app_coin_coin_proto_depIdxs = []int32{
 	17, // [17:17] is the sub-list for extension extendee
 	0,  // [0:17] is the sub-list for field type_name
 >>>>>>> Add app coin exrate
+=======
+	2,  // 10: chain.middleware.app.coin.v1.GetCoinsRequest.Conds:type_name -> chain.middleware.app.coin.v1.Conds
+	1,  // 11: chain.middleware.app.coin.v1.GetCoinsResponse.Infos:type_name -> chain.middleware.app.coin.v1.Coin
+	0,  // 12: chain.middleware.app.coin.v1.UpdateCoinRequest.Info:type_name -> chain.middleware.app.coin.v1.CoinReq
+	1,  // 13: chain.middleware.app.coin.v1.UpdateCoinResponse.Info:type_name -> chain.middleware.app.coin.v1.Coin
+	1,  // 14: chain.middleware.app.coin.v1.DeleteCoinResponse.Info:type_name -> chain.middleware.app.coin.v1.Coin
+	3,  // 15: chain.middleware.app.coin.v1.Middleware.CreateCoin:input_type -> chain.middleware.app.coin.v1.CreateCoinRequest
+	5,  // 16: chain.middleware.app.coin.v1.Middleware.GetCoin:input_type -> chain.middleware.app.coin.v1.GetCoinRequest
+	7,  // 17: chain.middleware.app.coin.v1.Middleware.GetCoins:input_type -> chain.middleware.app.coin.v1.GetCoinsRequest
+	9,  // 18: chain.middleware.app.coin.v1.Middleware.UpdateCoin:input_type -> chain.middleware.app.coin.v1.UpdateCoinRequest
+	11, // 19: chain.middleware.app.coin.v1.Middleware.DeleteCoin:input_type -> chain.middleware.app.coin.v1.DeleteCoinRequest
+	4,  // 20: chain.middleware.app.coin.v1.Middleware.CreateCoin:output_type -> chain.middleware.app.coin.v1.CreateCoinResponse
+	6,  // 21: chain.middleware.app.coin.v1.Middleware.GetCoin:output_type -> chain.middleware.app.coin.v1.GetCoinResponse
+	8,  // 22: chain.middleware.app.coin.v1.Middleware.GetCoins:output_type -> chain.middleware.app.coin.v1.GetCoinsResponse
+	10, // 23: chain.middleware.app.coin.v1.Middleware.UpdateCoin:output_type -> chain.middleware.app.coin.v1.UpdateCoinResponse
+	12, // 24: chain.middleware.app.coin.v1.Middleware.DeleteCoin:output_type -> chain.middleware.app.coin.v1.DeleteCoinResponse
+	20, // [20:25] is the sub-list for method output_type
+	15, // [15:20] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
+>>>>>>> Remove only api of appcoin
 }
 
 func init() { file_npool_chain_mw_v1_app_coin_coin_proto_init() }
@@ -2030,6 +2159,7 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 		}
 		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*GetCoinsRequest); i {
 =======
 			switch v := v.(*GetCoinOnlyRequest); i {
@@ -2064,6 +2194,8 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 <<<<<<< HEAD
 			switch v := v.(*UpdateCoinRequest); i {
 =======
+=======
+>>>>>>> Remove only api of appcoin
 			switch v := v.(*GetCoinsRequest); i {
 >>>>>>> Add app coin exrate
 			case 0:
@@ -2076,10 +2208,14 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 			switch v := v.(*UpdateCoinResponse); i {
 =======
+=======
+		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Remove only api of appcoin
 			switch v := v.(*GetCoinsResponse); i {
 >>>>>>> Add app coin exrate
 			case 0:
@@ -2092,10 +2228,14 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 			switch v := v.(*DeleteCoinRequest); i {
 =======
+=======
+		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Remove only api of appcoin
 			switch v := v.(*UpdateCoinRequest); i {
 >>>>>>> Add app coin exrate
 			case 0:
@@ -2108,9 +2248,13 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 =======
+=======
+		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Remove only api of appcoin
 			switch v := v.(*UpdateCoinResponse); i {
 			case 0:
 				return &v.state
@@ -2122,7 +2266,7 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 				return nil
 			}
 		}
-		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCoinRequest); i {
 			case 0:
 				return &v.state
@@ -2134,8 +2278,12 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 >>>>>>> Add app coin exrate
+=======
+		file_npool_chain_mw_v1_app_coin_coin_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Remove only api of appcoin
 			switch v := v.(*DeleteCoinResponse); i {
 			case 0:
 				return &v.state
@@ -2157,10 +2305,14 @@ func file_npool_chain_mw_v1_app_coin_coin_proto_init() {
 			RawDescriptor: file_npool_chain_mw_v1_app_coin_coin_proto_rawDesc,
 			NumEnums:      0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   13,
 =======
 			NumMessages:   15,
 >>>>>>> Add app coin exrate
+=======
+			NumMessages:   13,
+>>>>>>> Remove only api of appcoin
 			NumExtensions: 0,
 			NumServices:   1,
 		},

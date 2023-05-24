@@ -378,6 +378,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "v1GetCoinOnlyResponse": {
       "type": "object",
@@ -388,6 +389,8 @@
       }
     },
 >>>>>>> Add app coin exrate
+=======
+>>>>>>> Remove only api of appcoin
     "v1GetCoinResponse": {
       "type": "object",
       "properties": {
