@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Middleware_CreateCurrency_FullMethodName    = "/chain.middleware.coin.currency.v1.Middleware/CreateCurrency"
 	Middleware_CreateCurrencies_FullMethodName  = "/chain.middleware.coin.currency.v1.Middleware/CreateCurrencies"
 	Middleware_RefreshCurrencies_FullMethodName = "/chain.middleware.coin.currency.v1.Middleware/RefreshCurrencies"
@@ -44,28 +45,31 @@ const (
 
 // ManagerClient is the client API for Manager service.
 >>>>>>> Add currency history
+=======
+	Middleawre_GetCurrency_FullMethodName     = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrency"
+	Middleawre_GetCurrencyOnly_FullMethodName = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencyOnly"
+	Middleawre_GetCurrencies_FullMethodName   = "/chain.middleware.coin.currency.v1.Middleawre/GetCurrencies"
+)
+
+// MiddleawreClient is the client API for Middleawre service.
+>>>>>>> Remove unused currency apis
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
-	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
-	UpdateCurrency(ctx context.Context, in *UpdateCurrencyRequest, opts ...grpc.CallOption) (*UpdateCurrencyResponse, error)
+type MiddleawreClient interface {
 	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
-	ExistCurrency(ctx context.Context, in *ExistCurrencyRequest, opts ...grpc.CallOption) (*ExistCurrencyResponse, error)
-	ExistCurrencyConds(ctx context.Context, in *ExistCurrencyCondsRequest, opts ...grpc.CallOption) (*ExistCurrencyCondsResponse, error)
-	CountCurrencies(ctx context.Context, in *CountCurrenciesRequest, opts ...grpc.CallOption) (*CountCurrenciesResponse, error)
-	DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error)
 }
 
-type managerClient struct {
+type middleawreClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddleawreClient(cc grpc.ClientConnInterface) MiddleawreClient {
+	return &middleawreClient{cc}
 }
 
+<<<<<<< HEAD
 func (c *managerClient) CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error) {
 	out := new(CreateCurrencyResponse)
 <<<<<<< HEAD
@@ -103,12 +107,18 @@ func (c *managerClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest,
 	out := new(GetCurrencyResponse)
 	err := c.cc.Invoke(ctx, Manager_GetCurrency_FullMethodName, in, out, opts...)
 >>>>>>> Add currency history
+=======
+func (c *middleawreClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
+	out := new(GetCurrencyResponse)
+	err := c.cc.Invoke(ctx, Middleawre_GetCurrency_FullMethodName, in, out, opts...)
+>>>>>>> Remove unused currency apis
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func (c *middlewareClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
 	out := new(GetCurrencyResponse)
@@ -132,12 +142,18 @@ func (c *managerClient) GetCoinCurrency(ctx context.Context, in *GetCoinCurrency
 =======
 	err := c.cc.Invoke(ctx, Manager_GetCoinCurrency_FullMethodName, in, out, opts...)
 >>>>>>> Add currency history
+=======
+func (c *middleawreClient) GetCurrencyOnly(ctx context.Context, in *GetCurrencyOnlyRequest, opts ...grpc.CallOption) (*GetCurrencyOnlyResponse, error) {
+	out := new(GetCurrencyOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleawre_GetCurrencyOnly_FullMethodName, in, out, opts...)
+>>>>>>> Remove unused currency apis
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> Remove unused api
 func (c *managerClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
@@ -201,68 +217,50 @@ func (c *managerClient) RefreshCurrencies(ctx context.Context, in *RefreshCurren
 func (c *managerClient) DeleteCurrency(ctx context.Context, in *DeleteCurrencyRequest, opts ...grpc.CallOption) (*DeleteCurrencyResponse, error) {
 	out := new(DeleteCurrencyResponse)
 	err := c.cc.Invoke(ctx, Manager_DeleteCurrency_FullMethodName, in, out, opts...)
+=======
+func (c *middleawreClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
+	out := new(GetCurrenciesResponse)
+	err := c.cc.Invoke(ctx, Middleawre_GetCurrencies_FullMethodName, in, out, opts...)
+>>>>>>> Remove unused currency apis
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddleawreServer is the server API for Middleawre service.
+// All implementations must embed UnimplementedMiddleawreServer
 // for forward compatibility
-type ManagerServer interface {
-	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
-	UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error)
+type MiddleawreServer interface {
 	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
-	ExistCurrency(context.Context, *ExistCurrencyRequest) (*ExistCurrencyResponse, error)
-	ExistCurrencyConds(context.Context, *ExistCurrencyCondsRequest) (*ExistCurrencyCondsResponse, error)
-	CountCurrencies(context.Context, *CountCurrenciesRequest) (*CountCurrenciesResponse, error)
-	DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddleawreServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddleawreServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddleawreServer struct {
 }
 
-func (UnimplementedManagerServer) CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCurrency not implemented")
-}
-func (UnimplementedManagerServer) UpdateCurrency(context.Context, *UpdateCurrencyRequest) (*UpdateCurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCurrency not implemented")
-}
-func (UnimplementedManagerServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
+func (UnimplementedMiddleawreServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
 }
-func (UnimplementedManagerServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
+func (UnimplementedMiddleawreServer) GetCurrencyOnly(context.Context, *GetCurrencyOnlyRequest) (*GetCurrencyOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencyOnly not implemented")
 }
-func (UnimplementedManagerServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
+func (UnimplementedMiddleawreServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
 }
-func (UnimplementedManagerServer) ExistCurrency(context.Context, *ExistCurrencyRequest) (*ExistCurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCurrency not implemented")
-}
-func (UnimplementedManagerServer) ExistCurrencyConds(context.Context, *ExistCurrencyCondsRequest) (*ExistCurrencyCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCurrencyConds not implemented")
-}
-func (UnimplementedManagerServer) CountCurrencies(context.Context, *CountCurrenciesRequest) (*CountCurrenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountCurrencies not implemented")
-}
-func (UnimplementedManagerServer) DeleteCurrency(context.Context, *DeleteCurrencyRequest) (*DeleteCurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurrency not implemented")
-}
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddleawreServer) mustEmbedUnimplementedMiddleawreServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddleawreServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddleawreServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddleawreServer interface {
+	mustEmbedUnimplementedMiddleawreServer()
 }
 
+<<<<<<< HEAD
 func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
 	s.RegisterService(&Manager_ServiceDesc, srv)
 }
@@ -309,52 +307,65 @@ func _Manager_UpdateCurrency_Handler(srv interface{}, ctx context.Context, dec f
 		return srv.(ManagerServer).UpdateCurrency(ctx, req.(*UpdateCurrencyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
+=======
+func RegisterMiddleawreServer(s grpc.ServiceRegistrar, srv MiddleawreServer) {
+	s.RegisterService(&Middleawre_ServiceDesc, srv)
+>>>>>>> Remove unused currency apis
 }
 
-func _Manager_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleawre_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrencyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCurrency(ctx, in)
+		return srv.(MiddleawreServer).GetCurrency(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
+<<<<<<< HEAD
 <<<<<<< HEAD
 		FullMethod: Middleware_RefreshCurrencies_FullMethodName,
 =======
 		FullMethod: Manager_GetCurrency_FullMethodName,
 >>>>>>> Add currency history
+=======
+		FullMethod: Middleawre_GetCurrency_FullMethodName,
+>>>>>>> Remove unused currency apis
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
+		return srv.(MiddleawreServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleawre_GetCurrencyOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCurrencyOnlyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetCurrencyOnly(ctx, in)
+		return srv.(MiddleawreServer).GetCurrencyOnly(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
+<<<<<<< HEAD
 <<<<<<< HEAD
 		FullMethod: Middleware_GetCurrency_FullMethodName,
 =======
 		FullMethod: Manager_GetCurrencyOnly_FullMethodName,
 >>>>>>> Add currency history
+=======
+		FullMethod: Middleawre_GetCurrencyOnly_FullMethodName,
+>>>>>>> Remove unused currency apis
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetCurrencyOnly(ctx, req.(*GetCurrencyOnlyRequest))
+		return srv.(MiddleawreServer).GetCurrencyOnly(ctx, req.(*GetCurrencyOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func _Manager_GetCoinCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCoinCurrencyRequest)
@@ -381,11 +392,15 @@ func _Manager_GetCoinCurrency_Handler(srv interface{}, ctx context.Context, dec 
 =======
 >>>>>>> Remove unused api
 func _Manager_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+=======
+func _Middleawre_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+>>>>>>> Remove unused currency apis
 	in := new(GetCurrenciesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
+<<<<<<< HEAD
 		return srv.(ManagerServer).GetCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -453,73 +468,38 @@ func _Manager_CountCurrencies_Handler(srv interface{}, ctx context.Context, dec 
 =======
 		FullMethod: Manager_CountCurrencies_FullMethodName,
 >>>>>>> Add currency history
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CountCurrencies(ctx, req.(*CountCurrenciesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Manager_DeleteCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCurrencyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ManagerServer).DeleteCurrency(ctx, in)
+=======
+		return srv.(MiddleawreServer).GetCurrencies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_DeleteCurrency_FullMethodName,
+		FullMethod: Middleawre_GetCurrencies_FullMethodName,
+>>>>>>> Remove unused currency apis
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteCurrency(ctx, req.(*DeleteCurrencyRequest))
+		return srv.(MiddleawreServer).GetCurrencies(ctx, req.(*GetCurrenciesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleawre_ServiceDesc is the grpc.ServiceDesc for Middleawre service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.middleware.coin.currency.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleawre_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "chain.middleware.coin.currency.v1.Middleawre",
+	HandlerType: (*MiddleawreServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateCurrency",
-			Handler:    _Manager_CreateCurrency_Handler,
-		},
-		{
-			MethodName: "UpdateCurrency",
-			Handler:    _Manager_UpdateCurrency_Handler,
-		},
-		{
 			MethodName: "GetCurrency",
-			Handler:    _Manager_GetCurrency_Handler,
+			Handler:    _Middleawre_GetCurrency_Handler,
 		},
 		{
 			MethodName: "GetCurrencyOnly",
-			Handler:    _Manager_GetCurrencyOnly_Handler,
+			Handler:    _Middleawre_GetCurrencyOnly_Handler,
 		},
 		{
 			MethodName: "GetCurrencies",
-			Handler:    _Manager_GetCurrencies_Handler,
-		},
-		{
-			MethodName: "ExistCurrency",
-			Handler:    _Manager_ExistCurrency_Handler,
-		},
-		{
-			MethodName: "ExistCurrencyConds",
-			Handler:    _Manager_ExistCurrencyConds_Handler,
-		},
-		{
-			MethodName: "CountCurrencies",
-			Handler:    _Manager_CountCurrencies_Handler,
-		},
-		{
-			MethodName: "DeleteCurrency",
-			Handler:    _Manager_DeleteCurrency_Handler,
+			Handler:    _Middleawre_GetCurrencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
