@@ -87,10 +87,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
 =======
             "$ref": "#/definitions/chainmiddlewaretxv1Tx"
 >>>>>>> Add chain meta
+=======
+            "$ref": "#/definitions/v1Tx"
+>>>>>>> Refactor usedfor
           }
         }
       }
@@ -111,10 +115,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
 =======
             "$ref": "#/definitions/chainmiddlewaretxv1Tx"
 >>>>>>> Add chain meta
+=======
+            "$ref": "#/definitions/v1Tx"
+>>>>>>> Refactor usedfor
           }
         },
         "Total": {
@@ -226,6 +234,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "chainmiddlewaretxv1UpdateTxResponse": {
       "type": "object",
@@ -327,6 +336,8 @@
       }
     },
 >>>>>>> Add chain meta
+=======
+>>>>>>> Refactor usedfor
     "v1TxReq": {
       "type": "object",
       "properties": {

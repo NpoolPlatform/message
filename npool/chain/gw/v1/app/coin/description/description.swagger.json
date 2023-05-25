@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1CreateCoinDescriptionResponse"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1CreateCoinDescriptionResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1CreateCoinDescriptionRequest"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1CreateCoinDescriptionRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1GetCoinDescriptionsResponse"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1GetCoinDescriptionsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1GetCoinDescriptionsRequest"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1GetCoinDescriptionsRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1UpdateCoinDescriptionResponse"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1UpdateCoinDescriptionResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoindescriptionv1UpdateCoinDescriptionRequest"
+              "$ref": "#/definitions/gatewayappcoindescriptionv1UpdateCoinDescriptionRequest"
             }
           }
         ],
@@ -178,7 +178,7 @@
     }
   },
   "definitions": {
-    "chaingatewayappcoindescriptionv1CreateCoinDescriptionRequest": {
+    "gatewayappcoindescriptionv1CreateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -198,7 +198,7 @@
         }
       }
     },
-    "chaingatewayappcoindescriptionv1CreateCoinDescriptionResponse": {
+    "gatewayappcoindescriptionv1CreateCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -206,7 +206,7 @@
         }
       }
     },
-    "chaingatewayappcoindescriptionv1GetCoinDescriptionsRequest": {
+    "gatewayappcoindescriptionv1GetCoinDescriptionsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -222,7 +222,7 @@
         }
       }
     },
-    "chaingatewayappcoindescriptionv1GetCoinDescriptionsResponse": {
+    "gatewayappcoindescriptionv1GetCoinDescriptionsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -230,10 +230,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
             "$ref": "#/definitions/v1CoinDescription"
 =======
             "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
 >>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
+=======
+            "$ref": "#/definitions/v1CoinDescription"
+>>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
           }
         },
         "Total": {
@@ -242,7 +246,7 @@
         }
       }
     },
-    "chaingatewayappcoindescriptionv1UpdateCoinDescriptionRequest": {
+    "gatewayappcoindescriptionv1UpdateCoinDescriptionRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -259,7 +263,7 @@
         }
       }
     },
-    "chaingatewayappcoindescriptionv1UpdateCoinDescriptionResponse": {
+    "gatewayappcoindescriptionv1UpdateCoinDescriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -354,6 +358,7 @@
       }
     },
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
 =======
     "protobufAny": {
       "type": "object",
@@ -384,6 +389,8 @@
       }
     },
 >>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
+=======
+>>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
     "v1CreateAppCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -436,10 +443,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
             "$ref": "#/definitions/v1CoinDescription"
 =======
             "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
 >>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
+=======
+            "$ref": "#/definitions/v1CoinDescription"
+>>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
           }
         },
         "Total": {
