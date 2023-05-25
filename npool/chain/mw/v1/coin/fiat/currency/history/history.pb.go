@@ -9,9 +9,13 @@ package history
 import (
 	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	currency "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/fiat/currency"
 =======
 >>>>>>> Add coin fiat currency history
+=======
+	currency "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/fiat/currency"
+>>>>>>> Move fiat currency to its folder
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -26,6 +30,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 type Currency struct {
@@ -202,6 +207,8 @@ func (x *Currency) GetUpdatedAt() uint32 {
 }
 
 >>>>>>> Add coin fiat currency history
+=======
+>>>>>>> Move fiat currency to its folder
 type Conds struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -217,10 +224,14 @@ func (x *Conds) Reset() {
 	*x = Conds{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0]
 =======
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
 >>>>>>> Add coin fiat currency history
+=======
+		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0]
+>>>>>>> Move fiat currency to its folder
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -234,10 +245,14 @@ func (*Conds) ProtoMessage() {}
 
 func (x *Conds) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0]
 =======
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
 >>>>>>> Add coin fiat currency history
+=======
+	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0]
+>>>>>>> Move fiat currency to its folder
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -251,10 +266,14 @@ func (x *Conds) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Conds.ProtoReflect.Descriptor instead.
 func (*Conds) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{0}
 =======
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{1}
 >>>>>>> Add coin fiat currency history
+=======
+	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{0}
+>>>>>>> Move fiat currency to its folder
 }
 
 func (x *Conds) GetCoinTypeID() *v1.StringVal {
@@ -299,10 +318,14 @@ func (x *GetCurrenciesRequest) Reset() {
 	*x = GetCurrenciesRequest{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
 =======
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
 >>>>>>> Add coin fiat currency history
+=======
+		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
+>>>>>>> Move fiat currency to its folder
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -316,10 +339,14 @@ func (*GetCurrenciesRequest) ProtoMessage() {}
 
 func (x *GetCurrenciesRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
 =======
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
 >>>>>>> Add coin fiat currency history
+=======
+	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1]
+>>>>>>> Move fiat currency to its folder
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -333,10 +360,14 @@ func (x *GetCurrenciesRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCurrenciesRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrenciesRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{1}
 =======
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{2}
 >>>>>>> Add coin fiat currency history
+=======
+	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{1}
+>>>>>>> Move fiat currency to its folder
 }
 
 func (x *GetCurrenciesRequest) GetConds() *Conds {
@@ -366,22 +397,31 @@ type GetCurrenciesResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Infos []*currency.Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32               `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 =======
 	Infos []*Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32      `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 >>>>>>> Add coin fiat currency history
+=======
+	Infos []*currency.Currency `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32               `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+>>>>>>> Move fiat currency to its folder
 }
 
 func (x *GetCurrenciesResponse) Reset() {
 	*x = GetCurrenciesResponse{}
 	if protoimpl.UnsafeEnabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
 =======
 		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[3]
 >>>>>>> Add coin fiat currency history
+=======
+		mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
+>>>>>>> Move fiat currency to its folder
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -395,10 +435,14 @@ func (*GetCurrenciesResponse) ProtoMessage() {}
 
 func (x *GetCurrenciesResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
 =======
 	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[3]
 >>>>>>> Add coin fiat currency history
+=======
+	mi := &file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2]
+>>>>>>> Move fiat currency to its folder
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -412,6 +456,7 @@ func (x *GetCurrenciesResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetCurrenciesResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrenciesResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{2}
 }
 
@@ -422,6 +467,12 @@ func (x *GetCurrenciesResponse) GetInfos() []*currency.Currency {
 
 func (x *GetCurrenciesResponse) GetInfos() []*Currency {
 >>>>>>> Add coin fiat currency history
+=======
+	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetCurrenciesResponse) GetInfos() []*currency.Currency {
+>>>>>>> Move fiat currency to its folder
 	if x != nil {
 		return x.Infos
 	}
@@ -452,6 +503,9 @@ var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f,
 	0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x66, 0x65, 0x65, 0x64, 0x74, 0x79, 0x70, 0x65,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Move fiat currency to its folder
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x33, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x63, 0x68,
 	0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x66,
 	0x69, 0x61, 0x74, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x63, 0x75, 0x72,
@@ -494,6 +548,7 @@ var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xaf, 0x01, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x12, 0xa0, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
 	0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x12, 0x45, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d,
+<<<<<<< HEAD
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x66,
 	0x69, 0x61, 0x74, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x31, 0x2e, 0x68, 0x69,
 	0x73, 0x74, 0x6f, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
@@ -594,6 +649,22 @@ var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x2f, 0x66, 0x69, 0x61, 0x74, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x68,
 	0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> Add coin fiat currency history
+=======
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x66,
+	0x69, 0x61, 0x74, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x31, 0x2e, 0x68, 0x69,
+	0x73, 0x74, 0x6f, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72,
+	0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x46, 0x2e,
+	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x66, 0x69, 0x61, 0x74, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x65,
+	0x6e, 0x63, 0x79, 0x31, 0x2e, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x4f, 0x5a, 0x4d, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f,
+	0x69, 0x6e, 0x2f, 0x66, 0x69, 0x61, 0x74, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79,
+	0x2f, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> Move fiat currency to its folder
 }
 
 var (
@@ -608,6 +679,7 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescGZIP
 	return file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_goTypes = []interface{}{
@@ -635,17 +707,20 @@ var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_depIdxs = []
 	0, // [0:6] is the sub-list for field type_name
 =======
 var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+=======
+var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+>>>>>>> Move fiat currency to its folder
 var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_goTypes = []interface{}{
-	(*Currency)(nil),              // 0: chain.middleware.coin.fiat.currency1.history.v1.Currency
-	(*Conds)(nil),                 // 1: chain.middleware.coin.fiat.currency1.history.v1.Conds
-	(*GetCurrenciesRequest)(nil),  // 2: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesRequest
-	(*GetCurrenciesResponse)(nil), // 3: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesResponse
-	(v1.CurrencyFeedType)(0),      // 4: basetypes.v1.CurrencyFeedType
-	(*v1.StringVal)(nil),          // 5: basetypes.v1.StringVal
-	(*v1.StringSliceVal)(nil),     // 6: basetypes.v1.StringSliceVal
-	(*v1.Uint32Val)(nil),          // 7: basetypes.v1.Uint32Val
+	(*Conds)(nil),                 // 0: chain.middleware.coin.fiat.currency1.history.v1.Conds
+	(*GetCurrenciesRequest)(nil),  // 1: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesRequest
+	(*GetCurrenciesResponse)(nil), // 2: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesResponse
+	(*v1.StringVal)(nil),          // 3: basetypes.v1.StringVal
+	(*v1.StringSliceVal)(nil),     // 4: basetypes.v1.StringSliceVal
+	(*v1.Uint32Val)(nil),          // 5: basetypes.v1.Uint32Val
+	(*currency.Currency)(nil),     // 6: chain.middleware.coin.fiat.currency.v1.Currency
 }
 var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_depIdxs = []int32{
+<<<<<<< HEAD
 	4, // 0: chain.middleware.coin.fiat.currency1.history.v1.Currency.FeedType:type_name -> basetypes.v1.CurrencyFeedType
 	5, // 1: chain.middleware.coin.fiat.currency1.history.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
 	6, // 2: chain.middleware.coin.fiat.currency1.history.v1.Conds.CoinTypeIDs:type_name -> basetypes.v1.StringSliceVal
@@ -661,6 +736,21 @@ var file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_depIdxs = []
 	7, // [7:7] is the sub-list for extension extendee
 	0, // [0:7] is the sub-list for field type_name
 >>>>>>> Add coin fiat currency history
+=======
+	3, // 0: chain.middleware.coin.fiat.currency1.history.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	4, // 1: chain.middleware.coin.fiat.currency1.history.v1.Conds.CoinTypeIDs:type_name -> basetypes.v1.StringSliceVal
+	5, // 2: chain.middleware.coin.fiat.currency1.history.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
+	5, // 3: chain.middleware.coin.fiat.currency1.history.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
+	0, // 4: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesRequest.Conds:type_name -> chain.middleware.coin.fiat.currency1.history.v1.Conds
+	6, // 5: chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesResponse.Infos:type_name -> chain.middleware.coin.fiat.currency.v1.Currency
+	1, // 6: chain.middleware.coin.fiat.currency1.history.v1.Middleware.GetCurrencies:input_type -> chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesRequest
+	2, // 7: chain.middleware.coin.fiat.currency1.history.v1.Middleware.GetCurrencies:output_type -> chain.middleware.coin.fiat.currency1.history.v1.GetCurrenciesResponse
+	7, // [7:8] is the sub-list for method output_type
+	6, // [6:7] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
+>>>>>>> Move fiat currency to its folder
 }
 
 func init() { file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() }
@@ -670,6 +760,7 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			switch v := v.(*Conds); i {
 =======
@@ -689,6 +780,8 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 <<<<<<< HEAD
 			switch v := v.(*GetCurrenciesRequest); i {
 =======
+=======
+>>>>>>> Move fiat currency to its folder
 			switch v := v.(*Conds); i {
 >>>>>>> Add coin fiat currency history
 			case 0:
@@ -701,9 +794,13 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 =======
+=======
+		file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Move fiat currency to its folder
 			switch v := v.(*GetCurrenciesRequest); i {
 			case 0:
 				return &v.state
@@ -715,8 +812,12 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 >>>>>>> Add coin fiat currency history
+=======
+		file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Move fiat currency to its folder
 			switch v := v.(*GetCurrenciesResponse); i {
 			case 0:
 				return &v.state
@@ -730,10 +831,14 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0].OneofWrappers = []interface{}{}
 =======
 	file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[1].OneofWrappers = []interface{}{}
 >>>>>>> Add coin fiat currency history
+=======
+	file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_msgTypes[0].OneofWrappers = []interface{}{}
+>>>>>>> Move fiat currency to its folder
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
@@ -741,10 +846,14 @@ func file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_init() {
 			RawDescriptor: file_npool_chain_mw_v1_coin_fiat_currency_history_history_proto_rawDesc,
 			NumEnums:      0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   3,
 =======
 			NumMessages:   4,
 >>>>>>> Add coin fiat currency history
+=======
+			NumMessages:   3,
+>>>>>>> Move fiat currency to its folder
 			NumExtensions: 0,
 			NumServices:   1,
 		},
