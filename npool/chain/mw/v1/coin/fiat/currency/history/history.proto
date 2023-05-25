@@ -7,42 +7,11 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/fia
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/currencyfeedtype.proto";
+import "npool/chain/mw/v1/coin/fiat/currency/currency.proto";
 
 // Service Name
 service Middleware {
     rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
-}
-
-message Currency {
-    // @inject_tag: sql:"id"
-    uint32 ID           = 10;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID   = 20;
-    // @inject_tag: sql:"coin_name"
-    string CoinName     = 30;
-    // @inject_tag: sql:"coin_logo"
-    string CoinLogo     = 40;
-    // @inject_tag: sql:"coin_unit"
-    string CoinUnit     = 50;
-    // @inject_tag: sql:"coin_env"
-    string CoinENV      = 60;
-    // @inject_tag: sql:"fiat_id"
-    string FiatID       = 70;
-    // @inject_tag: sql:"fiat_name"
-    string FiatName     = 80;
-    // @inject_tag: sql:"fiat_logo"
-    string FiatLogo     = 90;
-    // @inject_tag: sql:"market_value_high"
-    string MarketValueHigh = 100;
-    // @inject_tag: sql:"market_value_low"
-    string MarketValueLow  = 110;
-    // @inject_tag: sql:"feed_type"
-    string FeedTypeStr     = 120;
-    basetypes.v1.CurrencyFeedType FeedType = 130;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt    = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt    = 1010;
 }
 
 message Conds {
@@ -59,6 +28,6 @@ message GetCurrenciesRequest {
 }
 
 message GetCurrenciesResponse {
-    repeated Currency Infos = 10;
-    uint32            Total = 20;
+    repeated chain.middleware.coin.fiat.currency.v1.Currency Infos = 10;
+    uint32                                                   Total = 20;
 }
