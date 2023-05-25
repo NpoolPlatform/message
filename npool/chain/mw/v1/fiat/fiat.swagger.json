@@ -109,12 +109,18 @@
           "title": "@inject_tag: sql:\"logo\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add fiat unit
         "Unit": {
           "type": "string",
           "title": "@inject_tag: sql:\"unit\""
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Add fiat currency
+=======
+>>>>>>> Add fiat unit
         "CreatedAt": {
           "type": "string",
           "title": "@inject_tag: sql:\"created_at\""
@@ -137,11 +143,17 @@
         "Logo": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "Unit": {
           "type": "string"
 =======
 >>>>>>> Add fiat currency
+=======
+        },
+        "Unit": {
+          "type": "string"
+>>>>>>> Add fiat unit
         }
       }
     },

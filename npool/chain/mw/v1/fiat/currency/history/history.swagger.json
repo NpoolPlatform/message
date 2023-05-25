@@ -108,12 +108,18 @@
           "title": "@inject_tag: sql:\"fiat_logo\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add fiat unit
         "FiatUnit": {
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_unit\""
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Add fiat currency
+=======
+>>>>>>> Add fiat unit
         "MarketValueHigh": {
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_high\""
