@@ -85,6 +85,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_logo\""
         },
+        "FiatUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fiat_unit\""
+        },
         "MarketValueHigh": {
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_high\""
