@@ -125,6 +125,9 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add coin info
         "CoinName": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
@@ -137,10 +140,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_logo\""
         },
+<<<<<<< HEAD
         "CoinENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_env\""
         },
+=======
+>>>>>>> Add coin info
         "FeedTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_type\""
