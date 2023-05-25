@@ -102,10 +102,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_logo\""
         },
+<<<<<<< HEAD
         "FiatUnit": {
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_unit\""
         },
+=======
+>>>>>>> Add coin fiat currency history
         "MarketValueHigh": {
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_high\""
