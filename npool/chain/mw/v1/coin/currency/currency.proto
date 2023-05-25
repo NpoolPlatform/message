@@ -51,6 +51,7 @@ message Conds {
     optional basetypes.v1.StringVal ID         = 10;
     optional basetypes.v1.StringVal CoinTypeID = 20;
     optional basetypes.v1.Uint32Val FeedType   = 30;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 40;
 }
 
 

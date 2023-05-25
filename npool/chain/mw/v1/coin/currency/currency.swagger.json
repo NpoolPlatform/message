@@ -56,6 +56,9 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -144,6 +147,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
