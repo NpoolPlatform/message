@@ -79,6 +79,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"logo\""
         },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
         "CreatedAt": {
           "type": "string",
           "title": "@inject_tag: sql:\"created_at\""
@@ -99,6 +103,9 @@
           "type": "string"
         },
         "Logo": {
+          "type": "string"
+        },
+        "Unit": {
           "type": "string"
         }
       }
