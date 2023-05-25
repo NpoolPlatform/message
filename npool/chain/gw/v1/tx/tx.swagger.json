@@ -134,7 +134,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1TxState"
+          "$ref": "#/definitions/managertxv1TxState"
         },
         "Extra": {
           "type": "string"
@@ -151,6 +151,18 @@
           "format": "int64"
         }
       }
+    },
+    "managertxv1TxState": {
+      "type": "string",
+      "enum": [
+        "DefaultTxState",
+        "StateCreated",
+        "StateWait",
+        "StateTransferring",
+        "StateSuccessful",
+        "StateFail"
+      ],
+      "default": "DefaultTxState"
     },
     "protobufAny": {
       "type": "object",
@@ -197,18 +209,6 @@
       ],
       "default": "DefaultAccountUsedFor",
       "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set"
-    },
-    "v1TxState": {
-      "type": "string",
-      "enum": [
-        "DefaultTxState",
-        "StateCreated",
-        "StateWait",
-        "StateTransferring",
-        "StateSuccessful",
-        "StateFail"
-      ],
-      "default": "DefaultTxState"
     },
     "v1TxType": {
       "type": "string",
