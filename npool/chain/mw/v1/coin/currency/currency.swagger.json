@@ -62,6 +62,7 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1Uint32Val"
+<<<<<<< HEAD
 >>>>>>> Add currency history
         }
       },
@@ -88,6 +89,11 @@
             "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
 >>>>>>> Add chain meta
           }
+=======
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+>>>>>>> Add conds for coin currency
         }
       }
     },
@@ -326,6 +332,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Currency"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
