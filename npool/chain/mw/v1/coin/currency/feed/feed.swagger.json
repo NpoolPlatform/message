@@ -105,6 +105,18 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+        "CoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
         "FeedTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_type\""
