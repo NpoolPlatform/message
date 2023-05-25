@@ -117,6 +117,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_logo\""
         },
+        "CoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_env\""
+        },
         "FeedTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_type\""
