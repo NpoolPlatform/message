@@ -1,7 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD
     "title": "npool/chain/mw/v1/fiat/currency/feed/feed.proto",
+=======
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+    "title": "npool/chain/mw/v1/coin/fiat/fiat.proto",
+=======
+    "title": "npool/chain/mw/v1/fiat/currency/feed/feed.proto",
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+>>>>>>> Add fiat currency
     "version": "version not set"
   },
   "tags": [
@@ -18,6 +26,39 @@
   "paths": {},
   "definitions": {
     "protobufAny": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinFiat": {
+=======
+>>>>>>> Add fiat currency
       "type": "object",
       "properties": {
         "@type": {
@@ -80,6 +121,7 @@
       "type": "object",
       "properties": {
         "Info": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
           "$ref": "#/definitions/v1Feed"
 =======
@@ -98,6 +140,9 @@
             "$ref": "#/definitions/v1Currency"
           }
 >>>>>>> Add chain meta:npool/chain/mgr/v1/coin/currency/currency.swagger.json
+=======
+          "$ref": "#/definitions/v1Feed"
+>>>>>>> Add fiat currency
         }
       }
     },
@@ -112,12 +157,48 @@
       "default": "DefaultFeedType"
     },
     "v1Feed": {
+<<<<<<< HEAD
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
+=======
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+        "CoinTypeID": {
+=======
+        "FiatID": {
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+        "CoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
+        "CoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_env\""
+        },
+>>>>>>> Add fiat currency
         "FiatID": {
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_id\""
@@ -140,14 +221,28 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
+<<<<<<< HEAD
         },
         "FeedFiatName": {
           "type": "string",
           "title": "@inject_tag: sql:\"feed_fiat_name\""
+=======
+=======
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
+        },
+        "FeedFiatName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"feed_coin_name\""
+>>>>>>> Add fiat currency
         },
         "Disabled": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"disabled\""
+<<<<<<< HEAD
+=======
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+>>>>>>> Add fiat currency
         },
         "CreatedAt": {
           "type": "integer",
@@ -158,6 +253,125 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+        }
+      }
+    },
+    "v1CoinFiatReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FiatID": {
+          "type": "string"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+=======
+        "StableUSD": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1CountCoinExtrasResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateCoinExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinExtra"
+        }
+      }
+    },
+    "v1CreateCoinExtrasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CoinExtra"
+          }
+        }
+      }
+    },
+    "v1DeleteCoinExtraResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinExtra"
+        }
+      }
+    },
+    "v1ExistCoinExtraCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+>>>>>>> Add chain meta:npool/chain/mgr/v1/coin/extra/extra.swagger.json
+        }
+      }
+    },
+    "v1CreateCoinFiatResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinFiat"
+        }
+      }
+    },
+    "v1CurrencyFeedType": {
+      "type": "string",
+      "enum": [
+        "DefaultFeedType",
+        "CoinGecko",
+        "CoinBase",
+        "StableUSDHardCode"
+      ],
+      "default": "DefaultFeedType"
+    },
+    "v1DeleteCoinFiatResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinFiat"
+        }
+      }
+    },
+    "v1GetCoinFiatsResponse": {
+      "type": "object",
+      "properties": {
+=======
+>>>>>>> Add fiat currency
         }
       }
     },
@@ -184,15 +398,31 @@
     "v1GetFeedsResponse": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
+=======
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+>>>>>>> Add fiat currency
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
             "$ref": "#/definitions/v1Feed"
 =======
             "$ref": "#/definitions/v1Currency"
 >>>>>>> Add chain meta:npool/chain/mgr/v1/coin/currency/currency.swagger.json
+=======
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+            "$ref": "#/definitions/v1CoinFiat"
+=======
+            "$ref": "#/definitions/v1CoinExtra"
+>>>>>>> Add chain meta:npool/chain/mgr/v1/coin/extra/extra.swagger.json
+=======
+            "$ref": "#/definitions/v1Feed"
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+>>>>>>> Add fiat currency
           }
         },
         "Total": {
@@ -225,6 +455,11 @@
           "type": "string"
         }
       }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+=======
+>>>>>>> Add fiat currency
     },
     "v1Uint32Val": {
       "type": "object",
@@ -245,6 +480,10 @@
           "$ref": "#/definitions/v1Feed"
         }
       }
+<<<<<<< HEAD
+=======
+>>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+>>>>>>> Add fiat currency
     }
   }
 }

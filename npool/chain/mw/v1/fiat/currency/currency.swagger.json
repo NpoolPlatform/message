@@ -85,10 +85,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_logo\""
         },
+<<<<<<< HEAD
         "FiatUnit": {
           "type": "string",
           "title": "@inject_tag: sql:\"fiat_unit\""
         },
+=======
+>>>>>>> Add fiat currency
         "MarketValueHigh": {
           "type": "string",
           "title": "@inject_tag: sql:\"market_value_high\""
@@ -105,6 +108,10 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64",
+<<<<<<< HEAD
+=======
+          "description": "@inject_tag: sql:\"coin_type_id\"",
+>>>>>>> Add fiat currency
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
