@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/message";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
-service Middleware {
+service Manager {
     rpc CreateMessage     (CreateMessageRequest)     returns (CreateMessageResponse)     {}
     rpc CreateMessages    (CreateMessagesRequest)    returns (CreateMessagesResponse)    {}
     rpc UpdateMessage     (UpdateMessageRequest)     returns (UpdateMessageResponse)     {}

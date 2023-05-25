@@ -32,7 +32,7 @@ const (
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type ManagerClient interface {
 	CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error)
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
 	UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error)
@@ -43,15 +43,15 @@ type MiddlewareClient interface {
 	DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error)
 }
 
-type middlewareClient struct {
+type managerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
+	return &managerClient{cc}
 }
 
-func (c *middlewareClient) CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error) {
+func (c *managerClient) CreateMessage(ctx context.Context, in *CreateMessageRequest, opts ...grpc.CallOption) (*CreateMessageResponse, error) {
 	out := new(CreateMessageResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateMessage_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -60,7 +60,7 @@ func (c *middlewareClient) CreateMessage(ctx context.Context, in *CreateMessageR
 	return out, nil
 }
 
-func (c *middlewareClient) CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error) {
+func (c *managerClient) CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error) {
 	out := new(CreateMessagesResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateMessages_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -69,7 +69,7 @@ func (c *middlewareClient) CreateMessages(ctx context.Context, in *CreateMessage
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error) {
+func (c *managerClient) UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error) {
 	out := new(UpdateMessageResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateMessage_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -96,7 +96,25 @@ func (c *middlewareClient) GetMessageOnly(ctx context.Context, in *GetMessageOnl
 	return out, nil
 }
 
-func (c *middlewareClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
+func (c *managerClient) GetMessage(ctx context.Context, in *GetMessageRequest, opts ...grpc.CallOption) (*GetMessageResponse, error) {
+	out := new(GetMessageResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.message1.v1.Manager/GetMessage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) GetMessageOnly(ctx context.Context, in *GetMessageOnlyRequest, opts ...grpc.CallOption) (*GetMessageOnlyResponse, error) {
+	out := new(GetMessageOnlyResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.message1.v1.Manager/GetMessageOnly", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
 	out := new(GetMessagesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetMessages_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -114,7 +132,34 @@ func (c *middlewareClient) ExistMessageConds(ctx context.Context, in *ExistMessa
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error) {
+func (c *managerClient) ExistMessage(ctx context.Context, in *ExistMessageRequest, opts ...grpc.CallOption) (*ExistMessageResponse, error) {
+	out := new(ExistMessageResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.message1.v1.Manager/ExistMessage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error) {
+	out := new(ExistMessageCondsResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.message1.v1.Manager/ExistMessageConds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) CountMessages(ctx context.Context, in *CountMessagesRequest, opts ...grpc.CallOption) (*CountMessagesResponse, error) {
+	out := new(CountMessagesResponse)
+	err := c.cc.Invoke(ctx, "/g11n.manager.message1.v1.Manager/CountMessages", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *managerClient) DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error) {
 	out := new(DeleteMessageResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteMessage_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -123,10 +168,10 @@ func (c *middlewareClient) DeleteMessage(ctx context.Context, in *DeleteMessageR
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// ManagerServer is the server API for Manager service.
+// All implementations must embed UnimplementedManagerServer
 // for forward compatibility
-type MiddlewareServer interface {
+type ManagerServer interface {
 	CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error)
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
 	UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error)
@@ -135,20 +180,20 @@ type MiddlewareServer interface {
 	GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error)
 	ExistMessageConds(context.Context, *ExistMessageCondsRequest) (*ExistMessageCondsResponse, error)
 	DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedManagerServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedManagerServer must be embedded to have forward compatible implementations.
+type UnimplementedManagerServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error) {
+func (UnimplementedManagerServer) CreateMessage(context.Context, *CreateMessageRequest) (*CreateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessage not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error) {
+func (UnimplementedManagerServer) CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMessages not implemented")
 }
-func (UnimplementedMiddlewareServer) UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error) {
+func (UnimplementedManagerServer) UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMessage not implemented")
 }
 func (UnimplementedMiddlewareServer) GetMessage(context.Context, *GetMessageRequest) (*GetMessageResponse, error) {
@@ -166,69 +211,69 @@ func (UnimplementedMiddlewareServer) ExistMessageConds(context.Context, *ExistMe
 func (UnimplementedMiddlewareServer) DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMessage not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ManagerServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeManagerServer interface {
+	mustEmbedUnimplementedManagerServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
+	s.RegisterService(&Manager_ServiceDesc, srv)
 }
 
-func _Middleware_CreateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateMessage(ctx, in)
+		return srv.(ManagerServer).CreateMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 		FullMethod: Middleware_CreateMessage_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateMessage(ctx, req.(*CreateMessageRequest))
+		return srv.(ManagerServer).CreateMessage(ctx, req.(*CreateMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_CreateMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateMessagesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateMessages(ctx, in)
+		return srv.(ManagerServer).CreateMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 		FullMethod: Middleware_CreateMessages_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateMessages(ctx, req.(*CreateMessagesRequest))
+		return srv.(ManagerServer).CreateMessages(ctx, req.(*CreateMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Manager_UpdateMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateMessage(ctx, in)
+		return srv.(ManagerServer).UpdateMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 		FullMethod: Middleware_UpdateMessage_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateMessage(ctx, req.(*UpdateMessageRequest))
+		return srv.(ManagerServer).UpdateMessage(ctx, req.(*UpdateMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -275,14 +320,14 @@ func _Middleware_GetMessages_Handler(srv interface{}, ctx context.Context, dec f
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetMessages(ctx, in)
+		return srv.(ManagerServer).GetMessages(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 		FullMethod: Middleware_GetMessages_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetMessages(ctx, req.(*GetMessagesRequest))
+		return srv.(ManagerServer).GetMessages(ctx, req.(*GetMessagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -311,36 +356,44 @@ func _Middleware_DeleteMessage_Handler(srv interface{}, ctx context.Context, dec
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteMessage(ctx, in)
+		return srv.(ManagerServer).DeleteMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
 		FullMethod: Middleware_DeleteMessage_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteMessage(ctx, req.(*DeleteMessageRequest))
+		return srv.(ManagerServer).DeleteMessage(ctx, req.(*DeleteMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.middleware.message1.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Manager_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "g11n.manager.message1.v1.Manager",
+	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateMessage",
-			Handler:    _Middleware_CreateMessage_Handler,
+			Handler:    _Manager_CreateMessage_Handler,
 		},
 		{
 			MethodName: "CreateMessages",
-			Handler:    _Middleware_CreateMessages_Handler,
+			Handler:    _Manager_CreateMessages_Handler,
 		},
 		{
 			MethodName: "UpdateMessage",
-			Handler:    _Middleware_UpdateMessage_Handler,
+			Handler:    _Manager_UpdateMessage_Handler,
+		},
+		{
+			MethodName: "GetMessage",
+			Handler:    _Manager_GetMessage_Handler,
+		},
+		{
+			MethodName: "GetMessageOnly",
+			Handler:    _Manager_GetMessageOnly_Handler,
 		},
 		{
 			MethodName: "GetMessage",
@@ -352,7 +405,19 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 		{
 			MethodName: "GetMessages",
-			Handler:    _Middleware_GetMessages_Handler,
+			Handler:    _Manager_GetMessages_Handler,
+		},
+		{
+			MethodName: "ExistMessage",
+			Handler:    _Manager_ExistMessage_Handler,
+		},
+		{
+			MethodName: "ExistMessageConds",
+			Handler:    _Manager_ExistMessageConds_Handler,
+		},
+		{
+			MethodName: "CountMessages",
+			Handler:    _Manager_CountMessages_Handler,
 		},
 		{
 			MethodName: "ExistMessageConds",
@@ -360,7 +425,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 		{
 			MethodName: "DeleteMessage",
-			Handler:    _Middleware_DeleteMessage_Handler,
+			Handler:    _Manager_DeleteMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
