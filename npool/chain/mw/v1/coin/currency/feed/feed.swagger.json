@@ -141,10 +141,14 @@
           "title": "@inject_tag: sql:\"coin_logo\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add feed
         "CoinENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_env\""
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Add coin info
         "FeedTypeStr": {
@@ -157,6 +161,8 @@
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType",
 =======
+=======
+>>>>>>> Add feed
         "FeedTypeStr": {
           "type": "string",
 >>>>>>> Add feed type str
