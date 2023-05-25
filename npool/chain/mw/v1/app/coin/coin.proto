@@ -180,7 +180,7 @@ message UpdateCoinResponse {
 }
 
 message DeleteCoinRequest {
-    string ID = 10;
+    CoinReq Info = 10;
 }
 
 message DeleteCoinResponse {
