@@ -5,9 +5,7 @@ package appuser.gateway.kyc.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/kyc";
 
 import "npool/appuser/mw/v1/kyc/kyc.proto";
-import "npool/review/mgr/v2/mgr.proto";
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 import "npool/basetypes/v1/kycstate.proto";
 
 service Gateway {
