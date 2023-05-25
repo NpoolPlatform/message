@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -225,7 +224,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2KycReview"
           }
         },
@@ -257,7 +255,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2KycReview"
           }
         },
@@ -375,8 +372,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "LangID": {
           "type": "string"
@@ -407,8 +403,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "LangID": {
           "type": "string"

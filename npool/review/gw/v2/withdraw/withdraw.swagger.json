@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -208,7 +207,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2WithdrawReview"
           }
         },
@@ -240,7 +238,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2WithdrawReview"
           }
         },
@@ -295,8 +292,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "LangID": {
           "type": "string"
@@ -327,8 +323,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "LangID": {
           "type": "string"

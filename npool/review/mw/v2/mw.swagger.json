@@ -26,46 +26,6 @@
       },
       "additionalProperties": {}
     },
-    "reviewmiddlewarev2CreateReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
-    },
-    "reviewmiddlewarev2DeleteReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
-    },
-    "reviewmiddlewarev2GetReviewsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v2Review"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "reviewmiddlewarev2UpdateReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
-    },
     "rpcStatus": {
       "type": "object",
       "properties": {
@@ -79,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -137,6 +96,22 @@
         }
       }
     },
+    "v2CreateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
+    "v2DeleteReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
     "v2GetObjectReviewResponse": {
       "type": "object",
       "properties": {
@@ -151,9 +126,23 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Review"
           }
+        }
+      }
+    },
+    "v2GetReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Review"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -260,6 +249,14 @@
       ],
       "default": "DefaultTriggerType",
       "title": "- AutoReviewed: Withdrawal triggers"
+    },
+    "v2UpdateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
     }
   }
 }
