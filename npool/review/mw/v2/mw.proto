@@ -5,7 +5,6 @@ package review.middleware.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2";
 
 import "npool/npool.proto";
-import "npool/review/mgr/v2/mgr.proto";
 
 // Service Name
 service Middleware {
@@ -17,30 +16,90 @@ service Middleware {
     rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
 }
 
+enum ReviewObjectType {
+    DefaultObjectType     = 0;
+    ObjectKyc             = 10;
+    ObjectWithdrawal      = 20;
+}
+
+enum ReviewState {
+    DefaultReviewState    = 0;
+    Approved              = 10;
+    Wait                  = 20;
+    Rejected              = 30;
+}
+
+enum ReviewTriggerType {
+    DefaultTriggerType    = 0;
+    // Withdrawal triggers
+    AutoReviewed          = 10;
+    LargeAmount           = 20;
+    InsufficientFunds     = 30;
+    InsufficientGas       = 40;
+    InsufficientFundsGas  = 50;
+}
+
+message ReviewReq {
+    optional string            ID         = 10;
+    optional string            AppID      = 20;
+    optional string            ReviewerID = 30;
+    optional string            Domain     = 40;
+    optional string            ObjectID   = 50;
+    optional ReviewTriggerType Trigger    = 60;
+    optional ReviewObjectType  ObjectType = 70;
+    optional ReviewState       State      = 80;
+    optional string            Message    = 90;
+}
+
+message Review {
+    string            ID         = 10;
+    string            AppID      = 20;
+    string            ReviewerID = 30;
+    string            Domain     = 40;
+    string            ObjectID   = 50;
+    ReviewTriggerType Trigger    = 60;
+    ReviewObjectType  ObjectType = 70;
+    ReviewState       State      = 80;
+    string            Message    = 90;
+    uint32            CreatedAt  = 100;
+    uint32            UpdatedAt  = 110;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID         = 10;
+    optional npool.v1.StringVal AppID      = 20;
+    optional npool.v1.StringVal ReviewerID = 30;
+    optional npool.v1.StringVal Domain     = 40;
+    optional npool.v1.StringVal ObjectID   = 50;
+    optional npool.v1.Int32Val  Trigger    = 60;
+    optional npool.v1.Int32Val  ObjectType = 70;
+    optional npool.v1.Int32Val  State      = 80;
+}
+
 message CreateReviewRequest {
-    review.manager.v2.ReviewReq Info = 10;
+    ReviewReq Info = 10;
 }
 
 message CreateReviewResponse {
-    review.manager.v2.Review Info = 10;
+    Review Info = 10;
 }
 
 message UpdateReviewRequest {
-    review.manager.v2.ReviewReq Info = 10;
+    ReviewReq Info = 10;
 }
 
 message UpdateReviewResponse {
-    review.manager.v2.Review Info = 10;
+    Review Info = 10;
 }
 
 message GetReviewsRequest {
-    review.manager.v2.Conds Conds  = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
 message GetReviewsResponse {
-    repeated review.manager.v2.Review Infos = 10;
+    repeated Review Infos = 10;
     uint32                            Total = 20;
 }
 
@@ -48,29 +107,29 @@ message GetObjectReviewRequest {
     string AppID     = 10;
     string Domain    = 20;
     string ObjectID  = 30;
-    review.manager.v2.ReviewObjectType ObjectType = 40;
+    ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewResponse {
-    review.manager.v2.Review Info = 10;
+    Review Info = 10;
 }
 
 message GetObjectReviewsRequest {
     string          AppID     = 10;
     string          Domain    = 20;
     repeated string ObjectIDs = 30;
-    review.manager.v2.ReviewObjectType ObjectType = 40;
+    ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewsResponse {
-    repeated review.manager.v2.Review Infos = 10;
+    repeated Review Infos = 10;
 }
 
 message DeleteReviewRequest {
-    review.manager.v2.ReviewReq Info = 10;
+    ReviewReq Info = 10;
 }
 
 message DeleteReviewResponse {
-    review.manager.v2.Review Info = 10;
+    Review Info = 10;
 }
 
