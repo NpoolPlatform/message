@@ -19,6 +19,7 @@ message FiatReq {
     optional string ID   = 10;
     optional string Name = 20;
     optional string Logo = 30;
+    optional string Unit = 40;
 }
 
 message Fiat {
@@ -28,6 +29,8 @@ message Fiat {
     string Name      = 20;
     // @inject_tag: sql:"logo"
     string Logo      = 30;
+    // @inject_tag: sql:"unit"
+    string Unit      = 40;
     // @inject_tag: sql:"created_at"
     string CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
