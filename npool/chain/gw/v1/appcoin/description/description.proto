@@ -5,9 +5,8 @@ package chain.gateway.appcoin.description.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/appcoin/description";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
-import "npool/chain/mw/v1/appcoin/description/description.proto";
-import "npool/chain/mgr/v1/appcoin/description/description.proto";
+import "npool/basetypes/v1/usedfor.proto";
+import "npool/chain/mw/v1/app/coin/description/description.proto";
 
 // Service Name
 service Gateway {
@@ -44,27 +43,27 @@ service Gateway {
 }
 
 message CreateCoinDescriptionRequest {
-    string AppID                                         = 10;
-    string CoinTypeID                                    = 20;
-    chain.manager.appcoin.description.v1.UsedFor UsedFor = 30;
-    string Title                                         = 40;
-    string Message                                       = 50;
+    string AppID                 = 10;
+    string CoinTypeID            = 20;
+    basetypes.v1.UsedFor UsedFor = 30;
+    string Title                 = 40;
+    string Message               = 50;
 }
 
 message CreateCoinDescriptionResponse {
-    chain.middleware.appcoin.description.v1.CoinDescription Info = 10;
+    chain.middleware.app.coin.description.v1.CoinDescription Info = 10;
 }
 
 message CreateAppCoinDescriptionRequest {
-    string TargetAppID                                   = 10;
-    string CoinTypeID                                    = 20;
-    chain.manager.appcoin.description.v1.UsedFor UsedFor = 30;
-    string Title                                         = 40;
-    string Message                                       = 50;
+    string TargetAppID           = 10;
+    string CoinTypeID            = 20;
+    basetypes.v1.UsedFor UsedFor = 30;
+    string Title                 = 40;
+    string Message               = 50;
 }
 
 message CreateAppCoinDescriptionResponse {
-    chain.middleware.appcoin.description.v1.CoinDescription Info = 10;
+    chain.middleware.app.coin.description.v1.CoinDescription Info = 10;
 }
 
 message UpdateCoinDescriptionRequest {
@@ -75,7 +74,7 @@ message UpdateCoinDescriptionRequest {
 }
 
 message UpdateCoinDescriptionResponse {
-    chain.middleware.appcoin.description.v1.CoinDescription Info = 10;
+    chain.middleware.app.coin.description.v1.CoinDescription Info = 10;
 }
 
 message GetCoinDescriptionsRequest {
@@ -85,7 +84,7 @@ message GetCoinDescriptionsRequest {
 }
 
 message GetCoinDescriptionsResponse {
-    repeated chain.middleware.appcoin.description.v1.CoinDescription Infos = 10;
+    repeated chain.middleware.app.coin.description.v1.CoinDescription Infos = 10;
     uint32                                                           Total = 20;
 }
 
@@ -96,7 +95,7 @@ message GetAppCoinDescriptionsRequest {
 }
 
 message GetAppCoinDescriptionsResponse {
-    repeated chain.middleware.appcoin.description.v1.CoinDescription Infos = 10;
+    repeated chain.middleware.app.coin.description.v1.CoinDescription Infos = 10;
     uint32                                                           Total = 20;
 }
 

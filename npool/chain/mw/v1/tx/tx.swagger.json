@@ -17,42 +17,96 @@
   ],
   "paths": {},
   "definitions": {
-    "chainmiddlewaretxv1CreateTxResponse": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+        "@type": {
+          "type": "string"
         }
-      }
+      },
+      "additionalProperties": {}
     },
-    "chainmiddlewaretxv1CreateTxsResponse": {
+    "rpcStatus": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+            "$ref": "#/definitions/protobufAny"
           }
         }
       }
     },
-    "chainmiddlewaretxv1GetTxResponse": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "chainmiddlewaretxv1GetTxsResponse": {
+    "v1CreateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1CreateTxsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chainmiddlewaretxv1Tx"
+            "$ref": "#/definitions/v1Tx"
+          }
+        }
+      }
+    },
+    "v1GetTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1GetTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Tx"
           }
         },
         "Total": {
@@ -61,7 +115,32 @@
         }
       }
     },
-    "chainmiddlewaretxv1Tx": {
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Tx": {
       "type": "object",
       "properties": {
         "ID": {
@@ -138,105 +217,6 @@
         }
       }
     },
-    "chainmiddlewaretxv1UpdateTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewaretxv1Tx"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "State": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
     "v1TxReq": {
       "type": "object",
       "properties": {
@@ -276,11 +256,11 @@
       "type": "string",
       "enum": [
         "DefaultTxState",
-        "StateCreated",
-        "StateWait",
-        "StateTransferring",
-        "StateSuccessful",
-        "StateFail"
+        "TxStateCreated",
+        "TxStateWait",
+        "TxStateTransferring",
+        "TxStateSuccessful",
+        "TxStateFail"
       ],
       "default": "DefaultTxState"
     },
@@ -297,6 +277,26 @@
         "TxUserBenefit"
       ],
       "default": "DefaultTxType"
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
     }
   }
 }

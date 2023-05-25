@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/appcoin"
 
 import "google/api/annotations.proto";
 import "npool/npool.proto";
-import "npool/chain/mw/v1/appcoin/appcoin.proto";
+import "npool/chain/mw/v1/app/coin/coin.proto";
 
 // Service Name
 service Gateway {
