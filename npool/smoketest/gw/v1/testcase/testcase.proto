@@ -70,6 +70,7 @@ message CreateTestCaseRequest {
     optional string  InputDesc                                        = 60;
     optional string  Expectation                                      = 70;
     optional string  OutputDesc                                       = 80;
+    optional string  ID                                               = 90;
 }
 
 message CreateTestCaseResponse {

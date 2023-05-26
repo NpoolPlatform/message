@@ -200,6 +200,9 @@
         },
         "OutputDesc": {
           "type": "string"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     },
