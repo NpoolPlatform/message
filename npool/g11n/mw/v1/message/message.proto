@@ -13,11 +13,7 @@ service Middleware {
     rpc CreateMessages    (CreateMessagesRequest)    returns (CreateMessagesResponse)    {}
     rpc UpdateMessage     (UpdateMessageRequest)     returns (UpdateMessageResponse)     {}
     rpc GetMessage        (GetMessageRequest)        returns (GetMessageResponse)        {}
-    rpc GetMessageOnly    (GetMessageOnlyRequest)    returns (GetMessageOnlyResponse)    {}
     rpc GetMessages       (GetMessagesRequest)       returns (GetMessagesResponse)       {}
-    rpc ExistMessage      (ExistMessageRequest)      returns (ExistMessageResponse)      {}
-    rpc ExistMessageConds (ExistMessageCondsRequest) returns (ExistMessageCondsResponse) {}
-    rpc CountMessages     (CountMessagesRequest)     returns (CountMessagesResponse)     {}
     rpc DeleteMessage     (DeleteMessageRequest)     returns (DeleteMessageResponse)     {}
 }
 
@@ -105,38 +101,6 @@ message GetMessagesRequest {
 message GetMessagesResponse {
     repeated Message Infos = 10;
     uint32           Total = 20;
-}
-
-message GetMessageOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetMessageOnlyResponse {
-    Message Info = 10;
-}
-
-message ExistMessageRequest {
-    string ID = 10;
-}
-
-message ExistMessageResponse {
-    bool Info = 10;
-}
-
-message ExistMessageCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistMessageCondsResponse {
-    bool Info = 10;
-}
-
-message CountMessagesRequest {
-    Conds Conds = 10;
-}
-
-message CountMessagesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteMessageRequest {

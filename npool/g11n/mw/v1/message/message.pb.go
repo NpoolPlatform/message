@@ -827,382 +827,6 @@ func (x *GetMessagesResponse) GetTotal() uint32 {
 	return 0
 }
 
-type GetMessageOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetMessageOnlyRequest) Reset() {
-	*x = GetMessageOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetMessageOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetMessageOnlyRequest) ProtoMessage() {}
-
-func (x *GetMessageOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetMessageOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetMessageOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *GetMessageOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetMessageOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Message `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetMessageOnlyResponse) Reset() {
-	*x = GetMessageOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetMessageOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetMessageOnlyResponse) ProtoMessage() {}
-
-func (x *GetMessageOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetMessageOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetMessageOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *GetMessageOnlyResponse) GetInfo() *Message {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type ExistMessageRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *ExistMessageRequest) Reset() {
-	*x = ExistMessageRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistMessageRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistMessageRequest) ProtoMessage() {}
-
-func (x *ExistMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistMessageRequest.ProtoReflect.Descriptor instead.
-func (*ExistMessageRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *ExistMessageRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type ExistMessageResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistMessageResponse) Reset() {
-	*x = ExistMessageResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistMessageResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistMessageResponse) ProtoMessage() {}
-
-func (x *ExistMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistMessageResponse.ProtoReflect.Descriptor instead.
-func (*ExistMessageResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *ExistMessageResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type ExistMessageCondsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *ExistMessageCondsRequest) Reset() {
-	*x = ExistMessageCondsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistMessageCondsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistMessageCondsRequest) ProtoMessage() {}
-
-func (x *ExistMessageCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistMessageCondsRequest.ProtoReflect.Descriptor instead.
-func (*ExistMessageCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *ExistMessageCondsRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type ExistMessageCondsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistMessageCondsResponse) Reset() {
-	*x = ExistMessageCondsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistMessageCondsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistMessageCondsResponse) ProtoMessage() {}
-
-func (x *ExistMessageCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistMessageCondsResponse.ProtoReflect.Descriptor instead.
-func (*ExistMessageCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{18}
-}
-
-func (x *ExistMessageCondsResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type CountMessagesRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *CountMessagesRequest) Reset() {
-	*x = CountMessagesRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountMessagesRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountMessagesRequest) ProtoMessage() {}
-
-func (x *CountMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountMessagesRequest.ProtoReflect.Descriptor instead.
-func (*CountMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{19}
-}
-
-func (x *CountMessagesRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type CountMessagesResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info uint32 `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CountMessagesResponse) Reset() {
-	*x = CountMessagesResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CountMessagesResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CountMessagesResponse) ProtoMessage() {}
-
-func (x *CountMessagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CountMessagesResponse.ProtoReflect.Descriptor instead.
-func (*CountMessagesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *CountMessagesResponse) GetInfo() uint32 {
-	if x != nil {
-		return x.Info
-	}
-	return 0
-}
-
 type DeleteMessageRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1214,7 +838,7 @@ type DeleteMessageRequest struct {
 func (x *DeleteMessageRequest) Reset() {
 	*x = DeleteMessageRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[21]
+		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1227,7 +851,7 @@ func (x *DeleteMessageRequest) String() string {
 func (*DeleteMessageRequest) ProtoMessage() {}
 
 func (x *DeleteMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[21]
+	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1240,7 +864,7 @@ func (x *DeleteMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteMessageRequest.ProtoReflect.Descriptor instead.
 func (*DeleteMessageRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{21}
+	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DeleteMessageRequest) GetID() string {
@@ -1261,7 +885,7 @@ type DeleteMessageResponse struct {
 func (x *DeleteMessageResponse) Reset() {
 	*x = DeleteMessageResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[22]
+		mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1274,7 +898,7 @@ func (x *DeleteMessageResponse) String() string {
 func (*DeleteMessageResponse) ProtoMessage() {}
 
 func (x *DeleteMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[22]
+	mi := &file_npool_g11n_mw_v1_message_message_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1287,7 +911,7 @@ func (x *DeleteMessageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteMessageResponse.ProtoReflect.Descriptor instead.
 func (*DeleteMessageResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{22}
+	return file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DeleteMessageResponse) GetInfo() *Message {
@@ -1421,38 +1045,6 @@ var file_npool_g11n_mw_v1_message_message_proto_rawDesc = []byte{
 	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73,
 	0x61, 0x67, 0x65, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f,
 	0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c,
-	0x22, 0x51, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x4f, 0x6e,
-	0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x22, 0x52, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x38, 0x0a,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x67, 0x31,
-	0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x25, 0x0a, 0x13, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
-	0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x2a,
-	0x0a, 0x14, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x18, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64,
-	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73,
-	0x22, 0x2f, 0x0a, 0x19, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66,
-	0x6f, 0x22, 0x50, 0x0a, 0x14, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x22, 0x2b, 0x0a, 0x15, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
 	0x22, 0x26, 0x0a, 0x14, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x51, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65,
@@ -1460,7 +1052,7 @@ var file_npool_g11n_mw_v1_message_message_proto_rawDesc = []byte{
 	0x65, 0x12, 0x38, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x24, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xd1, 0x09, 0x0a, 0x0a,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xdc, 0x05, 0x0a, 0x0a,
 	0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x78, 0x0a, 0x0d, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x31, 0x2e, 0x67, 0x31,
 	0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65,
@@ -1491,58 +1083,26 @@ var file_npool_g11n_mw_v1_message_message_proto_rawDesc = []byte{
 	0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x67, 0x31, 0x31, 0x6e,
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73,
 	0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7b, 0x0a, 0x0e,
-	0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x32,
-	0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x33, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x4f, 0x6e, 0x6c, 0x79, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x72, 0x0a, 0x0b, 0x47, 0x65, 0x74,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x2f, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x67, 0x31, 0x31, 0x6e,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x75, 0x0a,
-	0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x30, 0x2e,
-	0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x31, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x84, 0x01, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x35, 0x2e, 0x67, 0x31, 0x31,
-	0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x36, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e,
-	0x45, 0x78, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x78, 0x0a, 0x0d, 0x43,
-	0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x31, 0x2e, 0x67,
+	0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x72, 0x0a, 0x0b,
+	0x47, 0x65, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x12, 0x2f, 0x2e, 0x67, 0x31,
+	0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x67,
 	0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x32, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f,
-	0x75, 0x6e, 0x74, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x78, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x31, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x31, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x31, 0x31, 0x6e,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d,
-	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x78, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x12, 0x31, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e, 0x76, 0x31, 0x2e,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x31, 0x2e,
+	0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1557,42 +1117,34 @@ func file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP() []byte {
 	return file_npool_g11n_mw_v1_message_message_proto_rawDescData
 }
 
-var file_npool_g11n_mw_v1_message_message_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_npool_g11n_mw_v1_message_message_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_g11n_mw_v1_message_message_proto_goTypes = []interface{}{
-	(*MessageReq)(nil),                // 0: g11n.middleware.message1.v1.MessageReq
-	(*Message)(nil),                   // 1: g11n.middleware.message1.v1.Message
-	(*Conds)(nil),                     // 2: g11n.middleware.message1.v1.Conds
-	(*CreateMessageRequest)(nil),      // 3: g11n.middleware.message1.v1.CreateMessageRequest
-	(*CreateMessageResponse)(nil),     // 4: g11n.middleware.message1.v1.CreateMessageResponse
-	(*CreateMessagesRequest)(nil),     // 5: g11n.middleware.message1.v1.CreateMessagesRequest
-	(*CreateMessagesResponse)(nil),    // 6: g11n.middleware.message1.v1.CreateMessagesResponse
-	(*UpdateMessageRequest)(nil),      // 7: g11n.middleware.message1.v1.UpdateMessageRequest
-	(*UpdateMessageResponse)(nil),     // 8: g11n.middleware.message1.v1.UpdateMessageResponse
-	(*GetMessageRequest)(nil),         // 9: g11n.middleware.message1.v1.GetMessageRequest
-	(*GetMessageResponse)(nil),        // 10: g11n.middleware.message1.v1.GetMessageResponse
-	(*GetMessagesRequest)(nil),        // 11: g11n.middleware.message1.v1.GetMessagesRequest
-	(*GetMessagesResponse)(nil),       // 12: g11n.middleware.message1.v1.GetMessagesResponse
-	(*GetMessageOnlyRequest)(nil),     // 13: g11n.middleware.message1.v1.GetMessageOnlyRequest
-	(*GetMessageOnlyResponse)(nil),    // 14: g11n.middleware.message1.v1.GetMessageOnlyResponse
-	(*ExistMessageRequest)(nil),       // 15: g11n.middleware.message1.v1.ExistMessageRequest
-	(*ExistMessageResponse)(nil),      // 16: g11n.middleware.message1.v1.ExistMessageResponse
-	(*ExistMessageCondsRequest)(nil),  // 17: g11n.middleware.message1.v1.ExistMessageCondsRequest
-	(*ExistMessageCondsResponse)(nil), // 18: g11n.middleware.message1.v1.ExistMessageCondsResponse
-	(*CountMessagesRequest)(nil),      // 19: g11n.middleware.message1.v1.CountMessagesRequest
-	(*CountMessagesResponse)(nil),     // 20: g11n.middleware.message1.v1.CountMessagesResponse
-	(*DeleteMessageRequest)(nil),      // 21: g11n.middleware.message1.v1.DeleteMessageRequest
-	(*DeleteMessageResponse)(nil),     // 22: g11n.middleware.message1.v1.DeleteMessageResponse
-	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
-	(*npool.BoolVal)(nil),             // 24: npool.v1.BoolVal
-	(*npool.StringSliceVal)(nil),      // 25: npool.v1.StringSliceVal
+	(*MessageReq)(nil),             // 0: g11n.middleware.message1.v1.MessageReq
+	(*Message)(nil),                // 1: g11n.middleware.message1.v1.Message
+	(*Conds)(nil),                  // 2: g11n.middleware.message1.v1.Conds
+	(*CreateMessageRequest)(nil),   // 3: g11n.middleware.message1.v1.CreateMessageRequest
+	(*CreateMessageResponse)(nil),  // 4: g11n.middleware.message1.v1.CreateMessageResponse
+	(*CreateMessagesRequest)(nil),  // 5: g11n.middleware.message1.v1.CreateMessagesRequest
+	(*CreateMessagesResponse)(nil), // 6: g11n.middleware.message1.v1.CreateMessagesResponse
+	(*UpdateMessageRequest)(nil),   // 7: g11n.middleware.message1.v1.UpdateMessageRequest
+	(*UpdateMessageResponse)(nil),  // 8: g11n.middleware.message1.v1.UpdateMessageResponse
+	(*GetMessageRequest)(nil),      // 9: g11n.middleware.message1.v1.GetMessageRequest
+	(*GetMessageResponse)(nil),     // 10: g11n.middleware.message1.v1.GetMessageResponse
+	(*GetMessagesRequest)(nil),     // 11: g11n.middleware.message1.v1.GetMessagesRequest
+	(*GetMessagesResponse)(nil),    // 12: g11n.middleware.message1.v1.GetMessagesResponse
+	(*DeleteMessageRequest)(nil),   // 13: g11n.middleware.message1.v1.DeleteMessageRequest
+	(*DeleteMessageResponse)(nil),  // 14: g11n.middleware.message1.v1.DeleteMessageResponse
+	(*npool.StringVal)(nil),        // 15: npool.v1.StringVal
+	(*npool.BoolVal)(nil),          // 16: npool.v1.BoolVal
+	(*npool.StringSliceVal)(nil),   // 17: npool.v1.StringSliceVal
 }
 var file_npool_g11n_mw_v1_message_message_proto_depIdxs = []int32{
-	23, // 0: g11n.middleware.message1.v1.Conds.ID:type_name -> npool.v1.StringVal
-	23, // 1: g11n.middleware.message1.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	23, // 2: g11n.middleware.message1.v1.Conds.LangID:type_name -> npool.v1.StringVal
-	23, // 3: g11n.middleware.message1.v1.Conds.MessageID:type_name -> npool.v1.StringVal
-	24, // 4: g11n.middleware.message1.v1.Conds.Disabled:type_name -> npool.v1.BoolVal
-	25, // 5: g11n.middleware.message1.v1.Conds.MessageIDs:type_name -> npool.v1.StringSliceVal
+	15, // 0: g11n.middleware.message1.v1.Conds.ID:type_name -> npool.v1.StringVal
+	15, // 1: g11n.middleware.message1.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	15, // 2: g11n.middleware.message1.v1.Conds.LangID:type_name -> npool.v1.StringVal
+	15, // 3: g11n.middleware.message1.v1.Conds.MessageID:type_name -> npool.v1.StringVal
+	16, // 4: g11n.middleware.message1.v1.Conds.Disabled:type_name -> npool.v1.BoolVal
+	17, // 5: g11n.middleware.message1.v1.Conds.MessageIDs:type_name -> npool.v1.StringSliceVal
 	0,  // 6: g11n.middleware.message1.v1.CreateMessageRequest.Info:type_name -> g11n.middleware.message1.v1.MessageReq
 	1,  // 7: g11n.middleware.message1.v1.CreateMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
 	0,  // 8: g11n.middleware.message1.v1.CreateMessagesRequest.Infos:type_name -> g11n.middleware.message1.v1.MessageReq
@@ -1602,36 +1154,24 @@ var file_npool_g11n_mw_v1_message_message_proto_depIdxs = []int32{
 	1,  // 12: g11n.middleware.message1.v1.GetMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
 	2,  // 13: g11n.middleware.message1.v1.GetMessagesRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
 	1,  // 14: g11n.middleware.message1.v1.GetMessagesResponse.Infos:type_name -> g11n.middleware.message1.v1.Message
-	2,  // 15: g11n.middleware.message1.v1.GetMessageOnlyRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
-	1,  // 16: g11n.middleware.message1.v1.GetMessageOnlyResponse.Info:type_name -> g11n.middleware.message1.v1.Message
-	2,  // 17: g11n.middleware.message1.v1.ExistMessageCondsRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
-	2,  // 18: g11n.middleware.message1.v1.CountMessagesRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
-	1,  // 19: g11n.middleware.message1.v1.DeleteMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
-	3,  // 20: g11n.middleware.message1.v1.Middleware.CreateMessage:input_type -> g11n.middleware.message1.v1.CreateMessageRequest
-	5,  // 21: g11n.middleware.message1.v1.Middleware.CreateMessages:input_type -> g11n.middleware.message1.v1.CreateMessagesRequest
-	7,  // 22: g11n.middleware.message1.v1.Middleware.UpdateMessage:input_type -> g11n.middleware.message1.v1.UpdateMessageRequest
-	9,  // 23: g11n.middleware.message1.v1.Middleware.GetMessage:input_type -> g11n.middleware.message1.v1.GetMessageRequest
-	13, // 24: g11n.middleware.message1.v1.Middleware.GetMessageOnly:input_type -> g11n.middleware.message1.v1.GetMessageOnlyRequest
-	11, // 25: g11n.middleware.message1.v1.Middleware.GetMessages:input_type -> g11n.middleware.message1.v1.GetMessagesRequest
-	15, // 26: g11n.middleware.message1.v1.Middleware.ExistMessage:input_type -> g11n.middleware.message1.v1.ExistMessageRequest
-	17, // 27: g11n.middleware.message1.v1.Middleware.ExistMessageConds:input_type -> g11n.middleware.message1.v1.ExistMessageCondsRequest
-	19, // 28: g11n.middleware.message1.v1.Middleware.CountMessages:input_type -> g11n.middleware.message1.v1.CountMessagesRequest
-	21, // 29: g11n.middleware.message1.v1.Middleware.DeleteMessage:input_type -> g11n.middleware.message1.v1.DeleteMessageRequest
-	4,  // 30: g11n.middleware.message1.v1.Middleware.CreateMessage:output_type -> g11n.middleware.message1.v1.CreateMessageResponse
-	6,  // 31: g11n.middleware.message1.v1.Middleware.CreateMessages:output_type -> g11n.middleware.message1.v1.CreateMessagesResponse
-	8,  // 32: g11n.middleware.message1.v1.Middleware.UpdateMessage:output_type -> g11n.middleware.message1.v1.UpdateMessageResponse
-	10, // 33: g11n.middleware.message1.v1.Middleware.GetMessage:output_type -> g11n.middleware.message1.v1.GetMessageResponse
-	14, // 34: g11n.middleware.message1.v1.Middleware.GetMessageOnly:output_type -> g11n.middleware.message1.v1.GetMessageOnlyResponse
-	12, // 35: g11n.middleware.message1.v1.Middleware.GetMessages:output_type -> g11n.middleware.message1.v1.GetMessagesResponse
-	16, // 36: g11n.middleware.message1.v1.Middleware.ExistMessage:output_type -> g11n.middleware.message1.v1.ExistMessageResponse
-	18, // 37: g11n.middleware.message1.v1.Middleware.ExistMessageConds:output_type -> g11n.middleware.message1.v1.ExistMessageCondsResponse
-	20, // 38: g11n.middleware.message1.v1.Middleware.CountMessages:output_type -> g11n.middleware.message1.v1.CountMessagesResponse
-	22, // 39: g11n.middleware.message1.v1.Middleware.DeleteMessage:output_type -> g11n.middleware.message1.v1.DeleteMessageResponse
-	30, // [30:40] is the sub-list for method output_type
-	20, // [20:30] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	1,  // 15: g11n.middleware.message1.v1.DeleteMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	3,  // 16: g11n.middleware.message1.v1.Middleware.CreateMessage:input_type -> g11n.middleware.message1.v1.CreateMessageRequest
+	5,  // 17: g11n.middleware.message1.v1.Middleware.CreateMessages:input_type -> g11n.middleware.message1.v1.CreateMessagesRequest
+	7,  // 18: g11n.middleware.message1.v1.Middleware.UpdateMessage:input_type -> g11n.middleware.message1.v1.UpdateMessageRequest
+	9,  // 19: g11n.middleware.message1.v1.Middleware.GetMessage:input_type -> g11n.middleware.message1.v1.GetMessageRequest
+	11, // 20: g11n.middleware.message1.v1.Middleware.GetMessages:input_type -> g11n.middleware.message1.v1.GetMessagesRequest
+	13, // 21: g11n.middleware.message1.v1.Middleware.DeleteMessage:input_type -> g11n.middleware.message1.v1.DeleteMessageRequest
+	4,  // 22: g11n.middleware.message1.v1.Middleware.CreateMessage:output_type -> g11n.middleware.message1.v1.CreateMessageResponse
+	6,  // 23: g11n.middleware.message1.v1.Middleware.CreateMessages:output_type -> g11n.middleware.message1.v1.CreateMessagesResponse
+	8,  // 24: g11n.middleware.message1.v1.Middleware.UpdateMessage:output_type -> g11n.middleware.message1.v1.UpdateMessageResponse
+	10, // 25: g11n.middleware.message1.v1.Middleware.GetMessage:output_type -> g11n.middleware.message1.v1.GetMessageResponse
+	12, // 26: g11n.middleware.message1.v1.Middleware.GetMessages:output_type -> g11n.middleware.message1.v1.GetMessagesResponse
+	14, // 27: g11n.middleware.message1.v1.Middleware.DeleteMessage:output_type -> g11n.middleware.message1.v1.DeleteMessageResponse
+	22, // [22:28] is the sub-list for method output_type
+	16, // [16:22] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_npool_g11n_mw_v1_message_message_proto_init() }
@@ -1797,102 +1337,6 @@ func file_npool_g11n_mw_v1_message_message_proto_init() {
 			}
 		}
 		file_npool_g11n_mw_v1_message_message_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessageOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMessageOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistMessageRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistMessageResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistMessageCondsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistMessageCondsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountMessagesRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CountMessagesResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteMessageRequest); i {
 			case 0:
 				return &v.state
@@ -1904,7 +1348,7 @@ func file_npool_g11n_mw_v1_message_message_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_message_message_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_message_message_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteMessageResponse); i {
 			case 0:
 				return &v.state
@@ -1925,7 +1369,7 @@ func file_npool_g11n_mw_v1_message_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_g11n_mw_v1_message_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   23,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

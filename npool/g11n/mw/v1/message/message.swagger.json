@@ -79,15 +79,6 @@
         }
       }
     },
-    "v1CountMessagesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateMessageResponse": {
       "type": "object",
       "properties": {
@@ -109,30 +100,6 @@
       }
     },
     "v1DeleteMessageResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Message"
-        }
-      }
-    },
-    "v1ExistMessageCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistMessageResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetMessageOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
