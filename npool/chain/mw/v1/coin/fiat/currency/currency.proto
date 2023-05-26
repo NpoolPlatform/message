@@ -34,13 +34,15 @@ message Currency {
     string FiatName     = 80;
     // @inject_tag: sql:"fiat_logo"
     string FiatLogo     = 90;
+    // @inject_tag: sql:"fiat_unit"
+    string FiatUnit     = 100;
     // @inject_tag: sql:"market_value_high"
-    string MarketValueHigh = 100;
+    string MarketValueHigh = 110;
     // @inject_tag: sql:"market_value_low"
-    string MarketValueLow  = 110;
+    string MarketValueLow  = 120;
     // @inject_tag: sql:"feed_type"
-    string FeedTypeStr     = 120;
-    basetypes.v1.CurrencyFeedType FeedType = 130;
+    string FeedTypeStr     = 130;
+    basetypes.v1.CurrencyFeedType FeedType = 140;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 1000;
     // @inject_tag: sql:"updated_at"
