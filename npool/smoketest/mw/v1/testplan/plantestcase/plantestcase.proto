@@ -4,7 +4,7 @@ package smoketest.middleware.testplan.plantestcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan/plantestcase";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -68,11 +68,11 @@ message PlanTestCaseReq {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID             = 10;
-    optional npool.v1.StringVal      TestPlanID     = 20;
-    optional npool.v1.StringVal      TestUserID     = 30;
-    optional npool.v1.StringVal      Result         = 40;
-    optional npool.v1.StringSliceVal TestPlanIDs    = 50;
+    optional basetypes.v1.StringVal      ID             = 10;
+    optional basetypes.v1.StringVal      TestPlanID     = 20;
+    optional basetypes.v1.StringVal      TestUserID     = 30;
+    optional basetypes.v1.StringVal      Result         = 40;
+    optional basetypes.v1.StringSliceVal TestPlanIDs    = 50;
 }
 
 message CreatePlanTestCaseRequest {

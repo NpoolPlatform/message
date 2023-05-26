@@ -4,7 +4,7 @@ package smoketest.middleware.testplan.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testplan";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -78,10 +78,10 @@ message TestPlanReq {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID                         = 10;
-    optional npool.v1.StringVal      State                      = 20;
-    optional npool.v1.StringVal      CreatedBy                  = 30;
-    optional npool.v1.StringVal      Executor                   = 40;
+    optional basetypes.v1.StringVal      ID                         = 10;
+    optional basetypes.v1.StringVal      State                      = 20;
+    optional basetypes.v1.StringVal      CreatedBy                  = 30;
+    optional basetypes.v1.StringVal      Executor                   = 40;
 }
 
 message CreateTestPlanRequest {

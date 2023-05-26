@@ -4,7 +4,7 @@ package smoketest.middleware.testcase.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -70,11 +70,11 @@ message TestCaseReq {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID                 = 10;
-    optional npool.v1.StringVal      ModuleID           = 20;
-    optional npool.v1.StringVal      ApiID              = 30;
-    optional npool.v1.BoolVal        Deprecated         = 50;
-    optional npool.v1.StringSliceVal IDs                = 60;
+    optional basetypes.v1.StringVal      ID                 = 10;
+    optional basetypes.v1.StringVal      ModuleID           = 20;
+    optional basetypes.v1.StringVal      ApiID              = 30;
+    optional basetypes.v1.BoolVal        Deprecated         = 50;
+    optional basetypes.v1.StringSliceVal IDs                = 60;
 }
 
 message CreateTestCaseRequest {

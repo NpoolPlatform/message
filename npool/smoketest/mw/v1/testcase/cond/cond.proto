@@ -4,7 +4,7 @@ package smoketest.middleware.testcase.cond.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/smoketest/mw/v1/testcase/cond";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -54,10 +54,10 @@ message Cond {
 }
 
 message Conds {
-    optional npool.v1.StringVal  ID             = 10;
-    optional npool.v1.StringVal  CondType       = 20;
-    optional npool.v1.StringVal  TestCaseID     = 30;
-    optional npool.v1.StringVal  CondTestCaseID = 40;
+    optional basetypes.v1.StringVal  ID             = 10;
+    optional basetypes.v1.StringVal  CondType       = 20;
+    optional basetypes.v1.StringVal  TestCaseID     = 30;
+    optional basetypes.v1.StringVal  CondTestCaseID = 40;
 }
 
 message CreateCondRequest {
