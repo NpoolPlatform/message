@@ -52,17 +52,31 @@ message ReviewReq {
 }
 
 message Review {
+    // @inject_tag: sql:"id"
     string            ID         = 10;
+    // @inject_tag: sql:"app_id"
     string            AppID      = 20;
+    // @inject_tag: sql:"reviewer_id"
     string            ReviewerID = 30;
+    // @inject_tag: sql:"domain"
     string            Domain     = 40;
+    // @inject_tag: sql:"object_id"
     string            ObjectID   = 50;
+    // @inject_tag: sql:"trigger"
+    string            TriggerStr = 51;
     ReviewTriggerType Trigger    = 60;
-    ReviewObjectType  ObjectType = 70;
-    ReviewState       State      = 80;
-    string            Message    = 90;
-    uint32            CreatedAt  = 100;
-    uint32            UpdatedAt  = 110;
+    // @inject_tag: sql:"object_type"
+    string            ObjectTypeStr = 61;
+    ReviewObjectType  ObjectType    = 70;
+    // @inject_tag: sql:"state"
+    string            StateStr      = 71;
+    ReviewState       State         = 80;
+    // @inject_tag: sql:"message"
+    string            Message       = 90;
+    // @inject_tag: sql:"created_at"
+    uint32            CreatedAt     = 100;
+    // @inject_tag: sql:"updated_at"
+    uint32            UpdatedAt     = 110;
 }
 
 message Conds {
