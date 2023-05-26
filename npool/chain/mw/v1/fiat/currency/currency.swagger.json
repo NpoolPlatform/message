@@ -105,7 +105,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64",
-          "description": "@inject_tag: sql:\"coin_type_id\"",
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
