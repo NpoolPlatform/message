@@ -4,7 +4,7 @@ package review.middleware.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -66,14 +66,14 @@ message Review {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal ReviewerID = 30;
-    optional npool.v1.StringVal Domain     = 40;
-    optional npool.v1.StringVal ObjectID   = 50;
-    optional npool.v1.Int32Val  Trigger    = 60;
-    optional npool.v1.Int32Val  ObjectType = 70;
-    optional npool.v1.Int32Val  State      = 80;
+    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal AppID      = 20;
+    optional basetypes.v1.StringVal ReviewerID = 30;
+    optional basetypes.v1.StringVal Domain     = 40;
+    optional basetypes.v1.StringVal ObjectID   = 50;
+    optional basetypes.v1.Int32Val  Trigger    = 60;
+    optional basetypes.v1.Int32Val  ObjectType = 70;
+    optional basetypes.v1.Int32Val  State      = 80;
 }
 
 message CreateReviewRequest {
