@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/chain/gw/v1/appcoin/appcoin.proto
+// source: npool/chain/gw/v1/app/coin/coin.proto
 
-package appcoin
+package coin
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/CreateCoin"
-	Gateway_GetCoins_FullMethodName    = "/chain.gateway.appcoin.v1.Gateway/GetCoins"
-	Gateway_GetAppCoins_FullMethodName = "/chain.gateway.appcoin.v1.Gateway/GetAppCoins"
-	Gateway_UpdateCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/UpdateCoin"
-	Gateway_DeleteCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/DeleteCoin"
+	Gateway_CreateCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/CreateCoin"
+	Gateway_GetCoins_FullMethodName    = "/chain.gateway.app.coin.v1.Gateway/GetCoins"
+	Gateway_GetAppCoins_FullMethodName = "/chain.gateway.app.coin.v1.Gateway/GetAppCoins"
+	Gateway_UpdateCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/UpdateCoin"
+	Gateway_DeleteCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/DeleteCoin"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -228,7 +228,7 @@ func _Gateway_DeleteCoin_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.appcoin.v1.Gateway",
+	ServiceName: "chain.gateway.app.coin.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/gw/v1/appcoin/appcoin.proto",
+	Metadata: "npool/chain/gw/v1/app/coin/coin.proto",
 }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/chain/gw/v1/appcoin/description/description.proto
+// source: npool/chain/gw/v1/app/coin/description/description.proto
 
 package description
 
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateCoinDescription_FullMethodName    = "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription"
-	Gateway_CreateAppCoinDescription_FullMethodName = "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription"
-	Gateway_GetCoinDescriptions_FullMethodName      = "/chain.gateway.appcoin.description.v1.Gateway/GetCoinDescriptions"
-	Gateway_GetAppCoinDescriptions_FullMethodName   = "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions"
-	Gateway_UpdateCoinDescription_FullMethodName    = "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription"
+	Gateway_CreateCoinDescription_FullMethodName    = "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription"
+	Gateway_CreateAppCoinDescription_FullMethodName = "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription"
+	Gateway_GetCoinDescriptions_FullMethodName      = "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions"
+	Gateway_GetAppCoinDescriptions_FullMethodName   = "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions"
+	Gateway_UpdateCoinDescription_FullMethodName    = "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -228,7 +228,7 @@ func _Gateway_UpdateCoinDescription_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.appcoin.description.v1.Gateway",
+	ServiceName: "chain.gateway.app.coin.description.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/gw/v1/appcoin/description/description.proto",
+	Metadata: "npool/chain/gw/v1/app/coin/description/description.proto",
 }
