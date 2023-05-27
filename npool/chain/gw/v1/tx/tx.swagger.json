@@ -117,10 +117,14 @@
           "items": {
             "type": "object",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
 =======
             "$ref": "#/definitions/chaingatewaytxv1Tx"
 >>>>>>> Add chain meta
+=======
+            "$ref": "#/definitions/v1Tx"
+>>>>>>> Remove mgr of chain
           }
         },
         "Total": {
@@ -184,7 +188,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/managertxv1TxState"
+          "$ref": "#/definitions/v1TxState"
         },
         "Extra": {
           "type": "string"
@@ -204,20 +208,25 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
     "managertxv1TxState": {
+=======
+    "v1TxState": {
+>>>>>>> Remove mgr of chain
       "type": "string",
       "enum": [
         "DefaultTxState",
-        "StateCreated",
-        "StateWait",
-        "StateTransferring",
-        "StateSuccessful",
-        "StateFail"
+        "TxStateCreated",
+        "TxStateWait",
+        "TxStateTransferring",
+        "TxStateSuccessful",
+        "TxStateFail"
       ],
       "default": "DefaultTxState"
     },
+<<<<<<< HEAD
 >>>>>>> Refactor usedfor
     "protobufAny": {
       "type": "object",
@@ -281,6 +290,8 @@
     },
 =======
 >>>>>>> Refactor usedfor
+=======
+>>>>>>> Remove mgr of chain
     "v1TxType": {
       "type": "string",
       "enum": [
