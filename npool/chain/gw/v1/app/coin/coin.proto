@@ -87,7 +87,7 @@ message Coin {
     uint32          DisplayIndex                 = 360;
     string          MaxAmountPerWithdraw         = 370;
     string          LeastTransferAmount          = 380;
-    string          DefaultGoodID                = 400;
+    optional string DefaultGoodID                = 400;
     bool            NeedMemo                     = 410;
     bool            RefreshCurrency              = 420;
 }
