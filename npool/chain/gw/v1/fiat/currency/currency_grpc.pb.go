@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/chain/gw/v1/coin/currency/currency.proto
+// source: npool/chain/gw/v1/fiat/currency/currency.proto
 
 package currency
 
@@ -19,15 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetCurrency_FullMethodName   = "/chain.gateway.coin.currency.v1.Gateway/GetCurrency"
-	Gateway_GetCurrencies_FullMethodName = "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies"
+	Gateway_GetCurrencies_FullMethodName = "/chain.gateway.fiat.currency.v1.Gateway/GetCurrencies"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error)
 	GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error)
 }
 
@@ -37,15 +35,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetCurrency(ctx context.Context, in *GetCurrencyRequest, opts ...grpc.CallOption) (*GetCurrencyResponse, error) {
-	out := new(GetCurrencyResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetCurrency_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequest, opts ...grpc.CallOption) (*GetCurrenciesResponse, error) {
@@ -61,7 +50,6 @@ func (c *gatewayClient) GetCurrencies(ctx context.Context, in *GetCurrenciesRequ
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error)
 	GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -70,9 +58,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetCurrency(context.Context, *GetCurrencyRequest) (*GetCurrencyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCurrency not implemented")
-}
 func (UnimplementedGatewayServer) GetCurrencies(context.Context, *GetCurrenciesRequest) (*GetCurrenciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrencies not implemented")
 }
@@ -87,24 +72,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetCurrency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCurrencyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetCurrency(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetCurrency_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCurrency(ctx, req.(*GetCurrencyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -129,18 +96,14 @@ func _Gateway_GetCurrencies_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chain.gateway.coin.currency.v1.Gateway",
+	ServiceName: "chain.gateway.fiat.currency.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCurrency",
-			Handler:    _Gateway_GetCurrency_Handler,
-		},
 		{
 			MethodName: "GetCurrencies",
 			Handler:    _Gateway_GetCurrencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/chain/gw/v1/coin/currency/currency.proto",
+	Metadata: "npool/chain/gw/v1/fiat/currency/currency.proto",
 }

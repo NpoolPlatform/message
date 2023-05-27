@@ -5,7 +5,6 @@ package chain.gateway.coin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 import "npool/chain/mw/v1/coin/coin.proto";
 
 // Service Name
@@ -31,9 +30,9 @@ service Gateway {
 }
 
 message CreateCoinRequest {
-    string Name   = 10;
-    string Unit   = 20;
-    string ENV    = 30;
+    string Name = 10;
+    string Unit = 20;
+    string ENV  = 30;
 }
 
 message CreateCoinResponse {

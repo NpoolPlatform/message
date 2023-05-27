@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/appcoin/appcoin.proto",
+    "title": "npool/chain/gw/v1/app/coin/coin.proto",
     "version": "version not set"
   },
   "tags": [
@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1CreateCoinResponse"
+              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1CreateCoinRequest"
+              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1DeleteCoinResponse"
+              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1DeleteCoinRequest"
+              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1GetCoinsResponse"
+              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1GetCoinsRequest"
+              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1UpdateCoinResponse"
+              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayappcoinv1UpdateCoinRequest"
+              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinRequest"
             }
           }
         ],
@@ -178,7 +178,7 @@
     }
   },
   "definitions": {
-    "gatewayappcoinv1Coin": {
+    "chaingatewayappcoinv1Coin": {
       "type": "object",
       "properties": {
         "ID": {
@@ -337,7 +337,7 @@
         }
       }
     },
-    "gatewayappcoinv1CreateCoinRequest": {
+    "chaingatewayappcoinv1CreateCoinRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -348,15 +348,15 @@
         }
       }
     },
-    "gatewayappcoinv1CreateCoinResponse": {
+    "chaingatewayappcoinv1CreateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappcoinv1Coin"
+          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
         }
       }
     },
-    "gatewayappcoinv1DeleteCoinRequest": {
+    "chaingatewayappcoinv1DeleteCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -367,15 +367,15 @@
         }
       }
     },
-    "gatewayappcoinv1DeleteCoinResponse": {
+    "chaingatewayappcoinv1DeleteCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappcoinv1Coin"
+          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
         }
       }
     },
-    "gatewayappcoinv1GetCoinsRequest": {
+    "chaingatewayappcoinv1GetCoinsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -391,14 +391,14 @@
         }
       }
     },
-    "gatewayappcoinv1GetCoinsResponse": {
+    "chaingatewayappcoinv1GetCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayappcoinv1Coin"
+            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
           }
         },
         "Total": {
@@ -407,16 +407,13 @@
         }
       }
     },
-    "gatewayappcoinv1UpdateCoinRequest": {
+    "chaingatewayappcoinv1UpdateCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "UserID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -474,11 +471,11 @@
         }
       }
     },
-    "gatewayappcoinv1UpdateCoinResponse": {
+    "chaingatewayappcoinv1UpdateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayappcoinv1Coin"
+          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
         }
       }
     },
@@ -533,7 +530,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayappcoinv1Coin"
+            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
           }
         },
         "Total": {
