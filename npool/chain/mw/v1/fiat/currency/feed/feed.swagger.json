@@ -245,8 +245,12 @@
         },
         "FeedFiatName": {
           "type": "string",
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"feed_coin_name\""
 >>>>>>> Add fiat currency
+=======
+          "title": "@inject_tag: sql:\"feed_fiat_name\""
+>>>>>>> Use right tag
         },
         "Disabled": {
           "type": "boolean",
