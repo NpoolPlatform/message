@@ -26,15 +26,21 @@ message FeedReq {
 message Feed {
     // @inject_tag: sql:"id"
     string ID           = 10;
-    // @inject_tag: sql:"coin_type_id"
+    // @inject_tag: sql:"fiat_id"
     string FiatID       = 20;
+    // @inject_tag: sql:"fiat_name"
+    string FiatName     = 30;
+    // @inject_tag: sql:"fiat_logo"
+    string FiatLogo     = 40;
+    // @inject_tag: sql:"fiat_unit"
+    string FiatUnit     = 50;
     // @inject_tag: sql:"feed_type"
-    string FeedTypeStr  = 30;
-    basetypes.v1.CurrencyFeedType FeedType = 40;
+    string FeedTypeStr  = 60;
+    basetypes.v1.CurrencyFeedType FeedType = 70;
     // @inject_tag: sql:"feed_coin_name"
-    string FeedFiatName = 50;
+    string FeedFiatName = 80;
     // @inject_tag: sql:"disabled"
-    bool   Disabled     = 60;
+    bool   Disabled     = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 1000;
     // @inject_tag: sql:"updated_at"
