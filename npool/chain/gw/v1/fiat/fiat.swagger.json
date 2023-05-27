@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/coin/currency/currency.proto",
+    "title": "npool/chain/gw/v1/fiat/fiat.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/coincurrencies": {
+    "/v1/create/fiat": {
       "post": {
-        "operationId": "Gateway_GetCurrencies",
+        "operationId": "Gateway_CreateFiat",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrenciesResponse"
+              "$ref": "#/definitions/chaingatewayfiatv1CreateFiatResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrenciesRequest"
+              "$ref": "#/definitions/chaingatewayfiatv1CreateFiatRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/coincurrency": {
+    "/v1/get/fiats": {
       "post": {
-        "operationId": "Gateway_GetCurrency",
+        "operationId": "Gateway_GetFiats",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyResponse"
+              "$ref": "#/definitions/chaingatewayfiatv1GetFiatsResponse"
             }
           },
           "default": {
@@ -71,7 +71,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyRequest"
+              "$ref": "#/definitions/chaingatewayfiatv1GetFiatsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/fiat": {
+      "post": {
+        "operationId": "Gateway_UpdateFiat",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatv1UpdateFiatResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatv1UpdateFiatRequest"
             }
           }
         ],
@@ -82,15 +114,31 @@
     }
   },
   "definitions": {
-    "chaingatewaycoincurrencyv1GetCurrenciesRequest": {
+    "chaingatewayfiatv1CreateFiatRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "Name": {
+          "type": "string"
         },
+        "Unit": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        }
+      }
+    },
+    "chaingatewayfiatv1CreateFiatResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Fiat"
+        }
+      }
+    },
+    "chaingatewayfiatv1GetFiatsRequest": {
+      "type": "object",
+      "properties": {
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -101,14 +149,14 @@
         }
       }
     },
-    "chaingatewaycoincurrencyv1GetCurrenciesResponse": {
+    "chaingatewayfiatv1GetFiatsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Currency"
+            "$ref": "#/definitions/v1Fiat"
           }
         },
         "Total": {
@@ -117,31 +165,28 @@
         }
       }
     },
-    "chaingatewaycoincurrencyv1GetCurrencyRequest": {
+    "chaingatewayfiatv1UpdateFiatRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
+        "ID": {
           "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
+        "Name": {
+          "type": "string"
         },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "Unit": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
         }
       }
     },
-    "chaingatewaycoincurrencyv1GetCurrencyResponse": {
+    "chaingatewayfiatv1UpdateFiatResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Currency"
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1Fiat"
         }
       }
     },
@@ -173,69 +218,34 @@
         }
       }
     },
-    "v1Currency": {
+    "v1Fiat": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "CoinTypeID": {
+        "Name": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "title": "@inject_tag: sql:\"name\""
         },
-        "CoinName": {
+        "Logo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_name\""
+          "title": "@inject_tag: sql:\"logo\""
         },
-        "CoinLogo": {
+        "Unit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_logo\""
-        },
-        "CoinUnit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_unit\""
-        },
-        "CoinENV": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_env\""
+          "title": "@inject_tag: sql:\"unit\""
         },
         "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "MarketValueHigh": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"market_value_high\""
-        },
-        "MarketValueLow": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"market_value_low\""
-        },
-        "FeedTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"feed_type\""
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
         }
       }
-    },
-    "v1CurrencyFeedType": {
-      "type": "string",
-      "enum": [
-        "DefaultFeedType",
-        "CoinGecko",
-        "CoinBase",
-        "StableUSDHardCode"
-      ],
-      "default": "DefaultFeedType"
     }
   }
 }
