@@ -37,7 +37,7 @@ message Feed {
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr  = 60;
     basetypes.v1.CurrencyFeedType FeedType = 70;
-    // @inject_tag: sql:"feed_coin_name"
+    // @inject_tag: sql:"feed_fiat_name"
     string FeedFiatName = 80;
     // @inject_tag: sql:"disabled"
     bool   Disabled     = 90;

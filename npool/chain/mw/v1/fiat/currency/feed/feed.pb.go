@@ -119,8 +119,8 @@ type Feed struct {
 	// @inject_tag: sql:"feed_type"
 	FeedTypeStr string              `protobuf:"bytes,60,opt,name=FeedTypeStr,proto3" json:"FeedTypeStr,omitempty" sql:"feed_type"`
 	FeedType    v1.CurrencyFeedType `protobuf:"varint,70,opt,name=FeedType,proto3,enum=basetypes.v1.CurrencyFeedType" json:"FeedType,omitempty"`
-	// @inject_tag: sql:"feed_coin_name"
-	FeedFiatName string `protobuf:"bytes,80,opt,name=FeedFiatName,proto3" json:"FeedFiatName,omitempty" sql:"feed_coin_name"`
+	// @inject_tag: sql:"feed_fiat_name"
+	FeedFiatName string `protobuf:"bytes,80,opt,name=FeedFiatName,proto3" json:"FeedFiatName,omitempty" sql:"feed_fiat_name"`
 	// @inject_tag: sql:"disabled"
 	Disabled bool `protobuf:"varint,90,opt,name=Disabled,proto3" json:"Disabled,omitempty" sql:"disabled"`
 	// @inject_tag: sql:"created_at"
