@@ -179,7 +179,19 @@
         "FiatID": {
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "title": "@inject_tag: sql:\"fiat_id\""
+        },
+        "FiatName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fiat_name\""
+        },
+        "FiatLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fiat_logo\""
+        },
+        "FiatUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fiat_unit\""
         },
         "CoinName": {
           "type": "string",
