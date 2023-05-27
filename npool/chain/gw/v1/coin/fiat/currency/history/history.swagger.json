@@ -168,6 +168,7 @@
             "type": "string"
           }
         },
+<<<<<<< HEAD
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -176,6 +177,8 @@
           "type": "integer",
           "format": "int64"
         },
+=======
+>>>>>>> Refactor gw proto
         "Offset": {
           "type": "integer",
           "format": "int32"

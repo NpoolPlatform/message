@@ -20,11 +20,15 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description_grpc.pb.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description_grpc.pb.go
+=======
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description_grpc.pb.go
 	Gateway_CreateCoinDescription_FullMethodName    = "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription"
 	Gateway_CreateAppCoinDescription_FullMethodName = "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription"
 	Gateway_GetCoinDescriptions_FullMethodName      = "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions"
 	Gateway_GetAppCoinDescriptions_FullMethodName   = "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions"
 	Gateway_UpdateCoinDescription_FullMethodName    = "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription"
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description_grpc.pb.go
 =======
 	Gateway_CreateCoinDescription_FullMethodName    = "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription"
 	Gateway_CreateAppCoinDescription_FullMethodName = "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription"
@@ -32,6 +36,8 @@ const (
 	Gateway_GetAppCoinDescriptions_FullMethodName   = "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions"
 	Gateway_UpdateCoinDescription_FullMethodName    = "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription"
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description_grpc.pb.go
+=======
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description_grpc.pb.go
 )
 
 // GatewayClient is the client API for Gateway service.

@@ -56,10 +56,14 @@
             "description": "A successful response.",
             "schema": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyResponse"
 =======
               "$ref": "#/definitions/v1GetHistoriesResponse"
 >>>>>>> Add currency history
+=======
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyResponse"
+>>>>>>> Refactor gw proto
             }
           },
           "default": {
@@ -76,10 +80,14 @@
             "required": true,
             "schema": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyRequest"
 =======
               "$ref": "#/definitions/v1GetHistoriesRequest"
 >>>>>>> Add currency history
+=======
+              "$ref": "#/definitions/chaingatewaycoincurrencyv1GetCurrencyRequest"
+>>>>>>> Refactor gw proto
             }
           }
         ],
@@ -134,6 +142,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "chaingatewaycoincurrencyv1GetCurrencyRequest": {
 =======
     "protobufAny": {
@@ -147,11 +156,36 @@
       "additionalProperties": {}
     },
 <<<<<<< HEAD
+=======
+    "chaingatewaycoincurrencyv1GetCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+>>>>>>> Refactor gw proto
     "chaingatewaycoincurrencyv1GetCurrencyResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Currency"
+<<<<<<< HEAD
+=======
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Refactor gw proto
         }
       }
     },
@@ -266,6 +300,7 @@
         "StableUSDHardCode"
       ],
       "default": "DefaultFeedType"
+<<<<<<< HEAD
     },
     "v1GetHistoriesRequest": {
       "type": "object",
@@ -322,6 +357,8 @@
         }
       }
 >>>>>>> Add currency history
+=======
+>>>>>>> Refactor gw proto
     }
   }
 }

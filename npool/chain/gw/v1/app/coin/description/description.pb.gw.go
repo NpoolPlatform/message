@@ -216,10 +216,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -245,10 +249,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -274,10 +282,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
 =======
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -303,10 +315,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
 =======
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -332,10 +348,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -400,10 +420,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateCoinDescription", runtime.WithHTTPPathPattern("/v1/create/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -426,10 +450,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/CreateAppCoinDescription", runtime.WithHTTPPathPattern("/v1/create/app/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -452,10 +480,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
 =======
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/coindescriptions"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -478,10 +510,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
 =======
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/GetAppCoinDescriptions", runtime.WithHTTPPathPattern("/v1/get/app/coindescriptions"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,10 +540,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		var err error
 		var annotatedContext context.Context
 <<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
+<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
 =======
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.appcoin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
 >>>>>>> Regenerate:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
+=======
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.app.coin.description.v1.Gateway/UpdateCoinDescription", runtime.WithHTTPPathPattern("/v1/update/coindescription"))
+>>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/description/description.pb.gw.go
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

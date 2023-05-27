@@ -173,9 +173,12 @@
         },
         "FeedCoinName": {
           "type": "string"
+<<<<<<< HEAD
         },
         "Disabled": {
           "type": "boolean"
+=======
+>>>>>>> Refactor gw proto
         }
       }
     },

@@ -41,9 +41,14 @@ message CreateFeedResponse {
 }
 
 message UpdateFeedRequest {
+<<<<<<< HEAD
     string          ID           = 10;
     optional string FeedCoinName = 20;
     optional bool   Disabled     = 30;
+=======
+    string          ID           =  10;
+    optional string FeedCoinName = 20;
+>>>>>>> Refactor gw proto
 }
 
 message UpdateFeedResponse {
