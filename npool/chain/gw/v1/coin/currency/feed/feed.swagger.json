@@ -174,11 +174,17 @@
         "FeedCoinName": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "Disabled": {
           "type": "boolean"
 =======
 >>>>>>> Refactor gw proto
+=======
+        },
+        "Disabled": {
+          "type": "boolean"
+>>>>>>> Add disable to update feed
         }
       }
     },
