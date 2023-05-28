@@ -182,11 +182,17 @@
         "FeedFiatName": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "Disabled": {
           "type": "boolean"
 =======
 >>>>>>> Refactor gw proto
+=======
+        },
+        "Disabled": {
+          "type": "boolean"
+>>>>>>> Add disabled
         }
       }
     },
