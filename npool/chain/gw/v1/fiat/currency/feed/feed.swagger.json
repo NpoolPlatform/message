@@ -118,10 +118,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "FiatID": {
 =======
         "FiatTypeID": {
 >>>>>>> Refactor gw proto
+=======
+        "FiatID": {
+>>>>>>> Format name
           "type": "string"
         },
         "FeedType": {

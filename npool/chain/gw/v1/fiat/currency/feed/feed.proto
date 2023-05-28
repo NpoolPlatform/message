@@ -31,11 +31,7 @@ service Gateway {
 }
 
 message CreateFeedRequest {
-<<<<<<< HEAD
     string FiatID = 10;
-=======
-    string FiatTypeID = 10;
->>>>>>> Refactor gw proto
     basetypes.v1.CurrencyFeedType FeedType = 20;
     string FeedFiatName = 30;
 }
@@ -45,14 +41,9 @@ message CreateFeedResponse {
 }
 
 message UpdateFeedRequest {
-<<<<<<< HEAD
     string          ID           = 10;
     optional string FeedFiatName = 20;
     optional bool   Disabled     = 30;
-=======
-    string          ID           =  10;
-    optional string FeedFiatName = 20;
->>>>>>> Refactor gw proto
 }
 
 message UpdateFeedResponse {
