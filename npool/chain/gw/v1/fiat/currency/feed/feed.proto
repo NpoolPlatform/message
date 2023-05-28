@@ -31,7 +31,7 @@ service Gateway {
 }
 
 message CreateFeedRequest {
-    string FiatTypeID = 10;
+    string FiatID = 10;
     basetypes.v1.CurrencyFeedType FeedType = 20;
     string FeedFiatName = 30;
 }
