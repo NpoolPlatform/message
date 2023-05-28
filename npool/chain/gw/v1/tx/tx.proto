@@ -17,12 +17,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAppTxs (GetAppTxsRequest) returns (GetAppTxsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/txs"
-            body: "*"
-        };
-    }
 }
 
 message Tx {
@@ -51,7 +45,6 @@ message Tx {
 }
 
 message GetTxsRequest {
-    string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
@@ -61,13 +54,3 @@ message GetTxsResponse {
     uint32      Total = 20;
 }
 
-message GetAppTxsRequest {
-    string TargetAppID  = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
-}
-
-message GetAppTxsResponse {
-    repeated Tx Infos = 10;
-    uint32      Total = 20;
-}
