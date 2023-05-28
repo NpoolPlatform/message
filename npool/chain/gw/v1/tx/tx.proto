@@ -17,12 +17,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAppTxs (GetAppTxsRequest) returns (GetAppTxsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/txs"
-            body: "*"
-        };
-    }
 }
 
 message Tx {
