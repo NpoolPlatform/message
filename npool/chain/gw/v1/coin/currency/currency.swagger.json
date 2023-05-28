@@ -180,12 +180,15 @@
         "Info": {
           "$ref": "#/definitions/v1Currency"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         "Total": {
           "type": "integer",
           "format": "int64"
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Remove total from get currency
         }
       }
     },
