@@ -173,6 +173,9 @@
         },
         "FeedCoinName": {
           "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
