@@ -60,6 +60,9 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add start at and end at
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -68,8 +71,11 @@
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Add start at and end at
         "Offset": {
           "type": "integer",
           "format": "int32"
