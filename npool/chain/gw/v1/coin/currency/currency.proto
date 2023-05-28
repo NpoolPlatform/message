@@ -31,7 +31,6 @@ message GetCurrencyRequest {
 
 message GetCurrencyResponse {
     chain.middleware.coin.currency.v1.Currency Info  = 10;
-    uint32                                     Total = 20;
 }
 
 
