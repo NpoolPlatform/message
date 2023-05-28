@@ -169,6 +169,9 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -177,8 +180,11 @@
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
         "Offset": {
           "type": "integer",
           "format": "int32"

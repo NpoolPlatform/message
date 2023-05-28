@@ -19,15 +19,10 @@ service Gateway {
 
 message GetCurrenciesRequest {
     repeated string CoinTypeIDs = 10;
-<<<<<<< HEAD
     optional uint32 StartAt     = 20;
     optional uint32 EndAt       = 30;
     int32           Offset      = 40;
     int32           Limit       = 50;
-=======
-    int32           Offset      = 20;
-    int32           Limit       = 30;
->>>>>>> Refactor gw proto
 }
 
 message GetCurrenciesResponse {

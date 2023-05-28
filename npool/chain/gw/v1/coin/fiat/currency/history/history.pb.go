@@ -29,14 +29,20 @@ type GetCurrenciesRequest struct {
 
 	CoinTypeIDs []string `protobuf:"bytes,10,rep,name=CoinTypeIDs,proto3" json:"CoinTypeIDs,omitempty"`
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 	StartAt     *uint32  `protobuf:"varint,20,opt,name=StartAt,proto3,oneof" json:"StartAt,omitempty"`
 	EndAt       *uint32  `protobuf:"varint,30,opt,name=EndAt,proto3,oneof" json:"EndAt,omitempty"`
 	Offset      int32    `protobuf:"varint,40,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit       int32    `protobuf:"varint,50,opt,name=Limit,proto3" json:"Limit,omitempty"`
+<<<<<<< HEAD
 =======
 	Offset      int32    `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit       int32    `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 }
 
 func (x *GetCurrenciesRequest) Reset() {
@@ -79,6 +85,9 @@ func (x *GetCurrenciesRequest) GetCoinTypeIDs() []string {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 func (x *GetCurrenciesRequest) GetStartAt() uint32 {
 	if x != nil && x.StartAt != nil {
 		return *x.StartAt
@@ -93,8 +102,11 @@ func (x *GetCurrenciesRequest) GetEndAt() uint32 {
 	return 0
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 func (x *GetCurrenciesRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
@@ -179,6 +191,9 @@ var file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x68, 0x61, 0x69, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f,
 	0x66, 0x69, 0x61, 0x74, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x63, 0x75,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 	0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xb6, 0x01, 0x0a,
 	0x14, 0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70,
@@ -218,6 +233,7 @@ var file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x2f, 0x66, 0x69, 0x61, 0x74, 0x2f,
 	0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79,
 	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x66, 0x0a, 0x14,
 	0x47, 0x65, 0x74, 0x43, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71,
@@ -254,6 +270,8 @@ var file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_rawDesc = []
 	0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x2f, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> Refactor gw proto
+=======
+>>>>>>> Add start at and end at for coin fiat currency history
 }
 
 var (
@@ -317,9 +335,13 @@ func file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_init() {
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_msgTypes[0].OneofWrappers = []interface{}{}
 =======
 >>>>>>> Refactor gw proto
+=======
+	file_npool_chain_gw_v1_coin_fiat_currency_history_history_proto_msgTypes[0].OneofWrappers = []interface{}{}
+>>>>>>> Add start at and end at for coin fiat currency history
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
