@@ -19,8 +19,10 @@ service Gateway {
 
 message GetCurrenciesRequest {
     repeated string FiatIDs = 10;
-    int32           Offset  = 20;
-    int32           Limit   = 30;
+    optional uint32 StartAt = 20;
+    optional uint32 EndAt   = 30;
+    int32           Offset  = 40;
+    int32           Limit   = 50;
 }
 
 message GetCurrenciesResponse {
