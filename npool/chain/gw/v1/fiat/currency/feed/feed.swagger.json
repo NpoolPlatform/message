@@ -117,7 +117,7 @@
     "fiatcurrencyfeedv1CreateFeedRequest": {
       "type": "object",
       "properties": {
-        "FiatTypeID": {
+        "FiatID": {
           "type": "string"
         },
         "FeedType": {
