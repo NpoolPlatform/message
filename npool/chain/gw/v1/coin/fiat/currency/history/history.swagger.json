@@ -168,6 +168,14 @@
             "type": "string"
           }
         },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
