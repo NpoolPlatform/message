@@ -227,6 +227,9 @@
         },
         "RefreshCurrency": {
           "type": "boolean"
+        },
+        "Logo": {
+          "type": "string"
         }
       }
     },
