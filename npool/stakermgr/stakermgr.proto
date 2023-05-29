@@ -14,8 +14,23 @@ service StakerManager {
     // Method Version
     rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
         option (google.api.http) = {
-            post: "/version"
+            post: "/v1/version"
             body: "*"
         };
     }
+    rpc Redistribute (RedistributeRequest) returns (RedistributeResponse) {
+        option (google.api.http) = {
+            post: "/v1/redistribute"
+            body: "*"
+        };
+    }
+}
+
+message RedistributeRequest {
+    bool   Transferred = 10;
+    string Amount      = 20;
+    uint32 DateTime    = 30;
+}
+
+message RedistributeResponse {
 }

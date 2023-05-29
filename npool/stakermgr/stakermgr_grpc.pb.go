@@ -21,7 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	StakerManager_Version_FullMethodName = "/staker.manager.v1.StakerManager/Version"
+	StakerManager_Version_FullMethodName      = "/staker.manager.v1.StakerManager/Version"
+	StakerManager_Redistribute_FullMethodName = "/staker.manager.v1.StakerManager/Redistribute"
 )
 
 // StakerManagerClient is the client API for StakerManager service.
@@ -30,6 +31,7 @@ const (
 type StakerManagerClient interface {
 	// Method Version
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	Redistribute(ctx context.Context, in *RedistributeRequest, opts ...grpc.CallOption) (*RedistributeResponse, error)
 }
 
 type stakerManagerClient struct {
@@ -49,12 +51,22 @@ func (c *stakerManagerClient) Version(ctx context.Context, in *emptypb.Empty, op
 	return out, nil
 }
 
+func (c *stakerManagerClient) Redistribute(ctx context.Context, in *RedistributeRequest, opts ...grpc.CallOption) (*RedistributeResponse, error) {
+	out := new(RedistributeResponse)
+	err := c.cc.Invoke(ctx, StakerManager_Redistribute_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StakerManagerServer is the server API for StakerManager service.
 // All implementations must embed UnimplementedStakerManagerServer
 // for forward compatibility
 type StakerManagerServer interface {
 	// Method Version
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	Redistribute(context.Context, *RedistributeRequest) (*RedistributeResponse, error)
 	mustEmbedUnimplementedStakerManagerServer()
 }
 
@@ -64,6 +76,9 @@ type UnimplementedStakerManagerServer struct {
 
 func (UnimplementedStakerManagerServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
+}
+func (UnimplementedStakerManagerServer) Redistribute(context.Context, *RedistributeRequest) (*RedistributeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Redistribute not implemented")
 }
 func (UnimplementedStakerManagerServer) mustEmbedUnimplementedStakerManagerServer() {}
 
@@ -96,6 +111,24 @@ func _StakerManager_Version_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StakerManager_Redistribute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RedistributeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StakerManagerServer).Redistribute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: StakerManager_Redistribute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StakerManagerServer).Redistribute(ctx, req.(*RedistributeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StakerManager_ServiceDesc is the grpc.ServiceDesc for StakerManager service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -106,6 +139,10 @@ var StakerManager_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _StakerManager_Version_Handler,
+		},
+		{
+			MethodName: "Redistribute",
+			Handler:    _StakerManager_Redistribute_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

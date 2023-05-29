@@ -16,7 +16,39 @@
     "application/json"
   ],
   "paths": {
-    "/version": {
+    "/v1/redistribute": {
+      "post": {
+        "operationId": "StakerManager_Redistribute",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RedistributeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RedistributeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StakerManager"
+        ]
+      }
+    },
+    "/v1/version": {
       "post": {
         "summary": "Method Version",
         "operationId": "StakerManager_Version",
@@ -79,6 +111,24 @@
           }
         }
       }
+    },
+    "v1RedistributeRequest": {
+      "type": "object",
+      "properties": {
+        "Transferred": {
+          "type": "boolean"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "DateTime": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RedistributeResponse": {
+      "type": "object"
     },
     "v1VersionResponse": {
       "type": "object",
