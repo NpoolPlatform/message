@@ -164,6 +164,7 @@
         "FiatID": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
 <<<<<<< HEAD:npool/chain/gw/v1/coin/fiat/fiat.swagger.json
         "FeedType": {
@@ -178,6 +179,11 @@
 >>>>>>> Add chain meta:npool/apimgr/apimgr.swagger.json
 =======
 >>>>>>> Add coin fiat relationship
+=======
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
+>>>>>>> Add coin fiat feed type
         }
       }
     },
