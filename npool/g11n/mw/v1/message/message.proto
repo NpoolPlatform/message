@@ -104,7 +104,7 @@ message GetMessagesResponse {
 }
 
 message DeleteMessageRequest {
-    string ID = 10;
+    Message Info = 10;
 }
 
 message DeleteMessageResponse {
