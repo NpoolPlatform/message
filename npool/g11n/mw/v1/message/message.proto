@@ -104,7 +104,7 @@ message GetMessagesResponse {
 }
 
 message DeleteMessageRequest {
-    Message Info = 10;
+    MessageReq Info = 10;
 }
 
 message DeleteMessageResponse {
