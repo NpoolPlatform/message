@@ -237,12 +237,18 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add ID
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Add coin fiat relationship
+=======
+>>>>>>> Add ID
         "CoinTypeID": {
           "type": "string"
         },
