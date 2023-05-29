@@ -4,8 +4,7 @@ package g11n.middleware.applang.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/applang";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -48,11 +47,11 @@ message Lang {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID      = 10;
-    optional npool.v1.StringVal AppID   = 20;
-    optional npool.v1.StringVal LangID  = 30;
-    optional npool.v1.BoolVal   Main    = 40;
-    optional npool.v1.StringSliceVal LangIDs = 50;
+    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.StringVal AppID   = 20;
+    basetypes.v1.StringVal LangID  = 30;
+    basetypes.v1.BoolVal   Main    = 40;
+    basetypes.v1.StringSliceVal LangIDs = 50;
 }
 
 
