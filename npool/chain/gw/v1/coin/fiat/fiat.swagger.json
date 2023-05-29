@@ -214,11 +214,16 @@
       "properties": {
         "ID": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "type": "integer",
           "format": "int64"
 =======
           "type": "string"
 >>>>>>> Add coin fiat relationship
+=======
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Use right ID type
         }
       }
     },
