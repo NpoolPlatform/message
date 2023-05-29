@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/applang";
 
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/g11n/mgr/v1/applang/applang.proto";
 
 // Service Name
 service Middleware {
@@ -16,6 +15,13 @@ service Middleware {
     rpc GetLangOnly    (GetLangOnlyRequest)    returns (GetLangOnlyResponse)    {}
     rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
     rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
+}
+
+message LangReq {
+    optional string ID     = 10;
+    optional string AppID  = 20;
+    optional string LangID = 30;
+    optional bool   Main   = 40;
 }
 
 message Lang {
@@ -41,8 +47,17 @@ message Lang {
     uint32 UpdatedAt  = 100;
 }
 
+message Conds {
+    optional npool.v1.StringVal ID      = 10;
+    optional npool.v1.StringVal AppID   = 20;
+    optional npool.v1.StringVal LangID  = 30;
+    optional npool.v1.BoolVal   Main    = 40;
+    optional npool.v1.StringSliceVal LangIDs = 50;
+}
+
+
 message CreateLangRequest {
-    g11n.manager.applang.v1.LangReq Info = 10;
+    LangReq Info = 10;
 }
 
 message CreateLangResponse {
@@ -50,7 +65,7 @@ message CreateLangResponse {
 }
 
 message CreateLangsRequest {
-    repeated g11n.manager.applang.v1.LangReq Infos = 10;
+    repeated LangReq Infos = 10;
 }
 
 message CreateLangsResponse {
@@ -58,7 +73,7 @@ message CreateLangsResponse {
 }
 
 message UpdateLangRequest {
-    g11n.manager.applang.v1.LangReq Info = 10;
+    LangReq Info = 10;
 }
 
 message UpdateLangResponse {
@@ -66,7 +81,7 @@ message UpdateLangResponse {
 }
 
 message GetLangOnlyRequest {
-    g11n.manager.applang.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
 }
 
 message GetLangOnlyResponse {
@@ -74,7 +89,7 @@ message GetLangOnlyResponse {
 }
 
 message GetLangsRequest {
-    g11n.manager.applang.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
@@ -85,7 +100,7 @@ message GetLangsResponse {
 }
 
 message DeleteLangRequest {
-    string ID = 10;
+    Lang LangReq = 10;
 }
 
 message DeleteLangResponse {
