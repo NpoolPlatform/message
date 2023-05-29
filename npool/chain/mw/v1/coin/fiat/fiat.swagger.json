@@ -1,11 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
     "title": "npool/chain/mw/v1/coin/fiat/fiat.proto",
 =======
     "title": "npool/chain/mw/v1/fiat/currency/feed/feed.proto",
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+    "title": "npool/chain/mw/v1/coin/fiat/fiat.proto",
+>>>>>>> Add coin fiat relationship
     "version": "version not set"
   },
   "tags": [
@@ -22,7 +26,10 @@
   "paths": {},
   "definitions": {
     "protobufAny": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
       "type": "object",
       "properties": {
         "@type": {
@@ -51,6 +58,7 @@
       }
     },
     "v1CoinFiat": {
+<<<<<<< HEAD
 =======
       "type": "object",
       "properties": {
@@ -130,6 +138,8 @@
     },
     "v1Feed": {
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
       "type": "object",
       "properties": {
         "ID": {
@@ -137,11 +147,15 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"id\""
         },
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
         "CoinTypeID": {
 =======
         "FiatID": {
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+        "CoinTypeID": {
+>>>>>>> Add coin fiat relationship
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
@@ -149,7 +163,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_name\""
         },
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
         "CoinLogo": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_logo\""
@@ -184,6 +201,7 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
+<<<<<<< HEAD
 =======
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
@@ -196,6 +214,8 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"disabled\""
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
         },
         "CreatedAt": {
           "type": "integer",
@@ -206,17 +226,23 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
         }
       }
     },
     "v1CoinFiatReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+=======
+>>>>>>> Add coin fiat relationship
         "CoinTypeID": {
           "type": "string"
         },
@@ -237,6 +263,7 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -289,6 +316,10 @@
         "Info": {
           "type": "boolean"
 >>>>>>> Add chain meta:npool/chain/mgr/v1/coin/extra/extra.swagger.json
+=======
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+>>>>>>> Add coin fiat relationship
         }
       }
     },
@@ -321,6 +352,7 @@
     "v1GetCoinFiatsResponse": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
 =======
         }
       }
@@ -349,10 +381,13 @@
       "type": "object",
       "properties": {
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
             "$ref": "#/definitions/v1CoinFiat"
@@ -362,6 +397,9 @@
 =======
             "$ref": "#/definitions/v1Feed"
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+            "$ref": "#/definitions/v1CoinFiat"
+>>>>>>> Add coin fiat relationship
           }
         },
         "Total": {
@@ -394,6 +432,7 @@
           "type": "string"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/chain/mw/v1/coin/fiat/fiat.swagger.json
 =======
     },
@@ -417,6 +456,8 @@
         }
       }
 >>>>>>> Add fiat currency:npool/chain/mw/v1/fiat/currency/feed/feed.swagger.json
+=======
+>>>>>>> Add coin fiat relationship
     }
   }
 }
