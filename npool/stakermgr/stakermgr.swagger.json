@@ -115,8 +115,8 @@
     "v1RedistributeRequest": {
       "type": "object",
       "properties": {
-        "Transferred": {
-          "type": "boolean"
+        "GoodID": {
+          "type": "string"
         },
         "Amount": {
           "type": "string"

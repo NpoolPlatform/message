@@ -27,9 +27,9 @@ service StakerManager {
 }
 
 message RedistributeRequest {
-    bool   Transferred = 10;
-    string Amount      = 20;
-    uint32 DateTime    = 30;
+    string GoodID   = 10;
+    string Amount   = 20;
+    uint32 DateTime = 30;
 }
 
 message RedistributeResponse {
