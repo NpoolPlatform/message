@@ -15,9 +15,10 @@ service Middleware {
 }
 
 message CoinFiatReq {
-    optional string    CoinTypeID      = 10;
-    optional string    FiatID          = 20;
-    optional basetypes.v1.CurrencyFeedType FeedType = 30;
+    optional uint32    ID              = 10;
+    optional string    CoinTypeID      = 20;
+    optional string    FiatID          = 30;
+    optional basetypes.v1.CurrencyFeedType FeedType = 40;
 }
 
 message CoinFiat {
