@@ -122,6 +122,9 @@
         },
         "FiatID": {
           "type": "string"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
         }
       }
     },
