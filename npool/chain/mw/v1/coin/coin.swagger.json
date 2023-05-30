@@ -257,6 +257,22 @@
         },
         "RefreshCurrency": {
           "type": "boolean"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
         }
       }
     },
@@ -296,6 +312,16 @@
           "$ref": "#/definitions/v1Coin"
         }
       }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
     },
     "v1GetCoinOnlyResponse": {
       "type": "object",
