@@ -99,7 +99,7 @@ message GetLangsResponse {
 }
 
 message DeleteLangRequest {
-    Lang LangReq = 10;
+    LangReq Info = 10;
 }
 
 message DeleteLangResponse {
