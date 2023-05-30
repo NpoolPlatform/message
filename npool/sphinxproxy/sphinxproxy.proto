@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/sphinxproxy";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-
+import "npool/basetypes/v1/gastype.proto";
 import "npool/sphinxplugin/sphinxplugin.proto";
 
 // SphinxProxy http service only for inner
@@ -172,6 +172,7 @@ message ProxyPluginResponse {
   string ChainNativeUnit = 102;
   string ChainAtomicUnit = 103;
   int64 ChainUnitExp = 104;
+  basetypes.v1.GasType GasType = 105;
 
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
