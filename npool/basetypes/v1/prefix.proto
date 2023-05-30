@@ -12,4 +12,5 @@ enum Prefix {
     PrefixWalletAccountLock = 40;
     PrefixAPIRegister       = 50;
     PrefixCreateCoin        = 60;
+    PrefixCreateAppCoinDescription = 70;
 }
