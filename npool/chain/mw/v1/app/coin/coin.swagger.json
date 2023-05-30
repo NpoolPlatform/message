@@ -370,6 +370,14 @@
         }
       }
     },
+    "v1ExistCoinCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetCoinResponse": {
       "type": "object",
       "properties": {
