@@ -229,6 +229,14 @@
         }
       }
     },
+    "v1ExistCoinDescriptionCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetCoinDescriptionResponse": {
       "type": "object",
       "properties": {

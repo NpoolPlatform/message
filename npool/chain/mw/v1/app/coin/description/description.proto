@@ -13,6 +13,7 @@ service Middleware {
     rpc CreateCoinDescription     (CreateCoinDescriptionRequest)     returns (CreateCoinDescriptionResponse)     {}
     rpc GetCoinDescription        (GetCoinDescriptionRequest)        returns (GetCoinDescriptionResponse)        {}
     rpc GetCoinDescriptions       (GetCoinDescriptionsRequest)       returns (GetCoinDescriptionsResponse)       {}
+    rpc ExistCoinDescriptionConds (ExistCoinDescriptionCondsRequest) returns (ExistCoinDescriptionCondsResponse) {}
     rpc UpdateCoinDescription     (UpdateCoinDescriptionRequest)     returns (UpdateCoinDescriptionResponse)     {}
 }
 
