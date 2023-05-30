@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCoinDescription_FullMethodName = "/chain.middleware.app.coin.description.v1.Middleware/CreateCoinDescription"
-	Middleware_GetCoinDescription_FullMethodName    = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescription"
-	Middleware_GetCoinDescriptions_FullMethodName   = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescriptions"
-	Middleware_UpdateCoinDescription_FullMethodName = "/chain.middleware.app.coin.description.v1.Middleware/UpdateCoinDescription"
+	Middleware_CreateCoinDescription_FullMethodName     = "/chain.middleware.app.coin.description.v1.Middleware/CreateCoinDescription"
+	Middleware_GetCoinDescription_FullMethodName        = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescription"
+	Middleware_GetCoinDescriptions_FullMethodName       = "/chain.middleware.app.coin.description.v1.Middleware/GetCoinDescriptions"
+	Middleware_ExistCoinDescriptionConds_FullMethodName = "/chain.middleware.app.coin.description.v1.Middleware/ExistCoinDescriptionConds"
+	Middleware_UpdateCoinDescription_FullMethodName     = "/chain.middleware.app.coin.description.v1.Middleware/UpdateCoinDescription"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -32,6 +33,7 @@ type MiddlewareClient interface {
 	CreateCoinDescription(ctx context.Context, in *CreateCoinDescriptionRequest, opts ...grpc.CallOption) (*CreateCoinDescriptionResponse, error)
 	GetCoinDescription(ctx context.Context, in *GetCoinDescriptionRequest, opts ...grpc.CallOption) (*GetCoinDescriptionResponse, error)
 	GetCoinDescriptions(ctx context.Context, in *GetCoinDescriptionsRequest, opts ...grpc.CallOption) (*GetCoinDescriptionsResponse, error)
+	ExistCoinDescriptionConds(ctx context.Context, in *ExistCoinDescriptionCondsRequest, opts ...grpc.CallOption) (*ExistCoinDescriptionCondsResponse, error)
 	UpdateCoinDescription(ctx context.Context, in *UpdateCoinDescriptionRequest, opts ...grpc.CallOption) (*UpdateCoinDescriptionResponse, error)
 }
 
@@ -70,6 +72,15 @@ func (c *middlewareClient) GetCoinDescriptions(ctx context.Context, in *GetCoinD
 	return out, nil
 }
 
+func (c *middlewareClient) ExistCoinDescriptionConds(ctx context.Context, in *ExistCoinDescriptionCondsRequest, opts ...grpc.CallOption) (*ExistCoinDescriptionCondsResponse, error) {
+	out := new(ExistCoinDescriptionCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistCoinDescriptionConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) UpdateCoinDescription(ctx context.Context, in *UpdateCoinDescriptionRequest, opts ...grpc.CallOption) (*UpdateCoinDescriptionResponse, error) {
 	out := new(UpdateCoinDescriptionResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateCoinDescription_FullMethodName, in, out, opts...)
@@ -86,6 +97,7 @@ type MiddlewareServer interface {
 	CreateCoinDescription(context.Context, *CreateCoinDescriptionRequest) (*CreateCoinDescriptionResponse, error)
 	GetCoinDescription(context.Context, *GetCoinDescriptionRequest) (*GetCoinDescriptionResponse, error)
 	GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error)
+	ExistCoinDescriptionConds(context.Context, *ExistCoinDescriptionCondsRequest) (*ExistCoinDescriptionCondsResponse, error)
 	UpdateCoinDescription(context.Context, *UpdateCoinDescriptionRequest) (*UpdateCoinDescriptionResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -102,6 +114,9 @@ func (UnimplementedMiddlewareServer) GetCoinDescription(context.Context, *GetCoi
 }
 func (UnimplementedMiddlewareServer) GetCoinDescriptions(context.Context, *GetCoinDescriptionsRequest) (*GetCoinDescriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinDescriptions not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistCoinDescriptionConds(context.Context, *ExistCoinDescriptionCondsRequest) (*ExistCoinDescriptionCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinDescriptionConds not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateCoinDescription(context.Context, *UpdateCoinDescriptionRequest) (*UpdateCoinDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinDescription not implemented")
@@ -173,6 +188,24 @@ func _Middleware_GetCoinDescriptions_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistCoinDescriptionConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistCoinDescriptionCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistCoinDescriptionConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistCoinDescriptionConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistCoinDescriptionConds(ctx, req.(*ExistCoinDescriptionCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_UpdateCoinDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCoinDescriptionRequest)
 	if err := dec(in); err != nil {
@@ -209,6 +242,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoinDescriptions",
 			Handler:    _Middleware_GetCoinDescriptions_Handler,
+		},
+		{
+			MethodName: "ExistCoinDescriptionConds",
+			Handler:    _Middleware_ExistCoinDescriptionConds_Handler,
 		},
 		{
 			MethodName: "UpdateCoinDescription",

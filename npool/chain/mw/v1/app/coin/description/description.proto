@@ -13,6 +13,7 @@ service Middleware {
     rpc CreateCoinDescription     (CreateCoinDescriptionRequest)     returns (CreateCoinDescriptionResponse)     {}
     rpc GetCoinDescription        (GetCoinDescriptionRequest)        returns (GetCoinDescriptionResponse)        {}
     rpc GetCoinDescriptions       (GetCoinDescriptionsRequest)       returns (GetCoinDescriptionsResponse)       {}
+    rpc ExistCoinDescriptionConds (ExistCoinDescriptionCondsRequest) returns (ExistCoinDescriptionCondsResponse) {}
     rpc UpdateCoinDescription     (UpdateCoinDescriptionRequest)     returns (UpdateCoinDescriptionResponse)     {}
 }
 
@@ -94,5 +95,13 @@ message GetCoinDescriptionsRequest {
 message GetCoinDescriptionsResponse {
     repeated CoinDescription Infos = 10;
     uint32                   Total = 20;
+}
+
+message ExistCoinDescriptionCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistCoinDescriptionCondsResponse {
+    bool Info = 10;
 }
 
