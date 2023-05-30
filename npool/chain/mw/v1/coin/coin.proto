@@ -5,7 +5,9 @@ package chain.middleware.coin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/version.proto";
+import "npool/basetypes/v1/gastype.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -41,6 +43,11 @@ message CoinReq {
     optional string LeastTransferAmount          = 210;
     optional bool   NeedMemo                     = 220;
     optional bool   RefreshCurrency              = 230;
+    optional string ChainType                    = 240;
+    optional string ChainNativeUnit              = 250;
+    optional string ChainAtomicUnit              = 260;
+    optional int64  ChainUnitExt                 = 270;
+    optional basetypes.v1.GasType GasType        = 280;
 }
 
 message Coin {
@@ -107,14 +114,14 @@ message Coin {
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID       = 10;
-    optional npool.v1.BoolVal        Presale  = 20;
-    optional npool.v1.StringVal      ENV      = 30;
-    optional npool.v1.BoolVal        ForPay   = 40;
-    optional npool.v1.StringSliceVal IDs      = 50;
-    optional npool.v1.BoolVal        Disabled = 60;
-    optional npool.v1.StringVal      Name     = 70;
-    optional npool.v1.StringSliceVal Names    = 80;
+    optional basetypes.v1.StringVal      ID       = 10;
+    optional basetypes.v1.BoolVal        Presale  = 20;
+    optional basetypes.v1.StringVal      ENV      = 30;
+    optional basetypes.v1.BoolVal        ForPay   = 40;
+    optional basetypes.v1.StringSliceVal IDs      = 50;
+    optional basetypes.v1.BoolVal        Disabled = 60;
+    optional basetypes.v1.StringVal      Name     = 70;
+    optional basetypes.v1.StringSliceVal Names    = 80;
 }
 
 message CreateCoinRequest {
