@@ -384,7 +384,8 @@
           "type": "string"
         },
         "Amount": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         },
         "From": {
           "type": "string"
@@ -684,7 +685,8 @@
           "type": "string"
         },
         "Amount": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         },
         "From": {
           "type": "string"
