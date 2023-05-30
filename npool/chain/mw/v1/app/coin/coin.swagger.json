@@ -379,6 +379,7 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "v1GetCoinOnlyResponse": {
       "type": "object",
@@ -391,6 +392,16 @@
 >>>>>>> Add app coin exrate
 =======
 >>>>>>> Remove only api of appcoin
+=======
+    "v1ExistCoinCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+>>>>>>> Add exist api
     "v1GetCoinResponse": {
       "type": "object",
       "properties": {
