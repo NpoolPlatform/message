@@ -13,4 +13,5 @@ enum Prefix {
     PrefixAPIRegister       = 50;
     PrefixCreateCoin        = 60;
     PrefixCreateAppCoinDescription = 70;
+    PrefixCreateAppCoin     = 80;
 }
