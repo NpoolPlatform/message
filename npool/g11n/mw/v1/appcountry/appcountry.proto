@@ -4,9 +4,7 @@ package g11n.middleware.appcountry.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/appcountry";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
-import "npool/g11n/mgr/v1/appcountry/appcountry.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -15,6 +13,12 @@ service Middleware {
     rpc GetCountryOnly    (GetCountryOnlyRequest)    returns (GetCountryOnlyResponse)    {}
     rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
+}
+
+message CountryReq {
+    optional string ID        = 10;
+    optional string AppID     = 20;
+    optional string CountryID = 30;
 }
 
 message Country {
@@ -38,8 +42,15 @@ message Country {
     uint32 UpdatedAt  = 90;
 }
 
+message Conds {
+    basetypes.v1.StringVal ID         = 10;
+    basetypes.v1.StringVal AppID      = 20;
+    basetypes.v1.StringVal CountryID  = 30;
+}
+
+
 message CreateCountryRequest {
-    g11n.manager.appcountry.v1.CountryReq Info = 10;
+    CountryReq Info = 10;
 }
 
 message CreateCountryResponse {
@@ -47,7 +58,7 @@ message CreateCountryResponse {
 }
 
 message CreateCountriesRequest {
-    repeated g11n.manager.appcountry.v1.CountryReq Infos = 10;
+    repeated CountryReq Infos = 10;
 }
 
 message CreateCountriesResponse {
@@ -55,7 +66,7 @@ message CreateCountriesResponse {
 }
 
 message GetCountryOnlyRequest {
-    g11n.manager.appcountry.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
 }
 
 message GetCountryOnlyResponse {
@@ -63,7 +74,7 @@ message GetCountryOnlyResponse {
 }
 
 message GetCountriesRequest {
-    g11n.manager.appcountry.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
@@ -74,7 +85,7 @@ message GetCountriesResponse {
 }
 
 message DeleteCountryRequest {
-    string ID = 10;
+    CountryReq Info = 10;
 }
 
 message DeleteCountryResponse {
