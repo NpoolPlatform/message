@@ -28,7 +28,7 @@ message CountryReq {
 message Country {
     // @inject_tag: sql:"id"
     string ID      = 10;
-    // @inject_tag: sql:"counrty"
+    // @inject_tag: sql:"country"
     string Country = 20;
     // @inject_tag: sql:"flag"
     string Flag    = 30;

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.18.1
-// source: npool/g11n/mw/v1/counrty/country.proto
+// source: npool/g11n/mw/v1/country/country.proto
 
 package country
 
@@ -36,7 +36,7 @@ type CountryReq struct {
 func (x *CountryReq) Reset() {
 	*x = CountryReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[0]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -49,7 +49,7 @@ func (x *CountryReq) String() string {
 func (*CountryReq) ProtoMessage() {}
 
 func (x *CountryReq) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[0]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +62,7 @@ func (x *CountryReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountryReq.ProtoReflect.Descriptor instead.
 func (*CountryReq) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{0}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CountryReq) GetID() string {
@@ -107,8 +107,8 @@ type Country struct {
 
 	// @inject_tag: sql:"id"
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
-	// @inject_tag: sql:"counrty"
-	Country string `protobuf:"bytes,20,opt,name=Country,proto3" json:"Country,omitempty" sql:"counrty"`
+	// @inject_tag: sql:"country"
+	Country string `protobuf:"bytes,20,opt,name=Country,proto3" json:"Country,omitempty" sql:"country"`
 	// @inject_tag: sql:"flag"
 	Flag string `protobuf:"bytes,30,opt,name=Flag,proto3" json:"Flag,omitempty" sql:"flag"`
 	// @inject_tag: sql:"code"
@@ -124,7 +124,7 @@ type Country struct {
 func (x *Country) Reset() {
 	*x = Country{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[1]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -137,7 +137,7 @@ func (x *Country) String() string {
 func (*Country) ProtoMessage() {}
 
 func (x *Country) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[1]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -150,7 +150,7 @@ func (x *Country) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Country.ProtoReflect.Descriptor instead.
 func (*Country) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{1}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Country) GetID() string {
@@ -217,7 +217,7 @@ type Conds struct {
 func (x *Conds) Reset() {
 	*x = Conds{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[2]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -230,7 +230,7 @@ func (x *Conds) String() string {
 func (*Conds) ProtoMessage() {}
 
 func (x *Conds) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[2]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -243,7 +243,7 @@ func (x *Conds) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Conds.ProtoReflect.Descriptor instead.
 func (*Conds) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{2}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Conds) GetID() *v1.StringVal {
@@ -292,7 +292,7 @@ type CreateCountryRequest struct {
 func (x *CreateCountryRequest) Reset() {
 	*x = CreateCountryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[3]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -305,7 +305,7 @@ func (x *CreateCountryRequest) String() string {
 func (*CreateCountryRequest) ProtoMessage() {}
 
 func (x *CreateCountryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[3]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -318,7 +318,7 @@ func (x *CreateCountryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCountryRequest.ProtoReflect.Descriptor instead.
 func (*CreateCountryRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{3}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateCountryRequest) GetInfo() *CountryReq {
@@ -339,7 +339,7 @@ type CreateCountryResponse struct {
 func (x *CreateCountryResponse) Reset() {
 	*x = CreateCountryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[4]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -352,7 +352,7 @@ func (x *CreateCountryResponse) String() string {
 func (*CreateCountryResponse) ProtoMessage() {}
 
 func (x *CreateCountryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[4]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -365,7 +365,7 @@ func (x *CreateCountryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCountryResponse.ProtoReflect.Descriptor instead.
 func (*CreateCountryResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{4}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateCountryResponse) GetInfo() *Country {
@@ -386,7 +386,7 @@ type CreateCountriesRequest struct {
 func (x *CreateCountriesRequest) Reset() {
 	*x = CreateCountriesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[5]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -399,7 +399,7 @@ func (x *CreateCountriesRequest) String() string {
 func (*CreateCountriesRequest) ProtoMessage() {}
 
 func (x *CreateCountriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[5]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -412,7 +412,7 @@ func (x *CreateCountriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCountriesRequest.ProtoReflect.Descriptor instead.
 func (*CreateCountriesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{5}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateCountriesRequest) GetInfos() []*CountryReq {
@@ -433,7 +433,7 @@ type CreateCountriesResponse struct {
 func (x *CreateCountriesResponse) Reset() {
 	*x = CreateCountriesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[6]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *CreateCountriesResponse) String() string {
 func (*CreateCountriesResponse) ProtoMessage() {}
 
 func (x *CreateCountriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[6]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *CreateCountriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCountriesResponse.ProtoReflect.Descriptor instead.
 func (*CreateCountriesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{6}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CreateCountriesResponse) GetInfos() []*Country {
@@ -480,7 +480,7 @@ type UpdateCountryRequest struct {
 func (x *UpdateCountryRequest) Reset() {
 	*x = UpdateCountryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[7]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -493,7 +493,7 @@ func (x *UpdateCountryRequest) String() string {
 func (*UpdateCountryRequest) ProtoMessage() {}
 
 func (x *UpdateCountryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[7]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -506,7 +506,7 @@ func (x *UpdateCountryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCountryRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCountryRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{7}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdateCountryRequest) GetInfo() *CountryReq {
@@ -527,7 +527,7 @@ type UpdateCountryResponse struct {
 func (x *UpdateCountryResponse) Reset() {
 	*x = UpdateCountryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[8]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -540,7 +540,7 @@ func (x *UpdateCountryResponse) String() string {
 func (*UpdateCountryResponse) ProtoMessage() {}
 
 func (x *UpdateCountryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[8]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -553,7 +553,7 @@ func (x *UpdateCountryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCountryResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCountryResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{8}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *UpdateCountryResponse) GetInfo() *Country {
@@ -574,7 +574,7 @@ type GetCountryRequest struct {
 func (x *GetCountryRequest) Reset() {
 	*x = GetCountryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[9]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *GetCountryRequest) String() string {
 func (*GetCountryRequest) ProtoMessage() {}
 
 func (x *GetCountryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[9]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *GetCountryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountryRequest.ProtoReflect.Descriptor instead.
 func (*GetCountryRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{9}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetCountryRequest) GetID() string {
@@ -621,7 +621,7 @@ type GetCountryResponse struct {
 func (x *GetCountryResponse) Reset() {
 	*x = GetCountryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[10]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -634,7 +634,7 @@ func (x *GetCountryResponse) String() string {
 func (*GetCountryResponse) ProtoMessage() {}
 
 func (x *GetCountryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[10]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -647,7 +647,7 @@ func (x *GetCountryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountryResponse.ProtoReflect.Descriptor instead.
 func (*GetCountryResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{10}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetCountryResponse) GetInfo() *Country {
@@ -670,7 +670,7 @@ type GetCountriesRequest struct {
 func (x *GetCountriesRequest) Reset() {
 	*x = GetCountriesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[11]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -683,7 +683,7 @@ func (x *GetCountriesRequest) String() string {
 func (*GetCountriesRequest) ProtoMessage() {}
 
 func (x *GetCountriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[11]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,7 +696,7 @@ func (x *GetCountriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountriesRequest.ProtoReflect.Descriptor instead.
 func (*GetCountriesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{11}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetCountriesRequest) GetConds() *Conds {
@@ -732,7 +732,7 @@ type GetCountriesResponse struct {
 func (x *GetCountriesResponse) Reset() {
 	*x = GetCountriesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[12]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -745,7 +745,7 @@ func (x *GetCountriesResponse) String() string {
 func (*GetCountriesResponse) ProtoMessage() {}
 
 func (x *GetCountriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[12]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -758,7 +758,7 @@ func (x *GetCountriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountriesResponse.ProtoReflect.Descriptor instead.
 func (*GetCountriesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{12}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetCountriesResponse) GetInfos() []*Country {
@@ -786,7 +786,7 @@ type GetCountryOnlyRequest struct {
 func (x *GetCountryOnlyRequest) Reset() {
 	*x = GetCountryOnlyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[13]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -799,7 +799,7 @@ func (x *GetCountryOnlyRequest) String() string {
 func (*GetCountryOnlyRequest) ProtoMessage() {}
 
 func (x *GetCountryOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[13]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -812,7 +812,7 @@ func (x *GetCountryOnlyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountryOnlyRequest.ProtoReflect.Descriptor instead.
 func (*GetCountryOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{13}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetCountryOnlyRequest) GetConds() *Conds {
@@ -833,7 +833,7 @@ type GetCountryOnlyResponse struct {
 func (x *GetCountryOnlyResponse) Reset() {
 	*x = GetCountryOnlyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[14]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -846,7 +846,7 @@ func (x *GetCountryOnlyResponse) String() string {
 func (*GetCountryOnlyResponse) ProtoMessage() {}
 
 func (x *GetCountryOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[14]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -859,7 +859,7 @@ func (x *GetCountryOnlyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCountryOnlyResponse.ProtoReflect.Descriptor instead.
 func (*GetCountryOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{14}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetCountryOnlyResponse) GetInfo() *Country {
@@ -880,7 +880,7 @@ type ExistCountryRequest struct {
 func (x *ExistCountryRequest) Reset() {
 	*x = ExistCountryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[15]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -893,7 +893,7 @@ func (x *ExistCountryRequest) String() string {
 func (*ExistCountryRequest) ProtoMessage() {}
 
 func (x *ExistCountryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[15]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -906,7 +906,7 @@ func (x *ExistCountryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCountryRequest.ProtoReflect.Descriptor instead.
 func (*ExistCountryRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{15}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistCountryRequest) GetID() string {
@@ -927,7 +927,7 @@ type ExistCountryResponse struct {
 func (x *ExistCountryResponse) Reset() {
 	*x = ExistCountryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[16]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -940,7 +940,7 @@ func (x *ExistCountryResponse) String() string {
 func (*ExistCountryResponse) ProtoMessage() {}
 
 func (x *ExistCountryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[16]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -953,7 +953,7 @@ func (x *ExistCountryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCountryResponse.ProtoReflect.Descriptor instead.
 func (*ExistCountryResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{16}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistCountryResponse) GetInfo() bool {
@@ -974,7 +974,7 @@ type ExistCountryCondsRequest struct {
 func (x *ExistCountryCondsRequest) Reset() {
 	*x = ExistCountryCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[17]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -987,7 +987,7 @@ func (x *ExistCountryCondsRequest) String() string {
 func (*ExistCountryCondsRequest) ProtoMessage() {}
 
 func (x *ExistCountryCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[17]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1000,7 +1000,7 @@ func (x *ExistCountryCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCountryCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistCountryCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{17}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ExistCountryCondsRequest) GetConds() *Conds {
@@ -1021,7 +1021,7 @@ type ExistCountryCondsResponse struct {
 func (x *ExistCountryCondsResponse) Reset() {
 	*x = ExistCountryCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[18]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1034,7 +1034,7 @@ func (x *ExistCountryCondsResponse) String() string {
 func (*ExistCountryCondsResponse) ProtoMessage() {}
 
 func (x *ExistCountryCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[18]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1047,7 +1047,7 @@ func (x *ExistCountryCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistCountryCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistCountryCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{18}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExistCountryCondsResponse) GetInfo() bool {
@@ -1068,7 +1068,7 @@ type CountCountriesRequest struct {
 func (x *CountCountriesRequest) Reset() {
 	*x = CountCountriesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[19]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1081,7 +1081,7 @@ func (x *CountCountriesRequest) String() string {
 func (*CountCountriesRequest) ProtoMessage() {}
 
 func (x *CountCountriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[19]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1094,7 +1094,7 @@ func (x *CountCountriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountCountriesRequest.ProtoReflect.Descriptor instead.
 func (*CountCountriesRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{19}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CountCountriesRequest) GetConds() *Conds {
@@ -1115,7 +1115,7 @@ type CountCountriesResponse struct {
 func (x *CountCountriesResponse) Reset() {
 	*x = CountCountriesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[20]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1128,7 +1128,7 @@ func (x *CountCountriesResponse) String() string {
 func (*CountCountriesResponse) ProtoMessage() {}
 
 func (x *CountCountriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[20]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1141,7 +1141,7 @@ func (x *CountCountriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountCountriesResponse.ProtoReflect.Descriptor instead.
 func (*CountCountriesResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{20}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CountCountriesResponse) GetInfo() uint32 {
@@ -1162,7 +1162,7 @@ type DeleteCountryRequest struct {
 func (x *DeleteCountryRequest) Reset() {
 	*x = DeleteCountryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[21]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1175,7 +1175,7 @@ func (x *DeleteCountryRequest) String() string {
 func (*DeleteCountryRequest) ProtoMessage() {}
 
 func (x *DeleteCountryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[21]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1188,7 +1188,7 @@ func (x *DeleteCountryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCountryRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCountryRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{21}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *DeleteCountryRequest) GetInfo() *CountryReq {
@@ -1209,7 +1209,7 @@ type DeleteCountryResponse struct {
 func (x *DeleteCountryResponse) Reset() {
 	*x = DeleteCountryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[22]
+		mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1222,7 +1222,7 @@ func (x *DeleteCountryResponse) String() string {
 func (*DeleteCountryResponse) ProtoMessage() {}
 
 func (x *DeleteCountryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[22]
+	mi := &file_npool_g11n_mw_v1_country_country_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1235,7 +1235,7 @@ func (x *DeleteCountryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCountryResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCountryResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP(), []int{22}
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DeleteCountryResponse) GetInfo() *Country {
@@ -1245,11 +1245,11 @@ func (x *DeleteCountryResponse) GetInfo() *Country {
 	return nil
 }
 
-var File_npool_g11n_mw_v1_counrty_country_proto protoreflect.FileDescriptor
+var File_npool_g11n_mw_v1_country_country_proto protoreflect.FileDescriptor
 
-var file_npool_g11n_mw_v1_counrty_country_proto_rawDesc = []byte{
+var file_npool_g11n_mw_v1_country_country_proto_rawDesc = []byte{
 	0x0a, 0x26, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x77, 0x2f,
-	0x76, 0x31, 0x2f, 0x63, 0x6f, 0x75, 0x6e, 0x72, 0x74, 0x79, 0x2f, 0x63, 0x6f, 0x75, 0x6e, 0x74,
+	0x76, 0x31, 0x2f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x2f, 0x63, 0x6f, 0x75, 0x6e, 0x74,
 	0x72, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1a, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d,
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72,
 	0x79, 0x2e, 0x76, 0x31, 0x1a, 0x1e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65,
@@ -1450,19 +1450,19 @@ var file_npool_g11n_mw_v1_counrty_country_proto_rawDesc = []byte{
 }
 
 var (
-	file_npool_g11n_mw_v1_counrty_country_proto_rawDescOnce sync.Once
-	file_npool_g11n_mw_v1_counrty_country_proto_rawDescData = file_npool_g11n_mw_v1_counrty_country_proto_rawDesc
+	file_npool_g11n_mw_v1_country_country_proto_rawDescOnce sync.Once
+	file_npool_g11n_mw_v1_country_country_proto_rawDescData = file_npool_g11n_mw_v1_country_country_proto_rawDesc
 )
 
-func file_npool_g11n_mw_v1_counrty_country_proto_rawDescGZIP() []byte {
-	file_npool_g11n_mw_v1_counrty_country_proto_rawDescOnce.Do(func() {
-		file_npool_g11n_mw_v1_counrty_country_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_g11n_mw_v1_counrty_country_proto_rawDescData)
+func file_npool_g11n_mw_v1_country_country_proto_rawDescGZIP() []byte {
+	file_npool_g11n_mw_v1_country_country_proto_rawDescOnce.Do(func() {
+		file_npool_g11n_mw_v1_country_country_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_g11n_mw_v1_country_country_proto_rawDescData)
 	})
-	return file_npool_g11n_mw_v1_counrty_country_proto_rawDescData
+	return file_npool_g11n_mw_v1_country_country_proto_rawDescData
 }
 
-var file_npool_g11n_mw_v1_counrty_country_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_npool_g11n_mw_v1_counrty_country_proto_goTypes = []interface{}{
+var file_npool_g11n_mw_v1_country_country_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_npool_g11n_mw_v1_country_country_proto_goTypes = []interface{}{
 	(*CountryReq)(nil),                // 0: g11n.middleware.country.v1.CountryReq
 	(*Country)(nil),                   // 1: g11n.middleware.country.v1.Country
 	(*Conds)(nil),                     // 2: g11n.middleware.country.v1.Conds
@@ -1489,7 +1489,7 @@ var file_npool_g11n_mw_v1_counrty_country_proto_goTypes = []interface{}{
 	(*v1.StringVal)(nil),              // 23: basetypes.v1.StringVal
 	(*v1.StringSliceVal)(nil),         // 24: basetypes.v1.StringSliceVal
 }
-var file_npool_g11n_mw_v1_counrty_country_proto_depIdxs = []int32{
+var file_npool_g11n_mw_v1_country_country_proto_depIdxs = []int32{
 	23, // 0: g11n.middleware.country.v1.Conds.ID:type_name -> basetypes.v1.StringVal
 	23, // 1: g11n.middleware.country.v1.Conds.Country:type_name -> basetypes.v1.StringVal
 	23, // 2: g11n.middleware.country.v1.Conds.Code:type_name -> basetypes.v1.StringVal
@@ -1531,13 +1531,13 @@ var file_npool_g11n_mw_v1_counrty_country_proto_depIdxs = []int32{
 	0,  // [0:20] is the sub-list for field type_name
 }
 
-func init() { file_npool_g11n_mw_v1_counrty_country_proto_init() }
-func file_npool_g11n_mw_v1_counrty_country_proto_init() {
-	if File_npool_g11n_mw_v1_counrty_country_proto != nil {
+func init() { file_npool_g11n_mw_v1_country_country_proto_init() }
+func file_npool_g11n_mw_v1_country_country_proto_init() {
+	if File_npool_g11n_mw_v1_country_country_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountryReq); i {
 			case 0:
 				return &v.state
@@ -1549,7 +1549,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Country); i {
 			case 0:
 				return &v.state
@@ -1561,7 +1561,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Conds); i {
 			case 0:
 				return &v.state
@@ -1573,7 +1573,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCountryRequest); i {
 			case 0:
 				return &v.state
@@ -1585,7 +1585,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCountryResponse); i {
 			case 0:
 				return &v.state
@@ -1597,7 +1597,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCountriesRequest); i {
 			case 0:
 				return &v.state
@@ -1609,7 +1609,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCountriesResponse); i {
 			case 0:
 				return &v.state
@@ -1621,7 +1621,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCountryRequest); i {
 			case 0:
 				return &v.state
@@ -1633,7 +1633,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCountryResponse); i {
 			case 0:
 				return &v.state
@@ -1645,7 +1645,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountryRequest); i {
 			case 0:
 				return &v.state
@@ -1657,7 +1657,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountryResponse); i {
 			case 0:
 				return &v.state
@@ -1669,7 +1669,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountriesRequest); i {
 			case 0:
 				return &v.state
@@ -1681,7 +1681,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountriesResponse); i {
 			case 0:
 				return &v.state
@@ -1693,7 +1693,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountryOnlyRequest); i {
 			case 0:
 				return &v.state
@@ -1705,7 +1705,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCountryOnlyResponse); i {
 			case 0:
 				return &v.state
@@ -1717,7 +1717,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistCountryRequest); i {
 			case 0:
 				return &v.state
@@ -1729,7 +1729,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistCountryResponse); i {
 			case 0:
 				return &v.state
@@ -1741,7 +1741,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistCountryCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1753,7 +1753,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistCountryCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1765,7 +1765,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountCountriesRequest); i {
 			case 0:
 				return &v.state
@@ -1777,7 +1777,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CountCountriesResponse); i {
 			case 0:
 				return &v.state
@@ -1789,7 +1789,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCountryRequest); i {
 			case 0:
 				return &v.state
@@ -1801,7 +1801,7 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 				return nil
 			}
 		}
-		file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_g11n_mw_v1_country_country_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCountryResponse); i {
 			case 0:
 				return &v.state
@@ -1814,23 +1814,23 @@ func file_npool_g11n_mw_v1_counrty_country_proto_init() {
 			}
 		}
 	}
-	file_npool_g11n_mw_v1_counrty_country_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_npool_g11n_mw_v1_country_country_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_npool_g11n_mw_v1_counrty_country_proto_rawDesc,
+			RawDescriptor: file_npool_g11n_mw_v1_country_country_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_npool_g11n_mw_v1_counrty_country_proto_goTypes,
-		DependencyIndexes: file_npool_g11n_mw_v1_counrty_country_proto_depIdxs,
-		MessageInfos:      file_npool_g11n_mw_v1_counrty_country_proto_msgTypes,
+		GoTypes:           file_npool_g11n_mw_v1_country_country_proto_goTypes,
+		DependencyIndexes: file_npool_g11n_mw_v1_country_country_proto_depIdxs,
+		MessageInfos:      file_npool_g11n_mw_v1_country_country_proto_msgTypes,
 	}.Build()
-	File_npool_g11n_mw_v1_counrty_country_proto = out.File
-	file_npool_g11n_mw_v1_counrty_country_proto_rawDesc = nil
-	file_npool_g11n_mw_v1_counrty_country_proto_goTypes = nil
-	file_npool_g11n_mw_v1_counrty_country_proto_depIdxs = nil
+	File_npool_g11n_mw_v1_country_country_proto = out.File
+	file_npool_g11n_mw_v1_country_country_proto_rawDesc = nil
+	file_npool_g11n_mw_v1_country_country_proto_goTypes = nil
+	file_npool_g11n_mw_v1_country_country_proto_depIdxs = nil
 }
