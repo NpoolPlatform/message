@@ -174,7 +174,8 @@ message ProxyPluginResponse {
   uint32 ChainUnitExp = 104;
   basetypes.v1.GasType GasType = 105;
   string ChainID = 106;
-  string ChainNickName = 107;
+  string ChainNickname = 107;
+  string ChainNativeCoinName = 108;
 
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
