@@ -267,12 +267,18 @@
         "ChainAtomicUnit": {
           "type": "string"
         },
-        "ChainUnitExt": {
-          "type": "string",
+        "ChainUnitExp": {
+          "type": "integer",
           "format": "int64"
         },
         "GasType": {
           "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickName": {
+          "type": "string"
         }
       }
     },
