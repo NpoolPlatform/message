@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package g11n.manager.country.v1;
+package g11n.middleware.country.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/country";
 
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
     rpc CreateCountries   (CreateCountriesRequest)   returns (CreateCountriesResponse)   {}
     rpc UpdateCountry     (UpdateCountryRequest)     returns (UpdateCountryResponse)     {}
