@@ -49,7 +49,7 @@ message CoinReq {
     optional uint32 ChainUnitExp                 = 270;
     optional basetypes.v1.GasType GasType        = 280;
     optional string ChainID                      = 290;
-    optional string ChainNickName                = 300;
+    optional string ChainNickname                = 300;
     optional string ChainNativeCoinName          = 310;
 }
 
