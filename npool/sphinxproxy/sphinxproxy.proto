@@ -171,8 +171,10 @@ message ProxyPluginResponse {
   sphinx.plugin.v1.ChainType ChainType = 101;
   string ChainNativeUnit = 102;
   string ChainAtomicUnit = 103;
-  int64 ChainUnitExp = 104;
+  uint32 ChainUnitExp = 104;
   basetypes.v1.GasType GasType = 105;
+  string ChainID = 106;
+  string ChainNickName = 107;
 
   TransactionType TransactionType = 110;
   string ENV = 111; // main or test
