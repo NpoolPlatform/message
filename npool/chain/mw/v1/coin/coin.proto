@@ -50,6 +50,7 @@ message CoinReq {
     optional basetypes.v1.GasType GasType        = 280;
     optional string ChainID                      = 290;
     optional string ChainNickName                = 300;
+    optional string ChainNativeCoinName          = 310;
 }
 
 message Coin {
