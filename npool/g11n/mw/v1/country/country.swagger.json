@@ -1,0 +1,218 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "npool/g11n/mw/v1/counrty/country.proto",
+      "version": "version not set"
+    },
+    "tags": [
+      {
+        "name": "Manager"
+      }
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {},
+    "definitions": {
+      "protobufAny": {
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {}
+      },
+      "rpcStatus": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "#/definitions/protobufAny"
+            }
+          }
+        }
+      },
+      "v1Conds": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "$ref": "#/definitions/v1StringVal"
+          },
+          "Country": {
+            "$ref": "#/definitions/v1StringVal"
+          },
+          "Code": {
+            "$ref": "#/definitions/v1StringVal"
+          },
+          "Short": {
+            "$ref": "#/definitions/v1StringVal"
+          },
+          "Countries": {
+            "$ref": "#/definitions/v1StringSliceVal"
+          }
+        }
+      },
+      "v1Country": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "string",
+            "title": "@inject_tag: sql:\"id\""
+          },
+          "Country": {
+            "type": "string",
+            "title": "@inject_tag: sql:\"counrty\""
+          },
+          "Flag": {
+            "type": "string",
+            "title": "@inject_tag: sql:\"flag\""
+          },
+          "Code": {
+            "type": "string",
+            "title": "@inject_tag: sql:\"code\""
+          },
+          "Short": {
+            "type": "string",
+            "title": "@inject_tag: sql:\"short\""
+          },
+          "CreatedAt": {
+            "type": "integer",
+            "format": "int64",
+            "title": "@inject_tag: sql:\"created_at\""
+          },
+          "UpdatedAt": {
+            "type": "integer",
+            "format": "int64",
+            "title": "@inject_tag: sql:\"updated_at\""
+          }
+        }
+      },
+      "v1CountryReq": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Flag": {
+            "type": "string"
+          },
+          "Code": {
+            "type": "string"
+          },
+          "Short": {
+            "type": "string"
+          }
+        }
+      },
+      "v1CreateCountriesResponse": {
+        "type": "object",
+        "properties": {
+          "Infos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "#/definitions/v1Country"
+            }
+          }
+        }
+      },
+      "v1CreateCountryResponse": {
+        "type": "object",
+        "properties": {
+          "Info": {
+            "$ref": "#/definitions/v1Country"
+          }
+        }
+      },
+      "v1DeleteCountryResponse": {
+        "type": "object",
+        "properties": {
+          "Info": {
+            "$ref": "#/definitions/v1Country"
+          }
+        }
+      },
+      "v1GetCountriesResponse": {
+        "type": "object",
+        "properties": {
+          "Infos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "#/definitions/v1Country"
+            }
+          },
+          "Total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "v1GetCountryOnlyResponse": {
+        "type": "object",
+        "properties": {
+          "Info": {
+            "$ref": "#/definitions/v1Country"
+          }
+        }
+      },
+      "v1GetCountryResponse": {
+        "type": "object",
+        "properties": {
+          "Info": {
+            "$ref": "#/definitions/v1Country"
+          }
+        }
+      },
+      "v1StringSliceVal": {
+        "type": "object",
+        "properties": {
+          "Op": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "v1StringVal": {
+        "type": "object",
+        "properties": {
+          "Op": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "string"
+          }
+        }
+      },
+      "v1UpdateCountryResponse": {
+        "type": "object",
+        "properties": {
+          "Info": {
+            "$ref": "#/definitions/v1Country"
+          }
+        }
+      }
+    }
+  }
+  
