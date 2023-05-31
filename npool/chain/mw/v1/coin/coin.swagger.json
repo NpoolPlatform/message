@@ -277,7 +277,7 @@
         "ChainID": {
           "type": "string"
         },
-        "ChainNickName": {
+        "ChainNickname": {
           "type": "string"
         },
         "ChainNativeCoinName": {
