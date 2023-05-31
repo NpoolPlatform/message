@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/g11n/mw/v1/counrty/country.proto
+// source: npool/g11n/mw/v1/country/country.proto
 
 package country
 
@@ -327,5 +327,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/g11n/mw/v1/counrty/country.proto",
+	Metadata: "npool/g11n/mw/v1/country/country.proto",
 }
