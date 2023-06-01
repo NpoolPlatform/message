@@ -14,6 +14,7 @@ service Middleware {
     rpc GetObjectReviews (GetObjectReviewsRequest) returns (GetObjectReviewsResponse) {}
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
     rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
+    rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)     {}
 }
 
 enum ReviewObjectType {
@@ -144,6 +145,14 @@ message DeleteReviewRequest {
 }
 
 message DeleteReviewResponse {
+    Review Info = 10;
+}
+
+message GetReviewRequest {
+    string id = 10;
+}
+
+message GetReviewResponse {
     Review Info = 10;
 }
 

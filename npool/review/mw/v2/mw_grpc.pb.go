@@ -25,6 +25,7 @@ const (
 	Middleware_GetObjectReviews_FullMethodName = "/review.middleware.v2.Middleware/GetObjectReviews"
 	Middleware_GetReviews_FullMethodName       = "/review.middleware.v2.Middleware/GetReviews"
 	Middleware_DeleteReview_FullMethodName     = "/review.middleware.v2.Middleware/DeleteReview"
+	Middleware_GetReview_FullMethodName        = "/review.middleware.v2.Middleware/GetReview"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetObjectReviews(ctx context.Context, in *GetObjectReviewsRequest, opts ...grpc.CallOption) (*GetObjectReviewsResponse, error)
 	GetReviews(ctx context.Context, in *GetReviewsRequest, opts ...grpc.CallOption) (*GetReviewsResponse, error)
 	DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error)
+	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) DeleteReview(ctx context.Context, in *DeleteReviewReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error) {
+	out := new(GetReviewResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetReview_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetObjectReviews(context.Context, *GetObjectReviewsRequest) (*GetObjectReviewsResponse, error)
 	GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error)
 	DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error)
+	GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) GetReviews(context.Context, *GetReviewsRequ
 }
 func (UnimplementedMiddlewareServer) DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteReview not implemented")
+}
+func (UnimplementedMiddlewareServer) GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetReview not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_DeleteReview_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetReview(ctx, req.(*GetReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteReview",
 			Handler:    _Middleware_DeleteReview_Handler,
+		},
+		{
+			MethodName: "GetReview",
+			Handler:    _Middleware_GetReview_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
