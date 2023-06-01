@@ -149,7 +149,7 @@ message DeleteReviewResponse {
 }
 
 message GetReviewRequest {
-    string id = 10;
+    string ID = 10;
 }
 
 message GetReviewResponse {
