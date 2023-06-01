@@ -133,6 +133,14 @@
         }
       }
     },
+    "v2GetReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Review"
+        }
+      }
+    },
     "v2GetReviewsResponse": {
       "type": "object",
       "properties": {
