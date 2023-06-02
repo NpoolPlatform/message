@@ -95,7 +95,6 @@ message UpdateKycReviewRequest {
     string ReviewID    = 10;
     string AppID       = 20;
     string UserID      = 30; // Reviewer
-    string LangID      = 40;
     review.middleware.v2.ReviewState State = 50;
     optional string Message   = 60;
 }
