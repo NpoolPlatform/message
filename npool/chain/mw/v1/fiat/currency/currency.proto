@@ -47,9 +47,10 @@ message Currency {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID      = 10;
-    optional basetypes.v1.StringVal      FiatID  = 20;
-    optional basetypes.v1.StringSliceVal FiatIDs = 30;
+    optional basetypes.v1.StringVal      ID       = 10;
+    optional basetypes.v1.StringVal      FiatID   = 20;
+    optional basetypes.v1.StringSliceVal FiatIDs  = 30;
+    optional basetypes.v1.StringVal      FiatName = 40;
 }
 
 message GetCurrencyRequest {
