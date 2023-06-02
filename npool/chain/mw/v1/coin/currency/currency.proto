@@ -45,6 +45,8 @@ message Currency {
     // @inject_tag: sql:"feed_type"
     string FeedTypeStr      = 110;
     basetypes.v1.CurrencyFeedType FeedType = 120;
+    // @inject_tag: sql:"stable_usd"
+    bool   StableUSD    = 130;
 }
 
 message Conds {
