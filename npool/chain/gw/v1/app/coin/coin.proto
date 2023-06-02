@@ -126,7 +126,6 @@ message GetAppCoinsResponse {
 message UpdateCoinRequest {
     string          ID                       = 10;
     string          AppID                    = 20;
-    string          CoinTypeID               = 40;
     optional string Name                     = 50;
     repeated string DisplayNames             = 51;
     optional string Logo                     = 60;
