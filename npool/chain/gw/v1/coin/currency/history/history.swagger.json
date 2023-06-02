@@ -181,6 +181,10 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
+        },
+        "StableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"stable_usd\""
         }
       }
     },

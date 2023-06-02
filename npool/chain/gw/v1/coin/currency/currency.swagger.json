@@ -278,6 +278,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
           "$ref": "#/definitions/v1CurrencyFeedType"
+<<<<<<< HEAD
 =======
           "$ref": "#/definitions/v1FeedType"
 =======
@@ -332,6 +333,12 @@
           }
 <<<<<<< HEAD
 >>>>>>> Add chain meta
+=======
+        },
+        "StableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"stable_usd\""
+>>>>>>> Add stable usd
         }
       }
     },
