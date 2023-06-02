@@ -144,6 +144,14 @@
         }
       }
     },
+    "v1ExistCountryCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetCountriesResponse": {
       "type": "object",
       "properties": {

@@ -104,6 +104,14 @@
         }
       }
     },
+    "v1ExistLangCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetLangOnlyResponse": {
       "type": "object",
       "properties": {
