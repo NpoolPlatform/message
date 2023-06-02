@@ -178,7 +178,7 @@ message CreateNAppGoodRequest {
     optional uint32 ServiceStartAt = 120;
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
-    inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
+    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
     optional bool                               EnablePurchase         = 160;
     optional bool                               EnableProductPage      = 170;
     optional good.manager.appgood.v1.CancelMode CancelMode             = 180;
