@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/message";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/g11n/mgr/v1/message/message.proto";
+import "npool/g11n/mw/v1/message/message.proto";
 
 // Service Name
 service Gateway {
@@ -114,7 +114,7 @@ message CreateAppMessageResponse {
 message CreateMessagesRequest {
     string                                       AppID        = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateMessagesResponse {
@@ -124,7 +124,7 @@ message CreateMessagesResponse {
 message CreateAppMessagesRequest {
     string                                       TargetAppID  = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateAppMessagesResponse {
