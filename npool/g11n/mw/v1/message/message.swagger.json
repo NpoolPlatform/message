@@ -107,6 +107,22 @@
         }
       }
     },
+    "v1ExistMessageCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetMessageOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Message"
+        }
+      }
+    },
     "v1GetMessageResponse": {
       "type": "object",
       "properties": {

@@ -19,12 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateMessage_FullMethodName  = "/g11n.middleware.message1.v1.Middleware/CreateMessage"
-	Middleware_CreateMessages_FullMethodName = "/g11n.middleware.message1.v1.Middleware/CreateMessages"
-	Middleware_UpdateMessage_FullMethodName  = "/g11n.middleware.message1.v1.Middleware/UpdateMessage"
-	Middleware_GetMessage_FullMethodName     = "/g11n.middleware.message1.v1.Middleware/GetMessage"
-	Middleware_GetMessages_FullMethodName    = "/g11n.middleware.message1.v1.Middleware/GetMessages"
-	Middleware_DeleteMessage_FullMethodName  = "/g11n.middleware.message1.v1.Middleware/DeleteMessage"
+	Middleware_CreateMessage_FullMethodName     = "/g11n.middleware.message1.v1.Middleware/CreateMessage"
+	Middleware_CreateMessages_FullMethodName    = "/g11n.middleware.message1.v1.Middleware/CreateMessages"
+	Middleware_UpdateMessage_FullMethodName     = "/g11n.middleware.message1.v1.Middleware/UpdateMessage"
+	Middleware_GetMessage_FullMethodName        = "/g11n.middleware.message1.v1.Middleware/GetMessage"
+	Middleware_GetMessageOnly_FullMethodName    = "/g11n.middleware.message1.v1.Middleware/GetMessageOnly"
+	Middleware_GetMessages_FullMethodName       = "/g11n.middleware.message1.v1.Middleware/GetMessages"
+	Middleware_ExistMessageConds_FullMethodName = "/g11n.middleware.message1.v1.Middleware/ExistMessageConds"
+	Middleware_DeleteMessage_FullMethodName     = "/g11n.middleware.message1.v1.Middleware/DeleteMessage"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,7 +37,9 @@ type MiddlewareClient interface {
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
 	UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error)
 	GetMessage(ctx context.Context, in *GetMessageRequest, opts ...grpc.CallOption) (*GetMessageResponse, error)
+	GetMessageOnly(ctx context.Context, in *GetMessageOnlyRequest, opts ...grpc.CallOption) (*GetMessageOnlyResponse, error)
 	GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error)
+	ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error)
 	DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error)
 }
 
@@ -83,9 +87,27 @@ func (c *middlewareClient) GetMessage(ctx context.Context, in *GetMessageRequest
 	return out, nil
 }
 
+func (c *middlewareClient) GetMessageOnly(ctx context.Context, in *GetMessageOnlyRequest, opts ...grpc.CallOption) (*GetMessageOnlyResponse, error) {
+	out := new(GetMessageOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetMessageOnly_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
 	out := new(GetMessagesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetMessages_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error) {
+	out := new(ExistMessageCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistMessageConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +131,9 @@ type MiddlewareServer interface {
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
 	UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error)
 	GetMessage(context.Context, *GetMessageRequest) (*GetMessageResponse, error)
+	GetMessageOnly(context.Context, *GetMessageOnlyRequest) (*GetMessageOnlyResponse, error)
 	GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error)
+	ExistMessageConds(context.Context, *ExistMessageCondsRequest) (*ExistMessageCondsResponse, error)
 	DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -130,8 +154,14 @@ func (UnimplementedMiddlewareServer) UpdateMessage(context.Context, *UpdateMessa
 func (UnimplementedMiddlewareServer) GetMessage(context.Context, *GetMessageRequest) (*GetMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessage not implemented")
 }
+func (UnimplementedMiddlewareServer) GetMessageOnly(context.Context, *GetMessageOnlyRequest) (*GetMessageOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMessageOnly not implemented")
+}
 func (UnimplementedMiddlewareServer) GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessages not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistMessageConds(context.Context, *ExistMessageCondsRequest) (*ExistMessageCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistMessageConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMessage not implemented")
@@ -221,6 +251,24 @@ func _Middleware_GetMessage_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetMessageOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMessageOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetMessageOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetMessageOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetMessageOnly(ctx, req.(*GetMessageOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetMessages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetMessagesRequest)
 	if err := dec(in); err != nil {
@@ -235,6 +283,24 @@ func _Middleware_GetMessages_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetMessages(ctx, req.(*GetMessagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistMessageConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistMessageCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistMessageConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistMessageConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistMessageConds(ctx, req.(*ExistMessageCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -281,8 +347,16 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetMessage_Handler,
 		},
 		{
+			MethodName: "GetMessageOnly",
+			Handler:    _Middleware_GetMessageOnly_Handler,
+		},
+		{
 			MethodName: "GetMessages",
 			Handler:    _Middleware_GetMessages_Handler,
+		},
+		{
+			MethodName: "ExistMessageConds",
+			Handler:    _Middleware_ExistMessageConds_Handler,
 		},
 		{
 			MethodName: "DeleteMessage",
