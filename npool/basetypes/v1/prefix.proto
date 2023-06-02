@@ -11,4 +11,9 @@ enum Prefix {
     PrefixUserLogin         = 30;
     PrefixWalletAccountLock = 40;
     PrefixAPIRegister       = 50;
+    PrefixCreateAppCountry  = 60;
+    PrefixCreateCountry     = 70;
+    PrefixCreateAppLang     = 80;
+    PrefixCreateLang        = 90;
+    PrefixCreateMessage     = 100;
 }

@@ -794,6 +794,100 @@ func (x *GetLangsResponse) GetTotal() uint32 {
 	return 0
 }
 
+type ExistLangCondsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *ExistLangCondsRequest) Reset() {
+	*x = ExistLangCondsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistLangCondsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistLangCondsRequest) ProtoMessage() {}
+
+func (x *ExistLangCondsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistLangCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistLangCondsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ExistLangCondsRequest) GetConds() *Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
+type ExistLangCondsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *ExistLangCondsResponse) Reset() {
+	*x = ExistLangCondsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistLangCondsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistLangCondsResponse) ProtoMessage() {}
+
+func (x *ExistLangCondsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistLangCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistLangCondsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ExistLangCondsResponse) GetInfo() bool {
+	if x != nil {
+		return x.Info
+	}
+	return false
+}
+
 type DeleteLangRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -805,7 +899,7 @@ type DeleteLangRequest struct {
 func (x *DeleteLangRequest) Reset() {
 	*x = DeleteLangRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[13]
+		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -818,7 +912,7 @@ func (x *DeleteLangRequest) String() string {
 func (*DeleteLangRequest) ProtoMessage() {}
 
 func (x *DeleteLangRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[13]
+	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -831,7 +925,7 @@ func (x *DeleteLangRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLangRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLangRequest) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{13}
+	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *DeleteLangRequest) GetInfo() *LangReq {
@@ -852,7 +946,7 @@ type DeleteLangResponse struct {
 func (x *DeleteLangResponse) Reset() {
 	*x = DeleteLangResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[14]
+		mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -865,7 +959,7 @@ func (x *DeleteLangResponse) String() string {
 func (*DeleteLangResponse) ProtoMessage() {}
 
 func (x *DeleteLangResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[14]
+	mi := &file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -878,7 +972,7 @@ func (x *DeleteLangResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLangResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLangResponse) Descriptor() ([]byte, []int) {
-	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{14}
+	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeleteLangResponse) GetInfo() *Lang {
@@ -989,7 +1083,15 @@ var file_npool_g11n_mw_v1_applang_applang_proto_rawDesc = []byte{
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e,
 	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52,
-	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x4c, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x50, 0x0a, 0x15, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4c,
+	0x61, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x37, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21,
+	0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64,
+	0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2c, 0x0a, 0x16, 0x45, 0x78, 0x69, 0x73,
+	0x74, 0x4c, 0x61, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x4c, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
 	0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x04, 0x49,
 	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x67, 0x31, 0x31, 0x6e,
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c,
@@ -999,7 +1101,7 @@ var file_npool_g11n_mw_v1_applang_applang_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61,
 	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x32, 0xa6, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
+	0x32, 0xa1, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
 	0x6d, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x12, 0x2d, 0x2e,
 	0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
 	0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
@@ -1034,18 +1136,26 @@ var file_npool_g11n_mw_v1_applang_applang_proto_rawDesc = []byte{
 	0x6e, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x67, 0x31, 0x31,
 	0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70,
 	0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4c, 0x61, 0x6e, 0x67, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0a, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x12, 0x2d, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
-	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61,
-	0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x0e, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x4c, 0x61, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x31, 0x2e, 0x67,
+	0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
+	0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4c,
+	0x61, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x32, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69,
+	0x73, 0x74, 0x4c, 0x61, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c,
+	0x61, 0x6e, 0x67, 0x12, 0x2d, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x67, 0x31, 0x31, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x2e,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x61, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
+	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67,
+	0x31, 0x31, 0x6e, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x61, 0x6e,
+	0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1060,33 +1170,35 @@ func file_npool_g11n_mw_v1_applang_applang_proto_rawDescGZIP() []byte {
 	return file_npool_g11n_mw_v1_applang_applang_proto_rawDescData
 }
 
-var file_npool_g11n_mw_v1_applang_applang_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_npool_g11n_mw_v1_applang_applang_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_npool_g11n_mw_v1_applang_applang_proto_goTypes = []interface{}{
-	(*LangReq)(nil),             // 0: g11n.middleware.applang.v1.LangReq
-	(*Lang)(nil),                // 1: g11n.middleware.applang.v1.Lang
-	(*Conds)(nil),               // 2: g11n.middleware.applang.v1.Conds
-	(*CreateLangRequest)(nil),   // 3: g11n.middleware.applang.v1.CreateLangRequest
-	(*CreateLangResponse)(nil),  // 4: g11n.middleware.applang.v1.CreateLangResponse
-	(*CreateLangsRequest)(nil),  // 5: g11n.middleware.applang.v1.CreateLangsRequest
-	(*CreateLangsResponse)(nil), // 6: g11n.middleware.applang.v1.CreateLangsResponse
-	(*UpdateLangRequest)(nil),   // 7: g11n.middleware.applang.v1.UpdateLangRequest
-	(*UpdateLangResponse)(nil),  // 8: g11n.middleware.applang.v1.UpdateLangResponse
-	(*GetLangOnlyRequest)(nil),  // 9: g11n.middleware.applang.v1.GetLangOnlyRequest
-	(*GetLangOnlyResponse)(nil), // 10: g11n.middleware.applang.v1.GetLangOnlyResponse
-	(*GetLangsRequest)(nil),     // 11: g11n.middleware.applang.v1.GetLangsRequest
-	(*GetLangsResponse)(nil),    // 12: g11n.middleware.applang.v1.GetLangsResponse
-	(*DeleteLangRequest)(nil),   // 13: g11n.middleware.applang.v1.DeleteLangRequest
-	(*DeleteLangResponse)(nil),  // 14: g11n.middleware.applang.v1.DeleteLangResponse
-	(*v1.StringVal)(nil),        // 15: basetypes.v1.StringVal
-	(*v1.BoolVal)(nil),          // 16: basetypes.v1.BoolVal
-	(*v1.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
+	(*LangReq)(nil),                // 0: g11n.middleware.applang.v1.LangReq
+	(*Lang)(nil),                   // 1: g11n.middleware.applang.v1.Lang
+	(*Conds)(nil),                  // 2: g11n.middleware.applang.v1.Conds
+	(*CreateLangRequest)(nil),      // 3: g11n.middleware.applang.v1.CreateLangRequest
+	(*CreateLangResponse)(nil),     // 4: g11n.middleware.applang.v1.CreateLangResponse
+	(*CreateLangsRequest)(nil),     // 5: g11n.middleware.applang.v1.CreateLangsRequest
+	(*CreateLangsResponse)(nil),    // 6: g11n.middleware.applang.v1.CreateLangsResponse
+	(*UpdateLangRequest)(nil),      // 7: g11n.middleware.applang.v1.UpdateLangRequest
+	(*UpdateLangResponse)(nil),     // 8: g11n.middleware.applang.v1.UpdateLangResponse
+	(*GetLangOnlyRequest)(nil),     // 9: g11n.middleware.applang.v1.GetLangOnlyRequest
+	(*GetLangOnlyResponse)(nil),    // 10: g11n.middleware.applang.v1.GetLangOnlyResponse
+	(*GetLangsRequest)(nil),        // 11: g11n.middleware.applang.v1.GetLangsRequest
+	(*GetLangsResponse)(nil),       // 12: g11n.middleware.applang.v1.GetLangsResponse
+	(*ExistLangCondsRequest)(nil),  // 13: g11n.middleware.applang.v1.ExistLangCondsRequest
+	(*ExistLangCondsResponse)(nil), // 14: g11n.middleware.applang.v1.ExistLangCondsResponse
+	(*DeleteLangRequest)(nil),      // 15: g11n.middleware.applang.v1.DeleteLangRequest
+	(*DeleteLangResponse)(nil),     // 16: g11n.middleware.applang.v1.DeleteLangResponse
+	(*v1.StringVal)(nil),           // 17: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),             // 18: basetypes.v1.BoolVal
+	(*v1.StringSliceVal)(nil),      // 19: basetypes.v1.StringSliceVal
 }
 var file_npool_g11n_mw_v1_applang_applang_proto_depIdxs = []int32{
-	15, // 0: g11n.middleware.applang.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	15, // 1: g11n.middleware.applang.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	15, // 2: g11n.middleware.applang.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
-	16, // 3: g11n.middleware.applang.v1.Conds.Main:type_name -> basetypes.v1.BoolVal
-	17, // 4: g11n.middleware.applang.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
+	17, // 0: g11n.middleware.applang.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	17, // 1: g11n.middleware.applang.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	17, // 2: g11n.middleware.applang.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
+	18, // 3: g11n.middleware.applang.v1.Conds.Main:type_name -> basetypes.v1.BoolVal
+	19, // 4: g11n.middleware.applang.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 5: g11n.middleware.applang.v1.CreateLangRequest.Info:type_name -> g11n.middleware.applang.v1.LangReq
 	1,  // 6: g11n.middleware.applang.v1.CreateLangResponse.Info:type_name -> g11n.middleware.applang.v1.Lang
 	0,  // 7: g11n.middleware.applang.v1.CreateLangsRequest.Infos:type_name -> g11n.middleware.applang.v1.LangReq
@@ -1097,25 +1209,28 @@ var file_npool_g11n_mw_v1_applang_applang_proto_depIdxs = []int32{
 	1,  // 12: g11n.middleware.applang.v1.GetLangOnlyResponse.Info:type_name -> g11n.middleware.applang.v1.Lang
 	2,  // 13: g11n.middleware.applang.v1.GetLangsRequest.Conds:type_name -> g11n.middleware.applang.v1.Conds
 	1,  // 14: g11n.middleware.applang.v1.GetLangsResponse.Infos:type_name -> g11n.middleware.applang.v1.Lang
-	0,  // 15: g11n.middleware.applang.v1.DeleteLangRequest.Info:type_name -> g11n.middleware.applang.v1.LangReq
-	1,  // 16: g11n.middleware.applang.v1.DeleteLangResponse.Info:type_name -> g11n.middleware.applang.v1.Lang
-	3,  // 17: g11n.middleware.applang.v1.Middleware.CreateLang:input_type -> g11n.middleware.applang.v1.CreateLangRequest
-	5,  // 18: g11n.middleware.applang.v1.Middleware.CreateLangs:input_type -> g11n.middleware.applang.v1.CreateLangsRequest
-	7,  // 19: g11n.middleware.applang.v1.Middleware.UpdateLang:input_type -> g11n.middleware.applang.v1.UpdateLangRequest
-	9,  // 20: g11n.middleware.applang.v1.Middleware.GetLangOnly:input_type -> g11n.middleware.applang.v1.GetLangOnlyRequest
-	11, // 21: g11n.middleware.applang.v1.Middleware.GetLangs:input_type -> g11n.middleware.applang.v1.GetLangsRequest
-	13, // 22: g11n.middleware.applang.v1.Middleware.DeleteLang:input_type -> g11n.middleware.applang.v1.DeleteLangRequest
-	4,  // 23: g11n.middleware.applang.v1.Middleware.CreateLang:output_type -> g11n.middleware.applang.v1.CreateLangResponse
-	6,  // 24: g11n.middleware.applang.v1.Middleware.CreateLangs:output_type -> g11n.middleware.applang.v1.CreateLangsResponse
-	8,  // 25: g11n.middleware.applang.v1.Middleware.UpdateLang:output_type -> g11n.middleware.applang.v1.UpdateLangResponse
-	10, // 26: g11n.middleware.applang.v1.Middleware.GetLangOnly:output_type -> g11n.middleware.applang.v1.GetLangOnlyResponse
-	12, // 27: g11n.middleware.applang.v1.Middleware.GetLangs:output_type -> g11n.middleware.applang.v1.GetLangsResponse
-	14, // 28: g11n.middleware.applang.v1.Middleware.DeleteLang:output_type -> g11n.middleware.applang.v1.DeleteLangResponse
-	23, // [23:29] is the sub-list for method output_type
-	17, // [17:23] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	2,  // 15: g11n.middleware.applang.v1.ExistLangCondsRequest.Conds:type_name -> g11n.middleware.applang.v1.Conds
+	0,  // 16: g11n.middleware.applang.v1.DeleteLangRequest.Info:type_name -> g11n.middleware.applang.v1.LangReq
+	1,  // 17: g11n.middleware.applang.v1.DeleteLangResponse.Info:type_name -> g11n.middleware.applang.v1.Lang
+	3,  // 18: g11n.middleware.applang.v1.Middleware.CreateLang:input_type -> g11n.middleware.applang.v1.CreateLangRequest
+	5,  // 19: g11n.middleware.applang.v1.Middleware.CreateLangs:input_type -> g11n.middleware.applang.v1.CreateLangsRequest
+	7,  // 20: g11n.middleware.applang.v1.Middleware.UpdateLang:input_type -> g11n.middleware.applang.v1.UpdateLangRequest
+	9,  // 21: g11n.middleware.applang.v1.Middleware.GetLangOnly:input_type -> g11n.middleware.applang.v1.GetLangOnlyRequest
+	11, // 22: g11n.middleware.applang.v1.Middleware.GetLangs:input_type -> g11n.middleware.applang.v1.GetLangsRequest
+	13, // 23: g11n.middleware.applang.v1.Middleware.ExistLangConds:input_type -> g11n.middleware.applang.v1.ExistLangCondsRequest
+	15, // 24: g11n.middleware.applang.v1.Middleware.DeleteLang:input_type -> g11n.middleware.applang.v1.DeleteLangRequest
+	4,  // 25: g11n.middleware.applang.v1.Middleware.CreateLang:output_type -> g11n.middleware.applang.v1.CreateLangResponse
+	6,  // 26: g11n.middleware.applang.v1.Middleware.CreateLangs:output_type -> g11n.middleware.applang.v1.CreateLangsResponse
+	8,  // 27: g11n.middleware.applang.v1.Middleware.UpdateLang:output_type -> g11n.middleware.applang.v1.UpdateLangResponse
+	10, // 28: g11n.middleware.applang.v1.Middleware.GetLangOnly:output_type -> g11n.middleware.applang.v1.GetLangOnlyResponse
+	12, // 29: g11n.middleware.applang.v1.Middleware.GetLangs:output_type -> g11n.middleware.applang.v1.GetLangsResponse
+	14, // 30: g11n.middleware.applang.v1.Middleware.ExistLangConds:output_type -> g11n.middleware.applang.v1.ExistLangCondsResponse
+	16, // 31: g11n.middleware.applang.v1.Middleware.DeleteLang:output_type -> g11n.middleware.applang.v1.DeleteLangResponse
+	25, // [25:32] is the sub-list for method output_type
+	18, // [18:25] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_npool_g11n_mw_v1_applang_applang_proto_init() }
@@ -1281,7 +1396,7 @@ func file_npool_g11n_mw_v1_applang_applang_proto_init() {
 			}
 		}
 		file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteLangRequest); i {
+			switch v := v.(*ExistLangCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1293,6 +1408,30 @@ func file_npool_g11n_mw_v1_applang_applang_proto_init() {
 			}
 		}
 		file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistLangCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteLangRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_g11n_mw_v1_applang_applang_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLangResponse); i {
 			case 0:
 				return &v.state
@@ -1312,7 +1451,7 @@ func file_npool_g11n_mw_v1_applang_applang_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_g11n_mw_v1_applang_applang_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
