@@ -21,4 +21,5 @@ enum Prefix {
     PrefixCreateCoinCurrency = 130;
     PrefixCreateCoinFiat    = 140;
     PrefixCreateCoinFiatCurrency = 150;
+    PrefixUpdateFiat        = 160;
 }
