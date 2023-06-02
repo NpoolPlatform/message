@@ -56,6 +56,9 @@
         },
         "FiatIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "FiatName": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
