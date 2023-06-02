@@ -37,6 +37,7 @@ type MiddlewareClient interface {
 	CreateMessages(ctx context.Context, in *CreateMessagesRequest, opts ...grpc.CallOption) (*CreateMessagesResponse, error)
 	UpdateMessage(ctx context.Context, in *UpdateMessageRequest, opts ...grpc.CallOption) (*UpdateMessageResponse, error)
 	GetMessage(ctx context.Context, in *GetMessageRequest, opts ...grpc.CallOption) (*GetMessageResponse, error)
+	GetMessageOnly(ctx context.Context, in *GetMessageOnlyRequest, opts ...grpc.CallOption) (*GetMessageOnlyResponse, error)
 	GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error)
 	ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error)
 	DeleteMessage(ctx context.Context, in *DeleteMessageRequest, opts ...grpc.CallOption) (*DeleteMessageResponse, error)
@@ -175,6 +176,7 @@ type MiddlewareServer interface {
 	CreateMessages(context.Context, *CreateMessagesRequest) (*CreateMessagesResponse, error)
 	UpdateMessage(context.Context, *UpdateMessageRequest) (*UpdateMessageResponse, error)
 	GetMessage(context.Context, *GetMessageRequest) (*GetMessageResponse, error)
+	GetMessageOnly(context.Context, *GetMessageOnlyRequest) (*GetMessageOnlyResponse, error)
 	GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error)
 	ExistMessageConds(context.Context, *ExistMessageCondsRequest) (*ExistMessageCondsResponse, error)
 	DeleteMessage(context.Context, *DeleteMessageRequest) (*DeleteMessageResponse, error)
@@ -196,6 +198,9 @@ func (UnimplementedMiddlewareServer) UpdateMessage(context.Context, *UpdateMessa
 }
 func (UnimplementedMiddlewareServer) GetMessage(context.Context, *GetMessageRequest) (*GetMessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessage not implemented")
+}
+func (UnimplementedMiddlewareServer) GetMessageOnly(context.Context, *GetMessageOnlyRequest) (*GetMessageOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMessageOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetMessages(context.Context, *GetMessagesRequest) (*GetMessagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMessages not implemented")
@@ -287,6 +292,24 @@ func _Middleware_GetMessage_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetMessage(ctx, req.(*GetMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetMessageOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMessageOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetMessageOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetMessageOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetMessageOnly(ctx, req.(*GetMessageOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
