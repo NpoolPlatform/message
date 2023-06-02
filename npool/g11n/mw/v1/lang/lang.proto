@@ -14,6 +14,7 @@ service Middleware {
     rpc GetLang        (GetLangRequest)        returns (GetLangResponse)        {}
     rpc GetLangOnly    (GetLangOnlyRequest)    returns (GetLangOnlyResponse)    {}
     rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
+    rpc ExistLangConds (ExistLangCondsRequest) returns (ExistLangCondsResponse) {}
     rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
 }
 
@@ -100,6 +101,14 @@ message GetLangOnlyRequest {
 
 message GetLangOnlyResponse {
     Lang Info = 10;
+}
+
+message ExistLangCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistLangCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteLangRequest {

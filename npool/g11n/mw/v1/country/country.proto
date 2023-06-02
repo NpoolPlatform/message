@@ -14,6 +14,7 @@ service Middleware {
     rpc GetCountry        (GetCountryRequest)        returns (GetCountryResponse)        {}
     rpc GetCountryOnly    (GetCountryOnlyRequest)    returns (GetCountryOnlyResponse)    {}
     rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
+    rpc ExistCountryConds (ExistCountryCondsRequest) returns (ExistCountryCondsResponse) {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
 }
 
@@ -102,28 +103,12 @@ message GetCountryOnlyResponse {
     Country Info = 10;
 }
 
-message ExistCountryRequest {
-    string ID = 10;
-}
-
-message ExistCountryResponse {
-    bool Info = 10;
-}
-
 message ExistCountryCondsRequest {
     Conds Conds = 10;
 }
 
 message ExistCountryCondsResponse {
     bool Info = 10;
-}
-
-message CountCountriesRequest {
-    Conds Conds = 10;
-}
-
-message CountCountriesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteCountryRequest {

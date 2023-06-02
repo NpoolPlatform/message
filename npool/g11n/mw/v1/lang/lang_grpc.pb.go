@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLang_FullMethodName  = "/g11n.middleware.lang.v1.Middleware/CreateLang"
-	Middleware_CreateLangs_FullMethodName = "/g11n.middleware.lang.v1.Middleware/CreateLangs"
-	Middleware_UpdateLang_FullMethodName  = "/g11n.middleware.lang.v1.Middleware/UpdateLang"
-	Middleware_GetLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/GetLang"
-	Middleware_GetLangOnly_FullMethodName = "/g11n.middleware.lang.v1.Middleware/GetLangOnly"
-	Middleware_GetLangs_FullMethodName    = "/g11n.middleware.lang.v1.Middleware/GetLangs"
-	Middleware_DeleteLang_FullMethodName  = "/g11n.middleware.lang.v1.Middleware/DeleteLang"
+	Middleware_CreateLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/CreateLang"
+	Middleware_CreateLangs_FullMethodName    = "/g11n.middleware.lang.v1.Middleware/CreateLangs"
+	Middleware_UpdateLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/UpdateLang"
+	Middleware_GetLang_FullMethodName        = "/g11n.middleware.lang.v1.Middleware/GetLang"
+	Middleware_GetLangOnly_FullMethodName    = "/g11n.middleware.lang.v1.Middleware/GetLangOnly"
+	Middleware_GetLangs_FullMethodName       = "/g11n.middleware.lang.v1.Middleware/GetLangs"
+	Middleware_ExistLangConds_FullMethodName = "/g11n.middleware.lang.v1.Middleware/ExistLangConds"
+	Middleware_DeleteLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/DeleteLang"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -38,6 +39,7 @@ type MiddlewareClient interface {
 	GetLang(ctx context.Context, in *GetLangRequest, opts ...grpc.CallOption) (*GetLangResponse, error)
 	GetLangOnly(ctx context.Context, in *GetLangOnlyRequest, opts ...grpc.CallOption) (*GetLangOnlyResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
+	ExistLangConds(ctx context.Context, in *ExistLangCondsRequest, opts ...grpc.CallOption) (*ExistLangCondsResponse, error)
 	DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error)
 }
 
@@ -103,6 +105,15 @@ func (c *middlewareClient) GetLangs(ctx context.Context, in *GetLangsRequest, op
 	return out, nil
 }
 
+func (c *middlewareClient) ExistLangConds(ctx context.Context, in *ExistLangCondsRequest, opts ...grpc.CallOption) (*ExistLangCondsResponse, error) {
+	out := new(ExistLangCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistLangConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error) {
 	out := new(DeleteLangResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteLang_FullMethodName, in, out, opts...)
@@ -122,6 +133,7 @@ type MiddlewareServer interface {
 	GetLang(context.Context, *GetLangRequest) (*GetLangResponse, error)
 	GetLangOnly(context.Context, *GetLangOnlyRequest) (*GetLangOnlyResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
+	ExistLangConds(context.Context, *ExistLangCondsRequest) (*ExistLangCondsResponse, error)
 	DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -147,6 +159,9 @@ func (UnimplementedMiddlewareServer) GetLangOnly(context.Context, *GetLangOnlyRe
 }
 func (UnimplementedMiddlewareServer) GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLangs not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistLangConds(context.Context, *ExistLangCondsRequest) (*ExistLangCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistLangConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLang not implemented")
@@ -272,6 +287,24 @@ func _Middleware_GetLangs_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistLangConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistLangCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistLangConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistLangConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistLangConds(ctx, req.(*ExistLangCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteLang_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteLangRequest)
 	if err := dec(in); err != nil {
@@ -320,6 +353,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLangs",
 			Handler:    _Middleware_GetLangs_Handler,
+		},
+		{
+			MethodName: "ExistLangConds",
+			Handler:    _Middleware_ExistLangConds_Handler,
 		},
 		{
 			MethodName: "DeleteLang",
