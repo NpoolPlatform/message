@@ -47,6 +47,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/get/fiatcurrency": {
+      "post": {
+        "operationId": "Gateway_GetCurrency",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetCurrencyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/chaingatewayfiatcurrencyv1GetCurrencyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -82,6 +114,22 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "chaingatewayfiatcurrencyv1GetCurrencyRequest": {
+      "type": "object",
+      "properties": {
+        "FiatName": {
+          "type": "string"
+        }
+      }
+    },
+    "chaingatewayfiatcurrencyv1GetCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
         }
       }
     },

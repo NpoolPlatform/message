@@ -9,12 +9,26 @@ import "npool/chain/mw/v1/fiat/currency/currency.proto";
 
 // Service Name
 service Gateway {
+    rpc GetCurrency (GetCurrencyRequest) returns (GetCurrencyResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fiatcurrency"
+            body: "*"
+        };
+    }
     rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fiatcurrencies"
             body: "*"
         };
     }
+}
+
+message GetCurrencyRequest {
+    string FiatName = 10;
+}
+
+message GetCurrencyResponse {
+    chain.middleware.fiat.currency.v1.Currency Info = 10;
 }
 
 message GetCurrenciesRequest {
