@@ -114,15 +114,7 @@ func RegisterStakerManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/version"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/version"))
->>>>>>> Regenerate
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -130,17 +122,12 @@ func RegisterStakerManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 		resp, md, err := local_request_StakerManager_Version_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Regenerate
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
 		forward_StakerManager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-<<<<<<< HEAD
 
 	})
 
@@ -153,10 +140,8 @@ func RegisterStakerManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var err error
 		var annotatedContext context.Context
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Redistribute", runtime.WithHTTPPathPattern("/v1/redistribute"))
-=======
->>>>>>> Regenerate
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_StakerManager_Redistribute_0(annotatedContext, inboundMarshaler, server, req, pathParams)
@@ -167,13 +152,7 @@ func RegisterStakerManagerHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-<<<<<<< HEAD
 		forward_StakerManager_Redistribute_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_StakerManager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
->>>>>>> Regenerate
 
 	})
 
@@ -224,32 +203,19 @@ func RegisterStakerManagerHandlerClient(ctx context.Context, mux *runtime.ServeM
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/v1/version"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/version"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Version", runtime.WithHTTPPathPattern("/version"))
->>>>>>> Regenerate
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := request_StakerManager_Version_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Regenerate
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
 		forward_StakerManager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-<<<<<<< HEAD
 
 	})
 
@@ -260,10 +226,8 @@ func RegisterStakerManagerHandlerClient(ctx context.Context, mux *runtime.ServeM
 		var err error
 		var annotatedContext context.Context
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/staker.manager.v1.StakerManager/Redistribute", runtime.WithHTTPPathPattern("/v1/redistribute"))
-=======
->>>>>>> Regenerate
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := request_StakerManager_Redistribute_0(annotatedContext, inboundMarshaler, client, req, pathParams)
@@ -273,13 +237,7 @@ func RegisterStakerManagerHandlerClient(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-<<<<<<< HEAD
 		forward_StakerManager_Redistribute_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_StakerManager_Version_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
->>>>>>> Regenerate
 
 	})
 

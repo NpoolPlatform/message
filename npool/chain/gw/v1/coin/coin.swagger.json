@@ -227,18 +227,9 @@
         },
         "RefreshCurrency": {
           "type": "boolean"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "Logo": {
           "type": "string"
-=======
->>>>>>> Add refresh currency to coin
-=======
-        },
-        "Logo": {
-          "type": "string"
->>>>>>> Add logo to update coin
         }
       }
     },

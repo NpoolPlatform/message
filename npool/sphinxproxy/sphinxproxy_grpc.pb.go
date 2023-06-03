@@ -19,14 +19,6 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add chain native coin name
-=======
->>>>>>> Use better parameter definition
 const (
 	SphinxProxy_Version_FullMethodName           = "/sphinx.proxy.v1.SphinxProxy/Version"
 	SphinxProxy_GetBalance_FullMethodName        = "/sphinx.proxy.v1.SphinxProxy/GetBalance"
@@ -35,28 +27,11 @@ const (
 	SphinxProxy_UpdateTransaction_FullMethodName = "/sphinx.proxy.v1.SphinxProxy/UpdateTransaction"
 	SphinxProxy_GetTransaction_FullMethodName    = "/sphinx.proxy.v1.SphinxProxy/GetTransaction"
 	SphinxProxy_GetTransactions_FullMethodName   = "/sphinx.proxy.v1.SphinxProxy/GetTransactions"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	SphinxProxy_GetEstimateGas_FullMethodName    = "/sphinx.proxy.v1.SphinxProxy/GetEstimateGas"
->>>>>>> Add chain native coin name
-=======
-	SphinxProxy_GetEstimateGas_FullMethodName    = "/sphinx.proxy.v1.SphinxProxy/GetEstimateGas"
->>>>>>> Use better parameter definition
 	SphinxProxy_ProxyPlugin_FullMethodName       = "/sphinx.proxy.v1.SphinxProxy/ProxyPlugin"
 	SphinxProxy_ProxySign_FullMethodName         = "/sphinx.proxy.v1.SphinxProxy/ProxySign"
 )
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> add gastype
-=======
->>>>>>> Add chain native coin name
-=======
->>>>>>> add chainNativeCoinName
-=======
->>>>>>> Use better parameter definition
 // SphinxProxyClient is the client API for SphinxProxy service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.

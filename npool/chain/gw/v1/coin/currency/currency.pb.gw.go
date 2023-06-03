@@ -113,28 +113,12 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrency", runtime.WithHTTPPathPattern("/v1/get/coincurrency"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrency", runtime.WithHTTPPathPattern("/v1/get/coincurrency"))
->>>>>>> Refactor gw proto
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := local_request_Gateway_GetCurrency_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-=======
-		resp, md, err := local_request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Regenerate
-=======
-		resp, md, err := local_request_Gateway_GetCurrency_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Refactor gw proto
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -142,15 +126,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_GetCurrency_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
-		forward_Gateway_GetCurrency_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Refactor gw proto
 
 	})
 
@@ -162,28 +138,12 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/coincurrencyhistories"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
->>>>>>> Refactor gw proto
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := local_request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-=======
-		resp, md, err := local_request_Gateway_GetHistories_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Regenerate
-=======
-		resp, md, err := local_request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Refactor gw proto
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -191,15 +151,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_GetHistories_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
-		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Refactor gw proto
 
 	})
 
@@ -250,43 +202,19 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrency", runtime.WithHTTPPathPattern("/v1/get/coincurrency"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrency", runtime.WithHTTPPathPattern("/v1/get/coincurrency"))
->>>>>>> Refactor gw proto
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := request_Gateway_GetCurrency_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-=======
-		resp, md, err := request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Regenerate
-=======
-		resp, md, err := request_Gateway_GetCurrency_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Refactor gw proto
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_GetCurrency_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
-		forward_Gateway_GetCurrency_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Refactor gw proto
 
 	})
 
@@ -296,43 +224,19 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/coincurrencyhistories"))
->>>>>>> Regenerate
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/chain.gateway.coin.currency.v1.Gateway/GetCurrencies", runtime.WithHTTPPathPattern("/v1/get/coincurrencies"))
->>>>>>> Refactor gw proto
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-=======
-		resp, md, err := request_Gateway_GetHistories_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Regenerate
-=======
-		resp, md, err := request_Gateway_GetCurrencies_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Refactor gw proto
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_GetHistories_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Regenerate
-=======
-		forward_Gateway_GetCurrencies_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Refactor gw proto
 
 	})
 

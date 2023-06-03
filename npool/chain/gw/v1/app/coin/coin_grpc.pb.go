@@ -19,25 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin_grpc.pb.go
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin_grpc.pb.go
-=======
->>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/appcoin_grpc.pb.go
 	Gateway_CreateCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/CreateCoin"
 	Gateway_GetCoins_FullMethodName    = "/chain.gateway.app.coin.v1.Gateway/GetCoins"
 	Gateway_GetAppCoins_FullMethodName = "/chain.gateway.app.coin.v1.Gateway/GetAppCoins"
 	Gateway_UpdateCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/UpdateCoin"
 	Gateway_DeleteCoin_FullMethodName  = "/chain.gateway.app.coin.v1.Gateway/DeleteCoin"
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/coin_grpc.pb.go
-=======
-	Gateway_CreateCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/CreateCoin"
-	Gateway_GetCoins_FullMethodName    = "/chain.gateway.appcoin.v1.Gateway/GetCoins"
-	Gateway_GetAppCoins_FullMethodName = "/chain.gateway.appcoin.v1.Gateway/GetAppCoins"
-	Gateway_UpdateCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/UpdateCoin"
-	Gateway_DeleteCoin_FullMethodName  = "/chain.gateway.appcoin.v1.Gateway/DeleteCoin"
->>>>>>> Add refresh currency to coin:npool/chain/gw/v1/appcoin/appcoin_grpc.pb.go
-=======
->>>>>>> Refactor gw proto:npool/chain/gw/v1/appcoin/appcoin_grpc.pb.go
 )
 
 // GatewayClient is the client API for Gateway service.

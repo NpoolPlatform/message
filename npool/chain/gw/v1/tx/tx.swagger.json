@@ -116,15 +116,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "$ref": "#/definitions/v1Tx"
-=======
-            "$ref": "#/definitions/chaingatewaytxv1Tx"
->>>>>>> Add chain meta
-=======
-            "$ref": "#/definitions/v1Tx"
->>>>>>> Remove mgr of chain
           }
         },
         "Total": {
@@ -206,76 +198,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-    "managertxv1TxState": {
-=======
-    "v1TxState": {
->>>>>>> Remove mgr of chain
-      "type": "string",
-      "enum": [
-        "DefaultTxState",
-        "TxStateCreated",
-        "TxStateWait",
-        "TxStateTransferring",
-        "TxStateSuccessful",
-        "TxStateFail"
-      ],
-      "default": "DefaultTxState"
-    },
-<<<<<<< HEAD
->>>>>>> Refactor usedfor
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor",
-      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set"
-    },
-<<<<<<< HEAD
->>>>>>> Add chain meta
     "v1TxState": {
       "type": "string",
       "enum": [
@@ -288,10 +210,6 @@
       ],
       "default": "DefaultTxState"
     },
-=======
->>>>>>> Refactor usedfor
-=======
->>>>>>> Remove mgr of chain
     "v1TxType": {
       "type": "string",
       "enum": [

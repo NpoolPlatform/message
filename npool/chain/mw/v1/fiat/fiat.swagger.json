@@ -60,36 +60,7 @@
       "type": "object",
       "properties": {
         "Info": {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/chain/mw/v1/fiat/fiat.swagger.json
           "$ref": "#/definitions/v1Fiat"
-=======
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateFiatCurrencyTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FiatCurrencyType"
-        }
-      }
-    },
-    "v1CreateFiatCurrencyTypesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1FiatCurrencyType"
-          }
->>>>>>> Add chain meta:npool/chain/mgr/v1/fiat/currencytype/currencytype.swagger.json
-=======
-          "$ref": "#/definitions/v1Fiat"
->>>>>>> Add fiat currency
         }
       }
     },
@@ -108,19 +79,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"logo\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add fiat unit
         "Unit": {
           "type": "string",
           "title": "@inject_tag: sql:\"unit\""
         },
-<<<<<<< HEAD
-=======
->>>>>>> Add fiat currency
-=======
->>>>>>> Add fiat unit
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -144,18 +106,9 @@
         },
         "Logo": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "Unit": {
           "type": "string"
-=======
->>>>>>> Add fiat currency
-=======
-        },
-        "Unit": {
-          "type": "string"
->>>>>>> Add fiat unit
         }
       }
     },
@@ -174,15 +127,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/chain/mw/v1/fiat/fiat.swagger.json
             "$ref": "#/definitions/v1Fiat"
-=======
-            "$ref": "#/definitions/v1FiatCurrencyType"
->>>>>>> Add chain meta:npool/chain/mgr/v1/fiat/currencytype/currencytype.swagger.json
-=======
-            "$ref": "#/definitions/v1Fiat"
->>>>>>> Add fiat currency
           }
         },
         "Total": {

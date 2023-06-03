@@ -229,15 +229,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
             "$ref": "#/definitions/v1CoinDescription"
-=======
-            "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
->>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
-=======
-            "$ref": "#/definitions/v1CoinDescription"
->>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
           }
         },
         "Total": {
@@ -357,40 +349,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
-=======
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
->>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
-=======
->>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
     "v1CreateAppCoinDescriptionRequest": {
       "type": "object",
       "properties": {
@@ -442,15 +400,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
-<<<<<<< HEAD:npool/chain/gw/v1/app/coin/description/description.swagger.json
             "$ref": "#/definitions/v1CoinDescription"
-=======
-            "$ref": "#/definitions/chainmiddlewareappcoindescriptionv1CoinDescription"
->>>>>>> Add chain meta:npool/chain/gw/v1/appcoin/description/description.swagger.json
-=======
-            "$ref": "#/definitions/v1CoinDescription"
->>>>>>> Refactor usedfor:npool/chain/gw/v1/appcoin/description/description.swagger.json
           }
         },
         "Total": {

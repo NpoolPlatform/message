@@ -773,28 +773,12 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol", runtime.WithHTTPPathPattern("/v1/update/app/userkol"))
->>>>>>> Use good tx state
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol", runtime.WithHTTPPathPattern("/v1/update/app/userkol"))
->>>>>>> Use good tx state
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := local_request_Gateway_UpdateAppUser_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-=======
-		resp, md, err := local_request_Gateway_UpdateAppUserKol_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Use good tx state
-=======
-		resp, md, err := local_request_Gateway_UpdateAppUserKol_0(annotatedContext, inboundMarshaler, server, req, pathParams)
->>>>>>> Use good tx state
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -802,15 +786,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_UpdateAppUser_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_UpdateAppUserKol_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Use good tx state
-=======
-		forward_Gateway_UpdateAppUserKol_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Use good tx state
 
 	})
 
@@ -1243,43 +1219,19 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUser", runtime.WithHTTPPathPattern("/v1/update/app/user"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol", runtime.WithHTTPPathPattern("/v1/update/app/userkol"))
->>>>>>> Use good tx state
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.user.v1.Gateway/UpdateAppUserKol", runtime.WithHTTPPathPattern("/v1/update/app/userkol"))
->>>>>>> Use good tx state
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		resp, md, err := request_Gateway_UpdateAppUser_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-=======
-		resp, md, err := request_Gateway_UpdateAppUserKol_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Use good tx state
-=======
-		resp, md, err := request_Gateway_UpdateAppUserKol_0(annotatedContext, inboundMarshaler, client, req, pathParams)
->>>>>>> Use good tx state
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		forward_Gateway_UpdateAppUser_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-=======
-		forward_Gateway_UpdateAppUserKol_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Use good tx state
-=======
-		forward_Gateway_UpdateAppUserKol_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
->>>>>>> Use good tx state
 
 	})
 

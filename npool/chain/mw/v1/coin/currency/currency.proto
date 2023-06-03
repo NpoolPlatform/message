@@ -75,3 +75,4 @@ message GetCurrenciesResponse {
     repeated Currency Infos = 10;
     uint32            Total = 20;
 }
+

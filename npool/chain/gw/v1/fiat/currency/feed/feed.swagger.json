@@ -117,15 +117,7 @@
     "fiatcurrencyfeedv1CreateFeedRequest": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "FiatID": {
-=======
-        "FiatTypeID": {
->>>>>>> Refactor gw proto
-=======
-        "FiatID": {
->>>>>>> Format name
           "type": "string"
         },
         "FeedType": {
@@ -181,18 +173,9 @@
         },
         "FeedFiatName": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "Disabled": {
           "type": "boolean"
-=======
->>>>>>> Refactor gw proto
-=======
-        },
-        "Disabled": {
-          "type": "boolean"
->>>>>>> Add disabled
         }
       }
     },

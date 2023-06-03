@@ -108,48 +108,7 @@
           }
         ],
         "tags": [
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/chain/gw/v1/coin/fiat/fiat.swagger.json
           "Gateway"
-=======
-          "ApiManager"
-        ]
-      }
-    },
-    "/version": {
-      "post": {
-        "operationId": "ApiManager_Version",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VersionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        ],
-        "tags": [
-          "ApiManager"
->>>>>>> Add chain meta:npool/apimgr/apimgr.swagger.json
-=======
-          "Gateway"
->>>>>>> Add coin fiat relationship
         ]
       }
     }
@@ -163,49 +122,17 @@
         },
         "FiatID": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        },
-<<<<<<< HEAD:npool/chain/gw/v1/coin/fiat/fiat.swagger.json
-        "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
-=======
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
->>>>>>> Add chain meta:npool/apimgr/apimgr.swagger.json
-=======
->>>>>>> Add coin fiat relationship
-=======
         },
         "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
->>>>>>> Add coin fiat feed type
         }
       }
     },
     "chaingatewaycoinfiatv1CreateCoinFiatResponse": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/chain/gw/v1/coin/fiat/fiat.swagger.json
         "Info": {
           "$ref": "#/definitions/v1CoinFiat"
-=======
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1ServicePath"
-          }
->>>>>>> Add chain meta:npool/apimgr/apimgr.swagger.json
-=======
-        "Info": {
-          "$ref": "#/definitions/v1CoinFiat"
->>>>>>> Add coin fiat relationship
         }
       }
     },
@@ -213,17 +140,8 @@
       "type": "object",
       "properties": {
         "ID": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "integer",
           "format": "int64"
-=======
-          "type": "string"
->>>>>>> Add coin fiat relationship
-=======
-          "type": "integer",
-          "format": "int64"
->>>>>>> Use right ID type
         }
       }
     },
@@ -293,15 +211,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/chain/gw/v1/coin/fiat/fiat.swagger.json
             "$ref": "#/definitions/protobufAny"
-=======
-            "$ref": "#/definitions/v1Path"
->>>>>>> Add chain meta:npool/apimgr/apimgr.swagger.json
-=======
-            "$ref": "#/definitions/protobufAny"
->>>>>>> Add coin fiat relationship
           }
         }
       }

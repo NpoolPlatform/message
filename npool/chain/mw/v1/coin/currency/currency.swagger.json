@@ -18,12 +18,6 @@
   "paths": {},
   "definitions": {
     "protobufAny": {
-<<<<<<< HEAD
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-=======
       "type": "object",
       "properties": {
         "@type": {
@@ -62,77 +56,12 @@
         },
         "FeedType": {
           "$ref": "#/definitions/v1Uint32Val"
-<<<<<<< HEAD
->>>>>>> Add currency history
-        }
-      },
-      "additionalProperties": {}
-    },
-<<<<<<< HEAD
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-<<<<<<< HEAD
-            "$ref": "#/definitions/protobufAny"
-=======
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
->>>>>>> Add chain meta
-          }
-=======
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
->>>>>>> Add conds for coin currency
         }
       }
     },
-<<<<<<< HEAD
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-=======
-    "v1CountCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
->>>>>>> Add currency history
-        }
-      }
-    },
-=======
->>>>>>> Remove unused currency apis
     "v1Currency": {
       "type": "object",
       "properties": {
@@ -183,68 +112,14 @@
           "title": "@inject_tag: sql:\"feed_type\""
         },
         "FeedType": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "$ref": "#/definitions/v1CurrencyFeedType"
-=======
-          "$ref": "#/definitions/v1FeedType"
-        }
-      }
-    },
-    "chainmiddlewarecoincurrencyv1GetCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-          }
-=======
-          "$ref": "#/definitions/v1CurrencyFeedType"
->>>>>>> Add currency history
-        }
-      }
-    },
-    "v1CurrencyFeedType": {
-      "type": "string",
-      "enum": [
-        "DefaultFeedType",
-        "CoinGecko",
-        "CoinBase",
-        "StableUSDHardCode"
-      ],
-      "default": "DefaultFeedType"
-    },
-<<<<<<< HEAD
-    "v1CurrencyReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FeedType": {
           "$ref": "#/definitions/v1CurrencyFeedType"
         },
-<<<<<<< HEAD
-        "MarketValueHigh": {
-          "type": "string"
-        },
-        "MarketValueLow": {
-          "type": "string"
->>>>>>> Add chain meta
-=======
         "StableUSD": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"stable_usd\""
->>>>>>> Add stable usd
         }
       }
     },
-<<<<<<< HEAD
     "v1CurrencyFeedType": {
       "type": "string",
       "enum": [
@@ -255,45 +130,6 @@
       ],
       "default": "DefaultFeedType"
     },
-=======
-    "v1DeleteCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-    "v1ExistCurrencyCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-<<<<<<< HEAD
-    "v1GetCoinCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
->>>>>>> Add currency history
-=======
->>>>>>> Remove unused api
-=======
->>>>>>> Remove unused currency apis
     "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
@@ -301,15 +137,7 @@
           "type": "array",
           "items": {
             "type": "object",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "$ref": "#/definitions/v1Currency"
-=======
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
->>>>>>> Add chain meta
-=======
-            "$ref": "#/definitions/v1Currency"
->>>>>>> Add currency history
           }
         },
         "Total": {
@@ -318,21 +146,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "v1GetCurrencyResponse": {
-=======
-    "v1GetCurrencyOnlyResponse": {
->>>>>>> Add currency history
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Currency"
-        }
-      }
-    },
-=======
->>>>>>> Remove only
     "v1GetCurrencyResponse": {
       "type": "object",
       "properties": {
