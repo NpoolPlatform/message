@@ -176,6 +176,10 @@
         "NeedMemo": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"need_memo\""
+        },
+        "RefreshCurrency": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"refresh_currency\""
         }
       }
     },
@@ -250,6 +254,34 @@
         },
         "NeedMemo": {
           "type": "boolean"
+        },
+        "RefreshCurrency": {
+          "type": "boolean"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickname": {
+          "type": "string"
+        },
+        "ChainNativeCoinName": {
+          "type": "string"
         }
       }
     },
@@ -289,6 +321,16 @@
           "$ref": "#/definitions/v1Coin"
         }
       }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
     },
     "v1GetCoinOnlyResponse": {
       "type": "object",

@@ -11,4 +11,14 @@ enum Prefix {
     PrefixUserLogin         = 30;
     PrefixWalletAccountLock = 40;
     PrefixAPIRegister       = 50;
+    PrefixCreateCoin        = 60;
+    PrefixCreateAppCoinDescription = 70;
+    PrefixCreateAppCoin     = 80;
+    PrefixSetFiat           = 90;
+    PrefixCreateFiatCurrencyFeed = 100;
+    PrefixCreateFiatCurrency = 110;
+    PrefixCreateCoinCurrencyFeed = 120;
+    PrefixCreateCoinCurrency = 130;
+    PrefixCreateCoinFiat    = 140;
+    PrefixCreateCoinFiatCurrency = 150;
 }

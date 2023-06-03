@@ -28,4 +28,6 @@ enum UsedFor {
     AffiliateSignup       = 180;
 
     Announcement          = 100000;
+
+    ProductPage           = 200000;
 }

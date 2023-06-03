@@ -17,7 +17,35 @@
   ],
   "paths": {},
   "definitions": {
-    "chainmiddlewarecoincurrencyv1Conds": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -26,38 +54,15 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "FeedType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "chainmiddlewarecoincurrencyv1CreateCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-          }
-        }
-      }
-    },
-    "chainmiddlewarecoincurrencyv1CreateCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-        }
-      }
-    },
-    "chainmiddlewarecoincurrencyv1Currency": {
+    "v1Currency": {
       "type": "object",
       "properties": {
         "ID": {
@@ -107,79 +112,15 @@
           "title": "@inject_tag: sql:\"feed_type\""
         },
         "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
+          "$ref": "#/definitions/v1CurrencyFeedType"
+        },
+        "StableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"stable_usd\""
         }
       }
     },
-    "chainmiddlewarecoincurrencyv1GetCurrenciesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-          }
-        }
-      }
-    },
-    "chainmiddlewarecoincurrencyv1GetCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1CurrencyReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "FeedType": {
-          "$ref": "#/definitions/v1FeedType"
-        },
-        "MarketValueHigh": {
-          "type": "string"
-        },
-        "MarketValueLow": {
-          "type": "string"
-        }
-      }
-    },
-    "v1FeedType": {
+    "v1CurrencyFeedType": {
       "type": "string",
       "enum": [
         "DefaultFeedType",
@@ -189,22 +130,14 @@
       ],
       "default": "DefaultFeedType"
     },
-    "v1GetCoinCurrencyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
-        }
-      }
-    },
-    "v1GetHistoriesResponse": {
+    "v1GetCurrenciesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chainmiddlewarecoincurrencyv1Currency"
+            "$ref": "#/definitions/v1Currency"
           }
         },
         "Total": {
@@ -213,8 +146,13 @@
         }
       }
     },
-    "v1RefreshCurrenciesResponse": {
-      "type": "object"
+    "v1GetCurrencyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Currency"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",
