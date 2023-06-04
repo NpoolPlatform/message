@@ -1533,74 +1533,74 @@ func file_npool_g11n_mw_v1_message_message_proto_rawDescGZIP() []byte {
 
 var file_npool_g11n_mw_v1_message_message_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_npool_g11n_mw_v1_message_message_proto_goTypes = []interface{}{
-	(*MessageReq)(nil),                // 0: g11n.manager.message1.v1.MessageReq
-	(*Message)(nil),                   // 1: g11n.manager.message1.v1.Message
-	(*Conds)(nil),                     // 2: g11n.manager.message1.v1.Conds
-	(*CreateMessageRequest)(nil),      // 3: g11n.manager.message1.v1.CreateMessageRequest
-	(*CreateMessageResponse)(nil),     // 4: g11n.manager.message1.v1.CreateMessageResponse
-	(*CreateMessagesRequest)(nil),     // 5: g11n.manager.message1.v1.CreateMessagesRequest
-	(*CreateMessagesResponse)(nil),    // 6: g11n.manager.message1.v1.CreateMessagesResponse
-	(*UpdateMessageRequest)(nil),      // 7: g11n.manager.message1.v1.UpdateMessageRequest
-	(*UpdateMessageResponse)(nil),     // 8: g11n.manager.message1.v1.UpdateMessageResponse
-	(*GetMessageRequest)(nil),         // 9: g11n.manager.message1.v1.GetMessageRequest
-	(*GetMessageResponse)(nil),        // 10: g11n.manager.message1.v1.GetMessageResponse
-	(*GetMessagesRequest)(nil),        // 11: g11n.manager.message1.v1.GetMessagesRequest
-	(*GetMessagesResponse)(nil),       // 12: g11n.manager.message1.v1.GetMessagesResponse
-	(*GetMessageOnlyRequest)(nil),     // 13: g11n.manager.message1.v1.GetMessageOnlyRequest
-	(*GetMessageOnlyResponse)(nil),    // 14: g11n.manager.message1.v1.GetMessageOnlyResponse
-	(*ExistMessageRequest)(nil),       // 15: g11n.manager.message1.v1.ExistMessageRequest
-	(*ExistMessageResponse)(nil),      // 16: g11n.manager.message1.v1.ExistMessageResponse
-	(*ExistMessageCondsRequest)(nil),  // 17: g11n.manager.message1.v1.ExistMessageCondsRequest
-	(*ExistMessageCondsResponse)(nil), // 18: g11n.manager.message1.v1.ExistMessageCondsResponse
-	(*CountMessagesRequest)(nil),      // 19: g11n.manager.message1.v1.CountMessagesRequest
-	(*CountMessagesResponse)(nil),     // 20: g11n.manager.message1.v1.CountMessagesResponse
-	(*DeleteMessageRequest)(nil),      // 21: g11n.manager.message1.v1.DeleteMessageRequest
-	(*DeleteMessageResponse)(nil),     // 22: g11n.manager.message1.v1.DeleteMessageResponse
+	(*MessageReq)(nil),                // 0: g11n.middleware.message1.v1.MessageReq
+	(*Message)(nil),                   // 1: g11n.middleware.message1.v1.Message
+	(*Conds)(nil),                     // 2: g11n.middleware.message1.v1.Conds
+	(*CreateMessageRequest)(nil),      // 3: g11n.middleware.message1.v1.CreateMessageRequest
+	(*CreateMessageResponse)(nil),     // 4: g11n.middleware.message1.v1.CreateMessageResponse
+	(*CreateMessagesRequest)(nil),     // 5: g11n.middleware.message1.v1.CreateMessagesRequest
+	(*CreateMessagesResponse)(nil),    // 6: g11n.middleware.message1.v1.CreateMessagesResponse
+	(*UpdateMessageRequest)(nil),      // 7: g11n.middleware.message1.v1.UpdateMessageRequest
+	(*UpdateMessageResponse)(nil),     // 8: g11n.middleware.message1.v1.UpdateMessageResponse
+	(*GetMessageRequest)(nil),         // 9: g11n.middleware.message1.v1.GetMessageRequest
+	(*GetMessageResponse)(nil),        // 10: g11n.middleware.message1.v1.GetMessageResponse
+	(*GetMessagesRequest)(nil),        // 11: g11n.middleware.message1.v1.GetMessagesRequest
+	(*GetMessagesResponse)(nil),       // 12: g11n.middleware.message1.v1.GetMessagesResponse
+	(*GetMessageOnlyRequest)(nil),     // 13: g11n.middleware.message1.v1.GetMessageOnlyRequest
+	(*GetMessageOnlyResponse)(nil),    // 14: g11n.middleware.message1.v1.GetMessageOnlyResponse
+	(*ExistMessageRequest)(nil),       // 15: g11n.middleware.message1.v1.ExistMessageRequest
+	(*ExistMessageResponse)(nil),      // 16: g11n.middleware.message1.v1.ExistMessageResponse
+	(*ExistMessageCondsRequest)(nil),  // 17: g11n.middleware.message1.v1.ExistMessageCondsRequest
+	(*ExistMessageCondsResponse)(nil), // 18: g11n.middleware.message1.v1.ExistMessageCondsResponse
+	(*CountMessagesRequest)(nil),      // 19: g11n.middleware.message1.v1.CountMessagesRequest
+	(*CountMessagesResponse)(nil),     // 20: g11n.middleware.message1.v1.CountMessagesResponse
+	(*DeleteMessageRequest)(nil),      // 21: g11n.middleware.message1.v1.DeleteMessageRequest
+	(*DeleteMessageResponse)(nil),     // 22: g11n.middleware.message1.v1.DeleteMessageResponse
 	(*npool.StringVal)(nil),           // 23: npool.v1.StringVal
 	(*npool.BoolVal)(nil),             // 24: npool.v1.BoolVal
 	(*npool.StringSliceVal)(nil),      // 25: npool.v1.StringSliceVal
 }
 var file_npool_g11n_mw_v1_message_message_proto_depIdxs = []int32{
-	23, // 0: g11n.manager.message1.v1.Conds.ID:type_name -> npool.v1.StringVal
-	23, // 1: g11n.manager.message1.v1.Conds.AppID:type_name -> npool.v1.StringVal
-	23, // 2: g11n.manager.message1.v1.Conds.LangID:type_name -> npool.v1.StringVal
-	23, // 3: g11n.manager.message1.v1.Conds.MessageID:type_name -> npool.v1.StringVal
-	24, // 4: g11n.manager.message1.v1.Conds.Disabled:type_name -> npool.v1.BoolVal
-	25, // 5: g11n.manager.message1.v1.Conds.MessageIDs:type_name -> npool.v1.StringSliceVal
-	0,  // 6: g11n.manager.message1.v1.CreateMessageRequest.Info:type_name -> g11n.manager.message1.v1.MessageReq
-	1,  // 7: g11n.manager.message1.v1.CreateMessageResponse.Info:type_name -> g11n.manager.message1.v1.Message
-	0,  // 8: g11n.manager.message1.v1.CreateMessagesRequest.Infos:type_name -> g11n.manager.message1.v1.MessageReq
-	1,  // 9: g11n.manager.message1.v1.CreateMessagesResponse.Infos:type_name -> g11n.manager.message1.v1.Message
-	0,  // 10: g11n.manager.message1.v1.UpdateMessageRequest.Info:type_name -> g11n.manager.message1.v1.MessageReq
-	1,  // 11: g11n.manager.message1.v1.UpdateMessageResponse.Info:type_name -> g11n.manager.message1.v1.Message
-	1,  // 12: g11n.manager.message1.v1.GetMessageResponse.Info:type_name -> g11n.manager.message1.v1.Message
-	2,  // 13: g11n.manager.message1.v1.GetMessagesRequest.Conds:type_name -> g11n.manager.message1.v1.Conds
-	1,  // 14: g11n.manager.message1.v1.GetMessagesResponse.Infos:type_name -> g11n.manager.message1.v1.Message
-	2,  // 15: g11n.manager.message1.v1.GetMessageOnlyRequest.Conds:type_name -> g11n.manager.message1.v1.Conds
-	1,  // 16: g11n.manager.message1.v1.GetMessageOnlyResponse.Info:type_name -> g11n.manager.message1.v1.Message
-	2,  // 17: g11n.manager.message1.v1.ExistMessageCondsRequest.Conds:type_name -> g11n.manager.message1.v1.Conds
-	2,  // 18: g11n.manager.message1.v1.CountMessagesRequest.Conds:type_name -> g11n.manager.message1.v1.Conds
-	1,  // 19: g11n.manager.message1.v1.DeleteMessageResponse.Info:type_name -> g11n.manager.message1.v1.Message
-	3,  // 20: g11n.manager.message1.v1.Manager.CreateMessage:input_type -> g11n.manager.message1.v1.CreateMessageRequest
-	5,  // 21: g11n.manager.message1.v1.Manager.CreateMessages:input_type -> g11n.manager.message1.v1.CreateMessagesRequest
-	7,  // 22: g11n.manager.message1.v1.Manager.UpdateMessage:input_type -> g11n.manager.message1.v1.UpdateMessageRequest
-	9,  // 23: g11n.manager.message1.v1.Manager.GetMessage:input_type -> g11n.manager.message1.v1.GetMessageRequest
-	13, // 24: g11n.manager.message1.v1.Manager.GetMessageOnly:input_type -> g11n.manager.message1.v1.GetMessageOnlyRequest
-	11, // 25: g11n.manager.message1.v1.Manager.GetMessages:input_type -> g11n.manager.message1.v1.GetMessagesRequest
-	15, // 26: g11n.manager.message1.v1.Manager.ExistMessage:input_type -> g11n.manager.message1.v1.ExistMessageRequest
-	17, // 27: g11n.manager.message1.v1.Manager.ExistMessageConds:input_type -> g11n.manager.message1.v1.ExistMessageCondsRequest
-	19, // 28: g11n.manager.message1.v1.Manager.CountMessages:input_type -> g11n.manager.message1.v1.CountMessagesRequest
-	21, // 29: g11n.manager.message1.v1.Manager.DeleteMessage:input_type -> g11n.manager.message1.v1.DeleteMessageRequest
-	4,  // 30: g11n.manager.message1.v1.Manager.CreateMessage:output_type -> g11n.manager.message1.v1.CreateMessageResponse
-	6,  // 31: g11n.manager.message1.v1.Manager.CreateMessages:output_type -> g11n.manager.message1.v1.CreateMessagesResponse
-	8,  // 32: g11n.manager.message1.v1.Manager.UpdateMessage:output_type -> g11n.manager.message1.v1.UpdateMessageResponse
-	10, // 33: g11n.manager.message1.v1.Manager.GetMessage:output_type -> g11n.manager.message1.v1.GetMessageResponse
-	14, // 34: g11n.manager.message1.v1.Manager.GetMessageOnly:output_type -> g11n.manager.message1.v1.GetMessageOnlyResponse
-	12, // 35: g11n.manager.message1.v1.Manager.GetMessages:output_type -> g11n.manager.message1.v1.GetMessagesResponse
-	16, // 36: g11n.manager.message1.v1.Manager.ExistMessage:output_type -> g11n.manager.message1.v1.ExistMessageResponse
-	18, // 37: g11n.manager.message1.v1.Manager.ExistMessageConds:output_type -> g11n.manager.message1.v1.ExistMessageCondsResponse
-	20, // 38: g11n.manager.message1.v1.Manager.CountMessages:output_type -> g11n.manager.message1.v1.CountMessagesResponse
-	22, // 39: g11n.manager.message1.v1.Manager.DeleteMessage:output_type -> g11n.manager.message1.v1.DeleteMessageResponse
+	23, // 0: g11n.middleware.message1.v1.Conds.ID:type_name -> npool.v1.StringVal
+	23, // 1: g11n.middleware.message1.v1.Conds.AppID:type_name -> npool.v1.StringVal
+	23, // 2: g11n.middleware.message1.v1.Conds.LangID:type_name -> npool.v1.StringVal
+	23, // 3: g11n.middleware.message1.v1.Conds.MessageID:type_name -> npool.v1.StringVal
+	24, // 4: g11n.middleware.message1.v1.Conds.Disabled:type_name -> npool.v1.BoolVal
+	25, // 5: g11n.middleware.message1.v1.Conds.MessageIDs:type_name -> npool.v1.StringSliceVal
+	0,  // 6: g11n.middleware.message1.v1.CreateMessageRequest.Info:type_name -> g11n.middleware.message1.v1.MessageReq
+	1,  // 7: g11n.middleware.message1.v1.CreateMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	0,  // 8: g11n.middleware.message1.v1.CreateMessagesRequest.Infos:type_name -> g11n.middleware.message1.v1.MessageReq
+	1,  // 9: g11n.middleware.message1.v1.CreateMessagesResponse.Infos:type_name -> g11n.middleware.message1.v1.Message
+	0,  // 10: g11n.middleware.message1.v1.UpdateMessageRequest.Info:type_name -> g11n.middleware.message1.v1.MessageReq
+	1,  // 11: g11n.middleware.message1.v1.UpdateMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	1,  // 12: g11n.middleware.message1.v1.GetMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	2,  // 13: g11n.middleware.message1.v1.GetMessagesRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
+	1,  // 14: g11n.middleware.message1.v1.GetMessagesResponse.Infos:type_name -> g11n.middleware.message1.v1.Message
+	2,  // 15: g11n.middleware.message1.v1.GetMessageOnlyRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
+	1,  // 16: g11n.middleware.message1.v1.GetMessageOnlyResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	2,  // 17: g11n.middleware.message1.v1.ExistMessageCondsRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
+	2,  // 18: g11n.middleware.message1.v1.CountMessagesRequest.Conds:type_name -> g11n.middleware.message1.v1.Conds
+	1,  // 19: g11n.middleware.message1.v1.DeleteMessageResponse.Info:type_name -> g11n.middleware.message1.v1.Message
+	3,  // 20: g11n.middleware.message1.v1.middleware.CreateMessage:input_type -> g11n.middleware.message1.v1.CreateMessageRequest
+	5,  // 21: g11n.middleware.message1.v1.middleware.CreateMessages:input_type -> g11n.middleware.message1.v1.CreateMessagesRequest
+	7,  // 22: g11n.middleware.message1.v1.middleware.UpdateMessage:input_type -> g11n.middleware.message1.v1.UpdateMessageRequest
+	9,  // 23: g11n.middleware.message1.v1.middleware.GetMessage:input_type -> g11n.middleware.message1.v1.GetMessageRequest
+	13, // 24: g11n.middleware.message1.v1.middleware.GetMessageOnly:input_type -> g11n.middleware.message1.v1.GetMessageOnlyRequest
+	11, // 25: g11n.middleware.message1.v1.middleware.GetMessages:input_type -> g11n.middleware.message1.v1.GetMessagesRequest
+	15, // 26: g11n.middleware.message1.v1.middleware.ExistMessage:input_type -> g11n.middleware.message1.v1.ExistMessageRequest
+	17, // 27: g11n.middleware.message1.v1.middleware.ExistMessageConds:input_type -> g11n.middleware.message1.v1.ExistMessageCondsRequest
+	19, // 28: g11n.middleware.message1.v1.middleware.CountMessages:input_type -> g11n.middleware.message1.v1.CountMessagesRequest
+	21, // 29: g11n.middleware.message1.v1.middleware.DeleteMessage:input_type -> g11n.middleware.message1.v1.DeleteMessageRequest
+	4,  // 30: g11n.middleware.message1.v1.middleware.CreateMessage:output_type -> g11n.middleware.message1.v1.CreateMessageResponse
+	6,  // 31: g11n.middleware.message1.v1.middleware.CreateMessages:output_type -> g11n.middleware.message1.v1.CreateMessagesResponse
+	8,  // 32: g11n.middleware.message1.v1.middleware.UpdateMessage:output_type -> g11n.middleware.message1.v1.UpdateMessageResponse
+	10, // 33: g11n.middleware.message1.v1.middleware.GetMessage:output_type -> g11n.middleware.message1.v1.GetMessageResponse
+	14, // 34: g11n.middleware.message1.v1.middleware.GetMessageOnly:output_type -> g11n.middleware.message1.v1.GetMessageOnlyResponse
+	12, // 35: g11n.middleware.message1.v1.middleware.GetMessages:output_type -> g11n.middleware.message1.v1.GetMessagesResponse
+	16, // 36: g11n.middleware.message1.v1.middleware.ExistMessage:output_type -> g11n.middleware.message1.v1.ExistMessageResponse
+	18, // 37: g11n.middleware.message1.v1.middleware.ExistMessageConds:output_type -> g11n.middleware.message1.v1.ExistMessageCondsResponse
+	20, // 38: g11n.middleware.message1.v1.middleware.CountMessages:output_type -> g11n.middleware.message1.v1.CountMessagesResponse
+	22, // 39: g11n.middleware.message1.v1.middleware.DeleteMessage:output_type -> g11n.middleware.message1.v1.DeleteMessageResponse
 	30, // [30:40] is the sub-list for method output_type
 	20, // [20:30] is the sub-list for method input_type
 	20, // [20:20] is the sub-list for extension type_name
