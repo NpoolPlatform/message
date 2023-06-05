@@ -29,5 +29,5 @@ message GetObjectTypesRequest {
 }
 
 message GetObjectTypesResponse {
-    repeated review.middleware.v2.ReviewObjectType Infos = 10;
+    repeated review.middleware.review.v2.ReviewObjectType Infos = 10;
 }

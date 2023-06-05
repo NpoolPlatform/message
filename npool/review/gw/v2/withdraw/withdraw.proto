@@ -44,17 +44,17 @@ message WithdrawReview {
     ledger.manager.ledger.withdraw.v1.WithdrawState WithdrawState = 20;
     string ReviewID                             = 30;
     string UserID                               = 40;
-    review.middleware.v2.ReviewState KycState      = 50;
+    review.middleware.review.v2.ReviewState KycState      = 50;
     string EmailAddress                         = 60;
     string PhoneNO                              = 70;
     string Reviewer                             = 80;
-    review.middleware.v2.ReviewObjectType ObjectType = 90;
+    review.middleware.review.v2.ReviewObjectType ObjectType = 90;
     string Domain                               = 100;
     uint32 CreatedAt                            = 110;
     uint32 UpdatedAt                            = 120;
     string Message                              = 130;
-    review.middleware.v2.ReviewState State         = 140;
-    review.middleware.v2.ReviewTriggerType Trigger = 150;
+    review.middleware.review.v2.ReviewState State         = 140;
+    review.middleware.review.v2.ReviewTriggerType Trigger = 150;
     string Amount                               = 160;
     string FeeAmount                            = 170;
     string CoinTypeID                           = 180;
@@ -92,7 +92,7 @@ message UpdateWithdrawReviewRequest {
     string ReviewID    = 10;
     string AppID       = 20;
     string UserID      = 30; // Reviewer
-    review.middleware.v2.ReviewState State = 50;
+    review.middleware.review.v2.ReviewState State = 50;
     optional string Message   = 60;
 }
 
@@ -105,7 +105,7 @@ message UpdateAppWithdrawReviewRequest {
     string AppID       = 20;
     string TargetAppID = 30;
     string UserID      = 40; // Reviewer
-    review.middleware.v2.ReviewState State = 60;
+    review.middleware.review.v2.ReviewState State = 60;
     optional string Message   = 70;
 }
 
