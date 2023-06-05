@@ -19,6 +19,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
     optional basetypes.v1.Uint32Val      StartAt     = 40;
     optional basetypes.v1.Uint32Val      EndAt       = 50;
+    optional basetypes.v1.StringSliceVal CoinNames   = 60;
 }
 
 message GetCurrenciesRequest {

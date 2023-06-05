@@ -53,6 +53,12 @@
     "currencyhistoryv1GetCurrenciesRequest": {
       "type": "object",
       "properties": {
+        "CoinNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CoinTypeIDs": {
           "type": "array",
           "items": {

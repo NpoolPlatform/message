@@ -18,11 +18,12 @@ service Gateway {
 }
 
 message GetCurrenciesRequest {
-    repeated string CoinTypeIDs = 10;
-    optional uint32 StartAt     = 20;
-    optional uint32 EndAt       = 30;
-    int32           Offset      = 40;
-    int32           Limit       = 50;
+    repeated string CoinNames   = 10;
+    repeated string CoinTypeIDs = 20;
+    optional uint32 StartAt     = 30;
+    optional uint32 EndAt       = 40;
+    int32           Offset      = 50;
+    int32           Limit       = 60;
 }
 
 message GetCurrenciesResponse {

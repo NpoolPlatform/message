@@ -34,6 +34,9 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CoinNames": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
