@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/country";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
-import "npool/g11n/mgr/v1/country/country.proto";
+import "npool/g11n/mw/v1/country/country.proto";
 
 // Service Name
 service Gateway {
@@ -46,15 +46,15 @@ message CreateCountryRequest {
 }
 
 message CreateCountryResponse {
-    g11n.manager.country.v1.Country Info = 10;
+    g11n.middleware.country.v1.Country Info = 10;
 }
 
 message CreateCountriesRequest {
-    repeated g11n.manager.country.v1.CountryReq Infos = 10;
+    repeated g11n.middleware.country.v1.CountryReq Infos = 10;
 }
 
 message CreateCountriesResponse {
-    repeated g11n.manager.country.v1.Country Infos = 10;
+    repeated g11n.middleware.country.v1.Country Infos = 10;
 }
 
 message UpdateCountryRequest {
@@ -66,7 +66,7 @@ message UpdateCountryRequest {
 }
 
 message UpdateCountryResponse {
-    g11n.manager.country.v1.Country Info = 10;
+    g11n.middleware.country.v1.Country Info = 10;
 }
 
 message GetCountriesRequest {
@@ -75,7 +75,7 @@ message GetCountriesRequest {
 }
 
 message GetCountriesResponse {
-    repeated g11n.manager.country.v1.Country Infos = 10;
+    repeated g11n.middleware.country.v1.Country Infos = 10;
     uint32                                   Total = 20;
 }
 
