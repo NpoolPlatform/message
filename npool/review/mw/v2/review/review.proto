@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package review.middleware.v2;
+package review.middleware.review.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2/review";
 

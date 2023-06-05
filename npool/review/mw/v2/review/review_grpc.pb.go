@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateReview_FullMethodName     = "/review.middleware.v2.Middleware/CreateReview"
-	Middleware_UpdateReview_FullMethodName     = "/review.middleware.v2.Middleware/UpdateReview"
-	Middleware_GetObjectReview_FullMethodName  = "/review.middleware.v2.Middleware/GetObjectReview"
-	Middleware_GetObjectReviews_FullMethodName = "/review.middleware.v2.Middleware/GetObjectReviews"
-	Middleware_GetReviews_FullMethodName       = "/review.middleware.v2.Middleware/GetReviews"
-	Middleware_DeleteReview_FullMethodName     = "/review.middleware.v2.Middleware/DeleteReview"
-	Middleware_GetReview_FullMethodName        = "/review.middleware.v2.Middleware/GetReview"
+	Middleware_CreateReview_FullMethodName     = "/review.middleware.review.v2.Middleware/CreateReview"
+	Middleware_UpdateReview_FullMethodName     = "/review.middleware.review.v2.Middleware/UpdateReview"
+	Middleware_GetObjectReview_FullMethodName  = "/review.middleware.review.v2.Middleware/GetObjectReview"
+	Middleware_GetObjectReviews_FullMethodName = "/review.middleware.review.v2.Middleware/GetObjectReviews"
+	Middleware_GetReviews_FullMethodName       = "/review.middleware.review.v2.Middleware/GetReviews"
+	Middleware_DeleteReview_FullMethodName     = "/review.middleware.review.v2.Middleware/DeleteReview"
+	Middleware_GetReview_FullMethodName        = "/review.middleware.review.v2.Middleware/GetReview"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -294,7 +294,7 @@ func _Middleware_GetReview_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "review.middleware.v2.Middleware",
+	ServiceName: "review.middleware.review.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
