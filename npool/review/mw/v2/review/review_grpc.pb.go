@@ -26,7 +26,7 @@ const (
 	Middleware_GetReviews_FullMethodName       = "/review.middleware.review.v2.Middleware/GetReviews"
 	Middleware_DeleteReview_FullMethodName     = "/review.middleware.review.v2.Middleware/DeleteReview"
 	Middleware_GetReview_FullMethodName        = "/review.middleware.review.v2.Middleware/GetReview"
-	Middleware_ExistCondsReview_FullMethodName = "/review.middleware.review.v2.Middleware/ExistCondsReview"
+	Middleware_ExistReviewConds_FullMethodName = "/review.middleware.review.v2.Middleware/ExistReviewConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -40,7 +40,7 @@ type MiddlewareClient interface {
 	GetReviews(ctx context.Context, in *GetReviewsRequest, opts ...grpc.CallOption) (*GetReviewsResponse, error)
 	DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error)
 	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error)
-	ExistCondsReview(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error)
+	ExistReviewConds(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -114,9 +114,9 @@ func (c *middlewareClient) GetReview(ctx context.Context, in *GetReviewRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) ExistCondsReview(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error) {
+func (c *middlewareClient) ExistReviewConds(ctx context.Context, in *ExistReviewCondsRequest, opts ...grpc.CallOption) (*ExistReviewCondsResponse, error) {
 	out := new(ExistReviewCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistCondsReview_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_ExistReviewConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -134,7 +134,7 @@ type MiddlewareServer interface {
 	GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error)
 	DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error)
 	GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error)
-	ExistCondsReview(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error)
+	ExistReviewConds(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -163,8 +163,8 @@ func (UnimplementedMiddlewareServer) DeleteReview(context.Context, *DeleteReview
 func (UnimplementedMiddlewareServer) GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReview not implemented")
 }
-func (UnimplementedMiddlewareServer) ExistCondsReview(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistCondsReview not implemented")
+func (UnimplementedMiddlewareServer) ExistReviewConds(context.Context, *ExistReviewCondsRequest) (*ExistReviewCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistReviewConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -305,20 +305,20 @@ func _Middleware_GetReview_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistCondsReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_ExistReviewConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistReviewCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistCondsReview(ctx, in)
+		return srv.(MiddlewareServer).ExistReviewConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ExistCondsReview_FullMethodName,
+		FullMethod: Middleware_ExistReviewConds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistCondsReview(ctx, req.(*ExistReviewCondsRequest))
+		return srv.(MiddlewareServer).ExistReviewConds(ctx, req.(*ExistReviewCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -359,8 +359,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetReview_Handler,
 		},
 		{
-			MethodName: "ExistCondsReview",
-			Handler:    _Middleware_ExistCondsReview_Handler,
+			MethodName: "ExistReviewConds",
+			Handler:    _Middleware_ExistReviewConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

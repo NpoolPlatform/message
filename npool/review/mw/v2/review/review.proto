@@ -15,7 +15,7 @@ service Middleware {
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
     rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
     rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {}
-    rpc ExistCondsReview (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {}
+    rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {}
 }
 
 enum ReviewObjectType {
