@@ -113,6 +113,14 @@
         }
       }
     },
+    "v2ExistReviewCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v2GetObjectReviewResponse": {
       "type": "object",
       "properties": {
