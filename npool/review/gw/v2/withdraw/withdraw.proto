@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/withdra
 import "npool/ledger/mgr/v1/ledger/withdraw/withdraw.proto";
 import "npool/review/mw/v2/review/review.proto";
 import "google/api/annotations.proto";
-
+import "npool/basetypes/v1/kycstate.proto";
 // Service Name
 service Gateway {
     rpc GetWithdrawReviews (GetWithdrawReviewsRequest) returns (GetWithdrawReviewsResponse) {
@@ -44,7 +44,7 @@ message WithdrawReview {
     ledger.manager.ledger.withdraw.v1.WithdrawState WithdrawState = 20;
     string ReviewID                             = 30;
     string UserID                               = 40;
-    review.middleware.review.v2.ReviewState KycState      = 50;
+    basetypes.v1.KycState KycState              = 50;
     string EmailAddress                         = 60;
     string PhoneNO                              = 70;
     string Reviewer                             = 80;
