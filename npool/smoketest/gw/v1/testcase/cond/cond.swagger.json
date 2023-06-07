@@ -192,6 +192,9 @@
         },
         "CondType": {
           "$ref": "#/definitions/v1CondType"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     },

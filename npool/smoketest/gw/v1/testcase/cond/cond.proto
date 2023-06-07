@@ -44,6 +44,7 @@ message CreateCondRequest {
     optional string ArgumentMap        = 30;
     uint32          Index              = 40;
     smoketest.middleware.testcase.cond.v1.CondType CondType = 50;
+    optional string ID                 = 60;
 }
 
 message CreateCondResponse {
