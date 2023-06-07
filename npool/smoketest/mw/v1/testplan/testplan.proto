@@ -36,8 +36,8 @@ message TestPlan {
     // @inject_tag: sql:"name"
     string          Name                              = 20;
     // @inject_tag: sql:"state"
-    string          StateStr                          = 30; 
-    TestPlanState   State                             = 40; 
+    string          StateStr                          = 30;
+    TestPlanState   State                             = 40;
     // @inject_tag: sql:"created_by"
     string          CreatedBy                         = 50;
     // @inject_tag: sql:"executor"
@@ -66,7 +66,7 @@ message TestPlan {
 message TestPlanReq {
     optional string          ID                                = 10;
     optional string          Name                              = 20;
-    optional TestPlanState   State                             = 30; 
+    optional TestPlanState   State                             = 30;
     optional string          CreatedBy                         = 40;
     optional string          Executor                          = 50;
     optional uint32          Fails                             = 60;
