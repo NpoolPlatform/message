@@ -40,8 +40,8 @@ message PlanTestCase {
     // @inject_tag: sql:"test_user_id"
     string          TestUserID                              = 90;
     // @inject_tag: sql:"result"
-    string          ResultStr                               = 100; 
-    TestCaseResult  Result                                  = 110; 
+    string          ResultStr                               = 100;
+    TestCaseResult  Result                                  = 110;
     // @inject_tag: sql:"index"
     uint32          Index                                   = 120;
     // @inject_tag: sql:"created_at"
@@ -62,9 +62,8 @@ message PlanTestCaseReq {
     optional uint32          RunDuration                             = 70;
     optional string          TestUserID                              = 80;
     optional string          AppID                                   = 90;
-    optional TestCaseResult  Result                                  = 100; 
+    optional TestCaseResult  Result                                  = 100;
     optional uint32          Index                                   = 110;
-    
 }
 
 message Conds {

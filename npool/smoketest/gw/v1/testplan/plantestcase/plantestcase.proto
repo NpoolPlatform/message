@@ -15,7 +15,7 @@ service Gateway {
             body: "*"
         };
     }
-    
+
     rpc DeletePlanTestCase (DeletePlanTestCaseRequest) returns (DeletePlanTestCaseResponse) {
         option (google.api.http) = {
             post: "/v1/delete/plantestcase"
@@ -43,6 +43,7 @@ message CreatePlanTestCaseRequest {
     string                   TestCaseID                                              = 20;
     optional uint32          Index                                                   = 30;
     optional string          Input                                                   = 40;
+    optional string          ID                                                      = 50;
 }
 
 message CreatePlanTestCaseResponse {
@@ -56,7 +57,7 @@ message UpdatePlanTestCaseRequest {
     optional uint32          RunDuration                                             = 40;
     optional string          TestUserID                                              = 50;
     optional string          AppID                                                   = 60;
-    optional smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result     = 70; 
+    optional smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result     = 70;
     optional uint32          Index                                                   = 80;
     optional string          Input                                                   = 90;
 }

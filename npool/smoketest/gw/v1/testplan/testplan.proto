@@ -41,7 +41,7 @@ service Gateway {
 message TestPlan {
     string          ID                                                  = 10;
     string          Name                                                = 20;
-    smoketest.middleware.testplan.v1.TestPlanState   State              = 30; 
+    smoketest.middleware.testplan.v1.TestPlanState   State              = 30;
     string          CreatedBy                                           = 40;
     string          Email                                               = 50;
     string          Executor                                            = 60;
@@ -96,6 +96,7 @@ message CreateTestPlanRequest {
     string                   CreatedBy           = 20;
     optional string          Executor            = 30;
     optional uint32          Deadline            = 40;
+    optional string          ID                  = 50;
 }
 
 message CreateTestPlanResponse {

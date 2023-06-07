@@ -189,6 +189,9 @@
         },
         "Input": {
           "type": "string"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     },

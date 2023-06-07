@@ -189,6 +189,9 @@
         "Deadline": {
           "type": "integer",
           "format": "int64"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     },
