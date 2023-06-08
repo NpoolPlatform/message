@@ -5,7 +5,7 @@ package notif.gateway.template.email.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/template/email";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/template/email/email.proto";
+import "npool/notif/mw/v1/template/email/email.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 
@@ -73,7 +73,7 @@ message CreateEmailTemplateRequest {
 }
 
 message CreateEmailTemplateResponse {
-    notif.manager.template.email.v1.EmailTemplate Info = 10;
+    notif.middleware.email1.v1.EmailTemplate Info = 10;
 }
 
 message CreateAppEmailTemplateRequest {
@@ -89,7 +89,7 @@ message CreateAppEmailTemplateRequest {
 }
 
 message CreateAppEmailTemplateResponse {
-    notif.manager.template.email.v1.EmailTemplate Info = 10;
+     notif.middleware.email1.v1.EmailTemplate Info = 10;
 }
 
 message GetEmailTemplateRequest {
@@ -97,7 +97,7 @@ message GetEmailTemplateRequest {
 }
 
 message GetEmailTemplateResponse {
-    notif.manager.template.email.v1.EmailTemplate Info = 10;
+     notif.middleware.email1.v1.EmailTemplate Info = 10;
 }
 
 message GetEmailTemplatesRequest {
@@ -107,7 +107,7 @@ message GetEmailTemplatesRequest {
 }
 
 message GetEmailTemplatesResponse {
-    repeated notif.manager.template.email.v1.EmailTemplate Infos = 10;
+    repeated  notif.middleware.email1.v1.EmailTemplate Infos = 10;
     uint32                                                 Total = 20;
 }
 
@@ -118,7 +118,7 @@ message GetAppEmailTemplatesRequest {
 }
 
 message GetAppEmailTemplatesResponse {
-    repeated notif.manager.template.email.v1.EmailTemplate Infos = 10;
+    repeated  notif.middleware.email1.v1.EmailTemplate Infos = 10;
     uint32                                                 Total = 20;
 }
 
@@ -135,7 +135,7 @@ message UpdateEmailTemplateRequest {
 }
 
 message UpdateEmailTemplateResponse {
-    notif.manager.template.email.v1.EmailTemplate Info = 10;
+    notif.middleware.email1.v1.EmailTemplate Info = 10;
 }
 
 message UpdateAppEmailTemplateRequest {
@@ -151,6 +151,6 @@ message UpdateAppEmailTemplateRequest {
 }
 
 message UpdateAppEmailTemplateResponse {
-    notif.manager.template.email.v1.EmailTemplate Info = 10;
+    notif.middleware.email1.v1.EmailTemplate Info = 10;
 }
 

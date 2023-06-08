@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1CreateEmailTemplateResponse"
+              "$ref": "#/definitions/templateemailv1CreateEmailTemplateResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1CreateEmailTemplateRequest"
+              "$ref": "#/definitions/templateemailv1CreateEmailTemplateRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplateResponse"
+              "$ref": "#/definitions/templateemailv1GetEmailTemplateResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplateRequest"
+              "$ref": "#/definitions/templateemailv1GetEmailTemplateRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplatesResponse"
+              "$ref": "#/definitions/templateemailv1GetEmailTemplatesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplatesRequest"
+              "$ref": "#/definitions/templateemailv1GetEmailTemplatesRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1UpdateEmailTemplateResponse"
+              "$ref": "#/definitions/templateemailv1UpdateEmailTemplateResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplateemailv1UpdateEmailTemplateRequest"
+              "$ref": "#/definitions/templateemailv1UpdateEmailTemplateRequest"
             }
           }
         ],
@@ -242,7 +242,35 @@
     }
   },
   "definitions": {
-    "notifgatewaytemplateemailv1CreateEmailTemplateRequest": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "templateemailv1CreateEmailTemplateRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -280,7 +308,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1CreateEmailTemplateResponse": {
+    "templateemailv1CreateEmailTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -288,7 +316,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1GetEmailTemplateRequest": {
+    "templateemailv1GetEmailTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -296,7 +324,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1GetEmailTemplateResponse": {
+    "templateemailv1GetEmailTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -304,7 +332,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1GetEmailTemplatesRequest": {
+    "templateemailv1GetEmailTemplatesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -320,7 +348,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1GetEmailTemplatesResponse": {
+    "templateemailv1GetEmailTemplatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -336,7 +364,7 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1UpdateEmailTemplateRequest": {
+    "templateemailv1UpdateEmailTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -374,39 +402,11 @@
         }
       }
     },
-    "notifgatewaytemplateemailv1UpdateEmailTemplateResponse": {
+    "templateemailv1UpdateEmailTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1EmailTemplate"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
         }
       }
     },

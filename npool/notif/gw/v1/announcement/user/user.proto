@@ -5,7 +5,7 @@ package notif.gateway.announcement.announcementuser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/announcementuser";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/announcement/announcement.proto";
+import "npool/notif/mw/v1/announcement/announcement.proto";
 
 // Service Name
 service Gateway {
@@ -55,7 +55,7 @@ message AnnouncementUser {
     string           Username       = 80;
     string           Title          = 90;
     string           Content        = 100;
-    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 110;
+    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 130;
 }

@@ -5,8 +5,8 @@ package notif.gateway.announcement.sendstate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/sendstate";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/announcement/announcement.proto";
-import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/notif/mw/v1/announcement/announcement.proto";
+import "npool/basetypes/v1/channel.proto";
 
 // Service Name
 service Gateway {
@@ -49,8 +49,8 @@ message SendState {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    notif.manager.channel.v1.NotifChannel Channel = 100;
-    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 110;
+    basetypes.v1.NotifChannel Channel = 100;
+    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 150;
 }
@@ -58,7 +58,7 @@ message SendState {
 message GetSendStatesRequest {
     string AppID  = 10;
     string UserID = 20;
-    optional notif.manager.channel.v1.NotifChannel Channel = 30;
+    optional basetypes.v1.NotifChannel Channel = 30;
     uint32 Offset = 40;
     uint32 Limit  = 50;
 }
@@ -71,7 +71,7 @@ message GetSendStatesResponse {
 message GetAppUserSendStatesRequest {
     string TargetAppID  = 10;
     string TargetUserID = 20;
-    optional notif.manager.channel.v1.NotifChannel Channel = 30;
+    optional basetypes.v1.NotifChannel Channel = 30;
     uint32 Offset       = 40;
     uint32 Limit        = 50;
 }
@@ -83,7 +83,7 @@ message GetAppUserSendStatesResponse {
 
 message GetAppSendStatesRequest {
     string AppID  = 10;
-    optional notif.manager.channel.v1.NotifChannel Channel = 20;
+    optional basetypes.v1.NotifChannel Channel = 20;
     uint32 Offset = 30;
     uint32 Limit  = 40;
 }
@@ -95,7 +95,7 @@ message GetAppSendStatesResponse {
 
 message GetNAppSendStatesRequest {
     string TargetAppID  = 10;
-    optional notif.manager.channel.v1.NotifChannel Channel = 20;
+    optional basetypes.v1.NotifChannel Channel = 20;
     uint32 Offset       = 30;
     uint32 Limit        = 40;
 }

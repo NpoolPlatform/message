@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1CreateSMSTemplateResponse"
+              "$ref": "#/definitions/templatesmsv1CreateSMSTemplateResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1CreateSMSTemplateRequest"
+              "$ref": "#/definitions/templatesmsv1CreateSMSTemplateRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1GetSMSTemplateResponse"
+              "$ref": "#/definitions/templatesmsv1GetSMSTemplateResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1GetSMSTemplateRequest"
+              "$ref": "#/definitions/templatesmsv1GetSMSTemplateRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1GetSMSTemplatesResponse"
+              "$ref": "#/definitions/templatesmsv1GetSMSTemplatesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1GetSMSTemplatesRequest"
+              "$ref": "#/definitions/templatesmsv1GetSMSTemplatesRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1UpdateSMSTemplateResponse"
+              "$ref": "#/definitions/templatesmsv1UpdateSMSTemplateResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewaytemplatesmsv1UpdateSMSTemplateRequest"
+              "$ref": "#/definitions/templatesmsv1UpdateSMSTemplateRequest"
             }
           }
         ],
@@ -242,110 +242,6 @@
     }
   },
   "definitions": {
-    "notifgatewaytemplatesmsv1CreateSMSTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Subject": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1CreateSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1GetSMSTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1GetSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1GetSMSTemplatesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1GetSMSTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1SMSTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1UpdateSMSTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Subject": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
-        }
-      }
-    },
-    "notifgatewaytemplatesmsv1UpdateSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -371,6 +267,110 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "templatesmsv1CreateSMSTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "templatesmsv1CreateSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "templatesmsv1GetSMSTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "templatesmsv1GetSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "templatesmsv1GetSMSTemplatesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "templatesmsv1GetSMSTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SMSTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "templatesmsv1UpdateSMSTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        }
+      }
+    },
+    "templatesmsv1UpdateSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
         }
       }
     },
