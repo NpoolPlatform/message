@@ -5,7 +5,7 @@ package notif.gateway.notif2.channel.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif/channel";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
@@ -42,15 +42,15 @@ message Channel {
     string ID        = 10;
     string AppID     = 20;
     string AppName   = 30;
-    basetypes.v1.UsedFor            EventType = 40;
-    notif.manager.channel.v1.NotifChannel Channel   = 50;
+    basetypes.v1.UsedFor      EventType = 40;
+    basetypes.v1.NotifChannel Channel   = 50;
     uint32 CreatedAt = 60;
 }
 
 message CreateChannelsRequest {
     string AppID = 10;
     repeated basetypes.v1.UsedFor   EventTypes = 20;
-    notif.manager.channel.v1.NotifChannel Channel    = 30;
+    basetypes.v1.NotifChannel Channel    = 30;
 }
 
 message CreateChannelsResponse {

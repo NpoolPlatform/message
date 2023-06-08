@@ -5,7 +5,7 @@ package notif.gateway.notif3.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
@@ -51,7 +51,7 @@ message Notif {
     bool             UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
-    notif.manager.channel.v1.NotifChannel Channel = 120;
+    basetypes.v1.NotifChannel Channel = 120;
     bool             Notified     = 130;
     uint32           CreatedAt    = 140;
     uint32           UpdatedAt    = 150;
