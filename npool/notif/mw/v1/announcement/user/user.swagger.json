@@ -17,95 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "manageruserv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "middlewareannouncementuserv1GetUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewareannouncementuserv1User"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewareannouncementuserv1User": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AnnouncementID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"announcement_id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Content": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"content\""
-        },
-        "ChannelStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"channel\""
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
-        },
-        "AnnouncementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"type\""
-        },
-        "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -134,24 +45,110 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS",
-        "ChannelFrontend"
-      ],
-      "default": "DefaultChannel"
+    "v1CountUserAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateUserAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserAnnouncementReq"
+        }
+      }
+    },
+    "v1CreateUserAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserAnnouncement"
+          }
+        }
+      }
+    },
+    "v1DeleteUserAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserAnnouncement"
+        }
+      }
+    },
+    "v1ExistUserAnnouncementCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistUserAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetUserAnnouncementOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserAnnouncement"
+        }
+      }
+    },
+    "v1GetUserAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserAnnouncement"
+        }
+      }
+    },
+    "v1GetUserAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserAnnouncement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -174,6 +171,62 @@
           "type": "string"
         },
         "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateUserAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserAnnouncement"
+        }
+      }
+    },
+    "v1UserAnnouncement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "AnnouncementID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"announcement_id\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"update_at\""
+        }
+      }
+    },
+    "v1UserAnnouncementReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
           "type": "string"
         }
       }
