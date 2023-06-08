@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetAnnouncementStates_FullMethodName  = "/notif.middleware.announcement.announcement.v1.Middleware/GetAnnouncementStates"
-	Middleware_GetAnnouncements_FullMethodName       = "/notif.middleware.announcement.announcement.v1.Middleware/GetAnnouncements"
-	Middleware_CreateAnnouncement_FullMethodName     = "/notif.middleware.announcement.announcement.v1.Middleware/CreateAnnouncement"
-	Middleware_CreateAnnouncements_FullMethodName    = "/notif.middleware.announcement.announcement.v1.Middleware/CreateAnnouncements"
-	Middleware_UpdateAnnouncement_FullMethodName     = "/notif.middleware.announcement.announcement.v1.Middleware/UpdateAnnouncement"
-	Middleware_GetAnnouncement_FullMethodName        = "/notif.middleware.announcement.announcement.v1.Middleware/GetAnnouncement"
-	Middleware_GetAnnouncementOnly_FullMethodName    = "/notif.middleware.announcement.announcement.v1.Middleware/GetAnnouncementOnly"
-	Middleware_ExistAnnouncement_FullMethodName      = "/notif.middleware.announcement.announcement.v1.Middleware/ExistAnnouncement"
-	Middleware_ExistAnnouncementConds_FullMethodName = "/notif.middleware.announcement.announcement.v1.Middleware/ExistAnnouncementConds"
-	Middleware_CountAnnouncements_FullMethodName     = "/notif.middleware.announcement.announcement.v1.Middleware/CountAnnouncements"
-	Middleware_DeleteAnnouncement_FullMethodName     = "/notif.middleware.announcement.announcement.v1.Middleware/DeleteAnnouncement"
+	Middleware_GetAnnouncementStates_FullMethodName  = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementStates"
+	Middleware_GetAnnouncements_FullMethodName       = "/notif.middleware.announcement.v1.Middleware/GetAnnouncements"
+	Middleware_CreateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/CreateAnnouncement"
+	Middleware_CreateAnnouncements_FullMethodName    = "/notif.middleware.announcement.v1.Middleware/CreateAnnouncements"
+	Middleware_UpdateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/UpdateAnnouncement"
+	Middleware_GetAnnouncement_FullMethodName        = "/notif.middleware.announcement.v1.Middleware/GetAnnouncement"
+	Middleware_GetAnnouncementOnly_FullMethodName    = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementOnly"
+	Middleware_ExistAnnouncement_FullMethodName      = "/notif.middleware.announcement.v1.Middleware/ExistAnnouncement"
+	Middleware_ExistAnnouncementConds_FullMethodName = "/notif.middleware.announcement.v1.Middleware/ExistAnnouncementConds"
+	Middleware_CountAnnouncements_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/CountAnnouncements"
+	Middleware_DeleteAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/DeleteAnnouncement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -426,7 +426,7 @@ func _Middleware_DeleteAnnouncement_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.announcement.announcement.v1.Middleware",
+	ServiceName: "notif.middleware.announcement.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
