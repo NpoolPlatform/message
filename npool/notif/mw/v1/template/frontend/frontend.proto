@@ -51,7 +51,6 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal UsedFors = 70;
 }
 
-
 message GetFrontendTemplateRequest {
     string ID = 10;
 }
@@ -78,7 +77,6 @@ message GetFrontendTemplateOnlyRequest {
 message GetFrontendTemplateOnlyResponse {
     notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
 }
-
 
 message CreateFrontendTemplateRequest {
     FrontendTemplateReq Info = 10;
@@ -129,7 +127,7 @@ message CountFrontendTemplatesResponse {
 }
 
 message DeleteFrontendTemplateRequest {
-    string ID = 10;
+    FrontendTemplateReq Info = 10;
 }
 
 message DeleteFrontendTemplateResponse {
