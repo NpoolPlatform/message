@@ -62,6 +62,13 @@ message Announcement {
     uint32 CreatedAt  = 90;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 100;
+    // @inject_tag: sql:"user_id"
+    string UserID     = 110;
+    // @inject_tag: sql:"notified"
+    bool   Notified   = 120;
+    bool   Read       = 129;
+    // @inject_tag: sql:"read_user_id"
+    string ReadUserID = 130;
 }
 
 message Conds {
@@ -69,10 +76,8 @@ message Conds {
     optional basetypes.v1.StringVal      AppID            = 10;
     optional basetypes.v1.StringVal      UserID           = 20;
     optional basetypes.v1.StringVal      LangID           = 30;
-    optional basetypes.v1.StringVal      AnnouncementID   = 40;
     optional basetypes.v1.BoolVal        Read             = 50;
     optional basetypes.v1.Uint32Val      AnnouncementType = 60;
-    optional basetypes.v1.Uint32SliceVal Channels         = 70;
     optional basetypes.v1.BoolVal        Notified         = 80;
     optional basetypes.v1.Uint32Val      EndAt            = 90;
     optional basetypes.v1.Uint32Val      Channel          = 100;
