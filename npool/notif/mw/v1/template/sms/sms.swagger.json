@@ -17,199 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesv1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "middlewaresms1v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/basetypesv1Int32Val"
-        }
-      }
-    },
-    "middlewaresms1v1CreateSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaresms1v1SMSTemplate"
-        }
-      }
-    },
-    "middlewaresms1v1CreateSMSTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewaresms1v1SMSTemplate"
-          }
-        }
-      }
-    },
-    "middlewaresms1v1DeleteSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaresms1v1SMSTemplate"
-        }
-      }
-    },
-    "middlewaresms1v1ExistSMSTemplateCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "middlewaresms1v1ExistSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "middlewaresms1v1GetSMSTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/templatesmsv1SMSTemplate"
-        }
-      }
-    },
-    "middlewaresms1v1GetSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/templatesmsv1SMSTemplate"
-        }
-      }
-    },
-    "middlewaresms1v1GetSMSTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/templatesmsv1SMSTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewaresms1v1SMSTemplate": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Subject": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "middlewaresms1v1SMSTemplateReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Subject": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
-    "middlewaresms1v1UpdateSMSTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaresms1v1SMSTemplate"
-        }
-      }
-    },
-    "npoolv1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "npoolv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -238,24 +45,112 @@
         }
       }
     },
-    "templatesmsv1Conds": {
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/npoolv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/npoolv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "LangID": {
-          "$ref": "#/definitions/npoolv1StringVal"
+          "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/npoolv1Int32Val"
+          "$ref": "#/definitions/v1Int32Val"
         }
       }
     },
-    "templatesmsv1SMSTemplate": {
+    "v1CreateSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "v1CreateSMSTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SMSTemplate"
+          }
+        }
+      }
+    },
+    "v1DeleteSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "v1ExistSMSTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetSMSTemplateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "v1GetSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
+        }
+      }
+    },
+    "v1GetSMSTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SMSTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1SMSTemplate": {
       "type": "object",
       "properties": {
         "ID": {
@@ -275,6 +170,48 @@
         },
         "Message": {
           "type": "string"
+        }
+      }
+    },
+    "v1SMSTemplateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateSMSTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SMSTemplate"
         }
       }
     },
