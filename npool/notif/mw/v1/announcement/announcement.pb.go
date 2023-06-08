@@ -204,9 +204,9 @@ type Announcement struct {
 	UserID string `protobuf:"bytes,110,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
 	// @inject_tag: sql:"notified"
 	Notified bool `protobuf:"varint,120,opt,name=Notified,proto3" json:"Notified,omitempty" sql:"notified"`
-	Read     bool `protobuf:"varint,129,opt,name=Read,proto3" json:"Read,omitempty"`
+	Read     bool `protobuf:"varint,129,opt,name=Read,proto3" json:"Read,omitempty"` // TODO
 	// @inject_tag: sql:"read_user_id"
-	ReadUserID string `protobuf:"bytes,130,opt,name=ReadUserID,proto3" json:"ReadUserID,omitempty" sql:"read_user_id"`
+	ReadUserID string `protobuf:"bytes,130,opt,name=ReadUserID,proto3" json:"ReadUserID,omitempty" sql:"read_user_id"` // TODO
 }
 
 func (x *Announcement) Reset() {

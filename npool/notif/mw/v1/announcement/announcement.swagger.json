@@ -106,10 +106,12 @@
           "title": "@inject_tag: sql:\"notified\""
         },
         "Read": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "TODO"
         },
         "ReadUserID": {
           "type": "string",
+          "description": "TODO",
           "title": "@inject_tag: sql:\"read_user_id\""
         }
       }
