@@ -17,11 +17,196 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "basetypesv1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "basetypesv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewarefrontend2v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/basetypesv1Uint32Val"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/basetypesv1Uint32SliceVal"
+        }
+      }
+    },
+    "middlewarefrontend2v1CountFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewarefrontend2v1CreateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarefrontend2v1FrontendTemplate"
+        }
+      }
+    },
+    "middlewarefrontend2v1CreateFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/middlewarefrontend2v1FrontendTemplate"
+          }
+        }
+      }
+    },
+    "middlewarefrontend2v1DeleteFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarefrontend2v1FrontendTemplate"
+        }
+      }
+    },
+    "middlewarefrontend2v1ExistFrontendTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "middlewarefrontend2v1ExistFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "middlewarefrontend2v1FrontendTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewarefrontend2v1FrontendTemplateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
     "middlewarefrontend2v1GetFrontendTemplateOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
+          "$ref": "#/definitions/templatefrontend1v1FrontendTemplate"
         }
       }
     },
@@ -29,7 +214,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
+          "$ref": "#/definitions/templatefrontend1v1FrontendTemplate"
         }
       }
     },
@@ -40,10 +225,70 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1FrontendTemplate"
+            "$ref": "#/definitions/templatefrontend1v1FrontendTemplate"
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "middlewarefrontend2v1UpdateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/middlewarefrontend2v1FrontendTemplate"
+        }
+      }
+    },
+    "npoolv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "npoolv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "npoolv1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "npoolv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
           "type": "integer",
           "format": "int64"
         }
@@ -77,33 +322,33 @@
         }
       }
     },
-    "v1Conds": {
+    "templatefrontend1v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/npoolv1StringVal"
         },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/npoolv1StringVal"
         },
         "LangID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/npoolv1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/npoolv1Uint32Val"
         },
         "AppIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/npoolv1StringSliceVal"
         },
         "LangIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/npoolv1StringSliceVal"
         },
         "UsedFors": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
+          "$ref": "#/definitions/npoolv1Uint32SliceVal"
         }
       }
     },
-    "v1FrontendTemplate": {
+    "templatefrontend1v1FrontendTemplate": {
       "type": "object",
       "properties": {
         "ID": {
@@ -129,58 +374,6 @@
           "format": "int64"
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
           "type": "integer",
           "format": "int64"
         }
