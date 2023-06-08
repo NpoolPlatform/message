@@ -5,11 +5,44 @@ package notif.middleware.sms1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/sms";
 
 import "npool/notif/mgr/v1/template/sms/sms.proto";
+import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc GetSMSTemplate     (GetSMSTemplateRequest)     returns (GetSMSTemplateResponse)     {}
     rpc GetSMSTemplates    (GetSMSTemplatesRequest)    returns (GetSMSTemplatesResponse)    {}
     rpc GetSMSTemplateOnly (GetSMSTemplateOnlyRequest) returns (GetSMSTemplateOnlyResponse) {}
+    rpc CreateSMSTemplate     (CreateSMSTemplateRequest)     returns (CreateSMSTemplateResponse)     {}
+    rpc CreateSMSTemplates    (CreateSMSTemplatesRequest)    returns (CreateSMSTemplatesResponse)    {}
+    rpc UpdateSMSTemplate     (UpdateSMSTemplateRequest)     returns (UpdateSMSTemplateResponse)     {}
+    rpc ExistSMSTemplate      (ExistSMSTemplateRequest)      returns (ExistSMSTemplateResponse)      {}
+    rpc ExistSMSTemplateConds (ExistSMSTemplateCondsRequest) returns (ExistSMSTemplateCondsResponse) {}
+    rpc DeleteSMSTemplate     (DeleteSMSTemplateRequest)     returns (DeleteSMSTemplateResponse)     {}
+}
+
+message SMSTemplate {
+    string ID      = 10;
+    string AppID   = 20;
+    string LangID  = 30;
+    basetypes.v1.UsedFor UsedFor = 40;
+    string Subject = 50;
+    string Message = 60;
+}
+
+message SMSTemplateReq {
+    optional string ID      = 10;
+    optional string AppID   = 20;
+    optional string LangID  = 30;
+    optional basetypes.v1.UsedFor UsedFor = 40;
+    optional string Subject = 50;
+    optional string Message = 60;
+}
+
+message Conds {
+    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.StringVal AppID   = 30;
+    basetypes.v1.StringVal LangID  = 40;
+    basetypes.v1.Int32Val  UsedFor = 50;
 }
 
 message GetSMSTemplateRequest {
@@ -37,4 +70,52 @@ message GetSMSTemplateOnlyRequest {
 
 message GetSMSTemplateOnlyResponse {
     notif.manager.template.sms.v1.SMSTemplate Info = 10;
+}
+
+message CreateSMSTemplateRequest {
+    SMSTemplateReq Info = 10;
+}
+
+message CreateSMSTemplateResponse {
+    SMSTemplate Info = 10;
+}
+
+message CreateSMSTemplatesRequest {
+    repeated SMSTemplateReq Infos = 10;
+}
+
+message CreateSMSTemplatesResponse {
+    repeated SMSTemplate Infos = 10;
+}
+
+message UpdateSMSTemplateRequest {
+    SMSTemplateReq Info = 10;
+}
+
+message UpdateSMSTemplateResponse {
+    SMSTemplate Info = 10;
+}
+
+message ExistSMSTemplateRequest {
+    string ID = 10;
+}
+
+message ExistSMSTemplateResponse {
+    bool Info = 10;
+}
+
+message ExistSMSTemplateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistSMSTemplateCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteSMSTemplateRequest {
+    SMSTemplateReq Info = 10;
+}
+
+message DeleteSMSTemplateResponse {
+    SMSTemplate Info = 10;
 }
