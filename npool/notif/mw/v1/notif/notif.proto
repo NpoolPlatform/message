@@ -4,10 +4,10 @@ package notif.middleware.notif2.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
-import "npool/notif/mgr/v1/channel/channel.proto";
-import "npool/notif/mgr/v1/notif/notif.proto";
-import "npool/notif/mw/v1/template/template.proto";
+import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/notif/mw/v1/template/template.proto";
 
 // Service Name
 service Middleware {
@@ -21,25 +21,81 @@ service Middleware {
     rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
 }
 
+enum NotifType {
+    DefaultType   = 0;
+    Broadcast     = 10;
+    Multicast     = 20;
+    Unicast       = 30;
+}
+
 message Notif {
-    string ID          = 10;
-    string AppID       = 20;
-    string UserID      = 30;
-    bool   Notified    = 40;
-    string LangID      = 50;
+    // @inject_tag: sql:"id"
+    string    ID          = 10;
+    // @inject_tag: sql:"app_id"
+    string    AppID       = 20;
+    // @inject_tag: sql:"user_id"
+    string    UserID      = 30;
+    // @inject_tag: sql:"notified"
+    bool      Notified    = 40;
+    // @inject_tag: sql:"lang_id"
+    string    LangID      = 50;
+    string    EventTypeStr = 59;
     basetypes.v1.UsedFor EventType = 60;
-    bool   UseTemplate = 70;
-    string Title       = 80;
-    string Content     = 90;
-    notif.manager.channel.v1.NotifChannel Channel = 100;
-    string Extra       = 101;
-    uint32 CreatedAt   = 110;
-    uint32 UpdatedAt   = 120;
-    string EventID     = 130;
+    // @inject_tag: sql:"use_template"
+    bool      UseTemplate = 70;
+    // @inject_tag: sql:"title"
+    string    Title       = 80;
+    // @inject_tag: sql:"content"
+    string    Content     = 90;
+    // @inject_tag: sql:"channel"
+    string    ChannelStr   = 99;
+    basetypes.v1.NotifChannel Channel = 100;
+    // @inject_tag: sql:"extra"
+    string    Extra       = 110;
+    // @inject_tag: sql:"created_at"
+    uint32    CreatedAt   = 120;
+    // @inject_tag: sql:"updated_at"
+    uint32    UpdatedAt   = 130;
+    // @inject_tag: sql:"event_id"
+    string    EventID     = 140;
+    // @inject_tag: sql:"notif_type"
+    NotifType NotifTypeStr = 149;
+    NotifType NotifType    = 150;
+}
+
+message NotifReq {
+    optional string    ID          = 10;
+    optional string    AppID       = 20;
+    optional string    UserID      = 30;
+    optional bool      Notified    = 40;
+    optional string    LangID      = 50;
+    optional basetypes.v1.UsedFor EventType = 60;
+    optional bool      UseTemplate = 70;
+    optional string    Title       = 80;
+    optional string    Content     = 90;
+    optional basetypes.v1.NotifChannel Channel = 100;
+    optional string    Extra       = 110;
+    optional string    EventID     = 120;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.StringSliceVal IDs         = 11;
+    optional basetypes.v1.StringVal      AppID       = 20;
+    optional basetypes.v1.StringVal      UserID      = 30;
+    optional basetypes.v1.BoolVal        Notified    = 40;
+    optional basetypes.v1.StringVal      LangID      = 50;
+    optional basetypes.v1.Uint32Val      EventType   = 60;
+    optional basetypes.v1.BoolVal        UseTemplate = 70;
+    optional basetypes.v1.Uint32SliceVal Channels    = 80;
+    optional basetypes.v1.Uint32Val      Channel     = 90;
+    optional basetypes.v1.Uint32SliceVal EventTypes  = 100;
+    optional basetypes.v1.StringVal      Extra       = 110;
+    optional basetypes.v1.StringVal      EventID     = 120;
 }
 
 message CreateNotifRequest {
-    notif.manager.notif1.v1.NotifReq Info = 10;
+    NotifReq Info = 10;
 }
 
 message CreateNotifResponse {
@@ -48,7 +104,7 @@ message CreateNotifResponse {
 
 
 message CreateNotifsRequest {
-    repeated notif.manager.notif1.v1.NotifReq Infos = 10;
+    repeated NotifReq Infos = 10;
 }
 
 message CreateNotifsResponse {
@@ -56,7 +112,7 @@ message CreateNotifsResponse {
 }
 
 message UpdateNotifRequest {
-    notif.manager.notif1.v1.NotifReq Info = 10;
+    NotifReq Info = 10;
 }
 
 message UpdateNotifResponse {
@@ -81,7 +137,7 @@ message GetNotifResponse {
 }
 
 message GetNotifsRequest {
-    notif.manager.notif1.v1.Conds Conds   = 10;
+    Conds Conds   = 10;
     int32 Offset  = 20;
     int32 Limit   = 30;
 }
@@ -92,7 +148,7 @@ message GetNotifsResponse {
 }
 
 message GetNotifOnlyRequest {
-    notif.manager.notif1.v1.Conds Conds = 10;
+    Conds Conds = 10;
 }
 
 message GetNotifOnlyResponse {
