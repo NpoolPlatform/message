@@ -17,6 +17,16 @@
   ],
   "paths": {},
   "definitions": {
+    "managerchannelv1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
     "middlewarenotif2v1CreateNotifResponse": {
       "type": "object",
       "properties": {
@@ -100,7 +110,7 @@
           "type": "string"
         },
         "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
+          "$ref": "#/definitions/managerchannelv1NotifChannel"
         },
         "Extra": {
           "type": "string"
@@ -221,16 +231,6 @@
         }
       }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS",
-        "ChannelFrontend"
-      ],
-      "default": "DefaultChannel"
-    },
     "v1NotifReq": {
       "type": "object",
       "properties": {
@@ -262,7 +262,7 @@
           "type": "string"
         },
         "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
+          "$ref": "#/definitions/managerchannelv1NotifChannel"
         },
         "Extra": {
           "type": "string"
