@@ -96,6 +96,21 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "Notified": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"notified\""
+        },
+        "Read": {
+          "type": "boolean"
+        },
+        "ReadUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_user_id\""
         }
       }
     },
@@ -164,17 +179,11 @@
         "LangID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "Read": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "AnnouncementType": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "Notified": {
           "$ref": "#/definitions/v1BoolVal"
@@ -306,21 +315,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
         }
       }
     },
