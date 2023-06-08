@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+package notif.manager.readstate.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mgr/v1/announcement/readstate";
+
+import "npool/npool.proto";
+
+// Service Name
+service Manager {
+    rpc CreateReadState     (CreateReadStateRequest)     returns (CreateReadStateResponse)     {}
+    rpc CreateReadStates    (CreateReadStatesRequest)    returns (CreateReadStatesResponse)    {}
+    rpc UpdateReadState     (UpdateReadStateRequest)     returns (UpdateReadStateResponse)     {}
+    rpc GetReadState        (GetReadStateRequest)        returns (GetReadStateResponse)        {}
+    rpc GetReadStateOnly    (GetReadStateOnlyRequest)    returns (GetReadStateOnlyResponse)    {}
+    rpc GetReadStates       (GetReadStatesRequest)       returns (GetReadStatesResponse)       {}
+    rpc ExistReadState      (ExistReadStateRequest)      returns (ExistReadStateResponse)      {}
+    rpc ExistReadStateConds (ExistReadStateCondsRequest) returns (ExistReadStateCondsResponse) {}
+    rpc CountReadStates     (CountReadStatesRequest)     returns (CountReadStatesResponse)     {}
+    rpc DeleteReadState     (DeleteReadStateRequest)     returns (DeleteReadStateResponse)     {}
+}
+
+message ReadStateReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string AnnouncementID = 40;
+}
+
+message ReadState {
+    string ID             = 10;
+    string AppID          = 20;
+    string UserID         = 30;
+    string AnnouncementID = 40;
+    uint32 CreatedAt      = 50;
+    uint32 UpdatedAt      = 60;
+}
+
+message Conds {
+    optional npool.v1.StringVal ID             = 10;
+    optional npool.v1.StringVal AppID          = 20;
+    optional npool.v1.StringVal UserID         = 30;
+    optional npool.v1.StringVal AnnouncementID = 40;
+}
+
+
+message CreateReadStateRequest {
+    ReadStateReq Info = 10;
+}
+
+message CreateReadStateResponse {
+    ReadState Info = 10;
+}
+
+message CreateReadStatesRequest {
+    repeated ReadStateReq Infos = 10;
+}
+
+message CreateReadStatesResponse {
+    repeated ReadState Infos = 10;
+}
+
+message UpdateReadStateRequest {
+    ReadStateReq Info = 10;
+}
+
+message UpdateReadStateResponse {
+    ReadState Info = 10;
+}
+
+message GetReadStateRequest {
+    string ID = 10;
+}
+
+message GetReadStateResponse {
+    ReadState Info = 10;
+}
+
+message GetReadStatesRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetReadStatesResponse {
+    repeated ReadState Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetReadStateOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetReadStateOnlyResponse {
+    ReadState Info = 10;
+}
+
+message ExistReadStateRequest {
+    string ID = 10;
+}
+
+message ExistReadStateResponse {
+    bool Info = 10;
+}
+
+message ExistReadStateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistReadStateCondsResponse {
+    bool Info = 10;
+}
+
+message CountReadStatesRequest {
+    Conds Conds = 10;
+}
+
+message CountReadStatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteReadStateRequest {
+    string ID = 10;
+}
+
+message DeleteReadStateResponse {
+    ReadState Info = 10;
+}
