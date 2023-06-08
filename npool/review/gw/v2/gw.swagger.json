@@ -16,28 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v2/get/objecttypes": {
-      "post": {
-        "operationId": "Gateway_GetObjectTypes",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v2GetObjectTypesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v2/version": {
       "post": {
         "operationId": "Gateway_Version",
@@ -108,26 +86,6 @@
           "type": "string"
         }
       }
-    },
-    "v2GetObjectTypesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2ReviewObjectType"
-          }
-        }
-      }
-    },
-    "v2ReviewObjectType": {
-      "type": "string",
-      "enum": [
-        "DefaultObjectType",
-        "ObjectKyc",
-        "ObjectWithdrawal"
-      ],
-      "default": "DefaultObjectType"
     }
   }
 }

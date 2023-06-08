@@ -21,8 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_Version_FullMethodName        = "/review.gateway.v2.Gateway/Version"
-	Gateway_GetObjectTypes_FullMethodName = "/review.gateway.v2.Gateway/GetObjectTypes"
+	Gateway_Version_FullMethodName = "/review.gateway.v2.Gateway/Version"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -30,7 +29,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-	GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error)
 }
 
 type gatewayClient struct {
@@ -50,21 +48,11 @@ func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 	return out, nil
 }
 
-func (c *gatewayClient) GetObjectTypes(ctx context.Context, in *GetObjectTypesRequest, opts ...grpc.CallOption) (*GetObjectTypesResponse, error) {
-	out := new(GetObjectTypesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetObjectTypes_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-	GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -74,9 +62,6 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-}
-func (UnimplementedGatewayServer) GetObjectTypes(context.Context, *GetObjectTypesRequest) (*GetObjectTypesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetObjectTypes not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -109,24 +94,6 @@ func _Gateway_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetObjectTypes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetObjectTypesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetObjectTypes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetObjectTypes_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetObjectTypes(ctx, req.(*GetObjectTypesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -137,10 +104,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Version",
 			Handler:    _Gateway_Version_Handler,
-		},
-		{
-			MethodName: "GetObjectTypes",
-			Handler:    _Gateway_GetObjectTypes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

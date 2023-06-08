@@ -4,7 +4,6 @@ package review.gateway.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2";
 
-import "npool/review/mw/v2/review/review.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "npool/npool.proto";
@@ -17,17 +16,4 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetObjectTypes (GetObjectTypesRequest) returns (GetObjectTypesResponse) {
-        option (google.api.http) = {
-            post: "/v2/get/objecttypes"
-        };
-    }
-}
-
-message GetObjectTypesRequest {
-}
-
-message GetObjectTypesResponse {
-    repeated review.middleware.review.v2.ReviewObjectType Infos = 10;
 }
