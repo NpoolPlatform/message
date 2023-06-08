@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package notif.middleware.notif.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/user";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateUserNotif     (CreateUserNotifRequest)     returns (CreateUserNotifResponse)     {}
+    rpc CreateUserNotifs    (CreateUserNotifsRequest)    returns (CreateUserNotifsResponse)    {}
+    rpc UpdateUserNotif     (UpdateUserNotifRequest)     returns (UpdateUserNotifResponse)     {}
+    rpc GetUserNotif        (GetUserNotifRequest)        returns (GetUserNotifResponse)        {}
+    rpc GetUserNotifOnly    (GetUserNotifOnlyRequest)    returns (GetUserNotifOnlyResponse)    {}
+    rpc GetUserNotifs       (GetUserNotifsRequest)       returns (GetUserNotifsResponse)       {}
+    rpc ExistUserNotif      (ExistUserNotifRequest)      returns (ExistUserNotifResponse)      {}
+    rpc ExistUserNotifConds (ExistUserNotifCondsRequest) returns (ExistUserNotifCondsResponse) {}
+    rpc CountUserNotifs     (CountUserNotifsRequest)     returns (CountUserNotifsResponse)     {}
+    rpc DeleteUserNotif     (DeleteUserNotifRequest)     returns (DeleteUserNotifResponse)     {}
+}
+
+message UserNotif {
+    // @inject_tag: sql:"id"
+    string ID             = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID          = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID         = 30;
+    // @inject_tag: sql:"notif_id"
+    string NotifID = 40;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 60;
+    // @inject_tag: sql:"update_at"
+    uint32 UpdatedAt      = 70;
+}
+
+message UserNotifReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string NotifID = 40;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      ID             = 10;
+    optional basetypes.v1.StringSliceVal IDs            = 20;
+    optional basetypes.v1.StringVal      AppID          = 30;
+    optional basetypes.v1.StringVal      UserID         = 40;
+    optional basetypes.v1.StringVal      NotifID        = 50;
+}
+
+message CreateUserNotifRequest {
+    UserNotifReq Info = 10;
+}
+
+message CreateUserNotifResponse {
+    UserNotifReq Info = 10;
+}
+
+message CreateUserNotifsRequest {
+    repeated UserNotifReq Infos = 10;
+}
+
+message CreateUserNotifsResponse {
+    repeated UserNotif Infos = 10;
+}
+
+message UpdateUserNotifRequest {
+    UserNotifReq Info = 10;
+}
+
+message UpdateUserNotifResponse {
+    UserNotif Info = 10;
+}
+
+message GetUserNotifRequest {
+    string ID = 10;
+}
+
+message GetUserNotifResponse {
+    UserNotif Info = 10;
+}
+
+message GetUserNotifsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetUserNotifsResponse {
+    repeated UserNotif Infos = 10;
+    uint32                    Total = 20;
+}
+
+message GetUserNotifOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetUserNotifOnlyResponse {
+    UserNotif Info = 10;
+}
+
+message ExistUserNotifRequest {
+    string ID = 10;
+}
+
+message ExistUserNotifResponse {
+    bool Info = 10;
+}
+
+message ExistUserNotifCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistUserNotifCondsResponse {
+    bool Info = 10;
+}
+
+message CountUserNotifsRequest {
+    Conds Conds = 10;
+}
+
+message CountUserNotifsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteUserNotifRequest {
+    UserNotifReq Info = 10;
+}
+
+message DeleteUserNotifResponse {
+    UserNotif Info = 10;
+}
