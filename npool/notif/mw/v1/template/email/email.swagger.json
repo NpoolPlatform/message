@@ -17,38 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareemail1v1GetEmailTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EmailTemplate"
-        }
-      }
-    },
-    "middlewareemail1v1GetEmailTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EmailTemplate"
-        }
-      }
-    },
-    "middlewareemail1v1GetEmailTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1EmailTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -106,6 +74,34 @@
         }
       }
     },
+    "v1CreateEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "v1CreateEmailTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        }
+      }
+    },
+    "v1DeleteEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
     "v1EmailTemplate": {
       "type": "object",
       "properties": {
@@ -144,6 +140,95 @@
         },
         "DefaultToUsername": {
           "type": "string"
+        }
+      }
+    },
+    "v1EmailTemplateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ExistEmailTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetEmailTemplateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "v1GetEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "v1GetEmailTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -196,6 +281,14 @@
             "type": "integer",
             "format": "int64"
           }
+        }
+      }
+    },
+    "v1UpdateEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
         }
       }
     },
