@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateReadState_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/CreateReadState"
-	Middleware_CreateReadStates_FullMethodName    = "/notif.middleware.announcement.readstate.v1.Middleware/CreateReadStates"
-	Middleware_UpdateReadState_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/UpdateReadState"
-	Middleware_GetReadState_FullMethodName        = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadState"
-	Middleware_GetReadStateOnly_FullMethodName    = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStateOnly"
-	Middleware_GetReadStates_FullMethodName       = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStates"
-	Middleware_ExistReadState_FullMethodName      = "/notif.middleware.announcement.readstate.v1.Middleware/ExistReadState"
-	Middleware_ExistReadStateConds_FullMethodName = "/notif.middleware.announcement.readstate.v1.Middleware/ExistReadStateConds"
-	Middleware_CountReadStates_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/CountReadStates"
-	Middleware_DeleteReadState_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/DeleteReadState"
+	Middleware_CreateReadState_FullMethodName     = "/notif.middleware.notif.readstate.v1.Middleware/CreateReadState"
+	Middleware_CreateReadStates_FullMethodName    = "/notif.middleware.notif.readstate.v1.Middleware/CreateReadStates"
+	Middleware_UpdateReadState_FullMethodName     = "/notif.middleware.notif.readstate.v1.Middleware/UpdateReadState"
+	Middleware_GetReadState_FullMethodName        = "/notif.middleware.notif.readstate.v1.Middleware/GetReadState"
+	Middleware_GetReadStateOnly_FullMethodName    = "/notif.middleware.notif.readstate.v1.Middleware/GetReadStateOnly"
+	Middleware_GetReadStates_FullMethodName       = "/notif.middleware.notif.readstate.v1.Middleware/GetReadStates"
+	Middleware_ExistReadState_FullMethodName      = "/notif.middleware.notif.readstate.v1.Middleware/ExistReadState"
+	Middleware_ExistReadStateConds_FullMethodName = "/notif.middleware.notif.readstate.v1.Middleware/ExistReadStateConds"
+	Middleware_CountReadStates_FullMethodName     = "/notif.middleware.notif.readstate.v1.Middleware/CountReadStates"
+	Middleware_DeleteReadState_FullMethodName     = "/notif.middleware.notif.readstate.v1.Middleware/DeleteReadState"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -393,7 +393,7 @@ func _Middleware_DeleteReadState_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.announcement.readstate.v1.Middleware",
+	ServiceName: "notif.middleware.notif.readstate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
