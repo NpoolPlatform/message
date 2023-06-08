@@ -4,7 +4,6 @@ package notif.middleware.frontend2.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/frontend";
 
-import "npool/notif/mgr/v1/template/frontend/frontend.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
@@ -56,26 +55,26 @@ message GetFrontendTemplateRequest {
 }
 
 message GetFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    FrontendTemplate Info = 10;
 }
 
 message GetFrontendTemplatesRequest {
-    notif.manager.template.frontend1.v1.Conds Conds = 10;
+    Conds Conds = 10;
     uint32 Offset = 20;
     uint32 Limit  = 30;
 }
 
 message GetFrontendTemplatesResponse {
-    repeated notif.manager.template.frontend1.v1.FrontendTemplate Infos = 10;
+    repeated FrontendTemplate Infos = 10;
     uint32                                                        Total = 20;
 }
 
 message GetFrontendTemplateOnlyRequest {
-    notif.manager.template.frontend1.v1.Conds Conds = 10;
+    Conds Conds = 10;
 }
 
 message GetFrontendTemplateOnlyResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    FrontendTemplate Info = 10;
 }
 
 message CreateFrontendTemplateRequest {
