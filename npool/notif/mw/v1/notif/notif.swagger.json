@@ -188,7 +188,8 @@
           "title": "@inject_tag: sql:\"lang_id\""
         },
         "EventTypeStr": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_type\""
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
