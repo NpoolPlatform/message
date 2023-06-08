@@ -39,6 +39,7 @@ message Notif {
     bool      Notified    = 40;
     // @inject_tag: sql:"lang_id"
     string    LangID      = 50;
+    // @inject_tag: sql:"event_type"
     string    EventTypeStr = 59;
     basetypes.v1.UsedFor EventType = 60;
     // @inject_tag: sql:"use_template"

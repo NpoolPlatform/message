@@ -88,8 +88,9 @@ type Notif struct {
 	// @inject_tag: sql:"notified"
 	Notified bool `protobuf:"varint,40,opt,name=Notified,proto3" json:"Notified,omitempty" sql:"notified"`
 	// @inject_tag: sql:"lang_id"
-	LangID       string     `protobuf:"bytes,50,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
-	EventTypeStr string     `protobuf:"bytes,59,opt,name=EventTypeStr,proto3" json:"EventTypeStr,omitempty"`
+	LangID string `protobuf:"bytes,50,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
+	// @inject_tag: sql:"event_type"
+	EventTypeStr string     `protobuf:"bytes,59,opt,name=EventTypeStr,proto3" json:"EventTypeStr,omitempty" sql:"event_type"`
 	EventType    v1.UsedFor `protobuf:"varint,60,opt,name=EventType,proto3,enum=basetypes.v1.UsedFor" json:"EventType,omitempty"`
 	// @inject_tag: sql:"use_template"
 	UseTemplate bool `protobuf:"varint,70,opt,name=UseTemplate,proto3" json:"UseTemplate,omitempty" sql:"use_template"`
