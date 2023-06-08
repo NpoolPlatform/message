@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package notif.middleware.announcement.readstate.v1;
+package notif.middleware.notif.readstate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/readstate";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/readstate";
 
 import "npool/basetypes/v1/conds.proto";
 
