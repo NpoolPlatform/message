@@ -174,6 +174,16 @@
         }
       }
     },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
     "v1WithdrawState": {
       "type": "string",
       "enum": [
@@ -298,9 +308,6 @@
           "type": "string",
           "title": "Reviewer"
         },
-        "LangID": {
-          "type": "string"
-        },
         "State": {
           "$ref": "#/definitions/v2ReviewState"
         },
@@ -329,9 +336,6 @@
         "UserID": {
           "type": "string",
           "title": "Reviewer"
-        },
-        "LangID": {
-          "type": "string"
         },
         "State": {
           "$ref": "#/definitions/v2ReviewState"
@@ -365,7 +369,7 @@
           "type": "string"
         },
         "KycState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v1KycState"
         },
         "EmailAddress": {
           "type": "string"

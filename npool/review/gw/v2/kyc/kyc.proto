@@ -4,9 +4,8 @@ package review.gateway.kyc.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/kyc";
 
-import "npool/review/mgr/v2/mgr.proto";
+import "npool/review/mw/v2/review/review.proto";
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 import "npool/basetypes/v1/kycstate.proto";
 
 // Service Name
@@ -60,14 +59,14 @@ message KycReview {
 
     // review
     string ReviewID                             = 140;
-    review.manager.v2.ReviewObjectType ObjectType = 150;
-    string Domain                               = 160;
-    string Reviewer                             = 170;
-    review.manager.v2.ReviewState       ReviewState   = 180;
-    basetypes.v1.KycState     KycState      = 190;
-    string Message                              = 200;
-    uint32 CreatedAt                            = 210;
-    uint32 UpdatedAt                            = 220;
+    review.middleware.review.v2.ReviewObjectType ObjectType     = 150;
+    string Domain                                        = 160;
+    string Reviewer                                      = 170;
+    review.middleware.review.v2.ReviewState       ReviewState   = 180;
+    basetypes.v1.KycState     KycState                   = 190;
+    string Message                                       = 200;
+    uint32 CreatedAt                                     = 210;
+    uint32 UpdatedAt                                     = 220;
 }
 
 message GetKycReviewsRequest {
@@ -96,8 +95,7 @@ message UpdateKycReviewRequest {
     string ReviewID    = 10;
     string AppID       = 20;
     string UserID      = 30; // Reviewer
-    string LangID      = 40;
-    review.manager.v2.ReviewState State = 50;
+    review.middleware.review.v2.ReviewState State = 50;
     optional string Message   = 60;
 }
 
@@ -110,8 +108,7 @@ message UpdateAppKycReviewRequest {
     string AppID       = 20;
     string TargetAppID = 30;
     string UserID      = 40; // Reviewer
-    string LangID      = 50;
-    review.manager.v2.ReviewState State = 60;
+    review.middleware.review.v2.ReviewState State = 60;
     optional string Message   = 70;
 }
 
