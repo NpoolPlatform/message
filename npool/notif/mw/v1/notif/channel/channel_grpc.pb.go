@@ -19,15 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetChannels_FullMethodName       = "/notif.middleware.channel.v1.Middleware/GetChannels"
-	Middleware_GetChannelOnly_FullMethodName    = "/notif.middleware.channel.v1.Middleware/GetChannelOnly"
-	Middleware_CreateChannel_FullMethodName     = "/notif.middleware.channel.v1.Middleware/CreateChannel"
-	Middleware_CreateChannels_FullMethodName    = "/notif.middleware.channel.v1.Middleware/CreateChannels"
-	Middleware_UpdateChannel_FullMethodName     = "/notif.middleware.channel.v1.Middleware/UpdateChannel"
-	Middleware_GetChannel_FullMethodName        = "/notif.middleware.channel.v1.Middleware/GetChannel"
-	Middleware_ExistChannel_FullMethodName      = "/notif.middleware.channel.v1.Middleware/ExistChannel"
-	Middleware_ExistChannelConds_FullMethodName = "/notif.middleware.channel.v1.Middleware/ExistChannelConds"
-	Middleware_DeleteChannel_FullMethodName     = "/notif.middleware.channel.v1.Middleware/DeleteChannel"
+	Middleware_GetChannels_FullMethodName       = "/notif.middleware.notif.channel.v1.Middleware/GetChannels"
+	Middleware_GetChannelOnly_FullMethodName    = "/notif.middleware.notif.channel.v1.Middleware/GetChannelOnly"
+	Middleware_CreateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/CreateChannel"
+	Middleware_CreateChannels_FullMethodName    = "/notif.middleware.notif.channel.v1.Middleware/CreateChannels"
+	Middleware_UpdateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/UpdateChannel"
+	Middleware_GetChannel_FullMethodName        = "/notif.middleware.notif.channel.v1.Middleware/GetChannel"
+	Middleware_ExistChannel_FullMethodName      = "/notif.middleware.notif.channel.v1.Middleware/ExistChannel"
+	Middleware_ExistChannelConds_FullMethodName = "/notif.middleware.notif.channel.v1.Middleware/ExistChannelConds"
+	Middleware_DeleteChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/DeleteChannel"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -360,7 +360,7 @@ func _Middleware_DeleteChannel_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.channel.v1.Middleware",
+	ServiceName: "notif.middleware.notif.channel.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
