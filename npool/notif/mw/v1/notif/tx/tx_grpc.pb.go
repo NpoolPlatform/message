@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTx_FullMethodName     = "/notif.middleware.tx.v1.Middleware/CreateTx"
-	Middleware_UpdateTx_FullMethodName     = "/notif.middleware.tx.v1.Middleware/UpdateTx"
-	Middleware_GetTxs_FullMethodName       = "/notif.middleware.tx.v1.Middleware/GetTxs"
-	Middleware_GetTxOnly_FullMethodName    = "/notif.middleware.tx.v1.Middleware/GetTxOnly"
-	Middleware_CreateTxs_FullMethodName    = "/notif.middleware.tx.v1.Middleware/CreateTxs"
-	Middleware_GetTx_FullMethodName        = "/notif.middleware.tx.v1.Middleware/GetTx"
-	Middleware_ExistTx_FullMethodName      = "/notif.middleware.tx.v1.Middleware/ExistTx"
-	Middleware_ExistTxConds_FullMethodName = "/notif.middleware.tx.v1.Middleware/ExistTxConds"
-	Middleware_CountTxs_FullMethodName     = "/notif.middleware.tx.v1.Middleware/CountTxs"
-	Middleware_DeleteTx_FullMethodName     = "/notif.middleware.tx.v1.Middleware/DeleteTx"
+	Middleware_CreateTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/CreateTx"
+	Middleware_UpdateTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/UpdateTx"
+	Middleware_GetTxs_FullMethodName       = "/notif.middleware.notif.tx.v1.Middleware/GetTxs"
+	Middleware_GetTxOnly_FullMethodName    = "/notif.middleware.notif.tx.v1.Middleware/GetTxOnly"
+	Middleware_CreateTxs_FullMethodName    = "/notif.middleware.notif.tx.v1.Middleware/CreateTxs"
+	Middleware_GetTx_FullMethodName        = "/notif.middleware.notif.tx.v1.Middleware/GetTx"
+	Middleware_ExistTx_FullMethodName      = "/notif.middleware.notif.tx.v1.Middleware/ExistTx"
+	Middleware_ExistTxConds_FullMethodName = "/notif.middleware.notif.tx.v1.Middleware/ExistTxConds"
+	Middleware_CountTxs_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/CountTxs"
+	Middleware_DeleteTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/DeleteTx"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -393,7 +393,7 @@ func _Middleware_DeleteTx_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.tx.v1.Middleware",
+	ServiceName: "notif.middleware.notif.tx.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
