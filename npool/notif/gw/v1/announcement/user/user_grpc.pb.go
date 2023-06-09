@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/notif/gw/v1/announcement/user/user.proto
 
-package announcementuser
+package user
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.announcementuser.v1.Gateway/CreateAnnouncementUsers"
-	Gateway_DeleteAnnouncementUser_FullMethodName   = "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser"
-	Gateway_GetAnnouncementUsers_FullMethodName     = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAnnouncementUsers"
-	Gateway_GetAppAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAppAnnouncementUsers"
-	Gateway_GetNAppAnnouncementUsers_FullMethodName = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetNAppAnnouncementUsers"
+	Gateway_CreateAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.user.v1.Gateway/CreateAnnouncementUsers"
+	Gateway_DeleteAnnouncementUser_FullMethodName   = "/notif.gateway.announcement.user.v1.Gateway/DeleteAnnouncementUser"
+	Gateway_GetAnnouncementUsers_FullMethodName     = "/notif.gateway.announcement.user.v1.Gateway/GetAnnouncementUsers"
+	Gateway_GetAppAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.user.v1.Gateway/GetAppAnnouncementUsers"
+	Gateway_GetNAppAnnouncementUsers_FullMethodName = "/notif.gateway.announcement.user.v1.Gateway/GetNAppAnnouncementUsers"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -228,7 +228,7 @@ func _Gateway_GetNAppAnnouncementUsers_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.gateway.announcement.announcementuser.v1.Gateway",
+	ServiceName: "notif.gateway.announcement.user.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

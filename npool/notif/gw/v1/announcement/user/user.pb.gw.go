@@ -2,11 +2,11 @@
 // source: npool/notif/gw/v1/announcement/user/user.proto
 
 /*
-Package announcementuser is a reverse proxy.
+Package user is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package announcementuser
+package user
 
 import (
 	"context"
@@ -215,7 +215,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/CreateAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/create/announcementusers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/CreateAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/create/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -240,7 +240,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser", runtime.WithHTTPPathPattern("/v1/delete/announcementusers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/DeleteAnnouncementUser", runtime.WithHTTPPathPattern("/v1/delete/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -265,7 +265,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/announcementusers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -290,7 +290,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/app/announcementusers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/app/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -315,7 +315,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetNAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/n/app/announcementusers"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetNAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/n/app/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -379,7 +379,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/CreateAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/create/announcementusers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/CreateAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/create/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -401,7 +401,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser", runtime.WithHTTPPathPattern("/v1/delete/announcementusers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/DeleteAnnouncementUser", runtime.WithHTTPPathPattern("/v1/delete/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -423,7 +423,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/announcementusers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -445,7 +445,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/app/announcementusers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/app/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,7 +467,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.announcementuser.v1.Gateway/GetNAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/n/app/announcementusers"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.announcement.user.v1.Gateway/GetNAppAnnouncementUsers", runtime.WithHTTPPathPattern("/v1/get/n/app/announcementusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
