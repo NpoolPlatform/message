@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1CreateFrontendTemplateResponse"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1CreateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1CreateFrontendTemplateRequest"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1CreateFrontendTemplateRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplateResponse"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1GetFrontendTemplateResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplateRequest"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1GetFrontendTemplateRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplatesResponse"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1GetFrontendTemplatesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplatesRequest"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1GetFrontendTemplatesRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1UpdateFrontendTemplateResponse"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1UpdateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaytemplatefrontendv1UpdateFrontendTemplateRequest"
+              "$ref": "#/definitions/notifgatewaytemplatefrontendv1UpdateFrontendTemplateRequest"
             }
           }
         ],
@@ -242,7 +242,7 @@
     }
   },
   "definitions": {
-    "gatewaytemplatefrontendv1CreateFrontendTemplateRequest": {
+    "notifgatewaytemplatefrontendv1CreateFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -262,7 +262,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1CreateFrontendTemplateResponse": {
+    "notifgatewaytemplatefrontendv1CreateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -270,7 +270,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1GetFrontendTemplateRequest": {
+    "notifgatewaytemplatefrontendv1GetFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -278,7 +278,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1GetFrontendTemplateResponse": {
+    "notifgatewaytemplatefrontendv1GetFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -286,7 +286,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1GetFrontendTemplatesRequest": {
+    "notifgatewaytemplatefrontendv1GetFrontendTemplatesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -302,7 +302,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1GetFrontendTemplatesResponse": {
+    "notifgatewaytemplatefrontendv1GetFrontendTemplatesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -318,7 +318,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1UpdateFrontendTemplateRequest": {
+    "notifgatewaytemplatefrontendv1UpdateFrontendTemplateRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -338,7 +338,7 @@
         }
       }
     },
-    "gatewaytemplatefrontendv1UpdateFrontendTemplateResponse": {
+    "notifgatewaytemplatefrontendv1UpdateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
         "Info": {

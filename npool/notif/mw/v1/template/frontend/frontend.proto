@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package notif.middleware.frontend.v1;
+package notif.middleware.template.frontend.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/frontend";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/frontend";
 
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
