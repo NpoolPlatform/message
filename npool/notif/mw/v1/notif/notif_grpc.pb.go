@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateNotif_FullMethodName    = "/notif.middleware.notif2.v1.Middleware/CreateNotif"
-	Middleware_CreateNotifs_FullMethodName   = "/notif.middleware.notif2.v1.Middleware/CreateNotifs"
-	Middleware_UpdateNotif_FullMethodName    = "/notif.middleware.notif2.v1.Middleware/UpdateNotif"
-	Middleware_UpdateNotifs_FullMethodName   = "/notif.middleware.notif2.v1.Middleware/UpdateNotifs"
-	Middleware_GetNotif_FullMethodName       = "/notif.middleware.notif2.v1.Middleware/GetNotif"
-	Middleware_GetNotifs_FullMethodName      = "/notif.middleware.notif2.v1.Middleware/GetNotifs"
-	Middleware_GetNotifOnly_FullMethodName   = "/notif.middleware.notif2.v1.Middleware/GetNotifOnly"
-	Middleware_GenerateNotifs_FullMethodName = "/notif.middleware.notif2.v1.Middleware/GenerateNotifs"
+	Middleware_CreateNotif_FullMethodName    = "/notif.middleware.notif.v1.Middleware/CreateNotif"
+	Middleware_CreateNotifs_FullMethodName   = "/notif.middleware.notif.v1.Middleware/CreateNotifs"
+	Middleware_UpdateNotif_FullMethodName    = "/notif.middleware.notif.v1.Middleware/UpdateNotif"
+	Middleware_UpdateNotifs_FullMethodName   = "/notif.middleware.notif.v1.Middleware/UpdateNotifs"
+	Middleware_GetNotif_FullMethodName       = "/notif.middleware.notif.v1.Middleware/GetNotif"
+	Middleware_GetNotifs_FullMethodName      = "/notif.middleware.notif.v1.Middleware/GetNotifs"
+	Middleware_GetNotifOnly_FullMethodName   = "/notif.middleware.notif.v1.Middleware/GetNotifOnly"
+	Middleware_GenerateNotifs_FullMethodName = "/notif.middleware.notif.v1.Middleware/GenerateNotifs"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -327,7 +327,7 @@ func _Middleware_GenerateNotifs_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.notif2.v1.Middleware",
+	ServiceName: "notif.middleware.notif.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
