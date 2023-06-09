@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetFrontendTemplate_FullMethodName        = "/notif.middleware.frontend2.v1.Middleware/GetFrontendTemplate"
-	Middleware_GetFrontendTemplates_FullMethodName       = "/notif.middleware.frontend2.v1.Middleware/GetFrontendTemplates"
-	Middleware_GetFrontendTemplateOnly_FullMethodName    = "/notif.middleware.frontend2.v1.Middleware/GetFrontendTemplateOnly"
-	Middleware_CreateFrontendTemplate_FullMethodName     = "/notif.middleware.frontend2.v1.Middleware/CreateFrontendTemplate"
-	Middleware_CreateFrontendTemplates_FullMethodName    = "/notif.middleware.frontend2.v1.Middleware/CreateFrontendTemplates"
-	Middleware_UpdateFrontendTemplate_FullMethodName     = "/notif.middleware.frontend2.v1.Middleware/UpdateFrontendTemplate"
-	Middleware_ExistFrontendTemplate_FullMethodName      = "/notif.middleware.frontend2.v1.Middleware/ExistFrontendTemplate"
-	Middleware_ExistFrontendTemplateConds_FullMethodName = "/notif.middleware.frontend2.v1.Middleware/ExistFrontendTemplateConds"
-	Middleware_CountFrontendTemplates_FullMethodName     = "/notif.middleware.frontend2.v1.Middleware/CountFrontendTemplates"
-	Middleware_DeleteFrontendTemplate_FullMethodName     = "/notif.middleware.frontend2.v1.Middleware/DeleteFrontendTemplate"
+	Middleware_GetFrontendTemplate_FullMethodName        = "/notif.middleware.frontend.v1.Middleware/GetFrontendTemplate"
+	Middleware_GetFrontendTemplates_FullMethodName       = "/notif.middleware.frontend.v1.Middleware/GetFrontendTemplates"
+	Middleware_GetFrontendTemplateOnly_FullMethodName    = "/notif.middleware.frontend.v1.Middleware/GetFrontendTemplateOnly"
+	Middleware_CreateFrontendTemplate_FullMethodName     = "/notif.middleware.frontend.v1.Middleware/CreateFrontendTemplate"
+	Middleware_CreateFrontendTemplates_FullMethodName    = "/notif.middleware.frontend.v1.Middleware/CreateFrontendTemplates"
+	Middleware_UpdateFrontendTemplate_FullMethodName     = "/notif.middleware.frontend.v1.Middleware/UpdateFrontendTemplate"
+	Middleware_ExistFrontendTemplate_FullMethodName      = "/notif.middleware.frontend.v1.Middleware/ExistFrontendTemplate"
+	Middleware_ExistFrontendTemplateConds_FullMethodName = "/notif.middleware.frontend.v1.Middleware/ExistFrontendTemplateConds"
+	Middleware_CountFrontendTemplates_FullMethodName     = "/notif.middleware.frontend.v1.Middleware/CountFrontendTemplates"
+	Middleware_DeleteFrontendTemplate_FullMethodName     = "/notif.middleware.frontend.v1.Middleware/DeleteFrontendTemplate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -393,7 +393,7 @@ func _Middleware_DeleteFrontendTemplate_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.frontend2.v1.Middleware",
+	ServiceName: "notif.middleware.frontend.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

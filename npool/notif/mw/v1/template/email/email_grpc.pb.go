@@ -19,15 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetEmailTemplate_FullMethodName        = "/notif.middleware.email1.v1.Middleware/GetEmailTemplate"
-	Middleware_GetEmailTemplates_FullMethodName       = "/notif.middleware.email1.v1.Middleware/GetEmailTemplates"
-	Middleware_GetEmailTemplateOnly_FullMethodName    = "/notif.middleware.email1.v1.Middleware/GetEmailTemplateOnly"
-	Middleware_CreateEmailTemplate_FullMethodName     = "/notif.middleware.email1.v1.Middleware/CreateEmailTemplate"
-	Middleware_CreateEmailTemplates_FullMethodName    = "/notif.middleware.email1.v1.Middleware/CreateEmailTemplates"
-	Middleware_UpdateEmailTemplate_FullMethodName     = "/notif.middleware.email1.v1.Middleware/UpdateEmailTemplate"
-	Middleware_ExistEmailTemplate_FullMethodName      = "/notif.middleware.email1.v1.Middleware/ExistEmailTemplate"
-	Middleware_ExistEmailTemplateConds_FullMethodName = "/notif.middleware.email1.v1.Middleware/ExistEmailTemplateConds"
-	Middleware_DeleteEmailTemplate_FullMethodName     = "/notif.middleware.email1.v1.Middleware/DeleteEmailTemplate"
+	Middleware_GetEmailTemplate_FullMethodName        = "/notif.middleware.template.email1.v1.Middleware/GetEmailTemplate"
+	Middleware_GetEmailTemplates_FullMethodName       = "/notif.middleware.template.email1.v1.Middleware/GetEmailTemplates"
+	Middleware_GetEmailTemplateOnly_FullMethodName    = "/notif.middleware.template.email1.v1.Middleware/GetEmailTemplateOnly"
+	Middleware_CreateEmailTemplate_FullMethodName     = "/notif.middleware.template.email1.v1.Middleware/CreateEmailTemplate"
+	Middleware_CreateEmailTemplates_FullMethodName    = "/notif.middleware.template.email1.v1.Middleware/CreateEmailTemplates"
+	Middleware_UpdateEmailTemplate_FullMethodName     = "/notif.middleware.template.email1.v1.Middleware/UpdateEmailTemplate"
+	Middleware_ExistEmailTemplate_FullMethodName      = "/notif.middleware.template.email1.v1.Middleware/ExistEmailTemplate"
+	Middleware_ExistEmailTemplateConds_FullMethodName = "/notif.middleware.template.email1.v1.Middleware/ExistEmailTemplateConds"
+	Middleware_DeleteEmailTemplate_FullMethodName     = "/notif.middleware.template.email1.v1.Middleware/DeleteEmailTemplate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -360,7 +360,7 @@ func _Middleware_DeleteEmailTemplate_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.email1.v1.Middleware",
+	ServiceName: "notif.middleware.template.email1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
