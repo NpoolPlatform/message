@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1CreateFrontendTemplateResponse"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1CreateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1CreateFrontendTemplateRequest"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1CreateFrontendTemplateRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplateResponse"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplateResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplateRequest"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplateRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplatesResponse"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplatesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1GetFrontendTemplatesRequest"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1GetFrontendTemplatesRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1UpdateFrontendTemplateResponse"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1UpdateFrontendTemplateResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/templatefrontend3v1UpdateFrontendTemplateRequest"
+              "$ref": "#/definitions/gatewaytemplatefrontendv1UpdateFrontendTemplateRequest"
             }
           }
         ],
@@ -242,6 +242,110 @@
     }
   },
   "definitions": {
+    "gatewaytemplatefrontendv1CreateFrontendTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1CreateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1GetFrontendTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1GetFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1GetFrontendTemplatesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1GetFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1UpdateFrontendTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewaytemplatefrontendv1UpdateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -267,110 +371,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "templatefrontend3v1CreateFrontendTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        }
-      }
-    },
-    "templatefrontend3v1CreateFrontendTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
-        }
-      }
-    },
-    "templatefrontend3v1GetFrontendTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "templatefrontend3v1GetFrontendTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
-        }
-      }
-    },
-    "templatefrontend3v1GetFrontendTemplatesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "templatefrontend3v1GetFrontendTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1FrontendTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "templatefrontend3v1UpdateFrontendTemplateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
-        }
-      }
-    },
-    "templatefrontend3v1UpdateFrontendTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },

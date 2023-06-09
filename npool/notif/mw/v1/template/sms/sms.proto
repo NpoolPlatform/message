@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package notif.middleware.sms1.v1;
+package notif.middleware.template.sms.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/sms";
 

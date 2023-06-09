@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateFrontendTemplate_FullMethodName    = "/notif.gateway.template.frontend3.v1.Gateway/CreateFrontendTemplate"
-	Gateway_CreateAppFrontendTemplate_FullMethodName = "/notif.gateway.template.frontend3.v1.Gateway/CreateAppFrontendTemplate"
-	Gateway_GetFrontendTemplate_FullMethodName       = "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplate"
-	Gateway_GetFrontendTemplates_FullMethodName      = "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplates"
-	Gateway_GetAppFrontendTemplates_FullMethodName   = "/notif.gateway.template.frontend3.v1.Gateway/GetAppFrontendTemplates"
-	Gateway_UpdateFrontendTemplate_FullMethodName    = "/notif.gateway.template.frontend3.v1.Gateway/UpdateFrontendTemplate"
-	Gateway_UpdateAppFrontendTemplate_FullMethodName = "/notif.gateway.template.frontend3.v1.Gateway/UpdateAppFrontendTemplate"
+	Gateway_CreateFrontendTemplate_FullMethodName    = "/notif.gateway.template.frontend.v1.Gateway/CreateFrontendTemplate"
+	Gateway_CreateAppFrontendTemplate_FullMethodName = "/notif.gateway.template.frontend.v1.Gateway/CreateAppFrontendTemplate"
+	Gateway_GetFrontendTemplate_FullMethodName       = "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplate"
+	Gateway_GetFrontendTemplates_FullMethodName      = "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplates"
+	Gateway_GetAppFrontendTemplates_FullMethodName   = "/notif.gateway.template.frontend.v1.Gateway/GetAppFrontendTemplates"
+	Gateway_UpdateFrontendTemplate_FullMethodName    = "/notif.gateway.template.frontend.v1.Gateway/UpdateFrontendTemplate"
+	Gateway_UpdateAppFrontendTemplate_FullMethodName = "/notif.gateway.template.frontend.v1.Gateway/UpdateAppFrontendTemplate"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -294,7 +294,7 @@ func _Gateway_UpdateAppFrontendTemplate_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.gateway.template.frontend3.v1.Gateway",
+	ServiceName: "notif.gateway.template.frontend.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
