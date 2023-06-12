@@ -215,18 +215,6 @@
         }
       }
     },
-    "v1CreateAnnouncementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Announcement"
-          }
-        }
-      }
-    },
     "v1DeleteAnnouncementResponse": {
       "type": "object",
       "properties": {
