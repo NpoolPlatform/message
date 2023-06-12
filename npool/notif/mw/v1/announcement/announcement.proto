@@ -138,6 +138,7 @@ message GetAnnouncementOnlyResponse {
 
 message ExistAnnouncementRequest {
     string ID = 10;
+    string AppID = 20;
 }
 
 message ExistAnnouncementResponse {
