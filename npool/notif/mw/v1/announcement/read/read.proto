@@ -125,7 +125,7 @@ message CountReadAnnouncementsResponse {
 }
 
 message DeleteReadAnnouncementRequest {
-    string ID = 10;
+    ReadAnnouncementReq Info = 10;
 }
 
 message DeleteReadAnnouncementResponse {
