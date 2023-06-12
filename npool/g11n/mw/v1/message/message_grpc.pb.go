@@ -96,24 +96,6 @@ func (c *middlewareClient) GetMessageOnly(ctx context.Context, in *GetMessageOnl
 	return out, nil
 }
 
-func (c *middlewareClient) GetMessage(ctx context.Context, in *GetMessageRequest, opts ...grpc.CallOption) (*GetMessageResponse, error) {
-	out := new(GetMessageResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetMessage_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetMessageOnly(ctx context.Context, in *GetMessageOnlyRequest, opts ...grpc.CallOption) (*GetMessageOnlyResponse, error) {
-	out := new(GetMessageOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetMessageOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetMessages(ctx context.Context, in *GetMessagesRequest, opts ...grpc.CallOption) (*GetMessagesResponse, error) {
 	out := new(GetMessagesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetMessages_FullMethodName, in, out, opts...)
@@ -126,33 +108,6 @@ func (c *middlewareClient) GetMessages(ctx context.Context, in *GetMessagesReque
 func (c *middlewareClient) ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error) {
 	out := new(ExistMessageCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistMessageConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistMessage(ctx context.Context, in *ExistMessageRequest, opts ...grpc.CallOption) (*ExistMessageResponse, error) {
-	out := new(ExistMessageResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistMessage_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistMessageConds(ctx context.Context, in *ExistMessageCondsRequest, opts ...grpc.CallOption) (*ExistMessageCondsResponse, error) {
-	out := new(ExistMessageCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistMessageConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CountMessages(ctx context.Context, in *CountMessagesRequest, opts ...grpc.CallOption) (*CountMessagesResponse, error) {
-	out := new(CountMessagesResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountMessages_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -396,28 +351,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetMessageOnly_Handler,
 		},
 		{
-			MethodName: "GetMessage",
-			Handler:    _Middleware_GetMessage_Handler,
-		},
-		{
-			MethodName: "GetMessageOnly",
-			Handler:    _Middleware_GetMessageOnly_Handler,
-		},
-		{
 			MethodName: "GetMessages",
 			Handler:    _Middleware_GetMessages_Handler,
-		},
-		{
-			MethodName: "ExistMessage",
-			Handler:    _Middleware_ExistMessage_Handler,
-		},
-		{
-			MethodName: "ExistMessageConds",
-			Handler:    _Middleware_ExistMessageConds_Handler,
-		},
-		{
-			MethodName: "CountMessages",
-			Handler:    _Middleware_CountMessages_Handler,
 		},
 		{
 			MethodName: "ExistMessageConds",
