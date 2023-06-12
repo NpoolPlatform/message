@@ -1131,7 +1131,7 @@ type DeleteReadAnnouncementRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	Info *ReadAnnouncementReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *DeleteReadAnnouncementRequest) Reset() {
@@ -1166,11 +1166,11 @@ func (*DeleteReadAnnouncementRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_mw_v1_announcement_read_read_proto_rawDescGZIP(), []int{21}
 }
 
-func (x *DeleteReadAnnouncementRequest) GetID() string {
+func (x *DeleteReadAnnouncementRequest) GetInfo() *ReadAnnouncementReq {
 	if x != nil {
-		return x.ID
+		return x.Info
 	}
-	return ""
+	return nil
 }
 
 type DeleteReadAnnouncementResponse struct {
@@ -1380,10 +1380,14 @@ var file_npool_notif_mw_v1_announcement_read_read_proto_rawDesc = []byte{
 	0x73, 0x22, 0x34, 0x0a, 0x1e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x61, 0x64, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x2f, 0x0a, 0x1d, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x0d, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x6f, 0x0a, 0x1d, 0x44, 0x65, 0x6c, 0x65, 0x74,
 	0x65, 0x52, 0x65, 0x61, 0x64, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x6d, 0x0a, 0x1e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x4e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
+	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x72, 0x65, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x61, 0x64, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x6d, 0x0a, 0x1e, 0x44, 0x65, 0x6c, 0x65,
 	0x74, 0x65, 0x52, 0x65, 0x61, 0x64, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
 	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4b, 0x0a, 0x04, 0x49, 0x6e,
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
@@ -1562,32 +1566,33 @@ var file_npool_notif_mw_v1_announcement_read_read_proto_depIdxs = []int32{
 	0,  // 14: notif.middleware.announcement.read.v1.GetReadAnnouncementOnlyResponse.Info:type_name -> notif.middleware.announcement.read.v1.ReadAnnouncement
 	1,  // 15: notif.middleware.announcement.read.v1.ExistReadAnnouncementCondsRequest.Conds:type_name -> notif.middleware.announcement.read.v1.Conds
 	1,  // 16: notif.middleware.announcement.read.v1.CountReadAnnouncementsRequest.Conds:type_name -> notif.middleware.announcement.read.v1.Conds
-	0,  // 17: notif.middleware.announcement.read.v1.DeleteReadAnnouncementResponse.Info:type_name -> notif.middleware.announcement.read.v1.ReadAnnouncement
-	3,  // 18: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementRequest
-	5,  // 19: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementsRequest
-	7,  // 20: notif.middleware.announcement.read.v1.Middleware.UpdateReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.UpdateReadAnnouncementRequest
-	9,  // 21: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementRequest
-	13, // 22: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncementOnly:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementOnlyRequest
-	11, // 23: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementsRequest
-	15, // 24: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementRequest
-	17, // 25: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncementConds:input_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementCondsRequest
-	19, // 26: notif.middleware.announcement.read.v1.Middleware.CountReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.CountReadAnnouncementsRequest
-	21, // 27: notif.middleware.announcement.read.v1.Middleware.DeleteReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.DeleteReadAnnouncementRequest
-	4,  // 28: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementResponse
-	6,  // 29: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementsResponse
-	8,  // 30: notif.middleware.announcement.read.v1.Middleware.UpdateReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.UpdateReadAnnouncementResponse
-	10, // 31: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementResponse
-	14, // 32: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncementOnly:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementOnlyResponse
-	12, // 33: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementsResponse
-	16, // 34: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementResponse
-	18, // 35: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncementConds:output_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementCondsResponse
-	20, // 36: notif.middleware.announcement.read.v1.Middleware.CountReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.CountReadAnnouncementsResponse
-	22, // 37: notif.middleware.announcement.read.v1.Middleware.DeleteReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.DeleteReadAnnouncementResponse
-	28, // [28:38] is the sub-list for method output_type
-	18, // [18:28] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	2,  // 17: notif.middleware.announcement.read.v1.DeleteReadAnnouncementRequest.Info:type_name -> notif.middleware.announcement.read.v1.ReadAnnouncementReq
+	0,  // 18: notif.middleware.announcement.read.v1.DeleteReadAnnouncementResponse.Info:type_name -> notif.middleware.announcement.read.v1.ReadAnnouncement
+	3,  // 19: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementRequest
+	5,  // 20: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementsRequest
+	7,  // 21: notif.middleware.announcement.read.v1.Middleware.UpdateReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.UpdateReadAnnouncementRequest
+	9,  // 22: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementRequest
+	13, // 23: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncementOnly:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementOnlyRequest
+	11, // 24: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementsRequest
+	15, // 25: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementRequest
+	17, // 26: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncementConds:input_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementCondsRequest
+	19, // 27: notif.middleware.announcement.read.v1.Middleware.CountReadAnnouncements:input_type -> notif.middleware.announcement.read.v1.CountReadAnnouncementsRequest
+	21, // 28: notif.middleware.announcement.read.v1.Middleware.DeleteReadAnnouncement:input_type -> notif.middleware.announcement.read.v1.DeleteReadAnnouncementRequest
+	4,  // 29: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementResponse
+	6,  // 30: notif.middleware.announcement.read.v1.Middleware.CreateReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.CreateReadAnnouncementsResponse
+	8,  // 31: notif.middleware.announcement.read.v1.Middleware.UpdateReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.UpdateReadAnnouncementResponse
+	10, // 32: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementResponse
+	14, // 33: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncementOnly:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementOnlyResponse
+	12, // 34: notif.middleware.announcement.read.v1.Middleware.GetReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.GetReadAnnouncementsResponse
+	16, // 35: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementResponse
+	18, // 36: notif.middleware.announcement.read.v1.Middleware.ExistReadAnnouncementConds:output_type -> notif.middleware.announcement.read.v1.ExistReadAnnouncementCondsResponse
+	20, // 37: notif.middleware.announcement.read.v1.Middleware.CountReadAnnouncements:output_type -> notif.middleware.announcement.read.v1.CountReadAnnouncementsResponse
+	22, // 38: notif.middleware.announcement.read.v1.Middleware.DeleteReadAnnouncement:output_type -> notif.middleware.announcement.read.v1.DeleteReadAnnouncementResponse
+	29, // [29:39] is the sub-list for method output_type
+	19, // [19:29] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mw_v1_announcement_read_read_proto_init() }
