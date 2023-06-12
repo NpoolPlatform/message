@@ -12,7 +12,6 @@ service Middleware {
     rpc GetAnnouncementStates (GetAnnouncementStatesRequest) returns (GetAnnouncementStatesResponse) {}
     rpc GetAnnouncements      (GetAnnouncementsRequest)      returns (GetAnnouncementsResponse)      {}
     rpc CreateAnnouncement     (CreateAnnouncementRequest)     returns (CreateAnnouncementResponse)     {}
-    rpc CreateAnnouncements    (CreateAnnouncementsRequest)    returns (CreateAnnouncementsResponse)    {}
     rpc UpdateAnnouncement     (UpdateAnnouncementRequest)     returns (UpdateAnnouncementResponse)     {}
     rpc GetAnnouncement        (GetAnnouncementRequest)        returns (GetAnnouncementResponse)        {}
     rpc GetAnnouncementOnly    (GetAnnouncementOnlyRequest)    returns (GetAnnouncementOnlyResponse)    {}
@@ -89,14 +88,6 @@ message CreateAnnouncementRequest {
 
 message CreateAnnouncementResponse {
     Announcement Info = 10;
-}
-
-message CreateAnnouncementsRequest {
-    repeated AnnouncementReq Infos = 10;
-}
-
-message CreateAnnouncementsResponse {
-    repeated Announcement Infos = 10;
 }
 
 message UpdateAnnouncementRequest {

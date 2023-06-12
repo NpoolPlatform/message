@@ -22,7 +22,6 @@ const (
 	Middleware_GetAnnouncementStates_FullMethodName  = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementStates"
 	Middleware_GetAnnouncements_FullMethodName       = "/notif.middleware.announcement.v1.Middleware/GetAnnouncements"
 	Middleware_CreateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/CreateAnnouncement"
-	Middleware_CreateAnnouncements_FullMethodName    = "/notif.middleware.announcement.v1.Middleware/CreateAnnouncements"
 	Middleware_UpdateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/UpdateAnnouncement"
 	Middleware_GetAnnouncement_FullMethodName        = "/notif.middleware.announcement.v1.Middleware/GetAnnouncement"
 	Middleware_GetAnnouncementOnly_FullMethodName    = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementOnly"
@@ -39,7 +38,6 @@ type MiddlewareClient interface {
 	GetAnnouncementStates(ctx context.Context, in *GetAnnouncementStatesRequest, opts ...grpc.CallOption) (*GetAnnouncementStatesResponse, error)
 	GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
 	CreateAnnouncement(ctx context.Context, in *CreateAnnouncementRequest, opts ...grpc.CallOption) (*CreateAnnouncementResponse, error)
-	CreateAnnouncements(ctx context.Context, in *CreateAnnouncementsRequest, opts ...grpc.CallOption) (*CreateAnnouncementsResponse, error)
 	UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error)
 	GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error)
 	GetAnnouncementOnly(ctx context.Context, in *GetAnnouncementOnlyRequest, opts ...grpc.CallOption) (*GetAnnouncementOnlyResponse, error)
@@ -78,15 +76,6 @@ func (c *middlewareClient) GetAnnouncements(ctx context.Context, in *GetAnnounce
 func (c *middlewareClient) CreateAnnouncement(ctx context.Context, in *CreateAnnouncementRequest, opts ...grpc.CallOption) (*CreateAnnouncementResponse, error) {
 	out := new(CreateAnnouncementResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateAnnouncement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateAnnouncements(ctx context.Context, in *CreateAnnouncementsRequest, opts ...grpc.CallOption) (*CreateAnnouncementsResponse, error) {
-	out := new(CreateAnnouncementsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateAnnouncements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -163,7 +152,6 @@ type MiddlewareServer interface {
 	GetAnnouncementStates(context.Context, *GetAnnouncementStatesRequest) (*GetAnnouncementStatesResponse, error)
 	GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
 	CreateAnnouncement(context.Context, *CreateAnnouncementRequest) (*CreateAnnouncementResponse, error)
-	CreateAnnouncements(context.Context, *CreateAnnouncementsRequest) (*CreateAnnouncementsResponse, error)
 	UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error)
 	GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error)
 	GetAnnouncementOnly(context.Context, *GetAnnouncementOnlyRequest) (*GetAnnouncementOnlyResponse, error)
@@ -186,9 +174,6 @@ func (UnimplementedMiddlewareServer) GetAnnouncements(context.Context, *GetAnnou
 }
 func (UnimplementedMiddlewareServer) CreateAnnouncement(context.Context, *CreateAnnouncementRequest) (*CreateAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncement not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateAnnouncements(context.Context, *CreateAnnouncementsRequest) (*CreateAnnouncementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncements not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAnnouncement not implemented")
@@ -274,24 +259,6 @@ func _Middleware_CreateAnnouncement_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateAnnouncement(ctx, req.(*CreateAnnouncementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAnnouncementsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAnnouncements(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateAnnouncements_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAnnouncements(ctx, req.(*CreateAnnouncementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -440,10 +407,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAnnouncement",
 			Handler:    _Middleware_CreateAnnouncement_Handler,
-		},
-		{
-			MethodName: "CreateAnnouncements",
-			Handler:    _Middleware_CreateAnnouncements_Handler,
 		},
 		{
 			MethodName: "UpdateAnnouncement",
