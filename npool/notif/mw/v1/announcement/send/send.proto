@@ -1,0 +1,131 @@
+syntax = "proto3";
+
+package notif.middleware.announcement.send.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/send";
+
+import "npool/basetypes/v1/channel.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateSendAnnouncement     (CreateSendAnnouncementRequest)     returns (CreateSendAnnouncementResponse)  {}
+    rpc CreateSendAnnouncements    (CreateSendAnnouncementsRequest)    returns (CreateSendAnnouncementsResponse) {}
+    rpc GetSendAnnouncements       (GetSendAnnouncementsRequest)       returns (GetSendAnnouncementsResponse)    {}
+    rpc GetSendAnnouncement        (GetSendAnnouncementRequest)        returns (GetSendAnnouncementResponse)        {}
+    rpc GetSendAnnouncementOnly    (GetSendAnnouncementOnlyRequest)    returns (GetSendAnnouncementOnlyResponse)    {}
+    rpc ExistSendAnnouncement      (ExistSendAnnouncementRequest)      returns (ExistSendAnnouncementResponse)      {}
+    rpc ExistSendAnnouncementConds (ExistSendAnnouncementCondsRequest) returns (ExistSendAnnouncementCondsResponse) {}
+    rpc DeleteSendAnnouncement     (DeleteSendAnnouncementRequest)     returns (DeleteSendAnnouncementResponse)     {}
+}
+
+message SendAnnouncement {
+    // @inject_tag: sql:"id"
+    string ID             = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID          = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID         = 30;
+    // @inject_tag: sql:"announcement_id"
+    string AnnouncementID = 40;
+    // @inject_tag: sql:"channel"
+    string ChannelStr     = 49;
+    basetypes.v1.NotifChannel Channel = 50;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 60;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt      = 70;
+}
+
+message SendAnnouncementReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string AnnouncementID = 40;
+    optional basetypes.v1.NotifChannel Channel = 50;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      ID             = 10;
+    optional basetypes.v1.StringVal      AppID          = 20;
+    optional basetypes.v1.StringVal      UserID         = 30;
+    optional basetypes.v1.StringVal      AnnouncementID = 40;
+    optional basetypes.v1.Uint32Val      Channel        = 50;
+    optional basetypes.v1.Uint32Val      EndAt          = 60;
+    optional basetypes.v1.StringSliceVal UserIDs        = 70;
+}
+
+message CreateSendAnnouncementRequest {
+    SendAnnouncementReq Info = 10;
+}
+
+message CreateSendAnnouncementResponse {
+    SendAnnouncement Info = 10;
+}
+
+message CreateSendAnnouncementsRequest {
+    repeated SendAnnouncementReq Infos = 10;
+}
+
+message CreateSendAnnouncementsResponse {
+    repeated SendAnnouncement Infos = 10;
+}
+
+message GetSendAnnouncementsRequest {
+    Conds  Conds  = 10;
+    int32  Offset = 30;
+    int32  Limit  = 40;
+}
+
+message GetSendAnnouncementsResponse {
+    repeated SendAnnouncement Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetSendAnnouncementRequest {
+    string ID = 10;
+}
+
+message GetSendAnnouncementResponse {
+    SendAnnouncement Info = 10;
+}
+
+message GetSendAnnouncementOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetSendAnnouncementOnlyResponse {
+    SendAnnouncement Info = 10;
+}
+
+message ExistSendAnnouncementRequest {
+    string ID = 10;
+}
+
+message ExistSendAnnouncementResponse {
+    bool Info = 10;
+}
+
+message ExistSendAnnouncementCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistSendAnnouncementCondsResponse {
+    bool Info = 10;
+}
+
+message CountSendAnnouncementsRequest {
+    Conds Conds = 10;
+}
+
+message CountSendAnnouncementsResponse {
+    uint32 Info = 10;
+}
+
+message DeleteSendAnnouncementRequest {
+    SendAnnouncementReq Info = 10;
+}
+
+message DeleteSendAnnouncementResponse {
+    SendAnnouncement Info = 10;
+}

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/notif/mw/v1/announcement/readstate/readstate.proto",
+    "title": "npool/notif/mw/v1/announcement/send/send.proto",
     "version": "version not set"
   },
   "tags": [
@@ -59,55 +59,47 @@
         },
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CountReadStatesResponse": {
+    "v1CreateSendAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1SendAnnouncement"
         }
       }
     },
-    "v1CreateReadStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ReadState"
-        }
-      }
-    },
-    "v1CreateReadStatesResponse": {
+    "v1CreateSendAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1ReadState"
+            "$ref": "#/definitions/v1SendAnnouncement"
           }
         }
       }
     },
-    "v1DeleteReadStateResponse": {
+    "v1DeleteSendAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadState"
+          "$ref": "#/definitions/v1SendAnnouncement"
         }
       }
     },
-    "v1ExistReadStateCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistReadStateResponse": {
+    "v1ExistSendAnnouncementCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -115,30 +107,38 @@
         }
       }
     },
-    "v1GetReadStateOnlyResponse": {
+    "v1ExistSendAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadState"
+          "type": "boolean"
         }
       }
     },
-    "v1GetReadStateResponse": {
+    "v1GetSendAnnouncementOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1ReadState"
+          "$ref": "#/definitions/v1SendAnnouncement"
         }
       }
     },
-    "v1GetReadStatesResponse": {
+    "v1GetSendAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SendAnnouncement"
+        }
+      }
+    },
+    "v1GetSendAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1ReadState"
+            "$ref": "#/definitions/v1SendAnnouncement"
           }
         },
         "Total": {
@@ -147,7 +147,17 @@
         }
       }
     },
-    "v1ReadState": {
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
+    "v1SendAnnouncement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -166,6 +176,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"announcement_id\""
         },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -178,7 +195,7 @@
         }
       }
     },
-    "v1ReadStateReq": {
+    "v1SendAnnouncementReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -192,6 +209,23 @@
         },
         "AnnouncementID": {
           "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -206,11 +240,15 @@
         }
       }
     },
-    "v1UpdateReadStateResponse": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ReadState"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
