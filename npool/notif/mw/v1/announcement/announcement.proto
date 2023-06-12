@@ -170,7 +170,7 @@ message CountAnnouncementsResponse {
 }
 
 message DeleteAnnouncementRequest {
-    string ID = 10;
+    AnnouncementReq Info = 10;
 }
 
 message DeleteAnnouncementResponse {
