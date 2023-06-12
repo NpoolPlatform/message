@@ -55,7 +55,7 @@ message CreateUserAnnouncementRequest {
 }
 
 message CreateUserAnnouncementResponse {
-    UserAnnouncementReq Info = 10;
+    UserAnnouncement Info = 10;
 }
 
 message CreateUserAnnouncementsRequest {
