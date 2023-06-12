@@ -78,7 +78,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncementReq"
+          "$ref": "#/definitions/v1UserAnnouncement"
         }
       }
     },
