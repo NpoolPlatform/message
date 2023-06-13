@@ -45,6 +45,54 @@
         }
       }
     },
+    "v1AnnouncementUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "AnnouncementID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"announcement_id\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"update_at\""
+        }
+      }
+    },
+    "v1AnnouncementUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -65,7 +113,7 @@
         }
       }
     },
-    "v1CountUserAnnouncementsResponse": {
+    "v1CountAnnouncementUsersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -74,43 +122,35 @@
         }
       }
     },
-    "v1CreateUserAnnouncementResponse": {
+    "v1CreateAnnouncementUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncement"
+          "$ref": "#/definitions/v1AnnouncementUser"
         }
       }
     },
-    "v1CreateUserAnnouncementsResponse": {
+    "v1CreateAnnouncementUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserAnnouncement"
+            "$ref": "#/definitions/v1AnnouncementUser"
           }
         }
       }
     },
-    "v1DeleteUserAnnouncementResponse": {
+    "v1DeleteAnnouncementUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncement"
+          "$ref": "#/definitions/v1AnnouncementUser"
         }
       }
     },
-    "v1ExistUserAnnouncementCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUserAnnouncementResponse": {
+    "v1ExistAnnouncementUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -118,30 +158,38 @@
         }
       }
     },
-    "v1GetUserAnnouncementOnlyResponse": {
+    "v1ExistAnnouncementUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncement"
+          "type": "boolean"
         }
       }
     },
-    "v1GetUserAnnouncementResponse": {
+    "v1GetAnnouncementUserOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncement"
+          "$ref": "#/definitions/v1AnnouncementUser"
         }
       }
     },
-    "v1GetUserAnnouncementsResponse": {
+    "v1GetAnnouncementUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AnnouncementUser"
+        }
+      }
+    },
+    "v1GetAnnouncementUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserAnnouncement"
+            "$ref": "#/definitions/v1AnnouncementUser"
           }
         },
         "Total": {
@@ -175,59 +223,11 @@
         }
       }
     },
-    "v1UpdateUserAnnouncementResponse": {
+    "v1UpdateAnnouncementUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserAnnouncement"
-        }
-      }
-    },
-    "v1UserAnnouncement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "AnnouncementID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"announcement_id\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"update_at\""
-        }
-      }
-    },
-    "v1UserAnnouncementReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AnnouncementID": {
-          "type": "string"
+          "$ref": "#/definitions/v1AnnouncementUser"
         }
       }
     }
