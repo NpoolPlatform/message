@@ -124,7 +124,7 @@ message ExistEmailTemplateCondsResponse {
 }
 
 message DeleteEmailTemplateRequest {
-    string ID = 10;
+    EmailTemplateReq Info = 10;
 }
 
 message DeleteEmailTemplateResponse {
