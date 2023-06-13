@@ -8,19 +8,19 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAnnouncementUser     (CreateAnnouncementUserRequest)     returns (CreateAnnouncementUserResponse)     {}
-    rpc CreateAnnouncementUsers    (CreateAnnouncementUsersRequest)    returns (CreateAnnouncementUsersResponse)    {}
-    rpc UpdateAnnouncementUser     (UpdateAnnouncementUserRequest)     returns (UpdateAnnouncementUserResponse)     {}
-    rpc GetAnnouncementUser        (GetAnnouncementUserRequest)        returns (GetAnnouncementUserResponse)        {}
-    rpc GetAnnouncementUserOnly    (GetAnnouncementUserOnlyRequest)    returns (GetAnnouncementUserOnlyResponse)    {}
-    rpc GetAnnouncementUsers       (GetAnnouncementUsersRequest)       returns (GetAnnouncementUsersResponse)       {}
-    rpc ExistAnnouncementUser      (ExistAnnouncementUserRequest)      returns (ExistAnnouncementUserResponse)      {}
-    rpc ExistAnnouncementUserConds (ExistAnnouncementUserCondsRequest) returns (ExistAnnouncementUserCondsResponse) {}
-    rpc CountAnnouncementUsers     (CountAnnouncementUsersRequest)     returns (CountAnnouncementUsersResponse)     {}
-    rpc DeleteAnnouncementUser     (DeleteAnnouncementUserRequest)     returns (DeleteAnnouncementUserResponse)     {}
+    rpc CreateUserAnnouncement     (CreateUserAnnouncementRequest)     returns (CreateUserAnnouncementResponse)     {}
+    rpc CreateUserAnnouncements    (CreateUserAnnouncementsRequest)    returns (CreateUserAnnouncementsResponse)    {}
+    rpc UpdateUserAnnouncement     (UpdateUserAnnouncementRequest)     returns (UpdateUserAnnouncementResponse)     {}
+    rpc GetUserAnnouncement        (GetUserAnnouncementRequest)        returns (GetUserAnnouncementResponse)        {}
+    rpc GetUserAnnouncementOnly    (GetUserAnnouncementOnlyRequest)    returns (GetUserAnnouncementOnlyResponse)    {}
+    rpc GetUserAnnouncements       (GetUserAnnouncementsRequest)       returns (GetUserAnnouncementsResponse)       {}
+    rpc ExistUserAnnouncement      (ExistUserAnnouncementRequest)      returns (ExistUserAnnouncementResponse)      {}
+    rpc ExistUserAnnouncementConds (ExistUserAnnouncementCondsRequest) returns (ExistUserAnnouncementCondsResponse) {}
+    rpc CountUserAnnouncements     (CountUserAnnouncementsRequest)     returns (CountUserAnnouncementsResponse)     {}
+    rpc DeleteUserAnnouncement     (DeleteUserAnnouncementRequest)     returns (DeleteUserAnnouncementResponse)     {}
 }
 
-message AnnouncementUser {
+message UserAnnouncement {
     // @inject_tag: sql:"id"
     string ID             = 10;
     // @inject_tag: sql:"app_id"
@@ -35,7 +35,7 @@ message AnnouncementUser {
     uint32 UpdatedAt      = 70;
 }
 
-message AnnouncementUserReq {
+message UserAnnouncementReq {
     optional string ID             = 10;
     optional string AppID          = 20;
     optional string UserID         = 30;
@@ -50,85 +50,85 @@ message Conds {
     optional basetypes.v1.StringVal      AnnouncementID = 50;
 }
 
-message CreateAnnouncementUserRequest {
-    AnnouncementUserReq Info = 10;
+message CreateUserAnnouncementRequest {
+    UserAnnouncementReq Info = 10;
 }
 
-message CreateAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
+message CreateUserAnnouncementResponse {
+    UserAnnouncement Info = 10;
 }
 
-message CreateAnnouncementUsersRequest {
-    repeated AnnouncementUserReq Infos = 10;
+message CreateUserAnnouncementsRequest {
+    repeated UserAnnouncementReq Infos = 10;
 }
 
-message CreateAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
+message CreateUserAnnouncementsResponse {
+    repeated UserAnnouncement Infos = 10;
 }
 
-message UpdateAnnouncementUserRequest {
-    AnnouncementUserReq Info = 10;
+message UpdateUserAnnouncementRequest {
+    UserAnnouncementReq Info = 10;
 }
 
-message UpdateAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
+message UpdateUserAnnouncementResponse {
+    UserAnnouncement Info = 10;
 }
 
-message GetAnnouncementUserRequest {
+message GetUserAnnouncementRequest {
     string ID = 10;
 }
 
-message GetAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
+message GetUserAnnouncementResponse {
+    UserAnnouncement Info = 10;
 }
 
-message GetAnnouncementUsersRequest {
+message GetUserAnnouncementsRequest {
     Conds Conds = 10;
     int32 Offset = 20;
     int32 Limit = 30;
 }
 
-message GetAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
+message GetUserAnnouncementsResponse {
+    repeated UserAnnouncement Infos = 10;
     uint32                    Total = 20;
 }
 
-message GetAnnouncementUserOnlyRequest {
+message GetUserAnnouncementOnlyRequest {
     Conds Conds = 10;
 }
 
-message GetAnnouncementUserOnlyResponse {
-    AnnouncementUser Info = 10;
+message GetUserAnnouncementOnlyResponse {
+    UserAnnouncement Info = 10;
 }
 
-message ExistAnnouncementUserRequest {
+message ExistUserAnnouncementRequest {
     string ID = 10;
 }
 
-message ExistAnnouncementUserResponse {
+message ExistUserAnnouncementResponse {
     bool Info = 10;
 }
 
-message ExistAnnouncementUserCondsRequest {
+message ExistUserAnnouncementCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistAnnouncementUserCondsResponse {
+message ExistUserAnnouncementCondsResponse {
     bool Info = 10;
 }
 
-message CountAnnouncementUsersRequest {
+message CountUserAnnouncementsRequest {
     Conds Conds = 10;
 }
 
-message CountAnnouncementUsersResponse {
+message CountUserAnnouncementsResponse {
     uint32 Info = 10;
 }
 
-message DeleteAnnouncementUserRequest {
-    AnnouncementUserReq Info = 10;
+message DeleteUserAnnouncementRequest {
+    UserAnnouncementReq Info = 10;
 }
 
-message DeleteAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
+message DeleteUserAnnouncementResponse {
+    UserAnnouncement Info = 10;
 }
