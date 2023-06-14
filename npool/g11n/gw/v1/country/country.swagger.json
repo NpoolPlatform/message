@@ -287,27 +287,34 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "Country": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"country\""
         },
         "Flag": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"flag\""
         },
         "Code": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"code\""
         },
         "Short": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"short\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

@@ -287,27 +287,34 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "Lang": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang\""
         },
         "Logo": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
         },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
         "Short": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"short\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

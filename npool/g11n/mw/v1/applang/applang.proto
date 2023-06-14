@@ -4,9 +4,7 @@ package g11n.middleware.applang.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/applang";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
-import "npool/g11n/mgr/v1/applang/applang.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -15,7 +13,15 @@ service Middleware {
     rpc UpdateLang     (UpdateLangRequest)     returns (UpdateLangResponse)     {}
     rpc GetLangOnly    (GetLangOnlyRequest)    returns (GetLangOnlyResponse)    {}
     rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
+    rpc ExistLangConds (ExistLangCondsRequest) returns (ExistLangCondsResponse) {}
     rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
+}
+
+message LangReq {
+    optional string ID     = 10;
+    optional string AppID  = 20;
+    optional string LangID = 30;
+    optional bool   Main   = 40;
 }
 
 message Lang {
@@ -41,8 +47,17 @@ message Lang {
     uint32 UpdatedAt  = 100;
 }
 
+message Conds {
+    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.StringVal AppID   = 20;
+    basetypes.v1.StringVal LangID  = 30;
+    basetypes.v1.BoolVal   Main    = 40;
+    basetypes.v1.StringSliceVal LangIDs = 50;
+}
+
+
 message CreateLangRequest {
-    g11n.manager.applang.v1.LangReq Info = 10;
+    LangReq Info = 10;
 }
 
 message CreateLangResponse {
@@ -50,7 +65,7 @@ message CreateLangResponse {
 }
 
 message CreateLangsRequest {
-    repeated g11n.manager.applang.v1.LangReq Infos = 10;
+    repeated LangReq Infos = 10;
 }
 
 message CreateLangsResponse {
@@ -58,7 +73,7 @@ message CreateLangsResponse {
 }
 
 message UpdateLangRequest {
-    g11n.manager.applang.v1.LangReq Info = 10;
+    LangReq Info = 10;
 }
 
 message UpdateLangResponse {
@@ -66,7 +81,7 @@ message UpdateLangResponse {
 }
 
 message GetLangOnlyRequest {
-    g11n.manager.applang.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
 }
 
 message GetLangOnlyResponse {
@@ -74,7 +89,7 @@ message GetLangOnlyResponse {
 }
 
 message GetLangsRequest {
-    g11n.manager.applang.v1.Conds Conds  = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
@@ -84,8 +99,16 @@ message GetLangsResponse {
     uint32        Total = 20;
 }
 
+message ExistLangCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistLangCondsResponse {
+    bool Info = 10;
+}
+
 message DeleteLangRequest {
-    string ID = 10;
+    LangReq Info = 10;
 }
 
 message DeleteLangResponse {

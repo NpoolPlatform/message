@@ -5,9 +5,7 @@ package g11n.gateway.message1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/message";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
-import "npool/g11n/mgr/v1/message/message.proto";
+import "npool/g11n/mw/v1/message/message.proto";
 
 // Service Name
 service Gateway {
@@ -114,7 +112,7 @@ message CreateAppMessageResponse {
 message CreateMessagesRequest {
     string                                       AppID        = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateMessagesResponse {
@@ -124,7 +122,7 @@ message CreateMessagesResponse {
 message CreateAppMessagesRequest {
     string                                       TargetAppID  = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.manager.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
 }
 
 message CreateAppMessagesResponse {
@@ -134,7 +132,7 @@ message CreateAppMessagesResponse {
 message UpdateMessageRequest {
     string          ID           = 10;
     string          AppID        = 20;
-    string          TargetLangID = 30;
+    optional string TargetLangID = 30;
     optional string MessageID    = 40;
     optional string Message      = 50;
     optional uint32 GetIndex     = 60;
@@ -149,7 +147,7 @@ message UpdateAppMessageRequest {
     string          ID           = 10;
     string          AppID        = 20;
     string          TargetAppID  = 30;
-    string          TargetLangID = 40;
+    optional string TargetLangID = 40;
     optional string MessageID    = 50;
     optional string Message      = 60;
     optional uint32 GetIndex     = 70;

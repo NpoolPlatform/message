@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/g11n/mw/v1/applang/applang.proto
+// source: npool/g11n/mw/v1/lang/lang.proto
 
-package applang
+package lang
 
 import (
 	context "context"
@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/CreateLang"
-	Middleware_CreateLangs_FullMethodName    = "/g11n.middleware.applang.v1.Middleware/CreateLangs"
-	Middleware_UpdateLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/UpdateLang"
-	Middleware_GetLangOnly_FullMethodName    = "/g11n.middleware.applang.v1.Middleware/GetLangOnly"
-	Middleware_GetLangs_FullMethodName       = "/g11n.middleware.applang.v1.Middleware/GetLangs"
-	Middleware_ExistLangConds_FullMethodName = "/g11n.middleware.applang.v1.Middleware/ExistLangConds"
-	Middleware_DeleteLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/DeleteLang"
+	Middleware_CreateLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/CreateLang"
+	Middleware_CreateLangs_FullMethodName    = "/g11n.middleware.lang.v1.Middleware/CreateLangs"
+	Middleware_UpdateLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/UpdateLang"
+	Middleware_GetLang_FullMethodName        = "/g11n.middleware.lang.v1.Middleware/GetLang"
+	Middleware_GetLangOnly_FullMethodName    = "/g11n.middleware.lang.v1.Middleware/GetLangOnly"
+	Middleware_GetLangs_FullMethodName       = "/g11n.middleware.lang.v1.Middleware/GetLangs"
+	Middleware_ExistLangConds_FullMethodName = "/g11n.middleware.lang.v1.Middleware/ExistLangConds"
+	Middleware_DeleteLang_FullMethodName     = "/g11n.middleware.lang.v1.Middleware/DeleteLang"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,6 +36,7 @@ type MiddlewareClient interface {
 	CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error)
 	CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error)
 	UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error)
+	GetLang(ctx context.Context, in *GetLangRequest, opts ...grpc.CallOption) (*GetLangResponse, error)
 	GetLangOnly(ctx context.Context, in *GetLangOnlyRequest, opts ...grpc.CallOption) (*GetLangOnlyResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
 	ExistLangConds(ctx context.Context, in *ExistLangCondsRequest, opts ...grpc.CallOption) (*ExistLangCondsResponse, error)
@@ -70,6 +72,15 @@ func (c *middlewareClient) CreateLangs(ctx context.Context, in *CreateLangsReque
 func (c *middlewareClient) UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error) {
 	out := new(UpdateLangResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateLang_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetLang(ctx context.Context, in *GetLangRequest, opts ...grpc.CallOption) (*GetLangResponse, error) {
+	out := new(GetLangResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetLang_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,6 +130,7 @@ type MiddlewareServer interface {
 	CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error)
 	CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error)
 	UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error)
+	GetLang(context.Context, *GetLangRequest) (*GetLangResponse, error)
 	GetLangOnly(context.Context, *GetLangOnlyRequest) (*GetLangOnlyResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
 	ExistLangConds(context.Context, *ExistLangCondsRequest) (*ExistLangCondsResponse, error)
@@ -138,6 +150,9 @@ func (UnimplementedMiddlewareServer) CreateLangs(context.Context, *CreateLangsRe
 }
 func (UnimplementedMiddlewareServer) UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLang not implemented")
+}
+func (UnimplementedMiddlewareServer) GetLang(context.Context, *GetLangRequest) (*GetLangResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLang not implemented")
 }
 func (UnimplementedMiddlewareServer) GetLangOnly(context.Context, *GetLangOnlyRequest) (*GetLangOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLangOnly not implemented")
@@ -218,6 +233,24 @@ func _Middleware_UpdateLang_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetLang_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLangRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetLang(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetLang_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetLang(ctx, req.(*GetLangRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetLangOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetLangOnlyRequest)
 	if err := dec(in); err != nil {
@@ -294,7 +327,7 @@ func _Middleware_DeleteLang_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "g11n.middleware.applang.v1.Middleware",
+	ServiceName: "g11n.middleware.lang.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -308,6 +341,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateLang",
 			Handler:    _Middleware_UpdateLang_Handler,
+		},
+		{
+			MethodName: "GetLang",
+			Handler:    _Middleware_GetLang_Handler,
 		},
 		{
 			MethodName: "GetLangOnly",
@@ -327,5 +364,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/g11n/mw/v1/applang/applang.proto",
+	Metadata: "npool/g11n/mw/v1/lang/lang.proto",
 }

@@ -1,23 +1,20 @@
 syntax = "proto3";
 
-package g11n.manager.country.v1;
+package g11n.middleware.country.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/g11n/mgr/v1/country";
+option go_package = "github.com/NpoolPlatform/message/npool/g11n/mw/v1/country";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
     rpc CreateCountries   (CreateCountriesRequest)   returns (CreateCountriesResponse)   {}
     rpc UpdateCountry     (UpdateCountryRequest)     returns (UpdateCountryResponse)     {}
     rpc GetCountry        (GetCountryRequest)        returns (GetCountryResponse)        {}
     rpc GetCountryOnly    (GetCountryOnlyRequest)    returns (GetCountryOnlyResponse)    {}
     rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
-    rpc ExistCountry      (ExistCountryRequest)      returns (ExistCountryResponse)      {}
     rpc ExistCountryConds (ExistCountryCondsRequest) returns (ExistCountryCondsResponse) {}
-    rpc CountCountries    (CountCountriesRequest)    returns (CountCountriesResponse)    {}
     rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
 }
 
@@ -30,21 +27,28 @@ message CountryReq {
 }
 
 message Country {
+    // @inject_tag: sql:"id"
     string ID      = 10;
+    // @inject_tag: sql:"country"
     string Country = 20;
+    // @inject_tag: sql:"flag"
     string Flag    = 30;
+    // @inject_tag: sql:"code"
     string Code    = 40;
+    // @inject_tag: sql:"short"
     string Short   = 50;
+    // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 60;
+    // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 70;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID       = 10;
-    optional npool.v1.StringVal Country  = 20;
-    optional npool.v1.StringVal Code     = 30;
-    optional npool.v1.StringVal Short    = 40;
-    optional npool.v1.StringSliceVal Countries = 50;
+    basetypes.v1.StringVal ID       = 10;
+    basetypes.v1.StringVal Country  = 20;
+    basetypes.v1.StringVal Code     = 30;
+    basetypes.v1.StringVal Short    = 40;
+    basetypes.v1.StringSliceVal Countries = 50;
 }
 
 
@@ -99,14 +103,6 @@ message GetCountryOnlyResponse {
     Country Info = 10;
 }
 
-message ExistCountryRequest {
-    string ID = 10;
-}
-
-message ExistCountryResponse {
-    bool Info = 10;
-}
-
 message ExistCountryCondsRequest {
     Conds Conds = 10;
 }
@@ -115,16 +111,8 @@ message ExistCountryCondsResponse {
     bool Info = 10;
 }
 
-message CountCountriesRequest {
-    Conds Conds = 10;
-}
-
-message CountCountriesResponse {
-    uint32 Info = 10;
-}
-
 message DeleteCountryRequest {
-    string ID = 10;
+    CountryReq Info = 10;
 }
 
 message DeleteCountryResponse {

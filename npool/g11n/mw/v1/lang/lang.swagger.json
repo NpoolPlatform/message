@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/g11n/mgr/v1/applang/applang.proto",
+    "title": "npool/g11n/mw/v1/lang/lang.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -45,43 +45,23 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
+        "Lang": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LangID": {
+        "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Main": {
-          "$ref": "#/definitions/v1BoolVal"
+        "Short": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "LangIDs": {
+        "Langs": {
           "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CountLangsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -114,14 +94,6 @@
       }
     },
     "v1ExistLangCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistLangResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -165,24 +137,34 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
-        "AppID": {
-          "type": "string"
+        "Lang": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang\""
         },
-        "LangID": {
-          "type": "string"
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
         },
-        "Main": {
-          "type": "boolean"
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Short": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"short\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -192,14 +174,17 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "Lang": {
           "type": "string"
         },
-        "LangID": {
+        "Logo": {
           "type": "string"
         },
-        "Main": {
-          "type": "boolean"
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
         }
       }
     },

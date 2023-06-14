@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/g11n/mgr/v1/appcountry/appcountry.proto",
+    "title": "npool/g11n/mw/v1/country/country.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -51,20 +51,17 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
+        "Country": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CountryID": {
+        "Code": {
           "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CountCountriesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
+        },
+        "Short": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Countries": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -72,21 +69,34 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
-        "AppID": {
-          "type": "string"
+        "Country": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"country\""
         },
-        "CountryID": {
-          "type": "string"
+        "Flag": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"flag\""
+        },
+        "Code": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"code\""
+        },
+        "Short": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"short\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -96,10 +106,16 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "Country": {
           "type": "string"
         },
-        "CountryID": {
+        "Flag": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "Short": {
           "type": "string"
         }
       }
@@ -140,14 +156,6 @@
         }
       }
     },
-    "v1ExistCountryResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1GetCountriesResponse": {
       "type": "object",
       "properties": {
@@ -177,6 +185,20 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Country"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
