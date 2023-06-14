@@ -1366,6 +1366,194 @@ func (x *GenerateNotifsResponse) GetInfos() []*Notif {
 	return nil
 }
 
+type ExistNotifCondsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *ExistNotifCondsRequest) Reset() {
+	*x = ExistNotifCondsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistNotifCondsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistNotifCondsRequest) ProtoMessage() {}
+
+func (x *ExistNotifCondsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistNotifCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistNotifCondsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notif_mw_v1_notif_notif_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *ExistNotifCondsRequest) GetConds() *Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
+type ExistNotifCondsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *ExistNotifCondsResponse) Reset() {
+	*x = ExistNotifCondsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistNotifCondsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistNotifCondsResponse) ProtoMessage() {}
+
+func (x *ExistNotifCondsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistNotifCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistNotifCondsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notif_mw_v1_notif_notif_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ExistNotifCondsResponse) GetInfo() bool {
+	if x != nil {
+		return x.Info
+	}
+	return false
+}
+
+type DeleteNotifRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	NotifReq string `protobuf:"bytes,10,opt,name=NotifReq,proto3" json:"NotifReq,omitempty"`
+}
+
+func (x *DeleteNotifRequest) Reset() {
+	*x = DeleteNotifRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteNotifRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteNotifRequest) ProtoMessage() {}
+
+func (x *DeleteNotifRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteNotifRequest.ProtoReflect.Descriptor instead.
+func (*DeleteNotifRequest) Descriptor() ([]byte, []int) {
+	return file_npool_notif_mw_v1_notif_notif_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DeleteNotifRequest) GetNotifReq() string {
+	if x != nil {
+		return x.NotifReq
+	}
+	return ""
+}
+
+type DeleteNotifResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Notif `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteNotifResponse) Reset() {
+	*x = DeleteNotifResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteNotifResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteNotifResponse) ProtoMessage() {}
+
+func (x *DeleteNotifResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_notif_mw_v1_notif_notif_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteNotifResponse.ProtoReflect.Descriptor instead.
+func (*DeleteNotifResponse) Descriptor() ([]byte, []int) {
+	return file_npool_notif_mw_v1_notif_notif_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DeleteNotifResponse) GetInfo() *Notif {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_notif_mw_v1_notif_notif_proto protoreflect.FileDescriptor
 
 var file_npool_notif_mw_v1_notif_notif_proto_rawDesc = []byte{
@@ -1603,11 +1791,27 @@ var file_npool_notif_mw_v1_notif_notif_proto_rawDesc = []byte{
 	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x52, 0x05, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x2a, 0x47, 0x0a, 0x09, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x54, 0x79, 0x70, 0x65,
+	0x66, 0x6f, 0x73, 0x22, 0x50, 0x0a, 0x16, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a,
+	0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2d, 0x0a, 0x17, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x30, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x52, 0x65, 0x71, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x4e, 0x6f,
+	0x74, 0x69, 0x66, 0x52, 0x65, 0x71, 0x22, 0x4b, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x52, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x2a, 0x47, 0x0a, 0x09, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x54, 0x79, 0x70, 0x65,
 	0x12, 0x0f, 0x0a, 0x0b, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x54, 0x79, 0x70, 0x65, 0x10,
 	0x00, 0x12, 0x0d, 0x0a, 0x09, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x10, 0x0a,
 	0x12, 0x0d, 0x0a, 0x09, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x63, 0x61, 0x73, 0x74, 0x10, 0x14, 0x12,
-	0x0b, 0x0a, 0x07, 0x55, 0x6e, 0x69, 0x63, 0x61, 0x73, 0x74, 0x10, 0x1e, 0x32, 0x8f, 0x07, 0x0a,
+	0x0b, 0x0a, 0x07, 0x55, 0x6e, 0x69, 0x63, 0x61, 0x73, 0x74, 0x10, 0x1e, 0x32, 0xfb, 0x08, 0x0a,
 	0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x6e, 0x0a, 0x0b, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x12, 0x2d, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f,
@@ -1664,12 +1868,26 @@ var file_npool_notif_mw_v1_notif_notif_proto_rawDesc = []byte{
 	0x66, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4e, 0x6f,
-	0x74, 0x69, 0x66, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3a,
-	0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d,
-	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x74, 0x69, 0x66, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7a,
+	0x0a, 0x0f, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x43, 0x6f, 0x6e, 0x64,
+	0x73, 0x12, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x76, 0x31,
+	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x43, 0x6f, 0x6e, 0x64, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6e, 0x0a, 0x0b, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x12, 0x2d, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31,
+	0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1685,57 +1903,61 @@ func file_npool_notif_mw_v1_notif_notif_proto_rawDescGZIP() []byte {
 }
 
 var file_npool_notif_mw_v1_notif_notif_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_npool_notif_mw_v1_notif_notif_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_notif_mw_v1_notif_notif_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_npool_notif_mw_v1_notif_notif_proto_goTypes = []interface{}{
-	(NotifType)(0),                 // 0: notif.middleware.notif.v1.NotifType
-	(*Notif)(nil),                  // 1: notif.middleware.notif.v1.Notif
-	(*NotifReq)(nil),               // 2: notif.middleware.notif.v1.NotifReq
-	(*Conds)(nil),                  // 3: notif.middleware.notif.v1.Conds
-	(*CreateNotifRequest)(nil),     // 4: notif.middleware.notif.v1.CreateNotifRequest
-	(*CreateNotifResponse)(nil),    // 5: notif.middleware.notif.v1.CreateNotifResponse
-	(*CreateNotifsRequest)(nil),    // 6: notif.middleware.notif.v1.CreateNotifsRequest
-	(*CreateNotifsResponse)(nil),   // 7: notif.middleware.notif.v1.CreateNotifsResponse
-	(*UpdateNotifRequest)(nil),     // 8: notif.middleware.notif.v1.UpdateNotifRequest
-	(*UpdateNotifResponse)(nil),    // 9: notif.middleware.notif.v1.UpdateNotifResponse
-	(*UpdateNotifsRequest)(nil),    // 10: notif.middleware.notif.v1.UpdateNotifsRequest
-	(*UpdateNotifsResponse)(nil),   // 11: notif.middleware.notif.v1.UpdateNotifsResponse
-	(*GetNotifRequest)(nil),        // 12: notif.middleware.notif.v1.GetNotifRequest
-	(*GetNotifResponse)(nil),       // 13: notif.middleware.notif.v1.GetNotifResponse
-	(*GetNotifsRequest)(nil),       // 14: notif.middleware.notif.v1.GetNotifsRequest
-	(*GetNotifsResponse)(nil),      // 15: notif.middleware.notif.v1.GetNotifsResponse
-	(*GetNotifOnlyRequest)(nil),    // 16: notif.middleware.notif.v1.GetNotifOnlyRequest
-	(*GetNotifOnlyResponse)(nil),   // 17: notif.middleware.notif.v1.GetNotifOnlyResponse
-	(*GenerateNotifsRequest)(nil),  // 18: notif.middleware.notif.v1.GenerateNotifsRequest
-	(*GenerateNotifsResponse)(nil), // 19: notif.middleware.notif.v1.GenerateNotifsResponse
-	(v1.UsedFor)(0),                // 20: basetypes.v1.UsedFor
-	(v1.NotifChannel)(0),           // 21: basetypes.v1.NotifChannel
-	(*v1.StringVal)(nil),           // 22: basetypes.v1.StringVal
-	(*v1.StringSliceVal)(nil),      // 23: basetypes.v1.StringSliceVal
-	(*v1.BoolVal)(nil),             // 24: basetypes.v1.BoolVal
-	(*v1.Uint32Val)(nil),           // 25: basetypes.v1.Uint32Val
-	(*v1.Uint32SliceVal)(nil),      // 26: basetypes.v1.Uint32SliceVal
-	(*template.TemplateVars)(nil),  // 27: notif.middleware.template.v1.TemplateVars
+	(NotifType)(0),                  // 0: notif.middleware.notif.v1.NotifType
+	(*Notif)(nil),                   // 1: notif.middleware.notif.v1.Notif
+	(*NotifReq)(nil),                // 2: notif.middleware.notif.v1.NotifReq
+	(*Conds)(nil),                   // 3: notif.middleware.notif.v1.Conds
+	(*CreateNotifRequest)(nil),      // 4: notif.middleware.notif.v1.CreateNotifRequest
+	(*CreateNotifResponse)(nil),     // 5: notif.middleware.notif.v1.CreateNotifResponse
+	(*CreateNotifsRequest)(nil),     // 6: notif.middleware.notif.v1.CreateNotifsRequest
+	(*CreateNotifsResponse)(nil),    // 7: notif.middleware.notif.v1.CreateNotifsResponse
+	(*UpdateNotifRequest)(nil),      // 8: notif.middleware.notif.v1.UpdateNotifRequest
+	(*UpdateNotifResponse)(nil),     // 9: notif.middleware.notif.v1.UpdateNotifResponse
+	(*UpdateNotifsRequest)(nil),     // 10: notif.middleware.notif.v1.UpdateNotifsRequest
+	(*UpdateNotifsResponse)(nil),    // 11: notif.middleware.notif.v1.UpdateNotifsResponse
+	(*GetNotifRequest)(nil),         // 12: notif.middleware.notif.v1.GetNotifRequest
+	(*GetNotifResponse)(nil),        // 13: notif.middleware.notif.v1.GetNotifResponse
+	(*GetNotifsRequest)(nil),        // 14: notif.middleware.notif.v1.GetNotifsRequest
+	(*GetNotifsResponse)(nil),       // 15: notif.middleware.notif.v1.GetNotifsResponse
+	(*GetNotifOnlyRequest)(nil),     // 16: notif.middleware.notif.v1.GetNotifOnlyRequest
+	(*GetNotifOnlyResponse)(nil),    // 17: notif.middleware.notif.v1.GetNotifOnlyResponse
+	(*GenerateNotifsRequest)(nil),   // 18: notif.middleware.notif.v1.GenerateNotifsRequest
+	(*GenerateNotifsResponse)(nil),  // 19: notif.middleware.notif.v1.GenerateNotifsResponse
+	(*ExistNotifCondsRequest)(nil),  // 20: notif.middleware.notif.v1.ExistNotifCondsRequest
+	(*ExistNotifCondsResponse)(nil), // 21: notif.middleware.notif.v1.ExistNotifCondsResponse
+	(*DeleteNotifRequest)(nil),      // 22: notif.middleware.notif.v1.DeleteNotifRequest
+	(*DeleteNotifResponse)(nil),     // 23: notif.middleware.notif.v1.DeleteNotifResponse
+	(v1.UsedFor)(0),                 // 24: basetypes.v1.UsedFor
+	(v1.NotifChannel)(0),            // 25: basetypes.v1.NotifChannel
+	(*v1.StringVal)(nil),            // 26: basetypes.v1.StringVal
+	(*v1.StringSliceVal)(nil),       // 27: basetypes.v1.StringSliceVal
+	(*v1.BoolVal)(nil),              // 28: basetypes.v1.BoolVal
+	(*v1.Uint32Val)(nil),            // 29: basetypes.v1.Uint32Val
+	(*v1.Uint32SliceVal)(nil),       // 30: basetypes.v1.Uint32SliceVal
+	(*template.TemplateVars)(nil),   // 31: notif.middleware.template.v1.TemplateVars
 }
 var file_npool_notif_mw_v1_notif_notif_proto_depIdxs = []int32{
-	20, // 0: notif.middleware.notif.v1.Notif.EventType:type_name -> basetypes.v1.UsedFor
-	21, // 1: notif.middleware.notif.v1.Notif.Channel:type_name -> basetypes.v1.NotifChannel
+	24, // 0: notif.middleware.notif.v1.Notif.EventType:type_name -> basetypes.v1.UsedFor
+	25, // 1: notif.middleware.notif.v1.Notif.Channel:type_name -> basetypes.v1.NotifChannel
 	0,  // 2: notif.middleware.notif.v1.Notif.NotifTypeStr:type_name -> notif.middleware.notif.v1.NotifType
 	0,  // 3: notif.middleware.notif.v1.Notif.NotifType:type_name -> notif.middleware.notif.v1.NotifType
-	20, // 4: notif.middleware.notif.v1.NotifReq.EventType:type_name -> basetypes.v1.UsedFor
-	21, // 5: notif.middleware.notif.v1.NotifReq.Channel:type_name -> basetypes.v1.NotifChannel
-	22, // 6: notif.middleware.notif.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	23, // 7: notif.middleware.notif.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
-	22, // 8: notif.middleware.notif.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	22, // 9: notif.middleware.notif.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	24, // 10: notif.middleware.notif.v1.Conds.Notified:type_name -> basetypes.v1.BoolVal
-	22, // 11: notif.middleware.notif.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
-	25, // 12: notif.middleware.notif.v1.Conds.EventType:type_name -> basetypes.v1.Uint32Val
-	24, // 13: notif.middleware.notif.v1.Conds.UseTemplate:type_name -> basetypes.v1.BoolVal
-	26, // 14: notif.middleware.notif.v1.Conds.Channels:type_name -> basetypes.v1.Uint32SliceVal
-	25, // 15: notif.middleware.notif.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
-	26, // 16: notif.middleware.notif.v1.Conds.EventTypes:type_name -> basetypes.v1.Uint32SliceVal
-	22, // 17: notif.middleware.notif.v1.Conds.Extra:type_name -> basetypes.v1.StringVal
-	22, // 18: notif.middleware.notif.v1.Conds.EventID:type_name -> basetypes.v1.StringVal
+	24, // 4: notif.middleware.notif.v1.NotifReq.EventType:type_name -> basetypes.v1.UsedFor
+	25, // 5: notif.middleware.notif.v1.NotifReq.Channel:type_name -> basetypes.v1.NotifChannel
+	26, // 6: notif.middleware.notif.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	27, // 7: notif.middleware.notif.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+	26, // 8: notif.middleware.notif.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	26, // 9: notif.middleware.notif.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	28, // 10: notif.middleware.notif.v1.Conds.Notified:type_name -> basetypes.v1.BoolVal
+	26, // 11: notif.middleware.notif.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
+	29, // 12: notif.middleware.notif.v1.Conds.EventType:type_name -> basetypes.v1.Uint32Val
+	28, // 13: notif.middleware.notif.v1.Conds.UseTemplate:type_name -> basetypes.v1.BoolVal
+	30, // 14: notif.middleware.notif.v1.Conds.Channels:type_name -> basetypes.v1.Uint32SliceVal
+	29, // 15: notif.middleware.notif.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
+	30, // 16: notif.middleware.notif.v1.Conds.EventTypes:type_name -> basetypes.v1.Uint32SliceVal
+	26, // 17: notif.middleware.notif.v1.Conds.Extra:type_name -> basetypes.v1.StringVal
+	26, // 18: notif.middleware.notif.v1.Conds.EventID:type_name -> basetypes.v1.StringVal
 	2,  // 19: notif.middleware.notif.v1.CreateNotifRequest.Info:type_name -> notif.middleware.notif.v1.NotifReq
 	1,  // 20: notif.middleware.notif.v1.CreateNotifResponse.Info:type_name -> notif.middleware.notif.v1.Notif
 	2,  // 21: notif.middleware.notif.v1.CreateNotifsRequest.Infos:type_name -> notif.middleware.notif.v1.NotifReq
@@ -1748,30 +1970,36 @@ var file_npool_notif_mw_v1_notif_notif_proto_depIdxs = []int32{
 	1,  // 28: notif.middleware.notif.v1.GetNotifsResponse.Infos:type_name -> notif.middleware.notif.v1.Notif
 	3,  // 29: notif.middleware.notif.v1.GetNotifOnlyRequest.Conds:type_name -> notif.middleware.notif.v1.Conds
 	1,  // 30: notif.middleware.notif.v1.GetNotifOnlyResponse.Info:type_name -> notif.middleware.notif.v1.Notif
-	20, // 31: notif.middleware.notif.v1.GenerateNotifsRequest.EventType:type_name -> basetypes.v1.UsedFor
-	27, // 32: notif.middleware.notif.v1.GenerateNotifsRequest.Vars:type_name -> notif.middleware.template.v1.TemplateVars
+	24, // 31: notif.middleware.notif.v1.GenerateNotifsRequest.EventType:type_name -> basetypes.v1.UsedFor
+	31, // 32: notif.middleware.notif.v1.GenerateNotifsRequest.Vars:type_name -> notif.middleware.template.v1.TemplateVars
 	1,  // 33: notif.middleware.notif.v1.GenerateNotifsResponse.Infos:type_name -> notif.middleware.notif.v1.Notif
-	4,  // 34: notif.middleware.notif.v1.Middleware.CreateNotif:input_type -> notif.middleware.notif.v1.CreateNotifRequest
-	6,  // 35: notif.middleware.notif.v1.Middleware.CreateNotifs:input_type -> notif.middleware.notif.v1.CreateNotifsRequest
-	8,  // 36: notif.middleware.notif.v1.Middleware.UpdateNotif:input_type -> notif.middleware.notif.v1.UpdateNotifRequest
-	10, // 37: notif.middleware.notif.v1.Middleware.UpdateNotifs:input_type -> notif.middleware.notif.v1.UpdateNotifsRequest
-	12, // 38: notif.middleware.notif.v1.Middleware.GetNotif:input_type -> notif.middleware.notif.v1.GetNotifRequest
-	14, // 39: notif.middleware.notif.v1.Middleware.GetNotifs:input_type -> notif.middleware.notif.v1.GetNotifsRequest
-	16, // 40: notif.middleware.notif.v1.Middleware.GetNotifOnly:input_type -> notif.middleware.notif.v1.GetNotifOnlyRequest
-	18, // 41: notif.middleware.notif.v1.Middleware.GenerateNotifs:input_type -> notif.middleware.notif.v1.GenerateNotifsRequest
-	5,  // 42: notif.middleware.notif.v1.Middleware.CreateNotif:output_type -> notif.middleware.notif.v1.CreateNotifResponse
-	7,  // 43: notif.middleware.notif.v1.Middleware.CreateNotifs:output_type -> notif.middleware.notif.v1.CreateNotifsResponse
-	9,  // 44: notif.middleware.notif.v1.Middleware.UpdateNotif:output_type -> notif.middleware.notif.v1.UpdateNotifResponse
-	11, // 45: notif.middleware.notif.v1.Middleware.UpdateNotifs:output_type -> notif.middleware.notif.v1.UpdateNotifsResponse
-	13, // 46: notif.middleware.notif.v1.Middleware.GetNotif:output_type -> notif.middleware.notif.v1.GetNotifResponse
-	15, // 47: notif.middleware.notif.v1.Middleware.GetNotifs:output_type -> notif.middleware.notif.v1.GetNotifsResponse
-	17, // 48: notif.middleware.notif.v1.Middleware.GetNotifOnly:output_type -> notif.middleware.notif.v1.GetNotifOnlyResponse
-	19, // 49: notif.middleware.notif.v1.Middleware.GenerateNotifs:output_type -> notif.middleware.notif.v1.GenerateNotifsResponse
-	42, // [42:50] is the sub-list for method output_type
-	34, // [34:42] is the sub-list for method input_type
-	34, // [34:34] is the sub-list for extension type_name
-	34, // [34:34] is the sub-list for extension extendee
-	0,  // [0:34] is the sub-list for field type_name
+	3,  // 34: notif.middleware.notif.v1.ExistNotifCondsRequest.Conds:type_name -> notif.middleware.notif.v1.Conds
+	1,  // 35: notif.middleware.notif.v1.DeleteNotifResponse.Info:type_name -> notif.middleware.notif.v1.Notif
+	4,  // 36: notif.middleware.notif.v1.Middleware.CreateNotif:input_type -> notif.middleware.notif.v1.CreateNotifRequest
+	6,  // 37: notif.middleware.notif.v1.Middleware.CreateNotifs:input_type -> notif.middleware.notif.v1.CreateNotifsRequest
+	8,  // 38: notif.middleware.notif.v1.Middleware.UpdateNotif:input_type -> notif.middleware.notif.v1.UpdateNotifRequest
+	10, // 39: notif.middleware.notif.v1.Middleware.UpdateNotifs:input_type -> notif.middleware.notif.v1.UpdateNotifsRequest
+	12, // 40: notif.middleware.notif.v1.Middleware.GetNotif:input_type -> notif.middleware.notif.v1.GetNotifRequest
+	14, // 41: notif.middleware.notif.v1.Middleware.GetNotifs:input_type -> notif.middleware.notif.v1.GetNotifsRequest
+	16, // 42: notif.middleware.notif.v1.Middleware.GetNotifOnly:input_type -> notif.middleware.notif.v1.GetNotifOnlyRequest
+	18, // 43: notif.middleware.notif.v1.Middleware.GenerateNotifs:input_type -> notif.middleware.notif.v1.GenerateNotifsRequest
+	20, // 44: notif.middleware.notif.v1.Middleware.ExistNotifConds:input_type -> notif.middleware.notif.v1.ExistNotifCondsRequest
+	22, // 45: notif.middleware.notif.v1.Middleware.DeleteNotif:input_type -> notif.middleware.notif.v1.DeleteNotifRequest
+	5,  // 46: notif.middleware.notif.v1.Middleware.CreateNotif:output_type -> notif.middleware.notif.v1.CreateNotifResponse
+	7,  // 47: notif.middleware.notif.v1.Middleware.CreateNotifs:output_type -> notif.middleware.notif.v1.CreateNotifsResponse
+	9,  // 48: notif.middleware.notif.v1.Middleware.UpdateNotif:output_type -> notif.middleware.notif.v1.UpdateNotifResponse
+	11, // 49: notif.middleware.notif.v1.Middleware.UpdateNotifs:output_type -> notif.middleware.notif.v1.UpdateNotifsResponse
+	13, // 50: notif.middleware.notif.v1.Middleware.GetNotif:output_type -> notif.middleware.notif.v1.GetNotifResponse
+	15, // 51: notif.middleware.notif.v1.Middleware.GetNotifs:output_type -> notif.middleware.notif.v1.GetNotifsResponse
+	17, // 52: notif.middleware.notif.v1.Middleware.GetNotifOnly:output_type -> notif.middleware.notif.v1.GetNotifOnlyResponse
+	19, // 53: notif.middleware.notif.v1.Middleware.GenerateNotifs:output_type -> notif.middleware.notif.v1.GenerateNotifsResponse
+	21, // 54: notif.middleware.notif.v1.Middleware.ExistNotifConds:output_type -> notif.middleware.notif.v1.ExistNotifCondsResponse
+	23, // 55: notif.middleware.notif.v1.Middleware.DeleteNotif:output_type -> notif.middleware.notif.v1.DeleteNotifResponse
+	46, // [46:56] is the sub-list for method output_type
+	36, // [36:46] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mw_v1_notif_notif_proto_init() }
@@ -2008,6 +2236,54 @@ func file_npool_notif_mw_v1_notif_notif_proto_init() {
 				return nil
 			}
 		}
+		file_npool_notif_mw_v1_notif_notif_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistNotifCondsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_mw_v1_notif_notif_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistNotifCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_mw_v1_notif_notif_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteNotifRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_notif_mw_v1_notif_notif_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteNotifResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_notif_mw_v1_notif_notif_proto_msgTypes[1].OneofWrappers = []interface{}{}
 	file_npool_notif_mw_v1_notif_notif_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -2019,7 +2295,7 @@ func file_npool_notif_mw_v1_notif_notif_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notif_mw_v1_notif_notif_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   19,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

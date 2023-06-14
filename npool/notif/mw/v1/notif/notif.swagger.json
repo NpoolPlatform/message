@@ -120,6 +120,22 @@
         }
       }
     },
+    "v1DeleteNotifResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Notif"
+        }
+      }
+    },
+    "v1ExistNotifCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GenerateNotifsResponse": {
       "type": "object",
       "properties": {
