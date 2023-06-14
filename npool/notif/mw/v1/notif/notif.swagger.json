@@ -97,6 +97,9 @@
         },
         "EventID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -249,7 +252,7 @@
         },
         "NotifTypeStr": {
           "$ref": "#/definitions/v1NotifType",
-          "title": "@inject_tag: sql:\"notif_type\""
+          "title": "@inject_tag: sql:\"type\""
         },
         "NotifType": {
           "$ref": "#/definitions/v1NotifType"
@@ -304,6 +307,9 @@
         },
         "EventID": {
           "type": "string"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1NotifType"
         }
       }
     },

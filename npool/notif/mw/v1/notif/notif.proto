@@ -61,7 +61,7 @@ message Notif {
     uint32    UpdatedAt   = 130;
     // @inject_tag: sql:"event_id"
     string    EventID     = 140;
-    // @inject_tag: sql:"notif_type"
+    // @inject_tag: sql:"type"
     NotifType NotifTypeStr = 149;
     NotifType NotifType    = 150;
 }
@@ -79,6 +79,7 @@ message NotifReq {
     optional basetypes.v1.NotifChannel Channel = 100;
     optional string    Extra       = 110;
     optional string    EventID     = 120;
+    optional NotifType NotifType   = 130;
 }
 
 message Conds {
@@ -95,6 +96,7 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal EventTypes  = 100;
     optional basetypes.v1.StringVal      Extra       = 110;
     optional basetypes.v1.StringVal      EventID     = 120;
+    optional basetypes.v1.Uint32Val      NotifType   = 130;
 }
 
 message CreateNotifRequest {
