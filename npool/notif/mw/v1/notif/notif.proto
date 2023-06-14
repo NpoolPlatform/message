@@ -19,6 +19,8 @@ service Middleware {
     rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
     rpc GetNotifOnly   (GetNotifOnlyRequest)   returns (GetNotifOnlyResponse)   {}
     rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
+    rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
+    rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {}
 }
 
 enum NotifType {
@@ -166,4 +168,20 @@ message GenerateNotifsRequest {
 
 message GenerateNotifsResponse {
     repeated Notif Infos = 10;
+}
+
+message ExistNotifCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistNotifCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteNotifRequest {
+    string NotifReq = 10;
+}
+
+message DeleteNotifResponse {
+    Notif Info = 10;
 }
