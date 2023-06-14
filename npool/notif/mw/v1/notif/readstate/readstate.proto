@@ -125,7 +125,7 @@ message CountReadStatesResponse {
 }
 
 message DeleteReadStateRequest {
-    string ID = 10;
+    ReadStateReq Info = 10;
 }
 
 message DeleteReadStateResponse {
