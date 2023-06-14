@@ -124,7 +124,7 @@ message ExistContactCondsResponse {
 }
 
 message DeleteContactRequest {
-    string ID = 10;
+    ContactReq Info = 10;
 }
 
 message DeleteContactResponse {
