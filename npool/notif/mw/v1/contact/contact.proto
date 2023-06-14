@@ -47,6 +47,10 @@ message Contact {
     basetypes.v1.UsedFor    UsedFor        = 50;
     // @inject_tag: sql:"sender"
     string                  Sender         = 60;
+    // @inject_tag: sql:"created_at"
+    uint32                  CreatedAt      = 70;
+    // @inject_tag: sql:"updated_at"
+    uint32                  UpdatedAt      = 80;
 }
 
 message Conds {
