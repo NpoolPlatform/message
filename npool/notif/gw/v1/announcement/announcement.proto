@@ -98,8 +98,8 @@ message GetAnnouncementsRequest {
     string AppID  = 10;
     string UserID = 20;
     string LangID = 30;
-    uint32 Offset = 40;
-    uint32 Limit  = 50;
+    int32 Offset = 40;
+    int32 Limit  = 50;
 }
 
 message GetAnnouncementsResponse {
@@ -109,8 +109,8 @@ message GetAnnouncementsResponse {
 
 message GetAppAnnouncementsRequest {
     string AppID  = 10;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    int32 Offset = 30;
+    int32 Limit  = 40;
 }
 
 message GetAppAnnouncementsResponse {
@@ -120,8 +120,8 @@ message GetAppAnnouncementsResponse {
 
 message GetNAppAnnouncementsRequest {
     string TargetAppID  = 10;
-    uint32 Offset       = 30;
-    uint32 Limit        = 40;
+    int32 Offset       = 30;
+    int32 Limit        = 40;
 }
 
 message GetNAppAnnouncementsResponse {
