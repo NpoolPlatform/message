@@ -179,7 +179,7 @@ message ExistNotifCondsResponse {
 }
 
 message DeleteNotifRequest {
-    string NotifReq = 10;
+    NotifReq Info = 10;
 }
 
 message DeleteNotifResponse {
