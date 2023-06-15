@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/basetypes/v1/notifstate.proto",
+    "title": "npool/basetypes/v1/notiftxstate.proto",
     "version": "version not set"
   },
   "consumes": [
