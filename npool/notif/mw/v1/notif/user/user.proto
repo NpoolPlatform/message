@@ -55,7 +55,7 @@ message CreateUserNotifRequest {
 }
 
 message CreateUserNotifResponse {
-    UserNotifReq Info = 10;
+    UserNotif Info = 10;
 }
 
 message CreateUserNotifsRequest {

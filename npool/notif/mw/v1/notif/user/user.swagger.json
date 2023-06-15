@@ -78,7 +78,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotifReq"
+          "$ref": "#/definitions/v1UserNotif"
         }
       }
     },
