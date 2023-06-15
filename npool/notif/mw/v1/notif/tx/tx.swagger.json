@@ -147,6 +147,16 @@
         }
       }
     },
+    "v1NotifTxState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "WaitSuccess",
+        "WaitNotified",
+        "Notified"
+      ],
+      "default": "DefaultState"
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -170,7 +180,7 @@
           "title": "@inject_tag: sql:\"tx_id\""
         },
         "NotifState": {
-          "$ref": "#/definitions/v1TxState",
+          "$ref": "#/definitions/v1NotifTxState",
           "title": "@inject_tag: sql:\"notif_state\""
         },
         "TxType": {
@@ -199,22 +209,12 @@
           "type": "string"
         },
         "NotifState": {
-          "$ref": "#/definitions/v1TxState"
+          "$ref": "#/definitions/v1NotifTxState"
         },
         "TxType": {
           "$ref": "#/definitions/v1TxType"
         }
       }
-    },
-    "v1TxState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "WaitSuccess",
-        "WaitNotified",
-        "Notified"
-      ],
-      "default": "DefaultState"
     },
     "v1TxType": {
       "type": "string",

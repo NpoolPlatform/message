@@ -5,6 +5,7 @@ package notif.middleware.notif.tx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/tx";
 
 import "npool/basetypes/v1/txtype.proto";
+import "npool/basetypes/v1/notifstate.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -21,17 +22,10 @@ service Middleware {
     rpc DeleteTx     (DeleteTxRequest)     returns (DeleteTxResponse)     {}
 }
 
-enum TxState {
-    DefaultState  = 0;
-    WaitSuccess   = 10;
-    WaitNotified  = 20;
-    Notified      = 30;
-}
-
 message TxReq {
     optional string              ID         = 10;
     optional string              TxID       = 20;
-    optional TxState             NotifState = 30;
+    optional basetypes.v1.NotifTxState NotifState = 30;
     optional basetypes.v1.TxType TxType = 40;
 }
 
@@ -41,7 +35,7 @@ message Tx {
     // @inject_tag: sql:"tx_id"
     string              TxID       = 20;
      // @inject_tag: sql:"notif_state"
-    TxState             NotifState = 30;
+    basetypes.v1.NotifTxState   NotifState = 30;
      // @inject_tag: sql:"tx_type"
     basetypes.v1.TxType TxType     = 40;
      // @inject_tag: sql:"created_at"
