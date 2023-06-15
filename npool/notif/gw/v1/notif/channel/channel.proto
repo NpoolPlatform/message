@@ -68,8 +68,8 @@ message DeleteChannelResponse {
 
 message GetAppChannelsRequest {
     string AppID          = 10;
-    uint32 Offset         = 30;
-    uint32 Limit          = 40;
+    int32  Offset         = 30;
+    int32  Limit          = 40;
 }
 
 message GetAppChannelsResponse {
@@ -79,8 +79,8 @@ message GetAppChannelsResponse {
 
 message GetNAppChannelsRequest {
     string TargetAppID  = 10;
-    uint32 Offset       = 20;
-    uint32 Limit        = 30;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
 }
 
 message GetNAppChannelsResponse {
