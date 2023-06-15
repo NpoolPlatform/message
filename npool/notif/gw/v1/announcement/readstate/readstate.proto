@@ -9,13 +9,6 @@ import "npool/notif/mw/v1/announcement/announcement.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateReadState (CreateReadStateRequest) returns (CreateReadStateResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/readstate"
-            body: "*"
-        };
-    }
-
     rpc GetReadState (GetReadStateRequest) returns (GetReadStateResponse) {
         option (google.api.http) = {
             post: "/v1/get/readstate"
@@ -53,6 +46,7 @@ service Gateway {
 }
 
 message ReadState {
+    string           ID             = 9;
     string           AnnouncementID = 10;
     string           AppID          = 20;
     string           AppName        = 30;
@@ -65,16 +59,6 @@ message ReadState {
     notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 130;
-}
-
-message CreateReadStateRequest {
-    string AppID          = 10;
-    string UserID         = 20;
-    string AnnouncementID = 30;
-}
-
-message CreateReadStateResponse {
-    ReadState Info = 10;
 }
 
 message GetReadStateRequest {

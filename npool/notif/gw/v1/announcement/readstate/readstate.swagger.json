@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/readstate": {
-      "post": {
-        "operationId": "Gateway_CreateReadState",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateReadStateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateReadStateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/app/readstates": {
       "post": {
         "operationId": "Gateway_GetAppReadStates",
@@ -247,28 +215,6 @@
       ],
       "default": "DefaultType"
     },
-    "v1CreateReadStateRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AnnouncementID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateReadStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ReadState"
-        }
-      }
-    },
     "v1GetAppReadStatesRequest": {
       "type": "object",
       "properties": {
@@ -428,6 +374,9 @@
     "v1ReadState": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AnnouncementID": {
           "type": "string"
         },

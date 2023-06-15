@@ -40,6 +40,7 @@ service Gateway {
 }
 
 message SendState {
+    string           ID             =  9;
     string           AnnouncementID = 10;
     string           AppID          = 20;
     string           AppName        = 30;
