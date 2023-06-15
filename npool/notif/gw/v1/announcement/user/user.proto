@@ -70,6 +70,15 @@ message CreateAnnouncementUsersResponse {
     repeated AnnouncementUser Infos = 10;
 }
 
+message CreateAnnouncementUserRequest {
+    string          AppID          = 10;
+    string          UserID         = 20;
+    string          AnnouncementID = 30;
+}
+
+message CreateAnnouncementUserResponse {
+    AnnouncementUser Infos = 10;
+}
 
 message DeleteAnnouncementUserRequest {
     string ID    = 10;
