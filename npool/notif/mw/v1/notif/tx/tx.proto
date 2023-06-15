@@ -5,7 +5,7 @@ package notif.middleware.notif.tx.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/tx";
 
 import "npool/basetypes/v1/txtype.proto";
-import "npool/basetypes/v1/notifstate.proto";
+import "npool/basetypes/v1/notiftxstate.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
