@@ -227,9 +227,6 @@
         "AppID": {
           "type": "string"
         },
-        "AppName": {
-          "type": "string"
-        },
         "UserID": {
           "type": "string"
         },

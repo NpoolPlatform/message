@@ -48,7 +48,6 @@ message AnnouncementUser {
     string           ID             = 10;
     string           AnnouncementID = 20;
     string           AppID          = 30;
-    string           AppName        = 40;
     string           UserID         = 50;
     string           EmailAddress   = 60;
     string           PhoneNO        = 70;
