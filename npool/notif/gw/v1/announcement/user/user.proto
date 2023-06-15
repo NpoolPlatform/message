@@ -77,7 +77,7 @@ message CreateAnnouncementUserRequest {
 }
 
 message CreateAnnouncementUserResponse {
-    AnnouncementUser Infos = 10;
+    AnnouncementUser Info = 10;
 }
 
 message DeleteAnnouncementUserRequest {
