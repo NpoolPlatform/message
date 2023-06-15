@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+
+enum NotifTxState {
+  DefaultState  = 0;
+  WaitSuccess   = 10;
+  WaitNotified  = 20;
+  Notified      = 30;
+}
