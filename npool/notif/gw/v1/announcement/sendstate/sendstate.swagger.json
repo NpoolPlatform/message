@@ -342,6 +342,9 @@
     "v1SendState": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AnnouncementID": {
           "type": "string"
         },
