@@ -84,8 +84,8 @@ message GetAppUserSendStatesResponse {
 message GetAppSendStatesRequest {
     string AppID  = 10;
     optional basetypes.v1.NotifChannel Channel = 20;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetAppSendStatesResponse {
@@ -96,8 +96,8 @@ message GetAppSendStatesResponse {
 message GetNAppSendStatesRequest {
     string TargetAppID  = 10;
     optional basetypes.v1.NotifChannel Channel = 20;
-    uint32 Offset       = 30;
-    uint32 Limit        = 40;
+    int32  Offset       = 30;
+    int32  Limit        = 40;
 }
 
 message GetNAppSendStatesResponse {

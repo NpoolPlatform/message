@@ -90,8 +90,8 @@ message GetReadStateResponse {
 message GetReadStatesRequest {
     string AppID  = 10;
     string UserID = 20;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
 }
 
 message GetReadStatesResponse {
@@ -102,8 +102,8 @@ message GetReadStatesResponse {
 message GetAppUserReadStatesRequest {
     string TargetAppID  = 10;
     string TargetUserID = 20;
-    uint32 Offset       = 30;
-    uint32 Limit        = 40;
+    int32  Offset       = 30;
+    int32  Limit        = 40;
 }
 
 message GetAppUserReadStatesResponse {
@@ -113,8 +113,8 @@ message GetAppUserReadStatesResponse {
 
 message GetAppReadStatesRequest {
     string AppID  = 10;
-    uint32 Offset = 30;
-    uint32 Limit  = 40;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetAppReadStatesResponse {
@@ -124,8 +124,8 @@ message GetAppReadStatesResponse {
 
 message GetNAppReadStatesRequest {
     string TargetAppID  = 10;
-    uint32 Offset       = 20;
-    uint32 Limit        = 30;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
 }
 
 message GetNAppReadStatesResponse {
