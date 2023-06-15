@@ -162,24 +162,30 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "TxID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"tx_id\""
         },
         "NotifState": {
-          "$ref": "#/definitions/v1TxState"
+          "$ref": "#/definitions/v1TxState",
+          "title": "@inject_tag: sql:\"notif_state\""
         },
         "TxType": {
-          "$ref": "#/definitions/v1TxType"
+          "$ref": "#/definitions/v1TxType",
+          "title": "@inject_tag: sql:\"tx_type\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
