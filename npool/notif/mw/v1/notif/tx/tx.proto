@@ -36,11 +36,17 @@ message TxReq {
 }
 
 message Tx {
+    // @inject_tag: sql:"id"
     string              ID         = 10;
+    // @inject_tag: sql:"tx_id"
     string              TxID       = 20;
+     // @inject_tag: sql:"notif_state"
     TxState             NotifState = 30;
+     // @inject_tag: sql:"tx_type"
     basetypes.v1.TxType TxType     = 40;
+     // @inject_tag: sql:"created_at"
     uint32              CreatedAt  = 50;
+     // @inject_tag: sql:"updated_at"
     uint32              UpdatedAt  = 60;
 }
 

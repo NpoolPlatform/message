@@ -149,12 +149,18 @@ type Tx struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID         string    `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	TxID       string    `protobuf:"bytes,20,opt,name=TxID,proto3" json:"TxID,omitempty"`
-	NotifState TxState   `protobuf:"varint,30,opt,name=NotifState,proto3,enum=notif.middleware.notif.tx.v1.TxState" json:"NotifState,omitempty"`
-	TxType     v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=basetypes.v1.TxType" json:"TxType,omitempty"`
-	CreatedAt  uint32    `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt  uint32    `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"tx_id"
+	TxID string `protobuf:"bytes,20,opt,name=TxID,proto3" json:"TxID,omitempty" sql:"tx_id"`
+	// @inject_tag: sql:"notif_state"
+	NotifState TxState `protobuf:"varint,30,opt,name=NotifState,proto3,enum=notif.middleware.notif.tx.v1.TxState" json:"NotifState,omitempty" sql:"notif_state"`
+	// @inject_tag: sql:"tx_type"
+	TxType v1.TxType `protobuf:"varint,40,opt,name=TxType,proto3,enum=basetypes.v1.TxType" json:"TxType,omitempty" sql:"tx_type"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,50,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,60,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *Tx) Reset() {
