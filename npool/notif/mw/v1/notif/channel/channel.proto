@@ -22,11 +22,19 @@ service Middleware {
 }
 
 message Channel {
+     // @inject_tag: sql:"id"
     string               ID        = 10;
+     // @inject_tag: sql:"app_id"
     string               AppID     = 20;
-    basetypes.v1.UsedFor EventType = 30;
+     // @inject_tag: sql:"event_type"
+    string               EventTypeStr   = 29;
+    basetypes.v1.UsedFor EventType  = 30;
+     // @inject_tag: sql:"channel"
+    string               ChannelStr = 39;
     basetypes.v1.NotifChannel Channel = 40;
+     // @inject_tag: sql:"created_at"
     uint32               CreatedAt = 50;
+     // @inject_tag: sql:"updated_at"
     uint32               UpdatedAt = 60;
 }
 
