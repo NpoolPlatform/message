@@ -169,13 +169,19 @@
           "type": "string",
           "title": "@inject_tag: sql:\"tx_id\""
         },
-        "NotifState": {
-          "$ref": "#/definitions/v1TxState",
+        "NotifStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"notif_state\""
         },
-        "TxType": {
-          "$ref": "#/definitions/v1TxType",
+        "NotifState": {
+          "$ref": "#/definitions/v1TxState"
+        },
+        "TxTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"tx_type\""
+        },
+        "TxType": {
+          "$ref": "#/definitions/v1TxType"
         },
         "CreatedAt": {
           "type": "integer",

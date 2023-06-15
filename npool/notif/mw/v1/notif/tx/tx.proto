@@ -41,8 +41,10 @@ message Tx {
     // @inject_tag: sql:"tx_id"
     string              TxID       = 20;
      // @inject_tag: sql:"notif_state"
-    TxState   NotifState = 30;
+    string              NotifStateStr = 29;
+    TxState             NotifState = 30;
      // @inject_tag: sql:"tx_type"
+    string              TxTypeStr  = 39;
     basetypes.v1.TxType TxType     = 40;
      // @inject_tag: sql:"created_at"
     uint32              CreatedAt  = 50;
