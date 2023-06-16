@@ -46,7 +46,7 @@ service Gateway {
 
 message NotifUser {
     string           ID             = 10;
-    string           NotifID = 20;
+    string           NotifID        = 20;
     string           AppID          = 30;
     string           UserID         = 50;
     string           EmailAddress   = 60;

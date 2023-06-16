@@ -41,7 +41,7 @@ service Gateway {
 
 message SendState {
     string           ID             =  9;
-    string           AnnouncementID = 10;
+    string           NotifID        = 10;
     string           AppID          = 20;
     string           AppName        = 30;
     string           UserID         = 40;
