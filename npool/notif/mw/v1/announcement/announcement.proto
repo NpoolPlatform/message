@@ -63,11 +63,6 @@ message Announcement {
     uint32 UpdatedAt  = 100;
     // @inject_tag: sql:"user_id"
     string UserID     = 110;
-    // @inject_tag: sql:"notified"
-    bool   Notified   = 120;
-    bool   Read       = 129; // TODO
-    // @inject_tag: sql:"read_user_id"
-    string ReadUserID = 130; // TODO
 }
 
 message Conds {
