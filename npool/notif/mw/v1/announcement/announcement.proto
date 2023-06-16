@@ -61,8 +61,6 @@ message Announcement {
     uint32 CreatedAt  = 90;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 100;
-    // @inject_tag: sql:"user_id"
-    string UserID     = 110;
 }
 
 message Conds {
