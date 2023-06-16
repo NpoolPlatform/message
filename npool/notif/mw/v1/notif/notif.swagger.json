@@ -251,7 +251,7 @@
           "title": "@inject_tag: sql:\"event_id\""
         },
         "NotifTypeStr": {
-          "$ref": "#/definitions/v1NotifType",
+          "type": "string",
           "title": "@inject_tag: sql:\"type\""
         },
         "NotifType": {

@@ -62,8 +62,8 @@ message Notif {
     // @inject_tag: sql:"event_id"
     string    EventID     = 140;
     // @inject_tag: sql:"type"
-    NotifType NotifTypeStr = 149;
-    NotifType NotifType    = 150;
+    string NotifTypeStr   = 149;
+    NotifType NotifType   = 150;
 }
 
 message NotifReq {
