@@ -60,6 +60,24 @@ service Gateway {
     }
 }
 
+message Announcement {
+    string           ID             = 10;
+    string           AppID          = 20;
+    string           UserID         = 40;
+    string           LangID         = 41;
+    string           EmailAddress   = 50;
+    string           PhoneNO        = 60;
+    string           Username       = 70;
+    string           Title          = 80;
+    string           Content        = 90;
+    bool             Notified       = 110;
+    uint32           CreatedAt      = 120;
+    uint32           UpdatedAt      = 121;
+    uint32           EndAt          = 140;
+    basetypes.v1.NotifChannel                         Channel          = 150;
+    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 160;
+}
+
 message CreateAnnouncementRequest {
     string          AppID        = 10;
     string          TargetLangID = 20;
@@ -71,7 +89,7 @@ message CreateAnnouncementRequest {
 }
 
 message CreateAnnouncementResponse {
-    notif.middleware.announcement.v1.Announcement Info = 10;
+    Announcement Info = 10;
 }
 
 message UpdateAnnouncementRequest {
@@ -83,7 +101,7 @@ message UpdateAnnouncementRequest {
 }
 
 message UpdateAnnouncementResponse {
-    notif.middleware.announcement.v1.Announcement Info = 10;
+    Announcement Info = 10;
 }
 
 message DeleteAnnouncementRequest {
@@ -91,7 +109,7 @@ message DeleteAnnouncementRequest {
 }
 
 message DeleteAnnouncementResponse {
-    notif.middleware.announcement.v1.Announcement Info = 10;
+    Announcement Info = 10;
 }
 
 message GetAnnouncementsRequest {
@@ -103,7 +121,7 @@ message GetAnnouncementsRequest {
 }
 
 message GetAnnouncementsResponse {
-    repeated notif.middleware.announcement.v1.Announcement Infos = 10;
+    repeated Announcement Infos = 10;
     uint32                Total = 20;
 }
 
@@ -114,7 +132,7 @@ message GetAppAnnouncementsRequest {
 }
 
 message GetAppAnnouncementsResponse {
-    repeated notif.middleware.announcement.v1.Announcement Infos = 10;
+    repeated Announcement Infos = 10;
     uint32                Total = 20;
 }
 
@@ -125,7 +143,7 @@ message GetNAppAnnouncementsRequest {
 }
 
 message GetNAppAnnouncementsResponse {
-    repeated notif.middleware.announcement.v1.Announcement Infos = 10;
+    repeated Announcement Infos = 10;
     uint32                Total = 20;
 }
 
@@ -134,5 +152,5 @@ message GetAnnouncementRequest {
 }
 
 message GetAnnouncementResponse {
-    notif.middleware.announcement.v1.Announcement Info = 10;
+    Announcement Info = 10;
 }

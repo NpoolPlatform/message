@@ -242,6 +242,59 @@
     }
   },
   "definitions": {
+    "notifgatewayannouncementv1Announcement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Notified": {
+          "type": "boolean"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1AnnouncementType"
+        }
+      }
+    },
     "notifgatewayannouncementv1CreateAnnouncementRequest": {
       "type": "object",
       "properties": {
@@ -273,7 +326,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
         }
       }
     },
@@ -289,7 +342,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
         }
       }
     },
@@ -305,7 +358,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
         }
       }
     },
@@ -338,7 +391,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
         "Total": {
@@ -372,7 +425,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Announcement"
+          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
         }
       }
     },
@@ -401,77 +454,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Announcement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "LangID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"lang_id\""
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Content": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"content\""
-        },
-        "ChannelStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"channel\""
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "AnnouncementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"type\""
-        },
-        "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "Notified": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"notified\""
-        },
-        "Read": {
-          "type": "boolean",
-          "title": "TODO"
-        },
-        "ReadUserID": {
-          "type": "string",
-          "description": "TODO",
-          "title": "@inject_tag: sql:\"read_user_id\""
         }
       }
     },
@@ -507,7 +489,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
         "Total": {
@@ -539,7 +521,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Announcement"
+            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
           }
         },
         "Total": {
