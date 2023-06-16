@@ -28,13 +28,22 @@ message SendState {
     string UserID         = 30;
     // @inject_tag: sql:"announcement_id"
     string AnnouncementID = 40;
+    // @inject_tag: sql:"lang_id"
+    string LangID         = 50;
+    // @inject_tag: sql:"title"
+    string Title          = 60;
+    // @inject_tag: sql:"content"
+    string Content        = 70;
+    // @inject_tag: sql:"type"
+    string AnnouncementType = 80;
     // @inject_tag: sql:"channel"
-    string ChannelStr     = 49;
-    basetypes.v1.NotifChannel Channel = 50;
+    string Channel        = 90;
+    // @inject_tag: sql:"end_at"
+    string EndAt          = 100;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 60;
+    uint32 CreatedAt      = 110;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 70;
+    uint32 UpdatedAt      = 120;
 }
 
 message SendStateReq {

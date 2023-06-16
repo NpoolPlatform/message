@@ -176,12 +176,29 @@
           "type": "string",
           "title": "@inject_tag: sql:\"announcement_id\""
         },
-        "ChannelStr": {
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "AnnouncementType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "Channel": {
           "type": "string",
           "title": "@inject_tag: sql:\"channel\""
         },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
+        "EndAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"end_at\""
         },
         "CreatedAt": {
           "type": "integer",
