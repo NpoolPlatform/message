@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package notif.gateway.notif.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif/user";
+
+import "google/api/annotations.proto";
+import "npool/notif/mw/v1/notif/notif.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateNofitUsers (CreateNofitUsersRequest) returns (CreateNofitUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/notifusers"
+            body: "*"
+        };
+    }
+    rpc DeleteNofitUser (DeleteNofitUserRequest) returns (DeleteNofitUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/notifusers"
+            body: "*"
+        };
+    }
+
+    rpc GetNofitUsers (GetNofitUsersRequest) returns (GetNofitUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/notifusers"
+            body: "*"
+        };
+    }
+
+    rpc GetAppNofitUsers (GetAppNofitUsersRequest) returns (GetAppNofitUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/notifusers"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppNofitUsers (GetNAppNofitUsersRequest) returns (GetNAppNofitUsersResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/notifusers"
+            body: "*"
+        };
+    }
+}
+
+message NofitUser {
+    string           ID             = 10;
+    string           NotifID = 20;
+    string           AppID          = 30;
+    string           UserID         = 50;
+    string           EmailAddress   = 60;
+    string           PhoneNO        = 70;
+    string           Username       = 80;
+    string           Title          = 90;
+    string           Content        = 100;
+    .notif.middleware.notif.v1.NotifType NotifType = 110;
+    uint32           CreatedAt      = 120;
+    uint32           UpdatedAt      = 130;
+}
+
+message CreateNofitUsersRequest {
+    string          AppID          = 10;
+    repeated string UserIDs        = 20;
+    string          NotifID        = 30;
+}
+
+message CreateNofitUsersResponse {
+    repeated NofitUser Infos = 10;
+}
+
+message CreateNofitUserRequest {
+    string          AppID          = 10;
+    string          UserID         = 20;
+    string          NotifID        = 30;
+}
+
+message CreateNofitUserResponse {
+    NofitUser Info = 10;
+}
+
+message DeleteNofitUserRequest {
+    string ID    = 10;
+    string AppID = 20;
+}
+
+message DeleteNofitUserResponse {
+    NofitUser Info = 10;
+}
+
+message GetNofitUsersRequest {
+    string AppID          = 10;
+    string NotifID = 20;
+    int32  Offset         = 30;
+    int32  Limit          = 40;
+}
+
+message GetNofitUsersResponse {
+    repeated NofitUser Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetAppNofitUsersRequest {
+    string AppID  = 10;
+    int32  Offset = 30;
+    int32  Limit  = 40;
+}
+
+message GetAppNofitUsersResponse {
+    repeated NofitUser Infos = 10;
+    uint32             Total = 20;
+}
+
+message GetNAppNofitUsersRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetNAppNofitUsersResponse {
+    repeated NofitUser Infos = 10;
+    uint32             Total = 20;
+}
