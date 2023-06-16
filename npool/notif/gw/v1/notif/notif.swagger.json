@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNotifResponse"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNotifRequest"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNotifsResponse"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNotifsRequest"
+              "$ref": "#/definitions/gatewaynotif3v1GetNotifsRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateNotifsResponse"
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateNotifsRequest"
+              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifsRequest"
             }
           }
         ],
@@ -146,67 +146,7 @@
     }
   },
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1GetAppNotifsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppNotifsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Notif"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNotifRequest": {
+    "gatewaynotif3v1GetNotifRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -214,15 +154,15 @@
         }
       }
     },
-    "v1GetNotifResponse": {
+    "gatewaynotif3v1GetNotifResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Notif"
+          "$ref": "#/definitions/gatewaynotif3v1Notif"
         }
       }
     },
-    "v1GetNotifsRequest": {
+    "gatewaynotif3v1GetNotifsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -244,14 +184,14 @@
         }
       }
     },
-    "v1GetNotifsResponse": {
+    "gatewaynotif3v1GetNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Notif"
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         },
         "Total": {
@@ -260,7 +200,7 @@
         }
       }
     },
-    "v1Notif": {
+    "gatewaynotif3v1Notif": {
       "type": "object",
       "properties": {
         "ID": {
@@ -318,20 +258,13 @@
         },
         "EventID": {
           "type": "string"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1NotifType"
         }
       }
     },
-    "v1NotifChannel": {
-      "type": "string",
-      "enum": [
-        "DefaultChannel",
-        "ChannelEmail",
-        "ChannelSMS",
-        "ChannelFrontend"
-      ],
-      "default": "DefaultChannel"
-    },
-    "v1UpdateNotifsRequest": {
+    "gatewaynotif3v1UpdateNotifsRequest": {
       "type": "object",
       "properties": {
         "IDs": {
@@ -351,17 +284,97 @@
         }
       }
     },
-    "v1UpdateNotifsResponse": {
+    "gatewaynotif3v1UpdateNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Notif"
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         }
       }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetAppNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/gatewaynotif3v1Notif"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Broadcast",
+        "Multicast",
+        "Unicast"
+      ],
+      "default": "DefaultType"
     },
     "v1UsedFor": {
       "type": "string",
