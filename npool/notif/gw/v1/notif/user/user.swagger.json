@@ -18,12 +18,12 @@
   "paths": {
     "/v1/create/notifusers": {
       "post": {
-        "operationId": "Gateway_CreateNofitUsers",
+        "operationId": "Gateway_CreateNotifUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNofitUsersResponse"
+              "$ref": "#/definitions/v1CreateNotifUsersResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNofitUsersRequest"
+              "$ref": "#/definitions/v1CreateNotifUsersRequest"
             }
           }
         ],
@@ -50,12 +50,12 @@
     },
     "/v1/delete/notifusers": {
       "post": {
-        "operationId": "Gateway_DeleteNofitUser",
+        "operationId": "Gateway_DeleteNotifUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteNofitUserResponse"
+              "$ref": "#/definitions/v1DeleteNotifUserResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteNofitUserRequest"
+              "$ref": "#/definitions/v1DeleteNotifUserRequest"
             }
           }
         ],
@@ -82,12 +82,12 @@
     },
     "/v1/get/app/notifusers": {
       "post": {
-        "operationId": "Gateway_GetAppNofitUsers",
+        "operationId": "Gateway_GetAppNotifUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppNofitUsersResponse"
+              "$ref": "#/definitions/v1GetAppNotifUsersResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppNofitUsersRequest"
+              "$ref": "#/definitions/v1GetAppNotifUsersRequest"
             }
           }
         ],
@@ -114,12 +114,12 @@
     },
     "/v1/get/n/app/notifusers": {
       "post": {
-        "operationId": "Gateway_GetNAppNofitUsers",
+        "operationId": "Gateway_GetNAppNotifUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNAppNofitUsersResponse"
+              "$ref": "#/definitions/v1GetNAppNotifUsersResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNAppNofitUsersRequest"
+              "$ref": "#/definitions/v1GetNAppNotifUsersRequest"
             }
           }
         ],
@@ -146,12 +146,12 @@
     },
     "/v1/get/notifusers": {
       "post": {
-        "operationId": "Gateway_GetNofitUsers",
+        "operationId": "Gateway_GetNotifUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNofitUsersResponse"
+              "$ref": "#/definitions/v1GetNotifUsersResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNofitUsersRequest"
+              "$ref": "#/definitions/v1GetNotifUsersRequest"
             }
           }
         ],
@@ -206,7 +206,7 @@
         }
       }
     },
-    "v1CreateNofitUsersRequest": {
+    "v1CreateNotifUsersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -223,19 +223,19 @@
         }
       }
     },
-    "v1CreateNofitUsersResponse": {
+    "v1CreateNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1NofitUser"
+            "$ref": "#/definitions/v1NotifUser"
           }
         }
       }
     },
-    "v1DeleteNofitUserRequest": {
+    "v1DeleteNotifUserRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -246,15 +246,15 @@
         }
       }
     },
-    "v1DeleteNofitUserResponse": {
+    "v1DeleteNotifUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1NofitUser"
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
-    "v1GetAppNofitUsersRequest": {
+    "v1GetAppNotifUsersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -270,14 +270,14 @@
         }
       }
     },
-    "v1GetAppNofitUsersResponse": {
+    "v1GetAppNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1NofitUser"
+            "$ref": "#/definitions/v1NotifUser"
           }
         },
         "Total": {
@@ -286,7 +286,7 @@
         }
       }
     },
-    "v1GetNAppNofitUsersRequest": {
+    "v1GetNAppNotifUsersRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -302,14 +302,14 @@
         }
       }
     },
-    "v1GetNAppNofitUsersResponse": {
+    "v1GetNAppNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1NofitUser"
+            "$ref": "#/definitions/v1NotifUser"
           }
         },
         "Total": {
@@ -318,7 +318,7 @@
         }
       }
     },
-    "v1GetNofitUsersRequest": {
+    "v1GetNotifUsersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -337,14 +337,14 @@
         }
       }
     },
-    "v1GetNofitUsersResponse": {
+    "v1GetNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1NofitUser"
+            "$ref": "#/definitions/v1NotifUser"
           }
         },
         "Total": {
@@ -353,7 +353,17 @@
         }
       }
     },
-    "v1NofitUser": {
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Broadcast",
+        "Multicast",
+        "Unicast"
+      ],
+      "default": "DefaultType"
+    },
+    "v1NotifUser": {
       "type": "object",
       "properties": {
         "ID": {
@@ -395,16 +405,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1NotifType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast",
-        "Unicast"
-      ],
-      "default": "DefaultType"
     }
   }
 }

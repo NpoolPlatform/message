@@ -19,22 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateNofitUsers_FullMethodName  = "/notif.gateway.notif.user.v1.Gateway/CreateNofitUsers"
-	Gateway_DeleteNofitUser_FullMethodName   = "/notif.gateway.notif.user.v1.Gateway/DeleteNofitUser"
-	Gateway_GetNofitUsers_FullMethodName     = "/notif.gateway.notif.user.v1.Gateway/GetNofitUsers"
-	Gateway_GetAppNofitUsers_FullMethodName  = "/notif.gateway.notif.user.v1.Gateway/GetAppNofitUsers"
-	Gateway_GetNAppNofitUsers_FullMethodName = "/notif.gateway.notif.user.v1.Gateway/GetNAppNofitUsers"
+	Gateway_CreateNotifUsers_FullMethodName  = "/notif.gateway.notif.user.v1.Gateway/CreateNotifUsers"
+	Gateway_DeleteNotifUser_FullMethodName   = "/notif.gateway.notif.user.v1.Gateway/DeleteNotifUser"
+	Gateway_GetNotifUsers_FullMethodName     = "/notif.gateway.notif.user.v1.Gateway/GetNotifUsers"
+	Gateway_GetAppNotifUsers_FullMethodName  = "/notif.gateway.notif.user.v1.Gateway/GetAppNotifUsers"
+	Gateway_GetNAppNotifUsers_FullMethodName = "/notif.gateway.notif.user.v1.Gateway/GetNAppNotifUsers"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateNofitUsers(ctx context.Context, in *CreateNofitUsersRequest, opts ...grpc.CallOption) (*CreateNofitUsersResponse, error)
-	DeleteNofitUser(ctx context.Context, in *DeleteNofitUserRequest, opts ...grpc.CallOption) (*DeleteNofitUserResponse, error)
-	GetNofitUsers(ctx context.Context, in *GetNofitUsersRequest, opts ...grpc.CallOption) (*GetNofitUsersResponse, error)
-	GetAppNofitUsers(ctx context.Context, in *GetAppNofitUsersRequest, opts ...grpc.CallOption) (*GetAppNofitUsersResponse, error)
-	GetNAppNofitUsers(ctx context.Context, in *GetNAppNofitUsersRequest, opts ...grpc.CallOption) (*GetNAppNofitUsersResponse, error)
+	CreateNotifUsers(ctx context.Context, in *CreateNotifUsersRequest, opts ...grpc.CallOption) (*CreateNotifUsersResponse, error)
+	DeleteNotifUser(ctx context.Context, in *DeleteNotifUserRequest, opts ...grpc.CallOption) (*DeleteNotifUserResponse, error)
+	GetNotifUsers(ctx context.Context, in *GetNotifUsersRequest, opts ...grpc.CallOption) (*GetNotifUsersResponse, error)
+	GetAppNotifUsers(ctx context.Context, in *GetAppNotifUsersRequest, opts ...grpc.CallOption) (*GetAppNotifUsersResponse, error)
+	GetNAppNotifUsers(ctx context.Context, in *GetNAppNotifUsersRequest, opts ...grpc.CallOption) (*GetNAppNotifUsersResponse, error)
 }
 
 type gatewayClient struct {
@@ -45,45 +45,45 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateNofitUsers(ctx context.Context, in *CreateNofitUsersRequest, opts ...grpc.CallOption) (*CreateNofitUsersResponse, error) {
-	out := new(CreateNofitUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateNofitUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CreateNotifUsers(ctx context.Context, in *CreateNotifUsersRequest, opts ...grpc.CallOption) (*CreateNotifUsersResponse, error) {
+	out := new(CreateNotifUsersResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateNotifUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteNofitUser(ctx context.Context, in *DeleteNofitUserRequest, opts ...grpc.CallOption) (*DeleteNofitUserResponse, error) {
-	out := new(DeleteNofitUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteNofitUser_FullMethodName, in, out, opts...)
+func (c *gatewayClient) DeleteNotifUser(ctx context.Context, in *DeleteNotifUserRequest, opts ...grpc.CallOption) (*DeleteNotifUserResponse, error) {
+	out := new(DeleteNotifUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteNotifUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetNofitUsers(ctx context.Context, in *GetNofitUsersRequest, opts ...grpc.CallOption) (*GetNofitUsersResponse, error) {
-	out := new(GetNofitUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNofitUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetNotifUsers(ctx context.Context, in *GetNotifUsersRequest, opts ...grpc.CallOption) (*GetNotifUsersResponse, error) {
+	out := new(GetNotifUsersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetNotifUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppNofitUsers(ctx context.Context, in *GetAppNofitUsersRequest, opts ...grpc.CallOption) (*GetAppNofitUsersResponse, error) {
-	out := new(GetAppNofitUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppNofitUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetAppNotifUsers(ctx context.Context, in *GetAppNotifUsersRequest, opts ...grpc.CallOption) (*GetAppNotifUsersResponse, error) {
+	out := new(GetAppNotifUsersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppNotifUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetNAppNofitUsers(ctx context.Context, in *GetNAppNofitUsersRequest, opts ...grpc.CallOption) (*GetNAppNofitUsersResponse, error) {
-	out := new(GetNAppNofitUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNAppNofitUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetNAppNotifUsers(ctx context.Context, in *GetNAppNotifUsersRequest, opts ...grpc.CallOption) (*GetNAppNotifUsersResponse, error) {
+	out := new(GetNAppNotifUsersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetNAppNotifUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,11 +94,11 @@ func (c *gatewayClient) GetNAppNofitUsers(ctx context.Context, in *GetNAppNofitU
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateNofitUsers(context.Context, *CreateNofitUsersRequest) (*CreateNofitUsersResponse, error)
-	DeleteNofitUser(context.Context, *DeleteNofitUserRequest) (*DeleteNofitUserResponse, error)
-	GetNofitUsers(context.Context, *GetNofitUsersRequest) (*GetNofitUsersResponse, error)
-	GetAppNofitUsers(context.Context, *GetAppNofitUsersRequest) (*GetAppNofitUsersResponse, error)
-	GetNAppNofitUsers(context.Context, *GetNAppNofitUsersRequest) (*GetNAppNofitUsersResponse, error)
+	CreateNotifUsers(context.Context, *CreateNotifUsersRequest) (*CreateNotifUsersResponse, error)
+	DeleteNotifUser(context.Context, *DeleteNotifUserRequest) (*DeleteNotifUserResponse, error)
+	GetNotifUsers(context.Context, *GetNotifUsersRequest) (*GetNotifUsersResponse, error)
+	GetAppNotifUsers(context.Context, *GetAppNotifUsersRequest) (*GetAppNotifUsersResponse, error)
+	GetNAppNotifUsers(context.Context, *GetNAppNotifUsersRequest) (*GetNAppNotifUsersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -106,20 +106,20 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateNofitUsers(context.Context, *CreateNofitUsersRequest) (*CreateNofitUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNofitUsers not implemented")
+func (UnimplementedGatewayServer) CreateNotifUsers(context.Context, *CreateNotifUsersRequest) (*CreateNotifUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifUsers not implemented")
 }
-func (UnimplementedGatewayServer) DeleteNofitUser(context.Context, *DeleteNofitUserRequest) (*DeleteNofitUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteNofitUser not implemented")
+func (UnimplementedGatewayServer) DeleteNotifUser(context.Context, *DeleteNotifUserRequest) (*DeleteNotifUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotifUser not implemented")
 }
-func (UnimplementedGatewayServer) GetNofitUsers(context.Context, *GetNofitUsersRequest) (*GetNofitUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNofitUsers not implemented")
+func (UnimplementedGatewayServer) GetNotifUsers(context.Context, *GetNotifUsersRequest) (*GetNotifUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotifUsers not implemented")
 }
-func (UnimplementedGatewayServer) GetAppNofitUsers(context.Context, *GetAppNofitUsersRequest) (*GetAppNofitUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppNofitUsers not implemented")
+func (UnimplementedGatewayServer) GetAppNotifUsers(context.Context, *GetAppNotifUsersRequest) (*GetAppNotifUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppNotifUsers not implemented")
 }
-func (UnimplementedGatewayServer) GetNAppNofitUsers(context.Context, *GetNAppNofitUsersRequest) (*GetNAppNofitUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppNofitUsers not implemented")
+func (UnimplementedGatewayServer) GetNAppNotifUsers(context.Context, *GetNAppNotifUsersRequest) (*GetNAppNotifUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNAppNotifUsers not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -134,92 +134,92 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateNofitUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNofitUsersRequest)
+func _Gateway_CreateNotifUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateNofitUsers(ctx, in)
+		return srv.(GatewayServer).CreateNotifUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateNofitUsers_FullMethodName,
+		FullMethod: Gateway_CreateNotifUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateNofitUsers(ctx, req.(*CreateNofitUsersRequest))
+		return srv.(GatewayServer).CreateNotifUsers(ctx, req.(*CreateNotifUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteNofitUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteNofitUserRequest)
+func _Gateway_DeleteNotifUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteNotifUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteNofitUser(ctx, in)
+		return srv.(GatewayServer).DeleteNotifUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteNofitUser_FullMethodName,
+		FullMethod: Gateway_DeleteNotifUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteNofitUser(ctx, req.(*DeleteNofitUserRequest))
+		return srv.(GatewayServer).DeleteNotifUser(ctx, req.(*DeleteNotifUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetNofitUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNofitUsersRequest)
+func _Gateway_GetNotifUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotifUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetNofitUsers(ctx, in)
+		return srv.(GatewayServer).GetNotifUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetNofitUsers_FullMethodName,
+		FullMethod: Gateway_GetNotifUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNofitUsers(ctx, req.(*GetNofitUsersRequest))
+		return srv.(GatewayServer).GetNotifUsers(ctx, req.(*GetNotifUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppNofitUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppNofitUsersRequest)
+func _Gateway_GetAppNotifUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppNotifUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppNofitUsers(ctx, in)
+		return srv.(GatewayServer).GetAppNotifUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppNofitUsers_FullMethodName,
+		FullMethod: Gateway_GetAppNotifUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppNofitUsers(ctx, req.(*GetAppNofitUsersRequest))
+		return srv.(GatewayServer).GetAppNotifUsers(ctx, req.(*GetAppNotifUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetNAppNofitUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppNofitUsersRequest)
+func _Gateway_GetNAppNotifUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNAppNotifUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppNofitUsers(ctx, in)
+		return srv.(GatewayServer).GetNAppNotifUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetNAppNofitUsers_FullMethodName,
+		FullMethod: Gateway_GetNAppNotifUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppNofitUsers(ctx, req.(*GetNAppNofitUsersRequest))
+		return srv.(GatewayServer).GetNAppNotifUsers(ctx, req.(*GetNAppNotifUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -232,24 +232,24 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateNofitUsers",
-			Handler:    _Gateway_CreateNofitUsers_Handler,
+			MethodName: "CreateNotifUsers",
+			Handler:    _Gateway_CreateNotifUsers_Handler,
 		},
 		{
-			MethodName: "DeleteNofitUser",
-			Handler:    _Gateway_DeleteNofitUser_Handler,
+			MethodName: "DeleteNotifUser",
+			Handler:    _Gateway_DeleteNotifUser_Handler,
 		},
 		{
-			MethodName: "GetNofitUsers",
-			Handler:    _Gateway_GetNofitUsers_Handler,
+			MethodName: "GetNotifUsers",
+			Handler:    _Gateway_GetNotifUsers_Handler,
 		},
 		{
-			MethodName: "GetAppNofitUsers",
-			Handler:    _Gateway_GetAppNofitUsers_Handler,
+			MethodName: "GetAppNotifUsers",
+			Handler:    _Gateway_GetAppNotifUsers_Handler,
 		},
 		{
-			MethodName: "GetNAppNofitUsers",
-			Handler:    _Gateway_GetNAppNofitUsers_Handler,
+			MethodName: "GetNAppNotifUsers",
+			Handler:    _Gateway_GetNAppNotifUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

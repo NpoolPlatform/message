@@ -22,7 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type NofitUser struct {
+type NotifUser struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -41,8 +41,8 @@ type NofitUser struct {
 	UpdatedAt    uint32          `protobuf:"varint,130,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
 }
 
-func (x *NofitUser) Reset() {
-	*x = NofitUser{}
+func (x *NotifUser) Reset() {
+	*x = NotifUser{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -50,13 +50,13 @@ func (x *NofitUser) Reset() {
 	}
 }
 
-func (x *NofitUser) String() string {
+func (x *NotifUser) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NofitUser) ProtoMessage() {}
+func (*NotifUser) ProtoMessage() {}
 
-func (x *NofitUser) ProtoReflect() protoreflect.Message {
+func (x *NotifUser) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -68,96 +68,96 @@ func (x *NofitUser) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NofitUser.ProtoReflect.Descriptor instead.
-func (*NofitUser) Descriptor() ([]byte, []int) {
+// Deprecated: Use NotifUser.ProtoReflect.Descriptor instead.
+func (*NotifUser) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *NofitUser) GetID() string {
+func (x *NotifUser) GetID() string {
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
-func (x *NofitUser) GetNotifID() string {
+func (x *NotifUser) GetNotifID() string {
 	if x != nil {
 		return x.NotifID
 	}
 	return ""
 }
 
-func (x *NofitUser) GetAppID() string {
+func (x *NotifUser) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *NofitUser) GetUserID() string {
+func (x *NotifUser) GetUserID() string {
 	if x != nil {
 		return x.UserID
 	}
 	return ""
 }
 
-func (x *NofitUser) GetEmailAddress() string {
+func (x *NotifUser) GetEmailAddress() string {
 	if x != nil {
 		return x.EmailAddress
 	}
 	return ""
 }
 
-func (x *NofitUser) GetPhoneNO() string {
+func (x *NotifUser) GetPhoneNO() string {
 	if x != nil {
 		return x.PhoneNO
 	}
 	return ""
 }
 
-func (x *NofitUser) GetUsername() string {
+func (x *NotifUser) GetUsername() string {
 	if x != nil {
 		return x.Username
 	}
 	return ""
 }
 
-func (x *NofitUser) GetTitle() string {
+func (x *NotifUser) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *NofitUser) GetContent() string {
+func (x *NotifUser) GetContent() string {
 	if x != nil {
 		return x.Content
 	}
 	return ""
 }
 
-func (x *NofitUser) GetNotifType() notif.NotifType {
+func (x *NotifUser) GetNotifType() notif.NotifType {
 	if x != nil {
 		return x.NotifType
 	}
 	return notif.NotifType(0)
 }
 
-func (x *NofitUser) GetCreatedAt() uint32 {
+func (x *NotifUser) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return 0
 }
 
-func (x *NofitUser) GetUpdatedAt() uint32 {
+func (x *NotifUser) GetUpdatedAt() uint32 {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return 0
 }
 
-type CreateNofitUsersRequest struct {
+type CreateNotifUsersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -167,8 +167,8 @@ type CreateNofitUsersRequest struct {
 	NotifID string   `protobuf:"bytes,30,opt,name=NotifID,proto3" json:"NotifID,omitempty"`
 }
 
-func (x *CreateNofitUsersRequest) Reset() {
-	*x = CreateNofitUsersRequest{}
+func (x *CreateNotifUsersRequest) Reset() {
+	*x = CreateNotifUsersRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -176,13 +176,13 @@ func (x *CreateNofitUsersRequest) Reset() {
 	}
 }
 
-func (x *CreateNofitUsersRequest) String() string {
+func (x *CreateNotifUsersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateNofitUsersRequest) ProtoMessage() {}
+func (*CreateNotifUsersRequest) ProtoMessage() {}
 
-func (x *CreateNofitUsersRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateNotifUsersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -194,42 +194,42 @@ func (x *CreateNofitUsersRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateNofitUsersRequest.ProtoReflect.Descriptor instead.
-func (*CreateNofitUsersRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateNotifUsersRequest.ProtoReflect.Descriptor instead.
+func (*CreateNotifUsersRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateNofitUsersRequest) GetAppID() string {
+func (x *CreateNotifUsersRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *CreateNofitUsersRequest) GetUserIDs() []string {
+func (x *CreateNotifUsersRequest) GetUserIDs() []string {
 	if x != nil {
 		return x.UserIDs
 	}
 	return nil
 }
 
-func (x *CreateNofitUsersRequest) GetNotifID() string {
+func (x *CreateNotifUsersRequest) GetNotifID() string {
 	if x != nil {
 		return x.NotifID
 	}
 	return ""
 }
 
-type CreateNofitUsersResponse struct {
+type CreateNotifUsersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*NofitUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*NotifUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *CreateNofitUsersResponse) Reset() {
-	*x = CreateNofitUsersResponse{}
+func (x *CreateNotifUsersResponse) Reset() {
+	*x = CreateNotifUsersResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -237,13 +237,13 @@ func (x *CreateNofitUsersResponse) Reset() {
 	}
 }
 
-func (x *CreateNofitUsersResponse) String() string {
+func (x *CreateNotifUsersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateNofitUsersResponse) ProtoMessage() {}
+func (*CreateNotifUsersResponse) ProtoMessage() {}
 
-func (x *CreateNofitUsersResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateNotifUsersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -255,19 +255,19 @@ func (x *CreateNofitUsersResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateNofitUsersResponse.ProtoReflect.Descriptor instead.
-func (*CreateNofitUsersResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateNotifUsersResponse.ProtoReflect.Descriptor instead.
+func (*CreateNotifUsersResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreateNofitUsersResponse) GetInfos() []*NofitUser {
+func (x *CreateNotifUsersResponse) GetInfos() []*NotifUser {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type CreateNofitUserRequest struct {
+type CreateNotifUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -277,8 +277,8 @@ type CreateNofitUserRequest struct {
 	NotifID string `protobuf:"bytes,30,opt,name=NotifID,proto3" json:"NotifID,omitempty"`
 }
 
-func (x *CreateNofitUserRequest) Reset() {
-	*x = CreateNofitUserRequest{}
+func (x *CreateNotifUserRequest) Reset() {
+	*x = CreateNotifUserRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -286,13 +286,13 @@ func (x *CreateNofitUserRequest) Reset() {
 	}
 }
 
-func (x *CreateNofitUserRequest) String() string {
+func (x *CreateNotifUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateNofitUserRequest) ProtoMessage() {}
+func (*CreateNotifUserRequest) ProtoMessage() {}
 
-func (x *CreateNofitUserRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateNotifUserRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -304,42 +304,42 @@ func (x *CreateNofitUserRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateNofitUserRequest.ProtoReflect.Descriptor instead.
-func (*CreateNofitUserRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateNotifUserRequest.ProtoReflect.Descriptor instead.
+func (*CreateNotifUserRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateNofitUserRequest) GetAppID() string {
+func (x *CreateNotifUserRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *CreateNofitUserRequest) GetUserID() string {
+func (x *CreateNotifUserRequest) GetUserID() string {
 	if x != nil {
 		return x.UserID
 	}
 	return ""
 }
 
-func (x *CreateNofitUserRequest) GetNotifID() string {
+func (x *CreateNotifUserRequest) GetNotifID() string {
 	if x != nil {
 		return x.NotifID
 	}
 	return ""
 }
 
-type CreateNofitUserResponse struct {
+type CreateNotifUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *NofitUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *NotifUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *CreateNofitUserResponse) Reset() {
-	*x = CreateNofitUserResponse{}
+func (x *CreateNotifUserResponse) Reset() {
+	*x = CreateNotifUserResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -347,13 +347,13 @@ func (x *CreateNofitUserResponse) Reset() {
 	}
 }
 
-func (x *CreateNofitUserResponse) String() string {
+func (x *CreateNotifUserResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateNofitUserResponse) ProtoMessage() {}
+func (*CreateNotifUserResponse) ProtoMessage() {}
 
-func (x *CreateNofitUserResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateNotifUserResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -365,19 +365,19 @@ func (x *CreateNofitUserResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateNofitUserResponse.ProtoReflect.Descriptor instead.
-func (*CreateNofitUserResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateNotifUserResponse.ProtoReflect.Descriptor instead.
+func (*CreateNotifUserResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CreateNofitUserResponse) GetInfo() *NofitUser {
+func (x *CreateNotifUserResponse) GetInfo() *NotifUser {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type DeleteNofitUserRequest struct {
+type DeleteNotifUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -386,8 +386,8 @@ type DeleteNofitUserRequest struct {
 	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 }
 
-func (x *DeleteNofitUserRequest) Reset() {
-	*x = DeleteNofitUserRequest{}
+func (x *DeleteNotifUserRequest) Reset() {
+	*x = DeleteNotifUserRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -395,13 +395,13 @@ func (x *DeleteNofitUserRequest) Reset() {
 	}
 }
 
-func (x *DeleteNofitUserRequest) String() string {
+func (x *DeleteNotifUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteNofitUserRequest) ProtoMessage() {}
+func (*DeleteNotifUserRequest) ProtoMessage() {}
 
-func (x *DeleteNofitUserRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteNotifUserRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -413,35 +413,35 @@ func (x *DeleteNofitUserRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteNofitUserRequest.ProtoReflect.Descriptor instead.
-func (*DeleteNofitUserRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteNotifUserRequest.ProtoReflect.Descriptor instead.
+func (*DeleteNotifUserRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *DeleteNofitUserRequest) GetID() string {
+func (x *DeleteNotifUserRequest) GetID() string {
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
-func (x *DeleteNofitUserRequest) GetAppID() string {
+func (x *DeleteNotifUserRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-type DeleteNofitUserResponse struct {
+type DeleteNotifUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *NofitUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *NotifUser `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
-func (x *DeleteNofitUserResponse) Reset() {
-	*x = DeleteNofitUserResponse{}
+func (x *DeleteNotifUserResponse) Reset() {
+	*x = DeleteNotifUserResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -449,13 +449,13 @@ func (x *DeleteNofitUserResponse) Reset() {
 	}
 }
 
-func (x *DeleteNofitUserResponse) String() string {
+func (x *DeleteNotifUserResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteNofitUserResponse) ProtoMessage() {}
+func (*DeleteNotifUserResponse) ProtoMessage() {}
 
-func (x *DeleteNofitUserResponse) ProtoReflect() protoreflect.Message {
+func (x *DeleteNotifUserResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -467,19 +467,19 @@ func (x *DeleteNofitUserResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteNofitUserResponse.ProtoReflect.Descriptor instead.
-func (*DeleteNofitUserResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteNotifUserResponse.ProtoReflect.Descriptor instead.
+func (*DeleteNotifUserResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *DeleteNofitUserResponse) GetInfo() *NofitUser {
+func (x *DeleteNotifUserResponse) GetInfo() *NotifUser {
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
-type GetNofitUsersRequest struct {
+type GetNotifUsersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -490,8 +490,8 @@ type GetNofitUsersRequest struct {
 	Limit   int32  `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
-func (x *GetNofitUsersRequest) Reset() {
-	*x = GetNofitUsersRequest{}
+func (x *GetNotifUsersRequest) Reset() {
+	*x = GetNotifUsersRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -499,13 +499,13 @@ func (x *GetNofitUsersRequest) Reset() {
 	}
 }
 
-func (x *GetNofitUsersRequest) String() string {
+func (x *GetNotifUsersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetNofitUsersRequest) ProtoMessage() {}
+func (*GetNotifUsersRequest) ProtoMessage() {}
 
-func (x *GetNofitUsersRequest) ProtoReflect() protoreflect.Message {
+func (x *GetNotifUsersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -517,50 +517,50 @@ func (x *GetNofitUsersRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetNofitUsersRequest.ProtoReflect.Descriptor instead.
-func (*GetNofitUsersRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetNotifUsersRequest.ProtoReflect.Descriptor instead.
+func (*GetNotifUsersRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetNofitUsersRequest) GetAppID() string {
+func (x *GetNotifUsersRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *GetNofitUsersRequest) GetNotifID() string {
+func (x *GetNotifUsersRequest) GetNotifID() string {
 	if x != nil {
 		return x.NotifID
 	}
 	return ""
 }
 
-func (x *GetNofitUsersRequest) GetOffset() int32 {
+func (x *GetNotifUsersRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *GetNofitUsersRequest) GetLimit() int32 {
+func (x *GetNotifUsersRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-type GetNofitUsersResponse struct {
+type GetNotifUsersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*NofitUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*NotifUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
-func (x *GetNofitUsersResponse) Reset() {
-	*x = GetNofitUsersResponse{}
+func (x *GetNotifUsersResponse) Reset() {
+	*x = GetNotifUsersResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -568,13 +568,13 @@ func (x *GetNofitUsersResponse) Reset() {
 	}
 }
 
-func (x *GetNofitUsersResponse) String() string {
+func (x *GetNotifUsersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetNofitUsersResponse) ProtoMessage() {}
+func (*GetNotifUsersResponse) ProtoMessage() {}
 
-func (x *GetNofitUsersResponse) ProtoReflect() protoreflect.Message {
+func (x *GetNotifUsersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -586,26 +586,26 @@ func (x *GetNofitUsersResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetNofitUsersResponse.ProtoReflect.Descriptor instead.
-func (*GetNofitUsersResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetNotifUsersResponse.ProtoReflect.Descriptor instead.
+func (*GetNotifUsersResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *GetNofitUsersResponse) GetInfos() []*NofitUser {
+func (x *GetNotifUsersResponse) GetInfos() []*NotifUser {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-func (x *GetNofitUsersResponse) GetTotal() uint32 {
+func (x *GetNotifUsersResponse) GetTotal() uint32 {
 	if x != nil {
 		return x.Total
 	}
 	return 0
 }
 
-type GetAppNofitUsersRequest struct {
+type GetAppNotifUsersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -615,8 +615,8 @@ type GetAppNofitUsersRequest struct {
 	Limit  int32  `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
-func (x *GetAppNofitUsersRequest) Reset() {
-	*x = GetAppNofitUsersRequest{}
+func (x *GetAppNotifUsersRequest) Reset() {
+	*x = GetAppNotifUsersRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -624,13 +624,13 @@ func (x *GetAppNofitUsersRequest) Reset() {
 	}
 }
 
-func (x *GetAppNofitUsersRequest) String() string {
+func (x *GetAppNotifUsersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAppNofitUsersRequest) ProtoMessage() {}
+func (*GetAppNotifUsersRequest) ProtoMessage() {}
 
-func (x *GetAppNofitUsersRequest) ProtoReflect() protoreflect.Message {
+func (x *GetAppNotifUsersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -642,43 +642,43 @@ func (x *GetAppNofitUsersRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAppNofitUsersRequest.ProtoReflect.Descriptor instead.
-func (*GetAppNofitUsersRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAppNotifUsersRequest.ProtoReflect.Descriptor instead.
+func (*GetAppNotifUsersRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetAppNofitUsersRequest) GetAppID() string {
+func (x *GetAppNotifUsersRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *GetAppNofitUsersRequest) GetOffset() int32 {
+func (x *GetAppNotifUsersRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *GetAppNofitUsersRequest) GetLimit() int32 {
+func (x *GetAppNotifUsersRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-type GetAppNofitUsersResponse struct {
+type GetAppNotifUsersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*NofitUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*NotifUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
-func (x *GetAppNofitUsersResponse) Reset() {
-	*x = GetAppNofitUsersResponse{}
+func (x *GetAppNotifUsersResponse) Reset() {
+	*x = GetAppNotifUsersResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -686,13 +686,13 @@ func (x *GetAppNofitUsersResponse) Reset() {
 	}
 }
 
-func (x *GetAppNofitUsersResponse) String() string {
+func (x *GetAppNotifUsersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAppNofitUsersResponse) ProtoMessage() {}
+func (*GetAppNotifUsersResponse) ProtoMessage() {}
 
-func (x *GetAppNofitUsersResponse) ProtoReflect() protoreflect.Message {
+func (x *GetAppNotifUsersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -704,26 +704,26 @@ func (x *GetAppNofitUsersResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAppNofitUsersResponse.ProtoReflect.Descriptor instead.
-func (*GetAppNofitUsersResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAppNotifUsersResponse.ProtoReflect.Descriptor instead.
+func (*GetAppNotifUsersResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *GetAppNofitUsersResponse) GetInfos() []*NofitUser {
+func (x *GetAppNotifUsersResponse) GetInfos() []*NotifUser {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-func (x *GetAppNofitUsersResponse) GetTotal() uint32 {
+func (x *GetAppNotifUsersResponse) GetTotal() uint32 {
 	if x != nil {
 		return x.Total
 	}
 	return 0
 }
 
-type GetNAppNofitUsersRequest struct {
+type GetNAppNotifUsersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -733,8 +733,8 @@ type GetNAppNofitUsersRequest struct {
 	Limit       int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
-func (x *GetNAppNofitUsersRequest) Reset() {
-	*x = GetNAppNofitUsersRequest{}
+func (x *GetNAppNotifUsersRequest) Reset() {
+	*x = GetNAppNotifUsersRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -742,13 +742,13 @@ func (x *GetNAppNofitUsersRequest) Reset() {
 	}
 }
 
-func (x *GetNAppNofitUsersRequest) String() string {
+func (x *GetNAppNotifUsersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetNAppNofitUsersRequest) ProtoMessage() {}
+func (*GetNAppNotifUsersRequest) ProtoMessage() {}
 
-func (x *GetNAppNofitUsersRequest) ProtoReflect() protoreflect.Message {
+func (x *GetNAppNotifUsersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -760,43 +760,43 @@ func (x *GetNAppNofitUsersRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetNAppNofitUsersRequest.ProtoReflect.Descriptor instead.
-func (*GetNAppNofitUsersRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetNAppNotifUsersRequest.ProtoReflect.Descriptor instead.
+func (*GetNAppNotifUsersRequest) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *GetNAppNofitUsersRequest) GetTargetAppID() string {
+func (x *GetNAppNotifUsersRequest) GetTargetAppID() string {
 	if x != nil {
 		return x.TargetAppID
 	}
 	return ""
 }
 
-func (x *GetNAppNofitUsersRequest) GetOffset() int32 {
+func (x *GetNAppNotifUsersRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *GetNAppNofitUsersRequest) GetLimit() int32 {
+func (x *GetNAppNotifUsersRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-type GetNAppNofitUsersResponse struct {
+type GetNAppNotifUsersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*NofitUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Infos []*NotifUser `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 	Total uint32       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
-func (x *GetNAppNofitUsersResponse) Reset() {
-	*x = GetNAppNofitUsersResponse{}
+func (x *GetNAppNotifUsersResponse) Reset() {
+	*x = GetNAppNotifUsersResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -804,13 +804,13 @@ func (x *GetNAppNofitUsersResponse) Reset() {
 	}
 }
 
-func (x *GetNAppNofitUsersResponse) String() string {
+func (x *GetNAppNotifUsersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetNAppNofitUsersResponse) ProtoMessage() {}
+func (*GetNAppNotifUsersResponse) ProtoMessage() {}
 
-func (x *GetNAppNofitUsersResponse) ProtoReflect() protoreflect.Message {
+func (x *GetNAppNotifUsersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -822,19 +822,19 @@ func (x *GetNAppNofitUsersResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetNAppNofitUsersResponse.ProtoReflect.Descriptor instead.
-func (*GetNAppNofitUsersResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetNAppNotifUsersResponse.ProtoReflect.Descriptor instead.
+func (*GetNAppNotifUsersResponse) Descriptor() ([]byte, []int) {
 	return file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *GetNAppNofitUsersResponse) GetInfos() []*NofitUser {
+func (x *GetNAppNotifUsersResponse) GetInfos() []*NotifUser {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-func (x *GetNAppNofitUsersResponse) GetTotal() uint32 {
+func (x *GetNAppNotifUsersResponse) GetTotal() uint32 {
 	if x != nil {
 		return x.Total
 	}
@@ -853,7 +853,7 @@ var file_npool_notif_gw_v1_notif_user_user_proto_rawDesc = []byte{
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x23, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69,
 	0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xee, 0x02, 0x0a, 0x09, 0x4e, 0x6f,
-	0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20,
+	0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66,
 	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49,
 	0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
@@ -876,128 +876,128 @@ var file_npool_notif_gw_v1_notif_user_user_proto_rawDesc = []byte{
 	0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55,
 	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52,
 	0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0x63, 0x0a, 0x17, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65,
+	0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x55,
 	0x73, 0x65, 0x72, 0x49, 0x44, 0x73, 0x18, 0x14, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x55, 0x73,
 	0x65, 0x72, 0x49, 0x44, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49, 0x44,
 	0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49, 0x44, 0x22,
-	0x58, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73,
+	0x58, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73,
 	0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49,
 	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73,
 	0x65, 0x72, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x60, 0x0a, 0x16, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
+	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65,
 	0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
 	0x44, 0x12, 0x18, 0x0a, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49, 0x44, 0x22, 0x55, 0x0a, 0x17, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74,
 	0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
-	0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x22, 0x3e, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69,
-	0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02,
+	0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x22, 0x3e, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02,
 	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05,
 	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70,
-	0x49, 0x44, 0x22, 0x55, 0x0a, 0x17, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69,
-	0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a,
+	0x49, 0x44, 0x22, 0x55, 0x0a, 0x17, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a,
 	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55,
+	0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55,
 	0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x74, 0x0a, 0x14, 0x47, 0x65, 0x74,
-	0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66,
 	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x49,
 	0x44, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28,
 	0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d,
 	0x69, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22,
-	0x6b, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73,
+	0x6b, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f,
 	0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e,
 	0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73,
-	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52,
 	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18,
 	0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x5d, 0x0a, 0x17,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73,
+	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a,
 	0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f,
 	0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x28,
 	0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x6e, 0x0a, 0x18, 0x47,
-	0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52,
+	0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67,
 	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x05,
+	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x05,
 	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x6a, 0x0a, 0x18, 0x47,
-	0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73,
+	0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65,
 	0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66,
 	0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65,
 	0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05,
 	0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x6f, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x4e, 0x41,
-	0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x05, 0x49, 0x6e, 0x66,
+	0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x05, 0x49, 0x6e, 0x66,
 	0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28,
 	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xb5, 0x06, 0x0a, 0x07, 0x47, 0x61, 0x74,
 	0x65, 0x77, 0x61, 0x79, 0x12, 0xa1, 0x01, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e,
-	0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
 	0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e,
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f,
-	0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x35, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e,
 	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65,
+	0x65, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x3a, 0x01,
 	0x2a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x2f, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x75, 0x73, 0x65, 0x72, 0x73, 0x12, 0x9e, 0x01, 0x0a, 0x0f, 0x44, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x12, 0x33, 0x2e, 0x6e,
+	0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x12, 0x33, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61,
 	0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e,
-	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x20, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1a, 0x3a,
 	0x01, 0x2a, 0x22, 0x15, 0x2f, 0x76, 0x31, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x75, 0x73, 0x65, 0x72, 0x73, 0x12, 0x95, 0x01, 0x0a, 0x0d, 0x47, 0x65,
-	0x74, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x31, 0x2e, 0x6e, 0x6f,
+	0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x31, 0x2e, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x66,
-	0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32,
+	0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74,
+	0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32,
 	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x22, 0x1d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x17, 0x3a, 0x01, 0x2a, 0x22, 0x12, 0x2f,
 	0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x75, 0x73, 0x65, 0x72,
-	0x73, 0x12, 0xa2, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69,
-	0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67,
+	0x73, 0x12, 0xa2, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x34, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67,
 	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74,
+	0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66,
 	0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x35, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70,
-	0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x21, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1b, 0x3a, 0x01, 0x2a, 0x22, 0x16,
 	0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6e, 0x6f, 0x74, 0x69,
 	0x66, 0x75, 0x73, 0x65, 0x72, 0x73, 0x12, 0xa7, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4e, 0x41,
-	0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x35, 0x2e, 0x6e,
+	0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x35, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x41,
-	0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73, 0x65, 0x72, 0x73, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x67, 0x61, 0x74, 0x65,
 	0x77, 0x61, 0x79, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x66, 0x69, 0x74, 0x55, 0x73,
+	0x31, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x55, 0x73,
 	0x65, 0x72, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x23, 0x82, 0xd3, 0xe4,
 	0x93, 0x02, 0x1d, 0x3a, 0x01, 0x2a, 0x22, 0x18, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74, 0x2f,
 	0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x75, 0x73, 0x65, 0x72, 0x73,
@@ -1022,39 +1022,39 @@ func file_npool_notif_gw_v1_notif_user_user_proto_rawDescGZIP() []byte {
 
 var file_npool_notif_gw_v1_notif_user_user_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_npool_notif_gw_v1_notif_user_user_proto_goTypes = []interface{}{
-	(*NofitUser)(nil),                 // 0: notif.gateway.notif.user.v1.NofitUser
-	(*CreateNofitUsersRequest)(nil),   // 1: notif.gateway.notif.user.v1.CreateNofitUsersRequest
-	(*CreateNofitUsersResponse)(nil),  // 2: notif.gateway.notif.user.v1.CreateNofitUsersResponse
-	(*CreateNofitUserRequest)(nil),    // 3: notif.gateway.notif.user.v1.CreateNofitUserRequest
-	(*CreateNofitUserResponse)(nil),   // 4: notif.gateway.notif.user.v1.CreateNofitUserResponse
-	(*DeleteNofitUserRequest)(nil),    // 5: notif.gateway.notif.user.v1.DeleteNofitUserRequest
-	(*DeleteNofitUserResponse)(nil),   // 6: notif.gateway.notif.user.v1.DeleteNofitUserResponse
-	(*GetNofitUsersRequest)(nil),      // 7: notif.gateway.notif.user.v1.GetNofitUsersRequest
-	(*GetNofitUsersResponse)(nil),     // 8: notif.gateway.notif.user.v1.GetNofitUsersResponse
-	(*GetAppNofitUsersRequest)(nil),   // 9: notif.gateway.notif.user.v1.GetAppNofitUsersRequest
-	(*GetAppNofitUsersResponse)(nil),  // 10: notif.gateway.notif.user.v1.GetAppNofitUsersResponse
-	(*GetNAppNofitUsersRequest)(nil),  // 11: notif.gateway.notif.user.v1.GetNAppNofitUsersRequest
-	(*GetNAppNofitUsersResponse)(nil), // 12: notif.gateway.notif.user.v1.GetNAppNofitUsersResponse
+	(*NotifUser)(nil),                 // 0: notif.gateway.notif.user.v1.NotifUser
+	(*CreateNotifUsersRequest)(nil),   // 1: notif.gateway.notif.user.v1.CreateNotifUsersRequest
+	(*CreateNotifUsersResponse)(nil),  // 2: notif.gateway.notif.user.v1.CreateNotifUsersResponse
+	(*CreateNotifUserRequest)(nil),    // 3: notif.gateway.notif.user.v1.CreateNotifUserRequest
+	(*CreateNotifUserResponse)(nil),   // 4: notif.gateway.notif.user.v1.CreateNotifUserResponse
+	(*DeleteNotifUserRequest)(nil),    // 5: notif.gateway.notif.user.v1.DeleteNotifUserRequest
+	(*DeleteNotifUserResponse)(nil),   // 6: notif.gateway.notif.user.v1.DeleteNotifUserResponse
+	(*GetNotifUsersRequest)(nil),      // 7: notif.gateway.notif.user.v1.GetNotifUsersRequest
+	(*GetNotifUsersResponse)(nil),     // 8: notif.gateway.notif.user.v1.GetNotifUsersResponse
+	(*GetAppNotifUsersRequest)(nil),   // 9: notif.gateway.notif.user.v1.GetAppNotifUsersRequest
+	(*GetAppNotifUsersResponse)(nil),  // 10: notif.gateway.notif.user.v1.GetAppNotifUsersResponse
+	(*GetNAppNotifUsersRequest)(nil),  // 11: notif.gateway.notif.user.v1.GetNAppNotifUsersRequest
+	(*GetNAppNotifUsersResponse)(nil), // 12: notif.gateway.notif.user.v1.GetNAppNotifUsersResponse
 	(notif.NotifType)(0),              // 13: notif.middleware.notif.v1.NotifType
 }
 var file_npool_notif_gw_v1_notif_user_user_proto_depIdxs = []int32{
-	13, // 0: notif.gateway.notif.user.v1.NofitUser.NotifType:type_name -> notif.middleware.notif.v1.NotifType
-	0,  // 1: notif.gateway.notif.user.v1.CreateNofitUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NofitUser
-	0,  // 2: notif.gateway.notif.user.v1.CreateNofitUserResponse.Info:type_name -> notif.gateway.notif.user.v1.NofitUser
-	0,  // 3: notif.gateway.notif.user.v1.DeleteNofitUserResponse.Info:type_name -> notif.gateway.notif.user.v1.NofitUser
-	0,  // 4: notif.gateway.notif.user.v1.GetNofitUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NofitUser
-	0,  // 5: notif.gateway.notif.user.v1.GetAppNofitUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NofitUser
-	0,  // 6: notif.gateway.notif.user.v1.GetNAppNofitUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NofitUser
-	1,  // 7: notif.gateway.notif.user.v1.Gateway.CreateNofitUsers:input_type -> notif.gateway.notif.user.v1.CreateNofitUsersRequest
-	5,  // 8: notif.gateway.notif.user.v1.Gateway.DeleteNofitUser:input_type -> notif.gateway.notif.user.v1.DeleteNofitUserRequest
-	7,  // 9: notif.gateway.notif.user.v1.Gateway.GetNofitUsers:input_type -> notif.gateway.notif.user.v1.GetNofitUsersRequest
-	9,  // 10: notif.gateway.notif.user.v1.Gateway.GetAppNofitUsers:input_type -> notif.gateway.notif.user.v1.GetAppNofitUsersRequest
-	11, // 11: notif.gateway.notif.user.v1.Gateway.GetNAppNofitUsers:input_type -> notif.gateway.notif.user.v1.GetNAppNofitUsersRequest
-	2,  // 12: notif.gateway.notif.user.v1.Gateway.CreateNofitUsers:output_type -> notif.gateway.notif.user.v1.CreateNofitUsersResponse
-	6,  // 13: notif.gateway.notif.user.v1.Gateway.DeleteNofitUser:output_type -> notif.gateway.notif.user.v1.DeleteNofitUserResponse
-	8,  // 14: notif.gateway.notif.user.v1.Gateway.GetNofitUsers:output_type -> notif.gateway.notif.user.v1.GetNofitUsersResponse
-	10, // 15: notif.gateway.notif.user.v1.Gateway.GetAppNofitUsers:output_type -> notif.gateway.notif.user.v1.GetAppNofitUsersResponse
-	12, // 16: notif.gateway.notif.user.v1.Gateway.GetNAppNofitUsers:output_type -> notif.gateway.notif.user.v1.GetNAppNofitUsersResponse
+	13, // 0: notif.gateway.notif.user.v1.NotifUser.NotifType:type_name -> notif.middleware.notif.v1.NotifType
+	0,  // 1: notif.gateway.notif.user.v1.CreateNotifUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NotifUser
+	0,  // 2: notif.gateway.notif.user.v1.CreateNotifUserResponse.Info:type_name -> notif.gateway.notif.user.v1.NotifUser
+	0,  // 3: notif.gateway.notif.user.v1.DeleteNotifUserResponse.Info:type_name -> notif.gateway.notif.user.v1.NotifUser
+	0,  // 4: notif.gateway.notif.user.v1.GetNotifUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NotifUser
+	0,  // 5: notif.gateway.notif.user.v1.GetAppNotifUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NotifUser
+	0,  // 6: notif.gateway.notif.user.v1.GetNAppNotifUsersResponse.Infos:type_name -> notif.gateway.notif.user.v1.NotifUser
+	1,  // 7: notif.gateway.notif.user.v1.Gateway.CreateNotifUsers:input_type -> notif.gateway.notif.user.v1.CreateNotifUsersRequest
+	5,  // 8: notif.gateway.notif.user.v1.Gateway.DeleteNotifUser:input_type -> notif.gateway.notif.user.v1.DeleteNotifUserRequest
+	7,  // 9: notif.gateway.notif.user.v1.Gateway.GetNotifUsers:input_type -> notif.gateway.notif.user.v1.GetNotifUsersRequest
+	9,  // 10: notif.gateway.notif.user.v1.Gateway.GetAppNotifUsers:input_type -> notif.gateway.notif.user.v1.GetAppNotifUsersRequest
+	11, // 11: notif.gateway.notif.user.v1.Gateway.GetNAppNotifUsers:input_type -> notif.gateway.notif.user.v1.GetNAppNotifUsersRequest
+	2,  // 12: notif.gateway.notif.user.v1.Gateway.CreateNotifUsers:output_type -> notif.gateway.notif.user.v1.CreateNotifUsersResponse
+	6,  // 13: notif.gateway.notif.user.v1.Gateway.DeleteNotifUser:output_type -> notif.gateway.notif.user.v1.DeleteNotifUserResponse
+	8,  // 14: notif.gateway.notif.user.v1.Gateway.GetNotifUsers:output_type -> notif.gateway.notif.user.v1.GetNotifUsersResponse
+	10, // 15: notif.gateway.notif.user.v1.Gateway.GetAppNotifUsers:output_type -> notif.gateway.notif.user.v1.GetAppNotifUsersResponse
+	12, // 16: notif.gateway.notif.user.v1.Gateway.GetNAppNotifUsers:output_type -> notif.gateway.notif.user.v1.GetNAppNotifUsersResponse
 	12, // [12:17] is the sub-list for method output_type
 	7,  // [7:12] is the sub-list for method input_type
 	7,  // [7:7] is the sub-list for extension type_name
@@ -1069,7 +1069,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NofitUser); i {
+			switch v := v.(*NotifUser); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1081,7 +1081,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateNofitUsersRequest); i {
+			switch v := v.(*CreateNotifUsersRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1093,7 +1093,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateNofitUsersResponse); i {
+			switch v := v.(*CreateNotifUsersResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1105,7 +1105,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateNofitUserRequest); i {
+			switch v := v.(*CreateNotifUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1117,7 +1117,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateNofitUserResponse); i {
+			switch v := v.(*CreateNotifUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1129,7 +1129,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteNofitUserRequest); i {
+			switch v := v.(*DeleteNotifUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1141,7 +1141,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteNofitUserResponse); i {
+			switch v := v.(*DeleteNotifUserResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1153,7 +1153,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNofitUsersRequest); i {
+			switch v := v.(*GetNotifUsersRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1165,7 +1165,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNofitUsersResponse); i {
+			switch v := v.(*GetNotifUsersResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1177,7 +1177,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppNofitUsersRequest); i {
+			switch v := v.(*GetAppNotifUsersRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1189,7 +1189,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAppNofitUsersResponse); i {
+			switch v := v.(*GetAppNotifUsersResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1201,7 +1201,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNAppNofitUsersRequest); i {
+			switch v := v.(*GetNAppNotifUsersRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1213,7 +1213,7 @@ func file_npool_notif_gw_v1_notif_user_user_proto_init() {
 			}
 		}
 		file_npool_notif_gw_v1_notif_user_user_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetNAppNofitUsersResponse); i {
+			switch v := v.(*GetNAppNotifUsersResponse); i {
 			case 0:
 				return &v.state
 			case 1:
