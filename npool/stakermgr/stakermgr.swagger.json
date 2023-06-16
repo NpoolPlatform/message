@@ -124,6 +124,9 @@
         "DateTime": {
           "type": "integer",
           "format": "int64"
+        },
+        "UpdateGoodProfit": {
+          "type": "boolean"
         }
       }
     },
