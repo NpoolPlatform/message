@@ -59,6 +59,9 @@
         },
         "AnnouncementID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -192,6 +195,20 @@
         },
         "AnnouncementID": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
