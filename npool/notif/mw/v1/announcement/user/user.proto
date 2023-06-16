@@ -44,7 +44,6 @@ message AnnouncementUserReq {
 
 message Conds {
     optional basetypes.v1.StringVal      ID             = 10;
-    optional basetypes.v1.StringSliceVal IDs            = 20;
     optional basetypes.v1.StringVal      AppID          = 30;
     optional basetypes.v1.StringVal      UserID         = 40;
     optional basetypes.v1.StringVal      AnnouncementID = 50;
