@@ -32,8 +32,10 @@ message EmailTemplate {
     // @inject_tag: sql:"sender"
     string Sender            = 60;
     // @inject_tag: sql:"reply_tos"
+    string ReplyTosStr       = 69;
     repeated string ReplyTos = 70;
     // @inject_tag: sql:"cc_tos"
+    string CCTosStr          = 79;
     repeated string CCTos    = 80;
     // @inject_tag: sql:"subject"
     string Subject           = 90;
