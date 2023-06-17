@@ -40,6 +40,10 @@ message EmailTemplate {
     string Body              = 90;
     // @inject_tag: sql:"default_to_username"
     string DefaultToUsername = 100;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt         = 110;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt         = 120;
 }
 
 message EmailTemplateReq {

@@ -32,6 +32,10 @@ message SMSTemplate {
     string Subject = 50;
     // @inject_tag: sql:"message"
     string Message = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 70;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 80;
 }
 
 message SMSTemplateReq {
