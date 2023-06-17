@@ -27,23 +27,24 @@ message EmailTemplate {
     // @inject_tag: sql:"lang_id"
     string LangID            = 30;
     // @inject_tag: sql:"used_for"
-    basetypes.v1.UsedFor UsedFor = 40;
+    string UsedForStr        = 40;
+    basetypes.v1.UsedFor UsedFor = 50;
     // @inject_tag: sql:"sender"
-    string Sender            = 50;
+    string Sender            = 60;
     // @inject_tag: sql:"reply_tos"
-    repeated string ReplyTos = 60;
+    repeated string ReplyTos = 70;
     // @inject_tag: sql:"cc_tos"
-    repeated string CCTos    = 70;
+    repeated string CCTos    = 80;
     // @inject_tag: sql:"subject"
-    string Subject           = 80;
+    string Subject           = 90;
     // @inject_tag: sql:"body"
-    string Body              = 90;
+    string Body              = 100;
     // @inject_tag: sql:"default_to_username"
-    string DefaultToUsername = 100;
+    string DefaultToUsername = 110;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt         = 110;
+    uint32 CreatedAt         = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt         = 120;
+    uint32 UpdatedAt         = 1010;
 }
 
 message EmailTemplateReq {

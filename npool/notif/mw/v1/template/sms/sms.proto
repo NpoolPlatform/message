@@ -27,15 +27,16 @@ message SMSTemplate {
     // @inject_tag: sql:"lang_id"
     string LangID  = 30;
     // @inject_tag: sql:"used_for"
-    basetypes.v1.UsedFor UsedFor = 40;
+    string UsedForStr            = 40;
+    basetypes.v1.UsedFor UsedFor = 50;
     // @inject_tag: sql:"subject"
-    string Subject = 50;
+    string Subject = 60;
     // @inject_tag: sql:"message"
-    string Message = 60;
+    string Message = 70;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 70;
+    uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 80;
+    uint32 UpdatedAt = 1010;
 }
 
 message SMSTemplateReq {
