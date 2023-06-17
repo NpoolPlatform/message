@@ -26,16 +26,26 @@ type EmailTemplate struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID                string     `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID             string     `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	LangID            string     `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty"`
-	UsedFor           v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty"`
-	Sender            string     `protobuf:"bytes,50,opt,name=Sender,proto3" json:"Sender,omitempty"`
-	ReplyTos          []string   `protobuf:"bytes,60,rep,name=ReplyTos,proto3" json:"ReplyTos,omitempty"`
-	CCTos             []string   `protobuf:"bytes,70,rep,name=CCTos,proto3" json:"CCTos,omitempty"`
-	Subject           string     `protobuf:"bytes,80,opt,name=Subject,proto3" json:"Subject,omitempty"`
-	Body              string     `protobuf:"bytes,90,opt,name=Body,proto3" json:"Body,omitempty"`
-	DefaultToUsername string     `protobuf:"bytes,100,opt,name=DefaultToUsername,proto3" json:"DefaultToUsername,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"lang_id"
+	LangID string `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
+	// @inject_tag: sql:"used_for"
+	UsedFor v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty" sql:"used_for"`
+	// @inject_tag: sql:"sender"
+	Sender string `protobuf:"bytes,50,opt,name=Sender,proto3" json:"Sender,omitempty" sql:"sender"`
+	// @inject_tag: sql:"reply_tos"
+	ReplyTos []string `protobuf:"bytes,60,rep,name=ReplyTos,proto3" json:"ReplyTos,omitempty" sql:"reply_tos"`
+	// @inject_tag: sql:"cc_tos"
+	CCTos []string `protobuf:"bytes,70,rep,name=CCTos,proto3" json:"CCTos,omitempty" sql:"cc_tos"`
+	// @inject_tag: sql:"subject"
+	Subject string `protobuf:"bytes,80,opt,name=Subject,proto3" json:"Subject,omitempty" sql:"subject"`
+	// @inject_tag: sql:"body"
+	Body string `protobuf:"bytes,90,opt,name=Body,proto3" json:"Body,omitempty" sql:"body"`
+	// @inject_tag: sql:"default_to_username"
+	DefaultToUsername string `protobuf:"bytes,100,opt,name=DefaultToUsername,proto3" json:"DefaultToUsername,omitempty" sql:"default_to_username"`
 }
 
 func (x *EmailTemplate) Reset() {

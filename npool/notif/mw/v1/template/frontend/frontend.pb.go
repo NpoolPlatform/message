@@ -26,14 +26,22 @@ type FrontendTemplate struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        string     `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID     string     `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	LangID    string     `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty"`
-	UsedFor   v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty"`
-	Title     string     `protobuf:"bytes,50,opt,name=Title,proto3" json:"Title,omitempty"`
-	Content   string     `protobuf:"bytes,60,opt,name=Content,proto3" json:"Content,omitempty"`
-	CreatedAt uint32     `protobuf:"varint,80,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt uint32     `protobuf:"varint,90,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"lang_id"
+	LangID string `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
+	// @inject_tag: sql:"used_for"
+	UsedFor v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty" sql:"used_for"`
+	// @inject_tag: sql:"title"
+	Title string `protobuf:"bytes,50,opt,name=Title,proto3" json:"Title,omitempty" sql:"title"`
+	// @inject_tag: sql:"content"
+	Content string `protobuf:"bytes,60,opt,name=Content,proto3" json:"Content,omitempty" sql:"content"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,80,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,90,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *FrontendTemplate) Reset() {

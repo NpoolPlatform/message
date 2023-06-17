@@ -26,12 +26,18 @@ type SMSTemplate struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID      string     `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	AppID   string     `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	LangID  string     `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty"`
-	UsedFor v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty"`
-	Subject string     `protobuf:"bytes,50,opt,name=Subject,proto3" json:"Subject,omitempty"`
-	Message string     `protobuf:"bytes,60,opt,name=Message,proto3" json:"Message,omitempty"`
+	// @inject_tag: sql:"id"
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"app_id"
+	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
+	// @inject_tag: sql:"lang_id"
+	LangID string `protobuf:"bytes,30,opt,name=LangID,proto3" json:"LangID,omitempty" sql:"lang_id"`
+	// @inject_tag: sql:"used_for"
+	UsedFor v1.UsedFor `protobuf:"varint,40,opt,name=UsedFor,proto3,enum=basetypes.v1.UsedFor" json:"UsedFor,omitempty" sql:"used_for"`
+	// @inject_tag: sql:"subject"
+	Subject string `protobuf:"bytes,50,opt,name=Subject,proto3" json:"Subject,omitempty" sql:"subject"`
+	// @inject_tag: sql:"message"
+	Message string `protobuf:"bytes,60,opt,name=Message,proto3" json:"Message,omitempty" sql:"message"`
 }
 
 func (x *SMSTemplate) Reset() {
