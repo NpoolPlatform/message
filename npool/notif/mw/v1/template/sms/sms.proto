@@ -20,11 +20,17 @@ service Middleware {
 }
 
 message SMSTemplate {
+    // @inject_tag: sql:"id"
     string ID      = 10;
+    // @inject_tag: sql:"app_id"
     string AppID   = 20;
+    // @inject_tag: sql:"lang_id"
     string LangID  = 30;
+    // @inject_tag: sql:"used_for"
     basetypes.v1.UsedFor UsedFor = 40;
+    // @inject_tag: sql:"subject"
     string Subject = 50;
+    // @inject_tag: sql:"message"
     string Message = 60;
 }
 
