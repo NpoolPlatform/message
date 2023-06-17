@@ -117,9 +117,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"lang_id\""
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1UsedFor",
+        "UsedForStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
           "type": "string",
