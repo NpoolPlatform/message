@@ -128,19 +128,25 @@
           "type": "string",
           "title": "@inject_tag: sql:\"sender\""
         },
+        "ReplyTosStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reply_tos\""
+        },
         "ReplyTos": {
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "title": "@inject_tag: sql:\"reply_tos\""
+          }
+        },
+        "CCTosStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cc_tos\""
         },
         "CCTos": {
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "title": "@inject_tag: sql:\"cc_tos\""
+          }
         },
         "Subject": {
           "type": "string",
