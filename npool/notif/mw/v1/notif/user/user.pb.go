@@ -36,8 +36,8 @@ type UserNotif struct {
 	NotifID string `protobuf:"bytes,40,opt,name=NotifID,proto3" json:"NotifID,omitempty" sql:"notif_id"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,60,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
-	// @inject_tag: sql:"update_at"
-	UpdatedAt uint32 `protobuf:"varint,70,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"update_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,70,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *UserNotif) Reset() {
