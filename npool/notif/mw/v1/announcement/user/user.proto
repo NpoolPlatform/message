@@ -40,7 +40,7 @@ message AnnouncementUser {
     // @inject_tag: sql:"channel"
     string Channel        = 90;
     // @inject_tag: sql:"end_at"
-    string EndAt          = 100;
+    uint32 EndAt          = 100;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt      = 110;
     // @inject_tag: sql:"updated_at"

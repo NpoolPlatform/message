@@ -85,7 +85,8 @@
           "title": "@inject_tag: sql:\"channel\""
         },
         "EndAt": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
         },
         "CreatedAt": {
