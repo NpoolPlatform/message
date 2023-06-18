@@ -72,7 +72,7 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"update_at\""
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

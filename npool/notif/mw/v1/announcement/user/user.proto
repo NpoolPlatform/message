@@ -31,7 +31,7 @@ message AnnouncementUser {
     string AnnouncementID = 40;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt      = 60;
-    // @inject_tag: sql:"update_at"
+    // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 70;
 }
 
