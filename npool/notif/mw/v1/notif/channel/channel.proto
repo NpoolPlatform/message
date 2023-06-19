@@ -99,6 +99,7 @@ message UpdateChannelResponse {
 
 message GetChannelRequest {
     string ID = 10;
+    string AppID = 20;
 }
 
 message GetChannelResponse {
