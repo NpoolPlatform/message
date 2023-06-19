@@ -87,6 +87,7 @@ message UpdateAnnouncementUserResponse {
 
 message GetAnnouncementUserRequest {
     string ID = 10;
+    string AppID = 20;
 }
 
 message GetAnnouncementUserResponse {
