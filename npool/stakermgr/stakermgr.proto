@@ -30,6 +30,7 @@ message RedistributeRequest {
     string GoodID   = 10;
     string Amount   = 20;
     uint32 DateTime = 30;
+    optional bool UpdateGoodProfit = 40;
 }
 
 message RedistributeResponse {
