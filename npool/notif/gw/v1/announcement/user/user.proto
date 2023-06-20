@@ -6,18 +6,31 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announce
 
 import "google/api/annotations.proto";
 import "npool/notif/mw/v1/announcement/announcement.proto";
+import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAnnouncementUsers (CreateAnnouncementUsersRequest) returns (CreateAnnouncementUsersResponse) {
+    rpc CreateAnnouncementUser (CreateAnnouncementUserRequest) returns (CreateAnnouncementUserResponse) {
         option (google.api.http) = {
-            post: "/v1/create/announcementusers"
+            post: "/v1/create/announcementuser"
+            body: "*"
+        };
+    }
+    rpc CreateAppAnnouncementUser (CreateAppAnnouncementUserRequest) returns (CreateAppAnnouncementUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/announcementuser"
             body: "*"
         };
     }
     rpc DeleteAnnouncementUser (DeleteAnnouncementUserRequest) returns (DeleteAnnouncementUserResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/announcementusers"
+            post: "/v1/delete/announcementuser"
+            body: "*"
+        };
+    }
+    rpc DeleteAppAnnouncementUser (DeleteAppAnnouncementUserRequest) returns (DeleteAppAnnouncementUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/announcementuser"
             body: "*"
         };
     }
@@ -35,13 +48,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetNAppAnnouncementUsers (GetNAppAnnouncementUsersRequest) returns (GetNAppAnnouncementUsersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/n/app/announcementusers"
-            body: "*"
-        };
-    }
 }
 
 message AnnouncementUser {
@@ -54,28 +60,28 @@ message AnnouncementUser {
     string           Username       = 80;
     string           Title          = 90;
     string           Content        = 100;
-    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 110;
+    basetypes.v1.NotifType AnnouncementType = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 130;
 }
 
-message CreateAnnouncementUsersRequest {
-    string          AppID          = 10;
-    repeated string UserIDs        = 20;
-    string          AnnouncementID = 30;
-}
-
-message CreateAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
-}
-
 message CreateAnnouncementUserRequest {
-    string          AppID          = 10;
-    string          UserID         = 20;
-    string          AnnouncementID = 30;
+    string AppID          = 10;
+    string TargetUserID   = 20;
+    string AnnouncementID = 30;
 }
 
 message CreateAnnouncementUserResponse {
+    AnnouncementUser Info = 10;
+}
+
+message CreateAppAnnouncementUserRequest {
+    string TargetAppID    = 10;
+    string TargetUserID   = 20;
+    string AnnouncementID = 30;
+}
+
+message CreateAppAnnouncementUserResponse {
     AnnouncementUser Info = 10;
 }
 
@@ -88,22 +94,31 @@ message DeleteAnnouncementUserResponse {
     AnnouncementUser Info = 10;
 }
 
+message DeleteAppAnnouncementUserRequest {
+    string ID          = 10;
+    string TargetAppID = 20;
+}
+
+message DeleteAppAnnouncementUserResponse {
+    AnnouncementUser Info = 10;
+}
+
 message GetAnnouncementUsersRequest {
-    string AppID          = 10;
-    string AnnouncementID = 20;
-    int32  Offset         = 30;
-    int32  Limit          = 40;
+    string          AppID          = 10;
+    optional string AnnouncementID = 20;
+    int32           Offset         = 30;
+    int32           Limit          = 40;
 }
 
 message GetAnnouncementUsersResponse {
     repeated AnnouncementUser Infos = 10;
-    uint32             Total = 20;
+    uint32                    Total = 20;
 }
 
 message GetAppAnnouncementUsersRequest {
-    string AppID  = 10;
-    int32  Offset = 30;
-    int32  Limit  = 40;
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
 }
 
 message GetAppAnnouncementUsersResponse {
@@ -111,13 +126,3 @@ message GetAppAnnouncementUsersResponse {
     uint32                    Total = 20;
 }
 
-message GetNAppAnnouncementUsersRequest {
-    string TargetAppID  = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
-}
-
-message GetNAppAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
-    uint32                    Total = 20;
-}

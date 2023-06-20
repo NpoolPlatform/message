@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announce
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
+import "npool/basetypes/v1/notiftype.proto";
 import "npool/notif/mw/v1/announcement/announcement.proto";
 
 // Service Name
@@ -51,13 +52,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetAnnouncement (GetAnnouncementRequest) returns (GetAnnouncementResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/announcement"
-            body: "*"
-        };
-    }
 }
 
 message Announcement {
@@ -74,8 +68,8 @@ message Announcement {
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 121;
     uint32           EndAt          = 140;
-    basetypes.v1.NotifChannel                         Channel          = 150;
-    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 160;
+    basetypes.v1.NotifChannel Channel       = 150;
+    basetypes.v1.NotifType AnnouncementType = 160;
 }
 
 message CreateAnnouncementRequest {
@@ -85,7 +79,7 @@ message CreateAnnouncementRequest {
     string          Content      = 40;
     basetypes.v1.NotifChannel Channel = 50;
     uint32          EndAt        = 60;
-    notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 70;
+    basetypes.v1.NotifType AnnouncementType = 70;
 }
 
 message CreateAnnouncementResponse {
@@ -97,7 +91,7 @@ message UpdateAnnouncementRequest {
     optional string Title       = 20;
     optional string Content     = 30;
     optional uint32 EndAt       = 50;
-    optional notif.middleware.announcement.v1.AnnouncementType AnnouncementType = 60;
+    optional basetypes.v1.NotifType AnnouncementType = 60;
 }
 
 message UpdateAnnouncementResponse {
@@ -116,8 +110,8 @@ message GetAnnouncementsRequest {
     string AppID  = 10;
     string UserID = 20;
     string LangID = 30;
-    int32 Offset = 40;
-    int32 Limit  = 50;
+    int32  Offset = 40;
+    int32  Limit  = 50;
 }
 
 message GetAnnouncementsResponse {
@@ -127,8 +121,8 @@ message GetAnnouncementsResponse {
 
 message GetAppAnnouncementsRequest {
     string AppID  = 10;
-    int32 Offset = 30;
-    int32 Limit  = 40;
+    int32  Offset = 30;
+    int32  Limit  = 40;
 }
 
 message GetAppAnnouncementsResponse {
@@ -138,8 +132,8 @@ message GetAppAnnouncementsResponse {
 
 message GetNAppAnnouncementsRequest {
     string TargetAppID  = 10;
-    int32 Offset       = 30;
-    int32 Limit        = 40;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
 }
 
 message GetNAppAnnouncementsResponse {
@@ -147,10 +141,3 @@ message GetNAppAnnouncementsResponse {
     uint32                Total = 20;
 }
 
-message GetAnnouncementRequest {
-    string ID = 10;
-}
-
-message GetAnnouncementResponse {
-    Announcement Info = 10;
-}

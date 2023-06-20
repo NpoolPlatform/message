@@ -80,38 +80,6 @@
         ]
       }
     },
-    "/v1/get/announcement": {
-      "post": {
-        "operationId": "Gateway_GetAnnouncement",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/announcements": {
       "post": {
         "operationId": "Gateway_GetAnnouncements",
@@ -291,7 +259,7 @@
           "$ref": "#/definitions/v1NotifChannel"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         }
       }
     },
@@ -318,7 +286,7 @@
           "format": "int64"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         }
       }
     },
@@ -339,22 +307,6 @@
       }
     },
     "notifgatewayannouncementv1DeleteAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
-        }
-      }
-    },
-    "notifgatewayannouncementv1GetAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "notifgatewayannouncementv1GetAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -417,7 +369,7 @@
           "format": "int64"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         }
       }
     },
@@ -456,15 +408,6 @@
           }
         }
       }
-    },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
     },
     "v1GetAppAnnouncementsRequest": {
       "type": "object",
@@ -539,6 +482,16 @@
         "ChannelFrontend"
       ],
       "default": "DefaultChannel"
+    },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
     }
   }
 }

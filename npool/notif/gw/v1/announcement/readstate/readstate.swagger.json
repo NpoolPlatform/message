@@ -238,15 +238,6 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
     "v1CreateReadStateRequest": {
       "type": "object",
       "properties": {
@@ -425,6 +416,16 @@
         }
       }
     },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
+    },
     "v1ReadState": {
       "type": "object",
       "properties": {
@@ -459,7 +460,7 @@
           "type": "string"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         },
         "CreatedAt": {
           "type": "integer",

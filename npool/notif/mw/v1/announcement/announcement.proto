@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announce
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/channel.proto";
+import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
 service Middleware {
@@ -20,12 +21,6 @@ service Middleware {
     rpc DeleteAnnouncement     (DeleteAnnouncementRequest)     returns (DeleteAnnouncementResponse)     {}
 }
 
-enum AnnouncementType {
-    DefaultType   = 0;
-    Broadcast     = 10;
-    Multicast     = 20;
-}
-
 message AnnouncementReq {
     optional string ID         = 10;
     optional string AppID      = 20;
@@ -34,7 +29,7 @@ message AnnouncementReq {
     optional string Content    = 50;
     optional basetypes.v1.NotifChannel Channel = 60;
     optional uint32 EndAt      = 70;
-    optional AnnouncementType AnnouncementType = 80;
+    optional basetypes.v1.NotifType AnnouncementType = 80;
 }
 
 message Announcement {
@@ -55,7 +50,7 @@ message Announcement {
     uint32 EndAt      = 70;
     // @inject_tag: sql:"type"
     string AnnouncementTypeStr = 79;
-    AnnouncementType AnnouncementType = 80;
+    basetypes.v1.NotifType AnnouncementType = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 90;
     // @inject_tag: sql:"updated_at"

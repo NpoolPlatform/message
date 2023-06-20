@@ -85,7 +85,7 @@
           "title": "@inject_tag: sql:\"type\""
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -125,18 +125,9 @@
           "format": "int64"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         }
       }
-    },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
     },
     "v1BoolVal": {
       "type": "object",
@@ -263,6 +254,16 @@
         "ChannelFrontend"
       ],
       "default": "DefaultChannel"
+    },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
     },
     "v1StringVal": {
       "type": "object",

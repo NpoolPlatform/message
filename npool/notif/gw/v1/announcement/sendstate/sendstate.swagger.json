@@ -174,15 +174,6 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
     "v1GetAppSendStatesRequest": {
       "type": "object",
       "properties": {
@@ -339,6 +330,16 @@
       ],
       "default": "DefaultChannel"
     },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
+    },
     "v1SendState": {
       "type": "object",
       "properties": {
@@ -376,7 +377,7 @@
           "$ref": "#/definitions/v1NotifChannel"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         },
         "CreatedAt": {
           "type": "integer",
