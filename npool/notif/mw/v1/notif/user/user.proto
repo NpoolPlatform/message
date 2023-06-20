@@ -10,7 +10,6 @@ import "npool/basetypes/v1/usedfor.proto";
 // Service Name
 service Middleware {
     rpc CreateNotifUser     (CreateNotifUserRequest)     returns (CreateNotifUserResponse)     {}
-    rpc CreateNotifUsers    (CreateNotifUsersRequest)    returns (CreateNotifUsersResponse)    {}
     rpc UpdateNotifUser     (UpdateNotifUserRequest)     returns (UpdateNotifUserResponse)     {}
     rpc GetNotifUser        (GetNotifUserRequest)        returns (GetNotifUserResponse)        {}
     rpc GetNotifUserOnly    (GetNotifUserOnlyRequest)    returns (GetNotifUserOnlyResponse)    {}
@@ -60,14 +59,6 @@ message CreateNotifUserResponse {
     NotifUser Info = 10;
 }
 
-message CreateNotifUsersRequest {
-    repeated NotifUserReq Infos = 10;
-}
-
-message CreateNotifUsersResponse {
-    repeated NotifUser Infos = 10;
-}
-
 message UpdateNotifUserRequest {
     NotifUserReq Info = 10;
 }
@@ -92,7 +83,7 @@ message GetNotifUsersRequest {
 
 message GetNotifUsersResponse {
     repeated NotifUser Infos = 10;
-    uint32                    Total = 20;
+    uint32             Total = 20;
 }
 
 message GetNotifUserOnlyRequest {
