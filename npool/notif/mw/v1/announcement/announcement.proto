@@ -9,8 +9,7 @@ import "npool/basetypes/v1/channel.proto";
 
 // Service Name
 service Middleware {
-    rpc GetAnnouncementStates (GetAnnouncementStatesRequest) returns (GetAnnouncementStatesResponse) {}
-    rpc GetAnnouncements      (GetAnnouncementsRequest)      returns (GetAnnouncementsResponse)      {}
+    rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
     rpc CreateAnnouncement     (CreateAnnouncementRequest)     returns (CreateAnnouncementResponse)     {}
     rpc UpdateAnnouncement     (UpdateAnnouncementRequest)     returns (UpdateAnnouncementResponse)     {}
     rpc GetAnnouncement        (GetAnnouncementRequest)        returns (GetAnnouncementResponse)        {}
@@ -97,17 +96,6 @@ message GetAnnouncementRequest {
 
 message GetAnnouncementResponse {
     Announcement Info = 10;
-}
-
-message GetAnnouncementStatesRequest {
-    Conds  Conds  = 10;
-    int32  Offset = 30;
-    int32  Limit  = 40;
-}
-
-message GetAnnouncementStatesResponse {
-    repeated Announcement Infos = 10;
-    uint32   Total              = 20;
 }
 
 message GetAnnouncementsRequest {

@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetAnnouncementStates_FullMethodName  = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementStates"
 	Middleware_GetAnnouncements_FullMethodName       = "/notif.middleware.announcement.v1.Middleware/GetAnnouncements"
 	Middleware_CreateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/CreateAnnouncement"
 	Middleware_UpdateAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/UpdateAnnouncement"
@@ -35,7 +34,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetAnnouncementStates(ctx context.Context, in *GetAnnouncementStatesRequest, opts ...grpc.CallOption) (*GetAnnouncementStatesResponse, error)
 	GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
 	CreateAnnouncement(ctx context.Context, in *CreateAnnouncementRequest, opts ...grpc.CallOption) (*CreateAnnouncementResponse, error)
 	UpdateAnnouncement(ctx context.Context, in *UpdateAnnouncementRequest, opts ...grpc.CallOption) (*UpdateAnnouncementResponse, error)
@@ -53,15 +51,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) GetAnnouncementStates(ctx context.Context, in *GetAnnouncementStatesRequest, opts ...grpc.CallOption) (*GetAnnouncementStatesResponse, error) {
-	out := new(GetAnnouncementStatesResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAnnouncementStates_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error) {
@@ -149,7 +138,6 @@ func (c *middlewareClient) DeleteAnnouncement(ctx context.Context, in *DeleteAnn
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetAnnouncementStates(context.Context, *GetAnnouncementStatesRequest) (*GetAnnouncementStatesResponse, error)
 	GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
 	CreateAnnouncement(context.Context, *CreateAnnouncementRequest) (*CreateAnnouncementResponse, error)
 	UpdateAnnouncement(context.Context, *UpdateAnnouncementRequest) (*UpdateAnnouncementResponse, error)
@@ -166,9 +154,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetAnnouncementStates(context.Context, *GetAnnouncementStatesRequest) (*GetAnnouncementStatesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementStates not implemented")
-}
 func (UnimplementedMiddlewareServer) GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncements not implemented")
 }
@@ -207,24 +192,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_GetAnnouncementStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAnnouncementStatesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAnnouncementStates(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetAnnouncementStates_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAnnouncementStates(ctx, req.(*GetAnnouncementStatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -396,10 +363,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "notif.middleware.announcement.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAnnouncementStates",
-			Handler:    _Middleware_GetAnnouncementStates_Handler,
-		},
 		{
 			MethodName: "GetAnnouncements",
 			Handler:    _Middleware_GetAnnouncements_Handler,

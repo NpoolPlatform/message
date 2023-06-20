@@ -238,22 +238,6 @@
         }
       }
     },
-    "v1GetAnnouncementStatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Announcement"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
