@@ -287,6 +287,10 @@
         },
         "AnnouncementType": {
           "$ref": "#/definitions/v1NotifType"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -370,6 +374,10 @@
         },
         "AnnouncementType": {
           "$ref": "#/definitions/v1NotifType"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
