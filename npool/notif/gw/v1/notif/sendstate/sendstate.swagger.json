@@ -333,12 +333,12 @@
     "v1NotifType": {
       "type": "string",
       "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast",
-        "Unicast"
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
       ],
-      "default": "DefaultType"
+      "default": "DefaultNotifType"
     },
     "v1SendState": {
       "type": "object",

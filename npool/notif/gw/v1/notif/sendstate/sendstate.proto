@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif/se
 import "google/api/annotations.proto";
 import "npool/notif/mw/v1/notif/notif.proto";
 import "npool/basetypes/v1/channel.proto";
+import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
 service Gateway {
@@ -51,7 +52,7 @@ message SendState {
     string           Title          = 80;
     string           Content        = 90;
     basetypes.v1.NotifChannel Channel = 100;
-    .notif.middleware.notif.v1.NotifType NotifType = 110;
+    basetypes.v1.NotifType NotifType = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 150;
 }

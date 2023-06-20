@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/notiftype.proto";
 import "npool/notif/mw/v1/template/template.proto";
 
 // Service Name
@@ -21,13 +22,6 @@ service Middleware {
     rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
     rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
     rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {}
-}
-
-enum NotifType {
-    DefaultType   = 0;
-    Broadcast     = 10;
-    Multicast     = 20;
-    Unicast       = 30;
 }
 
 message Notif {
@@ -63,7 +57,7 @@ message Notif {
     string    EventID     = 140;
     // @inject_tag: sql:"type"
     string NotifTypeStr   = 149;
-    NotifType NotifType   = 150;
+    basetypes.v1.NotifType NotifType = 150;
 }
 
 message NotifReq {
@@ -79,7 +73,7 @@ message NotifReq {
     optional basetypes.v1.NotifChannel Channel = 100;
     optional string    Extra       = 110;
     optional string    EventID     = 120;
-    optional NotifType NotifType   = 130;
+    optional basetypes.v1.NotifType NotifType   = 130;
 }
 
 message Conds {

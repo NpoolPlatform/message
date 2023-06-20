@@ -30,11 +30,11 @@ message TextInfo {
 }
 
 message GenerateTextRequest {
-    string                                AppID     = 10;
-    string                                LangID    = 20;
-    basetypes.v1.NotifChannel             Channel   = 30;
-    basetypes.v1.UsedFor                  EventType = 40;
-    optional TemplateVars                 Vars      = 50;
+    string                    AppID     = 10;
+    string                    LangID    = 20;
+    basetypes.v1.NotifChannel Channel   = 30;
+    basetypes.v1.UsedFor      EventType = 40;
+    optional TemplateVars     Vars      = 50;
 }
 
 message GenerateTextResponse {

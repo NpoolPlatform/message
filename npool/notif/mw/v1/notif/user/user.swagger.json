@@ -60,12 +60,12 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "NotifID": {
-          "$ref": "#/definitions/v1StringVal"
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v1CountUserNotifsResponse": {
+    "v1CountNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -74,43 +74,35 @@
         }
       }
     },
-    "v1CreateUserNotifResponse": {
+    "v1CreateNotifUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotif"
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
-    "v1CreateUserNotifsResponse": {
+    "v1CreateNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserNotif"
+            "$ref": "#/definitions/v1NotifUser"
           }
         }
       }
     },
-    "v1DeleteUserNotifResponse": {
+    "v1DeleteNotifUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotif"
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
-    "v1ExistUserNotifCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUserNotifResponse": {
+    "v1ExistNotifUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -118,35 +110,94 @@
         }
       }
     },
-    "v1GetUserNotifOnlyResponse": {
+    "v1ExistNotifUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotif"
+          "type": "boolean"
         }
       }
     },
-    "v1GetUserNotifResponse": {
+    "v1GetNotifUserOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotif"
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
-    "v1GetUserNotifsResponse": {
+    "v1GetNotifUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifUser"
+        }
+      }
+    },
+    "v1GetNotifUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserNotif"
+            "$ref": "#/definitions/v1NotifUser"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1NotifUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "EventTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_type\""
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1NotifUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
         }
       }
     },
@@ -175,61 +226,52 @@
         }
       }
     },
-    "v1UpdateUserNotifResponse": {
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNotifUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1UserNotif"
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
-    "v1UserNotif": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "NotifID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"notif_id\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1UserNotifReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "NotifID": {
-          "type": "string"
-        }
-      }
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }

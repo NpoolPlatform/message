@@ -8,9 +8,9 @@ import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc GetFrontendTemplate     (GetFrontendTemplateRequest)     returns (GetFrontendTemplateResponse)     {}
-    rpc GetFrontendTemplates    (GetFrontendTemplatesRequest)    returns (GetFrontendTemplatesResponse)    {}
-    rpc GetFrontendTemplateOnly (GetFrontendTemplateOnlyRequest) returns (GetFrontendTemplateOnlyResponse) {}
+    rpc GetFrontendTemplate        (GetFrontendTemplateRequest)        returns (GetFrontendTemplateResponse)        {}
+    rpc GetFrontendTemplates       (GetFrontendTemplatesRequest)       returns (GetFrontendTemplatesResponse)       {}
+    rpc GetFrontendTemplateOnly    (GetFrontendTemplateOnlyRequest)    returns (GetFrontendTemplateOnlyResponse)    {}
     rpc CreateFrontendTemplate     (CreateFrontendTemplateRequest)     returns (CreateFrontendTemplateResponse)     {}
     rpc CreateFrontendTemplates    (CreateFrontendTemplatesRequest)    returns (CreateFrontendTemplatesResponse)    {}
     rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}

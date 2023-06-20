@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/notifusers": {
+    "/v1/create/notifuser": {
       "post": {
-        "operationId": "Gateway_CreateNotifUsers",
+        "operationId": "Gateway_CreateNotifUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifUsersResponse"
+              "$ref": "#/definitions/v1CreateNotifUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNotifUsersRequest"
+              "$ref": "#/definitions/v1CreateNotifUserRequest"
             }
           }
         ],
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/delete/notifusers": {
+    "/v1/delete/notifuser": {
       "post": {
         "operationId": "Gateway_DeleteNotifUser",
         "responses": {
@@ -104,38 +104,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAppNotifUsersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/n/app/notifusers": {
-      "post": {
-        "operationId": "Gateway_GetNAppNotifUsers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppNotifUsersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppNotifUsersRequest"
             }
           }
         ],
@@ -206,32 +174,25 @@
         }
       }
     },
-    "v1CreateNotifUsersRequest": {
+    "v1CreateNotifUserRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "UserIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "NotifID": {
+        "TargetUserID": {
           "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
         }
       }
     },
-    "v1CreateNotifUsersResponse": {
+    "v1CreateNotifUserResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1NotifUser"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1NotifUser"
         }
       }
     },
@@ -257,7 +218,7 @@
     "v1GetAppNotifUsersRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "Offset": {
@@ -286,46 +247,14 @@
         }
       }
     },
-    "v1GetNAppNotifUsersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNAppNotifUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1NotifUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetNotifUsersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "NotifID": {
-          "type": "string"
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
         },
         "Offset": {
           "type": "integer",
@@ -356,12 +285,12 @@
     "v1NotifType": {
       "type": "string",
       "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast",
-        "Unicast"
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
       ],
-      "default": "DefaultType"
+      "default": "DefaultNotifType"
     },
     "v1NotifUser": {
       "type": "object",
@@ -405,6 +334,33 @@
           "format": "int64"
         }
       }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
     }
   }
 }
