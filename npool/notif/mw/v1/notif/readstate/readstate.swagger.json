@@ -205,14 +205,6 @@
           "type": "string"
         }
       }
-    },
-    "v1UpdateReadStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ReadState"
-        }
-      }
     }
   }
 }

@@ -26,7 +26,6 @@ const (
 	Middleware_GetAnnouncementOnly_FullMethodName    = "/notif.middleware.announcement.v1.Middleware/GetAnnouncementOnly"
 	Middleware_ExistAnnouncement_FullMethodName      = "/notif.middleware.announcement.v1.Middleware/ExistAnnouncement"
 	Middleware_ExistAnnouncementConds_FullMethodName = "/notif.middleware.announcement.v1.Middleware/ExistAnnouncementConds"
-	Middleware_CountAnnouncements_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/CountAnnouncements"
 	Middleware_DeleteAnnouncement_FullMethodName     = "/notif.middleware.announcement.v1.Middleware/DeleteAnnouncement"
 )
 
@@ -41,7 +40,6 @@ type MiddlewareClient interface {
 	GetAnnouncementOnly(ctx context.Context, in *GetAnnouncementOnlyRequest, opts ...grpc.CallOption) (*GetAnnouncementOnlyResponse, error)
 	ExistAnnouncement(ctx context.Context, in *ExistAnnouncementRequest, opts ...grpc.CallOption) (*ExistAnnouncementResponse, error)
 	ExistAnnouncementConds(ctx context.Context, in *ExistAnnouncementCondsRequest, opts ...grpc.CallOption) (*ExistAnnouncementCondsResponse, error)
-	CountAnnouncements(ctx context.Context, in *CountAnnouncementsRequest, opts ...grpc.CallOption) (*CountAnnouncementsResponse, error)
 	DeleteAnnouncement(ctx context.Context, in *DeleteAnnouncementRequest, opts ...grpc.CallOption) (*DeleteAnnouncementResponse, error)
 }
 
@@ -116,15 +114,6 @@ func (c *middlewareClient) ExistAnnouncementConds(ctx context.Context, in *Exist
 	return out, nil
 }
 
-func (c *middlewareClient) CountAnnouncements(ctx context.Context, in *CountAnnouncementsRequest, opts ...grpc.CallOption) (*CountAnnouncementsResponse, error) {
-	out := new(CountAnnouncementsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountAnnouncements_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteAnnouncement(ctx context.Context, in *DeleteAnnouncementRequest, opts ...grpc.CallOption) (*DeleteAnnouncementResponse, error) {
 	out := new(DeleteAnnouncementResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteAnnouncement_FullMethodName, in, out, opts...)
@@ -145,7 +134,6 @@ type MiddlewareServer interface {
 	GetAnnouncementOnly(context.Context, *GetAnnouncementOnlyRequest) (*GetAnnouncementOnlyResponse, error)
 	ExistAnnouncement(context.Context, *ExistAnnouncementRequest) (*ExistAnnouncementResponse, error)
 	ExistAnnouncementConds(context.Context, *ExistAnnouncementCondsRequest) (*ExistAnnouncementCondsResponse, error)
-	CountAnnouncements(context.Context, *CountAnnouncementsRequest) (*CountAnnouncementsResponse, error)
 	DeleteAnnouncement(context.Context, *DeleteAnnouncementRequest) (*DeleteAnnouncementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -174,9 +162,6 @@ func (UnimplementedMiddlewareServer) ExistAnnouncement(context.Context, *ExistAn
 }
 func (UnimplementedMiddlewareServer) ExistAnnouncementConds(context.Context, *ExistAnnouncementCondsRequest) (*ExistAnnouncementCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAnnouncementConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CountAnnouncements(context.Context, *CountAnnouncementsRequest) (*CountAnnouncementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountAnnouncements not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteAnnouncement(context.Context, *DeleteAnnouncementRequest) (*DeleteAnnouncementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAnnouncement not implemented")
@@ -320,24 +305,6 @@ func _Middleware_ExistAnnouncementConds_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountAnnouncements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountAnnouncementsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountAnnouncements(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountAnnouncements_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountAnnouncements(ctx, req.(*CountAnnouncementsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteAnnouncement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAnnouncementRequest)
 	if err := dec(in); err != nil {
@@ -390,10 +357,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAnnouncementConds",
 			Handler:    _Middleware_ExistAnnouncementConds_Handler,
-		},
-		{
-			MethodName: "CountAnnouncements",
-			Handler:    _Middleware_CountAnnouncements_Handler,
 		},
 		{
 			MethodName: "DeleteAnnouncement",

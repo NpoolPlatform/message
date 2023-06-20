@@ -57,7 +57,7 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "NotifID": {
+        "EventID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Channel": {
@@ -169,9 +169,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "NotifID": {
+        "EventID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"notif_id\""
+          "title": "@inject_tag: sql:\"event_id\""
         },
         "ChannelStr": {
           "type": "string",
@@ -204,7 +204,7 @@
         "UserID": {
           "type": "string"
         },
-        "NotifID": {
+        "EventID": {
           "type": "string"
         },
         "Channel": {
