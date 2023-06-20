@@ -119,8 +119,7 @@ message UpdateNotifResponse {
 }
 
 message UpdateNotifsRequest {
-    repeated string IDs      = 10;
-    optional bool   Notified = 20;
+    repeated NotifReq Infos = 10;
 }
 
 message UpdateNotifsResponse {
