@@ -26,8 +26,8 @@ message SendState {
     string AppID      = 20;
     // @inject_tag: sql:"user_id"
     string UserID     = 30;
-    // @inject_tag: sql:"notif_id"
-    string NotifID    = 40;
+    // @inject_tag: sql:"event_id"
+    string EventID    = 40;
     // @inject_tag: sql:"channel"
     string ChannelStr = 49;
     basetypes.v1.NotifChannel Channel = 50;
@@ -41,7 +41,7 @@ message SendStateReq {
     optional string ID             = 10;
     optional string AppID          = 20;
     optional string UserID         = 30;
-    optional string NotifID        = 40;
+    optional string EventID        = 40;
     optional basetypes.v1.NotifChannel Channel = 50;
 }
 
@@ -49,7 +49,7 @@ message Conds {
     optional basetypes.v1.StringVal      ID             = 10;
     optional basetypes.v1.StringVal      AppID          = 20;
     optional basetypes.v1.StringVal      UserID         = 30;
-    optional basetypes.v1.StringVal      NotifID        = 40;
+    optional basetypes.v1.StringVal      EventID        = 40;
     optional basetypes.v1.Uint32Val      Channel        = 50;
     optional basetypes.v1.StringSliceVal UserIDs        = 70;
 }
