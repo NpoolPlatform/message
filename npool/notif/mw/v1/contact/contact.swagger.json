@@ -55,10 +55,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AccountType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -138,18 +138,6 @@
         }
       }
     },
-    "v1CreateContactsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Contact"
-          }
-        }
-      }
-    },
     "v1DeleteContactResponse": {
       "type": "object",
       "properties": {
@@ -214,18 +202,6 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1SignMethod": {
       "type": "string",
       "enum": [
@@ -280,6 +256,18 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
