@@ -113,12 +113,6 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EventTypes": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
@@ -127,18 +121,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Channel"
-        }
-      }
-    },
-    "v1CreateChannelsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Channel"
-          }
         }
       }
     },
@@ -216,21 +198,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
         }
       }
     },

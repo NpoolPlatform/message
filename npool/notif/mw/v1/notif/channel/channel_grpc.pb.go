@@ -19,11 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	Middleware_CreateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/CreateChannel"
+	Middleware_UpdateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/UpdateChannel"
 	Middleware_GetChannels_FullMethodName       = "/notif.middleware.notif.channel.v1.Middleware/GetChannels"
 	Middleware_GetChannelOnly_FullMethodName    = "/notif.middleware.notif.channel.v1.Middleware/GetChannelOnly"
-	Middleware_CreateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/CreateChannel"
-	Middleware_CreateChannels_FullMethodName    = "/notif.middleware.notif.channel.v1.Middleware/CreateChannels"
-	Middleware_UpdateChannel_FullMethodName     = "/notif.middleware.notif.channel.v1.Middleware/UpdateChannel"
 	Middleware_GetChannel_FullMethodName        = "/notif.middleware.notif.channel.v1.Middleware/GetChannel"
 	Middleware_ExistChannel_FullMethodName      = "/notif.middleware.notif.channel.v1.Middleware/ExistChannel"
 	Middleware_ExistChannelConds_FullMethodName = "/notif.middleware.notif.channel.v1.Middleware/ExistChannelConds"
@@ -34,11 +33,10 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
+	UpdateChannel(ctx context.Context, in *UpdateChannelRequest, opts ...grpc.CallOption) (*UpdateChannelResponse, error)
 	GetChannels(ctx context.Context, in *GetChannelsRequest, opts ...grpc.CallOption) (*GetChannelsResponse, error)
 	GetChannelOnly(ctx context.Context, in *GetChannelOnlyRequest, opts ...grpc.CallOption) (*GetChannelOnlyResponse, error)
-	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
-	CreateChannels(ctx context.Context, in *CreateChannelsRequest, opts ...grpc.CallOption) (*CreateChannelsResponse, error)
-	UpdateChannel(ctx context.Context, in *UpdateChannelRequest, opts ...grpc.CallOption) (*UpdateChannelResponse, error)
 	GetChannel(ctx context.Context, in *GetChannelRequest, opts ...grpc.CallOption) (*GetChannelResponse, error)
 	ExistChannel(ctx context.Context, in *ExistChannelRequest, opts ...grpc.CallOption) (*ExistChannelResponse, error)
 	ExistChannelConds(ctx context.Context, in *ExistChannelCondsRequest, opts ...grpc.CallOption) (*ExistChannelCondsResponse, error)
@@ -53,6 +51,24 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
+func (c *middlewareClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
+	out := new(CreateChannelResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateChannel_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateChannel(ctx context.Context, in *UpdateChannelRequest, opts ...grpc.CallOption) (*UpdateChannelResponse, error) {
+	out := new(UpdateChannelResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateChannel_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetChannels(ctx context.Context, in *GetChannelsRequest, opts ...grpc.CallOption) (*GetChannelsResponse, error) {
 	out := new(GetChannelsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetChannels_FullMethodName, in, out, opts...)
@@ -65,33 +81,6 @@ func (c *middlewareClient) GetChannels(ctx context.Context, in *GetChannelsReque
 func (c *middlewareClient) GetChannelOnly(ctx context.Context, in *GetChannelOnlyRequest, opts ...grpc.CallOption) (*GetChannelOnlyResponse, error) {
 	out := new(GetChannelOnlyResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetChannelOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
-	out := new(CreateChannelResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateChannel_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateChannels(ctx context.Context, in *CreateChannelsRequest, opts ...grpc.CallOption) (*CreateChannelsResponse, error) {
-	out := new(CreateChannelsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateChannels_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateChannel(ctx context.Context, in *UpdateChannelRequest, opts ...grpc.CallOption) (*UpdateChannelResponse, error) {
-	out := new(UpdateChannelResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateChannel_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,11 +127,10 @@ func (c *middlewareClient) DeleteChannel(ctx context.Context, in *DeleteChannelR
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
+	UpdateChannel(context.Context, *UpdateChannelRequest) (*UpdateChannelResponse, error)
 	GetChannels(context.Context, *GetChannelsRequest) (*GetChannelsResponse, error)
 	GetChannelOnly(context.Context, *GetChannelOnlyRequest) (*GetChannelOnlyResponse, error)
-	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
-	CreateChannels(context.Context, *CreateChannelsRequest) (*CreateChannelsResponse, error)
-	UpdateChannel(context.Context, *UpdateChannelRequest) (*UpdateChannelResponse, error)
 	GetChannel(context.Context, *GetChannelRequest) (*GetChannelResponse, error)
 	ExistChannel(context.Context, *ExistChannelRequest) (*ExistChannelResponse, error)
 	ExistChannelConds(context.Context, *ExistChannelCondsRequest) (*ExistChannelCondsResponse, error)
@@ -154,20 +142,17 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateChannel(context.Context, *UpdateChannelRequest) (*UpdateChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateChannel not implemented")
+}
 func (UnimplementedMiddlewareServer) GetChannels(context.Context, *GetChannelsRequest) (*GetChannelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChannels not implemented")
 }
 func (UnimplementedMiddlewareServer) GetChannelOnly(context.Context, *GetChannelOnlyRequest) (*GetChannelOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChannelOnly not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateChannels(context.Context, *CreateChannelsRequest) (*CreateChannelsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateChannels not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateChannel(context.Context, *UpdateChannelRequest) (*UpdateChannelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateChannel not implemented")
 }
 func (UnimplementedMiddlewareServer) GetChannel(context.Context, *GetChannelRequest) (*GetChannelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChannel not implemented")
@@ -192,6 +177,42 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateChannelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateChannel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateChannel(ctx, req.(*CreateChannelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateChannelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateChannel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateChannel(ctx, req.(*UpdateChannelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetChannels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -226,60 +247,6 @@ func _Middleware_GetChannelOnly_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetChannelOnly(ctx, req.(*GetChannelOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateChannelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateChannel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateChannel_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateChannel(ctx, req.(*CreateChannelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateChannels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateChannelsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateChannels(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateChannels_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateChannels(ctx, req.(*CreateChannelsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateChannelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateChannel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateChannel_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateChannel(ctx, req.(*UpdateChannelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -364,24 +331,20 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "CreateChannel",
+			Handler:    _Middleware_CreateChannel_Handler,
+		},
+		{
+			MethodName: "UpdateChannel",
+			Handler:    _Middleware_UpdateChannel_Handler,
+		},
+		{
 			MethodName: "GetChannels",
 			Handler:    _Middleware_GetChannels_Handler,
 		},
 		{
 			MethodName: "GetChannelOnly",
 			Handler:    _Middleware_GetChannelOnly_Handler,
-		},
-		{
-			MethodName: "CreateChannel",
-			Handler:    _Middleware_CreateChannel_Handler,
-		},
-		{
-			MethodName: "CreateChannels",
-			Handler:    _Middleware_CreateChannels_Handler,
-		},
-		{
-			MethodName: "UpdateChannel",
-			Handler:    _Middleware_UpdateChannel_Handler,
 		},
 		{
 			MethodName: "GetChannel",

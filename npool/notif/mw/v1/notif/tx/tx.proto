@@ -13,11 +13,9 @@ service Middleware {
     rpc UpdateTx     (UpdateTxRequest)     returns (UpdateTxResponse)  {}
     rpc GetTxs       (GetTxsRequest)       returns (GetTxsResponse)    {}
     rpc GetTxOnly    (GetTxOnlyRequest)    returns (GetTxOnlyResponse) {}
-    rpc CreateTxs    (CreateTxsRequest)    returns (CreateTxsResponse)    {}
     rpc GetTx        (GetTxRequest)        returns (GetTxResponse)        {}
     rpc ExistTx      (ExistTxRequest)      returns (ExistTxResponse)      {}
     rpc ExistTxConds (ExistTxCondsRequest) returns (ExistTxCondsResponse) {}
-    rpc CountTxs     (CountTxsRequest)     returns (CountTxsResponse)     {}
     rpc DeleteTx     (DeleteTxRequest)     returns (DeleteTxResponse)     {}
 }
 
@@ -83,7 +81,7 @@ message GetTxsRequest {
 
 message GetTxsResponse {
     repeated Tx Infos = 10;
-    uint32                                Total = 20;
+    uint32      Total = 20;
 }
 
 message GetTxOnlyRequest {
@@ -92,14 +90,6 @@ message GetTxOnlyRequest {
 
 message GetTxOnlyResponse {
     Tx Info = 10;
-}
-
-message CreateTxsRequest {
-    repeated TxReq Infos = 10;
-}
-
-message CreateTxsResponse {
-    repeated Tx Infos = 10;
 }
 
 message GetTxRequest {
@@ -124,14 +114,6 @@ message ExistTxCondsRequest {
 
 message ExistTxCondsResponse {
     bool Info = 10;
-}
-
-message CountTxsRequest {
-    Conds Conds = 10;
-}
-
-message CountTxsResponse {
-    uint32 Info = 10;
 }
 
 message DeleteTxRequest {

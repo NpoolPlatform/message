@@ -62,32 +62,11 @@
         }
       }
     },
-    "v1CountTxsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateTxResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Tx"
-        }
-      }
-    },
-    "v1CreateTxsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Tx"
-          }
         }
       }
     },

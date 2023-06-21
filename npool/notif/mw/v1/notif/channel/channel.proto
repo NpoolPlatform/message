@@ -10,11 +10,10 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
+    rpc CreateChannel     (CreateChannelRequest)     returns (CreateChannelResponse)     {}
+    rpc UpdateChannel     (UpdateChannelRequest)     returns (UpdateChannelResponse)     {}
     rpc GetChannels       (GetChannelsRequest)       returns (GetChannelsResponse)       {}
     rpc GetChannelOnly    (GetChannelOnlyRequest)    returns (GetChannelOnlyResponse)    {}
-    rpc CreateChannel     (CreateChannelRequest)     returns (CreateChannelResponse)     {}
-    rpc CreateChannels    (CreateChannelsRequest)    returns (CreateChannelsResponse)    {}
-    rpc UpdateChannel     (UpdateChannelRequest)     returns (UpdateChannelResponse)     {}
     rpc GetChannel        (GetChannelRequest)        returns (GetChannelResponse)        {}
     rpc ExistChannel      (ExistChannelRequest)      returns (ExistChannelResponse)      {}
     rpc ExistChannelConds (ExistChannelCondsRequest) returns (ExistChannelCondsResponse) {}
@@ -50,8 +49,6 @@ message Conds {
     optional basetypes.v1.StringVal      AppID      = 20;
     optional basetypes.v1.Uint32Val      EventType  = 30;
     optional basetypes.v1.Uint32Val      Channel    = 40;
-    optional basetypes.v1.Uint32SliceVal EventTypes = 50;
-    optional basetypes.v1.Uint32SliceVal Channels   = 60;
 }
 
 message GetChannelsRequest {
@@ -81,14 +78,6 @@ message CreateChannelResponse {
     Channel Info = 10;
 }
 
-message CreateChannelsRequest {
-    repeated ChannelReq Infos = 10;
-}
-
-message CreateChannelsResponse {
-    repeated Channel Infos = 10;
-}
-
 message UpdateChannelRequest {
     ChannelReq Info = 10;
 }
@@ -99,7 +88,6 @@ message UpdateChannelResponse {
 
 message GetChannelRequest {
     string ID = 10;
-    string AppID = 20;
 }
 
 message GetChannelResponse {

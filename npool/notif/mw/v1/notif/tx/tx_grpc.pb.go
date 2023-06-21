@@ -23,11 +23,9 @@ const (
 	Middleware_UpdateTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/UpdateTx"
 	Middleware_GetTxs_FullMethodName       = "/notif.middleware.notif.tx.v1.Middleware/GetTxs"
 	Middleware_GetTxOnly_FullMethodName    = "/notif.middleware.notif.tx.v1.Middleware/GetTxOnly"
-	Middleware_CreateTxs_FullMethodName    = "/notif.middleware.notif.tx.v1.Middleware/CreateTxs"
 	Middleware_GetTx_FullMethodName        = "/notif.middleware.notif.tx.v1.Middleware/GetTx"
 	Middleware_ExistTx_FullMethodName      = "/notif.middleware.notif.tx.v1.Middleware/ExistTx"
 	Middleware_ExistTxConds_FullMethodName = "/notif.middleware.notif.tx.v1.Middleware/ExistTxConds"
-	Middleware_CountTxs_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/CountTxs"
 	Middleware_DeleteTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/DeleteTx"
 )
 
@@ -39,11 +37,9 @@ type MiddlewareClient interface {
 	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
 	GetTxOnly(ctx context.Context, in *GetTxOnlyRequest, opts ...grpc.CallOption) (*GetTxOnlyResponse, error)
-	CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error)
 	GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error)
 	ExistTx(ctx context.Context, in *ExistTxRequest, opts ...grpc.CallOption) (*ExistTxResponse, error)
 	ExistTxConds(ctx context.Context, in *ExistTxCondsRequest, opts ...grpc.CallOption) (*ExistTxCondsResponse, error)
-	CountTxs(ctx context.Context, in *CountTxsRequest, opts ...grpc.CallOption) (*CountTxsResponse, error)
 	DeleteTx(ctx context.Context, in *DeleteTxRequest, opts ...grpc.CallOption) (*DeleteTxResponse, error)
 }
 
@@ -91,15 +87,6 @@ func (c *middlewareClient) GetTxOnly(ctx context.Context, in *GetTxOnlyRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error) {
-	out := new(CreateTxsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateTxs_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error) {
 	out := new(GetTxResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetTx_FullMethodName, in, out, opts...)
@@ -127,15 +114,6 @@ func (c *middlewareClient) ExistTxConds(ctx context.Context, in *ExistTxCondsReq
 	return out, nil
 }
 
-func (c *middlewareClient) CountTxs(ctx context.Context, in *CountTxsRequest, opts ...grpc.CallOption) (*CountTxsResponse, error) {
-	out := new(CountTxsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountTxs_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteTx(ctx context.Context, in *DeleteTxRequest, opts ...grpc.CallOption) (*DeleteTxResponse, error) {
 	out := new(DeleteTxResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteTx_FullMethodName, in, out, opts...)
@@ -153,11 +131,9 @@ type MiddlewareServer interface {
 	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
 	GetTxOnly(context.Context, *GetTxOnlyRequest) (*GetTxOnlyResponse, error)
-	CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error)
 	GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error)
 	ExistTx(context.Context, *ExistTxRequest) (*ExistTxResponse, error)
 	ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error)
-	CountTxs(context.Context, *CountTxsRequest) (*CountTxsResponse, error)
 	DeleteTx(context.Context, *DeleteTxRequest) (*DeleteTxResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -178,9 +154,6 @@ func (UnimplementedMiddlewareServer) GetTxs(context.Context, *GetTxsRequest) (*G
 func (UnimplementedMiddlewareServer) GetTxOnly(context.Context, *GetTxOnlyRequest) (*GetTxOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTxOnly not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateTxs not implemented")
-}
 func (UnimplementedMiddlewareServer) GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTx not implemented")
 }
@@ -189,9 +162,6 @@ func (UnimplementedMiddlewareServer) ExistTx(context.Context, *ExistTxRequest) (
 }
 func (UnimplementedMiddlewareServer) ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistTxConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CountTxs(context.Context, *CountTxsRequest) (*CountTxsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountTxs not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteTx(context.Context, *DeleteTxRequest) (*DeleteTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTx not implemented")
@@ -281,24 +251,6 @@ func _Middleware_GetTxOnly_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateTxs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTxsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateTxs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateTxs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateTxs(ctx, req.(*CreateTxsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTxRequest)
 	if err := dec(in); err != nil {
@@ -353,24 +305,6 @@ func _Middleware_ExistTxConds_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountTxs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountTxsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountTxs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountTxs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountTxs(ctx, req.(*CountTxsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTxRequest)
 	if err := dec(in); err != nil {
@@ -413,10 +347,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetTxOnly_Handler,
 		},
 		{
-			MethodName: "CreateTxs",
-			Handler:    _Middleware_CreateTxs_Handler,
-		},
-		{
 			MethodName: "GetTx",
 			Handler:    _Middleware_GetTx_Handler,
 		},
@@ -427,10 +357,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistTxConds",
 			Handler:    _Middleware_ExistTxConds_Handler,
-		},
-		{
-			MethodName: "CountTxs",
-			Handler:    _Middleware_CountTxs_Handler,
 		},
 		{
 			MethodName: "DeleteTx",
