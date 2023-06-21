@@ -27,6 +27,7 @@ message AnnouncementReq {
     optional string Title      = 40;
     optional string Content    = 50;
     optional basetypes.v1.NotifChannel Channel = 60;
+    optional uint32 StartAt    = 69;
     optional uint32 EndAt      = 70;
     optional basetypes.v1.NotifType AnnouncementType = 80;
 }

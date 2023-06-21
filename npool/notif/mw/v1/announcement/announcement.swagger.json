@@ -133,6 +133,10 @@
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
         },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
