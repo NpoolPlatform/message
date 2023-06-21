@@ -10,7 +10,6 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateSendState     (CreateSendStateRequest)     returns (CreateSendStateResponse)  {}
-    rpc CreateSendStates    (CreateSendStatesRequest)    returns (CreateSendStatesResponse) {}
     rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)    {}
     rpc GetSendState        (GetSendStateRequest)        returns (GetSendStateResponse)        {}
     rpc GetSendStateOnly    (GetSendStateOnlyRequest)    returns (GetSendStateOnlyResponse)    {}
@@ -38,6 +37,8 @@ message SendState {
     string AnnouncementType = 80;
     // @inject_tag: sql:"channel"
     string Channel        = 90;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt          = 99;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 100;
     // @inject_tag: sql:"created_at"
@@ -61,7 +62,7 @@ message Conds {
     optional basetypes.v1.StringVal      AnnouncementID = 40;
     optional basetypes.v1.Uint32Val      Channel        = 50;
     optional basetypes.v1.Uint32Val      EndAt          = 60;
-    optional basetypes.v1.StringSliceVal UserIDs        = 70;
+    optional basetypes.v1.StringSliceVal UserIDs        = 70; // TODO
 }
 
 message CreateSendStateRequest {
@@ -70,14 +71,6 @@ message CreateSendStateRequest {
 
 message CreateSendStateResponse {
     SendState Info = 10;
-}
-
-message CreateSendStatesRequest {
-    repeated SendStateReq Infos = 10;
-}
-
-message CreateSendStatesResponse {
-    repeated SendState Infos = 10;
 }
 
 message GetSendStatesRequest {
@@ -121,14 +114,6 @@ message ExistSendStateCondsRequest {
 
 message ExistSendStateCondsResponse {
     bool Info = 10;
-}
-
-message CountSendStatesRequest {
-    Conds Conds = 10;
-}
-
-message CountSendStatesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteSendStateRequest {

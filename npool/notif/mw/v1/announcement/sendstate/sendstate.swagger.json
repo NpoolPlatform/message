@@ -67,7 +67,8 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "UserIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/v1StringSliceVal",
+          "title": "TODO"
         }
       }
     },
@@ -76,18 +77,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1SendState"
-        }
-      }
-    },
-    "v1CreateSendStatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1SendState"
-          }
         }
       }
     },
@@ -195,6 +184,11 @@
         "Channel": {
           "type": "string",
           "title": "@inject_tag: sql:\"channel\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
         },
         "EndAt": {
           "type": "integer",
