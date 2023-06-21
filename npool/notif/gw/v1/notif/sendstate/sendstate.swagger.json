@@ -346,7 +346,7 @@
         "ID": {
           "type": "string"
         },
-        "NotifID": {
+        "EventID": {
           "type": "string"
         },
         "AppID": {

@@ -298,8 +298,8 @@
         "ID": {
           "type": "string"
         },
-        "NotifID": {
-          "type": "string"
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
         },
         "AppID": {
           "type": "string"
