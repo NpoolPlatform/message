@@ -45,10 +45,10 @@ message ChannelReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID         = 10;
-    optional basetypes.v1.StringVal      AppID      = 20;
-    optional basetypes.v1.Uint32Val      EventType  = 30;
-    optional basetypes.v1.Uint32Val      Channel    = 40;
+    optional basetypes.v1.StringVal  ID         = 10;
+    optional basetypes.v1.StringVal  AppID      = 20;
+    optional basetypes.v1.Uint32Val  EventType  = 30;
+    optional basetypes.v1.Uint32Val  Channel    = 40;
 }
 
 message GetChannelsRequest {
