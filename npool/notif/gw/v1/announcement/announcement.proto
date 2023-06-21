@@ -7,7 +7,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announce
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/notiftype.proto";
-import "npool/notif/mw/v1/announcement/announcement.proto";
 
 // Service Name
 service Gateway {
@@ -67,6 +66,7 @@ message Announcement {
     bool             Notified       = 110;
     uint32           CreatedAt      = 120;
     uint32           UpdatedAt      = 121;
+    uint32           StartAt        = 130;
     uint32           EndAt          = 140;
     basetypes.v1.NotifChannel Channel       = 150;
     basetypes.v1.NotifType AnnouncementType = 160;

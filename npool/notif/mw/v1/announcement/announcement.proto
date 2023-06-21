@@ -56,6 +56,10 @@ message Announcement {
     uint32 CreatedAt  = 110;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 120;
+    // @inject_tag: sql:"user_id"
+    string UserID      = 130;
+    // @inject_tag: sql:"notified"
+    bool   Notified    = 140;
 }
 
 message Conds {
@@ -68,6 +72,18 @@ message Conds {
     optional basetypes.v1.Uint32Val      EndAt            = 90;
     optional basetypes.v1.Uint32Val      Channel          = 100;
 }
+
+message GetAnnouncementsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAnnouncementsResponse {
+    repeated Announcement Infos = 10;
+    uint32                Total = 20;
+}
+
 
 message CreateAnnouncementRequest {
     AnnouncementReq Info = 10;
@@ -91,17 +107,6 @@ message GetAnnouncementRequest {
 
 message GetAnnouncementResponse {
     Announcement Info = 10;
-}
-
-message GetAnnouncementsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
-}
-
-message GetAnnouncementsResponse {
-    repeated Announcement Infos = 10;
-    uint32                Total = 20;
 }
 
 message GetAnnouncementOnlyRequest {

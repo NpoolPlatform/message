@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1CreateAnnouncementResponse"
+              "$ref": "#/definitions/v1CreateAnnouncementResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1CreateAnnouncementRequest"
+              "$ref": "#/definitions/v1CreateAnnouncementRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1DeleteAnnouncementResponse"
+              "$ref": "#/definitions/v1DeleteAnnouncementResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1DeleteAnnouncementRequest"
+              "$ref": "#/definitions/v1DeleteAnnouncementRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementsResponse"
+              "$ref": "#/definitions/v1GetAnnouncementsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1GetAnnouncementsRequest"
+              "$ref": "#/definitions/v1GetAnnouncementsRequest"
             }
           }
         ],
@@ -183,7 +183,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1UpdateAnnouncementResponse"
+              "$ref": "#/definitions/v1UpdateAnnouncementResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/notifgatewayannouncementv1UpdateAnnouncementRequest"
+              "$ref": "#/definitions/v1UpdateAnnouncementRequest"
             }
           }
         ],
@@ -210,7 +210,35 @@
     }
   },
   "definitions": {
-    "notifgatewayannouncementv1Announcement": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Announcement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -251,6 +279,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
@@ -263,7 +295,7 @@
         }
       }
     },
-    "notifgatewayannouncementv1CreateAnnouncementRequest": {
+    "v1CreateAnnouncementRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -294,15 +326,15 @@
         }
       }
     },
-    "notifgatewayannouncementv1CreateAnnouncementResponse": {
+    "v1CreateAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     },
-    "notifgatewayannouncementv1DeleteAnnouncementRequest": {
+    "v1DeleteAnnouncementRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -310,15 +342,15 @@
         }
       }
     },
-    "notifgatewayannouncementv1DeleteAnnouncementResponse": {
+    "v1DeleteAnnouncementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     },
-    "notifgatewayannouncementv1GetAnnouncementsRequest": {
+    "v1GetAnnouncementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -340,80 +372,19 @@
         }
       }
     },
-    "notifgatewayannouncementv1GetAnnouncementsResponse": {
+    "v1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "notifgatewayannouncementv1UpdateAnnouncementRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Content": {
-          "type": "string"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AnnouncementType": {
-          "$ref": "#/definitions/v1NotifType"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "notifgatewayannouncementv1UpdateAnnouncementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
         }
       }
     },
@@ -440,7 +411,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
@@ -472,7 +443,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/notifgatewayannouncementv1Announcement"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
@@ -500,6 +471,39 @@
         "NotifUnicast"
       ],
       "default": "DefaultNotifType"
+    },
+    "v1UpdateAnnouncementRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1NotifType"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
     }
   }
 }

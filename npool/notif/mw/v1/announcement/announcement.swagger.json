@@ -101,6 +101,14 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "Notified": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"notified\""
         }
       }
     },
