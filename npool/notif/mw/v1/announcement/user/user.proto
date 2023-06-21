@@ -9,14 +9,12 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateAnnouncementUser     (CreateAnnouncementUserRequest)     returns (CreateAnnouncementUserResponse)     {}
-    rpc CreateAnnouncementUsers    (CreateAnnouncementUsersRequest)    returns (CreateAnnouncementUsersResponse)    {}
     rpc UpdateAnnouncementUser     (UpdateAnnouncementUserRequest)     returns (UpdateAnnouncementUserResponse)     {}
     rpc GetAnnouncementUser        (GetAnnouncementUserRequest)        returns (GetAnnouncementUserResponse)        {}
     rpc GetAnnouncementUserOnly    (GetAnnouncementUserOnlyRequest)    returns (GetAnnouncementUserOnlyResponse)    {}
     rpc GetAnnouncementUsers       (GetAnnouncementUsersRequest)       returns (GetAnnouncementUsersResponse)       {}
     rpc ExistAnnouncementUser      (ExistAnnouncementUserRequest)      returns (ExistAnnouncementUserResponse)      {}
     rpc ExistAnnouncementUserConds (ExistAnnouncementUserCondsRequest) returns (ExistAnnouncementUserCondsResponse) {}
-    rpc CountAnnouncementUsers     (CountAnnouncementUsersRequest)     returns (CountAnnouncementUsersResponse)     {}
     rpc DeleteAnnouncementUser     (DeleteAnnouncementUserRequest)     returns (DeleteAnnouncementUserResponse)     {}
 }
 
@@ -39,6 +37,8 @@ message AnnouncementUser {
     string AnnouncementType = 80;
     // @inject_tag: sql:"channel"
     string Channel        = 90;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt        = 91;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 100;
     // @inject_tag: sql:"created_at"
@@ -69,14 +69,6 @@ message CreateAnnouncementUserResponse {
     AnnouncementUser Info = 10;
 }
 
-message CreateAnnouncementUsersRequest {
-    repeated AnnouncementUserReq Infos = 10;
-}
-
-message CreateAnnouncementUsersResponse {
-    repeated AnnouncementUser Infos = 10;
-}
-
 message UpdateAnnouncementUserRequest {
     AnnouncementUserReq Info = 10;
 }
@@ -87,7 +79,6 @@ message UpdateAnnouncementUserResponse {
 
 message GetAnnouncementUserRequest {
     string ID = 10;
-    string AppID = 20;
 }
 
 message GetAnnouncementUserResponse {
@@ -127,14 +118,6 @@ message ExistAnnouncementUserCondsRequest {
 
 message ExistAnnouncementUserCondsResponse {
     bool Info = 10;
-}
-
-message CountAnnouncementUsersRequest {
-    Conds Conds = 10;
-}
-
-message CountAnnouncementUsersResponse {
-    uint32 Info = 10;
 }
 
 message DeleteAnnouncementUserRequest {

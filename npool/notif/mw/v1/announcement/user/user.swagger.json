@@ -84,6 +84,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"channel\""
         },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64",
@@ -135,32 +140,11 @@
         }
       }
     },
-    "v1CountAnnouncementUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateAnnouncementUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AnnouncementUser"
-        }
-      }
-    },
-    "v1CreateAnnouncementUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1AnnouncementUser"
-          }
         }
       }
     },
