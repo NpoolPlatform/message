@@ -5,7 +5,6 @@ package notif.gateway.notif.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif/user";
 
 import "google/api/annotations.proto";
-import "npool/notif/mw/v1/notif/notif.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/notiftype.proto";
 
@@ -41,7 +40,7 @@ service Gateway {
 
 message NotifUser {
     string           ID             = 10;
-    string           NotifID        = 20;
+    basetypes.v1.UsedFor EventType  = 20;
     string           AppID          = 30;
     string           UserID         = 50;
     string           EmailAddress   = 60;
