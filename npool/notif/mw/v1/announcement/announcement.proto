@@ -10,11 +10,11 @@ import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
 service Middleware {
-    rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
     rpc CreateAnnouncement     (CreateAnnouncementRequest)     returns (CreateAnnouncementResponse)     {}
     rpc UpdateAnnouncement     (UpdateAnnouncementRequest)     returns (UpdateAnnouncementResponse)     {}
     rpc GetAnnouncement        (GetAnnouncementRequest)        returns (GetAnnouncementResponse)        {}
     rpc GetAnnouncementOnly    (GetAnnouncementOnlyRequest)    returns (GetAnnouncementOnlyResponse)    {}
+    rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
     rpc ExistAnnouncement      (ExistAnnouncementRequest)      returns (ExistAnnouncementResponse)      {}
     rpc ExistAnnouncementConds (ExistAnnouncementCondsRequest) returns (ExistAnnouncementCondsResponse) {}
     rpc DeleteAnnouncement     (DeleteAnnouncementRequest)     returns (DeleteAnnouncementResponse)     {}
