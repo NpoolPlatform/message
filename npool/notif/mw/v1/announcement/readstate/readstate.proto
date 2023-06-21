@@ -9,13 +9,11 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateReadState     (CreateReadStateRequest)     returns (CreateReadStateResponse)     {}
-    rpc CreateReadStates    (CreateReadStatesRequest)    returns (CreateReadStatesResponse)    {}
     rpc GetReadState        (GetReadStateRequest)        returns (GetReadStateResponse)        {}
     rpc GetReadStateOnly    (GetReadStateOnlyRequest)    returns (GetReadStateOnlyResponse)    {}
     rpc GetReadStates       (GetReadStatesRequest)       returns (GetReadStatesResponse)       {}
     rpc ExistReadState      (ExistReadStateRequest)      returns (ExistReadStateResponse)      {}
     rpc ExistReadStateConds (ExistReadStateCondsRequest) returns (ExistReadStateCondsResponse) {}
-    rpc CountReadStates     (CountReadStatesRequest)     returns (CountReadStatesResponse)     {}
     rpc DeleteReadState     (DeleteReadStateRequest)     returns (DeleteReadStateResponse)     {}
 }
 
@@ -38,6 +36,8 @@ message ReadState {
     string AnnouncementType    = 80;
     // @inject_tag: sql:"channel"
     string Channel        = 90;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt          = 99;
     // @inject_tag: sql:"end_at"
     uint32 EndAt          = 100;
     // @inject_tag: sql:"created_at"
@@ -52,7 +52,6 @@ message Conds {
     optional basetypes.v1.StringVal AppID          = 20;
     optional basetypes.v1.StringVal UserID         = 30;
     optional basetypes.v1.StringVal AnnouncementID = 40;
-    optional basetypes.v1.StringSliceVal AnnouncementIDs = 50;
 }
 
 message ReadStateReq {
@@ -68,14 +67,6 @@ message CreateReadStateRequest {
 
 message CreateReadStateResponse {
     ReadState Info = 10;
-}
-
-message CreateReadStatesRequest {
-    repeated ReadStateReq Infos = 10;
-}
-
-message CreateReadStatesResponse {
-    repeated ReadState Infos = 10;
 }
 
 message UpdateReadStateRequest {
@@ -127,14 +118,6 @@ message ExistReadStateCondsRequest {
 
 message ExistReadStateCondsResponse {
     bool Info = 10;
-}
-
-message CountReadStatesRequest {
-    Conds Conds = 10;
-}
-
-message CountReadStatesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteReadStateRequest {
