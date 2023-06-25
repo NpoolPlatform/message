@@ -256,6 +256,18 @@
         },
         "NotifType": {
           "$ref": "#/definitions/v1NotifType"
+        },
+        "NotifUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"notif_user_id\""
+        },
+        "SendUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"send_user_id\""
+        },
+        "ReadUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_user_id\""
         }
       }
     },
