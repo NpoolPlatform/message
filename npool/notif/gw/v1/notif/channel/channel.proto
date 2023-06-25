@@ -11,9 +11,9 @@ import "npool/notif/mw/v1/notif/channel/channel.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateChannels (CreateChannelsRequest) returns (CreateChannelsResponse) {
+    rpc CreateChannel (CreateChannelRequest) returns (CreateChannelResponse) {
         option (google.api.http) = {
-            post: "/v1/create/notifchannels"
+            post: "/v1/create/notifchannel"
             body: "*"
         };
     }
@@ -39,14 +39,14 @@ service Gateway {
     }
 }
 
-message CreateChannelsRequest {
+message CreateChannelRequest {
     string AppID = 10;
-    repeated basetypes.v1.UsedFor   EventTypes = 20;
+    basetypes.v1.UsedFor   EventType     = 20;
     basetypes.v1.NotifChannel Channel    = 30;
 }
 
-message CreateChannelsResponse {
-    repeated notif.middleware.notif.channel.v1.Channel Infos = 10;
+message CreateChannelResponse {
+    notif.middleware.notif.channel.v1.Channel Info = 10;
 }
 
 message DeleteChannelRequest {
