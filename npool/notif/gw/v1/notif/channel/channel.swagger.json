@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/notifchannel": {
+    "/v1/create/notifchannels": {
       "post": {
-        "operationId": "Gateway_CreateChannel",
+        "operationId": "Gateway_CreateChannels",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif2channelv1CreateChannelResponse"
+              "$ref": "#/definitions/v1CreateChannelsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif2channelv1CreateChannelRequest"
+              "$ref": "#/definitions/v1CreateChannelsRequest"
             }
           }
         ],
@@ -146,28 +146,6 @@
     }
   },
   "definitions": {
-    "gatewaynotif2channelv1CreateChannelRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
-        }
-      }
-    },
-    "gatewaynotif2channelv1CreateChannelResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Channel"
-        }
-      }
-    },
     "gatewaynotif2channelv1DeleteChannelRequest": {
       "type": "object",
       "properties": {
@@ -249,6 +227,35 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CreateChannelsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "EventTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UsedFor"
+          }
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        }
+      }
+    },
+    "v1CreateChannelsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Channel"
+          }
         }
       }
     },
