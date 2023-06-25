@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateSendState     (CreateSendStateRequest)     returns (CreateSendStateResponse)  {}
+    rpc CreateSendStates    (CreateSendStatesRequest)    returns (CreateSendStatesResponse)  {}
     rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)    {}
     rpc GetSendState        (GetSendStateRequest)        returns (GetSendStateResponse)        {}
     rpc GetSendStateOnly    (GetSendStateOnlyRequest)    returns (GetSendStateOnlyResponse)    {}
@@ -62,7 +63,7 @@ message Conds {
     optional basetypes.v1.StringVal      AnnouncementID = 40;
     optional basetypes.v1.Uint32Val      Channel        = 50;
     optional basetypes.v1.Uint32Val      EndAt          = 60;
-    optional basetypes.v1.StringSliceVal UserIDs        = 70; // TODO
+    optional basetypes.v1.StringSliceVal UserIDs        = 70;
 }
 
 message CreateSendStateRequest {
@@ -71,6 +72,14 @@ message CreateSendStateRequest {
 
 message CreateSendStateResponse {
     SendState Info = 10;
+}
+
+message CreateSendStatesRequest {
+    repeated SendStateReq Infos = 10;
+}
+
+message CreateSendStatesResponse {
+    repeated SendState Infos = 10;
 }
 
 message GetSendStatesRequest {

@@ -67,8 +67,7 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "UserIDs": {
-          "$ref": "#/definitions/v1StringSliceVal",
-          "title": "TODO"
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -77,6 +76,18 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1SendState"
+        }
+      }
+    },
+    "v1CreateSendStatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SendState"
+          }
         }
       }
     },
