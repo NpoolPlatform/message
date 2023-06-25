@@ -89,6 +89,7 @@ message CreateAnnouncementResponse {
 
 message UpdateAnnouncementRequest {
     string          ID          = 10;
+    string          AppID       = 11;
     optional string Title       = 20;
     optional string Content     = 30;
     optional uint32 EndAt       = 50;
@@ -101,7 +102,8 @@ message UpdateAnnouncementResponse {
 }
 
 message DeleteAnnouncementRequest {
-    string ID = 10;
+    string ID    = 10;
+    string AppID = 20;
 }
 
 message DeleteAnnouncementResponse {
