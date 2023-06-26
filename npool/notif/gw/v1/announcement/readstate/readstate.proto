@@ -5,8 +5,8 @@ package notif.gateway.announcement.readstate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/readstate";
 
 import "google/api/annotations.proto";
-import "npool/notif/mw/v1/announcement/announcement.proto";
 import "npool/basetypes/v1/notiftype.proto";
+import "npool/basetypes/v1/channel.proto";
 
 // Service Name
 service Gateway {
@@ -64,9 +64,10 @@ message ReadState {
     string           Username       = 70;
     string           Title          = 80;
     string           Content        = 90;
-    basetypes.v1.NotifType AnnouncementType = 110;
-    uint32           CreatedAt      = 120;
-    uint32           UpdatedAt      = 130;
+    basetypes.v1.NotifType    AnnouncementType = 110;
+    basetypes.v1.NotifChannel Channel          = 120;
+    uint32           CreatedAt      = 130;
+    uint32           UpdatedAt      = 140;
 }
 
 message CreateReadStateRequest {

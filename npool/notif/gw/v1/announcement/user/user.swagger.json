@@ -271,6 +271,9 @@
         "AnnouncementType": {
           "$ref": "#/definitions/v1NotifType"
         },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -426,6 +429,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
     },
     "v1NotifType": {
       "type": "string",
