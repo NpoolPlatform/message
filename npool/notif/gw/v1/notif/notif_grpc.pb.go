@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetNotif_FullMethodName     = "/notif.gateway.notif3.v1.Gateway/GetNotif"
 	Gateway_UpdateNotifs_FullMethodName = "/notif.gateway.notif3.v1.Gateway/UpdateNotifs"
 	Gateway_GetNotifs_FullMethodName    = "/notif.gateway.notif3.v1.Gateway/GetNotifs"
 	Gateway_GetAppNotifs_FullMethodName = "/notif.gateway.notif3.v1.Gateway/GetAppNotifs"
@@ -29,7 +28,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	UpdateNotifs(ctx context.Context, in *UpdateNotifsRequest, opts ...grpc.CallOption) (*UpdateNotifsResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GetAppNotifs(ctx context.Context, in *GetAppNotifsRequest, opts ...grpc.CallOption) (*GetAppNotifsResponse, error)
@@ -41,15 +39,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error) {
-	out := new(GetNotifResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNotif_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) UpdateNotifs(ctx context.Context, in *UpdateNotifsRequest, opts ...grpc.CallOption) (*UpdateNotifsResponse, error) {
@@ -83,7 +72,6 @@ func (c *gatewayClient) GetAppNotifs(ctx context.Context, in *GetAppNotifsReques
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	UpdateNotifs(context.Context, *UpdateNotifsRequest) (*UpdateNotifsResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GetAppNotifs(context.Context, *GetAppNotifsRequest) (*GetAppNotifsResponse, error)
@@ -94,9 +82,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNotif not implemented")
-}
 func (UnimplementedGatewayServer) UpdateNotifs(context.Context, *UpdateNotifsRequest) (*UpdateNotifsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotifs not implemented")
 }
@@ -117,24 +102,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetNotif_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNotifRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNotif(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNotif_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNotif(ctx, req.(*GetNotifRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_UpdateNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -198,10 +165,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "notif.gateway.notif3.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetNotif",
-			Handler:    _Gateway_GetNotif_Handler,
-		},
 		{
 			MethodName: "UpdateNotifs",
 			Handler:    _Gateway_UpdateNotifs_Handler,

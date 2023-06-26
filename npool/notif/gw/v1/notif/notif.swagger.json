@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/get/notif": {
-      "post": {
-        "operationId": "Gateway_GetNotif",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/notifs": {
       "post": {
         "operationId": "Gateway_GetNotifs",
@@ -87,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifsResponse"
+              "$ref": "#/definitions/v1GetNotifsResponse"
             }
           },
           "default": {
@@ -103,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1GetNotifsRequest"
+              "$ref": "#/definitions/v1GetNotifsRequest"
             }
           }
         ],
@@ -119,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifsResponse"
+              "$ref": "#/definitions/v1UpdateNotifsResponse"
             }
           },
           "default": {
@@ -135,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaynotif3v1UpdateNotifsRequest"
+              "$ref": "#/definitions/v1UpdateNotifsRequest"
             }
           }
         ],
@@ -146,23 +114,67 @@
     }
   },
   "definitions": {
-    "gatewaynotif3v1GetNotifRequest": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "ID": {
+        "@type": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": {}
     },
-    "gatewaynotif3v1GetNotifResponse": {
+    "rpcStatus": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewaynotif3v1Notif"
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
         }
       }
     },
-    "gatewaynotif3v1GetNotifsRequest": {
+    "v1GetAppNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Notif"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNotifsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -184,14 +196,14 @@
         }
       }
     },
-    "gatewaynotif3v1GetNotifsResponse": {
+    "v1GetNotifsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
+            "$ref": "#/definitions/v1Notif"
           }
         },
         "Total": {
@@ -200,7 +212,7 @@
         }
       }
     },
-    "gatewaynotif3v1Notif": {
+    "v1Notif": {
       "type": "object",
       "properties": {
         "ID": {
@@ -264,98 +276,6 @@
         }
       }
     },
-    "gatewaynotif3v1UpdateNotifsRequest": {
-      "type": "object",
-      "properties": {
-        "IDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Notified": {
-          "type": "boolean"
-        }
-      }
-    },
-    "gatewaynotif3v1UpdateNotifsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
-          }
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1GetAppNotifsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppNotifsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/gatewaynotif3v1Notif"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1NotifChannel": {
       "type": "string",
       "enum": [
@@ -375,6 +295,30 @@
         "NotifUnicast"
       ],
       "default": "DefaultNotifType"
+    },
+    "v1UpdateNotifsRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Notif"
+          }
+        }
+      }
+    },
+    "v1UpdateNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Notif"
+          }
+        }
+      }
     },
     "v1UsedFor": {
       "type": "string",
