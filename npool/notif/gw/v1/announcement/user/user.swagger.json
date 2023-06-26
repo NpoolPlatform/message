@@ -369,9 +369,6 @@
         "AppID": {
           "type": "string"
         },
-        "AnnouncementID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"

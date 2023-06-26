@@ -5,7 +5,6 @@ package notif.gateway.announcement.user.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/user";
 
 import "google/api/annotations.proto";
-import "npool/notif/mw/v1/announcement/announcement.proto";
 import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
@@ -105,7 +104,6 @@ message DeleteAppAnnouncementUserResponse {
 
 message GetAnnouncementUsersRequest {
     string          AppID          = 10;
-    optional string AnnouncementID = 20;
     int32           Offset         = 30;
     int32           Limit          = 40;
 }
