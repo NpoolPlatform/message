@@ -58,12 +58,6 @@ message Notif {
     // @inject_tag: sql:"type"
     string NotifTypeStr   = 149;
     basetypes.v1.NotifType NotifType = 150;
-    // @inject_tag: sql:"notif_user_id"
-    string    NotifUserID     = 160;
-    // @inject_tag: sql:"send_user_id"
-    string    SendUserID      = 170;
-    // @inject_tag: sql:"read_user_id"
-    string    ReadUserID      = 180;
 }
 
 message NotifReq {
