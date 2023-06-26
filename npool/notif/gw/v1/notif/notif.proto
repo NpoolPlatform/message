@@ -8,17 +8,9 @@ import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/notiftype.proto";
-import "npool/notif/mw/v1/notif/notif.proto";
 
 // Service Name
 service Gateway {
-    rpc GetNotif (GetNotifRequest) returns (GetNotifResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/notif"
-            body: "*"
-        };
-    }
-
     rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {
         option (google.api.http) = {
             post: "/v1/update/notifs"
@@ -63,19 +55,8 @@ message Notif {
     basetypes.v1.NotifType NotifType = 190;
 }
 
-message GetNotifRequest {
-    string ID  = 10;
-}
-
-message GetNotifResponse {
-    Notif Info = 10;
-}
-
 message UpdateNotifsRequest {
-    repeated string IDs         = 10;
-    string          AppID       = 20;
-    string          UserID      = 30;
-    bool            Notified    = 40;
+    repeated Notif Infos = 10;
 }
 
 message UpdateNotifsResponse {
