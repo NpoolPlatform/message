@@ -55,6 +55,7 @@ message Conds {
     optional basetypes.v1.StringVal TxID       = 20;
     optional basetypes.v1.Uint32Val NotifState = 30;
     optional basetypes.v1.Uint32Val TxType     = 40;
+    optional basetypes.v1.Uint32SliceVal TxTypes  = 50;
 }
 
 message CreateTxRequest {
