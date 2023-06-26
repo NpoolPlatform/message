@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/notiftype.proto";
+import "npool/notif/mw/v1/notif/notif.proto";
 
 // Service Name
 service Gateway {
@@ -56,7 +57,7 @@ message Notif {
 }
 
 message UpdateNotifsRequest {
-    repeated Notif Infos = 10;
+    repeated notif.middleware.notif.v1.NotifReq Infos = 10;
 }
 
 message UpdateNotifsResponse {
