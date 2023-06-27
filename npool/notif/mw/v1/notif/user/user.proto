@@ -16,7 +16,6 @@ service Middleware {
     rpc GetNotifUsers       (GetNotifUsersRequest)       returns (GetNotifUsersResponse)       {}
     rpc ExistNotifUser      (ExistNotifUserRequest)      returns (ExistNotifUserResponse)      {}
     rpc ExistNotifUserConds (ExistNotifUserCondsRequest) returns (ExistNotifUserCondsResponse) {}
-    rpc CountNotifUsers     (CountNotifUsersRequest)     returns (CountNotifUsersResponse)     {}
     rpc DeleteNotifUser     (DeleteNotifUserRequest)     returns (DeleteNotifUserResponse)     {}
 }
 
@@ -108,14 +107,6 @@ message ExistNotifUserCondsRequest {
 
 message ExistNotifUserCondsResponse {
     bool Info = 10;
-}
-
-message CountNotifUsersRequest {
-    Conds Conds = 10;
-}
-
-message CountNotifUsersResponse {
-    uint32 Info = 10;
 }
 
 message DeleteNotifUserRequest {
