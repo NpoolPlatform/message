@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateChannels_FullMethodName  = "/notif.gateway.notif2.channel.v1.Gateway/CreateChannels"
+	Gateway_CreateChannel_FullMethodName   = "/notif.gateway.notif2.channel.v1.Gateway/CreateChannel"
 	Gateway_DeleteChannel_FullMethodName   = "/notif.gateway.notif2.channel.v1.Gateway/DeleteChannel"
 	Gateway_GetAppChannels_FullMethodName  = "/notif.gateway.notif2.channel.v1.Gateway/GetAppChannels"
 	Gateway_GetNAppChannels_FullMethodName = "/notif.gateway.notif2.channel.v1.Gateway/GetNAppChannels"
@@ -29,7 +29,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateChannels(ctx context.Context, in *CreateChannelsRequest, opts ...grpc.CallOption) (*CreateChannelsResponse, error)
+	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 	DeleteChannel(ctx context.Context, in *DeleteChannelRequest, opts ...grpc.CallOption) (*DeleteChannelResponse, error)
 	GetAppChannels(ctx context.Context, in *GetAppChannelsRequest, opts ...grpc.CallOption) (*GetAppChannelsResponse, error)
 	GetNAppChannels(ctx context.Context, in *GetNAppChannelsRequest, opts ...grpc.CallOption) (*GetNAppChannelsResponse, error)
@@ -43,9 +43,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateChannels(ctx context.Context, in *CreateChannelsRequest, opts ...grpc.CallOption) (*CreateChannelsResponse, error) {
-	out := new(CreateChannelsResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateChannels_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
+	out := new(CreateChannelResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateChannel_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func (c *gatewayClient) GetNAppChannels(ctx context.Context, in *GetNAppChannels
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateChannels(context.Context, *CreateChannelsRequest) (*CreateChannelsResponse, error)
+	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 	DeleteChannel(context.Context, *DeleteChannelRequest) (*DeleteChannelResponse, error)
 	GetAppChannels(context.Context, *GetAppChannelsRequest) (*GetAppChannelsResponse, error)
 	GetNAppChannels(context.Context, *GetNAppChannelsRequest) (*GetNAppChannelsResponse, error)
@@ -94,8 +94,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateChannels(context.Context, *CreateChannelsRequest) (*CreateChannelsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateChannels not implemented")
+func (UnimplementedGatewayServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
 }
 func (UnimplementedGatewayServer) DeleteChannel(context.Context, *DeleteChannelRequest) (*DeleteChannelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteChannel not implemented")
@@ -119,20 +119,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateChannels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateChannelsRequest)
+func _Gateway_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateChannelRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateChannels(ctx, in)
+		return srv.(GatewayServer).CreateChannel(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateChannels_FullMethodName,
+		FullMethod: Gateway_CreateChannel_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateChannels(ctx, req.(*CreateChannelsRequest))
+		return srv.(GatewayServer).CreateChannel(ctx, req.(*CreateChannelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -199,8 +199,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateChannels",
-			Handler:    _Gateway_CreateChannels_Handler,
+			MethodName: "CreateChannel",
+			Handler:    _Gateway_CreateChannel_Handler,
 		},
 		{
 			MethodName: "DeleteChannel",
