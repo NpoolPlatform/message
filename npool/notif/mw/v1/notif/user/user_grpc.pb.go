@@ -26,7 +26,6 @@ const (
 	Middleware_GetNotifUsers_FullMethodName       = "/notif.middleware.notif.user.v1.Middleware/GetNotifUsers"
 	Middleware_ExistNotifUser_FullMethodName      = "/notif.middleware.notif.user.v1.Middleware/ExistNotifUser"
 	Middleware_ExistNotifUserConds_FullMethodName = "/notif.middleware.notif.user.v1.Middleware/ExistNotifUserConds"
-	Middleware_CountNotifUsers_FullMethodName     = "/notif.middleware.notif.user.v1.Middleware/CountNotifUsers"
 	Middleware_DeleteNotifUser_FullMethodName     = "/notif.middleware.notif.user.v1.Middleware/DeleteNotifUser"
 )
 
@@ -41,7 +40,6 @@ type MiddlewareClient interface {
 	GetNotifUsers(ctx context.Context, in *GetNotifUsersRequest, opts ...grpc.CallOption) (*GetNotifUsersResponse, error)
 	ExistNotifUser(ctx context.Context, in *ExistNotifUserRequest, opts ...grpc.CallOption) (*ExistNotifUserResponse, error)
 	ExistNotifUserConds(ctx context.Context, in *ExistNotifUserCondsRequest, opts ...grpc.CallOption) (*ExistNotifUserCondsResponse, error)
-	CountNotifUsers(ctx context.Context, in *CountNotifUsersRequest, opts ...grpc.CallOption) (*CountNotifUsersResponse, error)
 	DeleteNotifUser(ctx context.Context, in *DeleteNotifUserRequest, opts ...grpc.CallOption) (*DeleteNotifUserResponse, error)
 }
 
@@ -116,15 +114,6 @@ func (c *middlewareClient) ExistNotifUserConds(ctx context.Context, in *ExistNot
 	return out, nil
 }
 
-func (c *middlewareClient) CountNotifUsers(ctx context.Context, in *CountNotifUsersRequest, opts ...grpc.CallOption) (*CountNotifUsersResponse, error) {
-	out := new(CountNotifUsersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountNotifUsers_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteNotifUser(ctx context.Context, in *DeleteNotifUserRequest, opts ...grpc.CallOption) (*DeleteNotifUserResponse, error) {
 	out := new(DeleteNotifUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteNotifUser_FullMethodName, in, out, opts...)
@@ -145,7 +134,6 @@ type MiddlewareServer interface {
 	GetNotifUsers(context.Context, *GetNotifUsersRequest) (*GetNotifUsersResponse, error)
 	ExistNotifUser(context.Context, *ExistNotifUserRequest) (*ExistNotifUserResponse, error)
 	ExistNotifUserConds(context.Context, *ExistNotifUserCondsRequest) (*ExistNotifUserCondsResponse, error)
-	CountNotifUsers(context.Context, *CountNotifUsersRequest) (*CountNotifUsersResponse, error)
 	DeleteNotifUser(context.Context, *DeleteNotifUserRequest) (*DeleteNotifUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -174,9 +162,6 @@ func (UnimplementedMiddlewareServer) ExistNotifUser(context.Context, *ExistNotif
 }
 func (UnimplementedMiddlewareServer) ExistNotifUserConds(context.Context, *ExistNotifUserCondsRequest) (*ExistNotifUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistNotifUserConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CountNotifUsers(context.Context, *CountNotifUsersRequest) (*CountNotifUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountNotifUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteNotifUser(context.Context, *DeleteNotifUserRequest) (*DeleteNotifUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotifUser not implemented")
@@ -320,24 +305,6 @@ func _Middleware_ExistNotifUserConds_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountNotifUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountNotifUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountNotifUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountNotifUsers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountNotifUsers(ctx, req.(*CountNotifUsersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteNotifUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteNotifUserRequest)
 	if err := dec(in); err != nil {
@@ -390,10 +357,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistNotifUserConds",
 			Handler:    _Middleware_ExistNotifUserConds_Handler,
-		},
-		{
-			MethodName: "CountNotifUsers",
-			Handler:    _Middleware_CountNotifUsers_Handler,
 		},
 		{
 			MethodName: "DeleteNotifUser",
