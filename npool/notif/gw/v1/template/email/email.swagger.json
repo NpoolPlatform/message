@@ -345,9 +345,6 @@
         "AppID": {
           "type": "string"
         },
-        "TargetLangID": {
-          "type": "string"
-        },
         "Sender": {
           "type": "string"
         },
@@ -565,9 +562,6 @@
           "type": "string"
         },
         "TargetAppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         },
         "Sender": {

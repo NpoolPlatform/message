@@ -332,9 +332,6 @@
         },
         "Message": {
           "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
         }
       }
     },
@@ -483,9 +480,6 @@
           "type": "string"
         },
         "TargetAppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         },
         "Subject": {
