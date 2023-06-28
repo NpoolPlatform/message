@@ -194,7 +194,7 @@
           "type": "string"
         },
         "Notified": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },

@@ -26,7 +26,7 @@ message GoodBenefitReq {
     optional string              Message     = 60;
     optional uint32              BenefitDate = 70;
     optional string              TxID        = 80;
-    optional string              Notified    = 90;
+    optional bool                Notified    = 90;
 }
 
 message GoodBenefit {
