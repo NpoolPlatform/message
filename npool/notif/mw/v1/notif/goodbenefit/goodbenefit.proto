@@ -39,7 +39,8 @@ message GoodBenefit {
      // @inject_tag: sql:"amount"
     string              Amount        = 40;
     // @inject_tag: sql:"state"
-    string              State         = 50;
+    string              StateStr      = 50;
+    basetypes.v1.Result State         = 51;
      // @inject_tag: sql:"message"
     string              Message       = 60;
      // @inject_tag: sql:"benefit_date"
