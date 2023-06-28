@@ -65,7 +65,7 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Notified": {
+        "Generated": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "BenefitDateStart": {
@@ -163,9 +163,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"tx_id\""
         },
-        "Notified": {
+        "Generated": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"notified\""
+          "title": "@inject_tag: sql:\"generated\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -207,7 +207,7 @@
         "TxID": {
           "type": "string"
         },
-        "Notified": {
+        "Generated": {
           "type": "boolean"
         }
       }

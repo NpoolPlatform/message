@@ -26,7 +26,7 @@ message GoodBenefitReq {
     optional string              Message     = 60;
     optional uint32              BenefitDate = 70;
     optional string              TxID        = 80;
-    optional bool                Notified    = 90;
+    optional bool                Generated    = 90;
 }
 
 message GoodBenefit {
@@ -47,8 +47,8 @@ message GoodBenefit {
     uint32              BenefitDate   = 70;
     // @inject_tag: sql:"tx_id"
     string              TxID          = 80;
-    // @inject_tag: sql:"notified"
-    bool                Notified      = 90;
+    // @inject_tag: sql:"generated"
+    bool                Generated      = 90;
      // @inject_tag: sql:"created_at"
     uint32              CreatedAt     = 100;
      // @inject_tag: sql:"updated_at"
@@ -58,7 +58,7 @@ message GoodBenefit {
 message Conds {
     optional basetypes.v1.StringVal ID                     = 10;
     optional basetypes.v1.StringVal GoodID                 = 20;
-    optional basetypes.v1.BoolVal   Notified               = 30;
+    optional basetypes.v1.BoolVal   Generated              = 30;
     optional basetypes.v1.Uint32Val BenefitDateStart       = 40;
     optional basetypes.v1.Uint32Val BenefitDateEnd         = 50;
 }
