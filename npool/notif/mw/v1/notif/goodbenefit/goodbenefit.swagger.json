@@ -45,6 +45,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -55,7 +66,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Notified": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1BoolVal"
         },
         "BenefitDate": {
           "$ref": "#/definitions/v1Uint32Val"
