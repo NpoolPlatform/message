@@ -68,7 +68,10 @@
         "Notified": {
           "$ref": "#/definitions/v1BoolVal"
         },
-        "BenefitDate": {
+        "BenefitDateStart": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "BenefitDateEnd": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }

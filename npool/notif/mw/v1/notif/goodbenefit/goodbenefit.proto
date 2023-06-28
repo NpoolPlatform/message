@@ -59,7 +59,8 @@ message Conds {
     optional basetypes.v1.StringVal ID                     = 10;
     optional basetypes.v1.StringVal GoodID                 = 20;
     optional basetypes.v1.BoolVal   Notified               = 30;
-    optional basetypes.v1.Uint32Val BenefitDate            = 40;
+    optional basetypes.v1.Uint32Val BenefitDateStart       = 40;
+    optional basetypes.v1.Uint32Val BenefitDateEnd         = 50;
 }
 
 message CreateGoodBenefitRequest {
