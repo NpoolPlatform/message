@@ -119,7 +119,6 @@ message UpdateSMSTemplateRequest {
     string AppID        = 20;
     optional string Subject = 30;
     optional string Message = 40;
-    string TargetLangID = 50;
 }
 
 message UpdateSMSTemplateResponse {
@@ -129,7 +128,6 @@ message UpdateSMSTemplateResponse {
 message UpdateAppSMSTemplateRequest {
     string ID           = 10;
     string TargetAppID  = 20;
-    string TargetLangID = 30;
     optional string Subject = 40;
     optional string Message = 50;
 }

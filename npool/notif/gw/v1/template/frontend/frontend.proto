@@ -118,7 +118,6 @@ message UpdateFrontendTemplateRequest {
     string AppID                 = 20;
     optional string Title        = 30;
     optional string Content      = 40;
-    optional string TargetLangID = 50;
 }
 
 message UpdateFrontendTemplateResponse {
@@ -128,9 +127,8 @@ message UpdateFrontendTemplateResponse {
 message UpdateAppFrontendTemplateRequest {
     string          ID           = 10;
     string          TargetAppID  = 20;
-    optional string TargetLangID = 30;
-    optional string Title        = 40;
-    optional string Content      = 50;
+    optional string Title        = 30;
+    optional string Content      = 40;
 }
 
 message UpdateAppFrontendTemplateResponse {

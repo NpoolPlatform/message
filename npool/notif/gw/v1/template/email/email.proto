@@ -125,13 +125,12 @@ message GetAppEmailTemplatesResponse {
 message UpdateEmailTemplateRequest {
     string ID                = 10;
     string AppID             = 20;
-    string TargetLangID      = 30;
-    optional string Sender   = 40;
-    repeated string ReplyTos = 50;
-    repeated string CCTos    = 60;
-    optional string Subject  = 70;
-    optional string Body     = 80;
-    optional string DefaultToUsername = 90;
+    optional string Sender   = 30;
+    repeated string ReplyTos = 40;
+    repeated string CCTos    = 50;
+    optional string Subject  = 60;
+    optional string Body     = 70;
+    optional string DefaultToUsername = 80;
 }
 
 message UpdateEmailTemplateResponse {
@@ -141,13 +140,12 @@ message UpdateEmailTemplateResponse {
 message UpdateAppEmailTemplateRequest {
     string ID                = 10;
     string TargetAppID       = 20;
-    string TargetLangID      = 30;
-    optional string Sender   = 40;
-    repeated string ReplyTos = 50;
-    repeated string CCTos    = 60;
-    optional string Subject  = 70;
-    optional string Body     = 80;
-    optional string DefaultToUsername = 90;
+    optional string Sender   = 30;
+    repeated string ReplyTos = 40;
+    repeated string CCTos    = 50;
+    optional string Subject  = 60;
+    optional string Body     = 70;
+    optional string DefaultToUsername = 80;
 }
 
 message UpdateAppEmailTemplateResponse {
