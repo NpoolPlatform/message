@@ -72,8 +72,9 @@ message GoodBenefit {
 
 message Conds {
     optional basetypes.v1.StringVal ID                     = 10;
-    optional basetypes.v1.Uint32Val Notified               = 20;
-    optional basetypes.v1.Uint32Val BenefitDate            = 30;
+    optional basetypes.v1.StringVal GoodID                 = 20;
+    optional basetypes.v1.Uint32Val Notified               = 30;
+    optional basetypes.v1.Uint32Val BenefitDate            = 40;
 }
 
 message CreateGoodBenefitRequest {

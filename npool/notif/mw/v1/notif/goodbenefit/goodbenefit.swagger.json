@@ -51,6 +51,9 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Notified": {
           "$ref": "#/definitions/v1Uint32Val"
         },
