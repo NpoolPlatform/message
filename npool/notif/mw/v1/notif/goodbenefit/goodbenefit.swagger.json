@@ -129,19 +129,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"amount\""
         },
-        "StateStr": {
+        "State": {
           "type": "string",
           "title": "@inject_tag: sql:\"state\""
         },
-        "State": {
-          "$ref": "#/definitions/v1LedgerAccountState"
-        },
-        "MessageStr": {
+        "Message": {
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
-        },
-        "Message": {
-          "$ref": "#/definitions/v1StateMessage"
         },
         "BenefitDate": {
           "type": "integer",
@@ -184,10 +178,10 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1LedgerAccountState"
+          "$ref": "#/definitions/v1Result"
         },
         "Message": {
-          "$ref": "#/definitions/v1StateMessage"
+          "type": "string"
         },
         "BenefitDate": {
           "type": "integer",
@@ -201,26 +195,14 @@
         }
       }
     },
-    "v1LedgerAccountState": {
+    "v1Result": {
       "type": "string",
       "enum": [
-        "DefaultState",
-        "LedgerAccountSuccess",
-        "LedgerAccountFailed"
+        "DefaultResult",
+        "Success",
+        "Fail"
       ],
-      "default": "DefaultState"
-    },
-    "v1StateMessage": {
-      "type": "string",
-      "enum": [
-        "DefaultStateMessage",
-        "CalCulateRewardFailed",
-        "CalculateTechniqureSeerviceFeeFailed",
-        "UpdateDailyRewardFailed",
-        "TransferRewardFailed",
-        "BookKeepingFailed"
-      ],
-      "default": "DefaultStateMessage"
+      "default": "DefaultResult"
     },
     "v1StringVal": {
       "type": "object",

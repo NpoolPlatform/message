@@ -5,6 +5,7 @@ package notif.middleware.notif.goodbenefit.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif/goodbenefit";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/result.proto";
 
 // Service Name
 service Middleware {
@@ -16,28 +17,13 @@ service Middleware {
     rpc DeleteGoodBenefit     (DeleteGoodBenefitRequest)     returns (DeleteGoodBenefitResponse)     {}
 }
 
-enum LedgerAccountState {
-    DefaultState   = 0;
-    LedgerAccountSuccess = 10;
-    LedgerAccountFailed  = 20;
-}
-
-enum StateMessage {
-    DefaultStateMessage                  = 0;
-    CalCulateRewardFailed                = 10;
-    CalculateTechniqureSeerviceFeeFailed = 20;
-    UpdateDailyRewardFailed              = 30;
-    TransferRewardFailed                 = 40;
-    BookKeepingFailed                    = 50;
-}
-
 message GoodBenefitReq {
     optional string              ID          = 10;
     optional string              GoodID      = 20;
     optional string              GoodName    = 30;
     optional string              Amount      = 40;
-    optional LedgerAccountState  State       = 50;
-    optional StateMessage        Message     = 60;
+    optional basetypes.v1.Result State       = 50;
+    optional string              Message     = 60;
     optional uint32              BenefitDate = 70;
     optional string              TxID        = 80;
     optional string              Notified    = 90;
@@ -53,11 +39,9 @@ message GoodBenefit {
      // @inject_tag: sql:"amount"
     string              Amount        = 40;
     // @inject_tag: sql:"state"
-    string              StateStr      = 49;
-    LedgerAccountState  State         = 50;
+    string              State         = 50;
      // @inject_tag: sql:"message"
-    string              MessageStr    = 59;
-    StateMessage        Message       = 60;
+    string              Message       = 60;
      // @inject_tag: sql:"benefit_date"
     uint32              BenefitDate   = 70;
     // @inject_tag: sql:"tx_id"
