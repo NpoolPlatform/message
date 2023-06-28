@@ -1,0 +1,254 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mw/v1/notif/goodbenefit/goodbenefit.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Notified": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "BenefitDate": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateGoodBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1DeleteGoodBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1ExistGoodBenefitCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetGoodBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    },
+    "v1GetGoodBenefitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1GoodBenefit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodBenefit": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1LedgerAccountState"
+        },
+        "MessageStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
+        },
+        "Message": {
+          "$ref": "#/definitions/v1StateMessage"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_date\""
+        },
+        "TxID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"tx_id\""
+        },
+        "Notified": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"notified\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1GoodBenefitReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1LedgerAccountState"
+        },
+        "Message": {
+          "$ref": "#/definitions/v1StateMessage"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TxID": {
+          "type": "string"
+        },
+        "Notified": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LedgerAccountState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "LedgerAccountSuccess",
+        "LedgerAccountFailed"
+      ],
+      "default": "DefaultState"
+    },
+    "v1StateMessage": {
+      "type": "string",
+      "enum": [
+        "DefaultStateMessage",
+        "CalCulateRewardFailed",
+        "CalculateTechniqureSeerviceFeeFailed",
+        "UpdateDailyRewardFailed",
+        "TransferRewardFailed",
+        "BookKeepingFailed"
+      ],
+      "default": "DefaultStateMessage"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateGoodBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodBenefit"
+        }
+      }
+    }
+  }
+}
