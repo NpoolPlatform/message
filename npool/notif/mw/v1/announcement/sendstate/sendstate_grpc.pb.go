@@ -19,9 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateSendState_FullMethodName  = "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendState"
-	Middleware_CreateSendStates_FullMethodName = "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendStates"
-	Middleware_GetSendStates_FullMethodName    = "/notif.middleware.announcement.sendstate.v1.Middleware/GetSendStates"
+	Middleware_CreateSendState_FullMethodName     = "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendState"
+	Middleware_CreateSendStates_FullMethodName    = "/notif.middleware.announcement.sendstate.v1.Middleware/CreateSendStates"
+	Middleware_GetSendStates_FullMethodName       = "/notif.middleware.announcement.sendstate.v1.Middleware/GetSendStates"
+	Middleware_GetSendState_FullMethodName        = "/notif.middleware.announcement.sendstate.v1.Middleware/GetSendState"
+	Middleware_GetSendStateOnly_FullMethodName    = "/notif.middleware.announcement.sendstate.v1.Middleware/GetSendStateOnly"
+	Middleware_ExistSendState_FullMethodName      = "/notif.middleware.announcement.sendstate.v1.Middleware/ExistSendState"
+	Middleware_ExistSendStateConds_FullMethodName = "/notif.middleware.announcement.sendstate.v1.Middleware/ExistSendStateConds"
+	Middleware_DeleteSendState_FullMethodName     = "/notif.middleware.announcement.sendstate.v1.Middleware/DeleteSendState"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +36,11 @@ type MiddlewareClient interface {
 	CreateSendState(ctx context.Context, in *CreateSendStateRequest, opts ...grpc.CallOption) (*CreateSendStateResponse, error)
 	CreateSendStates(ctx context.Context, in *CreateSendStatesRequest, opts ...grpc.CallOption) (*CreateSendStatesResponse, error)
 	GetSendStates(ctx context.Context, in *GetSendStatesRequest, opts ...grpc.CallOption) (*GetSendStatesResponse, error)
+	GetSendState(ctx context.Context, in *GetSendStateRequest, opts ...grpc.CallOption) (*GetSendStateResponse, error)
+	GetSendStateOnly(ctx context.Context, in *GetSendStateOnlyRequest, opts ...grpc.CallOption) (*GetSendStateOnlyResponse, error)
+	ExistSendState(ctx context.Context, in *ExistSendStateRequest, opts ...grpc.CallOption) (*ExistSendStateResponse, error)
+	ExistSendStateConds(ctx context.Context, in *ExistSendStateCondsRequest, opts ...grpc.CallOption) (*ExistSendStateCondsResponse, error)
+	DeleteSendState(ctx context.Context, in *DeleteSendStateRequest, opts ...grpc.CallOption) (*DeleteSendStateResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +78,51 @@ func (c *middlewareClient) GetSendStates(ctx context.Context, in *GetSendStatesR
 	return out, nil
 }
 
+func (c *middlewareClient) GetSendState(ctx context.Context, in *GetSendStateRequest, opts ...grpc.CallOption) (*GetSendStateResponse, error) {
+	out := new(GetSendStateResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetSendState_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetSendStateOnly(ctx context.Context, in *GetSendStateOnlyRequest, opts ...grpc.CallOption) (*GetSendStateOnlyResponse, error) {
+	out := new(GetSendStateOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetSendStateOnly_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistSendState(ctx context.Context, in *ExistSendStateRequest, opts ...grpc.CallOption) (*ExistSendStateResponse, error) {
+	out := new(ExistSendStateResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistSendState_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistSendStateConds(ctx context.Context, in *ExistSendStateCondsRequest, opts ...grpc.CallOption) (*ExistSendStateCondsResponse, error) {
+	out := new(ExistSendStateCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistSendStateConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) DeleteSendState(ctx context.Context, in *DeleteSendStateRequest, opts ...grpc.CallOption) (*DeleteSendStateResponse, error) {
+	out := new(DeleteSendStateResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteSendState_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +130,11 @@ type MiddlewareServer interface {
 	CreateSendState(context.Context, *CreateSendStateRequest) (*CreateSendStateResponse, error)
 	CreateSendStates(context.Context, *CreateSendStatesRequest) (*CreateSendStatesResponse, error)
 	GetSendStates(context.Context, *GetSendStatesRequest) (*GetSendStatesResponse, error)
+	GetSendState(context.Context, *GetSendStateRequest) (*GetSendStateResponse, error)
+	GetSendStateOnly(context.Context, *GetSendStateOnlyRequest) (*GetSendStateOnlyResponse, error)
+	ExistSendState(context.Context, *ExistSendStateRequest) (*ExistSendStateResponse, error)
+	ExistSendStateConds(context.Context, *ExistSendStateCondsRequest) (*ExistSendStateCondsResponse, error)
+	DeleteSendState(context.Context, *DeleteSendStateRequest) (*DeleteSendStateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +150,21 @@ func (UnimplementedMiddlewareServer) CreateSendStates(context.Context, *CreateSe
 }
 func (UnimplementedMiddlewareServer) GetSendStates(context.Context, *GetSendStatesRequest) (*GetSendStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSendStates not implemented")
+}
+func (UnimplementedMiddlewareServer) GetSendState(context.Context, *GetSendStateRequest) (*GetSendStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSendState not implemented")
+}
+func (UnimplementedMiddlewareServer) GetSendStateOnly(context.Context, *GetSendStateOnlyRequest) (*GetSendStateOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSendStateOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistSendState(context.Context, *ExistSendStateRequest) (*ExistSendStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSendState not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistSendStateConds(context.Context, *ExistSendStateCondsRequest) (*ExistSendStateCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSendStateConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteSendState(context.Context, *DeleteSendStateRequest) (*DeleteSendStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSendState not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,6 +233,96 @@ func _Middleware_GetSendStates_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetSendState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSendStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetSendState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetSendState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetSendState(ctx, req.(*GetSendStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetSendStateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSendStateOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetSendStateOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetSendStateOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetSendStateOnly(ctx, req.(*GetSendStateOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistSendState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSendStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistSendState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistSendState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistSendState(ctx, req.(*ExistSendStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistSendStateConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSendStateCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistSendStateConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistSendStateConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistSendStateConds(ctx, req.(*ExistSendStateCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_DeleteSendState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSendStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteSendState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteSendState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteSendState(ctx, req.(*DeleteSendStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +341,26 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSendStates",
 			Handler:    _Middleware_GetSendStates_Handler,
+		},
+		{
+			MethodName: "GetSendState",
+			Handler:    _Middleware_GetSendState_Handler,
+		},
+		{
+			MethodName: "GetSendStateOnly",
+			Handler:    _Middleware_GetSendStateOnly_Handler,
+		},
+		{
+			MethodName: "ExistSendState",
+			Handler:    _Middleware_ExistSendState_Handler,
+		},
+		{
+			MethodName: "ExistSendStateConds",
+			Handler:    _Middleware_ExistSendStateConds_Handler,
+		},
+		{
+			MethodName: "DeleteSendState",
+			Handler:    _Middleware_DeleteSendState_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

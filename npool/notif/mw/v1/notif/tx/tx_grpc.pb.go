@@ -19,10 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTx_FullMethodName  = "/notif.middleware.tx.v1.Middleware/CreateTx"
-	Middleware_UpdateTx_FullMethodName  = "/notif.middleware.tx.v1.Middleware/UpdateTx"
-	Middleware_GetTxs_FullMethodName    = "/notif.middleware.tx.v1.Middleware/GetTxs"
-	Middleware_GetTxOnly_FullMethodName = "/notif.middleware.tx.v1.Middleware/GetTxOnly"
+	Middleware_CreateTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/CreateTx"
+	Middleware_UpdateTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/UpdateTx"
+	Middleware_GetTxs_FullMethodName       = "/notif.middleware.notif.tx.v1.Middleware/GetTxs"
+	Middleware_GetTxOnly_FullMethodName    = "/notif.middleware.notif.tx.v1.Middleware/GetTxOnly"
+	Middleware_GetTx_FullMethodName        = "/notif.middleware.notif.tx.v1.Middleware/GetTx"
+	Middleware_ExistTx_FullMethodName      = "/notif.middleware.notif.tx.v1.Middleware/ExistTx"
+	Middleware_ExistTxConds_FullMethodName = "/notif.middleware.notif.tx.v1.Middleware/ExistTxConds"
+	Middleware_DeleteTx_FullMethodName     = "/notif.middleware.notif.tx.v1.Middleware/DeleteTx"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +37,10 @@ type MiddlewareClient interface {
 	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
 	GetTxOnly(ctx context.Context, in *GetTxOnlyRequest, opts ...grpc.CallOption) (*GetTxOnlyResponse, error)
+	GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error)
+	ExistTx(ctx context.Context, in *ExistTxRequest, opts ...grpc.CallOption) (*ExistTxResponse, error)
+	ExistTxConds(ctx context.Context, in *ExistTxCondsRequest, opts ...grpc.CallOption) (*ExistTxCondsResponse, error)
+	DeleteTx(ctx context.Context, in *DeleteTxRequest, opts ...grpc.CallOption) (*DeleteTxResponse, error)
 }
 
 type middlewareClient struct {
@@ -79,6 +87,42 @@ func (c *middlewareClient) GetTxOnly(ctx context.Context, in *GetTxOnlyRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error) {
+	out := new(GetTxResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetTx_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistTx(ctx context.Context, in *ExistTxRequest, opts ...grpc.CallOption) (*ExistTxResponse, error) {
+	out := new(ExistTxResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTx_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistTxConds(ctx context.Context, in *ExistTxCondsRequest, opts ...grpc.CallOption) (*ExistTxCondsResponse, error) {
+	out := new(ExistTxCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTxConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) DeleteTx(ctx context.Context, in *DeleteTxRequest, opts ...grpc.CallOption) (*DeleteTxResponse, error) {
+	out := new(DeleteTxResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteTx_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -87,6 +131,10 @@ type MiddlewareServer interface {
 	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
 	GetTxOnly(context.Context, *GetTxOnlyRequest) (*GetTxOnlyResponse, error)
+	GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error)
+	ExistTx(context.Context, *ExistTxRequest) (*ExistTxResponse, error)
+	ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error)
+	DeleteTx(context.Context, *DeleteTxRequest) (*DeleteTxResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -105,6 +153,18 @@ func (UnimplementedMiddlewareServer) GetTxs(context.Context, *GetTxsRequest) (*G
 }
 func (UnimplementedMiddlewareServer) GetTxOnly(context.Context, *GetTxOnlyRequest) (*GetTxOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTxOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTx not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTx(context.Context, *ExistTxRequest) (*ExistTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTx not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTxConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteTx(context.Context, *DeleteTxRequest) (*DeleteTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTx not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -191,11 +251,83 @@ func _Middleware_GetTxOnly_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetTx_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetTx(ctx, req.(*GetTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTx_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTx(ctx, req.(*ExistTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistTxConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTxCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTxConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTxConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTxConds(ctx, req.(*ExistTxCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_DeleteTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteTx_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteTx(ctx, req.(*DeleteTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.tx.v1.Middleware",
+	ServiceName: "notif.middleware.notif.tx.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -213,6 +345,22 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTxOnly",
 			Handler:    _Middleware_GetTxOnly_Handler,
+		},
+		{
+			MethodName: "GetTx",
+			Handler:    _Middleware_GetTx_Handler,
+		},
+		{
+			MethodName: "ExistTx",
+			Handler:    _Middleware_ExistTx_Handler,
+		},
+		{
+			MethodName: "ExistTxConds",
+			Handler:    _Middleware_ExistTxConds_Handler,
+		},
+		{
+			MethodName: "DeleteTx",
+			Handler:    _Middleware_DeleteTx_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

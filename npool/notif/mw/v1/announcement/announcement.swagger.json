@@ -17,128 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareannouncementannouncementv1Announcement": {
-      "type": "object",
-      "properties": {
-        "AnnouncementID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"announcement_id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "LangID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"lang_id\""
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Content": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"content\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "Read": {
-          "type": "boolean"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "AnnouncementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"type\""
-        },
-        "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
-        },
-        "ReadUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"read_user_id\""
-        },
-        "ChannelStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"channel\""
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1NotifChannel"
-        },
-        "Notified": {
-          "type": "boolean"
-        }
-      }
-    },
-    "middlewareannouncementannouncementv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "LangID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AnnouncementID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Read": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "AnnouncementType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
-        "Notified": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Channel": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "middlewareannouncementannouncementv1GetAnnouncementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -167,34 +45,192 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
-    "v1BoolVal": {
+    "v1Announcement": {
       "type": "object",
       "properties": {
-        "Op": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "AnnouncementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1NotifType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "Notified": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"notified\""
+        }
+      }
+    },
+    "v1AnnouncementReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
           "type": "string"
         },
-        "Value": {
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1NotifType"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AnnouncementType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1DeleteAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1ExistAnnouncementCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
           "type": "boolean"
         }
       }
     },
-    "v1GetAnnouncementStatesResponse": {
+    "v1ExistAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAnnouncementOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1GetAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1GetAnnouncementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/middlewareannouncementannouncementv1Announcement"
+            "$ref": "#/definitions/v1Announcement"
           }
         },
         "Total": {
@@ -213,6 +249,16 @@
       ],
       "default": "DefaultChannel"
     },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -221,21 +267,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
         }
       }
     },
@@ -248,6 +279,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Announcement"
         }
       }
     }

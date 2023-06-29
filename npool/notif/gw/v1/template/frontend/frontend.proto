@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package notif.gateway.template.frontend3.v1;
+package notif.gateway.template.frontend.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/template/frontend";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/template/frontend/frontend.proto";
+import "npool/notif/mw/v1/template/frontend/frontend.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 service Gateway {
@@ -68,7 +68,7 @@ message CreateFrontendTemplateRequest {
 }
 
 message CreateFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    notif.middleware.template.frontend.v1.FrontendTemplate Info = 10;
 }
 
 message CreateAppFrontendTemplateRequest {
@@ -80,7 +80,7 @@ message CreateAppFrontendTemplateRequest {
 }
 
 message CreateAppFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    notif.middleware.template.frontend.v1.FrontendTemplate Info = 10;
 }
 
 message GetFrontendTemplateRequest {
@@ -88,7 +88,7 @@ message GetFrontendTemplateRequest {
 }
 
 message GetFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    notif.middleware.template.frontend.v1.FrontendTemplate Info = 10;
 }
 
 message GetFrontendTemplatesRequest {
@@ -98,7 +98,7 @@ message GetFrontendTemplatesRequest {
 }
 
 message GetFrontendTemplatesResponse {
-    repeated notif.manager.template.frontend1.v1.FrontendTemplate Infos = 10;
+    repeated  notif.middleware.template.frontend.v1.FrontendTemplate Infos = 10;
     uint32                                                  Total = 20;
 }
 
@@ -109,7 +109,7 @@ message GetAppFrontendTemplatesRequest {
 }
 
 message GetAppFrontendTemplatesResponse {
-    repeated notif.manager.template.frontend1.v1.FrontendTemplate Infos = 10;
+    repeated  notif.middleware.template.frontend.v1.FrontendTemplate Infos = 10;
     uint32                                                  Total = 20;
 }
 
@@ -118,21 +118,19 @@ message UpdateFrontendTemplateRequest {
     string AppID                 = 20;
     optional string Title        = 30;
     optional string Content      = 40;
-    optional string TargetLangID = 50;
 }
 
 message UpdateFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    notif.middleware.template.frontend.v1.FrontendTemplate Info = 10;
 }
 
 message UpdateAppFrontendTemplateRequest {
     string          ID           = 10;
     string          TargetAppID  = 20;
-    optional string TargetLangID = 30;
-    optional string Title        = 40;
-    optional string Content      = 50;
+    optional string Title        = 30;
+    optional string Content      = 40;
 }
 
 message UpdateAppFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    notif.middleware.template.frontend.v1.FrontendTemplate Info = 10;
 }

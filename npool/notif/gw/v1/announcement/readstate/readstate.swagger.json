@@ -238,15 +238,6 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
     "v1CreateReadStateRequest": {
       "type": "object",
       "properties": {
@@ -277,11 +268,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -312,11 +303,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -344,11 +335,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -401,11 +392,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -425,9 +416,32 @@
         }
       }
     },
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
+    },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
+    },
     "v1ReadState": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AnnouncementID": {
           "type": "string"
         },
@@ -456,7 +470,10 @@
           "type": "string"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "CreatedAt": {
           "type": "integer",

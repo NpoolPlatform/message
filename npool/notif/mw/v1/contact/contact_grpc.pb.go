@@ -19,7 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GenerateContact_FullMethodName = "/notif.middleware.contact.v1.Middleware/GenerateContact"
+	Middleware_GenerateContact_FullMethodName   = "/notif.middleware.contact.v1.Middleware/GenerateContact"
+	Middleware_CreateContact_FullMethodName     = "/notif.middleware.contact.v1.Middleware/CreateContact"
+	Middleware_UpdateContact_FullMethodName     = "/notif.middleware.contact.v1.Middleware/UpdateContact"
+	Middleware_GetContact_FullMethodName        = "/notif.middleware.contact.v1.Middleware/GetContact"
+	Middleware_GetContactOnly_FullMethodName    = "/notif.middleware.contact.v1.Middleware/GetContactOnly"
+	Middleware_GetContacts_FullMethodName       = "/notif.middleware.contact.v1.Middleware/GetContacts"
+	Middleware_ExistContact_FullMethodName      = "/notif.middleware.contact.v1.Middleware/ExistContact"
+	Middleware_ExistContactConds_FullMethodName = "/notif.middleware.contact.v1.Middleware/ExistContactConds"
+	Middleware_DeleteContact_FullMethodName     = "/notif.middleware.contact.v1.Middleware/DeleteContact"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -27,6 +35,14 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GenerateContact(ctx context.Context, in *GenerateContactRequest, opts ...grpc.CallOption) (*GenerateContactResponse, error)
+	CreateContact(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error)
+	UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error)
+	GetContact(ctx context.Context, in *GetContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error)
+	GetContactOnly(ctx context.Context, in *GetContactOnlyRequest, opts ...grpc.CallOption) (*GetContactOnlyResponse, error)
+	GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error)
+	ExistContact(ctx context.Context, in *ExistContactRequest, opts ...grpc.CallOption) (*ExistContactResponse, error)
+	ExistContactConds(ctx context.Context, in *ExistContactCondsRequest, opts ...grpc.CallOption) (*ExistContactCondsResponse, error)
+	DeleteContact(ctx context.Context, in *DeleteContactRequest, opts ...grpc.CallOption) (*DeleteContactResponse, error)
 }
 
 type middlewareClient struct {
@@ -46,11 +62,91 @@ func (c *middlewareClient) GenerateContact(ctx context.Context, in *GenerateCont
 	return out, nil
 }
 
+func (c *middlewareClient) CreateContact(ctx context.Context, in *CreateContactRequest, opts ...grpc.CallOption) (*CreateContactResponse, error) {
+	out := new(CreateContactResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateContact(ctx context.Context, in *UpdateContactRequest, opts ...grpc.CallOption) (*UpdateContactResponse, error) {
+	out := new(UpdateContactResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetContact(ctx context.Context, in *GetContactRequest, opts ...grpc.CallOption) (*GetContactResponse, error) {
+	out := new(GetContactResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetContactOnly(ctx context.Context, in *GetContactOnlyRequest, opts ...grpc.CallOption) (*GetContactOnlyResponse, error) {
+	out := new(GetContactOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetContactOnly_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetContacts(ctx context.Context, in *GetContactsRequest, opts ...grpc.CallOption) (*GetContactsResponse, error) {
+	out := new(GetContactsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetContacts_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistContact(ctx context.Context, in *ExistContactRequest, opts ...grpc.CallOption) (*ExistContactResponse, error) {
+	out := new(ExistContactResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistContactConds(ctx context.Context, in *ExistContactCondsRequest, opts ...grpc.CallOption) (*ExistContactCondsResponse, error) {
+	out := new(ExistContactCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistContactConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) DeleteContact(ctx context.Context, in *DeleteContactRequest, opts ...grpc.CallOption) (*DeleteContactResponse, error) {
+	out := new(DeleteContactResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	GenerateContact(context.Context, *GenerateContactRequest) (*GenerateContactResponse, error)
+	CreateContact(context.Context, *CreateContactRequest) (*CreateContactResponse, error)
+	UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error)
+	GetContact(context.Context, *GetContactRequest) (*GetContactResponse, error)
+	GetContactOnly(context.Context, *GetContactOnlyRequest) (*GetContactOnlyResponse, error)
+	GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error)
+	ExistContact(context.Context, *ExistContactRequest) (*ExistContactResponse, error)
+	ExistContactConds(context.Context, *ExistContactCondsRequest) (*ExistContactCondsResponse, error)
+	DeleteContact(context.Context, *DeleteContactRequest) (*DeleteContactResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -60,6 +156,30 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) GenerateContact(context.Context, *GenerateContactRequest) (*GenerateContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateContact not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateContact(context.Context, *CreateContactRequest) (*CreateContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateContact not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateContact(context.Context, *UpdateContactRequest) (*UpdateContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
+}
+func (UnimplementedMiddlewareServer) GetContact(context.Context, *GetContactRequest) (*GetContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetContact not implemented")
+}
+func (UnimplementedMiddlewareServer) GetContactOnly(context.Context, *GetContactOnlyRequest) (*GetContactOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetContactOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetContacts(context.Context, *GetContactsRequest) (*GetContactsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetContacts not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistContact(context.Context, *ExistContactRequest) (*ExistContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistContact not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistContactConds(context.Context, *ExistContactCondsRequest) (*ExistContactCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistContactConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteContact(context.Context, *DeleteContactRequest) (*DeleteContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteContact not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -92,6 +212,150 @@ func _Middleware_GenerateContact_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CreateContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateContact(ctx, req.(*CreateContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateContact(ctx, req.(*UpdateContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetContact(ctx, req.(*GetContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetContactOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContactOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetContactOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetContactOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetContactOnly(ctx, req.(*GetContactOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContactsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetContacts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetContacts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetContacts(ctx, req.(*GetContactsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistContact(ctx, req.(*ExistContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistContactConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistContactCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistContactConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistContactConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistContactConds(ctx, req.(*ExistContactCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_DeleteContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteContact(ctx, req.(*DeleteContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -102,6 +366,38 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateContact",
 			Handler:    _Middleware_GenerateContact_Handler,
+		},
+		{
+			MethodName: "CreateContact",
+			Handler:    _Middleware_CreateContact_Handler,
+		},
+		{
+			MethodName: "UpdateContact",
+			Handler:    _Middleware_UpdateContact_Handler,
+		},
+		{
+			MethodName: "GetContact",
+			Handler:    _Middleware_GetContact_Handler,
+		},
+		{
+			MethodName: "GetContactOnly",
+			Handler:    _Middleware_GetContactOnly_Handler,
+		},
+		{
+			MethodName: "GetContacts",
+			Handler:    _Middleware_GetContacts_Handler,
+		},
+		{
+			MethodName: "ExistContact",
+			Handler:    _Middleware_ExistContact_Handler,
+		},
+		{
+			MethodName: "ExistContactConds",
+			Handler:    _Middleware_ExistContactConds_Handler,
+		},
+		{
+			MethodName: "DeleteContact",
+			Handler:    _Middleware_DeleteContact_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

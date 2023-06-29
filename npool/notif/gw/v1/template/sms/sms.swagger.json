@@ -332,9 +332,6 @@
         },
         "Message": {
           "type": "string"
-        },
-        "TargetLangID": {
-          "type": "string"
         }
       }
     },
@@ -438,22 +435,41 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "LangID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
         },
         "Subject": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"subject\""
         },
         "Message": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -464,9 +480,6 @@
           "type": "string"
         },
         "TargetAppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         },
         "Subject": {
@@ -507,6 +520,7 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
+        "GoodBenefit",
         "Announcement",
         "ProductPage"
       ],

@@ -1,82 +1,143 @@
 syntax = "proto3";
 
-package notif.middleware.announcement.announcement.v1;
+package notif.middleware.announcement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement";
 
-import "npool/notif/mgr/v1/announcement/announcement.proto";
-import "npool/notif/mgr/v1/channel/channel.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/channel.proto";
+import "npool/basetypes/v1/notiftype.proto";
 
 // Service Name
 service Middleware {
-    rpc GetAnnouncementStates (GetAnnouncementStatesRequest) returns (GetAnnouncementStatesResponse) {}
-    rpc GetAnnouncements      (GetAnnouncementsRequest)      returns (GetAnnouncementsResponse)      {}
+    rpc CreateAnnouncement     (CreateAnnouncementRequest)     returns (CreateAnnouncementResponse)     {}
+    rpc UpdateAnnouncement     (UpdateAnnouncementRequest)     returns (UpdateAnnouncementResponse)     {}
+    rpc GetAnnouncement        (GetAnnouncementRequest)        returns (GetAnnouncementResponse)        {}
+    rpc GetAnnouncementOnly    (GetAnnouncementOnlyRequest)    returns (GetAnnouncementOnlyResponse)    {}
+    rpc GetAnnouncements       (GetAnnouncementsRequest)       returns (GetAnnouncementsResponse)       {}
+    rpc ExistAnnouncement      (ExistAnnouncementRequest)      returns (ExistAnnouncementResponse)      {}
+    rpc ExistAnnouncementConds (ExistAnnouncementCondsRequest) returns (ExistAnnouncementCondsResponse) {}
+    rpc DeleteAnnouncement     (DeleteAnnouncementRequest)     returns (DeleteAnnouncementResponse)     {}
 }
 
-message Conds {
-    optional npool.v1.StringVal      ID               = 9;
-    optional npool.v1.StringVal      AppID            = 10;
-    optional npool.v1.StringVal      UserID           = 20;
-    optional npool.v1.StringVal      LangID           = 30;
-    optional npool.v1.StringVal      AnnouncementID   = 40;
-    optional npool.v1.BoolVal        Read             = 50;
-    optional npool.v1.Uint32Val      AnnouncementType = 60;
-    optional npool.v1.Uint32SliceVal Channels         = 70;
-    optional npool.v1.BoolVal        Notified         = 80;
-    optional npool.v1.Uint32Val      EndAt            = 90;
-    optional npool.v1.Uint32Val      Channel          = 100;
+message AnnouncementReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string LangID     = 30;
+    optional string Title      = 40;
+    optional string Content    = 50;
+    optional basetypes.v1.NotifChannel Channel = 60;
+    optional uint32 StartAt    = 69;
+    optional uint32 EndAt      = 70;
+    optional basetypes.v1.NotifType AnnouncementType = 80;
 }
 
 message Announcement {
-    // @inject_tag: sql:"announcement_id"
-    string AnnouncementID = 10;
+    // @inject_tag: sql:"id"
+    string ID         = 10;
     // @inject_tag: sql:"app_id"
-    string AppID          = 20;
-    // @inject_tag: sql:"user_id"
-    string UserID         = 30;
+    string AppID      = 20;
     // @inject_tag: sql:"lang_id"
-    string LangID         = 40;
+    string LangID     = 30;
     // @inject_tag: sql:"title"
-    string Title          = 50;
+    string Title      = 40;
     // @inject_tag: sql:"content"
-    string Content        = 60;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 70;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 100;
-    bool   Read           = 120;
-    // @inject_tag: sql:"end_at"
-    uint32 EndAt          = 130;
-    // @inject_tag: sql:"type"
-    string AnnouncementTypeStr = 140;
-    notif.manager.announcement.v1.AnnouncementType AnnouncementType = 150;
-    // @inject_tag: sql:"read_user_id"
-    string ReadUserID     = 160;
+    string Content    = 50;
     // @inject_tag: sql:"channel"
-    string ChannelStr     = 170;
-    notif.manager.channel.v1.NotifChannel Channel = 180;
-    bool   Notified       = 190;
+    string ChannelStr = 59;
+    basetypes.v1.NotifChannel Channel = 60;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt      = 70;
+    // @inject_tag: sql:"end_at"
+    uint32 EndAt        = 80;
+    // @inject_tag: sql:"type"
+    string AnnouncementTypeStr = 90;
+    basetypes.v1.NotifType AnnouncementType = 100;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt  = 110;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt  = 120;
+    // @inject_tag: sql:"user_id"
+    string UserID      = 130;
+    // @inject_tag: sql:"notified"
+    bool   Notified    = 140;
 }
 
-message GetAnnouncementStatesRequest {
-    Conds  Conds  = 10;
-    int32  Offset = 30;
-    int32  Limit  = 40;
-}
-
-message GetAnnouncementStatesResponse {
-    repeated Announcement Infos = 10;
-    uint32   Total              = 20;
+message Conds {
+    optional basetypes.v1.StringVal      ID               = 9;
+    optional basetypes.v1.StringVal      AppID            = 10;
+    optional basetypes.v1.StringVal      UserID           = 20;
+    optional basetypes.v1.StringVal      LangID           = 30;
+    optional basetypes.v1.Uint32Val      AnnouncementType = 60;
+    optional basetypes.v1.Uint32Val      StartAt          = 70;
+    optional basetypes.v1.Uint32Val      EndAt            = 90;
+    optional basetypes.v1.Uint32Val      Channel          = 100;
 }
 
 message GetAnnouncementsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
 }
 
 message GetAnnouncementsResponse {
     repeated Announcement Infos = 10;
-    uint32                Total  = 20;
+    uint32                Total = 20;
+}
+
+
+message CreateAnnouncementRequest {
+    AnnouncementReq Info = 10;
+}
+
+message CreateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message UpdateAnnouncementRequest {
+    AnnouncementReq Info = 10;
+}
+
+message UpdateAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message GetAnnouncementRequest {
+    string ID = 10;
+}
+
+message GetAnnouncementResponse {
+    Announcement Info = 10;
+}
+
+message GetAnnouncementOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetAnnouncementOnlyResponse {
+    Announcement Info = 10;
+}
+
+message ExistAnnouncementRequest {
+    string ID = 10;
+}
+
+message ExistAnnouncementResponse {
+    bool Info = 10;
+}
+
+message ExistAnnouncementCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAnnouncementCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteAnnouncementRequest {
+    AnnouncementReq Info = 10;
+}
+
+message DeleteAnnouncementResponse {
+    Announcement Info = 10;
 }

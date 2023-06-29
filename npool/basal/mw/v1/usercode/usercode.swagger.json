@@ -92,6 +92,7 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
+        "GoodBenefit",
         "Announcement",
         "ProductPage"
       ],

@@ -26,4 +26,9 @@ enum Prefix {
     PrefixCreateAppLang     = 180;
     PrefixCreateLang        = 190;
     PrefixCreateMessage     = 200;
+    PrefixCreateNotifUser   = 210;
+    PrefixCreateNotif       = 220;
+    PrefixCreateEmailTemplate    = 230;
+    PrefixCreateFrontendTemplate = 240;
+    PrefixCreateSMSTemplate      = 250;
 }

@@ -17,38 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewarefrontend2v1GetFrontendTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
-        }
-      }
-    },
-    "middlewarefrontend2v1GetFrontendTemplateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
-        }
-      }
-    },
-    "middlewarefrontend2v1GetFrontendTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1FrontendTemplate"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -103,7 +71,102 @@
         }
       }
     },
+    "v1CountFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1CreateFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
+        }
+      }
+    },
+    "v1DeleteFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1ExistFrontendTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1FrontendTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1FrontendTemplateReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -123,12 +186,36 @@
         },
         "Content": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetFrontendTemplateOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1GetFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1GetFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
+        "Total": {
           "type": "integer",
           "format": "int64"
         }
@@ -186,6 +273,14 @@
         }
       }
     },
+    "v1UpdateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
     "v1UsedFor": {
       "type": "string",
       "enum": [
@@ -208,6 +303,7 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
+        "GoodBenefit",
         "Announcement",
         "ProductPage"
       ],

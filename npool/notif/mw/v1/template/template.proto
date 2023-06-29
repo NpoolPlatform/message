@@ -4,7 +4,7 @@ package notif.middleware.template.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template";
 
-import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 service Middleware {
@@ -30,11 +30,11 @@ message TextInfo {
 }
 
 message GenerateTextRequest {
-    string                                AppID     = 10;
-    string                                LangID    = 20;
-    notif.manager.channel.v1.NotifChannel Channel   = 30;
-    basetypes.v1.UsedFor            EventType = 40;
-    optional TemplateVars                 Vars      = 50;
+    string                    AppID     = 10;
+    string                    LangID    = 20;
+    basetypes.v1.NotifChannel Channel   = 30;
+    basetypes.v1.UsedFor      EventType = 40;
+    optional TemplateVars     Vars      = 50;
 }
 
 message GenerateTextResponse {

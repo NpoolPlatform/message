@@ -283,7 +283,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/CreateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/CreateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -308,7 +308,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/CreateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/app/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/CreateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/app/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -333,7 +333,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplate", runtime.WithHTTPPathPattern("/v1/get/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplate", runtime.WithHTTPPathPattern("/v1/get/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -358,7 +358,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/frontendtemplates"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/frontendtemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -383,7 +383,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetAppFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/app/frontendtemplates"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetAppFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/app/frontendtemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -408,7 +408,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/UpdateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/UpdateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -433,7 +433,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/UpdateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/app/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/UpdateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/app/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -497,7 +497,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/CreateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/CreateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -519,7 +519,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/CreateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/app/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/CreateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/create/app/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -541,7 +541,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplate", runtime.WithHTTPPathPattern("/v1/get/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplate", runtime.WithHTTPPathPattern("/v1/get/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -563,7 +563,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/frontendtemplates"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/frontendtemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -585,7 +585,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/GetAppFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/app/frontendtemplates"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/GetAppFrontendTemplates", runtime.WithHTTPPathPattern("/v1/get/app/frontendtemplates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -607,7 +607,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/UpdateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/UpdateFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -629,7 +629,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend3.v1.Gateway/UpdateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/app/frontendtemplate"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/notif.gateway.template.frontend.v1.Gateway/UpdateAppFrontendTemplate", runtime.WithHTTPPathPattern("/v1/update/app/frontendtemplate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

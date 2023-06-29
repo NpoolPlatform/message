@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/notif/gw/v1/announcement/user/user.proto
 
-package announcementuser
+package user
 
 import (
 	context "context"
@@ -19,22 +19,24 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.announcementuser.v1.Gateway/CreateAnnouncementUsers"
-	Gateway_DeleteAnnouncementUser_FullMethodName   = "/notif.gateway.announcement.announcementuser.v1.Gateway/DeleteAnnouncementUser"
-	Gateway_GetAnnouncementUsers_FullMethodName     = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAnnouncementUsers"
-	Gateway_GetAppAnnouncementUsers_FullMethodName  = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetAppAnnouncementUsers"
-	Gateway_GetNAppAnnouncementUsers_FullMethodName = "/notif.gateway.announcement.announcementuser.v1.Gateway/GetNAppAnnouncementUsers"
+	Gateway_CreateAnnouncementUser_FullMethodName    = "/notif.gateway.announcement.user.v1.Gateway/CreateAnnouncementUser"
+	Gateway_CreateAppAnnouncementUser_FullMethodName = "/notif.gateway.announcement.user.v1.Gateway/CreateAppAnnouncementUser"
+	Gateway_DeleteAnnouncementUser_FullMethodName    = "/notif.gateway.announcement.user.v1.Gateway/DeleteAnnouncementUser"
+	Gateway_DeleteAppAnnouncementUser_FullMethodName = "/notif.gateway.announcement.user.v1.Gateway/DeleteAppAnnouncementUser"
+	Gateway_GetAnnouncementUsers_FullMethodName      = "/notif.gateway.announcement.user.v1.Gateway/GetAnnouncementUsers"
+	Gateway_GetAppAnnouncementUsers_FullMethodName   = "/notif.gateway.announcement.user.v1.Gateway/GetAppAnnouncementUsers"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateAnnouncementUsers(ctx context.Context, in *CreateAnnouncementUsersRequest, opts ...grpc.CallOption) (*CreateAnnouncementUsersResponse, error)
+	CreateAnnouncementUser(ctx context.Context, in *CreateAnnouncementUserRequest, opts ...grpc.CallOption) (*CreateAnnouncementUserResponse, error)
+	CreateAppAnnouncementUser(ctx context.Context, in *CreateAppAnnouncementUserRequest, opts ...grpc.CallOption) (*CreateAppAnnouncementUserResponse, error)
 	DeleteAnnouncementUser(ctx context.Context, in *DeleteAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAnnouncementUserResponse, error)
+	DeleteAppAnnouncementUser(ctx context.Context, in *DeleteAppAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAppAnnouncementUserResponse, error)
 	GetAnnouncementUsers(ctx context.Context, in *GetAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetAnnouncementUsersResponse, error)
 	GetAppAnnouncementUsers(ctx context.Context, in *GetAppAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetAppAnnouncementUsersResponse, error)
-	GetNAppAnnouncementUsers(ctx context.Context, in *GetNAppAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementUsersResponse, error)
 }
 
 type gatewayClient struct {
@@ -45,9 +47,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateAnnouncementUsers(ctx context.Context, in *CreateAnnouncementUsersRequest, opts ...grpc.CallOption) (*CreateAnnouncementUsersResponse, error) {
-	out := new(CreateAnnouncementUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateAnnouncementUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CreateAnnouncementUser(ctx context.Context, in *CreateAnnouncementUserRequest, opts ...grpc.CallOption) (*CreateAnnouncementUserResponse, error) {
+	out := new(CreateAnnouncementUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateAnnouncementUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateAppAnnouncementUser(ctx context.Context, in *CreateAppAnnouncementUserRequest, opts ...grpc.CallOption) (*CreateAppAnnouncementUserResponse, error) {
+	out := new(CreateAppAnnouncementUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateAppAnnouncementUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,6 +68,15 @@ func (c *gatewayClient) CreateAnnouncementUsers(ctx context.Context, in *CreateA
 func (c *gatewayClient) DeleteAnnouncementUser(ctx context.Context, in *DeleteAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAnnouncementUserResponse, error) {
 	out := new(DeleteAnnouncementUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_DeleteAnnouncementUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) DeleteAppAnnouncementUser(ctx context.Context, in *DeleteAppAnnouncementUserRequest, opts ...grpc.CallOption) (*DeleteAppAnnouncementUserResponse, error) {
+	out := new(DeleteAppAnnouncementUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteAppAnnouncementUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,24 +101,16 @@ func (c *gatewayClient) GetAppAnnouncementUsers(ctx context.Context, in *GetAppA
 	return out, nil
 }
 
-func (c *gatewayClient) GetNAppAnnouncementUsers(ctx context.Context, in *GetNAppAnnouncementUsersRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementUsersResponse, error) {
-	out := new(GetNAppAnnouncementUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNAppAnnouncementUsers_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateAnnouncementUsers(context.Context, *CreateAnnouncementUsersRequest) (*CreateAnnouncementUsersResponse, error)
+	CreateAnnouncementUser(context.Context, *CreateAnnouncementUserRequest) (*CreateAnnouncementUserResponse, error)
+	CreateAppAnnouncementUser(context.Context, *CreateAppAnnouncementUserRequest) (*CreateAppAnnouncementUserResponse, error)
 	DeleteAnnouncementUser(context.Context, *DeleteAnnouncementUserRequest) (*DeleteAnnouncementUserResponse, error)
+	DeleteAppAnnouncementUser(context.Context, *DeleteAppAnnouncementUserRequest) (*DeleteAppAnnouncementUserResponse, error)
 	GetAnnouncementUsers(context.Context, *GetAnnouncementUsersRequest) (*GetAnnouncementUsersResponse, error)
 	GetAppAnnouncementUsers(context.Context, *GetAppAnnouncementUsersRequest) (*GetAppAnnouncementUsersResponse, error)
-	GetNAppAnnouncementUsers(context.Context, *GetNAppAnnouncementUsersRequest) (*GetNAppAnnouncementUsersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -106,20 +118,23 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateAnnouncementUsers(context.Context, *CreateAnnouncementUsersRequest) (*CreateAnnouncementUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncementUsers not implemented")
+func (UnimplementedGatewayServer) CreateAnnouncementUser(context.Context, *CreateAnnouncementUserRequest) (*CreateAnnouncementUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAnnouncementUser not implemented")
+}
+func (UnimplementedGatewayServer) CreateAppAnnouncementUser(context.Context, *CreateAppAnnouncementUserRequest) (*CreateAppAnnouncementUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAnnouncementUser not implemented")
 }
 func (UnimplementedGatewayServer) DeleteAnnouncementUser(context.Context, *DeleteAnnouncementUserRequest) (*DeleteAnnouncementUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAnnouncementUser not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAppAnnouncementUser(context.Context, *DeleteAppAnnouncementUserRequest) (*DeleteAppAnnouncementUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppAnnouncementUser not implemented")
 }
 func (UnimplementedGatewayServer) GetAnnouncementUsers(context.Context, *GetAnnouncementUsersRequest) (*GetAnnouncementUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncementUsers not implemented")
 }
 func (UnimplementedGatewayServer) GetAppAnnouncementUsers(context.Context, *GetAppAnnouncementUsersRequest) (*GetAppAnnouncementUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppAnnouncementUsers not implemented")
-}
-func (UnimplementedGatewayServer) GetNAppAnnouncementUsers(context.Context, *GetNAppAnnouncementUsersRequest) (*GetNAppAnnouncementUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppAnnouncementUsers not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -134,20 +149,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateAnnouncementUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAnnouncementUsersRequest)
+func _Gateway_CreateAnnouncementUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAnnouncementUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateAnnouncementUsers(ctx, in)
+		return srv.(GatewayServer).CreateAnnouncementUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateAnnouncementUsers_FullMethodName,
+		FullMethod: Gateway_CreateAnnouncementUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateAnnouncementUsers(ctx, req.(*CreateAnnouncementUsersRequest))
+		return srv.(GatewayServer).CreateAnnouncementUser(ctx, req.(*CreateAnnouncementUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateAppAnnouncementUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppAnnouncementUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateAppAnnouncementUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_CreateAppAnnouncementUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateAppAnnouncementUser(ctx, req.(*CreateAppAnnouncementUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,6 +199,24 @@ func _Gateway_DeleteAnnouncementUser_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).DeleteAnnouncementUser(ctx, req.(*DeleteAnnouncementUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_DeleteAppAnnouncementUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppAnnouncementUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAppAnnouncementUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteAppAnnouncementUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAppAnnouncementUser(ctx, req.(*DeleteAppAnnouncementUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -206,38 +257,28 @@ func _Gateway_GetAppAnnouncementUsers_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetNAppAnnouncementUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppAnnouncementUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppAnnouncementUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNAppAnnouncementUsers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppAnnouncementUsers(ctx, req.(*GetNAppAnnouncementUsersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.gateway.announcement.announcementuser.v1.Gateway",
+	ServiceName: "notif.gateway.announcement.user.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAnnouncementUsers",
-			Handler:    _Gateway_CreateAnnouncementUsers_Handler,
+			MethodName: "CreateAnnouncementUser",
+			Handler:    _Gateway_CreateAnnouncementUser_Handler,
+		},
+		{
+			MethodName: "CreateAppAnnouncementUser",
+			Handler:    _Gateway_CreateAppAnnouncementUser_Handler,
 		},
 		{
 			MethodName: "DeleteAnnouncementUser",
 			Handler:    _Gateway_DeleteAnnouncementUser_Handler,
+		},
+		{
+			MethodName: "DeleteAppAnnouncementUser",
+			Handler:    _Gateway_DeleteAppAnnouncementUser_Handler,
 		},
 		{
 			MethodName: "GetAnnouncementUsers",
@@ -246,10 +287,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppAnnouncementUsers",
 			Handler:    _Gateway_GetAppAnnouncementUsers_Handler,
-		},
-		{
-			MethodName: "GetNAppAnnouncementUsers",
-			Handler:    _Gateway_GetNAppAnnouncementUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

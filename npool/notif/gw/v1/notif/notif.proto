@@ -5,18 +5,13 @@ package notif.gateway.notif3.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/notif";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/channel/channel.proto";
+import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/notiftype.proto";
+import "npool/notif/mw/v1/notif/notif.proto";
 
 // Service Name
 service Gateway {
-    rpc GetNotif (GetNotifRequest) returns (GetNotifResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/notif"
-            body: "*"
-        };
-    }
-
     rpc UpdateNotifs (UpdateNotifsRequest) returns (UpdateNotifsResponse) {
         option (google.api.http) = {
             post: "/v1/update/notifs"
@@ -51,28 +46,20 @@ message Notif {
     bool             UseTemplate  = 90;
     string           Title        = 100;
     string           Content      = 110;
-    notif.manager.channel.v1.NotifChannel Channel = 120;
+    basetypes.v1.NotifChannel Channel = 120;
     bool             Notified     = 130;
     uint32           CreatedAt    = 140;
     uint32           UpdatedAt    = 150;
     string           LangID       = 160;
     string           Lang         = 170;
     string           EventID      = 180;
-}
-
-message GetNotifRequest {
-    string ID  = 10;
-}
-
-message GetNotifResponse {
-    Notif Info = 10;
+    basetypes.v1.NotifType NotifType = 190;
 }
 
 message UpdateNotifsRequest {
-    repeated string IDs         = 10;
-    string          AppID       = 20;
-    string          UserID      = 30;
-    bool            Notified    = 40;
+    string AppID  = 10;
+    string UserID = 20;
+    repeated notif.middleware.notif.v1.NotifReq Infos = 30;
 }
 
 message UpdateNotifsResponse {

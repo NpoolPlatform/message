@@ -17,30 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "notifmiddlewarechannelv1GetChannelOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Channel"
-        }
-      }
-    },
-    "notifmiddlewarechannelv1GetChannelsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Channel"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -73,6 +49,43 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "EventTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_type\""
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "ChannelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"channel\""
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1ChannelReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
           "type": "string"
         },
         "AppID": {
@@ -83,14 +96,6 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1NotifChannel"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -108,12 +113,70 @@
         },
         "Channel": {
           "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateChannelResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Channel"
+        }
+      }
+    },
+    "v1DeleteChannelResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Channel"
+        }
+      }
+    },
+    "v1ExistChannelCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistChannelResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetChannelOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Channel"
+        }
+      }
+    },
+    "v1GetChannelResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Channel"
+        }
+      }
+    },
+    "v1GetChannelsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Channel"
+          }
         },
-        "EventTypes": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
-        "Channels": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -138,21 +201,6 @@
         }
       }
     },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      }
-    },
     "v1Uint32Val": {
       "type": "object",
       "properties": {
@@ -162,6 +210,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateChannelResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Channel"
         }
       }
     },
@@ -187,6 +243,7 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
+        "GoodBenefit",
         "Announcement",
         "ProductPage"
       ],

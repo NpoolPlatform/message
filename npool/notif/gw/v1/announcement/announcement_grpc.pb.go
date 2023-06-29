@@ -25,7 +25,6 @@ const (
 	Gateway_GetAnnouncements_FullMethodName     = "/notif.gateway.announcement.v1.Gateway/GetAnnouncements"
 	Gateway_GetAppAnnouncements_FullMethodName  = "/notif.gateway.announcement.v1.Gateway/GetAppAnnouncements"
 	Gateway_GetNAppAnnouncements_FullMethodName = "/notif.gateway.announcement.v1.Gateway/GetNAppAnnouncements"
-	Gateway_GetAnnouncement_FullMethodName      = "/notif.gateway.announcement.v1.Gateway/GetAnnouncement"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -38,7 +37,6 @@ type GatewayClient interface {
 	GetAnnouncements(ctx context.Context, in *GetAnnouncementsRequest, opts ...grpc.CallOption) (*GetAnnouncementsResponse, error)
 	GetAppAnnouncements(ctx context.Context, in *GetAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetAppAnnouncementsResponse, error)
 	GetNAppAnnouncements(ctx context.Context, in *GetNAppAnnouncementsRequest, opts ...grpc.CallOption) (*GetNAppAnnouncementsResponse, error)
-	GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error)
 }
 
 type gatewayClient struct {
@@ -103,15 +101,6 @@ func (c *gatewayClient) GetNAppAnnouncements(ctx context.Context, in *GetNAppAnn
 	return out, nil
 }
 
-func (c *gatewayClient) GetAnnouncement(ctx context.Context, in *GetAnnouncementRequest, opts ...grpc.CallOption) (*GetAnnouncementResponse, error) {
-	out := new(GetAnnouncementResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAnnouncement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -122,7 +111,6 @@ type GatewayServer interface {
 	GetAnnouncements(context.Context, *GetAnnouncementsRequest) (*GetAnnouncementsResponse, error)
 	GetAppAnnouncements(context.Context, *GetAppAnnouncementsRequest) (*GetAppAnnouncementsResponse, error)
 	GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error)
-	GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -147,9 +135,6 @@ func (UnimplementedGatewayServer) GetAppAnnouncements(context.Context, *GetAppAn
 }
 func (UnimplementedGatewayServer) GetNAppAnnouncements(context.Context, *GetNAppAnnouncementsRequest) (*GetNAppAnnouncementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppAnnouncements not implemented")
-}
-func (UnimplementedGatewayServer) GetAnnouncement(context.Context, *GetAnnouncementRequest) (*GetAnnouncementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAnnouncement not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -272,24 +257,6 @@ func _Gateway_GetNAppAnnouncements_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAnnouncement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAnnouncementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAnnouncement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetAnnouncement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAnnouncement(ctx, req.(*GetAnnouncementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -320,10 +287,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNAppAnnouncements",
 			Handler:    _Gateway_GetNAppAnnouncements_Handler,
-		},
-		{
-			MethodName: "GetAnnouncement",
-			Handler:    _Gateway_GetAnnouncement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -19,9 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetSMSTemplate_FullMethodName     = "/notif.middleware.sms1.v1.Middleware/GetSMSTemplate"
-	Middleware_GetSMSTemplates_FullMethodName    = "/notif.middleware.sms1.v1.Middleware/GetSMSTemplates"
-	Middleware_GetSMSTemplateOnly_FullMethodName = "/notif.middleware.sms1.v1.Middleware/GetSMSTemplateOnly"
+	Middleware_GetSMSTemplate_FullMethodName        = "/notif.middleware.template.sms.v1.Middleware/GetSMSTemplate"
+	Middleware_GetSMSTemplates_FullMethodName       = "/notif.middleware.template.sms.v1.Middleware/GetSMSTemplates"
+	Middleware_GetSMSTemplateOnly_FullMethodName    = "/notif.middleware.template.sms.v1.Middleware/GetSMSTemplateOnly"
+	Middleware_CreateSMSTemplate_FullMethodName     = "/notif.middleware.template.sms.v1.Middleware/CreateSMSTemplate"
+	Middleware_CreateSMSTemplates_FullMethodName    = "/notif.middleware.template.sms.v1.Middleware/CreateSMSTemplates"
+	Middleware_UpdateSMSTemplate_FullMethodName     = "/notif.middleware.template.sms.v1.Middleware/UpdateSMSTemplate"
+	Middleware_ExistSMSTemplate_FullMethodName      = "/notif.middleware.template.sms.v1.Middleware/ExistSMSTemplate"
+	Middleware_ExistSMSTemplateConds_FullMethodName = "/notif.middleware.template.sms.v1.Middleware/ExistSMSTemplateConds"
+	Middleware_DeleteSMSTemplate_FullMethodName     = "/notif.middleware.template.sms.v1.Middleware/DeleteSMSTemplate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +37,12 @@ type MiddlewareClient interface {
 	GetSMSTemplate(ctx context.Context, in *GetSMSTemplateRequest, opts ...grpc.CallOption) (*GetSMSTemplateResponse, error)
 	GetSMSTemplates(ctx context.Context, in *GetSMSTemplatesRequest, opts ...grpc.CallOption) (*GetSMSTemplatesResponse, error)
 	GetSMSTemplateOnly(ctx context.Context, in *GetSMSTemplateOnlyRequest, opts ...grpc.CallOption) (*GetSMSTemplateOnlyResponse, error)
+	CreateSMSTemplate(ctx context.Context, in *CreateSMSTemplateRequest, opts ...grpc.CallOption) (*CreateSMSTemplateResponse, error)
+	CreateSMSTemplates(ctx context.Context, in *CreateSMSTemplatesRequest, opts ...grpc.CallOption) (*CreateSMSTemplatesResponse, error)
+	UpdateSMSTemplate(ctx context.Context, in *UpdateSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateSMSTemplateResponse, error)
+	ExistSMSTemplate(ctx context.Context, in *ExistSMSTemplateRequest, opts ...grpc.CallOption) (*ExistSMSTemplateResponse, error)
+	ExistSMSTemplateConds(ctx context.Context, in *ExistSMSTemplateCondsRequest, opts ...grpc.CallOption) (*ExistSMSTemplateCondsResponse, error)
+	DeleteSMSTemplate(ctx context.Context, in *DeleteSMSTemplateRequest, opts ...grpc.CallOption) (*DeleteSMSTemplateResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +80,60 @@ func (c *middlewareClient) GetSMSTemplateOnly(ctx context.Context, in *GetSMSTem
 	return out, nil
 }
 
+func (c *middlewareClient) CreateSMSTemplate(ctx context.Context, in *CreateSMSTemplateRequest, opts ...grpc.CallOption) (*CreateSMSTemplateResponse, error) {
+	out := new(CreateSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateSMSTemplate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateSMSTemplates(ctx context.Context, in *CreateSMSTemplatesRequest, opts ...grpc.CallOption) (*CreateSMSTemplatesResponse, error) {
+	out := new(CreateSMSTemplatesResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateSMSTemplates_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateSMSTemplate(ctx context.Context, in *UpdateSMSTemplateRequest, opts ...grpc.CallOption) (*UpdateSMSTemplateResponse, error) {
+	out := new(UpdateSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateSMSTemplate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistSMSTemplate(ctx context.Context, in *ExistSMSTemplateRequest, opts ...grpc.CallOption) (*ExistSMSTemplateResponse, error) {
+	out := new(ExistSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistSMSTemplate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistSMSTemplateConds(ctx context.Context, in *ExistSMSTemplateCondsRequest, opts ...grpc.CallOption) (*ExistSMSTemplateCondsResponse, error) {
+	out := new(ExistSMSTemplateCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistSMSTemplateConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) DeleteSMSTemplate(ctx context.Context, in *DeleteSMSTemplateRequest, opts ...grpc.CallOption) (*DeleteSMSTemplateResponse, error) {
+	out := new(DeleteSMSTemplateResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteSMSTemplate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +141,12 @@ type MiddlewareServer interface {
 	GetSMSTemplate(context.Context, *GetSMSTemplateRequest) (*GetSMSTemplateResponse, error)
 	GetSMSTemplates(context.Context, *GetSMSTemplatesRequest) (*GetSMSTemplatesResponse, error)
 	GetSMSTemplateOnly(context.Context, *GetSMSTemplateOnlyRequest) (*GetSMSTemplateOnlyResponse, error)
+	CreateSMSTemplate(context.Context, *CreateSMSTemplateRequest) (*CreateSMSTemplateResponse, error)
+	CreateSMSTemplates(context.Context, *CreateSMSTemplatesRequest) (*CreateSMSTemplatesResponse, error)
+	UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error)
+	ExistSMSTemplate(context.Context, *ExistSMSTemplateRequest) (*ExistSMSTemplateResponse, error)
+	ExistSMSTemplateConds(context.Context, *ExistSMSTemplateCondsRequest) (*ExistSMSTemplateCondsResponse, error)
+	DeleteSMSTemplate(context.Context, *DeleteSMSTemplateRequest) (*DeleteSMSTemplateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +162,24 @@ func (UnimplementedMiddlewareServer) GetSMSTemplates(context.Context, *GetSMSTem
 }
 func (UnimplementedMiddlewareServer) GetSMSTemplateOnly(context.Context, *GetSMSTemplateOnlyRequest) (*GetSMSTemplateOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSMSTemplateOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateSMSTemplate(context.Context, *CreateSMSTemplateRequest) (*CreateSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSMSTemplate not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateSMSTemplates(context.Context, *CreateSMSTemplatesRequest) (*CreateSMSTemplatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSMSTemplates not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateSMSTemplate(context.Context, *UpdateSMSTemplateRequest) (*UpdateSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSMSTemplate not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistSMSTemplate(context.Context, *ExistSMSTemplateRequest) (*ExistSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSMSTemplate not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistSMSTemplateConds(context.Context, *ExistSMSTemplateCondsRequest) (*ExistSMSTemplateCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistSMSTemplateConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteSMSTemplate(context.Context, *DeleteSMSTemplateRequest) (*DeleteSMSTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSMSTemplate not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,11 +248,119 @@ func _Middleware_GetSMSTemplateOnly_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CreateSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateSMSTemplate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateSMSTemplate(ctx, req.(*CreateSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateSMSTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSMSTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateSMSTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateSMSTemplates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateSMSTemplates(ctx, req.(*CreateSMSTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateSMSTemplate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateSMSTemplate(ctx, req.(*UpdateSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistSMSTemplate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistSMSTemplate(ctx, req.(*ExistSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistSMSTemplateConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistSMSTemplateCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistSMSTemplateConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistSMSTemplateConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistSMSTemplateConds(ctx, req.(*ExistSMSTemplateCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_DeleteSMSTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSMSTemplateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteSMSTemplate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteSMSTemplate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteSMSTemplate(ctx, req.(*DeleteSMSTemplateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notif.middleware.sms1.v1.Middleware",
+	ServiceName: "notif.middleware.template.sms.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -176,6 +374,30 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSMSTemplateOnly",
 			Handler:    _Middleware_GetSMSTemplateOnly_Handler,
+		},
+		{
+			MethodName: "CreateSMSTemplate",
+			Handler:    _Middleware_CreateSMSTemplate_Handler,
+		},
+		{
+			MethodName: "CreateSMSTemplates",
+			Handler:    _Middleware_CreateSMSTemplates_Handler,
+		},
+		{
+			MethodName: "UpdateSMSTemplate",
+			Handler:    _Middleware_UpdateSMSTemplate_Handler,
+		},
+		{
+			MethodName: "ExistSMSTemplate",
+			Handler:    _Middleware_ExistSMSTemplate_Handler,
+		},
+		{
+			MethodName: "ExistSMSTemplateConds",
+			Handler:    _Middleware_ExistSMSTemplateConds_Handler,
+		},
+		{
+			MethodName: "DeleteSMSTemplate",
+			Handler:    _Middleware_DeleteSMSTemplate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1,15 +1,62 @@
 syntax = "proto3";
 
-package notif.middleware.frontend2.v1;
+package notif.middleware.template.frontend.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/frontend";
+option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/frontend";
 
-import "npool/notif/mgr/v1/template/frontend/frontend.proto";
+import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc GetFrontendTemplate     (GetFrontendTemplateRequest)     returns (GetFrontendTemplateResponse)     {}
-    rpc GetFrontendTemplates    (GetFrontendTemplatesRequest)    returns (GetFrontendTemplatesResponse)    {}
-    rpc GetFrontendTemplateOnly (GetFrontendTemplateOnlyRequest) returns (GetFrontendTemplateOnlyResponse) {}
+    rpc GetFrontendTemplate        (GetFrontendTemplateRequest)        returns (GetFrontendTemplateResponse)        {}
+    rpc GetFrontendTemplates       (GetFrontendTemplatesRequest)       returns (GetFrontendTemplatesResponse)       {}
+    rpc GetFrontendTemplateOnly    (GetFrontendTemplateOnlyRequest)    returns (GetFrontendTemplateOnlyResponse)    {}
+    rpc CreateFrontendTemplate     (CreateFrontendTemplateRequest)     returns (CreateFrontendTemplateResponse)     {}
+    rpc CreateFrontendTemplates    (CreateFrontendTemplatesRequest)    returns (CreateFrontendTemplatesResponse)    {}
+    rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}
+    rpc ExistFrontendTemplate      (ExistFrontendTemplateRequest)      returns (ExistFrontendTemplateResponse)      {}
+    rpc ExistFrontendTemplateConds (ExistFrontendTemplateCondsRequest) returns (ExistFrontendTemplateCondsResponse) {}
+    rpc CountFrontendTemplates     (CountFrontendTemplatesRequest)     returns (CountFrontendTemplatesResponse)     {}
+    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {}
+}
+
+message FrontendTemplate {
+    // @inject_tag: sql:"id"
+    string ID          = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID       = 20;
+    // @inject_tag: sql:"lang_id"
+    string LangID      = 30;
+    // @inject_tag: sql:"used_for"
+    string UsedForStr        = 40;
+    basetypes.v1.UsedFor UsedFor = 50;
+    // @inject_tag: sql:"title"
+    string Title       = 60;
+    // @inject_tag: sql:"content"
+    string Content     = 70;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt   = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt   = 1010;
+}
+
+message FrontendTemplateReq {
+    optional string ID          = 10;
+    optional string AppID       = 20;
+    optional string LangID      = 30;
+    optional basetypes.v1.UsedFor UsedFor = 40;
+    optional string Title       = 50;
+    optional string Content     = 60;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID      = 10;
+    optional basetypes.v1.StringVal AppID   = 20;
+    optional basetypes.v1.StringVal LangID  = 30;
+    optional basetypes.v1.Uint32Val UsedFor = 40;
+    optional basetypes.v1.StringSliceVal AppIDs   = 50;
+    optional basetypes.v1.StringSliceVal LangIDs  = 60;
+    optional basetypes.v1.Uint32SliceVal UsedFors = 70;
 }
 
 message GetFrontendTemplateRequest {
@@ -17,24 +64,80 @@ message GetFrontendTemplateRequest {
 }
 
 message GetFrontendTemplateResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    FrontendTemplate Info = 10;
 }
 
 message GetFrontendTemplatesRequest {
-    notif.manager.template.frontend1.v1.Conds Conds = 10;
-    uint32 Offset = 20;
-    uint32 Limit  = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetFrontendTemplatesResponse {
-    repeated notif.manager.template.frontend1.v1.FrontendTemplate Infos = 10;
-    uint32                                                        Total = 20;
+    repeated FrontendTemplate Infos = 10;
+    uint32                    Total = 20;
 }
 
 message GetFrontendTemplateOnlyRequest {
-    notif.manager.template.frontend1.v1.Conds Conds = 10;
+    Conds Conds = 10;
 }
 
 message GetFrontendTemplateOnlyResponse {
-    notif.manager.template.frontend1.v1.FrontendTemplate Info = 10;
+    FrontendTemplate Info = 10;
+}
+
+message CreateFrontendTemplateRequest {
+    FrontendTemplateReq Info = 10;
+}
+
+message CreateFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}
+
+message CreateFrontendTemplatesRequest {
+    repeated FrontendTemplateReq Infos = 10;
+}
+
+message CreateFrontendTemplatesResponse {
+    repeated FrontendTemplate Infos = 10;
+}
+
+message UpdateFrontendTemplateRequest {
+    FrontendTemplateReq Info = 10;
+}
+
+message UpdateFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
+}
+
+message ExistFrontendTemplateRequest {
+    string ID = 10;
+}
+
+message ExistFrontendTemplateResponse {
+    bool Info = 10;
+}
+
+message ExistFrontendTemplateCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistFrontendTemplateCondsResponse {
+    bool Info = 10;
+}
+
+message CountFrontendTemplatesRequest {
+    Conds Conds = 10;
+}
+
+message CountFrontendTemplatesResponse {
+    uint32 Info = 10;
+}
+
+message DeleteFrontendTemplateRequest {
+    FrontendTemplateReq Info = 10;
+}
+
+message DeleteFrontendTemplateResponse {
+    FrontendTemplate Info = 10;
 }

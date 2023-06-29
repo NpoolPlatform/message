@@ -410,22 +410,44 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "Account": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"account\""
+        },
+        "AccountTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_type\""
         },
         "AccountType": {
           "$ref": "#/definitions/v1SignMethod"
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
         },
         "UsedFor": {
           "$ref": "#/definitions/v1UsedFor"
         },
         "Sender": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"sender\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -585,6 +607,7 @@
         "Purchase",
         "AffiliatePurchase",
         "AffiliateSignup",
+        "GoodBenefit",
         "Announcement",
         "ProductPage"
       ],

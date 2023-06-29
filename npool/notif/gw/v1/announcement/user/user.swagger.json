@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/announcementusers": {
+    "/v1/create/announcementuser": {
       "post": {
-        "operationId": "Gateway_CreateAnnouncementUsers",
+        "operationId": "Gateway_CreateAnnouncementUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAnnouncementUsersResponse"
+              "$ref": "#/definitions/v1CreateAnnouncementUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAnnouncementUsersRequest"
+              "$ref": "#/definitions/v1CreateAnnouncementUserRequest"
             }
           }
         ],
@@ -48,7 +48,39 @@
         ]
       }
     },
-    "/v1/delete/announcementusers": {
+    "/v1/create/app/announcementuser": {
+      "post": {
+        "operationId": "Gateway_CreateAppAnnouncementUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppAnnouncementUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppAnnouncementUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/announcementuser": {
       "post": {
         "operationId": "Gateway_DeleteAnnouncementUser",
         "responses": {
@@ -72,6 +104,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteAnnouncementUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/app/announcementuser": {
+      "post": {
+        "operationId": "Gateway_DeleteAppAnnouncementUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppAnnouncementUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppAnnouncementUserRequest"
             }
           }
         ],
@@ -143,38 +207,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/n/app/announcementusers": {
-      "post": {
-        "operationId": "Gateway_GetNAppAnnouncementUsers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppAnnouncementUsersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppAnnouncementUsersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -206,15 +238,6 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
     "v1AnnouncementUser": {
       "type": "object",
       "properties": {
@@ -225,9 +248,6 @@
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "AppName": {
           "type": "string"
         },
         "UserID": {
@@ -249,7 +269,10 @@
           "type": "string"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
+        },
+        "Channel": {
+          "$ref": "#/definitions/v1NotifChannel"
         },
         "CreatedAt": {
           "type": "integer",
@@ -261,32 +284,47 @@
         }
       }
     },
-    "v1CreateAnnouncementUsersRequest": {
+    "v1CreateAnnouncementUserRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "UserIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "TargetUserID": {
+          "type": "string"
         },
         "AnnouncementID": {
           "type": "string"
         }
       }
     },
-    "v1CreateAnnouncementUsersResponse": {
+    "v1CreateAnnouncementUserResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1AnnouncementUser"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1AnnouncementUser"
+        }
+      }
+    },
+    "v1CreateAppAnnouncementUserRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AnnouncementID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppAnnouncementUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AnnouncementUser"
         }
       }
     },
@@ -309,22 +347,38 @@
         }
       }
     },
+    "v1DeleteAppAnnouncementUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppAnnouncementUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AnnouncementUser"
+        }
+      }
+    },
     "v1GetAnnouncementUsersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "AnnouncementID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -347,16 +401,16 @@
     "v1GetAppAnnouncementUsersRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -376,37 +430,25 @@
         }
       }
     },
-    "v1GetNAppAnnouncementUsersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1NotifChannel": {
+      "type": "string",
+      "enum": [
+        "DefaultChannel",
+        "ChannelEmail",
+        "ChannelSMS",
+        "ChannelFrontend"
+      ],
+      "default": "DefaultChannel"
     },
-    "v1GetNAppAnnouncementUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1AnnouncementUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
     }
   }
 }

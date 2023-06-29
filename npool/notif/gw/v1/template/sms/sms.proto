@@ -5,7 +5,7 @@ package notif.gateway.template.sms.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/template/sms";
 
 import "google/api/annotations.proto";
-import "npool/notif/mgr/v1/template/sms/sms.proto";
+import "npool/notif/mw/v1/template/sms/sms.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 
@@ -69,7 +69,7 @@ message CreateSMSTemplateRequest {
 }
 
 message CreateSMSTemplateResponse {
-    notif.manager.template.sms.v1.SMSTemplate Info = 10;
+    notif.middleware.template.sms.v1.SMSTemplate Info = 10;
 }
 
 message CreateAppSMSTemplateRequest {
@@ -81,7 +81,7 @@ message CreateAppSMSTemplateRequest {
 }
 
 message CreateAppSMSTemplateResponse {
-    notif.manager.template.sms.v1.SMSTemplate Info = 10;
+    notif.middleware.template.sms.v1.SMSTemplate Info = 10;
 }
 
 message GetSMSTemplateRequest {
@@ -89,7 +89,7 @@ message GetSMSTemplateRequest {
 }
 
 message GetSMSTemplateResponse {
-    notif.manager.template.sms.v1.SMSTemplate Info = 10;
+    notif.middleware.template.sms.v1.SMSTemplate Info = 10;
 }
 
 message GetSMSTemplatesRequest {
@@ -99,7 +99,7 @@ message GetSMSTemplatesRequest {
 }
 
 message GetSMSTemplatesResponse {
-    repeated notif.manager.template.sms.v1.SMSTemplate Infos = 10;
+    repeated notif.middleware.template.sms.v1.SMSTemplate Infos = 10;
     uint32                                             Total = 20;
 }
 
@@ -110,7 +110,7 @@ message GetAppSMSTemplatesRequest {
 }
 
 message GetAppSMSTemplatesResponse {
-    repeated notif.manager.template.sms.v1.SMSTemplate Infos = 10;
+    repeated notif.middleware.template.sms.v1.SMSTemplate Infos = 10;
     uint32                                             Total = 20;
 }
 
@@ -119,21 +119,19 @@ message UpdateSMSTemplateRequest {
     string AppID        = 20;
     optional string Subject = 30;
     optional string Message = 40;
-    string TargetLangID = 50;
 }
 
 message UpdateSMSTemplateResponse {
-    notif.manager.template.sms.v1.SMSTemplate Info = 10;
+    notif.middleware.template.sms.v1.SMSTemplate Info = 10;
 }
 
 message UpdateAppSMSTemplateRequest {
     string ID           = 10;
     string TargetAppID  = 20;
-    string TargetLangID = 30;
     optional string Subject = 40;
     optional string Message = 50;
 }
 
 message UpdateAppSMSTemplateResponse {
-    notif.manager.template.sms.v1.SMSTemplate Info = 10;
+    notif.middleware.template.sms.v1.SMSTemplate Info = 10;
 }

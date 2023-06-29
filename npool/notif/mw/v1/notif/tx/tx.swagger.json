@@ -17,46 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "notifmiddlewaretxv1CreateTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Tx"
-        }
-      }
-    },
-    "notifmiddlewaretxv1GetTxOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Tx"
-        }
-      }
-    },
-    "notifmiddlewaretxv1GetTxsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Tx"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "notifmiddlewaretxv1UpdateTxResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Tx"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -99,6 +59,73 @@
         },
         "TxType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "TxTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        }
+      }
+    },
+    "v1CreateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1DeleteTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1ExistTxCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTxOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1GetTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
+    },
+    "v1GetTxsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Tx"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -117,24 +144,36 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "TxID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"tx_id\""
+        },
+        "NotifStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"notif_state\""
         },
         "NotifState": {
           "$ref": "#/definitions/v1TxState"
+        },
+        "TxTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"tx_type\""
         },
         "TxType": {
           "$ref": "#/definitions/v1TxType"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -179,6 +218,21 @@
       ],
       "default": "DefaultTxType"
     },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
     "v1Uint32Val": {
       "type": "object",
       "properties": {
@@ -188,6 +242,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
         }
       }
     }

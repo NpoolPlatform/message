@@ -174,15 +174,6 @@
         }
       }
     },
-    "v1AnnouncementType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Broadcast",
-        "Multicast"
-      ],
-      "default": "DefaultType"
-    },
     "v1GetAppSendStatesRequest": {
       "type": "object",
       "properties": {
@@ -194,11 +185,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -232,11 +223,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -267,11 +258,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -305,11 +296,11 @@
         },
         "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
         "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         }
       }
     },
@@ -339,9 +330,22 @@
       ],
       "default": "DefaultChannel"
     },
+    "v1NotifType": {
+      "type": "string",
+      "enum": [
+        "DefaultNotifType",
+        "NotifMulticast",
+        "NotifBroadcast",
+        "NotifUnicast"
+      ],
+      "default": "DefaultNotifType"
+    },
     "v1SendState": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AnnouncementID": {
           "type": "string"
         },
@@ -373,7 +377,7 @@
           "$ref": "#/definitions/v1NotifChannel"
         },
         "AnnouncementType": {
-          "$ref": "#/definitions/v1AnnouncementType"
+          "$ref": "#/definitions/v1NotifType"
         },
         "CreatedAt": {
           "type": "integer",
