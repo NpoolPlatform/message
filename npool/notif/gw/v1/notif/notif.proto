@@ -57,7 +57,9 @@ message Notif {
 }
 
 message UpdateNotifsRequest {
-    repeated notif.middleware.notif.v1.NotifReq Infos = 10;
+    string AppID  = 10;
+    string UserID = 20;
+    repeated notif.middleware.notif.v1.NotifReq Infos = 30;
 }
 
 message UpdateNotifsResponse {
