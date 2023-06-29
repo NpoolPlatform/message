@@ -219,6 +219,12 @@
     "gatewaynotif3v1UpdateNotifsRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "Infos": {
           "type": "array",
           "items": {
