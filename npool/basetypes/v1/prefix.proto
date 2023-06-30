@@ -31,4 +31,8 @@ enum Prefix {
     PrefixCreateEmailTemplate    = 230;
     PrefixCreateFrontendTemplate = 240;
     PrefixCreateSMSTemplate      = 250;
+    PrefixCreateApp          = 260;
+    PrefixCreateUser         = 270;
+    PrefixCreateSubscriber   = 280;
+    PrefixCreateAppSubscribe = 290;
 }
