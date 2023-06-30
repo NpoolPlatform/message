@@ -33,8 +33,9 @@ service Gateway {
 }
 
 message CreateSubscriberRequest {
-    string AppID        = 10;
-    string EmailAddress = 20;
+    string          AppID          = 10;
+    string          EmailAddress   = 20;
+    optional string SubscribeAppID = 30;
 }
 
 message CreateSubscriberResponse {
