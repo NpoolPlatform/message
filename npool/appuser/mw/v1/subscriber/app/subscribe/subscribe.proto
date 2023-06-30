@@ -31,7 +31,7 @@ message AppSubscribe {
     // @inject_tag: sql:"subscribe_app_id"
     string  SubscribeAppID   = 40;
     // @inject_tag: sql:"subscribe_app_name"
-    bool    SubscribeAppName = 50;
+    string  SubscribeAppName = 50;
     // @inject_tag: sql:"created_at"
     uint32  CreatedAt        = 60;
     // @inject_tag: sql:"updated_at"

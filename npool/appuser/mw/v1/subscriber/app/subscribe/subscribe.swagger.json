@@ -65,7 +65,7 @@
           "title": "@inject_tag: sql:\"subscribe_app_id\""
         },
         "SubscribeAppName": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"subscribe_app_name\""
         },
         "CreatedAt": {
