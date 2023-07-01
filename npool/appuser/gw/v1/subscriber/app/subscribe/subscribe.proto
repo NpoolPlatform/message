@@ -42,9 +42,9 @@ message CreateAppSubscribeResponse {
 }
 
 message GetAppSubscribesRequest {
-    string AppID   = 10;
-    int32  Offset  = 20;
-    int32  Limit   = 30;
+    string TargetAppID   = 10;
+    int32  Offset        = 20;
+    int32  Limit         = 30;
 }
 
 message GetAppSubscribesResponse {
@@ -53,8 +53,8 @@ message GetAppSubscribesResponse {
 }
 
 message DeleteAppSubscribeRequest {
-    string ID    = 10;
-    string AppID = 20;
+    string ID          = 10;
+    string TargetAppID = 20;
 }
 
 message DeleteAppSubscribeResponse {

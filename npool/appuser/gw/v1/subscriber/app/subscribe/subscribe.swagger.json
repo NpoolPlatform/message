@@ -139,7 +139,7 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }
@@ -155,7 +155,7 @@
     "appusergatewaysubscriberappsubscribev1GetAppSubscribesRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "Offset": {
