@@ -4,9 +4,10 @@ package account.middleware.deposit.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/deposit";
 
-import "npool/account/mgr/v1/account/account.proto";
 import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Middleware {
@@ -26,7 +27,7 @@ message AccountReq {
     optional string Address        = 60;
     optional bool   Active         = 70;
     optional bool   Locked         = 80;   // Locked when collecting
-    optional account.manager.account1.v1.LockedBy LockedBy = 90;
+    optional basetypes.v1.AccountLockedBy LockedBy = 90;
     optional bool   Blocked        = 100;
     optional string CollectingTID  = 110;  // Used to free the address when transaction done
     optional string Incoming       = 120;
@@ -53,7 +54,7 @@ message Account {
     bool   Locked        = 100;
     // @inject_tag: sql:"locked_by"
     string LockedByStr   = 110;
-    account.manager.account1.v1.LockedBy       LockedBy = 120;
+    basetypes.v1.AccountLockedBy LockedBy = 120;
     // @inject_tag: sql:"blocked"
     bool   Blocked       = 140;
     // @inject_tag: sql:"collecting_tid"
@@ -69,17 +70,17 @@ message Account {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal AppID       = 20;
-    optional npool.v1.StringVal UserID      = 30;
-    optional npool.v1.StringVal CoinTypeID  = 40;
-    optional npool.v1.StringVal AccountID   = 50;
-    optional npool.v1.StringVal Address     = 60;
-    optional npool.v1.BoolVal   Active      = 70;
-    optional npool.v1.BoolVal   Locked      = 80;
-    optional npool.v1.Int32Val  LockedBy    = 90;
-    optional npool.v1.BoolVal   Blocked     = 100;
-    optional npool.v1.Uint32Val ScannableAt = 110;
+    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal UserID      = 30;
+    optional basetypes.v1.StringVal CoinTypeID  = 40;
+    optional basetypes.v1.StringVal AccountID   = 50;
+    optional basetypes.v1.StringVal Address     = 60;
+    optional basetypes.v1.BoolVal   Active      = 70;
+    optional basetypes.v1.BoolVal   Locked      = 80;
+    optional basetypes.v1.Uint32Val LockedBy    = 90;
+    optional basetypes.v1.BoolVal   Blocked     = 100;
+    optional basetypes.v1.Uint32Val ScannableAt = 110;
 }
 
 message CreateAccountRequest {
