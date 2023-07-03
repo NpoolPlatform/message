@@ -67,6 +67,8 @@ message Account {
     uint32 ScannableAt   = 200;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt     = 210;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt     = 1000;
 }
 
 message Conds {
