@@ -4,9 +4,10 @@ package account.middleware.account1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/account";
 
-import "npool/account/mgr/v1/account/account.proto";
 import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Middleware {
@@ -14,23 +15,64 @@ service Middleware {
     rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {}
 }
 
+message Account {
+    // @inject_tag: sql:"id"
+    string         ID         = 10;
+    // @inject_tag: sql:"coin_type_id"
+    string         CoinTypeID = 20;
+    // @inject_tag: sql:"address"
+    string         Address    = 30;
+    // @inject_tag: sql:"used_for"
+    string         UsedForStr = 39;
+    basetypes.v1.AccountUsedFor UsedFor = 40;
+    // @inject_tag: sql:"platform_hold_private_key"
+    bool           PlatformHoldPrivateKey = 50;
+    // @inject_tag: sql:"active"
+    bool           Active     = 60;
+    // @inject_tag: sql:"locked"
+    bool           Locked     = 70;
+    // @inject_tag: sql:"locked_by"
+    string         LockedByStr = 79;
+    basetypes.v1.AccountLockedBy LockedBy = 80;
+    // @inject_tag: sql:"blocked"
+    bool           Blocked    = 90;
+    // @inject_tag: sql:"created_at"
+    uint32         CreatedAt  = 100;
+    // @inject_tag: sql:"updated_at"
+    uint32         UpdatedAt  = 1000;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal CoinTypeID = 20;
+    optional basetypes.v1.StringVal Address    = 30;
+    optional basetypes.v1.Int32Val  UsedFor    = 40;
+    optional basetypes.v1.BoolVal   PlatformHoldPrivateKey = 50;
+    optional basetypes.v1.BoolVal   Active     = 60;
+    optional basetypes.v1.BoolVal   Locked     = 70;
+    optional basetypes.v1.Int32Val  LockedBy   = 80;
+    optional basetypes.v1.BoolVal   Blocked    = 90;
+    optional basetypes.v1.Uint32Val CreatedAt  = 100;
+    optional basetypes.v1.StringSliceVal IDs   = 110;
+}
+
 message GetAccountRequest {
     string ID = 10;
 }
 
 message GetAccountResponse {
-    account.manager.account1.v1.Account Info = 10;
+    Account Info = 10;
 }
 
 message GetAccountsRequest {
-    account.manager.account1.v1.Conds Conds  = 10;
-    int32                             Offset = 20;
-    int32                             Limit  = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetAccountsResponse {
-    repeated account.manager.account1.v1.Account Infos = 10;
-    uint32                                       Total = 20;
+    repeated Account Infos = 10;
+    uint32           Total = 20;
 }
 
 
