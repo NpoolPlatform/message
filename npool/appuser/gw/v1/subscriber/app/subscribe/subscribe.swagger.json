@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/gw/v1/subscriber/subscriber.proto",
+    "title": "npool/appuser/gw/v1/subscriber/app/subscribe/subscribe.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/subscriber": {
+    "/v1/create/appsubscribe": {
       "post": {
-        "operationId": "Gateway_CreateSubscriber",
+        "operationId": "Gateway_CreateAppSubscribe",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1CreateSubscriberResponse"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1CreateAppSubscribeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1CreateSubscriberRequest"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1CreateAppSubscribeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/subscriber": {
+    "/v1/delete/appsubscribe": {
       "post": {
-        "operationId": "Gateway_DeleteSubscriber",
+        "operationId": "Gateway_DeleteAppSubscribe",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1DeleteSubscriberResponse"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1DeleteAppSubscribeResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1DeleteSubscriberRequest"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1DeleteAppSubscribeRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/subscriberes": {
+    "/v1/get/appsubscribes": {
       "post": {
-        "operationId": "Gateway_GetSubscriberes",
+        "operationId": "Gateway_GetAppSubscribes",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1GetSubscriberesResponse"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1GetAppSubscribesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appusergatewaysubscriberv1GetSubscriberesRequest"
+              "$ref": "#/definitions/appusergatewaysubscriberappsubscribev1GetAppSubscribesRequest"
             }
           }
         ],
@@ -114,13 +114,10 @@
     }
   },
   "definitions": {
-    "appusergatewaysubscriberv1CreateSubscriberRequest": {
+    "appusergatewaysubscriberappsubscribev1CreateAppSubscribeRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "EmailAddress": {
+        "TargetAppID": {
           "type": "string"
         },
         "SubscribeAppID": {
@@ -128,37 +125,37 @@
         }
       }
     },
-    "appusergatewaysubscriberv1CreateSubscriberResponse": {
+    "appusergatewaysubscriberappsubscribev1CreateAppSubscribeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscriber"
+          "$ref": "#/definitions/v1AppSubscribe"
         }
       }
     },
-    "appusergatewaysubscriberv1DeleteSubscriberRequest": {
+    "appusergatewaysubscriberappsubscribev1DeleteAppSubscribeRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "ID": {
           "type": "string"
         },
-        "EmailAddress": {
+        "TargetAppID": {
           "type": "string"
         }
       }
     },
-    "appusergatewaysubscriberv1DeleteSubscriberResponse": {
+    "appusergatewaysubscriberappsubscribev1DeleteAppSubscribeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscriber"
+          "$ref": "#/definitions/v1AppSubscribe"
         }
       }
     },
-    "appusergatewaysubscriberv1GetSubscriberesRequest": {
+    "appusergatewaysubscriberappsubscribev1GetAppSubscribesRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "Offset": {
@@ -171,14 +168,14 @@
         }
       }
     },
-    "appusergatewaysubscriberv1GetSubscriberesResponse": {
+    "appusergatewaysubscriberappsubscribev1GetAppSubscribesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Subscriber"
+            "$ref": "#/definitions/v1AppSubscribe"
           }
         },
         "Total": {
@@ -215,7 +212,7 @@
         }
       }
     },
-    "v1Subscriber": {
+    "v1AppSubscribe": {
       "type": "object",
       "properties": {
         "ID": {
@@ -230,13 +227,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_name\""
         },
-        "EmailAddress": {
+        "SubscribeAppID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"email_address\""
+          "title": "@inject_tag: sql:\"subscribe_app_id\""
         },
-        "Registered": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"registered\""
+        "SubscribeAppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"subscribe_app_name\""
         },
         "CreatedAt": {
           "type": "integer",
