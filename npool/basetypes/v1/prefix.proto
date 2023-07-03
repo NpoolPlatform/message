@@ -39,4 +39,10 @@ enum Prefix {
     PrefixCreateKyc          = 310;
     PrefixCreateRole         = 320;
     PrefixCreateRoleUser     = 330;
+    PrefixCreateDepositAccount = 340;
+    PrefixCreateGoodBenefitAccount = 350;
+    PrefixCreatePaymentAccount = 360;
+    PrefixCreateUserTransfer   = 370;
+    PrefixCreateUserAccount    = 380;
+    PrefixCreatePlatformAccount = 390;
 }
