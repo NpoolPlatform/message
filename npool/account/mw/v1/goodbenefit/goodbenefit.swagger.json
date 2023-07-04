@@ -218,6 +218,14 @@
         }
       }
     },
+    "v1ExistAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetAccountResponse": {
       "type": "object",
       "properties": {

@@ -23,6 +23,7 @@ const (
 	Middleware_UpdateAccount_FullMethodName     = "/account.middleware.goodbenefit.v1.Middleware/UpdateAccount"
 	Middleware_GetAccount_FullMethodName        = "/account.middleware.goodbenefit.v1.Middleware/GetAccount"
 	Middleware_GetAccounts_FullMethodName       = "/account.middleware.goodbenefit.v1.Middleware/GetAccounts"
+	Middleware_ExistAccount_FullMethodName      = "/account.middleware.goodbenefit.v1.Middleware/ExistAccount"
 	Middleware_ExistAccountConds_FullMethodName = "/account.middleware.goodbenefit.v1.Middleware/ExistAccountConds"
 )
 
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
+	ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error)
 	ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsReque
 	return out, nil
 }
 
+func (c *middlewareClient) ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error) {
+	out := new(ExistAccountResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
 	out := new(ExistAccountCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistAccountConds_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
+	ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error)
 	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequ
 }
 func (UnimplementedMiddlewareServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAccount not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAccountConds not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetAccounts_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistAccount_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistAccount(ctx, req.(*ExistAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAccountCondsRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAccounts",
 			Handler:    _Middleware_GetAccounts_Handler,
+		},
+		{
+			MethodName: "ExistAccount",
+			Handler:    _Middleware_ExistAccount_Handler,
 		},
 		{
 			MethodName: "ExistAccountConds",
