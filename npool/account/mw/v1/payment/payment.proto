@@ -66,7 +66,7 @@ message Conds {
     optional npool.v1.StringVal Address     = 40;
     optional npool.v1.BoolVal   Active      = 50;
     optional npool.v1.BoolVal   Locked      = 60;
-    optional npool.v1.Int32Val  LockedBy    = 70;
+    optional npool.v1.Uint32Val LockedBy    = 70;
     optional npool.v1.BoolVal   Blocked     = 80;
     optional npool.v1.StringSliceVal AccountIDs = 90;
     optional npool.v1.Uint32Val AvailableAt = 100;
