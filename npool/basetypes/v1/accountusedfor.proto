@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum AccountUsedFor {
     DefaultAccountUsedFor = 0;
-    GoodBenefit2          = 10;  // Daily good benefit receiver              - Platform Hot
+    GoodBenefit           = 10;  // Daily good benefit receiver              - Platform Hot
     UserBenefitHot        = 20;  // Limited amount money for withdrawal      - Platform Hot
     UserBenefitCold       = 30;  // Money of user benefit over limitation    - Platform Cold
     PlatformBenefitCold   = 40;  // Money over limitation                    - Platform Cold

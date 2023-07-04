@@ -26,8 +26,8 @@ enum UsedFor {
 
     AffiliatePurchase     = 170;
     AffiliateSignup       = 180;
-    GoodBenefit           = 190;
-    Announcement          = 100000;
+    GoodBenefit2          = 190;
 
+    Announcement          = 100000;
     ProductPage           = 200000;
 }
