@@ -706,100 +706,6 @@ func (x *GetAccountResponse) GetInfo() *Account {
 	return nil
 }
 
-type GetAccountOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetAccountOnlyRequest) Reset() {
-	*x = GetAccountOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetAccountOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAccountOnlyRequest) ProtoMessage() {}
-
-func (x *GetAccountOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAccountOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetAccountOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *GetAccountOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetAccountOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Account `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetAccountOnlyResponse) Reset() {
-	*x = GetAccountOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetAccountOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAccountOnlyResponse) ProtoMessage() {}
-
-func (x *GetAccountOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAccountOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetAccountOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *GetAccountOnlyResponse) GetInfo() *Account {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type GetAccountsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -813,7 +719,7 @@ type GetAccountsRequest struct {
 func (x *GetAccountsRequest) Reset() {
 	*x = GetAccountsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[11]
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -826,7 +732,7 @@ func (x *GetAccountsRequest) String() string {
 func (*GetAccountsRequest) ProtoMessage() {}
 
 func (x *GetAccountsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[11]
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -839,7 +745,7 @@ func (x *GetAccountsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountsRequest.ProtoReflect.Descriptor instead.
 func (*GetAccountsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{11}
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAccountsRequest) GetConds() *Conds {
@@ -875,7 +781,7 @@ type GetAccountsResponse struct {
 func (x *GetAccountsResponse) Reset() {
 	*x = GetAccountsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[12]
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -888,7 +794,7 @@ func (x *GetAccountsResponse) String() string {
 func (*GetAccountsResponse) ProtoMessage() {}
 
 func (x *GetAccountsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[12]
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -901,7 +807,7 @@ func (x *GetAccountsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountsResponse.ProtoReflect.Descriptor instead.
 func (*GetAccountsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{12}
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAccountsResponse) GetInfos() []*Account {
@@ -916,6 +822,194 @@ func (x *GetAccountsResponse) GetTotal() uint32 {
 		return x.Total
 	}
 	return 0
+}
+
+type ExistAccountRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+}
+
+func (x *ExistAccountRequest) Reset() {
+	*x = ExistAccountRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistAccountRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistAccountRequest) ProtoMessage() {}
+
+func (x *ExistAccountRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistAccountRequest.ProtoReflect.Descriptor instead.
+func (*ExistAccountRequest) Descriptor() ([]byte, []int) {
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ExistAccountRequest) GetID() string {
+	if x != nil {
+		return x.ID
+	}
+	return ""
+}
+
+type ExistAccountResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *ExistAccountResponse) Reset() {
+	*x = ExistAccountResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistAccountResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistAccountResponse) ProtoMessage() {}
+
+func (x *ExistAccountResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistAccountResponse.ProtoReflect.Descriptor instead.
+func (*ExistAccountResponse) Descriptor() ([]byte, []int) {
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *ExistAccountResponse) GetInfo() bool {
+	if x != nil {
+		return x.Info
+	}
+	return false
+}
+
+type ExistAccountCondsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
+}
+
+func (x *ExistAccountCondsRequest) Reset() {
+	*x = ExistAccountCondsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistAccountCondsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistAccountCondsRequest) ProtoMessage() {}
+
+func (x *ExistAccountCondsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistAccountCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistAccountCondsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ExistAccountCondsRequest) GetConds() *Conds {
+	if x != nil {
+		return x.Conds
+	}
+	return nil
+}
+
+type ExistAccountCondsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *ExistAccountCondsResponse) Reset() {
+	*x = ExistAccountCondsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExistAccountCondsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExistAccountCondsResponse) ProtoMessage() {}
+
+func (x *ExistAccountCondsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_account_mw_v1_platform_platform_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExistAccountCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistAccountCondsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ExistAccountCondsResponse) GetInfo() bool {
+	if x != nil {
+		return x.Info
+	}
+	return false
 }
 
 var File_npool_account_mw_v1_platform_platform_proto protoreflect.FileDescriptor
@@ -1066,32 +1160,35 @@ var file_npool_account_mw_v1_platform_platform_proto_rawDesc = []byte{
 	0x0b, 0x32, 0x27, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e,
 	0x76, 0x31, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x54, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4f, 0x6e,
-	0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75,
-	0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c,
-	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
-	0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x55, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27,
-	0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
-	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x7f, 0x0a,
-	0x12, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x25, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64,
-	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
-	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73,
-	0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05,
-	0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69,
-	0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x6a,
-	0x0a, 0x13, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a,
-	0x20, 0x03, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d,
-	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f,
-	0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x05, 0x49,
-	0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20,
-	0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0x81, 0x05, 0x0a, 0x0a, 0x4d,
+	0x22, 0x7f, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e,
+	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
+	0x6e, 0x64, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c,
+	0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69,
+	0x74, 0x22, 0x6a, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f,
+	0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
+	0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c,
+	0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x25, 0x0a,
+	0x13, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x02, 0x49, 0x44, 0x22, 0x2a, 0x0a, 0x14, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x57, 0x0a, 0x18, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x05,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x61, 0x63,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e,
+	0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x2f, 0x0a, 0x19, 0x45, 0x78, 0x69,
+	0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
+	0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x87, 0x06, 0x0a, 0x0a, 0x4d,
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x7e, 0x0a, 0x0d, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x34, 0x2e, 0x61, 0x63, 0x63,
 	0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
@@ -1116,27 +1213,35 @@ var file_npool_account_mw_v1_platform_platform_proto_rawDesc = []byte{
 	0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
 	0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41,
 	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x81, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x12, 0x35, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
-	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x61, 0x63, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41,
-	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x78, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75,
-	0x6e, 0x74, 0x73, 0x12, 0x32, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69,
+	0x12, 0x78, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x12,
+	0x32, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31,
+	0x2e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69,
 	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
 	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7b, 0x0a, 0x0c, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x33, 0x2e, 0x61, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
+	0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x34, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31,
+	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8a, 0x01, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73,
+	0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x38, 0x2e,
+	0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
+	0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x45,
+	0x78, 0x69, 0x73, 0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e,
 	0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x70, 0x6c, 0x61,
-	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x6f,
-	0x75, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3f,
-	0x5a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
-	0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x63,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x42, 0x3f, 0x5a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d,
+	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61,
+	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x70, 0x6c, 0x61,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1151,66 +1256,69 @@ func file_npool_account_mw_v1_platform_platform_proto_rawDescGZIP() []byte {
 	return file_npool_account_mw_v1_platform_platform_proto_rawDescData
 }
 
-var file_npool_account_mw_v1_platform_platform_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_account_mw_v1_platform_platform_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_account_mw_v1_platform_platform_proto_goTypes = []interface{}{
-	(*AccountReq)(nil),             // 0: account.middleware.platform.v1.AccountReq
-	(*Account)(nil),                // 1: account.middleware.platform.v1.Account
-	(*Conds)(nil),                  // 2: account.middleware.platform.v1.Conds
-	(*CreateAccountRequest)(nil),   // 3: account.middleware.platform.v1.CreateAccountRequest
-	(*CreateAccountResponse)(nil),  // 4: account.middleware.platform.v1.CreateAccountResponse
-	(*UpdateAccountRequest)(nil),   // 5: account.middleware.platform.v1.UpdateAccountRequest
-	(*UpdateAccountResponse)(nil),  // 6: account.middleware.platform.v1.UpdateAccountResponse
-	(*GetAccountRequest)(nil),      // 7: account.middleware.platform.v1.GetAccountRequest
-	(*GetAccountResponse)(nil),     // 8: account.middleware.platform.v1.GetAccountResponse
-	(*GetAccountOnlyRequest)(nil),  // 9: account.middleware.platform.v1.GetAccountOnlyRequest
-	(*GetAccountOnlyResponse)(nil), // 10: account.middleware.platform.v1.GetAccountOnlyResponse
-	(*GetAccountsRequest)(nil),     // 11: account.middleware.platform.v1.GetAccountsRequest
-	(*GetAccountsResponse)(nil),    // 12: account.middleware.platform.v1.GetAccountsResponse
-	(v1.AccountUsedFor)(0),         // 13: basetypes.v1.AccountUsedFor
-	(v1.AccountLockedBy)(0),        // 14: basetypes.v1.AccountLockedBy
-	(*v1.StringVal)(nil),           // 15: basetypes.v1.StringVal
-	(*v1.Int32Val)(nil),            // 16: basetypes.v1.Int32Val
-	(*v1.BoolVal)(nil),             // 17: basetypes.v1.BoolVal
+	(*AccountReq)(nil),                // 0: account.middleware.platform.v1.AccountReq
+	(*Account)(nil),                   // 1: account.middleware.platform.v1.Account
+	(*Conds)(nil),                     // 2: account.middleware.platform.v1.Conds
+	(*CreateAccountRequest)(nil),      // 3: account.middleware.platform.v1.CreateAccountRequest
+	(*CreateAccountResponse)(nil),     // 4: account.middleware.platform.v1.CreateAccountResponse
+	(*UpdateAccountRequest)(nil),      // 5: account.middleware.platform.v1.UpdateAccountRequest
+	(*UpdateAccountResponse)(nil),     // 6: account.middleware.platform.v1.UpdateAccountResponse
+	(*GetAccountRequest)(nil),         // 7: account.middleware.platform.v1.GetAccountRequest
+	(*GetAccountResponse)(nil),        // 8: account.middleware.platform.v1.GetAccountResponse
+	(*GetAccountsRequest)(nil),        // 9: account.middleware.platform.v1.GetAccountsRequest
+	(*GetAccountsResponse)(nil),       // 10: account.middleware.platform.v1.GetAccountsResponse
+	(*ExistAccountRequest)(nil),       // 11: account.middleware.platform.v1.ExistAccountRequest
+	(*ExistAccountResponse)(nil),      // 12: account.middleware.platform.v1.ExistAccountResponse
+	(*ExistAccountCondsRequest)(nil),  // 13: account.middleware.platform.v1.ExistAccountCondsRequest
+	(*ExistAccountCondsResponse)(nil), // 14: account.middleware.platform.v1.ExistAccountCondsResponse
+	(v1.AccountUsedFor)(0),            // 15: basetypes.v1.AccountUsedFor
+	(v1.AccountLockedBy)(0),           // 16: basetypes.v1.AccountLockedBy
+	(*v1.StringVal)(nil),              // 17: basetypes.v1.StringVal
+	(*v1.Int32Val)(nil),               // 18: basetypes.v1.Int32Val
+	(*v1.BoolVal)(nil),                // 19: basetypes.v1.BoolVal
 }
 var file_npool_account_mw_v1_platform_platform_proto_depIdxs = []int32{
-	13, // 0: account.middleware.platform.v1.AccountReq.UsedFor:type_name -> basetypes.v1.AccountUsedFor
-	14, // 1: account.middleware.platform.v1.AccountReq.LockedBy:type_name -> basetypes.v1.AccountLockedBy
-	13, // 2: account.middleware.platform.v1.Account.UsedFor:type_name -> basetypes.v1.AccountUsedFor
-	14, // 3: account.middleware.platform.v1.Account.LockedBy:type_name -> basetypes.v1.AccountLockedBy
-	15, // 4: account.middleware.platform.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	15, // 5: account.middleware.platform.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
-	16, // 6: account.middleware.platform.v1.Conds.UsedFor:type_name -> basetypes.v1.Int32Val
-	15, // 7: account.middleware.platform.v1.Conds.AccountID:type_name -> basetypes.v1.StringVal
-	17, // 8: account.middleware.platform.v1.Conds.Backup:type_name -> basetypes.v1.BoolVal
-	17, // 9: account.middleware.platform.v1.Conds.Active:type_name -> basetypes.v1.BoolVal
-	17, // 10: account.middleware.platform.v1.Conds.Locked:type_name -> basetypes.v1.BoolVal
-	16, // 11: account.middleware.platform.v1.Conds.LockedBy:type_name -> basetypes.v1.Int32Val
-	17, // 12: account.middleware.platform.v1.Conds.Blocked:type_name -> basetypes.v1.BoolVal
-	15, // 13: account.middleware.platform.v1.Conds.Address:type_name -> basetypes.v1.StringVal
+	15, // 0: account.middleware.platform.v1.AccountReq.UsedFor:type_name -> basetypes.v1.AccountUsedFor
+	16, // 1: account.middleware.platform.v1.AccountReq.LockedBy:type_name -> basetypes.v1.AccountLockedBy
+	15, // 2: account.middleware.platform.v1.Account.UsedFor:type_name -> basetypes.v1.AccountUsedFor
+	16, // 3: account.middleware.platform.v1.Account.LockedBy:type_name -> basetypes.v1.AccountLockedBy
+	17, // 4: account.middleware.platform.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	17, // 5: account.middleware.platform.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	18, // 6: account.middleware.platform.v1.Conds.UsedFor:type_name -> basetypes.v1.Int32Val
+	17, // 7: account.middleware.platform.v1.Conds.AccountID:type_name -> basetypes.v1.StringVal
+	19, // 8: account.middleware.platform.v1.Conds.Backup:type_name -> basetypes.v1.BoolVal
+	19, // 9: account.middleware.platform.v1.Conds.Active:type_name -> basetypes.v1.BoolVal
+	19, // 10: account.middleware.platform.v1.Conds.Locked:type_name -> basetypes.v1.BoolVal
+	18, // 11: account.middleware.platform.v1.Conds.LockedBy:type_name -> basetypes.v1.Int32Val
+	19, // 12: account.middleware.platform.v1.Conds.Blocked:type_name -> basetypes.v1.BoolVal
+	17, // 13: account.middleware.platform.v1.Conds.Address:type_name -> basetypes.v1.StringVal
 	0,  // 14: account.middleware.platform.v1.CreateAccountRequest.Info:type_name -> account.middleware.platform.v1.AccountReq
 	1,  // 15: account.middleware.platform.v1.CreateAccountResponse.Info:type_name -> account.middleware.platform.v1.Account
 	0,  // 16: account.middleware.platform.v1.UpdateAccountRequest.Info:type_name -> account.middleware.platform.v1.AccountReq
 	1,  // 17: account.middleware.platform.v1.UpdateAccountResponse.Info:type_name -> account.middleware.platform.v1.Account
 	1,  // 18: account.middleware.platform.v1.GetAccountResponse.Info:type_name -> account.middleware.platform.v1.Account
-	2,  // 19: account.middleware.platform.v1.GetAccountOnlyRequest.Conds:type_name -> account.middleware.platform.v1.Conds
-	1,  // 20: account.middleware.platform.v1.GetAccountOnlyResponse.Info:type_name -> account.middleware.platform.v1.Account
-	2,  // 21: account.middleware.platform.v1.GetAccountsRequest.Conds:type_name -> account.middleware.platform.v1.Conds
-	1,  // 22: account.middleware.platform.v1.GetAccountsResponse.Infos:type_name -> account.middleware.platform.v1.Account
-	3,  // 23: account.middleware.platform.v1.Middleware.CreateAccount:input_type -> account.middleware.platform.v1.CreateAccountRequest
-	5,  // 24: account.middleware.platform.v1.Middleware.UpdateAccount:input_type -> account.middleware.platform.v1.UpdateAccountRequest
-	7,  // 25: account.middleware.platform.v1.Middleware.GetAccount:input_type -> account.middleware.platform.v1.GetAccountRequest
-	9,  // 26: account.middleware.platform.v1.Middleware.GetAccountOnly:input_type -> account.middleware.platform.v1.GetAccountOnlyRequest
-	11, // 27: account.middleware.platform.v1.Middleware.GetAccounts:input_type -> account.middleware.platform.v1.GetAccountsRequest
+	2,  // 19: account.middleware.platform.v1.GetAccountsRequest.Conds:type_name -> account.middleware.platform.v1.Conds
+	1,  // 20: account.middleware.platform.v1.GetAccountsResponse.Infos:type_name -> account.middleware.platform.v1.Account
+	2,  // 21: account.middleware.platform.v1.ExistAccountCondsRequest.Conds:type_name -> account.middleware.platform.v1.Conds
+	3,  // 22: account.middleware.platform.v1.Middleware.CreateAccount:input_type -> account.middleware.platform.v1.CreateAccountRequest
+	5,  // 23: account.middleware.platform.v1.Middleware.UpdateAccount:input_type -> account.middleware.platform.v1.UpdateAccountRequest
+	7,  // 24: account.middleware.platform.v1.Middleware.GetAccount:input_type -> account.middleware.platform.v1.GetAccountRequest
+	9,  // 25: account.middleware.platform.v1.Middleware.GetAccounts:input_type -> account.middleware.platform.v1.GetAccountsRequest
+	11, // 26: account.middleware.platform.v1.Middleware.ExistAccount:input_type -> account.middleware.platform.v1.ExistAccountRequest
+	13, // 27: account.middleware.platform.v1.Middleware.ExistAccountConds:input_type -> account.middleware.platform.v1.ExistAccountCondsRequest
 	4,  // 28: account.middleware.platform.v1.Middleware.CreateAccount:output_type -> account.middleware.platform.v1.CreateAccountResponse
 	6,  // 29: account.middleware.platform.v1.Middleware.UpdateAccount:output_type -> account.middleware.platform.v1.UpdateAccountResponse
 	8,  // 30: account.middleware.platform.v1.Middleware.GetAccount:output_type -> account.middleware.platform.v1.GetAccountResponse
-	10, // 31: account.middleware.platform.v1.Middleware.GetAccountOnly:output_type -> account.middleware.platform.v1.GetAccountOnlyResponse
-	12, // 32: account.middleware.platform.v1.Middleware.GetAccounts:output_type -> account.middleware.platform.v1.GetAccountsResponse
-	28, // [28:33] is the sub-list for method output_type
-	23, // [23:28] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	10, // 31: account.middleware.platform.v1.Middleware.GetAccounts:output_type -> account.middleware.platform.v1.GetAccountsResponse
+	12, // 32: account.middleware.platform.v1.Middleware.ExistAccount:output_type -> account.middleware.platform.v1.ExistAccountResponse
+	14, // 33: account.middleware.platform.v1.Middleware.ExistAccountConds:output_type -> account.middleware.platform.v1.ExistAccountCondsResponse
+	28, // [28:34] is the sub-list for method output_type
+	22, // [22:28] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_npool_account_mw_v1_platform_platform_proto_init() }
@@ -1328,30 +1436,6 @@ func file_npool_account_mw_v1_platform_platform_proto_init() {
 			}
 		}
 		file_npool_account_mw_v1_platform_platform_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAccountOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_account_mw_v1_platform_platform_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAccountOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_account_mw_v1_platform_platform_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountsRequest); i {
 			case 0:
 				return &v.state
@@ -1363,8 +1447,56 @@ func file_npool_account_mw_v1_platform_platform_proto_init() {
 				return nil
 			}
 		}
-		file_npool_account_mw_v1_platform_platform_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_account_mw_v1_platform_platform_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_account_mw_v1_platform_platform_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistAccountRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_account_mw_v1_platform_platform_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistAccountResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_account_mw_v1_platform_platform_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistAccountCondsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_account_mw_v1_platform_platform_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistAccountCondsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1384,7 +1516,7 @@ func file_npool_account_mw_v1_platform_platform_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_account_mw_v1_platform_platform_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
