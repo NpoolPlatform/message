@@ -4,8 +4,7 @@ package account.middleware.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/payment";
 
-import "npool/account/mgr/v1/account/account.proto";
-import "google/protobuf/empty.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -26,7 +25,7 @@ message AccountReq {
     optional string     Address        = 40;
     optional bool       Active         = 50;
     optional bool       Locked         = 60;
-    optional account.manager.account1.v1.LockedBy LockedBy = 70;
+    optional basetypes.v1.AccountLockedBy LockedBy = 70;
     optional bool       Blocked        = 80;
     optional string     CollectingTID  = 90;  // Used to free the address when transaction done
     optional uint32     AvailableAt    = 100;
@@ -45,7 +44,7 @@ message Account {
     bool       Active        = 50;
     // @inject_tag: sql:"locked"
     bool       Locked        = 60;
-    account.manager.account1.v1.LockedBy LockedBy = 70;
+    basetypes.v1.AccountLockedBy LockedBy = 70;
     // @inject_tag: sql:"locked_by"
     string     LockedByStr   = 71;
     // @inject_tag: sql:"blocked"
