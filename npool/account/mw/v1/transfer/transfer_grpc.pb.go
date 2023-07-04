@@ -19,14 +19,28 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	Middleware_CreateTransfer_FullMethodName     = "/account.middleware.transfer.v1.Middleware/CreateTransfer"
+	Middleware_CreateTransfers_FullMethodName    = "/account.middleware.transfer.v1.Middleware/CreateTransfers"
+	Middleware_GetTransfer_FullMethodName        = "/account.middleware.transfer.v1.Middleware/GetTransfer"
+	Middleware_GetTransferOnly_FullMethodName    = "/account.middleware.transfer.v1.Middleware/GetTransferOnly"
+	Middleware_GetTransfers_FullMethodName       = "/account.middleware.transfer.v1.Middleware/GetTransfers"
+	Middleware_ExistTransfer_FullMethodName      = "/account.middleware.transfer.v1.Middleware/ExistTransfer"
 	Middleware_ExistTransferConds_FullMethodName = "/account.middleware.transfer.v1.Middleware/ExistTransferConds"
+	Middleware_DeleteTransfer_FullMethodName     = "/account.middleware.transfer.v1.Middleware/DeleteTransfer"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
+	CreateTransfers(ctx context.Context, in *CreateTransfersRequest, opts ...grpc.CallOption) (*CreateTransfersResponse, error)
+	GetTransfer(ctx context.Context, in *GetTransferRequest, opts ...grpc.CallOption) (*GetTransferResponse, error)
+	GetTransferOnly(ctx context.Context, in *GetTransferOnlyRequest, opts ...grpc.CallOption) (*GetTransferOnlyResponse, error)
+	GetTransfers(ctx context.Context, in *GetTransfersRequest, opts ...grpc.CallOption) (*GetTransfersResponse, error)
+	ExistTransfer(ctx context.Context, in *ExistTransferRequest, opts ...grpc.CallOption) (*ExistTransferResponse, error)
 	ExistTransferConds(ctx context.Context, in *ExistTransferCondsRequest, opts ...grpc.CallOption) (*ExistTransferCondsResponse, error)
+	DeleteTransfer(ctx context.Context, in *DeleteTransferRequest, opts ...grpc.CallOption) (*DeleteTransferResponse, error)
 }
 
 type middlewareClient struct {
@@ -35,6 +49,60 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error) {
+	out := new(CreateTransferResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateTransfer_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateTransfers(ctx context.Context, in *CreateTransfersRequest, opts ...grpc.CallOption) (*CreateTransfersResponse, error) {
+	out := new(CreateTransfersResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateTransfers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetTransfer(ctx context.Context, in *GetTransferRequest, opts ...grpc.CallOption) (*GetTransferResponse, error) {
+	out := new(GetTransferResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetTransfer_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetTransferOnly(ctx context.Context, in *GetTransferOnlyRequest, opts ...grpc.CallOption) (*GetTransferOnlyResponse, error) {
+	out := new(GetTransferOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetTransferOnly_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetTransfers(ctx context.Context, in *GetTransfersRequest, opts ...grpc.CallOption) (*GetTransfersResponse, error) {
+	out := new(GetTransfersResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetTransfers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistTransfer(ctx context.Context, in *ExistTransferRequest, opts ...grpc.CallOption) (*ExistTransferResponse, error) {
+	out := new(ExistTransferResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTransfer_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) ExistTransferConds(ctx context.Context, in *ExistTransferCondsRequest, opts ...grpc.CallOption) (*ExistTransferCondsResponse, error) {
@@ -46,11 +114,27 @@ func (c *middlewareClient) ExistTransferConds(ctx context.Context, in *ExistTran
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteTransfer(ctx context.Context, in *DeleteTransferRequest, opts ...grpc.CallOption) (*DeleteTransferResponse, error) {
+	out := new(DeleteTransferResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteTransfer_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
+	CreateTransfers(context.Context, *CreateTransfersRequest) (*CreateTransfersResponse, error)
+	GetTransfer(context.Context, *GetTransferRequest) (*GetTransferResponse, error)
+	GetTransferOnly(context.Context, *GetTransferOnlyRequest) (*GetTransferOnlyResponse, error)
+	GetTransfers(context.Context, *GetTransfersRequest) (*GetTransfersResponse, error)
+	ExistTransfer(context.Context, *ExistTransferRequest) (*ExistTransferResponse, error)
 	ExistTransferConds(context.Context, *ExistTransferCondsRequest) (*ExistTransferCondsResponse, error)
+	DeleteTransfer(context.Context, *DeleteTransferRequest) (*DeleteTransferResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -58,8 +142,29 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransfer not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateTransfers(context.Context, *CreateTransfersRequest) (*CreateTransfersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransfers not implemented")
+}
+func (UnimplementedMiddlewareServer) GetTransfer(context.Context, *GetTransferRequest) (*GetTransferResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransfer not implemented")
+}
+func (UnimplementedMiddlewareServer) GetTransferOnly(context.Context, *GetTransferOnlyRequest) (*GetTransferOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransferOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetTransfers(context.Context, *GetTransfersRequest) (*GetTransfersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransfers not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTransfer(context.Context, *ExistTransferRequest) (*ExistTransferResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTransfer not implemented")
+}
 func (UnimplementedMiddlewareServer) ExistTransferConds(context.Context, *ExistTransferCondsRequest) (*ExistTransferCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistTransferConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteTransfer(context.Context, *DeleteTransferRequest) (*DeleteTransferResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTransfer not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -72,6 +177,114 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateTransfer(ctx, req.(*CreateTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateTransfers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTransfersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateTransfers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateTransfers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateTransfers(ctx, req.(*CreateTransfersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetTransfer(ctx, req.(*GetTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetTransferOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransferOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetTransferOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetTransferOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetTransferOnly(ctx, req.(*GetTransferOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetTransfers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransfersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetTransfers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetTransfers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetTransfers(ctx, req.(*GetTransfersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTransfer(ctx, req.(*ExistTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_ExistTransferConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -92,6 +305,24 @@ func _Middleware_ExistTransferConds_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteTransfer(ctx, req.(*DeleteTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -100,8 +331,36 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "CreateTransfer",
+			Handler:    _Middleware_CreateTransfer_Handler,
+		},
+		{
+			MethodName: "CreateTransfers",
+			Handler:    _Middleware_CreateTransfers_Handler,
+		},
+		{
+			MethodName: "GetTransfer",
+			Handler:    _Middleware_GetTransfer_Handler,
+		},
+		{
+			MethodName: "GetTransferOnly",
+			Handler:    _Middleware_GetTransferOnly_Handler,
+		},
+		{
+			MethodName: "GetTransfers",
+			Handler:    _Middleware_GetTransfers_Handler,
+		},
+		{
+			MethodName: "ExistTransfer",
+			Handler:    _Middleware_ExistTransfer_Handler,
+		},
+		{
 			MethodName: "ExistTransferConds",
 			Handler:    _Middleware_ExistTransferConds_Handler,
+		},
+		{
+			MethodName: "DeleteTransfer",
+			Handler:    _Middleware_DeleteTransfer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

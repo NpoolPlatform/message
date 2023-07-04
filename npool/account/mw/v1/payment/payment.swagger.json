@@ -183,7 +183,7 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
@@ -245,18 +245,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },

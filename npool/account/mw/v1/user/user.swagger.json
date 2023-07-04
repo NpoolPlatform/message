@@ -17,7 +17,35 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareuserv1Account": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -90,7 +118,7 @@
         }
       }
     },
-    "middlewareuserv1AccountReq": {
+    "v1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -136,128 +164,6 @@
         }
       }
     },
-    "middlewareuserv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Address": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Active": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "Blocked": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "AccountIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "middlewareuserv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1DeleteAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "middlewareuserv1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewareuserv1Account"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewareuserv1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareuserv1Account"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
     "v1AccountUsedFor": {
       "type": "string",
       "enum": [
@@ -287,15 +193,89 @@
         }
       }
     },
-    "v1Int32Val": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "Value": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AccountIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         }
       }
     },
@@ -321,6 +301,26 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     }
