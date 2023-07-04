@@ -70,18 +70,6 @@
         }
       }
     },
-    "v1CreateTransfersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Transfer"
-          }
-        }
-      }
-    },
     "v1DeleteTransferResponse": {
       "type": "object",
       "properties": {
