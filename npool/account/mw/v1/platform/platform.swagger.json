@@ -210,6 +210,9 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
