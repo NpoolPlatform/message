@@ -13,10 +13,9 @@ import "npool/basetypes/v1/accountlockedby.proto";
 service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
-
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
-    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
+    rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
 }
 
 message AccountReq {
@@ -100,14 +99,6 @@ message GetAccountResponse {
     Account Info = 10;
 }
 
-message GetAccountOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAccountOnlyResponse {
-    Account Info = 10;
-}
-
 message GetAccountsRequest {
     Conds Conds = 10;
     int32 Offset = 20;
@@ -119,3 +110,10 @@ message GetAccountsResponse {
     uint32           Total = 20;
 }
 
+message ExistAccountCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAccountCondsResponse {
+    bool Info = 10;
+}

@@ -210,11 +210,11 @@
         }
       }
     },
-    "v1GetAccountOnlyResponse": {
+    "v1ExistAccountCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Account"
+          "type": "boolean"
         }
       }
     },
