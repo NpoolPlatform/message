@@ -5,7 +5,7 @@ package account.middleware.payment.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/payment";
 
 import "npool/basetypes/v1/accountlockedby.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -60,16 +60,16 @@ message Account {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID          = 10;
-    optional npool.v1.StringVal CoinTypeID  = 20;
-    optional npool.v1.StringVal AccountID   = 30;
-    optional npool.v1.StringVal Address     = 40;
-    optional npool.v1.BoolVal   Active      = 50;
-    optional npool.v1.BoolVal   Locked      = 60;
-    optional npool.v1.Uint32Val LockedBy    = 70;
-    optional npool.v1.BoolVal   Blocked     = 80;
-    optional npool.v1.StringSliceVal AccountIDs = 90;
-    optional npool.v1.Uint32Val AvailableAt = 100;
+    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal CoinTypeID  = 20;
+    optional basetypes.v1.StringVal AccountID   = 30;
+    optional basetypes.v1.StringVal Address     = 40;
+    optional basetypes.v1.BoolVal   Active      = 50;
+    optional basetypes.v1.BoolVal   Locked      = 60;
+    optional basetypes.v1.Uint32Val LockedBy    = 70;
+    optional basetypes.v1.BoolVal   Blocked     = 80;
+    optional basetypes.v1.StringSliceVal AccountIDs = 90;
+    optional basetypes.v1.Uint32Val AvailableAt = 100;
 }
 
 message CreateAccountRequest {

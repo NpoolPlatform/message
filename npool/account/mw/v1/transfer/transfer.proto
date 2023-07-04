@@ -4,7 +4,7 @@ package account.middleware.transfer.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/transfer";
 
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -43,10 +43,10 @@ message Transfer {
 }
 
 message Conds {
-  optional npool.v1.StringVal ID           = 10;
-  optional npool.v1.StringVal AppID        = 20;
-  optional npool.v1.StringVal UserID       = 30;
-  optional npool.v1.StringVal TargetUserID = 40;
+  optional basetypes.v1.StringVal ID           = 10;
+  optional basetypes.v1.StringVal AppID        = 20;
+  optional basetypes.v1.StringVal UserID       = 30;
+  optional basetypes.v1.StringVal TargetUserID = 40;
 }
 
 message CreateTransferRequest {
