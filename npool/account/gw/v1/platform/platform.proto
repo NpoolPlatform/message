@@ -49,6 +49,7 @@ message Account {
     basetypes.v1.AccountLockedBy LockedBy = 130;
     bool           Blocked       = 140;
     uint32         CreatedAt     = 150;
+    uint32         UpdatedAt     = 160;
 }
 
 message CreateAccountRequest {
