@@ -191,7 +191,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "AccountID": {
           "$ref": "#/definitions/v1StringVal"
@@ -206,7 +206,7 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
@@ -264,18 +264,6 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -284,6 +272,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

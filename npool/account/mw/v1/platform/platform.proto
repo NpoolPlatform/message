@@ -65,12 +65,12 @@ message Account {
 message Conds {
     optional basetypes.v1.StringVal ID          = 10;
     optional basetypes.v1.StringVal CoinTypeID  = 20;
-    optional basetypes.v1.Int32Val  UsedFor     = 30;
+    optional basetypes.v1.Uint32Val UsedFor     = 30;
     optional basetypes.v1.StringVal AccountID   = 40;
     optional basetypes.v1.BoolVal   Backup      = 50;
     optional basetypes.v1.BoolVal   Active      = 60;
     optional basetypes.v1.BoolVal   Locked      = 70;
-    optional basetypes.v1.Int32Val  LockedBy    = 80;
+    optional basetypes.v1.Uint32Val LockedBy    = 80;
     optional basetypes.v1.BoolVal   Blocked     = 90;
     optional basetypes.v1.StringVal Address     = 100;
 }
