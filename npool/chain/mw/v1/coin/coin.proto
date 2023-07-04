@@ -51,6 +51,7 @@ message CoinReq {
     optional string ChainID                      = 290;
     optional string ChainNickname                = 300;
     optional string ChainNativeCoinName          = 310;
+    optional bool   CheckNewAddressBalance       = 320;
 }
 
 message Coin {
@@ -114,6 +115,8 @@ message Coin {
     bool   NeedMemo                     = 260;
     // @inject_tag: sql:"refresh_currency"
     bool   RefreshCurrency              = 270;
+    // @inject_tag: sql:"check_new_address_balance"
+    bool   CheckNewAddressBalance       = 280;
 }
 
 message Conds {
