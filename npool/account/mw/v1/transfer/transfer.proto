@@ -9,7 +9,6 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
   rpc CreateTransfer     (CreateTransferRequest)     returns (CreateTransferResponse)     {}
-  rpc CreateTransfers    (CreateTransfersRequest)    returns (CreateTransfersResponse)    {}
   rpc GetTransfer        (GetTransferRequest)        returns (GetTransferResponse)        {}
   rpc GetTransferOnly    (GetTransferOnlyRequest)    returns (GetTransferOnlyResponse)    {}
   rpc GetTransfers       (GetTransfersRequest)       returns (GetTransfersResponse)       {}
@@ -55,14 +54,6 @@ message CreateTransferRequest {
 
 message CreateTransferResponse {
   Transfer Info = 10;
-}
-
-message CreateTransfersRequest {
-  repeated TransferReq Infos = 10;
-}
-
-message CreateTransfersResponse {
-  repeated Transfer Infos = 10;
 }
 
 message GetTransferRequest {
