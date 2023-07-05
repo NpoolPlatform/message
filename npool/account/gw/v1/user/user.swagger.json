@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1CreateAccountResponse"
+              "$ref": "#/definitions/v1CreateAccountResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1CreateAccountRequest"
+              "$ref": "#/definitions/v1CreateAccountRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1DeleteAccountResponse"
+              "$ref": "#/definitions/v1DeleteAccountResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1DeleteAccountRequest"
+              "$ref": "#/definitions/v1DeleteAccountRequest"
             }
           }
         ],
@@ -247,7 +247,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1GetAccountsResponse"
+              "$ref": "#/definitions/v1GetAccountsResponse"
             }
           },
           "default": {
@@ -263,7 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1GetAccountsRequest"
+              "$ref": "#/definitions/v1GetAccountsRequest"
             }
           }
         ],
@@ -311,7 +311,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1UpdateAccountResponse"
+              "$ref": "#/definitions/v1UpdateAccountResponse"
             }
           },
           "default": {
@@ -327,7 +327,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1UpdateAccountRequest"
+              "$ref": "#/definitions/v1UpdateAccountRequest"
             }
           }
         ],
@@ -338,7 +338,35 @@
     }
   },
   "definitions": {
-    "gatewayuserv1Account": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -408,7 +436,25 @@
         }
       }
     },
-    "gatewayuserv1CreateAccountRequest": {
+    "v1AccountUsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultAccountUsedFor",
+        "GoodBenefit",
+        "UserBenefitHot",
+        "UserBenefitCold",
+        "PlatformBenefitCold",
+        "GasProvider",
+        "UserWithdraw",
+        "UserDeposit",
+        "GoodPayment",
+        "PaymentCollector",
+        "UserDirectBenefit"
+      ],
+      "default": "DefaultAccountUsedFor",
+      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set"
+    },
+    "v1CreateAccountRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -447,15 +493,15 @@
         }
       }
     },
-    "gatewayuserv1CreateAccountResponse": {
+    "v1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
-    "gatewayuserv1DeleteAccountRequest": {
+    "v1DeleteAccountRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -469,15 +515,15 @@
         }
       }
     },
-    "gatewayuserv1DeleteAccountResponse": {
+    "v1DeleteAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
-    "gatewayuserv1GetAccountsRequest": {
+    "v1GetAccountsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -499,14 +545,14 @@
         }
       }
     },
-    "gatewayuserv1GetAccountsResponse": {
+    "v1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayuserv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -514,83 +560,6 @@
           "format": "int64"
         }
       }
-    },
-    "gatewayuserv1UpdateAccountRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Memo": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewayuserv1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor",
-      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set"
     },
     "v1GetAppAccountsRequest": {
       "type": "object",
@@ -615,7 +584,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayuserv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -647,7 +616,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayuserv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -674,7 +643,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
@@ -701,7 +670,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayuserv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -733,7 +702,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayuserv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -759,6 +728,37 @@
       "default": "DefaultSignMethod",
       "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
     },
+    "v1UpdateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Memo": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
     "v1UpdateAppUserAccountRequest": {
       "type": "object",
       "properties": {
@@ -783,7 +783,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayuserv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
     }

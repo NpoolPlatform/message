@@ -12,7 +12,7 @@ service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
     rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
-
+    rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
@@ -131,4 +131,12 @@ message GetAccountsRequest {
 message GetAccountsResponse {
     repeated Account Infos = 10;
     uint32           Total = 20;
+}
+
+message ExistAccountCondsRequest {
+    Conds Conds = 10;
+}
+  
+message ExistAccountCondsResponse {
+    bool Info = 10;
 }

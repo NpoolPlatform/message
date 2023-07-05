@@ -4,10 +4,8 @@ package account.gateway.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/payment";
 
-import "npool/account/mgr/v1/account/account.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
 
 // Service Name
 service Gateway {
@@ -38,7 +36,7 @@ message Account {
     string     CollectingTID = 110;
     bool       Active        = 120;
     bool       Locked        = 130;
-    account.manager.account1.v1.LockedBy LockedBy = 140;
+    basetypes.v1.AccountLockedBy LockedBy = 140;
     bool       Blocked       = 150;
     uint32     CreatedAt     = 160;
     uint32     AvailableAt   = 170;
