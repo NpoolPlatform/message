@@ -247,6 +247,14 @@
         }
       }
     },
+    "v1ExistAccountCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetAccountOnlyResponse": {
       "type": "object",
       "properties": {

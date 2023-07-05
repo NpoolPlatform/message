@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateAccount_FullMethodName  = "/account.middleware.user.v1.Middleware/CreateAccount"
-	Middleware_UpdateAccount_FullMethodName  = "/account.middleware.user.v1.Middleware/UpdateAccount"
-	Middleware_DeleteAccount_FullMethodName  = "/account.middleware.user.v1.Middleware/DeleteAccount"
-	Middleware_GetAccount_FullMethodName     = "/account.middleware.user.v1.Middleware/GetAccount"
-	Middleware_GetAccountOnly_FullMethodName = "/account.middleware.user.v1.Middleware/GetAccountOnly"
-	Middleware_GetAccounts_FullMethodName    = "/account.middleware.user.v1.Middleware/GetAccounts"
+	Middleware_CreateAccount_FullMethodName     = "/account.middleware.user.v1.Middleware/CreateAccount"
+	Middleware_UpdateAccount_FullMethodName     = "/account.middleware.user.v1.Middleware/UpdateAccount"
+	Middleware_DeleteAccount_FullMethodName     = "/account.middleware.user.v1.Middleware/DeleteAccount"
+	Middleware_ExistAccountConds_FullMethodName = "/account.middleware.user.v1.Middleware/ExistAccountConds"
+	Middleware_GetAccount_FullMethodName        = "/account.middleware.user.v1.Middleware/GetAccount"
+	Middleware_GetAccountOnly_FullMethodName    = "/account.middleware.user.v1.Middleware/GetAccountOnly"
+	Middleware_GetAccounts_FullMethodName       = "/account.middleware.user.v1.Middleware/GetAccounts"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
+	ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountR
 	return out, nil
 }
 
+func (c *middlewareClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
+	out := new(ExistAccountCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistAccountConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
 	out := new(GetAccountResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetAccount_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
+	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) UpdateAccount(context.Context, *UpdateAccou
 }
 func (UnimplementedMiddlewareServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAccountConds not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -203,6 +218,24 @@ func _Middleware_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAccountCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistAccountConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistAccountConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistAccountConds(ctx, req.(*ExistAccountCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAccount",
 			Handler:    _Middleware_DeleteAccount_Handler,
+		},
+		{
+			MethodName: "ExistAccountConds",
+			Handler:    _Middleware_ExistAccountConds_Handler,
 		},
 		{
 			MethodName: "GetAccount",
