@@ -210,6 +210,14 @@
         }
       }
     },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
     "v1ExistAccountCondsResponse": {
       "type": "object",
       "properties": {

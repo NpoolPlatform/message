@@ -236,6 +236,14 @@
         }
       }
     },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
     "v1GetAccountResponse": {
       "type": "object",
       "properties": {

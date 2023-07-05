@@ -17,6 +17,7 @@ service Middleware {
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
     rpc ExistAccount      (ExistAccountRequest)      returns (ExistAccountResponse)      {}
     rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
+    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
 }
 
 message AccountReq {
@@ -126,3 +127,12 @@ message ExistAccountCondsRequest {
 message ExistAccountCondsResponse {
     bool Info = 10;
 }
+
+message DeleteAccountRequest {
+    AccountReq Info = 10;
+}
+
+message DeleteAccountResponse {
+    Account Info = 10;
+}
+
