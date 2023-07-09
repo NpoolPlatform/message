@@ -47,7 +47,6 @@ message UpdateAccountRequest {
     string        ID       = 10;
     optional bool Active   = 20;
     optional bool Blocked  = 30;
-    optional bool Locked   = 40;
 }
 
 message UpdateAccountResponse {
