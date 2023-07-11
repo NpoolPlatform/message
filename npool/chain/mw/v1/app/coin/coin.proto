@@ -36,6 +36,7 @@ message CoinReq {
     optional bool   Display                  = 140;
     optional uint32 DisplayIndex             = 150;
     optional string MaxAmountPerWithdraw     = 160;
+    optional bool   CheckNewAddressBalance   = 170;
 }
 
 message Coin {
@@ -135,6 +136,8 @@ message Coin {
     bool   NeedMemo                     = 390;
     // @inject_tag: sql:"refresh_currency"
     bool   RefreshCurrency              = 400;
+    // @inject_tag: sql:"check_new_address_balance"
+    bool   CheckNewAddressBalance       = 410;
 }
 
 message Conds {
