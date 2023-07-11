@@ -114,7 +114,7 @@ message CreateAccountRequest {
     string          Address     = 40;
     basetypes.v1.AccountUsedFor UsedFor = 50;
     repeated string Labels      = 60;
-    string          Account     = 70;
+    optional string Account     = 70;
     basetypes.v1.SignMethod AccountType       = 80;
     string VerificationCode     = 90;
     optional string Memo        = 100;
