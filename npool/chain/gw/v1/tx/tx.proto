@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/tx";
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/txtype.proto";
 import "npool/basetypes/v1/txstate.proto";
-import "npool/account/mgr/v1/account/account.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
 
 // Service Name
 service Gateway {
@@ -20,28 +20,28 @@ service Gateway {
 }
 
 message Tx {
-    string                      ID                   = 10;
-    string                      CoinTypeID           = 20;
-    string                      CoinName             = 30;
-    string                      CoinLogo             = 40;
-    string                      CoinUnit             = 50;
-    string                      CoinENV              = 60;
-    string                      AppID                = 70;
-    string                      AppName              = 80;
-    string                      FromAccountID        = 90;
-    string                      FromAddress          = 100;
-    account.manager.account1.v1.AccountUsedFor FromUsedFor  = 110;
-    string                      ToAccountID          = 120;
-    string                      ToAddress            = 130;
-    account.manager.account1.v1.AccountUsedFor ToUsedFor    = 140;
-    string                      Amount               = 150;
-    string                      FeeAmount            = 160;
-    string                      ChainTxID            = 170;
-    basetypes.v1.TxState        State                = 180;
-    string                      Extra                = 190;
-    basetypes.v1.TxType         Type                 = 200;
-    uint32                      CreatedAt            = 210;
-    uint32                      UpdatedAt            = 220;
+    string                      ID            = 10;
+    string                      CoinTypeID    = 20;
+    string                      CoinName      = 30;
+    string                      CoinLogo      = 40;
+    string                      CoinUnit      = 50;
+    string                      CoinENV       = 60;
+    string                      AppID         = 70;
+    string                      AppName       = 80;
+    string                      FromAccountID = 90;
+    string                      FromAddress   = 100;
+    basetypes.v1.AccountUsedFor FromUsedFor   = 110;
+    string                      ToAccountID   = 120;
+    string                      ToAddress     = 130;
+    basetypes.v1.AccountUsedFor ToUsedFor     = 140;
+    string                      Amount        = 150;
+    string                      FeeAmount     = 160;
+    string                      ChainTxID     = 170;
+    basetypes.v1.TxState        State         = 180;
+    string                      Extra         = 190;
+    basetypes.v1.TxType         Type          = 200;
+    uint32                      CreatedAt     = 210;
+    uint32                      UpdatedAt     = 220;
 }
 
 message GetTxsRequest {

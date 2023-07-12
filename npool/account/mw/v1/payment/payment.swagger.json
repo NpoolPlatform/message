@@ -17,7 +17,35 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewarepaymentv1Account": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -45,7 +73,7 @@
           "title": "@inject_tag: sql:\"locked\""
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "LockedByStr": {
           "type": "string",
@@ -76,7 +104,16 @@
         }
       }
     },
-    "middlewarepaymentv1AccountReq": {
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -98,7 +135,7 @@
           "type": "boolean"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "Blocked": {
           "type": "boolean"
@@ -113,7 +150,18 @@
         }
       }
     },
-    "middlewarepaymentv1Conds": {
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -135,7 +183,7 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
@@ -148,50 +196,38 @@
         }
       }
     },
-    "middlewarepaymentv1CreateAccountResponse": {
+    "v1CreateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewarepaymentv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
-    "middlewarepaymentv1CreateAccountsResponse": {
+    "v1GetAccountOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/middlewarepaymentv1Account"
-          }
-        }
-      }
-    },
-    "middlewarepaymentv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewarepaymentv1Account"
-        }
-      }
-    },
-    "middlewarepaymentv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewarepaymentv1Account"
-        }
-      }
-    },
-    "middlewarepaymentv1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewarepaymentv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -199,74 +235,6 @@
           "format": "int64"
         }
       }
-    },
-    "middlewarepaymentv1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewarepaymentv1Account"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1LockedBy": {
-      "type": "string",
-      "enum": [
-        "DefaultLockedBy",
-        "Payment",
-        "Collecting"
-      ],
-      "default": "DefaultLockedBy"
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -302,6 +270,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     }

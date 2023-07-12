@@ -4,10 +4,8 @@ package account.gateway.goodbenefit.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/goodbenefit";
 
-import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Gateway {
@@ -48,15 +46,14 @@ message Account {
     string Address       = 120;
     bool   Active        = 130;
     bool   Locked        = 140;
-    account.manager.account1.v1.LockedBy LockedBy = 150;
+    basetypes.v1.AccountLockedBy LockedBy = 150;
     bool   Blocked       = 160;
     uint32 CreatedAt     = 170;
     uint32 UpdatedAt     = 180;
 }
 
 message CreateAccountRequest {
-    string          GoodID    = 10;
-    optional string AccountID = 20;
+    string GoodID    = 10;
 }
 
 message CreateAccountResponse {

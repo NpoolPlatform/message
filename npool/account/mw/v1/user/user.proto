@@ -4,16 +4,15 @@ package account.middleware.user.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/user";
 
-import "npool/account/mgr/v1/account/account.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
     rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
     rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
-
+    rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
     rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
@@ -27,7 +26,7 @@ message AccountReq {
     optional string AccountID  = 50;
     optional string Address    = 60;
     // Only [UserWithdraw, UserDirectBenefit]
-    optional account.manager.account1.v1.AccountUsedFor UsedFor = 70;
+    optional basetypes.v1.AccountUsedFor UsedFor = 70;
     repeated string Labels     = 80;   // For withdraw and benefit address
     optional bool   Active     = 90;
     optional bool   Blocked    = 100;
@@ -52,7 +51,7 @@ message Account {
     bool   Active     = 70;
     // @inject_tag: sql:"blocked"
     bool   Blocked    = 80;
-    account.manager.account1.v1.AccountUsedFor UsedFor = 90;
+    basetypes.v1.AccountUsedFor UsedFor = 90;
     // @inject_tag: sql:"used_for"
     string UsedForStr = 91;
     repeated string Labels = 100;
@@ -69,17 +68,17 @@ message Account {
 }
 
 message Conds {
-    optional npool.v1.StringVal ID         = 10;
-    optional npool.v1.StringVal AppID      = 20;
-    optional npool.v1.StringVal UserID     = 30;
-    optional npool.v1.StringVal CoinTypeID = 40;
-    optional npool.v1.StringVal AccountID  = 50;
-    optional npool.v1.StringVal Address    = 60;
-    optional npool.v1.BoolVal   Active     = 70;
-    optional npool.v1.BoolVal   Blocked    = 80;
-    optional npool.v1.Int32Val  UsedFor    = 90;
-    optional npool.v1.StringSliceVal IDs   = 100;
-    optional npool.v1.StringSliceVal AccountIDs = 110;
+    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal AppID      = 20;
+    optional basetypes.v1.StringVal UserID     = 30;
+    optional basetypes.v1.StringVal CoinTypeID = 40;
+    optional basetypes.v1.StringVal AccountID  = 50;
+    optional basetypes.v1.StringVal Address    = 60;
+    optional basetypes.v1.BoolVal   Active     = 70;
+    optional basetypes.v1.BoolVal   Blocked    = 80;
+    optional basetypes.v1.Uint32Val UsedFor    = 90;
+    optional basetypes.v1.StringSliceVal IDs   = 100;
+    optional basetypes.v1.StringSliceVal AccountIDs = 110;
 }
 
 
@@ -100,7 +99,7 @@ message UpdateAccountResponse {
 }
 
 message DeleteAccountRequest {
-    string ID = 10;
+    AccountReq Info = 10;
 }
 
 message DeleteAccountResponse {
@@ -132,4 +131,12 @@ message GetAccountsRequest {
 message GetAccountsResponse {
     repeated Account Infos = 10;
     uint32           Total = 20;
+}
+
+message ExistAccountCondsRequest {
+    Conds Conds = 10;
+}
+  
+message ExistAccountCondsResponse {
+    bool Info = 10;
 }

@@ -4,10 +4,10 @@ package account.gateway.platform.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/platform";
 
-import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Gateway {
@@ -40,21 +40,22 @@ message Account {
     string         CoinUnit      = 40;
     string         CoinEnv       = 50;
     string         CoinLogo      = 60;
-    account.manager.account1.v1.AccountUsedFor UsedFor  = 70;
+    basetypes.v1.AccountUsedFor UsedFor  = 70;
     string         AccountID     = 80;
     string         Address       = 90;
     bool           Backup        = 100;
     bool           Active        = 110;
     bool           Locked        = 120;
-    account.manager.account1.v1.LockedBy       LockedBy = 130;
+    basetypes.v1.AccountLockedBy LockedBy = 130;
     bool           Blocked       = 140;
     uint32         CreatedAt     = 150;
+    uint32         UpdatedAt     = 160;
 }
 
 message CreateAccountRequest {
     string          CoinTypeID  = 10;
     optional string Address     = 20;
-    account.manager.account1.v1.AccountUsedFor UsedFor = 30;
+    basetypes.v1.AccountUsedFor UsedFor = 30;
 }
 
 message CreateAccountResponse {

@@ -71,6 +71,7 @@ message UpdateCoinRequest {
     optional bool   NeedMemo                    = 180;
     optional bool   RefreshCurrency             = 190;
     optional string Logo                        = 200;
+    optional bool   CheckNewAddressBalance      = 210;
 }
 
 message UpdateCoinResponse {

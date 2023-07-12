@@ -17,30 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "accountmiddlewareaccount1v1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
-        }
-      }
-    },
-    "accountmiddlewareaccount1v1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Account"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -73,37 +49,67 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "Address": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
         "PlatformHoldPrivateKey": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"platform_hold_private_key\""
         },
         "Active": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"active\""
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "LockedByStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked_by\""
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "Blocked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
     },
     "v1AccountUsedFor": {
       "type": "string",
@@ -147,7 +153,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "PlatformHoldPrivateKey": {
           "$ref": "#/definitions/v1BoolVal"
@@ -159,7 +165,7 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
@@ -172,26 +178,29 @@
         }
       }
     },
-    "v1Int32Val": {
+    "v1GetAccountResponse": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
-    "v1LockedBy": {
-      "type": "string",
-      "enum": [
-        "DefaultLockedBy",
-        "Payment",
-        "Collecting"
-      ],
-      "default": "DefaultLockedBy"
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",

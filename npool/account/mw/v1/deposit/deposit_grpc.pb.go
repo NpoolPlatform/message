@@ -23,6 +23,7 @@ const (
 	Middleware_UpdateAccount_FullMethodName = "/account.middleware.deposit.v1.Middleware/UpdateAccount"
 	Middleware_GetAccount_FullMethodName    = "/account.middleware.deposit.v1.Middleware/GetAccount"
 	Middleware_GetAccounts_FullMethodName   = "/account.middleware.deposit.v1.Middleware/GetAccounts"
+	Middleware_DeleteAccount_FullMethodName = "/account.middleware.deposit.v1.Middleware/DeleteAccount"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +34,7 @@ type MiddlewareClient interface {
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
+	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
 }
 
 type middlewareClient struct {
@@ -79,6 +81,15 @@ func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsReque
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
+	out := new(DeleteAccountResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type MiddlewareServer interface {
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
+	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequ
 }
 func (UnimplementedMiddlewareServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -191,6 +206,24 @@ func _Middleware_GetAccounts_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteAccount_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAccounts",
 			Handler:    _Middleware_GetAccounts_Handler,
+		},
+		{
+			MethodName: "DeleteAccount",
+			Handler:    _Middleware_DeleteAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

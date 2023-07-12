@@ -5,10 +5,7 @@ package account.gateway.transfer.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/transfer";
 
 import "npool/basetypes/v1/signmethod.proto";
-import "npool/account/mgr/v1/account/account.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
 
 // Service Name
 service Gateway {
@@ -65,7 +62,7 @@ message Transfer {
 message CreateTransferRequest {
     string AppID             = 10;
     string UserID            = 20;
-    string Account           = 30;
+    optional string Account  = 30;
     basetypes.v1.SignMethod AccountType       = 40;
     string VerificationCode  = 50;
     string TargetAccount     = 60;

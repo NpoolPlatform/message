@@ -17,7 +17,35 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareplatformv1Account": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -28,12 +56,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
-        },
         "UsedForStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         },
         "AccountID": {
           "type": "string",
@@ -56,7 +84,7 @@
           "title": "@inject_tag: sql:\"locked\""
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "LockedByStr": {
           "type": "string",
@@ -70,10 +98,24 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
-    "middlewareplatformv1AccountReq": {
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1AccountReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -103,118 +145,10 @@
           "title": "Locked when collecting"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "Blocked": {
           "type": "boolean"
-        }
-      }
-    },
-    "middlewareplatformv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Backup": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "Active": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "Locked": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "LockedBy": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "Blocked": {
-          "$ref": "#/definitions/v1BoolVal"
-        }
-      }
-    },
-    "middlewareplatformv1CreateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareplatformv1Account"
-        }
-      }
-    },
-    "middlewareplatformv1GetAccountOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareplatformv1Account"
-        }
-      }
-    },
-    "middlewareplatformv1GetAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareplatformv1Account"
-        }
-      }
-    },
-    "middlewareplatformv1GetAccountsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewareplatformv1Account"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewareplatformv1UpdateAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareplatformv1Account"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
         }
       }
     },
@@ -247,26 +181,96 @@
         }
       }
     },
-    "v1Int32Val": {
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
         },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Backup": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1LockedBy": {
-      "type": "string",
-      "enum": [
-        "DefaultLockedBy",
-        "Payment",
-        "Collecting"
-      ],
-      "default": "DefaultLockedBy"
+    "v1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1ExistAccountCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
@@ -276,6 +280,26 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     }

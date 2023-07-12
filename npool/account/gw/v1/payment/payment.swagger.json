@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaypaymentv1GetAccountsResponse"
+              "$ref": "#/definitions/v1GetAccountsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaypaymentv1GetAccountsRequest"
+              "$ref": "#/definitions/v1GetAccountsRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaypaymentv1UpdateAccountResponse"
+              "$ref": "#/definitions/v1UpdateAccountResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaypaymentv1UpdateAccountRequest"
+              "$ref": "#/definitions/v1UpdateAccountRequest"
             }
           }
         ],
@@ -82,7 +82,35 @@
     }
   },
   "definitions": {
-    "gatewaypaymentv1Account": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -119,7 +147,7 @@
           "type": "boolean"
         },
         "LockedBy": {
-          "$ref": "#/definitions/v1LockedBy"
+          "$ref": "#/definitions/v1AccountLockedBy"
         },
         "Blocked": {
           "type": "boolean"
@@ -138,7 +166,16 @@
         }
       }
     },
-    "gatewaypaymentv1GetAccountsRequest": {
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1GetAccountsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -151,14 +188,14 @@
         }
       }
     },
-    "gatewaypaymentv1GetAccountsResponse": {
+    "v1GetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewaypaymentv1Account"
+            "$ref": "#/definitions/v1Account"
           }
         },
         "Total": {
@@ -167,7 +204,7 @@
         }
       }
     },
-    "gatewaypaymentv1UpdateAccountRequest": {
+    "v1UpdateAccountRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -178,56 +215,16 @@
         },
         "Blocked": {
           "type": "boolean"
-        },
-        "Locked": {
-          "type": "boolean"
         }
       }
     },
-    "gatewaypaymentv1UpdateAccountResponse": {
+    "v1UpdateAccountResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewaypaymentv1Account"
+          "$ref": "#/definitions/v1Account"
         }
       }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1LockedBy": {
-      "type": "string",
-      "enum": [
-        "DefaultLockedBy",
-        "Payment",
-        "Collecting"
-      ],
-      "default": "DefaultLockedBy"
     }
   }
 }
