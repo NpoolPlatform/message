@@ -400,6 +400,70 @@
         ]
       }
     },
+    "/v1/oauth/login": {
+      "post": {
+        "operationId": "Gateway_OAuthLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OAuthLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OAuthLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/oauth/redirect": {
+      "post": {
+        "operationId": "Gateway_OAuthRedirect",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OAuthRedirectResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OAuthRedirectRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/reset/user": {
       "post": {
         "operationId": "Gateway_ResetUser",
@@ -1125,6 +1189,41 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1OAuthLoginRequest": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OAuthLoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1OAuthRedirectRequest": {
+      "type": "object",
+      "properties": {
+        "ThirdName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OAuthRedirectResponse": {
+      "type": "object",
+      "properties": {
+        "RedirectUrl": {
+          "type": "string"
         }
       }
     },
