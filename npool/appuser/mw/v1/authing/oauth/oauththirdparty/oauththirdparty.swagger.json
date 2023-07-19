@@ -181,7 +181,25 @@
         "ClientID": {
           "type": "string"
         },
+        "ClientSecret": {
+          "type": "string"
+        },
         "ClientName": {
+          "type": "string"
+        },
+        "ClientTag": {
+          "type": "string"
+        },
+        "ClientLogoURL": {
+          "type": "string"
+        },
+        "ClientOAuthURL": {
+          "type": "string"
+        },
+        "ResponseType": {
+          "type": "string"
+        },
+        "Scope": {
           "type": "string"
         }
       }

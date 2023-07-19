@@ -20,9 +20,15 @@ service Middleware {
 }
 
 message OAuthThirdPartyReq {
-    optional string ID                 = 10;
-    optional string ClientID           = 20;
-    optional string ClientName         = 30;
+    optional string ID             = 10;
+    optional string ClientID       = 20;
+    optional string ClientSecret   = 30;
+    optional string ClientName     = 40;
+    optional string ClientTag      = 50;
+    optional string ClientLogoURL  = 60;
+    optional string ClientOAuthURL = 70;
+    optional string ResponseType   = 80;
+    optional string Scope          = 90;
 }
 
 message OAuthThirdParty {
