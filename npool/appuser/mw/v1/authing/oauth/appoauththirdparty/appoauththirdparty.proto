@@ -44,7 +44,7 @@ message OAuthThirdParty {
     string ClientLogoURL  = 80;
     // @inject_tag: sql:"client_oauth_url"
     string ClientOAuthURL = 90;
-    // @inject_tag: sql:"response_tag"
+    // @inject_tag: sql:"response_type"
     string ResponseType   = 100;
     // @inject_tag: sql:"scope"
     string Scope          = 110;

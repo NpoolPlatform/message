@@ -254,7 +254,7 @@
         },
         "ResponseType": {
           "type": "string",
-          "title": "@inject_tag: sql:\"response_tag\""
+          "title": "@inject_tag: sql:\"response_type\""
         },
         "Scope": {
           "type": "string",

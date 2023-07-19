@@ -103,8 +103,8 @@ type OAuthThirdParty struct {
 	ClientLogoURL string `protobuf:"bytes,60,opt,name=ClientLogoURL,proto3" json:"ClientLogoURL,omitempty" sql:"client_logo_url"`
 	// @inject_tag: sql:"client_oauth_url"
 	ClientOAuthURL string `protobuf:"bytes,70,opt,name=ClientOAuthURL,proto3" json:"ClientOAuthURL,omitempty" sql:"client_oauth_url"`
-	// @inject_tag: sql:"response_tag"
-	ResponseType string `protobuf:"bytes,80,opt,name=ResponseType,proto3" json:"ResponseType,omitempty" sql:"response_tag"`
+	// @inject_tag: sql:"response_type"
+	ResponseType string `protobuf:"bytes,80,opt,name=ResponseType,proto3" json:"ResponseType,omitempty" sql:"response_type"`
 	// @inject_tag: sql:"scope"
 	Scope string `protobuf:"bytes,90,opt,name=Scope,proto3" json:"Scope,omitempty" sql:"scope"`
 	// @inject_tag: sql:"created_at"
