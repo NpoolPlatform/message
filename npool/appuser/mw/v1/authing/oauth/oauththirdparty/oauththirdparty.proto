@@ -86,8 +86,7 @@ message GetOAuthThirdPartiesResponse {
 }
 
 message GetOAuthThirdPartyRequest {
-    string AppID  = 10;
-    string UserID = 20;
+    string ID = 10;
 }
 
 message GetOAuthThirdPartyResponse {
@@ -95,8 +94,7 @@ message GetOAuthThirdPartyResponse {
 }
 
 message ExistOAuthThirdPartyRequest {
-    string AppID   = 10;
-    string UserID  = 20;
+    string ID  = 10;
 }
 
 message ExistOAuthThirdPartyResponse {
