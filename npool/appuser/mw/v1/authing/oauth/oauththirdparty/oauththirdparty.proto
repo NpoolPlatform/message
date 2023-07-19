@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package appuser.middleware.authing.oauth.oauththirdparty.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing/oauth/oauththirdparty";
+
+import "npool/basetypes/v1/conds.proto";
+
+service Middleware {
+    rpc CreateOAuthThirdParty        (CreateOAuthThirdPartyRequest)       returns (CreateOAuthThirdPartyResponse)       {}
+    rpc UpdateOAuthThirdParty        (UpdateOAuthThirdPartyRequest)       returns (UpdateOAuthThirdPartyResponse)       {}
+
+    rpc GetOAuthThirdParties         (GetOAuthThirdPartiesRequest)        returns (GetOAuthThirdPartiesResponse)        {}
+    rpc GetOAuthThirdParty           (GetOAuthThirdPartyRequest)          returns (GetOAuthThirdPartyResponse)          {}
+
+    rpc ExistOAuthThirdParty         (ExistOAuthThirdPartyRequest)        returns (ExistOAuthThirdPartyResponse)        {}
+    rpc ExistOAuthThirdPartyConds    (ExistOAuthThirdPartyCondsRequest)   returns (ExistOAuthThirdPartyCondsResponse)   {}
+
+    rpc DeleteOAuthThirdParty        (DeleteOAuthThirdPartyRequest)       returns (DeleteOAuthThirdPartyResponse)       {}
+}
+
+message OAuthThirdPartyReq {
+    optional string ID                 = 10;
+    optional string ClientID           = 20;
+    optional string ClientName         = 30;
+}
+
+message OAuthThirdParty {
+    // @inject_tag: sql:"id"
+    string ID             = 10;
+    // @inject_tag: sql:"client_id"
+    string ClientID       = 20;
+    // @inject_tag: sql:"client_secret"
+    string ClientSecret   = 30;
+    // @inject_tag: sql:"client_name"
+    string ClientName     = 40;
+    // @inject_tag: sql:"client_tag"
+    string ClientTag      = 50;
+    // @inject_tag: sql:"client_logo_url"
+    string ClientLogoURL  = 60;
+    // @inject_tag: sql:"client_oauth_url"
+    string ClientOAuthURL = 70;
+    // @inject_tag: sql:"response_tag"
+    string ResponseType   = 80;
+    // @inject_tag: sql:"scope"
+    string Scope          = 90;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 100;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt      = 110;
+}
+
+message Conds {
+    basetypes.v1.StringVal      ID            = 10;
+    basetypes.v1.StringVal      ClientID      = 20;
+    basetypes.v1.StringVal      ClientName    = 30;
+    basetypes.v1.StringSliceVal IDs           = 40;
+}
+
+message CreateOAuthThirdPartyRequest {
+    OAuthThirdPartyReq Info = 10;
+}
+
+message CreateOAuthThirdPartyResponse {
+    OAuthThirdParty Info = 10;
+}
+
+message UpdateOAuthThirdPartyRequest {
+    OAuthThirdPartyReq Info = 10;
+}
+
+message UpdateOAuthThirdPartyResponse {
+    OAuthThirdParty Info = 10;
+}
+
+message GetOAuthThirdPartiesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetOAuthThirdPartiesResponse {
+    repeated OAuthThirdParty Infos = 10;
+    uint32 Total  = 40;
+}
+
+message GetOAuthThirdPartyRequest {
+    string AppID  = 10;
+    string UserID = 20;
+}
+
+message GetOAuthThirdPartyResponse {
+    OAuthThirdParty Info = 10;
+}
+
+message ExistOAuthThirdPartyRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+}
+
+message ExistOAuthThirdPartyResponse {
+    bool Info = 10;
+}
+
+message ExistOAuthThirdPartyCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistOAuthThirdPartyCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteOAuthThirdPartyRequest {
+    OAuthThirdPartyReq Info = 10;
+}
+
+message DeleteOAuthThirdPartyResponse {
+    OAuthThirdParty Info = 10;
+}

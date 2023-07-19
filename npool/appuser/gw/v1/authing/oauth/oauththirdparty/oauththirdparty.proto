@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package appuser.gateway.authing.oauth.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/authing/oauth/oauththirdparty";
+
+import "google/api/annotations.proto";
+import "npool/appuser/mw/v1/authing/oauth/oauththirdparty/oauththirdparty.proto";
+
+service Gateway {
+    rpc CreateOAuthThirdParty (CreateOAuthThirdPartyRequest) returns (CreateOAuthThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/oauththirdparty"
+            body: "*"
+        };
+    }
+
+    rpc UpdateOAuthThirdParty (UpdateOAuthThirdPartyRequest) returns (UpdateOAuthThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/oauththirdparty"
+            body: "*"
+        };
+    }
+
+    rpc DeleteOAuthThirdParty (DeleteOAuthThirdPartyRequest) returns (DeleteOAuthThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/oauththirdparty"
+            body: "*"
+        };
+    }
+
+    rpc GetOAuthThirdParties (GetOAuthThirdPartiesRequest) returns (GetOAuthThirdPartiesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/oauththirdparties"
+            body: "*"
+        };
+    }
+}
+
+message CreateOAuthThirdPartyRequest {
+    string          TargetAppID    = 10;
+    optional string TargetUserID   = 20;
+    optional string RoleID         = 30;
+    string          Resource       = 40;
+    string          Method         = 50;
+}
+
+message CreateOAuthThirdPartyResponse {
+    appuser.middleware.authing.oauth.oauththirdparty.v1.OAuthThirdParty Info = 10;
+}
+
+message UpdateOAuthThirdPartyRequest {
+    string          ID           = 10;
+    string          AppID        = 20;
+    optional string RoleName     = 30;
+    optional bool   Default      = 40;
+    optional string Description  = 50;
+}
+
+message UpdateOAuthThirdPartyResponse {
+    appuser.middleware.authing.oauth.oauththirdparty.v1.OAuthThirdParty Info = 10;
+}
+
+message DeleteOAuthThirdPartyRequest {
+    string TargetAppID = 10;
+    string ID          = 20;
+}
+
+message DeleteOAuthThirdPartyResponse {
+    appuser.middleware.authing.oauth.oauththirdparty.v1.OAuthThirdParty Info = 10;
+}
+
+message GetOAuthThirdPartiesRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetOAuthThirdPartiesResponse {
+   repeated appuser.middleware.authing.oauth.oauththirdparty.v1.OAuthThirdParty Infos = 10;
+   uint32   Total                                                                     = 20;
+}

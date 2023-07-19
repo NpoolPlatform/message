@@ -36,8 +36,6 @@ const (
 	Gateway_GetLoginHistories_FullMethodName = "/appuser.gateway.user.v1.Gateway/GetLoginHistories"
 	Gateway_BanUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/BanUser"
 	Gateway_BanAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/BanAppUser"
-	Gateway_OAuthRedirect_FullMethodName     = "/appuser.gateway.user.v1.Gateway/OAuthRedirect"
-	Gateway_OAuthLogin_FullMethodName        = "/appuser.gateway.user.v1.Gateway/OAuthLogin"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -61,8 +59,6 @@ type GatewayClient interface {
 	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
 	BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error)
 	BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error)
-	OAuthRedirect(ctx context.Context, in *OAuthRedirectRequest, opts ...grpc.CallOption) (*OAuthRedirectResponse, error)
-	OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error)
 }
 
 type gatewayClient struct {
@@ -226,24 +222,6 @@ func (c *gatewayClient) BanAppUser(ctx context.Context, in *BanAppUserRequest, o
 	return out, nil
 }
 
-func (c *gatewayClient) OAuthRedirect(ctx context.Context, in *OAuthRedirectRequest, opts ...grpc.CallOption) (*OAuthRedirectResponse, error) {
-	out := new(OAuthRedirectResponse)
-	err := c.cc.Invoke(ctx, Gateway_OAuthRedirect_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error) {
-	out := new(OAuthLoginResponse)
-	err := c.cc.Invoke(ctx, Gateway_OAuthLogin_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -265,8 +243,6 @@ type GatewayServer interface {
 	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
 	BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error)
 	BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error)
-	OAuthRedirect(context.Context, *OAuthRedirectRequest) (*OAuthRedirectResponse, error)
-	OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -324,12 +300,6 @@ func (UnimplementedGatewayServer) BanUser(context.Context, *BanUserRequest) (*Ba
 }
 func (UnimplementedGatewayServer) BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BanAppUser not implemented")
-}
-func (UnimplementedGatewayServer) OAuthRedirect(context.Context, *OAuthRedirectRequest) (*OAuthRedirectResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OAuthRedirect not implemented")
-}
-func (UnimplementedGatewayServer) OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OAuthLogin not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -650,42 +620,6 @@ func _Gateway_BanAppUser_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_OAuthRedirect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OAuthRedirectRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).OAuthRedirect(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_OAuthRedirect_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).OAuthRedirect(ctx, req.(*OAuthRedirectRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_OAuthLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OAuthLoginRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).OAuthLogin(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_OAuthLogin_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).OAuthLogin(ctx, req.(*OAuthLoginRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -760,14 +694,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BanAppUser",
 			Handler:    _Gateway_BanAppUser_Handler,
-		},
-		{
-			MethodName: "OAuthRedirect",
-			Handler:    _Gateway_OAuthRedirect_Handler,
-		},
-		{
-			MethodName: "OAuthLogin",
-			Handler:    _Gateway_OAuthLogin_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

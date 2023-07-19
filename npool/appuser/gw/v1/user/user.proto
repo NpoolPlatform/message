@@ -128,20 +128,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc OAuthRedirect (OAuthRedirectRequest) returns (OAuthRedirectResponse) {
-        option (google.api.http) = {
-            post: "/v1/oauth/redirect"
-            body: "*"
-        };
-    }
-
-    rpc OAuthLogin (OAuthLoginRequest) returns (OAuthLoginResponse) {
-        option (google.api.http) = {
-            post: "/v1/oauth/login"
-            body: "*"
-        };
-    }
 }
 
 message SignupRequest {
@@ -386,21 +372,4 @@ message BanAppUserRequest {
 
 message BanAppUserResponse {
   appuser.middleware.user.v1.User Info = 10;
-}
-
-message OAuthRedirectRequest {
-    string ThirdName = 10;
-}
-
-message OAuthRedirectResponse {
-    string RedirectUrl = 10;
-}
-
-message OAuthLoginRequest {
-    string code  = 10;
-    string state = 20;
-}
-
-message OAuthLoginResponse {
-    appuser.middleware.user.v1.User Info = 10;
 }
