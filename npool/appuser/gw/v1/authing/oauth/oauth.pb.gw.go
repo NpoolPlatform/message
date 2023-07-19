@@ -2,11 +2,11 @@
 // source: npool/appuser/gw/v1/authing/oauth/oauth.proto
 
 /*
-Package auth is a reverse proxy.
+Package oauth is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package auth
+package oauth
 
 import (
 	"context"
@@ -147,7 +147,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginList", runtime.WithHTTPPathPattern("/v1/get/oauth/login/list"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginList", runtime.WithHTTPPathPattern("/v1/get/oauth/login/list"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -172,7 +172,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginURL", runtime.WithHTTPPathPattern("/v1/get/oauth/login/url"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginURL", runtime.WithHTTPPathPattern("/v1/get/oauth/login/url"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -197,7 +197,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/OAuthLogin", runtime.WithHTTPPathPattern("/v1/oauth/login"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/OAuthLogin", runtime.WithHTTPPathPattern("/v1/oauth/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -261,7 +261,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginList", runtime.WithHTTPPathPattern("/v1/get/oauth/login/list"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginList", runtime.WithHTTPPathPattern("/v1/get/oauth/login/list"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -283,7 +283,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginURL", runtime.WithHTTPPathPattern("/v1/get/oauth/login/url"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginURL", runtime.WithHTTPPathPattern("/v1/get/oauth/login/url"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.auth.v1.Gateway/OAuthLogin", runtime.WithHTTPPathPattern("/v1/oauth/login"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/OAuthLogin", runtime.WithHTTPPathPattern("/v1/oauth/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

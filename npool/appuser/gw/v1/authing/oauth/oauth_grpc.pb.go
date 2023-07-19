@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/appuser/gw/v1/authing/oauth/oauth.proto
 
-package auth
+package oauth
 
 import (
 	context "context"
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetOAuthLoginList_FullMethodName = "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginList"
-	Gateway_GetOAuthLoginURL_FullMethodName  = "/appuser.gateway.authing.auth.v1.Gateway/GetOAuthLoginURL"
-	Gateway_OAuthLogin_FullMethodName        = "/appuser.gateway.authing.auth.v1.Gateway/OAuthLogin"
+	Gateway_GetOAuthLoginList_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginList"
+	Gateway_GetOAuthLoginURL_FullMethodName  = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginURL"
+	Gateway_OAuthLogin_FullMethodName        = "/appuser.gateway.authing.oauth.v1.Gateway/OAuthLogin"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -162,7 +162,7 @@ func _Gateway_OAuthLogin_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.authing.auth.v1.Gateway",
+	ServiceName: "appuser.gateway.authing.oauth.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
