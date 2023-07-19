@@ -57,6 +57,9 @@
         "ClientName": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "ClientTag": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
