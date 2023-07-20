@@ -168,15 +168,15 @@
         "AppID": {
           "type": "string"
         },
-        "ThirdName": {
-          "type": "string"
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
         }
       }
     },
     "v1GetOAuthLoginURLResponse": {
       "type": "object",
       "properties": {
-        "RedirectUrl": {
+        "OAuthLoginURL": {
           "type": "string"
         }
       }
