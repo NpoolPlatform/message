@@ -62,6 +62,7 @@ message Conds {
     basetypes.v1.StringVal      AppID         = 20;
     basetypes.v1.StringVal      ThirdPartyID  = 30;
     basetypes.v1.StringSliceVal ThirdPartyIDs = 40;
+    basetypes.v1.StringVal      ClientName    = 50;
 }
 
 message CreateOAuthThirdPartyRequest {

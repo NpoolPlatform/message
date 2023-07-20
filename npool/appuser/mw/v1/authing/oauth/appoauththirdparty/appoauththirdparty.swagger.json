@@ -59,6 +59,9 @@
         },
         "ThirdPartyIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
