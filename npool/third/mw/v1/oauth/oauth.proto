@@ -20,8 +20,10 @@ message ThirdUserInfo {
 }
 
 message GetOAuthAccessTokenRequest {
-    basetypes.v1.SignMethod ClientName = 10;
-    string                  Code       = 20;
+    basetypes.v1.SignMethod ClientName   = 10;
+    string                  Code         = 20;
+	string                  ClientID     = 30;
+	string                  ClientSecret = 40;
 }
 
 message GetOAuthAccessTokenResponse {
