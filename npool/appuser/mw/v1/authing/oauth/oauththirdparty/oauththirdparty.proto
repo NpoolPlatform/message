@@ -34,6 +34,7 @@ message OAuthThirdParty {
     // @inject_tag: sql:"id"
     string ID             = 10;
     // @inject_tag: sql:"client_name"
+    string ClientNameStr               = 19;
     basetypes.v1.SignMethod ClientName = 20;
     // @inject_tag: sql:"client_tag"
     string ClientTag      = 30;
@@ -53,9 +54,9 @@ message OAuthThirdParty {
 
 message Conds {
     optional basetypes.v1.StringVal      ID            = 10;
-    optional basetypes.v1.Int32Val       ClientName    = 30;
-    optional basetypes.v1.StringVal      ClientTag     = 40;
-    optional basetypes.v1.StringSliceVal IDs           = 50;
+    optional basetypes.v1.Int32Val       ClientName    = 20;
+    optional basetypes.v1.StringVal      ClientTag     = 30;
+    optional basetypes.v1.StringSliceVal IDs           = 40;
 }
 
 message CreateOAuthThirdPartyRequest {

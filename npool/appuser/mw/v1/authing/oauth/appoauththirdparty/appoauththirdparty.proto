@@ -43,6 +43,7 @@ message OAuthThirdParty {
     // @inject_tag: sql:"callback_url"
     string CallbackURL    = 60;
     // @inject_tag: sql:"client_name"
+    string ClientNameStr               = 69;
     basetypes.v1.SignMethod ClientName = 70;
     // @inject_tag: sql:"client_tag"
     string ClientTag      = 80;

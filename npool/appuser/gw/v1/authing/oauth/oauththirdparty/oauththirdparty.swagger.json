@@ -303,9 +303,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "ClientName": {
-          "$ref": "#/definitions/v1SignMethod",
+        "ClientNameStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"client_name\""
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
         },
         "ClientTag": {
           "type": "string",
