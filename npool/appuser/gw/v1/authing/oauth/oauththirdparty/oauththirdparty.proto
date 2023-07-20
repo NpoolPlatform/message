@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/authin
 
 import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/authing/oauth/oauththirdparty/oauththirdparty.proto";
+import "npool/basetypes/v1/signmethod.proto";
 
 service Gateway {
     rpc CreateOAuthThirdParty (CreateOAuthThirdPartyRequest) returns (CreateOAuthThirdPartyResponse) {
@@ -39,15 +40,12 @@ service Gateway {
 
 message CreateOAuthThirdPartyRequest {
     string ID             = 10;
-    string ClientID       = 20;
-    string ClientSecret   = 30;
-    string CallbackURL    = 40;
-    string ClientName     = 50;
-    string ClientTag      = 60;
-    string ClientLogoURL  = 70;
-    string ClientOAuthURL = 80;
-    string ResponseType   = 90;
-    string Scope          = 100;
+    basetypes.v1.SignMethod ClientName = 20;
+    string ClientTag      = 30;
+    string ClientLogoURL  = 40;
+    string ClientOAuthURL = 50;
+    string ResponseType   = 60;
+    string Scope          = 70;
 }
 
 message CreateOAuthThirdPartyResponse {
@@ -59,7 +57,7 @@ message UpdateOAuthThirdPartyRequest {
     optional string ClientID       = 20;
     optional string ClientSecret   = 30;
     optional string CallbackURL    = 40;
-    optional string ClientName     = 50;
+    optional basetypes.v1.SignMethod ClientName = 50;
     optional string ClientTag      = 60;
     optional string ClientLogoURL  = 70;
     optional string ClientOAuthURL = 80;

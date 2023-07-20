@@ -40,6 +40,9 @@ service Gateway {
 message CreateOAuthThirdPartyRequest {
     string TargetAppID  = 10;
     string ThirdPartyID = 20;
+    string ClientID     = 30;
+    string ClientSecret = 40;
+    string CallbackURL  = 50;
 }
 
 message CreateOAuthThirdPartyResponse {

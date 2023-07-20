@@ -5,6 +5,7 @@ package appuser.middleware.authing.oauth.oauththirdparty.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing/oauth/oauththirdparty";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/signmethod.proto";
 
 service Middleware {
     rpc CreateOAuthThirdParty        (CreateOAuthThirdPartyRequest)       returns (CreateOAuthThirdPartyResponse)       {}
@@ -21,38 +22,29 @@ service Middleware {
 
 message OAuthThirdPartyReq {
     optional string ID             = 10;
-    optional string ClientID       = 20;
-    optional string ClientSecret   = 30;
-    optional string CallbackURL    = 40;
-    optional string ClientName     = 50;
-    optional string ClientTag      = 60;
-    optional string ClientLogoURL  = 70;
-    optional string ClientOAuthURL = 80;
-    optional string ResponseType   = 90;
-    optional string Scope          = 100;
+    optional basetypes.v1.SignMethod ClientName = 20;
+    optional string ClientTag      = 30;
+    optional string ClientLogoURL  = 40;
+    optional string ClientOAuthURL = 50;
+    optional string ResponseType   = 60;
+    optional string Scope          = 70;
 }
 
 message OAuthThirdParty {
     // @inject_tag: sql:"id"
     string ID             = 10;
-    // @inject_tag: sql:"client_id"
-    string ClientID       = 20;
-    // @inject_tag: sql:"client_secret"
-    string ClientSecret   = 30;
-    // @inject_tag: sql:"callback_url"
-    string CallbackURL    = 40;
     // @inject_tag: sql:"client_name"
-    string ClientName     = 50;
+    basetypes.v1.SignMethod ClientName = 20;
     // @inject_tag: sql:"client_tag"
-    string ClientTag      = 60;
+    string ClientTag      = 30;
     // @inject_tag: sql:"client_logo_url"
-    string ClientLogoURL  = 70;
+    string ClientLogoURL  = 40;
     // @inject_tag: sql:"client_oauth_url"
-    string ClientOAuthURL = 80;
+    string ClientOAuthURL = 50;
     // @inject_tag: sql:"response_type"
-    string ResponseType   = 90;
+    string ResponseType   = 60;
     // @inject_tag: sql:"scope"
-    string Scope          = 100;
+    string Scope          = 70;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"
@@ -60,11 +52,10 @@ message OAuthThirdParty {
 }
 
 message Conds {
-    basetypes.v1.StringVal      ID            = 10;
-    basetypes.v1.StringVal      ClientID      = 20;
-    basetypes.v1.StringVal      ClientName    = 30;
-    basetypes.v1.StringVal      ClientTag     = 40;
-    basetypes.v1.StringSliceVal IDs           = 50;
+    optional basetypes.v1.StringVal      ID            = 10;
+    optional basetypes.v1.Int32Val       ClientName    = 30;
+    optional basetypes.v1.StringVal      ClientTag     = 40;
+    optional basetypes.v1.StringSliceVal IDs           = 50;
 }
 
 message CreateOAuthThirdPartyRequest {

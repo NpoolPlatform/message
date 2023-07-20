@@ -152,17 +152,8 @@
         "ID": {
           "type": "string"
         },
-        "ClientID": {
-          "type": "string"
-        },
-        "ClientSecret": {
-          "type": "string"
-        },
-        "CallbackURL": {
-          "type": "string"
-        },
         "ClientName": {
-          "type": "string"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "ClientTag": {
           "type": "string"
@@ -250,7 +241,7 @@
           "type": "string"
         },
         "ClientName": {
-          "type": "string"
+          "$ref": "#/definitions/v1SignMethod"
         },
         "ClientTag": {
           "type": "string"
@@ -312,20 +303,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "ClientID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_id\""
-        },
-        "ClientSecret": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_secret\""
-        },
-        "CallbackURL": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"callback_url\""
-        },
         "ClientName": {
-          "type": "string",
+          "$ref": "#/definitions/v1SignMethod",
           "title": "@inject_tag: sql:\"client_name\""
         },
         "ClientTag": {
@@ -359,6 +338,23 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod",
+      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
     }
   }
 }
