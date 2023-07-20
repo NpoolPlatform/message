@@ -38,11 +38,16 @@ service Gateway {
 }
 
 message CreateOAuthThirdPartyRequest {
-    string          TargetAppID    = 10;
-    optional string TargetUserID   = 20;
-    optional string RoleID         = 30;
-    string          Resource       = 40;
-    string          Method         = 50;
+    string ID             = 10;
+    string ClientID       = 20;
+    string ClientSecret   = 30;
+    string CallbackURL    = 40;
+    string ClientName     = 50;
+    string ClientTag      = 60;
+    string ClientLogoURL  = 70;
+    string ClientOAuthURL = 80;
+    string ResponseType   = 90;
+    string Scope          = 100;
 }
 
 message CreateOAuthThirdPartyResponse {
@@ -50,11 +55,16 @@ message CreateOAuthThirdPartyResponse {
 }
 
 message UpdateOAuthThirdPartyRequest {
-    string          ID           = 10;
-    string          AppID        = 20;
-    optional string RoleName     = 30;
-    optional bool   Default      = 40;
-    optional string Description  = 50;
+    string          ID             = 10;
+    optional string ClientID       = 20;
+    optional string ClientSecret   = 30;
+    optional string CallbackURL    = 40;
+    optional string ClientName     = 50;
+    optional string ClientTag      = 60;
+    optional string ClientLogoURL  = 70;
+    optional string ClientOAuthURL = 80;
+    optional string ResponseType   = 90;
+    optional string Scope          = 100;
 }
 
 message UpdateOAuthThirdPartyResponse {
@@ -62,8 +72,7 @@ message UpdateOAuthThirdPartyResponse {
 }
 
 message DeleteOAuthThirdPartyRequest {
-    string TargetAppID = 10;
-    string ID          = 20;
+    string ID = 10;
 }
 
 message DeleteOAuthThirdPartyResponse {
@@ -71,9 +80,8 @@ message DeleteOAuthThirdPartyResponse {
 }
 
 message GetOAuthThirdPartiesRequest {
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
+    int32  Offset      = 10;
+    int32  Limit       = 20;
 }
 
 message GetOAuthThirdPartiesResponse {

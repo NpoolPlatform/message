@@ -152,7 +152,7 @@
         "TargetAppID": {
           "type": "string"
         },
-        "CountryID": {
+        "ThirdPartyID": {
           "type": "string"
         }
       }
@@ -298,6 +298,10 @@
         "ClientSecret": {
           "type": "string",
           "title": "@inject_tag: sql:\"client_secret\""
+        },
+        "CallbackURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"callback_url\""
         },
         "ClientName": {
           "type": "string",

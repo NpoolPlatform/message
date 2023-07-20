@@ -149,19 +149,34 @@
     "authingoauthv1CreateOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "ID": {
           "type": "string"
         },
-        "TargetUserID": {
+        "ClientID": {
           "type": "string"
         },
-        "RoleID": {
+        "ClientSecret": {
           "type": "string"
         },
-        "Resource": {
+        "CallbackURL": {
           "type": "string"
         },
-        "Method": {
+        "ClientName": {
+          "type": "string"
+        },
+        "ClientTag": {
+          "type": "string"
+        },
+        "ClientLogoURL": {
+          "type": "string"
+        },
+        "ClientOAuthURL": {
+          "type": "string"
+        },
+        "ResponseType": {
+          "type": "string"
+        },
+        "Scope": {
           "type": "string"
         }
       }
@@ -177,9 +192,6 @@
     "authingoauthv1DeleteOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
         "ID": {
           "type": "string"
         }
@@ -196,9 +208,6 @@
     "authingoauthv1GetOAuthThirdPartiesRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -231,16 +240,31 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
+        "ClientID": {
           "type": "string"
         },
-        "RoleName": {
+        "ClientSecret": {
           "type": "string"
         },
-        "Default": {
-          "type": "boolean"
+        "CallbackURL": {
+          "type": "string"
         },
-        "Description": {
+        "ClientName": {
+          "type": "string"
+        },
+        "ClientTag": {
+          "type": "string"
+        },
+        "ClientLogoURL": {
+          "type": "string"
+        },
+        "ClientOAuthURL": {
+          "type": "string"
+        },
+        "ResponseType": {
+          "type": "string"
+        },
+        "Scope": {
           "type": "string"
         }
       }
@@ -295,6 +319,10 @@
         "ClientSecret": {
           "type": "string",
           "title": "@inject_tag: sql:\"client_secret\""
+        },
+        "CallbackURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"callback_url\""
         },
         "ClientName": {
           "type": "string",

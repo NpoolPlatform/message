@@ -23,6 +23,7 @@ message OAuthThirdPartyReq {
     optional string ID              = 10;
     optional string AppID           = 20;
     optional string ThirdPartyID    = 30;
+    optional string ClientName      = 40;
 }
 
 message OAuthThirdParty {
@@ -36,22 +37,24 @@ message OAuthThirdParty {
     string ClientID       = 40;
     // @inject_tag: sql:"client_secret"
     string ClientSecret   = 50;
+    // @inject_tag: sql:"callback_url"
+    string CallbackURL    = 60;
     // @inject_tag: sql:"client_name"
-    string ClientName     = 60;
+    string ClientName     = 70;
     // @inject_tag: sql:"client_tag"
-    string ClientTag      = 70;
+    string ClientTag      = 80;
     // @inject_tag: sql:"client_logo_url"
-    string ClientLogoURL  = 80;
+    string ClientLogoURL  = 90;
     // @inject_tag: sql:"client_oauth_url"
-    string ClientOAuthURL = 90;
+    string ClientOAuthURL = 100;
     // @inject_tag: sql:"response_type"
-    string ResponseType   = 100;
+    string ResponseType   = 110;
     // @inject_tag: sql:"scope"
-    string Scope          = 110;
+    string Scope          = 120;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 120;
+    uint32 CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 130;
+    uint32 UpdatedAt      = 1010;
 }
 
 message Conds {
