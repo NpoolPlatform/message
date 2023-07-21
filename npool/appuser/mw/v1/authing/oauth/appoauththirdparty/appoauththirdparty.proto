@@ -9,6 +9,7 @@ import "npool/basetypes/v1/signmethod.proto";
 
 service Middleware {
     rpc CreateOAuthThirdParty        (CreateOAuthThirdPartyRequest)       returns (CreateOAuthThirdPartyResponse)      {}
+    rpc UpdateOAuthThirdParty        (UpdateOAuthThirdPartyRequest)       returns (UpdateOAuthThirdPartyResponse)      {}
 
     rpc GetOAuthThirdParties         (GetOAuthThirdPartiesRequest)        returns (GetOAuthThirdPartiesResponse)       {}
     rpc GetOAuthThirdParty           (GetOAuthThirdPartyRequest)          returns (GetOAuthThirdPartyResponse)         {}

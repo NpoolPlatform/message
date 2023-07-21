@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/CreateOAuthThirdParty"
+	Middleware_UpdateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/UpdateOAuthThirdParty"
 	Middleware_GetOAuthThirdParties_FullMethodName      = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParties"
 	Middleware_GetOAuthThirdParty_FullMethodName        = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParty"
 	Middleware_GetOAuthThirdPartyOnly_FullMethodName    = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdPartyOnly"
@@ -33,6 +34,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOAuthThirdParty(ctx context.Context, in *CreateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*CreateOAuthThirdPartyResponse, error)
+	UpdateOAuthThirdParty(ctx context.Context, in *UpdateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*UpdateOAuthThirdPartyResponse, error)
 	GetOAuthThirdParties(ctx context.Context, in *GetOAuthThirdPartiesRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartiesResponse, error)
 	GetOAuthThirdParty(ctx context.Context, in *GetOAuthThirdPartyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyResponse, error)
 	GetOAuthThirdPartyOnly(ctx context.Context, in *GetOAuthThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyOnlyResponse, error)
@@ -52,6 +54,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateOAuthThirdParty(ctx context.Context, in *CreateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*CreateOAuthThirdPartyResponse, error) {
 	out := new(CreateOAuthThirdPartyResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateOAuthThirdParty_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateOAuthThirdParty(ctx context.Context, in *UpdateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*UpdateOAuthThirdPartyResponse, error) {
+	out := new(UpdateOAuthThirdPartyResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateOAuthThirdParty_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,6 +128,7 @@ func (c *middlewareClient) DeleteOAuthThirdParty(ctx context.Context, in *Delete
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOAuthThirdParty(context.Context, *CreateOAuthThirdPartyRequest) (*CreateOAuthThirdPartyResponse, error)
+	UpdateOAuthThirdParty(context.Context, *UpdateOAuthThirdPartyRequest) (*UpdateOAuthThirdPartyResponse, error)
 	GetOAuthThirdParties(context.Context, *GetOAuthThirdPartiesRequest) (*GetOAuthThirdPartiesResponse, error)
 	GetOAuthThirdParty(context.Context, *GetOAuthThirdPartyRequest) (*GetOAuthThirdPartyResponse, error)
 	GetOAuthThirdPartyOnly(context.Context, *GetOAuthThirdPartyOnlyRequest) (*GetOAuthThirdPartyOnlyResponse, error)
@@ -132,6 +144,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateOAuthThirdParty(context.Context, *CreateOAuthThirdPartyRequest) (*CreateOAuthThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOAuthThirdParty not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateOAuthThirdParty(context.Context, *UpdateOAuthThirdPartyRequest) (*UpdateOAuthThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOAuthThirdParty not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOAuthThirdParties(context.Context, *GetOAuthThirdPartiesRequest) (*GetOAuthThirdPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOAuthThirdParties not implemented")
@@ -178,6 +193,24 @@ func _Middleware_CreateOAuthThirdParty_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOAuthThirdParty(ctx, req.(*CreateOAuthThirdPartyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateOAuthThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOAuthThirdPartyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateOAuthThirdParty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateOAuthThirdParty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateOAuthThirdParty(ctx, req.(*UpdateOAuthThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,6 +333,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOAuthThirdParty",
 			Handler:    _Middleware_CreateOAuthThirdParty_Handler,
+		},
+		{
+			MethodName: "UpdateOAuthThirdParty",
+			Handler:    _Middleware_UpdateOAuthThirdParty_Handler,
 		},
 		{
 			MethodName: "GetOAuthThirdParties",
