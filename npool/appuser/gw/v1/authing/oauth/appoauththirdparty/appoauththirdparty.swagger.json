@@ -202,7 +202,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/oauthappoauththirdpartyv1OAuthThirdParty"
+          "$ref": "#/definitions/v1OAuthThirdParty"
         }
       }
     },
@@ -221,7 +221,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/oauthappoauththirdpartyv1OAuthThirdParty"
+          "$ref": "#/definitions/v1OAuthThirdParty"
         }
       }
     },
@@ -248,7 +248,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/oauthappoauththirdpartyv1OAuthThirdParty"
+            "$ref": "#/definitions/v1OAuthThirdParty"
           }
         },
         "Total": {
@@ -257,7 +257,7 @@
         }
       }
     },
-    "authingoauthv1OAuthThirdParty": {
+    "authingoauthv1UpdateOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -280,23 +280,75 @@
         }
       }
     },
-    "authingoauthv1UpdateOAuthThirdPartyRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/authingoauthv1OAuthThirdParty"
-        }
-      }
-    },
     "authingoauthv1UpdateOAuthThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/oauthappoauththirdpartyv1OAuthThirdParty"
+          "$ref": "#/definitions/v1OAuthThirdParty"
         }
       }
     },
-    "oauthappoauththirdpartyv1OAuthThirdParty": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetAppOAuthThirdPartiesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppOAuthThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1OAuthThirdParty"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OAuthThirdParty": {
       "type": "object",
       "properties": {
         "ID": {
@@ -363,66 +415,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1GetAppOAuthThirdPartiesRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppOAuthThirdPartiesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/oauthappoauththirdpartyv1OAuthThirdParty"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

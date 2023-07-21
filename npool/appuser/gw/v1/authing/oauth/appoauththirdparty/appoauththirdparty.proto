@@ -44,15 +44,6 @@ service Gateway {
     }
 }
 
-message OAuthThirdParty {
-    string ID             = 10;
-    string AppID          = 20;
-    string ThirdPartyID   = 30;
-    string ClientID       = 40;
-    string ClientSecret   = 50;
-    string CallbackURL    = 60;
-}
-
 message CreateOAuthThirdPartyRequest {
     string TargetAppID  = 10;
     string ThirdPartyID = 20;
@@ -66,7 +57,12 @@ message CreateOAuthThirdPartyResponse {
 }
 
 message UpdateOAuthThirdPartyRequest {
-    OAuthThirdParty Info = 10;
+    string          ID             = 10;
+    optional string AppID          = 20;
+    optional string ThirdPartyID   = 30;
+    optional string ClientID       = 40;
+    optional string ClientSecret   = 50;
+    optional string CallbackURL    = 60;
 }
 
 message UpdateOAuthThirdPartyResponse {
