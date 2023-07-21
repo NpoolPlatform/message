@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_CreateOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.v1.Gateway/CreateOAuthThirdParty"
+	Gateway_UpdateOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.v1.Gateway/UpdateOAuthThirdParty"
 	Gateway_DeleteOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.v1.Gateway/DeleteOAuthThirdParty"
 	Gateway_GetOAuthThirdParties_FullMethodName    = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthThirdParties"
 	Gateway_GetAppOAuthThirdParties_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/GetAppOAuthThirdParties"
@@ -30,6 +31,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateOAuthThirdParty(ctx context.Context, in *CreateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*CreateOAuthThirdPartyResponse, error)
+	UpdateOAuthThirdParty(ctx context.Context, in *UpdateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*UpdateOAuthThirdPartyResponse, error)
 	DeleteOAuthThirdParty(ctx context.Context, in *DeleteOAuthThirdPartyRequest, opts ...grpc.CallOption) (*DeleteOAuthThirdPartyResponse, error)
 	GetOAuthThirdParties(ctx context.Context, in *GetOAuthThirdPartiesRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartiesResponse, error)
 	GetAppOAuthThirdParties(ctx context.Context, in *GetAppOAuthThirdPartiesRequest, opts ...grpc.CallOption) (*GetAppOAuthThirdPartiesResponse, error)
@@ -46,6 +48,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateOAuthThirdParty(ctx context.Context, in *CreateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*CreateOAuthThirdPartyResponse, error) {
 	out := new(CreateOAuthThirdPartyResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateOAuthThirdParty_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateOAuthThirdParty(ctx context.Context, in *UpdateOAuthThirdPartyRequest, opts ...grpc.CallOption) (*UpdateOAuthThirdPartyResponse, error) {
+	out := new(UpdateOAuthThirdPartyResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateOAuthThirdParty_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,6 +95,7 @@ func (c *gatewayClient) GetAppOAuthThirdParties(ctx context.Context, in *GetAppO
 // for forward compatibility
 type GatewayServer interface {
 	CreateOAuthThirdParty(context.Context, *CreateOAuthThirdPartyRequest) (*CreateOAuthThirdPartyResponse, error)
+	UpdateOAuthThirdParty(context.Context, *UpdateOAuthThirdPartyRequest) (*UpdateOAuthThirdPartyResponse, error)
 	DeleteOAuthThirdParty(context.Context, *DeleteOAuthThirdPartyRequest) (*DeleteOAuthThirdPartyResponse, error)
 	GetOAuthThirdParties(context.Context, *GetOAuthThirdPartiesRequest) (*GetOAuthThirdPartiesResponse, error)
 	GetAppOAuthThirdParties(context.Context, *GetAppOAuthThirdPartiesRequest) (*GetAppOAuthThirdPartiesResponse, error)
@@ -96,6 +108,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateOAuthThirdParty(context.Context, *CreateOAuthThirdPartyRequest) (*CreateOAuthThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOAuthThirdParty not implemented")
+}
+func (UnimplementedGatewayServer) UpdateOAuthThirdParty(context.Context, *UpdateOAuthThirdPartyRequest) (*UpdateOAuthThirdPartyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOAuthThirdParty not implemented")
 }
 func (UnimplementedGatewayServer) DeleteOAuthThirdParty(context.Context, *DeleteOAuthThirdPartyRequest) (*DeleteOAuthThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOAuthThirdParty not implemented")
@@ -133,6 +148,24 @@ func _Gateway_CreateOAuthThirdParty_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateOAuthThirdParty(ctx, req.(*CreateOAuthThirdPartyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateOAuthThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOAuthThirdPartyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateOAuthThirdParty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_UpdateOAuthThirdParty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateOAuthThirdParty(ctx, req.(*UpdateOAuthThirdPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -201,6 +234,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOAuthThirdParty",
 			Handler:    _Gateway_CreateOAuthThirdParty_Handler,
+		},
+		{
+			MethodName: "UpdateOAuthThirdParty",
+			Handler:    _Gateway_UpdateOAuthThirdParty_Handler,
 		},
 		{
 			MethodName: "DeleteOAuthThirdParty",

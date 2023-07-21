@@ -15,6 +15,13 @@ service Gateway {
         };
     }
 
+    rpc UpdateOAuthThirdParty (UpdateOAuthThirdPartyRequest) returns (UpdateOAuthThirdPartyResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/appoauththirdparty"
+            body: "*"
+        };
+    }
+
     rpc DeleteOAuthThirdParty (DeleteOAuthThirdPartyRequest) returns (DeleteOAuthThirdPartyResponse) {
         option (google.api.http) = {
             post: "/v1/delete/appoauththirdparty"
@@ -46,6 +53,18 @@ message CreateOAuthThirdPartyRequest {
 }
 
 message CreateOAuthThirdPartyResponse {
+    appuser.middleware.authing.oauth.appoauththirdparty.v1.OAuthThirdParty Info = 10;
+}
+
+message UpdateOAuthThirdPartyRequest {
+    string          ID             = 10;
+    optional string ThirdPartyID   = 20;
+    optional string ClientID       = 30;
+    optional string ClientSecret   = 40;
+    optional string CallbackURL    = 50;
+}
+
+message UpdateOAuthThirdPartyResponse {
     appuser.middleware.authing.oauth.appoauththirdparty.v1.OAuthThirdParty Info = 10;
 }
 

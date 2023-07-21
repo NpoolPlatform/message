@@ -143,6 +143,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/appoauththirdparty": {
+      "post": {
+        "operationId": "Gateway_UpdateOAuthThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authingoauthv1UpdateOAuthThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authingoauthv1UpdateOAuthThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -222,6 +254,34 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "authingoauthv1UpdateOAuthThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "ClientID": {
+          "type": "string"
+        },
+        "ClientSecret": {
+          "type": "string"
+        },
+        "CallbackURL": {
+          "type": "string"
+        }
+      }
+    },
+    "authingoauthv1UpdateOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
         }
       }
     },
