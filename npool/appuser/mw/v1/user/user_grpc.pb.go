@@ -23,6 +23,7 @@ const (
 	Middleware_UpdateUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/UpdateUser"
 	Middleware_GetUsers_FullMethodName       = "/appuser.middleware.user.v1.Middleware/GetUsers"
 	Middleware_GetUser_FullMethodName        = "/appuser.middleware.user.v1.Middleware/GetUser"
+	Middleware_GetThirdUsers_FullMethodName  = "/appuser.middleware.user.v1.Middleware/GetThirdUsers"
 	Middleware_VerifyAccount_FullMethodName  = "/appuser.middleware.user.v1.Middleware/VerifyAccount"
 	Middleware_VerifyUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/VerifyUser"
 	Middleware_ExistUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/ExistUser"
@@ -38,6 +39,7 @@ type MiddlewareClient interface {
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
+	GetThirdUsers(ctx context.Context, in *GetThirdUsersRequest, opts ...grpc.CallOption) (*GetThirdUsersResponse, error)
 	VerifyAccount(ctx context.Context, in *VerifyAccountRequest, opts ...grpc.CallOption) (*VerifyAccountResponse, error)
 	VerifyUser(ctx context.Context, in *VerifyUserRequest, opts ...grpc.CallOption) (*VerifyUserResponse, error)
 	ExistUser(ctx context.Context, in *ExistUserRequest, opts ...grpc.CallOption) (*ExistUserResponse, error)
@@ -83,6 +85,15 @@ func (c *middlewareClient) GetUsers(ctx context.Context, in *GetUsersRequest, op
 func (c *middlewareClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
 	out := new(GetUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetThirdUsers(ctx context.Context, in *GetThirdUsersRequest, opts ...grpc.CallOption) (*GetThirdUsersResponse, error) {
+	out := new(GetThirdUsersResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetThirdUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -142,6 +153,7 @@ type MiddlewareServer interface {
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
+	GetThirdUsers(context.Context, *GetThirdUsersRequest) (*GetThirdUsersResponse, error)
 	VerifyAccount(context.Context, *VerifyAccountRequest) (*VerifyAccountResponse, error)
 	VerifyUser(context.Context, *VerifyUserRequest) (*VerifyUserResponse, error)
 	ExistUser(context.Context, *ExistUserRequest) (*ExistUserResponse, error)
@@ -165,6 +177,9 @@ func (UnimplementedMiddlewareServer) GetUsers(context.Context, *GetUsersRequest)
 }
 func (UnimplementedMiddlewareServer) GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
+}
+func (UnimplementedMiddlewareServer) GetThirdUsers(context.Context, *GetThirdUsersRequest) (*GetThirdUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetThirdUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) VerifyAccount(context.Context, *VerifyAccountRequest) (*VerifyAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyAccount not implemented")
@@ -262,6 +277,24 @@ func _Middleware_GetUser_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetUser(ctx, req.(*GetUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetThirdUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetThirdUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetThirdUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetThirdUsers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetThirdUsers(ctx, req.(*GetThirdUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -378,6 +411,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUser",
 			Handler:    _Middleware_GetUser_Handler,
+		},
+		{
+			MethodName: "GetThirdUsers",
+			Handler:    _Middleware_GetThirdUsers_Handler,
 		},
 		{
 			MethodName: "VerifyAccount",
