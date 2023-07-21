@@ -19,14 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/CreateOAuthThirdParty"
-	Middleware_UpdateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/UpdateOAuthThirdParty"
-	Middleware_GetOAuthThirdParties_FullMethodName      = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParties"
-	Middleware_GetOAuthThirdParty_FullMethodName        = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParty"
-	Middleware_GetOAuthThirdPartyOnly_FullMethodName    = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdPartyOnly"
-	Middleware_ExistOAuthThirdParty_FullMethodName      = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdParty"
-	Middleware_ExistOAuthThirdPartyConds_FullMethodName = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdPartyConds"
-	Middleware_DeleteOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/DeleteOAuthThirdParty"
+	Middleware_CreateOAuthThirdParty_FullMethodName         = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/CreateOAuthThirdParty"
+	Middleware_UpdateOAuthThirdParty_FullMethodName         = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/UpdateOAuthThirdParty"
+	Middleware_GetOAuthThirdParties_FullMethodName          = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParties"
+	Middleware_GetOAuthThirdParty_FullMethodName            = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParty"
+	Middleware_GetOAuthThirdPartyOnly_FullMethodName        = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdPartyOnly"
+	Middleware_GetOAuthThirdPartyDecryptOnly_FullMethodName = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdPartyDecryptOnly"
+	Middleware_ExistOAuthThirdParty_FullMethodName          = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdParty"
+	Middleware_ExistOAuthThirdPartyConds_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdPartyConds"
+	Middleware_DeleteOAuthThirdParty_FullMethodName         = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/DeleteOAuthThirdParty"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -38,6 +39,7 @@ type MiddlewareClient interface {
 	GetOAuthThirdParties(ctx context.Context, in *GetOAuthThirdPartiesRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartiesResponse, error)
 	GetOAuthThirdParty(ctx context.Context, in *GetOAuthThirdPartyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyResponse, error)
 	GetOAuthThirdPartyOnly(ctx context.Context, in *GetOAuthThirdPartyOnlyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyOnlyResponse, error)
+	GetOAuthThirdPartyDecryptOnly(ctx context.Context, in *GetOAuthThirdPartyDecryptOnlyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyDecryptOnlyResponse, error)
 	ExistOAuthThirdParty(ctx context.Context, in *ExistOAuthThirdPartyRequest, opts ...grpc.CallOption) (*ExistOAuthThirdPartyResponse, error)
 	ExistOAuthThirdPartyConds(ctx context.Context, in *ExistOAuthThirdPartyCondsRequest, opts ...grpc.CallOption) (*ExistOAuthThirdPartyCondsResponse, error)
 	DeleteOAuthThirdParty(ctx context.Context, in *DeleteOAuthThirdPartyRequest, opts ...grpc.CallOption) (*DeleteOAuthThirdPartyResponse, error)
@@ -96,6 +98,15 @@ func (c *middlewareClient) GetOAuthThirdPartyOnly(ctx context.Context, in *GetOA
 	return out, nil
 }
 
+func (c *middlewareClient) GetOAuthThirdPartyDecryptOnly(ctx context.Context, in *GetOAuthThirdPartyDecryptOnlyRequest, opts ...grpc.CallOption) (*GetOAuthThirdPartyDecryptOnlyResponse, error) {
+	out := new(GetOAuthThirdPartyDecryptOnlyResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetOAuthThirdPartyDecryptOnly_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistOAuthThirdParty(ctx context.Context, in *ExistOAuthThirdPartyRequest, opts ...grpc.CallOption) (*ExistOAuthThirdPartyResponse, error) {
 	out := new(ExistOAuthThirdPartyResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistOAuthThirdParty_FullMethodName, in, out, opts...)
@@ -132,6 +143,7 @@ type MiddlewareServer interface {
 	GetOAuthThirdParties(context.Context, *GetOAuthThirdPartiesRequest) (*GetOAuthThirdPartiesResponse, error)
 	GetOAuthThirdParty(context.Context, *GetOAuthThirdPartyRequest) (*GetOAuthThirdPartyResponse, error)
 	GetOAuthThirdPartyOnly(context.Context, *GetOAuthThirdPartyOnlyRequest) (*GetOAuthThirdPartyOnlyResponse, error)
+	GetOAuthThirdPartyDecryptOnly(context.Context, *GetOAuthThirdPartyDecryptOnlyRequest) (*GetOAuthThirdPartyDecryptOnlyResponse, error)
 	ExistOAuthThirdParty(context.Context, *ExistOAuthThirdPartyRequest) (*ExistOAuthThirdPartyResponse, error)
 	ExistOAuthThirdPartyConds(context.Context, *ExistOAuthThirdPartyCondsRequest) (*ExistOAuthThirdPartyCondsResponse, error)
 	DeleteOAuthThirdParty(context.Context, *DeleteOAuthThirdPartyRequest) (*DeleteOAuthThirdPartyResponse, error)
@@ -156,6 +168,9 @@ func (UnimplementedMiddlewareServer) GetOAuthThirdParty(context.Context, *GetOAu
 }
 func (UnimplementedMiddlewareServer) GetOAuthThirdPartyOnly(context.Context, *GetOAuthThirdPartyOnlyRequest) (*GetOAuthThirdPartyOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOAuthThirdPartyOnly not implemented")
+}
+func (UnimplementedMiddlewareServer) GetOAuthThirdPartyDecryptOnly(context.Context, *GetOAuthThirdPartyDecryptOnlyRequest) (*GetOAuthThirdPartyDecryptOnlyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOAuthThirdPartyDecryptOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOAuthThirdParty(context.Context, *ExistOAuthThirdPartyRequest) (*ExistOAuthThirdPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOAuthThirdParty not implemented")
@@ -269,6 +284,24 @@ func _Middleware_GetOAuthThirdPartyOnly_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetOAuthThirdPartyDecryptOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOAuthThirdPartyDecryptOnlyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetOAuthThirdPartyDecryptOnly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetOAuthThirdPartyDecryptOnly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetOAuthThirdPartyDecryptOnly(ctx, req.(*GetOAuthThirdPartyDecryptOnlyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistOAuthThirdParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistOAuthThirdPartyRequest)
 	if err := dec(in); err != nil {
@@ -349,6 +382,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOAuthThirdPartyOnly",
 			Handler:    _Middleware_GetOAuthThirdPartyOnly_Handler,
+		},
+		{
+			MethodName: "GetOAuthThirdPartyDecryptOnly",
+			Handler:    _Middleware_GetOAuthThirdPartyDecryptOnly_Handler,
 		},
 		{
 			MethodName: "ExistOAuthThirdParty",

@@ -14,6 +14,7 @@ service Middleware {
     rpc GetOAuthThirdParties         (GetOAuthThirdPartiesRequest)        returns (GetOAuthThirdPartiesResponse)       {}
     rpc GetOAuthThirdParty           (GetOAuthThirdPartyRequest)          returns (GetOAuthThirdPartyResponse)         {}
     rpc GetOAuthThirdPartyOnly       (GetOAuthThirdPartyOnlyRequest)      returns (GetOAuthThirdPartyOnlyResponse)     {}
+    rpc GetOAuthThirdPartyDecryptOnly (GetOAuthThirdPartyDecryptOnlyRequest)     returns (GetOAuthThirdPartyDecryptOnlyResponse)     {}
 
     rpc ExistOAuthThirdParty         (ExistOAuthThirdPartyRequest)        returns (ExistOAuthThirdPartyResponse)       {}
     rpc ExistOAuthThirdPartyConds    (ExistOAuthThirdPartyCondsRequest)   returns (ExistOAuthThirdPartyCondsResponse)  {}
@@ -112,6 +113,14 @@ message GetOAuthThirdPartyOnlyRequest {
 }
 
 message GetOAuthThirdPartyOnlyResponse {
+    OAuthThirdParty Info = 10;
+}
+
+message GetOAuthThirdPartyDecryptOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetOAuthThirdPartyDecryptOnlyResponse {
     OAuthThirdParty Info = 10;
 }
 

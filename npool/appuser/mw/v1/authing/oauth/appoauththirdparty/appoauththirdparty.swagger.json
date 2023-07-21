@@ -113,6 +113,14 @@
         }
       }
     },
+    "v1GetOAuthThirdPartyDecryptOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
     "v1GetOAuthThirdPartyOnlyResponse": {
       "type": "object",
       "properties": {
