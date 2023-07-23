@@ -68,6 +68,14 @@
         }
       }
     },
+    "v1CreateThirdUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1CreateUserResponse": {
       "type": "object",
       "properties": {

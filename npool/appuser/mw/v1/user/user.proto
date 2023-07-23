@@ -10,6 +10,7 @@ import "npool/basetypes/v1/kycstate.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
+    rpc CreateThirdUser   (CreateThirdUserRequest)  returns (CreateThirdUserResponse)  {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
@@ -190,6 +191,14 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
+    User Info = 10;
+}
+
+message CreateThirdUserRequest {
+    UserReq Info = 10;
+}
+
+message CreateThirdUserResponse {
     User Info = 10;
 }
 

@@ -19,16 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/CreateUser"
-	Middleware_UpdateUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/UpdateUser"
-	Middleware_GetUsers_FullMethodName       = "/appuser.middleware.user.v1.Middleware/GetUsers"
-	Middleware_GetUser_FullMethodName        = "/appuser.middleware.user.v1.Middleware/GetUser"
-	Middleware_GetThirdUsers_FullMethodName  = "/appuser.middleware.user.v1.Middleware/GetThirdUsers"
-	Middleware_VerifyAccount_FullMethodName  = "/appuser.middleware.user.v1.Middleware/VerifyAccount"
-	Middleware_VerifyUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/VerifyUser"
-	Middleware_ExistUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/ExistUser"
-	Middleware_ExistUserConds_FullMethodName = "/appuser.middleware.user.v1.Middleware/ExistUserConds"
-	Middleware_DeleteUser_FullMethodName     = "/appuser.middleware.user.v1.Middleware/DeleteUser"
+	Middleware_CreateUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/CreateUser"
+	Middleware_CreateThirdUser_FullMethodName = "/appuser.middleware.user.v1.Middleware/CreateThirdUser"
+	Middleware_UpdateUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/UpdateUser"
+	Middleware_GetUsers_FullMethodName        = "/appuser.middleware.user.v1.Middleware/GetUsers"
+	Middleware_GetUser_FullMethodName         = "/appuser.middleware.user.v1.Middleware/GetUser"
+	Middleware_GetThirdUsers_FullMethodName   = "/appuser.middleware.user.v1.Middleware/GetThirdUsers"
+	Middleware_VerifyAccount_FullMethodName   = "/appuser.middleware.user.v1.Middleware/VerifyAccount"
+	Middleware_VerifyUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/VerifyUser"
+	Middleware_ExistUser_FullMethodName       = "/appuser.middleware.user.v1.Middleware/ExistUser"
+	Middleware_ExistUserConds_FullMethodName  = "/appuser.middleware.user.v1.Middleware/ExistUserConds"
+	Middleware_DeleteUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/DeleteUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -36,6 +37,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	CreateThirdUser(ctx context.Context, in *CreateThirdUserRequest, opts ...grpc.CallOption) (*CreateThirdUserResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
@@ -58,6 +60,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
 	out := new(CreateUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateThirdUser(ctx context.Context, in *CreateThirdUserRequest, opts ...grpc.CallOption) (*CreateThirdUserResponse, error) {
+	out := new(CreateThirdUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateThirdUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,6 +161,7 @@ func (c *middlewareClient) DeleteUser(ctx context.Context, in *DeleteUserRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	CreateThirdUser(context.Context, *CreateThirdUserRequest) (*CreateThirdUserResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
@@ -168,6 +180,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateThirdUser(context.Context, *CreateThirdUserRequest) (*CreateThirdUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateThirdUser not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
@@ -223,6 +238,24 @@ func _Middleware_CreateUser_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateUser(ctx, req.(*CreateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateThirdUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateThirdUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateThirdUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateThirdUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateThirdUser(ctx, req.(*CreateThirdUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -399,6 +432,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateUser",
 			Handler:    _Middleware_CreateUser_Handler,
+		},
+		{
+			MethodName: "CreateThirdUser",
+			Handler:    _Middleware_CreateThirdUser_Handler,
 		},
 		{
 			MethodName: "UpdateUser",
