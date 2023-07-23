@@ -184,6 +184,8 @@ message Conds {
     basetypes.v1.StringVal      EmailAddress  = 40;
     basetypes.v1.StringVal      ImportFromApp = 50;
     basetypes.v1.StringSliceVal IDs           = 60;
+    basetypes.v1.StringVal      ThirdPartyID  = 70;
+    basetypes.v1.StringVal      ThirdPartyUserID = 80;
 }
 
 message CreateUserRequest {

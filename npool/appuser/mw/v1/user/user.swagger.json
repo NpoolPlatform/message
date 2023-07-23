@@ -65,6 +65,12 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ThirdPartyID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ThirdPartyUserID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
