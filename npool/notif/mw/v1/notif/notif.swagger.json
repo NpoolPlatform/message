@@ -445,6 +445,12 @@
         "AffiliatePurchase",
         "AffiliateSignup",
         "GoodBenefit1",
+        "NewDeviceDetected",
+        "PasswordChanged",
+        "EmailChanged",
+        "PhoneNumberChanged",
+        "TwoFactorAuthChanged",
+        "OrderCompleted",
         "Announcement",
         "ProductPage"
       ],

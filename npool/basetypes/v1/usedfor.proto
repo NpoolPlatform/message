@@ -28,6 +28,13 @@ enum UsedFor {
     AffiliateSignup       = 180;
     GoodBenefit1          = 190;
 
+    NewDeviceDetected     = 200;
+    PasswordChanged       = 210;
+    EmailChanged          = 220;
+    PhoneNumberChanged    = 230;
+    TwoFactorAuthChanged  = 240;
+    OrderCompleted        = 250;
+
     Announcement          = 100000;
     ProductPage           = 200000;
 }
