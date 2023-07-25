@@ -120,13 +120,7 @@
         "DefaultCouponType",
         "FixAmount",
         "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
+        "SpecialOffer"
       ],
       "default": "DefaultCouponType"
     },
