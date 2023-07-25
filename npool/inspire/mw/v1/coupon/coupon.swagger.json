@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/coupon/coupon/coupon.proto",
+    "title": "npool/inspire/mw/v1/coupon/coupon.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,6 +17,17 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesinspirev1CouponConstraint": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponConstraint",
+        "Normal",
+        "Threshold",
+        "GoodOnly",
+        "GoodThreshold"
+      ],
+      "default": "DefaultCouponConstraint"
+    },
     "basetypesinspirev1CouponType": {
       "type": "string",
       "enum": [
@@ -70,7 +81,7 @@
         }
       }
     },
-    "couponcouponv1Conds": {
+    "middlewarecouponv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -172,6 +183,9 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
         }
       }
     },
@@ -225,6 +239,9 @@
         "Allocated": {
           "type": "string",
           "title": "We may have random amount coupon"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
         }
       }
     },

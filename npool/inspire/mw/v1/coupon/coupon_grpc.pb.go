@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/coupon/coupon/coupon.proto
+// source: npool/inspire/mw/v1/coupon/coupon.proto
 
 package coupon
 
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCoupon_FullMethodName = "/inspire.middleware.coupon.coupon.v1.Middleware/CreateCoupon"
-	Middleware_UpdateCoupon_FullMethodName = "/inspire.middleware.coupon.coupon.v1.Middleware/UpdateCoupon"
-	Middleware_GetCoupon_FullMethodName    = "/inspire.middleware.coupon.coupon.v1.Middleware/GetCoupon"
-	Middleware_GetCoupons_FullMethodName   = "/inspire.middleware.coupon.coupon.v1.Middleware/GetCoupons"
+	Middleware_CreateCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/CreateCoupon"
+	Middleware_UpdateCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/UpdateCoupon"
+	Middleware_GetCoupon_FullMethodName    = "/inspire.middleware.coupon.v1.Middleware/GetCoupon"
+	Middleware_GetCoupons_FullMethodName   = "/inspire.middleware.coupon.v1.Middleware/GetCoupons"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -195,7 +195,7 @@ func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.coupon.coupon.v1.Middleware",
+	ServiceName: "inspire.middleware.coupon.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -216,5 +216,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/coupon/coupon/coupon.proto",
+	Metadata: "npool/inspire/mw/v1/coupon/coupon.proto",
 }

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package inspire.middleware.coupon.coupon.v1;
+package inspire.middleware.coupon.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/coupon";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon";
 
 import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
 import "npool/basetypes/v1/conds.proto";
@@ -35,6 +35,7 @@ message CouponReq {
     optional string Threshold    = 130;
     // We may have random amount coupon
     optional string Allocated    = 140;
+    optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
 }
 
 message Coupon {
@@ -54,6 +55,7 @@ message Coupon {
     string          Allocated       = 140;
     uint32          CreatedAt       = 150;
     uint32          UpdatedAt       = 160;
+    basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
 }
 
 message Conds {
