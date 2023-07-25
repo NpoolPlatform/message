@@ -128,6 +128,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc BindUser (BindUserRequest) returns (BindUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/bind/user"
+            body: "*"
+        };
+    }
 }
 
 message SignupRequest {
@@ -372,4 +379,23 @@ message BanAppUserRequest {
 
 message BanAppUserResponse {
   appuser.middleware.user.v1.User Info = 10;
+}
+
+message BindUserRequest {
+    string          AppID              = 10;
+    string          UserID             = 20;
+
+    optional string Account            = 30;
+    optional basetypes.v1.SignMethod AccountType    = 40;
+    optional string VerificationCode   = 50;
+
+    optional string NewVerificationCode = 51;
+    optional basetypes.v1.SignMethod NewAccountType = 52;
+
+    // Need verification code
+    optional string NewAccount          = 60;
+}
+
+message BindUserResponse {
+    appuser.middleware.user.v1.User Info = 10;
 }

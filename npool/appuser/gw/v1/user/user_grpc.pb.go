@@ -36,6 +36,7 @@ const (
 	Gateway_GetLoginHistories_FullMethodName = "/appuser.gateway.user.v1.Gateway/GetLoginHistories"
 	Gateway_BanUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/BanUser"
 	Gateway_BanAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/BanAppUser"
+	Gateway_BindUser_FullMethodName          = "/appuser.gateway.user.v1.Gateway/BindUser"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -59,6 +60,7 @@ type GatewayClient interface {
 	GetLoginHistories(ctx context.Context, in *GetLoginHistoriesRequest, opts ...grpc.CallOption) (*GetLoginHistoriesResponse, error)
 	BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error)
 	BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error)
+	BindUser(ctx context.Context, in *BindUserRequest, opts ...grpc.CallOption) (*BindUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -222,6 +224,15 @@ func (c *gatewayClient) BanAppUser(ctx context.Context, in *BanAppUserRequest, o
 	return out, nil
 }
 
+func (c *gatewayClient) BindUser(ctx context.Context, in *BindUserRequest, opts ...grpc.CallOption) (*BindUserResponse, error) {
+	out := new(BindUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_BindUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -243,6 +254,7 @@ type GatewayServer interface {
 	GetLoginHistories(context.Context, *GetLoginHistoriesRequest) (*GetLoginHistoriesResponse, error)
 	BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error)
 	BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error)
+	BindUser(context.Context, *BindUserRequest) (*BindUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -300,6 +312,9 @@ func (UnimplementedGatewayServer) BanUser(context.Context, *BanUserRequest) (*Ba
 }
 func (UnimplementedGatewayServer) BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BanAppUser not implemented")
+}
+func (UnimplementedGatewayServer) BindUser(context.Context, *BindUserRequest) (*BindUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BindUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -620,6 +635,24 @@ func _Gateway_BanAppUser_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_BindUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BindUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).BindUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_BindUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).BindUser(ctx, req.(*BindUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -694,6 +727,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BanAppUser",
 			Handler:    _Gateway_BanAppUser_Handler,
+		},
+		{
+			MethodName: "BindUser",
+			Handler:    _Gateway_BindUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
