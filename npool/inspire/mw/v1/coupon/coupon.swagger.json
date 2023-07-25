@@ -154,8 +154,12 @@
           "title": "@inject_tag: sql:\"circulation\""
         },
         "IssuedBy": {
+<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"issued_by\""
+=======
+          "type": "string"
+>>>>>>> Formal member variable name
         },
         "StartAt": {
           "type": "integer",

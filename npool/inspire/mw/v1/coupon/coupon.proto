@@ -43,7 +43,6 @@ message CouponReq {
 message Coupon {
     // @inject_tag: sql:"id"
     string          ID              = 10;
-<<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.proto
     // @inject_tag: sql:"coupon_type"
     string          CouponTypeStr   = 20;
     basetypes.inspire.v1.CouponType CouponType = 30;
