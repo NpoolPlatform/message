@@ -226,7 +226,13 @@
         },
         "CouponConstraint": {
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+<<<<<<< HEAD
 >>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
+=======
+        },
+        "Random": {
+          "type": "boolean"
+>>>>>>> Support random coupon
         }
       }
     },
@@ -283,12 +289,18 @@
         },
         "CouponConstraint": {
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
         },
         "Random": {
           "type": "boolean"
 =======
 >>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
+=======
+        },
+        "Random": {
+          "type": "boolean"
+>>>>>>> Support random coupon
         }
       }
     },
