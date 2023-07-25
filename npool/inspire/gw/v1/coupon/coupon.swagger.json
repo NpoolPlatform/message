@@ -498,6 +498,7 @@
         "Random": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
+<<<<<<< HEAD
         },
         "CreatedAt": {
           "type": "integer",
@@ -536,6 +537,8 @@
 =======
           "type": "boolean",
           "title": "@inject_tag: sql:\"id\""
+=======
+>>>>>>> For random
         },
         "CreatedAt": {
           "type": "integer",
