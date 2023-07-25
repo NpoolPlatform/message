@@ -215,7 +215,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/CreateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/create/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/CreateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/create/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -240,7 +240,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/UpdateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/update/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/UpdateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/update/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -265,7 +265,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/DeleteOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/delete/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/DeleteOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/delete/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -290,7 +290,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/appoauththirdparties"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/appoauththirdparties"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -315,7 +315,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetAppOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/app/appoauththirdparties"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetAppOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/app/appoauththirdparties"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -379,7 +379,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/CreateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/create/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/CreateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/create/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -401,7 +401,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/UpdateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/update/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/UpdateOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/update/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -423,7 +423,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/DeleteOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/delete/appoauththirdparty"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/DeleteOAuthThirdParty", runtime.WithHTTPPathPattern("/v1/delete/appoauththirdparty"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -445,7 +445,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/appoauththirdparties"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/appoauththirdparties"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,7 +467,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.v1.Gateway/GetAppOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/app/appoauththirdparties"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetAppOAuthThirdParties", runtime.WithHTTPPathPattern("/v1/get/app/appoauththirdparties"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/authingoauthv1CreateOAuthThirdPartyResponse"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1CreateOAuthThirdPartyResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authingoauthv1CreateOAuthThirdPartyRequest"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1CreateOAuthThirdPartyRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/authingoauthv1DeleteOAuthThirdPartyResponse"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1DeleteOAuthThirdPartyResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authingoauthv1DeleteOAuthThirdPartyRequest"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1DeleteOAuthThirdPartyRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/authingoauthv1GetOAuthThirdPartiesResponse"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1GetOAuthThirdPartiesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authingoauthv1GetOAuthThirdPartiesRequest"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1GetOAuthThirdPartiesRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/authingoauthv1UpdateOAuthThirdPartyResponse"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1UpdateOAuthThirdPartyResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authingoauthv1UpdateOAuthThirdPartyRequest"
+              "$ref": "#/definitions/appusergatewayauthingoauthoauththirdpartyv1UpdateOAuthThirdPartyRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "authingoauthv1CreateOAuthThirdPartyRequest": {
+    "appusergatewayauthingoauthoauththirdpartyv1CreateOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -172,7 +172,7 @@
         }
       }
     },
-    "authingoauthv1CreateOAuthThirdPartyResponse": {
+    "appusergatewayauthingoauthoauththirdpartyv1CreateOAuthThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -180,7 +180,7 @@
         }
       }
     },
-    "authingoauthv1DeleteOAuthThirdPartyRequest": {
+    "appusergatewayauthingoauthoauththirdpartyv1DeleteOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -188,7 +188,7 @@
         }
       }
     },
-    "authingoauthv1DeleteOAuthThirdPartyResponse": {
+    "appusergatewayauthingoauthoauththirdpartyv1DeleteOAuthThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -196,7 +196,7 @@
         }
       }
     },
-    "authingoauthv1GetOAuthThirdPartiesRequest": {
+    "appusergatewayauthingoauthoauththirdpartyv1GetOAuthThirdPartiesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -209,7 +209,7 @@
         }
       }
     },
-    "authingoauthv1GetOAuthThirdPartiesResponse": {
+    "appusergatewayauthingoauthoauththirdpartyv1GetOAuthThirdPartiesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -225,7 +225,7 @@
         }
       }
     },
-    "authingoauthv1UpdateOAuthThirdPartyRequest": {
+    "appusergatewayauthingoauthoauththirdpartyv1UpdateOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -260,7 +260,7 @@
         }
       }
     },
-    "authingoauthv1UpdateOAuthThirdPartyResponse": {
+    "appusergatewayauthingoauthoauththirdpartyv1UpdateOAuthThirdPartyResponse": {
       "type": "object",
       "properties": {
         "Info": {

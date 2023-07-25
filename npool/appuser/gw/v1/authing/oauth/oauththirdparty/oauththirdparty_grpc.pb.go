@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/CreateOAuthThirdParty"
-	Gateway_UpdateOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/UpdateOAuthThirdParty"
-	Gateway_DeleteOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/DeleteOAuthThirdParty"
-	Gateway_GetOAuthThirdParties_FullMethodName  = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthThirdParties"
+	Gateway_CreateOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.oauththirdparty.v1.Gateway/CreateOAuthThirdParty"
+	Gateway_UpdateOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.oauththirdparty.v1.Gateway/UpdateOAuthThirdParty"
+	Gateway_DeleteOAuthThirdParty_FullMethodName = "/appuser.gateway.authing.oauth.oauththirdparty.v1.Gateway/DeleteOAuthThirdParty"
+	Gateway_GetOAuthThirdParties_FullMethodName  = "/appuser.gateway.authing.oauth.oauththirdparty.v1.Gateway/GetOAuthThirdParties"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_GetOAuthThirdParties_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.authing.oauth.v1.Gateway",
+	ServiceName: "appuser.gateway.authing.oauth.oauththirdparty.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
