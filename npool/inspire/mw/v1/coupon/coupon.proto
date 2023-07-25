@@ -20,7 +20,7 @@ message CouponReq {
     optional string ID           = 10;
     optional basetypes.inspire.v1.CouponType CouponType = 20;
     optional string AppID        = 30;
-    optional string Value        = 40;
+    optional string Denomination = 40;
     optional string Circulation  = 50;
     optional string IssuedBy     = 60;
     optional uint32 StartAt      = 70;
@@ -43,7 +43,7 @@ message Coupon {
     string          ID              = 10;
     basetypes.inspire.v1.CouponType CouponType = 20;
     string          AppID           = 30;
-    string          Value           = 40;
+    string          Denomination    = 40;
     string          Circulation     = 50;
     string          IssuedBy        = 60;
     uint32          StartAt         = 70;

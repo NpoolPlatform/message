@@ -141,7 +141,7 @@
         "AppID": {
           "type": "string"
         },
-        "Value": {
+        "Denomination": {
           "type": "string"
         },
         "Circulation": {
@@ -204,7 +204,7 @@
         "AppID": {
           "type": "string"
         },
-        "Value": {
+        "Denomination": {
           "type": "string"
         },
         "Circulation": {

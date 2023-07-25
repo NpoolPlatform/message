@@ -369,7 +369,7 @@
         "AppID": {
           "type": "string"
         },
-        "Value": {
+        "Denomination": {
           "type": "string"
         },
         "Circulation": {
