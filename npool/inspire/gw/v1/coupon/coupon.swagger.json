@@ -151,7 +151,7 @@
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
-        "Threshold",
+        "PaymentThreshold",
         "GoodOnly",
         "GoodThreshold"
       ],
@@ -163,13 +163,7 @@
         "DefaultCouponType",
         "FixAmount",
         "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
+        "SpecialOffer"
       ],
       "default": "DefaultCouponType"
     },
