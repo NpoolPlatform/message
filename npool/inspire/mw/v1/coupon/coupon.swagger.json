@@ -147,7 +147,7 @@
         "Circulation": {
           "type": "string"
         },
-        "ReleasedByUserID": {
+        "IssuedBy": {
           "type": "string"
         },
         "StartAt": {
@@ -207,7 +207,7 @@
         "Circulation": {
           "type": "string"
         },
-        "ReleasedByUserID": {
+        "IssuedBy": {
           "type": "string"
         },
         "StartAt": {

@@ -22,7 +22,7 @@ message CouponReq {
     optional string AppID        = 30;
     optional string Value        = 40;
     optional string Circulation  = 50;
-    optional string ReleasedByUserID = 60;
+    optional string IssuedBy     = 60;
     optional uint32 StartAt      = 70;
     optional uint32 DurationDays = 80;
     optional string Message      = 90;
@@ -44,7 +44,7 @@ message Coupon {
     string          AppID           = 30;
     string          Value           = 40;
     string          Circulation     = 50;
-    string          ReleasedByUserID = 60;
+    string          IssuedBy        = 60;
     uint32          StartAt         = 70;
     uint32          DurationDays    = 80;
     string          Message         = 90;
