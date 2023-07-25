@@ -372,6 +372,12 @@
         },
         "Code": {
           "type": "string"
+        },
+        "IP": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "string"
         }
       }
     },
