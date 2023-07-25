@@ -29,10 +29,10 @@ enum UsedFor {
     GoodBenefit1          = 190;
 
     NewDeviceDetected     = 200;
-    PasswordChanged       = 210;
-    EmailChanged          = 220;
-    PhoneNumberChanged    = 230;
-    TwoFactorAuthChanged  = 240;
+    UpdatePassword        = 210;
+    UpdateEmail           = 220;
+    UpdatePhoneNumber     = 230;
+    UpdateGoogleAuth      = 240;
     OrderCompleted        = 250;
 
     Announcement          = 100000;
