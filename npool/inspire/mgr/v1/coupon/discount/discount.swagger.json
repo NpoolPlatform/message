@@ -17,6 +17,82 @@
   ],
   "paths": {},
   "definitions": {
+<<<<<<< HEAD:npool/inspire/mgr/v1/coupon/discount/discount.swagger.json
+=======
+    "basetypesinspirev1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "basetypesv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "basetypesv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "couponcouponv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/basetypesv1Uint32Val"
+        },
+        "AppID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/basetypesv1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
+        }
+      }
+    },
+>>>>>>> Redefine coupon:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -66,6 +142,7 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD:npool/inspire/mgr/v1/coupon/discount/discount.swagger.json
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -113,6 +190,10 @@
       "properties": {
         "ID": {
           "type": "string"
+=======
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+>>>>>>> Redefine coupon:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
         },
         "AppID": {
           "type": "string"
@@ -160,6 +241,12 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD:npool/inspire/mgr/v1/coupon/discount/discount.swagger.json
+=======
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+        },
+>>>>>>> Redefine coupon:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
         "AppID": {
           "type": "string"
         },
@@ -192,6 +279,7 @@
         }
       }
     },
+<<<<<<< HEAD:npool/inspire/mgr/v1/coupon/discount/discount.swagger.json
     "v1ExistDiscountCondsResponse": {
       "type": "object",
       "properties": {
@@ -201,6 +289,9 @@
       }
     },
     "v1ExistDiscountResponse": {
+=======
+    "v1CreateCouponResponse": {
+>>>>>>> Redefine coupon:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
       "properties": {
         "Info": {
@@ -240,6 +331,7 @@
         }
       }
     },
+<<<<<<< HEAD:npool/inspire/mgr/v1/coupon/discount/discount.swagger.json
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -278,6 +370,9 @@
       }
     },
     "v1UpdateDiscountResponse": {
+=======
+    "v1UpdateCouponResponse": {
+>>>>>>> Redefine coupon:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
       "properties": {
         "Info": {

@@ -114,6 +114,115 @@
     }
   },
   "definitions": {
+<<<<<<< HEAD
+=======
+    "basetypesinspirev1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "couponallocatedv1Coupon": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Expired": {
+          "type": "boolean"
+        },
+        "Valid": {
+          "type": "boolean"
+        },
+        "Used": {
+          "type": "boolean"
+        },
+        "UsedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UsedByOrderID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "couponallocatedv1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+>>>>>>> Redefine coupon
     "inspiregatewaycouponallocatedv1CreateCouponRequest": {
       "type": "object",
       "properties": {
@@ -123,6 +232,12 @@
         "TargetUserID": {
           "type": "string"
         },
+<<<<<<< HEAD
+=======
+        "CouponType": {
+          "$ref": "#/definitions/couponallocatedv1CouponType"
+        },
+>>>>>>> Redefine coupon
         "CouponID": {
           "type": "string"
         }
@@ -199,6 +314,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1Coupon": {
       "type": "object",
       "properties": {
@@ -333,6 +449,8 @@
       ],
       "default": "DefaultCouponType"
     },
+=======
+>>>>>>> Redefine coupon
     "v1GetAppCouponsRequest": {
       "type": "object",
       "properties": {

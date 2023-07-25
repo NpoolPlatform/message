@@ -17,6 +17,102 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesinspirev1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "inspiremanagercouponallocatedv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/npoolv1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/npoolv1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/npoolv1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/npoolv1Uint32Val"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/npoolv1StringVal"
+        },
+        "Used": {
+          "$ref": "#/definitions/npoolv1BoolVal"
+        },
+        "UsedByOrderID": {
+          "$ref": "#/definitions/npoolv1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/npoolv1StringSliceVal"
+        },
+        "UsedByOrderIDs": {
+          "$ref": "#/definitions/npoolv1StringSliceVal"
+        }
+      }
+    },
+    "npoolv1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "npoolv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "npoolv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "npoolv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -45,49 +141,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Used": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "UsedByOrderID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "UsedByOrderIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
     "v1Coupon": {
       "type": "object",
       "properties": {
@@ -100,7 +153,7 @@
           "title": "@inject_tag: sql:\"coupon_type\""
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "AppID": {
           "type": "string",
@@ -218,6 +271,12 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
+=======
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+        },
+>>>>>>> Redefine coupon
         "AppID": {
           "type": "string"
         },
@@ -235,6 +294,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1CouponType": {
       "type": "string",
       "enum": [
@@ -245,6 +305,8 @@
       ],
       "default": "DefaultCouponType"
     },
+=======
+>>>>>>> Redefine coupon
     "v1CreateCouponResponse": {
       "type": "object",
       "properties": {
@@ -285,6 +347,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -295,10 +358,21 @@
           "type": "array",
           "items": {
             "type": "string"
+=======
+    "v1GetManyCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Coupon"
+>>>>>>> Redefine coupon
           }
         }
       }
     },
+<<<<<<< HEAD
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -322,6 +396,8 @@
         }
       }
     },
+=======
+>>>>>>> Redefine coupon
     "v1UpdateCouponResponse": {
       "type": "object",
       "properties": {

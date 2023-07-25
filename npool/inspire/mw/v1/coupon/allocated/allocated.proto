@@ -90,6 +90,18 @@ message Conds {
     optional basetypes.v1.StringSliceVal UsedByOrderIDs = 90;
 }
 
+message Conds {
+    optional basetypes.v1.StringVal ID       = 10;
+    optional basetypes.v1.StringVal AppID    = 20;
+    optional basetypes.v1.StringVal UserID   = 30;
+    optional basetypes.v1.Uint32Val CouponType = 40;
+    optional basetypes.v1.StringVal CouponID = 50;
+    optional basetypes.v1.BoolVal   Used     = 60;
+    optional basetypes.v1.StringVal UsedByOrderID = 70;
+    optional basetypes.v1.StringSliceVal IDs = 80;
+    optional basetypes.v1.StringSliceVal UsedByOrderIDs = 90;
+}
+
 message CreateCouponRequest {
     CouponReq Info = 10;
 }

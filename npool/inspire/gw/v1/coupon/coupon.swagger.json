@@ -146,6 +146,7 @@
     }
   },
   "definitions": {
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
     "basetypesinspirev1CouponConstraint": {
       "type": "string",
       "enum": [
@@ -158,16 +159,49 @@
       "default": "DefaultCouponConstraint"
     },
     "basetypesinspirev1CouponType": {
+=======
+    "basetypesinspirev1CouponType": {
       "type": "string",
       "enum": [
         "DefaultCouponType",
         "FixAmount",
         "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "couponallocatedv1CouponType": {
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
         "SpecialOffer"
       ],
       "default": "DefaultCouponType"
     },
     "inspiregatewaycouponv1CreateCouponRequest": {
+=======
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "inspiregatewaycouponcouponv1CreateCouponRequest": {
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
       "properties": {
         "AppID": {
@@ -180,7 +214,11 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
+=======
+          "$ref": "#/definitions/couponallocatedv1CouponType"
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         },
         "Denomination": {
           "type": "string"
@@ -234,7 +272,11 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
+=======
+          "$ref": "#/definitions/couponallocatedv1CouponType"
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         },
         "Offset": {
           "type": "integer",
@@ -272,7 +314,11 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
+=======
+          "$ref": "#/definitions/couponallocatedv1CouponType"
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         },
         "Denomination": {
           "type": "string"
@@ -449,7 +495,11 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
+=======
+          "$ref": "#/definitions/couponallocatedv1CouponType"
+>>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         },
         "Offset": {
           "type": "integer",
