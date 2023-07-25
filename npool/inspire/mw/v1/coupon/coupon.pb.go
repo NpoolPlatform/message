@@ -231,8 +231,8 @@ type Coupon struct {
 	// @inject_tag: sql:"coupon_constraint"
 	CouponConstraintStr string              `protobuf:"bytes,160,opt,name=CouponConstraintStr,proto3" json:"CouponConstraintStr,omitempty" sql:"coupon_constraint"`
 	CouponConstraint    v1.CouponConstraint `protobuf:"varint,170,opt,name=CouponConstraint,proto3,enum=basetypes.inspire.v1.CouponConstraint" json:"CouponConstraint,omitempty"`
-	// @inject_tag: sql:"id"
-	Random bool `protobuf:"varint,180,opt,name=Random,proto3" json:"Random,omitempty" sql:"id"`
+	// @inject_tag: sql:"random"
+	Random bool `protobuf:"varint,180,opt,name=Random,proto3" json:"Random,omitempty" sql:"random"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
