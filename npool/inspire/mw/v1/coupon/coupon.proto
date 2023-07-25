@@ -72,7 +72,7 @@ message Coupon {
     // @inject_tag: sql:"coupon_constraint"
     string          CouponConstraintStr = 160;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
-    // @inject_tag: sql:"id"
+    // @inject_tag: sql:"random"
     bool            Random          = 180;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;

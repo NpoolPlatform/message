@@ -424,7 +424,7 @@
         },
         "Random": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"id\""
+          "title": "@inject_tag: sql:\"random\""
         },
         "CreatedAt": {
           "type": "integer",
