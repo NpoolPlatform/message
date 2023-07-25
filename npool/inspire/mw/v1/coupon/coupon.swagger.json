@@ -186,6 +186,9 @@
         },
         "CouponConstraint": {
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean"
         }
       }
     },
@@ -242,6 +245,9 @@
         },
         "CouponConstraint": {
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean"
         }
       }
     },

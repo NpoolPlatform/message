@@ -36,6 +36,7 @@ message CouponReq {
     // We may have random amount coupon
     optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
+    optional bool   Random       = 160;
 }
 
 message Coupon {
@@ -56,6 +57,7 @@ message Coupon {
     uint32          CreatedAt       = 150;
     uint32          UpdatedAt       = 160;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
+    bool            Random          = 180;
 }
 
 message Conds {
