@@ -175,6 +175,16 @@ message User {
     string          ActionCredits         = 440;
     // @inject_tag: sql:"selected_lang_id"
     optional string SelectedLangID        = 450;
+
+    // Third info
+    // @inject_tag: sql:"third_party_id"
+    optional string ThirdPartyID              = 460;
+    // @inject_tag: sql:"third_party_user_id"
+    optional string ThirdPartyUserID          = 470;
+    // @inject_tag: sql:"third_party_username"
+    optional string ThirdPartyUsername        = 480;
+    // @inject_tag: sql:"third_party_avatar"
+    optional string ThirdPartyAvatar          = 490;
 }
 
 message Conds {
