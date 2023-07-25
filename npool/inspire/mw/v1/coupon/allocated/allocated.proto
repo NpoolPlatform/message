@@ -18,6 +18,7 @@ service Middleware {
 
 message CouponReq {
     optional string ID       = 10;
+    optional basetypes.inspire.v1.CouponType CouponType = 20;
     optional string AppID    = 30;
     optional string CouponID = 40;
     optional string UserID   = 50;

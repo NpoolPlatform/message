@@ -267,6 +267,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/basetypesinspirev1CouponType"
@@ -274,6 +275,11 @@
 >>>>>>> Redefine coupon
 =======
 >>>>>>> Remove coupon type in allocated
+=======
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+        },
+>>>>>>> Add coupon allocated
         "AppID": {
           "type": "string"
         },
