@@ -5,7 +5,8 @@ package inspire.middleware.coupon.coupon.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/coupon";
 
 import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -17,7 +18,7 @@ service Middleware {
 
 message CouponReq {
     optional string ID           = 10;
-    optional inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    optional basetypes.inspire.v1.CouponType CouponType = 20;
     optional string AppID        = 30;
     optional string Value        = 40;
     optional string Circulation  = 50;
@@ -38,7 +39,7 @@ message CouponReq {
 
 message Coupon {
     string          ID              = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    basetypes.inspire.v1.CouponType CouponType = 20;
     string          AppID           = 30;
     string          Value           = 40;
     string          Circulation     = 50;
@@ -56,11 +57,11 @@ message Coupon {
 }
 
 message Conds {
-    optional npool.v1.StringVal  ID         = 10;
-    optional npool.v1.Int32Val   CouponType = 20;
-    optional npool.v1.StringVal  AppID      = 30;
-    optional npool.v1.StringVal  GoodID     = 40;
-    optional npool.v1.StringSliceVal IDs    = 50;
+    optional basetypes.v1.StringVal  ID         = 10;
+    optional basetypes.v1.Uint32Val  CouponType = 20;
+    optional basetypes.v1.StringVal  AppID      = 30;
+    optional basetypes.v1.StringVal  GoodID     = 40;
+    optional basetypes.v1.StringSliceVal IDs    = 50;
 }
 
 message GetCouponsRequest {
@@ -92,7 +93,6 @@ message UpdateCouponResponse {
 
 message GetCouponRequest {
     string ID  = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
 }
 
 message GetCouponResponse {

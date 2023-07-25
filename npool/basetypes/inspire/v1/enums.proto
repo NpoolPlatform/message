@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package basetypes.inspire.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/inspire/v1";
+
+enum SettleType {
+    DefaultSettleType     = 0;
+
+    // Divide commission according to order payment amount
+    GoodOrderPercent      = 10;
+    // Divide commission according to order good value
+    GoodOrderValuePercent = 11;
+    LimitedOrderPercent   = 20;
+    AmountThreshold       = 30;
+
+    TechniqueFeePercent   = 40;
+
+    NoCommission          = 1000;
+}
+
+enum SettleMode {
+    DefaultSettleMode       = 0;
+
+    SettleWithGoodValue     = 10;
+    SettleWithPaymentAmount = 20;
+}
+
+enum SettleInterval {
+    DefaultSettleInterval   = 0;
+
+    SettleAggregate     = 10;
+    SettleMonthly       = 20;
+    SettleYearly        = 30;
+    SettleEveryOrder    = 40;
+}
+
+enum CouponType {
+    DefaultCouponType      = 0;
+
+    FixAmount              = 10;
+    Discount               = 20;
+    SpecialOffer           = 30;
+    ThresholdFixAmount     = 40;
+    ThresholdDiscount      = 50;
+    GoodFixAmount          = 60;
+    GoodDiscount           = 70;
+    GoodThresholdFixAmount = 80;
+    GoodThresholdDiscount  = 90;
+}
+
+enum CouponConstraint {
+    DefaultCouponConstraint = 0;
+
+    Normal           = 10;
+    Threshold        = 20;
+    GoodOnly         = 30;
+    GoodThreshold    = 40;
+}
