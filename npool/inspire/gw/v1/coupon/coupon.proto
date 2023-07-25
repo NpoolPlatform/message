@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package inspire.gateway.coupon.coupon.v1;
+package inspire.gateway.coupon.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/coupon";
 
 import "google/api/annotations.proto";
 import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
-import "npool/inspire/mw/v1/coupon/coupon/coupon.proto";
+import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -57,7 +57,7 @@ message CreateCouponRequest {
 }
 
 message CreateCouponResponse {
-    inspire.middleware.coupon.coupon.v1.Coupon Info = 10;
+    inspire.middleware.coupon.v1.Coupon Info = 10;
 }
 
 message UpdateCouponRequest {
@@ -76,7 +76,7 @@ message UpdateCouponRequest {
 }
 
 message UpdateCouponResponse {
-    inspire.middleware.coupon.coupon.v1.Coupon Info = 10;
+    inspire.middleware.coupon.v1.Coupon Info = 10;
 }
 
 message GetCouponsRequest {
@@ -87,7 +87,7 @@ message GetCouponsRequest {
 }
 
 message GetCouponsResponse {
-    repeated inspire.middleware.coupon.coupon.v1.Coupon Infos = 10;
+    repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
     uint32                                              Total = 20;
 }
 
@@ -100,7 +100,7 @@ message GetAppCouponsRequest {
 }
 
 message GetAppCouponsResponse {
-    repeated inspire.middleware.coupon.coupon.v1.Coupon Infos = 10;
+    repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
     uint32                                              Total = 20;
 }
 
