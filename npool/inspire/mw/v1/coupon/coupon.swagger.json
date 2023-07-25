@@ -22,11 +22,15 @@
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
         "PaymentThreshold",
 =======
         "Threshold",
 >>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
+=======
+        "PaymentThreshold",
+>>>>>>> Remove coupon type
         "GoodOnly",
         "GoodThreshold"
       ],

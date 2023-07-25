@@ -155,11 +155,15 @@
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
         "PaymentThreshold",
 =======
         "Threshold",
 >>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+        "PaymentThreshold",
+>>>>>>> Remove coupon type
         "GoodOnly",
         "GoodThreshold"
       ],
@@ -176,13 +180,7 @@
         "DefaultCouponType",
         "FixAmount",
         "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
+        "SpecialOffer"
       ],
       "default": "DefaultCouponType"
     },
