@@ -344,7 +344,7 @@ message LogoutRequest {
 }
 
 message LogoutResponse {
-  appuser.middleware.user.v1.User Info = 10;
+    appuser.middleware.user.v1.User Info = 10;
 }
 
 message GetLoginHistoriesRequest {
@@ -367,7 +367,7 @@ message BanUserRequest {
 }
 
 message BanUserResponse {
-  appuser.middleware.user.v1.User Info = 10;
+    appuser.middleware.user.v1.User Info = 10;
 }
 
 message BanAppUserRequest {
@@ -378,7 +378,7 @@ message BanAppUserRequest {
 }
 
 message BanAppUserResponse {
-  appuser.middleware.user.v1.User Info = 10;
+    appuser.middleware.user.v1.User Info = 10;
 }
 
 message BindUserRequest {
