@@ -17,23 +17,76 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesinspirev1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "basetypesv1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basetypesv1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "basetypesv1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "couponcouponv1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/basetypesv1StringVal"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/basetypesv1Uint32Val"
         },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/basetypesv1StringVal"
         },
         "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/basetypesv1StringVal"
         },
         "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+          "$ref": "#/definitions/basetypesv1StringSliceVal"
         }
       }
     },
@@ -72,7 +125,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "AppID": {
           "type": "string"
@@ -129,7 +182,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "AppID": {
           "type": "string"
@@ -175,22 +228,6 @@
         }
       }
     },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
-    },
     "v1CreateCouponResponse": {
       "type": "object",
       "properties": {
@@ -220,43 +257,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
         }
       }
     },
