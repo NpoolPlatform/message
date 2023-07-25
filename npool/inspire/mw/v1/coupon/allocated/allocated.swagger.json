@@ -272,11 +272,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
 >>>>>>> Redefine coupon
+=======
+>>>>>>> Remove coupon type in allocated
         "AppID": {
           "type": "string"
         },
