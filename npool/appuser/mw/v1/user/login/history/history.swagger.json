@@ -65,6 +65,9 @@
         },
         "Location": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "UserAgent": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
