@@ -19,6 +19,8 @@ message TemplateVars {
     optional uint32 Timestamp = 50;
     optional string Address   = 60;
     optional string Code      = 70;
+    optional string IP        = 80;
+    optional string Location  = 90;
 }
 
 message TextInfo {
