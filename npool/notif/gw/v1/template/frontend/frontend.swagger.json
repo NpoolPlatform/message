@@ -524,7 +524,7 @@
         "NewDeviceDetected",
         "UpdatePassword",
         "UpdateEmail",
-        "UpdatePhoneNumber",
+        "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
         "Announcement",
