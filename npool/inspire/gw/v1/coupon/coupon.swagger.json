@@ -147,19 +147,29 @@
   },
   "definitions": {
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
+=======
+>>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
     "basetypesinspirev1CouponConstraint": {
       "type": "string",
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
         "PaymentThreshold",
+=======
+        "Threshold",
+>>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         "GoodOnly",
         "GoodThreshold"
       ],
       "default": "DefaultCouponConstraint"
     },
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
     "basetypesinspirev1CouponType": {
 =======
+=======
+>>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
     "basetypesinspirev1CouponType": {
       "type": "string",
       "enum": [
@@ -200,8 +210,12 @@
       ],
       "default": "DefaultCouponType"
     },
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
     "inspiregatewaycouponcouponv1CreateCouponRequest": {
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+    "inspiregatewaycouponv1CreateCouponRequest": {
+>>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
       "properties": {
         "AppID": {
@@ -475,6 +489,7 @@
         },
         "UpdatedAt": {
           "type": "integer",
+<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
         },
@@ -482,6 +497,12 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
+=======
+          "format": "int64"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+>>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
         }
       }
     },
