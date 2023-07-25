@@ -31,7 +31,7 @@ enum UsedFor {
     NewDeviceDetected     = 200;
     UpdatePassword        = 210;
     UpdateEmail           = 220;
-    UpdatePhoneNumber     = 230;
+    UpdateMobile          = 230;
     UpdateGoogleAuth      = 240;
     OrderCompleted        = 250;
 
