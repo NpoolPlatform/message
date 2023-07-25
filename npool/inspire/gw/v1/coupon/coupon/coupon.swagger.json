@@ -146,6 +146,38 @@
     }
   },
   "definitions": {
+    "basetypesinspirev1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "couponallocatedv1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer",
+        "ThresholdFixAmount",
+        "ThresholdDiscount",
+        "GoodFixAmount",
+        "GoodDiscount",
+        "GoodThresholdFixAmount",
+        "GoodThresholdDiscount"
+      ],
+      "default": "DefaultCouponType"
+    },
     "inspiregatewaycouponcouponv1CreateCouponRequest": {
       "type": "object",
       "properties": {
@@ -159,7 +191,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/couponallocatedv1CouponType"
         },
         "Value": {
           "type": "string"
@@ -207,7 +239,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/couponallocatedv1CouponType"
         },
         "Offset": {
           "type": "integer",
@@ -245,7 +277,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/couponallocatedv1CouponType"
         },
         "Value": {
           "type": "string"
@@ -321,7 +353,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "AppID": {
           "type": "string"
@@ -371,22 +403,6 @@
         }
       }
     },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
-    },
     "v1GetAppCouponsRequest": {
       "type": "object",
       "properties": {
@@ -397,7 +413,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/couponallocatedv1CouponType"
         },
         "Offset": {
           "type": "integer",
