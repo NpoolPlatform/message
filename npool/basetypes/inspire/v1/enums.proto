@@ -36,24 +36,18 @@ enum SettleInterval {
 }
 
 enum CouponType {
-    DefaultCouponType      = 0;
+    DefaultCouponType = 0;
 
-    FixAmount              = 10;
-    Discount               = 20;
-    SpecialOffer           = 30;
-    ThresholdFixAmount     = 40;
-    ThresholdDiscount      = 50;
-    GoodFixAmount          = 60;
-    GoodDiscount           = 70;
-    GoodThresholdFixAmount = 80;
-    GoodThresholdDiscount  = 90;
+    FixAmount         = 10;
+    Discount          = 20;
+    SpecialOffer      = 30;
 }
 
 enum CouponConstraint {
     DefaultCouponConstraint = 0;
 
     Normal           = 10;
-    Threshold        = 20;
+    PaymentThreshold = 20;
     GoodOnly         = 30;
     GoodThreshold    = 40;
 }
