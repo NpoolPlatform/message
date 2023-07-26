@@ -63,6 +63,7 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+<<<<<<< HEAD
 =======
         },
         "AppID": {
@@ -74,6 +75,8 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
 >>>>>>> Add event api
+=======
+>>>>>>> Add event parameter
         }
       }
     },
@@ -312,6 +315,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add event parameter
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -326,8 +332,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> Add event api
+=======
+>>>>>>> Add event parameter
     "v1StringVal": {
       "type": "object",
       "properties": {
