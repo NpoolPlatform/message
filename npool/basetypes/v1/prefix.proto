@@ -45,4 +45,5 @@ enum Prefix {
     PrefixCreateUserTransfer   = 370;
     PrefixCreateUserAccount    = 380;
     PrefixCreatePlatformAccount = 390;
+    PrefixCreateAppEvent       = 400;
 }
