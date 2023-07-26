@@ -50,6 +50,7 @@
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
+<<<<<<< HEAD
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -62,6 +63,17 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> Add event api
         }
       }
     },
@@ -113,10 +125,13 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
+<<<<<<< HEAD
         "CouponIDsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_ids\""
         },
+=======
+>>>>>>> Add event api
         "CouponIDs": {
           "type": "array",
           "items": {
@@ -223,6 +238,67 @@
         }
       }
     },
+    "v1EventReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1GetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Event"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1RewardEventResponse": {
       "type": "object",
       "properties": {
@@ -235,6 +311,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -249,6 +326,8 @@
         }
       }
     },
+=======
+>>>>>>> Add event api
     "v1StringVal": {
       "type": "object",
       "properties": {
