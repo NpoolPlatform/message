@@ -13,8 +13,6 @@ service Middleware {
 
     rpc GetOAuthThirdParties         (GetOAuthThirdPartiesRequest)        returns (GetOAuthThirdPartiesResponse)       {}
     rpc GetOAuthThirdParty           (GetOAuthThirdPartyRequest)          returns (GetOAuthThirdPartyResponse)         {}
-    rpc GetOAuthThirdPartyOnly       (GetOAuthThirdPartyOnlyRequest)      returns (GetOAuthThirdPartyOnlyResponse)     {}
-    rpc GetOAuthThirdPartyDecryptOnly (GetOAuthThirdPartyDecryptOnlyRequest)     returns (GetOAuthThirdPartyDecryptOnlyResponse)     {}
 
     rpc ExistOAuthThirdParty         (ExistOAuthThirdPartyRequest)        returns (ExistOAuthThirdPartyResponse)       {}
     rpc ExistOAuthThirdPartyConds    (ExistOAuthThirdPartyCondsRequest)   returns (ExistOAuthThirdPartyCondsResponse)  {}
@@ -71,6 +69,7 @@ message Conds {
     optional basetypes.v1.StringVal      ThirdPartyID  = 30;
     optional basetypes.v1.StringSliceVal ThirdPartyIDs = 40;
     optional basetypes.v1.Int32Val       ClientName    = 50;
+    optional basetypes.v1.BoolVal        DecryptSecret = 60;
 }
 
 message CreateOAuthThirdPartyRequest {
@@ -105,22 +104,6 @@ message GetOAuthThirdPartyRequest {
 }
 
 message GetOAuthThirdPartyResponse {
-    OAuthThirdParty Info = 10;
-}
-
-message GetOAuthThirdPartyOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetOAuthThirdPartyOnlyResponse {
-    OAuthThirdParty Info = 10;
-}
-
-message GetOAuthThirdPartyDecryptOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetOAuthThirdPartyDecryptOnlyResponse {
     OAuthThirdParty Info = 10;
 }
 

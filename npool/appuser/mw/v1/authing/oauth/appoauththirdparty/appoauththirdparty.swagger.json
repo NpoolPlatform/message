@@ -45,6 +45,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -62,6 +73,9 @@
         },
         "ClientName": {
           "$ref": "#/definitions/v1Int32Val"
+        },
+        "DecryptSecret": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -110,22 +124,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1GetOAuthThirdPartyDecryptOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OAuthThirdParty"
-        }
-      }
-    },
-    "v1GetOAuthThirdPartyOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OAuthThirdParty"
         }
       }
     },
