@@ -139,7 +139,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "@inject_tag: sql:\"coupon_ids\""
         },
         "Credits": {
           "type": "string",
@@ -177,6 +178,7 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
+<<<<<<< HEAD
         }
       }
     },
@@ -238,6 +240,8 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+=======
+>>>>>>> Add sql tag to event
         }
       }
     },
