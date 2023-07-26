@@ -215,9 +215,6 @@
         "ID": {
           "type": "string"
         },
-        "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-        },
         "AppID": {
           "type": "string"
         },
