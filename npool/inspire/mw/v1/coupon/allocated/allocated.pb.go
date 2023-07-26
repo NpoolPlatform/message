@@ -154,10 +154,17 @@ type Coupon struct {
 	GoodID *string `protobuf:"bytes,190,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty" sql:"good_id"`
 	// @inject_tag: sql:"threshold"
 	Threshold *string `protobuf:"bytes,200,opt,name=Threshold,proto3,oneof" json:"Threshold,omitempty" sql:"threshold"`
+	// @inject_tag: sql:"allocated"
+	Allocated string `protobuf:"bytes,210,opt,name=Allocated,proto3" json:"Allocated,omitempty" sql:"allocated"`
+	// @inject_tag: sql:"coupon_constraint"
+	CouponConstraintStr string              `protobuf:"bytes,220,opt,name=CouponConstraintStr,proto3" json:"CouponConstraintStr,omitempty" sql:"coupon_constraint"`
+	CouponConstraint    v1.CouponConstraint `protobuf:"varint,230,opt,name=CouponConstraint,proto3,enum=basetypes.inspire.v1.CouponConstraint" json:"CouponConstraint,omitempty"`
+	// @inject_tag: sql:"random"
+	Random bool `protobuf:"varint,240,opt,name=Random,proto3" json:"Random,omitempty" sql:"random"`
 	// @inject_tag: sql:"created_at"
-	CreatedAt uint32 `protobuf:"varint,210,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
-	UpdatedAt uint32 `protobuf:"varint,220,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
+	UpdatedAt uint32 `protobuf:"varint,1010,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *Coupon) Reset() {
@@ -330,6 +337,34 @@ func (x *Coupon) GetThreshold() string {
 		return *x.Threshold
 	}
 	return ""
+}
+
+func (x *Coupon) GetAllocated() string {
+	if x != nil {
+		return x.Allocated
+	}
+	return ""
+}
+
+func (x *Coupon) GetCouponConstraintStr() string {
+	if x != nil {
+		return x.CouponConstraintStr
+	}
+	return ""
+}
+
+func (x *Coupon) GetCouponConstraint() v1.CouponConstraint {
+	if x != nil {
+		return x.CouponConstraint
+	}
+	return v1.CouponConstraint(0)
+}
+
+func (x *Coupon) GetRandom() bool {
+	if x != nil {
+		return x.Random
+	}
+	return false
 }
 
 func (x *Coupon) GetCreatedAt() uint32 {
@@ -1078,7 +1113,7 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_rawDesc = []byte{
 	0x0a, 0x09, 0x5f, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f,
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x55, 0x73, 0x65, 0x64, 0x42,
 	0x10, 0x0a, 0x0e, 0x5f, 0x55, 0x73, 0x65, 0x64, 0x42, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49,
-	0x44, 0x22, 0xd6, 0x05, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02,
+	0x44, 0x22, 0x96, 0x07, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02,
 	0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12, 0x24, 0x0a, 0x0d,
 	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x18, 0x14, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x0d, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x53,
@@ -1117,9 +1152,21 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_rawDesc = []byte{
 	0x48, 0x01, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x22, 0x0a,
 	0x09, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x18, 0xc8, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x48, 0x02, 0x52, 0x09, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x88, 0x01,
-	0x01, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xd2,
-	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74,
-	0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xdc, 0x01,
+	0x01, 0x12, 0x1d, 0x0a, 0x09, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64, 0x18, 0xd2,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64,
+	0x12, 0x31, 0x0a, 0x13, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72,
+	0x61, 0x69, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x18, 0xdc, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x13,
+	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
+	0x53, 0x74, 0x72, 0x12, 0x53, 0x0a, 0x10, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f, 0x6e,
+	0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x18, 0xe6, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x26,
+	0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
+	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x73,
+	0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x10, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f,
+	0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x12, 0x17, 0x0a, 0x06, 0x52, 0x61, 0x6e, 0x64,
+	0x6f, 0x6d, 0x18, 0xf0, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x52, 0x61, 0x6e, 0x64, 0x6f,
+	0x6d, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8,
+	0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74,
+	0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xf2, 0x07,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x42,
 	0x10, 0x0a, 0x0e, 0x5f, 0x55, 0x73, 0x65, 0x64, 0x42, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49,
 	0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x42, 0x0c, 0x0a, 0x0a,
@@ -1321,50 +1368,52 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_goTypes = []interf
 	(*GetCouponOnlyRequest)(nil),   // 13: inspire.middleware.coupon.allocated.v1.GetCouponOnlyRequest
 	(*GetCouponOnlyResponse)(nil),  // 14: inspire.middleware.coupon.allocated.v1.GetCouponOnlyResponse
 	(v1.CouponType)(0),             // 15: basetypes.inspire.v1.CouponType
-	(*v11.StringVal)(nil),          // 16: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),          // 17: basetypes.v1.Uint32Val
-	(*v11.BoolVal)(nil),            // 18: basetypes.v1.BoolVal
-	(*v11.StringSliceVal)(nil),     // 19: basetypes.v1.StringSliceVal
-	(*allocated.Conds)(nil),        // 20: inspire.manager.coupon.allocated.v1.Conds
+	(v1.CouponConstraint)(0),       // 16: basetypes.inspire.v1.CouponConstraint
+	(*v11.StringVal)(nil),          // 17: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),          // 18: basetypes.v1.Uint32Val
+	(*v11.BoolVal)(nil),            // 19: basetypes.v1.BoolVal
+	(*v11.StringSliceVal)(nil),     // 20: basetypes.v1.StringSliceVal
+	(*allocated.Conds)(nil),        // 21: inspire.manager.coupon.allocated.v1.Conds
 }
 var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_depIdxs = []int32{
 	15, // 0: inspire.middleware.coupon.allocated.v1.Coupon.CouponType:type_name -> basetypes.inspire.v1.CouponType
-	16, // 1: inspire.middleware.coupon.allocated.v1.Conds.ID:type_name -> basetypes.v1.StringVal
-	16, // 2: inspire.middleware.coupon.allocated.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	16, // 3: inspire.middleware.coupon.allocated.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	17, // 4: inspire.middleware.coupon.allocated.v1.Conds.CouponType:type_name -> basetypes.v1.Uint32Val
-	16, // 5: inspire.middleware.coupon.allocated.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
-	18, // 6: inspire.middleware.coupon.allocated.v1.Conds.Used:type_name -> basetypes.v1.BoolVal
-	16, // 7: inspire.middleware.coupon.allocated.v1.Conds.UsedByOrderID:type_name -> basetypes.v1.StringVal
-	19, // 8: inspire.middleware.coupon.allocated.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
-	19, // 9: inspire.middleware.coupon.allocated.v1.Conds.UsedByOrderIDs:type_name -> basetypes.v1.StringSliceVal
-	0,  // 10: inspire.middleware.coupon.allocated.v1.CreateCouponRequest.Info:type_name -> inspire.middleware.coupon.allocated.v1.CouponReq
-	1,  // 11: inspire.middleware.coupon.allocated.v1.CreateCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	0,  // 12: inspire.middleware.coupon.allocated.v1.UpdateCouponRequest.Info:type_name -> inspire.middleware.coupon.allocated.v1.CouponReq
-	1,  // 13: inspire.middleware.coupon.allocated.v1.UpdateCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	1,  // 14: inspire.middleware.coupon.allocated.v1.GetCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	1,  // 15: inspire.middleware.coupon.allocated.v1.GetManyCouponsResponse.Infos:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	20, // 16: inspire.middleware.coupon.allocated.v1.GetCouponsRequest.Conds:type_name -> inspire.manager.coupon.allocated.v1.Conds
-	1,  // 17: inspire.middleware.coupon.allocated.v1.GetCouponsResponse.Infos:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	20, // 18: inspire.middleware.coupon.allocated.v1.GetCouponOnlyRequest.Conds:type_name -> inspire.manager.coupon.allocated.v1.Conds
-	1,  // 19: inspire.middleware.coupon.allocated.v1.GetCouponOnlyResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
-	3,  // 20: inspire.middleware.coupon.allocated.v1.Middleware.CreateCoupon:input_type -> inspire.middleware.coupon.allocated.v1.CreateCouponRequest
-	5,  // 21: inspire.middleware.coupon.allocated.v1.Middleware.UpdateCoupon:input_type -> inspire.middleware.coupon.allocated.v1.UpdateCouponRequest
-	7,  // 22: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupon:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponRequest
-	9,  // 23: inspire.middleware.coupon.allocated.v1.Middleware.GetManyCoupons:input_type -> inspire.middleware.coupon.allocated.v1.GetManyCouponsRequest
-	11, // 24: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupons:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponsRequest
-	13, // 25: inspire.middleware.coupon.allocated.v1.Middleware.GetCouponOnly:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponOnlyRequest
-	4,  // 26: inspire.middleware.coupon.allocated.v1.Middleware.CreateCoupon:output_type -> inspire.middleware.coupon.allocated.v1.CreateCouponResponse
-	6,  // 27: inspire.middleware.coupon.allocated.v1.Middleware.UpdateCoupon:output_type -> inspire.middleware.coupon.allocated.v1.UpdateCouponResponse
-	8,  // 28: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupon:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponResponse
-	10, // 29: inspire.middleware.coupon.allocated.v1.Middleware.GetManyCoupons:output_type -> inspire.middleware.coupon.allocated.v1.GetManyCouponsResponse
-	12, // 30: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupons:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponsResponse
-	14, // 31: inspire.middleware.coupon.allocated.v1.Middleware.GetCouponOnly:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponOnlyResponse
-	26, // [26:32] is the sub-list for method output_type
-	20, // [20:26] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	16, // 1: inspire.middleware.coupon.allocated.v1.Coupon.CouponConstraint:type_name -> basetypes.inspire.v1.CouponConstraint
+	17, // 2: inspire.middleware.coupon.allocated.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	17, // 3: inspire.middleware.coupon.allocated.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	17, // 4: inspire.middleware.coupon.allocated.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	18, // 5: inspire.middleware.coupon.allocated.v1.Conds.CouponType:type_name -> basetypes.v1.Uint32Val
+	17, // 6: inspire.middleware.coupon.allocated.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
+	19, // 7: inspire.middleware.coupon.allocated.v1.Conds.Used:type_name -> basetypes.v1.BoolVal
+	17, // 8: inspire.middleware.coupon.allocated.v1.Conds.UsedByOrderID:type_name -> basetypes.v1.StringVal
+	20, // 9: inspire.middleware.coupon.allocated.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+	20, // 10: inspire.middleware.coupon.allocated.v1.Conds.UsedByOrderIDs:type_name -> basetypes.v1.StringSliceVal
+	0,  // 11: inspire.middleware.coupon.allocated.v1.CreateCouponRequest.Info:type_name -> inspire.middleware.coupon.allocated.v1.CouponReq
+	1,  // 12: inspire.middleware.coupon.allocated.v1.CreateCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	0,  // 13: inspire.middleware.coupon.allocated.v1.UpdateCouponRequest.Info:type_name -> inspire.middleware.coupon.allocated.v1.CouponReq
+	1,  // 14: inspire.middleware.coupon.allocated.v1.UpdateCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	1,  // 15: inspire.middleware.coupon.allocated.v1.GetCouponResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	1,  // 16: inspire.middleware.coupon.allocated.v1.GetManyCouponsResponse.Infos:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	21, // 17: inspire.middleware.coupon.allocated.v1.GetCouponsRequest.Conds:type_name -> inspire.manager.coupon.allocated.v1.Conds
+	1,  // 18: inspire.middleware.coupon.allocated.v1.GetCouponsResponse.Infos:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	21, // 19: inspire.middleware.coupon.allocated.v1.GetCouponOnlyRequest.Conds:type_name -> inspire.manager.coupon.allocated.v1.Conds
+	1,  // 20: inspire.middleware.coupon.allocated.v1.GetCouponOnlyResponse.Info:type_name -> inspire.middleware.coupon.allocated.v1.Coupon
+	3,  // 21: inspire.middleware.coupon.allocated.v1.Middleware.CreateCoupon:input_type -> inspire.middleware.coupon.allocated.v1.CreateCouponRequest
+	5,  // 22: inspire.middleware.coupon.allocated.v1.Middleware.UpdateCoupon:input_type -> inspire.middleware.coupon.allocated.v1.UpdateCouponRequest
+	7,  // 23: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupon:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponRequest
+	9,  // 24: inspire.middleware.coupon.allocated.v1.Middleware.GetManyCoupons:input_type -> inspire.middleware.coupon.allocated.v1.GetManyCouponsRequest
+	11, // 25: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupons:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponsRequest
+	13, // 26: inspire.middleware.coupon.allocated.v1.Middleware.GetCouponOnly:input_type -> inspire.middleware.coupon.allocated.v1.GetCouponOnlyRequest
+	4,  // 27: inspire.middleware.coupon.allocated.v1.Middleware.CreateCoupon:output_type -> inspire.middleware.coupon.allocated.v1.CreateCouponResponse
+	6,  // 28: inspire.middleware.coupon.allocated.v1.Middleware.UpdateCoupon:output_type -> inspire.middleware.coupon.allocated.v1.UpdateCouponResponse
+	8,  // 29: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupon:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponResponse
+	10, // 30: inspire.middleware.coupon.allocated.v1.Middleware.GetManyCoupons:output_type -> inspire.middleware.coupon.allocated.v1.GetManyCouponsResponse
+	12, // 31: inspire.middleware.coupon.allocated.v1.Middleware.GetCoupons:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponsResponse
+	14, // 32: inspire.middleware.coupon.allocated.v1.Middleware.GetCouponOnly:output_type -> inspire.middleware.coupon.allocated.v1.GetCouponOnlyResponse
+	27, // [27:33] is the sub-list for method output_type
+	21, // [21:27] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_init() }
