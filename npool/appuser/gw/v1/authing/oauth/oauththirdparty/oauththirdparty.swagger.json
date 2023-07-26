@@ -231,15 +231,6 @@
         "ID": {
           "type": "string"
         },
-        "ClientID": {
-          "type": "string"
-        },
-        "ClientSecret": {
-          "type": "string"
-        },
-        "CallbackURL": {
-          "type": "string"
-        },
         "ClientName": {
           "$ref": "#/definitions/v1SignMethod"
         },
