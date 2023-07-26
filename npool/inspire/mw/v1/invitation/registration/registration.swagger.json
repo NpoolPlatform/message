@@ -17,62 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "inspiremiddlewareinvitationregistrationv1CreateRegistrationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
-        }
-      }
-    },
-    "inspiremiddlewareinvitationregistrationv1DeleteRegistrationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
-        }
-      }
-    },
-    "inspiremiddlewareinvitationregistrationv1GetRegistrationOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
-        }
-      }
-    },
-    "inspiremiddlewareinvitationregistrationv1GetRegistrationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
-        }
-      }
-    },
-    "inspiremiddlewareinvitationregistrationv1GetRegistrationsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Registration"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiremiddlewareinvitationregistrationv1UpdateRegistrationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -121,6 +65,46 @@
         },
         "InviteeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
+    "v1DeleteRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
+    "v1GetRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
+        }
+      }
+    },
+    "v1GetRegistrationsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Registration"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -226,6 +210,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Registration"
         }
       }
     }
