@@ -23,6 +23,7 @@ const (
 	Middleware_UpdateCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/UpdateCoupon"
 	Middleware_GetCoupon_FullMethodName    = "/inspire.middleware.coupon.v1.Middleware/GetCoupon"
 	Middleware_GetCoupons_FullMethodName   = "/inspire.middleware.coupon.v1.Middleware/GetCoupons"
+	Middleware_DeleteCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/DeleteCoupon"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +34,7 @@ type MiddlewareClient interface {
 	UpdateCoupon(ctx context.Context, in *UpdateCouponRequest, opts ...grpc.CallOption) (*UpdateCouponResponse, error)
 	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
 	GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error)
+	DeleteCoupon(ctx context.Context, in *DeleteCouponRequest, opts ...grpc.CallOption) (*DeleteCouponResponse, error)
 }
 
 type middlewareClient struct {
@@ -79,6 +81,15 @@ func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteCoupon(ctx context.Context, in *DeleteCouponRequest, opts ...grpc.CallOption) (*DeleteCouponResponse, error) {
+	out := new(DeleteCouponResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteCoupon_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type MiddlewareServer interface {
 	UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error)
 	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
 	GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error)
+	DeleteCoupon(context.Context, *DeleteCouponRequest) (*DeleteCouponResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedMiddlewareServer) GetCoupon(context.Context, *GetCouponReques
 }
 func (UnimplementedMiddlewareServer) GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoupons not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteCoupon(context.Context, *DeleteCouponRequest) (*DeleteCouponResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoupon not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -191,6 +206,24 @@ func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCouponRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteCoupon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteCoupon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteCoupon(ctx, req.(*DeleteCouponRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCoupons",
 			Handler:    _Middleware_GetCoupons_Handler,
+		},
+		{
+			MethodName: "DeleteCoupon",
+			Handler:    _Middleware_DeleteCoupon_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -282,6 +282,14 @@
         }
       }
     },
+    "v1DeleteCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
     "v1GetCouponResponse": {
       "type": "object",
       "properties": {

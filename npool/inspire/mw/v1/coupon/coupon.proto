@@ -14,6 +14,7 @@ service Middleware {
     rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
+    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {}
 }
 
 message CouponReq {
@@ -124,3 +125,12 @@ message GetCouponRequest {
 message GetCouponResponse {
     Coupon Info = 10;
 }
+
+message DeleteCouponRequest {
+    CouponReq Info = 10;
+}
+
+message DeleteCouponResponse {
+    Coupon Info = 10;
+}
+
