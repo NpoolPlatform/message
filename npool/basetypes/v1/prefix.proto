@@ -47,5 +47,6 @@ enum Prefix {
     PrefixCreatePlatformAccount = 390;
     PrefixCreateOAuthThirdParty    = 400;
     PrefixCreateAppOAuthThirdParty = 410;
-    PrefixOAuthLogin               = 420;
+    PrefixOAuthLogin         = 420;
+    PrefixCreateAppEvent     = 430;
 }
