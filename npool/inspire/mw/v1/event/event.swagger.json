@@ -17,54 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "basetypesv1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiremiddlewareeventv1GetEventOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Event"
-        }
-      }
-    },
-    "managereventv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/basetypesv1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -93,32 +45,30 @@
         }
       }
     },
-    "v1Coupon": {
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
+    "v1CreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
     },
     "v1Credit": {
       "type": "object",
@@ -134,6 +84,14 @@
         }
       }
     },
+    "v1DeleteEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
     "v1Event": {
       "type": "object",
       "properties": {
@@ -146,11 +104,10 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Coupons": {
+        "CouponIDs": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Coupon"
+            "type": "string"
           }
         },
         "Credits": {
@@ -184,6 +141,67 @@
         }
       }
     },
+    "v1EventReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1GetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Event"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1RewardEventResponse": {
       "type": "object",
       "properties": {
@@ -193,6 +211,37 @@
             "type": "object",
             "$ref": "#/definitions/v1Credit"
           }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
         }
       }
     },
