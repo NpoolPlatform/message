@@ -49,6 +49,7 @@ message Conds {
     optional basetypes.v1.StringVal AppID     = 20;
     optional basetypes.v1.Uint32Val EventType = 30;
     optional basetypes.v1.StringVal GoodID    = 40;
+    optional basetypes.v1.StringSliceVal IDs  = 50;
 }
 
 message CreateEventRequest {

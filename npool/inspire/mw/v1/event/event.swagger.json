@@ -59,6 +59,9 @@
         },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -210,6 +213,20 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/v1Credit"
+          }
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
       }
