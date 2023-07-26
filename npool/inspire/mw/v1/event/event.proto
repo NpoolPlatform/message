@@ -38,6 +38,7 @@ message Event {
     string               EventTypeStr  = 29;
     basetypes.v1.UsedFor EventType     = 30;
     // @inject_tag: sql:"coupon_ids"
+    string               CouponIDsStr  = 39;
     repeated string      CouponIDs     = 40;
     // @inject_tag: sql:"credits"
     string               Credits       = 50;
