@@ -48,4 +48,6 @@ enum Prefix {
     PrefixCreateOAuthThirdParty    = 400;
     PrefixCreateAppOAuthThirdParty = 410;
     PrefixCreateAppEvent       = 420;
+    PrefixCreateInvitationCode = 430;
+    PrefixCreateRegistration   = 440;
 }
