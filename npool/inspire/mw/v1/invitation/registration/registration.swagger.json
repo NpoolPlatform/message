@@ -84,6 +84,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1ExistRegistrationCondsResponse": {
       "type": "object",
       "properties": {
@@ -92,6 +93,8 @@
         }
       }
     },
+=======
+>>>>>>> Format invitation
     "v1GetRegistrationResponse": {
       "type": "object",
       "properties": {

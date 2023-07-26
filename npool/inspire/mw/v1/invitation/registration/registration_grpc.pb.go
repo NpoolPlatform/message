@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+<<<<<<< HEAD
 	Middleware_CreateRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration"
 	Middleware_UpdateRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration"
 	Middleware_GetRegistration_FullMethodName        = "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistration"
@@ -27,6 +28,15 @@ const (
 	Middleware_GetSubordinates_FullMethodName        = "/inspire.middleware.invitation.registration.v1.Middleware/GetSubordinates"
 	Middleware_GetSuperiores_FullMethodName          = "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores"
 	Middleware_DeleteRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration"
+=======
+	Middleware_CreateRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration"
+	Middleware_UpdateRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration"
+	Middleware_GetRegistration_FullMethodName    = "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistration"
+	Middleware_GetRegistrations_FullMethodName   = "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistrations"
+	Middleware_GetSubordinates_FullMethodName    = "/inspire.middleware.invitation.registration.v1.Middleware/GetSubordinates"
+	Middleware_GetSuperiores_FullMethodName      = "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores"
+	Middleware_DeleteRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration"
+>>>>>>> Format invitation
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -88,6 +98,7 @@ func (c *middlewareClient) ExistRegistrationConds(ctx context.Context, in *Exist
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *middlewareClient) GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error) {
 	out := new(GetRegistrationsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetRegistrations_FullMethodName, in, out, opts...)
@@ -97,6 +108,8 @@ func (c *middlewareClient) GetRegistrations(ctx context.Context, in *GetRegistra
 	return out, nil
 }
 
+=======
+>>>>>>> Format invitation
 func (c *middlewareClient) GetSubordinates(ctx context.Context, in *GetSubordinatesRequest, opts ...grpc.CallOption) (*GetSubordinatesResponse, error) {
 	out := new(GetSubordinatesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetSubordinates_FullMethodName, in, out, opts...)
@@ -253,6 +266,7 @@ func _Middleware_ExistRegistrationConds_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 func _Middleware_GetRegistrations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRegistrationsRequest)
 	if err := dec(in); err != nil {
@@ -271,6 +285,8 @@ func _Middleware_GetRegistrations_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+=======
+>>>>>>> Format invitation
 func _Middleware_GetSubordinates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSubordinatesRequest)
 	if err := dec(in); err != nil {
@@ -349,10 +365,13 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_ExistRegistrationConds_Handler,
 		},
 		{
+<<<<<<< HEAD
 			MethodName: "GetRegistrations",
 			Handler:    _Middleware_GetRegistrations_Handler,
 		},
 		{
+=======
+>>>>>>> Format invitation
 			MethodName: "GetSubordinates",
 			Handler:    _Middleware_GetSubordinates_Handler,
 		},
