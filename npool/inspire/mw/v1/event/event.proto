@@ -127,3 +127,4 @@ message RewardEventRequest {
 message RewardEventResponse {
     repeated Credit Infos = 10;
 }
+
