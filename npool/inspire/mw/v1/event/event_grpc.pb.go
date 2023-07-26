@@ -19,15 +19,23 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetEventOnly_FullMethodName = "/inspire.middleware.event.v1.Middleware/GetEventOnly"
-	Middleware_RewardEvent_FullMethodName  = "/inspire.middleware.event.v1.Middleware/RewardEvent"
+	Middleware_CreateEvent_FullMethodName = "/inspire.middleware.event.v1.Middleware/CreateEvent"
+	Middleware_UpdateEvent_FullMethodName = "/inspire.middleware.event.v1.Middleware/UpdateEvent"
+	Middleware_GetEvent_FullMethodName    = "/inspire.middleware.event.v1.Middleware/GetEvent"
+	Middleware_GetEvents_FullMethodName   = "/inspire.middleware.event.v1.Middleware/GetEvents"
+	Middleware_DeleteEvent_FullMethodName = "/inspire.middleware.event.v1.Middleware/DeleteEvent"
+	Middleware_RewardEvent_FullMethodName = "/inspire.middleware.event.v1.Middleware/RewardEvent"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetEventOnly(ctx context.Context, in *GetEventOnlyRequest, opts ...grpc.CallOption) (*GetEventOnlyResponse, error)
+	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
+	UpdateEvent(ctx context.Context, in *UpdateEventRequest, opts ...grpc.CallOption) (*UpdateEventResponse, error)
+	GetEvent(ctx context.Context, in *GetEventRequest, opts ...grpc.CallOption) (*GetEventResponse, error)
+	GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
+	DeleteEvent(ctx context.Context, in *DeleteEventRequest, opts ...grpc.CallOption) (*DeleteEventResponse, error)
 	RewardEvent(ctx context.Context, in *RewardEventRequest, opts ...grpc.CallOption) (*RewardEventResponse, error)
 }
 
@@ -39,9 +47,45 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GetEventOnly(ctx context.Context, in *GetEventOnlyRequest, opts ...grpc.CallOption) (*GetEventOnlyResponse, error) {
-	out := new(GetEventOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetEventOnly_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error) {
+	out := new(CreateEventResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateEvent(ctx context.Context, in *UpdateEventRequest, opts ...grpc.CallOption) (*UpdateEventResponse, error) {
+	out := new(UpdateEventResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetEvent(ctx context.Context, in *GetEventRequest, opts ...grpc.CallOption) (*GetEventResponse, error) {
+	out := new(GetEventResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error) {
+	out := new(GetEventsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetEvents_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) DeleteEvent(ctx context.Context, in *DeleteEventRequest, opts ...grpc.CallOption) (*DeleteEventResponse, error) {
+	out := new(DeleteEventResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteEvent_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +105,11 @@ func (c *middlewareClient) RewardEvent(ctx context.Context, in *RewardEventReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetEventOnly(context.Context, *GetEventOnlyRequest) (*GetEventOnlyResponse, error)
+	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
+	UpdateEvent(context.Context, *UpdateEventRequest) (*UpdateEventResponse, error)
+	GetEvent(context.Context, *GetEventRequest) (*GetEventResponse, error)
+	GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error)
+	DeleteEvent(context.Context, *DeleteEventRequest) (*DeleteEventResponse, error)
 	RewardEvent(context.Context, *RewardEventRequest) (*RewardEventResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -70,8 +118,20 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetEventOnly(context.Context, *GetEventOnlyRequest) (*GetEventOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetEventOnly not implemented")
+func (UnimplementedMiddlewareServer) CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateEvent not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateEvent(context.Context, *UpdateEventRequest) (*UpdateEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateEvent not implemented")
+}
+func (UnimplementedMiddlewareServer) GetEvent(context.Context, *GetEventRequest) (*GetEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEvent not implemented")
+}
+func (UnimplementedMiddlewareServer) GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEvents not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteEvent(context.Context, *DeleteEventRequest) (*DeleteEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteEvent not implemented")
 }
 func (UnimplementedMiddlewareServer) RewardEvent(context.Context, *RewardEventRequest) (*RewardEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RewardEvent not implemented")
@@ -89,20 +149,92 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_GetEventOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetEventOnlyRequest)
+func _Middleware_CreateEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEventRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetEventOnly(ctx, in)
+		return srv.(MiddlewareServer).CreateEvent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetEventOnly_FullMethodName,
+		FullMethod: Middleware_CreateEvent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetEventOnly(ctx, req.(*GetEventOnlyRequest))
+		return srv.(MiddlewareServer).CreateEvent(ctx, req.(*CreateEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateEvent(ctx, req.(*UpdateEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetEvent(ctx, req.(*GetEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetEvents(ctx, req.(*GetEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_DeleteEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteEvent(ctx, req.(*DeleteEventRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,8 +265,24 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetEventOnly",
-			Handler:    _Middleware_GetEventOnly_Handler,
+			MethodName: "CreateEvent",
+			Handler:    _Middleware_CreateEvent_Handler,
+		},
+		{
+			MethodName: "UpdateEvent",
+			Handler:    _Middleware_UpdateEvent_Handler,
+		},
+		{
+			MethodName: "GetEvent",
+			Handler:    _Middleware_GetEvent_Handler,
+		},
+		{
+			MethodName: "GetEvents",
+			Handler:    _Middleware_GetEvents_Handler,
+		},
+		{
+			MethodName: "DeleteEvent",
+			Handler:    _Middleware_DeleteEvent_Handler,
 		},
 		{
 			MethodName: "RewardEvent",

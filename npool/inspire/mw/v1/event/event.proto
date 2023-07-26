@@ -59,11 +59,38 @@ message CreateEventResponse {
     Event Info = 10;
 }
 
-message GetEventOnlyRequest {
-    Conds Conds = 10;
+message UpdateEventRequest {
+    EventReq Info = 10;
 }
 
-message GetEventOnlyResponse {
+message UpdateEventResponse {
+    Event Info = 10;
+}
+
+message GetEventRequest {
+    string ID = 10;
+}
+
+message GetEventResponse {
+    Event Info = 10;
+}
+
+message GetEventsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetEventsResponse {
+    repeated Event Infos = 10;
+    uint32         Total = 20;
+}
+
+message DeleteEventRequest {
+    EventReq Info = 10;
+}
+
+message DeleteEventResponse {
     Event Info = 10;
 }
 
