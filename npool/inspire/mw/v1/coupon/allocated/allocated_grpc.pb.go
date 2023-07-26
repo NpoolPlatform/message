@@ -19,12 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCoupon_FullMethodName   = "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon"
-	Middleware_UpdateCoupon_FullMethodName   = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon"
-	Middleware_GetCoupon_FullMethodName      = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon"
-	Middleware_GetManyCoupons_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/GetManyCoupons"
-	Middleware_GetCoupons_FullMethodName     = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons"
-	Middleware_GetCouponOnly_FullMethodName  = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCouponOnly"
+	Middleware_CreateCoupon_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon"
+	Middleware_UpdateCoupon_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon"
+	Middleware_GetCoupon_FullMethodName    = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon"
+	Middleware_GetCoupons_FullMethodName   = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons"
+	Middleware_DeleteCoupon_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,9 +33,8 @@ type MiddlewareClient interface {
 	CreateCoupon(ctx context.Context, in *CreateCouponRequest, opts ...grpc.CallOption) (*CreateCouponResponse, error)
 	UpdateCoupon(ctx context.Context, in *UpdateCouponRequest, opts ...grpc.CallOption) (*UpdateCouponResponse, error)
 	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
-	GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error)
 	GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error)
-	GetCouponOnly(ctx context.Context, in *GetCouponOnlyRequest, opts ...grpc.CallOption) (*GetCouponOnlyResponse, error)
+	DeleteCoupon(ctx context.Context, in *DeleteCouponRequest, opts ...grpc.CallOption) (*DeleteCouponResponse, error)
 }
 
 type middlewareClient struct {
@@ -74,15 +72,6 @@ func (c *middlewareClient) GetCoupon(ctx context.Context, in *GetCouponRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetManyCoupons(ctx context.Context, in *GetManyCouponsRequest, opts ...grpc.CallOption) (*GetManyCouponsResponse, error) {
-	out := new(GetManyCouponsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetManyCoupons_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest, opts ...grpc.CallOption) (*GetCouponsResponse, error) {
 	out := new(GetCouponsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetCoupons_FullMethodName, in, out, opts...)
@@ -92,9 +81,9 @@ func (c *middlewareClient) GetCoupons(ctx context.Context, in *GetCouponsRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetCouponOnly(ctx context.Context, in *GetCouponOnlyRequest, opts ...grpc.CallOption) (*GetCouponOnlyResponse, error) {
-	out := new(GetCouponOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetCouponOnly_FullMethodName, in, out, opts...)
+func (c *middlewareClient) DeleteCoupon(ctx context.Context, in *DeleteCouponRequest, opts ...grpc.CallOption) (*DeleteCouponResponse, error) {
+	out := new(DeleteCouponResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteCoupon_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,9 +97,8 @@ type MiddlewareServer interface {
 	CreateCoupon(context.Context, *CreateCouponRequest) (*CreateCouponResponse, error)
 	UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error)
 	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
-	GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error)
 	GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error)
-	GetCouponOnly(context.Context, *GetCouponOnlyRequest) (*GetCouponOnlyResponse, error)
+	DeleteCoupon(context.Context, *DeleteCouponRequest) (*DeleteCouponResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -127,14 +115,11 @@ func (UnimplementedMiddlewareServer) UpdateCoupon(context.Context, *UpdateCoupon
 func (UnimplementedMiddlewareServer) GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoupon not implemented")
 }
-func (UnimplementedMiddlewareServer) GetManyCoupons(context.Context, *GetManyCouponsRequest) (*GetManyCouponsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetManyCoupons not implemented")
-}
 func (UnimplementedMiddlewareServer) GetCoupons(context.Context, *GetCouponsRequest) (*GetCouponsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoupons not implemented")
 }
-func (UnimplementedMiddlewareServer) GetCouponOnly(context.Context, *GetCouponOnlyRequest) (*GetCouponOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCouponOnly not implemented")
+func (UnimplementedMiddlewareServer) DeleteCoupon(context.Context, *DeleteCouponRequest) (*DeleteCouponResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoupon not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -203,24 +188,6 @@ func _Middleware_GetCoupon_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetManyCoupons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetManyCouponsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetManyCoupons(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetManyCoupons_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetManyCoupons(ctx, req.(*GetManyCouponsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCouponsRequest)
 	if err := dec(in); err != nil {
@@ -239,20 +206,20 @@ func _Middleware_GetCoupons_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCouponOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCouponOnlyRequest)
+func _Middleware_DeleteCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCouponRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCouponOnly(ctx, in)
+		return srv.(MiddlewareServer).DeleteCoupon(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetCouponOnly_FullMethodName,
+		FullMethod: Middleware_DeleteCoupon_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCouponOnly(ctx, req.(*GetCouponOnlyRequest))
+		return srv.(MiddlewareServer).DeleteCoupon(ctx, req.(*DeleteCouponRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -277,16 +244,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetCoupon_Handler,
 		},
 		{
-			MethodName: "GetManyCoupons",
-			Handler:    _Middleware_GetManyCoupons_Handler,
-		},
-		{
 			MethodName: "GetCoupons",
 			Handler:    _Middleware_GetCoupons_Handler,
 		},
 		{
-			MethodName: "GetCouponOnly",
-			Handler:    _Middleware_GetCouponOnly_Handler,
+			MethodName: "DeleteCoupon",
+			Handler:    _Middleware_DeleteCoupon_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
