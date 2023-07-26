@@ -46,7 +46,7 @@ message Event {
     // @inject_tag: sql:"max_consecutive"
     uint32               MaxConsecutive = 70;
     // @inject_tag: sql:"good_id"
-    string               GoodID        = 80;
+    optional string      GoodID        = 80;
     // @inject_tag: sql:"inviter_layers"
     uint32               InviterLayers = 90;
     // @inject_tag: sql:"created_at"
