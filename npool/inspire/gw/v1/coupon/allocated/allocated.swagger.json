@@ -131,9 +131,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType",
+        "CouponTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "AppID": {
           "type": "string",
