@@ -4,21 +4,67 @@ package inspire.middleware.event.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event";
 
-import "npool/inspire/mgr/v1/event/event.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetEventOnly (GetEventOnlyRequest) returns (GetEventOnlyResponse) {}
-    rpc RewardEvent  (RewardEventRequest)  returns (RewardEventResponse)  {}
+    rpc CreateEvent     (CreateEventRequest)     returns (CreateEventResponse)     {}
+    rpc UpdateEvent     (UpdateEventRequest)     returns (UpdateEventResponse)     {}
+    rpc GetEvent        (GetEventRequest)        returns (GetEventResponse)        {}
+    rpc GetEvents       (GetEventsRequest)       returns (GetEventsResponse)       {}
+    rpc DeleteEvent     (DeleteEventRequest)     returns (DeleteEventResponse)     {}
+    rpc RewardEvent     (RewardEventRequest)     returns (RewardEventResponse)     {}
+}
+
+message EventReq {
+    optional string               ID            = 10;
+    optional string               AppID         = 20;
+    optional basetypes.v1.UsedFor EventType     = 30;
+    repeated string               CouponIDs     = 40;
+    optional string               Credits       = 50;
+    optional string               CreditsPerUSD = 60;
+    optional uint32               MaxConsecutive = 70;
+    optional string               GoodID        = 80;
+    optional uint32               InviterLayers = 90;
+}
+
+message Event {
+    string               ID            = 10;
+    string               AppID         = 20;
+    basetypes.v1.UsedFor EventType     = 30;
+    repeated string      CouponIDs     = 40;
+    string               Credits       = 50;
+    string               CreditsPerUSD = 60;
+    uint32               MaxConsecutive = 70;
+    string               GoodID        = 80;
+    uint32               InviterLayers = 90;
+    uint32               CreatedAt     = 200;
+    uint32               UpdatedAt     = 210;
+    uint32               DeletedAt     = 220;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID        = 10;
+    optional basetypes.v1.StringVal AppID     = 20;
+    optional basetypes.v1.Uint32Val EventType = 30;
+    optional basetypes.v1.StringVal GoodID    = 40;
+}
+
+message CreateEventRequest {
+    EventReq Info = 10;
+}
+
+message CreateEventResponse {
+    Event Info = 10;
 }
 
 message GetEventOnlyRequest {
-    inspire.manager.event.v1.Conds Conds = 10;
+    Conds Conds = 10;
 }
 
 message GetEventOnlyResponse {
-    inspire.manager.event.v1.Event Info = 10;
+    Event Info = 10;
 }
 
 message Credit {
