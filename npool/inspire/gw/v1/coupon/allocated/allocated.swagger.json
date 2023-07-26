@@ -115,7 +115,21 @@
   },
   "definitions": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    "basetypesinspirev1CouponConstraint": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponConstraint",
+        "Normal",
+        "PaymentThreshold",
+        "GoodOnly",
+        "GoodThreshold"
+      ],
+      "default": "DefaultCouponConstraint"
+    },
+>>>>>>> Add coupon info to allocated
     "basetypesinspirev1CouponType": {
       "type": "string",
       "enum": [
@@ -211,6 +225,21 @@
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
+        },
+        "Allocated": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"allocated\""
+        },
+        "CouponConstraintStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"random\""
         },
         "CreatedAt": {
           "type": "integer",
