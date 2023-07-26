@@ -141,13 +141,17 @@
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
+<<<<<<< HEAD
         },
         "CouponTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_type\""
+=======
+>>>>>>> Add sql tag to coupon allocated
         },
         "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType",
+          "title": "@inject_tag: sql:\"coupon_type\""
         },
         "AppID": {
           "type": "string",
@@ -220,6 +224,7 @@
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
+<<<<<<< HEAD
         },
         "Allocated": {
           "type": "string",
@@ -235,6 +240,8 @@
         "Random": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
+=======
+>>>>>>> Add sql tag to coupon allocated
         },
         "CreatedAt": {
           "type": "integer",
