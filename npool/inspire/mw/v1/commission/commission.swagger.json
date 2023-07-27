@@ -153,13 +153,19 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add order limited
         },
         "OrderLimit": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"order_limit\""
+<<<<<<< HEAD
 =======
 >>>>>>> Add sql tag
+=======
+>>>>>>> Add order limited
         }
       }
     },
