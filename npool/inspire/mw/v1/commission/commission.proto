@@ -70,6 +70,8 @@ message Commission {
     uint32     UpdatedAt       = 140;
     // @inject_tag: sql:"deleted_at"
     uint32     DeletedAt       = 150;
+    // @inject_tag: sql:"order_limit"
+    uint32     OrderLimit      = 160;
 }
 
 message Conds {
