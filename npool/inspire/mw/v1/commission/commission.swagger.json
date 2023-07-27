@@ -74,10 +74,11 @@
 =======
 >>>>>>> Add sql tag
         },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType",
+        "SettleTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"settle_type\""
         },
+<<<<<<< HEAD
         "SettleModeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"settle_mode\""
@@ -92,7 +93,24 @@
         },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval",
+=======
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "SettleModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_mode\""
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleIntervalStr": {
+          "type": "string",
+>>>>>>> Add str for enum
           "title": "@inject_tag: sql:\"settle_interval\""
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
         },
         "AmountOrPercent": {
           "type": "string",
