@@ -48,4 +48,5 @@ enum Prefix {
     PrefixCreateAppEvent       = 400;
     PrefixCreateInvitationCode = 410;
     PrefixCreateRegistration   = 420;
+    PrefixCreateCommission     = 430;
 }
