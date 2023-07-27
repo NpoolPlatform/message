@@ -28,7 +28,7 @@ enum UsedFor {
     AffiliateSignup       = 180;
     GoodBenefit1          = 190;
 
-    NewDeviceDetected     = 200;
+    NewLogin              = 200;
     UpdatePassword        = 210;
     UpdateEmail           = 220;
     UpdateMobile          = 230;
