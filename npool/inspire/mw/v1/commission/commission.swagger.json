@@ -180,7 +180,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "SettleType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -233,18 +233,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
