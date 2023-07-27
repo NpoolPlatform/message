@@ -21,6 +21,7 @@ message TemplateVars {
     optional string Code      = 70;
     optional string IP        = 80;
     optional string Location  = 90;
+    optional string UserAgent = 100;
 }
 
 message TextInfo {
