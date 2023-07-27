@@ -90,7 +90,11 @@
         },
         "AmountOrPercent": {
           "type": "string",
+<<<<<<< HEAD
           "title": "For fix amount or percent commission\n@inject_tag: sql:\"amount_or_percent\""
+=======
+          "title": "For fix amount or percent commission"
+>>>>>>> Rename amount and percent
         },
         "Threshold": {
           "type": "string",
