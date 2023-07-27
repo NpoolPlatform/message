@@ -73,13 +73,9 @@
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
-        "Amount": {
+        "AmountOrPercent": {
           "type": "string",
-          "title": "For fix amount commission"
-        },
-        "Percent": {
-          "type": "string",
-          "title": "For percent commission"
+          "title": "For fix amount or percent commission"
         },
         "Threshold": {
           "type": "string",
@@ -128,10 +124,7 @@
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
-        "Amount": {
-          "type": "string"
-        },
-        "Percent": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
