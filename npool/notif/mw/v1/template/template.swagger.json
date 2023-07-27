@@ -93,6 +93,9 @@
         },
         "Location": {
           "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
         }
       }
     },
