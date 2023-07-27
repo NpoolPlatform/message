@@ -66,35 +66,45 @@
         "GoodID": {
           "type": "string",
           "title": "For good specific commission\n@inject_tag: sql:\"good_id\""
+<<<<<<< HEAD
         },
         "SettleTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"settle_type\""
+=======
+>>>>>>> Add sql tag
         },
         "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/v1SettleType",
+          "title": "@inject_tag: sql:\"settle_type\""
         },
         "SettleModeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"settle_mode\""
         },
         "SettleMode": {
-          "$ref": "#/definitions/v1SettleMode"
+          "$ref": "#/definitions/v1SettleMode",
+          "title": "@inject_tag: sql:\"settle_mode\""
         },
         "SettleIntervalStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"settle_interval\""
         },
         "SettleInterval": {
-          "$ref": "#/definitions/v1SettleInterval"
+          "$ref": "#/definitions/v1SettleInterval",
+          "title": "@inject_tag: sql:\"settle_interval\""
         },
         "AmountOrPercent": {
           "type": "string",
+<<<<<<< HEAD
 <<<<<<< HEAD
           "title": "For fix amount or percent commission\n@inject_tag: sql:\"amount_or_percent\""
 =======
           "title": "For fix amount or percent commission"
 >>>>>>> Rename amount and percent
+=======
+          "title": "For fix amount or percent commission\n@inject_tag: sql:\"amount_or_percent\""
+>>>>>>> Add sql tag
         },
         "Threshold": {
           "type": "string",
@@ -124,11 +134,14 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
+<<<<<<< HEAD
         },
         "OrderLimit": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"order_limit\""
+=======
+>>>>>>> Add sql tag
         }
       }
     },
