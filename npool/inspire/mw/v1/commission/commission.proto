@@ -44,7 +44,7 @@ message Commission {
     inspire.manager.commission.v1.SettleMode SettleMode = 60;
     inspire.manager.commission.v1.SettleInterval SettleInterval = 70;
     // For fix amount or percent commission
-    optional string AmountOrPercent = 80;
+    string AmountOrPercent     = 80;
     // For commission threshold
     optional string Threshold  = 100;
     uint32     StartAt         = 110;
