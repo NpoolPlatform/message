@@ -49,4 +49,5 @@ enum Prefix {
     PrefixCreateInvitationCode = 410;
     PrefixCreateRegistration   = 420;
     PrefixCreateCommission     = 430;
+    PrefixCloneCommission      = 440;
 }
