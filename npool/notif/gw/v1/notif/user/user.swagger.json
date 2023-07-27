@@ -358,6 +358,12 @@
         "AffiliatePurchase",
         "AffiliateSignup",
         "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
         "Announcement",
         "ProductPage"
       ],

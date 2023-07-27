@@ -13,6 +13,7 @@ enum MsgID {
     CreateReviewReq              = 50;
     RegisterAPIsReq              = 60;
     UpdateOpLogHumanReadableReq  = 70;
+    CreateNewLoginReq            = 80;
     CreateSampleMsgReq           = 100000000;
 }
 

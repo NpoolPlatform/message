@@ -372,6 +372,15 @@
         },
         "Code": {
           "type": "string"
+        },
+        "IP": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
         }
       }
     },
@@ -445,6 +454,12 @@
         "AffiliatePurchase",
         "AffiliateSignup",
         "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
         "Announcement",
         "ProductPage"
       ],
