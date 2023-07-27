@@ -149,9 +149,6 @@
     "appusergatewayauthingoauthoauththirdpartyv1CreateOAuthThirdPartyRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
         "ClientName": {
           "$ref": "#/definitions/v1SignMethod"
         },

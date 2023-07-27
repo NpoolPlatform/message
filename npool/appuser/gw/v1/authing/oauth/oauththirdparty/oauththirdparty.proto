@@ -39,7 +39,6 @@ service Gateway {
 }
 
 message CreateOAuthThirdPartyRequest {
-    string ID             = 10;
     basetypes.v1.SignMethod ClientName = 20;
     string ClientTag      = 30;
     string ClientLogoURL  = 40;
