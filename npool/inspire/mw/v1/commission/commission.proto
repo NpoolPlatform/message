@@ -45,10 +45,13 @@ message Commission {
     // @inject_tag: sql:"good_id"
     optional string GoodID     = 40;
     // @inject_tag: sql:"settle_type"
+    string     SettleTypeStr   = 49;
     basetypes.inspire.v1.SettleType SettleType = 50;
     // @inject_tag: sql:"settle_mode"
+    string     SettleModeStr   = 59;
     basetypes.inspire.v1.SettleMode SettleMode = 60;
     // @inject_tag: sql:"settle_interval"
+    string     SettleIntervalStr = 69;
     basetypes.inspire.v1.SettleInterval SettleInterval = 70;
     // For fix amount or percent commission
     // @inject_tag: sql:"amount_or_percent"
