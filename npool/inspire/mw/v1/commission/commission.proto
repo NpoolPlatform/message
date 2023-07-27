@@ -58,7 +58,7 @@ message Commission {
     string AmountOrPercent     = 80;
     // For commission threshold
     // @inject_tag: sql:"threshold"
-    optional string Threshold  = 100;
+    string     Threshold       = 100;
     // @inject_tag: sql:"start_at"
     uint32     StartAt         = 110;
     // EndAt == 0 means active commission
