@@ -901,18 +901,15 @@
         "AccountType": {
           "$ref": "#/definitions/v1SignMethod"
         },
-        "VerificationCode": {
-          "type": "string"
-        },
         "NewVerificationCode": {
+          "type": "string",
+          "title": "Need verification code"
+        },
+        "NewAccount": {
           "type": "string"
         },
         "NewAccountType": {
           "$ref": "#/definitions/v1SignMethod"
-        },
-        "NewAccount": {
-          "type": "string",
-          "title": "Need verification code"
         }
       }
     },

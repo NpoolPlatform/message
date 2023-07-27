@@ -387,13 +387,11 @@ message BindUserRequest {
 
     optional string Account            = 30;
     optional basetypes.v1.SignMethod AccountType    = 40;
-    optional string VerificationCode   = 50;
-
-    optional string NewVerificationCode = 51;
-    optional basetypes.v1.SignMethod NewAccountType = 52;
 
     // Need verification code
+    optional string NewVerificationCode = 50;
     optional string NewAccount          = 60;
+    optional basetypes.v1.SignMethod NewAccountType = 70;
 }
 
 message BindUserResponse {
