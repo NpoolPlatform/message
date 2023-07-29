@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package inspire.middleware.archivement.statement.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement/statement";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
+    rpc ExistStatementConds (ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {}
+    rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
+    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
+}
+
+message StatementReq {
+    optional string ID                      = 10;
+    optional string AppID                   = 20;
+    optional string UserID                  = 30;
+    optional string DirectContributorID     = 31;
+    optional string GoodID                  = 40;
+    optional string OrderID                 = 50;
+    optional bool   SelfOrder               = 60;
+    optional string PaymentID               = 70;
+    optional string CoinTypeID              = 80;
+    optional string PaymentCoinTypeID       = 90;
+    optional string PaymentCoinUSDCurrency  = 100;
+    optional string Units                   = 110;
+    optional string Amount                  = 120;
+    optional string USDAmount               = 130;
+    optional string Commission              = 140;
+}
+
+message Statement {
+    string ID                       = 10;
+    string AppID                    = 20;
+    string UserID                   = 30;
+    string DirectContributorID      = 31;
+    string GoodID                   = 40;
+    string OrderID                  = 50;
+    bool   SelfOrder                = 60;
+    string PaymentID                = 70;
+    string CoinTypeID               = 80;
+    string PaymentCoinTypeID        = 90;
+    string PaymentCoinUSDCurrency   = 100;
+    string Units                    = 110;
+    string Amount                   = 120;
+    string USDAmount                = 130;
+    string Commission               = 140;
+    uint32 CreatedAt                = 150;
+    uint32 UpdatedAt                = 160;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID                  = 10;
+    optional basetypes.v1.StringVal AppID               = 20;
+    optional basetypes.v1.StringVal UserID              = 30;
+    optional basetypes.v1.StringVal DirectContributorID = 31;
+    optional basetypes.v1.StringVal GoodID              = 40;
+    optional basetypes.v1.StringVal OrderID             = 50;
+    optional basetypes.v1.BoolVal   SelfOrder           = 60;
+    optional basetypes.v1.StringVal PaymentID           = 70;
+    optional basetypes.v1.StringVal CoinTypeID          = 80;
+    optional basetypes.v1.StringVal PaymentCoinTypeID   = 90;
+}
+
+message CreateStatementRequest {
+    StatementReq Info = 10;
+}
+
+message CreateStatementResponse {
+    Statement Info = 10;
+}
+
+message ExistStatementCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistStatementCondsResponse {
+    bool Info = 10;
+}
+
+message GetStatementsRequest {
+    Conds  Conds  = 10;
+    uint32 Offset = 20;
+    uint32 limit  = 30;
+}
+
+message GetStatementsResponse {
+    repeated Statement Infos = 10;
+    uint32   Total           = 20;
+}
+
+message DeleteStatementRequest {
+    StatementReq Info = 10;
+}
+
+message DeleteStatementResponse {
+    Statement Info = 10;
+}
