@@ -45,10 +45,7 @@
         }
       }
     },
-    "v1BookKeepingResponse": {
-      "type": "object"
-    },
-    "v1DetailReq": {
+    "v1Archivement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -60,50 +57,101 @@
         "UserID": {
           "type": "string"
         },
-        "DirectContributorID": {
-          "type": "string"
-        },
         "GoodID": {
           "type": "string"
         },
-        "OrderID": {
+        "CoinTypeID": {
+          "type": "string",
+          "title": "CoinTypeID of the good"
+        },
+        "TotalAmount": {
+          "type": "string",
+          "title": "Payment amount in USD"
+        },
+        "SelfAmount": {
           "type": "string"
         },
-        "SelfOrder": {
-          "type": "boolean"
-        },
-        "PaymentID": {
+        "TotalUnits": {
           "type": "string"
+        },
+        "SelfUnits": {
+          "type": "string"
+        },
+        "TotalCommission": {
+          "type": "string",
+          "title": "Commission amount in USD"
+        },
+        "SelfCommission": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
-        "PaymentCoinTypeID": {
-          "type": "string"
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1ExpropriateArchivementResponse": {
+      "type": "object"
+    },
+    "v1GetArchivementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Archivement"
+          }
         },
-        "PaymentCoinUSDCurrency": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "USDAmount": {
-          "type": "string"
-        },
-        "Commission": {
-          "type": "string"
-        },
-        "CreatedAt": {
+        "Total": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1ExpropriateResponse": {
-      "type": "object"
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
     }
   }
 }
