@@ -604,6 +604,8 @@ func (x *CreateStatementResponse) GetInfo() *Statement {
 }
 
 type CreateStatementsRequest struct {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+=======
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -614,7 +616,7 @@ type CreateStatementsRequest struct {
 func (x *CreateStatementsRequest) Reset() {
 	*x = CreateStatementsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[5]
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -627,7 +629,7 @@ func (x *CreateStatementsRequest) String() string {
 func (*CreateStatementsRequest) ProtoMessage() {}
 
 func (x *CreateStatementsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[5]
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -640,7 +642,7 @@ func (x *CreateStatementsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStatementsRequest.ProtoReflect.Descriptor instead.
 func (*CreateStatementsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{5}
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateStatementsRequest) GetInfos() []*StatementReq {
@@ -661,7 +663,7 @@ type CreateStatementsResponse struct {
 func (x *CreateStatementsResponse) Reset() {
 	*x = CreateStatementsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[6]
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -674,7 +676,7 @@ func (x *CreateStatementsResponse) String() string {
 func (*CreateStatementsResponse) ProtoMessage() {}
 
 func (x *CreateStatementsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[6]
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -687,7 +689,132 @@ func (x *CreateStatementsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStatementsResponse.ProtoReflect.Descriptor instead.
 func (*CreateStatementsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CreateStatementsResponse) GetInfos() []*Statement {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type ExistStatementCondsRequest struct {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*StatementReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *CreateStatementsRequest) Reset() {
+	*x = CreateStatementsRequest{}
+	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[5]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[7]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateStatementsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateStatementsRequest) ProtoMessage() {}
+
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+func (x *CreateStatementsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[5]
+=======
+func (x *ExistStatementCondsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[7]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+// Deprecated: Use CreateStatementsRequest.ProtoReflect.Descriptor instead.
+func (*CreateStatementsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{5}
+=======
+// Deprecated: Use ExistStatementCondsRequest.ProtoReflect.Descriptor instead.
+func (*ExistStatementCondsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{7}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+}
+
+func (x *CreateStatementsRequest) GetInfos() []*StatementReq {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+type CreateStatementsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*Statement `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+}
+
+func (x *CreateStatementsResponse) Reset() {
+	*x = CreateStatementsResponse{}
+	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[6]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[8]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateStatementsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateStatementsResponse) ProtoMessage() {}
+
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+func (x *CreateStatementsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[6]
+=======
+func (x *ExistStatementCondsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[8]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+// Deprecated: Use CreateStatementsResponse.ProtoReflect.Descriptor instead.
+func (*CreateStatementsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{6}
+=======
+// Deprecated: Use ExistStatementCondsResponse.ProtoReflect.Descriptor instead.
+func (*ExistStatementCondsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{8}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 }
 
 func (x *CreateStatementsResponse) GetInfos() []*Statement {
@@ -710,7 +837,11 @@ type GetStatementsRequest struct {
 func (x *GetStatementsRequest) Reset() {
 	*x = GetStatementsRequest{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[7]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[9]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -723,7 +854,11 @@ func (x *GetStatementsRequest) String() string {
 func (*GetStatementsRequest) ProtoMessage() {}
 
 func (x *GetStatementsRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[7]
+=======
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[9]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -736,7 +871,11 @@ func (x *GetStatementsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStatementsRequest.ProtoReflect.Descriptor instead.
 func (*GetStatementsRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{7}
+=======
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{9}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 }
 
 func (x *GetStatementsRequest) GetConds() *Conds {
@@ -772,7 +911,11 @@ type GetStatementsResponse struct {
 func (x *GetStatementsResponse) Reset() {
 	*x = GetStatementsResponse{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[8]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[10]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -785,7 +928,11 @@ func (x *GetStatementsResponse) String() string {
 func (*GetStatementsResponse) ProtoMessage() {}
 
 func (x *GetStatementsResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[8]
+=======
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[10]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -798,7 +945,11 @@ func (x *GetStatementsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStatementsResponse.ProtoReflect.Descriptor instead.
 func (*GetStatementsResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{8}
+=======
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{10}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 }
 
 func (x *GetStatementsResponse) GetInfos() []*Statement {
@@ -826,7 +977,11 @@ type DeleteStatementRequest struct {
 func (x *DeleteStatementRequest) Reset() {
 	*x = DeleteStatementRequest{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[9]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[11]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -839,7 +994,11 @@ func (x *DeleteStatementRequest) String() string {
 func (*DeleteStatementRequest) ProtoMessage() {}
 
 func (x *DeleteStatementRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[9]
+=======
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[11]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -852,7 +1011,11 @@ func (x *DeleteStatementRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteStatementRequest.ProtoReflect.Descriptor instead.
 func (*DeleteStatementRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{9}
+=======
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{11}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 }
 
 func (x *DeleteStatementRequest) GetInfo() *StatementReq {
@@ -873,7 +1036,11 @@ type DeleteStatementResponse struct {
 func (x *DeleteStatementResponse) Reset() {
 	*x = DeleteStatementResponse{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[10]
+=======
+		mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[12]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -886,7 +1053,11 @@ func (x *DeleteStatementResponse) String() string {
 func (*DeleteStatementResponse) ProtoMessage() {}
 
 func (x *DeleteStatementResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	mi := &file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[10]
+=======
+	mi := &file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[12]
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -899,7 +1070,11 @@ func (x *DeleteStatementResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteStatementResponse.ProtoReflect.Descriptor instead.
 func (*DeleteStatementResponse) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(), []int{10}
+=======
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescGZIP(), []int{12}
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 }
 
 func (x *DeleteStatementResponse) GetInfo() *Statement {
@@ -1077,6 +1252,7 @@ var file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDesc = []b
 	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
 	0x63, 0x68, 0x69, 0x65, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65,
 	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e,
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	0x74, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x68, 0x0a, 0x18, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
@@ -1143,23 +1319,132 @@ var file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDesc = []b
 	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x42, 0x2e, 0x69,
 	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x63, 0x68, 0x69, 0x65, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74,
+=======
+	0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x6a, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x4f, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x39, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x22, 0x68, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x4c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x36,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
+	0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x66, 0x0a,
+	0x1a, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43,
+	0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x48, 0x0a, 0x05, 0x43,
+	0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x69, 0x6e, 0x73,
+	0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05,
+	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x31, 0x0a, 0x1b, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x8e, 0x01, 0x0a, 0x14, 0x47, 0x65, 0x74,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x48, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x32, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x4f,
+	0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x4f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x7b, 0x0a, 0x15, 0x47, 0x65, 0x74,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x4c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x36, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
+	0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52,
+	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x67, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x4d, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x39,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
+	0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61,
+	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x65, 0x0a, 0x17, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4a, 0x0a, 0x04, 0x49, 0x6e,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
+	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72,
+	0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xba, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x9e, 0x01, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x43, 0x2e, 0x69, 0x6e, 0x73, 0x70,
+	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x74,
+	0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x44,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
+	0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xa1, 0x01, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x44, 0x2e, 0x69, 0x6e,
+	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61,
+	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x45, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xaa, 0x01, 0x0a, 0x13, 0x45,
+	0x78, 0x69, 0x73, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e,
+	0x64, 0x73, 0x12, 0x47, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64,
+	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
+	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43,
+	0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x48, 0x2e, 0x69, 0x6e,
+	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61,
+	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53,
+	0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x98, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x53,
+	0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x41, 0x2e, 0x69, 0x6e, 0x73, 0x70,
+	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x42, 0x2e, 0x69,
+	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
+	0x65, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74,
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x74,
 	0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x22, 0x00, 0x12, 0x9e, 0x01, 0x0a, 0x0f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x61,
 	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x43, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x63, 0x68, 0x69,
 	0x65, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e,
 	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65,
 	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x44, 0x2e, 0x69, 0x6e,
 	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x61, 0x63, 0x68, 0x69, 0x65, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61,
+=======
+	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x72, 0x63, 0x68,
+	0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x44, 0x2e, 0x69, 0x6e,
+	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x74, 0x61,
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
 	0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x22, 0x00, 0x42, 0x4c, 0x5a, 0x4a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
 	0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f,
 	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e,
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x63, 0x68, 0x69,
 	0x65, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e,
+=======
+	0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x72, 0x63, 0x68,
+	0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e,
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -1172,6 +1457,7 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescGZIP(
 	file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescOnce.Do(func() {
 		file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescData = protoimpl.X.CompressGZIP(file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescData)
 	})
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	return file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDescData
 }
 
@@ -1222,14 +1508,75 @@ var file_npool_inspire_mw_v1_achievement_statement_statement_proto_depIdxs = []i
 	10, // 26: inspire.middleware.achievement.statement.v1.Middleware.DeleteStatement:output_type -> inspire.middleware.achievement.statement.v1.DeleteStatementResponse
 	23, // [23:27] is the sub-list for method output_type
 	19, // [19:23] is the sub-list for method input_type
+=======
+	return file_npool_inspire_mw_v1_archivement_statement_statement_proto_rawDescData
+}
+
+var file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_inspire_mw_v1_archivement_statement_statement_proto_goTypes = []interface{}{
+	(*StatementReq)(nil),                // 0: inspire.middleware.archivement.statement.v1.StatementReq
+	(*Statement)(nil),                   // 1: inspire.middleware.archivement.statement.v1.Statement
+	(*Conds)(nil),                       // 2: inspire.middleware.archivement.statement.v1.Conds
+	(*CreateStatementRequest)(nil),      // 3: inspire.middleware.archivement.statement.v1.CreateStatementRequest
+	(*CreateStatementResponse)(nil),     // 4: inspire.middleware.archivement.statement.v1.CreateStatementResponse
+	(*CreateStatementsRequest)(nil),     // 5: inspire.middleware.archivement.statement.v1.CreateStatementsRequest
+	(*CreateStatementsResponse)(nil),    // 6: inspire.middleware.archivement.statement.v1.CreateStatementsResponse
+	(*ExistStatementCondsRequest)(nil),  // 7: inspire.middleware.archivement.statement.v1.ExistStatementCondsRequest
+	(*ExistStatementCondsResponse)(nil), // 8: inspire.middleware.archivement.statement.v1.ExistStatementCondsResponse
+	(*GetStatementsRequest)(nil),        // 9: inspire.middleware.archivement.statement.v1.GetStatementsRequest
+	(*GetStatementsResponse)(nil),       // 10: inspire.middleware.archivement.statement.v1.GetStatementsResponse
+	(*DeleteStatementRequest)(nil),      // 11: inspire.middleware.archivement.statement.v1.DeleteStatementRequest
+	(*DeleteStatementResponse)(nil),     // 12: inspire.middleware.archivement.statement.v1.DeleteStatementResponse
+	(*v1.StringVal)(nil),                // 13: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),                  // 14: basetypes.v1.BoolVal
+}
+var file_npool_inspire_mw_v1_archivement_statement_statement_proto_depIdxs = []int32{
+	13, // 0: inspire.middleware.archivement.statement.v1.Conds.ID:type_name -> basetypes.v1.StringVal
+	13, // 1: inspire.middleware.archivement.statement.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	13, // 2: inspire.middleware.archivement.statement.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	13, // 3: inspire.middleware.archivement.statement.v1.Conds.DirectContributorID:type_name -> basetypes.v1.StringVal
+	13, // 4: inspire.middleware.archivement.statement.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	13, // 5: inspire.middleware.archivement.statement.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
+	14, // 6: inspire.middleware.archivement.statement.v1.Conds.SelfOrder:type_name -> basetypes.v1.BoolVal
+	13, // 7: inspire.middleware.archivement.statement.v1.Conds.PaymentID:type_name -> basetypes.v1.StringVal
+	13, // 8: inspire.middleware.archivement.statement.v1.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	13, // 9: inspire.middleware.archivement.statement.v1.Conds.PaymentCoinTypeID:type_name -> basetypes.v1.StringVal
+	0,  // 10: inspire.middleware.archivement.statement.v1.CreateStatementRequest.Info:type_name -> inspire.middleware.archivement.statement.v1.StatementReq
+	1,  // 11: inspire.middleware.archivement.statement.v1.CreateStatementResponse.Info:type_name -> inspire.middleware.archivement.statement.v1.Statement
+	0,  // 12: inspire.middleware.archivement.statement.v1.CreateStatementsRequest.Infos:type_name -> inspire.middleware.archivement.statement.v1.StatementReq
+	1,  // 13: inspire.middleware.archivement.statement.v1.CreateStatementsResponse.Infos:type_name -> inspire.middleware.archivement.statement.v1.Statement
+	2,  // 14: inspire.middleware.archivement.statement.v1.ExistStatementCondsRequest.Conds:type_name -> inspire.middleware.archivement.statement.v1.Conds
+	2,  // 15: inspire.middleware.archivement.statement.v1.GetStatementsRequest.Conds:type_name -> inspire.middleware.archivement.statement.v1.Conds
+	1,  // 16: inspire.middleware.archivement.statement.v1.GetStatementsResponse.Infos:type_name -> inspire.middleware.archivement.statement.v1.Statement
+	0,  // 17: inspire.middleware.archivement.statement.v1.DeleteStatementRequest.Info:type_name -> inspire.middleware.archivement.statement.v1.StatementReq
+	1,  // 18: inspire.middleware.archivement.statement.v1.DeleteStatementResponse.Info:type_name -> inspire.middleware.archivement.statement.v1.Statement
+	3,  // 19: inspire.middleware.archivement.statement.v1.Middleware.CreateStatement:input_type -> inspire.middleware.archivement.statement.v1.CreateStatementRequest
+	5,  // 20: inspire.middleware.archivement.statement.v1.Middleware.CreateStatements:input_type -> inspire.middleware.archivement.statement.v1.CreateStatementsRequest
+	7,  // 21: inspire.middleware.archivement.statement.v1.Middleware.ExistStatementConds:input_type -> inspire.middleware.archivement.statement.v1.ExistStatementCondsRequest
+	9,  // 22: inspire.middleware.archivement.statement.v1.Middleware.GetStatements:input_type -> inspire.middleware.archivement.statement.v1.GetStatementsRequest
+	11, // 23: inspire.middleware.archivement.statement.v1.Middleware.DeleteStatement:input_type -> inspire.middleware.archivement.statement.v1.DeleteStatementRequest
+	4,  // 24: inspire.middleware.archivement.statement.v1.Middleware.CreateStatement:output_type -> inspire.middleware.archivement.statement.v1.CreateStatementResponse
+	6,  // 25: inspire.middleware.archivement.statement.v1.Middleware.CreateStatements:output_type -> inspire.middleware.archivement.statement.v1.CreateStatementsResponse
+	8,  // 26: inspire.middleware.archivement.statement.v1.Middleware.ExistStatementConds:output_type -> inspire.middleware.archivement.statement.v1.ExistStatementCondsResponse
+	10, // 27: inspire.middleware.archivement.statement.v1.Middleware.GetStatements:output_type -> inspire.middleware.archivement.statement.v1.GetStatementsResponse
+	12, // 28: inspire.middleware.archivement.statement.v1.Middleware.DeleteStatement:output_type -> inspire.middleware.archivement.statement.v1.DeleteStatementResponse
+	24, // [24:29] is the sub-list for method output_type
+	19, // [19:24] is the sub-list for method input_type
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	19, // [19:19] is the sub-list for extension type_name
 	19, // [19:19] is the sub-list for extension extendee
 	0,  // [0:19] is the sub-list for field type_name
 }
 
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 func init() { file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() }
 func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 	if File_npool_inspire_mw_v1_achievement_statement_statement_proto != nil {
+=======
+func init() { file_npool_inspire_mw_v1_archivement_statement_statement_proto_init() }
+func file_npool_inspire_mw_v1_archivement_statement_statement_proto_init() {
+	if File_npool_inspire_mw_v1_archivement_statement_statement_proto != nil {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
@@ -1293,7 +1640,11 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 			switch v := v.(*CreateStatementsRequest); i {
 			case 0:
 				return &v.state
@@ -1305,7 +1656,11 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 			switch v := v.(*CreateStatementsResponse); i {
 			case 0:
 				return &v.state
@@ -1317,8 +1672,13 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStatementsRequest); i {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistStatementCondsRequest); i {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 			case 0:
 				return &v.state
 			case 1:
@@ -1329,7 +1689,44 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStatementsResponse); i {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistStatementCondsResponse); i {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteStatementRequest); i {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStatementsRequest); i {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+=======
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStatementsResponse); i {
 			case 0:
 				return &v.state
@@ -1341,7 +1738,7 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteStatementRequest); i {
 			case 0:
 				return &v.state
@@ -1353,7 +1750,8 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_achievement_statement_statement_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_archivement_statement_statement_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 			switch v := v.(*DeleteStatementResponse); i {
 			case 0:
 				return &v.state
@@ -1374,7 +1772,7 @@ func file_npool_inspire_mw_v1_achievement_statement_statement_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_achievement_statement_statement_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
