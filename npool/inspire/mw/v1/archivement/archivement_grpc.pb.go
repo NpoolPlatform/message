@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_BookKeeping_FullMethodName = "/inspire.middleware.archivement.v1.Middleware/BookKeeping"
-	Middleware_Expropriate_FullMethodName = "/inspire.middleware.archivement.v1.Middleware/Expropriate"
+	Middleware_ExpropriateArchivement_FullMethodName = "/inspire.middleware.archivement.v1.Middleware/ExpropriateArchivement"
+	Middleware_GetArchivements_FullMethodName        = "/inspire.middleware.archivement.v1.Middleware/GetArchivements"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
-	Expropriate(ctx context.Context, in *ExpropriateRequest, opts ...grpc.CallOption) (*ExpropriateResponse, error)
+	ExpropriateArchivement(ctx context.Context, in *ExpropriateArchivementRequest, opts ...grpc.CallOption) (*ExpropriateArchivementResponse, error)
+	GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error)
 }
 
 type middlewareClient struct {
@@ -39,18 +39,18 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error) {
-	out := new(BookKeepingResponse)
-	err := c.cc.Invoke(ctx, Middleware_BookKeeping_FullMethodName, in, out, opts...)
+func (c *middlewareClient) ExpropriateArchivement(ctx context.Context, in *ExpropriateArchivementRequest, opts ...grpc.CallOption) (*ExpropriateArchivementResponse, error) {
+	out := new(ExpropriateArchivementResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExpropriateArchivement_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) Expropriate(ctx context.Context, in *ExpropriateRequest, opts ...grpc.CallOption) (*ExpropriateResponse, error) {
-	out := new(ExpropriateResponse)
-	err := c.cc.Invoke(ctx, Middleware_Expropriate_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetArchivements(ctx context.Context, in *GetArchivementsRequest, opts ...grpc.CallOption) (*GetArchivementsResponse, error) {
+	out := new(GetArchivementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetArchivements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,8 +61,8 @@ func (c *middlewareClient) Expropriate(ctx context.Context, in *ExpropriateReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
-	Expropriate(context.Context, *ExpropriateRequest) (*ExpropriateResponse, error)
+	ExpropriateArchivement(context.Context, *ExpropriateArchivementRequest) (*ExpropriateArchivementResponse, error)
+	GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -70,11 +70,11 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BookKeeping not implemented")
+func (UnimplementedMiddlewareServer) ExpropriateArchivement(context.Context, *ExpropriateArchivementRequest) (*ExpropriateArchivementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExpropriateArchivement not implemented")
 }
-func (UnimplementedMiddlewareServer) Expropriate(context.Context, *ExpropriateRequest) (*ExpropriateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Expropriate not implemented")
+func (UnimplementedMiddlewareServer) GetArchivements(context.Context, *GetArchivementsRequest) (*GetArchivementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetArchivements not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -89,38 +89,38 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_BookKeeping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BookKeepingRequest)
+func _Middleware_ExpropriateArchivement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExpropriateArchivementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).BookKeeping(ctx, in)
+		return srv.(MiddlewareServer).ExpropriateArchivement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_BookKeeping_FullMethodName,
+		FullMethod: Middleware_ExpropriateArchivement_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).BookKeeping(ctx, req.(*BookKeepingRequest))
+		return srv.(MiddlewareServer).ExpropriateArchivement(ctx, req.(*ExpropriateArchivementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_Expropriate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExpropriateRequest)
+func _Middleware_GetArchivements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetArchivementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).Expropriate(ctx, in)
+		return srv.(MiddlewareServer).GetArchivements(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_Expropriate_FullMethodName,
+		FullMethod: Middleware_GetArchivements_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Expropriate(ctx, req.(*ExpropriateRequest))
+		return srv.(MiddlewareServer).GetArchivements(ctx, req.(*GetArchivementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,12 +133,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "BookKeeping",
-			Handler:    _Middleware_BookKeeping_Handler,
+			MethodName: "ExpropriateArchivement",
+			Handler:    _Middleware_ExpropriateArchivement_Handler,
 		},
 		{
-			MethodName: "Expropriate",
-			Handler:    _Middleware_Expropriate_Handler,
+			MethodName: "GetArchivements",
+			Handler:    _Middleware_GetArchivements_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
