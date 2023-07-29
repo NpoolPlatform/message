@@ -53,7 +53,11 @@
         }
       }
     },
+<<<<<<< HEAD:npool/good/mw/v1/recommend/recommend.swagger.json
     "v1Recommend": {
+=======
+    "v1Archivement": {
+>>>>>>> Rename detail to statement:npool/inspire/mw/v1/archivement/archivement.swagger.json
       "type": "object",
       "properties": {
         "ID": {
@@ -62,6 +66,7 @@
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD:npool/good/mw/v1/recommend/recommend.swagger.json
         "GoodID": {
           "type": "string"
         },
@@ -96,8 +101,47 @@
           "type": "string"
         },
         "AppID": {
+=======
+        "UserID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "CoinTypeID of the good"
+        },
+        "TotalAmount": {
+          "type": "string",
+          "title": "Payment amount in USD"
+        },
+        "SelfAmount": {
+          "type": "string"
+        },
+        "TotalUnits": {
+          "type": "string"
+        },
+        "SelfUnits": {
+          "type": "string"
+        },
+        "TotalCommission": {
+          "type": "string",
+          "title": "Commission amount in USD"
+        },
+        "SelfCommission": {
+>>>>>>> Rename detail to statement:npool/inspire/mw/v1/archivement/archivement.swagger.json
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+<<<<<<< HEAD:npool/good/mw/v1/recommend/recommend.swagger.json
         "GoodID": {
           "type": "string"
         },
@@ -112,6 +156,68 @@
           "format": "float"
         }
       }
+=======
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1ExpropriateArchivementResponse": {
+      "type": "object"
+    },
+    "v1GetArchivementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Archivement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+>>>>>>> Rename detail to statement:npool/inspire/mw/v1/archivement/archivement.swagger.json
     }
   }
 }
