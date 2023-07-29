@@ -23,51 +23,52 @@ const (
 type Prefix int32
 
 const (
-	Prefix_DefaultPrefix                  Prefix = 0
-	Prefix_PrefixUserCode                 Prefix = 10
-	Prefix_PrefixUserAccount              Prefix = 20
-	Prefix_PrefixUserLogin                Prefix = 30
-	Prefix_PrefixWalletAccountLock        Prefix = 40
-	Prefix_PrefixAPIRegister              Prefix = 50
-	Prefix_PrefixCreateCoin               Prefix = 60
-	Prefix_PrefixCreateAppCoinDescription Prefix = 70
-	Prefix_PrefixCreateAppCoin            Prefix = 80
-	Prefix_PrefixSetFiat                  Prefix = 90
-	Prefix_PrefixCreateFiatCurrencyFeed   Prefix = 100
-	Prefix_PrefixCreateFiatCurrency       Prefix = 110
-	Prefix_PrefixCreateCoinCurrencyFeed   Prefix = 120
-	Prefix_PrefixCreateCoinCurrency       Prefix = 130
-	Prefix_PrefixCreateCoinFiat           Prefix = 140
-	Prefix_PrefixCreateCoinFiatCurrency   Prefix = 150
-	Prefix_PrefixCreateAppCountry         Prefix = 160
-	Prefix_PrefixCreateCountry            Prefix = 170
-	Prefix_PrefixCreateAppLang            Prefix = 180
-	Prefix_PrefixCreateLang               Prefix = 190
-	Prefix_PrefixCreateMessage            Prefix = 200
-	Prefix_PrefixCreateNotifUser          Prefix = 210
-	Prefix_PrefixCreateNotif              Prefix = 220
-	Prefix_PrefixCreateEmailTemplate      Prefix = 230
-	Prefix_PrefixCreateFrontendTemplate   Prefix = 240
-	Prefix_PrefixCreateSMSTemplate        Prefix = 250
-	Prefix_PrefixCreateApp                Prefix = 260
-	Prefix_PrefixCreateUser               Prefix = 270
-	Prefix_PrefixCreateSubscriber         Prefix = 280
-	Prefix_PrefixCreateAppSubscribe       Prefix = 290
-	Prefix_PrefixCreateAuth               Prefix = 300
-	Prefix_PrefixCreateKyc                Prefix = 310
-	Prefix_PrefixCreateRole               Prefix = 320
-	Prefix_PrefixCreateRoleUser           Prefix = 330
-	Prefix_PrefixCreateDepositAccount     Prefix = 340
-	Prefix_PrefixCreateGoodBenefitAccount Prefix = 350
-	Prefix_PrefixCreatePaymentAccount     Prefix = 360
-	Prefix_PrefixCreateUserTransfer       Prefix = 370
-	Prefix_PrefixCreateUserAccount        Prefix = 380
-	Prefix_PrefixCreatePlatformAccount    Prefix = 390
-	Prefix_PrefixCreateAppEvent           Prefix = 400
-	Prefix_PrefixCreateInvitationCode     Prefix = 410
-	Prefix_PrefixCreateRegistration       Prefix = 420
-	Prefix_PrefixCreateCommission         Prefix = 430
-	Prefix_PrefixCloneCommission          Prefix = 440
+	Prefix_DefaultPrefix                           Prefix = 0
+	Prefix_PrefixUserCode                          Prefix = 10
+	Prefix_PrefixUserAccount                       Prefix = 20
+	Prefix_PrefixUserLogin                         Prefix = 30
+	Prefix_PrefixWalletAccountLock                 Prefix = 40
+	Prefix_PrefixAPIRegister                       Prefix = 50
+	Prefix_PrefixCreateCoin                        Prefix = 60
+	Prefix_PrefixCreateAppCoinDescription          Prefix = 70
+	Prefix_PrefixCreateAppCoin                     Prefix = 80
+	Prefix_PrefixSetFiat                           Prefix = 90
+	Prefix_PrefixCreateFiatCurrencyFeed            Prefix = 100
+	Prefix_PrefixCreateFiatCurrency                Prefix = 110
+	Prefix_PrefixCreateCoinCurrencyFeed            Prefix = 120
+	Prefix_PrefixCreateCoinCurrency                Prefix = 130
+	Prefix_PrefixCreateCoinFiat                    Prefix = 140
+	Prefix_PrefixCreateCoinFiatCurrency            Prefix = 150
+	Prefix_PrefixCreateAppCountry                  Prefix = 160
+	Prefix_PrefixCreateCountry                     Prefix = 170
+	Prefix_PrefixCreateAppLang                     Prefix = 180
+	Prefix_PrefixCreateLang                        Prefix = 190
+	Prefix_PrefixCreateMessage                     Prefix = 200
+	Prefix_PrefixCreateNotifUser                   Prefix = 210
+	Prefix_PrefixCreateNotif                       Prefix = 220
+	Prefix_PrefixCreateEmailTemplate               Prefix = 230
+	Prefix_PrefixCreateFrontendTemplate            Prefix = 240
+	Prefix_PrefixCreateSMSTemplate                 Prefix = 250
+	Prefix_PrefixCreateApp                         Prefix = 260
+	Prefix_PrefixCreateUser                        Prefix = 270
+	Prefix_PrefixCreateSubscriber                  Prefix = 280
+	Prefix_PrefixCreateAppSubscribe                Prefix = 290
+	Prefix_PrefixCreateAuth                        Prefix = 300
+	Prefix_PrefixCreateKyc                         Prefix = 310
+	Prefix_PrefixCreateRole                        Prefix = 320
+	Prefix_PrefixCreateRoleUser                    Prefix = 330
+	Prefix_PrefixCreateDepositAccount              Prefix = 340
+	Prefix_PrefixCreateGoodBenefitAccount          Prefix = 350
+	Prefix_PrefixCreatePaymentAccount              Prefix = 360
+	Prefix_PrefixCreateUserTransfer                Prefix = 370
+	Prefix_PrefixCreateUserAccount                 Prefix = 380
+	Prefix_PrefixCreatePlatformAccount             Prefix = 390
+	Prefix_PrefixCreateAppEvent                    Prefix = 400
+	Prefix_PrefixCreateInvitationCode              Prefix = 410
+	Prefix_PrefixCreateRegistration                Prefix = 420
+	Prefix_PrefixCreateCommission                  Prefix = 430
+	Prefix_PrefixCloneCommission                   Prefix = 440
+	Prefix_PrefixCreateInspireArchivementStatement Prefix = 450
 )
 
 // Enum value maps for Prefix.
@@ -118,53 +119,55 @@ var (
 		420: "PrefixCreateRegistration",
 		430: "PrefixCreateCommission",
 		440: "PrefixCloneCommission",
+		450: "PrefixCreateInspireArchivementStatement",
 	}
 	Prefix_value = map[string]int32{
-		"DefaultPrefix":                  0,
-		"PrefixUserCode":                 10,
-		"PrefixUserAccount":              20,
-		"PrefixUserLogin":                30,
-		"PrefixWalletAccountLock":        40,
-		"PrefixAPIRegister":              50,
-		"PrefixCreateCoin":               60,
-		"PrefixCreateAppCoinDescription": 70,
-		"PrefixCreateAppCoin":            80,
-		"PrefixSetFiat":                  90,
-		"PrefixCreateFiatCurrencyFeed":   100,
-		"PrefixCreateFiatCurrency":       110,
-		"PrefixCreateCoinCurrencyFeed":   120,
-		"PrefixCreateCoinCurrency":       130,
-		"PrefixCreateCoinFiat":           140,
-		"PrefixCreateCoinFiatCurrency":   150,
-		"PrefixCreateAppCountry":         160,
-		"PrefixCreateCountry":            170,
-		"PrefixCreateAppLang":            180,
-		"PrefixCreateLang":               190,
-		"PrefixCreateMessage":            200,
-		"PrefixCreateNotifUser":          210,
-		"PrefixCreateNotif":              220,
-		"PrefixCreateEmailTemplate":      230,
-		"PrefixCreateFrontendTemplate":   240,
-		"PrefixCreateSMSTemplate":        250,
-		"PrefixCreateApp":                260,
-		"PrefixCreateUser":               270,
-		"PrefixCreateSubscriber":         280,
-		"PrefixCreateAppSubscribe":       290,
-		"PrefixCreateAuth":               300,
-		"PrefixCreateKyc":                310,
-		"PrefixCreateRole":               320,
-		"PrefixCreateRoleUser":           330,
-		"PrefixCreateDepositAccount":     340,
-		"PrefixCreateGoodBenefitAccount": 350,
-		"PrefixCreatePaymentAccount":     360,
-		"PrefixCreateUserTransfer":       370,
-		"PrefixCreateUserAccount":        380,
-		"PrefixCreatePlatformAccount":    390,
-		"PrefixCreateAppEvent":           400,
-		"PrefixCreateInvitationCode":     410,
-		"PrefixCreateRegistration":       420,
-		"PrefixCreateCommission":         430,
-		"PrefixCloneCommission":          440,
+		"DefaultPrefix":                           0,
+		"PrefixUserCode":                          10,
+		"PrefixUserAccount":                       20,
+		"PrefixUserLogin":                         30,
+		"PrefixWalletAccountLock":                 40,
+		"PrefixAPIRegister":                       50,
+		"PrefixCreateCoin":                        60,
+		"PrefixCreateAppCoinDescription":          70,
+		"PrefixCreateAppCoin":                     80,
+		"PrefixSetFiat":                           90,
+		"PrefixCreateFiatCurrencyFeed":            100,
+		"PrefixCreateFiatCurrency":                110,
+		"PrefixCreateCoinCurrencyFeed":            120,
+		"PrefixCreateCoinCurrency":                130,
+		"PrefixCreateCoinFiat":                    140,
+		"PrefixCreateCoinFiatCurrency":            150,
+		"PrefixCreateAppCountry":                  160,
+		"PrefixCreateCountry":                     170,
+		"PrefixCreateAppLang":                     180,
+		"PrefixCreateLang":                        190,
+		"PrefixCreateMessage":                     200,
+		"PrefixCreateNotifUser":                   210,
+		"PrefixCreateNotif":                       220,
+		"PrefixCreateEmailTemplate":               230,
+		"PrefixCreateFrontendTemplate":            240,
+		"PrefixCreateSMSTemplate":                 250,
+		"PrefixCreateApp":                         260,
+		"PrefixCreateUser":                        270,
+		"PrefixCreateSubscriber":                  280,
+		"PrefixCreateAppSubscribe":                290,
+		"PrefixCreateAuth":                        300,
+		"PrefixCreateKyc":                         310,
+		"PrefixCreateRole":                        320,
+		"PrefixCreateRoleUser":                    330,
+		"PrefixCreateDepositAccount":              340,
+		"PrefixCreateGoodBenefitAccount":          350,
+		"PrefixCreatePaymentAccount":              360,
+		"PrefixCreateUserTransfer":                370,
+		"PrefixCreateUserAccount":                 380,
+		"PrefixCreatePlatformAccount":             390,
+		"PrefixCreateAppEvent":                    400,
+		"PrefixCreateInvitationCode":              410,
+		"PrefixCreateRegistration":                420,
+		"PrefixCreateCommission":                  430,
+		"PrefixCloneCommission":                   440,
+		"PrefixCreateInspireArchivementStatement": 450,
 	}
 )
 
@@ -201,7 +204,7 @@ var file_npool_basetypes_v1_prefix_proto_rawDesc = []byte{
 	0x0a, 0x1f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x2f, 0x76, 0x31, 0x2f, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x0c, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2a,
-	0xed, 0x09, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x11, 0x0a, 0x0d, 0x44, 0x65,
+	0x9b, 0x0a, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x11, 0x0a, 0x0d, 0x44, 0x65,
 	0x66, 0x61, 0x75, 0x6c, 0x74, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x10, 0x00, 0x12, 0x12, 0x0a,
 	0x0e, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x64, 0x65, 0x10,
 	0x0a, 0x12, 0x15, 0x0a, 0x11, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x55, 0x73, 0x65, 0x72, 0x41,
@@ -279,11 +282,14 @@ var file_npool_basetypes_v1_prefix_proto_rawDesc = []byte{
 	0x69, 0x6f, 0x6e, 0x10, 0xa4, 0x03, 0x12, 0x1b, 0x0a, 0x16, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
 	0x10, 0xae, 0x03, 0x12, 0x1a, 0x0a, 0x15, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x43, 0x6c, 0x6f,
-	0x6e, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x10, 0xb8, 0x03, 0x42,
-	0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79,
-	0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x65, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x10, 0xb8, 0x03, 0x12,
+	0x2c, 0x0a, 0x27, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49,
+	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x41, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x10, 0xc2, 0x03, 0x42, 0x35, 0x5a,
+	0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
+	0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
