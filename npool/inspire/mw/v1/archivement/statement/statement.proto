@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
+    rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
     rpc ExistStatementConds (ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
@@ -72,6 +73,14 @@ message CreateStatementRequest {
 
 message CreateStatementResponse {
     Statement Info = 10;
+}
+
+message CreateStatementsRequest {
+    repeated StatementReq Infos = 10;
+}
+
+message CreateStatementsResponse {
+    repeated Statement Infos = 10;
 }
 
 message ExistStatementCondsRequest {

@@ -99,6 +99,18 @@
         }
       }
     },
+    "v1CreateStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Statement"
+          }
+        }
+      }
+    },
     "v1DeleteStatementResponse": {
       "type": "object",
       "properties": {

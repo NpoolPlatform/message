@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateStatement_FullMethodName     = "/inspire.middleware.archivement.statement.v1.Middleware/CreateStatement"
+	Middleware_CreateStatements_FullMethodName    = "/inspire.middleware.archivement.statement.v1.Middleware/CreateStatements"
 	Middleware_ExistStatementConds_FullMethodName = "/inspire.middleware.archivement.statement.v1.Middleware/ExistStatementConds"
 	Middleware_GetStatements_FullMethodName       = "/inspire.middleware.archivement.statement.v1.Middleware/GetStatements"
 	Middleware_DeleteStatement_FullMethodName     = "/inspire.middleware.archivement.statement.v1.Middleware/DeleteStatement"
@@ -30,6 +31,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
+	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
 	ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
@@ -46,6 +48,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error) {
 	out := new(CreateStatementResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error) {
+	out := new(CreateStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateStatements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,6 +95,7 @@ func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatem
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
+	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
 	ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
@@ -96,6 +108,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatement not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStatements not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStatementConds not implemented")
@@ -133,6 +148,24 @@ func _Middleware_CreateStatement_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateStatement(ctx, req.(*CreateStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStatementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateStatements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateStatements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateStatements(ctx, req.(*CreateStatementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -201,6 +234,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateStatement",
 			Handler:    _Middleware_CreateStatement_Handler,
+		},
+		{
+			MethodName: "CreateStatements",
+			Handler:    _Middleware_CreateStatements_Handler,
 		},
 		{
 			MethodName: "ExistStatementConds",
