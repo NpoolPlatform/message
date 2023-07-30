@@ -19,6 +19,13 @@ message ThirdUserInfo {
 		string Message   = 50;
 }
 
+message AccessTokenInfo {
+		string AccessToken = 10;
+		string RefreshAccessToken = 20;
+		string TokenType = 30;
+		string Scope = 40;
+}
+
 message GetOAuthAccessTokenRequest {
   	basetypes.v1.SignMethod ClientName   = 10;
   	string                  Code         = 20;
@@ -27,7 +34,7 @@ message GetOAuthAccessTokenRequest {
 }
 
 message GetOAuthAccessTokenResponse {
-		string AccessToken = 10;
+		AccessTokenInfo Info = 10;
 }
 
 message GetOAuthUserInfoRequest {

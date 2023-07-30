@@ -45,11 +45,28 @@
         }
       }
     },
-    "v1GetOAuthAccessTokenResponse": {
+    "v1AccessTokenInfo": {
       "type": "object",
       "properties": {
         "AccessToken": {
           "type": "string"
+        },
+        "RefreshAccessToken": {
+          "type": "string"
+        },
+        "TokenType": {
+          "type": "string"
+        },
+        "Scope": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetOAuthAccessTokenResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AccessTokenInfo"
         }
       }
     },
