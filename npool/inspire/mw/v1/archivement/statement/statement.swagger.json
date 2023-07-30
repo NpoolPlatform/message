@@ -147,57 +147,79 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "DirectContributorID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"direct_contributor_id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "OrderID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
         },
         "SelfOrder": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"self_order\""
         },
         "PaymentID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "PaymentCoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
         "PaymentCoinUSDCurrency": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
         },
         "Units": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"units\""
         },
         "Amount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
         },
         "USDAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"usd_amount\""
         },
         "Commission": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"commission\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
     },
