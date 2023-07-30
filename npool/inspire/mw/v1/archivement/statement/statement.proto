@@ -57,7 +57,7 @@ message Statement {
     string PaymentCoinTypeID        = 90;
     // @inject_tag: sql:"payment_coin_usd_currency"
     string PaymentCoinUSDCurrency   = 100;
-    // @inject_tag: sql:"units"
+    // @inject_tag: sql:"units_v1"
     string Units                    = 110;
     // @inject_tag: sql:"amount"
     string Amount                   = 120;
