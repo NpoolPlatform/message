@@ -208,8 +208,8 @@ type Statement struct {
 	PaymentCoinTypeID string `protobuf:"bytes,90,opt,name=PaymentCoinTypeID,proto3" json:"PaymentCoinTypeID,omitempty" sql:"payment_coin_type_id"`
 	// @inject_tag: sql:"payment_coin_usd_currency"
 	PaymentCoinUSDCurrency string `protobuf:"bytes,100,opt,name=PaymentCoinUSDCurrency,proto3" json:"PaymentCoinUSDCurrency,omitempty" sql:"payment_coin_usd_currency"`
-	// @inject_tag: sql:"units"
-	Units string `protobuf:"bytes,110,opt,name=Units,proto3" json:"Units,omitempty" sql:"units"`
+	// @inject_tag: sql:"units_v1"
+	Units string `protobuf:"bytes,110,opt,name=Units,proto3" json:"Units,omitempty" sql:"units_v1"`
 	// @inject_tag: sql:"amount"
 	Amount string `protobuf:"bytes,120,opt,name=Amount,proto3" json:"Amount,omitempty" sql:"amount"`
 	// @inject_tag: sql:"usd_amount"
