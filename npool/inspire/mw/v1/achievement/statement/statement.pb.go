@@ -209,12 +209,17 @@ type Statement struct {
 	// @inject_tag: sql:"payment_coin_usd_currency"
 	PaymentCoinUSDCurrency string `protobuf:"bytes,100,opt,name=PaymentCoinUSDCurrency,proto3" json:"PaymentCoinUSDCurrency,omitempty" sql:"payment_coin_usd_currency"`
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.pb.go
 	// @inject_tag: sql:"units_v1"
 	Units string `protobuf:"bytes,110,opt,name=Units,proto3" json:"Units,omitempty" sql:"units_v1"`
 =======
 	// @inject_tag: sql:"units"
 	Units string `protobuf:"bytes,110,opt,name=Units,proto3" json:"Units,omitempty" sql:"units"`
 >>>>>>> Add statement sql tag:npool/inspire/mw/v1/archivement/statement/statement.pb.go
+=======
+	// @inject_tag: sql:"units_v1"
+	Units string `protobuf:"bytes,110,opt,name=Units,proto3" json:"Units,omitempty" sql:"units_v1"`
+>>>>>>> Correct tag:npool/inspire/mw/v1/archivement/statement/statement.pb.go
 	// @inject_tag: sql:"amount"
 	Amount string `protobuf:"bytes,120,opt,name=Amount,proto3" json:"Amount,omitempty" sql:"amount"`
 	// @inject_tag: sql:"usd_amount"
