@@ -192,7 +192,7 @@
         },
         "Units": {
           "type": "string",
-          "title": "@inject_tag: sql:\"units\""
+          "title": "@inject_tag: sql:\"units_v1\""
         },
         "Amount": {
           "type": "string",
