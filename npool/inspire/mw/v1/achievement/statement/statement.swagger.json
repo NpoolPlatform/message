@@ -202,7 +202,11 @@
         },
         "Units": {
           "type": "string",
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.swagger.json
           "title": "@inject_tag: sql:\"units_v1\""
+=======
+          "title": "@inject_tag: sql:\"units\""
+>>>>>>> Add statement sql tag:npool/inspire/mw/v1/archivement/statement/statement.swagger.json
         },
         "Amount": {
           "type": "string",
