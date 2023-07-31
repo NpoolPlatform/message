@@ -5,17 +5,11 @@ package inspire.middleware.accounting.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/accounting";
 
 import "npool/basetypes/inspire/v1/enums.proto";
+import "npool/inspire/mw/v1/archivement/statement/statement.proto";
 
 // Service Name
 service Middleware {
     rpc Accounting (AccountingRequest) returns (AccountingResponse) {}
-}
-
-message Commission {
-    string AppID    = 10;
-    string UserID   = 20;
-    optional string DirectContributorUserID = 30;
-    string Amount   = 40;
 }
 
 message AccountingRequest {
@@ -37,7 +31,7 @@ message AccountingRequest {
 }
 
 message AccountingResponse {
-    repeated Commission Infos = 10;
+    repeated inspire.middleware.archivement.statement.v1.Statement Infos = 10;
 }
 
 
