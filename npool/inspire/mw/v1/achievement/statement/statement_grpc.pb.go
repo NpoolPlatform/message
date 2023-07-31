@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/achivement/statement/statement.proto
+// source: npool/inspire/mw/v1/achievement/statement/statement.proto
 
 package statement
 
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatement"
-	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatements"
-	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achivement.statement.v1.Middleware/GetStatements"
-	Middleware_DeleteStatement_FullMethodName  = "/inspire.middleware.achivement.statement.v1.Middleware/DeleteStatement"
+	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatement"
+	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatements"
+	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achievement.statement.v1.Middleware/GetStatements"
+	Middleware_DeleteStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/DeleteStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -195,7 +195,7 @@ func _Middleware_DeleteStatement_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.achivement.statement.v1.Middleware",
+	ServiceName: "inspire.middleware.achievement.statement.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -216,5 +216,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/achivement/statement/statement.proto",
+	Metadata: "npool/inspire/mw/v1/achievement/statement/statement.proto",
 }

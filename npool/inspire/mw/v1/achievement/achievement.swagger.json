@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/achivement/achivement.proto",
+    "title": "npool/inspire/mw/v1/achievement/achievement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1Achivement": {
+    "v1Achievement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -109,7 +109,7 @@
         }
       }
     },
-    "v1AchivementReq": {
+    "v1AchievementReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -170,25 +170,25 @@
         }
       }
     },
-    "v1DeleteAchivementResponse": {
+    "v1DeleteAchievementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Achivement"
+          "$ref": "#/definitions/v1Achievement"
         }
       }
     },
-    "v1ExpropriateAchivementResponse": {
+    "v1ExpropriateAchievementResponse": {
       "type": "object"
     },
-    "v1GetAchivementsResponse": {
+    "v1GetAchievementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Achivement"
+            "$ref": "#/definitions/v1Achievement"
           }
         },
         "Total": {
