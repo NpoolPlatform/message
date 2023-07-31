@@ -1,25 +1,23 @@
 syntax = "proto3";
 
-package inspire.gateway.archivement.v1;
+package inspire.gateway.achievement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/achievement";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
 
 // Service Name
 service Gateway {
     rpc GetGoodArchivements (GetGoodArchivementsRequest) returns (GetGoodArchivementsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/goodarchivements"
+            post: "/v1/get/goodachievements"
             body: "*"
         };
     }
 
     rpc GetUserGoodArchivements (GetUserGoodArchivementsRequest) returns (GetUserGoodArchivementsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/goodarchivements"
+            post: "/v1/get/user/goodachievements"
             body: "*"
         };
     }

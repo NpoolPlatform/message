@@ -5,9 +5,8 @@ package inspire.gateway.coupon.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/coupon";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
 import "npool/inspire/mw/v1/coupon/coupon.proto";
-import "npool/npool.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -44,7 +43,7 @@ message CreateCouponRequest {
     string AppID        = 10;
     string UserID       = 20;
     string TargetAppID  = 30;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 40;
+    basetypes.inspire.v1.CouponType CouponType = 40;
     string Value        = 50;
     string Circulation  = 60;
     uint32 StartAt      = 70;
@@ -63,7 +62,7 @@ message CreateCouponResponse {
 message UpdateCouponRequest {
     string ID          = 10;
     string TargetAppID = 20;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    basetypes.inspire.v1.CouponType CouponType = 30;
     optional string Value        = 40;
     optional string Circulation  = 50;
     optional uint32 StartAt      = 60;
@@ -81,26 +80,26 @@ message UpdateCouponResponse {
 
 message GetCouponsRequest {
     string AppID  = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    basetypes.inspire.v1.CouponType CouponType = 20;
     int32  Offset = 30;
     int32  Limit  = 40;
 }
 
 message GetCouponsResponse {
     repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
-    uint32                                              Total = 20;
+    uint32                                       Total = 20;
 }
 
 message GetAppCouponsRequest {
     string AppID       = 10;
     string TargetAppID = 20;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    basetypes.inspire.v1.CouponType CouponType = 30;
     int32  Offset      = 40;
     int32  Limit       = 50;
 }
 
 message GetAppCouponsResponse {
     repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
-    uint32                                              Total = 20;
+    uint32                                       Total = 20;
 }
 

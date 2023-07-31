@@ -5,10 +5,9 @@ package inspire.gateway.coupon.allocated.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/allocated";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
 import "npool/inspire/mw/v1/coupon/allocated/allocated.proto";
 import "npool/inspire/mw/v1/coupon/coupon.proto";
-import "npool/npool.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -35,7 +34,7 @@ service Gateway {
 message CreateCouponRequest {
     string AppID        = 10;
     string TargetUserID = 20;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    basetypes.inspire.v1.CouponType CouponType = 30;
     string CouponID     = 40;
 }
 

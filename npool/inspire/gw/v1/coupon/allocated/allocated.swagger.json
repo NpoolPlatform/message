@@ -248,22 +248,6 @@
         }
       }
     },
-    "couponallocatedv1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
-    },
     "inspiregatewaycouponallocatedv1CreateCouponRequest": {
       "type": "object",
       "properties": {
@@ -274,7 +258,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/couponallocatedv1CouponType"
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
         "CouponID": {
           "type": "string"
