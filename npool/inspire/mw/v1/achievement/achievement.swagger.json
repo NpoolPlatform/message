@@ -118,10 +118,14 @@
       }
     },
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
     "v1AchievementReq": {
 =======
     "v1AchivementReq": {
 >>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement.swagger.json
+=======
+    "v1AchievementReq": {
+>>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object",
       "properties": {
         "ID": {
@@ -183,6 +187,7 @@
       }
     },
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
     "v1DeleteAchievementResponse": {
       "type": "object",
       "properties": {
@@ -194,15 +199,22 @@
     "v1ExpropriateAchievementResponse": {
 =======
     "v1DeleteAchivementResponse": {
+=======
+    "v1DeleteAchievementResponse": {
+>>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Achivement"
+          "$ref": "#/definitions/v1Achievement"
         }
       }
     },
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
     "v1ExpropriateAchivementResponse": {
 >>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement.swagger.json
+=======
+    "v1ExpropriateAchievementResponse": {
+>>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object"
     },
     "v1GetAchievementsResponse": {
