@@ -14,7 +14,7 @@ enum MsgID {
     RegisterAPIsReq              = 60;
     UpdateOpLogHumanReadableReq  = 70;
     CreateNewLoginReq            = 80;
-    CreateCommission             = 90;
+    CreateCommissionReq          = 90;
     CreateSampleMsgReq           = 100000000;
 }
 
