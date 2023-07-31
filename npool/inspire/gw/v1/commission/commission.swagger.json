@@ -360,11 +360,17 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
 =======
 >>>>>>> Remove settletype
+=======
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+>>>>>>> Add commission settletype and settlemode
         "AmountOrPercent": {
           "type": "string"
         },
@@ -374,9 +380,12 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
+<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
+=======
+>>>>>>> Add commission settletype and settlemode
         }
       }
     },
@@ -619,6 +628,9 @@
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
         "AmountOrPercent": {
           "type": "string"
         },
@@ -628,9 +640,12 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
+<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
+=======
+>>>>>>> Add commission settletype and settlemode
         }
       }
     },
