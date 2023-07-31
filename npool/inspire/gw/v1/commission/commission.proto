@@ -90,8 +90,7 @@ message CreateCommissionRequest {
     string          UserID       = 20;
     string          TargetUserID = 30;
     optional string GoodID       = 40;
-    basetypes.inspire.v1.SettleType SettleType = 50;
-    string          Value        = 60;
+    string          AmountOrPercent = 60;
     uint32          StartAt      = 70;
 }
 
@@ -103,8 +102,7 @@ message CreateUserCommissionRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
     optional string GoodID       = 30;
-    basetypes.inspire.v1.SettleType SettleType = 40;
-    string          Value        = 50;
+    string          AmountOrPercent = 50;
     uint32          StartAt      = 60;
 }
 
@@ -115,8 +113,7 @@ message CreateUserCommissionResponse {
 message UpdateCommissionRequest {
     string          ID      = 10;
     string          AppID   = 20;
-    basetypes.inspire.v1.SettleType SettleType = 30;
-    optional string Value   = 40;
+    optional string AmountOrPercent = 40;
     optional uint32 StartAt = 50;
 }
 
@@ -127,7 +124,6 @@ message UpdateCommissionResponse {
 message GetCommissionsRequest {
     string AppID   = 10;
     string UserID  = 20;
-    basetypes.inspire.v1.SettleType SettleType = 30;
     int32  Offset  = 40;
     int32  Limit   = 50;
 }
@@ -140,7 +136,6 @@ message GetCommissionsResponse {
 message GetAppCommissionsRequest {
     string AppID   = 10;
     optional uint32 EndAt = 20;
-    basetypes.inspire.v1.SettleType SettleType = 30;
     int32  Offset  = 40;
     int32  Limit   = 50;
 }
@@ -154,8 +149,7 @@ message CloneCommissionsRequest {
     string AppID      = 10;
     string FromGoodID = 20;
     string ToGoodID   = 30;
-    string Value      = 40;
-    basetypes.inspire.v1.SettleType SettleType = 50;
+    string AmountOrPercent = 40;
 }
 
 message CloneCommissionsResponse {
@@ -165,8 +159,7 @@ message CloneAppCommissionsRequest {
     string TargetAppID = 10;
     string FromGoodID  = 20;
     string ToGoodID    = 30;
-    string Value       = 40;
-    basetypes.inspire.v1.SettleType SettleType = 50;
+    string AmountOrPercent = 40;
 }
 
 message CloneAppCommissionsResponse {
