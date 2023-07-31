@@ -88,6 +88,9 @@
         },
         "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -270,6 +273,20 @@
         },
         "Commission": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
