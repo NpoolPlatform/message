@@ -254,7 +254,11 @@
         "ToGoodID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "ScalePercent": {
+=======
+        "AmountOrPercent": {
+>>>>>>> Remove settletype
           "type": "string"
         }
       }
@@ -355,9 +359,12 @@
         "GoodID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
+=======
+>>>>>>> Remove settletype
         "AmountOrPercent": {
           "type": "string"
         },
@@ -391,11 +398,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
 >>>>>>> Remove inspire manager message
+=======
+>>>>>>> Remove settletype
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -434,9 +444,12 @@
 >>>>>>> Remove inspire manager message
           "type": "string"
         },
+<<<<<<< HEAD
         "AppID": {
           "type": "string"
         },
+=======
+>>>>>>> Remove settletype
         "AmountOrPercent": {
           "type": "string"
         },
@@ -499,11 +512,8 @@
         "ToGoodID": {
           "type": "string"
         },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -525,10 +535,7 @@
         "GoodID": {
           "type": "string"
         },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
@@ -608,6 +615,7 @@
           "format": "int64"
 >>>>>>> Remove inspire manager message
         },
+<<<<<<< HEAD
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
@@ -644,6 +652,8 @@
           "type": "integer",
           "format": "int64"
         },
+=======
+>>>>>>> Remove settletype
         "Offset": {
           "type": "integer",
           "format": "int32"
