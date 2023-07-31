@@ -44,7 +44,7 @@ message Achivement {
     string TotalAmount        = 60;
     // @inject_tag: sql:"self_amount"
     string SelfAmount         = 70;
-    // @inject_tag: sql:"total_untis_v1"
+    // @inject_tag: sql:"total_units_v1"
     string TotalUnits         = 80;
     // @inject_tag: sql:"self_units_v1"
     string SelfUnits          = 90;

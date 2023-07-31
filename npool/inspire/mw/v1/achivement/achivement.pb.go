@@ -170,8 +170,8 @@ type Achivement struct {
 	TotalAmount string `protobuf:"bytes,60,opt,name=TotalAmount,proto3" json:"TotalAmount,omitempty" sql:"total_amount"`
 	// @inject_tag: sql:"self_amount"
 	SelfAmount string `protobuf:"bytes,70,opt,name=SelfAmount,proto3" json:"SelfAmount,omitempty" sql:"self_amount"`
-	// @inject_tag: sql:"total_untis_v1"
-	TotalUnits string `protobuf:"bytes,80,opt,name=TotalUnits,proto3" json:"TotalUnits,omitempty" sql:"total_untis_v1"`
+	// @inject_tag: sql:"total_units_v1"
+	TotalUnits string `protobuf:"bytes,80,opt,name=TotalUnits,proto3" json:"TotalUnits,omitempty" sql:"total_units_v1"`
 	// @inject_tag: sql:"self_units_v1"
 	SelfUnits string `protobuf:"bytes,90,opt,name=SelfUnits,proto3" json:"SelfUnits,omitempty" sql:"self_units_v1"`
 	// Commission amount in USD
