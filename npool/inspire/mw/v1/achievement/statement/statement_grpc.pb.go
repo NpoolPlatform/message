@@ -2,7 +2,11 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 // source: npool/inspire/mw/v1/achievement/statement/statement.proto
+=======
+// source: npool/inspire/mw/v1/achivement/statement/statement.proto
+>>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 
 package statement
 
@@ -20,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatement"
 	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatements"
 	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achievement.statement.v1.Middleware/GetStatements"
@@ -31,6 +36,13 @@ const (
 	Middleware_GetStatements_FullMethodName       = "/inspire.middleware.archivement.statement.v1.Middleware/GetStatements"
 	Middleware_DeleteStatement_FullMethodName     = "/inspire.middleware.archivement.statement.v1.Middleware/DeleteStatement"
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
+=======
+	Middleware_CreateStatement_FullMethodName     = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatement"
+	Middleware_CreateStatements_FullMethodName    = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatements"
+	Middleware_ExistStatementConds_FullMethodName = "/inspire.middleware.achivement.statement.v1.Middleware/ExistStatementConds"
+	Middleware_GetStatements_FullMethodName       = "/inspire.middleware.achivement.statement.v1.Middleware/GetStatements"
+	Middleware_DeleteStatement_FullMethodName     = "/inspire.middleware.achivement.statement.v1.Middleware/DeleteStatement"
+>>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -250,7 +262,11 @@ func _Middleware_DeleteStatement_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 	ServiceName: "inspire.middleware.achievement.statement.v1.Middleware",
+=======
+	ServiceName: "inspire.middleware.achivement.statement.v1.Middleware",
+>>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -278,5 +294,9 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 	Metadata: "npool/inspire/mw/v1/achievement/statement/statement.proto",
+=======
+	Metadata: "npool/inspire/mw/v1/achivement/statement/statement.proto",
+>>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 }

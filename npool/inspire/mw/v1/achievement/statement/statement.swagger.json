@@ -1,7 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.swagger.json
     "title": "npool/inspire/mw/v1/achievement/statement/statement.proto",
+=======
+    "title": "npool/inspire/mw/v1/achivement/statement/statement.proto",
+>>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement.swagger.json
     "version": "version not set"
   },
   "tags": [
