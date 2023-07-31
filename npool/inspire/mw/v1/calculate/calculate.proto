@@ -5,7 +5,7 @@ package inspire.middleware.calculate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/calculate";
 
 import "npool/basetypes/inspire/v1/enums.proto";
-import "npool/inspire/mw/v1/achivement/statement/statement.proto";
+import "npool/inspire/mw/v1/achievement/statement/statement.proto";
 
 // Service Name
 service Middleware {
@@ -31,7 +31,7 @@ message CalculateRequest {
 }
 
 message CalculateResponse {
-    repeated inspire.middleware.achivement.statement.v1.Statement Infos = 10;
+    repeated inspire.middleware.achievement.statement.v1.Statement Infos = 10;
 }
 
 

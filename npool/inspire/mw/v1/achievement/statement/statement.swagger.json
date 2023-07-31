@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/achivement/statement/statement.proto",
+    "title": "npool/inspire/mw/v1/achievement/statement/statement.proto",
     "version": "version not set"
   },
   "tags": [
