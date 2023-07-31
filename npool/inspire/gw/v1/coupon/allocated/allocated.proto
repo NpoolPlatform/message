@@ -34,8 +34,7 @@ service Gateway {
 message CreateCouponRequest {
     string AppID        = 10;
     string TargetUserID = 20;
-    basetypes.inspire.v1.CouponType CouponType = 30;
-    string CouponID     = 40;
+    string CouponID     = 30;
 }
 
 message CreateCouponResponse {
