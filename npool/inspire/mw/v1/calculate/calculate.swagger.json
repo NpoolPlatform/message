@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/accounting/accounting.proto",
+    "title": "npool/inspire/mw/v1/calculate/calculate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1AccountingResponse": {
+    "v1CalculateResponse": {
       "type": "object",
       "properties": {
         "Infos": {
