@@ -84,6 +84,7 @@ message Conds {
     optional basetypes.v1.StringVal PaymentID           = 70;
     optional basetypes.v1.StringVal CoinTypeID          = 80;
     optional basetypes.v1.StringVal PaymentCoinTypeID   = 90;
+    optional basetypes.v1.StringSliceVal UserIDs        = 100;
 }
 
 message CreateStatementRequest {
