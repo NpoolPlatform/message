@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/archivement/archivement.proto",
+    "title": "npool/inspire/mw/v1/achivement/achivement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1Archivement": {
+    "v1Achivement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -109,17 +109,17 @@
         }
       }
     },
-    "v1ExpropriateArchivementResponse": {
+    "v1ExpropriateAchivementResponse": {
       "type": "object"
     },
-    "v1GetArchivementsResponse": {
+    "v1GetAchivementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Archivement"
+            "$ref": "#/definitions/v1Achivement"
           }
         },
         "Total": {
