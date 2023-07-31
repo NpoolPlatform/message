@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/accounting/accounting.proto
+// source: npool/inspire/mw/v1/calculate/calculate.proto
 
-package accounting
+package calculate
 
 import (
 	context "context"
@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_Accounting_FullMethodName = "/inspire.middleware.accounting.v1.Middleware/Accounting"
+	Middleware_Calculate_FullMethodName = "/inspire.middleware.calculate.v1.Middleware/Calculate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	Accounting(ctx context.Context, in *AccountingRequest, opts ...grpc.CallOption) (*AccountingResponse, error)
+	Calculate(ctx context.Context, in *CalculateRequest, opts ...grpc.CallOption) (*CalculateResponse, error)
 }
 
 type middlewareClient struct {
@@ -37,9 +37,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) Accounting(ctx context.Context, in *AccountingRequest, opts ...grpc.CallOption) (*AccountingResponse, error) {
-	out := new(AccountingResponse)
-	err := c.cc.Invoke(ctx, Middleware_Accounting_FullMethodName, in, out, opts...)
+func (c *middlewareClient) Calculate(ctx context.Context, in *CalculateRequest, opts ...grpc.CallOption) (*CalculateResponse, error) {
+	out := new(CalculateResponse)
+	err := c.cc.Invoke(ctx, Middleware_Calculate_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *middlewareClient) Accounting(ctx context.Context, in *AccountingRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error)
+	Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -58,8 +58,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) Accounting(context.Context, *AccountingRequest) (*AccountingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Accounting not implemented")
+func (UnimplementedMiddlewareServer) Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Calculate not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -74,20 +74,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_Accounting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AccountingRequest)
+func _Middleware_Calculate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CalculateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).Accounting(ctx, in)
+		return srv.(MiddlewareServer).Calculate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_Accounting_FullMethodName,
+		FullMethod: Middleware_Calculate_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Accounting(ctx, req.(*AccountingRequest))
+		return srv.(MiddlewareServer).Calculate(ctx, req.(*CalculateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,14 +96,14 @@ func _Middleware_Accounting_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.accounting.v1.Middleware",
+	ServiceName: "inspire.middleware.calculate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Accounting",
-			Handler:    _Middleware_Accounting_Handler,
+			MethodName: "Calculate",
+			Handler:    _Middleware_Calculate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/accounting/accounting.proto",
+	Metadata: "npool/inspire/mw/v1/calculate/calculate.proto",
 }
