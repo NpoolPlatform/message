@@ -53,6 +53,8 @@ message CreateCouponRequest {
     optional string TargetUserID = 110;
     optional string GoodID       = 120;
     optional string Threshold    = 130;
+    basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
+    bool   Random       = 150;
 }
 
 message CreateCouponResponse {
@@ -72,6 +74,8 @@ message UpdateCouponRequest {
     optional string TargetUserID = 100;
     optional string GoodID       = 110;
     optional string Threshold    = 120;
+    optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
+    optional bool   Random       = 140;
 }
 
 message UpdateCouponResponse {
