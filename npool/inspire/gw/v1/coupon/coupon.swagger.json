@@ -182,7 +182,7 @@
         "CouponType": {
           "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
-        "Value": {
+        "Denomination": {
           "type": "string"
         },
         "Circulation": {
@@ -268,7 +268,7 @@
         "CouponType": {
           "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
-        "Value": {
+        "Denomination": {
           "type": "string"
         },
         "Circulation": {
