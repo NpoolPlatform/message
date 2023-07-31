@@ -109,6 +109,44 @@
         }
       }
     },
+    "v1AchivementReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "string"
+        },
+        "SelfAmount": {
+          "type": "string"
+        },
+        "TotalUnits": {
+          "type": "string"
+        },
+        "SelfUnits": {
+          "type": "string"
+        },
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -129,6 +167,14 @@
         },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1DeleteAchivementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Achivement"
         }
       }
     },

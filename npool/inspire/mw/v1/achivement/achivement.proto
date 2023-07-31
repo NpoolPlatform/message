@@ -11,6 +11,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc ExpropriateAchivement (ExpropriateAchivementRequest) returns (ExpropriateAchivementResponse) {}
     rpc GetAchivements        (GetAchivementsRequest)        returns (GetAchivementsResponse)        {}
+    rpc DeleteAchivement      (DeleteAchivementRequest)      returns (DeleteAchivementResponse)      {}
 }
 
 message AchivementReq {
@@ -88,3 +89,10 @@ message GetAchivementsResponse {
     uint32               Total = 20;
 }
 
+message DeleteAchivementRequest {
+    AchivementReq Info = 10;
+}
+
+message DeleteAchivementResponse {
+    Achivement Info = 10;
+}
