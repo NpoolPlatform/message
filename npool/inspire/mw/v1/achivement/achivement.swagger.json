@@ -78,11 +78,11 @@
         },
         "TotalUnits": {
           "type": "string",
-          "title": "@inject_tag: sql:\"total_untis\""
+          "title": "@inject_tag: sql:\"total_untis_v1\""
         },
         "SelfUnits": {
           "type": "string",
-          "title": "@inject_tag: sql:\"self_units\""
+          "title": "@inject_tag: sql:\"self_units_v1\""
         },
         "TotalCommission": {
           "type": "string",
