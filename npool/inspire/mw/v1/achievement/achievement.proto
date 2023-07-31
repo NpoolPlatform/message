@@ -1,34 +1,20 @@
 syntax = "proto3";
 
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.proto
 package inspire.middleware.achievement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement";
-=======
-package inspire.middleware.achivement.v1;
-
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achivement";
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.proto
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.proto
     rpc ExpropriateAchievement (ExpropriateAchievementRequest) returns (ExpropriateAchievementResponse) {}
     rpc GetAchievements        (GetAchievementsRequest)        returns (GetAchievementsResponse)        {}
     rpc DeleteAchievement      (DeleteAchievementRequest)      returns (DeleteAchievementResponse)      {}
 }
 
 message AchievementReq {
-=======
-    rpc ExpropriateAchivement (ExpropriateAchivementRequest) returns (ExpropriateAchivementResponse) {}
-    rpc GetAchivements        (GetAchivementsRequest)        returns (GetAchivementsResponse)        {}
-}
-
-message AchivementReq {
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.proto
     optional string ID              = 10;
     optional string AppID           = 20;
     optional string UserID          = 30;
@@ -42,12 +28,8 @@ message AchivementReq {
     optional string SelfCommission  = 110;
 }
 
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.proto
 message Achievement {
     // @inject_tag: sql:"id"
-=======
-message Achivement {
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.proto
     string ID                 = 10;
     // @inject_tag: sql:"app_id"
     string AppID              = 20;
@@ -89,7 +71,6 @@ message Conds {
     optional basetypes.v1.StringSliceVal UserIDs = 120;
 }
 
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.proto
 message ExpropriateAchievementRequest {
     string OrderID = 10;
 }
@@ -98,28 +79,13 @@ message ExpropriateAchievementResponse {
 }
 
 message GetAchievementsRequest {
-=======
-message ExpropriateAchivementRequest {
-    string OrderID = 10;
-}
-
-message ExpropriateAchivementResponse {
-}
-
-message GetAchivementsRequest {
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.proto
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.proto
 message GetAchievementsResponse {
     repeated Achievement Infos = 10;
-=======
-message GetAchivementsResponse {
-    repeated Achivement Infos = 10;
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.proto
     uint32               Total = 20;
 }
 
