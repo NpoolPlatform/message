@@ -390,6 +390,12 @@
         "UserID": {
           "type": "string"
         },
+<<<<<<< HEAD
+=======
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+>>>>>>> Remove inspire manager message
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -420,6 +426,12 @@
       "type": "object",
       "properties": {
         "ID": {
+<<<<<<< HEAD
+=======
+          "type": "string"
+        },
+        "AppID": {
+>>>>>>> Remove inspire manager message
           "type": "string"
         },
         "AppID": {
@@ -446,6 +458,8 @@
       }
     },
     "protobufAny": {
+<<<<<<< HEAD
+=======
       "type": "object",
       "properties": {
         "@type": {
@@ -454,6 +468,78 @@
       },
       "additionalProperties": {}
     },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CloneAppCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "FromGoodID": {
+          "type": "string"
+        },
+        "ToGoodID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        }
+      }
+    },
+    "v1CloneAppCommissionsResponse": {
+      "type": "object"
+    },
+    "v1CreateUserCommissionRequest": {
+>>>>>>> Remove inspire manager message
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+<<<<<<< HEAD
+=======
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Remove inspire manager message
+        }
+      },
+      "additionalProperties": {}
+    },
+<<<<<<< HEAD
     "rpcStatus": {
       "type": "object",
       "properties": {
@@ -494,16 +580,33 @@
       "type": "object"
     },
     "v1CreateUserCommissionRequest": {
+=======
+    "v1CreateUserCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
+        }
+      }
+    },
+    "v1GetAppCommissionsRequest": {
+>>>>>>> Remove inspire manager message
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "TargetUserID": {
           "type": "string"
         },
         "GoodID": {
           "type": "string"
+=======
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> Remove inspire manager message
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"

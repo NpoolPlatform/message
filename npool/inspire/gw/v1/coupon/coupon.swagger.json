@@ -184,6 +184,7 @@
       ],
       "default": "DefaultCouponType"
     },
+<<<<<<< HEAD
     "couponallocatedv1CouponType": {
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
       "type": "string",
@@ -212,6 +213,8 @@
     "inspiregatewaycouponcouponv1CreateCouponRequest": {
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
 =======
+=======
+>>>>>>> Remove inspire manager message
     "inspiregatewaycouponv1CreateCouponRequest": {
 >>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
@@ -226,11 +229,15 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
 =======
           "$ref": "#/definitions/couponallocatedv1CouponType"
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+>>>>>>> Remove inspire manager message
         },
         "Denomination": {
           "type": "string"
@@ -284,11 +291,15 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
 =======
           "$ref": "#/definitions/couponallocatedv1CouponType"
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+>>>>>>> Remove inspire manager message
         },
         "Offset": {
           "type": "integer",
@@ -326,11 +337,15 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
 =======
           "$ref": "#/definitions/couponallocatedv1CouponType"
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+>>>>>>> Remove inspire manager message
         },
         "Denomination": {
           "type": "string"
@@ -571,11 +586,15 @@
           "type": "string"
         },
         "CouponType": {
+<<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
           "$ref": "#/definitions/basetypesinspirev1CouponType"
 =======
           "$ref": "#/definitions/couponallocatedv1CouponType"
 >>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
+=======
+          "$ref": "#/definitions/basetypesinspirev1CouponType"
+>>>>>>> Remove inspire manager message
         },
         "Offset": {
           "type": "integer",

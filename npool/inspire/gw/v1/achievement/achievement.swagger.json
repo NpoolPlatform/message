@@ -16,7 +16,11 @@
     "application/json"
   ],
   "paths": {
+<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.swagger.json
     "/v1/get/achievements": {
+=======
+    "/v1/get/goodachievements": {
+>>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.swagger.json
       "post": {
         "operationId": "Gateway_GetAchievements",
         "responses": {
@@ -48,7 +52,11 @@
         ]
       }
     },
+<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.swagger.json
     "/v1/get/user/achievements": {
+=======
+    "/v1/get/user/goodachievements": {
+>>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.swagger.json
       "post": {
         "operationId": "Gateway_GetUserAchievements",
         "responses": {
