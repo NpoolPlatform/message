@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/archivement/archivement.proto",
+    "title": "npool/inspire/gw/v1/achievement/achievement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/goodarchivements": {
+    "/v1/get/goodachievements": {
       "post": {
         "operationId": "Gateway_GetGoodArchivements",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/user/goodarchivements": {
+    "/v1/get/user/goodachievements": {
       "post": {
         "operationId": "Gateway_GetUserGoodArchivements",
         "responses": {

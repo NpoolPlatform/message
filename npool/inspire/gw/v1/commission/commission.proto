@@ -5,9 +5,8 @@ package inspire.gateway.commission.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/commission";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/inspire/mgr/v1/commission/commission.proto";
-import "npool/npool.proto";
+import "npool/inspire/mw/v1/commission/commission.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -66,9 +65,9 @@ message Commission {
     string LastName      = 60;
     bool   Kol           = 70;
 
-    inspire.manager.commission.v1.SettleType SettleType = 80;
-    inspire.manager.commission.v1.SettleMode SettleMode = 90;
-    inspire.manager.commission.v1.SettleInterval SettleInterval = 100;
+    basetypes.inspire.v1.SettleType SettleType = 80;
+    basetypes.inspire.v1.SettleMode SettleMode = 90;
+    basetypes.inspire.v1.SettleInterval SettleInterval = 100;
 
     optional string GoodID     = 110;
     optional string GoodName   = 120;
@@ -91,7 +90,7 @@ message CreateCommissionRequest {
     string          UserID       = 20;
     string          TargetUserID = 30;
     optional string GoodID       = 40;
-    inspire.manager.commission.v1.SettleType SettleType = 50;
+    basetypes.inspire.v1.SettleType SettleType = 50;
     string          Value        = 60;
     uint32          StartAt      = 70;
 }
@@ -104,7 +103,7 @@ message CreateUserCommissionRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
     optional string GoodID       = 30;
-    inspire.manager.commission.v1.SettleType SettleType = 40;
+    basetypes.inspire.v1.SettleType SettleType = 40;
     string          Value        = 50;
     uint32          StartAt      = 60;
 }
@@ -116,7 +115,7 @@ message CreateUserCommissionResponse {
 message UpdateCommissionRequest {
     string          ID      = 10;
     string          AppID   = 20;
-    inspire.manager.commission.v1.SettleType SettleType = 30;
+    basetypes.inspire.v1.SettleType SettleType = 30;
     optional string Value   = 40;
     optional uint32 StartAt = 50;
 }
@@ -128,7 +127,7 @@ message UpdateCommissionResponse {
 message GetCommissionsRequest {
     string AppID   = 10;
     string UserID  = 20;
-    inspire.manager.commission.v1.SettleType SettleType = 30;
+    basetypes.inspire.v1.SettleType SettleType = 30;
     int32  Offset  = 40;
     int32  Limit   = 50;
 }
@@ -141,7 +140,7 @@ message GetCommissionsResponse {
 message GetAppCommissionsRequest {
     string AppID   = 10;
     optional uint32 EndAt = 20;
-    inspire.manager.commission.v1.SettleType SettleType = 30;
+    basetypes.inspire.v1.SettleType SettleType = 30;
     int32  Offset  = 40;
     int32  Limit   = 50;
 }
@@ -156,7 +155,7 @@ message CloneCommissionsRequest {
     string FromGoodID = 20;
     string ToGoodID   = 30;
     string Value      = 40;
-    inspire.manager.commission.v1.SettleType SettleType = 50;
+    basetypes.inspire.v1.SettleType SettleType = 50;
 }
 
 message CloneCommissionsResponse {
@@ -167,7 +166,7 @@ message CloneAppCommissionsRequest {
     string FromGoodID  = 20;
     string ToGoodID    = 30;
     string Value       = 40;
-    inspire.manager.commission.v1.SettleType SettleType = 50;
+    basetypes.inspire.v1.SettleType SettleType = 50;
 }
 
 message CloneAppCommissionsResponse {
