@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/gw/v1/archivement/archivement.proto
+// source: npool/inspire/gw/v1/achievement/achievement.proto
 
-package archivement
+package achievement
 
 import (
 	context "context"
@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetGoodArchivements_FullMethodName     = "/inspire.gateway.archivement.v1.Gateway/GetGoodArchivements"
-	Gateway_GetUserGoodArchivements_FullMethodName = "/inspire.gateway.archivement.v1.Gateway/GetUserGoodArchivements"
+	Gateway_GetGoodArchivements_FullMethodName     = "/inspire.gateway.achievement.v1.Gateway/GetGoodArchivements"
+	Gateway_GetUserGoodArchivements_FullMethodName = "/inspire.gateway.achievement.v1.Gateway/GetUserGoodArchivements"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -129,7 +129,7 @@ func _Gateway_GetUserGoodArchivements_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.gateway.archivement.v1.Gateway",
+	ServiceName: "inspire.gateway.achievement.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -142,5 +142,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/gw/v1/archivement/archivement.proto",
+	Metadata: "npool/inspire/gw/v1/achievement/achievement.proto",
 }

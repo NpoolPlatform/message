@@ -5,7 +5,6 @@ package inspire.gateway.invitation.registration.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/invitation/registration";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 
 // Service Name
 service Gateway {
