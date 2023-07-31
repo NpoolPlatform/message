@@ -358,12 +358,18 @@
         "GoodID": {
           "type": "string"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
         "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
         }
       }
     },
@@ -496,12 +502,18 @@
         "GoodID": {
           "type": "string"
         },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
         "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
         }
       }
     },
