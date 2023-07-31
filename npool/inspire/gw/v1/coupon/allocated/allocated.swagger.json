@@ -114,28 +114,92 @@
     }
   },
   "definitions": {
-    "basetypesinspirev1CouponConstraint": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponConstraint",
-        "Normal",
-        "PaymentThreshold",
-        "GoodOnly",
-        "GoodThreshold"
-      ],
-      "default": "DefaultCouponConstraint"
+    "inspiregatewaycouponallocatedv1CreateCouponRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
     },
-    "basetypesinspirev1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
+    "inspiregatewaycouponallocatedv1CreateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
     },
-    "couponallocatedv1Coupon": {
+    "inspiregatewaycouponallocatedv1GetCouponsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "inspiregatewaycouponallocatedv1GetCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coupon": {
       "type": "object",
       "properties": {
         "ID": {
@@ -147,7 +211,7 @@
           "title": "@inject_tag: sql:\"coupon_type\""
         },
         "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
+          "$ref": "#/definitions/v1CouponType"
         },
         "AppID": {
           "type": "string",
@@ -230,7 +294,7 @@
           "title": "@inject_tag: sql:\"coupon_constraint\""
         },
         "CouponConstraint": {
-          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+          "$ref": "#/definitions/v1CouponConstraint"
         },
         "Random": {
           "type": "boolean",
@@ -248,90 +312,26 @@
         }
       }
     },
-    "inspiregatewaycouponallocatedv1CreateCouponRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "CouponID": {
-          "type": "string"
-        }
-      }
+    "v1CouponConstraint": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponConstraint",
+        "Normal",
+        "PaymentThreshold",
+        "GoodOnly",
+        "GoodThreshold"
+      ],
+      "default": "DefaultCouponConstraint"
     },
-    "inspiregatewaycouponallocatedv1CreateCouponResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/couponallocatedv1Coupon"
-        }
-      }
-    },
-    "inspiregatewaycouponallocatedv1GetCouponsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "inspiregatewaycouponallocatedv1GetCouponsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/couponallocatedv1Coupon"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1GetAppCouponsRequest": {
       "type": "object",
@@ -356,7 +356,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/couponallocatedv1Coupon"
+            "$ref": "#/definitions/v1Coupon"
           }
         },
         "Total": {

@@ -6,8 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon
 
 import "google/api/annotations.proto";
 import "npool/inspire/mw/v1/coupon/allocated/allocated.proto";
-import "npool/inspire/mw/v1/coupon/coupon.proto";
-import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
