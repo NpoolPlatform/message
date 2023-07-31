@@ -210,6 +210,12 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean"
         }
       }
     },
@@ -296,6 +302,12 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean"
         }
       }
     },
