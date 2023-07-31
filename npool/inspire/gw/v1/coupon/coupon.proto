@@ -44,7 +44,7 @@ message CreateCouponRequest {
     string UserID       = 20;
     string TargetAppID  = 30;
     basetypes.inspire.v1.CouponType CouponType = 40;
-    string Value        = 50;
+    string Denomination = 50;
     string Circulation  = 60;
     uint32 StartAt      = 70;
     uint32 DurationDays = 80;
@@ -63,7 +63,7 @@ message UpdateCouponRequest {
     string ID          = 10;
     string TargetAppID = 20;
     basetypes.inspire.v1.CouponType CouponType = 30;
-    optional string Value        = 40;
+    optional string Denomination = 40;
     optional string Circulation  = 50;
     optional uint32 StartAt      = 60;
     optional uint32 DurationDays = 70;
