@@ -257,9 +257,6 @@
         "TargetUserID": {
           "type": "string"
         },
-        "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-        },
         "CouponID": {
           "type": "string"
         }
