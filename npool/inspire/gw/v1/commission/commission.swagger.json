@@ -254,11 +254,8 @@
         "ToGoodID": {
           "type": "string"
         },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -361,10 +358,7 @@
         "GoodID": {
           "type": "string"
         },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
@@ -389,9 +383,6 @@
         },
         "UserID": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",
@@ -428,10 +419,7 @@
         "AppID": {
           "type": "string"
         },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
@@ -488,11 +476,8 @@
         "ToGoodID": {
           "type": "string"
         },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
@@ -511,10 +496,7 @@
         "GoodID": {
           "type": "string"
         },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
@@ -540,9 +522,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",
