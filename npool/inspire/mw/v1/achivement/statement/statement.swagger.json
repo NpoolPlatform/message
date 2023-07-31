@@ -122,14 +122,6 @@
         }
       }
     },
-    "v1ExistStatementCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1GetStatementsResponse": {
       "type": "object",
       "properties": {
