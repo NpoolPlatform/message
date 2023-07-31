@@ -133,6 +133,7 @@
         }
       }
     },
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.swagger.json
     "v1DeleteStatementResponse": {
       "type": "object",
       "properties": {
@@ -141,6 +142,8 @@
         }
       }
     },
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement.swagger.json
     "v1GetStatementsResponse": {
       "type": "object",
       "properties": {

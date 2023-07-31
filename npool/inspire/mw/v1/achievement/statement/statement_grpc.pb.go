@@ -25,6 +25,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatement"
 	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatements"
 	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achievement.statement.v1.Middleware/GetStatements"
@@ -43,6 +44,12 @@ const (
 	Middleware_GetStatements_FullMethodName       = "/inspire.middleware.achivement.statement.v1.Middleware/GetStatements"
 	Middleware_DeleteStatement_FullMethodName     = "/inspire.middleware.achivement.statement.v1.Middleware/DeleteStatement"
 >>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
+=======
+	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatement"
+	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achivement.statement.v1.Middleware/CreateStatements"
+	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achivement.statement.v1.Middleware/GetStatements"
+	Middleware_DeleteStatement_FullMethodName  = "/inspire.middleware.achivement.statement.v1.Middleware/DeleteStatement"
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -52,9 +59,12 @@ type MiddlewareClient interface {
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 =======
 	ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error)
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
 }
@@ -87,6 +97,7 @@ func (c *middlewareClient) CreateStatements(ctx context.Context, in *CreateState
 	return out, nil
 }
 
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 func (c *middlewareClient) ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error) {
 	out := new(ExistStatementCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistStatementConds_FullMethodName, in, out, opts...)
@@ -97,6 +108,8 @@ func (c *middlewareClient) ExistStatementConds(ctx context.Context, in *ExistSta
 	return out, nil
 }
 
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error) {
 	out := new(GetStatementsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetStatements_FullMethodName, in, out, opts...)
@@ -122,9 +135,12 @@ type MiddlewareServer interface {
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 =======
 	ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error)
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -142,10 +158,13 @@ func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateSt
 <<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 =======
 }
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 func (UnimplementedMiddlewareServer) ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistStatementConds not implemented")
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
 }
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
 }
@@ -203,6 +222,7 @@ func _Middleware_CreateStatements_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 func _Middleware_ExistStatementConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistStatementCondsRequest)
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
@@ -222,6 +242,8 @@ func _Middleware_ExistStatementConds_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 func _Middleware_GetStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetStatementsRequest)
 	if err := dec(in); err != nil {
@@ -280,11 +302,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 =======
 		},
 		{
+<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement_grpc.pb.go
 			MethodName: "ExistStatementConds",
 			Handler:    _Middleware_ExistStatementConds_Handler,
 >>>>>>> Support batch create statement:npool/inspire/mw/v1/archivement/statement/statement_grpc.pb.go
 		},
 		{
+=======
+>>>>>>> Remove exist api:npool/inspire/mw/v1/achivement/statement/statement_grpc.pb.go
 			MethodName: "GetStatements",
 			Handler:    _Middleware_GetStatements_Handler,
 		},
