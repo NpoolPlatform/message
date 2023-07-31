@@ -1,19 +1,19 @@
 syntax = "proto3";
 
-package inspire.middleware.archivement.v1;
+package inspire.middleware.achivement.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/archivement";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achivement";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc ExpropriateArchivement (ExpropriateArchivementRequest) returns (ExpropriateArchivementResponse) {}
-    rpc GetArchivements        (GetArchivementsRequest)        returns (GetArchivementsResponse)        {}
+    rpc ExpropriateAchivement (ExpropriateAchivementRequest) returns (ExpropriateAchivementResponse) {}
+    rpc GetAchivements        (GetAchivementsRequest)        returns (GetAchivementsResponse)        {}
 }
 
-message ArchivementReq {
+message AchivementReq {
     optional string ID              = 10;
     optional string AppID           = 20;
     optional string UserID          = 30;
@@ -27,7 +27,7 @@ message ArchivementReq {
     optional string SelfCommission  = 110;
 }
 
-message Archivement {
+message Achivement {
     string ID                 = 10;
     string AppID              = 20;
     string UserID             = 30;
@@ -53,21 +53,21 @@ message Conds {
     optional basetypes.v1.StringSliceVal UserIDs = 120;
 }
 
-message ExpropriateArchivementRequest {
+message ExpropriateAchivementRequest {
     string OrderID = 10;
 }
 
-message ExpropriateArchivementResponse {
+message ExpropriateAchivementResponse {
 }
 
-message GetArchivementsRequest {
+message GetAchivementsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetArchivementsResponse {
-    repeated Archivement Infos = 10;
+message GetAchivementsResponse {
+    repeated Achivement Infos = 10;
     uint32               Total = 20;
 }
 
