@@ -11,7 +11,6 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
-    rpc ExistStatementConds (ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
 }
@@ -101,14 +100,6 @@ message CreateStatementsRequest {
 
 message CreateStatementsResponse {
     repeated Statement Infos = 10;
-}
-
-message ExistStatementCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistStatementCondsResponse {
-    bool Info = 10;
 }
 
 message GetStatementsRequest {
