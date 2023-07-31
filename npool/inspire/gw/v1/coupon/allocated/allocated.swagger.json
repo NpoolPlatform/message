@@ -283,11 +283,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/basetypesinspirev1CouponType"
         },
 >>>>>>> Redefine coupon
+=======
+>>>>>>> Remove coupontype
         "CouponID": {
           "type": "string"
         }
