@@ -1,14 +1,8 @@
 syntax = "proto3";
 
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/statement/statement.proto
 package inspire.middleware.achievement.statement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement/statement";
-=======
-package inspire.middleware.achivement.statement.v1;
-
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achivement/statement";
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/statement/statement.proto
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
