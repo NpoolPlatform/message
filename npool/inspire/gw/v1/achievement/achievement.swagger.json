@@ -197,10 +197,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Infos": {
 =======
         "Achievements": {
 >>>>>>> Refactor achievement
+=======
+        "Infos": {
+>>>>>>> Format return infos
           "type": "array",
           "items": {
             "type": "object",
@@ -240,10 +244,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Infos": {
 =======
         "Achievements": {
 >>>>>>> Refactor achievement
+=======
+        "Infos": {
+>>>>>>> Format return infos
           "type": "array",
           "items": {
             "type": "object",
