@@ -19,12 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCommission_FullMethodName  = "/inspire.middleware.commission.v1.Middleware/CreateCommission"
-	Middleware_UpdateCommission_FullMethodName  = "/inspire.middleware.commission.v1.Middleware/UpdateCommission"
-	Middleware_GetCommission_FullMethodName     = "/inspire.middleware.commission.v1.Middleware/GetCommission"
-	Middleware_GetCommissionOnly_FullMethodName = "/inspire.middleware.commission.v1.Middleware/GetCommissionOnly"
-	Middleware_GetCommissions_FullMethodName    = "/inspire.middleware.commission.v1.Middleware/GetCommissions"
-	Middleware_CloneCommissions_FullMethodName  = "/inspire.middleware.commission.v1.Middleware/CloneCommissions"
+	Middleware_CreateCommission_FullMethodName = "/inspire.middleware.commission.v1.Middleware/CreateCommission"
+	Middleware_UpdateCommission_FullMethodName = "/inspire.middleware.commission.v1.Middleware/UpdateCommission"
+	Middleware_GetCommission_FullMethodName    = "/inspire.middleware.commission.v1.Middleware/GetCommission"
+	Middleware_GetCommissions_FullMethodName   = "/inspire.middleware.commission.v1.Middleware/GetCommissions"
+	Middleware_CloneCommissions_FullMethodName = "/inspire.middleware.commission.v1.Middleware/CloneCommissions"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,7 +33,6 @@ type MiddlewareClient interface {
 	CreateCommission(ctx context.Context, in *CreateCommissionRequest, opts ...grpc.CallOption) (*CreateCommissionResponse, error)
 	UpdateCommission(ctx context.Context, in *UpdateCommissionRequest, opts ...grpc.CallOption) (*UpdateCommissionResponse, error)
 	GetCommission(ctx context.Context, in *GetCommissionRequest, opts ...grpc.CallOption) (*GetCommissionResponse, error)
-	GetCommissionOnly(ctx context.Context, in *GetCommissionOnlyRequest, opts ...grpc.CallOption) (*GetCommissionOnlyResponse, error)
 	GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error)
 	CloneCommissions(ctx context.Context, in *CloneCommissionsRequest, opts ...grpc.CallOption) (*CloneCommissionsResponse, error)
 }
@@ -74,15 +72,6 @@ func (c *middlewareClient) GetCommission(ctx context.Context, in *GetCommissionR
 	return out, nil
 }
 
-func (c *middlewareClient) GetCommissionOnly(ctx context.Context, in *GetCommissionOnlyRequest, opts ...grpc.CallOption) (*GetCommissionOnlyResponse, error) {
-	out := new(GetCommissionOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetCommissionOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetCommissions(ctx context.Context, in *GetCommissionsRequest, opts ...grpc.CallOption) (*GetCommissionsResponse, error) {
 	out := new(GetCommissionsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetCommissions_FullMethodName, in, out, opts...)
@@ -108,7 +97,6 @@ type MiddlewareServer interface {
 	CreateCommission(context.Context, *CreateCommissionRequest) (*CreateCommissionResponse, error)
 	UpdateCommission(context.Context, *UpdateCommissionRequest) (*UpdateCommissionResponse, error)
 	GetCommission(context.Context, *GetCommissionRequest) (*GetCommissionResponse, error)
-	GetCommissionOnly(context.Context, *GetCommissionOnlyRequest) (*GetCommissionOnlyResponse, error)
 	GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error)
 	CloneCommissions(context.Context, *CloneCommissionsRequest) (*CloneCommissionsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -126,9 +114,6 @@ func (UnimplementedMiddlewareServer) UpdateCommission(context.Context, *UpdateCo
 }
 func (UnimplementedMiddlewareServer) GetCommission(context.Context, *GetCommissionRequest) (*GetCommissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCommission not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCommissionOnly(context.Context, *GetCommissionOnlyRequest) (*GetCommissionOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCommissionOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCommissions(context.Context, *GetCommissionsRequest) (*GetCommissionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCommissions not implemented")
@@ -203,24 +188,6 @@ func _Middleware_GetCommission_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCommissionOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCommissionOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCommissionOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetCommissionOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCommissionOnly(ctx, req.(*GetCommissionOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetCommissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCommissionsRequest)
 	if err := dec(in); err != nil {
@@ -275,10 +242,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCommission",
 			Handler:    _Middleware_GetCommission_Handler,
-		},
-		{
-			MethodName: "GetCommissionOnly",
-			Handler:    _Middleware_GetCommissionOnly_Handler,
 		},
 		{
 			MethodName: "GetCommissions",

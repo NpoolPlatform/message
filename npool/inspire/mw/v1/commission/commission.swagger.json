@@ -204,14 +204,6 @@
         }
       }
     },
-    "v1GetCommissionOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Commission"
-        }
-      }
-    },
     "v1GetCommissionResponse": {
       "type": "object",
       "properties": {
