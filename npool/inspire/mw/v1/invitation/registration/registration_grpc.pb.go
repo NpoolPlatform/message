@@ -20,6 +20,9 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist registration api
 	Middleware_CreateRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration"
 	Middleware_UpdateRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration"
 	Middleware_GetRegistration_FullMethodName        = "/inspire.middleware.invitation.registration.v1.Middleware/GetRegistration"
@@ -28,6 +31,7 @@ const (
 	Middleware_GetSubordinates_FullMethodName        = "/inspire.middleware.invitation.registration.v1.Middleware/GetSubordinates"
 	Middleware_GetSuperiores_FullMethodName          = "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores"
 	Middleware_DeleteRegistration_FullMethodName     = "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration"
+<<<<<<< HEAD
 =======
 	Middleware_CreateRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/CreateRegistration"
 	Middleware_UpdateRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/UpdateRegistration"
@@ -37,6 +41,8 @@ const (
 	Middleware_GetSuperiores_FullMethodName      = "/inspire.middleware.invitation.registration.v1.Middleware/GetSuperiores"
 	Middleware_DeleteRegistration_FullMethodName = "/inspire.middleware.invitation.registration.v1.Middleware/DeleteRegistration"
 >>>>>>> Format invitation
+=======
+>>>>>>> Add exist registration api
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -99,6 +105,9 @@ func (c *middlewareClient) ExistRegistrationConds(ctx context.Context, in *Exist
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist registration api
 func (c *middlewareClient) GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error) {
 	out := new(GetRegistrationsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetRegistrations_FullMethodName, in, out, opts...)
@@ -267,6 +276,9 @@ func _Middleware_ExistRegistrationConds_Handler(srv interface{}, ctx context.Con
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist registration api
 func _Middleware_GetRegistrations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRegistrationsRequest)
 	if err := dec(in); err != nil {
@@ -366,6 +378,9 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add exist registration api
 			MethodName: "GetRegistrations",
 			Handler:    _Middleware_GetRegistrations_Handler,
 		},
