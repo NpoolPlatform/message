@@ -76,7 +76,7 @@ message Commission {
     optional string CoinLogo   = 150;
 
     string AmountOrPercent     = 160;
-    optional string Threshold  = 180;
+    string Threshold           = 180;
 
     uint32 StartAt       = 190;
     uint32 EndAt         = 200;
