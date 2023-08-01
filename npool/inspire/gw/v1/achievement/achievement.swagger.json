@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/goodachievements": {
+    "/v1/get/achievements": {
       "post": {
-        "operationId": "Gateway_GetGoodArchivements",
+        "operationId": "Gateway_GetAchievements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGoodArchivementsResponse"
+              "$ref": "#/definitions/v1GetAchievementsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGoodArchivementsRequest"
+              "$ref": "#/definitions/v1GetAchievementsRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/user/goodachievements": {
+    "/v1/get/user/achievements": {
       "post": {
-        "operationId": "Gateway_GetUserGoodArchivements",
+        "operationId": "Gateway_GetUserAchievements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetUserGoodArchivementsResponse"
+              "$ref": "#/definitions/v1GetUserAchievementsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetUserGoodArchivementsRequest"
+              "$ref": "#/definitions/v1GetUserAchievementsRequest"
             }
           }
         ],
@@ -110,7 +110,55 @@
         }
       }
     },
-    "v1GetGoodArchivementsRequest": {
+    "v1Achievement": {
+      "type": "object",
+      "properties": {
+        "InviterID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "TotalInvitees": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Achievements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1GoodAchievement"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InvitedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAchievementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -129,14 +177,14 @@
         }
       }
     },
-    "v1GetGoodArchivementsResponse": {
+    "v1GetAchievementsResponse": {
       "type": "object",
       "properties": {
-        "Archivements": {
+        "Achievements": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserArchivement"
+            "$ref": "#/definitions/v1Achievement"
           },
           "title": "Each user"
         },
@@ -146,7 +194,7 @@
         }
       }
     },
-    "v1GetUserGoodArchivementsRequest": {
+    "v1GetUserAchievementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -168,14 +216,14 @@
         }
       }
     },
-    "v1GetUserGoodArchivementsResponse": {
+    "v1GetUserAchievementsResponse": {
       "type": "object",
       "properties": {
-        "Archivements": {
+        "Achievements": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1UserArchivement"
+            "$ref": "#/definitions/v1Achievement"
           }
         },
         "Total": {
@@ -184,7 +232,7 @@
         }
       }
     },
-    "v1GoodArchivement": {
+    "v1GoodAchievement": {
       "type": "object",
       "properties": {
         "GoodID": {
@@ -232,54 +280,6 @@
         },
         "SuperiorCommission": {
           "type": "string"
-        }
-      }
-    },
-    "v1UserArchivement": {
-      "type": "object",
-      "properties": {
-        "InviterID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Archivements": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1GoodArchivement"
-          }
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InvitedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }
