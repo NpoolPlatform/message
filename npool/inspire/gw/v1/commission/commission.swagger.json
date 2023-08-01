@@ -316,10 +316,7 @@
         "CoinLogo": {
           "type": "string"
         },
-        "Percent": {
-          "type": "string"
-        },
-        "Amount": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "Threshold": {
