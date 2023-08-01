@@ -12,7 +12,6 @@ service Middleware {
     rpc CreateCommission   (CreateCommissionRequest)   returns (CreateCommissionResponse)   {}
     rpc UpdateCommission   (UpdateCommissionRequest)   returns (UpdateCommissionResponse)   {}
     rpc GetCommission      (GetCommissionRequest)      returns (GetCommissionResponse)      {}
-    rpc GetCommissionOnly  (GetCommissionOnlyRequest)  returns (GetCommissionOnlyResponse)  {}
     rpc GetCommissions     (GetCommissionsRequest)     returns (GetCommissionsResponse)     {}
     rpc CloneCommissions   (CloneCommissionsRequest)   returns (CloneCommissionsResponse)   {}
 }
@@ -107,14 +106,6 @@ message GetCommissionRequest {
 }
 
 message GetCommissionResponse {
-    Commission Info = 10;
-}
-
-message GetCommissionOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetCommissionOnlyResponse {
     Commission Info = 10;
 }
 
