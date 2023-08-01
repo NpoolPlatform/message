@@ -69,14 +69,14 @@ message Commission {
     basetypes.inspire.v1.SettleMode SettleMode = 90;
     basetypes.inspire.v1.SettleInterval SettleInterval = 100;
 
-    optional string GoodID     = 110;
-    optional string GoodName   = 120;
-    optional string CoinTypeID = 130;
-    optional string CoinName   = 140;
-    optional string CoinLogo   = 150;
+    string GoodID     = 110;
+    string GoodName   = 120;
+    string CoinTypeID = 130;
+    string CoinName   = 140;
+    string CoinLogo   = 150;
 
-    string AmountOrPercent     = 160;
-    string Threshold           = 180;
+    string AmountOrPercent = 160;
+    string Threshold       = 180;
 
     uint32 StartAt       = 190;
     uint32 EndAt         = 200;
@@ -88,7 +88,7 @@ message CreateCommissionRequest {
     string          AppID        = 10;
     string          UserID       = 20;
     string          TargetUserID = 30;
-    optional string GoodID       = 40;
+    string          GoodID       = 40;
     basetypes.inspire.v1.SettleType SettleType = 50;
     string          AmountOrPercent = 60;
     uint32          StartAt      = 70;
@@ -102,7 +102,7 @@ message CreateCommissionResponse {
 message CreateUserCommissionRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
-    optional string GoodID       = 30;
+    string          GoodID       = 30;
     basetypes.inspire.v1.SettleType SettleType = 40;
     string          AmountOrPercent = 50;
     uint32          StartAt      = 60;
