@@ -42,7 +42,7 @@ message Commission {
     string     UserID          = 30;
     // For good specific commission
     // @inject_tag: sql:"good_id"
-    optional string GoodID     = 40;
+    string GoodID              = 40;
     // @inject_tag: sql:"settle_type"
     string     SettleTypeStr   = 49;
     basetypes.inspire.v1.SettleType SettleType = 50;
