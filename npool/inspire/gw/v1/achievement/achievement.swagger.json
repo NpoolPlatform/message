@@ -180,7 +180,7 @@
     "v1GetAchievementsResponse": {
       "type": "object",
       "properties": {
-        "Achievements": {
+        "Infos": {
           "type": "array",
           "items": {
             "type": "object",
@@ -219,7 +219,7 @@
     "v1GetUserAchievementsResponse": {
       "type": "object",
       "properties": {
-        "Achievements": {
+        "Infos": {
           "type": "array",
           "items": {
             "type": "object",
