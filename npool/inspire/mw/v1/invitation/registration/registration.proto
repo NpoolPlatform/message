@@ -12,6 +12,7 @@ service Middleware {
     rpc CreateRegistration  (CreateRegistrationRequest)  returns (CreateRegistrationResponse)  {}
     rpc UpdateRegistration  (UpdateRegistrationRequest)  returns (UpdateRegistrationResponse)  {}
     rpc GetRegistration     (GetRegistrationRequest)     returns (GetRegistrationResponse)     {}
+    rpc ExistRegistrationConds (ExistRegistrationCondsRequest) returns (ExistRegistrationCondsResponse) {}
     rpc GetRegistrations    (GetRegistrationsRequest)    returns (GetRegistrationsResponse)    {}
     rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {}
     rpc GetSuperiores       (GetSuperioresRequest)       returns (GetSuperioresResponse)       {}
@@ -73,6 +74,14 @@ message GetRegistrationRequest {
 
 message GetRegistrationResponse {
     Registration Info = 10;
+}
+
+message ExistRegistrationCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistRegistrationCondsResponse {
+    bool Info = 10;
 }
 
 message GetRegistrationsRequest {
