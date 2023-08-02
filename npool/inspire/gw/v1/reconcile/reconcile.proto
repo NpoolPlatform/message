@@ -18,9 +18,8 @@ service Gateway {
 }
 
 message ReconcileRequest {
-    string AppID         = 10;
-    optional string TargetUserID  = 20;
-    string GoodID        = 30;
+    string AppID  = 10;
+    string GoodID = 20;
 }
 
 message ReconcileResponse {
