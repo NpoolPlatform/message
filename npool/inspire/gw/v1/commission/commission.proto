@@ -93,6 +93,7 @@ message CreateCommissionRequest {
     string          AmountOrPercent = 60;
     uint32          StartAt      = 70;
     basetypes.inspire.v1.SettleMode SettleMode = 80;
+    optional string Threshold    = 90;
 }
 
 message CreateCommissionResponse {
@@ -107,6 +108,7 @@ message CreateUserCommissionRequest {
     string          AmountOrPercent = 50;
     uint32          StartAt      = 60;
     basetypes.inspire.v1.SettleMode SettleMode = 70;
+    optional string Threshold    = 80;
 }
 
 message CreateUserCommissionResponse {
@@ -118,6 +120,7 @@ message UpdateCommissionRequest {
     string          AppID   = 20;
     optional string AmountOrPercent = 40;
     optional uint32 StartAt = 50;
+    optional string Threshold = 60;
 }
 
 message UpdateCommissionResponse {
