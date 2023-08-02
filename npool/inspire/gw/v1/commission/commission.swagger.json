@@ -254,7 +254,7 @@
         "ToGoodID": {
           "type": "string"
         },
-        "AmountOrPercent": {
+        "ScalePercent": {
           "type": "string"
         }
       }
@@ -485,7 +485,7 @@
         "ToGoodID": {
           "type": "string"
         },
-        "AmountOrPercent": {
+        "ScalePercent": {
           "type": "string"
         }
       }
