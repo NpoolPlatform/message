@@ -367,6 +367,9 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
+        },
+        "Threshold": {
+          "type": "string"
         }
       }
     },
@@ -428,6 +431,9 @@
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Threshold": {
+          "type": "string"
         }
       }
     },
@@ -511,6 +517,9 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
+        },
+        "Threshold": {
+          "type": "string"
         }
       }
     },
