@@ -255,10 +255,14 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ScalePercent": {
 =======
         "AmountOrPercent": {
 >>>>>>> Remove settletype
+=======
+        "ScalePercent": {
+>>>>>>> Add commission scale percent
           "type": "string"
         }
       }
@@ -527,7 +531,7 @@
         "ToGoodID": {
           "type": "string"
         },
-        "AmountOrPercent": {
+        "ScalePercent": {
           "type": "string"
         }
       }
