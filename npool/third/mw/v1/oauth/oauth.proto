@@ -31,6 +31,7 @@ message GetOAuthAccessTokenRequest {
     string                  Code         = 20;
     string                  ClientID     = 30;
     string                  ClientSecret = 40;
+		string                  RedirectURI  = 50;
 }
 
 message GetOAuthAccessTokenResponse {
