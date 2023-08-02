@@ -381,11 +381,17 @@
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
 =======
 >>>>>>> Add commission settletype and settlemode
+=======
+        },
+        "Threshold": {
+          "type": "string"
+>>>>>>> Add commission threshold
         }
       }
     },
@@ -641,11 +647,17 @@
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
 =======
 >>>>>>> Add commission settletype and settlemode
+=======
+        },
+        "Threshold": {
+          "type": "string"
+>>>>>>> Add commission threshold
         }
       }
     },
