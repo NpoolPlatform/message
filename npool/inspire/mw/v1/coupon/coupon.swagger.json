@@ -17,6 +17,7 @@
   ],
   "paths": {},
   "definitions": {
+<<<<<<< HEAD
     "basetypesinspirev1CouponConstraint": {
       "type": "string",
       "enum": [
@@ -103,6 +104,8 @@
         }
       }
     },
+=======
+>>>>>>> Remove inspire mgr
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -131,6 +134,26 @@
         }
       }
     },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "v1Coupon": {
       "type": "object",
       "properties": {
@@ -143,7 +166,7 @@
           "title": "@inject_tag: sql:\"coupon_type\""
         },
         "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
+          "$ref": "#/definitions/v1CouponType"
         },
         "AppID": {
           "type": "string",
@@ -250,10 +273,14 @@
 >>>>>>> Add sql tag
         },
         "CouponConstraint": {
+<<<<<<< HEAD
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
 <<<<<<< HEAD
 >>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
 =======
+=======
+          "$ref": "#/definitions/v1CouponConstraint"
+>>>>>>> Remove inspire mgr
         },
         "Random": {
 <<<<<<< HEAD
@@ -284,6 +311,17 @@
         }
       }
     },
+    "v1CouponConstraint": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponConstraint",
+        "Normal",
+        "PaymentThreshold",
+        "GoodOnly",
+        "GoodThreshold"
+      ],
+      "default": "DefaultCouponConstraint"
+    },
     "v1CouponReq": {
       "type": "object",
       "properties": {
@@ -291,7 +329,7 @@
           "type": "string"
         },
         "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
+          "$ref": "#/definitions/v1CouponType"
         },
         "AppID": {
           "type": "string"
@@ -336,6 +374,7 @@
           "title": "We may have random amount coupon"
         },
         "CouponConstraint": {
+<<<<<<< HEAD
           "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
 <<<<<<< HEAD
 <<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
@@ -345,12 +384,25 @@
 =======
 >>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
 =======
+=======
+          "$ref": "#/definitions/v1CouponConstraint"
+>>>>>>> Remove inspire mgr
         },
         "Random": {
           "type": "boolean"
 >>>>>>> Support random coupon
         }
       }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1CreateCouponResponse": {
       "type": "object",
@@ -387,6 +439,43 @@
           }
         },
         "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
           "type": "integer",
           "format": "int64"
         }
