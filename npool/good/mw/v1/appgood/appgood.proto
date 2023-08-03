@@ -6,8 +6,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/appgood";
 
 import "npool/good/mgr/v1/good/good.proto";
 import "npool/good/mgr/v1/appgood/appgood.proto";
-import "npool/inspire/mgr/v1/commission/commission.proto";
 import "npool/npool.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -150,7 +150,7 @@ message Good {
 
     // @inject_tag: sql:"commission_settle_type"
     string           CommissionSettleTypeStr = 490;
-    inspire.manager.commission.v1.SettleType CommissionSettleType = 500;
+    basetypes.inspire.v1.SettleType CommissionSettleType = 500;
 
     // @inject_tag: sql:"descriptions"
     string           DescriptionsStr     = 510;
