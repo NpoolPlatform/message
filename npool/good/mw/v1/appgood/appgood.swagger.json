@@ -17,6 +17,17 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesinspirev1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "TechniqueFeePercent",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount or good value\n - TechniqueFeePercent: Divice commission according to order technique fee"
+    },
     "managerappgoodv1Conds": {
       "type": "object",
       "properties": {
@@ -36,6 +47,20 @@
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
+    },
+    "managercommissionv1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "GoodOrderValuePercent",
+        "LimitedOrderPercent",
+        "AmountThreshold",
+        "TechniqueFeePercent",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
     },
     "middlewareappgoodv1CreateGoodResponse": {
       "type": "object",
@@ -366,7 +391,7 @@
           "title": "@inject_tag: sql:\"commission_settle_type\""
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/basetypesinspirev1SettleType"
         },
         "DescriptionsStr": {
           "type": "string",
@@ -532,7 +557,7 @@
           "type": "string"
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/managercommissionv1SettleType"
         },
         "Descriptions": {
           "type": "array",
@@ -620,20 +645,6 @@
       ],
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
-    },
-    "v1SettleType": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleType",
-        "GoodOrderPercent",
-        "GoodOrderValuePercent",
-        "LimitedOrderPercent",
-        "AmountThreshold",
-        "TechniqueFeePercent",
-        "NoCommission"
-      ],
-      "default": "DefaultSettleType",
-      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
     },
     "v1StringSliceVal": {
       "type": "object",

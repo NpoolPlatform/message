@@ -239,6 +239,17 @@
         }
       }
     },
+    "basetypesinspirev1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPercent",
+        "TechniqueFeePercent",
+        "NoCommission"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPercent: Divide commission according to order payment amount or good value\n - TechniqueFeePercent: Divice commission according to order technique fee"
+    },
     "gatewayappgoodv1Good": {
       "type": "object",
       "properties": {
@@ -484,7 +495,7 @@
           "type": "string"
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/basetypesinspirev1SettleType"
         },
         "Descriptions": {
           "type": "array",
@@ -636,7 +647,7 @@
           "format": "int64"
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/basetypesinspirev1SettleType"
         },
         "Descriptions": {
           "type": "array",
@@ -796,7 +807,7 @@
           "format": "int64"
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/basetypesinspirev1SettleType"
         },
         "EnablePurchase": {
           "type": "boolean"
@@ -880,20 +891,6 @@
       "default": "DefaultGoodType",
       "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
     },
-    "v1SettleType": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleType",
-        "GoodOrderPercent",
-        "GoodOrderValuePercent",
-        "LimitedOrderPercent",
-        "AmountThreshold",
-        "TechniqueFeePercent",
-        "NoCommission"
-      ],
-      "default": "DefaultSettleType",
-      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
-    },
     "v1UpdateNAppGoodRequest": {
       "type": "object",
       "properties": {
@@ -940,7 +937,7 @@
           "format": "int64"
         },
         "CommissionSettleType": {
-          "$ref": "#/definitions/v1SettleType"
+          "$ref": "#/definitions/basetypesinspirev1SettleType"
         },
         "Descriptions": {
           "type": "array",
