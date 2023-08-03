@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/mw/v1/user/user.proto",
+    "title": "npool/appuser/gw/v1/authing/oauth/oauth.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -15,7 +15,104 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/get/oauth/login/list": {
+      "post": {
+        "operationId": "Gateway_GetOAuthLoginList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOAuthLoginListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOAuthLoginListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/oauth/login/url": {
+      "post": {
+        "operationId": "Gateway_GetOAuthLoginURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOAuthLoginURLResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOAuthLoginURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/oauth/login": {
+      "post": {
+        "operationId": "Gateway_OAuthLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OAuthLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OAuthLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -45,112 +142,42 @@
         }
       }
     },
-    "v1Conds": {
+    "v1GetOAuthLoginListRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "PhoneNO": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EmailAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ImportFromApp": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "ThirdPartyID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ThirdPartyUserID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         }
       }
     },
-    "v1CreateThirdUserResponse": {
+    "v1GetOAuthLoginListResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1CreateUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1DeleteUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1ExistUserCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetThirdUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
+        "OAuthLoginInfoLists": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1User"
+            "$ref": "#/definitions/v1OAuthThirdParty"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
-    "v1GetUserResponse": {
+    "v1GetOAuthLoginURLRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
+        "AppID": {
+          "type": "string"
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
         }
       }
     },
-    "v1GetUsersResponse": {
+    "v1GetOAuthLoginURLResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1User"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+        "OAuthLoginURL": {
+          "type": "string"
         }
       }
     },
@@ -163,6 +190,98 @@
         "Rejected"
       ],
       "default": "DefaultState"
+    },
+    "v1OAuthLoginRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OAuthLoginResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1OAuthThirdParty": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_id\""
+        },
+        "ClientID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_id\""
+        },
+        "ClientSecret": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_secret\""
+        },
+        "CallbackURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"callback_url\""
+        },
+        "ClientNameStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_name\""
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "ClientTag": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_tag\""
+        },
+        "ClientLogoURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_logo_url\""
+        },
+        "ClientOAuthURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_oauth_url\""
+        },
+        "ResponseType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"response_type\""
+        },
+        "Scope": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"scope\""
+        },
+        "Salt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"salt\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
     },
     "v1SignMethod": {
       "type": "string",
@@ -180,39 +299,6 @@
       ],
       "default": "DefaultSignMethod",
       "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
     },
     "v1User": {
       "type": "object",
@@ -417,136 +503,6 @@
         "ThirdPartyAvatar": {
           "type": "string",
           "title": "@inject_tag: sql:\"third_party_avatar\""
-        }
-      }
-    },
-    "v1UserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "Base"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "ImportedFromAppID": {
-          "type": "string",
-          "title": "Imported"
-        },
-        "Username": {
-          "type": "string",
-          "title": "Extra"
-        },
-        "AddressFields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Gender": {
-          "type": "string"
-        },
-        "PostalCode": {
-          "type": "string"
-        },
-        "Age": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Birthday": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Avatar": {
-          "type": "string"
-        },
-        "Organization": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "IDNumber": {
-          "type": "string"
-        },
-        "SigninVerifyType": {
-          "$ref": "#/definitions/v1SignMethod",
-          "title": "Control"
-        },
-        "GoogleAuthVerified": {
-          "type": "boolean"
-        },
-        "PasswordHash": {
-          "type": "string",
-          "title": "Secret"
-        },
-        "GoogleSecret": {
-          "type": "string"
-        },
-        "ThirdPartyID": {
-          "type": "string",
-          "title": "ThirdParty"
-        },
-        "ThirdPartyUserID": {
-          "type": "string"
-        },
-        "ThirdPartyUsername": {
-          "type": "string"
-        },
-        "ThirdPartyAvatar": {
-          "type": "string"
-        },
-        "Banned": {
-          "type": "boolean",
-          "title": "Banned"
-        },
-        "BanMessage": {
-          "type": "string"
-        },
-        "RoleIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "RoleUser"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "KolConfirmed": {
-          "type": "boolean"
-        },
-        "ActionCredits": {
-          "type": "string"
-        },
-        "SelectedLangID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VerifyAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1VerifyUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1User"
         }
       }
     }

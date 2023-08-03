@@ -838,6 +838,22 @@
         "SelectedLangID": {
           "type": "string",
           "title": "@inject_tag: sql:\"selected_lang_id\""
+        },
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "Third info\n@inject_tag: sql:\"third_party_id\""
+        },
+        "ThirdPartyUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_user_id\""
+        },
+        "ThirdPartyUsername": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_username\""
+        },
+        "ThirdPartyAvatar": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_avatar\""
         }
       }
     }

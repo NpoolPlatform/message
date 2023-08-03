@@ -10,10 +10,12 @@ import "npool/basetypes/v1/kycstate.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
+    rpc CreateThirdUser   (CreateThirdUserRequest)  returns (CreateThirdUserResponse)  {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
+    rpc GetThirdUsers     (GetThirdUsersRequest)    returns (GetThirdUsersResponse)    {}
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
 
@@ -173,6 +175,16 @@ message User {
     string          ActionCredits         = 440;
     // @inject_tag: sql:"selected_lang_id"
     optional string SelectedLangID        = 450;
+
+    // Third info
+    // @inject_tag: sql:"third_party_id"
+    optional string ThirdPartyID              = 460;
+    // @inject_tag: sql:"third_party_user_id"
+    optional string ThirdPartyUserID          = 470;
+    // @inject_tag: sql:"third_party_username"
+    optional string ThirdPartyUsername        = 480;
+    // @inject_tag: sql:"third_party_avatar"
+    optional string ThirdPartyAvatar          = 490;
 }
 
 message Conds {
@@ -182,6 +194,8 @@ message Conds {
     basetypes.v1.StringVal      EmailAddress  = 40;
     basetypes.v1.StringVal      ImportFromApp = 50;
     basetypes.v1.StringSliceVal IDs           = 60;
+    basetypes.v1.StringVal      ThirdPartyID  = 70;
+    basetypes.v1.StringVal      ThirdPartyUserID = 80;
 }
 
 message CreateUserRequest {
@@ -189,6 +203,14 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
+    User Info = 10;
+}
+
+message CreateThirdUserRequest {
+    UserReq Info = 10;
+}
+
+message CreateThirdUserResponse {
     User Info = 10;
 }
 
@@ -207,6 +229,17 @@ message GetUsersRequest {
 }
 
 message GetUsersResponse {
+    repeated User Infos = 10;
+    uint32 Total  = 40;
+}
+
+message GetThirdUsersRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetThirdUsersResponse {
     repeated User Infos = 10;
     uint32 Total  = 40;
 }
