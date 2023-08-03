@@ -4,9 +4,9 @@ package order.gateway.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 
-import "npool/order/mgr/v1/order/order.proto";
 import "google/api/annotations.proto";
-import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
+import "npool/order/mgr/v1/order/order.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -99,7 +99,7 @@ service Gateway {
 
 message Coupon {
     string CouponID = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
+    basetypes.inspire.v1.CouponType CouponType = 20;
     string CouponName  = 30;
     string CouponValue = 40;
 }
