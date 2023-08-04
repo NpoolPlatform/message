@@ -58,7 +58,7 @@ message CreateOAuthThirdPartyResponse {
 
 message UpdateOAuthThirdPartyRequest {
     string          ID             = 10;
-    string          AppID          = 20;
+    string          TargetAppID    = 20;
     optional string ThirdPartyID   = 30;
     optional string ClientID       = 40;
     optional string ClientSecret   = 50;
