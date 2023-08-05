@@ -124,7 +124,7 @@
     "v1GetOAuthLoginURLResponse": {
       "type": "object",
       "properties": {
-        "OAuthLoginURL": {
+        "Info": {
           "type": "string"
         }
       }

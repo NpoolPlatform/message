@@ -30,7 +30,7 @@ message GetOAuthLoginURLRequest {
 }
 
 message GetOAuthLoginURLResponse {
-    string OAuthLoginURL = 10;
+    string Info = 10;
 }
 
 message OAuthLoginRequest {
