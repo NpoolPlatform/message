@@ -57,15 +57,6 @@
         }
       }
     },
-    "v1SettleMode": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleMode",
-        "SettleWithGoodValue",
-        "SettleWithPaymentAmount"
-      ],
-      "default": "DefaultSettleMode"
-    },
     "v1SettleType": {
       "type": "string",
       "enum": [
