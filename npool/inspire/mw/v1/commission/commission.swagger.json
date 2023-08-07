@@ -125,6 +125,13 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"order_limit\""
+        },
+        "SettleAmountStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_amount\""
+        },
+        "SettleAmount": {
+          "$ref": "#/definitions/v1SettleAmount"
         }
       }
     },
@@ -161,6 +168,9 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "SettleAmount": {
+          "$ref": "#/definitions/v1SettleAmount"
         }
       }
     },
@@ -227,6 +237,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1SettleAmount": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmount",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmount"
     },
     "v1SettleInterval": {
       "type": "string",
