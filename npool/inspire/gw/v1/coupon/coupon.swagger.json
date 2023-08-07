@@ -250,9 +250,6 @@
         "TargetAppID": {
           "type": "string"
         },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
-        },
         "Denomination": {
           "type": "string"
         },
