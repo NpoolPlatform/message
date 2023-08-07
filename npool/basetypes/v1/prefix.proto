@@ -52,8 +52,8 @@ enum Prefix {
     PrefixCreateRegistration   = 440;
     PrefixCreateCommission     = 450;
     PrefixCloneCommission      = 460;
-    PrefixCreateInspireArchivementStatement = 470;
-    PrefixCreateInspireArchivement = 480;
+    PrefixCreateInspireAchievementStatement = 470;
+    PrefixCreateInspireAchievement = 480;
 
     PrefixMigrateInspire       = 10000;
 }
