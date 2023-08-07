@@ -347,6 +347,7 @@
         "TargetAppID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "CouponType": {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,6 +363,8 @@
           "$ref": "#/definitions/v1CouponType"
 >>>>>>> Remove inspire mgr
         },
+=======
+>>>>>>> Remove coupon type
         "Denomination": {
           "type": "string"
         },

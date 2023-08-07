@@ -64,7 +64,6 @@ message CreateCouponResponse {
 message UpdateCouponRequest {
     string ID          = 10;
     string TargetAppID = 20;
-    basetypes.inspire.v1.CouponType CouponType = 30;
     optional string Denomination = 40;
     optional string Circulation  = 50;
     optional uint32 StartAt      = 60;
