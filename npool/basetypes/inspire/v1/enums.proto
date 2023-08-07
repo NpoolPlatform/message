@@ -8,7 +8,7 @@ enum SettleType {
     DefaultSettleType     = 0;
 
     // Divide commission according to order payment amount or good value
-    GoodOrderPercent      = 10;
+    GoodOrderPayment      = 10;
     // Divice commission according to order technique fee
     TechniqueFeePercent   = 40;
 
@@ -20,6 +20,13 @@ enum SettleMode {
 
     SettleWithGoodValue     = 10;
     SettleWithPaymentAmount = 20;
+}
+
+enum SettleAmount {
+    DefaultSettleAmount = 0;
+
+    SettleByPercent     = 10;
+    SettleByAmount      = 20;
 }
 
 enum SettleInterval {
