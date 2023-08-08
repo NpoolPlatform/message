@@ -476,11 +476,14 @@
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Remove settletype
         "AmountOrPercent": {
           "type": "string"
         },
+=======
+>>>>>>> Remove amount or percent from update request
         "StartAt": {
           "type": "integer",
           "format": "int64"
