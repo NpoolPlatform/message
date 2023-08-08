@@ -128,7 +128,7 @@
         },
         "SettleAmountTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"settle_amount\""
+          "title": "@inject_tag: sql:\"settle_amount_type\""
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"

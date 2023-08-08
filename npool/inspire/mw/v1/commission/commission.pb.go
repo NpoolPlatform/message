@@ -191,8 +191,8 @@ type Commission struct {
 	DeletedAt uint32 `protobuf:"varint,150,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty" sql:"deleted_at"`
 	// @inject_tag: sql:"order_limit"
 	OrderLimit uint32 `protobuf:"varint,160,opt,name=OrderLimit,proto3" json:"OrderLimit,omitempty" sql:"order_limit"`
-	// @inject_tag: sql:"settle_amount"
-	SettleAmountTypeStr string              `protobuf:"bytes,170,opt,name=SettleAmountTypeStr,proto3" json:"SettleAmountTypeStr,omitempty" sql:"settle_amount"`
+	// @inject_tag: sql:"settle_amount_type"
+	SettleAmountTypeStr string              `protobuf:"bytes,170,opt,name=SettleAmountTypeStr,proto3" json:"SettleAmountTypeStr,omitempty" sql:"settle_amount_type"`
 	SettleAmountType    v1.SettleAmountType `protobuf:"varint,180,opt,name=SettleAmountType,proto3,enum=basetypes.inspire.v1.SettleAmountType" json:"SettleAmountType,omitempty"`
 }
 
