@@ -67,6 +67,7 @@ message Commission {
 
     basetypes.inspire.v1.SettleType SettleType = 80;
     basetypes.inspire.v1.SettleMode SettleMode = 90;
+    basetypes.inspire.v1.SettleAmountType SettleAmountType = 95;
     basetypes.inspire.v1.SettleInterval SettleInterval = 100;
 
     string GoodID     = 110;
@@ -94,6 +95,7 @@ message CreateCommissionRequest {
     uint32          StartAt      = 70;
     basetypes.inspire.v1.SettleMode SettleMode = 80;
     optional string Threshold    = 90;
+    basetypes.inspire.v1.SettleAmountType SettleAmountType = 100;
 }
 
 message CreateCommissionResponse {
@@ -109,6 +111,7 @@ message CreateUserCommissionRequest {
     uint32          StartAt      = 60;
     basetypes.inspire.v1.SettleMode SettleMode = 70;
     optional string Threshold    = 80;
+    basetypes.inspire.v1.SettleAmountType SettleAmountType = 90;
 }
 
 message CreateUserCommissionResponse {

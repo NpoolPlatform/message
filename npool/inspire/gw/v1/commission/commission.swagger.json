@@ -298,6 +298,9 @@
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
         },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
@@ -370,6 +373,9 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
         }
       }
     },
@@ -520,6 +526,9 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
         }
       }
     },
@@ -566,6 +575,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
     },
     "v1SettleInterval": {
       "type": "string",
