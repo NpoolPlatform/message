@@ -431,9 +431,6 @@
         "AppID": {
           "type": "string"
         },
-        "AmountOrPercent": {
-          "type": "string"
-        },
         "StartAt": {
           "type": "integer",
           "format": "int64"

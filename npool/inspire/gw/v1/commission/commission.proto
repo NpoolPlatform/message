@@ -121,7 +121,6 @@ message CreateUserCommissionResponse {
 message UpdateCommissionRequest {
     string          ID      = 10;
     string          AppID   = 20;
-    optional string AmountOrPercent = 40;
     optional uint32 StartAt = 50;
     optional string Threshold = 60;
 }
