@@ -103,49 +103,11 @@
         }
       }
     },
-    "v1IOSubType": {
-      "type": "string",
-      "enum": [
-        "DefaultSubType",
-        "Payment",
-        "MiningBenefit",
-        "Commission",
-        "TechniqueFeeCommission",
-        "Deposit",
-        "Transfer",
-        "Withdrawal",
-        "OrderRevoke",
-        "CommissionRevoke"
-      ],
-      "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
-    },
-    "v1IOType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Incoming",
-        "Outcoming"
-      ],
-      "default": "DefaultType"
-    },
     "v1LockBalanceResponse": {
       "type": "object"
     },
     "v1UnlockBalanceResponse": {
       "type": "object"
-    },
-    "v1WithdrawState": {
-      "type": "string",
-      "enum": [
-        "DefaultWithdrawState",
-        "Reviewing",
-        "Transferring",
-        "Rejected",
-        "TransactionFail",
-        "Successful"
-      ],
-      "default": "DefaultWithdrawState"
     },
     "v2Detail": {
       "type": "object",
@@ -171,14 +133,14 @@
           "title": "@inject_tag: sql:\"io_type\""
         },
         "IOType": {
-          "$ref": "#/definitions/v1IOType"
+          "$ref": "#/definitions/v2IOType"
         },
         "IOSubTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"io_sub_type\""
         },
         "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
+          "$ref": "#/definitions/v2IOSubType"
         },
         "Amount": {
           "type": "string",
@@ -224,10 +186,10 @@
           "type": "string"
         },
         "IOType": {
-          "$ref": "#/definitions/v1IOType"
+          "$ref": "#/definitions/v2IOType"
         },
         "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
+          "$ref": "#/definitions/v2IOSubType"
         },
         "Amount": {
           "type": "string"
@@ -295,6 +257,32 @@
         }
       }
     },
+    "v2IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v2IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
     "v2Withdraw": {
       "type": "object",
       "properties": {
@@ -339,7 +327,7 @@
           "title": "@inject_tag: sql:\"state\""
         },
         "State": {
-          "$ref": "#/definitions/v1WithdrawState"
+          "$ref": "#/definitions/v2WithdrawState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -384,9 +372,21 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1WithdrawState"
+          "$ref": "#/definitions/v2WithdrawState"
         }
       }
+    },
+    "v2WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }
