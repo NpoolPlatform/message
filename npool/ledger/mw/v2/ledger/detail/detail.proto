@@ -4,7 +4,6 @@ package ledger.middleware.ledger.detail.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger/detail";
 
-import "npool/basetypes/v1/iotype.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -14,13 +13,45 @@ service Middleware {
     rpc GetDetails       (GetDetailsRequest)       returns (GetDetailsResponse)       {}
 }
 
+
+enum IOType {
+    DefaultType        = 0;
+    Incoming           = 10;
+    Outcoming          = 11;
+}
+  
+enum IOSubType {
+    DefaultSubType            = 0;
+    // I/O
+    // I: record tids in extra
+    // O: record order id in extra
+    Payment                   = 100;
+    // I: record good id in extra
+    MiningBenefit             = 101;
+    // I: record user id, order id in extra
+    Commission                = 102;
+    // I: record good id in extra
+    TechniqueFeeCommission    = 103;
+    // I: record address in extra
+    Deposit                   = 104;
+    // I: record from user in extra
+    // O: record target user in extra
+    Transfer                  = 105;
+    // O
+    Withdrawal                = 200;
+    // I: record user id, order id in extra
+    OrderRevoke               = 210;
+    // I: record user id,order id, archivement details id in extra
+    CommissionRevoke          = 220;
+}
+  
 message DetailReq {
     optional string     ID               = 10;
     optional string     AppID            = 20;
     optional string     UserID           = 30;
     optional string     CoinTypeID       = 40;
-    optional basetypes.v1.IOType     IOType           = 50;
-    optional basetypes.v1.IOSubType  IOSubType        = 60;
+    optional IOType     IOType           = 50;
+    optional IOSubType  IOSubType        = 60;
     optional string     Amount           = 70;
     // E.g. when pay with non-USDT coin
     optional string     FromCoinTypeID   = 80;
@@ -39,11 +70,11 @@ message Detail {
     // @inject_tag: sql:"coin_type_id"
     string      CoinTypeID                     = 40;
     // @inject_tag: sql:"io_type"
-    string       IOTypeStr                     = 41;
-    basetypes.v1.IOType      IOType            = 50;
+    string      IOTypeStr                      = 41;
+    IOType      IOType                         = 50;
     // @inject_tag: sql:"io_sub_type"
-    string       IOSubTypeStr                  = 51;
-    basetypes.v1.IOSubType   IOSubType         = 60;
+    string      IOSubTypeStr                   = 51;
+    IOSubType   IOSubType                      = 60;
     // @inject_tag: sql:"amount"
     string      Amount                         = 70;
     // @inject_tag: sql:"from_coin_type_id"
