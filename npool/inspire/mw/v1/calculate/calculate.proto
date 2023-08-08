@@ -27,7 +27,6 @@ message CalculateRequest {
     basetypes.inspire.v1.SettleType SettleType = 120;
     bool   HasCommission          = 130;
     uint32 OrderCreatedAt         = 140;
-    basetypes.inspire.v1.SettleAmountType SettleAmountType = 150;
 }
 
 message CalculateResponse {

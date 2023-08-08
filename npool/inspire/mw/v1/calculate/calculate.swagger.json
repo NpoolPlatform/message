@@ -57,15 +57,6 @@
         }
       }
     },
-    "v1SettleAmountType": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleAmountType",
-        "SettleByPercent",
-        "SettleByAmount"
-      ],
-      "default": "DefaultSettleAmountType"
-    },
     "v1SettleType": {
       "type": "string",
       "enum": [
