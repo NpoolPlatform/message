@@ -30,6 +30,7 @@ const (
 	Middleware_ExistUser_FullMethodName       = "/appuser.middleware.user.v1.Middleware/ExistUser"
 	Middleware_ExistUserConds_FullMethodName  = "/appuser.middleware.user.v1.Middleware/ExistUserConds"
 	Middleware_DeleteUser_FullMethodName      = "/appuser.middleware.user.v1.Middleware/DeleteUser"
+	Middleware_DeleteThirdUser_FullMethodName = "/appuser.middleware.user.v1.Middleware/DeleteThirdUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -47,6 +48,7 @@ type MiddlewareClient interface {
 	ExistUser(ctx context.Context, in *ExistUserRequest, opts ...grpc.CallOption) (*ExistUserResponse, error)
 	ExistUserConds(ctx context.Context, in *ExistUserCondsRequest, opts ...grpc.CallOption) (*ExistUserCondsResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
+	DeleteThirdUser(ctx context.Context, in *DeleteThirdUserRequest, opts ...grpc.CallOption) (*DeleteThirdUserResponse, error)
 }
 
 type middlewareClient struct {
@@ -156,6 +158,15 @@ func (c *middlewareClient) DeleteUser(ctx context.Context, in *DeleteUserRequest
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteThirdUser(ctx context.Context, in *DeleteThirdUserRequest, opts ...grpc.CallOption) (*DeleteThirdUserResponse, error) {
+	out := new(DeleteThirdUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteThirdUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -171,6 +182,7 @@ type MiddlewareServer interface {
 	ExistUser(context.Context, *ExistUserRequest) (*ExistUserResponse, error)
 	ExistUserConds(context.Context, *ExistUserCondsRequest) (*ExistUserCondsResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
+	DeleteThirdUser(context.Context, *DeleteThirdUserRequest) (*DeleteThirdUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -210,6 +222,9 @@ func (UnimplementedMiddlewareServer) ExistUserConds(context.Context, *ExistUserC
 }
 func (UnimplementedMiddlewareServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteThirdUser(context.Context, *DeleteThirdUserRequest) (*DeleteThirdUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteThirdUser not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -422,6 +437,24 @@ func _Middleware_DeleteUser_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteThirdUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteThirdUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteThirdUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteThirdUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteThirdUser(ctx, req.(*DeleteThirdUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -472,6 +505,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteUser",
 			Handler:    _Middleware_DeleteUser_Handler,
+		},
+		{
+			MethodName: "DeleteThirdUser",
+			Handler:    _Middleware_DeleteThirdUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

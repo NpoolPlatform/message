@@ -23,6 +23,7 @@ service Middleware {
     rpc ExistUserConds    (ExistUserCondsRequest)   returns (ExistUserCondsResponse)   {}
 
     rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
+    rpc DeleteThirdUser   (DeleteThirdUserRequest)  returns (DeleteThirdUserResponse)  {}
 
 }
 
@@ -296,5 +297,13 @@ message DeleteUserRequest {
 }
 
 message DeleteUserResponse {
+    User Info = 10;
+}
+
+message DeleteThirdUserRequest {
+    UserReq Info = 10;
+}
+
+message DeleteThirdUserResponse {
     User Info = 10;
 }

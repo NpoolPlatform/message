@@ -90,6 +90,14 @@
         }
       }
     },
+    "v1DeleteThirdUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
     "v1DeleteUserResponse": {
       "type": "object",
       "properties": {
