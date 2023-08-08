@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package basetypes.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
+
+enum WithdrawState {
+    DefaultWithdrawState  = 0;
+    Reviewing             = 10;
+    Transferring          = 20;
+    Rejected              = 30;
+    TransactionFail       = 40;
+    Successful            = 50;
+}
+

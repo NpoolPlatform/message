@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/ledger/detail/detail.proto",
+    "title": "npool/ledger/mw/v2/ledger/detail/detail.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -44,7 +44,56 @@
         }
       }
     },
-    "v1Conds": {
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -60,10 +109,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "IOType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "IOSubType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
@@ -79,74 +128,76 @@
         }
       }
     },
-    "v1CountDetailsResponse": {
+    "v2CreateDetailResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v2Detail"
         }
       }
     },
-    "v1CreateDetailResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Detail"
-        }
-      }
-    },
-    "v1CreateDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Detail"
-          }
-        }
-      }
-    },
-    "v1Detail": {
+    "v2Detail": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "IOTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"io_type\""
         },
         "IOType": {
           "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"io_sub_type\""
         },
         "IOSubType": {
           "$ref": "#/definitions/v1IOSubType"
         },
         "Amount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
         },
         "FromCoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"from_coin_type_id\""
         },
         "CoinUSDCurrency": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
         },
         "IOExtra": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"io_extra\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
-    "v1DetailReq": {
+    "v2DetailReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -186,99 +237,26 @@
         }
       }
     },
-    "v1ExistDetailCondsResponse": {
+    "v2GetDetailOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "boolean"
+          "$ref": "#/definitions/v2Detail"
         }
       }
     },
-    "v1ExistDetailResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetDetailOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Detail"
-        }
-      }
-    },
-    "v1GetDetailResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Detail"
-        }
-      }
-    },
-    "v1GetDetailsResponse": {
+    "v2GetDetailsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Detail"
+            "$ref": "#/definitions/v2Detail"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1IOSubType": {
-      "type": "string",
-      "enum": [
-        "DefaultSubType",
-        "Payment",
-        "MiningBenefit",
-        "Commission",
-        "TechniqueFeeCommission",
-        "Deposit",
-        "Transfer",
-        "Withdrawal",
-        "OrderRevoke",
-        "CommissionRevoke"
-      ],
-      "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
-    },
-    "v1IOType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Incoming",
-        "Outcoming"
-      ],
-      "default": "DefaultType"
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
         }
       }
     }
