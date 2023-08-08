@@ -27,7 +27,7 @@ message CommissionReq {
     optional string AmountOrPercent = 80;
     optional uint32 StartAt  = 100;
     optional string Threshold = 110;
-    optional basetypes.inspire.v1.SettleAmount SettleAmount = 120;
+    optional basetypes.inspire.v1.SettleAmountType SettleAmountType = 120;
 }
 
 // If good commission exist, use good commission
@@ -73,8 +73,8 @@ message Commission {
     // @inject_tag: sql:"order_limit"
     uint32     OrderLimit      = 160;
     // @inject_tag: sql:"settle_amount"
-    string     SettleAmountStr   = 170;
-    basetypes.inspire.v1.SettleAmount SettleAmount = 180;
+    string     SettleAmountTypeStr   = 170;
+    basetypes.inspire.v1.SettleAmountType SettleAmountType = 180;
 }
 
 message Conds {
