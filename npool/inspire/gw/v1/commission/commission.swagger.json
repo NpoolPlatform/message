@@ -306,6 +306,9 @@
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
         },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
@@ -395,7 +398,13 @@
         },
         "Threshold": {
           "type": "string"
+<<<<<<< HEAD
 >>>>>>> Add commission threshold
+=======
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+>>>>>>> Add settle amount type
         }
       }
     },
@@ -661,7 +670,13 @@
         },
         "Threshold": {
           "type": "string"
+<<<<<<< HEAD
 >>>>>>> Add commission threshold
+=======
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+>>>>>>> Add settle amount type
         }
       }
     },
@@ -710,6 +725,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
     },
     "v1SettleInterval": {
       "type": "string",
