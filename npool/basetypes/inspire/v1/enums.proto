@@ -22,8 +22,8 @@ enum SettleMode {
     SettleWithPaymentAmount = 20;
 }
 
-enum SettleAmount {
-    DefaultSettleAmount = 0;
+enum SettleAmountType {
+    DefaultSettleAmountType = 0;
 
     SettleByPercent     = 10;
     SettleByAmount      = 20;
