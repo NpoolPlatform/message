@@ -1,14 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/mining/bookkeeping/bookkeeping.proto",
+    "title": "npool/basetypes/v1/withdrawstate.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "Middleware"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -43,9 +38,6 @@
           }
         }
       }
-    },
-    "v2BookKeepingResponse": {
-      "type": "object"
     }
   }
 }

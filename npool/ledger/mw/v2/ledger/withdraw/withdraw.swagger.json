@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mgr/v1/ledger/withdraw/withdraw.proto",
+    "title": "npool/ledger/mw/v2/ledger/withdraw/withdraw.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -44,118 +44,6 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AccountID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CreatedAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "State": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v1CountWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
-    },
-    "v1CreateWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Withdraw"
-          }
-        }
-      }
-    },
-    "v1DeleteWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
-    },
-    "v1ExistWithdrawCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetWithdrawOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
-    },
-    "v1GetWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
-    },
-    "v1GetWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Withdraw"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -179,88 +67,6 @@
         }
       }
     },
-    "v1UpdateWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Withdraw"
-        }
-      }
-    },
-    "v1Withdraw": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1WithdrawState"
-        }
-      }
-    },
-    "v1WithdrawReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "PlatformTransactionID": {
-          "type": "string"
-        },
-        "ChainTransactionID": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1WithdrawState"
-        }
-      }
-    },
     "v1WithdrawState": {
       "type": "string",
       "enum": [
@@ -272,6 +78,202 @@
         "Successful"
       ],
       "default": "DefaultWithdrawState"
+    },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v2CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2CreateWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Withdraw"
+          }
+        }
+      }
+    },
+    "v2ExistWithdrawCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2ExistWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v2GetWithdrawOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2GetWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2GetWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UpdateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2Withdraw": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "AccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
+        },
+        "Address": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "PlatformTransactionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"platform_transaction_id\""
+        },
+        "ChainTransactionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_transaction_id\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v2WithdrawReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        }
+      }
     }
   }
 }

@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package ledger.middleware.ledger.profit.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger/profit";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateProfit     (CreateProfitRequest)     returns (CreateProfitResponse)     {}
+    rpc CreateProfits    (CreateProfitsRequest)    returns (CreateProfitsResponse)    {}
+    rpc AddProfit        (AddProfitRequest)        returns (AddProfitResponse)        {}
+    rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
+    rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
+    rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
+    rpc DeleteProfit     (DeleteProfitRequest)     returns (DeleteProfitResponse)     {}
+}
+
+message ProfitReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string CoinTypeID = 40;
+    optional string Incoming   = 50;
+}
+
+message Profit {
+    // @inject_tag: sql:"id"
+    string      ID                             = 10;
+    // @inject_tag: sql:"app_id"
+    string      AppID                          = 20;
+    // @inject_tag: sql:"user_id"
+    string      UserID                         = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string      CoinTypeID                     = 40;
+    // @inject_tag: sql:"incoming"
+    string      Incoming                       = 50;
+    // @inject_tag: sql:"created_at"
+    uint32      CreatedAt                      = 90;
+    // @inject_tag: sql:"updated_at"
+    uint32      UpdatedAt                      = 100;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal UserID      = 30;
+    optional basetypes.v1.StringVal CoinTypeID  = 40;
+    optional basetypes.v1.StringVal Incoming    = 50;
+}
+
+message CreateProfitRequest {
+    ProfitReq Info = 10;
+}
+
+message CreateProfitResponse {
+    Profit Info = 10;
+}
+
+message CreateProfitsRequest {
+    repeated ProfitReq Infos = 10;
+}
+
+message CreateProfitsResponse {
+    repeated Profit Infos = 10;
+}
+
+message AddProfitRequest {
+    ProfitReq Info = 10;
+}
+
+message AddProfitResponse {
+    Profit Info = 10;
+}
+
+message GetProfitRequest {
+    string ID = 10;
+}
+
+message GetProfitResponse {
+    Profit Info = 10;
+}
+
+message GetProfitsRequest {
+    Conds Conds     = 10;
+    int32 Offset    = 20;
+    int32 Limit     = 30;
+}
+
+message GetProfitsResponse {
+    repeated Profit Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetProfitOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetProfitOnlyResponse {
+    Profit Info = 10;
+}
+
+message DeleteProfitRequest {
+    ProfitReq Infos = 10;
+}
+
+message DeleteProfitResponse {
+    Profit Info = 10;
+}
