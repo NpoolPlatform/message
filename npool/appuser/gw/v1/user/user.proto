@@ -409,8 +409,8 @@ message UnBindOAuthRequest {
     string          AppID              = 10;
     string          UserID             = 20;
 
-    optional string Account            = 30;
-    optional basetypes.v1.SignMethod AccountType    = 40;
+    string Account                     = 30;
+    basetypes.v1.SignMethod AccountType    = 40;
 }
 
 message UnBindOAuthResponse {
