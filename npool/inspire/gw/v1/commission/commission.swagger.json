@@ -404,7 +404,13 @@
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
+<<<<<<< HEAD
 >>>>>>> Add settle amount type
+=======
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+>>>>>>> Add interval
         }
       }
     },
@@ -679,7 +685,13 @@
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
+<<<<<<< HEAD
 >>>>>>> Add settle amount type
+=======
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+>>>>>>> Add interval
         }
       }
     },
