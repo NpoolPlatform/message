@@ -1227,6 +1227,31 @@
         }
       }
     },
+    "v1OAuthThirdParty": {
+      "type": "object",
+      "properties": {
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_id\""
+        },
+        "ThirdPartyUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_user_id\""
+        },
+        "ThirdPartyUsername": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_username\""
+        },
+        "ThirdPartyAvatar": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_avatar\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        }
+      }
+    },
     "v1ResetUserRequest": {
       "type": "object",
       "properties": {
@@ -1577,6 +1602,13 @@
         "ThirdPartyAvatar": {
           "type": "string",
           "title": "@inject_tag: sql:\"third_party_avatar\""
+        },
+        "OAuthThirdParties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1OAuthThirdParty"
+          }
         }
       }
     }

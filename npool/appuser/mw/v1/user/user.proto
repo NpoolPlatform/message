@@ -76,6 +76,19 @@ message UserReq {
     optional string SelectedLangID     = 310;
 }
 
+message OAuthThirdParty {
+    // @inject_tag: sql:"third_party_id"
+    string ThirdPartyID              = 10;
+    // @inject_tag: sql:"third_party_user_id"
+    string ThirdPartyUserID          = 20;
+    // @inject_tag: sql:"third_party_username"
+    string ThirdPartyUsername        = 30;
+    // @inject_tag: sql:"third_party_avatar"
+    string ThirdPartyAvatar          = 40;
+    // @inject_tag: sql:"user_id"
+    string UserID                    = 50;
+}
+
 message User {
     // Base
     // @inject_tag: sql:"id"
@@ -184,6 +197,7 @@ message User {
     optional string ThirdPartyUsername        = 480;
     // @inject_tag: sql:"third_party_avatar"
     optional string ThirdPartyAvatar          = 490;
+    repeated OAuthThirdParty OAuthThirdParties = 500;
 }
 
 message Conds {
