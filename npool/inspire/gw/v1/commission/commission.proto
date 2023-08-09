@@ -96,6 +96,7 @@ message CreateCommissionRequest {
     basetypes.inspire.v1.SettleMode SettleMode = 80;
     optional string Threshold    = 90;
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 100;
+    basetypes.inspire.v1.SettleInterval SettleInterval = 110;
 }
 
 message CreateCommissionResponse {
@@ -112,6 +113,7 @@ message CreateUserCommissionRequest {
     basetypes.inspire.v1.SettleMode SettleMode = 70;
     optional string Threshold    = 80;
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 90;
+    basetypes.inspire.v1.SettleInterval SettleInterval = 100;
 }
 
 message CreateUserCommissionResponse {

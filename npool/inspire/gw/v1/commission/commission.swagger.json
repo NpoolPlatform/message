@@ -376,6 +376,9 @@
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
         }
       }
     },
@@ -526,6 +529,9 @@
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
         }
       }
     },
