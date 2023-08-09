@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/ledger/ledger.proto",
+    "title": "npool/ledger/mw/v2/withdraw/withdraw.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,20 +44,6 @@
         }
       }
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -69,13 +55,29 @@
         }
       }
     },
-    "v2AddLedgerResponse": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     },
     "v2Conds": {
       "type": "object",
@@ -92,73 +94,78 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v2CreateLedgerResponse": {
+    "v2CreateWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Withdraw"
         }
       }
     },
-    "v2CreateLedgersResponse": {
+    "v2CreateWithdrawsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Withdraw"
           }
         }
       }
     },
-    "v2DeleteLedgerResponse": {
+    "v2ExistWithdrawCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "type": "boolean"
         }
       }
     },
-    "v2GetLedgerOnlyResponse": {
+    "v2ExistWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "type": "boolean"
         }
       }
     },
-    "v2GetLedgerResponse": {
+    "v2GetWithdrawOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Withdraw"
         }
       }
     },
-    "v2GetLedgersResponse": {
+    "v2GetWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2GetWithdrawsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Withdraw"
           }
         },
         "Total": {
@@ -167,7 +174,15 @@
         }
       }
     },
-    "v2Ledger": {
+    "v2UpdateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2Withdraw": {
       "type": "object",
       "properties": {
         "ID": {
@@ -186,21 +201,32 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "Incoming": {
+        "AccountID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
+          "title": "@inject_tag: sql:\"account_id\""
         },
-        "Outcoming": {
+        "Address": {
           "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
+          "title": "@inject_tag: sql:\"address\""
         },
-        "Locked": {
+        "Amount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
+          "title": "@inject_tag: sql:\"amount\""
         },
-        "Spendable": {
+        "PlatformTransactionID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
+          "title": "@inject_tag: sql:\"platform_transaction_id\""
+        },
+        "ChainTransactionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_transaction_id\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -214,7 +240,7 @@
         }
       }
     },
-    "v2LedgerReq": {
+    "v2WithdrawReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -229,17 +255,23 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "AccountID": {
           "type": "string"
         },
-        "Locked": {
+        "Address": {
           "type": "string"
         },
-        "Outcoming": {
+        "Amount": {
           "type": "string"
         },
-        "Spendable": {
+        "PlatformTransactionID": {
           "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
     }

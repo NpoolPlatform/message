@@ -19,22 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetIntervalGenerals_FullMethodName = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalGenerals"
-	Middleware_GetIntervalDetails_FullMethodName  = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalDetails"
-	Middleware_GetIntervalProfits_FullMethodName  = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalProfits"
-	Middleware_BookKeeping_FullMethodName         = "/ledger.middleware.ledger1.v1.Middleware/BookKeeping"
-	Middleware_LockBalance_FullMethodName         = "/ledger.middleware.ledger1.v1.Middleware/LockBalance"
-	Middleware_UnlockBalance_FullMethodName       = "/ledger.middleware.ledger1.v1.Middleware/UnlockBalance"
-	Middleware_FinalPayment_FullMethodName        = "/ledger.middleware.ledger1.v1.Middleware/FinalPayment"
-	Middleware_UpdateWithdraw_FullMethodName      = "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw"
+	Middleware_GetIntervalLedgers_FullMethodName    = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalLedgers"
+	Middleware_GetIntervalStatements_FullMethodName = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalStatements"
+	Middleware_GetIntervalProfits_FullMethodName    = "/ledger.middleware.ledger1.v1.Middleware/GetIntervalProfits"
+	Middleware_BookKeeping_FullMethodName           = "/ledger.middleware.ledger1.v1.Middleware/BookKeeping"
+	Middleware_LockBalance_FullMethodName           = "/ledger.middleware.ledger1.v1.Middleware/LockBalance"
+	Middleware_UnlockBalance_FullMethodName         = "/ledger.middleware.ledger1.v1.Middleware/UnlockBalance"
+	Middleware_FinalPayment_FullMethodName          = "/ledger.middleware.ledger1.v1.Middleware/FinalPayment"
+	Middleware_UpdateWithdraw_FullMethodName        = "/ledger.middleware.ledger1.v1.Middleware/UpdateWithdraw"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error)
-	GetIntervalDetails(ctx context.Context, in *GetIntervalDetailsRequest, opts ...grpc.CallOption) (*GetIntervalDetailsResponse, error)
+	GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error)
+	GetIntervalStatements(ctx context.Context, in *GetIntervalStatementsRequest, opts ...grpc.CallOption) (*GetIntervalStatementsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
 	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
@@ -51,18 +51,18 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error) {
-	out := new(GetIntervalGeneralsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetIntervalGenerals_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error) {
+	out := new(GetIntervalLedgersResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalLedgers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetIntervalDetails(ctx context.Context, in *GetIntervalDetailsRequest, opts ...grpc.CallOption) (*GetIntervalDetailsResponse, error) {
-	out := new(GetIntervalDetailsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetIntervalDetails_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetIntervalStatements(ctx context.Context, in *GetIntervalStatementsRequest, opts ...grpc.CallOption) (*GetIntervalStatementsResponse, error) {
+	out := new(GetIntervalStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalStatements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -127,8 +127,8 @@ func (c *middlewareClient) UpdateWithdraw(ctx context.Context, in *UpdateWithdra
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error)
-	GetIntervalDetails(context.Context, *GetIntervalDetailsRequest) (*GetIntervalDetailsResponse, error)
+	GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error)
+	GetIntervalStatements(context.Context, *GetIntervalStatementsRequest) (*GetIntervalStatementsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
 	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
@@ -142,11 +142,11 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalGenerals not implemented")
+func (UnimplementedMiddlewareServer) GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalLedgers not implemented")
 }
-func (UnimplementedMiddlewareServer) GetIntervalDetails(context.Context, *GetIntervalDetailsRequest) (*GetIntervalDetailsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalDetails not implemented")
+func (UnimplementedMiddlewareServer) GetIntervalStatements(context.Context, *GetIntervalStatementsRequest) (*GetIntervalStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalStatements not implemented")
 }
 func (UnimplementedMiddlewareServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
@@ -179,38 +179,38 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_GetIntervalGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIntervalGeneralsRequest)
+func _Middleware_GetIntervalLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalLedgersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetIntervalGenerals(ctx, in)
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetIntervalGenerals_FullMethodName,
+		FullMethod: Middleware_GetIntervalLedgers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetIntervalGenerals(ctx, req.(*GetIntervalGeneralsRequest))
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, req.(*GetIntervalLedgersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetIntervalDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIntervalDetailsRequest)
+func _Middleware_GetIntervalStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalStatementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetIntervalDetails(ctx, in)
+		return srv.(MiddlewareServer).GetIntervalStatements(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetIntervalDetails_FullMethodName,
+		FullMethod: Middleware_GetIntervalStatements_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetIntervalDetails(ctx, req.(*GetIntervalDetailsRequest))
+		return srv.(MiddlewareServer).GetIntervalStatements(ctx, req.(*GetIntervalStatementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -331,12 +331,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetIntervalGenerals",
-			Handler:    _Middleware_GetIntervalGenerals_Handler,
+			MethodName: "GetIntervalLedgers",
+			Handler:    _Middleware_GetIntervalLedgers_Handler,
 		},
 		{
-			MethodName: "GetIntervalDetails",
-			Handler:    _Middleware_GetIntervalDetails_Handler,
+			MethodName: "GetIntervalStatements",
+			Handler:    _Middleware_GetIntervalStatements_Handler,
 		},
 		{
 			MethodName: "GetIntervalProfits",

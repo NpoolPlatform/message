@@ -58,28 +58,13 @@
     "v1FinalPaymentResponse": {
       "type": "object"
     },
-    "v1GetIntervalDetailsResponse": {
+    "v1GetIntervalLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Detail"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetIntervalGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2General"
+            "$ref": "#/definitions/v2Ledger"
           }
         },
         "Total": {
@@ -94,7 +79,22 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Detail"
+            "$ref": "#/definitions/v2Statement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetIntervalStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Statement"
           }
         },
         "Total": {
@@ -147,7 +147,54 @@
       ],
       "default": "DefaultWithdrawState"
     },
-    "v2Detail": {
+    "v2Ledger": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Incoming": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"incoming\""
+        },
+        "Outcoming": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"outcoming\""
+        },
+        "Locked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "Spendable": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spendable\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v2Statement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -208,7 +255,7 @@
         }
       }
     },
-    "v2DetailReq": {
+    "v2StatementReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -245,53 +292,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2General": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "Incoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
-        },
-        "Outcoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
-        },
-        "Locked": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
-        },
-        "Spendable": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
