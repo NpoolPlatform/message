@@ -46,7 +46,7 @@ message GoodAchievement {
 }
 
 message Achievement {
-    string InviterID       = 9;
+    optional string InviterID = 9;
     string UserID          = 10;
     string Username        = 20;
     string EmailAddress    = 30;
