@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package basetypes.ledger.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/ledger/v1";
+
+enum IOType {
+    DefaultType        = 0;
+    Incoming           = 10;
+    Outcoming          = 11;
+}
+  
+enum IOSubType {
+    DefaultSubType            = 0;
+    // I/O
+    // I: record tids in extra
+    // O: record order id in extra
+    Payment                   = 100;
+    // I: record good id in extra
+    MiningBenefit             = 101;
+    // I: record user id, order id in extra
+    Commission                = 102;
+    // I: record good id in extra
+    TechniqueFeeCommission    = 103;
+    // I: record address in extra
+    Deposit                   = 104;
+    // I: record from user in extra
+    // O: record target user in extra
+    Transfer                  = 105;
+    // O
+    Withdrawal                = 200;
+    // I: record user id, order id in extra
+    OrderRevoke               = 210;
+    // I: record user id,order id, archivement details id in extra
+    CommissionRevoke          = 220;
+}
+
+enum WithdrawState {
+    DefaultWithdrawState  = 0;
+    Reviewing             = 10;
+    Transferring          = 20;
+    Rejected              = 30;
+    TransactionFail       = 40;
+    Successful            = 50;
+}
