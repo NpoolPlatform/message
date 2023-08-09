@@ -15,7 +15,6 @@ enum MsgID {
     UpdateOpLogHumanReadableReq  = 70;
     CreateNewLoginReq            = 80;
     CreateCommissionReq          = 90;
-    RewardEventCouponReq         = 100;
     CreateSampleMsgReq           = 100000000;
 }
 
