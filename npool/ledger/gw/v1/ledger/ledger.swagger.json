@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ledger1v1CreateWithdrawResponse"
+              "$ref": "#/definitions/v1CreateWithdrawResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ledger1v1CreateWithdrawRequest"
+              "$ref": "#/definitions/v1CreateWithdrawRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ledger1v1GetDetailsResponse"
+              "$ref": "#/definitions/v1GetDetailsResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ledger1v1GetDetailsRequest"
+              "$ref": "#/definitions/v1GetDetailsRequest"
             }
           }
         ],
@@ -503,7 +503,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ledger1v1GetWithdrawsResponse"
+              "$ref": "#/definitions/v1GetWithdrawsResponse"
             }
           },
           "default": {
@@ -519,7 +519,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ledger1v1GetWithdrawsRequest"
+              "$ref": "#/definitions/v1GetWithdrawsRequest"
             }
           }
         ],
@@ -530,215 +530,6 @@
     }
   },
   "definitions": {
-    "ledger1v1CreateWithdrawRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "AccountType": {
-          "$ref": "#/definitions/v1SignMethod"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "ledger1v1CreateWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/ledger1v1Withdraw"
-        }
-      }
-    },
-    "ledger1v1Detail": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "IOType": {
-          "$ref": "#/definitions/v2IOType"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v2IOSubType"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "IOExtra": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        }
-      }
-    },
-    "ledger1v1GetDetailsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ledger1v1GetDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ledger1v1Detail"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "ledger1v1GetWithdrawsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ledger1v1GetWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ledger1v1Withdraw"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "ledger1v1Withdraw": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "AddressLabels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "State": {
-          "$ref": "#/definitions/v2WithdrawState"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -796,7 +587,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/ledger1v1Detail"
+          "$ref": "#/definitions/v1Detail"
         }
       }
     },
@@ -834,6 +625,94 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Transfer"
+        }
+      }
+    },
+    "v1CreateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Withdraw"
+        }
+      }
+    },
+    "v1Detail": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },
@@ -909,7 +788,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ledger1v1Detail"
+            "$ref": "#/definitions/v1Detail"
           }
         },
         "Total": {
@@ -971,7 +850,49 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ledger1v1Withdraw"
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Detail"
           }
         },
         "Total": {
@@ -1173,7 +1094,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ledger1v1Withdraw"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1246,7 +1167,7 @@
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ledger1v1Withdraw"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1281,6 +1202,40 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Profit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1331,6 +1286,32 @@
         }
       }
     },
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
     "v1MiningReward": {
       "type": "object",
       "properties": {
@@ -1347,10 +1328,10 @@
           "type": "string"
         },
         "IOType": {
-          "$ref": "#/definitions/v2IOType"
+          "$ref": "#/definitions/v1IOType"
         },
         "IOSubType": {
-          "$ref": "#/definitions/v2IOSubType"
+          "$ref": "#/definitions/v1IOSubType"
         },
         "RewardAmount": {
           "type": "string"
@@ -1466,33 +1447,52 @@
         }
       }
     },
-    "v2IOSubType": {
-      "type": "string",
-      "enum": [
-        "DefaultSubType",
-        "Payment",
-        "MiningBenefit",
-        "Commission",
-        "TechniqueFeeCommission",
-        "Deposit",
-        "Transfer",
-        "Withdrawal",
-        "OrderRevoke",
-        "CommissionRevoke"
-      ],
-      "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    "v1Withdraw": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AddressLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
     },
-    "v2IOType": {
-      "type": "string",
-      "enum": [
-        "DefaultType",
-        "Incoming",
-        "Outcoming"
-      ],
-      "default": "DefaultType"
-    },
-    "v2WithdrawState": {
+    "v1WithdrawState": {
       "type": "string",
       "enum": [
         "DefaultWithdrawState",

@@ -67,6 +67,18 @@
         }
       }
     },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
+    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -214,7 +226,7 @@
           "title": "@inject_tag: sql:\"state\""
         },
         "State": {
-          "$ref": "#/definitions/v2WithdrawState"
+          "$ref": "#/definitions/v1WithdrawState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -259,21 +271,9 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v2WithdrawState"
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
-    },
-    "v2WithdrawState": {
-      "type": "string",
-      "enum": [
-        "DefaultWithdrawState",
-        "Reviewing",
-        "Transferring",
-        "Rejected",
-        "TransactionFail",
-        "Successful"
-      ],
-      "default": "DefaultWithdrawState"
     }
   }
 }

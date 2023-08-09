@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v1/ledger"
 import "npool/ledger/mw/v2/ledger/general/general.proto";
 import "npool/ledger/mw/v2/ledger/detail/detail.proto";
 import "npool/ledger/mw/v2/ledger/withdraw/withdraw.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -88,7 +89,7 @@ message UnlockBalanceRequest {
     string Unlocked                                     = 40;
     string Outcoming                                    = 50;
     // Only Payment or Withdrawal
-    .ledger.middleware.ledger.detail.v2.IOSubType IOSubType    = 60;
+    basetypes.ledger.v1.IOSubType IOSubType             = 60;
     string IOExtra                                      = 70;
 }
 

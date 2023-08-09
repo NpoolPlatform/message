@@ -5,9 +5,8 @@ package ledger.gateway.ledger1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger";
 
 import "npool/basetypes/v1/signmethod.proto";
-import "npool/ledger/mw/v2/ledger/withdraw/withdraw.proto";
-import "npool/ledger/mw/v2/ledger/detail/detail.proto";
 import "google/api/annotations.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -184,8 +183,8 @@ message Detail {
     repeated string DisplayNames = 21;
     string CoinLogo   = 30;
     string CoinUnit   = 40;
-    ledger.middleware.ledger.detail.v2.IOType    IOType    = 50;
-    ledger.middleware.ledger.detail.v2.IOSubType IOSubType = 60;
+    basetypes.ledger.v1.IOType    IOType    = 50;
+    basetypes.ledger.v1.IOSubType IOSubType = 60;
     string Amount     = 70;
     string IOExtra    = 80;
     uint32 CreatedAt  = 90;
@@ -225,8 +224,8 @@ message MiningReward {
     string CoinName = 20;
     string CoinLogo = 30;
     string CoinUnit = 40;
-    ledger.middleware.ledger.detail.v2.IOType    IOType = 50;
-    ledger.middleware.ledger.detail.v2.IOSubType IOSubType = 60;
+    basetypes.ledger.v1.IOType    IOType    = 50;
+    basetypes.ledger.v1.IOSubType IOSubType = 60;
     string RewardAmount = 70;
     string RewardAmountPerUnit = 80;
     string Units = 90;
@@ -314,16 +313,16 @@ message GetGoodProfitsResponse {
 }
 
 message Withdraw {
-    string        CoinTypeID    = 10;
-    string        CoinName      = 20;
+    string        CoinTypeID     = 10;
+    string        CoinName       = 20;
     repeated string DisplayNames = 21;
-    string        CoinLogo      = 30;
-    string        CoinUnit      = 40;
-    string        Amount        = 50;
-    uint32        CreatedAt     = 60;
-    string        Address       = 70;
+    string        CoinLogo       = 30;
+    string        CoinUnit       = 40;
+    string        Amount         = 50;
+    uint32        CreatedAt      = 60;
+    string        Address        = 70;
     repeated string AddressLabels = 80;
-    ledger.middleware.ledger.withdraw.v2.WithdrawState State = 90;
+    basetypes.ledger.v1.WithdrawState State = 90;
     string        Message       = 100;
 }
 
