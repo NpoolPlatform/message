@@ -114,12 +114,12 @@
     },
     "/v1/get/app/details": {
       "post": {
-        "operationId": "Gateway_GetAppDetails",
+        "operationId": "Gateway_GetAppStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppDetailsResponse"
+              "$ref": "#/definitions/v1GetAppStatementsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppDetailsRequest"
+              "$ref": "#/definitions/v1GetAppStatementsRequest"
             }
           }
         ],
@@ -210,12 +210,12 @@
     },
     "/v1/get/details": {
       "post": {
-        "operationId": "Gateway_GetDetails",
+        "operationId": "Gateway_GetStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetDetailsResponse"
+              "$ref": "#/definitions/v1GetStatementsResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetDetailsRequest"
+              "$ref": "#/definitions/v1GetStatementsRequest"
             }
           }
         ],
@@ -587,7 +587,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Detail"
+          "$ref": "#/definitions/v1Statement"
         }
       }
     },
@@ -668,54 +668,6 @@
         }
       }
     },
-    "v1Detail": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "IOType": {
-          "$ref": "#/definitions/v1IOType"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "IOExtra": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        }
-      }
-    },
     "v1General": {
       "type": "object",
       "properties": {
@@ -766,37 +718,6 @@
         }
       }
     },
-    "v1GetAppDetailsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Detail"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetAppGeneralsRequest": {
       "type": "object",
       "properties": {
@@ -828,6 +749,37 @@
         }
       }
     },
+    "v1GetAppStatementsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Statement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetAppWithdrawsRequest": {
       "type": "object",
       "properties": {
@@ -851,48 +803,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Withdraw"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetDetailsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Detail"
           }
         },
         "Total": {
@@ -1210,6 +1120,48 @@
         }
       }
     },
+    "v1GetStatementsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Statement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetWithdrawsRequest": {
       "type": "object",
       "properties": {
@@ -1398,6 +1350,54 @@
         "Username"
       ],
       "default": "DefaultSignMethod"
+    },
+    "v1Statement": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
     },
     "v1Transfer": {
       "type": "object",
