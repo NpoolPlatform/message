@@ -391,11 +391,11 @@
       "enum": [
         "DefaultSettleType",
         "GoodOrderPayment",
-        "TechniqueFeePercent",
+        "TechniqueServiceFee",
         "NoCommission"
       ],
       "default": "DefaultSettleType",
-      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueFeePercent: Divice commission according to order technique fee"
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
     },
     "v1StringSliceVal": {
       "type": "object",
