@@ -76,7 +76,7 @@ message UserReq {
     optional string SelectedLangID     = 310;
 }
 
-message AppUserThirdParty {
+message OAuthThirdParty {
     // @inject_tag: sql:"third_party_id"
     string ThirdPartyID              = 10;
     // @inject_tag: sql:"third_party_user_id"
@@ -197,7 +197,7 @@ message User {
     optional string ThirdPartyUsername        = 480;
     // @inject_tag: sql:"third_party_avatar"
     optional string ThirdPartyAvatar          = 490;
-    repeated AppUserThirdParty AppUserThirdParties = 500;
+    repeated OAuthThirdParty OAuthThirdParties = 500;
 }
 
 message Conds {

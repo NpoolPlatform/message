@@ -111,7 +111,17 @@
         }
       }
     },
-    "v1AppUserThirdParty": {
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
+    "v1OAuthThirdParty": {
       "type": "object",
       "properties": {
         "ThirdPartyID": {
@@ -135,16 +145,6 @@
           "title": "@inject_tag: sql:\"user_id\""
         }
       }
-    },
-    "v1KycState": {
-      "type": "string",
-      "enum": [
-        "DefaultState",
-        "Approved",
-        "Reviewing",
-        "Rejected"
-      ],
-      "default": "DefaultState"
     },
     "v1SetupGoogleAuthRequest": {
       "type": "object",
@@ -386,11 +386,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"third_party_avatar\""
         },
-        "AppUserThirdParties": {
+        "OAuthThirdParties": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1AppUserThirdParty"
+            "$ref": "#/definitions/v1OAuthThirdParty"
           }
         }
       }
