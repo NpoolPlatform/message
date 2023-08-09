@@ -2476,7 +2476,7 @@ func (x *BindUserResponse) GetInfo() *user.User {
 	return nil
 }
 
-type UnBindOAuthRequest struct {
+type UnbindOAuthRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2487,8 +2487,8 @@ type UnBindOAuthRequest struct {
 	AccountType v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod" json:"AccountType,omitempty"`
 }
 
-func (x *UnBindOAuthRequest) Reset() {
-	*x = UnBindOAuthRequest{}
+func (x *UnbindOAuthRequest) Reset() {
+	*x = UnbindOAuthRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_gw_v1_user_user_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2496,13 +2496,13 @@ func (x *UnBindOAuthRequest) Reset() {
 	}
 }
 
-func (x *UnBindOAuthRequest) String() string {
+func (x *UnbindOAuthRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UnBindOAuthRequest) ProtoMessage() {}
+func (*UnbindOAuthRequest) ProtoMessage() {}
 
-func (x *UnBindOAuthRequest) ProtoReflect() protoreflect.Message {
+func (x *UnbindOAuthRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_gw_v1_user_user_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2514,47 +2514,47 @@ func (x *UnBindOAuthRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UnBindOAuthRequest.ProtoReflect.Descriptor instead.
-func (*UnBindOAuthRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UnbindOAuthRequest.ProtoReflect.Descriptor instead.
+func (*UnbindOAuthRequest) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_gw_v1_user_user_proto_rawDescGZIP(), []int{36}
 }
 
-func (x *UnBindOAuthRequest) GetAppID() string {
+func (x *UnbindOAuthRequest) GetAppID() string {
 	if x != nil {
 		return x.AppID
 	}
 	return ""
 }
 
-func (x *UnBindOAuthRequest) GetUserID() string {
+func (x *UnbindOAuthRequest) GetUserID() string {
 	if x != nil {
 		return x.UserID
 	}
 	return ""
 }
 
-func (x *UnBindOAuthRequest) GetAccount() string {
+func (x *UnbindOAuthRequest) GetAccount() string {
 	if x != nil {
 		return x.Account
 	}
 	return ""
 }
 
-func (x *UnBindOAuthRequest) GetAccountType() v1.SignMethod {
+func (x *UnbindOAuthRequest) GetAccountType() v1.SignMethod {
 	if x != nil {
 		return x.AccountType
 	}
 	return v1.SignMethod(0)
 }
 
-type UnBindOAuthResponse struct {
+type UnbindOAuthResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *UnBindOAuthResponse) Reset() {
-	*x = UnBindOAuthResponse{}
+func (x *UnbindOAuthResponse) Reset() {
+	*x = UnbindOAuthResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_appuser_gw_v1_user_user_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2562,13 +2562,13 @@ func (x *UnBindOAuthResponse) Reset() {
 	}
 }
 
-func (x *UnBindOAuthResponse) String() string {
+func (x *UnbindOAuthResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UnBindOAuthResponse) ProtoMessage() {}
+func (*UnbindOAuthResponse) ProtoMessage() {}
 
-func (x *UnBindOAuthResponse) ProtoReflect() protoreflect.Message {
+func (x *UnbindOAuthResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_appuser_gw_v1_user_user_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2580,8 +2580,8 @@ func (x *UnBindOAuthResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UnBindOAuthResponse.ProtoReflect.Descriptor instead.
-func (*UnBindOAuthResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UnbindOAuthResponse.ProtoReflect.Descriptor instead.
+func (*UnbindOAuthResponse) Descriptor() ([]byte, []int) {
 	return file_npool_appuser_gw_v1_user_user_proto_rawDescGZIP(), []int{37}
 }
 
@@ -2996,7 +2996,7 @@ var file_npool_appuser_gw_v1_user_user_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x6d,
 	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76,
 	0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x98, 0x01, 0x0a,
-	0x12, 0x55, 0x6e, 0x42, 0x69, 0x6e, 0x64, 0x4f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75,
+	0x12, 0x55, 0x6e, 0x62, 0x69, 0x6e, 0x64, 0x4f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65,
 	0x72, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
@@ -3005,7 +3005,7 @@ var file_npool_appuser_gw_v1_user_user_proto_rawDesc = []byte{
 	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x18, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e,
 	0x53, 0x69, 0x67, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x52, 0x0b, 0x41, 0x63, 0x63, 0x6f,
-	0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x22, 0x15, 0x0a, 0x13, 0x55, 0x6e, 0x42, 0x69, 0x6e,
+	0x75, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x22, 0x15, 0x0a, 0x13, 0x55, 0x6e, 0x62, 0x69, 0x6e,
 	0x64, 0x4f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xb8,
 	0x13, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x70, 0x0a, 0x06, 0x53, 0x69,
 	0x67, 0x6e, 0x75, 0x70, 0x12, 0x26, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67,
@@ -3154,12 +3154,12 @@ var file_npool_appuser_gw_v1_user_user_proto_rawDesc = []byte{
 	0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x69, 0x6e, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x18, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x12, 0x22,
 	0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x62, 0x69, 0x6e, 0x64, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x3a, 0x01,
-	0x2a, 0x12, 0x85, 0x01, 0x0a, 0x0b, 0x55, 0x6e, 0x42, 0x69, 0x6e, 0x64, 0x4f, 0x41, 0x75, 0x74,
+	0x2a, 0x12, 0x85, 0x01, 0x0a, 0x0b, 0x55, 0x6e, 0x62, 0x69, 0x6e, 0x64, 0x4f, 0x41, 0x75, 0x74,
 	0x68, 0x12, 0x2b, 0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65,
-	0x77, 0x61, 0x79, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x42, 0x69,
+	0x77, 0x61, 0x79, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x62, 0x69,
 	0x6e, 0x64, 0x4f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c,
 	0x2e, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
-	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x42, 0x69, 0x6e, 0x64, 0x4f,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x62, 0x69, 0x6e, 0x64, 0x4f,
 	0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x15, 0x22, 0x10, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x6e, 0x62, 0x69, 0x6e, 0x64,
 	0x2f, 0x6f, 0x61, 0x75, 0x74, 0x68, 0x3a, 0x01, 0x2a, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74,
@@ -3219,8 +3219,8 @@ var file_npool_appuser_gw_v1_user_user_proto_goTypes = []interface{}{
 	(*BanAppUserResponse)(nil),        // 33: appuser.gateway.user.v1.BanAppUserResponse
 	(*BindUserRequest)(nil),           // 34: appuser.gateway.user.v1.BindUserRequest
 	(*BindUserResponse)(nil),          // 35: appuser.gateway.user.v1.BindUserResponse
-	(*UnBindOAuthRequest)(nil),        // 36: appuser.gateway.user.v1.UnBindOAuthRequest
-	(*UnBindOAuthResponse)(nil),       // 37: appuser.gateway.user.v1.UnBindOAuthResponse
+	(*UnbindOAuthRequest)(nil),        // 36: appuser.gateway.user.v1.UnbindOAuthRequest
+	(*UnbindOAuthResponse)(nil),       // 37: appuser.gateway.user.v1.UnbindOAuthResponse
 	(v1.SignMethod)(0),                // 38: basetypes.v1.SignMethod
 	(*user.User)(nil),                 // 39: appuser.middleware.user.v1.User
 	(*history.History)(nil),           // 40: appuser.middleware.user.login.history.v1.History
@@ -3252,7 +3252,7 @@ var file_npool_appuser_gw_v1_user_user_proto_depIdxs = []int32{
 	38, // 23: appuser.gateway.user.v1.BindUserRequest.AccountType:type_name -> basetypes.v1.SignMethod
 	38, // 24: appuser.gateway.user.v1.BindUserRequest.NewAccountType:type_name -> basetypes.v1.SignMethod
 	39, // 25: appuser.gateway.user.v1.BindUserResponse.Info:type_name -> appuser.middleware.user.v1.User
-	38, // 26: appuser.gateway.user.v1.UnBindOAuthRequest.AccountType:type_name -> basetypes.v1.SignMethod
+	38, // 26: appuser.gateway.user.v1.UnbindOAuthRequest.AccountType:type_name -> basetypes.v1.SignMethod
 	0,  // 27: appuser.gateway.user.v1.Gateway.Signup:input_type -> appuser.gateway.user.v1.SignupRequest
 	2,  // 28: appuser.gateway.user.v1.Gateway.CreateUser:input_type -> appuser.gateway.user.v1.CreateUserRequest
 	4,  // 29: appuser.gateway.user.v1.Gateway.DeleteUser:input_type -> appuser.gateway.user.v1.DeleteUserRequest
@@ -3271,7 +3271,7 @@ var file_npool_appuser_gw_v1_user_user_proto_depIdxs = []int32{
 	30, // 42: appuser.gateway.user.v1.Gateway.BanUser:input_type -> appuser.gateway.user.v1.BanUserRequest
 	32, // 43: appuser.gateway.user.v1.Gateway.BanAppUser:input_type -> appuser.gateway.user.v1.BanAppUserRequest
 	34, // 44: appuser.gateway.user.v1.Gateway.BindUser:input_type -> appuser.gateway.user.v1.BindUserRequest
-	36, // 45: appuser.gateway.user.v1.Gateway.UnBindOAuth:input_type -> appuser.gateway.user.v1.UnBindOAuthRequest
+	36, // 45: appuser.gateway.user.v1.Gateway.UnbindOAuth:input_type -> appuser.gateway.user.v1.UnbindOAuthRequest
 	1,  // 46: appuser.gateway.user.v1.Gateway.Signup:output_type -> appuser.gateway.user.v1.SignupResponse
 	3,  // 47: appuser.gateway.user.v1.Gateway.CreateUser:output_type -> appuser.gateway.user.v1.CreateUserResponse
 	5,  // 48: appuser.gateway.user.v1.Gateway.DeleteUser:output_type -> appuser.gateway.user.v1.DeleteUserResponse
@@ -3290,7 +3290,7 @@ var file_npool_appuser_gw_v1_user_user_proto_depIdxs = []int32{
 	31, // 61: appuser.gateway.user.v1.Gateway.BanUser:output_type -> appuser.gateway.user.v1.BanUserResponse
 	33, // 62: appuser.gateway.user.v1.Gateway.BanAppUser:output_type -> appuser.gateway.user.v1.BanAppUserResponse
 	35, // 63: appuser.gateway.user.v1.Gateway.BindUser:output_type -> appuser.gateway.user.v1.BindUserResponse
-	37, // 64: appuser.gateway.user.v1.Gateway.UnBindOAuth:output_type -> appuser.gateway.user.v1.UnBindOAuthResponse
+	37, // 64: appuser.gateway.user.v1.Gateway.UnbindOAuth:output_type -> appuser.gateway.user.v1.UnbindOAuthResponse
 	46, // [46:65] is the sub-list for method output_type
 	27, // [27:46] is the sub-list for method input_type
 	27, // [27:27] is the sub-list for extension type_name
@@ -3737,7 +3737,7 @@ func file_npool_appuser_gw_v1_user_user_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_user_user_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnBindOAuthRequest); i {
+			switch v := v.(*UnbindOAuthRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3749,7 +3749,7 @@ func file_npool_appuser_gw_v1_user_user_proto_init() {
 			}
 		}
 		file_npool_appuser_gw_v1_user_user_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnBindOAuthResponse); i {
+			switch v := v.(*UnbindOAuthResponse); i {
 			case 0:
 				return &v.state
 			case 1:
