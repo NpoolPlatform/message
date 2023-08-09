@@ -10,12 +10,10 @@ import "npool/basetypes/v1/kycstate.proto";
 
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
-    rpc CreateThirdUser   (CreateThirdUserRequest)  returns (CreateThirdUserResponse)  {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
 
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
-    rpc GetThirdUsers     (GetThirdUsersRequest)    returns (GetThirdUsersResponse)    {}
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
 
@@ -207,14 +205,6 @@ message CreateUserResponse {
     User Info = 10;
 }
 
-message CreateThirdUserRequest {
-    UserReq Info = 10;
-}
-
-message CreateThirdUserResponse {
-    User Info = 10;
-}
-
 message UpdateUserRequest {
     UserReq Info = 10;
 }
@@ -230,17 +220,6 @@ message GetUsersRequest {
 }
 
 message GetUsersResponse {
-    repeated User Infos = 10;
-    uint32 Total  = 40;
-}
-
-message GetThirdUsersRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
-}
-
-message GetThirdUsersResponse {
     repeated User Infos = 10;
     uint32 Total  = 40;
 }
