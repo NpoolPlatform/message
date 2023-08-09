@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/authing/oauth/oauth.proto
+// source: npool/appuser/gw/v1/oauth/oauth.proto
 
 package oauth
 
@@ -19,16 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetOAuthLoginList_FullMethodName = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginList"
-	Gateway_GetOAuthLoginURL_FullMethodName  = "/appuser.gateway.authing.oauth.v1.Gateway/GetOAuthLoginURL"
-	Gateway_OAuthLogin_FullMethodName        = "/appuser.gateway.authing.oauth.v1.Gateway/OAuthLogin"
+	Gateway_GetOAuthLoginURL_FullMethodName = "/appuser.gateway.oauth.v1.Gateway/GetOAuthLoginURL"
+	Gateway_OAuthLogin_FullMethodName       = "/appuser.gateway.oauth.v1.Gateway/OAuthLogin"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetOAuthLoginList(ctx context.Context, in *GetOAuthLoginListRequest, opts ...grpc.CallOption) (*GetOAuthLoginListResponse, error)
 	GetOAuthLoginURL(ctx context.Context, in *GetOAuthLoginURLRequest, opts ...grpc.CallOption) (*GetOAuthLoginURLResponse, error)
 	OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error)
 }
@@ -39,15 +37,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetOAuthLoginList(ctx context.Context, in *GetOAuthLoginListRequest, opts ...grpc.CallOption) (*GetOAuthLoginListResponse, error) {
-	out := new(GetOAuthLoginListResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetOAuthLoginList_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetOAuthLoginURL(ctx context.Context, in *GetOAuthLoginURLRequest, opts ...grpc.CallOption) (*GetOAuthLoginURLResponse, error) {
@@ -72,7 +61,6 @@ func (c *gatewayClient) OAuthLogin(ctx context.Context, in *OAuthLoginRequest, o
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetOAuthLoginList(context.Context, *GetOAuthLoginListRequest) (*GetOAuthLoginListResponse, error)
 	GetOAuthLoginURL(context.Context, *GetOAuthLoginURLRequest) (*GetOAuthLoginURLResponse, error)
 	OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -82,9 +70,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetOAuthLoginList(context.Context, *GetOAuthLoginListRequest) (*GetOAuthLoginListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOAuthLoginList not implemented")
-}
 func (UnimplementedGatewayServer) GetOAuthLoginURL(context.Context, *GetOAuthLoginURLRequest) (*GetOAuthLoginURLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOAuthLoginURL not implemented")
 }
@@ -102,24 +87,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetOAuthLoginList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOAuthLoginListRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetOAuthLoginList(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetOAuthLoginList_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetOAuthLoginList(ctx, req.(*GetOAuthLoginListRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetOAuthLoginURL_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -162,13 +129,9 @@ func _Gateway_OAuthLogin_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.authing.oauth.v1.Gateway",
+	ServiceName: "appuser.gateway.oauth.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetOAuthLoginList",
-			Handler:    _Gateway_GetOAuthLoginList_Handler,
-		},
 		{
 			MethodName: "GetOAuthLoginURL",
 			Handler:    _Gateway_GetOAuthLoginURL_Handler,
@@ -179,5 +142,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/authing/oauth/oauth.proto",
+	Metadata: "npool/appuser/gw/v1/oauth/oauth.proto",
 }

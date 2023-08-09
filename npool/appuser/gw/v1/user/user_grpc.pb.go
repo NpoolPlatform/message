@@ -37,6 +37,7 @@ const (
 	Gateway_BanUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/BanUser"
 	Gateway_BanAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/BanAppUser"
 	Gateway_BindUser_FullMethodName          = "/appuser.gateway.user.v1.Gateway/BindUser"
+	Gateway_UnbindOAuth_FullMethodName       = "/appuser.gateway.user.v1.Gateway/UnbindOAuth"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -61,6 +62,7 @@ type GatewayClient interface {
 	BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error)
 	BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error)
 	BindUser(ctx context.Context, in *BindUserRequest, opts ...grpc.CallOption) (*BindUserResponse, error)
+	UnbindOAuth(ctx context.Context, in *UnbindOAuthRequest, opts ...grpc.CallOption) (*UnbindOAuthResponse, error)
 }
 
 type gatewayClient struct {
@@ -233,6 +235,15 @@ func (c *gatewayClient) BindUser(ctx context.Context, in *BindUserRequest, opts 
 	return out, nil
 }
 
+func (c *gatewayClient) UnbindOAuth(ctx context.Context, in *UnbindOAuthRequest, opts ...grpc.CallOption) (*UnbindOAuthResponse, error) {
+	out := new(UnbindOAuthResponse)
+	err := c.cc.Invoke(ctx, Gateway_UnbindOAuth_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -255,6 +266,7 @@ type GatewayServer interface {
 	BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error)
 	BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error)
 	BindUser(context.Context, *BindUserRequest) (*BindUserResponse, error)
+	UnbindOAuth(context.Context, *UnbindOAuthRequest) (*UnbindOAuthResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -315,6 +327,9 @@ func (UnimplementedGatewayServer) BanAppUser(context.Context, *BanAppUserRequest
 }
 func (UnimplementedGatewayServer) BindUser(context.Context, *BindUserRequest) (*BindUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BindUser not implemented")
+}
+func (UnimplementedGatewayServer) UnbindOAuth(context.Context, *UnbindOAuthRequest) (*UnbindOAuthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnbindOAuth not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -653,6 +668,24 @@ func _Gateway_BindUser_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UnbindOAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnbindOAuthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UnbindOAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_UnbindOAuth_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UnbindOAuth(ctx, req.(*UnbindOAuthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -731,6 +764,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BindUser",
 			Handler:    _Gateway_BindUser_Handler,
+		},
+		{
+			MethodName: "UnbindOAuth",
+			Handler:    _Gateway_UnbindOAuth_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

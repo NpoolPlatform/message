@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package appuser.middleware.authing.oauth.oauththirdparty.v1;
+package appuser.middleware.oauth.oauththirdparty.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing/oauth/oauththirdparty";
+option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/oauth/oauththirdparty";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/signmethod.proto";

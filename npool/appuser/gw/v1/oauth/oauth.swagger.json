@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/gw/v1/authing/oauth/oauth.proto",
+    "title": "npool/appuser/gw/v1/oauth/oauth.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,39 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/oauth/login/list": {
-      "post": {
-        "operationId": "Gateway_GetOAuthLoginList",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetOAuthLoginListResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetOAuthLoginListRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/oauth/login/url": {
+    "/v1/get/oauthloginurl": {
       "post": {
         "operationId": "Gateway_GetOAuthLoginURL",
         "responses": {
@@ -80,7 +48,7 @@
         ]
       }
     },
-    "/v1/oauth/login": {
+    "/v1/oauthlogin": {
       "post": {
         "operationId": "Gateway_OAuthLogin",
         "responses": {
@@ -142,26 +110,6 @@
         }
       }
     },
-    "v1GetOAuthLoginListRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetOAuthLoginListResponse": {
-      "type": "object",
-      "properties": {
-        "OAuthLoginInfoLists": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1OAuthThirdParty"
-          }
-        }
-      }
-    },
     "v1GetOAuthLoginURLRequest": {
       "type": "object",
       "properties": {
@@ -176,7 +124,7 @@
     "v1GetOAuthLoginURLResponse": {
       "type": "object",
       "properties": {
-        "OAuthLoginURL": {
+        "Info": {
           "type": "string"
         }
       }
@@ -210,76 +158,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1OAuthThirdParty": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "ThirdPartyID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"third_party_id\""
-        },
-        "ClientID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_id\""
-        },
-        "ClientSecret": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_secret\""
-        },
-        "CallbackURL": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"callback_url\""
-        },
-        "ClientNameStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_name\""
-        },
-        "ClientName": {
-          "$ref": "#/definitions/v1SignMethod"
-        },
-        "ClientTag": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_tag\""
-        },
-        "ClientLogoURL": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_logo_url\""
-        },
-        "ClientOAuthURL": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"client_oauth_url\""
-        },
-        "ResponseType": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"response_type\""
-        },
-        "Scope": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"scope\""
-        },
-        "Salt": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"salt\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

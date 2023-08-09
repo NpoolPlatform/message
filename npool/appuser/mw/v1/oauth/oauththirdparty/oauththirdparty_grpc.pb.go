@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/appuser/mw/v1/authing/oauth/appoauththirdparty/appoauththirdparty.proto
+// source: npool/appuser/mw/v1/oauth/oauththirdparty/oauththirdparty.proto
 
-package appoauththirdparty
+package oauththirdparty
 
 import (
 	context "context"
@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/CreateOAuthThirdParty"
-	Middleware_UpdateOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/UpdateOAuthThirdParty"
-	Middleware_GetOAuthThirdParties_FullMethodName      = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParties"
-	Middleware_GetOAuthThirdParty_FullMethodName        = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/GetOAuthThirdParty"
-	Middleware_ExistOAuthThirdParty_FullMethodName      = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdParty"
-	Middleware_ExistOAuthThirdPartyConds_FullMethodName = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/ExistOAuthThirdPartyConds"
-	Middleware_DeleteOAuthThirdParty_FullMethodName     = "/appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware/DeleteOAuthThirdParty"
+	Middleware_CreateOAuthThirdParty_FullMethodName     = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/CreateOAuthThirdParty"
+	Middleware_UpdateOAuthThirdParty_FullMethodName     = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/UpdateOAuthThirdParty"
+	Middleware_GetOAuthThirdParties_FullMethodName      = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/GetOAuthThirdParties"
+	Middleware_GetOAuthThirdParty_FullMethodName        = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/GetOAuthThirdParty"
+	Middleware_ExistOAuthThirdParty_FullMethodName      = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/ExistOAuthThirdParty"
+	Middleware_ExistOAuthThirdPartyConds_FullMethodName = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/ExistOAuthThirdPartyConds"
+	Middleware_DeleteOAuthThirdParty_FullMethodName     = "/appuser.middleware.oauth.oauththirdparty.v1.Middleware/DeleteOAuthThirdParty"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -294,7 +294,7 @@ func _Middleware_DeleteOAuthThirdParty_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.middleware.authing.oauth.appoauththirdparty.v1.Middleware",
+	ServiceName: "appuser.middleware.oauth.oauththirdparty.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -327,5 +327,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/mw/v1/authing/oauth/appoauththirdparty/appoauththirdparty.proto",
+	Metadata: "npool/appuser/mw/v1/oauth/oauththirdparty/oauththirdparty.proto",
 }

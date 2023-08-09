@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/appuser/gw/v1/authing/oauth/appoauththirdparty/appoauththirdparty.proto
+// source: npool/appuser/gw/v1/oauth/appoauththirdparty/appoauththirdparty.proto
 
 package appoauththirdparty
 
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/CreateOAuthThirdParty"
-	Gateway_UpdateOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/UpdateOAuthThirdParty"
-	Gateway_DeleteOAuthThirdParty_FullMethodName   = "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/DeleteOAuthThirdParty"
-	Gateway_GetOAuthThirdParties_FullMethodName    = "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetOAuthThirdParties"
-	Gateway_GetAppOAuthThirdParties_FullMethodName = "/appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway/GetAppOAuthThirdParties"
+	Gateway_CreateOAuthThirdParty_FullMethodName   = "/appuser.gateway.oauth.appoauththirdparty.v1.Gateway/CreateOAuthThirdParty"
+	Gateway_UpdateOAuthThirdParty_FullMethodName   = "/appuser.gateway.oauth.appoauththirdparty.v1.Gateway/UpdateOAuthThirdParty"
+	Gateway_DeleteOAuthThirdParty_FullMethodName   = "/appuser.gateway.oauth.appoauththirdparty.v1.Gateway/DeleteOAuthThirdParty"
+	Gateway_GetOAuthThirdParties_FullMethodName    = "/appuser.gateway.oauth.appoauththirdparty.v1.Gateway/GetOAuthThirdParties"
+	Gateway_GetAppOAuthThirdParties_FullMethodName = "/appuser.gateway.oauth.appoauththirdparty.v1.Gateway/GetAppOAuthThirdParties"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -228,7 +228,7 @@ func _Gateway_GetAppOAuthThirdParties_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "appuser.gateway.authing.oauth.appoauththirdparty.v1.Gateway",
+	ServiceName: "appuser.gateway.oauth.appoauththirdparty.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/appuser/gw/v1/authing/oauth/appoauththirdparty/appoauththirdparty.proto",
+	Metadata: "npool/appuser/gw/v1/oauth/appoauththirdparty/appoauththirdparty.proto",
 }

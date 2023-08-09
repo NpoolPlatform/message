@@ -496,6 +496,38 @@
         ]
       }
     },
+    "/v1/unbind/oauth": {
+      "post": {
+        "operationId": "Gateway_UnbindOAuth",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UnbindOAuthResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnbindOAuthRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/app/user": {
       "post": {
         "operationId": "Gateway_UpdateAppUser",
@@ -1271,6 +1303,26 @@
           "$ref": "#/definitions/v1User"
         }
       }
+    },
+    "v1UnbindOAuthRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        }
+      }
+    },
+    "v1UnbindOAuthResponse": {
+      "type": "object"
     },
     "v1UpdateAppUserRequest": {
       "type": "object",

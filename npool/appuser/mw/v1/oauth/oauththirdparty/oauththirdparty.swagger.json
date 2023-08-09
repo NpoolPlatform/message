@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/appuser/mw/v1/authing/oauth/oauththirdparty/oauththirdparty.proto",
+    "title": "npool/appuser/mw/v1/oauth/oauththirdparty/oauththirdparty.proto",
     "version": "version not set"
   },
   "tags": [

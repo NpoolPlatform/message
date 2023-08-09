@@ -135,6 +135,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc UnbindOAuth (UnbindOAuthRequest) returns (UnbindOAuthResponse) {
+        option (google.api.http) = {
+            post: "/v1/unbind/oauth"
+            body: "*"
+        };
+    }
 }
 
 message SignupRequest {
@@ -396,4 +403,15 @@ message BindUserRequest {
 
 message BindUserResponse {
     appuser.middleware.user.v1.User Info = 10;
+}
+
+message UnbindOAuthRequest {
+    string          AppID              = 10;
+    string          UserID             = 20;
+
+    string Account                     = 30;
+    basetypes.v1.SignMethod AccountType    = 40;
+}
+
+message UnbindOAuthResponse {
 }

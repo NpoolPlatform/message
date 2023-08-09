@@ -74,7 +74,7 @@
         }
       }
     },
-    "v1CreateThirdUserResponse": {
+    "v1CreateUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -82,7 +82,7 @@
         }
       }
     },
-    "v1CreateUserResponse": {
+    "v1DeleteThirdUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -111,22 +111,6 @@
       "properties": {
         "Info": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetThirdUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1User"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
