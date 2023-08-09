@@ -31,14 +31,14 @@ service Gateway {
         };
     }
 
-    rpc GetDetails (GetDetailsRequest) returns (GetDetailsResponse) {
+    rpc GetStatements (GetStatementsRequest) returns (GetStatementsResponse) {
         option (google.api.http) = {
             post: "/v1/get/details"
             body: "*"
         };
     }
 
-    rpc GetAppDetails (GetAppDetailsRequest) returns (GetAppDetailsResponse) {
+    rpc GetAppStatements (GetAppStatementsRequest) returns (GetAppStatementsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/details"
             body: "*"
@@ -177,7 +177,7 @@ message GetAppGeneralsResponse {
     uint32           Total = 20;
 }
 
-message Detail {
+message Statement {
     string CoinTypeID = 10;
     string CoinName   = 20;
     repeated string DisplayNames = 21;
@@ -193,7 +193,7 @@ message Detail {
     string EmailAddress  = 120;
 }
 
-message GetDetailsRequest {
+message GetStatementsRequest {
     string AppID   = 10;
     string UserID  = 20;
     uint32 StartAt = 30;
@@ -202,19 +202,19 @@ message GetDetailsRequest {
     int32  Limit   = 60;
 }
 
-message GetDetailsResponse {
-    repeated Detail Infos = 10;
-    uint32          Total = 20;
+message GetStatementsResponse {
+    repeated Statement Infos = 10;
+    uint32             Total = 20;
 }
 
-message GetAppDetailsRequest {
+message GetAppStatementsRequest {
     string TargetAppID   = 10;
     int32  Offset        = 20;
     int32  Limit         = 30;
 }
 
-message GetAppDetailsResponse {
-    repeated Detail Infos = 10;
+message GetAppStatementsResponse {
+    repeated Statement Infos = 10;
     uint32          Total = 20;
 }
 
@@ -434,5 +434,5 @@ message CreateAppUserDepositRequest {
 }
 
 message CreateAppUserDepositResponse {
-    Detail Info = 10;
+    Statement Info = 10;
 }
