@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/ledger/ledger.proto",
+    "title": "npool/ledger/mw/v2/profit/profit.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,20 +44,6 @@
         }
       }
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -69,11 +55,11 @@
         }
       }
     },
-    "v2AddLedgerResponse": {
+    "v2AddProfitResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Profit"
         }
       }
     },
@@ -94,71 +80,59 @@
         },
         "Incoming": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Locked": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v2CreateLedgerResponse": {
+    "v2CreateProfitResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Profit"
         }
       }
     },
-    "v2CreateLedgersResponse": {
+    "v2CreateProfitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Profit"
           }
         }
       }
     },
-    "v2DeleteLedgerResponse": {
+    "v2DeleteProfitResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Profit"
         }
       }
     },
-    "v2GetLedgerOnlyResponse": {
+    "v2GetProfitOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Profit"
         }
       }
     },
-    "v2GetLedgerResponse": {
+    "v2GetProfitResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Profit"
         }
       }
     },
-    "v2GetLedgersResponse": {
+    "v2GetProfitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Profit"
           }
         },
         "Total": {
@@ -167,7 +141,7 @@
         }
       }
     },
-    "v2Ledger": {
+    "v2Profit": {
       "type": "object",
       "properties": {
         "ID": {
@@ -190,18 +164,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"incoming\""
         },
-        "Outcoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
-        },
-        "Locked": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
-        },
-        "Spendable": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -214,7 +176,7 @@
         }
       }
     },
-    "v2LedgerReq": {
+    "v2ProfitReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -230,15 +192,6 @@
           "type": "string"
         },
         "Incoming": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
           "type": "string"
         }
       }

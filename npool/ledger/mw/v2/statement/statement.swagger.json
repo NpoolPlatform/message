@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/ledger/ledger.proto",
+    "title": "npool/ledger/mw/v2/statement/statement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,19 +44,31 @@
         }
       }
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
     },
     "v1StringVal": {
       "type": "object",
@@ -69,11 +81,15 @@
         }
       }
     },
-    "v2AddLedgerResponse": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -92,73 +108,49 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "IOType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
+        "FromCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Outcoming": {
+        "CoinUSDCurrency": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Spendable": {
+        "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v2CreateLedgerResponse": {
+    "v2CreateStatementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Statement"
         }
       }
     },
-    "v2CreateLedgersResponse": {
+    "v2GetStatementOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Statement"
+        }
+      }
+    },
+    "v2GetStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
-          }
-        }
-      }
-    },
-    "v2DeleteLedgerResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgerOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgerResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Statement"
           }
         },
         "Total": {
@@ -167,7 +159,7 @@
         }
       }
     },
-    "v2Ledger": {
+    "v2Statement": {
       "type": "object",
       "properties": {
         "ID": {
@@ -186,21 +178,35 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "Incoming": {
+        "IOTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
+          "title": "@inject_tag: sql:\"io_type\""
         },
-        "Outcoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
         },
-        "Locked": {
+        "IOSubTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
+          "title": "@inject_tag: sql:\"io_sub_type\""
         },
-        "Spendable": {
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"from_coin_type_id\""
+        },
+        "CoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
+        },
+        "IOExtra": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"io_extra\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -214,7 +220,7 @@
         }
       }
     },
-    "v2LedgerReq": {
+    "v2StatementReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -229,17 +235,28 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "E.g. when pay with non-USDT coin"
+        },
+        "CoinUSDCurrency": {
           "type": "string"
         },
-        "Outcoming": {
+        "IOExtra": {
           "type": "string"
         },
-        "Spendable": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package ledger.middleware.ledger2.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger2";
+
+import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
+import "npool/ledger/mgr/v1/ledger/general/general.proto";
+
+// Service Name
+service Middleware {
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
+    rpc GetGeneralOnly            (GetGeneralOnlyRequest)            returns (GetGeneralOnlyResponse)       {}
+    rpc GetDetails                (GetDetailsRequest)                returns (GetDetailsResponse)           {}
+    rpc AddGeneral                (AddGeneralRequest)                returns (AddGeneralResponse)           {}
+}
+
+message BookKeepingRequest {
+    repeated ledger.manager.ledger.detail.v1.DetailReq Infos = 10;
+}
+
+message BookKeepingResponse {
+}
+
+message GetGeneralOnlyRequest {
+    ledger.manager.ledger.general.v1.Conds Conds = 10;
+}
+
+message GetGeneralOnlyResponse {
+    ledger.manager.ledger.general.v1.General Info = 10;
+}
+
+message GetDetailsRequest {
+    ledger.manager.ledger.detail.v1.Conds Conds = 10;
+    uint32 Offset = 20;
+    uint32 Limit  = 30;
+}
+
+message GetDetailsResponse {
+    repeated ledger.manager.ledger.detail.v1.Detail Infos = 10;
+    uint32                                          Total = 20;
+}
+
+message AddGeneralRequest {
+    ledger.manager.ledger.general.v1.GeneralReq Info = 10;
+}
+
+message AddGeneralResponse {
+    ledger.manager.ledger.general.v1.General Info = 10;
+}

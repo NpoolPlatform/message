@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/ledger/ledger.proto",
+    "title": "npool/ledger/mw/v2/goodstatement/goodstatement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,20 +44,6 @@
         }
       }
     },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -69,11 +55,15 @@
         }
       }
     },
-    "v2AddLedgerResponse": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -83,82 +73,43 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
+        "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "BenefitDate": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v2CreateLedgerResponse": {
+    "v2CreateGoodStatementResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2GoodStatement"
         }
       }
     },
-    "v2CreateLedgersResponse": {
+    "v2GetGoodStatementOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2GoodStatement"
+        }
+      }
+    },
+    "v2GetGoodStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2Ledger"
-          }
-        }
-      }
-    },
-    "v2DeleteLedgerResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgerOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgerResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2GetLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2GoodStatement"
           }
         },
         "Total": {
@@ -167,40 +118,29 @@
         }
       }
     },
-    "v2Ledger": {
+    "v2GoodStatement": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
-        "AppID": {
+        "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "Incoming": {
+        "Amount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
+          "title": "@inject_tag: sql:\"amount\""
         },
-        "Outcoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
-        },
-        "Locked": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
-        },
-        "Spendable": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_date\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -214,32 +154,28 @@
         }
       }
     },
-    "v2LedgerReq": {
+    "v2GoodStatementReq": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
+        "GoodID": {
           "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
-          "type": "string"
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
