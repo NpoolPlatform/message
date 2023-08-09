@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/appgood/appgood.proto
+// source: npool/good/mw/v1/app/good/good.proto
 
-package appgood
+package good
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGood_FullMethodName  = "/good.middleware.appgood.v1.Middleware/CreateGood"
-	Middleware_GetGood_FullMethodName     = "/good.middleware.appgood.v1.Middleware/GetGood"
-	Middleware_GetGoodOnly_FullMethodName = "/good.middleware.appgood.v1.Middleware/GetGoodOnly"
-	Middleware_GetGoods_FullMethodName    = "/good.middleware.appgood.v1.Middleware/GetGoods"
-	Middleware_UpdateGood_FullMethodName  = "/good.middleware.appgood.v1.Middleware/UpdateGood"
+	Middleware_CreateGood_FullMethodName  = "/good.middleware.app.good1.v1.Middleware/CreateGood"
+	Middleware_GetGood_FullMethodName     = "/good.middleware.app.good1.v1.Middleware/GetGood"
+	Middleware_GetGoodOnly_FullMethodName = "/good.middleware.app.good1.v1.Middleware/GetGoodOnly"
+	Middleware_GetGoods_FullMethodName    = "/good.middleware.app.good1.v1.Middleware/GetGoods"
+	Middleware_UpdateGood_FullMethodName  = "/good.middleware.app.good1.v1.Middleware/UpdateGood"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_UpdateGood_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.appgood.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/appgood/appgood.proto",
+	Metadata: "npool/good/mw/v1/app/good/good.proto",
 }

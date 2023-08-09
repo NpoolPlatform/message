@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package basetypes.good.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/good/v1";
+
+enum BenefitType {
+    DefaultBenefitType   = 0;
+    // Platform receive benefit, then distribute benefit to user
+    BenefitTypePlatform  = 10;
+    // User receive benefit from pool directly
+    BenefitTypePool      = 20;
+}
+
+enum GoodType {
+    DefaultGoodType         = 0;
+    // Classic good: user pay for both device and other material, get all benefit
+    GoodTypeClassicMining   = 10;
+    // Union good: user pay for a part of material, get part of benefit
+    GoodTypeUnionMining     = 20;
+
+    // Fee good
+    GoodTypeTechniqueFee    = 30;
+    GoodTypeElectricityFee  = 40;
+}
+
+enum BenefitState {
+    DefaultBenefitState    = 0;
+
+    BenefitWait         = 10;
+    BenefitTransferring = 20;
+    BenefitBookKeeping  = 30;
+}
+
+enum CancelMode {
+    DefaultCancelMode        = 0;
+
+    CancellableBeforeStart   = 10;
+    CancellableBeforeBenefit = 20;
+    Uncancellable            = 30;
+}
