@@ -15,7 +15,6 @@ service Middleware {
 }
 
 
-  
 message StatementReq {
     optional string     ID               = 10;
     optional string     AppID            = 20;

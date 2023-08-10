@@ -154,7 +154,7 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitDate": {
+        "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
         },
