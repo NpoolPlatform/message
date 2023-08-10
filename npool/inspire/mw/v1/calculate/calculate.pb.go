@@ -27,20 +27,22 @@ type CalculateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AppID                  string        `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	UserID                 string        `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	GoodID                 string        `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	OrderID                string        `protobuf:"bytes,40,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
-	PaymentID              string        `protobuf:"bytes,50,opt,name=PaymentID,proto3" json:"PaymentID,omitempty"`
-	CoinTypeID             string        `protobuf:"bytes,60,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
-	PaymentCoinTypeID      string        `protobuf:"bytes,70,opt,name=PaymentCoinTypeID,proto3" json:"PaymentCoinTypeID,omitempty"`
-	PaymentCoinUSDCurrency string        `protobuf:"bytes,80,opt,name=PaymentCoinUSDCurrency,proto3" json:"PaymentCoinUSDCurrency,omitempty"`
-	Units                  string        `protobuf:"bytes,90,opt,name=Units,proto3" json:"Units,omitempty"`
-	PaymentAmount          string        `protobuf:"bytes,100,opt,name=PaymentAmount,proto3" json:"PaymentAmount,omitempty"`
-	GoodValue              string        `protobuf:"bytes,110,opt,name=GoodValue,proto3" json:"GoodValue,omitempty"`
-	SettleType             v1.SettleType `protobuf:"varint,120,opt,name=SettleType,proto3,enum=basetypes.inspire.v1.SettleType" json:"SettleType,omitempty"`
-	HasCommission          bool          `protobuf:"varint,130,opt,name=HasCommission,proto3" json:"HasCommission,omitempty"`
-	OrderCreatedAt         uint32        `protobuf:"varint,140,opt,name=OrderCreatedAt,proto3" json:"OrderCreatedAt,omitempty"`
+	AppID                  string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID                 string `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	GoodID                 string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	OrderID                string `protobuf:"bytes,40,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
+	PaymentID              string `protobuf:"bytes,50,opt,name=PaymentID,proto3" json:"PaymentID,omitempty"`
+	CoinTypeID             string `protobuf:"bytes,60,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty"`
+	PaymentCoinTypeID      string `protobuf:"bytes,70,opt,name=PaymentCoinTypeID,proto3" json:"PaymentCoinTypeID,omitempty"`
+	PaymentCoinUSDCurrency string `protobuf:"bytes,80,opt,name=PaymentCoinUSDCurrency,proto3" json:"PaymentCoinUSDCurrency,omitempty"`
+	Units                  string `protobuf:"bytes,90,opt,name=Units,proto3" json:"Units,omitempty"`
+	// Payment amount in payment coin amount
+	PaymentAmount string `protobuf:"bytes,100,opt,name=PaymentAmount,proto3" json:"PaymentAmount,omitempty"`
+	// Good value in payment coin amount
+	GoodValue      string        `protobuf:"bytes,110,opt,name=GoodValue,proto3" json:"GoodValue,omitempty"`
+	SettleType     v1.SettleType `protobuf:"varint,120,opt,name=SettleType,proto3,enum=basetypes.inspire.v1.SettleType" json:"SettleType,omitempty"`
+	HasCommission  bool          `protobuf:"varint,130,opt,name=HasCommission,proto3" json:"HasCommission,omitempty"`
+	OrderCreatedAt uint32        `protobuf:"varint,140,opt,name=OrderCreatedAt,proto3" json:"OrderCreatedAt,omitempty"`
 }
 
 func (x *CalculateRequest) Reset() {

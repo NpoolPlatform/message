@@ -22,7 +22,9 @@ message CalculateRequest {
     string PaymentCoinTypeID      = 70;
     string PaymentCoinUSDCurrency = 80;
     string Units                  = 90;
+    // Payment amount in payment coin amount
     string PaymentAmount          = 100;
+    // Good value in payment coin amount
     string GoodValue              = 110;
     basetypes.inspire.v1.SettleType SettleType = 120;
     bool   HasCommission          = 130;
