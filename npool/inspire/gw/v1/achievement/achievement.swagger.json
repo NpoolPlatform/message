@@ -16,15 +16,7 @@
     "application/json"
   ],
   "paths": {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.swagger.json
     "/v1/get/achievements": {
-=======
-    "/v1/get/goodachievements": {
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.swagger.json
-=======
-    "/v1/get/achievements": {
->>>>>>> Refactor achievement
       "post": {
         "operationId": "Gateway_GetAchievements",
         "responses": {
@@ -56,15 +48,7 @@
         ]
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.swagger.json
     "/v1/get/user/achievements": {
-=======
-    "/v1/get/user/goodachievements": {
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.swagger.json
-=======
-    "/v1/get/user/achievements": {
->>>>>>> Refactor achievement
       "post": {
         "operationId": "Gateway_GetUserAchievements",
         "responses": {
@@ -196,15 +180,7 @@
     "v1GetAchievementsResponse": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Infos": {
-=======
-        "Achievements": {
->>>>>>> Refactor achievement
-=======
-        "Infos": {
->>>>>>> Format return infos
           "type": "array",
           "items": {
             "type": "object",
@@ -243,15 +219,7 @@
     "v1GetUserAchievementsResponse": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Infos": {
-=======
-        "Achievements": {
->>>>>>> Refactor achievement
-=======
-        "Infos": {
->>>>>>> Format return infos
           "type": "array",
           "items": {
             "type": "object",

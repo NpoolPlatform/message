@@ -1,11 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-<<<<<<< HEAD:npool/good/mw/v1/appdefaultgood/appdefaultgood.swagger.json
     "title": "npool/good/mw/v1/appdefaultgood/appdefaultgood.proto",
-=======
-    "title": "npool/inspire/mw/v1/achivement/achivement.proto",
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.swagger.json
     "version": "version not set"
   },
   "tags": [
@@ -89,11 +85,7 @@
         }
       }
     },
-<<<<<<< HEAD:npool/good/mw/v1/appdefaultgood/appdefaultgood.swagger.json
     "v1AppDefaultGood": {
-=======
-    "v1Achivement": {
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object",
       "properties": {
         "ID": {
@@ -135,24 +127,6 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-<<<<<<< HEAD:npool/good/mw/v1/appdefaultgood/appdefaultgood.swagger.json
-=======
-        }
-      }
-    },
-    "v1ExpropriateAchivementResponse": {
-      "type": "object"
-    },
-    "v1GetAchivementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Achivement"
-          }
->>>>>>> Correct achivement:npool/inspire/mw/v1/achivement/achivement.swagger.json
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"

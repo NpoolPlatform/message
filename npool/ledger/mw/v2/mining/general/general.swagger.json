@@ -73,7 +73,6 @@
       "type": "object",
       "properties": {
         "ID": {
-<<<<<<< HEAD:npool/ledger/mw/v2/mining/general/general.swagger.json
           "$ref": "#/definitions/v1StringVal"
         },
         "GoodID": {
@@ -98,25 +97,11 @@
       "properties": {
         "ID": {
           "type": "string"
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
->>>>>>> Add sql tag to achivement:npool/inspire/mw/v1/achivement/achivement.swagger.json
         },
         "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "type": "string"
         },
         "CoinTypeID": {
-<<<<<<< HEAD:npool/ledger/mw/v2/mining/general/general.swagger.json
           "type": "string"
         },
         "Amount": {
@@ -135,49 +120,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-=======
-          "type": "string",
-          "title": "CoinTypeID of the good\n@inject_tag: sql:\"coin_type_id\""
-        },
-        "TotalAmount": {
-          "type": "string",
-          "title": "Payment amount in USD\n@inject_tag: sql:\"total_amount\""
-        },
-        "SelfAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"self_amount\""
-        },
-        "TotalUnits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total_untis\""
-        },
-        "SelfUnits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"self_units\""
-        },
-        "TotalCommission": {
-          "type": "string",
-          "title": "Commission amount in USD\n@inject_tag: sql:\"total_commission\""
-        },
-        "SelfCommission": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"self_commission\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"deleted_at\""
->>>>>>> Add sql tag to achivement:npool/inspire/mw/v1/achivement/achivement.swagger.json
         }
       }
     },

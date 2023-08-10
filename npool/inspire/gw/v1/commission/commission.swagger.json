@@ -254,15 +254,7 @@
         "ToGoodID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "ScalePercent": {
-=======
-        "AmountOrPercent": {
->>>>>>> Remove settletype
-=======
-        "ScalePercent": {
->>>>>>> Add commission scale percent
           "type": "string"
         }
       }
@@ -366,18 +358,9 @@
         "GoodID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
-=======
->>>>>>> Remove settletype
-=======
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
->>>>>>> Add commission settletype and settlemode
         "AmountOrPercent": {
           "type": "string"
         },
@@ -387,30 +370,15 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
-=======
->>>>>>> Add commission settletype and settlemode
-=======
-        },
-        "Threshold": {
-          "type": "string"
-<<<<<<< HEAD
->>>>>>> Add commission threshold
-=======
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
-<<<<<<< HEAD
->>>>>>> Add settle amount type
-=======
         },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
->>>>>>> Add interval
         }
       }
     },
@@ -431,15 +399,6 @@
         "UserID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
->>>>>>> Remove inspire manager message
-=======
->>>>>>> Remove settletype
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -470,26 +429,11 @@
       "type": "object",
       "properties": {
         "ID": {
-<<<<<<< HEAD
-=======
           "type": "string"
         },
         "AppID": {
->>>>>>> Remove inspire manager message
           "type": "string"
         },
-<<<<<<< HEAD
-        "AppID": {
-          "type": "string"
-        },
-<<<<<<< HEAD
-=======
->>>>>>> Remove settletype
-        "AmountOrPercent": {
-          "type": "string"
-        },
-=======
->>>>>>> Remove amount or percent from update request
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -508,8 +452,6 @@
       }
     },
     "protobufAny": {
-<<<<<<< HEAD
-=======
       "type": "object",
       "properties": {
         "@type": {
@@ -558,103 +500,16 @@
       "type": "object"
     },
     "v1CreateUserCommissionRequest": {
->>>>>>> Remove inspire manager message
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-<<<<<<< HEAD
-=======
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AmountOrPercent": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
->>>>>>> Remove inspire manager message
-        }
-      },
-      "additionalProperties": {}
-    },
-<<<<<<< HEAD
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1CloneAppCommissionsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "FromGoodID": {
-          "type": "string"
-        },
-        "ToGoodID": {
-          "type": "string"
-        },
-        "ScalePercent": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CloneAppCommissionsResponse": {
-      "type": "object"
-    },
-    "v1CreateUserCommissionRequest": {
-=======
-    "v1CreateUserCommissionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
-        }
-      }
-    },
-    "v1GetAppCommissionsRequest": {
->>>>>>> Remove inspire manager message
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-<<<<<<< HEAD
         "TargetUserID": {
           "type": "string"
         },
         "GoodID": {
           "type": "string"
-=======
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
->>>>>>> Remove inspire manager message
-        },
-<<<<<<< HEAD
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
@@ -668,30 +523,15 @@
         },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
-<<<<<<< HEAD
-<<<<<<< HEAD
         },
         "Threshold": {
           "type": "string"
-=======
->>>>>>> Add commission settletype and settlemode
-=======
-        },
-        "Threshold": {
-          "type": "string"
-<<<<<<< HEAD
->>>>>>> Add commission threshold
-=======
         },
         "SettleAmountType": {
           "$ref": "#/definitions/v1SettleAmountType"
-<<<<<<< HEAD
->>>>>>> Add settle amount type
-=======
         },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
->>>>>>> Add interval
         }
       }
     },
@@ -713,8 +553,6 @@
           "type": "integer",
           "format": "int64"
         },
-=======
->>>>>>> Remove settletype
         "Offset": {
           "type": "integer",
           "format": "int32"

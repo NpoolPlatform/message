@@ -84,10 +84,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add exist registration api
     "v1ExistRegistrationCondsResponse": {
       "type": "object",
       "properties": {
@@ -96,11 +92,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Format invitation
-=======
->>>>>>> Add exist registration api
     "v1GetRegistrationResponse": {
       "type": "object",
       "properties": {

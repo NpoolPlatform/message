@@ -113,15 +113,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetAchievements", runtime.WithHTTPPathPattern("/v1/get/achievements"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetGoodArchivements", runtime.WithHTTPPathPattern("/v1/get/goodachievements"))
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.pb.gw.go
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetAchievements", runtime.WithHTTPPathPattern("/v1/get/achievements"))
->>>>>>> Refactor achievement
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -146,15 +138,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.pb.gw.go
 		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserAchievements", runtime.WithHTTPPathPattern("/v1/get/user/achievements"))
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserGoodArchivements", runtime.WithHTTPPathPattern("/v1/get/user/goodachievements"))
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.pb.gw.go
-=======
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserAchievements", runtime.WithHTTPPathPattern("/v1/get/user/achievements"))
->>>>>>> Refactor achievement
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -218,15 +202,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetAchievements", runtime.WithHTTPPathPattern("/v1/get/achievements"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetGoodArchivements", runtime.WithHTTPPathPattern("/v1/get/goodachievements"))
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.pb.gw.go
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetAchievements", runtime.WithHTTPPathPattern("/v1/get/achievements"))
->>>>>>> Refactor achievement
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,15 +224,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.pb.gw.go
 		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserAchievements", runtime.WithHTTPPathPattern("/v1/get/user/achievements"))
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserGoodArchivements", runtime.WithHTTPPathPattern("/v1/get/user/goodachievements"))
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.pb.gw.go
-=======
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.achievement.v1.Gateway/GetUserAchievements", runtime.WithHTTPPathPattern("/v1/get/user/achievements"))
->>>>>>> Refactor achievement
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -276,21 +244,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/achievement/achievement.pb.gw.go
 	pattern_Gateway_GetAchievements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "achievements"}, ""))
 
 	pattern_Gateway_GetUserAchievements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "achievements"}, ""))
-=======
-	pattern_Gateway_GetGoodArchivements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "goodachievements"}, ""))
-
-	pattern_Gateway_GetUserGoodArchivements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "goodachievements"}, ""))
->>>>>>> Remove inspire manager message:npool/inspire/gw/v1/archivement/archivement.pb.gw.go
-=======
-	pattern_Gateway_GetAchievements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "achievements"}, ""))
-
-	pattern_Gateway_GetUserAchievements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "achievements"}, ""))
->>>>>>> Refactor achievement
 )
 
 var (

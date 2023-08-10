@@ -19,28 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-<<<<<<< HEAD:npool/basal/mw/v1/usercode/usercode_grpc.pb.go
 	Middleware_CreateUserCode_FullMethodName = "/basal.middleware.usercode.v1.Middleware/CreateUserCode"
 	Middleware_VerifyUserCode_FullMethodName = "/basal.middleware.usercode.v1.Middleware/VerifyUserCode"
-=======
-	Middleware_ExpropriateAchivement_FullMethodName = "/inspire.middleware.achivement.v1.Middleware/ExpropriateAchivement"
-	Middleware_GetAchivements_FullMethodName        = "/inspire.middleware.achivement.v1.Middleware/GetAchivements"
-	Middleware_DeleteAchivement_FullMethodName      = "/inspire.middleware.achivement.v1.Middleware/DeleteAchivement"
->>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-<<<<<<< HEAD:npool/basal/mw/v1/usercode/usercode_grpc.pb.go
 	CreateUserCode(ctx context.Context, in *CreateUserCodeRequest, opts ...grpc.CallOption) (*CreateUserCodeResponse, error)
 	VerifyUserCode(ctx context.Context, in *VerifyUserCodeRequest, opts ...grpc.CallOption) (*VerifyUserCodeResponse, error)
-=======
-	ExpropriateAchivement(ctx context.Context, in *ExpropriateAchivementRequest, opts ...grpc.CallOption) (*ExpropriateAchivementResponse, error)
-	GetAchivements(ctx context.Context, in *GetAchivementsRequest, opts ...grpc.CallOption) (*GetAchivementsResponse, error)
-	DeleteAchivement(ctx context.Context, in *DeleteAchivementRequest, opts ...grpc.CallOption) (*DeleteAchivementResponse, error)
->>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement_grpc.pb.go
 }
 
 type middlewareClient struct {
@@ -69,27 +57,12 @@ func (c *middlewareClient) VerifyUserCode(ctx context.Context, in *VerifyUserCod
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteAchivement(ctx context.Context, in *DeleteAchivementRequest, opts ...grpc.CallOption) (*DeleteAchivementResponse, error) {
-	out := new(DeleteAchivementResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteAchivement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-<<<<<<< HEAD:npool/basal/mw/v1/usercode/usercode_grpc.pb.go
 	CreateUserCode(context.Context, *CreateUserCodeRequest) (*CreateUserCodeResponse, error)
 	VerifyUserCode(context.Context, *VerifyUserCodeRequest) (*VerifyUserCodeResponse, error)
-=======
-	ExpropriateAchivement(context.Context, *ExpropriateAchivementRequest) (*ExpropriateAchivementResponse, error)
-	GetAchivements(context.Context, *GetAchivementsRequest) (*GetAchivementsResponse, error)
-	DeleteAchivement(context.Context, *DeleteAchivementRequest) (*DeleteAchivementResponse, error)
->>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement_grpc.pb.go
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -102,9 +75,6 @@ func (UnimplementedMiddlewareServer) CreateUserCode(context.Context, *CreateUser
 }
 func (UnimplementedMiddlewareServer) VerifyUserCode(context.Context, *VerifyUserCodeRequest) (*VerifyUserCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyUserCode not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteAchivement(context.Context, *DeleteAchivementRequest) (*DeleteAchivementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAchivement not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -155,24 +125,6 @@ func _Middleware_VerifyUserCode_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteAchivement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAchivementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteAchivement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteAchivement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteAchivement(ctx, req.(*DeleteAchivementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -187,10 +139,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "VerifyUserCode",
 			Handler:    _Middleware_VerifyUserCode_Handler,
-		},
-		{
-			MethodName: "DeleteAchivement",
-			Handler:    _Middleware_DeleteAchivement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

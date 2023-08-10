@@ -50,7 +50,6 @@
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
-<<<<<<< HEAD
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -63,20 +62,6 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-<<<<<<< HEAD
-=======
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
->>>>>>> Add event api
-=======
->>>>>>> Add event parameter
         }
       }
     },
@@ -128,19 +113,10 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add coupon ids
         "CouponIDsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_ids\""
         },
-<<<<<<< HEAD
-=======
->>>>>>> Add event api
-=======
->>>>>>> Add coupon ids
         "CouponIDs": {
           "type": "array",
           "items": {
@@ -183,70 +159,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
-<<<<<<< HEAD
-        }
-      }
-    },
-    "v1EventReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Credits": {
-          "type": "string"
-        },
-        "CreditsPerUSD": {
-          "type": "string"
-        },
-        "MaxConsecutive": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "InviterLayers": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetEventResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Event"
-        }
-      }
-    },
-    "v1GetEventsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Event"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-=======
->>>>>>> Add sql tag to event
         }
       }
     },
@@ -323,10 +235,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add event parameter
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -341,11 +249,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Add event api
-=======
->>>>>>> Add event parameter
     "v1StringVal": {
       "type": "object",
       "properties": {

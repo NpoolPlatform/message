@@ -2,15 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 // source: npool/appuser/mw/v1/mw.proto
 
 package v1
-=======
-// source: npool/inspire/mw/v1/calculate/calculate.proto
-
-package calculate
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 
 import (
 	context "context"
@@ -27,22 +21,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 	Middleware_Version_FullMethodName = "/appuser.middleware.v1.Middleware/Version"
-=======
-	Middleware_Calculate_FullMethodName = "/inspire.middleware.calculate.v1.Middleware/Calculate"
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
-=======
-	Calculate(ctx context.Context, in *CalculateRequest, opts ...grpc.CallOption) (*CalculateResponse, error)
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 }
 
 type middlewareClient struct {
@@ -53,15 +39,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 func (c *middlewareClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
 	out := new(npool.VersionResponse)
 	err := c.cc.Invoke(ctx, Middleware_Version_FullMethodName, in, out, opts...)
-=======
-func (c *middlewareClient) Calculate(ctx context.Context, in *CalculateRequest, opts ...grpc.CallOption) (*CalculateResponse, error) {
-	out := new(CalculateResponse)
-	err := c.cc.Invoke(ctx, Middleware_Calculate_FullMethodName, in, out, opts...)
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 	if err != nil {
 		return nil, err
 	}
@@ -72,11 +52,7 @@ func (c *middlewareClient) Calculate(ctx context.Context, in *CalculateRequest, 
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
-=======
-	Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error)
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -84,13 +60,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 func (UnimplementedMiddlewareServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
-=======
-func (UnimplementedMiddlewareServer) Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Calculate not implemented")
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -105,18 +76,12 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 func _Middleware_Version_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
-=======
-func _Middleware_Calculate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CalculateRequest)
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 		return srv.(MiddlewareServer).Version(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -125,16 +90,6 @@ func _Middleware_Calculate_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).Version(ctx, req.(*emptypb.Empty))
-=======
-		return srv.(MiddlewareServer).Calculate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_Calculate_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Calculate(ctx, req.(*CalculateRequest))
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -143,7 +98,6 @@ func _Middleware_Calculate_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-<<<<<<< HEAD:npool/appuser/mw/v1/mw_grpc.pb.go
 	ServiceName: "appuser.middleware.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
@@ -154,16 +108,4 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/appuser/mw/v1/mw.proto",
-=======
-	ServiceName: "inspire.middleware.calculate.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Calculate",
-			Handler:    _Middleware_Calculate_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/calculate/calculate.proto",
->>>>>>> Move accounting to calculate:npool/inspire/mw/v1/calculate/calculate_grpc.pb.go
 }

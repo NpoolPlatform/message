@@ -146,80 +146,7 @@
     }
   },
   "definitions": {
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-=======
->>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-    "basetypesinspirev1CouponConstraint": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponConstraint",
-        "Normal",
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-        "PaymentThreshold",
-=======
-        "Threshold",
->>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-        "PaymentThreshold",
->>>>>>> Remove coupon type
-        "GoodOnly",
-        "GoodThreshold"
-      ],
-      "default": "DefaultCouponConstraint"
-    },
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-    "basetypesinspirev1CouponType": {
-=======
-=======
->>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-    "basetypesinspirev1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
-    },
-<<<<<<< HEAD
-    "couponallocatedv1CouponType": {
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
-    },
-=======
->>>>>>> Remove inspire mgr
     "inspiregatewaycouponv1CreateCouponRequest": {
-=======
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
-    },
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-    "inspiregatewaycouponcouponv1CreateCouponRequest": {
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-=======
->>>>>>> Remove inspire manager message
-    "inspiregatewaycouponv1CreateCouponRequest": {
->>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
       "type": "object",
       "properties": {
         "AppID": {
@@ -232,19 +159,7 @@
           "type": "string"
         },
         "CouponType": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-=======
-          "$ref": "#/definitions/couponallocatedv1CouponType"
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
->>>>>>> Remove inspire manager message
-=======
           "$ref": "#/definitions/v1CouponType"
->>>>>>> Remove inspire mgr
         },
         "Denomination": {
           "type": "string"
@@ -298,19 +213,7 @@
           "type": "string"
         },
         "CouponType": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-=======
-          "$ref": "#/definitions/couponallocatedv1CouponType"
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
->>>>>>> Remove inspire manager message
-=======
           "$ref": "#/definitions/v1CouponType"
->>>>>>> Remove inspire mgr
         },
         "Offset": {
           "type": "integer",
@@ -347,24 +250,6 @@
         "TargetAppID": {
           "type": "string"
         },
-<<<<<<< HEAD
-        "CouponType": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-=======
-          "$ref": "#/definitions/couponallocatedv1CouponType"
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
->>>>>>> Remove inspire manager message
-=======
-          "$ref": "#/definitions/v1CouponType"
->>>>>>> Remove inspire mgr
-        },
-=======
->>>>>>> Remove coupon type
         "Denomination": {
           "type": "string"
         },
@@ -457,34 +342,16 @@
           "title": "@inject_tag: sql:\"app_id\""
         },
         "Denomination": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"denomination\""
-=======
-          "type": "string"
->>>>>>> Format variable name
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"denomination\""
->>>>>>> Add sql tag
         },
         "Circulation": {
           "type": "string",
           "title": "@inject_tag: sql:\"circulation\""
         },
         "IssuedBy": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"issued_by\""
-=======
-          "type": "string"
->>>>>>> Formal member variable name
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"issued_by\""
->>>>>>> Add sql tag
         },
         "StartAt": {
           "type": "integer",
@@ -519,7 +386,6 @@
         "Allocated": {
           "type": "string",
           "title": "@inject_tag: sql:\"allocated\""
-<<<<<<< HEAD
         },
         "CouponConstraintStr": {
           "type": "string",
@@ -531,47 +397,6 @@
         "Random": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
-<<<<<<< HEAD
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"deleted_at\""
-=======
-          "format": "int64"
-=======
-        },
-        "CouponConstraintStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> Add sql tag
-        },
-        "CouponConstraint": {
-          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
-<<<<<<< HEAD
->>>>>>> Refactor coupon structure:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-        },
-        "Random": {
-<<<<<<< HEAD
-          "type": "boolean"
->>>>>>> Support random coupon
-=======
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"id\""
-=======
->>>>>>> For random
         },
         "CreatedAt": {
           "type": "integer",
@@ -582,15 +407,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-<<<<<<< HEAD
->>>>>>> Add sql tag
-=======
         },
         "DeletedAt": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
->>>>>>> Add coupon
         }
       }
     },
@@ -625,19 +446,7 @@
           "type": "string"
         },
         "CouponType": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/gw/v1/coupon/coupon.swagger.json
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-=======
-          "$ref": "#/definitions/couponallocatedv1CouponType"
->>>>>>> Redefine coupon:npool/inspire/gw/v1/coupon/coupon/coupon.swagger.json
-=======
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
->>>>>>> Remove inspire manager message
-=======
           "$ref": "#/definitions/v1CouponType"
->>>>>>> Remove inspire mgr
         },
         "Offset": {
           "type": "integer",

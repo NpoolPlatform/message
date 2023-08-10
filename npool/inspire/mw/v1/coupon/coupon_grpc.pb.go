@@ -23,14 +23,7 @@ const (
 	Middleware_UpdateCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/UpdateCoupon"
 	Middleware_GetCoupon_FullMethodName    = "/inspire.middleware.coupon.v1.Middleware/GetCoupon"
 	Middleware_GetCoupons_FullMethodName   = "/inspire.middleware.coupon.v1.Middleware/GetCoupons"
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon_grpc.pb.go
 	Middleware_DeleteCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/DeleteCoupon"
-=======
->>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon_grpc.pb.go
-=======
-	Middleware_DeleteCoupon_FullMethodName = "/inspire.middleware.coupon.v1.Middleware/DeleteCoupon"
->>>>>>> Add delete coupon api
 )
 
 // MiddlewareClient is the client API for Middleware service.

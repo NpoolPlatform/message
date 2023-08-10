@@ -94,13 +94,6 @@
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
-<<<<<<< HEAD
-        },
-        "CouponTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_type\""
-=======
->>>>>>> Add sql tag to coupon allocated
         },
         "CouponTypeStr": {
           "type": "string",
@@ -180,24 +173,6 @@
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
-<<<<<<< HEAD
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
-        },
-        "CouponConstraintStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
-        },
-        "CouponConstraint": {
-          "$ref": "#/definitions/v1CouponConstraint"
-        },
-        "Random": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"random\""
-=======
->>>>>>> Add sql tag to coupon allocated
         },
         "Allocated": {
           "type": "string",
@@ -243,24 +218,6 @@
         "ID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-        },
->>>>>>> Redefine coupon
-=======
->>>>>>> Remove coupon type in allocated
-=======
-        "CouponType": {
-          "$ref": "#/definitions/basetypesinspirev1CouponType"
-        },
->>>>>>> Add coupon allocated
-=======
->>>>>>> Remove coupon type from allocated
         "AppID": {
           "type": "string"
         },
@@ -278,10 +235,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Delete coupon api
     "v1CouponType": {
       "type": "string",
       "enum": [
@@ -292,11 +245,6 @@
       ],
       "default": "DefaultCouponType"
     },
-<<<<<<< HEAD
-=======
->>>>>>> Redefine coupon
-=======
->>>>>>> Delete coupon api
     "v1CreateCouponResponse": {
       "type": "object",
       "properties": {
@@ -337,8 +285,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -349,34 +295,10 @@
           "type": "array",
           "items": {
             "type": "string"
-=======
-    "v1GetManyCouponsResponse": {
-=======
-    "v1StringSliceVal": {
->>>>>>> Delete coupon api
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-<<<<<<< HEAD
-            "type": "object",
-            "$ref": "#/definitions/v1Coupon"
->>>>>>> Redefine coupon
-=======
-            "type": "string"
->>>>>>> Delete coupon api
           }
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Delete coupon api
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -400,11 +322,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
->>>>>>> Redefine coupon
-=======
->>>>>>> Delete coupon api
     "v1UpdateCouponResponse": {
       "type": "object",
       "properties": {

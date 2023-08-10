@@ -17,95 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-<<<<<<< HEAD
-    "basetypesinspirev1CouponConstraint": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponConstraint",
-        "Normal",
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
-        "PaymentThreshold",
-=======
-        "Threshold",
->>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
-=======
-        "PaymentThreshold",
->>>>>>> Remove coupon type
-        "GoodOnly",
-        "GoodThreshold"
-      ],
-      "default": "DefaultCouponConstraint"
-    },
-    "basetypesinspirev1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
-    },
-    "basetypesv1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "basetypesv1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "middlewarecouponv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "CouponType": {
-          "$ref": "#/definitions/basetypesv1Uint32Val"
-        },
-        "AppID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "IDs": {
-          "$ref": "#/definitions/basetypesv1StringSliceVal"
-        }
-      }
-    },
-=======
->>>>>>> Remove inspire mgr
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -173,34 +84,16 @@
           "title": "@inject_tag: sql:\"app_id\""
         },
         "Denomination": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"denomination\""
-=======
-          "type": "string"
->>>>>>> Format variable name
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"denomination\""
->>>>>>> Add sql tag
         },
         "Circulation": {
           "type": "string",
           "title": "@inject_tag: sql:\"circulation\""
         },
         "IssuedBy": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "string",
           "title": "@inject_tag: sql:\"issued_by\""
-=======
-          "type": "string"
->>>>>>> Formal member variable name
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"issued_by\""
->>>>>>> Add sql tag
         },
         "StartAt": {
           "type": "integer",
@@ -235,58 +128,15 @@
         "Allocated": {
           "type": "string",
           "title": "@inject_tag: sql:\"allocated\""
-<<<<<<< HEAD
         },
         "CouponConstraintStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_constraint\""
         },
         "CouponConstraint": {
-          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
-        },
-        "Random": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"random\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-<<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"deleted_at\""
-=======
-          "format": "int64"
-=======
-        },
-        "CouponConstraintStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> Add sql tag
-        },
-        "CouponConstraint": {
-<<<<<<< HEAD
-          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
-<<<<<<< HEAD
->>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
-=======
-=======
           "$ref": "#/definitions/v1CouponConstraint"
->>>>>>> Remove inspire mgr
         },
         "Random": {
-<<<<<<< HEAD
-          "type": "boolean"
->>>>>>> Support random coupon
-=======
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
@@ -299,15 +149,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-<<<<<<< HEAD
->>>>>>> Add sql tag
-=======
         },
         "DeletedAt": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"deleted_at\""
->>>>>>> Add coupon
         }
       }
     },
@@ -374,23 +220,10 @@
           "title": "We may have random amount coupon"
         },
         "CouponConstraint": {
-<<<<<<< HEAD
-          "$ref": "#/definitions/basetypesinspirev1CouponConstraint"
-<<<<<<< HEAD
-<<<<<<< HEAD:npool/inspire/mw/v1/coupon/coupon.swagger.json
-        },
-        "Random": {
-          "type": "boolean"
-=======
->>>>>>> Refactor coupon structure:npool/inspire/mw/v1/coupon/coupon/coupon.swagger.json
-=======
-=======
           "$ref": "#/definitions/v1CouponConstraint"
->>>>>>> Remove inspire mgr
         },
         "Random": {
           "type": "boolean"
->>>>>>> Support random coupon
         }
       }
     },

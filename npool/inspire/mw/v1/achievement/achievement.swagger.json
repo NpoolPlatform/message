@@ -78,15 +78,7 @@
         },
         "TotalUnits": {
           "type": "string",
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
           "title": "@inject_tag: sql:\"total_units_v1\""
-=======
-          "title": "@inject_tag: sql:\"total_untis_v1\""
->>>>>>> Right column:npool/inspire/mw/v1/achivement/achivement.swagger.json
-=======
-          "title": "@inject_tag: sql:\"total_units_v1\""
->>>>>>> Correct sql tag name:npool/inspire/mw/v1/achivement/achivement.swagger.json
         },
         "SelfUnits": {
           "type": "string",
@@ -117,15 +109,7 @@
         }
       }
     },
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
     "v1AchievementReq": {
-=======
-    "v1AchivementReq": {
->>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement.swagger.json
-=======
-    "v1AchievementReq": {
->>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object",
       "properties": {
         "ID": {
@@ -186,8 +170,6 @@
         }
       }
     },
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
     "v1DeleteAchievementResponse": {
       "type": "object",
       "properties": {
@@ -197,24 +179,6 @@
       }
     },
     "v1ExpropriateAchievementResponse": {
-=======
-    "v1DeleteAchivementResponse": {
-=======
-    "v1DeleteAchievementResponse": {
->>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Achievement"
-        }
-      }
-    },
-<<<<<<< HEAD:npool/inspire/mw/v1/achievement/achievement.swagger.json
-    "v1ExpropriateAchivementResponse": {
->>>>>>> Add delete achivement api:npool/inspire/mw/v1/achivement/achivement.swagger.json
-=======
-    "v1ExpropriateAchievementResponse": {
->>>>>>> Correct achievement:npool/inspire/mw/v1/achivement/achivement.swagger.json
       "type": "object"
     },
     "v1GetAchievementsResponse": {
