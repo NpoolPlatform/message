@@ -11,8 +11,6 @@ enum SettleType {
     GoodOrderPayment      = 10;
     // Divice commission according to order technique fee
     TechniqueServiceFee   = 20;
-
-    NoCommission          = 1000;
 }
 
 enum SettleMode {
