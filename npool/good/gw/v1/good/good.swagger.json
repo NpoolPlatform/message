@@ -189,10 +189,10 @@
           "type": "string"
         },
         "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
+          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
         },
         "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
+          "$ref": "#/definitions/goodmanagergoodv1GoodType"
         },
         "Title": {
           "type": "string"
@@ -350,10 +350,10 @@
           "type": "string"
         },
         "InheritFromGoodType": {
-          "$ref": "#/definitions/v1GoodType"
+          "$ref": "#/definitions/goodmanagergoodv1GoodType"
         },
         "InheritFromGoodBenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
+          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
         },
         "VendorLocationID": {
           "type": "string"
@@ -371,10 +371,10 @@
           "type": "string"
         },
         "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
+          "$ref": "#/definitions/goodmanagergoodv1GoodType"
         },
         "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
+          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
         },
         "Price": {
           "type": "string"
@@ -554,6 +554,28 @@
         }
       }
     },
+    "goodmanagergoodv1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "goodmanagergoodv1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "GoodTypeClassicMining",
+        "GoodTypeUnionMining",
+        "GoodTypeTechniqueFee",
+        "GoodTypeElectricityFee"
+      ],
+      "default": "DefaultGoodType",
+      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -581,28 +603,6 @@
           }
         }
       }
-    },
-    "v1BenefitType": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitType",
-        "BenefitTypePlatform",
-        "BenefitTypePool"
-      ],
-      "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
-    },
-    "v1GoodType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodType",
-        "GoodTypeClassicMining",
-        "GoodTypeUnionMining",
-        "GoodTypeTechniqueFee",
-        "GoodTypeElectricityFee"
-      ],
-      "default": "DefaultGoodType",
-      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
     }
   }
 }

@@ -17,30 +17,94 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewaregood1v1CreateGoodResponse": {
+    "protobufAny": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
         }
       }
     },
-    "middlewaregood1v1GetGoodResponse": {
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "DeviceInfoID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "VendorLocationID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "middlewaregood1v1GetGoodsResponse": {
+    "v1CreateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/middlewaregood1v1Good"
+            "$ref": "#/definitions/v1Good"
           }
         },
         "Total": {
@@ -49,7 +113,7 @@
         }
       }
     },
-    "middlewaregood1v1Good": {
+    "v1Good": {
       "type": "object",
       "properties": {
         "ID": {
@@ -96,28 +160,6 @@
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "InheritFromGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"inherit_from_good_id\""
-        },
-        "InheritFromGoodName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"inherit_from_good_name\""
-        },
-        "InheritFromGoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "InheritFromGoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"inherit_from_good_type\""
-        },
-        "InheritFromGoodBenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "InheritFromGoodBenefitTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"inherit_from_good_benefit_type\""
         },
         "VendorLocationID": {
           "type": "string",
@@ -263,39 +305,13 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"benefit_interval_hours\""
         },
-        "BenefitStateStr": {
+        "UnitLockDeposit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"benefit_state\""
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
-        },
-        "LastBenefitAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"last_benefit_at\""
-        },
-        "BenefitTIDsStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"benefit_tids\""
-        },
-        "BenefitTIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "NextBenefitStartAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"next_benefit_start_amount\""
-        },
-        "LastBenefitAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_benefit_amount\""
+          "title": "@inject_tag: sql:\"unit_lock_deposit\""
         }
       }
     },
-    "middlewaregood1v1GoodReq": {
+    "v1GoodReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -309,9 +325,6 @@
           "format": "int32"
         },
         "CoinTypeID": {
-          "type": "string"
-        },
-        "InheritFromGoodID": {
           "type": "string"
         },
         "VendorLocationID": {
@@ -384,121 +397,8 @@
           "type": "integer",
           "format": "int64"
         },
-        "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
-        },
-        "BenefitTIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "NextBenefitStartAmount": {
+        "UnitLockDeposit": {
           "type": "string"
-        },
-        "LastBenefitAmount": {
-          "type": "string"
-        }
-      }
-    },
-    "middlewaregood1v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewaregood1v1Good"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitTransferring",
-        "BenefitBookKeeping"
-      ],
-      "default": "DefaultBenefitState"
-    },
-    "v1BenefitType": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitType",
-        "BenefitTypePlatform",
-        "BenefitTypePool"
-      ],
-      "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DeviceInfoID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "VendorLocationID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1Int32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/v1Int32Val"
-        }
-      }
-    },
-    "v1GetManyGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/middlewaregood1v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -548,6 +448,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
         }
       }
     }
