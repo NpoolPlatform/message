@@ -5,8 +5,8 @@ package good.manager.appgood.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mgr/v1/appgood";
 
 import "google/protobuf/empty.proto";
-import "npool/inspire/mgr/v1/commission/commission.proto";
 import "npool/npool.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Manager {
@@ -39,7 +39,7 @@ message AppGoodReq {
     optional uint32 TechnicalFeeRatio   = 140;
     optional uint32 ElectricityFeeRatio = 150;
     optional string DailyRewardAmount   = 160;
-    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 170;
+    optional basetypes.inspire.v1.SettleType CommissionSettleType = 170;
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
@@ -73,7 +73,7 @@ message AppGood {
     uint32 TechnicalFeeRatio   = 170;
     uint32 ElectricityFeeRatio = 180;
     string DailyRewardAmount   = 190;
-    inspire.manager.commission.v1.SettleType CommissionSettleType = 200;
+    basetypes.inspire.v1.SettleType CommissionSettleType = 200;
     repeated string Descriptions = 210;
     string          GoodBanner   = 220;
     repeated string DisplayNames = 230;

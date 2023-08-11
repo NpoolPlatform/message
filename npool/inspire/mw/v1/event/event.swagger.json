@@ -17,54 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesv1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "basetypesv1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiremiddlewareeventv1GetEventOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Event"
-        }
-      }
-    },
-    "managereventv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/basetypesv1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/basetypesv1StringVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -93,32 +45,33 @@
         }
       }
     },
-    "v1Coupon": {
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "$ref": "#/definitions/v1StringVal"
         },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "ThresholdFixAmount",
-        "ThresholdDiscount",
-        "GoodFixAmount",
-        "GoodDiscount",
-        "GoodThresholdFixAmount",
-        "GoodThresholdDiscount"
-      ],
-      "default": "DefaultCouponType"
+    "v1CreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
     },
     "v1Credit": {
       "type": "object",
@@ -134,7 +87,82 @@
         }
       }
     },
+    "v1DeleteEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
     "v1Event": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "EventTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_type\""
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CouponIDsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_ids\""
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"credits\""
+        },
+        "CreditsPerUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"credits_per_usd\""
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_consecutive\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"inviter_layers\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
+    },
+    "v1EventReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -146,11 +174,10 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Coupons": {
+        "CouponIDs": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Coupon"
+            "type": "string"
           }
         },
         "Credits": {
@@ -169,16 +196,28 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1GetEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1GetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Event"
+          }
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
+        "Total": {
           "type": "integer",
           "format": "int64"
         }
@@ -193,6 +232,51 @@
             "type": "object",
             "$ref": "#/definitions/v1Credit"
           }
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
         }
       }
     },

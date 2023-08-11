@@ -4,21 +4,109 @@ package inspire.middleware.event.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event";
 
-import "npool/inspire/mgr/v1/event/event.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetEventOnly (GetEventOnlyRequest) returns (GetEventOnlyResponse) {}
-    rpc RewardEvent  (RewardEventRequest)  returns (RewardEventResponse)  {}
+    rpc CreateEvent     (CreateEventRequest)     returns (CreateEventResponse)     {}
+    rpc UpdateEvent     (UpdateEventRequest)     returns (UpdateEventResponse)     {}
+    rpc GetEvent        (GetEventRequest)        returns (GetEventResponse)        {}
+    rpc GetEvents       (GetEventsRequest)       returns (GetEventsResponse)       {}
+    rpc DeleteEvent     (DeleteEventRequest)     returns (DeleteEventResponse)     {}
+    rpc RewardEvent     (RewardEventRequest)     returns (RewardEventResponse)     {}
 }
 
-message GetEventOnlyRequest {
-    inspire.manager.event.v1.Conds Conds = 10;
+message EventReq {
+    optional string               ID            = 10;
+    optional string               AppID         = 20;
+    optional basetypes.v1.UsedFor EventType     = 30;
+    repeated string               CouponIDs     = 40;
+    optional string               Credits       = 50;
+    optional string               CreditsPerUSD = 60;
+    optional uint32               MaxConsecutive = 70;
+    optional string               GoodID        = 80;
+    optional uint32               InviterLayers = 90;
 }
 
-message GetEventOnlyResponse {
-    inspire.manager.event.v1.Event Info = 10;
+message Event {
+    // @inject_tag: sql:"id"
+    string               ID            = 10;
+    // @inject_tag: sql:"app_id"
+    string               AppID         = 20;
+    // @inject_tag: sql:"event_type"
+    string               EventTypeStr  = 29;
+    basetypes.v1.UsedFor EventType     = 30;
+    // @inject_tag: sql:"coupon_ids"
+    string               CouponIDsStr  = 39;
+    repeated string      CouponIDs     = 40;
+    // @inject_tag: sql:"credits"
+    string               Credits       = 50;
+    // @inject_tag: sql:"credits_per_usd"
+    string               CreditsPerUSD = 60;
+    // @inject_tag: sql:"max_consecutive"
+    uint32               MaxConsecutive = 70;
+    // @inject_tag: sql:"good_id"
+    optional string      GoodID        = 80;
+    // @inject_tag: sql:"inviter_layers"
+    uint32               InviterLayers = 90;
+    // @inject_tag: sql:"created_at"
+    uint32               CreatedAt     = 200;
+    // @inject_tag: sql:"updated_at"
+    uint32               UpdatedAt     = 210;
+    // @inject_tag: sql:"deleted_at"
+    uint32               DeletedAt     = 220;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID        = 10;
+    optional basetypes.v1.StringVal AppID     = 20;
+    optional basetypes.v1.Uint32Val EventType = 30;
+    optional basetypes.v1.StringVal GoodID    = 40;
+    optional basetypes.v1.StringSliceVal IDs  = 50;
+}
+
+message CreateEventRequest {
+    EventReq Info = 10;
+}
+
+message CreateEventResponse {
+    Event Info = 10;
+}
+
+message UpdateEventRequest {
+    EventReq Info = 10;
+}
+
+message UpdateEventResponse {
+    Event Info = 10;
+}
+
+message GetEventRequest {
+    string ID = 10;
+}
+
+message GetEventResponse {
+    Event Info = 10;
+}
+
+message GetEventsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetEventsResponse {
+    repeated Event Infos = 10;
+    uint32         Total = 20;
+}
+
+message DeleteEventRequest {
+    EventReq Info = 10;
+}
+
+message DeleteEventResponse {
+    Event Info = 10;
 }
 
 message Credit {
@@ -39,3 +127,4 @@ message RewardEventRequest {
 message RewardEventResponse {
     repeated Credit Infos = 10;
 }
+

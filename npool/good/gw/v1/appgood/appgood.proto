@@ -6,8 +6,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/appgood";
 
 import "npool/good/mgr/v1/good/good.proto";
 import "npool/good/mgr/v1/appgood/appgood.proto";
-import "npool/inspire/mgr/v1/commission/commission.proto";
 import "npool/npool.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -148,7 +148,7 @@ message Good {
     uint32           TechnicalFeeRatio   = 600;
     uint32           ElectricityFeeRatio = 610;
     string           DailyRewardAmount   = 620;
-    inspire.manager.commission.v1.SettleType CommissionSettleType = 630;
+    basetypes.inspire.v1.SettleType CommissionSettleType = 630;
     repeated string  Descriptions        = 640;
     string           GoodBanner          = 650;
     repeated string  DisplayNames        = 660;
@@ -178,15 +178,15 @@ message CreateNAppGoodRequest {
     optional uint32 ServiceStartAt = 120;
     optional uint32 TechnicalFeeRatio    = 130;
     optional uint32 ElectricityFeeRatio  = 140;
-    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
-    optional bool                               EnablePurchase         = 160;
-    optional bool                               EnableProductPage      = 170;
+    optional basetypes.inspire.v1.SettleType CommissionSettleType = 150;
+    optional bool   EnablePurchase         = 160;
+    optional bool   EnableProductPage      = 170;
     optional good.manager.appgood.v1.CancelMode CancelMode             = 180;
-    optional string                             UserPurchaseLimit      = 190;
-    repeated string                             DisplayColors          = 200;
-    optional uint32                             CancellableBeforeStart = 210;
-    optional string                             ProductPage            = 220;
-    optional bool                               EnableSetCommission    = 230;
+    optional string UserPurchaseLimit      = 190;
+    repeated string DisplayColors          = 200;
+    optional uint32 CancellableBeforeStart = 210;
+    optional string ProductPage            = 220;
+    optional bool   EnableSetCommission    = 230;
 }
 
 message CreateNAppGoodResponse {
@@ -239,19 +239,19 @@ message UpdateAppGoodRequest {
     optional uint32 ServiceStartAt      = 120;
     optional uint32 TechnicalFeeRatio   = 130;
     optional uint32 ElectricityFeeRatio = 140;
-    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 150;
+    optional basetypes.inspire.v1.SettleType CommissionSettleType = 150;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
     optional string DailyRewardAmount   = 190;
-    optional bool                               EnablePurchase    = 200;
-    optional bool                               EnableProductPage = 210;
+    optional bool   EnablePurchase      = 200;
+    optional bool   EnableProductPage   = 210;
     optional good.manager.appgood.v1.CancelMode CancelMode        = 220;
-    optional string                             UserPurchaseLimit = 230;
-    repeated string                             DisplayColors          = 240;
-    optional uint32                             CancellableBeforeStart = 250;
-    optional string                             ProductPage            = 260;
-    optional bool                               EnableSetCommission    = 270;
+    optional string UserPurchaseLimit = 230;
+    repeated string DisplayColors          = 240;
+    optional uint32 CancellableBeforeStart = 250;
+    optional string ProductPage            = 260;
+    optional bool   EnableSetCommission    = 270;
 }
 
 message UpdateAppGoodResponse {
@@ -271,7 +271,7 @@ message UpdateNAppGoodRequest {
     optional uint32 ServiceStartAt      = 100;
     optional uint32 TechnicalFeeRatio   = 110;
     optional uint32 ElectricityFeeRatio = 120;
-    optional inspire.manager.commission.v1.SettleType CommissionSettleType = 130;
+    optional basetypes.inspire.v1.SettleType CommissionSettleType = 130;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;

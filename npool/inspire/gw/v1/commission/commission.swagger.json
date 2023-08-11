@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CloneCommissionsResponse"
+              "$ref": "#/definitions/inspiregatewaycommissionv1CloneCommissionsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CloneCommissionsRequest"
+              "$ref": "#/definitions/inspiregatewaycommissionv1CloneCommissionsRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateCommissionResponse"
+              "$ref": "#/definitions/inspiregatewaycommissionv1CreateCommissionResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateCommissionRequest"
+              "$ref": "#/definitions/inspiregatewaycommissionv1CreateCommissionRequest"
             }
           }
         ],
@@ -183,7 +183,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetCommissionsResponse"
+              "$ref": "#/definitions/inspiregatewaycommissionv1GetCommissionsResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetCommissionsRequest"
+              "$ref": "#/definitions/inspiregatewaycommissionv1GetCommissionsRequest"
             }
           }
         ],
@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateCommissionResponse"
+              "$ref": "#/definitions/inspiregatewaycommissionv1UpdateCommissionResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateCommissionRequest"
+              "$ref": "#/definitions/inspiregatewaycommissionv1UpdateCommissionRequest"
             }
           }
         ],
@@ -242,6 +242,215 @@
     }
   },
   "definitions": {
+    "inspiregatewaycommissionv1CloneCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "FromGoodID": {
+          "type": "string"
+        },
+        "ToGoodID": {
+          "type": "string"
+        },
+        "ScalePercent": {
+          "type": "string"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1CloneCommissionsResponse": {
+      "type": "object"
+    },
+    "inspiregatewaycommissionv1Commission": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Kol": {
+          "type": "boolean"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1CreateCommissionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "Threshold": {
+          "type": "string"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1CreateCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1GetCommissionsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1GetCommissionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1UpdateCommissionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Threshold": {
+          "type": "string"
+        }
+      }
+    },
+    "inspiregatewaycommissionv1UpdateCommissionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -282,155 +491,13 @@
         "ToGoodID": {
           "type": "string"
         },
-        "Value": {
+        "ScalePercent": {
           "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
     "v1CloneAppCommissionsResponse": {
       "type": "object"
-    },
-    "v1CloneCommissionsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "FromGoodID": {
-          "type": "string"
-        },
-        "ToGoodID": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        }
-      }
-    },
-    "v1CloneCommissionsResponse": {
-      "type": "object"
-    },
-    "v1Commission": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "FirstName": {
-          "type": "string"
-        },
-        "LastName": {
-          "type": "string"
-        },
-        "Kol": {
-          "type": "boolean"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "SettleMode": {
-          "$ref": "#/definitions/v1SettleMode"
-        },
-        "SettleInterval": {
-          "$ref": "#/definitions/v1SettleInterval"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "Percent": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "Threshold": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateCommissionRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateCommissionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Commission"
-        }
-      }
     },
     "v1CreateUserCommissionRequest": {
       "type": "object",
@@ -447,12 +514,24 @@
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
-        "Value": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "Threshold": {
+          "type": "string"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
         }
       }
     },
@@ -460,7 +539,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Commission"
+          "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
         }
       }
     },
@@ -473,9 +552,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
         },
         "Offset": {
           "type": "integer",
@@ -494,7 +570,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Commission"
+            "$ref": "#/definitions/inspiregatewaycommissionv1Commission"
           }
         },
         "Total": {
@@ -503,43 +579,14 @@
         }
       }
     },
-    "v1GetCommissionsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetCommissionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Commission"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
     },
     "v1SettleInterval": {
       "type": "string",
@@ -565,44 +612,11 @@
       "type": "string",
       "enum": [
         "DefaultSettleType",
-        "GoodOrderPercent",
-        "GoodOrderValuePercent",
-        "LimitedOrderPercent",
-        "AmountThreshold",
-        "TechniqueFeePercent",
-        "NoCommission"
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
       ],
       "default": "DefaultSettleType",
-      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
-    },
-    "v1UpdateCommissionRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Value": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCommissionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Commission"
-        }
-      }
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
     }
   }
 }

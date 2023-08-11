@@ -4,22 +4,20 @@ package inspire.middleware.coupon.allocated.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/allocated";
 
-import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
     rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {}
     rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
-    rpc GetManyCoupons (GetManyCouponsRequest) returns (GetManyCouponsResponse) {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
-    rpc GetCouponOnly  (GetCouponOnlyRequest)  returns (GetCouponOnlyResponse)  {}
+    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {}
 }
 
 message CouponReq {
     optional string ID       = 10;
-    optional inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
     optional string AppID    = 30;
     optional string CouponID = 40;
     optional string UserID   = 50;
@@ -28,27 +26,71 @@ message CouponReq {
 }
 
 message Coupon {
+    // @inject_tag: sql:"id"
     string     ID              = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 30;
+    // @inject_tag: sql:"coupon_type"
+    string     CouponTypeStr   = 20;
+    basetypes.inspire.v1.CouponType CouponType = 30;
+    // @inject_tag: sql:"app_id"
     string     AppID           = 40;
+    // @inject_tag: sql:"user_id"
    string      UserID          = 50;
-    string     Value           = 60;
+   string      Username        = 51;
+   string      EmailAddress    = 52;
+   string      PhoneNO         = 53;
+    // @inject_tag: sql:"denomination"
+    string     Denomination    = 60;
+    // @inject_tag: sql:"circulation"
     string     Circulation     = 70;
+    // @inject_tag: sql:"start_at"
     uint32     StartAt         = 80;
+    // @inject_tag: sql:"duration_days"
     uint32     DurationDays    = 90;
+    // @inject_tag: sql:"end_at"
     uint32     EndAt           = 100;
+    // @inject_tag: sql:"coupon_id"
     string     CouponID        = 110;
+    // @inject_tag: sql:"coupon_name"
     string     CouponName      = 120;
+    // @inject_tag: sql:"coupon_message"
     string     Message         = 130;
+    // @inject_tag: sql:"expired"
     bool       Expired         = 140;
+    // @inject_tag: sql:"valid"
     bool       Valid           = 150;
+    // @inject_tag: sql:"used"
     bool       Used            = 160;
+    // @inject_tag: sql:"used_at"
     uint32     UsedAt          = 170;
+    // @inject_tag: sql:"used_by_order_id"
     optional string UsedByOrderID = 180;
+    // @inject_tag: sql:"good_id"
     optional string GoodID     = 190;
+    // @inject_tag: sql:"threshold"
     optional string Threshold  = 200;
-    uint32     CreatedAt       = 210;
-    uint32     UpdatedAt       = 220;
+    // @inject_tag: sql:"allocated"
+    string     Allocated       = 210;
+    // @inject_tag: sql:"coupon_constraint"
+    string     CouponConstraintStr = 220;
+    basetypes.inspire.v1.CouponConstraint CouponConstraint = 230;
+    // @inject_tag: sql:"random"
+    bool       Random          = 240;
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32     UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID       = 10;
+    optional basetypes.v1.StringVal AppID    = 20;
+    optional basetypes.v1.StringVal UserID   = 30;
+    optional basetypes.v1.Uint32Val CouponType = 40;
+    optional basetypes.v1.StringVal CouponID = 50;
+    optional basetypes.v1.BoolVal   Used     = 60;
+    optional basetypes.v1.StringVal UsedByOrderID = 70;
+    optional basetypes.v1.StringSliceVal IDs = 80;
+    optional basetypes.v1.StringSliceVal UsedByOrderIDs = 90;
 }
 
 message CreateCouponRequest {
@@ -75,16 +117,8 @@ message GetCouponResponse {
     Coupon Info = 10;
 }
 
-message GetManyCouponsRequest {
-    repeated string IDs = 10;
-}
-
-message GetManyCouponsResponse {
-    repeated Coupon Infos = 10;
-}
-
 message GetCouponsRequest {
-    inspire.manager.coupon.allocated.v1.Conds Conds = 10;
+    Conds Conds = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
@@ -94,10 +128,11 @@ message GetCouponsResponse {
     uint32          Total = 20;
 }
 
-message GetCouponOnlyRequest {
-    inspire.manager.coupon.allocated.v1.Conds Conds = 10;
+message DeleteCouponRequest {
+    CouponReq Info = 10;
 }
 
-message GetCouponOnlyResponse {
+message DeleteCouponResponse {
     Coupon Info = 10;
 }
+

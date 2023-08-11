@@ -5,8 +5,8 @@ package inspire.gateway.event.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/event";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mgr/v1/coupon/allocated/allocated.proto";
-import "npool/inspire/mgr/v1/event/event.proto";
+import "npool/inspire/mw/v1/event/event.proto";
+import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
@@ -31,19 +31,12 @@ service Gateway {
     }
 }
 
-message Coupon {
-    string                                         ID         = 10;
-    inspire.manager.coupon.allocated.v1.CouponType CouponType = 20;
-    string                                         Value      = 30;
-    string                                         Name       = 40;
-}
-
 message Event {
     string               ID            = 10;
     string               AppID         = 20;
     string               AppName       = 30;
     basetypes.v1.UsedFor EventType     = 40;
-    repeated             Coupon Coupons = 50;
+    repeated inspire.middleware.coupon.v1.Coupon Coupons = 50;
     string               Credits       = 60;
     string               CreditsPerUSD = 70;
     uint32               MaxConsecutive = 80;
@@ -58,7 +51,7 @@ message Event {
 message CreateEventRequest {
     string               AppID         = 10;
     basetypes.v1.UsedFor EventType     = 20;
-    repeated inspire.manager.event.v1.Coupon Coupons = 30;
+    repeated string      CouponIDs     = 30;
     optional string      Credits       = 40;
     optional string      CreditsPerUSD = 50;
     optional uint32      MaxConsecutive = 60;
@@ -85,7 +78,7 @@ message GetEventsResponse {
 message UpdateEventRequest {
     string          ID            = 10;
     string          AppID         = 20;
-    repeated inspire.manager.event.v1.Coupon Coupons = 30;
+    repeated string CouponIDs     = 30;
     optional string Credits       = 40;
     optional string CreditsPerUSD = 50;
     optional uint32 MaxConsecutive = 60;

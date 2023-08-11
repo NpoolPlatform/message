@@ -5,7 +5,6 @@ package inspire.gateway.reconciliation.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/reconciliation";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/npool.proto";
 
 // Service Name
@@ -19,9 +18,8 @@ service Gateway {
 }
 
 message ReconcileRequest {
-    string AppID         = 10;
-    string TargetUserID  = 20;
-    string GoodID        = 30;
+    string AppID  = 10;
+    string GoodID = 20;
 }
 
 message ReconcileResponse {

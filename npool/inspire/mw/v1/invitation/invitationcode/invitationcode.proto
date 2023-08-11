@@ -4,7 +4,7 @@ package inspire.middleware.invitation.invitationcode.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/invitationcode";
 
-import "npool/inspire/mgr/v1/invitation/invitationcode/invitationcode.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
@@ -12,24 +12,59 @@ service Middleware {
     rpc UpdateInvitationCode     (UpdateInvitationCodeRequest)     returns (UpdateInvitationCodeResponse)     {}
     rpc GetInvitationCode        (GetInvitationCodeRequest)        returns (GetInvitationCodeResponse)        {}
     rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
-    rpc GetInvitationCodeOnly    (GetInvitationCodeOnlyRequest)    returns (GetInvitationCodeOnlyResponse)    {}
     rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
 }
 
+message InvitationCodeReq {
+    optional string ID             = 10;
+    optional string AppID          = 20;
+    optional string UserID         = 30;
+    optional string InvitationCode = 40;
+    optional bool   Disabled       = 50;
+}
+
+message InvitationCode {
+    // @inject_tag: sql:"id"
+    string ID             = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID          = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID         = 30;
+    // @inject_tag: sql:"invitation_code"
+    string InvitationCode = 40;
+    // @inject_tag: sql:"disabled"
+    bool   Disabled       = 50;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 60;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt      = 70;
+    // @inject_tag: sql:"deleted_at"
+    uint32 DeletedAt      = 80;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID             = 10;
+    optional basetypes.v1.StringVal AppID          = 20;
+    optional basetypes.v1.StringVal UserID         = 30;
+    optional basetypes.v1.StringVal InvitationCode = 40;
+    optional basetypes.v1.BoolVal   Disabled       = 50;
+    optional basetypes.v1.StringSliceVal UserIDs   = 60;
+}
+
 message CreateInvitationCodeRequest {
-    inspire.manager.invitation.invitationcode.v1.InvitationCodeReq Info = 10;
+    InvitationCodeReq Info = 10;
 }
 
 message CreateInvitationCodeResponse {
-    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+    InvitationCode Info = 10;
 }
 
 message UpdateInvitationCodeRequest {
-    inspire.manager.invitation.invitationcode.v1.InvitationCodeReq Info = 10;
+    InvitationCodeReq Info = 10;
 }
 
 message UpdateInvitationCodeResponse {
-    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+    InvitationCode Info = 10;
 }
 
 message GetInvitationCodeRequest {
@@ -37,33 +72,25 @@ message GetInvitationCodeRequest {
 }
 
 message GetInvitationCodeResponse {
-    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+    InvitationCode Info = 10;
 }
 
 message GetInvitationCodesRequest {
-    inspire.manager.invitation.invitationcode.v1.Conds Conds = 10;
+    Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
 message GetInvitationCodesResponse {
-    repeated inspire.manager.invitation.invitationcode.v1.InvitationCode Infos = 10;
+    repeated InvitationCode Infos = 10;
     uint32 Total = 20;
 }
 
-message GetInvitationCodeOnlyRequest {
-    inspire.manager.invitation.invitationcode.v1.Conds Conds = 10;
-}
-
-message GetInvitationCodeOnlyResponse {
-    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
-}
-
 message DeleteInvitationCodeRequest {
-    inspire.manager.invitation.invitationcode.v1.InvitationCodeReq Info = 10;
+    InvitationCodeReq Info = 10;
 }
 
 message DeleteInvitationCodeResponse {
-    inspire.manager.invitation.invitationcode.v1.InvitationCode Info = 10;
+    InvitationCode Info = 10;
 }
 

@@ -52,55 +52,86 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "GoodID": {
           "type": "string",
-          "title": "For good specific commission"
+          "title": "For good specific commission\n@inject_tag: sql:\"good_id\""
+        },
+        "SettleTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_type\""
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
+        "SettleModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_mode\""
+        },
         "SettleMode": {
           "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleIntervalStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_interval\""
         },
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
-        "Amount": {
+        "AmountOrPercent": {
           "type": "string",
-          "title": "For fix amount commission"
-        },
-        "Percent": {
-          "type": "string",
-          "title": "For percent commission"
+          "title": "For fix amount or percent commission\n@inject_tag: sql:\"amount_or_percent\""
         },
         "Threshold": {
           "type": "string",
-          "title": "For commission threshold"
+          "title": "For commission threshold\n@inject_tag: sql:\"threshold\""
         },
         "StartAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
         },
         "EndAt": {
           "type": "integer",
           "format": "int64",
-          "title": "EndAt == 0 means active commission"
+          "title": "EndAt == 0 means active commission\n@inject_tag: sql:\"end_at\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        },
+        "OrderLimit": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"order_limit\""
+        },
+        "SettleAmountTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_amount_type\""
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
         }
       }
     },
@@ -128,10 +159,7 @@
         "SettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
-        "Amount": {
-          "type": "string"
-        },
-        "Percent": {
+        "AmountOrPercent": {
           "type": "string"
         },
         "StartAt": {
@@ -140,6 +168,9 @@
         },
         "Threshold": {
           "type": "string"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
         }
       }
     },
@@ -159,7 +190,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "SettleType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -176,14 +207,6 @@
       }
     },
     "v1CreateCommissionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Commission"
-        }
-      }
-    },
-    "v1GetCommissionOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -215,17 +238,14 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
     },
     "v1SettleInterval": {
       "type": "string",
@@ -251,15 +271,11 @@
       "type": "string",
       "enum": [
         "DefaultSettleType",
-        "GoodOrderPercent",
-        "GoodOrderValuePercent",
-        "LimitedOrderPercent",
-        "AmountThreshold",
-        "TechniqueFeePercent",
-        "NoCommission"
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
       ],
       "default": "DefaultSettleType",
-      "title": "- GoodOrderPercent: Divide commission according to order payment amount\n - GoodOrderValuePercent: Divide commission according to order good value"
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
     },
     "v1StringSliceVal": {
       "type": "object",
