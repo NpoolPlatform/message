@@ -5,6 +5,7 @@ package inspire.gateway.achievement.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/achievement";
 
 import "google/api/annotations.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -27,7 +28,12 @@ message GoodAchievement {
     string GoodID             = 10;
     string GoodName           = 20;
     string GoodUnit           = 30;
+
     string CommissionPercent  = 40;
+    basetypes.inspire.v1.SettleType CommissionSettleType             = 41;
+    basetypes.inspire.v1.SettleAmountType CommissionSettleAmountType = 42;
+    basetypes.inspire.v1.SettleMode CommissionSettleMode             = 43;
+    basetypes.inspire.v1.SettleInterval CommissionSettleInterval     = 44;
 
     string CoinTypeID         = 50;
     string CoinName           = 60;

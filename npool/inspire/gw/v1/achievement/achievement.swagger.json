@@ -247,6 +247,18 @@
         "CommissionPercent": {
           "type": "string"
         },
+        "CommissionSettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "CommissionSettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "CommissionSettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "CommissionSettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -282,6 +294,45 @@
           "type": "string"
         }
       }
+    },
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
+    },
+    "v1SettleInterval": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleInterval",
+        "SettleAggregate",
+        "SettleMonthly",
+        "SettleYearly",
+        "SettleEveryOrder"
+      ],
+      "default": "DefaultSettleInterval"
+    },
+    "v1SettleMode": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleMode",
+        "SettleWithGoodValue",
+        "SettleWithPaymentAmount"
+      ],
+      "default": "DefaultSettleMode"
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
     }
   }
 }
