@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/vendor/brand/brand.proto
+// source: npool/good/mw/v1/vender/brand/brand.proto
 
 package brand
 
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Manager_CreateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Manager/CreateBrand"
-	Manager_UpdateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Manager/UpdateBrand"
-	Manager_GetBrand_FullMethodName    = "/good.middleware.vendor.brand.v1.Manager/GetBrand"
-	Manager_GetBrands_FullMethodName   = "/good.middleware.vendor.brand.v1.Manager/GetBrands"
-	Manager_DeleteBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Manager/DeleteBrand"
+	Manager_CreateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/CreateBrand"
+	Manager_UpdateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/UpdateBrand"
+	Manager_GetBrand_FullMethodName    = "/good.middleware.vender.brand.v1.Manager/GetBrand"
+	Manager_GetBrands_FullMethodName   = "/good.middleware.vender.brand.v1.Manager/GetBrands"
+	Manager_DeleteBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/DeleteBrand"
 )
 
 // ManagerClient is the client API for Manager service.
@@ -228,7 +228,7 @@ func _Manager_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vendor.brand.v1.Manager",
+	ServiceName: "good.middleware.vender.brand.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/vendor/brand/brand.proto",
+	Metadata: "npool/good/mw/v1/vender/brand/brand.proto",
 }

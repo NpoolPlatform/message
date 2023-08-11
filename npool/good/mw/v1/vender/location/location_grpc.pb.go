@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/vendor/location/location.proto
+// source: npool/good/mw/v1/vender/location/location.proto
 
 package location
 
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Manager_CreateLocation_FullMethodName = "/good.middleware.vendor.location.v1.Manager/CreateLocation"
-	Manager_UpdateLocation_FullMethodName = "/good.middleware.vendor.location.v1.Manager/UpdateLocation"
-	Manager_GetLocation_FullMethodName    = "/good.middleware.vendor.location.v1.Manager/GetLocation"
-	Manager_GetLocations_FullMethodName   = "/good.middleware.vendor.location.v1.Manager/GetLocations"
-	Manager_DeleteLocation_FullMethodName = "/good.middleware.vendor.location.v1.Manager/DeleteLocation"
+	Manager_CreateLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/CreateLocation"
+	Manager_UpdateLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/UpdateLocation"
+	Manager_GetLocation_FullMethodName    = "/good.middleware.vender.location.v1.Manager/GetLocation"
+	Manager_GetLocations_FullMethodName   = "/good.middleware.vender.location.v1.Manager/GetLocations"
+	Manager_DeleteLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/DeleteLocation"
 )
 
 // ManagerClient is the client API for Manager service.
@@ -228,7 +228,7 @@ func _Manager_DeleteLocation_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vendor.location.v1.Manager",
+	ServiceName: "good.middleware.vender.location.v1.Manager",
 	HandlerType: (*ManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Manager_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/vendor/location/location.proto",
+	Metadata: "npool/good/mw/v1/vender/location/location.proto",
 }

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.middleware.vendor.brand.v1;
+package good.middleware.vender.brand.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/vendor/brand";
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/vender/brand";
 
 import "npool/basetypes/v1/conds.proto";
 
