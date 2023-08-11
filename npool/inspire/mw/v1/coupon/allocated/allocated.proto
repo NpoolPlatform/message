@@ -35,6 +35,9 @@ message Coupon {
     string     AppID           = 40;
     // @inject_tag: sql:"user_id"
    string      UserID          = 50;
+   string      Username        = 51;
+   string      EmailAddress    = 52;
+   string      PhoneNO         = 53;
     // @inject_tag: sql:"denomination"
     string     Denomination    = 60;
     // @inject_tag: sql:"circulation"
