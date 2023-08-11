@@ -29,7 +29,7 @@ message GoodAchievement {
     string GoodName           = 20;
     string GoodUnit           = 30;
 
-    string CommissionPercent  = 40;
+    string CommissionValue    = 40;
     basetypes.inspire.v1.SettleType CommissionSettleType             = 41;
     basetypes.inspire.v1.SettleAmountType CommissionSettleAmountType = 42;
     basetypes.inspire.v1.SettleMode CommissionSettleMode             = 43;
