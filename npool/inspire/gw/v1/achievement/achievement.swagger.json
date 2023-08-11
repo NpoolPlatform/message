@@ -259,6 +259,9 @@
         "CommissionSettleInterval": {
           "$ref": "#/definitions/v1SettleInterval"
         },
+        "CommissionThreshold": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },

@@ -34,6 +34,7 @@ message GoodAchievement {
     basetypes.inspire.v1.SettleAmountType CommissionSettleAmountType = 42;
     basetypes.inspire.v1.SettleMode CommissionSettleMode             = 43;
     basetypes.inspire.v1.SettleInterval CommissionSettleInterval     = 44;
+    string CommissionThreshold = 45;
 
     string CoinTypeID         = 50;
     string CoinName           = 60;
