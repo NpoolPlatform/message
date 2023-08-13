@@ -19,7 +19,7 @@ message LocationReq {
     optional string ID       = 10;
     optional string Country  = 20;
     optional string Province = 30;
-    optional string Citys    = 40;
+    optional string City     = 40;
     optional string Address  = 50;
     optional string BrandID  = 60;
 }
