@@ -13,15 +13,17 @@ enum BenefitType {
 }
 
 enum GoodType {
-    DefaultGoodType         = 0;
-    // Classic good: user pay for both device and other material, get all benefit
-    GoodTypeClassicMining   = 10;
-    // Union good: user pay for a part of material, get part of benefit
-    GoodTypeUnionMining     = 20;
+    DefaultGoodType   = 0;
 
-    // Fee good
-    GoodTypeTechniqueFee    = 30;
-    GoodTypeElectricityFee  = 40;
+    PowerRenting      = 10;
+    MachineRenting    = 20;
+    MachineHosting    = 30;
+
+    TechniqueServiceFee = 1000;
+    ElectricityFee      = 2000;
+
+    CrowdFunding = 3000;
+    Arbitrage    = 3010;
 }
 
 enum BenefitState {

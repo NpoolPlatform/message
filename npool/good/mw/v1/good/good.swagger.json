@@ -406,13 +406,15 @@
       "type": "string",
       "enum": [
         "DefaultGoodType",
-        "GoodTypeClassicMining",
-        "GoodTypeUnionMining",
-        "GoodTypeTechniqueFee",
-        "GoodTypeElectricityFee"
+        "PowerRenting",
+        "MachineRenting",
+        "MachineHosting",
+        "TechniqueServiceFee",
+        "ElectricityFee",
+        "CrowdFunding",
+        "Arbitrage"
       ],
-      "default": "DefaultGoodType",
-      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
+      "default": "DefaultGoodType"
     },
     "v1Int32Val": {
       "type": "object",
