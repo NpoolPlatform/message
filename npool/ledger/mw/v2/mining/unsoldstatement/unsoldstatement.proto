@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package ledger.middleware.unsoldstatement.v2;
+package ledger.middleware.mining.unsoldstatement.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/unsoldstatement";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/mining/unsoldstatement";
 
 import "npool/basetypes/v1/conds.proto";
 

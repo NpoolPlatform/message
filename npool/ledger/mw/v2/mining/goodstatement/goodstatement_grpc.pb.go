@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/ledger/mw/v2/goodstatement/goodstatement.proto
+// source: npool/ledger/mw/v2/mining/goodstatement/goodstatement.proto
 
 package goodstatement
 
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGoodStatement_FullMethodName  = "/ledger.middleware.goodstatement.v2.Middleware/CreateGoodStatement"
-	Middleware_GetGoodStatementOnly_FullMethodName = "/ledger.middleware.goodstatement.v2.Middleware/GetGoodStatementOnly"
-	Middleware_GetGoodStatements_FullMethodName    = "/ledger.middleware.goodstatement.v2.Middleware/GetGoodStatements"
+	Middleware_CreateGoodStatement_FullMethodName  = "/ledger.middleware.mining.goodstatement.v2.Middleware/CreateGoodStatement"
+	Middleware_GetGoodStatementOnly_FullMethodName = "/ledger.middleware.mining.goodstatement.v2.Middleware/GetGoodStatementOnly"
+	Middleware_GetGoodStatements_FullMethodName    = "/ledger.middleware.mining.goodstatement.v2.Middleware/GetGoodStatements"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -162,7 +162,7 @@ func _Middleware_GetGoodStatements_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.middleware.goodstatement.v2.Middleware",
+	ServiceName: "ledger.middleware.mining.goodstatement.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -179,5 +179,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mw/v2/goodstatement/goodstatement.proto",
+	Metadata: "npool/ledger/mw/v2/mining/goodstatement/goodstatement.proto",
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/goodstatement/goodstatement.proto",
+    "title": "npool/ledger/mw/v2/mining/goodstatement/goodstatement.proto",
     "version": "version not set"
   },
   "tags": [
