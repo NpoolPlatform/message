@@ -254,10 +254,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"labels\""
         },
-        "VoteCount": {
+        "Likes": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"vote_count\""
+          "title": "@inject_tag: sql:\"likes\""
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"dislikes\""
         },
         "Rating": {
           "type": "number",

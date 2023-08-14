@@ -111,8 +111,10 @@ message Good {
     // @inject_tag: sql:"labels"
     string           LabelsStr          = 281;
 
-    // @inject_tag: sql:"vote_count"
-    uint32           VoteCount          = 290;
+    // @inject_tag: sql:"likes"
+    uint32           Likes              = 290;
+    // @inject_tag: sql:"dislikes"
+    uint32           Dislikes           = 291;
     // @inject_tag: sql:"rating"
     float            Rating             = 300;
 
