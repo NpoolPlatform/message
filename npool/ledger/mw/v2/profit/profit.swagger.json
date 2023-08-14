@@ -110,21 +110,6 @@
         }
       }
     },
-    "v2GetIntervalProfitsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Profit"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v2GetProfitOnlyResponse": {
       "type": "object",
       "properties": {

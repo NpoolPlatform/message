@@ -19,9 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateStatement_FullMethodName  = "/ledger.middleware.statement.v2.Middleware/CreateStatement"
-	Middleware_GetStatementOnly_FullMethodName = "/ledger.middleware.statement.v2.Middleware/GetStatementOnly"
-	Middleware_GetStatements_FullMethodName    = "/ledger.middleware.statement.v2.Middleware/GetStatements"
+	Middleware_CreateStatement_FullMethodName    = "/ledger.middleware.statement.v2.Middleware/CreateStatement"
+	Middleware_GetStatementOnly_FullMethodName   = "/ledger.middleware.statement.v2.Middleware/GetStatementOnly"
+	Middleware_GetStatements_FullMethodName      = "/ledger.middleware.statement.v2.Middleware/GetStatements"
+	Middleware_GetIntervalProfits_FullMethodName = "/ledger.middleware.statement.v2.Middleware/GetIntervalProfits"
+	Middleware_GetIntervalLedgers_FullMethodName = "/ledger.middleware.statement.v2.Middleware/GetIntervalLedgers"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +33,8 @@ type MiddlewareClient interface {
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
 	GetStatementOnly(ctx context.Context, in *GetStatementOnlyRequest, opts ...grpc.CallOption) (*GetStatementOnlyResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
+	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
+	GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +72,24 @@ func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsR
 	return out, nil
 }
 
+func (c *middlewareClient) GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error) {
+	out := new(GetIntervalProfitsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalProfits_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error) {
+	out := new(GetIntervalLedgersResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalLedgers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +97,8 @@ type MiddlewareServer interface {
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
 	GetStatementOnly(context.Context, *GetStatementOnlyRequest) (*GetStatementOnlyResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
+	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
+	GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +114,12 @@ func (UnimplementedMiddlewareServer) GetStatementOnly(context.Context, *GetState
 }
 func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
+}
+func (UnimplementedMiddlewareServer) GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalLedgers not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,6 +188,42 @@ func _Middleware_GetStatements_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalProfitsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetIntervalProfits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetIntervalProfits_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetIntervalProfits(ctx, req.(*GetIntervalProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetIntervalLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalLedgersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetIntervalLedgers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, req.(*GetIntervalLedgersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +242,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStatements",
 			Handler:    _Middleware_GetStatements_Handler,
+		},
+		{
+			MethodName: "GetIntervalProfits",
+			Handler:    _Middleware_GetIntervalProfits_Handler,
+		},
+		{
+			MethodName: "GetIntervalLedgers",
+			Handler:    _Middleware_GetIntervalLedgers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
