@@ -356,7 +356,8 @@
           "$ref": "#/definitions/v1BenefitState"
         },
         "LastRewardAt": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"last_reward_at\""
         },
         "RewardTID": {

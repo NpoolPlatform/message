@@ -161,7 +161,7 @@ message Good {
     string           RewardStateStr      = 430;
     basetypes.good.v1.BenefitState RewardState = 440;
     // @inject_tag: sql:"last_reward_at"
-    string           LastRewardAt        = 450;
+    uint32           LastRewardAt        = 450;
     // @inject_tag: sql:"reward_tid"
     string           RewardTID           = 460;
     // @inject_tag: sql:"next_reward_start_amount"
