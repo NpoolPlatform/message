@@ -6,12 +6,16 @@ option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/stateme
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
+import "npool/ledger/mw/v2/profit/profit.proto";
+import "npool/ledger/mw/v2/ledger/ledger.proto";
 
 // Service Name
 service Middleware {
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
     rpc GetStatementOnly    (GetStatementOnlyRequest)    returns (GetStatementOnlyResponse)    {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
+    rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)   {}
+    rpc GetIntervalLedgers       (GetIntervalLedgersRequest)       returns (GetIntervalLedgersResponse)  {}
 }
 
 
@@ -105,4 +109,32 @@ message DeleteStatementRequest {
 
 message StatementStatementResponse {
     Statement    Info = 10;
+}
+
+message GetIntervalProfitsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalProfitsResponse {
+    repeated .ledger.middleware.profit.v2.Profit Infos = 10;
+    uint32                                       Total = 20;
+}
+
+message GetIntervalLedgersRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalLedgersResponse {
+    repeated .ledger.middleware.ledger.v2.Ledger Infos = 10;
+    uint32                                       Total = 20;
 }
