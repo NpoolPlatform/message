@@ -74,6 +74,8 @@ message Conds {
     optional basetypes.v1.StringVal FromCoinTypeID   = 80;
     optional basetypes.v1.StringVal CoinUSDCurrency  = 90;
     optional basetypes.v1.StringVal IOExtra          = 100;
+    optional basetypes.v1.Uint32Val StartAt          = 110;
+    optional basetypes.v1.Uint32Val EndAt            = 120;
 }
 
 message CreateStatementRequest {
