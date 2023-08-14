@@ -51,7 +51,8 @@
         "DefaultBenefitState",
         "BenefitWait",
         "BenefitTransferring",
-        "BenefitBookKeeping"
+        "BenefitBookKeeping",
+        "BenefitDone"
       ],
       "default": "DefaultBenefitState"
     },

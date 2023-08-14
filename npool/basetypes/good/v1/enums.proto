@@ -32,6 +32,7 @@ enum BenefitState {
     BenefitWait         = 10;
     BenefitTransferring = 20;
     BenefitBookKeeping  = 30;
+    BenefitDone         = 40;
 }
 
 enum CancelMode {
