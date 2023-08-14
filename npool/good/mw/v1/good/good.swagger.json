@@ -355,9 +355,9 @@
         "RewardState": {
           "$ref": "#/definitions/v1BenefitState"
         },
-        "RewardAt": {
+        "LastRewardAt": {
           "type": "string",
-          "title": "@inject_tag: sql:\"reward_at\""
+          "title": "@inject_tag: sql:\"last_reward_at\""
         },
         "RewardTID": {
           "type": "string",
@@ -367,13 +367,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"next_reward_start_amount\""
         },
-        "RewardAmount": {
+        "LastRewardAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"reward_amount\""
-        },
-        "UnitRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"unit_reward_amount\""
+          "title": "@inject_tag: sql:\"last_reward_amount\""
         }
       }
     },
