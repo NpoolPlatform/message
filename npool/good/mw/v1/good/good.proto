@@ -75,6 +75,10 @@ message Good {
     string           VendorLocationCity          = 170;
     // @inject_tag: sql:"vendor_location_address"
     string           VendorLocationAddress       = 180;
+    // @inject_tag: sql:"vendor_brand_name"
+    string           VendorBrandName             = 181;
+    // @inject_tag: sql:"vendor_brand_logo"
+    string           VendorBrandLogo             = 182;
 
     basetypes.good.v1.GoodType    GoodType    = 190;
     // @inject_tag: sql:"good_type"

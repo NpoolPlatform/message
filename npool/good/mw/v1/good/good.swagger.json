@@ -181,6 +181,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"vendor_location_address\""
         },
+        "VendorBrandName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_brand_name\""
+        },
+        "VendorBrandLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_brand_logo\""
+        },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
