@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package ledger.middleware.goodstatement.v2;
+package ledger.middleware.mining.goodstatement.v2;
 
-option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/goodstatement";
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/mining/goodstatement";
 
 import "npool/basetypes/v1/conds.proto";
 

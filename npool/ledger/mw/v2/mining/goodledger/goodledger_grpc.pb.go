@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/ledger/mw/v2/goodledger/goodledger.proto
+// source: npool/ledger/mw/v2/mining/goodledger/goodledger.proto
 
 package goodledger
 
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGoodLedger_FullMethodName  = "/ledger.middleware.goodledger.v2.Middleware/CreateGoodLedger"
-	Middleware_GetGoodLedgerOnly_FullMethodName = "/ledger.middleware.goodledger.v2.Middleware/GetGoodLedgerOnly"
-	Middleware_AddGoodLedger_FullMethodName     = "/ledger.middleware.goodledger.v2.Middleware/AddGoodLedger"
+	Middleware_CreateGoodLedger_FullMethodName  = "/ledger.middleware.mining.goodledger.v2.Middleware/CreateGoodLedger"
+	Middleware_GetGoodLedgerOnly_FullMethodName = "/ledger.middleware.mining.goodledger.v2.Middleware/GetGoodLedgerOnly"
+	Middleware_AddGoodLedger_FullMethodName     = "/ledger.middleware.mining.goodledger.v2.Middleware/AddGoodLedger"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -162,7 +162,7 @@ func _Middleware_AddGoodLedger_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.middleware.goodledger.v2.Middleware",
+	ServiceName: "ledger.middleware.mining.goodledger.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -179,5 +179,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mw/v2/goodledger/goodledger.proto",
+	Metadata: "npool/ledger/mw/v2/mining/goodledger/goodledger.proto",
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/unsoldstatement/unsoldstatement.proto",
+    "title": "npool/ledger/mw/v2/mining/goodledger/goodledger.proto",
     "version": "version not set"
   },
   "tags": [
@@ -55,15 +55,11 @@
         }
       }
     },
-    "v1Uint32Val": {
+    "v2AddGoodLedgerResponse": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
+        "Info": {
+          "$ref": "#/definitions/v2GoodLedger"
         }
       }
     },
@@ -82,28 +78,31 @@
         "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "BenefitDate": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "ToPlatform": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ToUser": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v2CreateUnsoldStatementResponse": {
+    "v2CreateGoodLedgerResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2UnsoldStatement"
+          "$ref": "#/definitions/v2GoodLedger"
         }
       }
     },
-    "v2GetUnsoldStatementOnlyResponse": {
+    "v2GetGoodLedgerOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2UnsoldStatement"
+          "$ref": "#/definitions/v2GoodLedger"
         }
       }
     },
-    "v2UnsoldStatement": {
+    "v2GoodLedger": {
       "type": "object",
       "properties": {
         "ID": {
@@ -122,10 +121,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"amount\""
         },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"benefit_date\""
+        "ToPlatform": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"to_platform\""
+        },
+        "ToUser": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"to_user\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -139,7 +141,7 @@
         }
       }
     },
-    "v2UnsoldStatementReq": {
+    "v2GoodLedgerReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -154,13 +156,11 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
+        "ToPlatform": {
+          "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "ToUser": {
+          "type": "string"
         }
       }
     }

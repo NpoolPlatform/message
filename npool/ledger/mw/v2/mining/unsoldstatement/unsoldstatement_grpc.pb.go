@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/ledger/mw/v2/unsoldstatement/unsoldstatement.proto
+// source: npool/ledger/mw/v2/mining/unsoldstatement/unsoldstatement.proto
 
 package unsoldstatement
 
@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateUnsoldStatement_FullMethodName  = "/ledger.middleware.unsoldstatement.v2.Middleware/CreateUnsoldStatement"
-	Middleware_GetUnsoldStatementOnly_FullMethodName = "/ledger.middleware.unsoldstatement.v2.Middleware/GetUnsoldStatementOnly"
+	Middleware_CreateUnsoldStatement_FullMethodName  = "/ledger.middleware.mining.unsoldstatement.v2.Middleware/CreateUnsoldStatement"
+	Middleware_GetUnsoldStatementOnly_FullMethodName = "/ledger.middleware.mining.unsoldstatement.v2.Middleware/GetUnsoldStatementOnly"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -129,7 +129,7 @@ func _Middleware_GetUnsoldStatementOnly_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.middleware.unsoldstatement.v2.Middleware",
+	ServiceName: "ledger.middleware.mining.unsoldstatement.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -142,5 +142,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/ledger/mw/v2/unsoldstatement/unsoldstatement.proto",
+	Metadata: "npool/ledger/mw/v2/mining/unsoldstatement/unsoldstatement.proto",
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/mining/unsold/unsold.proto",
+    "title": "npool/ledger/mw/v2/mining/unsoldstatement/unsoldstatement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,67 +44,6 @@
         }
       }
     },
-    "unsoldv2CreateUnsoldResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Unsold"
-        }
-      }
-    },
-    "unsoldv2GetUnsoldOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Unsold"
-        }
-      }
-    },
-    "unsoldv2UnsoldReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "BenefitDate": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -128,7 +67,79 @@
         }
       }
     },
-    "v1Unsold": {
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "BenefitDate": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v2CreateUnsoldStatementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2UnsoldStatement"
+        }
+      }
+    },
+    "v2GetUnsoldStatementOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2UnsoldStatement"
+        }
+      }
+    },
+    "v2UnsoldStatement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_date\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v2UnsoldStatementReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -143,7 +154,7 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitDate": {
+        "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
         },
