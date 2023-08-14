@@ -50,4 +50,5 @@ enum Prefix {
     PrefixCreateDeviceInfo     = 500;
     PrefixCreateVendorBrand    = 510;
     PrefixCreateVendorLocation = 520;
+    PrefixCreateGood           = 530;
 }
