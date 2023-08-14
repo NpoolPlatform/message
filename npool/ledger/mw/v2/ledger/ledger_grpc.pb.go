@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/CreateLedger"
-	Middleware_CreateLedgers_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/CreateLedgers"
-	Middleware_AddLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/AddLedger"
-	Middleware_GetLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
-	Middleware_GetLedgerOnly_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
-	Middleware_GetLedgers_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
-	Middleware_DeleteLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/DeleteLedger"
+	Middleware_CreateLedger_FullMethodName       = "/ledger.middleware.ledger.v2.Middleware/CreateLedger"
+	Middleware_CreateLedgers_FullMethodName      = "/ledger.middleware.ledger.v2.Middleware/CreateLedgers"
+	Middleware_AddLedger_FullMethodName          = "/ledger.middleware.ledger.v2.Middleware/AddLedger"
+	Middleware_GetLedger_FullMethodName          = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
+	Middleware_GetLedgerOnly_FullMethodName      = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
+	Middleware_GetLedgers_FullMethodName         = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
+	Middleware_DeleteLedger_FullMethodName       = "/ledger.middleware.ledger.v2.Middleware/DeleteLedger"
+	Middleware_GetIntervalLedgers_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetIntervalLedgers"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -39,6 +40,7 @@ type MiddlewareClient interface {
 	GetLedgerOnly(ctx context.Context, in *GetLedgerOnlyRequest, opts ...grpc.CallOption) (*GetLedgerOnlyResponse, error)
 	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
 	DeleteLedger(ctx context.Context, in *DeleteLedgerRequest, opts ...grpc.CallOption) (*DeleteLedgerResponse, error)
+	GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error)
 }
 
 type middlewareClient struct {
@@ -112,6 +114,15 @@ func (c *middlewareClient) DeleteLedger(ctx context.Context, in *DeleteLedgerReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error) {
+	out := new(GetIntervalLedgersResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalLedgers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type MiddlewareServer interface {
 	GetLedgerOnly(context.Context, *GetLedgerOnlyRequest) (*GetLedgerOnlyResponse, error)
 	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
 	DeleteLedger(context.Context, *DeleteLedgerRequest) (*DeleteLedgerResponse, error)
+	GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedMiddlewareServer) GetLedgers(context.Context, *GetLedgersRequ
 }
 func (UnimplementedMiddlewareServer) DeleteLedger(context.Context, *DeleteLedgerRequest) (*DeleteLedgerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLedger not implemented")
+}
+func (UnimplementedMiddlewareServer) GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalLedgers not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -290,6 +305,24 @@ func _Middleware_DeleteLedger_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetIntervalLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalLedgersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetIntervalLedgers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetIntervalLedgers(ctx, req.(*GetIntervalLedgersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteLedger",
 			Handler:    _Middleware_DeleteLedger_Handler,
+		},
+		{
+			MethodName: "GetIntervalLedgers",
+			Handler:    _Middleware_GetIntervalLedgers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

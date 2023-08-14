@@ -15,6 +15,7 @@ service Middleware {
     rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
     rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
     rpc DeleteProfit     (DeleteProfitRequest)     returns (DeleteProfitResponse)     {}
+    rpc GetIntervalProfits        (GetIntervalProfitsRequest)        returns (GetIntervalProfitsResponse)   {}
 }
 
 message ProfitReq {
@@ -107,4 +108,18 @@ message DeleteProfitRequest {
 
 message DeleteProfitResponse {
     Profit Info = 10;
+}
+
+message GetIntervalProfitsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    uint32 Start   = 30;
+    uint32 End     = 40;
+    int32  Offset  = 50;
+    int32  Limit   = 60;
+}
+
+message GetIntervalProfitsResponse {
+    repeated Profit Infos = 10;
+    uint32          Total = 20;
 }

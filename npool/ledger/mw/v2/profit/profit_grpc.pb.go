@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateProfit_FullMethodName  = "/ledger.middleware.profit.v2.Middleware/CreateProfit"
-	Middleware_CreateProfits_FullMethodName = "/ledger.middleware.profit.v2.Middleware/CreateProfits"
-	Middleware_AddProfit_FullMethodName     = "/ledger.middleware.profit.v2.Middleware/AddProfit"
-	Middleware_GetProfit_FullMethodName     = "/ledger.middleware.profit.v2.Middleware/GetProfit"
-	Middleware_GetProfitOnly_FullMethodName = "/ledger.middleware.profit.v2.Middleware/GetProfitOnly"
-	Middleware_GetProfits_FullMethodName    = "/ledger.middleware.profit.v2.Middleware/GetProfits"
-	Middleware_DeleteProfit_FullMethodName  = "/ledger.middleware.profit.v2.Middleware/DeleteProfit"
+	Middleware_CreateProfit_FullMethodName       = "/ledger.middleware.profit.v2.Middleware/CreateProfit"
+	Middleware_CreateProfits_FullMethodName      = "/ledger.middleware.profit.v2.Middleware/CreateProfits"
+	Middleware_AddProfit_FullMethodName          = "/ledger.middleware.profit.v2.Middleware/AddProfit"
+	Middleware_GetProfit_FullMethodName          = "/ledger.middleware.profit.v2.Middleware/GetProfit"
+	Middleware_GetProfitOnly_FullMethodName      = "/ledger.middleware.profit.v2.Middleware/GetProfitOnly"
+	Middleware_GetProfits_FullMethodName         = "/ledger.middleware.profit.v2.Middleware/GetProfits"
+	Middleware_DeleteProfit_FullMethodName       = "/ledger.middleware.profit.v2.Middleware/DeleteProfit"
+	Middleware_GetIntervalProfits_FullMethodName = "/ledger.middleware.profit.v2.Middleware/GetIntervalProfits"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -39,6 +40,7 @@ type MiddlewareClient interface {
 	GetProfitOnly(ctx context.Context, in *GetProfitOnlyRequest, opts ...grpc.CallOption) (*GetProfitOnlyResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
 	DeleteProfit(ctx context.Context, in *DeleteProfitRequest, opts ...grpc.CallOption) (*DeleteProfitResponse, error)
+	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 }
 
 type middlewareClient struct {
@@ -112,6 +114,15 @@ func (c *middlewareClient) DeleteProfit(ctx context.Context, in *DeleteProfitReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error) {
+	out := new(GetIntervalProfitsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetIntervalProfits_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type MiddlewareServer interface {
 	GetProfitOnly(context.Context, *GetProfitOnlyRequest) (*GetProfitOnlyResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
 	DeleteProfit(context.Context, *DeleteProfitRequest) (*DeleteProfitResponse, error)
+	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedMiddlewareServer) GetProfits(context.Context, *GetProfitsRequ
 }
 func (UnimplementedMiddlewareServer) DeleteProfit(context.Context, *DeleteProfitRequest) (*DeleteProfitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProfit not implemented")
+}
+func (UnimplementedMiddlewareServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -290,6 +305,24 @@ func _Middleware_DeleteProfit_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalProfitsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetIntervalProfits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetIntervalProfits_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetIntervalProfits(ctx, req.(*GetIntervalProfitsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteProfit",
 			Handler:    _Middleware_DeleteProfit_Handler,
+		},
+		{
+			MethodName: "GetIntervalProfits",
+			Handler:    _Middleware_GetIntervalProfits_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
