@@ -13,6 +13,7 @@ service Middleware {
     rpc GetGood         (GetGoodRequest)         returns (GetGoodResponse)         {}
     rpc GetGoods        (GetGoodsRequest)        returns (GetGoodsResponse)        {}
     rpc UpdateGood      (UpdateGoodRequest)      returns (UpdateGoodResponse)      {}
+    rpc DeleteGood      (DeleteGoodRequest)      returns (DeleteGoodResponse)      {}
 }
 
 message GoodReq {
@@ -190,5 +191,13 @@ message UpdateGoodRequest {
 }
 
 message UpdateGoodResponse {
+    Good Info = 10;
+}
+
+message DeleteGoodRequest {
+    GoodReq Info = 10;
+}
+
+message DeleteGoodResponse {
     Good Info = 10;
 }

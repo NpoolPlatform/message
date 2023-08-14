@@ -23,6 +23,7 @@ const (
 	Middleware_GetGood_FullMethodName    = "/good.middleware.good1.v1.Middleware/GetGood"
 	Middleware_GetGoods_FullMethodName   = "/good.middleware.good1.v1.Middleware/GetGoods"
 	Middleware_UpdateGood_FullMethodName = "/good.middleware.good1.v1.Middleware/UpdateGood"
+	Middleware_DeleteGood_FullMethodName = "/good.middleware.good1.v1.Middleware/DeleteGood"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +34,7 @@ type MiddlewareClient interface {
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
 	UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error)
+	DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error)
 }
 
 type middlewareClient struct {
@@ -79,6 +81,15 @@ func (c *middlewareClient) UpdateGood(ctx context.Context, in *UpdateGoodRequest
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error) {
+	out := new(DeleteGoodResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteGood_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type MiddlewareServer interface {
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
 	UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error)
+	DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedMiddlewareServer) GetGoods(context.Context, *GetGoodsRequest)
 }
 func (UnimplementedMiddlewareServer) UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateGood not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGood not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -191,6 +206,24 @@ func _Middleware_UpdateGood_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteGood_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteGood(ctx, req.(*DeleteGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateGood",
 			Handler:    _Middleware_UpdateGood_Handler,
+		},
+		{
+			MethodName: "DeleteGood",
+			Handler:    _Middleware_DeleteGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
