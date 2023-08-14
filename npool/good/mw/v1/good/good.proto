@@ -35,11 +35,11 @@ message GoodReq {
     optional string        Locked             = 180;
     optional string        InService          = 190;
     optional string        WaitStart          = 191;
-    optional string        Sold               = 200;
     repeated string        Posters            = 210;
     repeated string        Labels             = 220;
     optional uint32        BenefitIntervalHours = 230;
     optional string        UnitLockDeposit    = 240;
+    optional string        AppLocked          = 250;
 }
 
 message Good {
@@ -138,6 +138,8 @@ message Good {
     uint32           BenefitIntervalHours = 400;
     // @inject_tag: sql:"unit_lock_deposit"
     string           UnitLockDeposit     = 410;
+    // @inject_tag: sql:"good_app_locked"
+    string           GoodAppLocked       = 420;
 }
 
 message Conds {

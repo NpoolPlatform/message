@@ -308,6 +308,10 @@
         "UnitLockDeposit": {
           "type": "string",
           "title": "@inject_tag: sql:\"unit_lock_deposit\""
+        },
+        "GoodAppLocked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_app_locked\""
         }
       }
     },
@@ -378,9 +382,6 @@
         "WaitStart": {
           "type": "string"
         },
-        "Sold": {
-          "type": "string"
-        },
         "Posters": {
           "type": "array",
           "items": {
@@ -398,6 +399,9 @@
           "format": "int64"
         },
         "UnitLockDeposit": {
+          "type": "string"
+        },
+        "AppLocked": {
           "type": "string"
         }
       }
