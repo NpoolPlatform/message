@@ -136,21 +136,6 @@
         }
       }
     },
-    "v2GetIntervalLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Ledger"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v2GetLedgerOnlyResponse": {
       "type": "object",
       "properties": {
