@@ -175,8 +175,8 @@ message Conds {
     optional basetypes.v1.StringVal      DeviceInfoID     = 20;
     optional basetypes.v1.StringVal      CoinTypeID       = 30;
     optional basetypes.v1.StringVal      VendorLocationID = 40;
-    optional basetypes.v1.Int32Val       BenefitType      = 50;
-    optional basetypes.v1.Int32Val       GoodType         = 60;
+    optional basetypes.v1.Uint32Val      BenefitType      = 50;
+    optional basetypes.v1.Uint32Val      GoodType         = 60;
     optional basetypes.v1.StringSliceVal IDs              = 70;
     optional basetypes.v1.Uint32Val      RewardState      = 80;
 }

@@ -82,10 +82,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "BenefitType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "GoodType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -508,18 +508,6 @@
         "Arbitrage"
       ],
       "default": "DefaultGoodType"
-    },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
     },
     "v1StringSliceVal": {
       "type": "object",
