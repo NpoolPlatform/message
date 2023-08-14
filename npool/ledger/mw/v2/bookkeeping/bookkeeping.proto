@@ -3,22 +3,49 @@ syntax = "proto3";
 package ledger.middleware.bookkeeping.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/bookkeeping";
+import "npool/ledger/mw/v2/statement/statement.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc BookKeeping (BookKeepingRequest) returns (BookKeepingResponse) {}
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse) {}
+    rpc LockBalance               (LockBalanceRequest)               returns (LockBalanceResponse)          {}
+    rpc UnlockBalance             (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
+    rpc FinalPayment              (FinalPaymentRequest)              returns (FinalPaymentResponse)         {}
 }
 
 message BookKeepingRequest {
-    string GoodID       = 10;
-    string CoinTypeID   = 20;
-    string TotalAmount  = 30;
-    string UnsoldAmount = 40;
-    string TechniqueServiceFeeAmount = 50;
-    uint32 BenefitDate  = 60;
+    .ledger.middleware.statement.v2.StatementReq Info = 10;
 }
 
-message BookKeepingResponse {
+message BookKeepingResponse {}
+
+message LockBalanceRequest {
+    string AppID       = 10;
+    string UserID      = 20;
+    string CoinTypeID  = 30;
+    string Amount      = 40;
 }
 
+message LockBalanceResponse {}
+
+message UnlockBalanceRequest {
+    string AppID                                        = 10;
+    string UserID                                       = 20;
+    string CoinTypeID                                   = 30;
+    string Unlocked                                     = 40;
+    string Outcoming                                    = 50;
+    // Only Payment or Withdrawal
+    basetypes.ledger.v1.IOSubType IOSubType             = 60;
+    string IOExtra                                      = 70;
+}
+
+message UnlockBalanceResponse {
+}
+
+message FinalPaymentRequest {
+    repeated .ledger.middleware.statement.v2.StatementReq Infos = 10;
+}
+
+message FinalPaymentResponse {}
 

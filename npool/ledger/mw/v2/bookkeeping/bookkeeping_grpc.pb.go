@@ -19,7 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_BookKeeping_FullMethodName = "/ledger.middleware.bookkeeping.v2.Middleware/BookKeeping"
+	Middleware_BookKeeping_FullMethodName   = "/ledger.middleware.bookkeeping.v2.Middleware/BookKeeping"
+	Middleware_LockBalance_FullMethodName   = "/ledger.middleware.bookkeeping.v2.Middleware/LockBalance"
+	Middleware_UnlockBalance_FullMethodName = "/ledger.middleware.bookkeeping.v2.Middleware/UnlockBalance"
+	Middleware_FinalPayment_FullMethodName  = "/ledger.middleware.bookkeeping.v2.Middleware/FinalPayment"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -27,6 +30,9 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	BookKeeping(ctx context.Context, in *BookKeepingRequest, opts ...grpc.CallOption) (*BookKeepingResponse, error)
+	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
+	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
+	FinalPayment(ctx context.Context, in *FinalPaymentRequest, opts ...grpc.CallOption) (*FinalPaymentResponse, error)
 }
 
 type middlewareClient struct {
@@ -46,11 +52,41 @@ func (c *middlewareClient) BookKeeping(ctx context.Context, in *BookKeepingReque
 	return out, nil
 }
 
+func (c *middlewareClient) LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error) {
+	out := new(LockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_LockBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error) {
+	out := new(UnlockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnlockBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) FinalPayment(ctx context.Context, in *FinalPaymentRequest, opts ...grpc.CallOption) (*FinalPaymentResponse, error) {
+	out := new(FinalPaymentResponse)
+	err := c.cc.Invoke(ctx, Middleware_FinalPayment_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error)
+	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
+	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
+	FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -60,6 +96,15 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) BookKeeping(context.Context, *BookKeepingRequest) (*BookKeepingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BookKeeping not implemented")
+}
+func (UnimplementedMiddlewareServer) LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnlockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) FinalPayment(context.Context, *FinalPaymentRequest) (*FinalPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FinalPayment not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -92,6 +137,60 @@ func _Middleware_BookKeeping_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_LockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).LockBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_LockBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).LockBalance(ctx, req.(*LockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnlockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnlockBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnlockBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnlockBalance(ctx, req.(*UnlockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_FinalPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FinalPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).FinalPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_FinalPayment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).FinalPayment(ctx, req.(*FinalPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -102,6 +201,18 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BookKeeping",
 			Handler:    _Middleware_BookKeeping_Handler,
+		},
+		{
+			MethodName: "LockBalance",
+			Handler:    _Middleware_LockBalance_Handler,
+		},
+		{
+			MethodName: "UnlockBalance",
+			Handler:    _Middleware_UnlockBalance_Handler,
+		},
+		{
+			MethodName: "FinalPayment",
+			Handler:    _Middleware_FinalPayment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -44,7 +44,82 @@
         }
       }
     },
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+    },
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
+    },
     "v2BookKeepingResponse": {
+      "type": "object"
+    },
+    "v2FinalPaymentResponse": {
+      "type": "object"
+    },
+    "v2LockBalanceResponse": {
+      "type": "object"
+    },
+    "v2StatementReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FromCoinTypeID": {
+          "type": "string",
+          "title": "E.g. when pay with non-USDT coin"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UnlockBalanceResponse": {
       "type": "object"
     }
   }
