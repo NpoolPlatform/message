@@ -41,6 +41,15 @@ message GoodReq {
     optional uint32        BenefitIntervalHours = 230;
     optional string        UnitLockDeposit    = 240;
     optional string        AppLocked          = 250;
+    optional basetypes.good.v1.BenefitState RewardState = 260;
+    optional uint32        RewardAt           = 270;
+    optional string        RewardTID          = 280;
+    optional string        NextRewardStartAmount = 290;
+    optional string        RewardAmount       = 300;
+    optional string        UnitRewardAmount   = 310;
+    optional int32         Likes              = 320;
+    optional int32         Dislikes           = 330;
+    optional string        Rating             = 340;
 }
 
 message Good {
@@ -147,6 +156,20 @@ message Good {
     string           UnitLockDeposit     = 410;
     // @inject_tag: sql:"good_app_locked"
     string           GoodAppLocked       = 420;
+
+    // @inject_tag: sql:"reward_state"
+    string           RewardStateStr      = 430;
+    basetypes.good.v1.BenefitState RewardState = 440;
+    // @inject_tag: sql:"reward_at"
+    string           RewardAt            = 450;
+    // @inject_tag: sql:"reward_tid"
+    string           RewardTID           = 460;
+    // @inject_tag: sql:"next_reward_start_amount"
+    string           NextRewardStartAmount = 470;
+    // @inject_tag: sql:"reward_amount"
+    string           RewardAmount        = 480;
+    // @inject_tag: sql:"unit_reward_amount"
+    string           UnitRewardAmount    = 490;
 }
 
 message Conds {
@@ -157,6 +180,7 @@ message Conds {
     optional basetypes.v1.Int32Val       BenefitType      = 50;
     optional basetypes.v1.Int32Val       GoodType         = 60;
     optional basetypes.v1.StringSliceVal IDs              = 70;
+    optional basetypes.v1.Uint32Val      RewardState      = 80;
 }
 
 message CreateGoodRequest {

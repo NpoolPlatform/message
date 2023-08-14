@@ -45,6 +45,17 @@
         }
       }
     },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping",
+        "BenefitDone"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -78,6 +89,9 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -333,6 +347,33 @@
         "GoodAppLocked": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_app_locked\""
+        },
+        "RewardStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_state\""
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "RewardAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_at\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "RewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_amount\""
+        },
+        "UnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_reward_amount\""
         }
       }
     },
@@ -424,6 +465,36 @@
         },
         "AppLocked": {
           "type": "string"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "RewardAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RewardTID": {
+          "type": "string"
+        },
+        "NextRewardStartAmount": {
+          "type": "string"
+        },
+        "RewardAmount": {
+          "type": "string"
+        },
+        "UnitRewardAmount": {
+          "type": "string"
+        },
+        "Likes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Rating": {
+          "type": "string"
         }
       }
     },
@@ -475,6 +546,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
