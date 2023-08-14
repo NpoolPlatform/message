@@ -54,7 +54,7 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IDs": {
+        "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
