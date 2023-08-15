@@ -19,26 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/CreateLedger"
-	Middleware_CreateLedgers_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/CreateLedgers"
-	Middleware_AddLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/AddLedger"
 	Middleware_GetLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
 	Middleware_GetLedgerOnly_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
 	Middleware_GetLedgers_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
-	Middleware_DeleteLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/DeleteLedger"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateLedger(ctx context.Context, in *CreateLedgerRequest, opts ...grpc.CallOption) (*CreateLedgerResponse, error)
-	CreateLedgers(ctx context.Context, in *CreateLedgersRequest, opts ...grpc.CallOption) (*CreateLedgersResponse, error)
-	AddLedger(ctx context.Context, in *AddLedgerRequest, opts ...grpc.CallOption) (*AddLedgerResponse, error)
 	GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error)
 	GetLedgerOnly(ctx context.Context, in *GetLedgerOnlyRequest, opts ...grpc.CallOption) (*GetLedgerOnlyResponse, error)
 	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
-	DeleteLedger(ctx context.Context, in *DeleteLedgerRequest, opts ...grpc.CallOption) (*DeleteLedgerResponse, error)
 }
 
 type middlewareClient struct {
@@ -47,33 +39,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateLedger(ctx context.Context, in *CreateLedgerRequest, opts ...grpc.CallOption) (*CreateLedgerResponse, error) {
-	out := new(CreateLedgerResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateLedgers(ctx context.Context, in *CreateLedgersRequest, opts ...grpc.CallOption) (*CreateLedgersResponse, error) {
-	out := new(CreateLedgersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateLedgers_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) AddLedger(ctx context.Context, in *AddLedgerRequest, opts ...grpc.CallOption) (*AddLedgerResponse, error) {
-	out := new(AddLedgerResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error) {
@@ -103,26 +68,13 @@ func (c *middlewareClient) GetLedgers(ctx context.Context, in *GetLedgersRequest
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteLedger(ctx context.Context, in *DeleteLedgerRequest, opts ...grpc.CallOption) (*DeleteLedgerResponse, error) {
-	out := new(DeleteLedgerResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateLedger(context.Context, *CreateLedgerRequest) (*CreateLedgerResponse, error)
-	CreateLedgers(context.Context, *CreateLedgersRequest) (*CreateLedgersResponse, error)
-	AddLedger(context.Context, *AddLedgerRequest) (*AddLedgerResponse, error)
 	GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error)
 	GetLedgerOnly(context.Context, *GetLedgerOnlyRequest) (*GetLedgerOnlyResponse, error)
 	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
-	DeleteLedger(context.Context, *DeleteLedgerRequest) (*DeleteLedgerResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -130,15 +82,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateLedger(context.Context, *CreateLedgerRequest) (*CreateLedgerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateLedger not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateLedgers(context.Context, *CreateLedgersRequest) (*CreateLedgersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateLedgers not implemented")
-}
-func (UnimplementedMiddlewareServer) AddLedger(context.Context, *AddLedgerRequest) (*AddLedgerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddLedger not implemented")
-}
 func (UnimplementedMiddlewareServer) GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedger not implemented")
 }
@@ -147,9 +90,6 @@ func (UnimplementedMiddlewareServer) GetLedgerOnly(context.Context, *GetLedgerOn
 }
 func (UnimplementedMiddlewareServer) GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedgers not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteLedger(context.Context, *DeleteLedgerRequest) (*DeleteLedgerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteLedger not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -162,60 +102,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateLedgerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateLedger(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateLedger_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateLedger(ctx, req.(*CreateLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateLedgersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateLedgers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateLedgers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateLedgers(ctx, req.(*CreateLedgersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_AddLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddLedgerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).AddLedger(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_AddLedger_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddLedger(ctx, req.(*AddLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -272,24 +158,6 @@ func _Middleware_GetLedgers_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteLedgerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteLedger(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteLedger_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteLedger(ctx, req.(*DeleteLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -297,18 +165,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.middleware.ledger.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateLedger",
-			Handler:    _Middleware_CreateLedger_Handler,
-		},
-		{
-			MethodName: "CreateLedgers",
-			Handler:    _Middleware_CreateLedgers_Handler,
-		},
-		{
-			MethodName: "AddLedger",
-			Handler:    _Middleware_AddLedger_Handler,
-		},
 		{
 			MethodName: "GetLedger",
 			Handler:    _Middleware_GetLedger_Handler,
@@ -320,10 +176,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLedgers",
 			Handler:    _Middleware_GetLedgers_Handler,
-		},
-		{
-			MethodName: "DeleteLedger",
-			Handler:    _Middleware_DeleteLedger_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

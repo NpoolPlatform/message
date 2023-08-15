@@ -8,13 +8,9 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateLedger     (CreateLedgerRequest)     returns (CreateLedgerResponse)     {}
-    rpc CreateLedgers    (CreateLedgersRequest)    returns (CreateLedgersResponse)    {}
-    rpc AddLedger        (AddLedgerRequest)        returns (AddLedgerResponse)        {}
     rpc GetLedger        (GetLedgerRequest)        returns (GetLedgerResponse)        {}
     rpc GetLedgerOnly    (GetLedgerOnlyRequest)    returns (GetLedgerOnlyResponse)    {}
     rpc GetLedgers       (GetLedgersRequest)       returns (GetLedgersResponse)       {}
-    rpc DeleteLedger     (DeleteLedgerRequest)     returns (DeleteLedgerResponse)     {}
 }
 
 message LedgerReq {
@@ -63,29 +59,6 @@ message Conds {
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 90;
 }
 
-message CreateLedgerRequest {
-    LedgerReq Info = 10;
-}
-
-message CreateLedgerResponse {
-    Ledger Info = 10;
-}
-
-message CreateLedgersRequest {
-    repeated LedgerReq Infos = 10;
-}
-
-message CreateLedgersResponse {
-    repeated Ledger Infos = 10;
-}
-
-message AddLedgerRequest {
-    LedgerReq Info = 10;
-}
-
-message AddLedgerResponse {
-    Ledger Info = 10;
-}
 
 message GetLedgerRequest {
     string ID = 10;
@@ -114,10 +87,3 @@ message GetLedgerOnlyResponse {
     Ledger Info = 10;
 }
 
-message DeleteLedgerRequest {
-    LedgerReq Infos = 10;
-}
-
-message DeleteLedgerResponse {
-    Ledger Info = 10;
-}
