@@ -51,4 +51,5 @@ enum Prefix {
     PrefixCreateVendorBrand    = 510;
     PrefixCreateVendorLocation = 520;
     PrefixCreateGood           = 530;
+    PrefixCreateRequired       = 540;
 }
