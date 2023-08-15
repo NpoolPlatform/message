@@ -14,7 +14,6 @@ service Middleware {
     rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
     rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
     rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
-    rpc DeleteProfit     (DeleteProfitRequest)     returns (DeleteProfitResponse)     {}
 }
 
 message ProfitReq {
@@ -98,13 +97,5 @@ message GetProfitOnlyRequest {
 }
 
 message GetProfitOnlyResponse {
-    Profit Info = 10;
-}
-
-message DeleteProfitRequest {
-    ProfitReq Infos = 10;
-}
-
-message DeleteProfitResponse {
     Profit Info = 10;
 }

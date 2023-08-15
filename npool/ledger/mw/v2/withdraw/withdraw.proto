@@ -19,7 +19,6 @@ service Middleware {
     rpc ExistWithdrawConds (ExistWithdrawCondsRequest) returns (ExistWithdrawCondsResponse) {}
 }
 
-
 message WithdrawReq {
     optional string ID                     = 10;
     optional string AppID                  = 20;
@@ -137,12 +136,4 @@ message ExistWithdrawCondsRequest {
 
 message ExistWithdrawCondsResponse {
     bool Info = 10;
-}
-
-message DeleteWithdrawRequest {
-    WithdrawReq Info = 10;
-}
-
-message DeleteWithdrawResponse {
-    Withdraw Info = 10;
 }

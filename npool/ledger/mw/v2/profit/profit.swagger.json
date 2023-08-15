@@ -102,14 +102,6 @@
         }
       }
     },
-    "v2DeleteProfitResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Profit"
-        }
-      }
-    },
     "v2GetProfitOnlyResponse": {
       "type": "object",
       "properties": {

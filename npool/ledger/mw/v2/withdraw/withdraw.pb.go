@@ -1175,100 +1175,6 @@ func (x *ExistWithdrawCondsResponse) GetInfo() bool {
 	return false
 }
 
-type DeleteWithdrawRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *WithdrawReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *DeleteWithdrawRequest) Reset() {
-	*x = DeleteWithdrawRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteWithdrawRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteWithdrawRequest) ProtoMessage() {}
-
-func (x *DeleteWithdrawRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteWithdrawRequest.ProtoReflect.Descriptor instead.
-func (*DeleteWithdrawRequest) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{19}
-}
-
-func (x *DeleteWithdrawRequest) GetInfo() *WithdrawReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type DeleteWithdrawResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Withdraw `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *DeleteWithdrawResponse) Reset() {
-	*x = DeleteWithdrawResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteWithdrawResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteWithdrawResponse) ProtoMessage() {}
-
-func (x *DeleteWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteWithdrawResponse.ProtoReflect.Descriptor instead.
-func (*DeleteWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *DeleteWithdrawResponse) GetInfo() *Withdraw {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 var File_npool_ledger_mw_v2_withdraw_withdraw_proto protoreflect.FileDescriptor
 
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc = []byte{
@@ -1456,18 +1362,7 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc = []byte{
 	0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x30, 0x0a, 0x1a, 0x45, 0x78, 0x69,
 	0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x15, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x2e,
-	0x76, 0x32, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x55, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x69,
-	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6c,
-	0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x97, 0x08, 0x0a, 0x0a,
+	0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x97, 0x08, 0x0a, 0x0a,
 	0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x7f, 0x0a, 0x0e, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x34, 0x2e, 0x6c,
 	0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
@@ -1552,7 +1447,7 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP() []byte {
 	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescData
 }
 
-var file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_goTypes = []interface{}{
 	(*WithdrawReq)(nil),                // 0: ledger.middleware.withdraw.v2.WithdrawReq
 	(*Withdraw)(nil),                   // 1: ledger.middleware.withdraw.v2.Withdraw
@@ -1573,23 +1468,21 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_goTypes = []interface{}{
 	(*ExistWithdrawResponse)(nil),      // 16: ledger.middleware.withdraw.v2.ExistWithdrawResponse
 	(*ExistWithdrawCondsRequest)(nil),  // 17: ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest
 	(*ExistWithdrawCondsResponse)(nil), // 18: ledger.middleware.withdraw.v2.ExistWithdrawCondsResponse
-	(*DeleteWithdrawRequest)(nil),      // 19: ledger.middleware.withdraw.v2.DeleteWithdrawRequest
-	(*DeleteWithdrawResponse)(nil),     // 20: ledger.middleware.withdraw.v2.DeleteWithdrawResponse
-	(v1.WithdrawState)(0),              // 21: basetypes.ledger.v1.WithdrawState
-	(*v11.StringVal)(nil),              // 22: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),              // 23: basetypes.v1.Uint32Val
+	(v1.WithdrawState)(0),              // 19: basetypes.ledger.v1.WithdrawState
+	(*v11.StringVal)(nil),              // 20: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),              // 21: basetypes.v1.Uint32Val
 }
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_depIdxs = []int32{
-	21, // 0: ledger.middleware.withdraw.v2.WithdrawReq.State:type_name -> basetypes.ledger.v1.WithdrawState
-	21, // 1: ledger.middleware.withdraw.v2.Withdraw.State:type_name -> basetypes.ledger.v1.WithdrawState
-	22, // 2: ledger.middleware.withdraw.v2.Conds.ID:type_name -> basetypes.v1.StringVal
-	22, // 3: ledger.middleware.withdraw.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
-	22, // 4: ledger.middleware.withdraw.v2.Conds.UserID:type_name -> basetypes.v1.StringVal
-	22, // 5: ledger.middleware.withdraw.v2.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
-	22, // 6: ledger.middleware.withdraw.v2.Conds.AccountID:type_name -> basetypes.v1.StringVal
-	22, // 7: ledger.middleware.withdraw.v2.Conds.Amount:type_name -> basetypes.v1.StringVal
-	23, // 8: ledger.middleware.withdraw.v2.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
-	23, // 9: ledger.middleware.withdraw.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
+	19, // 0: ledger.middleware.withdraw.v2.WithdrawReq.State:type_name -> basetypes.ledger.v1.WithdrawState
+	19, // 1: ledger.middleware.withdraw.v2.Withdraw.State:type_name -> basetypes.ledger.v1.WithdrawState
+	20, // 2: ledger.middleware.withdraw.v2.Conds.ID:type_name -> basetypes.v1.StringVal
+	20, // 3: ledger.middleware.withdraw.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
+	20, // 4: ledger.middleware.withdraw.v2.Conds.UserID:type_name -> basetypes.v1.StringVal
+	20, // 5: ledger.middleware.withdraw.v2.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	20, // 6: ledger.middleware.withdraw.v2.Conds.AccountID:type_name -> basetypes.v1.StringVal
+	20, // 7: ledger.middleware.withdraw.v2.Conds.Amount:type_name -> basetypes.v1.StringVal
+	21, // 8: ledger.middleware.withdraw.v2.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
+	21, // 9: ledger.middleware.withdraw.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
 	0,  // 10: ledger.middleware.withdraw.v2.CreateWithdrawRequest.Info:type_name -> ledger.middleware.withdraw.v2.WithdrawReq
 	1,  // 11: ledger.middleware.withdraw.v2.CreateWithdrawResponse.Info:type_name -> ledger.middleware.withdraw.v2.Withdraw
 	0,  // 12: ledger.middleware.withdraw.v2.CreateWithdrawsRequest.Infos:type_name -> ledger.middleware.withdraw.v2.WithdrawReq
@@ -1602,29 +1495,27 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_depIdxs = []int32{
 	2,  // 19: ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest.Conds:type_name -> ledger.middleware.withdraw.v2.Conds
 	1,  // 20: ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse.Info:type_name -> ledger.middleware.withdraw.v2.Withdraw
 	2,  // 21: ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest.Conds:type_name -> ledger.middleware.withdraw.v2.Conds
-	0,  // 22: ledger.middleware.withdraw.v2.DeleteWithdrawRequest.Info:type_name -> ledger.middleware.withdraw.v2.WithdrawReq
-	1,  // 23: ledger.middleware.withdraw.v2.DeleteWithdrawResponse.Info:type_name -> ledger.middleware.withdraw.v2.Withdraw
-	3,  // 24: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawRequest
-	5,  // 25: ledger.middleware.withdraw.v2.Middleware.CreateWithdraws:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawsRequest
-	7,  // 26: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:input_type -> ledger.middleware.withdraw.v2.UpdateWithdrawRequest
-	9,  // 27: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:input_type -> ledger.middleware.withdraw.v2.GetWithdrawRequest
-	13, // 28: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:input_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
-	11, // 29: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:input_type -> ledger.middleware.withdraw.v2.GetWithdrawsRequest
-	15, // 30: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawRequest
-	17, // 31: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest
-	4,  // 32: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawResponse
-	6,  // 33: ledger.middleware.withdraw.v2.Middleware.CreateWithdraws:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawsResponse
-	8,  // 34: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:output_type -> ledger.middleware.withdraw.v2.UpdateWithdrawResponse
-	10, // 35: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:output_type -> ledger.middleware.withdraw.v2.GetWithdrawResponse
-	14, // 36: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:output_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
-	12, // 37: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:output_type -> ledger.middleware.withdraw.v2.GetWithdrawsResponse
-	16, // 38: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawResponse
-	18, // 39: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsResponse
-	32, // [32:40] is the sub-list for method output_type
-	24, // [24:32] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	3,  // 22: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawRequest
+	5,  // 23: ledger.middleware.withdraw.v2.Middleware.CreateWithdraws:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawsRequest
+	7,  // 24: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:input_type -> ledger.middleware.withdraw.v2.UpdateWithdrawRequest
+	9,  // 25: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:input_type -> ledger.middleware.withdraw.v2.GetWithdrawRequest
+	13, // 26: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:input_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
+	11, // 27: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:input_type -> ledger.middleware.withdraw.v2.GetWithdrawsRequest
+	15, // 28: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawRequest
+	17, // 29: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest
+	4,  // 30: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawResponse
+	6,  // 31: ledger.middleware.withdraw.v2.Middleware.CreateWithdraws:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawsResponse
+	8,  // 32: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:output_type -> ledger.middleware.withdraw.v2.UpdateWithdrawResponse
+	10, // 33: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:output_type -> ledger.middleware.withdraw.v2.GetWithdrawResponse
+	14, // 34: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:output_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
+	12, // 35: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:output_type -> ledger.middleware.withdraw.v2.GetWithdrawsResponse
+	16, // 36: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawResponse
+	18, // 37: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsResponse
+	30, // [30:38] is the sub-list for method output_type
+	22, // [22:30] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() }
@@ -1861,30 +1752,6 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() {
 				return nil
 			}
 		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteWithdrawRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteWithdrawResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1894,7 +1761,7 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   21,
+			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
