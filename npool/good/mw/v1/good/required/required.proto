@@ -29,12 +29,16 @@ message Required {
     string ID             = 10;
     // @inject_tag: sql:"main_good_id"
     string MainGoodID     = 20;
+    // @inject_tag: sql:"main_good_name"
+    string MainGoodName   = 30;
     // @inject_tag: sql:"required_good_id"
-    string RequiredGoodID = 30;
+    string RequiredGoodID = 40;
+    // @inject_tag: sql:"required_good_name"
+    string RequiredGoodName = 50;
     // @inject_tag: sql:"must"
-    bool   Must           = 40;
+    bool   Must           = 60;
     // @inject_tag: sql:"commission"
-    bool   Commission     = 50;
+    bool   Commission     = 70;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"
