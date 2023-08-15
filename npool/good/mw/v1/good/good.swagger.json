@@ -506,9 +506,7 @@
         "MachineRenting",
         "MachineHosting",
         "TechniqueServiceFee",
-        "ElectricityFee",
-        "CrowdFunding",
-        "Arbitrage"
+        "ElectricityFee"
       ],
       "default": "DefaultGoodType"
     },

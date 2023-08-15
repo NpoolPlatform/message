@@ -186,52 +186,6 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"commission_percent\""
         },
-        "PromotionStartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"promotion_start_at\""
-        },
-        "PromotionEndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"promotion_end_at\""
-        },
-        "PromotionMessage": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_message\""
-        },
-        "PromotionPrice": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_price\""
-        },
-        "PromotionPosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "PromotionPostersStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_posters\""
-        },
-        "RecommenderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"recommender_id\""
-        },
-        "RecommendMessage": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"recommend_message\""
-        },
-        "RecommendIndex": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"recommend_index\""
-        },
-        "RecommendAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"recommend_at\""
-        },
         "DeviceType": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_type\""
@@ -340,16 +294,6 @@
         "LabelsStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"labels\""
-        },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"vote_count\""
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"rating\""
         },
         "BenefitIntervalHours": {
           "type": "integer",
@@ -485,6 +429,35 @@
         "EnableSetCommission": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"enable_set_commission\""
+        },
+        "Likes": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"likes\""
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"dislikes\""
+        },
+        "Score": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"score\""
+        },
+        "ScoreCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"score_count\""
+        },
+        "RecommendCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"recommend_count\""
+        },
+        "CommentCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"comment_count\""
         }
       }
     },
@@ -589,8 +562,23 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
+        },
+        "TopMostType": {
+          "$ref": "#/definitions/v1GoodTopMostType"
         }
       }
+    },
+    "v1GoodTopMostType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodTopMostType",
+        "TopMostPromotion",
+        "TopMostNoviceExclusive",
+        "TopMostBestOffer",
+        "TopMostInnovationStarter",
+        "TopMostLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodTopMostType"
     },
     "v1GoodType": {
       "type": "string",
@@ -600,9 +588,7 @@
         "MachineRenting",
         "MachineHosting",
         "TechniqueServiceFee",
-        "ElectricityFee",
-        "CrowdFunding",
-        "Arbitrage"
+        "ElectricityFee"
       ],
       "default": "DefaultGoodType"
     },

@@ -44,6 +44,7 @@ message GoodReq {
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
+    optional basetypes.good.v1.GoodTopMostType TopMostType = 320;
 }
 
 message Good {
@@ -67,27 +68,6 @@ message Good {
     int32            PurchaseLimit               = 80;
     // @inject_tag: sql:"commission_percent"
     int32            CommissionPercent           = 90;
-
-    // @inject_tag: sql:"promotion_start_at"
-    optional uint32  PromotionStartAt            = 100;
-    // @inject_tag: sql:"promotion_end_at"
-    optional uint32  PromotionEndAt              = 110;
-    // @inject_tag: sql:"promotion_message"
-    optional string  PromotionMessage            = 120;
-    // @inject_tag: sql:"promotion_price"
-    optional string  PromotionPrice              = 130;
-    repeated string  PromotionPosters            = 140;
-    // @inject_tag: sql:"promotion_posters"
-    string           PromotionPostersStr         = 141;
-
-    // @inject_tag: sql:"recommender_id"
-    optional string  RecommenderID               = 150;
-    // @inject_tag: sql:"recommend_message"
-    optional string  RecommendMessage            = 160;
-    // @inject_tag: sql:"recommend_index"
-    optional float   RecommendIndex              = 170;
-    // @inject_tag: sql:"recommend_at"
-    optional uint32  RecommendAt                 = 171;
 
     // @inject_tag: sql:"device_type"
     string           DeviceType                  = 180;
@@ -137,10 +117,6 @@ message Good {
     repeated string  Labels             = 340;
     // @inject_tag: sql:"labels"
     string           LabelsStr          = 341;
-    // @inject_tag: sql:"vote_count"
-    uint32           VoteCount          = 350;
-    // @inject_tag: sql:"rating"
-    float            Rating             = 360;
     // @inject_tag: sql:"benefit_interval_hours"
     uint32           BenefitIntervalHours = 361;
 
@@ -204,6 +180,19 @@ message Good {
     string           ProductPage            = 640;
     // @inject_tag: sql:"enable_set_commission"
     bool             EnableSetCommission    = 650;
+
+    // @inject_tag: sql:"likes"
+    uint32           Likes              = 660;
+    // @inject_tag: sql:"dislikes"
+    uint32           Dislikes           = 670;
+    // @inject_tag: sql:"score"
+    string           Score              = 680;
+    // @inject_tag: sql:"score_count"
+    uint32           ScoreCount         = 690;
+    // @inject_tag: sql:"recommend_count"
+    uint32           RecommendCount     = 700;
+    // @inject_tag: sql:"comment_count"
+    uint32           CommentCount       = 710;
 }
 
 message Conds {

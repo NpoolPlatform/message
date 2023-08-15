@@ -21,9 +21,6 @@ enum GoodType {
 
     TechniqueServiceFee = 1000;
     ElectricityFee      = 2000;
-
-    CrowdFunding = 3000;
-    Arbitrage    = 3010;
 }
 
 enum BenefitState {
@@ -41,4 +38,23 @@ enum CancelMode {
     CancellableBeforeStart   = 10;
     CancellableBeforeBenefit = 20;
     Uncancellable            = 30;
+}
+
+enum GoodLabel {
+    DefaultGoodLabel = 0;
+
+    GoodLabelPromotion         = 10;
+    GoodLabelNoviceExclusive   = 20; // Newbie
+    GoodLabelInnovationStarter = 30; // First batch mining
+    GoodLabelLoyaltyExclusive  = 40; // User with action credis pass threshold
+}
+
+enum GoodTopMostType {
+    DefaultGoodTopMostType   = 0;
+
+    TopMostPromotion         = 10;
+    TopMostNoviceExclusive   = 20;
+    TopMostBestOffer         = 30;
+    TopMostInnovationStarter = 40;
+    TopMostLoyaltyExclusive  = 50;
 }
