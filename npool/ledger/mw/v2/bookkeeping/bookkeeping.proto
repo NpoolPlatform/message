@@ -8,9 +8,12 @@ import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse) {}
+    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
+    rpc BookKeepingOut            (BookKeepingRequest)               returns (BookKeepingResponse)          {}
     rpc LockBalance               (LockBalanceRequest)               returns (LockBalanceResponse)          {}
+    rpc LockBalanceOut            (LockBalanceRequest)               returns (LockBalanceResponse)          {}
     rpc UnlockBalance             (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
+    rpc UnlockBalanceOut          (UnlockBalanceRequest)             returns (UnlockBalanceResponse)        {}
     rpc FinalPayment              (FinalPaymentRequest)              returns (FinalPaymentResponse)         {}
 }
 
