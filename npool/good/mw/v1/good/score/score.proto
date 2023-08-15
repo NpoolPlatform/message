@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package good.middleware.good1.score.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/score";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateScore      (CreateScoreRequest)      returns (CreateScoreResponse)      {}
+    rpc GetScores        (GetScoresRequest)        returns (GetScoresResponse)        {}
+    rpc DeleteScore      (DeleteScoreRequest)      returns (DeleteScoreResponse)      {}
+}
+
+message ScoreReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string GoodID     = 40;
+    optional string Score      = 50;
+}
+
+message Score {
+    // @inject_tag: sql:"id"
+    string ID        = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID     = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID    = 30;
+    // @inject_tag: sql:"good_id"
+    string GoodID    = 40;
+    // @inject_tag: sql:"good_name"
+    string GoodName  = 50;
+    // @inject_tag: sql:"score"
+    string Score     = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      ID      = 10;
+    optional basetypes.v1.StringVal      AppID   = 20;
+    optional basetypes.v1.StringVal      UserID  = 30;
+    optional basetypes.v1.StringVal      GoodID  = 40;
+    optional basetypes.v1.StringSliceVal GoodIDs = 50;
+}
+
+message CreateScoreRequest {
+    ScoreReq Info = 10;
+}
+
+message CreateScoreResponse {
+    Score Info = 10;
+}
+
+message GetScoresRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetScoresResponse {
+    repeated Score Infos = 10;
+    uint32            Total = 20;
+}
+
+message DeleteScoreRequest {
+    ScoreReq Info = 10;
+}
+
+message DeleteScoreResponse {
+    Score Info = 10;
+}
