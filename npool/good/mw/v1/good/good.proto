@@ -126,6 +126,8 @@ message Good {
     string           Score              = 300;
     // @inject_tag: sql:"score_count"
     uint32           ScoreCount         = 301;
+    // @inject_tag: sql:"recommend_count"
+    uint32           RecommendCount     = 302;
 
     // @inject_tag: sql:"good_stock_id"
     string           GoodStockID        = 310;
