@@ -153,8 +153,6 @@ message Conds {
     basetypes.v1.StringVal      GoodID             = 110;
     basetypes.v1.Uint32Val      Type               = 120;
     basetypes.v1.Uint32Val      State              = 130;
-    basetypes.v1.StringVal      FixAmountCouponID      = 140;
-    basetypes.v1.StringVal      DiscountCouponID       = 150;
     basetypes.v1.StringVal      UserSpecialReductionID = 160;
     basetypes.v1.Uint32Val      LastBenefitAt          = 170;
     basetypes.v1.StringVal      CouponID               = 180;
