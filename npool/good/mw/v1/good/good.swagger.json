@@ -286,10 +286,15 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"dislikes\""
         },
-        "Rating": {
+        "Score": {
           "type": "number",
           "format": "float",
-          "title": "@inject_tag: sql:\"rating\""
+          "title": "@inject_tag: sql:\"score\""
+        },
+        "ScoreCount": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"score_count\""
         },
         "GoodStockID": {
           "type": "string",
@@ -480,17 +485,6 @@
           "type": "string"
         },
         "UnitRewardAmount": {
-          "type": "string"
-        },
-        "Likes": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Dislikes": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Rating": {
           "type": "string"
         }
       }

@@ -47,9 +47,6 @@ message GoodReq {
     optional string        NextRewardStartAmount = 290;
     optional string        RewardAmount       = 300;
     optional string        UnitRewardAmount   = 310;
-    optional int32         Likes              = 320;
-    optional int32         Dislikes           = 330;
-    optional string        Rating             = 340;
 }
 
 message Good {
@@ -125,8 +122,10 @@ message Good {
     uint32           Likes              = 290;
     // @inject_tag: sql:"dislikes"
     uint32           Dislikes           = 291;
-    // @inject_tag: sql:"rating"
-    float            Rating             = 300;
+    // @inject_tag: sql:"score"
+    float            Score              = 300;
+    // @inject_tag: sql:"score_count"
+    float            ScoreCount         = 301;
 
     // @inject_tag: sql:"good_stock_id"
     string           GoodStockID        = 310;
