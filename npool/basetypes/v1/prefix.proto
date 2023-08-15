@@ -56,4 +56,8 @@ enum Prefix {
     PrefixCommentGood          = 560;
     PrefixRecommendGood        = 570;
     PrefixScoreGood            = 580;
+    PrefixCreateAppGood        = 590;
+    PrefixCreateAppDefaultGood = 600;
+    PrefixCreateTopMost        = 610;
+    PrefixCreateTopMostGood    = 620;
 }
