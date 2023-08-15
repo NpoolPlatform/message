@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/app/good/topmost/topmost.proto",
+    "title": "npool/good/mw/v1/app/good/topmost/good/good.proto",
     "version": "version not set"
   },
   "tags": [
@@ -53,41 +53,44 @@
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "TopMostID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CreateTopMostResponse": {
+    "v1CreateTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1TopMostGood"
         }
       }
     },
-    "v1DeleteTopMostResponse": {
+    "v1DeleteTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1TopMostGood"
         }
       }
     },
-    "v1GetTopMostResponse": {
+    "v1GetTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1TopMostGood"
         }
       }
     },
-    "v1GetTopMostsResponse": {
+    "v1GetTopMostGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1TopMost"
+            "$ref": "#/definitions/v1TopMostGood"
           }
         },
         "Total": {
@@ -95,18 +98,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1GoodTopMostType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodTopMostType",
-        "TopMostPromotion",
-        "TopMostNoviceExclusive",
-        "TopMostBestOffer",
-        "TopMostInnovationStarter",
-        "TopMostLoyaltyExclusive"
-      ],
-      "default": "DefaultGoodTopMostType"
     },
     "v1StringVal": {
       "type": "object",
@@ -119,7 +110,7 @@
         }
       }
     },
-    "v1TopMost": {
+    "v1TopMostGood": {
       "type": "object",
       "properties": {
         "ID": {
@@ -130,20 +121,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "TopMostTypeStr": {
+        "TostMostID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"top_most_type\""
+          "title": "@inject_tag: sql:\"top_most_id\""
         },
-        "TopMostType": {
-          "$ref": "#/definitions/v1GoodTopMostType"
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"message\""
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"display_index\""
         },
         "PostersStr": {
           "type": "string",
@@ -155,37 +140,9 @@
             "type": "string"
           }
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "ThresholdCredits": {
+        "Price": {
           "type": "string",
-          "title": "@inject_tag: sql:\"threshold_credits\""
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"register_elapsed_seconds\""
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"threshold_purchases\""
-        },
-        "ThresholdPaymentAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold_payment_amount\""
-        },
-        "KycMust": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kyc_must\""
+          "title": "@inject_tag: sql:\"price\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -199,7 +156,7 @@
         }
       }
     },
-    "v1TopMostReq": {
+    "v1TopMostGoodReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -208,14 +165,12 @@
         "AppID": {
           "type": "string"
         },
-        "TopMostType": {
-          "$ref": "#/definitions/v1GoodTopMostType"
-        },
-        "Title": {
+        "TopMostID": {
           "type": "string"
         },
-        "Message": {
-          "type": "string"
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int64"
         },
         "Posters": {
           "type": "array",
@@ -223,40 +178,16 @@
             "type": "string"
           }
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "For promotion"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdCredits": {
-          "type": "string",
-          "title": "For user specific threshold"
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPaymentAmount": {
+        "Price": {
           "type": "string"
-        },
-        "KycMust": {
-          "type": "boolean"
         }
       }
     },
-    "v1UpdateTopMostResponse": {
+    "v1UpdateTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1TopMostGood"
         }
       }
     }

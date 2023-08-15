@@ -186,6 +186,34 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"commission_percent\""
         },
+        "PromotionStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"promotion_start_at\""
+        },
+        "PromotionEndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"promotion_end_at\""
+        },
+        "PromotionMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_message\""
+        },
+        "PromotionPrice": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_price\""
+        },
+        "PromotionPosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "PromotionPostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_posters\""
+        },
         "DeviceType": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_type\""

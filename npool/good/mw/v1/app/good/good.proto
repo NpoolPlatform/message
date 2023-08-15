@@ -69,6 +69,18 @@ message Good {
     // @inject_tag: sql:"commission_percent"
     int32            CommissionPercent           = 90;
 
+    // @inject_tag: sql:"promotion_start_at"
+    optional uint32  PromotionStartAt            = 100;
+    // @inject_tag: sql:"promotion_end_at"
+    optional uint32  PromotionEndAt              = 110;
+    // @inject_tag: sql:"promotion_message"
+    optional string  PromotionMessage            = 120;
+    // @inject_tag: sql:"promotion_price"
+    optional string  PromotionPrice              = 130;
+    repeated string  PromotionPosters            = 140;
+    // @inject_tag: sql:"promotion_posters"
+    string           PromotionPostersStr         = 141;
+
     // @inject_tag: sql:"device_type"
     string           DeviceType                  = 180;
     // @inject_tag: sql:"device_manufacturer"
@@ -137,7 +149,6 @@ message Good {
     uint32           CreatedAt          = 420;
     // @inject_tag: sql:"updated_at"
     uint32           UpdatedAt          = 421;
-
 
     // @inject_tag: sql:"sale_start_at"
     uint32           SaleStartAt         = 430;

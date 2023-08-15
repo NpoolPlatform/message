@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDefault_FullMethodName = "/good.middleware.app.good.default1.v1.Middleware/CreateDefault"
-	Middleware_UpdateDefault_FullMethodName = "/good.middleware.app.good.default1.v1.Middleware/UpdateDefault"
-	Middleware_GetDefault_FullMethodName    = "/good.middleware.app.good.default1.v1.Middleware/GetDefault"
-	Middleware_GetDefaults_FullMethodName   = "/good.middleware.app.good.default1.v1.Middleware/GetDefaults"
-	Middleware_DeleteDefault_FullMethodName = "/good.middleware.app.good.default1.v1.Middleware/DeleteDefault"
+	Middleware_CreateDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/CreateDefault"
+	Middleware_UpdateDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/UpdateDefault"
+	Middleware_GetDefault_FullMethodName    = "/good.middleware.app.good1.default1.v1.Middleware/GetDefault"
+	Middleware_GetDefaults_FullMethodName   = "/good.middleware.app.good1.default1.v1.Middleware/GetDefaults"
+	Middleware_DeleteDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/DeleteDefault"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteDefault_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.app.good.default1.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.default1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

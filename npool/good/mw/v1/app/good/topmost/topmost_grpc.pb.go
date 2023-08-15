@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTopMost_FullMethodName = "/good.middleware.app.good.topmost.v1.Middleware/CreateTopMost"
-	Middleware_UpdateTopMost_FullMethodName = "/good.middleware.app.good.topmost.v1.Middleware/UpdateTopMost"
-	Middleware_GetTopMost_FullMethodName    = "/good.middleware.app.good.topmost.v1.Middleware/GetTopMost"
-	Middleware_GetTopMosts_FullMethodName   = "/good.middleware.app.good.topmost.v1.Middleware/GetTopMosts"
-	Middleware_DeleteTopMost_FullMethodName = "/good.middleware.app.good.topmost.v1.Middleware/DeleteTopMost"
+	Middleware_CreateTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/CreateTopMost"
+	Middleware_UpdateTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/UpdateTopMost"
+	Middleware_GetTopMost_FullMethodName    = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMost"
+	Middleware_GetTopMosts_FullMethodName   = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMosts"
+	Middleware_DeleteTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/DeleteTopMost"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteTopMost_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.app.good.topmost.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.topmost.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
