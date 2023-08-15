@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package basetypes.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/order/v1";
+
+enum OrderType {
+  DefaultOrderType = 0;
+  Normal           = 10;
+  Offline          = 20;
+  Airdrop          = 30;
+}
+
+enum OrderState {
+  DefaultOrderState = 0;
+
+  // Common state
+  OrderStateWaitPayment       = 10;
+  OrderStatePaid              = 20;
+  OrderStatePaymentTimeout    = 30;
+  // Platform confirm canceled
+  OrderStateCanceled          = 40;
+
+  // Cyclation order state
+  OrderStateInService         = 50;
+  OrderStateExpired           = 60;
+
+  // Delivery order state
+}
+
+enum PaymentState {
+  DefaultPaymentState  = 0;
+  PaymentStateWait     = 10;
+  PaymentStateDone     = 20;
+  PaymentStateCanceled = 30;
+  PaymentStateTimeOut  = 40;
+}
