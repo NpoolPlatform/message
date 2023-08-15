@@ -287,13 +287,12 @@
           "title": "@inject_tag: sql:\"dislikes\""
         },
         "Score": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"score\""
         },
         "ScoreCount": {
-          "type": "number",
-          "format": "float",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"score_count\""
         },
         "GoodStockID": {
