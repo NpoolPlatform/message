@@ -128,6 +128,8 @@ message Good {
     uint32           ScoreCount         = 301;
     // @inject_tag: sql:"recommend_count"
     uint32           RecommendCount     = 302;
+    // @inject_tag: sql:"comment_count"
+    uint32           CommentCount       = 303;
 
     // @inject_tag: sql:"good_stock_id"
     string           GoodStockID        = 310;
