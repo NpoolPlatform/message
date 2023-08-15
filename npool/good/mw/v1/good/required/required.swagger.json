@@ -56,6 +56,12 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "MainGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RequiredGoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
