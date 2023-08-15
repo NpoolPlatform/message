@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/CreateRecommend"
+	Middleware_UpdateRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/UpdateRecommend"
 	Middleware_GetRecommends_FullMethodName   = "/good.middleware.good1.recommend.v1.Middleware/GetRecommends"
 	Middleware_DeleteRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/DeleteRecommend"
 )
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error)
+	UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error)
 	GetRecommends(ctx context.Context, in *GetRecommendsRequest, opts ...grpc.CallOption) (*GetRecommendsResponse, error)
 	DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error)
 }
@@ -44,6 +46,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error) {
 	out := new(CreateRecommendResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateRecommend_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error) {
+	out := new(UpdateRecommendResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateRecommend_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *middlewareClient) DeleteRecommend(ctx context.Context, in *DeleteRecomm
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error)
+	UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error)
 	GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error)
 	DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -84,6 +96,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRecommend not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecommend not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecommends not implemented")
@@ -118,6 +133,24 @@ func _Middleware_CreateRecommend_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateRecommend(ctx, req.(*CreateRecommendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRecommendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateRecommend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateRecommend_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateRecommend(ctx, req.(*UpdateRecommendRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,6 +201,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateRecommend",
 			Handler:    _Middleware_CreateRecommend_Handler,
+		},
+		{
+			MethodName: "UpdateRecommend",
+			Handler:    _Middleware_UpdateRecommend_Handler,
 		},
 		{
 			MethodName: "GetRecommends",

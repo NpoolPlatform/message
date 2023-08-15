@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/recommend/recommend.proto",
+    "title": "npool/good/mw/v1/good/comment/comment.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,59 +45,7 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RecommenderID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateRecommendResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Recommend"
-        }
-      }
-    },
-    "v1DeleteRecommendResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Recommend"
-        }
-      }
-    },
-    "v1GetRecommendsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Recommend"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Recommend": {
+    "v1Comment": {
       "type": "object",
       "properties": {
         "ID": {
@@ -108,9 +56,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "RecommenderID": {
+        "UserID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"recommender_id\""
+          "title": "@inject_tag: sql:\"commenter_id\""
         },
         "GoodID": {
           "type": "string",
@@ -120,13 +68,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "RecommendIndex": {
+        "OrderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"recommend_index\""
+          "title": "@inject_tag: sql:\"order_id\""
         },
-        "Message": {
+        "Content": {
           "type": "string",
-          "title": "@inject_tag: sql:\"message\""
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "ReplyToID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reply_to_id\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -140,7 +92,7 @@
         }
       }
     },
-    "v1RecommendReq": {
+    "v1CommentReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -149,17 +101,78 @@
         "AppID": {
           "type": "string"
         },
-        "RecommenderID": {
+        "UserID": {
           "type": "string"
         },
         "GoodID": {
           "type": "string"
         },
-        "RecommendIndex": {
+        "OrderID": {
           "type": "string"
         },
-        "Message": {
+        "Content": {
           "type": "string"
+        },
+        "ReplyToID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1DeleteCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1GetCommentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Comment"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -188,11 +201,11 @@
         }
       }
     },
-    "v1UpdateRecommendResponse": {
+    "v1UpdateCommentResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Recommend"
+          "$ref": "#/definitions/v1Comment"
         }
       }
     }

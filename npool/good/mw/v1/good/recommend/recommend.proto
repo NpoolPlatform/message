@@ -10,6 +10,7 @@ import "npool/basetypes/good/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateRecommend      (CreateRecommendRequest)      returns (CreateRecommendResponse)      {}
+    rpc UpdateRecommend      (UpdateRecommendRequest)      returns (UpdateRecommendResponse)      {}
     rpc GetRecommends        (GetRecommendsRequest)        returns (GetRecommendsResponse)        {}
     rpc DeleteRecommend      (DeleteRecommendRequest)      returns (DeleteRecommendResponse)      {}
 }
@@ -57,6 +58,14 @@ message CreateRecommendRequest {
 }
 
 message CreateRecommendResponse {
+    Recommend Info = 10;
+}
+
+message UpdateRecommendRequest {
+    RecommendReq Info = 10;
+}
+
+message UpdateRecommendResponse {
     Recommend Info = 10;
 }
 
