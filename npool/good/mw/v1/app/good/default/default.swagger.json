@@ -132,14 +132,6 @@
         }
       }
     },
-    "v1GetDefaultOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Default"
-        }
-      }
-    },
     "v1GetDefaultResponse": {
       "type": "object",
       "properties": {

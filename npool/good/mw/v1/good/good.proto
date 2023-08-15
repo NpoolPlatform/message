@@ -37,7 +37,7 @@ message GoodReq {
     optional string        InService          = 190;
     optional string        WaitStart          = 191;
     repeated string        Posters            = 210;
-    repeated string        Labels             = 220;
+    repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32        BenefitIntervalHours = 230;
     optional string        UnitLockDeposit    = 240;
     optional string        AppLocked          = 250;
@@ -114,7 +114,7 @@ message Good {
     // @inject_tag: sql:"posters"
     string           PostersStr         = 271;
 
-    repeated string  Labels             = 280;
+    repeated basetypes.good.v1.GoodLabel Labels = 280;
     // @inject_tag: sql:"labels"
     string           LabelsStr          = 281;
 

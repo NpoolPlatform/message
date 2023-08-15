@@ -12,7 +12,6 @@ service Middleware {
     rpc CreateDefault    (CreateDefaultRequest)    returns (CreateDefaultResponse)    {}
     rpc UpdateDefault    (UpdateDefaultRequest)    returns (UpdateDefaultResponse)    {}
     rpc GetDefault       (GetDefaultRequest)       returns (GetDefaultResponse)       {}
-    rpc GetDefaultOnly   (GetDefaultOnlyRequest)   returns (GetDefaultOnlyResponse)   {}
     rpc GetDefaults      (GetDefaultsRequest)      returns (GetDefaultsResponse)      {}
     rpc DeleteDefault    (DeleteDefaultRequest)    returns (DeleteDefaultResponse)    {}
 }
@@ -69,14 +68,6 @@ message GetDefaultRequest {
 }
 
 message GetDefaultResponse {
-    Default Info = 10;
-}
-
-message GetDefaultOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetDefaultOnlyResponse {
     Default Info = 10;
 }
 

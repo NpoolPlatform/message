@@ -114,7 +114,7 @@ message Good {
     repeated string  Posters            = 330;
     // @inject_tag: sql:"posters"
     string           PostersStr         = 331;
-    repeated string  Labels             = 340;
+    repeated basetypes.good.v1.GoodLabel Labels = 340;
     // @inject_tag: sql:"labels"
     string           LabelsStr          = 341;
     // @inject_tag: sql:"benefit_interval_hours"

@@ -269,7 +269,7 @@
         "Labels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1GoodLabel"
           }
         },
         "LabelsStr": {
@@ -388,6 +388,18 @@
         }
       }
     },
+    "v1GoodLabel": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodLabel",
+        "GoodLabelPromotion",
+        "GoodLabelNoviceExclusive",
+        "GoodLabelInnovationStarter",
+        "GoodLabelLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodLabel",
+      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+    },
     "v1GoodReq": {
       "type": "object",
       "properties": {
@@ -464,7 +476,7 @@
         "Labels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1GoodLabel"
           }
         },
         "BenefitIntervalHours": {
