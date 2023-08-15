@@ -52,4 +52,8 @@ enum Prefix {
     PrefixCreateVendorLocation = 520;
     PrefixCreateGood           = 530;
     PrefixCreateRequiredGood   = 540;
+    PrefixLikeGood             = 550;
+    PrefixCommentGood          = 560;
+    PrefixRecommendGood        = 570;
+    PrefixScoreGood            = 580;
 }
