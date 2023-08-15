@@ -110,7 +110,7 @@
         },
         "RecommenderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "title": "@inject_tag: sql:\"recommender_id\""
         },
         "GoodID": {
           "type": "string",
