@@ -15,7 +15,7 @@ service Middleware {
 }
 
 message BookKeepingRequest {
-    .ledger.middleware.statement.v2.StatementReq Info = 10;
+    repeated .ledger.middleware.statement.v2.StatementReq Infos = 10;
 }
 
 message BookKeepingResponse {}
