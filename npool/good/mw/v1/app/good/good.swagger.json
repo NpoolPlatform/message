@@ -627,9 +627,6 @@
         "EnableSetCommission": {
           "type": "boolean"
         },
-        "TopMostType": {
-          "$ref": "#/definitions/v1GoodTopMostType"
-        },
         "GoodReserved": {
           "type": "string",
           "title": "Reserved from platform"
@@ -651,18 +648,6 @@
           "type": "string"
         }
       }
-    },
-    "v1GoodTopMostType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodTopMostType",
-        "TopMostPromotion",
-        "TopMostNoviceExclusive",
-        "TopMostBestOffer",
-        "TopMostInnovationStarter",
-        "TopMostLoyaltyExclusive"
-      ],
-      "default": "DefaultGoodTopMostType"
     },
     "v1GoodType": {
       "type": "string",
