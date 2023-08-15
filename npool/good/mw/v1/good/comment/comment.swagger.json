@@ -58,7 +58,7 @@
         },
         "UserID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"commenter_id\""
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "GoodID": {
           "type": "string",

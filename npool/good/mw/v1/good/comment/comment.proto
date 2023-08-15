@@ -30,7 +30,7 @@ message Comment {
     string ID        = 10;
     // @inject_tag: sql:"app_id"
     string AppID     = 20;
-    // @inject_tag: sql:"commenter_id"
+    // @inject_tag: sql:"user_id"
     string UserID    = 30;
     // @inject_tag: sql:"good_id"
     string GoodID    = 40;
