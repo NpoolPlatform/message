@@ -45,6 +45,14 @@ message GoodReq {
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
     optional basetypes.good.v1.GoodTopMostType TopMostType = 320;
+    // Reserved from platform
+    optional string GoodReserved       = 330;
+    // Remain part of reserved stock, if exhausted, purchase from app will goto platform directly
+    optional string SpotQuantity       = 340;
+    optional string GoodLocked         = 350;
+    optional string GoodWaitStart      = 360;
+    optional string GoodInService      = 370;
+    optional string GoodSold           = 380;
 }
 
 message Good {
@@ -204,6 +212,19 @@ message Good {
     uint32           RecommendCount     = 700;
     // @inject_tag: sql:"comment_count"
     uint32           CommentCount       = 710;
+
+    // @inject_tag: sql:"good_reserved"
+    string           AppGoodReserved    = 720;
+    // @inject_tag: sql:"spot_quantity"
+    string           AppSpotQuantity    = 730;
+    // @inject_tag: sql:"good_locked"
+    string           AppGoodLocked      = 740;
+    // @inject_tag: sql:"good_wait_start"
+    string           AppGoodWaitStart   = 750;
+    // @inject_tag: sql:"good_in_service"
+    string           AppGoodInService   = 760;
+    // @inject_tag: sql:"good_sold"
+    string           AppGoodSold        = 770;
 }
 
 message Conds {
