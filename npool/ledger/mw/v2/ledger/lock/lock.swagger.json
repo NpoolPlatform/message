@@ -61,6 +61,26 @@
       "default": "DefaultSubType",
       "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
     },
+    "v2BalanceReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
     "v2Ledger": {
       "type": "object",
       "properties": {
@@ -108,31 +128,6 @@
         }
       }
     },
-    "v2LockBalanceOutResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2LockBalanceReq": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        }
-      }
-    },
     "v2LockBalanceResponse": {
       "type": "object",
       "properties": {
@@ -141,17 +136,12 @@
         }
       }
     },
-    "v2UnlockBalanceOutResponse": {
+    "v2SpendBalanceReq": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnlockBalanceReq": {
-      "type": "object",
-      "properties": {
+        "ID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
@@ -169,14 +159,30 @@
         },
         "IOSubType": {
           "$ref": "#/definitions/v1IOSubType",
-          "title": "Only Payment or Withdrawal"
+          "title": "Only Payment or Withdraw"
         },
         "IOExtra": {
           "type": "string"
         }
       }
     },
+    "v2SpendBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
     "v2UnlockBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
+    "v2UnspendBalanceResponse": {
       "type": "object",
       "properties": {
         "Info": {
