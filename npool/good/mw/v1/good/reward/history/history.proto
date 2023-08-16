@@ -29,7 +29,7 @@ message History {
     // @inject_tag: sql:"good_name"
     string GoodName  = 30;
     // @inject_tag: sql:"reward_date"
-    string RewardDate = 40;
+    uint32 RewardDate = 40;
     // @inject_tag: sql:"tid"
     string TID       = 50;
     // @inject_tag: sql:"amount"
