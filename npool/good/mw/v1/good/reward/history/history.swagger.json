@@ -56,6 +56,9 @@
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RewardDate": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -136,6 +139,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
