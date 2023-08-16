@@ -19,18 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGoodLedger_FullMethodName  = "/ledger.middleware.mining.goodledger.v2.Middleware/CreateGoodLedger"
 	Middleware_GetGoodLedgerOnly_FullMethodName = "/ledger.middleware.mining.goodledger.v2.Middleware/GetGoodLedgerOnly"
-	Middleware_AddGoodLedger_FullMethodName     = "/ledger.middleware.mining.goodledger.v2.Middleware/AddGoodLedger"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateGoodLedger(ctx context.Context, in *CreateGoodLedgerRequest, opts ...grpc.CallOption) (*CreateGoodLedgerResponse, error)
 	GetGoodLedgerOnly(ctx context.Context, in *GetGoodLedgerOnlyRequest, opts ...grpc.CallOption) (*GetGoodLedgerOnlyResponse, error)
-	AddGoodLedger(ctx context.Context, in *AddGoodLedgerRequest, opts ...grpc.CallOption) (*AddGoodLedgerResponse, error)
 }
 
 type middlewareClient struct {
@@ -39,15 +35,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateGoodLedger(ctx context.Context, in *CreateGoodLedgerRequest, opts ...grpc.CallOption) (*CreateGoodLedgerResponse, error) {
-	out := new(CreateGoodLedgerResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateGoodLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetGoodLedgerOnly(ctx context.Context, in *GetGoodLedgerOnlyRequest, opts ...grpc.CallOption) (*GetGoodLedgerOnlyResponse, error) {
@@ -59,22 +46,11 @@ func (c *middlewareClient) GetGoodLedgerOnly(ctx context.Context, in *GetGoodLed
 	return out, nil
 }
 
-func (c *middlewareClient) AddGoodLedger(ctx context.Context, in *AddGoodLedgerRequest, opts ...grpc.CallOption) (*AddGoodLedgerResponse, error) {
-	out := new(AddGoodLedgerResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddGoodLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateGoodLedger(context.Context, *CreateGoodLedgerRequest) (*CreateGoodLedgerResponse, error)
 	GetGoodLedgerOnly(context.Context, *GetGoodLedgerOnlyRequest) (*GetGoodLedgerOnlyResponse, error)
-	AddGoodLedger(context.Context, *AddGoodLedgerRequest) (*AddGoodLedgerResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -82,14 +58,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateGoodLedger(context.Context, *CreateGoodLedgerRequest) (*CreateGoodLedgerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodLedger not implemented")
-}
 func (UnimplementedMiddlewareServer) GetGoodLedgerOnly(context.Context, *GetGoodLedgerOnlyRequest) (*GetGoodLedgerOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodLedgerOnly not implemented")
-}
-func (UnimplementedMiddlewareServer) AddGoodLedger(context.Context, *AddGoodLedgerRequest) (*AddGoodLedgerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddGoodLedger not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -102,24 +72,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateGoodLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodLedgerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateGoodLedger(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateGoodLedger_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateGoodLedger(ctx, req.(*CreateGoodLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetGoodLedgerOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -140,24 +92,6 @@ func _Middleware_GetGoodLedgerOnly_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_AddGoodLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddGoodLedgerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).AddGoodLedger(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_AddGoodLedger_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddGoodLedger(ctx, req.(*AddGoodLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -166,16 +100,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateGoodLedger",
-			Handler:    _Middleware_CreateGoodLedger_Handler,
-		},
-		{
 			MethodName: "GetGoodLedgerOnly",
 			Handler:    _Middleware_GetGoodLedgerOnly_Handler,
-		},
-		{
-			MethodName: "AddGoodLedger",
-			Handler:    _Middleware_AddGoodLedger_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

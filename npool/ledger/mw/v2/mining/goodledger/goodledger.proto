@@ -8,9 +8,7 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateGoodLedger  (CreateGoodLedgerRequest)  returns (CreateGoodLedgerResponse)  {}
     rpc GetGoodLedgerOnly (GetGoodLedgerOnlyRequest) returns (GetGoodLedgerOnlyResponse) {}
-    rpc AddGoodLedger     (AddGoodLedgerRequest)     returns (AddGoodLedgerResponse)     {}
 }
 
 message GoodLedgerReq {
@@ -50,26 +48,10 @@ message Conds {
     optional basetypes.v1.StringVal ToUser     = 60;
 }
 
-message CreateGoodLedgerRequest {
-    GoodLedgerReq Info = 10;
-}
-
-message CreateGoodLedgerResponse {
-    GoodLedger Info = 10;
-}
-
 message GetGoodLedgerOnlyRequest {
     Conds Conds = 10;
 }
 
 message GetGoodLedgerOnlyResponse {
-    GoodLedger Info = 10;
-}
-
-message AddGoodLedgerRequest {
-    GoodLedgerReq Info = 10;
-}
-
-message AddGoodLedgerResponse {
     GoodLedger Info = 10;
 }

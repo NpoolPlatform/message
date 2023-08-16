@@ -19,9 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateProfit_FullMethodName  = "/ledger.middleware.profit.v2.Middleware/CreateProfit"
-	Middleware_CreateProfits_FullMethodName = "/ledger.middleware.profit.v2.Middleware/CreateProfits"
-	Middleware_AddProfit_FullMethodName     = "/ledger.middleware.profit.v2.Middleware/AddProfit"
 	Middleware_GetProfit_FullMethodName     = "/ledger.middleware.profit.v2.Middleware/GetProfit"
 	Middleware_GetProfitOnly_FullMethodName = "/ledger.middleware.profit.v2.Middleware/GetProfitOnly"
 	Middleware_GetProfits_FullMethodName    = "/ledger.middleware.profit.v2.Middleware/GetProfits"
@@ -31,9 +28,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateProfit(ctx context.Context, in *CreateProfitRequest, opts ...grpc.CallOption) (*CreateProfitResponse, error)
-	CreateProfits(ctx context.Context, in *CreateProfitsRequest, opts ...grpc.CallOption) (*CreateProfitsResponse, error)
-	AddProfit(ctx context.Context, in *AddProfitRequest, opts ...grpc.CallOption) (*AddProfitResponse, error)
 	GetProfit(ctx context.Context, in *GetProfitRequest, opts ...grpc.CallOption) (*GetProfitResponse, error)
 	GetProfitOnly(ctx context.Context, in *GetProfitOnlyRequest, opts ...grpc.CallOption) (*GetProfitOnlyResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
@@ -45,33 +39,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateProfit(ctx context.Context, in *CreateProfitRequest, opts ...grpc.CallOption) (*CreateProfitResponse, error) {
-	out := new(CreateProfitResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateProfit_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateProfits(ctx context.Context, in *CreateProfitsRequest, opts ...grpc.CallOption) (*CreateProfitsResponse, error) {
-	out := new(CreateProfitsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateProfits_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) AddProfit(ctx context.Context, in *AddProfitRequest, opts ...grpc.CallOption) (*AddProfitResponse, error) {
-	out := new(AddProfitResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddProfit_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetProfit(ctx context.Context, in *GetProfitRequest, opts ...grpc.CallOption) (*GetProfitResponse, error) {
@@ -105,9 +72,6 @@ func (c *middlewareClient) GetProfits(ctx context.Context, in *GetProfitsRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateProfit(context.Context, *CreateProfitRequest) (*CreateProfitResponse, error)
-	CreateProfits(context.Context, *CreateProfitsRequest) (*CreateProfitsResponse, error)
-	AddProfit(context.Context, *AddProfitRequest) (*AddProfitResponse, error)
 	GetProfit(context.Context, *GetProfitRequest) (*GetProfitResponse, error)
 	GetProfitOnly(context.Context, *GetProfitOnlyRequest) (*GetProfitOnlyResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
@@ -118,15 +82,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateProfit(context.Context, *CreateProfitRequest) (*CreateProfitResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateProfit not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateProfits(context.Context, *CreateProfitsRequest) (*CreateProfitsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateProfits not implemented")
-}
-func (UnimplementedMiddlewareServer) AddProfit(context.Context, *AddProfitRequest) (*AddProfitResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddProfit not implemented")
-}
 func (UnimplementedMiddlewareServer) GetProfit(context.Context, *GetProfitRequest) (*GetProfitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfit not implemented")
 }
@@ -147,60 +102,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateProfit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateProfitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateProfit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateProfit_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateProfit(ctx, req.(*CreateProfitRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateProfitsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateProfits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateProfits_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateProfits(ctx, req.(*CreateProfitsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_AddProfit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddProfitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).AddProfit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_AddProfit_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddProfit(ctx, req.(*AddProfitRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetProfit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -264,18 +165,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.middleware.profit.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateProfit",
-			Handler:    _Middleware_CreateProfit_Handler,
-		},
-		{
-			MethodName: "CreateProfits",
-			Handler:    _Middleware_CreateProfits_Handler,
-		},
-		{
-			MethodName: "AddProfit",
-			Handler:    _Middleware_AddProfit_Handler,
-		},
 		{
 			MethodName: "GetProfit",
 			Handler:    _Middleware_GetProfit_Handler,
