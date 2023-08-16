@@ -53,7 +53,8 @@ message Stock {
 
 message Conds {
     optional basetypes.v1.StringVal ID     = 10;
-    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringVal GoodID = 20;
+    optional basetypes.v1.StringSliceVal GoodIDs = 30;
 }
 
 message CreateStockRequest {
