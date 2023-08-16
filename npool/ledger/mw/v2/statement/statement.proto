@@ -12,6 +12,11 @@ service Middleware {
     rpc GetStatementOnly    (GetStatementOnlyRequest)    returns (GetStatementOnlyResponse)    {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)        {}
+    rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
+    rpc UnCreateStatements  (UnCreateStatementsRequest)  returns (UnCreateStatementsResponse)  {}
+    rpc CreateStatement     (CreateStatementRequest)    returns (CreateStatementResponse)      {}
+    rpc UnCreateStatement   (UnCreateStatementRequest)  returns (UnCreateStatementResponse)    {}
+
 }
 
 message StatementReq {
@@ -97,5 +102,37 @@ message GetStatementRequest {
 }
 
 message GetStatementResponse {
+    Statement Info = 10;
+}
+
+message CreateStatementsRequest {
+    repeated StatementReq Infos = 10;
+}
+
+message CreateStatementsResponse {
+    repeated Statement Infos = 10;
+}
+
+message UnCreateStatementsRequest {
+    repeated StatementReq Infos = 10;
+}
+
+message UnCreateStatementsResponse {
+    repeated Statement Infos = 10;
+}
+
+message CreateStatementRequest {
+    StatementReq Info = 10;
+}
+
+message CreateStatementResponse {
+    Statement Infos = 10;
+}
+
+message UnCreateStatementRequest {
+    StatementReq Info = 10;
+}
+
+message UnCreateStatementResponse {
     Statement Info = 10;
 }
