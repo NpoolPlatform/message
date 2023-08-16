@@ -630,22 +630,6 @@
         "GoodReserved": {
           "type": "string",
           "title": "Reserved from platform"
-        },
-        "SpotQuantity": {
-          "type": "string",
-          "title": "Remain part of reserved stock, if exhausted, purchase from app will goto platform directly"
-        },
-        "GoodLocked": {
-          "type": "string"
-        },
-        "GoodWaitStart": {
-          "type": "string"
-        },
-        "GoodInService": {
-          "type": "string"
-        },
-        "GoodSold": {
-          "type": "string"
         }
       }
     },

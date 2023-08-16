@@ -33,9 +33,6 @@ message GoodReq {
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
     optional string        Total              = 170;
-    optional string        Locked             = 180;
-    optional string        InService          = 190;
-    optional string        WaitStart          = 191;
     repeated string        Posters            = 210;
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32        BenefitIntervalHours = 230;

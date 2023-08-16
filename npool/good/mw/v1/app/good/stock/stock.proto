@@ -9,13 +9,8 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateStock    (CreateStockRequest)    returns (CreateStockResponse)    {}
-    rpc UpdateStock    (UpdateStockRequest)    returns (UpdateStockResponse)    {}
     rpc AddStock       (AddStockRequest)       returns (AddStockResponse)       {}
     rpc SubStock       (SubStockRequest)       returns (SubStockResponse)       {}
-    rpc GetStock       (GetStockRequest)       returns (GetStockResponse)       {}
-    rpc GetStocks      (GetStocksRequest)      returns (GetStocksResponse)      {}
-    rpc DeleteStock    (DeleteStockRequest)    returns (DeleteStockResponse)    {}
 }
 
 message StockReq {
@@ -67,22 +62,6 @@ message Conds {
     optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
 }
 
-message CreateStockRequest {
-    StockReq Info = 10;
-}
-
-message CreateStockResponse {
-    Stock Info = 10;
-}
-
-message UpdateStockRequest {
-    StockReq Info = 10;
-}
-
-message UpdateStockResponse {
-    Stock Info = 10;
-}
-
 message AddStockRequest {
     StockReq Info = 10;
 }
@@ -99,29 +78,3 @@ message SubStockResponse {
     Stock Info = 10;
 }
 
-message GetStockRequest {
-    string ID = 10;
-}
-
-message GetStockResponse {
-    Stock Info = 10;
-}
-
-message GetStocksRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
-}
-
-message GetStocksResponse {
-    repeated Stock Infos = 10;
-    uint32         Total = 20;
-}
-
-message DeleteStockRequest {
-    string ID = 10;
-}
-
-message DeleteStockResponse {
-    Stock Info = 10;
-}

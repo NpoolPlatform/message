@@ -46,12 +46,6 @@ message GoodReq {
     optional bool   EnableSetCommission = 310;
     // Reserved from platform
     optional string GoodReserved        = 320;
-    // Remain part of reserved stock, if exhausted, purchase from app will goto platform directly
-    optional string SpotQuantity        = 330;
-    optional string GoodLocked          = 340;
-    optional string GoodWaitStart       = 350;
-    optional string GoodInService       = 360;
-    optional string GoodSold            = 370;
 }
 
 message Good {
