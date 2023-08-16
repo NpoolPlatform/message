@@ -90,6 +90,7 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal EventTypes  = 100;
     optional basetypes.v1.StringVal      Extra       = 110;
     optional basetypes.v1.StringVal      EventID     = 120;
+    optional basetypes.v1.StringSliceVal EventIDs    = 121;
     optional basetypes.v1.Uint32Val      NotifType   = 130;
 }
 
