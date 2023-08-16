@@ -44,8 +44,6 @@ message GoodReq {
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
-    // Reserved from platform
-    optional string GoodReserved        = 320;
 }
 
 message Good {

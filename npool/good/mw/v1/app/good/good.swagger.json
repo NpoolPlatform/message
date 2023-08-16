@@ -626,10 +626,6 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
-        },
-        "GoodReserved": {
-          "type": "string",
-          "title": "Reserved from platform"
         }
       }
     },
