@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateUnsoldStatement_FullMethodName  = "/ledger.middleware.mining.unsoldstatement.v2.Middleware/CreateUnsoldStatement"
 	Middleware_GetUnsoldStatementOnly_FullMethodName = "/ledger.middleware.mining.unsoldstatement.v2.Middleware/GetUnsoldStatementOnly"
 )
 
@@ -27,7 +26,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateUnsoldStatement(ctx context.Context, in *CreateUnsoldStatementRequest, opts ...grpc.CallOption) (*CreateUnsoldStatementResponse, error)
 	GetUnsoldStatementOnly(ctx context.Context, in *GetUnsoldStatementOnlyRequest, opts ...grpc.CallOption) (*GetUnsoldStatementOnlyResponse, error)
 }
 
@@ -37,15 +35,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateUnsoldStatement(ctx context.Context, in *CreateUnsoldStatementRequest, opts ...grpc.CallOption) (*CreateUnsoldStatementResponse, error) {
-	out := new(CreateUnsoldStatementResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateUnsoldStatement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetUnsoldStatementOnly(ctx context.Context, in *GetUnsoldStatementOnlyRequest, opts ...grpc.CallOption) (*GetUnsoldStatementOnlyResponse, error) {
@@ -61,7 +50,6 @@ func (c *middlewareClient) GetUnsoldStatementOnly(ctx context.Context, in *GetUn
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateUnsoldStatement(context.Context, *CreateUnsoldStatementRequest) (*CreateUnsoldStatementResponse, error)
 	GetUnsoldStatementOnly(context.Context, *GetUnsoldStatementOnlyRequest) (*GetUnsoldStatementOnlyResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -70,9 +58,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateUnsoldStatement(context.Context, *CreateUnsoldStatementRequest) (*CreateUnsoldStatementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUnsoldStatement not implemented")
-}
 func (UnimplementedMiddlewareServer) GetUnsoldStatementOnly(context.Context, *GetUnsoldStatementOnlyRequest) (*GetUnsoldStatementOnlyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUnsoldStatementOnly not implemented")
 }
@@ -87,24 +72,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateUnsoldStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUnsoldStatementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateUnsoldStatement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateUnsoldStatement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateUnsoldStatement(ctx, req.(*CreateUnsoldStatementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetUnsoldStatementOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -132,10 +99,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.middleware.mining.unsoldstatement.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateUnsoldStatement",
-			Handler:    _Middleware_CreateUnsoldStatement_Handler,
-		},
 		{
 			MethodName: "GetUnsoldStatementOnly",
 			Handler:    _Middleware_GetUnsoldStatementOnly_Handler,

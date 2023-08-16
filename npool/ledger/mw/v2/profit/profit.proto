@@ -8,9 +8,6 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateProfit     (CreateProfitRequest)     returns (CreateProfitResponse)     {}
-    rpc CreateProfits    (CreateProfitsRequest)    returns (CreateProfitsResponse)    {}
-    rpc AddProfit        (AddProfitRequest)        returns (AddProfitResponse)        {}
     rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
     rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
     rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
@@ -47,30 +44,6 @@ message Conds {
     optional basetypes.v1.StringVal UserID      = 30;
     optional basetypes.v1.StringVal CoinTypeID  = 40;
     optional basetypes.v1.StringVal Incoming    = 50;
-}
-
-message CreateProfitRequest {
-    ProfitReq Info = 10;
-}
-
-message CreateProfitResponse {
-    Profit Info = 10;
-}
-
-message CreateProfitsRequest {
-    repeated ProfitReq Infos = 10;
-}
-
-message CreateProfitsResponse {
-    repeated Profit Infos = 10;
-}
-
-message AddProfitRequest {
-    ProfitReq Info = 10;
-}
-
-message AddProfitResponse {
-    Profit Info = 10;
 }
 
 message GetProfitRequest {

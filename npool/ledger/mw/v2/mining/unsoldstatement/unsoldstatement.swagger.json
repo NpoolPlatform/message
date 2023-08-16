@@ -87,14 +87,6 @@
         }
       }
     },
-    "v2CreateUnsoldStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2UnsoldStatement"
-        }
-      }
-    },
     "v2GetUnsoldStatementOnlyResponse": {
       "type": "object",
       "properties": {
@@ -136,31 +128,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v2UnsoldStatementReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

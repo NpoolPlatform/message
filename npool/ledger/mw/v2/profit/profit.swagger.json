@@ -55,14 +55,6 @@
         }
       }
     },
-    "v2AddProfitResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Profit"
-        }
-      }
-    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -80,25 +72,6 @@
         },
         "Incoming": {
           "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v2CreateProfitResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Profit"
-        }
-      }
-    },
-    "v2CreateProfitsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Profit"
-          }
         }
       }
     },
@@ -165,26 +138,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v2ProfitReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Incoming": {
-          "type": "string"
         }
       }
     }
