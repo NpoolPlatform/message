@@ -69,12 +69,12 @@ message GetGoodStatementsResponse {
 
 message GoodStatementsReq {
     // for bookkeeping
-    string GoodID       = 10;
-    string CoinTypeID   = 20;
-    string TotalAmount  = 30;
-    string UnsoldAmount = 40;
-    string TechniqueServiceFeeAmount = 50;
-    uint32 BenefitDate  = 60;
+    optional string GoodID       = 10;
+    optional string CoinTypeID   = 20;
+    optional string TotalAmount  = 30;
+    optional string UnsoldAmount = 40;
+    optional string TechniqueServiceFeeAmount = 50;
+    optional uint32 BenefitDate  = 60;
 }
 
 message CreateGoodStatementsRequest {
