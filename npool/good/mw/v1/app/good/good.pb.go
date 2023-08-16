@@ -424,18 +424,18 @@ type Good struct {
 	CommentCount uint32 `protobuf:"varint,710,opt,name=CommentCount,proto3" json:"CommentCount,omitempty" sql:"comment_count"`
 	// @inject_tag: sql:"app_good_stock_id"
 	AppGoodStockID string `protobuf:"bytes,730,opt,name=AppGoodStockID,proto3" json:"AppGoodStockID,omitempty" sql:"app_good_stock_id"`
-	// @inject_tag: sql:"good_reserved"
-	AppGoodReserved string `protobuf:"bytes,740,opt,name=AppGoodReserved,proto3" json:"AppGoodReserved,omitempty" sql:"good_reserved"`
-	// @inject_tag: sql:"spot_quantity"
-	AppSpotQuantity string `protobuf:"bytes,750,opt,name=AppSpotQuantity,proto3" json:"AppSpotQuantity,omitempty" sql:"spot_quantity"`
-	// @inject_tag: sql:"good_locked"
-	AppGoodLocked string `protobuf:"bytes,760,opt,name=AppGoodLocked,proto3" json:"AppGoodLocked,omitempty" sql:"good_locked"`
-	// @inject_tag: sql:"good_wait_start"
-	AppGoodWaitStart string `protobuf:"bytes,770,opt,name=AppGoodWaitStart,proto3" json:"AppGoodWaitStart,omitempty" sql:"good_wait_start"`
-	// @inject_tag: sql:"good_in_service"
-	AppGoodInService string `protobuf:"bytes,780,opt,name=AppGoodInService,proto3" json:"AppGoodInService,omitempty" sql:"good_in_service"`
-	// @inject_tag: sql:"good_sold"
-	AppGoodSold string `protobuf:"bytes,790,opt,name=AppGoodSold,proto3" json:"AppGoodSold,omitempty" sql:"good_sold"`
+	// @inject_tag: sql:"app_good_reserved"
+	AppGoodReserved string `protobuf:"bytes,740,opt,name=AppGoodReserved,proto3" json:"AppGoodReserved,omitempty" sql:"app_good_reserved"`
+	// @inject_tag: sql:"app_spot_quantity"
+	AppSpotQuantity string `protobuf:"bytes,750,opt,name=AppSpotQuantity,proto3" json:"AppSpotQuantity,omitempty" sql:"app_spot_quantity"`
+	// @inject_tag: sql:"app_good_locked"
+	AppGoodLocked string `protobuf:"bytes,760,opt,name=AppGoodLocked,proto3" json:"AppGoodLocked,omitempty" sql:"app_good_locked"`
+	// @inject_tag: sql:"app_good_wait_start"
+	AppGoodWaitStart string `protobuf:"bytes,770,opt,name=AppGoodWaitStart,proto3" json:"AppGoodWaitStart,omitempty" sql:"app_good_wait_start"`
+	// @inject_tag: sql:"app_good_in_service"
+	AppGoodInService string `protobuf:"bytes,780,opt,name=AppGoodInService,proto3" json:"AppGoodInService,omitempty" sql:"app_good_in_service"`
+	// @inject_tag: sql:"app_good_sold"
+	AppGoodSold string `protobuf:"bytes,790,opt,name=AppGoodSold,proto3" json:"AppGoodSold,omitempty" sql:"app_good_sold"`
 }
 
 func (x *Good) Reset() {

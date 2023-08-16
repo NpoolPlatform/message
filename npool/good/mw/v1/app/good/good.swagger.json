@@ -485,27 +485,27 @@
         },
         "AppGoodReserved": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_reserved\""
+          "title": "@inject_tag: sql:\"app_good_reserved\""
         },
         "AppSpotQuantity": {
           "type": "string",
-          "title": "@inject_tag: sql:\"spot_quantity\""
+          "title": "@inject_tag: sql:\"app_spot_quantity\""
         },
         "AppGoodLocked": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_locked\""
+          "title": "@inject_tag: sql:\"app_good_locked\""
         },
         "AppGoodWaitStart": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_wait_start\""
+          "title": "@inject_tag: sql:\"app_good_wait_start\""
         },
         "AppGoodInService": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_in_service\""
+          "title": "@inject_tag: sql:\"app_good_in_service\""
         },
         "AppGoodSold": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_sold\""
+          "title": "@inject_tag: sql:\"app_good_sold\""
         }
       }
     },
