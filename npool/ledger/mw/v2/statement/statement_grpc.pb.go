@@ -19,9 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetStatementOnly_FullMethodName = "/ledger.middleware.statement.v2.Middleware/GetStatementOnly"
-	Middleware_GetStatements_FullMethodName    = "/ledger.middleware.statement.v2.Middleware/GetStatements"
-	Middleware_GetStatement_FullMethodName     = "/ledger.middleware.statement.v2.Middleware/GetStatement"
+	Middleware_GetStatementOnly_FullMethodName   = "/ledger.middleware.statement.v2.Middleware/GetStatementOnly"
+	Middleware_GetStatements_FullMethodName      = "/ledger.middleware.statement.v2.Middleware/GetStatements"
+	Middleware_GetStatement_FullMethodName       = "/ledger.middleware.statement.v2.Middleware/GetStatement"
+	Middleware_CreateStatements_FullMethodName   = "/ledger.middleware.statement.v2.Middleware/CreateStatements"
+	Middleware_UnCreateStatements_FullMethodName = "/ledger.middleware.statement.v2.Middleware/UnCreateStatements"
+	Middleware_CreateStatement_FullMethodName    = "/ledger.middleware.statement.v2.Middleware/CreateStatement"
+	Middleware_UnCreateStatement_FullMethodName  = "/ledger.middleware.statement.v2.Middleware/UnCreateStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +35,10 @@ type MiddlewareClient interface {
 	GetStatementOnly(ctx context.Context, in *GetStatementOnlyRequest, opts ...grpc.CallOption) (*GetStatementOnlyResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	GetStatement(ctx context.Context, in *GetStatementRequest, opts ...grpc.CallOption) (*GetStatementResponse, error)
+	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
+	UnCreateStatements(ctx context.Context, in *UnCreateStatementsRequest, opts ...grpc.CallOption) (*UnCreateStatementsResponse, error)
+	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
+	UnCreateStatement(ctx context.Context, in *UnCreateStatementRequest, opts ...grpc.CallOption) (*UnCreateStatementResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +76,42 @@ func (c *middlewareClient) GetStatement(ctx context.Context, in *GetStatementReq
 	return out, nil
 }
 
+func (c *middlewareClient) CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error) {
+	out := new(CreateStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateStatements_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnCreateStatements(ctx context.Context, in *UnCreateStatementsRequest, opts ...grpc.CallOption) (*UnCreateStatementsResponse, error) {
+	out := new(UnCreateStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnCreateStatements_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error) {
+	out := new(CreateStatementResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnCreateStatement(ctx context.Context, in *UnCreateStatementRequest, opts ...grpc.CallOption) (*UnCreateStatementResponse, error) {
+	out := new(UnCreateStatementResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnCreateStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +119,10 @@ type MiddlewareServer interface {
 	GetStatementOnly(context.Context, *GetStatementOnlyRequest) (*GetStatementOnlyResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error)
+	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
+	UnCreateStatements(context.Context, *UnCreateStatementsRequest) (*UnCreateStatementsResponse, error)
+	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
+	UnCreateStatement(context.Context, *UnCreateStatementRequest) (*UnCreateStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +138,18 @@ func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatemen
 }
 func (UnimplementedMiddlewareServer) GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatement not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) UnCreateStatements(context.Context, *UnCreateStatementsRequest) (*UnCreateStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnCreateStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStatement not implemented")
+}
+func (UnimplementedMiddlewareServer) UnCreateStatement(context.Context, *UnCreateStatementRequest) (*UnCreateStatementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnCreateStatement not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,6 +218,78 @@ func _Middleware_GetStatement_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CreateStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStatementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateStatements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateStatements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateStatements(ctx, req.(*CreateStatementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnCreateStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnCreateStatementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnCreateStatements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnCreateStatements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnCreateStatements(ctx, req.(*UnCreateStatementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStatementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateStatement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateStatement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateStatement(ctx, req.(*CreateStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnCreateStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnCreateStatementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnCreateStatement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnCreateStatement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnCreateStatement(ctx, req.(*UnCreateStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +308,22 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStatement",
 			Handler:    _Middleware_GetStatement_Handler,
+		},
+		{
+			MethodName: "CreateStatements",
+			Handler:    _Middleware_CreateStatements_Handler,
+		},
+		{
+			MethodName: "UnCreateStatements",
+			Handler:    _Middleware_UnCreateStatements_Handler,
+		},
+		{
+			MethodName: "CreateStatement",
+			Handler:    _Middleware_CreateStatement_Handler,
+		},
+		{
+			MethodName: "UnCreateStatement",
+			Handler:    _Middleware_UnCreateStatement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
