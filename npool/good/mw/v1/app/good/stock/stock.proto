@@ -24,7 +24,7 @@ message StockReq {
     optional string GoodID     = 30;
     optional string AppGoodID  = 40;
     optional string Reserved   = 50;
-    optional string Remain     = 60;
+    optional string SpotQuantity = 60;
     optional string Locked     = 70;
     optional string WaitStart  = 80;
     optional string InService  = 90;
@@ -41,8 +41,8 @@ message Stock {
     string AppGoodID  = 40;
     // @inject_tag: sql:"reserved"
     string Reserved   = 50;
-    // @inject_tag: sql:"remain"
-    string Remain     = 60;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 60;
     // @inject_tag: sql:"locked"
     string Locked     = 70;
     // @inject_tag: sql:"wait_start"

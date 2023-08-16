@@ -133,9 +133,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"reserved\""
         },
-        "Remain": {
+        "SpotQuantity": {
           "type": "string",
-          "title": "@inject_tag: sql:\"remain\""
+          "title": "@inject_tag: sql:\"spot_quantity\""
         },
         "Locked": {
           "type": "string",
@@ -183,7 +183,7 @@
         "Reserved": {
           "type": "string"
         },
-        "Remain": {
+        "SpotQuantity": {
           "type": "string"
         },
         "Locked": {
