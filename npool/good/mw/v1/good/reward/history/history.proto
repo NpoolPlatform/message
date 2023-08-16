@@ -28,12 +28,14 @@ message History {
     string GoodID    = 20;
     // @inject_tag: sql:"good_name"
     string GoodName  = 30;
+    // @inject_tag: sql:"reward_date"
+    string RewardDate = 40;
     // @inject_tag: sql:"tid"
-    string Tid       = 40;
+    string TID       = 50;
     // @inject_tag: sql:"amount"
-    string Amount    = 50;
+    string Amount    = 60;
     // @inject_tag: sql:"unit_amount"
-    string UnitAmount = 60;
+    string UnitAmount = 70;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

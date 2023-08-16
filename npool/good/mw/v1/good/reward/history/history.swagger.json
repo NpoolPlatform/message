@@ -93,7 +93,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "Tid": {
+        "RewardDate": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_date\""
+        },
+        "TID": {
           "type": "string",
           "title": "@inject_tag: sql:\"tid\""
         },
