@@ -17,6 +17,12 @@
   ],
   "paths": {},
   "definitions": {
+    "ledger1v1LockBalanceResponse": {
+      "type": "object"
+    },
+    "ledger1v1UnlockBalanceResponse": {
+      "type": "object"
+    },
     "ledger1v1UpdateWithdrawResponse": {
       "type": "object",
       "properties": {
@@ -128,12 +134,6 @@
         "Outcoming"
       ],
       "default": "DefaultType"
-    },
-    "v1LockBalanceResponse": {
-      "type": "object"
-    },
-    "v1UnlockBalanceResponse": {
-      "type": "object"
     },
     "v1WithdrawState": {
       "type": "string",
