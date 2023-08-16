@@ -26,7 +26,6 @@ message GoodReq {
     optional string Price               = 70;
     optional int32  DisplayIndex        = 80;
     optional int32  PurchaseLimit       = 90;
-    optional int32  CommissionPercent   = 100;
     optional uint32 SaleStartAt         = 110;
     optional uint32 SaleEndAt           = 120;
     optional uint32 ServiceStartAt      = 130;
@@ -63,8 +62,6 @@ message Good {
     int32            DisplayIndex                = 70;
     // @inject_tag: sql:"purchase_limit"
     int32            PurchaseLimit               = 80;
-    // @inject_tag: sql:"commission_percent"
-    int32            CommissionPercent           = 90;
 
     // @inject_tag: sql:"promotion_start_at"
     optional uint32  PromotionStartAt            = 100;
