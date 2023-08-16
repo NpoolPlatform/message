@@ -152,19 +152,11 @@
           "title": "@inject_tag: sql:\"good_id\""
         },
         "Online": {
-          "type": "boolean"
-        },
-        "OnlineInt": {
-          "type": "integer",
-          "format": "int32",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"online\""
         },
         "Visible": {
-          "type": "boolean"
-        },
-        "VisibleInt": {
-          "type": "integer",
-          "format": "int32",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"visible\""
         },
         "Price": {

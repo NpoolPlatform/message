@@ -53,12 +53,10 @@ message Good {
     string           AppID                       = 20;
     // @inject_tag: sql:"good_id"
     string           GoodID                      = 30;
-    bool             Online                      = 40;
     // @inject_tag: sql:"online"
-    int32            OnlineInt                   = 41;
-    bool             Visible                     = 50;
+    bool             Online                      = 40;
     // @inject_tag: sql:"visible"
-    int32            VisibleInt                  = 51;
+    bool             Visible                     = 50;
     // @inject_tag: sql:"price"
     string           Price                       = 60;
     // @inject_tag: sql:"display_index"
