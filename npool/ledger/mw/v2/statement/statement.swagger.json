@@ -137,7 +137,7 @@
     "v2CreateStatementResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "Info": {
           "$ref": "#/definitions/v2Statement"
         }
       }

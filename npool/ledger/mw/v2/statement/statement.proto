@@ -126,7 +126,7 @@ message CreateStatementRequest {
 }
 
 message CreateStatementResponse {
-    Statement Infos = 10;
+    Statement Info = 10;
 }
 
 message UnCreateStatementRequest {
