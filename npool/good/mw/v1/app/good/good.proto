@@ -101,6 +101,10 @@ message Good {
     string           VendorLocationID            = 249;
     // @inject_tag: sql:"vendor_location_country"
     string           VendorLocationCountry       = 250;
+    // @inject_tag: sql:"vendor_brand_name"
+    string           VendorBrandName             = 251;
+    // @inject_tag: sql:"vendor_brand_logo"
+    string           VendorBrandLogo             = 252;
 
     basetypes.good.v1.GoodType GoodType          = 260;
     // @inject_tag: sql:"good_type"
