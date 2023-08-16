@@ -111,10 +111,6 @@ message Good {
     // @inject_tag: sql:"benefit_type"
     string           BenefitTypeStr              = 271;
 
-    basetypes.good.v1.BenefitState BenefitState = 272;
-    // @inject_tag: sql:"benefit_state"
-    string           BenefitStateStr            = 273;
-
     // @inject_tag: sql:"good_name"
     string           GoodName           = 280;
     // @inject_tag: sql:"unit"

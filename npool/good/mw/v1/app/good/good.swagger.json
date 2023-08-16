@@ -45,17 +45,6 @@
         }
       }
     },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitTransferring",
-        "BenefitBookKeeping",
-        "BenefitDone"
-      ],
-      "default": "DefaultBenefitState"
-    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -271,13 +260,6 @@
         "BenefitTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
-        },
-        "BenefitStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"benefit_state\""
         },
         "GoodName": {
           "type": "string",
