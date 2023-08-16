@@ -95,6 +95,17 @@
         }
       }
     },
+    "v2CreateGoodStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2GoodStatement"
+          }
+        }
+      }
+    },
     "v2GetGoodStatementOnlyResponse": {
       "type": "object",
       "properties": {
@@ -169,13 +180,49 @@
         "Amount": {
           "type": "string"
         },
-        "BenefitIntervalHours": {
+        "BenefitDate": {
           "type": "integer",
           "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v2GoodStatementsReq": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string",
+          "title": "for bookkeeping"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "string"
+        },
+        "UnsoldAmount": {
+          "type": "string"
+        },
+        "TechniqueServiceFeeAmount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UnCreateGoodStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2GoodStatement"
+          }
         }
       }
     }

@@ -8,9 +8,11 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateGoodStatement  (CreateGoodStatementRequest)  returns (CreateGoodStatementResponse)  {}
-    rpc GetGoodStatementOnly (GetGoodStatementOnlyRequest) returns (GetGoodStatementOnlyResponse) {}
-    rpc GetGoodStatements    (GetGoodStatementsRequest)    returns (GetGoodStatementsResponse)    {}
+    rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse)  {}
+    rpc GetGoodStatementOnly    (GetGoodStatementOnlyRequest)   returns (GetGoodStatementOnlyResponse) {}
+    rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
+    rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
+    rpc UnCreateGoodStatements  (UnCreateGoodStatementsRequest) returns (UnCreateGoodStatementsResponse) {}
 }
 
 message GoodStatementReq {
@@ -18,7 +20,7 @@ message GoodStatementReq {
     optional string     GoodID           = 20;
     optional string     CoinTypeID       = 30;
     optional string     Amount           = 40;
-    optional uint32     BenefitIntervalHours      = 50;
+    optional uint32     BenefitDate      = 50;
     optional uint32     CreatedAt        = 60;
 }
 
@@ -74,3 +76,28 @@ message GetGoodStatementsResponse {
     uint32                 Total = 20;
 }
 
+message GoodStatementsReq {
+    // for bookkeeping
+    string GoodID       = 10;
+    string CoinTypeID   = 20;
+    string TotalAmount  = 30;
+    string UnsoldAmount = 40;
+    string TechniqueServiceFeeAmount = 50;
+    uint32 BenefitDate  = 60;
+}
+
+message CreateGoodStatementsRequest {
+    repeated GoodStatementsReq Infos = 10;
+}
+
+message CreateGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
+}
+
+message UnCreateGoodStatementsRequest {
+    repeated GoodStatementsReq Infos = 10;
+}
+
+message UnCreateGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
+}
