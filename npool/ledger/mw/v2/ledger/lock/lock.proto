@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package ledger.middleware.ledger.lock.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger/lock";
+
+import "npool/basetypes/ledger/v1/enums.proto";
+import "npool/ledger/mw/v2/ledger/ledger.proto";
+
+// Service Name
+service Middleware {
+    rpc LockBalance         (LockBalanceRequest)         returns (LockBalanceResponse)          {}
+    rpc LockBalanceOut      (LockBalanceOutRequest)      returns (LockBalanceOutResponse)       {}
+    rpc UnlockBalance       (UnlockBalanceRequest)       returns (UnlockBalanceResponse)        {}
+    rpc UnlockBalanceOut    (UnlockBalanceOutRequest)    returns (UnlockBalanceOutResponse)     {}
+}
+
+message LockBalanceReq {
+    string AppID       = 10;
+    string UserID      = 20;
+    string CoinTypeID  = 30;
+    string Amount      = 40;
+}
+
+message LockBalanceRequest {
+    LockBalanceReq Info = 10;
+}
+
+message LockBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message LockBalanceOutRequest {
+    LockBalanceReq Info = 10;
+}
+
+message LockBalanceOutResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message UnlockBalanceReq {
+    string AppID                                        = 10;
+    string UserID                                       = 20;
+    string CoinTypeID                                   = 30;
+    string Unlocked                                     = 40;
+    string Outcoming                                    = 50;
+    // Only Payment or Withdrawal
+    optional basetypes.ledger.v1.IOSubType IOSubType    = 60;
+    string IOExtra                                      = 70;
+}
+
+message UnlockBalanceRequest {
+    UnlockBalanceReq Info = 10;
+}
+
+message UnlockBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message UnlockBalanceOutRequest {
+    UnlockBalanceReq Info = 10;
+}
+
+message UnlockBalanceOutResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}

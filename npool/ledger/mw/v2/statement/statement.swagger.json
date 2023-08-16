@@ -17,47 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewarestatementv2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IOType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FromCoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinUSDCurrency": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "IOExtra": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -134,6 +93,47 @@
         }
       }
     },
+    "v2Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Amount": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FromCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinUSDCurrency": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IOExtra": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
     "v2GetStatementOnlyResponse": {
       "type": "object",
       "properties": {
@@ -162,86 +162,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2Ledger": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "Incoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
-        },
-        "Outcoming": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
-        },
-        "Locked": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
-        },
-        "Spendable": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v2LockBalanceOutResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2LockBalanceReq": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        }
-      }
-    },
-    "v2LockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
         }
       }
     },
@@ -303,49 +223,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v2UnlockBalanceOutResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnlockBalanceReq": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Unlocked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType",
-          "title": "Only Payment or Withdrawal"
-        },
-        "IOExtra": {
-          "type": "string"
-        }
-      }
-    },
-    "v2UnlockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
         }
       }
     }
