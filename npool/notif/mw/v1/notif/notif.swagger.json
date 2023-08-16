@@ -98,6 +98,9 @@
         "EventID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "EventIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "NotifType": {
           "$ref": "#/definitions/v1Uint32Val"
         }
