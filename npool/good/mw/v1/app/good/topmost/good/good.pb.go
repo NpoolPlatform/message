@@ -721,7 +721,7 @@ type DeleteTopMostGoodRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	Info *TopMostGoodReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *DeleteTopMostGoodRequest) Reset() {
@@ -756,11 +756,11 @@ func (*DeleteTopMostGoodRequest) Descriptor() ([]byte, []int) {
 	return file_npool_good_mw_v1_app_good_topmost_good_good_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *DeleteTopMostGoodRequest) GetID() string {
+func (x *DeleteTopMostGoodRequest) GetInfo() *TopMostGoodReq {
 	if x != nil {
-		return x.ID
+		return x.Info
 	}
-	return ""
+	return nil
 }
 
 type DeleteTopMostGoodResponse struct {
@@ -930,10 +930,14 @@ var file_npool_good_mw_v1_app_good_topmost_good_good_proto_rawDesc = []byte{
 	0x6f, 0x70, 0x6d, 0x6f, 0x73, 0x74, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x32, 0x2e, 0x76, 0x31, 0x2e,
 	0x54, 0x6f, 0x70, 0x4d, 0x6f, 0x73, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66,
 	0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28,
-	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x2a, 0x0a, 0x18, 0x44, 0x65, 0x6c, 0x65,
+	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x6a, 0x0a, 0x18, 0x44, 0x65, 0x6c, 0x65,
 	0x74, 0x65, 0x54, 0x6f, 0x70, 0x4d, 0x6f, 0x73, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x02, 0x49, 0x44, 0x22, 0x68, 0x0a, 0x19, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x6f,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x4e, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x31, 0x2e, 0x74,
+	0x6f, 0x70, 0x6d, 0x6f, 0x73, 0x74, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x32, 0x2e, 0x76, 0x31, 0x2e,
+	0x54, 0x6f, 0x70, 0x4d, 0x6f, 0x73, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x52, 0x04,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x68, 0x0a, 0x19, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x6f,
 	0x70, 0x4d, 0x6f, 0x73, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x4b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
@@ -1040,22 +1044,23 @@ var file_npool_good_mw_v1_app_good_topmost_good_good_proto_depIdxs = []int32{
 	1,  // 8: good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodResponse.Info:type_name -> good.middleware.app.good1.topmost.good2.v1.TopMostGood
 	2,  // 9: good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsRequest.Conds:type_name -> good.middleware.app.good1.topmost.good2.v1.Conds
 	1,  // 10: good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsResponse.Infos:type_name -> good.middleware.app.good1.topmost.good2.v1.TopMostGood
-	1,  // 11: good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodResponse.Info:type_name -> good.middleware.app.good1.topmost.good2.v1.TopMostGood
-	3,  // 12: good.middleware.app.good1.topmost.good2.v1.Middleware.CreateTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.CreateTopMostGoodRequest
-	5,  // 13: good.middleware.app.good1.topmost.good2.v1.Middleware.UpdateTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.UpdateTopMostGoodRequest
-	7,  // 14: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodRequest
-	9,  // 15: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGoods:input_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsRequest
-	11, // 16: good.middleware.app.good1.topmost.good2.v1.Middleware.DeleteTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodRequest
-	4,  // 17: good.middleware.app.good1.topmost.good2.v1.Middleware.CreateTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.CreateTopMostGoodResponse
-	6,  // 18: good.middleware.app.good1.topmost.good2.v1.Middleware.UpdateTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.UpdateTopMostGoodResponse
-	8,  // 19: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodResponse
-	10, // 20: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGoods:output_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsResponse
-	12, // 21: good.middleware.app.good1.topmost.good2.v1.Middleware.DeleteTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodResponse
-	17, // [17:22] is the sub-list for method output_type
-	12, // [12:17] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	0,  // 11: good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodRequest.Info:type_name -> good.middleware.app.good1.topmost.good2.v1.TopMostGoodReq
+	1,  // 12: good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodResponse.Info:type_name -> good.middleware.app.good1.topmost.good2.v1.TopMostGood
+	3,  // 13: good.middleware.app.good1.topmost.good2.v1.Middleware.CreateTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.CreateTopMostGoodRequest
+	5,  // 14: good.middleware.app.good1.topmost.good2.v1.Middleware.UpdateTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.UpdateTopMostGoodRequest
+	7,  // 15: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodRequest
+	9,  // 16: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGoods:input_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsRequest
+	11, // 17: good.middleware.app.good1.topmost.good2.v1.Middleware.DeleteTopMostGood:input_type -> good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodRequest
+	4,  // 18: good.middleware.app.good1.topmost.good2.v1.Middleware.CreateTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.CreateTopMostGoodResponse
+	6,  // 19: good.middleware.app.good1.topmost.good2.v1.Middleware.UpdateTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.UpdateTopMostGoodResponse
+	8,  // 20: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodResponse
+	10, // 21: good.middleware.app.good1.topmost.good2.v1.Middleware.GetTopMostGoods:output_type -> good.middleware.app.good1.topmost.good2.v1.GetTopMostGoodsResponse
+	12, // 22: good.middleware.app.good1.topmost.good2.v1.Middleware.DeleteTopMostGood:output_type -> good.middleware.app.good1.topmost.good2.v1.DeleteTopMostGoodResponse
+	18, // [18:23] is the sub-list for method output_type
+	13, // [13:18] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_mw_v1_app_good_topmost_good_good_proto_init() }

@@ -91,7 +91,7 @@ message GetTopMostGoodsResponse {
 }
 
 message DeleteTopMostGoodRequest {
-    string ID = 10;
+    TopMostGoodReq Info = 10;
 }
 
 message DeleteTopMostGoodResponse {

@@ -110,7 +110,7 @@ message GetTopMostsResponse {
 }
 
 message DeleteTopMostRequest {
-    string ID = 10;
+    TopMostReq Info = 10;
 }
 
 message DeleteTopMostResponse {
