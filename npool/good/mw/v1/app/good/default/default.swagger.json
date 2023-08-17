@@ -57,6 +57,9 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -91,6 +94,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
@@ -117,6 +124,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "CoinTypeID": {

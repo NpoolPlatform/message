@@ -20,7 +20,8 @@ message DefaultReq {
     optional string ID         = 10;
     optional string AppID      = 20;
     optional string GoodID     = 30;
-    optional string CoinTypeID = 40;
+    optional string AppGoodID  = 40;
+    optional string CoinTypeID = 50;
 }
 
 message Default {
@@ -30,21 +31,24 @@ message Default {
     string AppID      = 20;
     // @inject_tag: sql:"good_id"
     string GoodID     = 30;
+    // @inject_tag: sql:"good_id"
+    string AppGoodID  = 40;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 40;
+    string CoinTypeID = 50;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 50;
+    uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 60;
+    uint32 UpdatedAt  = 1010;
 }
 
 message Conds {
     optional basetypes.v1.StringVal      ID          = 10;
     optional basetypes.v1.StringVal      AppID       = 20;
     optional basetypes.v1.StringVal      GoodID      = 30;
-    optional basetypes.v1.StringVal      CoinTypeID  = 40;
-    optional basetypes.v1.StringSliceVal GoodIDs     = 50;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 60;
+    optional basetypes.v1.StringVal      AppGoodID   = 40;
+    optional basetypes.v1.StringVal      CoinTypeID  = 50;
+    optional basetypes.v1.StringSliceVal GoodIDs     = 60;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
 message CreateDefaultRequest {
