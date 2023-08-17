@@ -116,17 +116,6 @@
         }
       }
     },
-    "v2CreateWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Withdraw"
-          }
-        }
-      }
-    },
     "v2ExistWithdrawCondsResponse": {
       "type": "object",
       "properties": {

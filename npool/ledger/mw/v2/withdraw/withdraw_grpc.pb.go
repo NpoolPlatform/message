@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraw"
-	Middleware_CreateWithdraws_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraws"
 	Middleware_UpdateWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/UpdateWithdraw"
 	Middleware_GetWithdraw_FullMethodName        = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraw"
 	Middleware_GetWithdrawOnly_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/GetWithdrawOnly"
@@ -34,7 +33,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error)
-	CreateWithdraws(ctx context.Context, in *CreateWithdrawsRequest, opts ...grpc.CallOption) (*CreateWithdrawsResponse, error)
 	UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error)
 	GetWithdraw(ctx context.Context, in *GetWithdrawRequest, opts ...grpc.CallOption) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(ctx context.Context, in *GetWithdrawOnlyRequest, opts ...grpc.CallOption) (*GetWithdrawOnlyResponse, error)
@@ -54,15 +52,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateWithdraw(ctx context.Context, in *CreateWithdrawRequest, opts ...grpc.CallOption) (*CreateWithdrawResponse, error) {
 	out := new(CreateWithdrawResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateWithdraw_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateWithdraws(ctx context.Context, in *CreateWithdrawsRequest, opts ...grpc.CallOption) (*CreateWithdrawsResponse, error) {
-	out := new(CreateWithdrawsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateWithdraws_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +117,6 @@ func (c *middlewareClient) ExistWithdrawConds(ctx context.Context, in *ExistWith
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error)
-	CreateWithdraws(context.Context, *CreateWithdrawsRequest) (*CreateWithdrawsResponse, error)
 	UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error)
 	GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(context.Context, *GetWithdrawOnlyRequest) (*GetWithdrawOnlyResponse, error)
@@ -144,9 +132,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateWithdraw(context.Context, *CreateWithdrawRequest) (*CreateWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraw not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateWithdraws(context.Context, *CreateWithdrawsRequest) (*CreateWithdrawsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateWithdraws not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateWithdraw not implemented")
@@ -193,24 +178,6 @@ func _Middleware_CreateWithdraw_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateWithdraw(ctx, req.(*CreateWithdrawRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateWithdrawsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateWithdraws(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateWithdraws_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateWithdraws(ctx, req.(*CreateWithdrawsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -333,10 +300,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateWithdraw",
 			Handler:    _Middleware_CreateWithdraw_Handler,
-		},
-		{
-			MethodName: "CreateWithdraws",
-			Handler:    _Middleware_CreateWithdraws_Handler,
 		},
 		{
 			MethodName: "UpdateWithdraw",
