@@ -54,6 +54,9 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "TopMostID": {
           "$ref": "#/definitions/v1StringVal"
         }
@@ -121,6 +124,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
         "TostMostID": {
           "type": "string",
           "title": "@inject_tag: sql:\"top_most_id\""
@@ -163,6 +170,9 @@
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "TopMostID": {
