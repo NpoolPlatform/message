@@ -19,13 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraw"
-	Middleware_UpdateWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/UpdateWithdraw"
-	Middleware_GetWithdraw_FullMethodName        = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraw"
-	Middleware_GetWithdrawOnly_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/GetWithdrawOnly"
-	Middleware_GetWithdraws_FullMethodName       = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraws"
-	Middleware_ExistWithdraw_FullMethodName      = "/ledger.middleware.withdraw.v2.Middleware/ExistWithdraw"
-	Middleware_ExistWithdrawConds_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/ExistWithdrawConds"
+	Middleware_CreateWithdraw_FullMethodName  = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraw"
+	Middleware_UpdateWithdraw_FullMethodName  = "/ledger.middleware.withdraw.v2.Middleware/UpdateWithdraw"
+	Middleware_GetWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraw"
+	Middleware_GetWithdrawOnly_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/GetWithdrawOnly"
+	Middleware_GetWithdraws_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraws"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,8 +35,6 @@ type MiddlewareClient interface {
 	GetWithdraw(ctx context.Context, in *GetWithdrawRequest, opts ...grpc.CallOption) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(ctx context.Context, in *GetWithdrawOnlyRequest, opts ...grpc.CallOption) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
-	ExistWithdraw(ctx context.Context, in *ExistWithdrawRequest, opts ...grpc.CallOption) (*ExistWithdrawResponse, error)
-	ExistWithdrawConds(ctx context.Context, in *ExistWithdrawCondsRequest, opts ...grpc.CallOption) (*ExistWithdrawCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -94,24 +90,6 @@ func (c *middlewareClient) GetWithdraws(ctx context.Context, in *GetWithdrawsReq
 	return out, nil
 }
 
-func (c *middlewareClient) ExistWithdraw(ctx context.Context, in *ExistWithdrawRequest, opts ...grpc.CallOption) (*ExistWithdrawResponse, error) {
-	out := new(ExistWithdrawResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistWithdraw_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistWithdrawConds(ctx context.Context, in *ExistWithdrawCondsRequest, opts ...grpc.CallOption) (*ExistWithdrawCondsResponse, error) {
-	out := new(ExistWithdrawCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistWithdrawConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -121,8 +99,6 @@ type MiddlewareServer interface {
 	GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error)
 	GetWithdrawOnly(context.Context, *GetWithdrawOnlyRequest) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
-	ExistWithdraw(context.Context, *ExistWithdrawRequest) (*ExistWithdrawResponse, error)
-	ExistWithdrawConds(context.Context, *ExistWithdrawCondsRequest) (*ExistWithdrawCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -144,12 +120,6 @@ func (UnimplementedMiddlewareServer) GetWithdrawOnly(context.Context, *GetWithdr
 }
 func (UnimplementedMiddlewareServer) GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdraws not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistWithdraw(context.Context, *ExistWithdrawRequest) (*ExistWithdrawResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistWithdraw not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistWithdrawConds(context.Context, *ExistWithdrawCondsRequest) (*ExistWithdrawCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistWithdrawConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -254,42 +224,6 @@ func _Middleware_GetWithdraws_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistWithdrawRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistWithdraw(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistWithdraw_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistWithdraw(ctx, req.(*ExistWithdrawRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistWithdrawConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistWithdrawCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistWithdrawConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistWithdrawConds_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistWithdrawConds(ctx, req.(*ExistWithdrawCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,14 +250,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetWithdraws",
 			Handler:    _Middleware_GetWithdraws_Handler,
-		},
-		{
-			MethodName: "ExistWithdraw",
-			Handler:    _Middleware_ExistWithdraw_Handler,
-		},
-		{
-			MethodName: "ExistWithdrawConds",
-			Handler:    _Middleware_ExistWithdrawConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

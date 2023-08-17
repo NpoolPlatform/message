@@ -14,8 +14,6 @@ service Middleware {
     rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
     rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
     rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
-    rpc ExistWithdraw      (ExistWithdrawRequest)      returns (ExistWithdrawResponse)      {}
-    rpc ExistWithdrawConds (ExistWithdrawCondsRequest) returns (ExistWithdrawCondsResponse) {}
 }
 
 message WithdrawReq {
@@ -111,20 +109,4 @@ message GetWithdrawOnlyRequest {
 
 message GetWithdrawOnlyResponse {
     Withdraw Info = 10;
-}
-
-message ExistWithdrawRequest {
-    string ID = 10;
-}
-
-message ExistWithdrawResponse {
-    bool Info = 10;
-}
-
-message ExistWithdrawCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistWithdrawCondsResponse {
-    bool Info = 10;
 }

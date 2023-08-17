@@ -893,194 +893,6 @@ func (x *GetWithdrawOnlyResponse) GetInfo() *Withdraw {
 	return nil
 }
 
-type ExistWithdrawRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-}
-
-func (x *ExistWithdrawRequest) Reset() {
-	*x = ExistWithdrawRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistWithdrawRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistWithdrawRequest) ProtoMessage() {}
-
-func (x *ExistWithdrawRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistWithdrawRequest.ProtoReflect.Descriptor instead.
-func (*ExistWithdrawRequest) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *ExistWithdrawRequest) GetID() string {
-	if x != nil {
-		return x.ID
-	}
-	return ""
-}
-
-type ExistWithdrawResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistWithdrawResponse) Reset() {
-	*x = ExistWithdrawResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistWithdrawResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistWithdrawResponse) ProtoMessage() {}
-
-func (x *ExistWithdrawResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistWithdrawResponse.ProtoReflect.Descriptor instead.
-func (*ExistWithdrawResponse) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *ExistWithdrawResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
-type ExistWithdrawCondsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *ExistWithdrawCondsRequest) Reset() {
-	*x = ExistWithdrawCondsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistWithdrawCondsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistWithdrawCondsRequest) ProtoMessage() {}
-
-func (x *ExistWithdrawCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistWithdrawCondsRequest.ProtoReflect.Descriptor instead.
-func (*ExistWithdrawCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *ExistWithdrawCondsRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type ExistWithdrawCondsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistWithdrawCondsResponse) Reset() {
-	*x = ExistWithdrawCondsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistWithdrawCondsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistWithdrawCondsResponse) ProtoMessage() {}
-
-func (x *ExistWithdrawCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistWithdrawCondsResponse.ProtoReflect.Descriptor instead.
-func (*ExistWithdrawCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *ExistWithdrawCondsResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
-}
-
 var File_npool_ledger_mw_v2_withdraw_withdraw_proto protoreflect.FileDescriptor
 
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc = []byte{
@@ -1243,21 +1055,7 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc = []byte{
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64,
 	0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x26, 0x0a, 0x14, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69,
-	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a,
-	0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x2b, 0x0a,
-	0x15, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x57, 0x0a, 0x19, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x43, 0x6f, 0x6e, 0x64, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3a, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64,
-	0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x22, 0x30, 0x0a, 0x1a, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68,
-	0x64, 0x72, 0x61, 0x77, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x07, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x86, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x12, 0x7f, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x57, 0x69,
 	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12, 0x34, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64,
@@ -1297,29 +1095,12 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc = []byte{
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72,
 	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68,
 	0x64, 0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e, 0x47, 0x65, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64,
-	0x72, 0x61, 0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c,
-	0x0a, 0x0d, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x12,
-	0x33, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e,
-	0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69,
-	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
-	0x77, 0x2e, 0x76, 0x32, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
-	0x61, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a,
-	0x12, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x12, 0x38, 0x2e, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64,
-	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
-	0x2e, 0x76, 0x32, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
-	0x77, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e,
-	0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x2e, 0x76, 0x32, 0x2e, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x43, 0x6f, 0x6e, 0x64, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
-	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
-	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f, 0x76,
-	0x32, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x72, 0x61, 0x77, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3e,
+	0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
+	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x2f,
+	0x6d, 0x77, 0x2f, 0x76, 0x32, 0x2f, 0x77, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1334,40 +1115,36 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescGZIP() []byte {
 	return file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDescData
 }
 
-var file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_goTypes = []interface{}{
-	(*WithdrawReq)(nil),                // 0: ledger.middleware.withdraw.v2.WithdrawReq
-	(*Withdraw)(nil),                   // 1: ledger.middleware.withdraw.v2.Withdraw
-	(*Conds)(nil),                      // 2: ledger.middleware.withdraw.v2.Conds
-	(*CreateWithdrawRequest)(nil),      // 3: ledger.middleware.withdraw.v2.CreateWithdrawRequest
-	(*CreateWithdrawResponse)(nil),     // 4: ledger.middleware.withdraw.v2.CreateWithdrawResponse
-	(*UpdateWithdrawRequest)(nil),      // 5: ledger.middleware.withdraw.v2.UpdateWithdrawRequest
-	(*UpdateWithdrawResponse)(nil),     // 6: ledger.middleware.withdraw.v2.UpdateWithdrawResponse
-	(*GetWithdrawRequest)(nil),         // 7: ledger.middleware.withdraw.v2.GetWithdrawRequest
-	(*GetWithdrawResponse)(nil),        // 8: ledger.middleware.withdraw.v2.GetWithdrawResponse
-	(*GetWithdrawsRequest)(nil),        // 9: ledger.middleware.withdraw.v2.GetWithdrawsRequest
-	(*GetWithdrawsResponse)(nil),       // 10: ledger.middleware.withdraw.v2.GetWithdrawsResponse
-	(*GetWithdrawOnlyRequest)(nil),     // 11: ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
-	(*GetWithdrawOnlyResponse)(nil),    // 12: ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
-	(*ExistWithdrawRequest)(nil),       // 13: ledger.middleware.withdraw.v2.ExistWithdrawRequest
-	(*ExistWithdrawResponse)(nil),      // 14: ledger.middleware.withdraw.v2.ExistWithdrawResponse
-	(*ExistWithdrawCondsRequest)(nil),  // 15: ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest
-	(*ExistWithdrawCondsResponse)(nil), // 16: ledger.middleware.withdraw.v2.ExistWithdrawCondsResponse
-	(v1.WithdrawState)(0),              // 17: basetypes.ledger.v1.WithdrawState
-	(*v11.StringVal)(nil),              // 18: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),              // 19: basetypes.v1.Uint32Val
+	(*WithdrawReq)(nil),             // 0: ledger.middleware.withdraw.v2.WithdrawReq
+	(*Withdraw)(nil),                // 1: ledger.middleware.withdraw.v2.Withdraw
+	(*Conds)(nil),                   // 2: ledger.middleware.withdraw.v2.Conds
+	(*CreateWithdrawRequest)(nil),   // 3: ledger.middleware.withdraw.v2.CreateWithdrawRequest
+	(*CreateWithdrawResponse)(nil),  // 4: ledger.middleware.withdraw.v2.CreateWithdrawResponse
+	(*UpdateWithdrawRequest)(nil),   // 5: ledger.middleware.withdraw.v2.UpdateWithdrawRequest
+	(*UpdateWithdrawResponse)(nil),  // 6: ledger.middleware.withdraw.v2.UpdateWithdrawResponse
+	(*GetWithdrawRequest)(nil),      // 7: ledger.middleware.withdraw.v2.GetWithdrawRequest
+	(*GetWithdrawResponse)(nil),     // 8: ledger.middleware.withdraw.v2.GetWithdrawResponse
+	(*GetWithdrawsRequest)(nil),     // 9: ledger.middleware.withdraw.v2.GetWithdrawsRequest
+	(*GetWithdrawsResponse)(nil),    // 10: ledger.middleware.withdraw.v2.GetWithdrawsResponse
+	(*GetWithdrawOnlyRequest)(nil),  // 11: ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
+	(*GetWithdrawOnlyResponse)(nil), // 12: ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
+	(v1.WithdrawState)(0),           // 13: basetypes.ledger.v1.WithdrawState
+	(*v11.StringVal)(nil),           // 14: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),           // 15: basetypes.v1.Uint32Val
 }
 var file_npool_ledger_mw_v2_withdraw_withdraw_proto_depIdxs = []int32{
-	17, // 0: ledger.middleware.withdraw.v2.WithdrawReq.State:type_name -> basetypes.ledger.v1.WithdrawState
-	17, // 1: ledger.middleware.withdraw.v2.Withdraw.State:type_name -> basetypes.ledger.v1.WithdrawState
-	18, // 2: ledger.middleware.withdraw.v2.Conds.ID:type_name -> basetypes.v1.StringVal
-	18, // 3: ledger.middleware.withdraw.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
-	18, // 4: ledger.middleware.withdraw.v2.Conds.UserID:type_name -> basetypes.v1.StringVal
-	18, // 5: ledger.middleware.withdraw.v2.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
-	18, // 6: ledger.middleware.withdraw.v2.Conds.AccountID:type_name -> basetypes.v1.StringVal
-	18, // 7: ledger.middleware.withdraw.v2.Conds.Amount:type_name -> basetypes.v1.StringVal
-	19, // 8: ledger.middleware.withdraw.v2.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
-	19, // 9: ledger.middleware.withdraw.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
+	13, // 0: ledger.middleware.withdraw.v2.WithdrawReq.State:type_name -> basetypes.ledger.v1.WithdrawState
+	13, // 1: ledger.middleware.withdraw.v2.Withdraw.State:type_name -> basetypes.ledger.v1.WithdrawState
+	14, // 2: ledger.middleware.withdraw.v2.Conds.ID:type_name -> basetypes.v1.StringVal
+	14, // 3: ledger.middleware.withdraw.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
+	14, // 4: ledger.middleware.withdraw.v2.Conds.UserID:type_name -> basetypes.v1.StringVal
+	14, // 5: ledger.middleware.withdraw.v2.Conds.CoinTypeID:type_name -> basetypes.v1.StringVal
+	14, // 6: ledger.middleware.withdraw.v2.Conds.AccountID:type_name -> basetypes.v1.StringVal
+	14, // 7: ledger.middleware.withdraw.v2.Conds.Amount:type_name -> basetypes.v1.StringVal
+	15, // 8: ledger.middleware.withdraw.v2.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
+	15, // 9: ledger.middleware.withdraw.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
 	0,  // 10: ledger.middleware.withdraw.v2.CreateWithdrawRequest.Info:type_name -> ledger.middleware.withdraw.v2.WithdrawReq
 	1,  // 11: ledger.middleware.withdraw.v2.CreateWithdrawResponse.Info:type_name -> ledger.middleware.withdraw.v2.Withdraw
 	0,  // 12: ledger.middleware.withdraw.v2.UpdateWithdrawRequest.Info:type_name -> ledger.middleware.withdraw.v2.WithdrawReq
@@ -1377,26 +1154,21 @@ var file_npool_ledger_mw_v2_withdraw_withdraw_proto_depIdxs = []int32{
 	1,  // 16: ledger.middleware.withdraw.v2.GetWithdrawsResponse.Infos:type_name -> ledger.middleware.withdraw.v2.Withdraw
 	2,  // 17: ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest.Conds:type_name -> ledger.middleware.withdraw.v2.Conds
 	1,  // 18: ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse.Info:type_name -> ledger.middleware.withdraw.v2.Withdraw
-	2,  // 19: ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest.Conds:type_name -> ledger.middleware.withdraw.v2.Conds
-	3,  // 20: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawRequest
-	5,  // 21: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:input_type -> ledger.middleware.withdraw.v2.UpdateWithdrawRequest
-	7,  // 22: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:input_type -> ledger.middleware.withdraw.v2.GetWithdrawRequest
-	11, // 23: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:input_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
-	9,  // 24: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:input_type -> ledger.middleware.withdraw.v2.GetWithdrawsRequest
-	13, // 25: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawRequest
-	15, // 26: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:input_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsRequest
-	4,  // 27: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawResponse
-	6,  // 28: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:output_type -> ledger.middleware.withdraw.v2.UpdateWithdrawResponse
-	8,  // 29: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:output_type -> ledger.middleware.withdraw.v2.GetWithdrawResponse
-	12, // 30: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:output_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
-	10, // 31: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:output_type -> ledger.middleware.withdraw.v2.GetWithdrawsResponse
-	14, // 32: ledger.middleware.withdraw.v2.Middleware.ExistWithdraw:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawResponse
-	16, // 33: ledger.middleware.withdraw.v2.Middleware.ExistWithdrawConds:output_type -> ledger.middleware.withdraw.v2.ExistWithdrawCondsResponse
-	27, // [27:34] is the sub-list for method output_type
-	20, // [20:27] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	3,  // 19: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:input_type -> ledger.middleware.withdraw.v2.CreateWithdrawRequest
+	5,  // 20: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:input_type -> ledger.middleware.withdraw.v2.UpdateWithdrawRequest
+	7,  // 21: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:input_type -> ledger.middleware.withdraw.v2.GetWithdrawRequest
+	11, // 22: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:input_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyRequest
+	9,  // 23: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:input_type -> ledger.middleware.withdraw.v2.GetWithdrawsRequest
+	4,  // 24: ledger.middleware.withdraw.v2.Middleware.CreateWithdraw:output_type -> ledger.middleware.withdraw.v2.CreateWithdrawResponse
+	6,  // 25: ledger.middleware.withdraw.v2.Middleware.UpdateWithdraw:output_type -> ledger.middleware.withdraw.v2.UpdateWithdrawResponse
+	8,  // 26: ledger.middleware.withdraw.v2.Middleware.GetWithdraw:output_type -> ledger.middleware.withdraw.v2.GetWithdrawResponse
+	12, // 27: ledger.middleware.withdraw.v2.Middleware.GetWithdrawOnly:output_type -> ledger.middleware.withdraw.v2.GetWithdrawOnlyResponse
+	10, // 28: ledger.middleware.withdraw.v2.Middleware.GetWithdraws:output_type -> ledger.middleware.withdraw.v2.GetWithdrawsResponse
+	24, // [24:29] is the sub-list for method output_type
+	19, // [19:24] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() }
@@ -1561,54 +1333,6 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() {
 				return nil
 			}
 		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistWithdrawRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistWithdrawResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistWithdrawCondsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistWithdrawCondsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_ledger_mw_v2_withdraw_withdraw_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1618,7 +1342,7 @@ func file_npool_ledger_mw_v2_withdraw_withdraw_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_ledger_mw_v2_withdraw_withdraw_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
