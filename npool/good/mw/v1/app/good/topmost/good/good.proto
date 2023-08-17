@@ -31,17 +31,19 @@ message TopMostGood {
     string ID         = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID     = 30;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 30;
+    string AppGoodID  = 40;
     // @inject_tag: sql:"top_most_id"
-    string TostMostID = 40;
+    string TostMostID = 50;
     // @inject_tag: sql:"display_index"
-    uint32 DisplayIndex = 50;
+    uint32 DisplayIndex = 60;
     // @inject_tag: sql:"posters"
-    string PostersStr = 60;
-    repeated string Posters = 70;
+    string PostersStr = 70;
+    repeated string Posters = 80;
     // @inject_tag: sql:"price"
-    string Price      = 80;
+    string Price      = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -51,8 +53,9 @@ message TopMostGood {
 message Conds {
     optional basetypes.v1.StringVal ID    = 10;
     optional basetypes.v1.StringVal AppID = 20;
-    optional basetypes.v1.StringVal AppGoodID = 30;
-    optional basetypes.v1.StringVal TopMostID = 40;
+    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringVal AppGoodID = 40;
+    optional basetypes.v1.StringVal TopMostID = 50;
 }
 
 message CreateTopMostGoodRequest {

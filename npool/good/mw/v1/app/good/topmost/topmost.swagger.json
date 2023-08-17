@@ -53,6 +53,12 @@
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "TopMostType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Title": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -249,6 +255,18 @@
         },
         "KycMust": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
