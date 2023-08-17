@@ -116,22 +116,6 @@
         }
       }
     },
-    "v2ExistWithdrawCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v2ExistWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v2GetWithdrawOnlyResponse": {
       "type": "object",
       "properties": {
