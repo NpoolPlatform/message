@@ -358,9 +358,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"unit_lock_deposit\""
         },
-        "GoodAppLocked": {
+        "GoodAppReserved": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_app_locked\""
+          "title": "@inject_tag: sql:\"good_app_reserved\""
         },
         "RewardStateStr": {
           "type": "string",
@@ -477,7 +477,7 @@
         "UnitLockDeposit": {
           "type": "string"
         },
-        "AppLocked": {
+        "AppReserved": {
           "type": "string"
         },
         "RewardState": {

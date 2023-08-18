@@ -20,7 +20,7 @@ message StockReq {
     optional string Locked     = 40;
     optional string WaitStart  = 50;
     optional string InService  = 60;
-    optional string AppLocked  = 70;
+    optional string AppReserved  = 70;
 }
 
 message Stock {
@@ -40,8 +40,8 @@ message Stock {
     string InService  = 70;
     // @inject_tag: sql:"sold"
     string Sold       = 80;
-    // @inject_tag: sql:"app_locked"
-    string AppLocked  = 90;
+    // @inject_tag: sql:"app_reserved"
+    string AppReserved  = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
