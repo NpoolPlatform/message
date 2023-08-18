@@ -112,8 +112,8 @@ type Default struct {
 	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
-	// @inject_tag: sql:"good_id"
-	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"app_good_id"
+	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"coin_type_id"
 	CoinTypeID string `protobuf:"bytes,50,opt,name=CoinTypeID,proto3" json:"CoinTypeID,omitempty" sql:"coin_type_id"`
 	// @inject_tag: sql:"created_at"
