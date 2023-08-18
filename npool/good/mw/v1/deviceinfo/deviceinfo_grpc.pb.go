@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Manager_CreateDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Manager/CreateDeviceInfo"
-	Manager_UpdateDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Manager/UpdateDeviceInfo"
-	Manager_GetDeviceInfo_FullMethodName    = "/good.middleware.deviceinfo.v1.Manager/GetDeviceInfo"
-	Manager_GetDeviceInfos_FullMethodName   = "/good.middleware.deviceinfo.v1.Manager/GetDeviceInfos"
-	Manager_DeleteDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Manager/DeleteDeviceInfo"
+	Middleware_CreateDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Middleware/CreateDeviceInfo"
+	Middleware_UpdateDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Middleware/UpdateDeviceInfo"
+	Middleware_GetDeviceInfo_FullMethodName    = "/good.middleware.deviceinfo.v1.Middleware/GetDeviceInfo"
+	Middleware_GetDeviceInfos_FullMethodName   = "/good.middleware.deviceinfo.v1.Middleware/GetDeviceInfos"
+	Middleware_DeleteDeviceInfo_FullMethodName = "/good.middleware.deviceinfo.v1.Middleware/DeleteDeviceInfo"
 )
 
-// ManagerClient is the client API for Manager service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type MiddlewareClient interface {
 	CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error)
@@ -37,219 +37,219 @@ type ManagerClient interface {
 	DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error)
 }
 
-type managerClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *managerClient) CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error) {
+func (c *middlewareClient) CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error) {
 	out := new(CreateDeviceInfoResponse)
-	err := c.cc.Invoke(ctx, Manager_CreateDeviceInfo_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_CreateDeviceInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error) {
+func (c *middlewareClient) UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error) {
 	out := new(UpdateDeviceInfoResponse)
-	err := c.cc.Invoke(ctx, Manager_UpdateDeviceInfo_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_UpdateDeviceInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error) {
+func (c *middlewareClient) GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error) {
 	out := new(GetDeviceInfoResponse)
-	err := c.cc.Invoke(ctx, Manager_GetDeviceInfo_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetDeviceInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error) {
+func (c *middlewareClient) GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error) {
 	out := new(GetDeviceInfosResponse)
-	err := c.cc.Invoke(ctx, Manager_GetDeviceInfos_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetDeviceInfos_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error) {
+func (c *middlewareClient) DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error) {
 	out := new(DeleteDeviceInfoResponse)
-	err := c.cc.Invoke(ctx, Manager_DeleteDeviceInfo_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_DeleteDeviceInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ManagerServer interface {
+type MiddlewareServer interface {
 	CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error)
 	GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error)
 	DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedManagerServer) CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error) {
+func (UnimplementedMiddlewareServer) CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDeviceInfo not implemented")
 }
-func (UnimplementedManagerServer) UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeviceInfo not implemented")
 }
-func (UnimplementedManagerServer) GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error) {
+func (UnimplementedMiddlewareServer) GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfo not implemented")
 }
-func (UnimplementedManagerServer) GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error) {
+func (UnimplementedMiddlewareServer) GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfos not implemented")
 }
-func (UnimplementedManagerServer) DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error) {
+func (UnimplementedMiddlewareServer) DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeviceInfo not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Manager_CreateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDeviceInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateDeviceInfo(ctx, in)
+		return srv.(MiddlewareServer).CreateDeviceInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_CreateDeviceInfo_FullMethodName,
+		FullMethod: Middleware_CreateDeviceInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateDeviceInfo(ctx, req.(*CreateDeviceInfoRequest))
+		return srv.(MiddlewareServer).CreateDeviceInfo(ctx, req.(*CreateDeviceInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateDeviceInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateDeviceInfo(ctx, in)
+		return srv.(MiddlewareServer).UpdateDeviceInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_UpdateDeviceInfo_FullMethodName,
+		FullMethod: Middleware_UpdateDeviceInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateDeviceInfo(ctx, req.(*UpdateDeviceInfoRequest))
+		return srv.(MiddlewareServer).UpdateDeviceInfo(ctx, req.(*UpdateDeviceInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDeviceInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetDeviceInfo(ctx, in)
+		return srv.(MiddlewareServer).GetDeviceInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetDeviceInfo_FullMethodName,
+		FullMethod: Middleware_GetDeviceInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetDeviceInfo(ctx, req.(*GetDeviceInfoRequest))
+		return srv.(MiddlewareServer).GetDeviceInfo(ctx, req.(*GetDeviceInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetDeviceInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetDeviceInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDeviceInfosRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetDeviceInfos(ctx, in)
+		return srv.(MiddlewareServer).GetDeviceInfos(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetDeviceInfos_FullMethodName,
+		FullMethod: Middleware_GetDeviceInfos_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetDeviceInfos(ctx, req.(*GetDeviceInfosRequest))
+		return srv.(MiddlewareServer).GetDeviceInfos(ctx, req.(*GetDeviceInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_DeleteDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDeviceInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteDeviceInfo(ctx, in)
+		return srv.(MiddlewareServer).DeleteDeviceInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_DeleteDeviceInfo_FullMethodName,
+		FullMethod: Middleware_DeleteDeviceInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteDeviceInfo(ctx, req.(*DeleteDeviceInfoRequest))
+		return srv.(MiddlewareServer).DeleteDeviceInfo(ctx, req.(*DeleteDeviceInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.deviceinfo.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "good.middleware.deviceinfo.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateDeviceInfo",
-			Handler:    _Manager_CreateDeviceInfo_Handler,
+			Handler:    _Middleware_CreateDeviceInfo_Handler,
 		},
 		{
 			MethodName: "UpdateDeviceInfo",
-			Handler:    _Manager_UpdateDeviceInfo_Handler,
+			Handler:    _Middleware_UpdateDeviceInfo_Handler,
 		},
 		{
 			MethodName: "GetDeviceInfo",
-			Handler:    _Manager_GetDeviceInfo_Handler,
+			Handler:    _Middleware_GetDeviceInfo_Handler,
 		},
 		{
 			MethodName: "GetDeviceInfos",
-			Handler:    _Manager_GetDeviceInfos_Handler,
+			Handler:    _Middleware_GetDeviceInfos_Handler,
 		},
 		{
 			MethodName: "DeleteDeviceInfo",
-			Handler:    _Manager_DeleteDeviceInfo_Handler,
+			Handler:    _Middleware_DeleteDeviceInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
