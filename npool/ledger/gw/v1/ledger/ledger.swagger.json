@@ -146,12 +146,12 @@
     },
     "/v1/get/app/generals": {
       "post": {
-        "operationId": "Gateway_GetAppGenerals",
+        "operationId": "Gateway_GetAppLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppGeneralsResponse"
+              "$ref": "#/definitions/v1GetAppLedgersResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppGeneralsRequest"
+              "$ref": "#/definitions/v1GetAppLedgersRequest"
             }
           }
         ],
@@ -242,12 +242,12 @@
     },
     "/v1/get/generals": {
       "post": {
-        "operationId": "Gateway_GetGenerals",
+        "operationId": "Gateway_GetLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGeneralsResponse"
+              "$ref": "#/definitions/v1GetLedgersResponse"
             }
           },
           "default": {
@@ -263,7 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGeneralsRequest"
+              "$ref": "#/definitions/v1GetLedgersRequest"
             }
           }
         ],
@@ -306,12 +306,12 @@
     },
     "/v1/get/intervalgenerals": {
       "post": {
-        "operationId": "Gateway_GetIntervalGenerals",
+        "operationId": "Gateway_GetIntervalLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalGeneralsResponse"
+              "$ref": "#/definitions/v1GetIntervalLedgersResponse"
             }
           },
           "default": {
@@ -327,7 +327,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalGeneralsRequest"
+              "$ref": "#/definitions/v1GetIntervalLedgersRequest"
             }
           }
         ],
@@ -668,57 +668,7 @@
         }
       }
     },
-    "v1General": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinDisabled": {
-          "type": "boolean"
-        },
-        "CoinDisplay": {
-          "type": "boolean"
-        },
-        "Incoming": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetAppGeneralsRequest": {
+    "v1GetAppLedgersRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -734,13 +684,13 @@
         }
       }
     },
-    "v1GetAppGeneralsResponse": {
+    "v1GetAppLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -811,40 +761,6 @@
         }
       }
     },
-    "v1GetGeneralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1General"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetGoodProfitsRequest": {
       "type": "object",
       "properties": {
@@ -887,7 +803,7 @@
         }
       }
     },
-    "v1GetIntervalGeneralsRequest": {
+    "v1GetIntervalLedgersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -914,13 +830,13 @@
         }
       }
     },
-    "v1GetIntervalGeneralsResponse": {
+    "v1GetIntervalLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -1005,6 +921,40 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetLedgersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetLedgersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -1263,6 +1213,56 @@
         "Outcoming"
       ],
       "default": "DefaultType"
+    },
+    "v1Ledger": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinDisabled": {
+          "type": "boolean"
+        },
+        "CoinDisplay": {
+          "type": "boolean"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "Spendable": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
     },
     "v1MiningReward": {
       "type": "object",

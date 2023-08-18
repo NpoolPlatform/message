@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetGenerals_FullMethodName          = "/ledger.gateway.ledger1.v1.Gateway/GetGenerals"
-	Gateway_GetIntervalGenerals_FullMethodName  = "/ledger.gateway.ledger1.v1.Gateway/GetIntervalGenerals"
-	Gateway_GetAppGenerals_FullMethodName       = "/ledger.gateway.ledger1.v1.Gateway/GetAppGenerals"
+	Gateway_GetLedgers_FullMethodName           = "/ledger.gateway.ledger1.v1.Gateway/GetLedgers"
+	Gateway_GetIntervalLedgers_FullMethodName   = "/ledger.gateway.ledger1.v1.Gateway/GetIntervalLedgers"
+	Gateway_GetAppLedgers_FullMethodName        = "/ledger.gateway.ledger1.v1.Gateway/GetAppLedgers"
 	Gateway_GetStatements_FullMethodName        = "/ledger.gateway.ledger1.v1.Gateway/GetStatements"
 	Gateway_GetAppStatements_FullMethodName     = "/ledger.gateway.ledger1.v1.Gateway/GetAppStatements"
 	Gateway_GetMiningRewards_FullMethodName     = "/ledger.gateway.ledger1.v1.Gateway/GetMiningRewards"
@@ -41,9 +41,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error)
-	GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error)
-	GetAppGenerals(ctx context.Context, in *GetAppGeneralsRequest, opts ...grpc.CallOption) (*GetAppGeneralsResponse, error)
+	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
+	GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error)
+	GetAppLedgers(ctx context.Context, in *GetAppLedgersRequest, opts ...grpc.CallOption) (*GetAppLedgersResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	GetAppStatements(ctx context.Context, in *GetAppStatementsRequest, opts ...grpc.CallOption) (*GetAppStatementsResponse, error)
 	GetMiningRewards(ctx context.Context, in *GetMiningRewardsRequest, opts ...grpc.CallOption) (*GetMiningRewardsResponse, error)
@@ -67,27 +67,27 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetGenerals(ctx context.Context, in *GetGeneralsRequest, opts ...grpc.CallOption) (*GetGeneralsResponse, error) {
-	out := new(GetGeneralsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetGenerals_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error) {
+	out := new(GetLedgersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetLedgers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetIntervalGenerals(ctx context.Context, in *GetIntervalGeneralsRequest, opts ...grpc.CallOption) (*GetIntervalGeneralsResponse, error) {
-	out := new(GetIntervalGeneralsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetIntervalGenerals_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetIntervalLedgers(ctx context.Context, in *GetIntervalLedgersRequest, opts ...grpc.CallOption) (*GetIntervalLedgersResponse, error) {
+	out := new(GetIntervalLedgersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetIntervalLedgers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppGenerals(ctx context.Context, in *GetAppGeneralsRequest, opts ...grpc.CallOption) (*GetAppGeneralsResponse, error) {
-	out := new(GetAppGeneralsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppGenerals_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetAppLedgers(ctx context.Context, in *GetAppLedgersRequest, opts ...grpc.CallOption) (*GetAppLedgersResponse, error) {
+	out := new(GetAppLedgersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppLedgers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -215,9 +215,9 @@ func (c *gatewayClient) CreateAppUserDeposit(ctx context.Context, in *CreateAppU
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error)
-	GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error)
-	GetAppGenerals(context.Context, *GetAppGeneralsRequest) (*GetAppGeneralsResponse, error)
+	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
+	GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error)
+	GetAppLedgers(context.Context, *GetAppLedgersRequest) (*GetAppLedgersResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	GetAppStatements(context.Context, *GetAppStatementsRequest) (*GetAppStatementsResponse, error)
 	GetMiningRewards(context.Context, *GetMiningRewardsRequest) (*GetMiningRewardsResponse, error)
@@ -238,14 +238,14 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetGenerals(context.Context, *GetGeneralsRequest) (*GetGeneralsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGenerals not implemented")
+func (UnimplementedGatewayServer) GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLedgers not implemented")
 }
-func (UnimplementedGatewayServer) GetIntervalGenerals(context.Context, *GetIntervalGeneralsRequest) (*GetIntervalGeneralsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalGenerals not implemented")
+func (UnimplementedGatewayServer) GetIntervalLedgers(context.Context, *GetIntervalLedgersRequest) (*GetIntervalLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalLedgers not implemented")
 }
-func (UnimplementedGatewayServer) GetAppGenerals(context.Context, *GetAppGeneralsRequest) (*GetAppGeneralsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppGenerals not implemented")
+func (UnimplementedGatewayServer) GetAppLedgers(context.Context, *GetAppLedgersRequest) (*GetAppLedgersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppLedgers not implemented")
 }
 func (UnimplementedGatewayServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
@@ -299,56 +299,56 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGeneralsRequest)
+func _Gateway_GetLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLedgersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetGenerals(ctx, in)
+		return srv.(GatewayServer).GetLedgers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetGenerals_FullMethodName,
+		FullMethod: Gateway_GetLedgers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetGenerals(ctx, req.(*GetGeneralsRequest))
+		return srv.(GatewayServer).GetLedgers(ctx, req.(*GetLedgersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetIntervalGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIntervalGeneralsRequest)
+func _Gateway_GetIntervalLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntervalLedgersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetIntervalGenerals(ctx, in)
+		return srv.(GatewayServer).GetIntervalLedgers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetIntervalGenerals_FullMethodName,
+		FullMethod: Gateway_GetIntervalLedgers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetIntervalGenerals(ctx, req.(*GetIntervalGeneralsRequest))
+		return srv.(GatewayServer).GetIntervalLedgers(ctx, req.(*GetIntervalLedgersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppGenerals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppGeneralsRequest)
+func _Gateway_GetAppLedgers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppLedgersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppGenerals(ctx, in)
+		return srv.(GatewayServer).GetAppLedgers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppGenerals_FullMethodName,
+		FullMethod: Gateway_GetAppLedgers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppGenerals(ctx, req.(*GetAppGeneralsRequest))
+		return srv.(GatewayServer).GetAppLedgers(ctx, req.(*GetAppLedgersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -595,16 +595,16 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetGenerals",
-			Handler:    _Gateway_GetGenerals_Handler,
+			MethodName: "GetLedgers",
+			Handler:    _Gateway_GetLedgers_Handler,
 		},
 		{
-			MethodName: "GetIntervalGenerals",
-			Handler:    _Gateway_GetIntervalGenerals_Handler,
+			MethodName: "GetIntervalLedgers",
+			Handler:    _Gateway_GetIntervalLedgers_Handler,
 		},
 		{
-			MethodName: "GetAppGenerals",
-			Handler:    _Gateway_GetAppGenerals_Handler,
+			MethodName: "GetAppLedgers",
+			Handler:    _Gateway_GetAppLedgers_Handler,
 		},
 		{
 			MethodName: "GetStatements",

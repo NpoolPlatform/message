@@ -10,21 +10,21 @@ import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc GetGenerals (GetGeneralsRequest) returns (GetGeneralsResponse) {
+    rpc GetLedgers (GetLedgersRequest) returns (GetLedgersResponse) {
         option (google.api.http) = {
             post: "/v1/get/generals"
             body: "*"
         };
     }
 
-    rpc GetIntervalGenerals (GetIntervalGeneralsRequest) returns (GetIntervalGeneralsResponse) {
+    rpc GetIntervalLedgers (GetIntervalLedgersRequest) returns (GetIntervalLedgersResponse) {
         option (google.api.http) = {
             post: "/v1/get/intervalgenerals"
             body: "*"
         };
     }
 
-    rpc GetAppGenerals (GetAppGeneralsRequest) returns (GetAppGeneralsResponse) {
+    rpc GetAppLedgers (GetAppLedgersRequest) returns (GetAppLedgersResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/generals"
             body: "*"
@@ -123,7 +123,7 @@ service Gateway {
     }
 }
 
-message General {
+message Ledger {
     string CoinTypeID     = 10;
     string CoinName       = 20;
     repeated string DisplayNames = 21;
@@ -140,19 +140,19 @@ message General {
     string EmailAddress   = 110;
 }
 
-message GetGeneralsRequest {
+message GetLedgersRequest {
     string AppID   = 10;
     string UserID  = 20;
     int32  Offset  = 30;
     int32  Limit   = 40;
 }
 
-message GetGeneralsResponse {
-    repeated General Infos = 10;
+message GetLedgersResponse {
+    repeated Ledger Infos = 10;
     uint32           Total = 20;
 }
 
-message GetIntervalGeneralsRequest {
+message GetIntervalLedgersRequest {
     string AppID   = 10;
     string UserID  = 20;
     uint32 StartAt = 30;
@@ -161,19 +161,19 @@ message GetIntervalGeneralsRequest {
     int32  Limit   = 60;
 }
 
-message GetIntervalGeneralsResponse {
-    repeated General Infos = 10;
+message GetIntervalLedgersResponse {
+    repeated Ledger Infos = 10;
     uint32           Total = 20;
 }
 
-message GetAppGeneralsRequest {
+message GetAppLedgersRequest {
     string TargetAppID   = 10;
     int32  Offset        = 20;
     int32  Limit         = 30;
 }
 
-message GetAppGeneralsResponse {
-    repeated General Infos = 10;
+message GetAppLedgersResponse {
+    repeated Ledger Infos = 10;
     uint32           Total = 20;
 }
 
