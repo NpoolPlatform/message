@@ -37,7 +37,7 @@ message TopMostGood {
     // @inject_tag: sql:"app_good_id"
     string AppGoodID  = 40;
     // @inject_tag: sql:"top_most_id"
-    string TostMostID = 50;
+    string TopMostID = 50;
     // @inject_tag: sql:"display_index"
     uint32 DisplayIndex = 60;
     // @inject_tag: sql:"posters"
