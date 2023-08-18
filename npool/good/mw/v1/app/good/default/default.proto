@@ -87,7 +87,7 @@ message GetDefaultsResponse {
 }
 
 message DeleteDefaultRequest {
-    string ID = 10;
+    DefaultReq Info = 10;
 }
 
 message DeleteDefaultResponse {
