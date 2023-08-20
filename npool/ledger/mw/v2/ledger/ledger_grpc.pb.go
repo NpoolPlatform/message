@@ -19,9 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
-	Middleware_GetLedgerOnly_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
-	Middleware_GetLedgers_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
+	Middleware_GetLedger_FullMethodName      = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
+	Middleware_GetLedgerOnly_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
+	Middleware_GetLedgers_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
+	Middleware_LockBalance_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/LockBalance"
+	Middleware_UnlockBalance_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/UnlockBalance"
+	Middleware_SpendBalance_FullMethodName   = "/ledger.middleware.ledger.v2.Middleware/SpendBalance"
+	Middleware_UnspendBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/UnspendBalance"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +35,10 @@ type MiddlewareClient interface {
 	GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error)
 	GetLedgerOnly(ctx context.Context, in *GetLedgerOnlyRequest, opts ...grpc.CallOption) (*GetLedgerOnlyResponse, error)
 	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
+	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
+	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
+	SpendBalance(ctx context.Context, in *SpendBalanceRequest, opts ...grpc.CallOption) (*SpendBalanceResponse, error)
+	UnspendBalance(ctx context.Context, in *UnspendBalanceRequest, opts ...grpc.CallOption) (*UnspendBalanceResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +76,42 @@ func (c *middlewareClient) GetLedgers(ctx context.Context, in *GetLedgersRequest
 	return out, nil
 }
 
+func (c *middlewareClient) LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error) {
+	out := new(LockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_LockBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error) {
+	out := new(UnlockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnlockBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SpendBalance(ctx context.Context, in *SpendBalanceRequest, opts ...grpc.CallOption) (*SpendBalanceResponse, error) {
+	out := new(SpendBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_SpendBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnspendBalance(ctx context.Context, in *UnspendBalanceRequest, opts ...grpc.CallOption) (*UnspendBalanceResponse, error) {
+	out := new(UnspendBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnspendBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +119,10 @@ type MiddlewareServer interface {
 	GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error)
 	GetLedgerOnly(context.Context, *GetLedgerOnlyRequest) (*GetLedgerOnlyResponse, error)
 	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
+	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
+	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
+	SpendBalance(context.Context, *SpendBalanceRequest) (*SpendBalanceResponse, error)
+	UnspendBalance(context.Context, *UnspendBalanceRequest) (*UnspendBalanceResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +138,18 @@ func (UnimplementedMiddlewareServer) GetLedgerOnly(context.Context, *GetLedgerOn
 }
 func (UnimplementedMiddlewareServer) GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedgers not implemented")
+}
+func (UnimplementedMiddlewareServer) LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnlockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) SpendBalance(context.Context, *SpendBalanceRequest) (*SpendBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) UnspendBalance(context.Context, *UnspendBalanceRequest) (*UnspendBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnspendBalance not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,6 +218,78 @@ func _Middleware_GetLedgers_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_LockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).LockBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_LockBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).LockBalance(ctx, req.(*LockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnlockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnlockBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnlockBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnlockBalance(ctx, req.(*UnlockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SpendBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SpendBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SpendBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SpendBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SpendBalance(ctx, req.(*SpendBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnspendBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnspendBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnspendBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnspendBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnspendBalance(ctx, req.(*UnspendBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +308,22 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLedgers",
 			Handler:    _Middleware_GetLedgers_Handler,
+		},
+		{
+			MethodName: "LockBalance",
+			Handler:    _Middleware_LockBalance_Handler,
+		},
+		{
+			MethodName: "UnlockBalance",
+			Handler:    _Middleware_UnlockBalance_Handler,
+		},
+		{
+			MethodName: "SpendBalance",
+			Handler:    _Middleware_SpendBalance_Handler,
+		},
+		{
+			MethodName: "UnspendBalance",
+			Handler:    _Middleware_UnspendBalance_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
