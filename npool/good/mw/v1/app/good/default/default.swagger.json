@@ -57,6 +57,9 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -129,6 +132,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "CoinTypeID": {

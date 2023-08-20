@@ -20,7 +20,8 @@ message DefaultReq {
     optional string ID         = 10;
     optional string AppID      = 20;
     optional string GoodID     = 30;
-    optional string CoinTypeID = 40;
+    optional string AppGoodID  = 40;
+    optional string CoinTypeID = 50;
 }
 
 message Default {
@@ -48,9 +49,10 @@ message Conds {
     optional basetypes.v1.StringVal      ID          = 10;
     optional basetypes.v1.StringVal      AppID       = 20;
     optional basetypes.v1.StringVal      GoodID      = 30;
-    optional basetypes.v1.StringVal      CoinTypeID  = 40;
-    optional basetypes.v1.StringSliceVal GoodIDs     = 50;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 60;
+    optional basetypes.v1.StringVal      AppGoodID   = 40;
+    optional basetypes.v1.StringVal      CoinTypeID  = 50;
+    optional basetypes.v1.StringSliceVal GoodIDs     = 60;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
 message CreateDefaultRequest {
@@ -89,7 +91,7 @@ message GetDefaultsResponse {
 }
 
 message DeleteDefaultRequest {
-    string ID = 10;
+    DefaultReq Info = 10;
 }
 
 message DeleteDefaultResponse {

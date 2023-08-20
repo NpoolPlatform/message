@@ -11,6 +11,8 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc AddStock       (AddStockRequest)       returns (AddStockResponse)       {}
     rpc SubStock       (SubStockRequest)       returns (SubStockResponse)       {}
+    rpc AddReserved    (AddReservedRequest)    returns (AddReservedResponse)    {}
+    rpc SubReserved    (SubReservedRequest)    returns (SubReservedResponse)    {}
 }
 
 message StockReq {
@@ -78,3 +80,18 @@ message SubStockResponse {
     Stock Info = 10;
 }
 
+message AddReservedRequest {
+    StockReq Info = 10;
+}
+
+message AddReservedResponse {
+    Stock Info = 10;
+}
+
+message SubReservedRequest {
+    StockReq Info = 10;
+}
+
+message SubReservedResponse {
+    Stock Info = 10;
+}

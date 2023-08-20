@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Manager_CreateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/CreateBrand"
-	Manager_UpdateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/UpdateBrand"
-	Manager_GetBrand_FullMethodName    = "/good.middleware.vender.brand.v1.Manager/GetBrand"
-	Manager_GetBrands_FullMethodName   = "/good.middleware.vender.brand.v1.Manager/GetBrands"
-	Manager_DeleteBrand_FullMethodName = "/good.middleware.vender.brand.v1.Manager/DeleteBrand"
+	Middleware_CreateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/CreateBrand"
+	Middleware_UpdateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/UpdateBrand"
+	Middleware_GetBrand_FullMethodName    = "/good.middleware.vender.brand.v1.Middleware/GetBrand"
+	Middleware_GetBrands_FullMethodName   = "/good.middleware.vender.brand.v1.Middleware/GetBrands"
+	Middleware_DeleteBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/DeleteBrand"
 )
 
-// ManagerClient is the client API for Manager service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type MiddlewareClient interface {
 	CreateBrand(ctx context.Context, in *CreateBrandRequest, opts ...grpc.CallOption) (*CreateBrandResponse, error)
 	UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error)
 	GetBrand(ctx context.Context, in *GetBrandRequest, opts ...grpc.CallOption) (*GetBrandResponse, error)
@@ -37,219 +37,219 @@ type ManagerClient interface {
 	DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error)
 }
 
-type managerClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *managerClient) CreateBrand(ctx context.Context, in *CreateBrandRequest, opts ...grpc.CallOption) (*CreateBrandResponse, error) {
+func (c *middlewareClient) CreateBrand(ctx context.Context, in *CreateBrandRequest, opts ...grpc.CallOption) (*CreateBrandResponse, error) {
 	out := new(CreateBrandResponse)
-	err := c.cc.Invoke(ctx, Manager_CreateBrand_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_CreateBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error) {
+func (c *middlewareClient) UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error) {
 	out := new(UpdateBrandResponse)
-	err := c.cc.Invoke(ctx, Manager_UpdateBrand_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_UpdateBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetBrand(ctx context.Context, in *GetBrandRequest, opts ...grpc.CallOption) (*GetBrandResponse, error) {
+func (c *middlewareClient) GetBrand(ctx context.Context, in *GetBrandRequest, opts ...grpc.CallOption) (*GetBrandResponse, error) {
 	out := new(GetBrandResponse)
-	err := c.cc.Invoke(ctx, Manager_GetBrand_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetBrands(ctx context.Context, in *GetBrandsRequest, opts ...grpc.CallOption) (*GetBrandsResponse, error) {
+func (c *middlewareClient) GetBrands(ctx context.Context, in *GetBrandsRequest, opts ...grpc.CallOption) (*GetBrandsResponse, error) {
 	out := new(GetBrandsResponse)
-	err := c.cc.Invoke(ctx, Manager_GetBrands_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetBrands_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error) {
+func (c *middlewareClient) DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error) {
 	out := new(DeleteBrandResponse)
-	err := c.cc.Invoke(ctx, Manager_DeleteBrand_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_DeleteBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ManagerServer interface {
+type MiddlewareServer interface {
 	CreateBrand(context.Context, *CreateBrandRequest) (*CreateBrandResponse, error)
 	UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error)
 	GetBrand(context.Context, *GetBrandRequest) (*GetBrandResponse, error)
 	GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error)
 	DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedManagerServer) CreateBrand(context.Context, *CreateBrandRequest) (*CreateBrandResponse, error) {
+func (UnimplementedMiddlewareServer) CreateBrand(context.Context, *CreateBrandRequest) (*CreateBrandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBrand not implemented")
 }
-func (UnimplementedManagerServer) UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBrand not implemented")
 }
-func (UnimplementedManagerServer) GetBrand(context.Context, *GetBrandRequest) (*GetBrandResponse, error) {
+func (UnimplementedMiddlewareServer) GetBrand(context.Context, *GetBrandRequest) (*GetBrandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBrand not implemented")
 }
-func (UnimplementedManagerServer) GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error) {
+func (UnimplementedMiddlewareServer) GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBrands not implemented")
 }
-func (UnimplementedManagerServer) DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error) {
+func (UnimplementedMiddlewareServer) DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBrand not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Manager_CreateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateBrand(ctx, in)
+		return srv.(MiddlewareServer).CreateBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_CreateBrand_FullMethodName,
+		FullMethod: Middleware_CreateBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateBrand(ctx, req.(*CreateBrandRequest))
+		return srv.(MiddlewareServer).CreateBrand(ctx, req.(*CreateBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateBrand(ctx, in)
+		return srv.(MiddlewareServer).UpdateBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_UpdateBrand_FullMethodName,
+		FullMethod: Middleware_UpdateBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateBrand(ctx, req.(*UpdateBrandRequest))
+		return srv.(MiddlewareServer).UpdateBrand(ctx, req.(*UpdateBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetBrand(ctx, in)
+		return srv.(MiddlewareServer).GetBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetBrand_FullMethodName,
+		FullMethod: Middleware_GetBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetBrand(ctx, req.(*GetBrandRequest))
+		return srv.(MiddlewareServer).GetBrand(ctx, req.(*GetBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetBrands_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetBrands_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBrandsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetBrands(ctx, in)
+		return srv.(MiddlewareServer).GetBrands(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetBrands_FullMethodName,
+		FullMethod: Middleware_GetBrands_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetBrands(ctx, req.(*GetBrandsRequest))
+		return srv.(MiddlewareServer).GetBrands(ctx, req.(*GetBrandsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteBrand(ctx, in)
+		return srv.(MiddlewareServer).DeleteBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_DeleteBrand_FullMethodName,
+		FullMethod: Middleware_DeleteBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteBrand(ctx, req.(*DeleteBrandRequest))
+		return srv.(MiddlewareServer).DeleteBrand(ctx, req.(*DeleteBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vender.brand.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "good.middleware.vender.brand.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateBrand",
-			Handler:    _Manager_CreateBrand_Handler,
+			Handler:    _Middleware_CreateBrand_Handler,
 		},
 		{
 			MethodName: "UpdateBrand",
-			Handler:    _Manager_UpdateBrand_Handler,
+			Handler:    _Middleware_UpdateBrand_Handler,
 		},
 		{
 			MethodName: "GetBrand",
-			Handler:    _Manager_GetBrand_Handler,
+			Handler:    _Middleware_GetBrand_Handler,
 		},
 		{
 			MethodName: "GetBrands",
-			Handler:    _Manager_GetBrands_Handler,
+			Handler:    _Middleware_GetBrands_Handler,
 		},
 		{
 			MethodName: "DeleteBrand",
-			Handler:    _Manager_DeleteBrand_Handler,
+			Handler:    _Middleware_DeleteBrand_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

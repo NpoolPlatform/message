@@ -19,11 +19,12 @@ service Middleware {
 message TopMostGoodReq {
     optional string ID         = 10;
     optional string AppID      = 20;
-    optional string TopMostID  = 30;
+    optional string GoodID     = 30;
     optional string AppGoodID  = 40;
-    optional uint32 DisplayIndex = 50;
-    repeated string Posters    = 60;
-    optional string Price      = 70;
+    optional string TopMostID  = 50;
+    optional uint32 DisplayIndex = 60;
+    repeated string Posters    = 70;
+    optional string Price      = 80;
 }
 
 message TopMostGood {
@@ -31,30 +32,28 @@ message TopMostGood {
     string ID         = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
-    // @inject_tag: sql:"top_most_id"
-    string TopMostID  = 30;
-    // @inject_tag: sql:"top_most_type"
-    string TopMostTypeStr = 40;
-    basetypes.good.v1.GoodTopMostType TostMostType = 50;
-    // @inject_tag: sql:"top_most_title"
-    string TopMostTitle = 60;
-    // @inject_tag: sql:"top_most_message"
-    string TopMostMessage = 70;
-    // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 80;
-    // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 90;
     // @inject_tag: sql:"good_id"
-    string GoodID     = 100;
+    string GoodID     = 30;
     // @inject_tag: sql:"good_name"
-    string GoodName   = 110;
+    string GoodName   = 40;
+    // @inject_tag: sql:"top_most_type"
+    string TopMostTypeStr = 50;
+    basetypes.good.v1.GoodTopMostType TostMostType = 60;
+    // @inject_tag: sql:"top_most_title"
+    string TopMostTitle = 70;
+    // @inject_tag: sql:"top_most_message"
+    string TopMostMessage = 80;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID  = 90;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 100;
     // @inject_tag: sql:"display_index"
-    uint32 DisplayIndex = 120;
+    uint32 DisplayIndex = 110;
     // @inject_tag: sql:"posters"
-    string PostersStr = 130;
-    repeated string Posters = 140;
+    string PostersStr = 120;
+    repeated string Posters = 130;
     // @inject_tag: sql:"price"
-    string Price      = 150;
+    string Price      = 140;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -64,7 +63,9 @@ message TopMostGood {
 message Conds {
     optional basetypes.v1.StringVal ID    = 10;
     optional basetypes.v1.StringVal AppID = 20;
-    optional basetypes.v1.StringVal TopMostID = 30;
+    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringVal AppGoodID = 40;
+    optional basetypes.v1.StringVal TopMostID = 50;
 }
 
 message CreateTopMostGoodRequest {
@@ -103,7 +104,7 @@ message GetTopMostGoodsResponse {
 }
 
 message DeleteTopMostGoodRequest {
-    string ID = 10;
+    TopMostGoodReq Info = 10;
 }
 
 message DeleteTopMostGoodResponse {

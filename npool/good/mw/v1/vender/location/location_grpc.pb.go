@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Manager_CreateLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/CreateLocation"
-	Manager_UpdateLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/UpdateLocation"
-	Manager_GetLocation_FullMethodName    = "/good.middleware.vender.location.v1.Manager/GetLocation"
-	Manager_GetLocations_FullMethodName   = "/good.middleware.vender.location.v1.Manager/GetLocations"
-	Manager_DeleteLocation_FullMethodName = "/good.middleware.vender.location.v1.Manager/DeleteLocation"
+	Middleware_CreateLocation_FullMethodName = "/good.middleware.vender.location.v1.Middleware/CreateLocation"
+	Middleware_UpdateLocation_FullMethodName = "/good.middleware.vender.location.v1.Middleware/UpdateLocation"
+	Middleware_GetLocation_FullMethodName    = "/good.middleware.vender.location.v1.Middleware/GetLocation"
+	Middleware_GetLocations_FullMethodName   = "/good.middleware.vender.location.v1.Middleware/GetLocations"
+	Middleware_DeleteLocation_FullMethodName = "/good.middleware.vender.location.v1.Middleware/DeleteLocation"
 )
 
-// ManagerClient is the client API for Manager service.
+// MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ManagerClient interface {
+type MiddlewareClient interface {
 	CreateLocation(ctx context.Context, in *CreateLocationRequest, opts ...grpc.CallOption) (*CreateLocationResponse, error)
 	UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error)
 	GetLocation(ctx context.Context, in *GetLocationRequest, opts ...grpc.CallOption) (*GetLocationResponse, error)
@@ -37,219 +37,219 @@ type ManagerClient interface {
 	DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error)
 }
 
-type managerClient struct {
+type middlewareClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewManagerClient(cc grpc.ClientConnInterface) ManagerClient {
-	return &managerClient{cc}
+func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
+	return &middlewareClient{cc}
 }
 
-func (c *managerClient) CreateLocation(ctx context.Context, in *CreateLocationRequest, opts ...grpc.CallOption) (*CreateLocationResponse, error) {
+func (c *middlewareClient) CreateLocation(ctx context.Context, in *CreateLocationRequest, opts ...grpc.CallOption) (*CreateLocationResponse, error) {
 	out := new(CreateLocationResponse)
-	err := c.cc.Invoke(ctx, Manager_CreateLocation_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_CreateLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error) {
+func (c *middlewareClient) UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error) {
 	out := new(UpdateLocationResponse)
-	err := c.cc.Invoke(ctx, Manager_UpdateLocation_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_UpdateLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetLocation(ctx context.Context, in *GetLocationRequest, opts ...grpc.CallOption) (*GetLocationResponse, error) {
+func (c *middlewareClient) GetLocation(ctx context.Context, in *GetLocationRequest, opts ...grpc.CallOption) (*GetLocationResponse, error) {
 	out := new(GetLocationResponse)
-	err := c.cc.Invoke(ctx, Manager_GetLocation_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) GetLocations(ctx context.Context, in *GetLocationsRequest, opts ...grpc.CallOption) (*GetLocationsResponse, error) {
+func (c *middlewareClient) GetLocations(ctx context.Context, in *GetLocationsRequest, opts ...grpc.CallOption) (*GetLocationsResponse, error) {
 	out := new(GetLocationsResponse)
-	err := c.cc.Invoke(ctx, Manager_GetLocations_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_GetLocations_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *managerClient) DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error) {
+func (c *middlewareClient) DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error) {
 	out := new(DeleteLocationResponse)
-	err := c.cc.Invoke(ctx, Manager_DeleteLocation_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Middleware_DeleteLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ManagerServer is the server API for Manager service.
-// All implementations must embed UnimplementedManagerServer
+// MiddlewareServer is the server API for Middleware service.
+// All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
-type ManagerServer interface {
+type MiddlewareServer interface {
 	CreateLocation(context.Context, *CreateLocationRequest) (*CreateLocationResponse, error)
 	UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error)
 	GetLocation(context.Context, *GetLocationRequest) (*GetLocationResponse, error)
 	GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error)
 	DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error)
-	mustEmbedUnimplementedManagerServer()
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-// UnimplementedManagerServer must be embedded to have forward compatible implementations.
-type UnimplementedManagerServer struct {
+// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
+type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedManagerServer) CreateLocation(context.Context, *CreateLocationRequest) (*CreateLocationResponse, error) {
+func (UnimplementedMiddlewareServer) CreateLocation(context.Context, *CreateLocationRequest) (*CreateLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLocation not implemented")
 }
-func (UnimplementedManagerServer) UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error) {
+func (UnimplementedMiddlewareServer) UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLocation not implemented")
 }
-func (UnimplementedManagerServer) GetLocation(context.Context, *GetLocationRequest) (*GetLocationResponse, error) {
+func (UnimplementedMiddlewareServer) GetLocation(context.Context, *GetLocationRequest) (*GetLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLocation not implemented")
 }
-func (UnimplementedManagerServer) GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error) {
+func (UnimplementedMiddlewareServer) GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLocations not implemented")
 }
-func (UnimplementedManagerServer) DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error) {
+func (UnimplementedMiddlewareServer) DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLocation not implemented")
 }
-func (UnimplementedManagerServer) mustEmbedUnimplementedManagerServer() {}
+func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
-// UnsafeManagerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ManagerServer will
+// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MiddlewareServer will
 // result in compilation errors.
-type UnsafeManagerServer interface {
-	mustEmbedUnimplementedManagerServer()
+type UnsafeMiddlewareServer interface {
+	mustEmbedUnimplementedMiddlewareServer()
 }
 
-func RegisterManagerServer(s grpc.ServiceRegistrar, srv ManagerServer) {
-	s.RegisterService(&Manager_ServiceDesc, srv)
+func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
+	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Manager_CreateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_CreateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).CreateLocation(ctx, in)
+		return srv.(MiddlewareServer).CreateLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_CreateLocation_FullMethodName,
+		FullMethod: Middleware_CreateLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).CreateLocation(ctx, req.(*CreateLocationRequest))
+		return srv.(MiddlewareServer).CreateLocation(ctx, req.(*CreateLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_UpdateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_UpdateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).UpdateLocation(ctx, in)
+		return srv.(MiddlewareServer).UpdateLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_UpdateLocation_FullMethodName,
+		FullMethod: Middleware_UpdateLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).UpdateLocation(ctx, req.(*UpdateLocationRequest))
+		return srv.(MiddlewareServer).UpdateLocation(ctx, req.(*UpdateLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetLocation(ctx, in)
+		return srv.(MiddlewareServer).GetLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetLocation_FullMethodName,
+		FullMethod: Middleware_GetLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetLocation(ctx, req.(*GetLocationRequest))
+		return srv.(MiddlewareServer).GetLocation(ctx, req.(*GetLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_GetLocations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_GetLocations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetLocationsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).GetLocations(ctx, in)
+		return srv.(MiddlewareServer).GetLocations(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_GetLocations_FullMethodName,
+		FullMethod: Middleware_GetLocations_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).GetLocations(ctx, req.(*GetLocationsRequest))
+		return srv.(MiddlewareServer).GetLocations(ctx, req.(*GetLocationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Manager_DeleteLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Middleware_DeleteLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ManagerServer).DeleteLocation(ctx, in)
+		return srv.(MiddlewareServer).DeleteLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Manager_DeleteLocation_FullMethodName,
+		FullMethod: Middleware_DeleteLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ManagerServer).DeleteLocation(ctx, req.(*DeleteLocationRequest))
+		return srv.(MiddlewareServer).DeleteLocation(ctx, req.(*DeleteLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Manager_ServiceDesc is the grpc.ServiceDesc for Manager service.
+// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Manager_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vender.location.v1.Manager",
-	HandlerType: (*ManagerServer)(nil),
+var Middleware_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "good.middleware.vender.location.v1.Middleware",
+	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateLocation",
-			Handler:    _Manager_CreateLocation_Handler,
+			Handler:    _Middleware_CreateLocation_Handler,
 		},
 		{
 			MethodName: "UpdateLocation",
-			Handler:    _Manager_UpdateLocation_Handler,
+			Handler:    _Middleware_UpdateLocation_Handler,
 		},
 		{
 			MethodName: "GetLocation",
-			Handler:    _Manager_GetLocation_Handler,
+			Handler:    _Middleware_GetLocation_Handler,
 		},
 		{
 			MethodName: "GetLocations",
-			Handler:    _Manager_GetLocations_Handler,
+			Handler:    _Middleware_GetLocations_Handler,
 		},
 		{
 			MethodName: "DeleteLocation",
-			Handler:    _Manager_DeleteLocation_Handler,
+			Handler:    _Middleware_DeleteLocation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

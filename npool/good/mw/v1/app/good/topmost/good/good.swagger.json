@@ -54,6 +54,12 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "TopMostID": {
           "$ref": "#/definitions/v1StringVal"
         }
@@ -133,9 +139,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "TopMostID": {
+        "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"top_most_id\""
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
         },
         "TopMostTypeStr": {
           "type": "string",
@@ -159,14 +169,6 @@
         "AppGoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_name\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "GoodName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_name\""
         },
         "DisplayIndex": {
           "type": "integer",
@@ -208,10 +210,13 @@
         "AppID": {
           "type": "string"
         },
-        "TopMostID": {
+        "GoodID": {
           "type": "string"
         },
         "AppGoodID": {
+          "type": "string"
+        },
+        "TopMostID": {
           "type": "string"
         },
         "DisplayIndex": {
