@@ -10,32 +10,32 @@ import "npool/basetypes/v1/result.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc ListSubSystem    (ListSubSystemRequest)    returns (ListSubSystemRequest)    {}
-    rpc EnableSubSystem  (EnableSubSystemRequest)  returns (EnableSubSystemRequest)  {}
-    rpc DisableSubSystem (DisableSubSystemRequest) returns (DisableSubSystemRequest) {}
+    rpc ListSubsystem    (ListSubsystemRequest)    returns (ListSubsystemRequest)    {}
+    rpc EnableSubsystem  (EnableSubsystemRequest)  returns (EnableSubsystemRequest)  {}
+    rpc DisableSubsystem (DisableSubsystemRequest) returns (DisableSubsystemRequest) {}
 }
 
-message ListSubSystemRequest {
+message ListSubsystemRequest {
 }
 
-message ListSubSystemResponse {
+message ListSubsystemResponse {
     repeated string Infos = 10;
 }
 
-message EnableSubSystemRequest {
+message EnableSubsystemRequest {
     repeated string Infos = 10;
 }
 
-message EnableSubSystemResponse {
+message EnableSubsystemResponse {
     repeated string Infos = 10;
 }
 
 
-message DisableSubSystemRequest {
+message DisableSubsystemRequest {
     repeated string Infos = 10;
 }
 
-message DisableSubSystemResponse {
+message DisableSubsystemResponse {
     repeated string Infos = 10;
 }
 

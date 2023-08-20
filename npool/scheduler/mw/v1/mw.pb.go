@@ -22,14 +22,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ListSubSystemRequest struct {
+type ListSubsystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *ListSubSystemRequest) Reset() {
-	*x = ListSubSystemRequest{}
+func (x *ListSubsystemRequest) Reset() {
+	*x = ListSubsystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -37,13 +37,13 @@ func (x *ListSubSystemRequest) Reset() {
 	}
 }
 
-func (x *ListSubSystemRequest) String() string {
+func (x *ListSubsystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListSubSystemRequest) ProtoMessage() {}
+func (*ListSubsystemRequest) ProtoMessage() {}
 
-func (x *ListSubSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *ListSubsystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,12 +55,12 @@ func (x *ListSubSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListSubSystemRequest.ProtoReflect.Descriptor instead.
-func (*ListSubSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListSubsystemRequest.ProtoReflect.Descriptor instead.
+func (*ListSubsystemRequest) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{0}
 }
 
-type ListSubSystemResponse struct {
+type ListSubsystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -68,8 +68,8 @@ type ListSubSystemResponse struct {
 	Infos []string `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *ListSubSystemResponse) Reset() {
-	*x = ListSubSystemResponse{}
+func (x *ListSubsystemResponse) Reset() {
+	*x = ListSubsystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -77,13 +77,13 @@ func (x *ListSubSystemResponse) Reset() {
 	}
 }
 
-func (x *ListSubSystemResponse) String() string {
+func (x *ListSubsystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListSubSystemResponse) ProtoMessage() {}
+func (*ListSubsystemResponse) ProtoMessage() {}
 
-func (x *ListSubSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *ListSubsystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -95,19 +95,19 @@ func (x *ListSubSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListSubSystemResponse.ProtoReflect.Descriptor instead.
-func (*ListSubSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListSubsystemResponse.ProtoReflect.Descriptor instead.
+func (*ListSubsystemResponse) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ListSubSystemResponse) GetInfos() []string {
+func (x *ListSubsystemResponse) GetInfos() []string {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type EnableSubSystemRequest struct {
+type EnableSubsystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -115,8 +115,8 @@ type EnableSubSystemRequest struct {
 	Infos []string `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *EnableSubSystemRequest) Reset() {
-	*x = EnableSubSystemRequest{}
+func (x *EnableSubsystemRequest) Reset() {
+	*x = EnableSubsystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -124,13 +124,13 @@ func (x *EnableSubSystemRequest) Reset() {
 	}
 }
 
-func (x *EnableSubSystemRequest) String() string {
+func (x *EnableSubsystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*EnableSubSystemRequest) ProtoMessage() {}
+func (*EnableSubsystemRequest) ProtoMessage() {}
 
-func (x *EnableSubSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *EnableSubsystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -142,19 +142,19 @@ func (x *EnableSubSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use EnableSubSystemRequest.ProtoReflect.Descriptor instead.
-func (*EnableSubSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use EnableSubsystemRequest.ProtoReflect.Descriptor instead.
+func (*EnableSubsystemRequest) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *EnableSubSystemRequest) GetInfos() []string {
+func (x *EnableSubsystemRequest) GetInfos() []string {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type EnableSubSystemResponse struct {
+type EnableSubsystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -162,8 +162,8 @@ type EnableSubSystemResponse struct {
 	Infos []string `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *EnableSubSystemResponse) Reset() {
-	*x = EnableSubSystemResponse{}
+func (x *EnableSubsystemResponse) Reset() {
+	*x = EnableSubsystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -171,13 +171,13 @@ func (x *EnableSubSystemResponse) Reset() {
 	}
 }
 
-func (x *EnableSubSystemResponse) String() string {
+func (x *EnableSubsystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*EnableSubSystemResponse) ProtoMessage() {}
+func (*EnableSubsystemResponse) ProtoMessage() {}
 
-func (x *EnableSubSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *EnableSubsystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -189,19 +189,19 @@ func (x *EnableSubSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use EnableSubSystemResponse.ProtoReflect.Descriptor instead.
-func (*EnableSubSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use EnableSubsystemResponse.ProtoReflect.Descriptor instead.
+func (*EnableSubsystemResponse) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *EnableSubSystemResponse) GetInfos() []string {
+func (x *EnableSubsystemResponse) GetInfos() []string {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type DisableSubSystemRequest struct {
+type DisableSubsystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -209,8 +209,8 @@ type DisableSubSystemRequest struct {
 	Infos []string `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *DisableSubSystemRequest) Reset() {
-	*x = DisableSubSystemRequest{}
+func (x *DisableSubsystemRequest) Reset() {
+	*x = DisableSubsystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -218,13 +218,13 @@ func (x *DisableSubSystemRequest) Reset() {
 	}
 }
 
-func (x *DisableSubSystemRequest) String() string {
+func (x *DisableSubsystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DisableSubSystemRequest) ProtoMessage() {}
+func (*DisableSubsystemRequest) ProtoMessage() {}
 
-func (x *DisableSubSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *DisableSubsystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -236,19 +236,19 @@ func (x *DisableSubSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DisableSubSystemRequest.ProtoReflect.Descriptor instead.
-func (*DisableSubSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DisableSubsystemRequest.ProtoReflect.Descriptor instead.
+func (*DisableSubsystemRequest) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *DisableSubSystemRequest) GetInfos() []string {
+func (x *DisableSubsystemRequest) GetInfos() []string {
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
-type DisableSubSystemResponse struct {
+type DisableSubsystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -256,8 +256,8 @@ type DisableSubSystemResponse struct {
 	Infos []string `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
-func (x *DisableSubSystemResponse) Reset() {
-	*x = DisableSubSystemResponse{}
+func (x *DisableSubsystemResponse) Reset() {
+	*x = DisableSubsystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -265,13 +265,13 @@ func (x *DisableSubSystemResponse) Reset() {
 	}
 }
 
-func (x *DisableSubSystemResponse) String() string {
+func (x *DisableSubsystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DisableSubSystemResponse) ProtoMessage() {}
+func (*DisableSubsystemResponse) ProtoMessage() {}
 
-func (x *DisableSubSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *DisableSubsystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_npool_scheduler_mw_v1_mw_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -283,12 +283,12 @@ func (x *DisableSubSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DisableSubSystemResponse.ProtoReflect.Descriptor instead.
-func (*DisableSubSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use DisableSubsystemResponse.ProtoReflect.Descriptor instead.
+func (*DisableSubsystemResponse) Descriptor() ([]byte, []int) {
 	return file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *DisableSubSystemResponse) GetInfos() []string {
+func (x *DisableSubsystemResponse) GetInfos() []string {
 	if x != nil {
 		return x.Infos
 	}
@@ -310,45 +310,45 @@ var file_npool_scheduler_mw_v1_mw_proto_rawDesc = []byte{
 	0x2f, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x6e,
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76,
 	0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x64, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x16, 0x0a,
-	0x14, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x14, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x2d, 0x0a, 0x15, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62,
-	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14,
 	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x49,
 	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x2e, 0x0a, 0x16, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75,
-	0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
 	0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x49,
 	0x6e, 0x66, 0x6f, 0x73, 0x22, 0x2f, 0x0a, 0x17, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75,
-	0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x14, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05,
 	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x2f, 0x0a, 0x17, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65,
-	0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x14, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52,
 	0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x30, 0x0a, 0x18, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c,
-	0x65, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28,
 	0x09, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x32, 0xee, 0x02, 0x0a, 0x0a, 0x4d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x6f, 0x0a, 0x0d, 0x4c, 0x69, 0x73, 0x74, 0x53,
-	0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x2d, 0x2e, 0x73, 0x63, 0x68, 0x65, 0x64,
+	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x2d, 0x2e, 0x73, 0x63, 0x68, 0x65, 0x64,
 	0x75, 0x6c, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75,
 	0x6c, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x12, 0x75, 0x0a, 0x0f, 0x45, 0x6e, 0x61, 0x62,
-	0x6c, 0x65, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x2f, 0x2e, 0x73, 0x63,
+	0x6c, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x2f, 0x2e, 0x73, 0x63,
 	0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x53,
+	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x73,
 	0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x73,
 	0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 	0x61, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62,
-	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x12,
-	0x78, 0x0a, 0x10, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x12,
+	0x78, 0x0a, 0x10, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
 	0x74, 0x65, 0x6d, 0x12, 0x30, 0x2e, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x72, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x69,
-	0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65,
 	0x72, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x42, 0x38, 0x5a, 0x36, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
 	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
@@ -370,20 +370,20 @@ func file_npool_scheduler_mw_v1_mw_proto_rawDescGZIP() []byte {
 
 var file_npool_scheduler_mw_v1_mw_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_npool_scheduler_mw_v1_mw_proto_goTypes = []interface{}{
-	(*ListSubSystemRequest)(nil),     // 0: scheduler.middleware.v1.ListSubSystemRequest
-	(*ListSubSystemResponse)(nil),    // 1: scheduler.middleware.v1.ListSubSystemResponse
-	(*EnableSubSystemRequest)(nil),   // 2: scheduler.middleware.v1.EnableSubSystemRequest
-	(*EnableSubSystemResponse)(nil),  // 3: scheduler.middleware.v1.EnableSubSystemResponse
-	(*DisableSubSystemRequest)(nil),  // 4: scheduler.middleware.v1.DisableSubSystemRequest
-	(*DisableSubSystemResponse)(nil), // 5: scheduler.middleware.v1.DisableSubSystemResponse
+	(*ListSubsystemRequest)(nil),     // 0: scheduler.middleware.v1.ListSubsystemRequest
+	(*ListSubsystemResponse)(nil),    // 1: scheduler.middleware.v1.ListSubsystemResponse
+	(*EnableSubsystemRequest)(nil),   // 2: scheduler.middleware.v1.EnableSubsystemRequest
+	(*EnableSubsystemResponse)(nil),  // 3: scheduler.middleware.v1.EnableSubsystemResponse
+	(*DisableSubsystemRequest)(nil),  // 4: scheduler.middleware.v1.DisableSubsystemRequest
+	(*DisableSubsystemResponse)(nil), // 5: scheduler.middleware.v1.DisableSubsystemResponse
 }
 var file_npool_scheduler_mw_v1_mw_proto_depIdxs = []int32{
-	0, // 0: scheduler.middleware.v1.Middleware.ListSubSystem:input_type -> scheduler.middleware.v1.ListSubSystemRequest
-	2, // 1: scheduler.middleware.v1.Middleware.EnableSubSystem:input_type -> scheduler.middleware.v1.EnableSubSystemRequest
-	4, // 2: scheduler.middleware.v1.Middleware.DisableSubSystem:input_type -> scheduler.middleware.v1.DisableSubSystemRequest
-	0, // 3: scheduler.middleware.v1.Middleware.ListSubSystem:output_type -> scheduler.middleware.v1.ListSubSystemRequest
-	2, // 4: scheduler.middleware.v1.Middleware.EnableSubSystem:output_type -> scheduler.middleware.v1.EnableSubSystemRequest
-	4, // 5: scheduler.middleware.v1.Middleware.DisableSubSystem:output_type -> scheduler.middleware.v1.DisableSubSystemRequest
+	0, // 0: scheduler.middleware.v1.Middleware.ListSubsystem:input_type -> scheduler.middleware.v1.ListSubsystemRequest
+	2, // 1: scheduler.middleware.v1.Middleware.EnableSubsystem:input_type -> scheduler.middleware.v1.EnableSubsystemRequest
+	4, // 2: scheduler.middleware.v1.Middleware.DisableSubsystem:input_type -> scheduler.middleware.v1.DisableSubsystemRequest
+	0, // 3: scheduler.middleware.v1.Middleware.ListSubsystem:output_type -> scheduler.middleware.v1.ListSubsystemRequest
+	2, // 4: scheduler.middleware.v1.Middleware.EnableSubsystem:output_type -> scheduler.middleware.v1.EnableSubsystemRequest
+	4, // 5: scheduler.middleware.v1.Middleware.DisableSubsystem:output_type -> scheduler.middleware.v1.DisableSubsystemRequest
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -398,7 +398,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListSubSystemRequest); i {
+			switch v := v.(*ListSubsystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -410,7 +410,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 			}
 		}
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListSubSystemResponse); i {
+			switch v := v.(*ListSubsystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -422,7 +422,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 			}
 		}
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnableSubSystemRequest); i {
+			switch v := v.(*EnableSubsystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -434,7 +434,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 			}
 		}
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnableSubSystemResponse); i {
+			switch v := v.(*EnableSubsystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -446,7 +446,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 			}
 		}
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DisableSubSystemRequest); i {
+			switch v := v.(*DisableSubsystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -458,7 +458,7 @@ func file_npool_scheduler_mw_v1_mw_proto_init() {
 			}
 		}
 		file_npool_scheduler_mw_v1_mw_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DisableSubSystemResponse); i {
+			switch v := v.(*DisableSubsystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:

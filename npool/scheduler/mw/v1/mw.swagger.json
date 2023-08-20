@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1DisableSubSystemRequest": {
+    "v1DisableSubsystemRequest": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -56,7 +56,7 @@
         }
       }
     },
-    "v1EnableSubSystemRequest": {
+    "v1EnableSubsystemRequest": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -67,7 +67,7 @@
         }
       }
     },
-    "v1ListSubSystemRequest": {
+    "v1ListSubsystemRequest": {
       "type": "object"
     }
   }

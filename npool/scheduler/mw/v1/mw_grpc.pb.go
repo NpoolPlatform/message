@@ -19,18 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_ListSubSystem_FullMethodName    = "/scheduler.middleware.v1.Middleware/ListSubSystem"
-	Middleware_EnableSubSystem_FullMethodName  = "/scheduler.middleware.v1.Middleware/EnableSubSystem"
-	Middleware_DisableSubSystem_FullMethodName = "/scheduler.middleware.v1.Middleware/DisableSubSystem"
+	Middleware_ListSubsystem_FullMethodName    = "/scheduler.middleware.v1.Middleware/ListSubsystem"
+	Middleware_EnableSubsystem_FullMethodName  = "/scheduler.middleware.v1.Middleware/EnableSubsystem"
+	Middleware_DisableSubsystem_FullMethodName = "/scheduler.middleware.v1.Middleware/DisableSubsystem"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	ListSubSystem(ctx context.Context, in *ListSubSystemRequest, opts ...grpc.CallOption) (*ListSubSystemRequest, error)
-	EnableSubSystem(ctx context.Context, in *EnableSubSystemRequest, opts ...grpc.CallOption) (*EnableSubSystemRequest, error)
-	DisableSubSystem(ctx context.Context, in *DisableSubSystemRequest, opts ...grpc.CallOption) (*DisableSubSystemRequest, error)
+	ListSubsystem(ctx context.Context, in *ListSubsystemRequest, opts ...grpc.CallOption) (*ListSubsystemRequest, error)
+	EnableSubsystem(ctx context.Context, in *EnableSubsystemRequest, opts ...grpc.CallOption) (*EnableSubsystemRequest, error)
+	DisableSubsystem(ctx context.Context, in *DisableSubsystemRequest, opts ...grpc.CallOption) (*DisableSubsystemRequest, error)
 }
 
 type middlewareClient struct {
@@ -41,27 +41,27 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) ListSubSystem(ctx context.Context, in *ListSubSystemRequest, opts ...grpc.CallOption) (*ListSubSystemRequest, error) {
-	out := new(ListSubSystemRequest)
-	err := c.cc.Invoke(ctx, Middleware_ListSubSystem_FullMethodName, in, out, opts...)
+func (c *middlewareClient) ListSubsystem(ctx context.Context, in *ListSubsystemRequest, opts ...grpc.CallOption) (*ListSubsystemRequest, error) {
+	out := new(ListSubsystemRequest)
+	err := c.cc.Invoke(ctx, Middleware_ListSubsystem_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) EnableSubSystem(ctx context.Context, in *EnableSubSystemRequest, opts ...grpc.CallOption) (*EnableSubSystemRequest, error) {
-	out := new(EnableSubSystemRequest)
-	err := c.cc.Invoke(ctx, Middleware_EnableSubSystem_FullMethodName, in, out, opts...)
+func (c *middlewareClient) EnableSubsystem(ctx context.Context, in *EnableSubsystemRequest, opts ...grpc.CallOption) (*EnableSubsystemRequest, error) {
+	out := new(EnableSubsystemRequest)
+	err := c.cc.Invoke(ctx, Middleware_EnableSubsystem_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) DisableSubSystem(ctx context.Context, in *DisableSubSystemRequest, opts ...grpc.CallOption) (*DisableSubSystemRequest, error) {
-	out := new(DisableSubSystemRequest)
-	err := c.cc.Invoke(ctx, Middleware_DisableSubSystem_FullMethodName, in, out, opts...)
+func (c *middlewareClient) DisableSubsystem(ctx context.Context, in *DisableSubsystemRequest, opts ...grpc.CallOption) (*DisableSubsystemRequest, error) {
+	out := new(DisableSubsystemRequest)
+	err := c.cc.Invoke(ctx, Middleware_DisableSubsystem_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,9 +72,9 @@ func (c *middlewareClient) DisableSubSystem(ctx context.Context, in *DisableSubS
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	ListSubSystem(context.Context, *ListSubSystemRequest) (*ListSubSystemRequest, error)
-	EnableSubSystem(context.Context, *EnableSubSystemRequest) (*EnableSubSystemRequest, error)
-	DisableSubSystem(context.Context, *DisableSubSystemRequest) (*DisableSubSystemRequest, error)
+	ListSubsystem(context.Context, *ListSubsystemRequest) (*ListSubsystemRequest, error)
+	EnableSubsystem(context.Context, *EnableSubsystemRequest) (*EnableSubsystemRequest, error)
+	DisableSubsystem(context.Context, *DisableSubsystemRequest) (*DisableSubsystemRequest, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -82,14 +82,14 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) ListSubSystem(context.Context, *ListSubSystemRequest) (*ListSubSystemRequest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSubSystem not implemented")
+func (UnimplementedMiddlewareServer) ListSubsystem(context.Context, *ListSubsystemRequest) (*ListSubsystemRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSubsystem not implemented")
 }
-func (UnimplementedMiddlewareServer) EnableSubSystem(context.Context, *EnableSubSystemRequest) (*EnableSubSystemRequest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method EnableSubSystem not implemented")
+func (UnimplementedMiddlewareServer) EnableSubsystem(context.Context, *EnableSubsystemRequest) (*EnableSubsystemRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableSubsystem not implemented")
 }
-func (UnimplementedMiddlewareServer) DisableSubSystem(context.Context, *DisableSubSystemRequest) (*DisableSubSystemRequest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DisableSubSystem not implemented")
+func (UnimplementedMiddlewareServer) DisableSubsystem(context.Context, *DisableSubsystemRequest) (*DisableSubsystemRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableSubsystem not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -104,56 +104,56 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_ListSubSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListSubSystemRequest)
+func _Middleware_ListSubsystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSubsystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ListSubSystem(ctx, in)
+		return srv.(MiddlewareServer).ListSubsystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ListSubSystem_FullMethodName,
+		FullMethod: Middleware_ListSubsystem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ListSubSystem(ctx, req.(*ListSubSystemRequest))
+		return srv.(MiddlewareServer).ListSubsystem(ctx, req.(*ListSubsystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_EnableSubSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EnableSubSystemRequest)
+func _Middleware_EnableSubsystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnableSubsystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).EnableSubSystem(ctx, in)
+		return srv.(MiddlewareServer).EnableSubsystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_EnableSubSystem_FullMethodName,
+		FullMethod: Middleware_EnableSubsystem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).EnableSubSystem(ctx, req.(*EnableSubSystemRequest))
+		return srv.(MiddlewareServer).EnableSubsystem(ctx, req.(*EnableSubsystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DisableSubSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DisableSubSystemRequest)
+func _Middleware_DisableSubsystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DisableSubsystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DisableSubSystem(ctx, in)
+		return srv.(MiddlewareServer).DisableSubsystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_DisableSubSystem_FullMethodName,
+		FullMethod: Middleware_DisableSubsystem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DisableSubSystem(ctx, req.(*DisableSubSystemRequest))
+		return srv.(MiddlewareServer).DisableSubsystem(ctx, req.(*DisableSubsystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,16 +166,16 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListSubSystem",
-			Handler:    _Middleware_ListSubSystem_Handler,
+			MethodName: "ListSubsystem",
+			Handler:    _Middleware_ListSubsystem_Handler,
 		},
 		{
-			MethodName: "EnableSubSystem",
-			Handler:    _Middleware_EnableSubSystem_Handler,
+			MethodName: "EnableSubsystem",
+			Handler:    _Middleware_EnableSubsystem_Handler,
 		},
 		{
-			MethodName: "DisableSubSystem",
-			Handler:    _Middleware_DisableSubSystem_Handler,
+			MethodName: "DisableSubsystem",
+			Handler:    _Middleware_DisableSubsystem_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
