@@ -57,4 +57,6 @@ enum Prefix {
     PrefixCreateInspireAchievement = 490;
 
     PrefixMigrateInspire       = 10000;
+
+    PrefixSchedulerOrder       = 20000;
 }
