@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package scheduler.middleware.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/httpmethod.proto";
+import "npool/basetypes/v1/result.proto";
+import "npool/basetypes/v1/conds.proto";
+
+service Middleware {
+    rpc ListSubSystem    (ListSubSystemRequest)    returns (ListSubSystemRequest)    {}
+    rpc EnableSubSystem  (EnableSubSystemRequest)  returns (EnableSubSystemRequest)  {}
+    rpc DisableSubSystem (DisableSubSystemRequest) returns (DisableSubSystemRequest) {}
+}
+
+message ListSubSystemRequest {
+}
+
+message ListSubSystemResponse {
+    repeated string Infos = 10;
+}
+
+message EnableSubSystemRequest {
+    repeated string Infos = 10;
+}
+
+message EnableSubSystemResponse {
+    repeated string Infos = 10;
+}
+
+
+message DisableSubSystemRequest {
+    repeated string Infos = 10;
+}
+
+message DisableSubSystemResponse {
+    repeated string Infos = 10;
+}
+
