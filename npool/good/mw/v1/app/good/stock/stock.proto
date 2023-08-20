@@ -35,7 +35,7 @@ message Stock {
     // @inject_tag: sql:"good_id"
     string GoodID     = 30;
     // @inject_tag: sql:"good_name"
-    string GoodTile   = 40;
+    string GoodName   = 40;
     // @inject_tag: sql:"app_good_id"
     string AppGoodID  = 50;
     // @inject_tag: sql:"app_good_name"
