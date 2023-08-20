@@ -99,6 +99,18 @@
         }
       }
     },
+    "v1GoodTopMostType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodTopMostType",
+        "TopMostPromotion",
+        "TopMostNoviceExclusive",
+        "TopMostBestOffer",
+        "TopMostInnovationStarter",
+        "TopMostLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodTopMostType"
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -121,9 +133,40 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "TostMostID": {
+        "TopMostID": {
           "type": "string",
           "title": "@inject_tag: sql:\"top_most_id\""
+        },
+        "TopMostTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"top_most_type\""
+        },
+        "TostMostType": {
+          "$ref": "#/definitions/v1GoodTopMostType"
+        },
+        "TopMostTitle": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"top_most_title\""
+        },
+        "TopMostMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"top_most_message\""
+        },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "AppGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_name\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
         },
         "DisplayIndex": {
           "type": "integer",
@@ -166,6 +209,9 @@
           "type": "string"
         },
         "TopMostID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "DisplayIndex": {
