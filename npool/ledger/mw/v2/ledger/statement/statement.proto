@@ -16,7 +16,6 @@ service Middleware {
     rpc UnCreateStatements  (UnCreateStatementsRequest)  returns (UnCreateStatementsResponse)  {}
     rpc CreateStatement     (CreateStatementRequest)    returns (CreateStatementResponse)      {}
     rpc UnCreateStatement   (UnCreateStatementRequest)  returns (UnCreateStatementResponse)    {}
-
 }
 
 message StatementReq {
