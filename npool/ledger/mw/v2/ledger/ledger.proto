@@ -95,11 +95,10 @@ message BalanceReq {
     optional string          AppID       = 20;
     optional string          UserID      = 30;
     optional string          CoinTypeID  = 40;
-    // Add
-    optional string          Locked      = 50;
-    // Sub
+    // Lock & UnSpend
+    optional string          Amount      = 50;
+    // Unlock & Spend
     optional basetypes.ledger.v1.IOSubType       IOSubType   = 60;
-    optional string          Unlocked    = 70;
     optional string          Outcoming   = 80;
     optional string          IOExtra     = 90;
 }
