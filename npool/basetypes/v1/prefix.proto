@@ -76,5 +76,7 @@ enum Prefix {
     PrefixCreateGoodLedger      = 720;
     PrefixCreateGoodLedgerStatement = 730;
 
-    PrefixMigrateInspire       = 10000;
+    PrefixMigrate              = 10000;
+
+    PrefixSchedulerOrder       = 20000;
 }
