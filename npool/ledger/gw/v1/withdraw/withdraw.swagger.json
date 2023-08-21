@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/gw/v1/ledger/ledger.proto",
+    "title": "npool/ledger/gw/v1/withdraw/withdraw.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/app/generals": {
+    "/v1/create/withdraw": {
       "post": {
-        "operationId": "Gateway_GetAppLedgers",
+        "operationId": "Gateway_CreateWithdraw",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppLedgersResponse"
+              "$ref": "#/definitions/v1CreateWithdrawResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppLedgersRequest"
+              "$ref": "#/definitions/v1CreateWithdrawRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/generals": {
+    "/v1/get/app/withdraws": {
       "post": {
-        "operationId": "Gateway_GetLedgers",
+        "operationId": "Gateway_GetAppWithdraws",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetLedgersResponse"
+              "$ref": "#/definitions/v1GetAppWithdrawsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetLedgersRequest"
+              "$ref": "#/definitions/v1GetAppWithdrawsRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/intervalgenerals": {
+    "/v1/get/n/app/withdraws": {
       "post": {
-        "operationId": "Gateway_GetIntervalLedgers",
+        "operationId": "Gateway_GetNAppWithdraws",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersResponse"
+              "$ref": "#/definitions/v1GetNAppWithdrawsResponse"
             }
           },
           "default": {
@@ -103,7 +103,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersRequest"
+              "$ref": "#/definitions/v1GetNAppWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/withdraws": {
+      "post": {
+        "operationId": "Gateway_GetWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawsRequest"
             }
           }
         ],
@@ -141,7 +173,78 @@
         }
       }
     },
-    "v1GetAppLedgersRequest": {
+    "v1CreateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "VerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Withdraw"
+        }
+      }
+    },
+    "v1GetAppWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppWithdrawsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -157,13 +260,13 @@
         }
       }
     },
-    "v1GetAppLedgersResponse": {
+    "v1GetNAppWithdrawsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Ledger"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -172,49 +275,7 @@
         }
       }
     },
-    "v1GetIntervalLedgersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetIntervalLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Ledger"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetLedgersRequest": {
+    "v1GetWithdrawsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -233,13 +294,13 @@
         }
       }
     },
-    "v1GetLedgersResponse": {
+    "v1GetWithdrawsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Ledger"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -248,7 +309,23 @@
         }
       }
     },
-    "v1Ledger": {
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username"
+      ],
+      "default": "DefaultSignMethod"
+    },
+    "v1Withdraw": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -269,34 +346,41 @@
         "CoinUnit": {
           "type": "string"
         },
-        "CoinDisabled": {
-          "type": "boolean"
-        },
-        "CoinDisplay": {
-          "type": "boolean"
-        },
-        "Incoming": {
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
           "type": "string"
         },
-        "Outcoming": {
-          "type": "string"
+        "AddressLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "Spendable": {
-          "type": "string"
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         },
-        "UserID": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "EmailAddress": {
+        "Message": {
           "type": "string"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     }
   }
 }

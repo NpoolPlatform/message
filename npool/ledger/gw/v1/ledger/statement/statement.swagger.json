@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/gw/v1/ledger/ledger.proto",
+    "title": "npool/ledger/gw/v1/ledger/statement/statement.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/app/generals": {
+    "/v1/get/app/details": {
       "post": {
-        "operationId": "Gateway_GetAppLedgers",
+        "operationId": "Gateway_GetAppStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppLedgersResponse"
+              "$ref": "#/definitions/v1GetAppStatementsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppLedgersRequest"
+              "$ref": "#/definitions/v1GetAppStatementsRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/generals": {
+    "/v1/get/details": {
       "post": {
-        "operationId": "Gateway_GetLedgers",
+        "operationId": "Gateway_GetStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetLedgersResponse"
+              "$ref": "#/definitions/v1GetStatementsResponse"
             }
           },
           "default": {
@@ -71,39 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetLedgersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/intervalgenerals": {
-      "post": {
-        "operationId": "Gateway_GetIntervalLedgers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersRequest"
+              "$ref": "#/definitions/v1GetStatementsRequest"
             }
           }
         ],
@@ -141,7 +109,7 @@
         }
       }
     },
-    "v1GetAppLedgersRequest": {
+    "v1GetAppStatementsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -157,13 +125,13 @@
         }
       }
     },
-    "v1GetAppLedgersResponse": {
+    "v1GetAppStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Ledger"
+            "$ref": "#/definitions/v1Statement"
           }
         },
         "Total": {
@@ -172,7 +140,7 @@
         }
       }
     },
-    "v1GetIntervalLedgersRequest": {
+    "v1GetStatementsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -199,13 +167,13 @@
         }
       }
     },
-    "v1GetIntervalLedgersResponse": {
+    "v1GetStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Ledger"
+            "$ref": "#/definitions/v1Statement"
           }
         },
         "Total": {
@@ -214,41 +182,33 @@
         }
       }
     },
-    "v1GetLedgersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
+    "v1IOSubType": {
+      "type": "string",
+      "enum": [
+        "DefaultSubType",
+        "Payment",
+        "MiningBenefit",
+        "Commission",
+        "TechniqueFeeCommission",
+        "Deposit",
+        "Transfer",
+        "Withdrawal",
+        "OrderRevoke",
+        "CommissionRevoke"
+      ],
+      "default": "DefaultSubType",
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
     },
-    "v1GetLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Ledger"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1IOType": {
+      "type": "string",
+      "enum": [
+        "DefaultType",
+        "Incoming",
+        "Outcoming"
+      ],
+      "default": "DefaultType"
     },
-    "v1Ledger": {
+    "v1Statement": {
       "type": "object",
       "properties": {
         "CoinTypeID": {
@@ -269,23 +229,21 @@
         "CoinUnit": {
           "type": "string"
         },
-        "CoinDisabled": {
-          "type": "boolean"
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
         },
-        "CoinDisplay": {
-          "type": "boolean"
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
         },
-        "Incoming": {
+        "Amount": {
           "type": "string"
         },
-        "Locked": {
+        "IOExtra": {
           "type": "string"
         },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "UserID": {
           "type": "string"

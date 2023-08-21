@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package ledger.gateway.ledger.deposit.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger/deposit";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAppUserDeposit (CreateAppUserDepositRequest) returns (CreateAppUserDepositResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/user/deposit"
+            body: "*"
+        };
+    }
+}
+
+message Statement {
+    string CoinTypeID = 10;
+    string CoinName   = 20;
+    repeated string DisplayNames = 21;
+    string CoinLogo   = 30;
+    string CoinUnit   = 40;
+    basetypes.ledger.v1.IOType    IOType    = 50;
+    basetypes.ledger.v1.IOSubType IOSubType = 60;
+    string Amount     = 70;
+    string IOExtra    = 80;
+    uint32 CreatedAt  = 90;
+    string UserID     = 100;
+    string PhoneNO       = 110;
+    string EmailAddress  = 120;
+}
+
+message CreateAppUserDepositRequest {
+    string AppID        = 10;
+    string UserID       = 20;
+    string LangID       = 21;
+    string CoinTypeID   = 30;
+    string Amount       = 40;
+    string TargetAppID  = 50;
+    string TargetUserID = 60;
+
+}
+
+message CreateAppUserDepositResponse {
+    Statement Info = 10;
+}
