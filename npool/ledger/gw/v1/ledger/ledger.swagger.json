@@ -552,7 +552,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -691,7 +690,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Ledger"
           }
         },
@@ -723,7 +721,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Statement"
           }
         },
@@ -755,7 +752,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -798,7 +794,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1GoodProfit"
           }
         },
@@ -841,7 +836,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Ledger"
           }
         },
@@ -884,7 +878,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Profit"
           }
         },
@@ -927,7 +920,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -962,7 +954,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Ledger"
           }
         },
@@ -1005,7 +996,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1MiningReward"
           }
         },
@@ -1037,7 +1027,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -1072,7 +1061,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Profit"
           }
         },
@@ -1115,7 +1103,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Statement"
           }
         },
@@ -1150,7 +1137,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -1363,8 +1349,7 @@
         "Google",
         "Username"
       ],
-      "default": "DefaultSignMethod",
-      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
+      "default": "DefaultSignMethod"
     },
     "v1Statement": {
       "type": "object",

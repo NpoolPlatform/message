@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -87,6 +86,14 @@
         }
       }
     },
+    "v2AddBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
     "v2BalanceReq": {
       "type": "object",
       "properties": {
@@ -102,7 +109,21 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Amount": {
+        "Locked": {
+          "type": "string",
+          "title": "Add"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType",
+          "title": "Sub"
+        },
+        "Unlocked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "IOExtra": {
           "type": "string"
         }
       }
@@ -161,7 +182,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         },
@@ -218,61 +238,7 @@
         }
       }
     },
-    "v2LockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2SpendBalanceReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Unlocked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType",
-          "title": "Only Payment or Withdraw"
-        },
-        "IOExtra": {
-          "type": "string"
-        }
-      }
-    },
-    "v2SpendBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnlockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnspendBalanceResponse": {
+    "v2SubBalanceResponse": {
       "type": "object",
       "properties": {
         "Info": {
