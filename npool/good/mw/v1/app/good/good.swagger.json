@@ -93,6 +93,14 @@
         }
       }
     },
+    "v1DeleteGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
     "v1GetGoodOnlyResponse": {
       "type": "object",
       "properties": {
