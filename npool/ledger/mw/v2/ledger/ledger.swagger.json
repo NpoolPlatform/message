@@ -94,37 +94,6 @@
         }
       }
     },
-    "v2BalanceReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string",
-          "title": "Lock \u0026 UnSpend"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType",
-          "title": "Unlock \u0026 Spend"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "IOExtra": {
-          "type": "string"
-        }
-      }
-    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -232,6 +201,41 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v2LedgerReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "Spendable": {
+          "type": "string"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "IOExtra": {
+          "type": "string"
         }
       }
     },
