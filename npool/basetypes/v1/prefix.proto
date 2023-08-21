@@ -71,10 +71,11 @@ enum Prefix {
     PrefixCreateTopMost        = 610;
     PrefixCreateTopMostGood    = 620;
 
-    PrefixCreateLedgerStatement = 700;
-    PrefixCreateLedger          = 710;
-    PrefixCreateGoodLedger      = 720;
-    PrefixCreateGoodLedgerStatement = 730;
+    PrefixCreateLedger          = 700;
+    PrefixCreateLedgerStatement = 710;
+    PrefixCreateLedgerProfit    = 720;
+    PrefixCreateGoodLedger      = 730;
+    PrefixCreateGoodLedgerStatement = 740;
 
     PrefixMigrate              = 10000;
 
