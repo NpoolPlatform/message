@@ -109,7 +109,7 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Amount": {
+        "Locked": {
           "type": "string",
           "title": "Add"
         },
