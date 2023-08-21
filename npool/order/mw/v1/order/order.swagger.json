@@ -17,7 +17,35 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewareorder1v1Conds": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -59,12 +87,6 @@
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "FixAmountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "DiscountCouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "UserSpecialReductionID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -82,7 +104,7 @@
         }
       }
     },
-    "middlewareorder1v1CountOrdersResponse": {
+    "v1CountOrdersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -91,38 +113,74 @@
         }
       }
     },
-    "middlewareorder1v1CreateOrderResponse": {
+    "v1CreateOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
+          "$ref": "#/definitions/v1Order"
         }
       }
     },
-    "middlewareorder1v1GetOrderOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
-        }
-      }
-    },
-    "middlewareorder1v1GetOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
-        }
-      }
-    },
-    "middlewareorder1v1GetOrdersResponse": {
+    "v1CreateOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/middlewareorder1v1Order"
+            "$ref": "#/definitions/v1Order"
+          }
+        }
+      }
+    },
+    "v1DeleteOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
+    "v1ExistOrderCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetOrderOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
+    "v1GetOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
+    "v1GetOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Order"
           }
         },
         "Total": {
@@ -131,7 +189,7 @@
         }
       }
     },
-    "middlewareorder1v1Order": {
+    "v1Order": {
       "type": "object",
       "properties": {
         "ID": {
@@ -277,10 +335,15 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"last_benefit_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
-    "middlewareorder1v1OrderReq": {
+    "v1OrderReq": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -382,55 +445,19 @@
         }
       }
     },
-    "middlewareorder1v1UpdateOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/middlewareorder1v1Order"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
     "v1OrderState": {
       "type": "string",
       "enum": [
-        "DefaultState",
-        "WaitPayment",
-        "Paid",
-        "PaymentTimeout",
-        "Canceled",
-        "InService",
-        "Expired"
+        "DefaultOrderState",
+        "OrderStateWaitPayment",
+        "OrderStatePaid",
+        "OrderStatePaymentTimeout",
+        "OrderStateCanceled",
+        "OrderStateInService",
+        "OrderStateExpired"
       ],
-      "default": "DefaultState",
-      "title": "- WaitPayment: Common state\n - Canceled: Platform confirm canceled\n - InService: Cyclation order state"
+      "default": "DefaultOrderState",
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCanceled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
@@ -445,13 +472,13 @@
     "v1PaymentState": {
       "type": "string",
       "enum": [
-        "DefaultState",
-        "Wait",
-        "Done",
-        "Canceled",
-        "TimeOut"
+        "DefaultPaymentState",
+        "PaymentStateWait",
+        "PaymentStateDone",
+        "PaymentStateCanceled",
+        "PaymentStateTimeOut"
       ],
-      "default": "DefaultState"
+      "default": "DefaultPaymentState"
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -513,6 +540,14 @@
         }
       }
     },
+    "v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
     "v1UpdateOrdersResponse": {
       "type": "object",
       "properties": {
@@ -520,7 +555,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/middlewareorder1v1Order"
+            "$ref": "#/definitions/v1Order"
           }
         }
       }

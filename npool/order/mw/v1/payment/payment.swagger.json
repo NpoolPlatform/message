@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/payment/payment.proto",
+    "title": "npool/order/mw/v1/payment/payment.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -163,73 +163,93 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "AppID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "UserID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "OrderID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
         },
         "AccountID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
         },
         "StartAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_amount\""
         },
         "Amount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
         },
         "PayWithBalanceAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"pay_with_balance_amount\""
         },
         "FinishAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"finish_amount\""
         },
         "CoinUsdCurrency": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
         },
         "LocalCoinUsdCurrency": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"local_coin_usd_currency\""
         },
         "LiveCoinUsdCurrency": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"live_coin_usd_currency\""
         },
         "CoinInfoID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_info_id\""
+        },
+        "PaymentStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
         },
         "State": {
           "$ref": "#/definitions/v1PaymentState"
         },
         "ChainTransactionID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_transaction_id\""
         },
         "UserSetPaid": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"user_set_paid\""
         },
         "UserSetCanceled": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"user_set_canceled\""
         },
         "FakePayment": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"fake_payment\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -292,23 +312,19 @@
         },
         "FakePayment": {
           "type": "boolean"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
     "v1PaymentState": {
       "type": "string",
       "enum": [
-        "DefaultState",
-        "Wait",
-        "Done",
-        "Canceled",
-        "TimeOut"
+        "DefaultPaymentState",
+        "PaymentStateWait",
+        "PaymentStateDone",
+        "PaymentStateCanceled",
+        "PaymentStateTimeOut"
       ],
-      "default": "DefaultState"
+      "default": "DefaultPaymentState"
     },
     "v1StringVal": {
       "type": "object",

@@ -4,15 +4,14 @@ package order.middleware.order1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
-import "npool/order/mgr/v1/order/order.proto";
-import "npool/order/mgr/v1/payment/payment.proto";
-import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/v1/conds.proto";
+
 
 // Service Name
 service Middleware {
     rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
+    rpc CreateOrders    (CreateOrdersRequest)   returns (CreateOrdersResponse)    {}
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
     rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
@@ -20,6 +19,9 @@ service Middleware {
     rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
     rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
     rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
+    rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
+    rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
+    rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {}
 }
 
 message OrderReq {
@@ -27,7 +29,7 @@ message OrderReq {
     optional string UserID                    = 20;
     optional string GoodID                    = 30;
     optional string Units                     = 40;
-    optional order.manager.order.v1.OrderType OrderType = 50;
+    optional basetypes.order.v1.OrderType OrderType = 50;
 
     optional string ParentOrderID             = 60;
     optional bool   PayWithParent             = 70;
@@ -41,7 +43,7 @@ message OrderReq {
     optional string PaymentCoinUSDCurrency    = 130;
     optional string PaymentLiveUSDCurrency    = 140;
     optional string PaymentLocalUSDCurrency   = 150;
-    optional  order.manager.payment.v1.PaymentState PaymentState = 151;
+    optional basetypes.order.v1.PaymentState PaymentState = 151;
 
     optional string FixAmountID               = 160;
     optional string DiscountID                = 170;
@@ -57,7 +59,7 @@ message OrderReq {
     optional string PaymentID                 = 230;
     optional bool   Canceled                  = 240;
     optional bool   FakePayment               = 250;
-    optional order.manager.order.v1.OrderState State  = 260;
+    optional basetypes.order.v1.OrderState State   = 260;
     repeated string CouponIDs                = 270;
     optional uint32 LastBenefitAt            = 280;
 }
@@ -75,10 +77,10 @@ message Order {
     string Units                  = 50;
     // @inject_tag: sql:"type"
     string OrderTypeStr           = 60;
-    order.manager.order.v1.OrderType OrderType = 61;
+    basetypes.order.v1.OrderType OrderType = 61;
     // @inject_tag: sql:"state"
     string OrderStateStr             = 62;
-    order.manager.order.v1.OrderState OrderState = 63;
+    basetypes.order.v1.OrderState OrderState = 63;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
@@ -104,7 +106,7 @@ message Order {
     string PaymentAmount          = 180;
     // @inject_tag: sql:"payment_state"
     string PaymentStateStr        = 190;
-    order.manager.payment.v1.PaymentState PaymentState = 191;
+    basetypes.order.v1.PaymentState PaymentState = 191;
     // @inject_tag: sql:"pay_with_balance_amount"
     string PayWithBalanceAmount   = 200;
     // @inject_tag: sql:"paid_at"
@@ -133,29 +135,29 @@ message Order {
     repeated string  CouponIDs    = 300;
     // @inject_tag: sql:"last_benefit_at"
     uint32 LastBenefitAt          = 310;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt              = 320;
 }
 
 message Conds {
-    optional npool.v1.StringVal      ID                 = 10;
-    optional npool.v1.StringSliceVal IDs                = 20;
-    optional npool.v1.StringVal      AppID              = 30;
-    optional npool.v1.StringVal      UserID             = 40;
-    optional npool.v1.StringVal      CoinTypeID         = 50;
-    optional npool.v1.StringVal      ParentOrderID      = 60;
-    optional npool.v1.Uint32Val      PaymentState       = 70;
-    optional npool.v1.StringVal      PaymentAmount      = 80;
-    optional npool.v1.Uint32Val      OrderType          = 90;
-    optional npool.v1.Uint32Val      CreatedAt          = 100;
-    optional npool.v1.StringVal      GoodID             = 110;
-    optional npool.v1.Uint32Val      Type               = 120;
-    optional npool.v1.Uint32Val      State              = 130;
-    optional npool.v1.StringVal      FixAmountCouponID      = 140;
-    optional npool.v1.StringVal      DiscountCouponID       = 150;
-    optional npool.v1.StringVal      UserSpecialReductionID = 160;
-    optional npool.v1.Uint32Val      LastBenefitAt          = 170;
-    optional npool.v1.StringVal      CouponID               = 180;
-    optional npool.v1.StringSliceVal CouponIDs              = 190;
-    optional npool.v1.Uint32SliceVal States                 = 200;
+    basetypes.v1.StringVal      ID                 = 10;
+    basetypes.v1.StringSliceVal IDs                = 20;
+    basetypes.v1.StringVal      AppID              = 30;
+    basetypes.v1.StringVal      UserID             = 40;
+    basetypes.v1.StringVal      CoinTypeID         = 50;
+    basetypes.v1.StringVal      ParentOrderID      = 60;
+    basetypes.v1.Uint32Val      PaymentState       = 70;
+    basetypes.v1.StringVal      PaymentAmount      = 80;
+    basetypes.v1.Uint32Val      OrderType          = 90;
+    basetypes.v1.Uint32Val      CreatedAt          = 100;
+    basetypes.v1.StringVal      GoodID             = 110;
+    basetypes.v1.Uint32Val      Type               = 120;
+    basetypes.v1.Uint32Val      State              = 130;
+    basetypes.v1.StringVal      UserSpecialReductionID = 160;
+    basetypes.v1.Uint32Val      LastBenefitAt          = 170;
+    basetypes.v1.StringVal      CouponID               = 180;
+    basetypes.v1.StringSliceVal CouponIDs              = 190;
+    basetypes.v1.Uint32SliceVal States                 = 200;
 }
 
 message CreateOrderRequest {
@@ -164,6 +166,14 @@ message CreateOrderRequest {
 
 message CreateOrderResponse {
     Order Info = 10;
+}
+
+message CreateOrdersRequest {
+    repeated OrderReq Infos = 10;
+}
+
+message CreateOrdersResponse {
+    repeated Order Infos = 10;
 }
 
 message UpdateOrderRequest {
@@ -223,4 +233,28 @@ message SumOrderUnitsRequest {
 
 message SumOrderUnitsResponse {
     string Info = 10;
+}
+
+message ExistOrderRequest {
+    string ID = 10;
+}
+
+message ExistOrderResponse {
+    bool Info = 10;
+}
+
+message ExistOrderCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistOrderCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteOrderRequest {
+    OrderReq Info = 10;
+}
+
+message DeleteOrderResponse {
+    Order Info = 10;
 }

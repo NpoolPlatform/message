@@ -1,14 +1,13 @@
 syntax = "proto3";
 
-package order.manager.compensate.v1;
+package order.middleware.compensate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mgr/v1/compensate";
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensate";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateCompensate     (CreateCompensateRequest)     returns (CreateCompensateResponse)     {}
     rpc CreateCompensates    (CreateCompensatesRequest)    returns (CreateCompensatesResponse)    {}
     rpc UpdateCompensate     (UpdateCompensateRequest)     returns (UpdateCompensateResponse)     {}
@@ -31,21 +30,27 @@ message CompensateReq {
 }
 
 message Compensate {
+  // @inject_tag: sql:"id"
     string     ID        = 10;
+    // @inject_tag: sql:"order_id"
     string     OrderID   = 20;
+    // @inject_tag: sql:"start"
     uint32     Start     = 30;
+    // @inject_tag: sql:"end"
     uint32     End       = 40;
+    // @inject_tag: sql:"message"
     string     Message   = 50;
+    // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 60;
+    // @inject_tag: sql:"updated_at"
     uint32     UpdatedAt = 70;
-    uint32     DeletedAt = 80;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID      = 10;
-    optional npool.v1.StringVal OrderID = 20;
-    optional npool.v1.Uint32Val Start   = 30;
-    optional npool.v1.Uint32Val End     = 40;
+    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.StringVal OrderID = 20;
+    basetypes.v1.Uint32Val Start   = 30;
+    basetypes.v1.Uint32Val End     = 40;
 }
 
 
@@ -125,7 +130,7 @@ message CountCompensatesResponse {
 }
 
 message DeleteCompensateRequest {
-    string ID = 10;
+    CompensateReq Info = 10;
 }
 
 message DeleteCompensateResponse {

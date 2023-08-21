@@ -1,14 +1,13 @@
 syntax = "proto3";
 
-package order.manager.outofgas.v1;
+package order.middleware.outofgas.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mgr/v1/outofgas";
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/outofgas";
 
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/conds.proto";
 
 // Service Name
-service Manager {
+service Middleware {
     rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {}
     rpc CreateOutOfGass    (CreateOutOfGassRequest)    returns (CreateOutOfGassResponse)    {}
     rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {}
@@ -30,20 +29,25 @@ message OutOfGasReq {
 }
 
 message OutOfGas {
+    // @inject_tag: sql:"id"
     string     ID        = 10;
+    // @inject_tag: sql:"order_id"
     string     OrderID   = 20;
+    // @inject_tag: sql:"start"
     uint32     Start     = 30;
+    // @inject_tag: sql:"end"
     uint32     End       = 40;
+    // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 50;
+    // @inject_tag: sql:"updated_at"
     uint32     UpdatedAt = 60;
-    uint32     DeletedAt = 70;
 }
 
 message Conds {
-    optional npool.v1.StringVal ID      = 10;
-    optional npool.v1.StringVal OrderID = 20;
-    optional npool.v1.Uint32Val Start   = 30;
-    optional npool.v1.Uint32Val End     = 40;
+    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.StringVal OrderID = 20;
+    basetypes.v1.Uint32Val Start   = 30;
+    basetypes.v1.Uint32Val End     = 40;
 }
 
 
@@ -123,7 +127,7 @@ message CountOutOfGassResponse {
 }
 
 message DeleteOutOfGasRequest {
-    string ID = 10;
+    OutOfGasReq Info = 10;
 }
 
 message DeleteOutOfGasResponse {

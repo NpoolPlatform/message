@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mgr/v1/compensate/compensate.proto",
+    "title": "npool/order/mw/v1/compensate/compensate.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Manager"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -49,33 +49,36 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "OrderID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
         },
         "Start": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start\""
         },
         "End": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end\""
         },
         "Message": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
