@@ -47,6 +47,7 @@ enum Prefix {
     PrefixCreatePlatformAccount = 390;
     PrefixCreateOAuthThirdParty    = 400;
     PrefixCreateAppOAuthThirdParty = 410;
+
     PrefixOAuthLogin           = 420;
     PrefixCreateAppEvent       = 430;
     PrefixCreateInvitationCode = 440;
@@ -55,6 +56,20 @@ enum Prefix {
     PrefixCloneCommission      = 470;
     PrefixCreateInspireAchievementStatement = 480;
     PrefixCreateInspireAchievement = 490;
+
+    PrefixCreateDeviceInfo     = 500;
+    PrefixCreateVendorBrand    = 510;
+    PrefixCreateVendorLocation = 520;
+    PrefixCreateGood           = 530;
+    PrefixCreateRequiredGood   = 540;
+    PrefixLikeGood             = 550;
+    PrefixCommentGood          = 560;
+    PrefixRecommendGood        = 570;
+    PrefixScoreGood            = 580;
+    PrefixCreateAppGood        = 590;
+    PrefixCreateAppDefaultGood = 600;
+    PrefixCreateTopMost        = 610;
+    PrefixCreateTopMostGood    = 620;
 
     PrefixMigrateInspire       = 10000;
 }

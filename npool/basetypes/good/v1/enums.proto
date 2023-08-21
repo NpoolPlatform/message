@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package basetypes.good.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/good/v1";
+
+enum BenefitType {
+    DefaultBenefitType   = 0;
+    // Platform receive benefit, then distribute benefit to user
+    BenefitTypePlatform  = 10;
+    // User receive benefit from pool directly
+    BenefitTypePool      = 20;
+}
+
+enum GoodType {
+    DefaultGoodType   = 0;
+
+    PowerRenting      = 10;
+    MachineRenting    = 20;
+    MachineHosting    = 30;
+
+    TechniqueServiceFee = 1000;
+    ElectricityFee      = 2000;
+}
+
+enum BenefitState {
+    DefaultBenefitState    = 0;
+
+    BenefitWait         = 10;
+    BenefitTransferring = 20;
+    BenefitBookKeeping  = 30;
+    BenefitDone         = 40;
+}
+
+enum CancelMode {
+    DefaultCancelMode        = 0;
+
+    CancellableBeforeStart   = 10;
+    CancellableBeforeBenefit = 20;
+    Uncancellable            = 30;
+}
+
+enum GoodLabel {
+    DefaultGoodLabel = 0;
+
+    GoodLabelPromotion         = 10;
+    GoodLabelNoviceExclusive   = 20; // Newbie
+    GoodLabelInnovationStarter = 30; // First batch mining
+    GoodLabelLoyaltyExclusive  = 40; // User with action credis pass threshold
+}
+
+enum GoodTopMostType {
+    DefaultGoodTopMostType   = 0;
+
+    TopMostPromotion         = 10;
+    TopMostNoviceExclusive   = 20;
+    TopMostBestOffer         = 30;
+    TopMostInnovationStarter = 40;
+    TopMostLoyaltyExclusive  = 50;
+}

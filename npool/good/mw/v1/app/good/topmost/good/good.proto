@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package good.middleware.app.good1.topmost.good2.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/topmost/good";
+
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateTopMostGood    (CreateTopMostGoodRequest)    returns (CreateTopMostGoodResponse)    {}
+    rpc UpdateTopMostGood    (UpdateTopMostGoodRequest)    returns (UpdateTopMostGoodResponse)    {}
+    rpc GetTopMostGood       (GetTopMostGoodRequest)       returns (GetTopMostGoodResponse)       {}
+    rpc GetTopMostGoods      (GetTopMostGoodsRequest)      returns (GetTopMostGoodsResponse)      {}
+    rpc DeleteTopMostGood    (DeleteTopMostGoodRequest)    returns (DeleteTopMostGoodResponse)    {}
+}
+
+message TopMostGoodReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string GoodID     = 30;
+    optional string AppGoodID  = 40;
+    optional string TopMostID  = 50;
+    optional uint32 DisplayIndex = 60;
+    repeated string Posters    = 70;
+    optional string Price      = 80;
+}
+
+message TopMostGood {
+    // @inject_tag: sql:"id"
+    string ID         = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID      = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID     = 30;
+    // @inject_tag: sql:"good_name"
+    string GoodName   = 40;
+    // @inject_tag: sql:"top_most_id"
+    string TopMostID  = 50;
+    // @inject_tag: sql:"top_most_type"
+    string TopMostTypeStr = 60;
+    basetypes.good.v1.GoodTopMostType TostMostType = 70;
+    // @inject_tag: sql:"top_most_title"
+    string TopMostTitle = 80;
+    // @inject_tag: sql:"top_most_message"
+    string TopMostMessage = 90;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID  = 100;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 110;
+    // @inject_tag: sql:"display_index"
+    uint32 DisplayIndex = 120;
+    // @inject_tag: sql:"posters"
+    string PostersStr = 130;
+    repeated string Posters = 140;
+    // @inject_tag: sql:"price"
+    string Price      = 150;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt  = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt  = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID    = 10;
+    optional basetypes.v1.StringVal AppID = 20;
+    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringVal AppGoodID = 40;
+    optional basetypes.v1.StringVal TopMostID = 50;
+}
+
+message CreateTopMostGoodRequest {
+    TopMostGoodReq Info = 10;
+}
+
+message CreateTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
+
+message UpdateTopMostGoodRequest {
+    TopMostGoodReq Info = 10;
+}
+
+message UpdateTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
+
+message GetTopMostGoodRequest {
+    string ID = 10;
+}
+
+message GetTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
+
+message GetTopMostGoodsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetTopMostGoodsResponse {
+    repeated TopMostGood Infos = 10;
+    uint32           Total = 20;
+}
+
+message DeleteTopMostGoodRequest {
+    TopMostGoodReq Info = 10;
+}
+
+message DeleteTopMostGoodResponse {
+    TopMostGood Info = 10;
+}

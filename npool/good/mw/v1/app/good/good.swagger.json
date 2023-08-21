@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/good.proto",
+    "title": "npool/good/mw/v1/app/good/good.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,17 +45,6 @@
         }
       }
     },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitTransferring",
-        "BenefitBookKeeping",
-        "BenefitDone"
-      ],
-      "default": "DefaultBenefitState"
-    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -66,32 +55,33 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
     },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCancelMode",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "DefaultCancelMode"
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "DeviceInfoID": {
+        "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinTypeID": {
+        "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "VendorLocationID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "IDs": {
+        "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "RewardState": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -103,7 +93,7 @@
         }
       }
     },
-    "v1DeleteGoodResponse": {
+    "v1GetGoodOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -141,6 +131,64 @@
         "ID": {
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "Online": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"online\""
+        },
+        "Visible": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"visible\""
+        },
+        "Price": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"price\""
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"display_index\""
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"purchase_limit\""
+        },
+        "PromotionStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"promotion_start_at\""
+        },
+        "PromotionEndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"promotion_end_at\""
+        },
+        "PromotionMessage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_message\""
+        },
+        "PromotionPrice": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_price\""
+        },
+        "PromotionPosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "PromotionPostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_posters\""
         },
         "DeviceInfoID": {
           "type": "string",
@@ -191,18 +239,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"vendor_location_country\""
         },
-        "VendorLocationProvince": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_location_province\""
-        },
-        "VendorLocationCity": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_location_city\""
-        },
-        "VendorLocationAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_location_address\""
-        },
         "VendorBrandName": {
           "type": "string",
           "title": "@inject_tag: sql:\"vendor_brand_name\""
@@ -225,13 +261,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
         },
-        "Price": {
+        "GoodName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
+          "title": "@inject_tag: sql:\"good_name\""
         },
         "Unit": {
           "type": "string",
@@ -276,6 +308,141 @@
           "type": "string",
           "title": "@inject_tag: sql:\"labels\""
         },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "GoodTotal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_total\""
+        },
+        "GoodLocked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_locked\""
+        },
+        "GoodInService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_in_service\""
+        },
+        "GoodWaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
+        "GoodSold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_sold\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_start_at\""
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_end_at\""
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"technical_fee_ratio\""
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"electricity_fee_ratio\""
+        },
+        "DailyRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"daily_reward_amount\""
+        },
+        "DescriptionsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"descriptions\""
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GoodBanner": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_banner\""
+        },
+        "DisplayNamesStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"display_names\""
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EnablePurchase": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_purchase\""
+        },
+        "EnableProductPage": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_product_page\""
+        },
+        "CancelModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cancel_mode\""
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_purchase_limit\""
+        },
+        "DisplayColorsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"display_colors\""
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cancellable_before_start\""
+        },
+        "ProductPage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"product_page\""
+        },
+        "EnableSetCommission": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_set_commission\""
+        },
         "Likes": {
           "type": "integer",
           "format": "int64",
@@ -305,86 +472,33 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"comment_count\""
         },
-        "GoodStockID": {
+        "AppGoodStockID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_stock_id\""
+          "title": "@inject_tag: sql:\"app_good_stock_id\""
         },
-        "GoodTotal": {
+        "AppGoodReserved": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_total\""
+          "title": "@inject_tag: sql:\"app_good_reserved\""
         },
-        "GoodLocked": {
+        "AppSpotQuantity": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_locked\""
+          "title": "@inject_tag: sql:\"app_spot_quantity\""
         },
-        "GoodInService": {
+        "AppGoodLocked": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_in_service\""
+          "title": "@inject_tag: sql:\"app_good_locked\""
         },
-        "GoodWaitStart": {
+        "AppGoodWaitStart": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_wait_start\""
+          "title": "@inject_tag: sql:\"app_good_wait_start\""
         },
-        "GoodSold": {
+        "AppGoodInService": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_sold\""
+          "title": "@inject_tag: sql:\"app_good_in_service\""
         },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"delivery_at\""
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"benefit_interval_hours\""
-        },
-        "UnitLockDeposit": {
+        "AppGoodSold": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit_lock_deposit\""
-        },
-        "GoodAppReserved": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_app_reserved\""
-        },
-        "RewardStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"reward_state\""
-        },
-        "RewardState": {
-          "$ref": "#/definitions/v1BenefitState"
-        },
-        "LastRewardAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"last_reward_at\""
-        },
-        "RewardTID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"reward_tid\""
-        },
-        "NextRewardStartAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"next_reward_start_amount\""
-        },
-        "LastRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_reward_amount\""
+          "title": "@inject_tag: sql:\"app_good_sold\""
         }
       }
     },
@@ -406,98 +520,97 @@
         "ID": {
           "type": "string"
         },
-        "DeviceInfoID": {
+        "AppID": {
           "type": "string"
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CoinTypeID": {
+        "GoodID": {
           "type": "string"
         },
-        "VendorLocationID": {
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
           "type": "string"
         },
         "Price": {
           "type": "string"
         },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Unit": {
-          "type": "string"
-        },
-        "UnitAmount": {
+        "DisplayIndex": {
           "type": "integer",
           "format": "int32"
         },
-        "SupportCoinTypeIDs": {
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
+        },
+        "Descriptions": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
+        "GoodBanner": {
+          "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "TestOnly": {
+        "EnablePurchase": {
           "type": "boolean"
         },
-        "Total": {
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
           "type": "string"
         },
-        "Posters": {
+        "DisplayColors": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "BenefitIntervalHours": {
+        "CancellableBeforeStart": {
           "type": "integer",
           "format": "int64"
         },
-        "UnitLockDeposit": {
+        "ProductPage": {
           "type": "string"
         },
-        "AppReserved": {
-          "type": "string"
-        },
-        "RewardState": {
-          "$ref": "#/definitions/v1BenefitState"
-        },
-        "RewardAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "RewardTID": {
-          "type": "string"
-        },
-        "NextRewardStartAmount": {
-          "type": "string"
-        },
-        "RewardAmount": {
-          "type": "string"
-        },
-        "UnitRewardAmount": {
-          "type": "string"
+        "EnableSetCommission": {
+          "type": "boolean"
         }
       }
     },
@@ -535,18 +648,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
