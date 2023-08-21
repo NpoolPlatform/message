@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/ledger/mw/v2/ledger/ledger.proto",
+    "title": "npool/ledger/mw/v2/withdraw/withdraw.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,37 +45,6 @@
         }
       }
     },
-    "v1IOSubType": {
-      "type": "string",
-      "enum": [
-        "DefaultSubType",
-        "Payment",
-        "MiningBenefit",
-        "Commission",
-        "TechniqueFeeCommission",
-        "Deposit",
-        "Transfer",
-        "Withdrawal",
-        "OrderRevoke",
-        "CommissionRevoke"
-      ],
-      "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -87,25 +56,29 @@
         }
       }
     },
-    "v2BalanceReq": {
+    "v1Uint32Val": {
       "type": "object",
       "properties": {
-        "ID": {
+        "Op": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Reviewing",
+        "Transferring",
+        "Rejected",
+        "TransactionFail",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
     },
     "v2Conds": {
       "type": "object",
@@ -122,47 +95,52 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
+        "AccountID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Locked": {
+        "Amount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
-    "v2GetLedgerOnlyResponse": {
+    "v2CreateWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Withdraw"
         }
       }
     },
-    "v2GetLedgerResponse": {
+    "v2GetWithdrawOnlyResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v2Ledger"
+          "$ref": "#/definitions/v2Withdraw"
         }
       }
     },
-    "v2GetLedgersResponse": {
+    "v2GetWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2GetWithdrawsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v2Ledger"
+            "$ref": "#/definitions/v2Withdraw"
           }
         },
         "Total": {
@@ -171,7 +149,15 @@
         }
       }
     },
-    "v2Ledger": {
+    "v2UpdateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2Withdraw": {
       "type": "object",
       "properties": {
         "ID": {
@@ -190,21 +176,32 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "Incoming": {
+        "AccountID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"incoming\""
+          "title": "@inject_tag: sql:\"account_id\""
         },
-        "Outcoming": {
+        "Address": {
           "type": "string",
-          "title": "@inject_tag: sql:\"outcoming\""
+          "title": "@inject_tag: sql:\"address\""
         },
-        "Locked": {
+        "Amount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
+          "title": "@inject_tag: sql:\"amount\""
         },
-        "Spendable": {
+        "PlatformTransactionID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"spendable\""
+          "title": "@inject_tag: sql:\"platform_transaction_id\""
+        },
+        "ChainTransactionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_transaction_id\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -218,15 +215,7 @@
         }
       }
     },
-    "v2LockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2SpendBalanceReq": {
+    "v2WithdrawReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -241,42 +230,23 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Unlocked": {
+        "AccountID": {
           "type": "string"
         },
-        "Outcoming": {
+        "Address": {
           "type": "string"
         },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType",
-          "title": "Only Payment or Withdraw"
-        },
-        "IOExtra": {
+        "Amount": {
           "type": "string"
-        }
-      }
-    },
-    "v2SpendBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnlockBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
-    "v2UnspendBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
         }
       }
     }

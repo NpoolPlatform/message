@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawResponse"
+              "$ref": "#/definitions/v1CreateWithdrawResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1CreateWithdrawRequest"
+              "$ref": "#/definitions/v1CreateWithdrawRequest"
             }
           }
         ],
@@ -114,12 +114,12 @@
     },
     "/v1/get/app/details": {
       "post": {
-        "operationId": "Gateway_GetAppDetails",
+        "operationId": "Gateway_GetAppStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppDetailsResponse"
+              "$ref": "#/definitions/v1GetAppStatementsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppDetailsRequest"
+              "$ref": "#/definitions/v1GetAppStatementsRequest"
             }
           }
         ],
@@ -146,12 +146,12 @@
     },
     "/v1/get/app/generals": {
       "post": {
-        "operationId": "Gateway_GetAppGenerals",
+        "operationId": "Gateway_GetAppLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppGeneralsResponse"
+              "$ref": "#/definitions/v1GetAppLedgersResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppGeneralsRequest"
+              "$ref": "#/definitions/v1GetAppLedgersRequest"
             }
           }
         ],
@@ -210,12 +210,12 @@
     },
     "/v1/get/details": {
       "post": {
-        "operationId": "Gateway_GetDetails",
+        "operationId": "Gateway_GetStatements",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1GetDetailsResponse"
+              "$ref": "#/definitions/v1GetStatementsResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1GetDetailsRequest"
+              "$ref": "#/definitions/v1GetStatementsRequest"
             }
           }
         ],
@@ -242,12 +242,12 @@
     },
     "/v1/get/generals": {
       "post": {
-        "operationId": "Gateway_GetGenerals",
+        "operationId": "Gateway_GetLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGeneralsResponse"
+              "$ref": "#/definitions/v1GetLedgersResponse"
             }
           },
           "default": {
@@ -263,7 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGeneralsRequest"
+              "$ref": "#/definitions/v1GetLedgersRequest"
             }
           }
         ],
@@ -306,12 +306,12 @@
     },
     "/v1/get/intervalgenerals": {
       "post": {
-        "operationId": "Gateway_GetIntervalGenerals",
+        "operationId": "Gateway_GetIntervalLedgers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalGeneralsResponse"
+              "$ref": "#/definitions/v1GetIntervalLedgersResponse"
             }
           },
           "default": {
@@ -327,7 +327,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetIntervalGeneralsRequest"
+              "$ref": "#/definitions/v1GetIntervalLedgersRequest"
             }
           }
         ],
@@ -503,7 +503,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1GetWithdrawsResponse"
+              "$ref": "#/definitions/v1GetWithdrawsResponse"
             }
           },
           "default": {
@@ -519,7 +519,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayledger1v1GetWithdrawsRequest"
+              "$ref": "#/definitions/v1GetWithdrawsRequest"
             }
           }
         ],
@@ -530,217 +530,6 @@
     }
   },
   "definitions": {
-    "gatewayledger1v1CreateWithdrawRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "LangID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "AccountType": {
-          "$ref": "#/definitions/v1SignMethod"
-        },
-        "Account": {
-          "type": "string"
-        },
-        "VerificationCode": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewayledger1v1CreateWithdrawResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/gatewayledger1v1Withdraw"
-        }
-      }
-    },
-    "gatewayledger1v1Detail": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "IOType": {
-          "$ref": "#/definitions/v1IOType"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "IOExtra": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewayledger1v1GetDetailsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "gatewayledger1v1GetDetailsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Detail"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "gatewayledger1v1GetWithdrawsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "gatewayledger1v1GetWithdrawsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Withdraw"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "gatewayledger1v1Withdraw": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "AddressLabels": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "State": {
-          "$ref": "#/definitions/v1WithdrawState"
-        },
-        "Message": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -799,7 +588,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/gatewayledger1v1Detail"
+          "$ref": "#/definitions/v1Statement"
         }
       }
     },
@@ -840,57 +629,47 @@
         }
       }
     },
-    "v1General": {
+    "v1CreateWithdrawRequest": {
       "type": "object",
       "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinDisabled": {
-          "type": "boolean"
-        },
-        "CoinDisplay": {
-          "type": "boolean"
-        },
-        "Incoming": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
-          "type": "string"
-        },
-        "Spendable": {
+        "AppID": {
           "type": "string"
         },
         "UserID": {
           "type": "string"
         },
-        "PhoneNO": {
+        "LangID": {
           "type": "string"
         },
-        "EmailAddress": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "VerificationCode": {
           "type": "string"
         }
       }
     },
-    "v1GetAppDetailsRequest": {
+    "v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Withdraw"
+        }
+      }
+    },
+    "v1GetAppLedgersRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -906,14 +685,14 @@
         }
       }
     },
-    "v1GetAppDetailsResponse": {
+    "v1GetAppLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Detail"
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -922,7 +701,7 @@
         }
       }
     },
-    "v1GetAppGeneralsRequest": {
+    "v1GetAppStatementsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -938,14 +717,14 @@
         }
       }
     },
-    "v1GetAppGeneralsResponse": {
+    "v1GetAppStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Statement"
           }
         },
         "Total": {
@@ -977,42 +756,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Withdraw"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetGeneralsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGeneralsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1064,7 +808,7 @@
         }
       }
     },
-    "v1GetIntervalGeneralsRequest": {
+    "v1GetIntervalLedgersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -1091,14 +835,14 @@
         }
       }
     },
-    "v1GetIntervalGeneralsResponse": {
+    "v1GetIntervalLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1General"
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -1184,7 +928,42 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Withdraw"
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetLedgersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetLedgersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Ledger"
           }
         },
         "Total": {
@@ -1259,7 +1038,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/gatewayledger1v1Withdraw"
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1295,6 +1074,84 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/v1Profit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetStatementsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Statement"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Withdraw"
           }
         },
         "Total": {
@@ -1370,6 +1227,56 @@
         "Outcoming"
       ],
       "default": "DefaultType"
+    },
+    "v1Ledger": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinDisabled": {
+          "type": "boolean"
+        },
+        "CoinDisplay": {
+          "type": "boolean"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "Spendable": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
     },
     "v1MiningReward": {
       "type": "object",
@@ -1459,6 +1366,54 @@
       "default": "DefaultSignMethod",
       "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
     },
+    "v1Statement": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "IOType": {
+          "$ref": "#/definitions/v1IOType"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
     "v1Transfer": {
       "type": "object",
       "properties": {
@@ -1503,6 +1458,51 @@
           "type": "string"
         },
         "TargetLastName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Withdraw": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AddressLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "Message": {
           "type": "string"
         }
       }

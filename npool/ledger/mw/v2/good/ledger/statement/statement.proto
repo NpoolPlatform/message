@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package ledger.middleware.good.ledger.statement.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/good/ledger/statement";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc GetGoodStatementOnly    (GetGoodStatementOnlyRequest)   returns (GetGoodStatementOnlyResponse) {}
+    rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
+    rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
+    rpc UnCreateGoodStatements  (UnCreateGoodStatementsRequest) returns (UnCreateGoodStatementsResponse) {}
+}
+
+message GoodStatementReq {
+    optional string     ID               = 10;
+    optional string     GoodID           = 20;
+    optional string     CoinTypeID       = 30;
+    optional string     Amount           = 40;
+    optional uint32     BenefitDate      = 50;
+    optional uint32     CreatedAt        = 60;
+}
+
+message GoodStatement {
+    // @inject_tag: sql:"id"
+    string ID          = 10;
+    // @inject_tag: sql:"good_id"
+    string GoodID      = 20;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID  = 30;
+    // @inject_tag: sql:"amount"
+    string Amount      = 40;
+    // @inject_tag: sql:"benefit_date"
+    uint32 BenefitDate = 50;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt   = 60;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt   = 70;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID               = 10;
+    optional basetypes.v1.StringVal GoodID           = 20;
+    optional basetypes.v1.StringVal CoinTypeID       = 30;
+    optional basetypes.v1.StringVal Amount           = 40;
+    optional basetypes.v1.Uint32Val BenefitDate      = 50;
+}
+
+message GetGoodStatementOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetGoodStatementOnlyResponse {
+    GoodStatement Info = 10;
+}
+
+message GetGoodStatementsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
+    uint32                 Total = 20;
+}
+
+message GoodStatementsReq {
+    // for bookkeeping
+    optional string GoodID       = 10;
+    optional string CoinTypeID   = 20;
+    optional string TotalAmount  = 30;
+    optional string UnsoldAmount = 40;
+    optional string TechniqueServiceFeeAmount = 50;
+    optional uint32 BenefitDate  = 60;
+}
+
+message CreateGoodStatementsRequest {
+    repeated GoodStatementsReq Infos = 10;
+}
+
+message CreateGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
+}
+
+message UnCreateGoodStatementsRequest {
+    repeated GoodStatementsReq Infos = 10;
+}
+
+message UnCreateGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
+}

@@ -1,50 +1,145 @@
 syntax = "proto3";
 
-package ledger.middleware.ledger1.v2;
+package ledger.middleware.ledger.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger";
 
-import "npool/ledger/mgr/v1/ledger/detail/detail.proto";
-import "npool/ledger/mgr/v1/ledger/general/general.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc BookKeeping               (BookKeepingRequest)               returns (BookKeepingResponse)          {}
-    rpc GetGeneralOnly            (GetGeneralOnlyRequest)            returns (GetGeneralOnlyResponse)       {}
-    rpc GetDetails                (GetDetailsRequest)                returns (GetDetailsResponse)           {}
-    rpc AddGeneral                (AddGeneralRequest)                returns (AddGeneralResponse)           {}
+    rpc GetLedger        (GetLedgerRequest)        returns (GetLedgerResponse)        {}
+    rpc GetLedgerOnly    (GetLedgerOnlyRequest)    returns (GetLedgerOnlyResponse)    {}
+    rpc GetLedgers       (GetLedgersRequest)       returns (GetLedgersResponse)       {}
+    rpc LockBalance      (LockBalanceRequest)      returns (LockBalanceResponse)      {}
+    rpc UnlockBalance    (UnlockBalanceRequest)    returns (UnlockBalanceResponse)    {}
+    rpc SpendBalance     (SpendBalanceRequest)     returns (SpendBalanceResponse)     {}
+    rpc UnspendBalance   (UnspendBalanceRequest)   returns (UnspendBalanceResponse)   {}
 }
 
-message BookKeepingRequest {
-    repeated ledger.manager.ledger.detail.v1.DetailReq Infos = 10;
+message LedgerReq {
+    optional string ID         = 10;
+    optional string AppID      = 20;
+    optional string UserID     = 30;
+    optional string CoinTypeID = 40;
+    optional string Incoming   = 50;
+    optional string Locked     = 60;
+    optional string Outcoming  = 70;
+    optional string Spendable  = 80;
 }
 
-message BookKeepingResponse {
+message Ledger {
+    // @inject_tag: sql:"id"
+    string      ID                             = 10;
+    // @inject_tag: sql:"app_id"
+    string      AppID                          = 20;
+    // @inject_tag: sql:"user_id"
+    string      UserID                         = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string      CoinTypeID                     = 40;
+    // @inject_tag: sql:"incoming"
+    string      Incoming                       = 50;
+    // @inject_tag: sql:"outcoming"
+    string      Outcoming                      = 60;
+    // @inject_tag: sql:"locked"
+    string      Locked                         = 70;
+    // @inject_tag: sql:"spendable"
+    string      Spendable                      = 80;
+    // @inject_tag: sql:"created_at"
+    uint32      CreatedAt                      = 90;
+    // @inject_tag: sql:"updated_at"
+    uint32      UpdatedAt                      = 100;
 }
 
-message GetGeneralOnlyRequest {
-    ledger.manager.ledger.general.v1.Conds Conds = 10;
+message Conds {
+    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal UserID      = 30;
+    optional basetypes.v1.StringVal CoinTypeID  = 40;
+    optional basetypes.v1.StringVal Incoming    = 50;
+    optional basetypes.v1.StringVal Locked      = 60;
+    optional basetypes.v1.StringVal Outcoming   = 70;
+    optional basetypes.v1.StringVal Spendable   = 80;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 90;
 }
 
-message GetGeneralOnlyResponse {
-    ledger.manager.ledger.general.v1.General Info = 10;
+
+message GetLedgerRequest {
+    string ID = 10;
 }
 
-message GetDetailsRequest {
-    ledger.manager.ledger.detail.v1.Conds Conds = 10;
-    uint32 Offset = 20;
-    uint32 Limit  = 30;
+message GetLedgerResponse {
+    Ledger Info = 10;
 }
 
-message GetDetailsResponse {
-    repeated ledger.manager.ledger.detail.v1.Detail Infos = 10;
-    uint32                                          Total = 20;
+message GetLedgersRequest {
+    Conds Conds     = 10;
+    int32 Offset    = 20;
+    int32 Limit     = 30;
 }
 
-message AddGeneralRequest {
-    ledger.manager.ledger.general.v1.GeneralReq Info = 10;
+message GetLedgersResponse {
+    repeated Ledger Infos = 10;
+    uint32           Total = 20;
 }
 
-message AddGeneralResponse {
-    ledger.manager.ledger.general.v1.General Info = 10;
+message GetLedgerOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetLedgerOnlyResponse {
+    Ledger Info = 10;
+}
+
+message BalanceReq {
+    optional string ID          = 10;
+    string          AppID       = 20;
+    string          UserID      = 30;
+    string          CoinTypeID  = 40;
+    string          Amount      = 50;
+}
+
+message LockBalanceRequest {
+    BalanceReq Info = 10;
+}
+
+message LockBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message UnlockBalanceRequest {
+    BalanceReq Info = 10;
+}
+
+message UnlockBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message SpendBalanceReq {
+    optional string ID                                  = 10;
+    string          AppID                               = 20;
+    string          UserID                              = 30;
+    string          CoinTypeID                          = 40;
+    string          Unlocked                            = 50;
+    string          Outcoming                           = 60;
+    // Only Payment or Withdraw
+    basetypes.ledger.v1.IOSubType IOSubType             = 70;
+    string          IOExtra                             = 80;
+}
+
+message SpendBalanceRequest {
+    SpendBalanceReq Info = 10;
+}
+
+message SpendBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
+}
+
+message UnspendBalanceRequest {
+    SpendBalanceReq Info = 10;
+}
+
+message UnspendBalanceResponse {
+    .ledger.middleware.ledger.v2.Ledger Info = 10;
 }

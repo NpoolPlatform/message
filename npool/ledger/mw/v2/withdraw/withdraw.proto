@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package ledger.middleware.withdraw.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/withdraw";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {}
+    rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
+    rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
+    rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
+    rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
+}
+
+message WithdrawReq {
+    optional string ID                     = 10;
+    optional string AppID                  = 20;
+    optional string UserID                 = 30;
+    optional string CoinTypeID             = 40;
+    optional string AccountID              = 50;
+    optional string Address                = 51;
+    optional string Amount                 = 60;
+    optional string PlatformTransactionID  = 70;
+    optional string ChainTransactionID     = 80;
+    optional basetypes.ledger.v1.WithdrawState State       = 90;
+}
+
+message Withdraw {
+    // @inject_tag: sql:"id"
+    string ID                     = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID                  = 20;
+    // @inject_tag: sql:"user_id"
+    string UserID                 = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID             = 40;
+    // @inject_tag: sql:"account_id"
+    string AccountID              = 50;
+    // @inject_tag: sql:"address"
+    string Address                = 51;
+    // @inject_tag: sql:"amount"
+    string Amount                 = 60;
+    // @inject_tag: sql:"platform_transaction_id"
+    string PlatformTransactionID  = 80;
+    // @inject_tag: sql:"chain_transaction_id"
+    string ChainTransactionID     = 90;
+    // @inject_tag: sql:"state"
+    string StateStr               = 100;
+    basetypes.ledger.v1.WithdrawState State           = 110;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt              = 120;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt              = 130;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal AppID      = 20;
+    optional basetypes.v1.StringVal UserID     = 30;
+    optional basetypes.v1.StringVal CoinTypeID = 40;
+    optional basetypes.v1.StringVal AccountID  = 50;
+    optional basetypes.v1.StringVal Amount     = 60;
+    optional basetypes.v1.Uint32Val CreatedAt  = 70;
+    optional basetypes.v1.Uint32Val State      = 80;
+}
+
+message CreateWithdrawRequest {
+    WithdrawReq Info = 10;
+}
+
+message CreateWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message UpdateWithdrawRequest {
+    WithdrawReq Info = 10;
+}
+
+message UpdateWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message GetWithdrawRequest {
+    string ID = 10;
+}
+
+message GetWithdrawResponse {
+    Withdraw Info = 10;
+}
+
+message GetWithdrawsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetWithdrawsResponse {
+    repeated Withdraw Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetWithdrawOnlyRequest {
+    Conds Conds = 10;
+}
+
+message GetWithdrawOnlyResponse {
+    Withdraw Info = 10;
+}
