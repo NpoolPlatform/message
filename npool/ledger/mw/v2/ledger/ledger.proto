@@ -79,7 +79,7 @@ message GetLedgersRequest {
 
 message GetLedgersResponse {
     repeated Ledger Infos = 10;
-    uint32           Total = 20;
+    uint32          Total = 20;
 }
 
 message GetLedgerOnlyRequest {
