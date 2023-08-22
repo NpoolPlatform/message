@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package good.middleware.good1.required.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/required";
+
+import "google/api/annotations.proto";
+
+service Gateway {
+    rpc CreateRequired (CreateRequiredRequest) returns (CreateRequiredResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/requiredgood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateRequired (UpdateRequiredRequest) returns (UpdateRequiredResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/requiredgood"
+            body: "*"
+        };
+    }
+
+    rpc GetRequireds (GetRequiredsRequest) returns (GetRequiredsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/requiredgoods"
+            body: "*"
+        };
+    }
+
+    rpc DeleteRequired (DeleteRequiredRequest) returns (DeleteRequiredResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/requiredgood"
+            body: "*"
+        };
+    }
+}
+
+message Required {
+    string ID         = 10;
+    string MainGoodID = 20;
+    string MainGoodName = 30;
+    string RequiredGoodID = 40;
+    string RequiredGoodName = 50;
+    bool   Must       = 60;
+    uint32 CreatedAt  = 1000;
+    uint32 UpdatedAt  = 1010;
+}
+
+message CreateRequiredRequest {
+    string MainGoodID     = 10;
+    string RequiredGoodID = 20;
+    bool   Must           = 30;
+}
+
+message CreateRequiredResponse {
+    Required Info = 10;
+}
+
+message UpdateRequiredRequest {
+    string ID   = 10;
+    string Must = 20;
+}
+
+message UpdateRequiredResponse {
+    Required Info = 10;
+}
+
+message GetRequiredsRequest {
+    optional string GoodID = 10;
+    int32           Offset = 20;
+    int32           Limit  = 30;
+}
+
+message GetRequiredsResponse {
+    repeated Required Infos = 10;
+}
+
+message DeleteRequiredRequest {
+    string ID = 10;
+}
+
+message DeleteRequiredResponse {
+    Required Info = 10;
+}

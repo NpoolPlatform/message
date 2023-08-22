@@ -5,11 +5,11 @@ package good.middleware.good1.score.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/score";
 
 import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
     rpc CreateScore      (CreateScoreRequest)      returns (CreateScoreResponse)      {}
+    rpc GetScore         (GetScoreRequest)         returns (GetScoreResponse)         {}
     rpc GetScores        (GetScoresRequest)        returns (GetScoresResponse)        {}
     rpc DeleteScore      (DeleteScoreRequest)      returns (DeleteScoreResponse)      {}
 }
@@ -57,6 +57,14 @@ message CreateScoreResponse {
     Score Info = 10;
 }
 
+message GetScoreRequest {
+    string ID = 10;
+}
+
+message GetScoreResponse {
+    Score Info = 10;
+}
+
 message GetScoresRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
@@ -65,7 +73,7 @@ message GetScoresRequest {
 
 message GetScoresResponse {
     repeated Score Infos = 10;
-    uint32            Total = 20;
+    uint32         Total = 20;
 }
 
 message DeleteScoreRequest {

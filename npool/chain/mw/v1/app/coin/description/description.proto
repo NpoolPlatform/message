@@ -4,7 +4,6 @@ package chain.middleware.app.coin.description.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/app/coin/description";
 
-import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 

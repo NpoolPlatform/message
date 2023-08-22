@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1CreateEventResponse"
+              "$ref": "#/definitions/v1CreateEventResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1CreateEventRequest"
+              "$ref": "#/definitions/v1CreateEventRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1GetEventsResponse"
+              "$ref": "#/definitions/v1GetEventsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1GetEventsRequest"
+              "$ref": "#/definitions/v1GetEventsRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1UpdateEventResponse"
+              "$ref": "#/definitions/v1UpdateEventResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/inspiregatewayeventv1UpdateEventRequest"
+              "$ref": "#/definitions/v1UpdateEventRequest"
             }
           }
         ],
@@ -114,175 +114,6 @@
     }
   },
   "definitions": {
-    "inspiregatewayeventv1CreateEventRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Credits": {
-          "type": "string"
-        },
-        "CreditsPerUSD": {
-          "type": "string"
-        },
-        "MaxConsecutive": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "InviterLayers": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiregatewayeventv1CreateEventResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/inspiregatewayeventv1Event"
-        }
-      }
-    },
-    "inspiregatewayeventv1Event": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "Coupons": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Coupon"
-          }
-        },
-        "Credits": {
-          "type": "string"
-        },
-        "CreditsPerUSD": {
-          "type": "string"
-        },
-        "MaxConsecutive": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "InviterLayers": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiregatewayeventv1GetEventsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "inspiregatewayeventv1GetEventsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/inspiregatewayeventv1Event"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiregatewayeventv1UpdateEventRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Credits": {
-          "type": "string"
-        },
-        "CreditsPerUSD": {
-          "type": "string"
-        },
-        "MaxConsecutive": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InviterLayers": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "inspiregatewayeventv1UpdateEventResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/inspiregatewayeventv1Event"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -423,6 +254,175 @@
         "SpecialOffer"
       ],
       "default": "DefaultCouponType"
+    },
+    "v1CreateEventRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1Event": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetEventsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Event"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateEventRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
     },
     "v1UsedFor": {
       "type": "string",

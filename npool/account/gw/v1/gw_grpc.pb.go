@@ -8,7 +8,7 @@ package v1
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
+	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	// Method Version
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error)
 }
 
 type gatewayClient struct {
@@ -40,8 +40,8 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
+func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error) {
+	out := new(v1.VersionResponse)
 	err := c.cc.Invoke(ctx, Gateway_Version_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -54,7 +54,7 @@ func (c *gatewayClient) Version(ctx context.Context, in *emptypb.Empty, opts ...
 // for forward compatibility
 type GatewayServer interface {
 	// Method Version
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -62,7 +62,7 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedGatewayServer) Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}

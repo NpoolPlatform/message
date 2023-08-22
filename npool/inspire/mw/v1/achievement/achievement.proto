@@ -4,7 +4,6 @@ package inspire.middleware.achievement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name

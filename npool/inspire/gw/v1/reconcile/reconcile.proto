@@ -5,7 +5,6 @@ package inspire.gateway.reconciliation.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/reconciliation";
 
 import "google/api/annotations.proto";
-import "npool/npool.proto";
 
 // Service Name
 service Gateway {

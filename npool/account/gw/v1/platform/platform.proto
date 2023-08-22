@@ -5,7 +5,6 @@ package account.gateway.platform.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/platform";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/accountusedfor.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
 

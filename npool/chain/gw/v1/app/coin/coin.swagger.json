@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinResponse"
+              "$ref": "#/definitions/v1CreateCoinResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1CreateCoinRequest"
+              "$ref": "#/definitions/v1CreateCoinRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinResponse"
+              "$ref": "#/definitions/v1DeleteCoinResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1DeleteCoinRequest"
+              "$ref": "#/definitions/v1DeleteCoinRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsResponse"
+              "$ref": "#/definitions/v1GetCoinsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1GetCoinsRequest"
+              "$ref": "#/definitions/v1GetCoinsRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinResponse"
+              "$ref": "#/definitions/v1UpdateCoinResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/chaingatewayappcoinv1UpdateCoinRequest"
+              "$ref": "#/definitions/v1UpdateCoinRequest"
             }
           }
         ],
@@ -178,7 +178,35 @@
     }
   },
   "definitions": {
-    "chaingatewayappcoinv1Coin": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coin": {
       "type": "object",
       "properties": {
         "ID": {
@@ -337,7 +365,7 @@
         }
       }
     },
-    "chaingatewayappcoinv1CreateCoinRequest": {
+    "v1CreateCoinRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -348,15 +376,15 @@
         }
       }
     },
-    "chaingatewayappcoinv1CreateCoinResponse": {
+    "v1CreateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     },
-    "chaingatewayappcoinv1DeleteCoinRequest": {
+    "v1DeleteCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -367,15 +395,47 @@
         }
       }
     },
-    "chaingatewayappcoinv1DeleteCoinResponse": {
+    "v1DeleteCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     },
-    "chaingatewayappcoinv1GetCoinsRequest": {
+    "v1GetAppCoinsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetCoinsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -391,14 +451,14 @@
         }
       }
     },
-    "chaingatewayappcoinv1GetCoinsResponse": {
+    "v1GetCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
+            "$ref": "#/definitions/v1Coin"
           }
         },
         "Total": {
@@ -407,7 +467,7 @@
         }
       }
     },
-    "chaingatewayappcoinv1UpdateCoinRequest": {
+    "v1UpdateCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -468,71 +528,11 @@
         }
       }
     },
-    "chaingatewayappcoinv1UpdateCoinResponse": {
+    "v1UpdateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/chaingatewayappcoinv1Coin"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1GetAppCoinsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppCoinsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/chaingatewayappcoinv1Coin"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     }

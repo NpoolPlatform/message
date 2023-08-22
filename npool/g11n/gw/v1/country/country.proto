@@ -5,8 +5,6 @@ package g11n.gateway.country.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/g11n/gw/v1/country";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
 import "npool/g11n/mw/v1/country/country.proto";
 
 // Service Name

@@ -1,0 +1,950 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/gw/v1/app/good/good.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/n/appgood": {
+      "post": {
+        "operationId": "Gateway_CreateNAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/appgood": {
+      "post": {
+        "operationId": "Gateway_GetAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/appgoods": {
+      "post": {
+        "operationId": "Gateway_GetAppGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/appgoods": {
+      "post": {
+        "operationId": "Gateway_GetNAppGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/appgood": {
+      "post": {
+        "operationId": "Gateway_UpdateAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/n/appgood": {
+      "post": {
+        "operationId": "Gateway_UpdateNAppGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GoodCoinInfo": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
+          "type": "boolean"
+        },
+        "CoinEnv": {
+          "type": "string"
+        },
+        "CoinHomePage": {
+          "type": "string"
+        },
+        "CoinSpecs": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCancelMode",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "DefaultCancelMode"
+    },
+    "v1CreateNAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateNAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetAppGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Good": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PromotionStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PromotionEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PromotionMessage": {
+          "type": "string"
+        },
+        "PromotionPrice": {
+          "type": "string"
+        },
+        "PromotionPosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DeviceType": {
+          "type": "string"
+        },
+        "DeviceManufacturer": {
+          "type": "string"
+        },
+        "DevicePowerConsumption": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DeviceShipmentAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DevicePosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "VendorLocationCountry": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPreSale": {
+          "type": "boolean"
+        },
+        "CoinEnv": {
+          "type": "string"
+        },
+        "CoinHomePage": {
+          "type": "string"
+        },
+        "CoinSpecs": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "UnitAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SupportCoins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/GoodCoinInfo"
+          }
+        },
+        "Total": {
+          "type": "string"
+        },
+        "SpotQuantity": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "InService": {
+          "type": "string"
+        },
+        "WaitStart": {
+          "type": "string"
+        },
+        "Sold": {
+          "type": "string"
+        },
+        "RequiredGoods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DailyRewardAmount": {
+          "type": "string"
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GoodBanner": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
+        },
+        "Likes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Score": {
+          "type": "string"
+        },
+        "ScoreCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RecommendCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CommentCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRenting",
+        "MachineRenting",
+        "MachineHosting",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1UpdateAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GoodBanner": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DailyRewardAmount": {
+          "type": "string"
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1UpdateNAppGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PurchaseLimit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CommissionPercent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TechnicalFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ElectricityFeeRatio": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GoodBanner": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EnablePurchase": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
+        "UserPurchaseLimit": {
+          "type": "string"
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CancellableBeforeStart": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateNAppGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    }
+  }
+}

@@ -4,9 +4,7 @@ package good.gateway.good1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good";
 
-import "npool/good/mgr/v1/good/good.proto";
-import "npool/good/mw/v1/good/good.proto";
-import "npool/npool.proto";
+import "npool/basetypes/good/v1/enums.proto";
 import "google/api/annotations.proto";
 
 // Service Name
@@ -46,7 +44,7 @@ message Good {
     string           DeviceInfoID                = 20;
     string           DeviceType                  = 30;
     string           DeviceManufacturer          = 40;
-    uint32           DevicePowerComsuption       = 50;
+    uint32           DevicePowerConsumption      = 50;
     uint32           DeviceShipmentAt            = 60;
     repeated string  DevicePosters               = 70;
 
@@ -58,19 +56,16 @@ message Good {
     string           CoinUnit                    = 120;
     bool             CoinPreSale                 = 130;
 
-    optional string  InheritFromGoodID           = 140;
-    optional string  InheritFromGoodName         = 150;
-    optional good.manager.good.v1.GoodType    InheritFromGoodType        = 160;
-    optional good.manager.good.v1.BenefitType InheritFromGoodBenefitType = 170;
-
     string           VendorLocationID            = 180;
     string           VendorLocationCountry       = 190;
     string           VendorLocationProvince      = 200;
     string           VendorLocationCity          = 210;
     string           VendorLocationAddress       = 220;
+    string           VendorBrandName             = 221;
+    string           VendorBrandLogo             = 222;
 
-    good.manager.good.v1.GoodType    GoodType    = 230;
-    good.manager.good.v1.BenefitType BenefitType = 240;
+    basetypes.good.v1.GoodType    GoodType    = 230;
+    basetypes.good.v1.BenefitType BenefitType = 240;
 
     string           Price              = 250;
     string           Title              = 260;
@@ -78,9 +73,7 @@ message Good {
     int32            UnitAmount         = 280;
     bool             TestOnly           = 290;
     repeated string  Posters            = 300;
-    repeated string  Labels             = 310;
-    uint32           VoteCount          = 320;
-    float            Rating             = 330;
+    repeated basetypes.good.v1.GoodLabel Labels = 310;
 
     message CoinInfo {
         string CoinTypeID  = 10;
@@ -97,28 +90,35 @@ message Good {
     string           InService      = 380;
     string           WaitStart      = 381;
     string           Sold           = 390;
+    string           AppReserved    = 391;
 
     uint32           DeliveryAt         = 400;
     uint32           StartAt            = 410;
     uint32           CreatedAt          = 420;
     uint32           UpdatedAt          = 430;
-    uint32           DeletedAt          = 440;
 
     uint32           BenefitIntervalHours = 450;
     uint32           LastBenefitAt        = 460;
     string           NextBenefitStartAmount = 470;
     string           LastBenefitAmount    = 480;
+
+    uint32           Likes        = 490;
+    uint32           Dislikes     = 500;
+    string           Score        = 510;
+    uint32           ScoreCount   = 520;
+    uint32           RecommendCount = 530;
+    uint32           CommentCount = 540;
+    string           UnitLockDeposit = 550;
 }
 
 message CreateGoodRequest {
     string          DeviceInfoID       = 20;
     int32           DurationDays       = 30;
     string          CoinTypeID         = 40;
-    optional string InheritFromGoodID  = 50;
     string          VendorLocationID   = 60;
     string          Price              = 70;
-    good.manager.good.v1.BenefitType BenefitType = 80;
-    good.manager.good.v1.GoodType    GoodType    = 90;
+    basetypes.good.v1.BenefitType BenefitType = 80;
+    basetypes.good.v1.GoodType    GoodType    = 90;
     string          Title              = 100;
     string          Unit               = 110;
     int32           UnitAmount         = 120;
@@ -128,8 +128,9 @@ message CreateGoodRequest {
     bool            TestOnly           = 160;
     string          Total              = 170;
     repeated string Posters            = 210;
-    repeated string Labels             = 220;
+    repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
+    optional string UnitLockDeposit    = 240;
 }
 
 message CreateGoodResponse {
@@ -155,24 +156,25 @@ message GetGoodsResponse {
 }
 
 message UpdateGoodRequest {
-    string                 ID                 = 10;
-    optional string        DeviceInfoID       = 20;
-    optional int32         DurationDays       = 30;
-    optional string        CoinTypeID         = 40;
-    optional string        InheritFromGoodID  = 50;
-    optional string        VendorLocationID   = 60;
-    optional string        Price              = 70;
-    optional string        Title              = 100;
-    optional string        Unit               = 110;
-    optional int32         UnitAmount         = 120;
-    repeated string        SupportCoinTypeIDs = 130;
-    optional uint32        DeliveryAt         = 140;
-    optional uint32        StartAt            = 150;
-    optional bool          TestOnly           = 160;
-    optional string        Total              = 170;
-    repeated string        Posters            = 210;
-    repeated string        Labels             = 220;
-    optional uint32        BenefitIntervalHours = 230;
+    string          ID                 = 10;
+    optional string DeviceInfoID       = 20;
+    optional int32  DurationDays       = 30;
+    optional string CoinTypeID         = 40;
+    optional string InheritFromGoodID  = 50;
+    optional string VendorLocationID   = 60;
+    optional string Price              = 70;
+    optional string Title              = 100;
+    optional string Unit               = 110;
+    optional int32  UnitAmount         = 120;
+    repeated string SupportCoinTypeIDs = 130;
+    optional uint32 DeliveryAt         = 140;
+    optional uint32 StartAt            = 150;
+    optional bool   TestOnly           = 160;
+    optional string Total              = 170;
+    repeated string Posters            = 210;
+    repeated basetypes.good.v1.GoodLabel Labels = 220;
+    optional uint32 BenefitIntervalHours = 230;
+    optional string UnitLockDeposit    = 240;
 }
 
 message UpdateGoodResponse {

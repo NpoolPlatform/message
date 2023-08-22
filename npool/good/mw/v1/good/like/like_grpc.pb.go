@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateLike_FullMethodName = "/good.middleware.good1.like.v1.Middleware/CreateLike"
+	Middleware_GetLike_FullMethodName    = "/good.middleware.good1.like.v1.Middleware/GetLike"
 	Middleware_GetLikes_FullMethodName   = "/good.middleware.good1.like.v1.Middleware/GetLikes"
 	Middleware_DeleteLike_FullMethodName = "/good.middleware.good1.like.v1.Middleware/DeleteLike"
 )
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error)
+	GetLike(ctx context.Context, in *GetLikeRequest, opts ...grpc.CallOption) (*GetLikeResponse, error)
 	GetLikes(ctx context.Context, in *GetLikesRequest, opts ...grpc.CallOption) (*GetLikesResponse, error)
 	DeleteLike(ctx context.Context, in *DeleteLikeRequest, opts ...grpc.CallOption) (*DeleteLikeResponse, error)
 }
@@ -44,6 +46,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error) {
 	out := new(CreateLikeResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateLike_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetLike(ctx context.Context, in *GetLikeRequest, opts ...grpc.CallOption) (*GetLikeResponse, error) {
+	out := new(GetLikeResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetLike_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *middlewareClient) DeleteLike(ctx context.Context, in *DeleteLikeRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error)
+	GetLike(context.Context, *GetLikeRequest) (*GetLikeResponse, error)
 	GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error)
 	DeleteLike(context.Context, *DeleteLikeRequest) (*DeleteLikeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -84,6 +96,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLike not implemented")
+}
+func (UnimplementedMiddlewareServer) GetLike(context.Context, *GetLikeRequest) (*GetLikeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLike not implemented")
 }
 func (UnimplementedMiddlewareServer) GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLikes not implemented")
@@ -118,6 +133,24 @@ func _Middleware_CreateLike_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateLike(ctx, req.(*CreateLikeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetLike_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLikeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetLike(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetLike_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetLike(ctx, req.(*GetLikeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,6 +201,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateLike",
 			Handler:    _Middleware_CreateLike_Handler,
+		},
+		{
+			MethodName: "GetLike",
+			Handler:    _Middleware_GetLike_Handler,
 		},
 		{
 			MethodName: "GetLikes",

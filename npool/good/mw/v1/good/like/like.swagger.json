@@ -81,6 +81,14 @@
         }
       }
     },
+    "v1GetLikeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Like"
+        }
+      }
+    },
     "v1GetLikesResponse": {
       "type": "object",
       "properties": {

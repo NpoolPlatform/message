@@ -154,10 +154,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"device_manufacturer\""
         },
-        "DevicePowerComsuption": {
+        "DevicePowerConsumption": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"device_power_comsuption\""
+          "title": "@inject_tag: sql:\"device_power_consumption\""
         },
         "DeviceShipmentAt": {
           "type": "integer",

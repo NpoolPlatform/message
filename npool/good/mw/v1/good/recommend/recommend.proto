@@ -5,12 +5,12 @@ package good.middleware.good1.recommend.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/recommend";
 
 import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
     rpc CreateRecommend      (CreateRecommendRequest)      returns (CreateRecommendResponse)      {}
     rpc UpdateRecommend      (UpdateRecommendRequest)      returns (UpdateRecommendResponse)      {}
+    rpc GetRecommend         (GetRecommendRequest)         returns (GetRecommendResponse)         {}
     rpc GetRecommends        (GetRecommendsRequest)        returns (GetRecommendsResponse)        {}
     rpc DeleteRecommend      (DeleteRecommendRequest)      returns (DeleteRecommendResponse)      {}
 }
@@ -69,6 +69,14 @@ message UpdateRecommendResponse {
     Recommend Info = 10;
 }
 
+message GetRecommendRequest {
+    string ID = 10;
+}
+
+message GetRecommendResponse {
+    Recommend Info = 10;
+}
+
 message GetRecommendsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
@@ -77,7 +85,7 @@ message GetRecommendsRequest {
 
 message GetRecommendsResponse {
     repeated Recommend Infos = 10;
-    uint32            Total = 20;
+    uint32             Total = 20;
 }
 
 message DeleteRecommendRequest {

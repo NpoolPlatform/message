@@ -4,7 +4,6 @@ package chain.middleware.chain.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/chain";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name

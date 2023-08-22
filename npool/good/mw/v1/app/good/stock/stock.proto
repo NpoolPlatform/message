@@ -4,15 +4,12 @@ package good.middleware.app.good1.stock.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/stock";
 
-import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
     rpc AddStock       (AddStockRequest)       returns (AddStockResponse)       {}
     rpc SubStock       (SubStockRequest)       returns (SubStockResponse)       {}
-    rpc AddReserved    (AddReservedRequest)    returns (AddReservedResponse)    {}
-    rpc SubReserved    (SubReservedRequest)    returns (SubReservedResponse)    {}
 }
 
 message StockReq {
@@ -84,18 +81,3 @@ message SubStockResponse {
     Stock Info = 10;
 }
 
-message AddReservedRequest {
-    StockReq Info = 10;
-}
-
-message AddReservedResponse {
-    Stock Info = 10;
-}
-
-message SubReservedRequest {
-    StockReq Info = 10;
-}
-
-message SubReservedResponse {
-    Stock Info = 10;
-}

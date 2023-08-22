@@ -101,6 +101,9 @@
         },
         "States": {
           "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -189,6 +192,15 @@
         }
       }
     },
+    "v1InvestmentType": {
+      "type": "string",
+      "enum": [
+        "DefaultInvestmentType",
+        "UnionMining",
+        "FullPayment"
+      ],
+      "default": "DefaultInvestmentType"
+    },
     "v1Order": {
       "type": "object",
       "properties": {
@@ -225,6 +237,13 @@
         },
         "OrderState": {
           "$ref": "#/definitions/v1OrderState"
+        },
+        "InvestmentTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"investment_type\""
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         },
         "ParentOrderID": {
           "type": "string",
@@ -396,6 +415,9 @@
         },
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         },
         "FixAmountID": {
           "type": "string"

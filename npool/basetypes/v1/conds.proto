@@ -4,6 +4,13 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
+import "google/protobuf/struct.proto";
+
+message FilterCond {
+    string                Op  = 10;
+    google.protobuf.Value Val = 20;
+}
+
 message Int32Val {
     string Op    = 10;
     int32  Value = 20;

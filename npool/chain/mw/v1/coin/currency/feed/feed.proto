@@ -4,7 +4,6 @@ package chain.middleware.coin.currency1.feed.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/currency/feed";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/currencyfeedtype.proto";
 

@@ -4,11 +4,11 @@
 // - protoc             v3.18.1
 // source: npool/build-chain/buildchain.proto
 
-package proto
+package buildchain
 
 import (
 	context "context"
-	npool "github.com/NpoolPlatform/message/npool"
+	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -31,7 +31,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BuildChainClient interface {
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error)
 	GetTokenInfos(ctx context.Context, in *GetTokenInfosRequest, opts ...grpc.CallOption) (*GetTokenInfosResponse, error)
 	CreateTokenInfo(ctx context.Context, in *CreateTokenInfoRequest, opts ...grpc.CallOption) (*CreateTokenInfoResponse, error)
 	Faucet(ctx context.Context, in *FaucetRequst, opts ...grpc.CallOption) (*FaucetResponse, error)
@@ -45,8 +45,8 @@ func NewBuildChainClient(cc grpc.ClientConnInterface) BuildChainClient {
 	return &buildChainClient{cc}
 }
 
-func (c *buildChainClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*npool.VersionResponse, error) {
-	out := new(npool.VersionResponse)
+func (c *buildChainClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error) {
+	out := new(v1.VersionResponse)
 	err := c.cc.Invoke(ctx, BuildChain_Version_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -85,7 +85,7 @@ func (c *buildChainClient) Faucet(ctx context.Context, in *FaucetRequst, opts ..
 // All implementations must embed UnimplementedBuildChainServer
 // for forward compatibility
 type BuildChainServer interface {
-	Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error)
 	GetTokenInfos(context.Context, *GetTokenInfosRequest) (*GetTokenInfosResponse, error)
 	CreateTokenInfo(context.Context, *CreateTokenInfoRequest) (*CreateTokenInfoResponse, error)
 	Faucet(context.Context, *FaucetRequst) (*FaucetResponse, error)
@@ -96,7 +96,7 @@ type BuildChainServer interface {
 type UnimplementedBuildChainServer struct {
 }
 
-func (UnimplementedBuildChainServer) Version(context.Context, *emptypb.Empty) (*npool.VersionResponse, error) {
+func (UnimplementedBuildChainServer) Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedBuildChainServer) GetTokenInfos(context.Context, *GetTokenInfosRequest) (*GetTokenInfosResponse, error) {
