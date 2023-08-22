@@ -21,7 +21,6 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Gateway_CreateDeviceInfo_FullMethodName = "/good.gateway.deviceinfo.v1.Gateway/CreateDeviceInfo"
 	Gateway_UpdateDeviceInfo_FullMethodName = "/good.gateway.deviceinfo.v1.Gateway/UpdateDeviceInfo"
-	Gateway_GetDeviceInfo_FullMethodName    = "/good.gateway.deviceinfo.v1.Gateway/GetDeviceInfo"
 	Gateway_GetDeviceInfos_FullMethodName   = "/good.gateway.deviceinfo.v1.Gateway/GetDeviceInfos"
 )
 
@@ -31,7 +30,6 @@ const (
 type GatewayClient interface {
 	CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error)
-	GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error)
 	GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error)
 }
 
@@ -61,15 +59,6 @@ func (c *gatewayClient) UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceIn
 	return out, nil
 }
 
-func (c *gatewayClient) GetDeviceInfo(ctx context.Context, in *GetDeviceInfoRequest, opts ...grpc.CallOption) (*GetDeviceInfoResponse, error) {
-	out := new(GetDeviceInfoResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetDeviceInfo_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error) {
 	out := new(GetDeviceInfosResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetDeviceInfos_FullMethodName, in, out, opts...)
@@ -85,7 +74,6 @@ func (c *gatewayClient) GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRe
 type GatewayServer interface {
 	CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error)
-	GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error)
 	GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -99,9 +87,6 @@ func (UnimplementedGatewayServer) CreateDeviceInfo(context.Context, *CreateDevic
 }
 func (UnimplementedGatewayServer) UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeviceInfo not implemented")
-}
-func (UnimplementedGatewayServer) GetDeviceInfo(context.Context, *GetDeviceInfoRequest) (*GetDeviceInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfo not implemented")
 }
 func (UnimplementedGatewayServer) GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfos not implemented")
@@ -155,24 +140,6 @@ func _Gateway_UpdateDeviceInfo_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDeviceInfoRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetDeviceInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetDeviceInfo_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetDeviceInfo(ctx, req.(*GetDeviceInfoRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetDeviceInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDeviceInfosRequest)
 	if err := dec(in); err != nil {
@@ -205,10 +172,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateDeviceInfo",
 			Handler:    _Gateway_UpdateDeviceInfo_Handler,
-		},
-		{
-			MethodName: "GetDeviceInfo",
-			Handler:    _Gateway_GetDeviceInfo_Handler,
 		},
 		{
 			MethodName: "GetDeviceInfos",

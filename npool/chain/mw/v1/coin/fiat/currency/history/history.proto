@@ -4,9 +4,7 @@ package chain.middleware.coin.fiat.currency1.history.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin/fiat/currency/history";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/v1/currencyfeedtype.proto";
 import "npool/chain/mw/v1/coin/fiat/currency/currency.proto";
 
 // Service Name

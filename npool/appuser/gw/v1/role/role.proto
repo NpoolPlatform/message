@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/role";
 
 import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/role/role.proto";
-import "npool/appuser/mw/v1/role/user/user.proto";
 
 service Gateway {
     rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {

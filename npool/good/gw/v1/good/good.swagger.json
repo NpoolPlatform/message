@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodResponse"
+              "$ref": "#/definitions/v1CreateGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1CreateGoodRequest"
+              "$ref": "#/definitions/v1CreateGoodRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1GetGoodResponse"
+              "$ref": "#/definitions/v1GetGoodResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1GetGoodRequest"
+              "$ref": "#/definitions/v1GetGoodRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsResponse"
+              "$ref": "#/definitions/v1GetGoodsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsRequest"
+              "$ref": "#/definitions/v1GetGoodsRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodResponse"
+              "$ref": "#/definitions/v1UpdateGoodResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1v1UpdateGoodRequest"
+              "$ref": "#/definitions/v1UpdateGoodRequest"
             }
           }
         ],
@@ -166,7 +166,45 @@
         }
       }
     },
-    "goodgatewaygood1v1CreateGoodRequest": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+    },
+    "v1CreateGoodRequest": {
       "type": "object",
       "properties": {
         "DeviceInfoID": {
@@ -179,9 +217,6 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "InheritFromGoodID": {
-          "type": "string"
-        },
         "VendorLocationID": {
           "type": "string"
         },
@@ -189,10 +224,10 @@
           "type": "string"
         },
         "BenefitType": {
-          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
+          "$ref": "#/definitions/v1BenefitType"
         },
         "GoodType": {
-          "$ref": "#/definitions/goodmanagergoodv1GoodType"
+          "$ref": "#/definitions/v1GoodType"
         },
         "Title": {
           "type": "string"
@@ -239,18 +274,21 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "UnitLockDeposit": {
+          "type": "string"
         }
       }
     },
-    "goodgatewaygood1v1CreateGoodResponse": {
+    "v1CreateGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/goodgatewaygood1v1Good"
+          "$ref": "#/definitions/v1Good"
         }
       }
     },
-    "goodgatewaygood1v1GetGoodRequest": {
+    "v1GetGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -258,15 +296,15 @@
         }
       }
     },
-    "goodgatewaygood1v1GetGoodResponse": {
+    "v1GetGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/goodgatewaygood1v1Good"
+          "$ref": "#/definitions/v1Good"
         }
       }
     },
-    "goodgatewaygood1v1GetGoodsRequest": {
+    "v1GetGoodsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -279,14 +317,14 @@
         }
       }
     },
-    "goodgatewaygood1v1GetGoodsResponse": {
+    "v1GetGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/goodgatewaygood1v1Good"
+            "$ref": "#/definitions/v1Good"
           }
         },
         "Total": {
@@ -295,7 +333,7 @@
         }
       }
     },
-    "goodgatewaygood1v1Good": {
+    "v1Good": {
       "type": "object",
       "properties": {
         "ID": {
@@ -343,18 +381,6 @@
         "CoinPreSale": {
           "type": "boolean"
         },
-        "InheritFromGoodID": {
-          "type": "string"
-        },
-        "InheritFromGoodName": {
-          "type": "string"
-        },
-        "InheritFromGoodType": {
-          "$ref": "#/definitions/goodmanagergoodv1GoodType"
-        },
-        "InheritFromGoodBenefitType": {
-          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
-        },
         "VendorLocationID": {
           "type": "string"
         },
@@ -370,11 +396,17 @@
         "VendorLocationAddress": {
           "type": "string"
         },
+        "VendorBrandName": {
+          "type": "string"
+        },
+        "VendorBrandLogo": {
+          "type": "string"
+        },
         "GoodType": {
-          "$ref": "#/definitions/goodmanagergoodv1GoodType"
+          "$ref": "#/definitions/v1GoodType"
         },
         "BenefitType": {
-          "$ref": "#/definitions/goodmanagergoodv1BenefitType"
+          "$ref": "#/definitions/v1BenefitType"
         },
         "Price": {
           "type": "string"
@@ -404,14 +436,6 @@
             "type": "string"
           }
         },
-        "VoteCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rating": {
-          "type": "number",
-          "format": "float"
-        },
         "SupportCoins": {
           "type": "array",
           "items": {
@@ -437,6 +461,9 @@
         "Sold": {
           "type": "string"
         },
+        "AppReserved": {
+          "type": "string"
+        },
         "DeliveryAt": {
           "type": "integer",
           "format": "int64"
@@ -453,10 +480,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
@@ -470,10 +493,48 @@
         },
         "LastBenefitAmount": {
           "type": "string"
+        },
+        "Likes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Score": {
+          "type": "string"
+        },
+        "ScoreCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RecommendCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CommentCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UnitLockDeposit": {
+          "type": "string"
         }
       }
     },
-    "goodgatewaygood1v1UpdateGoodRequest": {
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRenting",
+        "MachineRenting",
+        "MachineHosting",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1UpdateGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -543,64 +604,17 @@
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "UnitLockDeposit": {
+          "type": "string"
         }
       }
     },
-    "goodgatewaygood1v1UpdateGoodResponse": {
+    "v1UpdateGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/goodgatewaygood1v1Good"
-        }
-      }
-    },
-    "goodmanagergoodv1BenefitType": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitType",
-        "BenefitTypePlatform",
-        "BenefitTypePool"
-      ],
-      "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
-    },
-    "goodmanagergoodv1GoodType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodType",
-        "GoodTypeClassicMining",
-        "GoodTypeUnionMining",
-        "GoodTypeTechniqueFee",
-        "GoodTypeElectricityFee"
-      ],
-      "default": "DefaultGoodType",
-      "title": "- GoodTypeClassicMining: Classic good: user pay for both device and other material, get all benefit\n - GoodTypeUnionMining: Union good: user pay for a part of material, get part of benefit\n - GoodTypeTechniqueFee: Fee good"
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
+          "$ref": "#/definitions/v1Good"
         }
       }
     }

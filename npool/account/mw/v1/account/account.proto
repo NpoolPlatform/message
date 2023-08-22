@@ -4,7 +4,6 @@ package account.middleware.account1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/account";
 
-import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/accountusedfor.proto";
 import "npool/basetypes/v1/accountlockedby.proto";

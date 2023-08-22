@@ -5,7 +5,6 @@ package inspire.gateway.event.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/event";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mw/v1/event/event.proto";
 import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/basetypes/v1/usedfor.proto";
 

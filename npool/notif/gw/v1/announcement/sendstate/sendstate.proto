@@ -5,7 +5,6 @@ package notif.gateway.announcement.sendstate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/notif/gw/v1/announcement/sendstate";
 
 import "google/api/annotations.proto";
-import "npool/notif/mw/v1/announcement/announcement.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/notiftype.proto";
 

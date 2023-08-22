@@ -6,10 +6,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "npool/npool.proto";
+import "npool/basetypes/v1/version.proto";
 
 service Middleware {
-    rpc Version (google.protobuf.Empty) returns (npool.v1.VersionResponse){
+    rpc Version (google.protobuf.Empty) returns (basetypes.v1.VersionResponse){
         option (google.api.http) = {
             post: "/v1/version"
             body: "*"

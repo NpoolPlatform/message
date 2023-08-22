@@ -4,7 +4,6 @@ package chain.middleware.tx.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/tx";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/txtype.proto";
 import "npool/basetypes/v1/txstate.proto";

@@ -5,8 +5,6 @@ package appuser.gateway.subscriber.app.subscribe.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/gw/v1/subscriber/app/subscribe";
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
-import "npool/npool.proto";
 import "npool/appuser/mw/v1/subscriber/app/subscribe/subscribe.proto";
 
 service Gateway {

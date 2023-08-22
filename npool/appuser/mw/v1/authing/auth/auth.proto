@@ -4,8 +4,6 @@ package appuser.middleware.authing.auth.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/authing/auth";
 
-import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {

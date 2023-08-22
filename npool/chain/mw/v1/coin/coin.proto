@@ -4,8 +4,6 @@ package chain.middleware.coin.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/coin";
 
-import "google/api/annotations.proto";
-import "npool/basetypes/v1/version.proto";
 import "npool/basetypes/v1/gastype.proto";
 import "npool/basetypes/v1/conds.proto";
 

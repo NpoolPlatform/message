@@ -4,7 +4,6 @@ package appuser.middleware.kyc.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/kyc";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/kycstate.proto";
 

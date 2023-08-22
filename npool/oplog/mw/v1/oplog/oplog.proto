@@ -4,7 +4,6 @@ package oplog.middleware.oplog1.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/oplog/mw/v1/oplog";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/httpmethod.proto";
 import "npool/basetypes/v1/result.proto";
 import "npool/basetypes/v1/conds.proto";

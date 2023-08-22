@@ -2,11 +2,11 @@
 // source: npool/build-chain/buildchain.proto
 
 /*
-Package proto is a reverse proxy.
+Package buildchain is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package proto
+package buildchain
 
 import (
 	"context"

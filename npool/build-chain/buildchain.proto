@@ -2,13 +2,15 @@ syntax = "proto3";
 
 package build.chain.v1;
 
-option go_package = "github.com/NpoolPlatform/pkg/proto";
-import "npool/npool.proto";
+option go_package = "github.com/NpoolPlatform/pkg/buildchain";
+
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
+import "npool/basetypes/v1/version.proto";
+import "npool/basetypes/v1/conds.proto";
 
 service BuildChain {
-  rpc Version(google.protobuf.Empty) returns (npool.v1.VersionResponse) {
+  rpc Version(google.protobuf.Empty) returns (basetypes.v1.VersionResponse) {
     option (google.api.http) = {
       post : "/v1/version"
       body : "*"
@@ -60,7 +62,7 @@ message CreateTokenInfoResponse {
   string Msg = 30;
 }
 
-message GetTokenInfosRequest { map<string, npool.v1.FilterCond> Conds = 20; }
+message GetTokenInfosRequest { map<string, basetypes.v1.FilterCond> Conds = 20; }
 
 message GetTokenInfosResponse {
   repeated TokenInfo Infos = 10;

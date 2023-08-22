@@ -5,7 +5,6 @@ package good.middleware.good1.required.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/required";
 
 import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {

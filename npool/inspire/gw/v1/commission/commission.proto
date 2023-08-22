@@ -5,7 +5,6 @@ package inspire.gateway.commission.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/commission";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mw/v1/commission/commission.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
