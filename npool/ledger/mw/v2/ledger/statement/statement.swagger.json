@@ -282,6 +282,10 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "ChangeLedger": {
+          "type": "boolean",
+          "title": "default true"
         }
       }
     },

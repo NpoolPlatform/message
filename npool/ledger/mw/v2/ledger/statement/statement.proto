@@ -31,6 +31,8 @@ message StatementReq {
     optional string     CoinUSDCurrency  = 90;
     optional string     IOExtra          = 100;
     optional uint32     CreatedAt        = 110;
+    // default true
+    optional bool       ChangeLedger     = 120;
 }
 
 message Statement {
