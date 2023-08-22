@@ -44,7 +44,7 @@ message Good {
     string           DeviceInfoID                = 20;
     string           DeviceType                  = 30;
     string           DeviceManufacturer          = 40;
-    uint32           DevicePowerComsuption       = 50;
+    uint32           DevicePowerConsumption      = 50;
     uint32           DeviceShipmentAt            = 60;
     repeated string  DevicePosters               = 70;
 

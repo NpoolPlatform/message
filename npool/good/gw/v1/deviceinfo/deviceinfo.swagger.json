@@ -155,7 +155,7 @@
         "Manufacturer": {
           "type": "string"
         },
-        "PowerComsuption": {
+        "PowerConsumption": {
           "type": "integer",
           "format": "int64"
         },
@@ -236,7 +236,7 @@
         "Manufacturer": {
           "type": "string"
         },
-        "PowerComsuption": {
+        "PowerConsumption": {
           "type": "integer",
           "format": "int64"
         },
@@ -303,10 +303,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"manufacturer\""
         },
-        "PowerComsuption": {
+        "PowerConsumption": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"power_comsuption\""
+          "title": "@inject_tag: sql:\"power_consumption\""
         },
         "ShipmentAt": {
           "type": "integer",

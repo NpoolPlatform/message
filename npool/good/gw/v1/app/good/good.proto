@@ -70,7 +70,7 @@ message Good {
 
     string           DeviceType                  = 240;
     string           DeviceManufacturer          = 250;
-    uint32           DevicePowerComsuption       = 260;
+    uint32           DevicePowerConsumption      = 260;
     uint32           DeviceShipmentAt            = 270;
     repeated string  DevicePosters               = 280;
 

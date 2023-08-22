@@ -82,8 +82,8 @@ message Good {
     string           DeviceType                  = 180;
     // @inject_tag: sql:"device_manufacturer"
     string           DeviceManufacturer          = 190;
-    // @inject_tag: sql:"device_power_comsuption"
-    uint32           DevicePowerComsuption       = 200;
+    // @inject_tag: sql:"device_power_consumption"
+    uint32           DevicePowerConsumption      = 200;
     // @inject_tag: sql:"device_shipment_at"
     uint32           DeviceShipmentAt            = 210;
     repeated string  DevicePosters               = 220;

@@ -31,8 +31,8 @@ message DeviceInfo {
     string          Type            = 20;
     // @inject_tag: sql:"manufacturer"
     string          Manufacturer    = 30;
-    // @inject_tag: sql:"power_comsuption"
-    uint32          PowerComsuption = 40;
+    // @inject_tag: sql:"power_consumption"
+    uint32          PowerConsumption = 40;
     // @inject_tag: sql:"shipment_at"
     uint32          ShipmentAt      = 50;
     // @inject_tag: sql:"posters"

@@ -516,7 +516,7 @@
         "DeviceManufacturer": {
           "type": "string"
         },
-        "DevicePowerComsuption": {
+        "DevicePowerConsumption": {
           "type": "integer",
           "format": "int64"
         },
