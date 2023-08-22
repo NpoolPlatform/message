@@ -164,8 +164,10 @@ message Order {
 
     uint32 Start                  = 390;
     uint32 End                    = 400;
+    basetypes.order.v1.InvestmentType InvestmentType = 410;
     repeated Coupon Coupons       = 500;
     uint32 LastBenefitAt          = 510;
+    
 }
 
 message CreateOrderRequest {
@@ -181,6 +183,7 @@ message CreateOrderRequest {
     optional string SpecialOfferID       = 100;
     basetypes.order.v1.OrderType OrderType     = 110;
     repeated string CouponIDs            = 120;
+    basetypes.order.v1.InvestmentType InvestmentType = 130;
 }
 
 message CreateOrderResponse {
@@ -260,6 +263,7 @@ message CreateUserOrderRequest {
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     basetypes.order.v1.OrderType OrderType     = 110;
+    basetypes.order.v1.InvestmentType InvestmentType = 120;
 }
 
 message CreateUserOrderResponse {
@@ -274,6 +278,7 @@ message CreateAppUserOrderRequest {
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     basetypes.order.v1.OrderType OrderType     = 110;
+    basetypes.order.v1.InvestmentType InvestmentType = 120;
 }
 
 message CreateAppUserOrderResponse {

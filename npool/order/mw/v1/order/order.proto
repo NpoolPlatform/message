@@ -43,7 +43,8 @@ message OrderReq {
     optional string PaymentCoinUSDCurrency    = 130;
     optional string PaymentLiveUSDCurrency    = 140;
     optional string PaymentLocalUSDCurrency   = 150;
-    optional basetypes.order.v1.PaymentState PaymentState = 151;
+    optional basetypes.order.v1.PaymentState PaymentState     = 151;
+    optional basetypes.order.v1.InvestmentType InvestmentType = 152;
 
     optional string FixAmountID               = 160;
     optional string DiscountID                = 170;
@@ -81,6 +82,9 @@ message Order {
     // @inject_tag: sql:"state"
     string OrderStateStr             = 62;
     basetypes.order.v1.OrderState OrderState = 63;
+    // @inject_tag: sql:"investment_type"
+    string InvestmentTypeStr             = 64;
+    basetypes.order.v1.InvestmentType InvestmentType = 65;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID          = 70;
     // @inject_tag: sql:"parent_order_good_id"
@@ -158,6 +162,7 @@ message Conds {
     basetypes.v1.StringVal      CouponID               = 180;
     basetypes.v1.StringSliceVal CouponIDs              = 190;
     basetypes.v1.Uint32SliceVal States                 = 200;
+    basetypes.v1.Uint32Val      InvestmentType         = 210;
 }
 
 message CreateOrderRequest {

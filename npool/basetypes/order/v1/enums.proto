@@ -35,3 +35,9 @@ enum PaymentState {
   PaymentStateCanceled = 30;
   PaymentStateTimeOut  = 40;
 }
+
+enum InvestmentType {
+  DefaultInvestmentType = 0;
+  UnionMining = 10;
+  FullPayment = 20;
+}
