@@ -81,6 +81,14 @@
         }
       }
     },
+    "v1ExistLikeCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetLikeResponse": {
       "type": "object",
       "properties": {

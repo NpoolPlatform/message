@@ -11,6 +11,7 @@ service Middleware {
     rpc CreateLike      (CreateLikeRequest)      returns (CreateLikeResponse)      {}
     rpc GetLike         (GetLikeRequest)         returns (GetLikeResponse)         {}
     rpc GetLikes        (GetLikesRequest)        returns (GetLikesResponse)        {}
+    rpc ExistLikeConds  (ExistLikeCondsRequest)  returns (ExistLikeCondsResponse)  {}
     rpc DeleteLike      (DeleteLikeRequest)      returns (DeleteLikeResponse)      {}
 }
 
@@ -74,6 +75,14 @@ message GetLikesRequest {
 message GetLikesResponse {
     repeated Like Infos = 10;
     uint32        Total = 20;
+}
+
+message ExistLikeCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistLikeCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteLikeRequest {

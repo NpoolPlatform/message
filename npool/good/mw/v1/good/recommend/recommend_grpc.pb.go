@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/CreateRecommend"
-	Middleware_UpdateRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/UpdateRecommend"
-	Middleware_GetRecommend_FullMethodName    = "/good.middleware.good1.recommend.v1.Middleware/GetRecommend"
-	Middleware_GetRecommends_FullMethodName   = "/good.middleware.good1.recommend.v1.Middleware/GetRecommends"
-	Middleware_DeleteRecommend_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/DeleteRecommend"
+	Middleware_CreateRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/CreateRecommend"
+	Middleware_UpdateRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/UpdateRecommend"
+	Middleware_GetRecommend_FullMethodName        = "/good.middleware.good1.recommend.v1.Middleware/GetRecommend"
+	Middleware_GetRecommends_FullMethodName       = "/good.middleware.good1.recommend.v1.Middleware/GetRecommends"
+	Middleware_ExistRecommendConds_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/ExistRecommendConds"
+	Middleware_DeleteRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/DeleteRecommend"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error)
 	GetRecommend(ctx context.Context, in *GetRecommendRequest, opts ...grpc.CallOption) (*GetRecommendResponse, error)
 	GetRecommends(ctx context.Context, in *GetRecommendsRequest, opts ...grpc.CallOption) (*GetRecommendsResponse, error)
+	ExistRecommendConds(ctx context.Context, in *ExistRecommendCondsRequest, opts ...grpc.CallOption) (*ExistRecommendCondsResponse, error)
 	DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetRecommends(ctx context.Context, in *GetRecommendsR
 	return out, nil
 }
 
+func (c *middlewareClient) ExistRecommendConds(ctx context.Context, in *ExistRecommendCondsRequest, opts ...grpc.CallOption) (*ExistRecommendCondsResponse, error) {
+	out := new(ExistRecommendCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistRecommendConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error) {
 	out := new(DeleteRecommendResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteRecommend_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error)
 	GetRecommend(context.Context, *GetRecommendRequest) (*GetRecommendResponse, error)
 	GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error)
+	ExistRecommendConds(context.Context, *ExistRecommendCondsRequest) (*ExistRecommendCondsResponse, error)
 	DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetRecommend(context.Context, *GetRecommend
 }
 func (UnimplementedMiddlewareServer) GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecommends not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistRecommendConds(context.Context, *ExistRecommendCondsRequest) (*ExistRecommendCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistRecommendConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecommend not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetRecommends_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistRecommendConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistRecommendCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistRecommendConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistRecommendConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistRecommendConds(ctx, req.(*ExistRecommendCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteRecommendRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRecommends",
 			Handler:    _Middleware_GetRecommends_Handler,
+		},
+		{
+			MethodName: "ExistRecommendConds",
+			Handler:    _Middleware_ExistRecommendConds_Handler,
 		},
 		{
 			MethodName: "DeleteRecommend",

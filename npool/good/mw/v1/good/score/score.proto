@@ -11,6 +11,7 @@ service Middleware {
     rpc CreateScore      (CreateScoreRequest)      returns (CreateScoreResponse)      {}
     rpc GetScore         (GetScoreRequest)         returns (GetScoreResponse)         {}
     rpc GetScores        (GetScoresRequest)        returns (GetScoresResponse)        {}
+    rpc ExistScoreConds  (ExistScoreCondsRequest)  returns (ExistScoreCondsResponse)  {}
     rpc DeleteScore      (DeleteScoreRequest)      returns (DeleteScoreResponse)      {}
 }
 
@@ -74,6 +75,14 @@ message GetScoresRequest {
 message GetScoresResponse {
     repeated Score Infos = 10;
     uint32         Total = 20;
+}
+
+message ExistScoreCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistScoreCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteScoreRequest {

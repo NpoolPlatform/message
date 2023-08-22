@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/CreateComment"
-	Middleware_UpdateComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/UpdateComment"
-	Middleware_GetComment_FullMethodName    = "/good.middleware.good1.comment.v1.Middleware/GetComment"
-	Middleware_GetComments_FullMethodName   = "/good.middleware.good1.comment.v1.Middleware/GetComments"
-	Middleware_DeleteComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/DeleteComment"
+	Middleware_CreateComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/CreateComment"
+	Middleware_UpdateComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/UpdateComment"
+	Middleware_GetComment_FullMethodName        = "/good.middleware.good1.comment.v1.Middleware/GetComment"
+	Middleware_GetComments_FullMethodName       = "/good.middleware.good1.comment.v1.Middleware/GetComments"
+	Middleware_ExistCommentConds_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/ExistCommentConds"
+	Middleware_DeleteComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/DeleteComment"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateComment(ctx context.Context, in *UpdateCommentRequest, opts ...grpc.CallOption) (*UpdateCommentResponse, error)
 	GetComment(ctx context.Context, in *GetCommentRequest, opts ...grpc.CallOption) (*GetCommentResponse, error)
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
+	ExistCommentConds(ctx context.Context, in *ExistCommentCondsRequest, opts ...grpc.CallOption) (*ExistCommentCondsResponse, error)
 	DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetComments(ctx context.Context, in *GetCommentsReque
 	return out, nil
 }
 
+func (c *middlewareClient) ExistCommentConds(ctx context.Context, in *ExistCommentCondsRequest, opts ...grpc.CallOption) (*ExistCommentCondsResponse, error) {
+	out := new(ExistCommentCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistCommentConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error) {
 	out := new(DeleteCommentResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteComment_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateComment(context.Context, *UpdateCommentRequest) (*UpdateCommentResponse, error)
 	GetComment(context.Context, *GetCommentRequest) (*GetCommentResponse, error)
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
+	ExistCommentConds(context.Context, *ExistCommentCondsRequest) (*ExistCommentCondsResponse, error)
 	DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetComment(context.Context, *GetCommentRequ
 }
 func (UnimplementedMiddlewareServer) GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetComments not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistCommentConds(context.Context, *ExistCommentCondsRequest) (*ExistCommentCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistCommentConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComment not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetComments_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistCommentConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistCommentCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistCommentConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistCommentConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistCommentConds(ctx, req.(*ExistCommentCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteCommentRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetComments",
 			Handler:    _Middleware_GetComments_Handler,
+		},
+		{
+			MethodName: "ExistCommentConds",
+			Handler:    _Middleware_ExistCommentConds_Handler,
 		},
 		{
 			MethodName: "DeleteComment",
