@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateLocationResponse"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1CreateLocationResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateLocationRequest"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1CreateLocationRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteLocationResponse"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1DeleteLocationResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteLocationRequest"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1DeleteLocationRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetLocationsResponse"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1GetLocationsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetLocationsRequest"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1GetLocationsRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateLocationResponse"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1UpdateLocationResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateLocationRequest"
+              "$ref": "#/definitions/goodgatewayvendorlocationv1UpdateLocationRequest"
             }
           }
         ],
@@ -146,7 +146,83 @@
     }
   },
   "definitions": {
-    "locationv1Location": {
+    "goodgatewayvendorlocationv1CreateLocationRequest": {
+      "type": "object",
+      "properties": {
+        "Country": {
+          "type": "string"
+        },
+        "Province": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "BrandID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1CreateLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1DeleteLocationRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1DeleteLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1GetLocationsRequest": {
+      "type": "object",
+      "properties": {
+        "BrandID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1GetLocationsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/locationv1Location"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1UpdateLocationRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -166,20 +242,53 @@
         },
         "BrandID": {
           "type": "string"
+        }
+      }
+    },
+    "goodgatewayvendorlocationv1UpdateLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
+        }
+      }
+    },
+    "locationv1Location": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
-        "BrandName": {
-          "type": "string"
+        "Country": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"country\""
         },
-        "BrandLogo": {
-          "type": "string"
+        "Province": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"province\""
+        },
+        "City": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"city\""
+        },
+        "Address": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
+        },
+        "BrandID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"brand_id\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -208,113 +317,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1CreateLocationRequest": {
-      "type": "object",
-      "properties": {
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "BrandID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
-        }
-      }
-    },
-    "v1DeleteLocationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
-        }
-      }
-    },
-    "v1GetLocationsRequest": {
-      "type": "object",
-      "properties": {
-        "BrandID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetLocationsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/locationv1Location"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateLocationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "BrandID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
         }
       }
     }
