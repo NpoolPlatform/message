@@ -19,7 +19,7 @@ message DeviceInfoReq {
     optional string ID              = 10;
     optional string Type            = 20;
     optional string Manufacturer    = 30;
-    optional uint32 PowerComsuption = 40;
+    optional uint32 PowerConsumption = 40;
     optional uint32 ShipmentAt      = 50;
     repeated string Posters         = 60;
 }

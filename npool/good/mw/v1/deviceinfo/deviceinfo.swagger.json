@@ -139,7 +139,7 @@
         "Manufacturer": {
           "type": "string"
         },
-        "PowerComsuption": {
+        "PowerConsumption": {
           "type": "integer",
           "format": "int64"
         },
