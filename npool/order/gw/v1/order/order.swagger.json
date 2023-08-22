@@ -480,6 +480,9 @@
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },
@@ -532,6 +535,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },
@@ -566,6 +572,9 @@
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },
@@ -768,6 +777,15 @@
         }
       }
     },
+    "v1InvestmentType": {
+      "type": "string",
+      "enum": [
+        "DefaultInvestmentType",
+        "UnionMining",
+        "FullPayment"
+      ],
+      "default": "DefaultInvestmentType"
+    },
     "v1Order": {
       "type": "object",
       "properties": {
@@ -920,6 +938,9 @@
         "End": {
           "type": "integer",
           "format": "int64"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         },
         "Coupons": {
           "type": "array",
