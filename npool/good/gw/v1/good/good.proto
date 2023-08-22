@@ -73,7 +73,7 @@ message Good {
     int32            UnitAmount         = 280;
     bool             TestOnly           = 290;
     repeated string  Posters            = 300;
-    repeated string  Labels             = 310;
+    repeated basetypes.good.v1.GoodLabel Labels = 310;
 
     message CoinInfo {
         string CoinTypeID  = 10;
@@ -128,7 +128,7 @@ message CreateGoodRequest {
     bool            TestOnly           = 160;
     string          Total              = 170;
     repeated string Posters            = 210;
-    repeated string Labels             = 220;
+    repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
 }
@@ -172,7 +172,7 @@ message UpdateGoodRequest {
     optional bool   TestOnly           = 160;
     optional string Total              = 170;
     repeated string Posters            = 210;
-    repeated string Labels             = 220;
+    repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
 }
