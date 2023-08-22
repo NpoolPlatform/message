@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/CreateBrand"
-	Middleware_UpdateBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/UpdateBrand"
-	Middleware_GetBrand_FullMethodName    = "/good.middleware.vender.brand.v1.Middleware/GetBrand"
-	Middleware_GetBrands_FullMethodName   = "/good.middleware.vender.brand.v1.Middleware/GetBrands"
-	Middleware_DeleteBrand_FullMethodName = "/good.middleware.vender.brand.v1.Middleware/DeleteBrand"
+	Middleware_CreateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/CreateBrand"
+	Middleware_UpdateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/UpdateBrand"
+	Middleware_GetBrand_FullMethodName    = "/good.middleware.vendor.brand.v1.Middleware/GetBrand"
+	Middleware_GetBrands_FullMethodName   = "/good.middleware.vendor.brand.v1.Middleware/GetBrands"
+	Middleware_DeleteBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/DeleteBrand"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vender.brand.v1.Middleware",
+	ServiceName: "good.middleware.vendor.brand.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
