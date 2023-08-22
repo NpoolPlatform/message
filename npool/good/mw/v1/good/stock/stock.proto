@@ -15,11 +15,10 @@ service Middleware {
 message StockReq {
     optional string ID         = 10;
     optional string GoodID     = 20;
-    optional string Total      = 30;
-    optional string Locked     = 40;
-    optional string WaitStart  = 50;
-    optional string InService  = 60;
-    optional string AppReserved  = 70;
+    optional string Locked     = 30;
+    optional string WaitStart  = 40;
+    optional string InService  = 50;
+    optional string AppReserved  = 60;
 }
 
 message Stock {

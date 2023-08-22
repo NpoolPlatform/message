@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateComment      (CreateCommentRequest)      returns (CreateCommentResponse)      {}
     rpc UpdateComment      (UpdateCommentRequest)      returns (UpdateCommentResponse)      {}
+    rpc GetComment         (GetCommentRequest)         returns (GetCommentResponse)         {}
     rpc GetComments        (GetCommentsRequest)        returns (GetCommentsResponse)        {}
     rpc DeleteComment      (DeleteCommentRequest)      returns (DeleteCommentResponse)      {}
 }
@@ -73,6 +74,14 @@ message UpdateCommentResponse {
     Comment Info = 10;
 }
 
+message GetCommentRequest {
+    string ID = 10;
+}
+
+message GetCommentResponse {
+    Comment Info = 10;
+}
+
 message GetCommentsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
@@ -81,7 +90,7 @@ message GetCommentsRequest {
 
 message GetCommentsResponse {
     repeated Comment Infos = 10;
-    uint32            Total = 20;
+    uint32           Total = 20;
 }
 
 message DeleteCommentRequest {

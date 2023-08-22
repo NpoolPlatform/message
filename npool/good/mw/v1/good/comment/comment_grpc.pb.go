@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/CreateComment"
 	Middleware_UpdateComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/UpdateComment"
+	Middleware_GetComment_FullMethodName    = "/good.middleware.good1.comment.v1.Middleware/GetComment"
 	Middleware_GetComments_FullMethodName   = "/good.middleware.good1.comment.v1.Middleware/GetComments"
 	Middleware_DeleteComment_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/DeleteComment"
 )
@@ -31,6 +32,7 @@ const (
 type MiddlewareClient interface {
 	CreateComment(ctx context.Context, in *CreateCommentRequest, opts ...grpc.CallOption) (*CreateCommentResponse, error)
 	UpdateComment(ctx context.Context, in *UpdateCommentRequest, opts ...grpc.CallOption) (*UpdateCommentResponse, error)
+	GetComment(ctx context.Context, in *GetCommentRequest, opts ...grpc.CallOption) (*GetCommentResponse, error)
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
 	DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error)
 }
@@ -61,6 +63,15 @@ func (c *middlewareClient) UpdateComment(ctx context.Context, in *UpdateCommentR
 	return out, nil
 }
 
+func (c *middlewareClient) GetComment(ctx context.Context, in *GetCommentRequest, opts ...grpc.CallOption) (*GetCommentResponse, error) {
+	out := new(GetCommentResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetComment_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error) {
 	out := new(GetCommentsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetComments_FullMethodName, in, out, opts...)
@@ -85,6 +96,7 @@ func (c *middlewareClient) DeleteComment(ctx context.Context, in *DeleteCommentR
 type MiddlewareServer interface {
 	CreateComment(context.Context, *CreateCommentRequest) (*CreateCommentResponse, error)
 	UpdateComment(context.Context, *UpdateCommentRequest) (*UpdateCommentResponse, error)
+	GetComment(context.Context, *GetCommentRequest) (*GetCommentResponse, error)
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
 	DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -99,6 +111,9 @@ func (UnimplementedMiddlewareServer) CreateComment(context.Context, *CreateComme
 }
 func (UnimplementedMiddlewareServer) UpdateComment(context.Context, *UpdateCommentRequest) (*UpdateCommentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateComment not implemented")
+}
+func (UnimplementedMiddlewareServer) GetComment(context.Context, *GetCommentRequest) (*GetCommentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetComment not implemented")
 }
 func (UnimplementedMiddlewareServer) GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetComments not implemented")
@@ -155,6 +170,24 @@ func _Middleware_UpdateComment_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetComment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetComment(ctx, req.(*GetCommentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetComments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCommentsRequest)
 	if err := dec(in); err != nil {
@@ -205,6 +238,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateComment",
 			Handler:    _Middleware_UpdateComment_Handler,
+		},
+		{
+			MethodName: "GetComment",
+			Handler:    _Middleware_GetComment_Handler,
 		},
 		{
 			MethodName: "GetComments",

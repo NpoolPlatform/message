@@ -45,14 +45,6 @@
         }
       }
     },
-    "v1AddReservedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Stock"
-        }
-      }
-    },
     "v1AddStockResponse": {
       "type": "object",
       "properties": {
@@ -153,14 +145,6 @@
         },
         "InService": {
           "type": "string"
-        }
-      }
-    },
-    "v1SubReservedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Stock"
         }
       }
     },

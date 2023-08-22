@@ -19,10 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_AddStock_FullMethodName    = "/good.middleware.app.good1.stock.v1.Middleware/AddStock"
-	Middleware_SubStock_FullMethodName    = "/good.middleware.app.good1.stock.v1.Middleware/SubStock"
-	Middleware_AddReserved_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/AddReserved"
-	Middleware_SubReserved_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/SubReserved"
+	Middleware_AddStock_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/AddStock"
+	Middleware_SubStock_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/SubStock"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,8 +29,6 @@ const (
 type MiddlewareClient interface {
 	AddStock(ctx context.Context, in *AddStockRequest, opts ...grpc.CallOption) (*AddStockResponse, error)
 	SubStock(ctx context.Context, in *SubStockRequest, opts ...grpc.CallOption) (*SubStockResponse, error)
-	AddReserved(ctx context.Context, in *AddReservedRequest, opts ...grpc.CallOption) (*AddReservedResponse, error)
-	SubReserved(ctx context.Context, in *SubReservedRequest, opts ...grpc.CallOption) (*SubReservedResponse, error)
 }
 
 type middlewareClient struct {
@@ -61,32 +57,12 @@ func (c *middlewareClient) SubStock(ctx context.Context, in *SubStockRequest, op
 	return out, nil
 }
 
-func (c *middlewareClient) AddReserved(ctx context.Context, in *AddReservedRequest, opts ...grpc.CallOption) (*AddReservedResponse, error) {
-	out := new(AddReservedResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddReserved_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) SubReserved(ctx context.Context, in *SubReservedRequest, opts ...grpc.CallOption) (*SubReservedResponse, error) {
-	out := new(SubReservedResponse)
-	err := c.cc.Invoke(ctx, Middleware_SubReserved_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	AddStock(context.Context, *AddStockRequest) (*AddStockResponse, error)
 	SubStock(context.Context, *SubStockRequest) (*SubStockResponse, error)
-	AddReserved(context.Context, *AddReservedRequest) (*AddReservedResponse, error)
-	SubReserved(context.Context, *SubReservedRequest) (*SubReservedResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -99,12 +75,6 @@ func (UnimplementedMiddlewareServer) AddStock(context.Context, *AddStockRequest)
 }
 func (UnimplementedMiddlewareServer) SubStock(context.Context, *SubStockRequest) (*SubStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubStock not implemented")
-}
-func (UnimplementedMiddlewareServer) AddReserved(context.Context, *AddReservedRequest) (*AddReservedResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddReserved not implemented")
-}
-func (UnimplementedMiddlewareServer) SubReserved(context.Context, *SubReservedRequest) (*SubReservedResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubReserved not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -155,42 +125,6 @@ func _Middleware_SubStock_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_AddReserved_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddReservedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).AddReserved(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_AddReserved_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddReserved(ctx, req.(*AddReservedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_SubReserved_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubReservedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SubReserved(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SubReserved_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SubReserved(ctx, req.(*SubReservedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -205,14 +139,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubStock",
 			Handler:    _Middleware_SubStock_Handler,
-		},
-		{
-			MethodName: "AddReserved",
-			Handler:    _Middleware_AddReserved_Handler,
-		},
-		{
-			MethodName: "SubReserved",
-			Handler:    _Middleware_SubReserved_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

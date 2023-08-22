@@ -81,6 +81,14 @@
         }
       }
     },
+    "v1GetScoreResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Score"
+        }
+      }
+    },
     "v1GetScoresResponse": {
       "type": "object",
       "properties": {

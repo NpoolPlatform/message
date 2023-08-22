@@ -160,6 +160,14 @@
         }
       }
     },
+    "v1GetCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
     "v1GetCommentsResponse": {
       "type": "object",
       "properties": {
