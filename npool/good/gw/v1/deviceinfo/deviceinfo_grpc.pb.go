@@ -22,6 +22,7 @@ const (
 	Gateway_CreateDeviceInfo_FullMethodName = "/good.gateway.deviceinfo.v1.Gateway/CreateDeviceInfo"
 	Gateway_UpdateDeviceInfo_FullMethodName = "/good.gateway.deviceinfo.v1.Gateway/UpdateDeviceInfo"
 	Gateway_GetDeviceInfos_FullMethodName   = "/good.gateway.deviceinfo.v1.Gateway/GetDeviceInfos"
+	Gateway_DeleteDeviceInfo_FullMethodName = "/good.gateway.deviceinfo.v1.Gateway/DeleteDeviceInfo"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +32,7 @@ type GatewayClient interface {
 	CreateDeviceInfo(ctx context.Context, in *CreateDeviceInfoRequest, opts ...grpc.CallOption) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(ctx context.Context, in *UpdateDeviceInfoRequest, opts ...grpc.CallOption) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRequest, opts ...grpc.CallOption) (*GetDeviceInfosResponse, error)
+	DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +70,15 @@ func (c *gatewayClient) GetDeviceInfos(ctx context.Context, in *GetDeviceInfosRe
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteDeviceInfo(ctx context.Context, in *DeleteDeviceInfoRequest, opts ...grpc.CallOption) (*DeleteDeviceInfoResponse, error) {
+	out := new(DeleteDeviceInfoResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteDeviceInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type GatewayServer interface {
 	CreateDeviceInfo(context.Context, *CreateDeviceInfoRequest) (*CreateDeviceInfoResponse, error)
 	UpdateDeviceInfo(context.Context, *UpdateDeviceInfoRequest) (*UpdateDeviceInfoResponse, error)
 	GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error)
+	DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedGatewayServer) UpdateDeviceInfo(context.Context, *UpdateDevic
 }
 func (UnimplementedGatewayServer) GetDeviceInfos(context.Context, *GetDeviceInfosRequest) (*GetDeviceInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceInfos not implemented")
+}
+func (UnimplementedGatewayServer) DeleteDeviceInfo(context.Context, *DeleteDeviceInfoRequest) (*DeleteDeviceInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeviceInfo not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +173,24 @@ func _Gateway_GetDeviceInfos_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteDeviceInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDeviceInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteDeviceInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteDeviceInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteDeviceInfo(ctx, req.(*DeleteDeviceInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDeviceInfos",
 			Handler:    _Gateway_GetDeviceInfos_Handler,
+		},
+		{
+			MethodName: "DeleteDeviceInfo",
+			Handler:    _Gateway_DeleteDeviceInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

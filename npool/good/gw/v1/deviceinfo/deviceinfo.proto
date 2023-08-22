@@ -27,6 +27,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc DeleteDeviceInfo(DeleteDeviceInfoRequest) returns (DeleteDeviceInfoResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/deviceinfo"
+            body: "*"
+        };
+    }
 }
 
 message CreateDeviceInfoRequest {
@@ -62,4 +68,12 @@ message GetDeviceInfosRequest {
 message GetDeviceInfosResponse {
     repeated middleware.deviceinfo.v1.DeviceInfo Infos = 10;
     uint32                                       Total = 20;
+}
+
+message DeleteDeviceInfoRequest {
+    string ID = 10;
+}
+
+message DeleteDeviceInfoResponse {
+    middleware.deviceinfo.v1.DeviceInfo Info = 10;
 }
