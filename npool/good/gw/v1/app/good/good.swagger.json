@@ -486,26 +486,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PromotionStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionMessage": {
-          "type": "string"
-        },
-        "PromotionPrice": {
-          "type": "string"
-        },
-        "PromotionPosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "DeviceType": {
           "type": "string"
         },

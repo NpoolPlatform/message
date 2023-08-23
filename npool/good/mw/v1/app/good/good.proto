@@ -64,18 +64,6 @@ message Good {
     // @inject_tag: sql:"purchase_limit"
     int32            PurchaseLimit               = 80;
 
-    // @inject_tag: sql:"promotion_start_at"
-    optional uint32  PromotionStartAt            = 100;
-    // @inject_tag: sql:"promotion_end_at"
-    optional uint32  PromotionEndAt              = 110;
-    // @inject_tag: sql:"promotion_message"
-    optional string  PromotionMessage            = 120;
-    // @inject_tag: sql:"promotion_price"
-    optional string  PromotionPrice              = 130;
-    repeated string  PromotionPosters            = 140;
-    // @inject_tag: sql:"promotion_posters"
-    string           PromotionPostersStr         = 141;
-
     // @inject_tag: sql:"device_info_id"
     string           DeviceInfoID                = 170;
     // @inject_tag: sql:"device_type"

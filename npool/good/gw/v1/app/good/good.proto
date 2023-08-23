@@ -62,12 +62,6 @@ message Good {
     int32            DisplayIndex                = 70;
     int32            PurchaseLimit               = 80;
 
-    optional uint32  PromotionStartAt            = 100;
-    optional uint32  PromotionEndAt              = 110;
-    optional string  PromotionMessage            = 120;
-    optional string  PromotionPrice              = 130;
-    repeated string  PromotionPosters            = 140;
-
     string           DeviceType                  = 240;
     string           DeviceManufacturer          = 250;
     uint32           DevicePowerConsumption      = 260;
