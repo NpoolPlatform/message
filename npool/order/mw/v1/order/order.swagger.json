@@ -439,7 +439,7 @@
         "PromotionID": {
           "type": "string"
         },
-        "IsParentOrder": {
+        "IsMainGood": {
           "type": "boolean"
         },
         "ID": {
