@@ -76,6 +76,7 @@ enum Prefix {
     PrefixCreateLedgerProfit    = 720;
     PrefixCreateGoodLedger      = 730;
     PrefixCreateGoodLedgerStatement = 740;
+    PrefixCreateGoodLedgerUnsoldStatement = 750;
 
     PrefixMigrate              = 10000;
 
