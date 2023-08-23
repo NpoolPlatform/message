@@ -132,10 +132,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"must\""
         },
-        "Commission": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"commission\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -161,9 +157,6 @@
           "type": "string"
         },
         "Must": {
-          "type": "boolean"
-        },
-        "Commission": {
           "type": "boolean"
         }
       }

@@ -20,7 +20,6 @@ message RequiredReq {
     optional string MainGoodID     = 20;
     optional string RequiredGoodID = 30;
     optional bool   Must           = 40;
-    optional bool   Commission     = 50;
 }
 
 message Required {
@@ -36,8 +35,6 @@ message Required {
     string RequiredGoodName = 50;
     // @inject_tag: sql:"must"
     bool   Must           = 60;
-    // @inject_tag: sql:"commission"
-    bool   Commission     = 70;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"

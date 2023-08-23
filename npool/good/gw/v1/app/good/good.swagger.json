@@ -316,10 +316,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -768,10 +764,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -874,10 +866,6 @@
           "format": "int32"
         },
         "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CommissionPercent": {
           "type": "integer",
           "format": "int32"
         },
