@@ -71,14 +71,21 @@ message TopMostGood {
     string CoinLogo   = 100;
     string CoinEnv    = 110;
     string CoinUnit   = 120;
+    string TopMostID  = 130;
+    string TopMostTitle = 140;
+    string TopMostMessage = 150;
+    repeated string Poster = 160;
+    string Price      = 170;
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
 
 message CreateTopMostGoodRequest {
     string AppID      = 10;
-    string AppGoodID  = 20;
-    string CoinTypeID = 30;
+    string TopMostID  = 20;
+    string AppGoodID  = 30;
+    repeated string Posters = 40;
+    string Price      = 50;
 }
 
 message CreateTopMostGoodResponse {
@@ -87,8 +94,10 @@ message CreateTopMostGoodResponse {
 
 message CreateNTopMostGoodRequest {
     string TargetAppID = 10;
-    string AppGoodID   = 20;
-    string CoinTypeID  = 30;
+    string TopMostID   = 20;
+    string AppGoodID   = 30;
+    repeated string Posters = 40;
+    string Price       = 50;
 }
 
 message CreateNTopMostGoodResponse {
@@ -127,9 +136,10 @@ message DeleteTopMostGoodResponse {
 }
 
 message UpdateTopMostGoodRequest {
-    string          ID        = 10;
-    string          AppID     = 20;
-    optional string AppGoodID = 30;
+    string          ID      = 10;
+    string          AppID   = 20;
+    repeated string Posters = 30;
+    optional string Price   = 40;
 }
 
 message UpdateTopMostGoodResponse {
@@ -139,7 +149,8 @@ message UpdateTopMostGoodResponse {
 message UpdateNTopMostGoodRequest {
     string          ID          = 10;
     string          TargetAppID = 20;
-    optional string AppGoodID   = 30;
+    repeated string Posters     = 30;
+    optional string Price       = 40;
 }
 
 message UpdateNTopMostGoodResponse {

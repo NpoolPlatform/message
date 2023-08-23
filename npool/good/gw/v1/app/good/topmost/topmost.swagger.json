@@ -276,11 +276,42 @@
         "TargetAppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "TopMostType": {
+          "$ref": "#/definitions/v1GoodTopMostType"
+        },
+        "Title": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "Message": {
           "type": "string"
+        },
+        "Posters": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdCredits": {
+          "type": "string"
+        },
+        "RegisterElapsedSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPurchases": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPaymentAmount": {
+          "type": "string"
+        },
+        "KeyMust": {
+          "type": "boolean"
         }
       }
     },
@@ -298,11 +329,42 @@
         "AppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "TopMostType": {
+          "$ref": "#/definitions/v1GoodTopMostType"
+        },
+        "Title": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "Message": {
           "type": "string"
+        },
+        "Posters": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdCredits": {
+          "type": "string"
+        },
+        "RegisterElapsedSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPurchases": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPaymentAmount": {
+          "type": "string"
+        },
+        "KeyMust": {
+          "type": "boolean"
         }
       }
     },
@@ -477,8 +539,39 @@
         "TargetAppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "Title": {
           "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Posters": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdCredits": {
+          "type": "string"
+        },
+        "RegisterElapsedSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPurchases": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPaymentAmount": {
+          "type": "string"
+        },
+        "KeyMust": {
+          "type": "boolean"
         }
       }
     },
@@ -499,8 +592,39 @@
         "AppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "Title": {
           "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Posters": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdCredits": {
+          "type": "string"
+        },
+        "RegisterElapsedSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPurchases": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdPaymentAmount": {
+          "type": "string"
+        },
+        "KeyMust": {
+          "type": "boolean"
         }
       }
     },

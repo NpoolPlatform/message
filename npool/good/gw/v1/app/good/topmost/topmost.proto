@@ -80,8 +80,17 @@ message TopMost {
 
 message CreateTopMostRequest {
     string AppID      = 10;
-    string AppGoodID  = 20;
-    string CoinTypeID = 30;
+    basetypes.good.v1.GoodTopMostType TopMostType = 20;
+    string Title      = 30;
+    string Message    = 40;
+    string Posters    = 50;
+    uint32 StartAt    = 60;
+    uint32 EndAt      = 70;
+    optional string ThresholdCredits = 80;
+    optional uint32 RegisterElapsedSeconds = 90;
+    optional uint32 ThresholdPurchases = 100;
+    optional string ThresholdPaymentAmount = 110;
+    bool   KeyMust = 120;
 }
 
 message CreateTopMostResponse {
@@ -90,8 +99,17 @@ message CreateTopMostResponse {
 
 message CreateNTopMostRequest {
     string TargetAppID = 10;
-    string AppGoodID   = 20;
-    string CoinTypeID  = 30;
+    basetypes.good.v1.GoodTopMostType TopMostType = 20;
+    string Title      = 30;
+    string Message    = 40;
+    string Posters    = 50;
+    uint32 StartAt    = 60;
+    uint32 EndAt      = 70;
+    optional string ThresholdCredits = 80;
+    optional uint32 RegisterElapsedSeconds = 90;
+    optional uint32 ThresholdPurchases = 100;
+    optional string ThresholdPaymentAmount = 110;
+    bool   KeyMust = 120;
 }
 
 message CreateNTopMostResponse {
@@ -130,9 +148,18 @@ message DeleteTopMostResponse {
 }
 
 message UpdateTopMostRequest {
-    string          ID        = 10;
-    string          AppID     = 20;
-    optional string AppGoodID = 30;
+    string          ID         = 10;
+    string          AppID      = 20;
+    optional string Title      = 30;
+    optional string Message    = 40;
+    optional string Posters    = 50;
+    optional uint32 StartAt    = 60;
+    optional uint32 EndAt      = 70;
+    optional string ThresholdCredits = 80;
+    optional uint32 RegisterElapsedSeconds = 90;
+    optional uint32 ThresholdPurchases = 100;
+    optional string ThresholdPaymentAmount = 110;
+    optional bool   KeyMust = 120;
 }
 
 message UpdateTopMostResponse {
@@ -142,7 +169,16 @@ message UpdateTopMostResponse {
 message UpdateNTopMostRequest {
     string          ID          = 10;
     string          TargetAppID = 20;
-    optional string AppGoodID   = 30;
+    optional string Title      = 30;
+    optional string Message    = 40;
+    optional string Posters    = 50;
+    optional uint32 StartAt    = 60;
+    optional uint32 EndAt      = 70;
+    optional string ThresholdCredits = 80;
+    optional uint32 RegisterElapsedSeconds = 90;
+    optional uint32 ThresholdPurchases = 100;
+    optional string ThresholdPaymentAmount = 110;
+    optional bool   KeyMust = 120;
 }
 
 message UpdateNTopMostResponse {

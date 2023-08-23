@@ -276,10 +276,19 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TopMostID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Price": {
           "type": "string"
         }
       }
@@ -298,10 +307,19 @@
         "AppID": {
           "type": "string"
         },
+        "TopMostID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
-        "CoinTypeID": {
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Price": {
           "type": "string"
         }
       }
@@ -436,6 +454,24 @@
         "CoinUnit": {
           "type": "string"
         },
+        "TopMostID": {
+          "type": "string"
+        },
+        "TopMostTitle": {
+          "type": "string"
+        },
+        "TopMostMessage": {
+          "type": "string"
+        },
+        "Poster": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Price": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -455,7 +491,13 @@
         "TargetAppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Price": {
           "type": "string"
         }
       }
@@ -477,7 +519,13 @@
         "AppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Price": {
           "type": "string"
         }
       }
