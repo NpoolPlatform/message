@@ -32,7 +32,6 @@ message GoodReq {
     optional uint32 ServiceStartAt      = 130;
     optional uint32 TechnicalFeeRatio   = 140;
     optional uint32 ElectricityFeeRatio = 150;
-    optional string DailyRewardAmount   = 160;
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
@@ -44,6 +43,7 @@ message GoodReq {
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
+    repeated string Posters             = 320;
 }
 
 message Good {
@@ -63,18 +63,6 @@ message Good {
     int32            DisplayIndex                = 70;
     // @inject_tag: sql:"purchase_limit"
     int32            PurchaseLimit               = 80;
-
-    // @inject_tag: sql:"promotion_start_at"
-    optional uint32  PromotionStartAt            = 100;
-    // @inject_tag: sql:"promotion_end_at"
-    optional uint32  PromotionEndAt              = 110;
-    // @inject_tag: sql:"promotion_message"
-    optional string  PromotionMessage            = 120;
-    // @inject_tag: sql:"promotion_price"
-    optional string  PromotionPrice              = 130;
-    repeated string  PromotionPosters            = 140;
-    // @inject_tag: sql:"promotion_posters"
-    string           PromotionPostersStr         = 141;
 
     // @inject_tag: sql:"device_info_id"
     string           DeviceInfoID                = 170;
@@ -160,8 +148,6 @@ message Good {
     uint32           TechnicalFeeRatio   = 460;
     // @inject_tag: sql:"electricity_fee_ratio"
     uint32           ElectricityFeeRatio = 470;
-    // @inject_tag: sql:"daily_reward_amount"
-    string           DailyRewardAmount   = 480;
 
     // @inject_tag: sql:"descriptions"
     string           DescriptionsStr     = 510;
@@ -219,6 +205,17 @@ message Good {
     string           AppGoodInService   = 780;
     // @inject_tag: sql:"app_good_sold"
     string           AppGoodSold        = 790;
+
+    // @inject_tag: sql:"last_reward_at"
+    uint32           LastRewardAt       = 800;
+    // @inject_tag: sql:"last_reward_amount"
+    string           LastRewardAmount   = 810;
+    // @inject_tag: sql:"last_unit_reward_amount"
+    string           LastUnitRewardAmount = 820;
+
+    // @inject_tag: sql:"app_good_posters"
+    string           AppGoodPostersStr  = 830;
+    repeated string  AppGoodPosters     = 840;
 }
 
 message Conds {

@@ -59,6 +59,12 @@
         },
         "RewardDate": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

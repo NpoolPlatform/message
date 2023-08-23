@@ -81,6 +81,14 @@
         }
       }
     },
+    "v1ExistScoreCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetScoreResponse": {
       "type": "object",
       "properties": {
@@ -186,6 +194,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1UpdateScoreResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Score"
         }
       }
     }

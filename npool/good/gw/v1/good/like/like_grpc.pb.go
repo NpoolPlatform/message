@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateLike_FullMethodName = "/good.middleware.good1.like.v1.Gateway/CreateLike"
-	Gateway_GetLikes_FullMethodName   = "/good.middleware.good1.like.v1.Gateway/GetLikes"
-	Gateway_GetMyLikes_FullMethodName = "/good.middleware.good1.like.v1.Gateway/GetMyLikes"
-	Gateway_DeleteLike_FullMethodName = "/good.middleware.good1.like.v1.Gateway/DeleteLike"
+	Gateway_CreateLike_FullMethodName = "/good.gateway.good1.like.v1.Gateway/CreateLike"
+	Gateway_GetLikes_FullMethodName   = "/good.gateway.good1.like.v1.Gateway/GetLikes"
+	Gateway_GetMyLikes_FullMethodName = "/good.gateway.good1.like.v1.Gateway/GetMyLikes"
+	Gateway_DeleteLike_FullMethodName = "/good.gateway.good1.like.v1.Gateway/DeleteLike"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_DeleteLike_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.like.v1.Gateway",
+	ServiceName: "good.gateway.good1.like.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

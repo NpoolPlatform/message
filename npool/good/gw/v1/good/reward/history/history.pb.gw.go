@@ -79,7 +79,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.reward.history.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/goodrewardhistories"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.reward.history.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/goodrewardhistories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -143,7 +143,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.reward.history.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/goodrewardhistories"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.reward.history.v1.Gateway/GetHistories", runtime.WithHTTPPathPattern("/v1/get/goodrewardhistories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

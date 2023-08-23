@@ -81,7 +81,6 @@ message Coin {
     bool            CoinDisabled                 = 310;
     uint32          CreatedAt                    = 320;
     uint32          UpdatedAt                    = 330;
-    string          DailyRewardAmount            = 340;
     bool            Display                      = 350;
     uint32          DisplayIndex                 = 360;
     string          MaxAmountPerWithdraw         = 370;
@@ -133,7 +132,6 @@ message UpdateCoinRequest {
     optional string MarketValue              = 90;
     optional uint32 SettlePercent            = 100;
     repeated string SettleTips               = 101;
-    optional string DailyRewardAmount        = 110;
     optional string ProductPage              = 120;
     optional bool   Disabled                 = 130;
     optional bool   Display                  = 140;

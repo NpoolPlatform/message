@@ -131,6 +131,8 @@ message CreateGoodRequest {
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
+    string          LastUnitRewardAmount = 250;
+    string          TotalRewardAmount    = 260;
 }
 
 message CreateGoodResponse {

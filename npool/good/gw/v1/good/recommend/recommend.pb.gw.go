@@ -215,7 +215,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/CreateRecommend", runtime.WithHTTPPathPattern("/v1/create/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/CreateRecommend", runtime.WithHTTPPathPattern("/v1/create/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -240,7 +240,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/UpdateRecommend", runtime.WithHTTPPathPattern("/v1/update/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/UpdateRecommend", runtime.WithHTTPPathPattern("/v1/update/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -265,7 +265,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/GetRecommends", runtime.WithHTTPPathPattern("/v1/get/goodrecommends"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/GetRecommends", runtime.WithHTTPPathPattern("/v1/get/goodrecommends"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -290,7 +290,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/GetMyRecommends", runtime.WithHTTPPathPattern("/v1/get/mygoodrecommends"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/GetMyRecommends", runtime.WithHTTPPathPattern("/v1/get/mygoodrecommends"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -315,7 +315,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/DeleteRecommend", runtime.WithHTTPPathPattern("/v1/delete/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/DeleteRecommend", runtime.WithHTTPPathPattern("/v1/delete/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -379,7 +379,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/CreateRecommend", runtime.WithHTTPPathPattern("/v1/create/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/CreateRecommend", runtime.WithHTTPPathPattern("/v1/create/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -401,7 +401,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/UpdateRecommend", runtime.WithHTTPPathPattern("/v1/update/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/UpdateRecommend", runtime.WithHTTPPathPattern("/v1/update/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -423,7 +423,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/GetRecommends", runtime.WithHTTPPathPattern("/v1/get/goodrecommends"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/GetRecommends", runtime.WithHTTPPathPattern("/v1/get/goodrecommends"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -445,7 +445,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/GetMyRecommends", runtime.WithHTTPPathPattern("/v1/get/mygoodrecommends"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/GetMyRecommends", runtime.WithHTTPPathPattern("/v1/get/mygoodrecommends"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,7 +467,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.recommend.v1.Gateway/DeleteRecommend", runtime.WithHTTPPathPattern("/v1/delete/goodrecommend"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.recommend.v1.Gateway/DeleteRecommend", runtime.WithHTTPPathPattern("/v1/delete/goodrecommend"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

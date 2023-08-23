@@ -12,6 +12,7 @@ service Middleware {
     rpc UpdateRecommend      (UpdateRecommendRequest)      returns (UpdateRecommendResponse)      {}
     rpc GetRecommend         (GetRecommendRequest)         returns (GetRecommendResponse)         {}
     rpc GetRecommends        (GetRecommendsRequest)        returns (GetRecommendsResponse)        {}
+    rpc ExistRecommendConds  (ExistRecommendCondsRequest)  returns (ExistRecommendCondsResponse)  {}
     rpc DeleteRecommend      (DeleteRecommendRequest)      returns (DeleteRecommendResponse)      {}
 }
 
@@ -87,6 +88,15 @@ message GetRecommendsResponse {
     repeated Recommend Infos = 10;
     uint32             Total = 20;
 }
+
+message ExistRecommendCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistRecommendCondsResponse {
+    bool Info = 10;
+}
+
 
 message DeleteRecommendRequest {
     RecommendReq Info = 10;

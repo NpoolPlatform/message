@@ -181,7 +181,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/CreateScore", runtime.WithHTTPPathPattern("/v1/create/goodscore"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/CreateScore", runtime.WithHTTPPathPattern("/v1/create/goodscore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -206,7 +206,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/GetScores", runtime.WithHTTPPathPattern("/v1/get/goodscores"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/GetScores", runtime.WithHTTPPathPattern("/v1/get/goodscores"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -231,7 +231,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/GetMyScores", runtime.WithHTTPPathPattern("/v1/get/mygoodscores"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/GetMyScores", runtime.WithHTTPPathPattern("/v1/get/mygoodscores"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -256,7 +256,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/DeleteScore", runtime.WithHTTPPathPattern("/v1/delete/goodscore"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/DeleteScore", runtime.WithHTTPPathPattern("/v1/delete/goodscore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -320,7 +320,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/CreateScore", runtime.WithHTTPPathPattern("/v1/create/goodscore"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/CreateScore", runtime.WithHTTPPathPattern("/v1/create/goodscore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -342,7 +342,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/GetScores", runtime.WithHTTPPathPattern("/v1/get/goodscores"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/GetScores", runtime.WithHTTPPathPattern("/v1/get/goodscores"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -364,7 +364,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/GetMyScores", runtime.WithHTTPPathPattern("/v1/get/mygoodscores"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/GetMyScores", runtime.WithHTTPPathPattern("/v1/get/mygoodscores"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -386,7 +386,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.middleware.good1.score.v1.Gateway/DeleteScore", runtime.WithHTTPPathPattern("/v1/delete/goodscore"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.good1.score.v1.Gateway/DeleteScore", runtime.WithHTTPPathPattern("/v1/delete/goodscore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

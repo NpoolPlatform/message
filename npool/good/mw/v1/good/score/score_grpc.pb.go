@@ -19,10 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateScore_FullMethodName = "/good.middleware.good1.score.v1.Middleware/CreateScore"
-	Middleware_GetScore_FullMethodName    = "/good.middleware.good1.score.v1.Middleware/GetScore"
-	Middleware_GetScores_FullMethodName   = "/good.middleware.good1.score.v1.Middleware/GetScores"
-	Middleware_DeleteScore_FullMethodName = "/good.middleware.good1.score.v1.Middleware/DeleteScore"
+	Middleware_CreateScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/CreateScore"
+	Middleware_UpdateScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/UpdateScore"
+	Middleware_GetScore_FullMethodName        = "/good.middleware.good1.score.v1.Middleware/GetScore"
+	Middleware_GetScores_FullMethodName       = "/good.middleware.good1.score.v1.Middleware/GetScores"
+	Middleware_ExistScoreConds_FullMethodName = "/good.middleware.good1.score.v1.Middleware/ExistScoreConds"
+	Middleware_DeleteScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/DeleteScore"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -30,8 +32,10 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error)
+	UpdateScore(ctx context.Context, in *UpdateScoreRequest, opts ...grpc.CallOption) (*UpdateScoreResponse, error)
 	GetScore(ctx context.Context, in *GetScoreRequest, opts ...grpc.CallOption) (*GetScoreResponse, error)
 	GetScores(ctx context.Context, in *GetScoresRequest, opts ...grpc.CallOption) (*GetScoresResponse, error)
+	ExistScoreConds(ctx context.Context, in *ExistScoreCondsRequest, opts ...grpc.CallOption) (*ExistScoreCondsResponse, error)
 	DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error)
 }
 
@@ -46,6 +50,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error) {
 	out := new(CreateScoreResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateScore_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateScore(ctx context.Context, in *UpdateScoreRequest, opts ...grpc.CallOption) (*UpdateScoreResponse, error) {
+	out := new(UpdateScoreResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateScore_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,6 +83,15 @@ func (c *middlewareClient) GetScores(ctx context.Context, in *GetScoresRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) ExistScoreConds(ctx context.Context, in *ExistScoreCondsRequest, opts ...grpc.CallOption) (*ExistScoreCondsResponse, error) {
+	out := new(ExistScoreCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistScoreConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error) {
 	out := new(DeleteScoreResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteScore_FullMethodName, in, out, opts...)
@@ -84,8 +106,10 @@ func (c *middlewareClient) DeleteScore(ctx context.Context, in *DeleteScoreReque
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error)
+	UpdateScore(context.Context, *UpdateScoreRequest) (*UpdateScoreResponse, error)
 	GetScore(context.Context, *GetScoreRequest) (*GetScoreResponse, error)
 	GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error)
+	ExistScoreConds(context.Context, *ExistScoreCondsRequest) (*ExistScoreCondsResponse, error)
 	DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -97,11 +121,17 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateScore not implemented")
 }
+func (UnimplementedMiddlewareServer) UpdateScore(context.Context, *UpdateScoreRequest) (*UpdateScoreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateScore not implemented")
+}
 func (UnimplementedMiddlewareServer) GetScore(context.Context, *GetScoreRequest) (*GetScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScore not implemented")
 }
 func (UnimplementedMiddlewareServer) GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScores not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistScoreConds(context.Context, *ExistScoreCondsRequest) (*ExistScoreCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistScoreConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteScore not implemented")
@@ -133,6 +163,24 @@ func _Middleware_CreateScore_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateScore(ctx, req.(*CreateScoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateScoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateScore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateScore_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateScore(ctx, req.(*UpdateScoreRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -173,6 +221,24 @@ func _Middleware_GetScores_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistScoreConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistScoreCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistScoreConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistScoreConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistScoreConds(ctx, req.(*ExistScoreCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteScoreRequest)
 	if err := dec(in); err != nil {
@@ -203,12 +269,20 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CreateScore_Handler,
 		},
 		{
+			MethodName: "UpdateScore",
+			Handler:    _Middleware_UpdateScore_Handler,
+		},
+		{
 			MethodName: "GetScore",
 			Handler:    _Middleware_GetScore_Handler,
 		},
 		{
 			MethodName: "GetScores",
 			Handler:    _Middleware_GetScores_Handler,
+		},
+		{
+			MethodName: "ExistScoreConds",
+			Handler:    _Middleware_ExistScoreConds_Handler,
 		},
 		{
 			MethodName: "DeleteScore",

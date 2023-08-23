@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRequiredResponse"
+              "$ref": "#/definitions/goodgatewaygood1required1v1CreateRequiredResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRequiredRequest"
+              "$ref": "#/definitions/goodgatewaygood1required1v1CreateRequiredRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteRequiredResponse"
+              "$ref": "#/definitions/goodgatewaygood1required1v1DeleteRequiredResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteRequiredRequest"
+              "$ref": "#/definitions/goodgatewaygood1required1v1DeleteRequiredRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRequiredsResponse"
+              "$ref": "#/definitions/goodgatewaygood1required1v1GetRequiredsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRequiredsRequest"
+              "$ref": "#/definitions/goodgatewaygood1required1v1GetRequiredsRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRequiredResponse"
+              "$ref": "#/definitions/goodgatewaygood1required1v1UpdateRequiredResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRequiredRequest"
+              "$ref": "#/definitions/goodgatewaygood1required1v1UpdateRequiredRequest"
             }
           }
         ],
@@ -146,6 +146,95 @@
     }
   },
   "definitions": {
+    "goodgatewaygood1required1v1CreateRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "MainGoodID": {
+          "type": "string"
+        },
+        "RequiredGoodID": {
+          "type": "string"
+        },
+        "Must": {
+          "type": "boolean"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1CreateRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1DeleteRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1DeleteRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1GetRequiredsRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1GetRequiredsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Required"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1UpdateRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Must": {
+          "type": "string"
+        }
+      }
+    },
+    "goodgatewaygood1required1v1UpdateRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -174,119 +263,42 @@
         }
       }
     },
-    "v1CreateRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "MainGoodID": {
-          "type": "string"
-        },
-        "RequiredGoodID": {
-          "type": "string"
-        },
-        "Must": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CreateRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
-        }
-      }
-    },
-    "v1DeleteRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
-        }
-      }
-    },
-    "v1GetRequiredsRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetRequiredsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Required"
-          }
-        }
-      }
-    },
     "v1Required": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "MainGoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"main_good_id\""
         },
         "MainGoodName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"main_good_name\""
         },
         "RequiredGoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_good_id\""
         },
         "RequiredGoodName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_good_name\""
         },
         "Must": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"must\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "Must": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     }

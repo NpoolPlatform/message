@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateScore_FullMethodName = "/good.middleware.good1.score.v1.Gateway/CreateScore"
-	Gateway_GetScores_FullMethodName   = "/good.middleware.good1.score.v1.Gateway/GetScores"
-	Gateway_GetMyScores_FullMethodName = "/good.middleware.good1.score.v1.Gateway/GetMyScores"
-	Gateway_DeleteScore_FullMethodName = "/good.middleware.good1.score.v1.Gateway/DeleteScore"
+	Gateway_CreateScore_FullMethodName = "/good.gateway.good1.score.v1.Gateway/CreateScore"
+	Gateway_GetScores_FullMethodName   = "/good.gateway.good1.score.v1.Gateway/GetScores"
+	Gateway_GetMyScores_FullMethodName = "/good.gateway.good1.score.v1.Gateway/GetMyScores"
+	Gateway_DeleteScore_FullMethodName = "/good.gateway.good1.score.v1.Gateway/DeleteScore"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_DeleteScore_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.score.v1.Gateway",
+	ServiceName: "good.gateway.good1.score.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

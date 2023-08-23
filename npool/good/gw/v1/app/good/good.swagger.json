@@ -316,10 +316,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -489,26 +485,6 @@
         "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
-        },
-        "PromotionStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PromotionMessage": {
-          "type": "string"
-        },
-        "PromotionPrice": {
-          "type": "string"
-        },
-        "PromotionPosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "DeviceType": {
           "type": "string"
@@ -768,10 +744,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "CommissionPercent": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -874,10 +846,6 @@
           "format": "int32"
         },
         "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "CommissionPercent": {
           "type": "integer",
           "format": "int32"
         },

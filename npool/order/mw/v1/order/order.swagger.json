@@ -439,6 +439,9 @@
         "PromotionID": {
           "type": "string"
         },
+        "IsMainGood": {
+          "type": "boolean"
+        },
         "ID": {
           "type": "string",
           "title": "Update"
