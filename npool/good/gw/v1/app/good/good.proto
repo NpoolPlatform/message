@@ -148,9 +148,10 @@ message Good {
     string           AppGoodSold        = 870;
 
     uint32           LastRewardAt       = 880;
-    string           LastUnitRewardAmount = 890;
-    string           TotalRewardAmount  = 900;
-    repeated string  AppGoodPosters     = 910;
+    string           LastRewardAmount   = 890;
+    string           LastUnitRewardAmount = 900;
+    string           TotalRewardAmount  = 910;
+    repeated string  AppGoodPosters     = 920;
 }
 
 message CreateNAppGoodRequest {

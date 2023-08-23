@@ -133,8 +133,9 @@ message CreateGoodRequest {
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
     uint32          LastRewardAt       = 250;
-    string          LastUnitRewardAmount = 260;
-    string          TotalRewardAmount  = 270;
+    string          LastRewardAmount   = 270;
+    string          LastUnitRewardAmount = 280;
+    string          TotalRewardAmount  = 290;
 }
 
 message CreateGoodResponse {

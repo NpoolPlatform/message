@@ -204,12 +204,14 @@ message Good {
     uint32           LastRewardAt       = 800;
     // @inject_tag: sql:"last_reward_amount"
     string           LastRewardAmount   = 810;
+    // @inject_tag: sql:"total_reward_amount"
+    string           TotalRewardAmount  = 820;
     // @inject_tag: sql:"last_unit_reward_amount"
-    string           LastUnitRewardAmount = 820;
+    string           LastUnitRewardAmount = 830;
 
     // @inject_tag: sql:"app_good_posters"
-    string           AppGoodPostersStr  = 830;
-    repeated string  AppGoodPosters     = 840;
+    string           AppGoodPostersStr  = 840;
+    repeated string  AppGoodPosters     = 850;
 }
 
 message Conds {
