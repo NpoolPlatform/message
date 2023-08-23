@@ -512,6 +512,10 @@
         "LastRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
         }
       }
     },

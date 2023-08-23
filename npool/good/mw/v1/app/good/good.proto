@@ -221,6 +221,8 @@ message Good {
     uint32           LastRewardAt       = 800;
     // @inject_tag: sql:"last_reward_amount"
     string           LastRewardAmount   = 810;
+    // @inject_tag: sql:"last_unit_reward_amount"
+    string           LastUnitRewardAmount = 820;
 }
 
 message Conds {
