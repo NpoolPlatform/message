@@ -313,7 +313,7 @@
         "ThresholdPaymentAmount": {
           "type": "string"
         },
-        "KeyMust": {
+        "KycMust": {
           "type": "boolean"
         }
       }
@@ -369,7 +369,7 @@
         "ThresholdPaymentAmount": {
           "type": "string"
         },
-        "KeyMust": {
+        "KycMust": {
           "type": "boolean"
         }
       }
@@ -526,7 +526,7 @@
         "ThresholdPaymentAmount": {
           "type": "string"
         },
-        "KeyMust": {
+        "KycMust": {
           "type": "boolean"
         },
         "CreatedAt": {
@@ -582,7 +582,7 @@
         "ThresholdPaymentAmount": {
           "type": "string"
         },
-        "KeyMust": {
+        "KycMust": {
           "type": "boolean"
         }
       }
@@ -638,7 +638,7 @@
         "ThresholdPaymentAmount": {
           "type": "string"
         },
-        "KeyMust": {
+        "KycMust": {
           "type": "boolean"
         }
       }
