@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateRequired_FullMethodName = "/good.middleware.good1.required.v1.Middleware/CreateRequired"
-	Middleware_GetRequired_FullMethodName    = "/good.middleware.good1.required.v1.Middleware/GetRequired"
-	Middleware_GetRequireds_FullMethodName   = "/good.middleware.good1.required.v1.Middleware/GetRequireds"
-	Middleware_UpdateRequired_FullMethodName = "/good.middleware.good1.required.v1.Middleware/UpdateRequired"
-	Middleware_DeleteRequired_FullMethodName = "/good.middleware.good1.required.v1.Middleware/DeleteRequired"
+	Middleware_CreateRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/CreateRequired"
+	Middleware_GetRequired_FullMethodName    = "/good.middleware.good1.required1.v1.Middleware/GetRequired"
+	Middleware_GetRequireds_FullMethodName   = "/good.middleware.good1.required1.v1.Middleware/GetRequireds"
+	Middleware_UpdateRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/UpdateRequired"
+	Middleware_DeleteRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/DeleteRequired"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteRequired_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.required.v1.Middleware",
+	ServiceName: "good.middleware.good1.required1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

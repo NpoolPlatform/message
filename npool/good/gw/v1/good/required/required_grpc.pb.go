@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateRequired_FullMethodName = "/good.middleware.good1.required.v1.Gateway/CreateRequired"
-	Gateway_UpdateRequired_FullMethodName = "/good.middleware.good1.required.v1.Gateway/UpdateRequired"
-	Gateway_GetRequireds_FullMethodName   = "/good.middleware.good1.required.v1.Gateway/GetRequireds"
-	Gateway_DeleteRequired_FullMethodName = "/good.middleware.good1.required.v1.Gateway/DeleteRequired"
+	Gateway_CreateRequired_FullMethodName = "/good.gateway.good1.required1.v1.Gateway/CreateRequired"
+	Gateway_UpdateRequired_FullMethodName = "/good.gateway.good1.required1.v1.Gateway/UpdateRequired"
+	Gateway_GetRequireds_FullMethodName   = "/good.gateway.good1.required1.v1.Gateway/GetRequireds"
+	Gateway_DeleteRequired_FullMethodName = "/good.gateway.good1.required1.v1.Gateway/DeleteRequired"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_DeleteRequired_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.required.v1.Gateway",
+	ServiceName: "good.gateway.good1.required1.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
