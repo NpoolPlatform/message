@@ -277,19 +277,6 @@
         },
         "UnitLockDeposit": {
           "type": "string"
-        },
-        "LastRewardAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "LastRewardAmount": {
-          "type": "string"
-        },
-        "LastUnitRewardAmount": {
-          "type": "string"
-        },
-        "TotalRewardAmount": {
-          "type": "string"
         }
       }
     },
