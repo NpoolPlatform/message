@@ -16,11 +16,8 @@ service Middleware {
 }
 
 message DefaultReq {
-    optional string ID         = 10;
-    optional string AppID      = 20;
-    optional string GoodID     = 30;
-    optional string AppGoodID  = 40;
-    optional string CoinTypeID = 50;
+    optional string ID        = 10;
+    optional string AppGoodID = 20;
 }
 
 message Default {
