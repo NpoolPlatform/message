@@ -11,7 +11,7 @@ import "google/api/annotations.proto";
 service Gateway {
     rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
         option (google.api.http) = {
-            post: "/v1/create/n/appgood"
+            post: "/v1/create/appgood"
             body: "*"
         };
     }

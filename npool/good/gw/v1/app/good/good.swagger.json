@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/n/appgood": {
+    "/v1/create/appgood": {
       "post": {
         "operationId": "Gateway_CreateAppGood",
         "responses": {
