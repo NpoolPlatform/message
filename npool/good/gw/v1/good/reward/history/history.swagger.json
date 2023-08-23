@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetHistoriesResponse"
+              "$ref": "#/definitions/goodgatewaygood1rewardhistoryv1GetHistoriesResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetHistoriesRequest"
+              "$ref": "#/definitions/goodgatewaygood1rewardhistoryv1GetHistoriesRequest"
             }
           }
         ],
@@ -50,6 +50,46 @@
     }
   },
   "definitions": {
+    "goodgatewaygood1rewardhistoryv1GetHistoriesRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewaygood1rewardhistoryv1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1History"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -78,78 +118,47 @@
         }
       }
     },
-    "v1GetHistoriesRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetHistoriesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1History"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1History": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "GoodName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
         },
         "RewardDate": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"reward_date\""
         },
         "TID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"tid\""
         },
         "Amount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
         },
         "UnitAmount": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_amount\""
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     }

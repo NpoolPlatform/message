@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.middleware.good1.like.v1;
+package good.gateway.good1.like.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/like";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/like";
 
 import "google/api/annotations.proto";
 

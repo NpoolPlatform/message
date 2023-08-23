@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateComment_FullMethodName = "/good.middleware.good1.comment.v1.Gateway/CreateComment"
-	Gateway_UpdateComment_FullMethodName = "/good.middleware.good1.comment.v1.Gateway/UpdateComment"
-	Gateway_GetComments_FullMethodName   = "/good.middleware.good1.comment.v1.Gateway/GetComments"
-	Gateway_GetMyComments_FullMethodName = "/good.middleware.good1.comment.v1.Gateway/GetMyComments"
-	Gateway_DeleteComment_FullMethodName = "/good.middleware.good1.comment.v1.Gateway/DeleteComment"
+	Gateway_CreateComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/CreateComment"
+	Gateway_UpdateComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/UpdateComment"
+	Gateway_GetComments_FullMethodName   = "/good.gateway.good1.comment.v1.Gateway/GetComments"
+	Gateway_GetMyComments_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/GetMyComments"
+	Gateway_DeleteComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/DeleteComment"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -228,7 +228,7 @@ func _Gateway_DeleteComment_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.comment.v1.Gateway",
+	ServiceName: "good.gateway.good1.comment.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
