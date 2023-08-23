@@ -338,9 +338,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "DailyRewardAmount": {
-          "type": "string"
-        },
         "Display": {
           "type": "boolean"
         },
@@ -506,9 +503,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "DailyRewardAmount": {
-          "type": "string"
         },
         "ProductPage": {
           "type": "string"

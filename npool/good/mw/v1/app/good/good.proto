@@ -32,7 +32,6 @@ message GoodReq {
     optional uint32 ServiceStartAt      = 130;
     optional uint32 TechnicalFeeRatio   = 140;
     optional uint32 ElectricityFeeRatio = 150;
-    optional string DailyRewardAmount   = 160;
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
@@ -160,8 +159,6 @@ message Good {
     uint32           TechnicalFeeRatio   = 460;
     // @inject_tag: sql:"electricity_fee_ratio"
     uint32           ElectricityFeeRatio = 470;
-    // @inject_tag: sql:"daily_reward_amount"
-    string           DailyRewardAmount   = 480;
 
     // @inject_tag: sql:"descriptions"
     string           DescriptionsStr     = 510;
@@ -219,6 +216,11 @@ message Good {
     string           AppGoodInService   = 780;
     // @inject_tag: sql:"app_good_sold"
     string           AppGoodSold        = 790;
+
+    // @inject_tag: sql:"last_reward_at"
+    uint32           LastRewardAt       = 800;
+    // @inject_tag: sql:"last_reward_amount"
+    string           LastRewardAmount   = 810;
 }
 
 message Conds {
