@@ -211,12 +211,6 @@
         "ID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
         "AppGoodID": {
           "type": "string"
         },

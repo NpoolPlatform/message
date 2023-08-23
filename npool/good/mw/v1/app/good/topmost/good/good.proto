@@ -18,13 +18,11 @@ service Middleware {
 
 message TopMostGoodReq {
     optional string ID         = 10;
-    optional string AppID      = 20;
-    optional string GoodID     = 30;
-    optional string AppGoodID  = 40;
-    optional string TopMostID  = 50;
-    optional uint32 DisplayIndex = 60;
-    repeated string Posters    = 70;
-    optional string Price      = 80;
+    optional string AppGoodID  = 20;
+    optional string TopMostID  = 30;
+    optional uint32 DisplayIndex = 40;
+    repeated string Posters    = 50;
+    optional string Price      = 60;
 }
 
 message TopMostGood {
