@@ -146,6 +146,11 @@ message Good {
     string           AppGoodWaitStart   = 850;
     string           AppGoodInService   = 860;
     string           AppGoodSold        = 870;
+
+    uint32           LastRewardAt       = 880;
+    string           LastUnitRewardAmount = 890;
+    string           TotalRewardAmount  = 900;
+    repeated string  AppGoodPosters     = 910;
 }
 
 message CreateNAppGoodRequest {

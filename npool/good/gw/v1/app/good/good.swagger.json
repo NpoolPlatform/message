@@ -718,6 +718,22 @@
         },
         "AppGoodSold": {
           "type": "string"
+        },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastUnitRewardAmount": {
+          "type": "string"
+        },
+        "TotalRewardAmount": {
+          "type": "string"
+        },
+        "AppGoodPosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

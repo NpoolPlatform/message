@@ -278,6 +278,10 @@
         "UnitLockDeposit": {
           "type": "string"
         },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "LastUnitRewardAmount": {
           "type": "string"
         },
