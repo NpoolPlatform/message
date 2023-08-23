@@ -7,6 +7,7 @@
 package required
 
 import (
+	required "github.com/NpoolPlatform/message/npool/good/mw/v1/good/required"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -89,7 +90,7 @@ type CreateRequiredResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *required.Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *CreateRequiredResponse) Reset() {
@@ -124,7 +125,7 @@ func (*CreateRequiredResponse) Descriptor() ([]byte, []int) {
 	return file_npool_good_gw_v1_good_required_required_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateRequiredResponse) GetInfo() *Required {
+func (x *CreateRequiredResponse) GetInfo() *required.Required {
 	if x != nil {
 		return x.Info
 	}
@@ -191,7 +192,7 @@ type UpdateRequiredResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *required.Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *UpdateRequiredResponse) Reset() {
@@ -226,7 +227,7 @@ func (*UpdateRequiredResponse) Descriptor() ([]byte, []int) {
 	return file_npool_good_gw_v1_good_required_required_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *UpdateRequiredResponse) GetInfo() *Required {
+func (x *UpdateRequiredResponse) GetInfo() *required.Required {
 	if x != nil {
 		return x.Info
 	}
@@ -301,8 +302,8 @@ type GetRequiredsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*Required `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32      `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*required.Required `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32               `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetRequiredsResponse) Reset() {
@@ -337,7 +338,7 @@ func (*GetRequiredsResponse) Descriptor() ([]byte, []int) {
 	return file_npool_good_gw_v1_good_required_required_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetRequiredsResponse) GetInfos() []*Required {
+func (x *GetRequiredsResponse) GetInfos() []*required.Required {
 	if x != nil {
 		return x.Infos
 	}
@@ -403,7 +404,7 @@ type DeleteRequiredResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info *required.Required `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *DeleteRequiredResponse) Reset() {
@@ -438,7 +439,7 @@ func (*DeleteRequiredResponse) Descriptor() ([]byte, []int) {
 	return file_npool_good_gw_v1_good_required_required_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *DeleteRequiredResponse) GetInfo() *Required {
+func (x *DeleteRequiredResponse) GetInfo() *required.Required {
 	if x != nil {
 		return x.Info
 	}
@@ -547,7 +548,7 @@ var file_npool_good_gw_v1_good_required_required_proto_rawDesc = []byte{
 	0x74, 0x65, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x67, 0x6f, 0x6f, 0x64, 0x42,
 	0x41, 0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70,
 	0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x6d,
+	0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x67,
 	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72,
 	0x65, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -574,7 +575,7 @@ var file_npool_good_gw_v1_good_required_required_proto_goTypes = []interface{}{
 	(*GetRequiredsResponse)(nil),   // 5: good.gateway.good1.required1.v1.GetRequiredsResponse
 	(*DeleteRequiredRequest)(nil),  // 6: good.gateway.good1.required1.v1.DeleteRequiredRequest
 	(*DeleteRequiredResponse)(nil), // 7: good.gateway.good1.required1.v1.DeleteRequiredResponse
-	(*Required)(nil),               // 8: good.middleware.good1.required1.v1.Required
+	(*required.Required)(nil),      // 8: good.middleware.good1.required1.v1.Required
 }
 var file_npool_good_gw_v1_good_required_required_proto_depIdxs = []int32{
 	8, // 0: good.gateway.good1.required1.v1.CreateRequiredResponse.Info:type_name -> good.middleware.good1.required1.v1.Required
@@ -601,7 +602,6 @@ func file_npool_good_gw_v1_good_required_required_proto_init() {
 	if File_npool_good_gw_v1_good_required_required_proto != nil {
 		return
 	}
-	file_npool_good_mw_v1_good_required_required_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_npool_good_gw_v1_good_required_required_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRequiredRequest); i {
