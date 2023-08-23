@@ -46,6 +46,8 @@ message Conds {
     optional basetypes.v1.StringVal      GoodID  = 20;
     optional basetypes.v1.StringSliceVal GoodIDs = 30;
     optional basetypes.v1.Uint32Val      RewardDate = 40;
+    optional basetypes.v1.Uint32Val      StartAt = 50;
+    optional basetypes.v1.Uint32Val      EndAt   = 60;
 }
 
 message GetHistoriesRequest {
