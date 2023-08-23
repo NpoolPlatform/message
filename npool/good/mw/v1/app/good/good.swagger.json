@@ -332,13 +332,11 @@
           "title": "@inject_tag: sql:\"service_start_at\""
         },
         "TechnicalFeeRatio": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"technical_fee_ratio\""
         },
         "ElectricityFeeRatio": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"electricity_fee_ratio\""
         },
         "DescriptionsStr": {
