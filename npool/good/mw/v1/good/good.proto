@@ -170,6 +170,8 @@ message Good {
     string           LastRewardAmount    = 480;
     // @inject_tag: sql:"last_unit_reward_amount"
     string           LastUnitRewardAmount = 490;
+    // @inject_tag: sql:"total_reward_amount"
+    string           TotalRewardAmount    = 500;
 }
 
 message Conds {
