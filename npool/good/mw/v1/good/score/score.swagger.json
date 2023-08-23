@@ -196,6 +196,14 @@
           "type": "string"
         }
       }
+    },
+    "v1UpdateScoreResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Score"
+        }
+      }
     }
   }
 }

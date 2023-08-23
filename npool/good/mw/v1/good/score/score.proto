@@ -9,6 +9,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateScore      (CreateScoreRequest)      returns (CreateScoreResponse)      {}
+    rpc UpdateScore      (UpdateScoreRequest)      returns (UpdateScoreResponse)      {}
     rpc GetScore         (GetScoreRequest)         returns (GetScoreResponse)         {}
     rpc GetScores        (GetScoresRequest)        returns (GetScoresResponse)        {}
     rpc ExistScoreConds  (ExistScoreCondsRequest)  returns (ExistScoreCondsResponse)  {}
@@ -55,6 +56,14 @@ message CreateScoreRequest {
 }
 
 message CreateScoreResponse {
+    Score Info = 10;
+}
+
+message UpdateScoreRequest {
+    ScoreReq Info = 10;
+}
+
+message UpdateScoreResponse {
     Score Info = 10;
 }
 
