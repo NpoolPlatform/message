@@ -159,7 +159,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"top_most_type\""
         },
-        "TostMostType": {
+        "TopMostType": {
           "$ref": "#/definitions/v1GoodTopMostType"
         },
         "TopMostTitle": {

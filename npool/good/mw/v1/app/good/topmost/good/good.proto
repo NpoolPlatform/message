@@ -40,7 +40,7 @@ message TopMostGood {
     string TopMostID  = 60;
     // @inject_tag: sql:"top_most_type"
     string TopMostTypeStr = 70;
-    basetypes.good.v1.GoodTopMostType TostMostType = 80;
+    basetypes.good.v1.GoodTopMostType TopMostType = 80;
     // @inject_tag: sql:"top_most_title"
     string TopMostTitle = 90;
     // @inject_tag: sql:"top_most_message"
