@@ -439,6 +439,9 @@
         "PromotionID": {
           "type": "string"
         },
+        "IsParentOrder": {
+          "type": "boolean"
+        },
         "ID": {
           "type": "string",
           "title": "Update"

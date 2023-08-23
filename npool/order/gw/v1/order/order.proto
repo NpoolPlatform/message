@@ -17,6 +17,13 @@ service Gateway {
         };
     }
 
+    rpc CreateOrders (CreateOrdersRequest) returns (CreateOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/orders"
+            body: "*"
+        };
+    }
+
     rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {
         option (google.api.http) = {
             post: "/v1/update/order"
@@ -170,6 +177,23 @@ message Order {
     
 }
 
+message OrderReq {
+    string          AppID                = 10;
+    string          UserID               = 20;
+    string          GoodID               = 30;
+    string          Units                = 40;
+    string          PaymentCoinID        = 50;
+    optional string ParentOrderID        = 60;
+    optional string PayWithBalanceAmount = 70;
+    optional string FixAmountID          = 80;
+    optional string DiscountID           = 90;
+    optional string SpecialOfferID       = 100;
+    basetypes.order.v1.OrderType OrderType     = 110;
+    repeated string CouponIDs            = 120;
+    basetypes.order.v1.InvestmentType InvestmentType = 130;
+    bool            IsParentOrder        = 140;
+}
+
 message CreateOrderRequest {
     string          AppID                = 10;
     string          UserID               = 20;
@@ -188,6 +212,14 @@ message CreateOrderRequest {
 
 message CreateOrderResponse {
     Order Info = 10;
+}
+
+message CreateOrdersRequest {
+    repeated OrderReq Infos = 10;
+}
+
+message CreateOrdersResponse {
+    repeated Order Infos = 10;
 }
 
 message UpdateOrderRequest {

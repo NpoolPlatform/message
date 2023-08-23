@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/create/orders": {
+      "post": {
+        "operationId": "Gateway_CreateOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/user/order": {
       "post": {
         "operationId": "Gateway_CreateUserOrder",
@@ -549,6 +581,30 @@
         }
       }
     },
+    "v1CreateOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1OrderReq"
+          }
+        }
+      }
+    },
+    "v1CreateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Order"
+          }
+        }
+      }
+    },
     "v1CreateUserOrderRequest": {
       "type": "object",
       "properties": {
@@ -952,6 +1008,56 @@
         "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1OrderReq": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "PaymentCoinID": {
+          "type": "string"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "FixAmountID": {
+          "type": "string"
+        },
+        "DiscountID": {
+          "type": "string"
+        },
+        "SpecialOfferID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "IsParentOrder": {
+          "type": "boolean"
         }
       }
     },

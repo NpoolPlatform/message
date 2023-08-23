@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_CreateOrder_FullMethodName        = "/order.gateway.order1.v1.Gateway/CreateOrder"
+	Gateway_CreateOrders_FullMethodName       = "/order.gateway.order1.v1.Gateway/CreateOrders"
 	Gateway_UpdateOrder_FullMethodName        = "/order.gateway.order1.v1.Gateway/UpdateOrder"
 	Gateway_UpdateUserOrder_FullMethodName    = "/order.gateway.order1.v1.Gateway/UpdateUserOrder"
 	Gateway_UpdateAppUserOrder_FullMethodName = "/order.gateway.order1.v1.Gateway/UpdateAppUserOrder"
@@ -38,6 +39,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
+	CreateOrders(ctx context.Context, in *CreateOrdersRequest, opts ...grpc.CallOption) (*CreateOrdersResponse, error)
 	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
 	UpdateUserOrder(ctx context.Context, in *UpdateUserOrderRequest, opts ...grpc.CallOption) (*UpdateUserOrderResponse, error)
 	UpdateAppUserOrder(ctx context.Context, in *UpdateAppUserOrderRequest, opts ...grpc.CallOption) (*UpdateAppUserOrderResponse, error)
@@ -62,6 +64,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
 	out := new(CreateOrderResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateOrders(ctx context.Context, in *CreateOrdersRequest, opts ...grpc.CallOption) (*CreateOrdersResponse, error) {
+	out := new(CreateOrdersResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateOrders_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -172,6 +183,7 @@ func (c *gatewayClient) GetNAppOrders(ctx context.Context, in *GetNAppOrdersRequ
 // for forward compatibility
 type GatewayServer interface {
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
+	CreateOrders(context.Context, *CreateOrdersRequest) (*CreateOrdersResponse, error)
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
 	UpdateUserOrder(context.Context, *UpdateUserOrderRequest) (*UpdateUserOrderResponse, error)
 	UpdateAppUserOrder(context.Context, *UpdateAppUserOrderRequest) (*UpdateAppUserOrderResponse, error)
@@ -192,6 +204,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrder not implemented")
+}
+func (UnimplementedGatewayServer) CreateOrders(context.Context, *CreateOrdersRequest) (*CreateOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrders not implemented")
 }
 func (UnimplementedGatewayServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
@@ -253,6 +268,24 @@ func _Gateway_CreateOrder_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateOrder(ctx, req.(*CreateOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_CreateOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateOrders(ctx, req.(*CreateOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -465,6 +498,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOrder",
 			Handler:    _Gateway_CreateOrder_Handler,
+		},
+		{
+			MethodName: "CreateOrders",
+			Handler:    _Gateway_CreateOrders_Handler,
 		},
 		{
 			MethodName: "UpdateOrder",
