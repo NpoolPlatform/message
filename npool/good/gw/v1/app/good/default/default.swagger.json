@@ -278,9 +278,6 @@
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
         }
       }
     },
@@ -299,9 +296,6 @@
           "type": "string"
         },
         "AppGoodID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
           "type": "string"
         }
       }

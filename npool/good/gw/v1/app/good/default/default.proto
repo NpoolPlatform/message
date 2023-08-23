@@ -78,7 +78,6 @@ message Default {
 message CreateDefaultRequest {
     string AppID      = 10;
     string AppGoodID  = 20;
-    string CoinTypeID = 30;
 }
 
 message CreateDefaultResponse {
@@ -88,7 +87,6 @@ message CreateDefaultResponse {
 message CreateNDefaultRequest {
     string TargetAppID = 10;
     string AppGoodID   = 20;
-    string CoinTypeID  = 30;
 }
 
 message CreateNDefaultResponse {
