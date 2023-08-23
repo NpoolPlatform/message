@@ -415,6 +415,18 @@
         }
       }
     },
+    "v1GoodTopMostType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodTopMostType",
+        "TopMostPromotion",
+        "TopMostNoviceExclusive",
+        "TopMostBestOffer",
+        "TopMostInnovationStarter",
+        "TopMostLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodTopMostType"
+    },
     "v1TopMostGood": {
       "type": "object",
       "properties": {
@@ -456,6 +468,9 @@
         },
         "TopMostID": {
           "type": "string"
+        },
+        "TopMostType": {
+          "$ref": "#/definitions/v1GoodTopMostType"
         },
         "TopMostTitle": {
           "type": "string"
