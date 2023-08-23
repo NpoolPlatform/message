@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateLike_FullMethodName     = "/good.middleware.good1.like.v1.Middleware/CreateLike"
+	Middleware_UpdateLike_FullMethodName     = "/good.middleware.good1.like.v1.Middleware/UpdateLike"
 	Middleware_GetLike_FullMethodName        = "/good.middleware.good1.like.v1.Middleware/GetLike"
 	Middleware_GetLikes_FullMethodName       = "/good.middleware.good1.like.v1.Middleware/GetLikes"
 	Middleware_ExistLikeConds_FullMethodName = "/good.middleware.good1.like.v1.Middleware/ExistLikeConds"
@@ -31,6 +32,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error)
+	UpdateLike(ctx context.Context, in *UpdateLikeRequest, opts ...grpc.CallOption) (*UpdateLikeResponse, error)
 	GetLike(ctx context.Context, in *GetLikeRequest, opts ...grpc.CallOption) (*GetLikeResponse, error)
 	GetLikes(ctx context.Context, in *GetLikesRequest, opts ...grpc.CallOption) (*GetLikesResponse, error)
 	ExistLikeConds(ctx context.Context, in *ExistLikeCondsRequest, opts ...grpc.CallOption) (*ExistLikeCondsResponse, error)
@@ -48,6 +50,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error) {
 	out := new(CreateLikeResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateLike_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateLike(ctx context.Context, in *UpdateLikeRequest, opts ...grpc.CallOption) (*UpdateLikeResponse, error) {
+	out := new(UpdateLikeResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateLike_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,6 +106,7 @@ func (c *middlewareClient) DeleteLike(ctx context.Context, in *DeleteLikeRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error)
+	UpdateLike(context.Context, *UpdateLikeRequest) (*UpdateLikeResponse, error)
 	GetLike(context.Context, *GetLikeRequest) (*GetLikeResponse, error)
 	GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error)
 	ExistLikeConds(context.Context, *ExistLikeCondsRequest) (*ExistLikeCondsResponse, error)
@@ -108,6 +120,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLike not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateLike(context.Context, *UpdateLikeRequest) (*UpdateLikeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateLike not implemented")
 }
 func (UnimplementedMiddlewareServer) GetLike(context.Context, *GetLikeRequest) (*GetLikeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLike not implemented")
@@ -148,6 +163,24 @@ func _Middleware_CreateLike_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateLike(ctx, req.(*CreateLikeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateLike_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateLikeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateLike(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateLike_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateLike(ctx, req.(*UpdateLikeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -234,6 +267,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateLike",
 			Handler:    _Middleware_CreateLike_Handler,
+		},
+		{
+			MethodName: "UpdateLike",
+			Handler:    _Middleware_UpdateLike_Handler,
 		},
 		{
 			MethodName: "GetLike",

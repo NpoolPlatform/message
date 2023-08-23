@@ -9,6 +9,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateLike      (CreateLikeRequest)      returns (CreateLikeResponse)      {}
+    rpc UpdateLike      (UpdateLikeRequest)      returns (UpdateLikeResponse)      {}
     rpc GetLike         (GetLikeRequest)         returns (GetLikeResponse)         {}
     rpc GetLikes        (GetLikesRequest)        returns (GetLikesResponse)        {}
     rpc ExistLikeConds  (ExistLikeCondsRequest)  returns (ExistLikeCondsResponse)  {}
@@ -55,6 +56,14 @@ message CreateLikeRequest {
 }
 
 message CreateLikeResponse {
+    Like Info = 10;
+}
+
+message UpdateLikeRequest {
+    LikeReq Info = 10;
+}
+
+message UpdateLikeResponse {
     Like Info = 10;
 }
 
