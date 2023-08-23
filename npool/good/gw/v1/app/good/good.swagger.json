@@ -329,12 +329,10 @@
           "format": "int64"
         },
         "TechnicalFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ElectricityFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "EnablePurchase": {
           "type": "boolean"
@@ -628,12 +626,10 @@
           "format": "int64"
         },
         "TechnicalFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ElectricityFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "DailyRewardAmount": {
           "type": "string"
@@ -812,12 +808,10 @@
           "format": "int64"
         },
         "TechnicalFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ElectricityFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Descriptions": {
           "type": "array",
@@ -915,12 +909,10 @@
           "format": "int64"
         },
         "TechnicalFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "ElectricityFeeRatio": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Descriptions": {
           "type": "array",

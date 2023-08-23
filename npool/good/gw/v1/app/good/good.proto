@@ -116,8 +116,8 @@ message Good {
     uint32           SaleStartAt         = 570;
     uint32           SaleEndAt           = 580;
     uint32           ServiceStartAt      = 590;
-    uint32           TechnicalFeeRatio   = 600;
-    uint32           ElectricityFeeRatio = 610;
+    string           TechnicalFeeRatio   = 600;
+    string           ElectricityFeeRatio = 610;
     string           DailyRewardAmount   = 620;
     repeated string  Descriptions        = 640;
     string           GoodBanner          = 650;
@@ -166,8 +166,8 @@ message CreateGoodRequest {
     optional uint32 SaleStartAt    = 100;
     optional uint32 SaleEndAt      = 110;
     optional uint32 ServiceStartAt = 120;
-    optional uint32 TechnicalFeeRatio    = 130;
-    optional uint32 ElectricityFeeRatio  = 140;
+    optional string TechnicalFeeRatio    = 130;
+    optional string ElectricityFeeRatio  = 140;
     optional bool   EnablePurchase         = 160;
     optional bool   EnableProductPage      = 170;
     optional basetypes.good.v1.CancelMode CancelMode = 180;
@@ -226,8 +226,8 @@ message UpdateGoodRequest {
     optional uint32 SaleStartAt         = 100;
     optional uint32 SaleEndAt           = 110;
     optional uint32 ServiceStartAt      = 120;
-    optional uint32 TechnicalFeeRatio   = 130;
-    optional uint32 ElectricityFeeRatio = 140;
+    optional string TechnicalFeeRatio   = 130;
+    optional string ElectricityFeeRatio = 140;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
@@ -257,8 +257,8 @@ message UpdateNGoodRequest {
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional uint32 ServiceStartAt      = 100;
-    optional uint32 TechnicalFeeRatio   = 110;
-    optional uint32 ElectricityFeeRatio = 120;
+    optional string TechnicalFeeRatio   = 110;
+    optional string ElectricityFeeRatio = 120;
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;

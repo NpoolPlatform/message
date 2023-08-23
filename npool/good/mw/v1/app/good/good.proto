@@ -31,8 +31,8 @@ message GoodReq {
     optional uint32 SaleStartAt         = 110;
     optional uint32 SaleEndAt           = 120;
     optional uint32 ServiceStartAt      = 130;
-    optional uint32 TechnicalFeeRatio   = 140;
-    optional uint32 ElectricityFeeRatio = 150;
+    optional string TechnicalFeeRatio   = 140;
+    optional string ElectricityFeeRatio = 150;
     repeated string Descriptions        = 180;
     optional string GoodBanner          = 190;
     repeated string DisplayNames        = 200;
