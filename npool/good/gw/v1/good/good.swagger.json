@@ -574,6 +574,12 @@
         "Price": {
           "type": "string"
         },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "Title": {
           "type": "string"
         },

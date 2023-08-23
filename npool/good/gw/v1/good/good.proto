@@ -164,6 +164,8 @@ message UpdateGoodRequest {
     optional string InheritFromGoodID  = 50;
     optional string VendorLocationID   = 60;
     optional string Price              = 70;
+    optional basetypes.good.v1.BenefitType BenefitType = 80;
+    optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string Title              = 100;
     optional string Unit               = 110;
     optional int32  UnitAmount         = 120;
