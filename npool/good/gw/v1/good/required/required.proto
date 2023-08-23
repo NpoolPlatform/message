@@ -49,7 +49,7 @@ message CreateRequiredResponse {
 
 message UpdateRequiredRequest {
     string ID   = 10;
-    string Must = 20;
+    bool   Must = 20;
 }
 
 message UpdateRequiredResponse {

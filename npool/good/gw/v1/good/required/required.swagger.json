@@ -223,7 +223,7 @@
           "type": "string"
         },
         "Must": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
