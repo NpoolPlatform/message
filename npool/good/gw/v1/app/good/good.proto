@@ -55,6 +55,7 @@ service Gateway {
 message Good {
     string           ID                          = 10;
     string           AppID                       = 20;
+    string           AppName                     = 21;
     string           GoodID                      = 30;
     bool             Online                      = 40;
     bool             Visible                     = 50;
@@ -70,6 +71,8 @@ message Good {
 
     int32            DurationDays                = 290;
     string           VendorLocationCountry       = 300;
+    string           VendorBrandName             = 301;
+    string           VendorBrandLogo             = 302;
 
     string           CoinTypeID                  = 310;
     string           CoinLogo                    = 320;
@@ -89,7 +92,7 @@ message Good {
 
     bool             TestOnly           = 410;
     repeated string  Posters            = 420;
-    repeated string  Labels             = 430;
+    repeated basetypes.good.v1.GoodLabel Labels = 430;
 
     message CoinInfo {
         string CoinTypeID    = 10;
@@ -139,6 +142,14 @@ message Good {
     uint32           ScoreCount     = 780;
     uint32           RecommendCount = 790;
     uint32           CommentCount   = 800;
+
+    string           AppGoodStockID     = 810;
+    string           AppGoodReserved    = 820;
+    string           AppSpotQuantity    = 830;
+    string           AppGoodLocked      = 840;
+    string           AppGoodWaitStart   = 850;
+    string           AppGoodInService   = 860;
+    string           AppGoodSold        = 870;
 }
 
 message CreateNAppGoodRequest {

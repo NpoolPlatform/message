@@ -466,6 +466,9 @@
         "AppID": {
           "type": "string"
         },
+        "AppName": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -511,6 +514,12 @@
           "format": "int32"
         },
         "VendorLocationCountry": {
+          "type": "string"
+        },
+        "VendorBrandName": {
+          "type": "string"
+        },
+        "VendorBrandLogo": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -569,7 +578,7 @@
         "Labels": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1GoodLabel"
           }
         },
         "SupportCoins": {
@@ -700,8 +709,41 @@
         "CommentCount": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodStockID": {
+          "type": "string"
+        },
+        "AppGoodReserved": {
+          "type": "string"
+        },
+        "AppSpotQuantity": {
+          "type": "string"
+        },
+        "AppGoodLocked": {
+          "type": "string"
+        },
+        "AppGoodWaitStart": {
+          "type": "string"
+        },
+        "AppGoodInService": {
+          "type": "string"
+        },
+        "AppGoodSold": {
+          "type": "string"
         }
       }
+    },
+    "v1GoodLabel": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodLabel",
+        "GoodLabelPromotion",
+        "GoodLabelNoviceExclusive",
+        "GoodLabelInnovationStarter",
+        "GoodLabelLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodLabel",
+      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
     },
     "v1GoodType": {
       "type": "string",
