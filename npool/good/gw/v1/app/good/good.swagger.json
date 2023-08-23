@@ -363,6 +363,12 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -858,6 +864,12 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -952,6 +964,12 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

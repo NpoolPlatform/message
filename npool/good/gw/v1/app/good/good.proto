@@ -176,6 +176,7 @@ message CreateNAppGoodRequest {
     optional uint32 CancellableBeforeStart = 210;
     optional string ProductPage            = 220;
     optional bool   EnableSetCommission    = 230;
+    repeated string Posters    = 240;
 }
 
 message CreateNAppGoodResponse {
@@ -239,6 +240,7 @@ message UpdateAppGoodRequest {
     optional uint32 CancellableBeforeStart = 250;
     optional string ProductPage            = 260;
     optional bool   EnableSetCommission    = 270;
+    repeated string Posters    = 280;
 }
 
 message UpdateAppGoodResponse {
@@ -268,6 +270,7 @@ message UpdateNAppGoodRequest {
     optional uint32 CancellableBeforeStart = 240;
     optional string ProductPage            = 250;
     optional bool   EnableSetCommission    = 270;
+    repeated string Posters    = 280;
 }
 
 message UpdateNAppGoodResponse {
