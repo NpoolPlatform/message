@@ -455,6 +455,9 @@
         "Total": {
           "type": "string"
         },
+        "SpotQuantity": {
+          "type": "string"
+        },
         "Locked": {
           "type": "string"
         },

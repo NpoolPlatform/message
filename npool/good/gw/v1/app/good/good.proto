@@ -106,12 +106,8 @@ message Good {
     }
     repeated CoinInfo SupportCoins  = 460;
 
-    string           Total          = 470;
-    string           SpotQuantity   = 471;
-    string           Locked         = 480;
-    string           InService      = 490;
-    string           WaitStart      = 491;
-    string           Sold           = 510;
+    string           GoodTotal          = 470;
+    string           GoodSpotQuantity   = 480;
 
     repeated Good    RequiredGoods      = 520;
     uint32           StartAt            = 550;

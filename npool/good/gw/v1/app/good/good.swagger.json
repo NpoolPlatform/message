@@ -588,22 +588,10 @@
             "$ref": "#/definitions/GoodCoinInfo"
           }
         },
-        "Total": {
+        "GoodTotal": {
           "type": "string"
         },
-        "SpotQuantity": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "InService": {
-          "type": "string"
-        },
-        "WaitStart": {
-          "type": "string"
-        },
-        "Sold": {
+        "GoodSpotQuantity": {
           "type": "string"
         },
         "RequiredGoods": {

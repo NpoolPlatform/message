@@ -86,6 +86,7 @@ message Good {
 
     string           StockID        = 350;
     string           Total          = 360;
+    string           SpotQuantity   = 361;
     string           Locked         = 370;
     string           InService      = 380;
     string           WaitStart      = 381;

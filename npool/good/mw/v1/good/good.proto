@@ -132,6 +132,8 @@ message Good {
     string           GoodStockID        = 310;
     // @inject_tag: sql:"good_total"
     string           GoodTotal          = 320;
+    // @inject_tag: sql:"good_spot_quantity"
+    string           GoodSpotQuantity   = 321;
     // @inject_tag: sql:"good_locked"
     string           GoodLocked         = 330;
     // @inject_tag: sql:"good_in_service"
