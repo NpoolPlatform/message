@@ -1056,7 +1056,7 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
-        "IsParentOrder": {
+        "IsMainGood": {
           "type": "boolean"
         }
       }

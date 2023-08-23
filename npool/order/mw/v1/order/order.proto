@@ -54,7 +54,7 @@ message OrderReq {
     optional uint32 End                       = 200;
 
     optional string PromotionID               = 210;
-    optional bool   IsParentOrder             = 211;
+    optional bool   IsMainGood                = 211;
 
     // Update
     optional string ID                        = 220;

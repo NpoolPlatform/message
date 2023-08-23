@@ -191,7 +191,7 @@ message OrderReq {
     basetypes.order.v1.OrderType OrderType     = 110;
     repeated string CouponIDs            = 120;
     basetypes.order.v1.InvestmentType InvestmentType = 130;
-    bool            IsParentOrder        = 140;
+    bool            IsMainGood           = 140;
 }
 
 message CreateOrderRequest {
