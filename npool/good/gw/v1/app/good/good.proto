@@ -9,42 +9,42 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
+    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/appgood"
             body: "*"
         };
     }
 
-    rpc GetAppGoods (GetAppGoodsRequest) returns (GetAppGoodsResponse) {
+    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
         option (google.api.http) = {
             post: "/v1/get/appgoods"
             body: "*"
         };
     }
 
-    rpc GetAppGood (GetAppGoodRequest) returns (GetAppGoodResponse) {
+    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
         option (google.api.http) = {
             post: "/v1/get/appgood"
             body: "*"
         };
     }
 
-    rpc GetNAppGoods (GetNAppGoodsRequest) returns (GetNAppGoodsResponse) {
+    rpc GetNGoods (GetNGoodsRequest) returns (GetNGoodsResponse) {
         option (google.api.http) = {
             post: "/v1/get/n/appgoods"
             body: "*"
         };
     }
 
-    rpc UpdateAppGood (UpdateAppGoodRequest) returns (UpdateAppGoodResponse) {
+    rpc UpdateGood (UpdateGoodRequest) returns (UpdateGoodResponse) {
         option (google.api.http) = {
             post: "/v1/update/appgood"
             body: "*"
         };
     }
 
-    rpc UpdateNAppGood (UpdateNAppGoodRequest) returns (UpdateNAppGoodResponse) {
+    rpc UpdateNGood (UpdateNGoodRequest) returns (UpdateNGoodResponse) {
         option (google.api.http) = {
             post: "/v1/update/n/appgood"
             body: "*"
@@ -154,7 +154,7 @@ message Good {
     repeated string  AppGoodPosters     = 920;
 }
 
-message CreateAppGoodRequest {
+message CreateGoodRequest {
     string TargetAppID         = 10;
     string GoodID              = 20;
     bool   Online              = 30;
@@ -179,42 +179,42 @@ message CreateAppGoodRequest {
     repeated string Posters    = 240;
 }
 
-message CreateAppGoodResponse {
+message CreateGoodResponse {
     Good Info = 10;
 }
 
-message GetAppGoodsRequest {
+message GetGoodsRequest {
     string AppID  = 10;
     int32  Offset = 20;
     int32  Limit  = 30;
 }
 
-message GetAppGoodsResponse {
+message GetGoodsResponse {
     repeated Good Infos = 10;
     uint32        Total = 20;
 }
 
-message GetAppGoodRequest {
-    string AppID  = 10;
-    string GoodID = 20;
+message GetGoodRequest {
+    string ID    = 10;
+    string AppID = 20;
 }
 
-message GetAppGoodResponse {
+message GetGoodResponse {
     Good Info = 10;
 }
 
-message GetNAppGoodsRequest {
+message GetNGoodsRequest {
     string TargetAppID  = 10;
     int32  Offset       = 20;
     int32  Limit        = 30;
 }
 
-message GetNAppGoodsResponse {
+message GetNGoodsResponse {
     repeated Good Infos = 10;
     uint32        Total = 20;
 }
 
-message UpdateAppGoodRequest {
+message UpdateGoodRequest {
     string          ID                  = 10;
     string          AppID               = 20;
     optional bool   Online              = 30;
@@ -243,11 +243,11 @@ message UpdateAppGoodRequest {
     repeated string Posters    = 280;
 }
 
-message UpdateAppGoodResponse {
+message UpdateGoodResponse {
     Good Info = 10;
 }
 
-message UpdateNAppGoodRequest {
+message UpdateNGoodRequest {
     string          ID                  = 10;
     string          TargetAppID         = 20;
     optional bool   Online              = 30;
@@ -273,6 +273,6 @@ message UpdateNAppGoodRequest {
     repeated string Posters    = 280;
 }
 
-message UpdateNAppGoodResponse {
+message UpdateNGoodResponse {
     Good Info = 10;
 }

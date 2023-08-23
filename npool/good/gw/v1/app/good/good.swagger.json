@@ -18,12 +18,12 @@
   "paths": {
     "/v1/create/appgood": {
       "post": {
-        "operationId": "Gateway_CreateAppGood",
+        "operationId": "Gateway_CreateGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppGoodResponse"
+              "$ref": "#/definitions/v1CreateGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppGoodRequest"
+              "$ref": "#/definitions/v1CreateGoodRequest"
             }
           }
         ],
@@ -50,12 +50,12 @@
     },
     "/v1/get/appgood": {
       "post": {
-        "operationId": "Gateway_GetAppGood",
+        "operationId": "Gateway_GetGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppGoodResponse"
+              "$ref": "#/definitions/v1GetGoodResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppGoodRequest"
+              "$ref": "#/definitions/v1GetGoodRequest"
             }
           }
         ],
@@ -82,12 +82,12 @@
     },
     "/v1/get/appgoods": {
       "post": {
-        "operationId": "Gateway_GetAppGoods",
+        "operationId": "Gateway_GetGoods",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppGoodsResponse"
+              "$ref": "#/definitions/v1GetGoodsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppGoodsRequest"
+              "$ref": "#/definitions/v1GetGoodsRequest"
             }
           }
         ],
@@ -114,12 +114,12 @@
     },
     "/v1/get/n/appgoods": {
       "post": {
-        "operationId": "Gateway_GetNAppGoods",
+        "operationId": "Gateway_GetNGoods",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetNAppGoodsResponse"
+              "$ref": "#/definitions/v1GetNGoodsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetNAppGoodsRequest"
+              "$ref": "#/definitions/v1GetNGoodsRequest"
             }
           }
         ],
@@ -146,12 +146,12 @@
     },
     "/v1/update/appgood": {
       "post": {
-        "operationId": "Gateway_UpdateAppGood",
+        "operationId": "Gateway_UpdateGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppGoodResponse"
+              "$ref": "#/definitions/v1UpdateGoodResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppGoodRequest"
+              "$ref": "#/definitions/v1UpdateGoodRequest"
             }
           }
         ],
@@ -178,12 +178,12 @@
     },
     "/v1/update/n/appgood": {
       "post": {
-        "operationId": "Gateway_UpdateNAppGood",
+        "operationId": "Gateway_UpdateNGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateNAppGoodResponse"
+              "$ref": "#/definitions/v1UpdateNGoodResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateNAppGoodRequest"
+              "$ref": "#/definitions/v1UpdateNGoodRequest"
             }
           }
         ],
@@ -287,7 +287,7 @@
       ],
       "default": "DefaultCancelMode"
     },
-    "v1CreateAppGoodRequest": {
+    "v1CreateGoodRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -372,7 +372,7 @@
         }
       }
     },
-    "v1CreateAppGoodResponse": {
+    "v1CreateGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -380,18 +380,18 @@
         }
       }
     },
-    "v1GetAppGoodRequest": {
+    "v1GetGoodRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "ID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppID": {
           "type": "string"
         }
       }
     },
-    "v1GetAppGoodResponse": {
+    "v1GetGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -399,7 +399,7 @@
         }
       }
     },
-    "v1GetAppGoodsRequest": {
+    "v1GetGoodsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -415,7 +415,7 @@
         }
       }
     },
-    "v1GetAppGoodsResponse": {
+    "v1GetGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -431,7 +431,7 @@
         }
       }
     },
-    "v1GetNAppGoodsRequest": {
+    "v1GetNGoodsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -447,7 +447,7 @@
         }
       }
     },
-    "v1GetNAppGoodsResponse": {
+    "v1GetNGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -770,7 +770,7 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1UpdateAppGoodRequest": {
+    "v1UpdateGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -873,7 +873,7 @@
         }
       }
     },
-    "v1UpdateAppGoodResponse": {
+    "v1UpdateGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -881,7 +881,7 @@
         }
       }
     },
-    "v1UpdateNAppGoodRequest": {
+    "v1UpdateNGoodRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -973,7 +973,7 @@
         }
       }
     },
-    "v1UpdateNAppGoodResponse": {
+    "v1UpdateNGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
