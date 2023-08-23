@@ -72,6 +72,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"total\""
         },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        },
         "Locked": {
           "type": "string",
           "title": "@inject_tag: sql:\"locked\""

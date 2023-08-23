@@ -30,16 +30,18 @@ message Stock {
     string GoodName   = 30;
     // @inject_tag: sql:"total"
     string Total      = 40;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 50;
     // @inject_tag: sql:"locked"
-    string Locked     = 50;
+    string Locked     = 60;
     // @inject_tag: sql:"wait_start"
-    string WaitStart  = 60;
+    string WaitStart  = 70;
     // @inject_tag: sql:"in_service"
-    string InService  = 70;
+    string InService  = 80;
     // @inject_tag: sql:"sold"
-    string Sold       = 80;
+    string Sold       = 90;
     // @inject_tag: sql:"app_reserved"
-    string AppReserved  = 90;
+    string AppReserved  = 100;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
