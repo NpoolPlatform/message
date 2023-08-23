@@ -18,12 +18,12 @@
   "paths": {
     "/v1/create/n/appgood": {
       "post": {
-        "operationId": "Gateway_CreateNAppGood",
+        "operationId": "Gateway_CreateAppGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNAppGoodResponse"
+              "$ref": "#/definitions/v1CreateAppGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNAppGoodRequest"
+              "$ref": "#/definitions/v1CreateAppGoodRequest"
             }
           }
         ],
@@ -287,7 +287,7 @@
       ],
       "default": "DefaultCancelMode"
     },
-    "v1CreateNAppGoodRequest": {
+    "v1CreateAppGoodRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -372,7 +372,7 @@
         }
       }
     },
-    "v1CreateNAppGoodResponse": {
+    "v1CreateAppGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {

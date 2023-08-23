@@ -9,7 +9,7 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateNAppGood (CreateNAppGoodRequest) returns (CreateNAppGoodResponse) {
+    rpc CreateAppGood (CreateAppGoodRequest) returns (CreateAppGoodResponse) {
         option (google.api.http) = {
             post: "/v1/create/n/appgood"
             body: "*"
@@ -154,7 +154,7 @@ message Good {
     repeated string  AppGoodPosters     = 920;
 }
 
-message CreateNAppGoodRequest {
+message CreateAppGoodRequest {
     string TargetAppID         = 10;
     string GoodID              = 20;
     bool   Online              = 30;
@@ -179,7 +179,7 @@ message CreateNAppGoodRequest {
     repeated string Posters    = 240;
 }
 
-message CreateNAppGoodResponse {
+message CreateAppGoodResponse {
     Good Info = 10;
 }
 
