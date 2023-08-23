@@ -286,7 +286,10 @@
           "type": "string"
         },
         "Posters": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "StartAt": {
           "type": "integer",
@@ -339,7 +342,10 @@
           "type": "string"
         },
         "Posters": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "StartAt": {
           "type": "integer",
@@ -493,7 +499,10 @@
           "type": "string"
         },
         "Posters": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "StartAt": {
           "type": "integer",
@@ -546,7 +555,10 @@
           "type": "string"
         },
         "Posters": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "StartAt": {
           "type": "integer",
@@ -599,7 +611,10 @@
           "type": "string"
         },
         "Posters": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "StartAt": {
           "type": "integer",

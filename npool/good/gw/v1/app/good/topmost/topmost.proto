@@ -66,7 +66,7 @@ message TopMost {
     basetypes.good.v1.GoodTopMostType TopMostType = 40;
     string Title      = 50;
     string Message    = 60;
-    string Posters    = 70;
+    repeated string Posters    = 70;
     uint32 StartAt    = 80;
     uint32 EndAt      = 90;
     string ThresholdCredits = 100;
@@ -83,7 +83,7 @@ message CreateTopMostRequest {
     basetypes.good.v1.GoodTopMostType TopMostType = 20;
     string Title      = 30;
     string Message    = 40;
-    string Posters    = 50;
+    repeated string Posters    = 50;
     uint32 StartAt    = 60;
     uint32 EndAt      = 70;
     optional string ThresholdCredits = 80;
@@ -102,7 +102,7 @@ message CreateNTopMostRequest {
     basetypes.good.v1.GoodTopMostType TopMostType = 20;
     string Title      = 30;
     string Message    = 40;
-    string Posters    = 50;
+    repeated string Posters    = 50;
     uint32 StartAt    = 60;
     uint32 EndAt      = 70;
     optional string ThresholdCredits = 80;
@@ -152,7 +152,7 @@ message UpdateTopMostRequest {
     string          AppID      = 20;
     optional string Title      = 30;
     optional string Message    = 40;
-    optional string Posters    = 50;
+    repeated string Posters    = 50;
     optional uint32 StartAt    = 60;
     optional uint32 EndAt      = 70;
     optional string ThresholdCredits = 80;
@@ -171,7 +171,7 @@ message UpdateNTopMostRequest {
     string          TargetAppID = 20;
     optional string Title      = 30;
     optional string Message    = 40;
-    optional string Posters    = 50;
+    repeated string Posters    = 50;
     optional uint32 StartAt    = 60;
     optional uint32 EndAt      = 70;
     optional string ThresholdCredits = 80;
