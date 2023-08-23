@@ -516,6 +516,16 @@
         "LastUnitRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "AppGoodPostersStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_posters\""
+        },
+        "AppGoodPosters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -625,6 +635,12 @@
         },
         "EnableSetCommission": {
           "type": "boolean"
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

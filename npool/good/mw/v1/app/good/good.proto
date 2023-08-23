@@ -43,6 +43,7 @@ message GoodReq {
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
+    repeated string Posters             = 320;
 }
 
 message Good {
@@ -223,6 +224,10 @@ message Good {
     string           LastRewardAmount   = 810;
     // @inject_tag: sql:"last_unit_reward_amount"
     string           LastUnitRewardAmount = 820;
+
+    // @inject_tag: sql:"app_good_posters"
+    string           AppGoodPostersStr  = 830;
+    repeated string  AppGoodPosters     = 840;
 }
 
 message Conds {
