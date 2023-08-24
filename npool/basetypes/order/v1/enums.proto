@@ -60,3 +60,11 @@ enum CompensateType {
     CompensateWalfare      = 20;
     CompensateStarterDelay = 30;
 }
+
+enum BenefitState {
+    DefaultBenefitState = 0;
+
+    BenefitWait       = 10;
+    BenefitCalculated = 20;
+    BenefitDone       = 30;
+}
