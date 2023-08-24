@@ -39,6 +39,7 @@ enum PaymentState {
 
 enum InvestmentType {
     DefaultInvestmentType = 0;
+
     UnionMining = 10;
     FullPayment = 20;
 }
@@ -50,4 +51,11 @@ enum PaymentType {
     PayWithTransferOnly       = 20;
     PayWithTransferAndBalance = 30;
     PayWithParentOrder        = 40;
+}
+
+enum CompensateType {
+    DefaultCompensateType = 0;
+
+    CompensateMalfunction = 10;
+    CompensateWalfare     = 20;
 }
