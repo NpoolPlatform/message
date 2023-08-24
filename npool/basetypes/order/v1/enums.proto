@@ -20,7 +20,7 @@ enum OrderState {
     OrderStatePaid              = 30;
     OrderStatePaymentTimeout    = 40;
     // Platform confirm canceled
-    OrderStateCanceled          = 50;
+    OrderStateCancelled         = 50;
 
     // Cyclation order state
     OrderStateInService         = 60;
@@ -34,7 +34,7 @@ enum PaymentState {
 
     PaymentStateWait     = 10;
     PaymentStateDone     = 20;
-    PaymentStateCanceled = 30;
+    PaymentStateCancelled = 30;
     PaymentStateTimeOut  = 40;
 }
 

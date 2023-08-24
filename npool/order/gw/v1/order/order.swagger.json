@@ -1069,12 +1069,12 @@
         "OrderStateCheckPayment",
         "OrderStatePaid",
         "OrderStatePaymentTimeout",
-        "OrderStateCanceled",
+        "OrderStateCancelled",
         "OrderStateInService",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCanceled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCancelled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
