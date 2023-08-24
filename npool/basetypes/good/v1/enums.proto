@@ -58,3 +58,10 @@ enum GoodTopMostType {
     TopMostInnovationStarter = 40;
     TopMostLoyaltyExclusive  = 50;
 }
+
+enum GoodStartMode {
+    DefaultGoodStartMode = 0;
+
+    GoodStartModeTBD       = 10;
+    GoodStartModeConfirmed = 20;
+}

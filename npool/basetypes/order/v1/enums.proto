@@ -68,3 +68,10 @@ enum BenefitState {
     BenefitCalculated = 20;
     BenefitDone       = 30;
 }
+
+enum OrderStartMode {
+    DefaultOrderStartMode = 0;
+
+    OrderStartTBD        = 10;
+    OrderStartConfirmed  = 20;
+}
