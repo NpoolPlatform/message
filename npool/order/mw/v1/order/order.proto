@@ -11,7 +11,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
-    rpc CreateOrders    (CreateOrdersRequest)   returns (CreateOrdersResponse)    {}
+    rpc CreateOrders    (CreateOrdersRequest)   returns (CreateOrdersResponse)   {}
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
     rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
@@ -26,50 +26,48 @@ service Middleware {
 
 message OrderReq {
     // order
-    optional string AppID                     = 10;
-    optional string UserID                    = 20;
-    optional string GoodID                    = 30;
-    optional string AppGoodID                 = 40;
-    optional string ParentOrderID             = 50;
-    optional string Units                     = 60;
-    optional string GoodValue                 = 70;
-    optional string PaymentAmount             = 80;
-    optional string DiscountAmount            = 90;
-    optional string PromotionID               = 100;
-    optional uint32 StartAt                   = 110;
-    optional basetypes.order.v1.OrderStartMode StartMode = 120;
-    optional uint32 DurationDays                         = 130;
-    optional basetypes.order.v1.OrderType OrderType      = 140;
-    optional basetypes.order.v1.InvestmentType InvestmentType = 150;
-    repeated string CouponIDs                                 = 160;
-    optional basetypes.order.v1.PaymentType PaymentType     = 170;
+    optional string ID                        = 10;
+    optional string AppID                     = 20;
+    optional string UserID                    = 30;
+    optional string GoodID                    = 40;
+    optional string AppGoodID                 = 50;
+    optional string ParentOrderID             = 60;
+    optional string Units                     = 70;
+    optional string GoodValue                 = 80;
+    optional string PaymentAmount             = 90;
+    optional string DiscountAmount            = 100;
+    optional string PromotionID               = 110;
+    optional uint32 DurationDays                              = 120;
+    optional basetypes.order.v1.OrderType OrderType           = 130;
+    optional basetypes.order.v1.InvestmentType InvestmentType = 140;
+    repeated string CouponIDs                                 = 150;
+    optional basetypes.order.v1.PaymentType PaymentType       = 160;
 
     // payment
-    optional string PaymentAccountID          = 180;
-    optional string PaymentCoinInfoID         = 190;
-    optional string PaymentStartAmount        = 200;
-    optional string PaymentTransferAmount     = 210;
-    optional string PaymentBalanceAmount      = 220;
-    optional string PaymentCoinUSDCurrency    = 230;
-    optional string PaymentLocalUSDCurrency   = 240;
-    optional string PaymentLiveUSDCurrency    = 250;
+    optional string PaymentAccountID          = 170;
+    optional string PaymentCoinInfoID         = 180;
+    optional string PaymentStartAmount        = 190;
+    optional string PaymentTransferAmount     = 200;
+    optional string PaymentBalanceAmount      = 210;
+    optional string PaymentCoinUSDCurrency    = 220;
+    optional string PaymentLocalUSDCurrency   = 230;
+    optional string PaymentLiveUSDCurrency    = 240;
 
     // Create or Update
     // orderstate
-    optional basetypes.order.v1.OrderState OrderState   = 290;
-    optional uint32 EndAt                               = 300;
-    optional uint32 LastBenefitAt                       = 310;
-    optional basetypes.order.v1.BenefitState BenefitState = 320;
-    optional bool   UserSetPaid                           = 330;
-    optional bool   UserSetCanceled                       = 340;
-    optional string PaymentTransactionID                  = 350;
-    optional string PaymentFinishAmount                   = 360;
-    optional basetypes.order.v1.PaymentState PaymentState = 370;
-
-    // Only in update
-    optional string ID                        = 260;
-    optional string PaymentID                 = 270;
-    optional string OrderStateID              = 280;
+    optional basetypes.order.v1.OrderState OrderState     = 250;
+    optional basetypes.order.v1.OrderStartMode StartMode  = 260;
+    optional uint32 StartAt                               = 270;
+    optional uint32 EndAt                                 = 280;
+    optional uint32 LastBenefitAt                         = 290;
+    optional basetypes.order.v1.BenefitState BenefitState = 300;
+    optional bool   UserSetPaid                           = 310;
+    optional bool   UserSetCancelled                      = 320;
+    optional string PaymentTransactionID                  = 330;
+    optional string PaymentFinishAmount                   = 340;
+    optional basetypes.order.v1.PaymentState PaymentState = 350;
+    optional uint32 OutOfGasHours                         = 360;
+    optional uint32 CompensateHours                       = 370;
 }
 
 message Order {
@@ -98,50 +96,50 @@ message Order {
     string DiscountAmount                            = 110;
     // @inject_tag: sql:"promotion_id"
     string PromotionID                               = 120;
-    // @inject_tag: sql:"start_at"
-    uint32 StartAt                                   = 130;
-    // @inject_tag: sql:"start_mode"
-    string StartModeStr                              = 140;
-    basetypes.order.v1.OrderStartMode StartMode      = 150;
     // @inject_tag: sql:"duration_days"
-    uint32 DurationDays                              = 160;
+    uint32 DurationDays                              = 130;
     // @inject_tag: sql:"order_type"
-    string OrderTypeStr                              = 170;
-    basetypes.order.v1.OrderType OrderType           = 180;
+    string OrderTypeStr                              = 140;
+    basetypes.order.v1.OrderType OrderType           = 150;
     // @inject_tag: sql:"investment_type"
-    string InvestmentTypeStr                         = 190;
-    basetypes.order.v1.InvestmentType InvestmentType = 200;
+    string InvestmentTypeStr                         = 160;
+    basetypes.order.v1.InvestmentType InvestmentType = 170;
     // @inject_tag: sql:"coupon_ids"
-    string CouponIDsStr                              = 210;
-    repeated string  CouponIDs                       = 220;
+    string CouponIDsStr                              = 180;
+    repeated string  CouponIDs                       = 190;
     // @inject_tag: sql:"payment_type"
-    string PaymentTypeStr                            = 230;
-    basetypes.order.v1.PaymentType PaymentType       = 240;
+    string PaymentTypeStr                            = 200;
+    basetypes.order.v1.PaymentType PaymentType       = 210;
 
     // payment
     // @inject_tag: sql:"payment_account_id"
-    string PaymentAccountID                      = 250;
+    string PaymentAccountID                      = 220;
     // @inject_tag: sql:"payment_coin_info_id"
-    string PaymentCoinInfoID                     = 260;
+    string PaymentCoinInfoID                     = 230;
     // @inject_tag: sql:"payment_start_amount"
-    string PaymentStartAmount                    = 270;
+    string PaymentStartAmount                    = 240;
     // @inject_tag: sql:"payment_transfer_amount"
-    string PaymentTransferAmount                 = 280;
+    string PaymentTransferAmount                 = 250;
     // @inject_tag: sql:"payment_balance_amount"
-    string PaymentBalanceAmount                  = 290;
+    string PaymentBalanceAmount                  = 260;
     // @inject_tag: sql:"payment_coin_usd_currency"
-    string PaymentCoinUSDCurrency                = 300;
+    string PaymentCoinUSDCurrency                = 270;
     // @inject_tag: sql:"payment_local_coin_usd_currency"
-    string PaymentLocalUSDCurrency               = 310;
+    string PaymentLocalUSDCurrency               = 280;
     // @inject_tag: sql:"payment_live_coin_usd_currency"
-    string PaymentLiveUSDCurrency                = 320;
+    string PaymentLiveUSDCurrency                = 290;
 
     // orderstate 
     // @inject_tag: sql:"orderstate_id"
-    string OrderStateID                          = 330;
+    string OrderStateID                          = 300;
     // @inject_tag: sql:"order_state"
-    string OrderStateStr                         = 340;
-    basetypes.order.v1.OrderState OrderState     = 350;
+    string OrderStateStr                         = 310;
+    basetypes.order.v1.OrderState OrderState     = 320;
+    // @inject_tag: sql:"start_mode"
+    string StartModeStr                          = 330;
+    basetypes.order.v1.OrderStartMode StartMode  = 340;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt                               = 350;
     // @inject_tag: sql:"end_at"
     uint32 EndAt                                 = 360;
     // @inject_tag: sql:"last_benefit_at"
@@ -152,7 +150,7 @@ message Order {
     // @inject_tag: sql:"user_set_paid"
     bool UserSetPaid                             = 400;
     // @inject_tag: sql:"user_set_cancelled"
-    bool UserSetCanceled                         = 410;
+    bool UserSetCancelled                         = 410;
     // @inject_tag: sql:"payment_transaction_id"
     string PaymentTransactionID                  = 420;
     // @inject_tag: sql:"payment_finish_amount"
@@ -160,6 +158,10 @@ message Order {
     // @inject_tag: sql:"payment_state"
     string PaymentStateStr                       = 440;
     basetypes.order.v1.PaymentState PaymentState = 450;
+    // @inject_tag: sql:"outofgas_hours"
+    uint32 OutOfGasHours                         = 460;
+    // @inject_tag: sql:"compensate_hours"
+    uint32 CompensateHours                       = 470;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
@@ -176,18 +178,18 @@ message Conds {
     basetypes.v1.StringVal      AppGoodID             = 50;
     basetypes.v1.StringVal      ParentOrderID         = 60;
     basetypes.v1.StringVal      PaymentAmount         = 70;
-    basetypes.v1.Uint32Val      StartMode             = 80;
-    basetypes.v1.Uint32Val      OrderType             = 90;
-    basetypes.v1.Uint32Val      InvestmentType        = 100;
-    basetypes.v1.StringSliceVal CouponIDs             = 110;
-    basetypes.v1.Uint32Val      PaymentType           = 120;
-    basetypes.v1.Uint32Val      CreatedAt             = 130;
+    basetypes.v1.Uint32Val      OrderType             = 80;
+    basetypes.v1.Uint32Val      InvestmentType        = 90;
+    basetypes.v1.StringSliceVal CouponIDs             = 100;
+    basetypes.v1.Uint32Val      PaymentType           = 110;
+    basetypes.v1.Uint32Val      CreatedAt             = 120;
 
     // payment
-    basetypes.v1.StringVal      PaymentCoinInfoID     = 140;
+    basetypes.v1.StringVal      PaymentCoinInfoID     = 130;
 
     // orderstate
-    basetypes.v1.Uint32Val      OrderState            = 150;
+    basetypes.v1.Uint32Val      OrderState            = 140;
+    basetypes.v1.Uint32Val      StartMode             = 150;
     basetypes.v1.Uint32Val      LastBenefitAt         = 160;
     basetypes.v1.Uint32Val      BenefitState          = 170;
     basetypes.v1.StringVal      PaymentTransactionID  = 180;

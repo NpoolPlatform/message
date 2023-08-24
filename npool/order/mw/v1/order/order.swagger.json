@@ -80,9 +80,6 @@
         "PaymentAmount": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "StartMode": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -105,6 +102,9 @@
         "OrderState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "orderstate"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "LastBenefitAt": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -275,18 +275,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"promotion_id\""
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "StartModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"start_mode\""
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
-        },
         "DurationDays": {
           "type": "integer",
           "format": "int64",
@@ -366,6 +354,18 @@
         "OrderState": {
           "$ref": "#/definitions/v1OrderState"
         },
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64",
@@ -387,7 +387,7 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"user_set_paid\""
         },
-        "UserSetCanceled": {
+        "UserSetCancelled": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"user_set_cancelled\""
         },
@@ -406,6 +406,16 @@
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },
+        "OutOfGasHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"outofgas_hours\""
+        },
+        "CompensateHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"compensate_hours\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -421,9 +431,12 @@
     "v1OrderReq": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "ID": {
           "type": "string",
           "title": "order"
+        },
+        "AppID": {
+          "type": "string"
         },
         "UserID": {
           "type": "string"
@@ -451,13 +464,6 @@
         },
         "PromotionID": {
           "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
         },
         "DurationDays": {
           "type": "integer",
@@ -507,6 +513,13 @@
           "$ref": "#/definitions/v1OrderState",
           "title": "Create or Update\norderstate"
         },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
@@ -521,7 +534,7 @@
         "UserSetPaid": {
           "type": "boolean"
         },
-        "UserSetCanceled": {
+        "UserSetCancelled": {
           "type": "boolean"
         },
         "PaymentTransactionID": {
@@ -533,15 +546,13 @@
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },
-        "ID": {
-          "type": "string",
-          "title": "Only in update"
+        "OutOfGasHours": {
+          "type": "integer",
+          "format": "int64"
         },
-        "PaymentID": {
-          "type": "string"
-        },
-        "OrderStateID": {
-          "type": "string"
+        "CompensateHours": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
