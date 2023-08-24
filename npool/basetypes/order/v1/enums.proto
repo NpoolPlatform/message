@@ -56,6 +56,7 @@ enum PaymentType {
 enum CompensateType {
     DefaultCompensateType = 0;
 
-    CompensateMalfunction = 10;
-    CompensateWalfare     = 20;
+    CompensateMalfunction  = 10;
+    CompensateWalfare      = 20;
+    CompensateStarterDelay = 30;
 }
