@@ -35,7 +35,7 @@ enum PaymentState {
     PaymentStateWait     = 10;
     PaymentStateDone     = 20;
     PaymentStateCancelled = 30;
-    PaymentStateTimeOut  = 40;
+    PaymentStateTimeout  = 40;
 }
 
 enum InvestmentType {

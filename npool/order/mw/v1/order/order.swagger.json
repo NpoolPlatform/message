@@ -597,7 +597,7 @@
         "PaymentStateWait",
         "PaymentStateDone",
         "PaymentStateCancelled",
-        "PaymentStateTimeOut"
+        "PaymentStateTimeout"
       ],
       "default": "DefaultPaymentState"
     },
