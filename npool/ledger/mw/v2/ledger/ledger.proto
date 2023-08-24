@@ -27,6 +27,8 @@ message LedgerReq {
     optional string Spendable  = 80;
     optional basetypes.ledger.v1.IOSubType       IOSubType   = 90;
     optional string IOExtra     = 100;
+    optional string StatementID = 110;
+    optional string LockID      = 120; // currently not used
 }
 
 message Ledger {
