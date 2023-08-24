@@ -80,7 +80,7 @@ enum Prefix {
 
     PrefixMigrate              = 10000;
 
-    PrefixSchedulerOrder       = 20000;
+    PrefixScheduler            = 20000;
 
     PrefixAccountLock          = 30000;
 }
