@@ -111,6 +111,7 @@ message Good {
 
     repeated Good    RequiredGoods      = 520;
     uint32           StartAt            = 550;
+    basetypes.good.v1.GoodStartMode StartMode = 551;
     uint32           CreatedAt          = 560;
 
     uint32           SaleStartAt         = 570;

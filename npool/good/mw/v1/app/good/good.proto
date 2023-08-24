@@ -127,6 +127,9 @@ message Good {
 
     // @inject_tag: sql:"start_at"
     uint32           StartAt            = 410;
+    // @inject_tag: sql:"start_mode"
+    string           StartModeStr       = 411;
+    basetypes.good.v1.GoodStartMode StartMode = 412;
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 420;
     // @inject_tag: sql:"updated_at"

@@ -343,6 +343,13 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"start_at\""
         },
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -510,8 +517,20 @@
         },
         "UnitRewardAmount": {
           "type": "string"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         }
       }
+    },
+    "v1GoodStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStartMode",
+        "GoodStartModeTBD",
+        "GoodStartModeConfirmed"
+      ],
+      "default": "DefaultGoodStartMode"
     },
     "v1GoodType": {
       "type": "string",

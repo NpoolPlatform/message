@@ -609,6 +609,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -753,6 +756,15 @@
       ],
       "default": "DefaultGoodLabel",
       "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+    },
+    "v1GoodStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStartMode",
+        "GoodStartModeTBD",
+        "GoodStartModeConfirmed"
+      ],
+      "default": "DefaultGoodStartMode"
     },
     "v1GoodType": {
       "type": "string",

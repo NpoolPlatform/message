@@ -95,6 +95,7 @@ message Good {
 
     uint32           DeliveryAt         = 400;
     uint32           StartAt            = 410;
+    basetypes.good.v1.GoodStartMode StartMode = 411;
     uint32           CreatedAt          = 420;
     uint32           UpdatedAt          = 430;
 
@@ -126,6 +127,7 @@ message CreateGoodRequest {
     repeated string SupportCoinTypeIDs = 130;
     uint32          DeliveryAt         = 140;
     uint32          StartAt            = 150;
+    basetypes.good.v1.GoodStartMode StartMode = 151;
     bool            TestOnly           = 160;
     string          Total              = 170;
     repeated string Posters            = 210;
@@ -172,6 +174,7 @@ message UpdateGoodRequest {
     repeated string SupportCoinTypeIDs = 130;
     optional uint32 DeliveryAt         = 140;
     optional uint32 StartAt            = 150;
+    optional basetypes.good.v1.GoodStartMode StartMode = 151;
     optional bool   TestOnly           = 160;
     optional string Total              = 170;
     repeated string Posters            = 210;
