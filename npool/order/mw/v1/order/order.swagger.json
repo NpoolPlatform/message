@@ -95,7 +95,7 @@
         "CreatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "PaymentCoinInfoID": {
+        "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "payment"
         },
@@ -315,9 +315,9 @@
           "type": "string",
           "title": "payment\n@inject_tag: sql:\"payment_account_id\""
         },
-        "PaymentCoinInfoID": {
+        "PaymentCoinTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"payment_coin_info_id\""
+          "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
         "PaymentStartAmount": {
           "type": "string",
@@ -488,7 +488,7 @@
           "type": "string",
           "title": "payment"
         },
-        "PaymentCoinInfoID": {
+        "PaymentCoinTypeID": {
           "type": "string"
         },
         "PaymentStartAmount": {

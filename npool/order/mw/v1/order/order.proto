@@ -45,7 +45,7 @@ message OrderReq {
 
     // payment
     optional string PaymentAccountID          = 170;
-    optional string PaymentCoinInfoID         = 180;
+    optional string PaymentCoinTypeID         = 180;
     optional string PaymentStartAmount        = 190;
     optional string PaymentTransferAmount     = 200;
     optional string PaymentBalanceAmount      = 210;
@@ -114,8 +114,8 @@ message Order {
     // payment
     // @inject_tag: sql:"payment_account_id"
     string PaymentAccountID                      = 220;
-    // @inject_tag: sql:"payment_coin_info_id"
-    string PaymentCoinInfoID                     = 230;
+    // @inject_tag: sql:"payment_coin_type_id"
+    string PaymentCoinTypeID                     = 230;
     // @inject_tag: sql:"payment_start_amount"
     string PaymentStartAmount                    = 240;
     // @inject_tag: sql:"payment_transfer_amount"
@@ -185,7 +185,7 @@ message Conds {
     basetypes.v1.Uint32Val      CreatedAt             = 120;
 
     // payment
-    basetypes.v1.StringVal      PaymentCoinInfoID     = 130;
+    basetypes.v1.StringVal      PaymentCoinTypeID     = 130;
 
     // orderstate
     basetypes.v1.Uint32Val      OrderState            = 140;
