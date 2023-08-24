@@ -475,6 +475,7 @@
       "enum": [
         "DefaultOrderState",
         "OrderStateWaitPayment",
+        "OrderStateCheckPayment",
         "OrderStatePaid",
         "OrderStatePaymentTimeout",
         "OrderStateCanceled",

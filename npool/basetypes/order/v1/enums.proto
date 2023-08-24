@@ -16,14 +16,15 @@ enum OrderState {
 
     // Common state
     OrderStateWaitPayment       = 10;
-    OrderStatePaid              = 20;
-    OrderStatePaymentTimeout    = 30;
+    OrderStateCheckPayment      = 20;
+    OrderStatePaid              = 30;
+    OrderStatePaymentTimeout    = 40;
     // Platform confirm canceled
-    OrderStateCanceled          = 40;
+    OrderStateCanceled          = 50;
 
     // Cyclation order state
-    OrderStateInService         = 50;
-    OrderStateExpired           = 60;
+    OrderStateInService         = 60;
+    OrderStateExpired           = 70;
 
     // Delivery order state
 }
