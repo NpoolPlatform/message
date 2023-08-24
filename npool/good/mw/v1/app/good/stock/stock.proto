@@ -22,6 +22,7 @@ message StockReq {
     optional string Locked     = 70;
     optional string WaitStart  = 80;
     optional string InService  = 90;
+    optional bool   ChargeBack = 100;
 }
 
 message Stock {
