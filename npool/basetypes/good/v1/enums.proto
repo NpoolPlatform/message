@@ -10,6 +10,8 @@ enum BenefitType {
     BenefitTypePlatform  = 10;
     // User receive benefit from pool directly
     BenefitTypePool      = 20;
+    // User do not receive any online reward
+    BenefitTypeOffline   = 30;
 }
 
 enum GoodType {

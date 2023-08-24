@@ -61,10 +61,11 @@
       "enum": [
         "DefaultBenefitType",
         "BenefitTypePlatform",
-        "BenefitTypePool"
+        "BenefitTypePool",
+        "BenefitTypeOffline"
       ],
       "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly"
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward"
     },
     "v1Conds": {
       "type": "object",
