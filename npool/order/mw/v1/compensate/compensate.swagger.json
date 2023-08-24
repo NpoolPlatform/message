@@ -56,15 +56,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_id\""
         },
-        "Start": {
+        "StartAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"start\""
+          "title": "@inject_tag: sql:\"start_at\""
         },
-        "End": {
+        "EndAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"end\""
+          "title": "@inject_tag: sql:\"end_at\""
         },
         "Message": {
           "type": "string",
@@ -91,11 +91,11 @@
         "OrderID": {
           "type": "string"
         },
-        "Start": {
+        "StartAt": {
           "type": "integer",
           "format": "int64"
         },
-        "End": {
+        "EndAt": {
           "type": "integer",
           "format": "int64"
         },
@@ -117,10 +117,10 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Start": {
+        "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "End": {
+        "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
