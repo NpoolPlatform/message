@@ -335,11 +335,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
         },
-        "PaymentLocalUSDCurrency": {
+        "PaymentLocalCoinUSDCurrency": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
         },
-        "PaymentLiveUSDCurrency": {
+        "PaymentLiveCoinUSDCurrency": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
         },
@@ -503,10 +503,10 @@
         "PaymentCoinUSDCurrency": {
           "type": "string"
         },
-        "PaymentLocalUSDCurrency": {
+        "PaymentLocalCoinUSDCurrency": {
           "type": "string"
         },
-        "PaymentLiveUSDCurrency": {
+        "PaymentLiveCoinUSDCurrency": {
           "type": "string"
         },
         "OrderState": {

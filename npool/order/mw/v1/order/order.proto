@@ -44,14 +44,14 @@ message OrderReq {
     optional basetypes.order.v1.PaymentType PaymentType       = 160;
 
     // payment
-    optional string PaymentAccountID          = 170;
-    optional string PaymentCoinTypeID         = 180;
-    optional string PaymentStartAmount        = 190;
-    optional string PaymentTransferAmount     = 200;
-    optional string PaymentBalanceAmount      = 210;
-    optional string PaymentCoinUSDCurrency    = 220;
-    optional string PaymentLocalUSDCurrency   = 230;
-    optional string PaymentLiveUSDCurrency    = 240;
+    optional string PaymentAccountID              = 170;
+    optional string PaymentCoinTypeID             = 180;
+    optional string PaymentStartAmount            = 190;
+    optional string PaymentTransferAmount         = 200;
+    optional string PaymentBalanceAmount          = 210;
+    optional string PaymentCoinUSDCurrency        = 220;
+    optional string PaymentLocalCoinUSDCurrency   = 230;
+    optional string PaymentLiveCoinUSDCurrency    = 240;
 
     // Create or Update
     // orderstate
@@ -125,9 +125,9 @@ message Order {
     // @inject_tag: sql:"payment_coin_usd_currency"
     string PaymentCoinUSDCurrency                = 270;
     // @inject_tag: sql:"payment_local_coin_usd_currency"
-    string PaymentLocalUSDCurrency               = 280;
+    string PaymentLocalCoinUSDCurrency           = 280;
     // @inject_tag: sql:"payment_live_coin_usd_currency"
-    string PaymentLiveUSDCurrency                = 290;
+    string PaymentLiveCoinUSDCurrency            = 290;
 
     // orderstate 
     // @inject_tag: sql:"orderstate_id"
