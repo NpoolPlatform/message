@@ -62,7 +62,7 @@ message OrderReq {
     optional uint32 LastBenefitAt                         = 290;
     optional basetypes.order.v1.BenefitState BenefitState = 300;
     optional bool   UserSetPaid                           = 310;
-    optional bool   UserSetCancelled                      = 320;
+    optional bool   UserSetCanceled                       = 320;
     optional string PaymentTransactionID                  = 330;
     optional string PaymentFinishAmount                   = 340;
     optional basetypes.order.v1.PaymentState PaymentState = 350;
@@ -149,8 +149,8 @@ message Order {
     basetypes.order.v1.BenefitState BenefitState = 390;
     // @inject_tag: sql:"user_set_paid"
     bool UserSetPaid                             = 400;
-    // @inject_tag: sql:"user_set_cancelled"
-    bool UserSetCancelled                         = 410;
+    // @inject_tag: sql:"user_set_canceled"
+    bool UserSetCanceled                         = 410;
     // @inject_tag: sql:"payment_transaction_id"
     string PaymentTransactionID                  = 420;
     // @inject_tag: sql:"payment_finish_amount"
