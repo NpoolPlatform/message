@@ -11,8 +11,10 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateCoin     (CreateCoinRequest)   returns (CreateCoinResponse)    {}
     rpc GetCoin        (GetCoinRequest)      returns (GetCoinResponse)       {}
+    rpc ExistCoin      (ExistCoinRequest)    returns (ExistCoinResponse)     {}
     rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
-    rpc GetCoinOnly    (GetCoinOnlyRequest)  returns (GetCoinOnlyResponse)      {}
+    rpc ExistCoinConds (ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
+    rpc GetCoinOnly    (GetCoinOnlyRequest)  returns (GetCoinOnlyResponse)   {}
     rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
 }
 
@@ -144,6 +146,14 @@ message GetCoinResponse {
     Coin Info = 10;
 }
 
+message ExistCoinRequest {
+    string ID = 10;
+}
+
+message ExistCoinResponse {
+    Coin Info = 10;
+}
+
 message GetCoinsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
@@ -153,6 +163,14 @@ message GetCoinsRequest {
 message GetCoinsResponse {
     repeated Coin Infos = 10;
     uint32        Total = 20;
+}
+
+message ExistCoinCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistCoinCondsResponse {
+    bool Info = 10;
 }
 
 message GetCoinOnlyRequest {

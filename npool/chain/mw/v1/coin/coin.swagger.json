@@ -329,6 +329,22 @@
         }
       }
     },
+    "v1ExistCoinCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
     "v1GasType": {
       "type": "string",
       "enum": [
