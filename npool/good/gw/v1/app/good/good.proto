@@ -178,6 +178,9 @@ message CreateGoodRequest {
     optional string ProductPage            = 220;
     optional bool   EnableSetCommission    = 230;
     repeated string Posters    = 240;
+    repeated string Descriptions = 250;
+    optional string GoodBanner   = 260;
+    repeated string DisplayNames = 270;
 }
 
 message CreateGoodResponse {
