@@ -14,6 +14,7 @@ service Middleware {
     rpc CreateTxs    (CreateTxsRequest)  returns (CreateTxsResponse)   {}
     rpc GetTx        (GetTxRequest)      returns (GetTxResponse)       {}
     rpc GetTxs       (GetTxsRequest)     returns (GetTxsResponse)      {}
+    rpc ExistTxConds (ExistTxCondsRequest) returns (ExistTxCondsResponse) {}
     rpc UpdateTx     (UpdateTxRequest)   returns (UpdateTxResponse)    {}
 }
 
@@ -75,6 +76,7 @@ message Conds {
     optional basetypes.v1.Uint32Val      State       = 50;
     optional basetypes.v1.Uint32Val      Type        = 60;
     optional basetypes.v1.StringSliceVal IDs         = 70;
+    optional basetypes.v1.Uint32SliceVal States      = 80;
 }
 
 message CreateTxRequest {
@@ -111,6 +113,15 @@ message GetTxsResponse {
     repeated Tx Infos = 10;
     uint32      Total = 20;
 }
+
+message ExistTxCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistTxCondsResponse {
+    bool Info = 10;
+}
+
 
 message UpdateTxRequest {
     TxReq Info = 10;

@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTx_FullMethodName  = "/chain.middleware.tx.v1.Middleware/CreateTx"
-	Middleware_CreateTxs_FullMethodName = "/chain.middleware.tx.v1.Middleware/CreateTxs"
-	Middleware_GetTx_FullMethodName     = "/chain.middleware.tx.v1.Middleware/GetTx"
-	Middleware_GetTxs_FullMethodName    = "/chain.middleware.tx.v1.Middleware/GetTxs"
-	Middleware_UpdateTx_FullMethodName  = "/chain.middleware.tx.v1.Middleware/UpdateTx"
+	Middleware_CreateTx_FullMethodName     = "/chain.middleware.tx.v1.Middleware/CreateTx"
+	Middleware_CreateTxs_FullMethodName    = "/chain.middleware.tx.v1.Middleware/CreateTxs"
+	Middleware_GetTx_FullMethodName        = "/chain.middleware.tx.v1.Middleware/GetTx"
+	Middleware_GetTxs_FullMethodName       = "/chain.middleware.tx.v1.Middleware/GetTxs"
+	Middleware_ExistTxConds_FullMethodName = "/chain.middleware.tx.v1.Middleware/ExistTxConds"
+	Middleware_UpdateTx_FullMethodName     = "/chain.middleware.tx.v1.Middleware/UpdateTx"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateTxs(ctx context.Context, in *CreateTxsRequest, opts ...grpc.CallOption) (*CreateTxsResponse, error)
 	GetTx(ctx context.Context, in *GetTxRequest, opts ...grpc.CallOption) (*GetTxResponse, error)
 	GetTxs(ctx context.Context, in *GetTxsRequest, opts ...grpc.CallOption) (*GetTxsResponse, error)
+	ExistTxConds(ctx context.Context, in *ExistTxCondsRequest, opts ...grpc.CallOption) (*ExistTxCondsResponse, error)
 	UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetTxs(ctx context.Context, in *GetTxsRequest, opts .
 	return out, nil
 }
 
+func (c *middlewareClient) ExistTxConds(ctx context.Context, in *ExistTxCondsRequest, opts ...grpc.CallOption) (*ExistTxCondsResponse, error) {
+	out := new(ExistTxCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTxConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) UpdateTx(ctx context.Context, in *UpdateTxRequest, opts ...grpc.CallOption) (*UpdateTxResponse, error) {
 	out := new(UpdateTxResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateTx_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	CreateTxs(context.Context, *CreateTxsRequest) (*CreateTxsResponse, error)
 	GetTx(context.Context, *GetTxRequest) (*GetTxResponse, error)
 	GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error)
+	ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error)
 	UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetTx(context.Context, *GetTxRequest) (*Get
 }
 func (UnimplementedMiddlewareServer) GetTxs(context.Context, *GetTxsRequest) (*GetTxsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTxs not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTxConds(context.Context, *ExistTxCondsRequest) (*ExistTxCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTxConds not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateTx(context.Context, *UpdateTxRequest) (*UpdateTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTx not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetTxs_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistTxConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTxCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTxConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTxConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTxConds(ctx, req.(*ExistTxCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_UpdateTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateTxRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTxs",
 			Handler:    _Middleware_GetTxs_Handler,
+		},
+		{
+			MethodName: "ExistTxConds",
+			Handler:    _Middleware_ExistTxConds_Handler,
 		},
 		{
 			MethodName: "UpdateTx",
