@@ -22,6 +22,7 @@ const (
 	Middleware_GetProfit_FullMethodName     = "/ledger.middleware.ledger.profit.v2.Middleware/GetProfit"
 	Middleware_GetProfitOnly_FullMethodName = "/ledger.middleware.ledger.profit.v2.Middleware/GetProfitOnly"
 	Middleware_GetProfits_FullMethodName    = "/ledger.middleware.ledger.profit.v2.Middleware/GetProfits"
+	Middleware_DeleteProfit_FullMethodName  = "/ledger.middleware.ledger.profit.v2.Middleware/DeleteProfit"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,6 +32,7 @@ type MiddlewareClient interface {
 	GetProfit(ctx context.Context, in *GetProfitRequest, opts ...grpc.CallOption) (*GetProfitResponse, error)
 	GetProfitOnly(ctx context.Context, in *GetProfitOnlyRequest, opts ...grpc.CallOption) (*GetProfitOnlyResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
+	DeleteProfit(ctx context.Context, in *DeleteProfitRequest, opts ...grpc.CallOption) (*DeleteProfitResponse, error)
 }
 
 type middlewareClient struct {
@@ -68,6 +70,15 @@ func (c *middlewareClient) GetProfits(ctx context.Context, in *GetProfitsRequest
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteProfit(ctx context.Context, in *DeleteProfitRequest, opts ...grpc.CallOption) (*DeleteProfitResponse, error) {
+	out := new(DeleteProfitResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteProfit_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type MiddlewareServer interface {
 	GetProfit(context.Context, *GetProfitRequest) (*GetProfitResponse, error)
 	GetProfitOnly(context.Context, *GetProfitOnlyRequest) (*GetProfitOnlyResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
+	DeleteProfit(context.Context, *DeleteProfitRequest) (*DeleteProfitResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedMiddlewareServer) GetProfitOnly(context.Context, *GetProfitOn
 }
 func (UnimplementedMiddlewareServer) GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfits not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteProfit(context.Context, *DeleteProfitRequest) (*DeleteProfitResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteProfit not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -158,6 +173,24 @@ func _Middleware_GetProfits_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteProfit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteProfitRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteProfit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteProfit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteProfit(ctx, req.(*DeleteProfitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetProfits",
 			Handler:    _Middleware_GetProfits_Handler,
+		},
+		{
+			MethodName: "DeleteProfit",
+			Handler:    _Middleware_DeleteProfit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

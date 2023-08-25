@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -117,6 +116,14 @@
         }
       }
     },
+    "v2DeleteWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
     "v2GetWithdrawOnlyResponse": {
       "type": "object",
       "properties": {
@@ -139,7 +146,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Withdraw"
           }
         },

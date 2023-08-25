@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -76,6 +75,14 @@
         }
       }
     },
+    "v2DeleteProfitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Profit"
+        }
+      }
+    },
     "v2GetProfitOnlyResponse": {
       "type": "object",
       "properties": {
@@ -98,7 +105,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Profit"
           }
         },
@@ -140,6 +146,26 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v2ProfitReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
         }
       }
     }

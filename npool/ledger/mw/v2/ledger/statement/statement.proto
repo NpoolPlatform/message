@@ -16,6 +16,7 @@ service Middleware {
     rpc RollbackStatements  (RollbackStatementsRequest)  returns (RollbackStatementsResponse)  {}
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)      {}
     rpc RollbackStatement   (RollbackStatementRequest)   returns (RollbackStatementResponse)    {}
+    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)      {}
 }
 
 message StatementReq {
@@ -133,5 +134,13 @@ message RollbackStatementRequest {
 }
 
 message RollbackStatementResponse {
+    Statement Info = 10;
+}
+
+message DeleteStatementRequest {
+    StatementReq Info = 10;
+}
+
+message DeleteStatementResponse {
     Statement Info = 10;
 }
