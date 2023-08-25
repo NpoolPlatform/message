@@ -257,7 +257,9 @@
       "enum": [
         "DefaultTxState",
         "TxStateCreated",
+        "TxStateCreatedCheck",
         "TxStateWait",
+        "TxStateWaitCheck",
         "TxStateTransferring",
         "TxStateSuccessful",
         "TxStateFail"
