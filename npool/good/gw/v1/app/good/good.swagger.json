@@ -368,6 +368,21 @@
           "items": {
             "type": "string"
           }
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GoodBanner": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
