@@ -151,7 +151,7 @@ message ExistCoinRequest {
 }
 
 message ExistCoinResponse {
-    Coin Info = 10;
+    bool Info = 10;
 }
 
 message GetCoinsRequest {

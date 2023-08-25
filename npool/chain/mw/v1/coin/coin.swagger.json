@@ -341,7 +341,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Coin"
+          "type": "boolean"
         }
       }
     },

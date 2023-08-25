@@ -985,7 +985,7 @@ type ExistCoinResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *Coin `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
 func (x *ExistCoinResponse) Reset() {
@@ -1020,11 +1020,11 @@ func (*ExistCoinResponse) Descriptor() ([]byte, []int) {
 	return file_npool_chain_mw_v1_coin_coin_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ExistCoinResponse) GetInfo() *Coin {
+func (x *ExistCoinResponse) GetInfo() bool {
 	if x != nil {
 		return x.Info
 	}
-	return nil
+	return false
 }
 
 type GetCoinsRequest struct {
@@ -1681,11 +1681,9 @@ var file_npool_chain_mw_v1_coin_coin_proto_rawDesc = []byte{
 	0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x22, 0x0a, 0x10,
 	0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44,
-	0x22, 0x47, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43,
-	0x6f, 0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x76, 0x0a, 0x0f, 0x47, 0x65, 0x74,
+	0x22, 0x27, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x76, 0x0a, 0x0f, 0x47, 0x65, 0x74,
 	0x43, 0x6f, 0x69, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x35, 0x0a, 0x05,
 	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x68,
 	0x61, 0x69, 0x6e, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
@@ -1829,33 +1827,32 @@ var file_npool_chain_mw_v1_coin_coin_proto_depIdxs = []int32{
 	0,  // 9: chain.middleware.coin.v1.CreateCoinRequest.Info:type_name -> chain.middleware.coin.v1.CoinReq
 	1,  // 10: chain.middleware.coin.v1.CreateCoinResponse.Info:type_name -> chain.middleware.coin.v1.Coin
 	1,  // 11: chain.middleware.coin.v1.GetCoinResponse.Info:type_name -> chain.middleware.coin.v1.Coin
-	1,  // 12: chain.middleware.coin.v1.ExistCoinResponse.Info:type_name -> chain.middleware.coin.v1.Coin
-	2,  // 13: chain.middleware.coin.v1.GetCoinsRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
-	1,  // 14: chain.middleware.coin.v1.GetCoinsResponse.Infos:type_name -> chain.middleware.coin.v1.Coin
-	2,  // 15: chain.middleware.coin.v1.ExistCoinCondsRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
-	2,  // 16: chain.middleware.coin.v1.GetCoinOnlyRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
-	1,  // 17: chain.middleware.coin.v1.GetCoinOnlyResponse.Info:type_name -> chain.middleware.coin.v1.Coin
-	0,  // 18: chain.middleware.coin.v1.UpdateCoinRequest.Info:type_name -> chain.middleware.coin.v1.CoinReq
-	1,  // 19: chain.middleware.coin.v1.UpdateCoinResponse.Info:type_name -> chain.middleware.coin.v1.Coin
-	3,  // 20: chain.middleware.coin.v1.Middleware.CreateCoin:input_type -> chain.middleware.coin.v1.CreateCoinRequest
-	5,  // 21: chain.middleware.coin.v1.Middleware.GetCoin:input_type -> chain.middleware.coin.v1.GetCoinRequest
-	7,  // 22: chain.middleware.coin.v1.Middleware.ExistCoin:input_type -> chain.middleware.coin.v1.ExistCoinRequest
-	9,  // 23: chain.middleware.coin.v1.Middleware.GetCoins:input_type -> chain.middleware.coin.v1.GetCoinsRequest
-	11, // 24: chain.middleware.coin.v1.Middleware.ExistCoinConds:input_type -> chain.middleware.coin.v1.ExistCoinCondsRequest
-	13, // 25: chain.middleware.coin.v1.Middleware.GetCoinOnly:input_type -> chain.middleware.coin.v1.GetCoinOnlyRequest
-	15, // 26: chain.middleware.coin.v1.Middleware.UpdateCoin:input_type -> chain.middleware.coin.v1.UpdateCoinRequest
-	4,  // 27: chain.middleware.coin.v1.Middleware.CreateCoin:output_type -> chain.middleware.coin.v1.CreateCoinResponse
-	6,  // 28: chain.middleware.coin.v1.Middleware.GetCoin:output_type -> chain.middleware.coin.v1.GetCoinResponse
-	8,  // 29: chain.middleware.coin.v1.Middleware.ExistCoin:output_type -> chain.middleware.coin.v1.ExistCoinResponse
-	10, // 30: chain.middleware.coin.v1.Middleware.GetCoins:output_type -> chain.middleware.coin.v1.GetCoinsResponse
-	12, // 31: chain.middleware.coin.v1.Middleware.ExistCoinConds:output_type -> chain.middleware.coin.v1.ExistCoinCondsResponse
-	14, // 32: chain.middleware.coin.v1.Middleware.GetCoinOnly:output_type -> chain.middleware.coin.v1.GetCoinOnlyResponse
-	16, // 33: chain.middleware.coin.v1.Middleware.UpdateCoin:output_type -> chain.middleware.coin.v1.UpdateCoinResponse
-	27, // [27:34] is the sub-list for method output_type
-	20, // [20:27] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	2,  // 12: chain.middleware.coin.v1.GetCoinsRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
+	1,  // 13: chain.middleware.coin.v1.GetCoinsResponse.Infos:type_name -> chain.middleware.coin.v1.Coin
+	2,  // 14: chain.middleware.coin.v1.ExistCoinCondsRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
+	2,  // 15: chain.middleware.coin.v1.GetCoinOnlyRequest.Conds:type_name -> chain.middleware.coin.v1.Conds
+	1,  // 16: chain.middleware.coin.v1.GetCoinOnlyResponse.Info:type_name -> chain.middleware.coin.v1.Coin
+	0,  // 17: chain.middleware.coin.v1.UpdateCoinRequest.Info:type_name -> chain.middleware.coin.v1.CoinReq
+	1,  // 18: chain.middleware.coin.v1.UpdateCoinResponse.Info:type_name -> chain.middleware.coin.v1.Coin
+	3,  // 19: chain.middleware.coin.v1.Middleware.CreateCoin:input_type -> chain.middleware.coin.v1.CreateCoinRequest
+	5,  // 20: chain.middleware.coin.v1.Middleware.GetCoin:input_type -> chain.middleware.coin.v1.GetCoinRequest
+	7,  // 21: chain.middleware.coin.v1.Middleware.ExistCoin:input_type -> chain.middleware.coin.v1.ExistCoinRequest
+	9,  // 22: chain.middleware.coin.v1.Middleware.GetCoins:input_type -> chain.middleware.coin.v1.GetCoinsRequest
+	11, // 23: chain.middleware.coin.v1.Middleware.ExistCoinConds:input_type -> chain.middleware.coin.v1.ExistCoinCondsRequest
+	13, // 24: chain.middleware.coin.v1.Middleware.GetCoinOnly:input_type -> chain.middleware.coin.v1.GetCoinOnlyRequest
+	15, // 25: chain.middleware.coin.v1.Middleware.UpdateCoin:input_type -> chain.middleware.coin.v1.UpdateCoinRequest
+	4,  // 26: chain.middleware.coin.v1.Middleware.CreateCoin:output_type -> chain.middleware.coin.v1.CreateCoinResponse
+	6,  // 27: chain.middleware.coin.v1.Middleware.GetCoin:output_type -> chain.middleware.coin.v1.GetCoinResponse
+	8,  // 28: chain.middleware.coin.v1.Middleware.ExistCoin:output_type -> chain.middleware.coin.v1.ExistCoinResponse
+	10, // 29: chain.middleware.coin.v1.Middleware.GetCoins:output_type -> chain.middleware.coin.v1.GetCoinsResponse
+	12, // 30: chain.middleware.coin.v1.Middleware.ExistCoinConds:output_type -> chain.middleware.coin.v1.ExistCoinCondsResponse
+	14, // 31: chain.middleware.coin.v1.Middleware.GetCoinOnly:output_type -> chain.middleware.coin.v1.GetCoinOnlyResponse
+	16, // 32: chain.middleware.coin.v1.Middleware.UpdateCoin:output_type -> chain.middleware.coin.v1.UpdateCoinResponse
+	26, // [26:33] is the sub-list for method output_type
+	19, // [19:26] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_npool_chain_mw_v1_coin_coin_proto_init() }
