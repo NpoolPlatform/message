@@ -478,7 +478,7 @@
         "TopMostMessage": {
           "type": "string"
         },
-        "Poster": {
+        "Posters": {
           "type": "array",
           "items": {
             "type": "string"
