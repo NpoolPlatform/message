@@ -52,7 +52,6 @@ message Conds {
     optional basetypes.v1.StringVal CoinTypeID       = 30;
     optional basetypes.v1.StringVal Amount           = 40;
     optional basetypes.v1.Uint32Val BenefitDate      = 50;
-    optional basetypes.v1.StringSliceVal IDs         = 60;
 }
 
 message GetGoodStatementOnlyRequest {
