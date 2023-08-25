@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -88,13 +87,20 @@
         }
       }
     },
+    "v2CreateGoodStatementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2GoodStatement"
+        }
+      }
+    },
     "v2CreateGoodStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         }
@@ -114,7 +120,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         },
@@ -160,15 +165,28 @@
         }
       }
     },
-    "v2GoodStatementsReq": {
+    "v2GoodStatementReq": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
         "GoodID": {
-          "type": "string",
-          "title": "for bookkeeping"
+          "type": "string"
         },
         "CoinTypeID": {
           "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "BenefitDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "TotalAmount": {
           "type": "string"
@@ -179,19 +197,25 @@
         "TechniqueServiceFeeAmount": {
           "type": "string"
         },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64"
+        "UnsoldStatementID": {
+          "type": "string"
         }
       }
     },
-    "v2UnCreateGoodStatementsResponse": {
+    "v2RollbackGoodStatementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2GoodStatement"
+        }
+      }
+    },
+    "v2RollbackGoodStatementsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         }

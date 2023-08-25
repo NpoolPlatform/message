@@ -21,8 +21,10 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_GetGoodStatementOnly_FullMethodName   = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatementOnly"
 	Middleware_GetGoodStatements_FullMethodName      = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatements"
+	Middleware_CreateGoodStatement_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatement"
 	Middleware_CreateGoodStatements_FullMethodName   = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatements"
-	Middleware_UnCreateGoodStatements_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/UnCreateGoodStatements"
+	Middleware_RollbackGoodStatement_FullMethodName  = "/ledger.middleware.good.ledger.statement.v2.Middleware/RollbackGoodStatement"
+	Middleware_RollbackGoodStatements_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/RollbackGoodStatements"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,8 +33,10 @@ const (
 type MiddlewareClient interface {
 	GetGoodStatementOnly(ctx context.Context, in *GetGoodStatementOnlyRequest, opts ...grpc.CallOption) (*GetGoodStatementOnlyResponse, error)
 	GetGoodStatements(ctx context.Context, in *GetGoodStatementsRequest, opts ...grpc.CallOption) (*GetGoodStatementsResponse, error)
+	CreateGoodStatement(ctx context.Context, in *CreateGoodStatementRequest, opts ...grpc.CallOption) (*CreateGoodStatementResponse, error)
 	CreateGoodStatements(ctx context.Context, in *CreateGoodStatementsRequest, opts ...grpc.CallOption) (*CreateGoodStatementsResponse, error)
-	UnCreateGoodStatements(ctx context.Context, in *UnCreateGoodStatementsRequest, opts ...grpc.CallOption) (*UnCreateGoodStatementsResponse, error)
+	RollbackGoodStatement(ctx context.Context, in *RollbackGoodStatementRequest, opts ...grpc.CallOption) (*RollbackGoodStatementResponse, error)
+	RollbackGoodStatements(ctx context.Context, in *RollbackGoodStatementsRequest, opts ...grpc.CallOption) (*RollbackGoodStatementsResponse, error)
 }
 
 type middlewareClient struct {
@@ -61,6 +65,15 @@ func (c *middlewareClient) GetGoodStatements(ctx context.Context, in *GetGoodSta
 	return out, nil
 }
 
+func (c *middlewareClient) CreateGoodStatement(ctx context.Context, in *CreateGoodStatementRequest, opts ...grpc.CallOption) (*CreateGoodStatementResponse, error) {
+	out := new(CreateGoodStatementResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateGoodStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) CreateGoodStatements(ctx context.Context, in *CreateGoodStatementsRequest, opts ...grpc.CallOption) (*CreateGoodStatementsResponse, error) {
 	out := new(CreateGoodStatementsResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateGoodStatements_FullMethodName, in, out, opts...)
@@ -70,9 +83,18 @@ func (c *middlewareClient) CreateGoodStatements(ctx context.Context, in *CreateG
 	return out, nil
 }
 
-func (c *middlewareClient) UnCreateGoodStatements(ctx context.Context, in *UnCreateGoodStatementsRequest, opts ...grpc.CallOption) (*UnCreateGoodStatementsResponse, error) {
-	out := new(UnCreateGoodStatementsResponse)
-	err := c.cc.Invoke(ctx, Middleware_UnCreateGoodStatements_FullMethodName, in, out, opts...)
+func (c *middlewareClient) RollbackGoodStatement(ctx context.Context, in *RollbackGoodStatementRequest, opts ...grpc.CallOption) (*RollbackGoodStatementResponse, error) {
+	out := new(RollbackGoodStatementResponse)
+	err := c.cc.Invoke(ctx, Middleware_RollbackGoodStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) RollbackGoodStatements(ctx context.Context, in *RollbackGoodStatementsRequest, opts ...grpc.CallOption) (*RollbackGoodStatementsResponse, error) {
+	out := new(RollbackGoodStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_RollbackGoodStatements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,8 +107,10 @@ func (c *middlewareClient) UnCreateGoodStatements(ctx context.Context, in *UnCre
 type MiddlewareServer interface {
 	GetGoodStatementOnly(context.Context, *GetGoodStatementOnlyRequest) (*GetGoodStatementOnlyResponse, error)
 	GetGoodStatements(context.Context, *GetGoodStatementsRequest) (*GetGoodStatementsResponse, error)
+	CreateGoodStatement(context.Context, *CreateGoodStatementRequest) (*CreateGoodStatementResponse, error)
 	CreateGoodStatements(context.Context, *CreateGoodStatementsRequest) (*CreateGoodStatementsResponse, error)
-	UnCreateGoodStatements(context.Context, *UnCreateGoodStatementsRequest) (*UnCreateGoodStatementsResponse, error)
+	RollbackGoodStatement(context.Context, *RollbackGoodStatementRequest) (*RollbackGoodStatementResponse, error)
+	RollbackGoodStatements(context.Context, *RollbackGoodStatementsRequest) (*RollbackGoodStatementsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -100,11 +124,17 @@ func (UnimplementedMiddlewareServer) GetGoodStatementOnly(context.Context, *GetG
 func (UnimplementedMiddlewareServer) GetGoodStatements(context.Context, *GetGoodStatementsRequest) (*GetGoodStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodStatements not implemented")
 }
+func (UnimplementedMiddlewareServer) CreateGoodStatement(context.Context, *CreateGoodStatementRequest) (*CreateGoodStatementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodStatement not implemented")
+}
 func (UnimplementedMiddlewareServer) CreateGoodStatements(context.Context, *CreateGoodStatementsRequest) (*CreateGoodStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodStatements not implemented")
 }
-func (UnimplementedMiddlewareServer) UnCreateGoodStatements(context.Context, *UnCreateGoodStatementsRequest) (*UnCreateGoodStatementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UnCreateGoodStatements not implemented")
+func (UnimplementedMiddlewareServer) RollbackGoodStatement(context.Context, *RollbackGoodStatementRequest) (*RollbackGoodStatementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RollbackGoodStatement not implemented")
+}
+func (UnimplementedMiddlewareServer) RollbackGoodStatements(context.Context, *RollbackGoodStatementsRequest) (*RollbackGoodStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RollbackGoodStatements not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -155,6 +185,24 @@ func _Middleware_GetGoodStatements_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CreateGoodStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGoodStatementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateGoodStatement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateGoodStatement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateGoodStatement(ctx, req.(*CreateGoodStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_CreateGoodStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateGoodStatementsRequest)
 	if err := dec(in); err != nil {
@@ -173,20 +221,38 @@ func _Middleware_CreateGoodStatements_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UnCreateGoodStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnCreateGoodStatementsRequest)
+func _Middleware_RollbackGoodStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RollbackGoodStatementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).UnCreateGoodStatements(ctx, in)
+		return srv.(MiddlewareServer).RollbackGoodStatement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_UnCreateGoodStatements_FullMethodName,
+		FullMethod: Middleware_RollbackGoodStatement_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UnCreateGoodStatements(ctx, req.(*UnCreateGoodStatementsRequest))
+		return srv.(MiddlewareServer).RollbackGoodStatement(ctx, req.(*RollbackGoodStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_RollbackGoodStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RollbackGoodStatementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).RollbackGoodStatements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_RollbackGoodStatements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).RollbackGoodStatements(ctx, req.(*RollbackGoodStatementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -207,12 +273,20 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetGoodStatements_Handler,
 		},
 		{
+			MethodName: "CreateGoodStatement",
+			Handler:    _Middleware_CreateGoodStatement_Handler,
+		},
+		{
 			MethodName: "CreateGoodStatements",
 			Handler:    _Middleware_CreateGoodStatements_Handler,
 		},
 		{
-			MethodName: "UnCreateGoodStatements",
-			Handler:    _Middleware_UnCreateGoodStatements_Handler,
+			MethodName: "RollbackGoodStatement",
+			Handler:    _Middleware_RollbackGoodStatement_Handler,
+		},
+		{
+			MethodName: "RollbackGoodStatements",
+			Handler:    _Middleware_RollbackGoodStatements_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
