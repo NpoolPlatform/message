@@ -27,7 +27,8 @@ message GoodStatementReq {
     optional string     TotalAmount        = 70;
     optional string     UnsoldAmount       = 80;
     optional string     TechniqueServiceFeeAmount = 90;
-    optional string     UnsoldStatementID  = 100;
+    optional string     StatementID        = 100;
+    optional string     UnsoldStatementID  = 110;
 }
 
 message GoodStatement {
