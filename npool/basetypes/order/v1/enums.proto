@@ -30,12 +30,12 @@ enum OrderState {
 }
 
 enum PaymentState {
-    DefaultPaymentState  = 0;
+    DefaultPaymentState   = 0;
 
-    PaymentStateWait     = 10;
-    PaymentStateDone     = 20;
-    PaymentStateCanceled = 30;
-    PaymentStateTimeout  = 40;
+    PaymentStateWait      = 10;
+    PaymentStateDone      = 20;
+    PaymentStateCanceled  = 30;
+    PaymentStateTimeout   = 40;
 
     PaymentStateNoPayment = 1000;
 }
