@@ -581,9 +581,6 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "InheritFromGoodID": {
-          "type": "string"
-        },
         "VendorLocationID": {
           "type": "string"
         },
