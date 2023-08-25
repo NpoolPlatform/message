@@ -36,6 +36,8 @@ enum PaymentState {
     PaymentStateDone     = 20;
     PaymentStateCancelled = 30;
     PaymentStateTimeout  = 40;
+
+    PaymentStateNoPayment = 1000;
 }
 
 enum InvestmentType {
@@ -52,6 +54,9 @@ enum PaymentType {
     PayWithTransferOnly       = 20;
     PayWithTransferAndBalance = 30;
     PayWithParentOrder        = 40;
+
+    PayWithOffline            = 1000;
+    PayWithNoPayment          = 1010;
 }
 
 enum CompensateType {
