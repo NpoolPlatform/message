@@ -10,17 +10,23 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc GetGoodStatementOnly    (GetGoodStatementOnlyRequest)   returns (GetGoodStatementOnlyResponse) {}
     rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
+    rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {}
     rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
-    rpc UnCreateGoodStatements  (UnCreateGoodStatementsRequest) returns (UnCreateGoodStatementsResponse) {}
+    rpc RollbackGoodStatement   (RollbackGoodStatementRequest) returns (RollbackGoodStatementResponse) {}
+    rpc RollbackGoodStatements  (RollbackGoodStatementsRequest) returns (RollbackGoodStatementsResponse) {}
 }
 
 message GoodStatementReq {
-    optional string     ID               = 10;
-    optional string     GoodID           = 20;
-    optional string     CoinTypeID       = 30;
-    optional string     Amount           = 40;
-    optional uint32     BenefitDate      = 50;
-    optional uint32     CreatedAt        = 60;
+    optional string     ID                 = 10;
+    optional string     GoodID             = 20;
+    optional string     CoinTypeID         = 30;
+    optional string     Amount             = 40;
+    optional uint32     BenefitDate        = 50;
+    optional uint32     CreatedAt          = 60;
+    optional string     TotalAmount        = 70;
+    optional string     UnsoldAmount       = 80;
+    optional string     TechniqueServiceFeeAmount = 90;
+    optional string     UnsoldStatementID  = 100;
 }
 
 message GoodStatement {
@@ -67,28 +73,34 @@ message GetGoodStatementsResponse {
     uint32                 Total = 20;
 }
 
-message GoodStatementsReq {
-    // for bookkeeping
-    optional string GoodID       = 10;
-    optional string CoinTypeID   = 20;
-    optional string TotalAmount  = 30;
-    optional string UnsoldAmount = 40;
-    optional string TechniqueServiceFeeAmount = 50;
-    optional uint32 BenefitDate  = 60;
+message CreateGoodStatementRequest {
+    GoodStatementReq Info = 10;
+}
+
+message CreateGoodStatementResponse {
+    GoodStatement Info = 10;
 }
 
 message CreateGoodStatementsRequest {
-    repeated GoodStatementsReq Infos = 10;
+    repeated GoodStatementReq Infos = 10;
 }
 
 message CreateGoodStatementsResponse {
     repeated GoodStatement Infos = 10;
 }
 
-message UnCreateGoodStatementsRequest {
-    repeated GoodStatementsReq Infos = 10;
+message RollbackGoodStatementRequest {
+    GoodStatementReq Info = 10;
 }
 
-message UnCreateGoodStatementsResponse {
+message RollbackGoodStatementResponse {
+    GoodStatement Info = 10;
+}
+
+message RollbackGoodStatementsRequest {
+    repeated GoodStatementReq Infos = 10;
+}
+
+message RollbackGoodStatementsResponse {
     repeated GoodStatement Infos = 10;
 }
