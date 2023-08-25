@@ -13,9 +13,9 @@ service Middleware {
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)        {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
-    rpc UnCreateStatements  (UnCreateStatementsRequest)  returns (UnCreateStatementsResponse)  {}
-    rpc CreateStatement     (CreateStatementRequest)    returns (CreateStatementResponse)      {}
-    rpc UnCreateStatement   (UnCreateStatementRequest)  returns (UnCreateStatementResponse)    {}
+    rpc RollbackStatements  (RollbackStatementsRequest)  returns (RollbackStatementsResponse)  {}
+    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)      {}
+    rpc RollbackStatement   (RollbackStatementRequest)   returns (RollbackStatementResponse)    {}
 }
 
 message StatementReq {
@@ -112,11 +112,11 @@ message CreateStatementsResponse {
     repeated Statement Infos = 10;
 }
 
-message UnCreateStatementsRequest {
+message RollbackStatementsRequest {
     repeated StatementReq Infos = 10;
 }
 
-message UnCreateStatementsResponse {
+message RollbackStatementsResponse {
     repeated Statement Infos = 10;
 }
 
@@ -128,10 +128,10 @@ message CreateStatementResponse {
     Statement Info = 10;
 }
 
-message UnCreateStatementRequest {
+message RollbackStatementRequest {
     StatementReq Info = 10;
 }
 
-message UnCreateStatementResponse {
+message RollbackStatementResponse {
     Statement Info = 10;
 }

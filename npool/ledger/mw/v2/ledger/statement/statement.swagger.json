@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -149,7 +148,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -177,13 +175,31 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v2RollbackStatementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Statement"
+        }
+      }
+    },
+    "v2RollbackStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Statement"
+          }
         }
       }
     },
@@ -285,26 +301,6 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2UnCreateStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Statement"
-        }
-      }
-    },
-    "v2UnCreateStatementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v2Statement"
-          }
         }
       }
     }
