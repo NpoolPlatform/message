@@ -387,9 +387,9 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"user_set_paid\""
         },
-        "UserSetCancelled": {
+        "UserSetCanceled": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"user_set_cancelled\""
+          "title": "@inject_tag: sql:\"user_set_canceled\""
         },
         "PaymentTransactionID": {
           "type": "string",
@@ -534,7 +534,7 @@
         "UserSetPaid": {
           "type": "boolean"
         },
-        "UserSetCancelled": {
+        "UserSetCanceled": {
           "type": "boolean"
         },
         "PaymentTransactionID": {
@@ -573,12 +573,12 @@
         "OrderStateCheckPayment",
         "OrderStatePaid",
         "OrderStatePaymentTimeout",
-        "OrderStateCancelled",
+        "OrderStateCanceled",
         "OrderStateInService",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCancelled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCanceled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
@@ -596,7 +596,7 @@
         "DefaultPaymentState",
         "PaymentStateWait",
         "PaymentStateDone",
-        "PaymentStateCancelled",
+        "PaymentStateCanceled",
         "PaymentStateTimeout",
         "PaymentStateNoPayment"
       ],
