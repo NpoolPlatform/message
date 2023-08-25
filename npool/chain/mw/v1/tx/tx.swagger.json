@@ -91,6 +91,14 @@
         }
       }
     },
+    "v1ExistTxCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTxResponse": {
       "type": "object",
       "properties": {
