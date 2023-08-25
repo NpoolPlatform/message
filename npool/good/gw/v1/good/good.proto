@@ -163,7 +163,6 @@ message UpdateGoodRequest {
     optional string DeviceInfoID       = 20;
     optional int32  DurationDays       = 30;
     optional string CoinTypeID         = 40;
-    optional string InheritFromGoodID  = 50;
     optional string VendorLocationID   = 60;
     optional string Price              = 70;
     optional basetypes.good.v1.BenefitType BenefitType = 80;
