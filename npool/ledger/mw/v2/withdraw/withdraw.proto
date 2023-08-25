@@ -11,6 +11,7 @@ import "npool/basetypes/ledger/v1/enums.proto";
 service Middleware {
     rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {}
     rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
+    rpc DeleteWithdraw     (DeleteWithdrawRequest)     returns (DeleteWithdrawResponse)     {}
     rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
     rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
     rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
@@ -108,5 +109,13 @@ message GetWithdrawOnlyRequest {
 }
 
 message GetWithdrawOnlyResponse {
+    Withdraw Info = 10;
+}
+
+message DeleteWithdrawRequest {
+    WithdrawReq Info = 10;
+}
+
+message DeleteWithdrawResponse {
     Withdraw Info = 10;
 }
