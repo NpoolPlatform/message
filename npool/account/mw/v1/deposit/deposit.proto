@@ -11,6 +11,8 @@ import "npool/basetypes/v1/accountlockedby.proto";
 service Middleware {
     rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {}
     rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {}
+    rpc AddBalance    (AddBalanceRequest)    returns (AddBalanceResponse)    {}
+    rpc SubBalance    (SubBalanceRequest)    returns (SubBalanceResponse)    {}
     rpc GetAccount    (GetAccountRequest)    returns (GetAccountResponse)    {}
     rpc GetAccounts   (GetAccountsRequest)   returns (GetAccountsResponse)   {}
     rpc DeleteAccount (DeleteAccountRequest) returns (DeleteAccountResponse) {}
@@ -96,6 +98,22 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message AddBalanceRequest {
+    AccountReq Info = 10;
+}
+
+message AddBalanceResponse {
+    Account Info = 10;
+}
+
+message SubBalanceRequest {
+    AccountReq Info = 10;
+}
+
+message SubBalanceResponse {
     Account Info = 10;
 }
 

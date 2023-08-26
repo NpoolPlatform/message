@@ -21,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateAccount_FullMethodName = "/account.middleware.deposit.v1.Middleware/CreateAccount"
 	Middleware_UpdateAccount_FullMethodName = "/account.middleware.deposit.v1.Middleware/UpdateAccount"
+	Middleware_AddBalance_FullMethodName    = "/account.middleware.deposit.v1.Middleware/AddBalance"
+	Middleware_SubBalance_FullMethodName    = "/account.middleware.deposit.v1.Middleware/SubBalance"
 	Middleware_GetAccount_FullMethodName    = "/account.middleware.deposit.v1.Middleware/GetAccount"
 	Middleware_GetAccounts_FullMethodName   = "/account.middleware.deposit.v1.Middleware/GetAccounts"
 	Middleware_DeleteAccount_FullMethodName = "/account.middleware.deposit.v1.Middleware/DeleteAccount"
@@ -32,6 +34,8 @@ const (
 type MiddlewareClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
+	AddBalance(ctx context.Context, in *AddBalanceRequest, opts ...grpc.CallOption) (*AddBalanceResponse, error)
+	SubBalance(ctx context.Context, in *SubBalanceRequest, opts ...grpc.CallOption) (*SubBalanceResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
@@ -57,6 +61,24 @@ func (c *middlewareClient) CreateAccount(ctx context.Context, in *CreateAccountR
 func (c *middlewareClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) AddBalance(ctx context.Context, in *AddBalanceRequest, opts ...grpc.CallOption) (*AddBalanceResponse, error) {
+	out := new(AddBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_AddBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SubBalance(ctx context.Context, in *SubBalanceRequest, opts ...grpc.CallOption) (*SubBalanceResponse, error) {
+	out := new(SubBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_SubBalance_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,6 +118,8 @@ func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountR
 type MiddlewareServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
+	AddBalance(context.Context, *AddBalanceRequest) (*AddBalanceResponse, error)
+	SubBalance(context.Context, *SubBalanceRequest) (*SubBalanceResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
@@ -111,6 +135,12 @@ func (UnimplementedMiddlewareServer) CreateAccount(context.Context, *CreateAccou
 }
 func (UnimplementedMiddlewareServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) AddBalance(context.Context, *AddBalanceRequest) (*AddBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) SubBalance(context.Context, *SubBalanceRequest) (*SubBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubBalance not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -166,6 +196,42 @@ func _Middleware_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_AddBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).AddBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_AddBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).AddBalance(ctx, req.(*AddBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SubBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SubBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SubBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SubBalance(ctx, req.(*SubBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -238,6 +304,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAccount",
 			Handler:    _Middleware_UpdateAccount_Handler,
+		},
+		{
+			MethodName: "AddBalance",
+			Handler:    _Middleware_AddBalance_Handler,
+		},
+		{
+			MethodName: "SubBalance",
+			Handler:    _Middleware_SubBalance_Handler,
 		},
 		{
 			MethodName: "GetAccount",
