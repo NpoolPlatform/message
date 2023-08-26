@@ -21,7 +21,6 @@ message GoodStatementReq {
     optional string     ID                 = 10;
     optional string     GoodID             = 20;
     optional string     CoinTypeID         = 30;
-    optional string     Amount             = 40;
     optional uint32     BenefitDate        = 50;
     optional uint32     CreatedAt          = 60;
     optional string     TotalAmount        = 70;

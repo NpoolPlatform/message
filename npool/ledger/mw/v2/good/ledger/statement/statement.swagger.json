@@ -185,9 +185,6 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Amount": {
-          "type": "string"
-        },
         "BenefitDate": {
           "type": "integer",
           "format": "int64"
