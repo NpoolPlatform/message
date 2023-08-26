@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -149,7 +148,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -185,7 +183,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         },
@@ -209,7 +206,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -252,14 +248,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"amount\""
         },
-        "FromCoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"from_coin_type_id\""
-        },
-        "CoinUSDCurrency": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_usd_currency\""
-        },
         "IOExtra": {
           "type": "string",
           "title": "@inject_tag: sql:\"io_extra\""
@@ -298,13 +286,6 @@
           "$ref": "#/definitions/v1IOSubType"
         },
         "Amount": {
-          "type": "string"
-        },
-        "FromCoinTypeID": {
-          "type": "string",
-          "title": "E.g. when pay with non-USDT coin"
-        },
-        "CoinUSDCurrency": {
           "type": "string"
         },
         "IOExtra": {

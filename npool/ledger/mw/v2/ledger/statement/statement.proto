@@ -27,9 +27,6 @@ message StatementReq {
     optional basetypes.ledger.v1.IOType     IOType           = 50;
     optional basetypes.ledger.v1.IOSubType  IOSubType        = 60;
     optional string     Amount           = 70;
-    // E.g. when pay with non-USDT coin
-    optional string     FromCoinTypeID   = 80;
-    optional string     CoinUSDCurrency  = 90;
     optional string     IOExtra          = 100;
     optional uint32     CreatedAt        = 110;
 }
@@ -51,10 +48,6 @@ message Statement {
     basetypes.ledger.v1.IOSubType   IOSubType                      = 60;
     // @inject_tag: sql:"amount"
     string      Amount                         = 70;
-    // @inject_tag: sql:"from_coin_type_id"
-    string      FromCoinTypeID                 = 80;
-    // @inject_tag: sql:"coin_usd_currency"
-    string      CoinUSDCurrency                = 90;
     // @inject_tag: sql:"io_extra"
     string      IOExtra                        = 100;
     // @inject_tag: sql:"created_at"
