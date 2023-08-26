@@ -48,10 +48,6 @@ message Statement {
     basetypes.ledger.v1.IOSubType   IOSubType                      = 60;
     // @inject_tag: sql:"amount"
     string      Amount                         = 70;
-    // @inject_tag: sql:"from_coin_type_id"
-    string      FromCoinTypeID                 = 80;
-    // @inject_tag: sql:"coin_usd_currency"
-    string      CoinUSDCurrency                = 90;
     // @inject_tag: sql:"io_extra"
     string      IOExtra                        = 100;
     // @inject_tag: sql:"created_at"
