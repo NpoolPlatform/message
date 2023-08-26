@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -149,7 +148,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -185,7 +183,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         },
@@ -209,7 +206,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -298,13 +294,6 @@
           "$ref": "#/definitions/v1IOSubType"
         },
         "Amount": {
-          "type": "string"
-        },
-        "FromCoinTypeID": {
-          "type": "string",
-          "title": "E.g. when pay with non-USDT coin"
-        },
-        "CoinUSDCurrency": {
           "type": "string"
         },
         "IOExtra": {
