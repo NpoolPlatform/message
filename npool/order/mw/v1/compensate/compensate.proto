@@ -4,6 +4,7 @@ package order.middleware.compensate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensate";
 
+import "npool/basetypes/order/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -30,7 +31,7 @@ message CompensateReq {
 }
 
 message Compensate {
-  // @inject_tag: sql:"id"
+    // @inject_tag: sql:"id"
     string     ID        = 10;
     // @inject_tag: sql:"order_id"
     string     OrderID   = 20;
@@ -40,10 +41,29 @@ message Compensate {
     uint32     EndAt     = 40;
     // @inject_tag: sql:"message"
     string     Message   = 50;
+
+    // order
+    // @inject_tag: sql:"app_id"
+    string AppID                                     = 60;
+    // @inject_tag: sql:"user_id"
+    string UserID                                    = 70;
+    // @inject_tag: sql:"good_id"
+    string GoodID                                    = 80;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID                                 = 90;
+    // @inject_tag: sql:"units_v1"
+    string Units                                     = 120;
+
+    // orderstate
+    // @inject_tag: sql:"order_start_at"
+    uint32 OrderStartAt                              = 260;
+    // @inject_tag: sql:"order_end_at"
+    uint32 OrderEndAt                                = 270;
+
     // @inject_tag: sql:"created_at"
-    uint32     CreatedAt = 60;
+    uint32     CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt = 70;
+    uint32     UpdatedAt = 1010;
 }
 
 message Conds {

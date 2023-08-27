@@ -179,6 +179,14 @@
         }
       }
     },
+    "v1AddBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -276,6 +284,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1SubBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
