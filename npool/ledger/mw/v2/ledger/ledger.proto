@@ -59,13 +59,8 @@ message Conds {
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal UserID      = 30;
     optional basetypes.v1.StringVal CoinTypeID  = 40;
-    optional basetypes.v1.StringVal Incoming    = 50;
-    optional basetypes.v1.StringVal Locked      = 60;
-    optional basetypes.v1.StringVal Outcoming   = 70;
-    optional basetypes.v1.StringVal Spendable   = 80;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 90;
 }
-
 
 message GetLedgerRequest {
     string ID = 10;

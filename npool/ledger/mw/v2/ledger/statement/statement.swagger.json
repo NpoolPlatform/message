@@ -114,15 +114,6 @@
         "IOSubType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FromCoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinUSDCurrency": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
         },

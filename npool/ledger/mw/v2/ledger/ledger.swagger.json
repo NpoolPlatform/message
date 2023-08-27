@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -110,18 +109,6 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Locked": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Outcoming": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Spendable": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -149,7 +136,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         },
@@ -243,8 +229,7 @@
           "type": "string"
         },
         "LockID": {
-          "type": "string",
-          "title": "currently not used"
+          "type": "string"
         }
       }
     },

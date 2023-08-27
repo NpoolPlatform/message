@@ -63,9 +63,6 @@ message Conds {
     optional basetypes.v1.StringVal CoinTypeID       = 40;
     optional basetypes.v1.Uint32Val IOType           = 50;
     optional basetypes.v1.Uint32Val IOSubType        = 60;
-    optional basetypes.v1.StringVal Amount           = 70;
-    optional basetypes.v1.StringVal FromCoinTypeID   = 80;
-    optional basetypes.v1.StringVal CoinUSDCurrency  = 90;
     optional basetypes.v1.StringVal IOExtra          = 100;
     optional basetypes.v1.Uint32Val StartAt          = 110;
     optional basetypes.v1.Uint32Val EndAt            = 120;

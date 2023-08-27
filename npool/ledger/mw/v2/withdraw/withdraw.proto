@@ -64,7 +64,6 @@ message Conds {
     optional basetypes.v1.StringVal UserID     = 30;
     optional basetypes.v1.StringVal CoinTypeID = 40;
     optional basetypes.v1.StringVal AccountID  = 50;
-    optional basetypes.v1.StringVal Amount     = 60;
     optional basetypes.v1.Uint32Val CreatedAt  = 70;
     optional basetypes.v1.Uint32Val State      = 80;
 }
