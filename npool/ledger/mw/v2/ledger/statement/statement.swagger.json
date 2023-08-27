@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -115,15 +114,6 @@
         "IOSubType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "FromCoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinUSDCurrency": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "IOExtra": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -149,7 +139,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -160,6 +149,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2Statement"
+        }
+      }
+    },
+    "v2DeleteStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Statement"
+          }
         }
       }
     },
@@ -185,33 +185,12 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2RollbackStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Statement"
-        }
-      }
-    },
-    "v2RollbackStatementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v2Statement"
-          }
         }
       }
     },

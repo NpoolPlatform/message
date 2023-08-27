@@ -12,9 +12,8 @@ service Middleware {
     rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
     rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {}
     rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
-    rpc RollbackGoodStatement   (RollbackGoodStatementRequest)  returns (RollbackGoodStatementResponse) {}
-    rpc RollbackGoodStatements  (RollbackGoodStatementsRequest) returns (RollbackGoodStatementsResponse) {}
     rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {}
+    rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {}
 }
 
 message GoodStatementReq {
@@ -90,26 +89,18 @@ message CreateGoodStatementsResponse {
     repeated GoodStatement Infos = 10;
 }
 
-message RollbackGoodStatementRequest {
-    GoodStatementReq Info = 10;
-}
-
-message RollbackGoodStatementResponse {
-    GoodStatement Info = 10;
-}
-
-message RollbackGoodStatementsRequest {
-    repeated GoodStatementReq Infos = 10;
-}
-
-message RollbackGoodStatementsResponse {
-    repeated GoodStatement Infos = 10;
-}
-
 message DeleteGoodStatementRequest {
     GoodStatementReq Info = 10;
 }
 
 message DeleteGoodStatementResponse {
     GoodStatement Info = 10;
+}
+
+message DeleteGoodStatementsRequest {
+    repeated GoodStatementReq Infos = 10;
+}
+
+message DeleteGoodStatementsResponse {
+    repeated GoodStatement Infos = 10;
 }

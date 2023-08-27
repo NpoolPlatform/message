@@ -13,10 +13,9 @@ service Middleware {
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)        {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
-    rpc RollbackStatements  (RollbackStatementsRequest)  returns (RollbackStatementsResponse)  {}
+    rpc DeleteStatements    (DeleteStatementsRequest)  returns (DeleteStatementsResponse)  {}
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)      {}
-    rpc RollbackStatement   (RollbackStatementRequest)   returns (RollbackStatementResponse)    {}
-    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)      {}
+    rpc DeleteStatement     (DeleteStatementRequest)   returns (DeleteStatementResponse)    {}
 }
 
 message StatementReq {
@@ -63,9 +62,6 @@ message Conds {
     optional basetypes.v1.StringVal CoinTypeID       = 40;
     optional basetypes.v1.Uint32Val IOType           = 50;
     optional basetypes.v1.Uint32Val IOSubType        = 60;
-    optional basetypes.v1.StringVal Amount           = 70;
-    optional basetypes.v1.StringVal FromCoinTypeID   = 80;
-    optional basetypes.v1.StringVal CoinUSDCurrency  = 90;
     optional basetypes.v1.StringVal IOExtra          = 100;
     optional basetypes.v1.Uint32Val StartAt          = 110;
     optional basetypes.v1.Uint32Val EndAt            = 120;
@@ -106,11 +102,11 @@ message CreateStatementsResponse {
     repeated Statement Infos = 10;
 }
 
-message RollbackStatementsRequest {
+message DeleteStatementsRequest {
     repeated StatementReq Infos = 10;
 }
 
-message RollbackStatementsResponse {
+message DeleteStatementsResponse {
     repeated Statement Infos = 10;
 }
 
@@ -119,14 +115,6 @@ message CreateStatementRequest {
 }
 
 message CreateStatementResponse {
-    Statement Info = 10;
-}
-
-message RollbackStatementRequest {
-    StatementReq Info = 10;
-}
-
-message RollbackStatementResponse {
     Statement Info = 10;
 }
 
