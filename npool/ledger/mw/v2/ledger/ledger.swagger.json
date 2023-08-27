@@ -207,13 +207,7 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "Incoming": {
-          "type": "string"
-        },
         "Locked": {
-          "type": "string"
-        },
-        "Outcoming": {
           "type": "string"
         },
         "Spendable": {
