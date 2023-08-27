@@ -4,11 +4,6 @@
     "title": "npool/ledger/mw/v2/good/ledger/unsold/unsold.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "Middleware"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -41,93 +36,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "BenefitDate": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v2GetUnsoldStatementOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2UnsoldStatement"
-        }
-      }
-    },
-    "v2UnsoldStatement": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "Amount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"amount\""
-        },
-        "BenefitDate": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"benefit_date\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     }

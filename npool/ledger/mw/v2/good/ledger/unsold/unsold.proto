@@ -4,21 +4,10 @@ package ledger.middleware.good.ledger.unsold.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/good/ledger/unsold";
 
-import "npool/basetypes/v1/conds.proto";
-
 // Service Name
-service Middleware {
-    rpc GetUnsoldStatementOnly (GetUnsoldStatementOnlyRequest) returns (GetUnsoldStatementOnlyResponse) {}
-}
+service Middleware {}
 
-message UnsoldStatementReq {
-    optional string ID          = 10;
-    optional string GoodID      = 20;
-    optional string CoinTypeID  = 30;
-    optional string Amount      = 40;
-    optional uint32 BenefitDate = 50;
-    optional uint32 CreatedAt   = 60;
-}
+message UnsoldStatementReq {}
 
 message UnsoldStatement {
     // @inject_tag: sql:"id"
@@ -37,19 +26,5 @@ message UnsoldStatement {
     uint32 UpdatedAt   = 70;
 }
 
-message Conds {
-    optional basetypes.v1.StringVal ID          = 10;
-    optional basetypes.v1.StringVal GoodID      = 20;
-    optional basetypes.v1.StringVal CoinTypeID  = 30;
-    optional basetypes.v1.StringVal Amount      = 40;
-    optional basetypes.v1.Uint32Val BenefitDate = 50;
-}
-
-message GetUnsoldStatementOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetUnsoldStatementOnlyResponse {
-    UnsoldStatement Info = 10;
-}
+message Conds {}
 

@@ -19,14 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetStatementOnly_FullMethodName   = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatementOnly"
-	Middleware_GetStatements_FullMethodName      = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements"
-	Middleware_GetStatement_FullMethodName       = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement"
-	Middleware_CreateStatements_FullMethodName   = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements"
-	Middleware_RollbackStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/RollbackStatements"
-	Middleware_CreateStatement_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement"
-	Middleware_RollbackStatement_FullMethodName  = "/ledger.middleware.ledger.statement.v2.Middleware/RollbackStatement"
-	Middleware_DeleteStatement_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement"
+	Middleware_GetStatementOnly_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatementOnly"
+	Middleware_GetStatements_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements"
+	Middleware_GetStatement_FullMethodName     = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement"
+	Middleware_CreateStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements"
+	Middleware_DeleteStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements"
+	Middleware_CreateStatement_FullMethodName  = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement"
+	Middleware_DeleteStatement_FullMethodName  = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,9 +36,8 @@ type MiddlewareClient interface {
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	GetStatement(ctx context.Context, in *GetStatementRequest, opts ...grpc.CallOption) (*GetStatementResponse, error)
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
-	RollbackStatements(ctx context.Context, in *RollbackStatementsRequest, opts ...grpc.CallOption) (*RollbackStatementsResponse, error)
+	DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error)
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
-	RollbackStatement(ctx context.Context, in *RollbackStatementRequest, opts ...grpc.CallOption) (*RollbackStatementResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
 }
 
@@ -87,9 +85,9 @@ func (c *middlewareClient) CreateStatements(ctx context.Context, in *CreateState
 	return out, nil
 }
 
-func (c *middlewareClient) RollbackStatements(ctx context.Context, in *RollbackStatementsRequest, opts ...grpc.CallOption) (*RollbackStatementsResponse, error) {
-	out := new(RollbackStatementsResponse)
-	err := c.cc.Invoke(ctx, Middleware_RollbackStatements_FullMethodName, in, out, opts...)
+func (c *middlewareClient) DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error) {
+	out := new(DeleteStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteStatements_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,15 +97,6 @@ func (c *middlewareClient) RollbackStatements(ctx context.Context, in *RollbackS
 func (c *middlewareClient) CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error) {
 	out := new(CreateStatementResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateStatement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) RollbackStatement(ctx context.Context, in *RollbackStatementRequest, opts ...grpc.CallOption) (*RollbackStatementResponse, error) {
-	out := new(RollbackStatementResponse)
-	err := c.cc.Invoke(ctx, Middleware_RollbackStatement_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -131,9 +120,8 @@ type MiddlewareServer interface {
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error)
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
-	RollbackStatements(context.Context, *RollbackStatementsRequest) (*RollbackStatementsResponse, error)
+	DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error)
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
-	RollbackStatement(context.Context, *RollbackStatementRequest) (*RollbackStatementResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -154,14 +142,11 @@ func (UnimplementedMiddlewareServer) GetStatement(context.Context, *GetStatement
 func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatements not implemented")
 }
-func (UnimplementedMiddlewareServer) RollbackStatements(context.Context, *RollbackStatementsRequest) (*RollbackStatementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RollbackStatements not implemented")
+func (UnimplementedMiddlewareServer) DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatements not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatement not implemented")
-}
-func (UnimplementedMiddlewareServer) RollbackStatement(context.Context, *RollbackStatementRequest) (*RollbackStatementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RollbackStatement not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatement not implemented")
@@ -251,20 +236,20 @@ func _Middleware_CreateStatements_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_RollbackStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RollbackStatementsRequest)
+func _Middleware_DeleteStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteStatementsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).RollbackStatements(ctx, in)
+		return srv.(MiddlewareServer).DeleteStatements(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_RollbackStatements_FullMethodName,
+		FullMethod: Middleware_DeleteStatements_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).RollbackStatements(ctx, req.(*RollbackStatementsRequest))
+		return srv.(MiddlewareServer).DeleteStatements(ctx, req.(*DeleteStatementsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -283,24 +268,6 @@ func _Middleware_CreateStatement_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateStatement(ctx, req.(*CreateStatementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_RollbackStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RollbackStatementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).RollbackStatement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_RollbackStatement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).RollbackStatement(ctx, req.(*RollbackStatementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -347,16 +314,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CreateStatements_Handler,
 		},
 		{
-			MethodName: "RollbackStatements",
-			Handler:    _Middleware_RollbackStatements_Handler,
+			MethodName: "DeleteStatements",
+			Handler:    _Middleware_DeleteStatements_Handler,
 		},
 		{
 			MethodName: "CreateStatement",
 			Handler:    _Middleware_CreateStatement_Handler,
-		},
-		{
-			MethodName: "RollbackStatement",
-			Handler:    _Middleware_RollbackStatement_Handler,
 		},
 		{
 			MethodName: "DeleteStatement",

@@ -152,6 +152,17 @@
         }
       }
     },
+    "v2DeleteStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Statement"
+          }
+        }
+      }
+    },
     "v2GetStatementOnlyResponse": {
       "type": "object",
       "properties": {
@@ -180,25 +191,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v2RollbackStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Statement"
-        }
-      }
-    },
-    "v2RollbackStatementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Statement"
-          }
         }
       }
     },
