@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -102,7 +101,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         }
@@ -113,6 +111,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2GoodStatement"
+        }
+      }
+    },
+    "v2DeleteGoodStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2GoodStatement"
+          }
         }
       }
     },
@@ -130,7 +139,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         },
@@ -210,26 +218,6 @@
         },
         "UnsoldStatementID": {
           "type": "string"
-        }
-      }
-    },
-    "v2RollbackGoodStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2GoodStatement"
-        }
-      }
-    },
-    "v2RollbackGoodStatementsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v2GoodStatement"
-          }
         }
       }
     }
