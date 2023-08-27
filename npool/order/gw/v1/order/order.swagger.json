@@ -434,6 +434,23 @@
     }
   },
   "definitions": {
+    "CreateOrdersRequestGood": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "PromotionID": {
+          "type": "string"
+        },
+        "Parent": {
+          "type": "boolean"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -550,15 +567,6 @@
         "PayWithBalanceAmount": {
           "type": "string"
         },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         },
@@ -584,11 +592,35 @@
     "v1CreateOrdersRequest": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PaymentCoinID": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "Goods": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1OrderReq"
+            "$ref": "#/definitions/CreateOrdersRequestGood"
           }
         }
       }
@@ -948,31 +980,6 @@
         "PayWithParent": {
           "type": "boolean"
         },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "FixAmountName": {
-          "type": "string"
-        },
-        "FixAmountAmount": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "DiscountName": {
-          "type": "string"
-        },
-        "DiscountPercent": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
-        "SpecialOfferAmount": {
-          "type": "string"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -987,11 +994,14 @@
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         },
-        "Start": {
+        "PaymentType": {
+          "$ref": "#/definitions/v1PaymentType"
+        },
+        "StartAt": {
           "type": "integer",
           "format": "int64"
         },
-        "End": {
+        "EndAt": {
           "type": "integer",
           "format": "int64"
         },
@@ -1008,56 +1018,6 @@
         "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1OrderReq": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "PaymentCoinID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "PayWithBalanceAmount": {
-          "type": "string"
-        },
-        "FixAmountID": {
-          "type": "string"
-        },
-        "DiscountID": {
-          "type": "string"
-        },
-        "SpecialOfferID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        },
-        "IsMainGood": {
-          "type": "boolean"
         }
       }
     },
@@ -1085,6 +1045,19 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentType": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentType",
+        "PayWithBalanceOnly",
+        "PayWithTransferOnly",
+        "PayWithTransferAndBalance",
+        "PayWithParentOrder",
+        "PayWithOffline",
+        "PayWithNoPayment"
+      ],
+      "default": "DefaultPaymentType"
     },
     "v1UpdateAppUserOrderRequest": {
       "type": "object",
