@@ -148,6 +148,9 @@
         },
         "ChargeBack": {
           "type": "boolean"
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     },
