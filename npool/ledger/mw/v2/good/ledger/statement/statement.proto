@@ -14,6 +14,7 @@ service Middleware {
     rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
     rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {}
     rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {}
+    rpc ExistGoodStatementConds (ExistGoodStatementCondsRequest) returns (ExistGoodStatementCondsResponse) {}
 }
 
 message GoodStatementReq {
@@ -107,4 +108,12 @@ message DeleteGoodStatementsRequest {
 
 message DeleteGoodStatementsResponse {
     repeated GoodStatement Infos = 10;
+}
+
+message ExistGoodStatementCondsRequest {
+    Conds conds = 10;
+}
+
+message ExistGoodStatementCondsResponse {
+    bool info = 10;
 }

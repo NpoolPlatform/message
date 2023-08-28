@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetGoodStatementOnly_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatementOnly"
-	Middleware_GetGoodStatements_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatements"
-	Middleware_CreateGoodStatement_FullMethodName  = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatement"
-	Middleware_CreateGoodStatements_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatements"
-	Middleware_DeleteGoodStatement_FullMethodName  = "/ledger.middleware.good.ledger.statement.v2.Middleware/DeleteGoodStatement"
-	Middleware_DeleteGoodStatements_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/DeleteGoodStatements"
+	Middleware_GetGoodStatementOnly_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatementOnly"
+	Middleware_GetGoodStatements_FullMethodName       = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatements"
+	Middleware_CreateGoodStatement_FullMethodName     = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatement"
+	Middleware_CreateGoodStatements_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatements"
+	Middleware_DeleteGoodStatement_FullMethodName     = "/ledger.middleware.good.ledger.statement.v2.Middleware/DeleteGoodStatement"
+	Middleware_DeleteGoodStatements_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/DeleteGoodStatements"
+	Middleware_ExistGoodStatementConds_FullMethodName = "/ledger.middleware.good.ledger.statement.v2.Middleware/ExistGoodStatementConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	CreateGoodStatements(ctx context.Context, in *CreateGoodStatementsRequest, opts ...grpc.CallOption) (*CreateGoodStatementsResponse, error)
 	DeleteGoodStatement(ctx context.Context, in *DeleteGoodStatementRequest, opts ...grpc.CallOption) (*DeleteGoodStatementResponse, error)
 	DeleteGoodStatements(ctx context.Context, in *DeleteGoodStatementsRequest, opts ...grpc.CallOption) (*DeleteGoodStatementsResponse, error)
+	ExistGoodStatementConds(ctx context.Context, in *ExistGoodStatementCondsRequest, opts ...grpc.CallOption) (*ExistGoodStatementCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) DeleteGoodStatements(ctx context.Context, in *DeleteG
 	return out, nil
 }
 
+func (c *middlewareClient) ExistGoodStatementConds(ctx context.Context, in *ExistGoodStatementCondsRequest, opts ...grpc.CallOption) (*ExistGoodStatementCondsResponse, error) {
+	out := new(ExistGoodStatementCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistGoodStatementConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	CreateGoodStatements(context.Context, *CreateGoodStatementsRequest) (*CreateGoodStatementsResponse, error)
 	DeleteGoodStatement(context.Context, *DeleteGoodStatementRequest) (*DeleteGoodStatementResponse, error)
 	DeleteGoodStatements(context.Context, *DeleteGoodStatementsRequest) (*DeleteGoodStatementsResponse, error)
+	ExistGoodStatementConds(context.Context, *ExistGoodStatementCondsRequest) (*ExistGoodStatementCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) DeleteGoodStatement(context.Context, *Delet
 }
 func (UnimplementedMiddlewareServer) DeleteGoodStatements(context.Context, *DeleteGoodStatementsRequest) (*DeleteGoodStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteGoodStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistGoodStatementConds(context.Context, *ExistGoodStatementCondsRequest) (*ExistGoodStatementCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistGoodStatementConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_DeleteGoodStatements_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistGoodStatementConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistGoodStatementCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistGoodStatementConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistGoodStatementConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistGoodStatementConds(ctx, req.(*ExistGoodStatementCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteGoodStatements",
 			Handler:    _Middleware_DeleteGoodStatements_Handler,
+		},
+		{
+			MethodName: "ExistGoodStatementConds",
+			Handler:    _Middleware_ExistGoodStatementConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

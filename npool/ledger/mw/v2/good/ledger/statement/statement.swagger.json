@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -102,7 +101,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         }
@@ -122,9 +120,16 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
+        }
+      }
+    },
+    "v2ExistGoodStatementCondsResponse": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "boolean"
         }
       }
     },
@@ -142,7 +147,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2GoodStatement"
           }
         },
