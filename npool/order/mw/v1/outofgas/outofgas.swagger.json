@@ -62,32 +62,11 @@
         }
       }
     },
-    "v1CountOutOfGassResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1OutOfGas"
-        }
-      }
-    },
-    "v1CreateOutOfGassResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1OutOfGas"
-          }
         }
       }
     },
@@ -112,14 +91,6 @@
       "properties": {
         "Info": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetOutOfGasOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     },

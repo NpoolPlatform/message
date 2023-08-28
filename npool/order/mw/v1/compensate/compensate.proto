@@ -10,14 +10,11 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateCompensate     (CreateCompensateRequest)     returns (CreateCompensateResponse)     {}
-    rpc CreateCompensates    (CreateCompensatesRequest)    returns (CreateCompensatesResponse)    {}
     rpc UpdateCompensate     (UpdateCompensateRequest)     returns (UpdateCompensateResponse)     {}
     rpc GetCompensate        (GetCompensateRequest)        returns (GetCompensateResponse)        {}
-    rpc GetCompensateOnly    (GetCompensateOnlyRequest)    returns (GetCompensateOnlyResponse)    {}
     rpc GetCompensates       (GetCompensatesRequest)       returns (GetCompensatesResponse)       {}
     rpc ExistCompensate      (ExistCompensateRequest)      returns (ExistCompensateResponse)      {}
     rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
-    rpc CountCompensates     (CountCompensatesRequest)     returns (CountCompensatesResponse)     {}
     rpc DeleteCompensate     (DeleteCompensateRequest)     returns (DeleteCompensateResponse)     {}
 }
 
@@ -82,14 +79,6 @@ message CreateCompensateResponse {
     Compensate Info = 10;
 }
 
-message CreateCompensatesRequest {
-    repeated CompensateReq Infos = 10;
-}
-
-message CreateCompensatesResponse {
-    repeated Compensate Infos = 10;
-}
-
 message UpdateCompensateRequest {
     CompensateReq Info = 10;
 }
@@ -117,14 +106,6 @@ message GetCompensatesResponse {
     uint32              Total = 20;
 }
 
-message GetCompensateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetCompensateOnlyResponse {
-    Compensate Info = 10;
-}
-
 message ExistCompensateRequest {
     string ID = 10;
 }
@@ -139,14 +120,6 @@ message ExistCompensateCondsRequest {
 
 message ExistCompensateCondsResponse {
     bool Info = 10;
-}
-
-message CountCompensatesRequest {
-    Conds Conds = 10;
-}
-
-message CountCompensatesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteCompensateRequest {

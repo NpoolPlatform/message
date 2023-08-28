@@ -155,32 +155,11 @@
         }
       }
     },
-    "v1CountCompensatesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Compensate"
-        }
-      }
-    },
-    "v1CreateCompensatesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Compensate"
-          }
         }
       }
     },
@@ -205,14 +184,6 @@
       "properties": {
         "Info": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetCompensateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Compensate"
         }
       }
     },

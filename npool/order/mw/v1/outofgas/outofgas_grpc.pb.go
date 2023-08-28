@@ -20,14 +20,11 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateOutOfGas_FullMethodName     = "/order.middleware.outofgas.v1.Middleware/CreateOutOfGas"
-	Middleware_CreateOutOfGass_FullMethodName    = "/order.middleware.outofgas.v1.Middleware/CreateOutOfGass"
 	Middleware_UpdateOutOfGas_FullMethodName     = "/order.middleware.outofgas.v1.Middleware/UpdateOutOfGas"
 	Middleware_GetOutOfGas_FullMethodName        = "/order.middleware.outofgas.v1.Middleware/GetOutOfGas"
-	Middleware_GetOutOfGasOnly_FullMethodName    = "/order.middleware.outofgas.v1.Middleware/GetOutOfGasOnly"
 	Middleware_GetOutOfGass_FullMethodName       = "/order.middleware.outofgas.v1.Middleware/GetOutOfGass"
 	Middleware_ExistOutOfGas_FullMethodName      = "/order.middleware.outofgas.v1.Middleware/ExistOutOfGas"
 	Middleware_ExistOutOfGasConds_FullMethodName = "/order.middleware.outofgas.v1.Middleware/ExistOutOfGasConds"
-	Middleware_CountOutOfGass_FullMethodName     = "/order.middleware.outofgas.v1.Middleware/CountOutOfGass"
 	Middleware_DeleteOutOfGas_FullMethodName     = "/order.middleware.outofgas.v1.Middleware/DeleteOutOfGas"
 )
 
@@ -36,14 +33,11 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error)
-	CreateOutOfGass(ctx context.Context, in *CreateOutOfGassRequest, opts ...grpc.CallOption) (*CreateOutOfGassResponse, error)
 	UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error)
 	GetOutOfGas(ctx context.Context, in *GetOutOfGasRequest, opts ...grpc.CallOption) (*GetOutOfGasResponse, error)
-	GetOutOfGasOnly(ctx context.Context, in *GetOutOfGasOnlyRequest, opts ...grpc.CallOption) (*GetOutOfGasOnlyResponse, error)
 	GetOutOfGass(ctx context.Context, in *GetOutOfGassRequest, opts ...grpc.CallOption) (*GetOutOfGassResponse, error)
 	ExistOutOfGas(ctx context.Context, in *ExistOutOfGasRequest, opts ...grpc.CallOption) (*ExistOutOfGasResponse, error)
 	ExistOutOfGasConds(ctx context.Context, in *ExistOutOfGasCondsRequest, opts ...grpc.CallOption) (*ExistOutOfGasCondsResponse, error)
-	CountOutOfGass(ctx context.Context, in *CountOutOfGassRequest, opts ...grpc.CallOption) (*CountOutOfGassResponse, error)
 	DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error)
 }
 
@@ -64,15 +58,6 @@ func (c *middlewareClient) CreateOutOfGas(ctx context.Context, in *CreateOutOfGa
 	return out, nil
 }
 
-func (c *middlewareClient) CreateOutOfGass(ctx context.Context, in *CreateOutOfGassRequest, opts ...grpc.CallOption) (*CreateOutOfGassResponse, error) {
-	out := new(CreateOutOfGassResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateOutOfGass_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error) {
 	out := new(UpdateOutOfGasResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateOutOfGas_FullMethodName, in, out, opts...)
@@ -85,15 +70,6 @@ func (c *middlewareClient) UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGa
 func (c *middlewareClient) GetOutOfGas(ctx context.Context, in *GetOutOfGasRequest, opts ...grpc.CallOption) (*GetOutOfGasResponse, error) {
 	out := new(GetOutOfGasResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetOutOfGas_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetOutOfGasOnly(ctx context.Context, in *GetOutOfGasOnlyRequest, opts ...grpc.CallOption) (*GetOutOfGasOnlyResponse, error) {
-	out := new(GetOutOfGasOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetOutOfGasOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -127,15 +103,6 @@ func (c *middlewareClient) ExistOutOfGasConds(ctx context.Context, in *ExistOutO
 	return out, nil
 }
 
-func (c *middlewareClient) CountOutOfGass(ctx context.Context, in *CountOutOfGassRequest, opts ...grpc.CallOption) (*CountOutOfGassResponse, error) {
-	out := new(CountOutOfGassResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountOutOfGass_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error) {
 	out := new(DeleteOutOfGasResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteOutOfGas_FullMethodName, in, out, opts...)
@@ -150,14 +117,11 @@ func (c *middlewareClient) DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGa
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error)
-	CreateOutOfGass(context.Context, *CreateOutOfGassRequest) (*CreateOutOfGassResponse, error)
 	UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error)
 	GetOutOfGas(context.Context, *GetOutOfGasRequest) (*GetOutOfGasResponse, error)
-	GetOutOfGasOnly(context.Context, *GetOutOfGasOnlyRequest) (*GetOutOfGasOnlyResponse, error)
 	GetOutOfGass(context.Context, *GetOutOfGassRequest) (*GetOutOfGassResponse, error)
 	ExistOutOfGas(context.Context, *ExistOutOfGasRequest) (*ExistOutOfGasResponse, error)
 	ExistOutOfGasConds(context.Context, *ExistOutOfGasCondsRequest) (*ExistOutOfGasCondsResponse, error)
-	CountOutOfGass(context.Context, *CountOutOfGassRequest) (*CountOutOfGassResponse, error)
 	DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -169,17 +133,11 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOutOfGas not implemented")
 }
-func (UnimplementedMiddlewareServer) CreateOutOfGass(context.Context, *CreateOutOfGassRequest) (*CreateOutOfGassResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOutOfGass not implemented")
-}
 func (UnimplementedMiddlewareServer) UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOutOfGas not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOutOfGas(context.Context, *GetOutOfGasRequest) (*GetOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOutOfGas not implemented")
-}
-func (UnimplementedMiddlewareServer) GetOutOfGasOnly(context.Context, *GetOutOfGasOnlyRequest) (*GetOutOfGasOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOutOfGasOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOutOfGass(context.Context, *GetOutOfGassRequest) (*GetOutOfGassResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOutOfGass not implemented")
@@ -189,9 +147,6 @@ func (UnimplementedMiddlewareServer) ExistOutOfGas(context.Context, *ExistOutOfG
 }
 func (UnimplementedMiddlewareServer) ExistOutOfGasConds(context.Context, *ExistOutOfGasCondsRequest) (*ExistOutOfGasCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOutOfGasConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CountOutOfGass(context.Context, *CountOutOfGassRequest) (*CountOutOfGassResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountOutOfGass not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOutOfGas not implemented")
@@ -223,24 +178,6 @@ func _Middleware_CreateOutOfGas_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOutOfGas(ctx, req.(*CreateOutOfGasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateOutOfGass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOutOfGassRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateOutOfGass(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateOutOfGass_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateOutOfGass(ctx, req.(*CreateOutOfGassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -277,24 +214,6 @@ func _Middleware_GetOutOfGas_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetOutOfGas(ctx, req.(*GetOutOfGasRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetOutOfGasOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOutOfGasOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetOutOfGasOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetOutOfGasOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetOutOfGasOnly(ctx, req.(*GetOutOfGasOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -353,24 +272,6 @@ func _Middleware_ExistOutOfGasConds_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountOutOfGass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountOutOfGassRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountOutOfGass(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountOutOfGass_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountOutOfGass(ctx, req.(*CountOutOfGassRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteOutOfGasRequest)
 	if err := dec(in); err != nil {
@@ -401,20 +302,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CreateOutOfGas_Handler,
 		},
 		{
-			MethodName: "CreateOutOfGass",
-			Handler:    _Middleware_CreateOutOfGass_Handler,
-		},
-		{
 			MethodName: "UpdateOutOfGas",
 			Handler:    _Middleware_UpdateOutOfGas_Handler,
 		},
 		{
 			MethodName: "GetOutOfGas",
 			Handler:    _Middleware_GetOutOfGas_Handler,
-		},
-		{
-			MethodName: "GetOutOfGasOnly",
-			Handler:    _Middleware_GetOutOfGasOnly_Handler,
 		},
 		{
 			MethodName: "GetOutOfGass",
@@ -427,10 +320,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistOutOfGasConds",
 			Handler:    _Middleware_ExistOutOfGasConds_Handler,
-		},
-		{
-			MethodName: "CountOutOfGass",
-			Handler:    _Middleware_CountOutOfGass_Handler,
 		},
 		{
 			MethodName: "DeleteOutOfGas",
