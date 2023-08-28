@@ -33,6 +33,7 @@ message OrderReq {
     optional string ParentOrderID             = 60;
     optional string Units                     = 70;
     optional string GoodValue                 = 80;
+    optional string GoodValueUSD              = 81;
     optional string PaymentAmount             = 90;
     optional string DiscountAmount            = 100;
     optional string PromotionID               = 110;
@@ -41,16 +42,17 @@ message OrderReq {
     optional basetypes.order.v1.InvestmentType InvestmentType = 140;
     repeated string CouponIDs                                 = 150;
     optional basetypes.order.v1.PaymentType PaymentType       = 160;
+    optional string CoinTypeID             = 170;
+    optional string PaymentCoinTypeID      = 171;
+    optional string TransferAmount         = 180;
+    optional string BalanceAmount          = 190;
+    optional string CoinUSDCurrency        = 200;
+    optional string LocalCoinUSDCurrency   = 210;
+    optional string LiveCoinUSDCurrency    = 220;
 
     // payment
-    optional string PaymentAccountID              = 170;
-    optional string PaymentCoinTypeID             = 180;
-    optional string PaymentStartAmount            = 190;
-    optional string PaymentTransferAmount         = 200;
-    optional string PaymentBalanceAmount          = 210;
-    optional string PaymentCoinUSDCurrency        = 220;
-    optional string PaymentLocalCoinUSDCurrency   = 230;
-    optional string PaymentLiveCoinUSDCurrency    = 240;
+    optional string PaymentAccountID              = 230;
+    optional string PaymentStartAmount            = 240;
 
     // Create or Update
     // orderstate
@@ -89,6 +91,8 @@ message Order {
     string Units                                     = 80;
     // @inject_tag: sql:"good_value"
     string GoodValue                                 = 90;
+    // @inject_tag: sql:"good_value_usd"
+    string GoodValueUSD                              = 91;
     // @inject_tag: sql:"payment_amount"
     string PaymentAmount                             = 100;
     // @inject_tag: sql:"discount_amount"
@@ -109,24 +113,26 @@ message Order {
     // @inject_tag: sql:"payment_type"
     string PaymentTypeStr                            = 200;
     basetypes.order.v1.PaymentType PaymentType       = 210;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID                                = 220;
+    // @inject_tag: sql:"payment_coin_type_id"
+    string PaymentCoinTypeID                         = 221;
+    // @inject_tag: sql:"transfer_amount"
+    string TransferAmount                            = 230;
+    // @inject_tag: sql:"balance_amount"
+    string BalanceAmount                             = 240;
+    // @inject_tag: sql:"coin_usd_currency"
+    string CoinUSDCurrency                           = 250;
+    // @inject_tag: sql:"local_coin_usd_currency"
+    string LocalCoinUSDCurrency                      = 260;
+    // @inject_tag: sql:"live_coin_usd_currency"
+    string LiveCoinUSDCurrency                       = 270;
 
     // payment
     // @inject_tag: sql:"payment_account_id"
-    string PaymentAccountID                      = 220;
-    // @inject_tag: sql:"payment_coin_type_id"
-    string PaymentCoinTypeID                     = 230;
+    string PaymentAccountID                      = 280;
     // @inject_tag: sql:"payment_start_amount"
-    string PaymentStartAmount                    = 240;
-    // @inject_tag: sql:"payment_transfer_amount"
-    string PaymentTransferAmount                 = 250;
-    // @inject_tag: sql:"payment_balance_amount"
-    string PaymentBalanceAmount                  = 260;
-    // @inject_tag: sql:"payment_coin_usd_currency"
-    string PaymentCoinUSDCurrency                = 270;
-    // @inject_tag: sql:"payment_local_coin_usd_currency"
-    string PaymentLocalCoinUSDCurrency           = 280;
-    // @inject_tag: sql:"payment_live_coin_usd_currency"
-    string PaymentLiveCoinUSDCurrency            = 290;
+    string PaymentStartAmount                    = 290;
 
     // orderstate 
     // @inject_tag: sql:"orderstate_id"
@@ -150,6 +156,8 @@ message Order {
     bool UserSetPaid                             = 400;
     // @inject_tag: sql:"user_set_canceled"
     bool UserSetCanceled                         = 410;
+    // @inject_tag: sql:"admin_set_canceled"
+    bool AdminSetCanceled                        = 411;
     // @inject_tag: sql:"payment_transaction_id"
     string PaymentTransactionID                  = 420;
     // @inject_tag: sql:"payment_finish_amount"
@@ -181,9 +189,7 @@ message Conds {
     basetypes.v1.Uint32Val      InvestmentType        = 90;
     basetypes.v1.StringSliceVal CouponIDs             = 100;
     basetypes.v1.Uint32Val      PaymentType           = 110;
-    basetypes.v1.Uint32Val      CreatedAt             = 120;
-
-    // payment
+    basetypes.v1.StringVal      CoinTypeID            = 120;
     basetypes.v1.StringVal      PaymentCoinTypeID     = 130;
 
     // orderstate
