@@ -24,6 +24,8 @@ message UnsoldStatement {
     uint32 CreatedAt   = 60;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt   = 70;
+    // @inject_tag: sql:"statement_id"
+    string StatementID = 80;
 }
 
 message Conds {}
