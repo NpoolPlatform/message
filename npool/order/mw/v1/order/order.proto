@@ -64,6 +64,7 @@ message OrderReq {
     optional basetypes.order.v1.BenefitState BenefitState = 300;
     optional bool   UserSetPaid                           = 310;
     optional bool   UserSetCanceled                       = 320;
+    optional bool   AdminSetCanceled                      = 321;
     optional string PaymentTransactionID                  = 330;
     optional string PaymentFinishAmount                   = 340;
     optional basetypes.order.v1.PaymentState PaymentState = 350;

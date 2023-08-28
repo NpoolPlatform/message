@@ -545,6 +545,9 @@
         "UserSetCanceled": {
           "type": "boolean"
         },
+        "AdminSetCanceled": {
+          "type": "boolean"
+        },
         "PaymentTransactionID": {
           "type": "string"
         },
