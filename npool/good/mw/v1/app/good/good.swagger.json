@@ -83,6 +83,9 @@
         },
         "AppIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

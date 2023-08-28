@@ -29,9 +29,15 @@ enum BenefitState {
     DefaultBenefitState    = 0;
 
     BenefitWait         = 10;
-    BenefitTransferring = 20;
-    BenefitBookKeeping  = 30;
-    BenefitDone         = 40;
+    BenefitCheckWait    = 20;
+    BenefitTransferring = 30;
+    BenefitCheckTransferring = 40;
+    BenefitBookKeeping  = 50;
+    BenefitCheckBookKeeping = 60;
+    BenefitDone         = 70;
+    BenefitCheckDone    = 80;
+    BenefitFail         = 90;
+    BenefitCheckFail    = 100;
 }
 
 enum CancelMode {
