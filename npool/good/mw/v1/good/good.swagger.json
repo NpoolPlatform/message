@@ -50,10 +50,15 @@
       "enum": [
         "DefaultBenefitState",
         "BenefitWait",
+        "BenefitCheckWait",
         "BenefitTransferring",
+        "BenefitCheckTransferring",
         "BenefitBookKeeping",
+        "BenefitCheckBookKeeping",
         "BenefitDone",
-        "BenefitFail"
+        "BenefitCheckDone",
+        "BenefitFail",
+        "BenefitCheckFail"
       ],
       "default": "DefaultBenefitState"
     },
