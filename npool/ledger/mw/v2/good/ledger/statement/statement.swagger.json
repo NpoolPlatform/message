@@ -167,6 +167,18 @@
           "type": "string",
           "title": "@inject_tag: sql:\"amount\""
         },
+        "TechniqueServiceFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"technique_service_fee_amount\""
+        },
+        "ToPlatform": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"to_platform\""
+        },
+        "ToUser": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"to_user\""
+        },
         "BenefitDate": {
           "type": "integer",
           "format": "int64",
